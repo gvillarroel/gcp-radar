@@ -1,0 +1,83 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:18.771Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery",
+  "feature_name": "JSONPath mode support in JSON functions",
+  "feature_slug": "jsonpath-mode-support-in-json-functions",
+  "summary": "Some BigQuery JSON functions support selectable JSONPath modes that provide flexibility in how paths match JSON data structures.",
+  "extended_definition": "Some BigQuery JSON functions support selectable JSONPath modes that provide flexibility in how paths match JSON data structures.",
+  "lifecycle": {
+    "latest_feature_date": "2024-08-08",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/reference/legacy-sql",
+      "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/json_functions",
+      "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/string_functions"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "JSON functions \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/json_functions",
+        "source_id": "site-docs-reference-required-8",
+        "final_score": 204,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "JSON-formatted string: '{\"a\": [[\"b\", \"c\"], \"d\"], \"e\":\"f\"}' JSON path: \"$.a[0][1]\" JSON result: \"c\" Modes for JSONPath Some JSON functions that take a JSONPath let you specify a mode that indicates how the JSONPath matches the JSON data structure.",
+          "The following modes are supported: Mode Description Example JSONPath strict (default) The JSONPath must structurally match the JSON data \"$.class.students\" lax Implicitly adapts the path to the structure of the JSON data.",
+          "Home Documentation Data analytics BigQuery Reference Send feedback JSON functions Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "String functions \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/string_functions",
+        "source_id": "site-docs-root",
+        "final_score": 139,
+        "relevance": "",
+        "evidence_snippets": [
+          "NORMALIZE AND CASEFOLD supports four optional normalization modes: Value Name Description NFC Normalization Form Canonical Composition Decomposes and recomposes characters by canonical equivalence.",
+          "NORMALIZE supports four optional normalization modes: Value Name Description NFC Normalization Form Canonical Composition Decomposes and recomposes characters by canonical equivalence.",
+          "Home Documentation Data analytics BigQuery Reference Send feedback String functions Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"Legacy SQL Syntax, Functions and Operators \\_|\\_ BigQuery \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/reference/legacy-sql",
+        "source_id": "site-docs-reference",
+        "final_score": 127,
+        "relevance": "",
+        "evidence_snippets": [
+          "Examples: PARSE PACKED IP('48.49.50.51') returns 'MDEyMw==' PARSE PACKED IP('3031:3233:3435:3637:3839:4041:4243:4445') returns 'MDEyMzQ1Njc4OUBBQkNERQ==' JSON functions BigQuery's JSON functions give you the ability to find values within your stored JSON data, by using JSONPath -like expressions.",
+          "Use JSON functions instead of BigQuery's regular expression functions if working with structured data, as JSON functions are easier to use.",
+          "Syntax JSON functions JSON EXTRACT() Selects a value according to the JSONPath expression and returns a JSON string."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "class.students"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": []
+}

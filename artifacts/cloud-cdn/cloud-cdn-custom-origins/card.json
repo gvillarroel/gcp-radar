@@ -1,0 +1,117 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:23.081Z",
+  "source_step08_card": "data/step-08/current/products/cloud-cdn/card.json",
+  "product_name": "Cloud CDN",
+  "product_slug": "cloud-cdn",
+  "feature_name": "Cloud CDN custom origins",
+  "feature_slug": "cloud-cdn-custom-origins",
+  "summary": "Cloud CDN custom origins is generally available, enabling caches to source content from on-premises or other-cloud origins; Cloud CDN custom origins support is available in beta for serving cached content from external origins.",
+  "extended_definition": "Cloud CDN custom origins is generally available, enabling caches to source content from on-premises or other-cloud origins; Cloud CDN custom origins support is available in beta for serving cached content from external origins.",
+  "lifecycle": {
+    "latest_feature_date": "2020-03-25",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/cdn/docs/best-practices",
+      "https://docs.cloud.google.com/cdn/docs/cdn-logging-monitoring",
+      "https://docs.cloud.google.com/cdn/docs/logging"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Logs and metrics for backend services \\_|\\_ Cloud CDN \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/cdn/docs/cdn-logging-monitoring",
+        "source_id": "site-docs-root-2",
+        "final_score": 107,
+        "relevance": "",
+        "evidence_snippets": [
+          "This information is only available for global external Application Load Balancers using custom error responses . string Optional The cachePolicySource field holds the source of the caching policy that governs the caching behavior for a specific request: CACHE POLICY SOURCE ROUTE : A cache policy can be applied at different levels of the URL map, and that allows for more granular control over caching.",
+          "This information is only available for global external Application Load Balancers using custom error responses . string Required The errorBackendStatusDetails field holds the statusDetails of the final response served to the client.",
+          "This information is only available for global external Application Load Balancers using custom error responses . string Required The errorService field holds the backend service that provided the custom error response."
+        ]
+      },
+      {
+        "title": "Content delivery best practices \\_|\\_ Cloud CDN \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/cdn/docs/best-practices",
+        "source_id": "site-docs-reference-2",
+        "final_score": 104,
+        "relevance": "",
+        "evidence_snippets": [
+          "When you enable Cloud CDN and customize the cache keys for the backend service that holds the logo, clear the Host checkbox so that the cache ignores the domain but caches the logo.",
+          "Instead, use GCPHTTPFilter , a custom resource for GKE Gateway, to customize cacheKeyPolicy and TTL settings for specific URL paths within an HTTPRoute resource.",
+          "When you customize the cache keys for the backend service that holds the logo, clear the Protocol checkbox so that requests through HTTP and HTTPS count as matches for the logo's cache entry."
+        ]
+      },
+      {
+        "title": "Logs and metrics for caching \\_|\\_ Cloud CDN \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/cdn/docs/logging",
+        "source_id": "site-docs-reference-2",
+        "final_score": 104,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "You can filter on the following fields to determine the cache hit, miss, or revalidation status of a request served by Cloud CDN: Cache Hit jsonPayload.statusDetails=(\"response from cache\" OR \"byte range caching\") or httpRequest.cacheHit=true httpRequest.cacheValidatedWithOriginServer!=true Cache Hit Validated With Origin Server jsonPayload.statusDetails=\"response from cache validated\" or httpRequest.cacheHit=true httpRequest.cacheValidatedWithOriginServer=true Cache Miss jsonPayload.statusDetails=\"response sent by backend\" or httpRequest.cacheHit!=true httpRequest.cacheLookup=true Alternatively, you can observe the cache status from the client side by configuring a custom response header with cdn cache status .",
+          "Metrics on the dashboards The predefined dashboards provide the following key metrics about your CDN origins: Client traffic distribution A dynamic geographical map displaying the source of client requests.",
+          "The definitions of these custom dashboards are available on GitHub in the monitoring-dashboard-samples repository as JSON files."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cats.jpg",
+      "type.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/cdn/docs/best-practices",
+        "https://docs.cloud.google.com/cdn/docs/cdn-logging-monitoring",
+        "https://docs.cloud.google.com/cdn/docs/logging"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/cdn/docs/best-practices",
+        "https://docs.cloud.google.com/cdn/docs/cdn-logging-monitoring",
+        "https://docs.cloud.google.com/cdn/docs/logging"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/cdn/docs/best-practices",
+        "https://docs.cloud.google.com/cdn/docs/cdn-logging-monitoring",
+        "https://docs.cloud.google.com/cdn/docs/logging"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/cdn/docs/best-practices",
+        "https://docs.cloud.google.com/cdn/docs/cdn-logging-monitoring",
+        "https://docs.cloud.google.com/cdn/docs/logging"
+      ]
+    }
+  ]
+}

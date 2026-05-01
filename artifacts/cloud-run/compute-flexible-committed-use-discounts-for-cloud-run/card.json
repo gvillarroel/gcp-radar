@@ -1,0 +1,188 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:25.811Z",
+  "source_step08_card": "data/step-08/current/products/cloud-run/card.json",
+  "product_name": "Cloud Run",
+  "product_slug": "cloud-run",
+  "feature_name": "Compute flexible committed use discounts for Cloud Run",
+  "feature_slug": "compute-flexible-committed-use-discounts-for-cloud-run",
+  "summary": "Cloud Run usage is covered by expanded compute flexible committed use discounts under the spend-based CUD model.",
+  "extended_definition": "Cloud Run usage is covered by expanded compute flexible committed use discounts under the spend-based CUD model.",
+  "lifecycle": {
+    "latest_feature_date": "2026-02-06",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/run/docs/resources",
+      "https://docs.cloud.google.com/run/docs/tutorials/eventarc",
+      "https://docs.cloud.google.com/run/docs/tutorials/function-returns-bigquery-query"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Resources \\_|\\_ Cloud Run \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/run/docs/resources",
+        "source_id": "site-api-reference",
+        "final_score": 74,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Compute flexible committed use discounts Flexible CUD details for Cloud Run.",
+          "Quotas and Limits Usage policies for your Cloud Run resources."
+        ]
+      },
+      {
+        "title": "\"Create a Cloud Run function that uses BigQuery to submit a query and return\\",
+        "url": "https://docs.cloud.google.com/run/docs/tutorials/function-returns-bigquery-query",
+        "source_id": "site-docs-root-2",
+        "final_score": 65,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Required roles To get the permissions that you need to deploy Cloud Run services from source, ask your administrator to grant you the following IAM roles: Cloud Run Source Developer ( roles/run.sourceDeveloper ) on your project Service Usage Consumer ( roles/serviceusage.serviceUsageConsumer ) on the Cloud Run service Service Account User ( roles/iam.serviceAccountUser ) on the service identity BigQuery Job User ( roles/bigquery.jobUser ) on the service identity For a list of IAM roles and permissions that are associated with Cloud Run, see Cloud Run IAM roles and Cloud Run IAM permissions .",
+          "For Cloud Build to build your sources, ask your administrator to grant Cloud Run Builder ( roles/run.builder ) to the Compute Engine default service account on your project: gcloud projects add-iam-policy-binding PROJECT ID \\ --member = serviceAccount: PROJECT NUMBER -compute@developer.gserviceaccount.com \\ --role = roles/run.builder Replace PROJECT NUMBER with your Google Cloud project number, and PROJECT ID with your Google Cloud project ID.",
+          "Click to view required roles for the Cloud Build service account Cloud Build automatically uses the Compute Engine default service account as the default Cloud Build service account to build your source code and Cloud Run resource, unless you override this behavior."
+        ]
+      },
+      {
+        "title": "\"Use Eventarc to receive events from Cloud Storage \\_|\\_ Cloud Run \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/run/docs/tutorials/eventarc",
+        "source_id": "site-docs-root-2",
+        "final_score": 65,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To get the permissions that you need to complete this tutorial, ask your administrator to grant you the following IAM roles on your project: Cloud Build Editor ( roles/cloudbuild.builds.editor ) Cloud Run Admin ( roles/run.admin ) Cloud Run Source Developer ( roles/run.sourceDeveloper ) Eventarc Admin ( roles/eventarc.admin ) Logs View Accessor ( roles/logging.viewAccessor ) Project IAM Admin ( roles/resourcemanager.projectIamAdmin ) Service Account Admin ( roles/iam.serviceAccountAdmin ) Service Account User ( roles/iam.serviceAccountUser ) Service Usage Admin ( roles/serviceusage.serviceUsageAdmin ) Storage Admin ( roles/storage.admin ) For more information about granting roles, see Manage access to projects, folders, and organizations .",
+          "Grant the Eventarc Event Receiver role ( roles/eventarc.eventReceiver ) on the project to the Compute Engine default service account so that the Eventarc trigger can receive events from event providers. gcloud projects add-iam-policy-binding PROJECT ID \\ --member = serviceAccount: PROJECT NUMBER -compute@developer.gserviceaccount.com \\ --role = roles/eventarc.eventReceiver Optional role for the Pub/Sub service agent If you enabled the Cloud Pub/Sub service agent on or before April 8, 2021, to support authenticated Pub/Sub push requests, grant the Service Account Token Creator role ( roles/iam.serviceAccountTokenCreator ) to the service agent.",
+          "Create a trigger that filters Cloud Storage events: gcloud eventarc triggers create ${ SERVICE NAME } \\ --destination-run-service = ${ SERVICE NAME } \\ --destination-run-region = ${ REGION } \\ --location = ${ REGION } \\ --event-filters = \"type=google.cloud.storage.object.v1.finalized\" \\ --event-filters = \"bucket= PROJECT ID -bucket\" \\ --service-account = PROJECT NUMBER -compute@developer.gserviceaccount.com This creates a trigger called helloworld-events ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "bigquery.jobUser",
+      "cloudbuild.builds.editor",
+      "developer.gserviceaccount.com",
+      "eventarc.admin",
+      "eventarc.eventReceiver",
+      "iam.serviceAccountAdmin",
+      "iam.serviceAccountTokenCreator",
+      "iam.serviceAccountUser",
+      "logging.viewAccessor",
+      "resourcemanager.projectIamAdmin",
+      "run.admin",
+      "run.builder",
+      "run.invoker",
+      "run.sourceDeveloper",
+      "serviceusage.serviceUsageAdmin",
+      "serviceusage.serviceUsageConsumer",
+      "storage.admin"
+    ],
+    "missing_inventory_roles": [
+      "roles/bigquery.jobUser",
+      "roles/cloudbuild.builds.editor",
+      "roles/eventarc.admin",
+      "roles/eventarc.eventReceiver",
+      "roles/iam.serviceAccountAdmin",
+      "roles/iam.serviceAccountTokenCreator",
+      "roles/iam.serviceAccountUser",
+      "roles/logging.viewAccessor",
+      "roles/resourcemanager.projectIamAdmin",
+      "roles/run.admin",
+      "roles/run.builder",
+      "roles/run.invoker",
+      "roles/run.sourceDeveloper",
+      "roles/serviceusage.serviceUsageAdmin",
+      "roles/serviceusage.serviceUsageConsumer",
+      "roles/storage.admin"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/resources",
+        "https://docs.cloud.google.com/run/docs/tutorials/function-returns-bigquery-query",
+        "https://docs.cloud.google.com/run/docs/tutorials/eventarc"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/resources",
+        "https://docs.cloud.google.com/run/docs/tutorials/function-returns-bigquery-query",
+        "https://docs.cloud.google.com/run/docs/tutorials/eventarc"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/resources",
+        "https://docs.cloud.google.com/run/docs/tutorials/function-returns-bigquery-query",
+        "https://docs.cloud.google.com/run/docs/tutorials/eventarc"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/resources",
+        "https://docs.cloud.google.com/run/docs/tutorials/function-returns-bigquery-query",
+        "https://docs.cloud.google.com/run/docs/tutorials/eventarc"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/resources",
+        "https://docs.cloud.google.com/run/docs/tutorials/function-returns-bigquery-query",
+        "https://docs.cloud.google.com/run/docs/tutorials/eventarc"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/resources",
+        "https://docs.cloud.google.com/run/docs/tutorials/function-returns-bigquery-query",
+        "https://docs.cloud.google.com/run/docs/tutorials/eventarc"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/resources",
+        "https://docs.cloud.google.com/run/docs/tutorials/function-returns-bigquery-query",
+        "https://docs.cloud.google.com/run/docs/tutorials/eventarc"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/resources",
+        "https://docs.cloud.google.com/run/docs/tutorials/function-returns-bigquery-query",
+        "https://docs.cloud.google.com/run/docs/tutorials/eventarc"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/resources",
+        "https://docs.cloud.google.com/run/docs/tutorials/function-returns-bigquery-query",
+        "https://docs.cloud.google.com/run/docs/tutorials/eventarc"
+      ]
+    }
+  ]
+}

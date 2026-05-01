@@ -1,0 +1,98 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:18.771Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery",
+  "feature_name": "BigQuery clustering recommendations",
+  "feature_slug": "bigquery-clustering-recommendations",
+  "summary": "BigQuery recommends clustering strategies to reduce cost and improve performance.",
+  "extended_definition": "BigQuery recommends clustering strategies to reduce cost and improve performance.",
+  "lifecycle": {
+    "latest_feature_date": "2024-04-09",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners",
+      "https://docs.cloud.google.com/bigquery/docs/controlling-costs",
+      "https://docs.cloud.google.com/bigquery/docs/troubleshoot-quotas"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Estimate and control costs \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/controlling-costs",
+        "source_id": "site-docs-root",
+        "final_score": 97,
+        "relevance": "",
+        "evidence_snippets": [
+          "Rapid Cache provides an SSD-backed zonal read cache for your Cloud Storage buckets, which can potentially improve query performance and reduce query costs when querying external tables.",
+          "Storage costs reduced with no modifications to the data In BigQuery users pay for active and long-term storage.",
+          "Unexpected storage charges Scenarios that could lead to storage charge increases: Increases in the amount of data that is stored in your tables—use the INFORMATION SCHEMA.TABLE STORAGE USAGE TIMELINE view to monitor the change in bytes for your tables Changing dataset billing models Increasing the time-travel window for physical billing model datasets Modification of tables that have data in long-term storage , causing them to become active storage Deletion of table(s) or dataset(s) resulted in higher BigQuery storage costs The BigQuery time travel feature retains deleted data for duration of the configured time-travel window and an additional 7 days for fail-safe recovery."
+        ]
+      },
+      {
+        "title": "Google Cloud Ready - BigQuery Partners \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners",
+        "source_id": "site-docs-reference-5",
+        "final_score": 85,
+        "relevance": "",
+        "evidence_snippets": [
+          "Partner references Secure Data Warehousing with BigQuery Vaultree's Data-In-Use Encryption for BigQuery Partner Advantage page Direct link Data Quality, Observability, & FinOps Alvin.ai Solution Alvin Automated BigQuery Optimization Category Data Quality, Observability, & FinOps Description Alvin.ai is a platform that automatically optimizes BigQuery workloads to reduce costs and improve query performance.",
+          "Partner references BigQuery and Monte Carlo How Resident Reduced Data Issues with Monte Carlo New Relic Solution New Relic Infrastructure Monitoring Category Data Quality, Observability, & FinOps Description New Relic provides performance, availability, and monitoring services that improve your product, improve your business, and keep your customers happy.",
+          "HVR's simple yet powerful data integration and synchronization solution reduces infrastructure costs while allowing you to create new and improved services driven by data stored on-premises and in the cloud."
+        ]
+      },
+      {
+        "title": "Troubleshoot quota and limit errors \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/troubleshoot-quotas",
+        "source_id": "site-docs-root",
+        "final_score": 84,
+        "relevance": "",
+        "evidence_snippets": [
+          "Using this often improves locality of the data, eliminates the need for some joins, and overall reduces resource consumption and the query runtime.",
+          "To learn about limits and quotas, see Storage Write API and to see costs of using this API, see BigQuery data ingestion pricing .",
+          "To learn about limits and quotas, see Storage Write API and to see costs of using this API, see BigQuery data ingestion pricing ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/controlling-costs",
+        "https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners",
+        "https://docs.cloud.google.com/bigquery/docs/troubleshoot-quotas"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/controlling-costs",
+        "https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners",
+        "https://docs.cloud.google.com/bigquery/docs/troubleshoot-quotas"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,90 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:46.193Z",
+  "source_step08_card": "data/step-08/current/products/sensitive-data-protection/card.json",
+  "product_name": "Sensitive Data Protection",
+  "product_slug": "sensitive-data-protection",
+  "feature_name": "large custom dictionaries",
+  "feature_slug": "large-custom-dictionaries",
+  "summary": "Adds support for scanning custom dictionaries with up to tens of millions of entries.",
+  "extended_definition": "Adds support for scanning custom dictionaries with up to tens of millions of entries.",
+  "lifecycle": {
+    "latest_feature_date": "2018-08-10",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/sensitive-data-protection/docs/creating-custom-infotypes-dictionary",
+      "https://docs.cloud.google.com/sensitive-data-protection/docs/creating-stored-infotypes",
+      "https://docs.cloud.google.com/sensitive-data-protection/docs/inspecting-storage"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Create a large custom dictionary detector \\_|\\_ Sensitive Data Protection\\",
+        "url": "https://docs.cloud.google.com/sensitive-data-protection/docs/creating-stored-infotypes",
+        "source_id": "site-docs-root-2",
+        "final_score": 207,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "If you have more or if your term list changes frequently, consider creating a large custom dictionary , which can support tens of millions of terms.",
+          "How large custom dictionaries differ from other custom infoTypes Large custom dictionaries are different from other custom infoTypes in that each large custom dictionary has two components: A list of phrases that you create and define.",
+          "When to choose a large custom dictionary over a regular custom dictionary Regular custom dictionary detectors are sufficient when you have tens of thousands of sensitive words or phrases that you want to scan your content for."
+        ]
+      },
+      {
+        "title": "\"Creating a regular custom dictionary detector \\_|\\_ Sensitive Data Protection\\",
+        "url": "https://docs.cloud.google.com/sensitive-data-protection/docs/creating-custom-infotypes-dictionary",
+        "source_id": "site-api-reference-required-2",
+        "final_score": 177,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Note: If you have a list of anywhere from several hundred to tens of millions of words that you want to scan for, consider using a large custom dictionary detector instead of the regular custom dictionary detector described in this topic.",
+          "These points apply to both regular and large custom dictionaries: Dictionary words are case-insensitive.",
+          "What's next Learn about large custom dictionaries ."
+        ]
+      },
+      {
+        "title": "\"Inspect Google Cloud storage and databases for sensitive data \\_|\\_ Sensitive\\",
+        "url": "https://docs.cloud.google.com/sensitive-data-protection/docs/inspecting-storage",
+        "source_id": "site-docs-reference-3",
+        "final_score": 125,
+        "relevance": "",
+        "evidence_snippets": [
+          "DlpServiceClient () Prepare info types by converting the list of strings into a list of dictionaries (protos are also accepted). if not info types : info types = [ \"FIRST NAME\" , \"LAST NAME\" , \"EMAIL ADDRESS\" ] info types = [{ \"name\" : info type } for info type in info types ] Prepare custom info types by parsing the dictionary word lists and regex patterns. if custom dictionaries is None : custom dictionaries = [] dictionaries = [ { \"info type\" : { \"name\" : f \"CUSTOM DICTIONARY { i } \" }, \"dictionary\" : { \"word list\" : { \"words\" : custom dict . split ( \",\" )}}, } for i , custom dict in enumerate ( custom dictionaries ) ] if custom regexes is None : custom regexes = [] regexes = [ { \"info type\" : { \"name\" : f \"CUSTOM REGEX { i } \" }, \"regex\" : { \"pattern\" : custom regex }, } for i , custom regex in enumerate ( custom regexes ) ] custom info types = dictionaries + regexes Construct the configuration dictionary.",
+          "DlpServiceClient () Prepare info types by converting the list of strings into a list of dictionaries (protos are also accepted). if not info types : info types = [ \"FIRST NAME\" , \"LAST NAME\" , \"EMAIL ADDRESS\" ] info types = [{ \"name\" : info type } for info type in info types ] Prepare custom info types by parsing the dictionary word lists and regex patterns. if custom dictionaries is None : custom dictionaries = [] dictionaries = [ { \"info type\" : { \"name\" : f \"CUSTOM DICTIONARY { i } \" }, \"dictionary\" : { \"word list\" : { \"words\" : custom dict . split ( \",\" )}}, } for i , custom dict in enumerate ( custom dictionaries ) ] if custom regexes is None : custom regexes = [] regexes = [ { \"info type\" : { \"name\" : f \"CUSTOM REGEX { i } \" }, \"regex\" : { \"pattern\" : custom regex }, } for i , custom regex in enumerate ( custom regexes ) ] custom info types = dictionaries + regexes Construct the configuration dictionary.",
+          "DlpServiceClient () Prepare info types by converting the list of strings into a list of dictionaries (protos are also accepted). if not info types : info types = [ \"FIRST NAME\" , \"LAST NAME\" , \"EMAIL ADDRESS\" ] info types = [{ \"name\" : info type } for info type in info types ] Prepare custom info types by parsing the dictionary word lists and regex patterns. if custom dictionaries is None : custom dictionaries = [] dictionaries = [ { \"info type\" : { \"name\" : f \"CUSTOM DICTIONARY { i } \" }, \"dictionary\" : { \"word list\" : { \"words\" : custom dict . split ( \",\" )}}, } for i , custom dict in enumerate ( custom dictionaries ) ] if custom regexes is None : custom regexes = [] regexes = [ { \"info type\" : { \"name\" : f \"CUSTOM REGEX { i } \" }, \"regex\" : { \"pattern\" : custom regex }, } for i , custom regex in enumerate ( custom regexes ) ] custom info types = dictionaries + regexes Construct the configuration dictionary."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/creating-stored-infotypes",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/creating-custom-infotypes-dictionary",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/inspecting-storage"
+      ]
+    }
+  ]
+}

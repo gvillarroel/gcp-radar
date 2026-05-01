@@ -1,0 +1,106 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:24.125Z",
+  "source_step08_card": "data/step-08/current/products/cloud-load-balancing/card.json",
+  "product_name": "Cloud Load Balancing",
+  "product_slug": "cloud-load-balancing",
+  "feature_name": "HTTP/2 and gRPC to backend VMs",
+  "feature_slug": "http-2-and-grpc-to-backend-vms",
+  "summary": "Load balancing supports HTTP/2 and gRPC traffic from the load balancer to backend virtual machines.",
+  "extended_definition": "Load balancing supports HTTP/2 and gRPC traffic from the load balancer to backend virtual machines.",
+  "lifecycle": {
+    "latest_feature_date": "2018-06-28",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/load-balancing/docs/backend-service",
+      "https://docs.cloud.google.com/load-balancing/docs/https",
+      "https://docs.cloud.google.com/load-balancing/docs/l7-internal"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Backend services overview \\_|\\_ Cloud Load Balancing \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/load-balancing/docs/backend-service",
+        "source_id": "site-docs-reference-required-3",
+        "final_score": 183,
+        "relevance": "",
+        "evidence_snippets": [
+          "Custom metrics target capacity parameters for Application Load Balancer backends with a long traffic duration setting Application Load Balancer backends with a long traffic duration setting can use the CUSTOM METRICS balancing mode with one of the following target capacity parameters or combinations of parameters: Table: CUSTOM METRICS balancing mode target capacity parameters and parameter combinations for Application Load Balancer backends with a long traffic duration setting ( Preview ) Target capacity parameter or parameter combination Supported backend Zonal (managed or unmanaged) instance groups Regional managed instance groups Zonal NEGs with GCE VM IP PORT endpoints Zonal hybrid connectivity NEGs backends[].customMetrics[].maxUtilization Target custom metric utilization per backend zone max-in-flight-requests Target number of in-progress HTTP requests per backend zone max-in-flight-requests and backends[].customMetrics[].maxUtilization Target is the first to be reached in the backend zone: Zone's target custom metric utilization Zone's target number of in-progress HTTP requests max-in-flight-requests-per-instance Target number of in-progress HTTP requests per VM instance.",
+          "Utilization target capacity parameters for Application Load Balancer and Cloud Service Mesh backends with a long traffic duration setting Application Load Balancer and Cloud Service Mesh backends with a long traffic duration setting ( Preview ) can use the UTILIZATION balancing mode with one of the following target capacity parameters or combinations of parameters: Table: UTILIZATION balancing mode target capacity parameters and parameter combinations for Application Load Balancer and Cloud Service Mesh backends with a long traffic duration setting ( Preview ) Target capacity parameter or parameter combination Supported backend Zonal (managed or unmanaged) instance groups Regional managed instance groups Zonal NEGs with GCE VM IP PORT endpoints Zonal hybrid connectivity NEGs max-utilization Target utilization per backend zone max-in-flight-requests Target number of in-progress HTTP requests per backend zone max-in-flight-requests and max-utilization Target is the first to be reached in the backend zone: Zone's target utilization Zone's target number of in-progress HTTP requests max-in-flight-requests-per-instance Target number of in-progress HTTP requests per VM instance.",
+          "Custom metrics target capacity parameters for Application Load Balancer backends with an unspecified or short traffic duration setting Application Load Balancer backends with an unspecified or short traffic duration setting ( Preview ) can use the CUSTOM METRICS balancing mode with one of the following target capacity parameters or combinations of parameters: Table : CUSTOM METRICS balancing mode target capacity parameters and parameter combinations for Application Load Balancer backends with an unspecified or short traffic duration setting Target capacity parameter or parameter combination Supported backend Zonal (managed or unmanaged) instance groups Regional managed instance groups Zonal NEGs with GCE VM IP PORT endpoints Zonal hybrid connectivity NEGs backends[].customMetrics[].maxUtilization Target custom metric utilization per backend zone max-rate Target HTTP request rate per backend zone max-rate and backends[].customMetrics[].maxUtilization Target is the first to be reached in the backend zone: Zone's target custom metric utilization Zone's target HTTP request rate max-rate-per-instance Target HTTP request rate per VM instance."
+        ]
+      },
+      {
+        "title": "\"External Application Load Balancer overview \\_|\\_ Cloud Load Balancing \\_\\",
+        "url": "https://docs.cloud.google.com/load-balancing/docs/https",
+        "source_id": "site-docs-reference-required-3",
+        "final_score": 167,
+        "relevance": "",
+        "evidence_snippets": [
+          "In the Premium Network Service Tier , this load balancer offers multi-region load balancing, attempts to direct traffic to the closest healthy backend that has capacity, and terminates HTTP(S) traffic as close as possible to your users.",
+          "Compatible with GKE using Gateway (fully orchestrated) or Standalone NEGs (manual orchestration) Supports advanced traffic management Global Anycast external IP addresses over Premium Tier Can access backends across multiple regions Supports Cloud CDN Supports Cloud Armor Classic Application Load Balancer This load balancer is global in Premium Tier.",
+          "Compatible with GKE using Standalone NEGs (manual orchestration) Supports advanced traffic management capabilities Regional VIPs using Standard Network Tier Terminates TLS in a single region that you configure Serves content from the configured region only For the complete list, see Load balancing features ."
+        ]
+      },
+      {
+        "title": "\"Internal Application Load Balancer overview \\_|\\_ Cloud Load Balancing \\_\\",
+        "url": "https://docs.cloud.google.com/load-balancing/docs/l7-internal",
+        "source_id": "site-docs-root",
+        "final_score": 157,
+        "relevance": "",
+        "evidence_snippets": [
+          "Additionally, you must make sure that the backends can handle TLS traffic and configure the load balancer to use HTTP/2 for encrypted connections between the load balancer and its backends by setting the backend service protocol to HTTP2 .",
+          "The internal Application Load Balancer distributes HTTP and HTTPS traffic to backends hosted on a variety of Google Cloud platforms such as Compute Engine, Google Kubernetes Engine (GKE), and Cloud Run.",
+          "Forwarding rule and IP address Forwarding rules route traffic by IP address, port, and protocol to a load balancing configuration that consists of a target proxy and a backend service."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/backend-service",
+        "https://docs.cloud.google.com/load-balancing/docs/https",
+        "https://docs.cloud.google.com/load-balancing/docs/l7-internal"
+      ]
+    },
+    {
+      "capability": "armor",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/backend-service",
+        "https://docs.cloud.google.com/load-balancing/docs/https",
+        "https://docs.cloud.google.com/load-balancing/docs/l7-internal"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/backend-service",
+        "https://docs.cloud.google.com/load-balancing/docs/https",
+        "https://docs.cloud.google.com/load-balancing/docs/l7-internal"
+      ]
+    }
+  ]
+}

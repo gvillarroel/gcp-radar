@@ -1,0 +1,213 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:25.811Z",
+  "source_step08_card": "data/step-08/current/products/cloud-run/card.json",
+  "product_name": "Cloud Run",
+  "product_slug": "cloud-run",
+  "feature_name": "Allowed ingress settings organization policy",
+  "feature_slug": "allowed-ingress-settings-organization-policy",
+  "summary": "The Allowed ingress settings organization policy controls which ingress settings are permitted for Cloud Run.",
+  "extended_definition": "The Allowed ingress settings organization policy controls which ingress settings are permitted for Cloud Run.",
+  "lifecycle": {
+    "latest_feature_date": "2021-07-27",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/run/docs/deploy-functions",
+      "https://docs.cloud.google.com/run/docs/reference/rest/Shared.Types/Policy",
+      "https://docs.cloud.google.com/run/docs/securing/identity-aware-proxy-cloud-run"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Configure IAP for Cloud Run \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/run/docs/securing/identity-aware-proxy-cloud-run",
+        "source_id": "site-docs-root",
+        "final_score": 150,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Before you begin Enable the IAP API: Enable the IAP API Required roles To get the permissions that you need to enable IAP, ask your administrator to grant you the following IAM roles: Cloud Run Admin ( roles/run.admin ) on the project Grant access to the IAP-enabled service: IAP Policy Admin ( roles/iap.admin ) on the project Create an IAP-enabled service or update an existing service to enable IAP: Artifact Registry Reader ( roles/artifactregistry.reader ) on the deployed container images Service Account User ( roles/iam.serviceAccountUser ) on the service identity Grant access to users not part of a Google organization: IAP Settings Admin ( roles/iap.settingsAdmin ) on the project Grant access to users from outside an organization or not part of an organization: OAuth Config Editor ( roles/oauthconfig.editor ) on the project For more information about granting roles, see Manage access to projects, folders, and organizations .",
+          "To retrieve the current IAM policy data, add the following to a google cloud run v2 service iam policy resource in your Terraform configuration. data \"google cloud run v2 service iam policy\" \"policy\" { project = google cloud run v2 service.default.project location = google cloud run v2 service.default.location name = google cloud run v2 service.default.name } Manage user or group access By default, IAP for Cloud Run uses a Google-managed OAuth client that lets you add in-organization identities with an email address associated with a user.",
+          "At the organization level, perform the following steps: To apply the OAuth client at the organization level, run the gcloud iap settings set command: gcloud iap settings set iap settings.yaml --organization = ORGANIZATION NUMBER Replace the following: CLIENT ID : the OAuth client ID you saved in the previous step."
+        ]
+      },
+      {
+        "title": "Policy \\_|\\_ Cloud Run \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/run/docs/reference/rest/Shared.Types/Policy",
+        "source_id": "site-api-reference",
+        "final_score": 116,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "JSON representation An Identity and Access Management (IAM) policy, which specifies access controls for Google Cloud resources.",
+          "JSON example: { \"bindings\": [ { \"role\": \"roles/resourcemanager.organizationAdmin\", \"members\": [ \"user:mike@example.com\", \"group:admins@example.com\", \"domain:google.com\", \"serviceAccount:my-project-id@appspot.gserviceaccount.com\" ] }, { \"role\": \"roles/resourcemanager.organizationViewer\", \"members\": [ \"user:eve@example.com\" ], \"condition\": { \"title\": \"expirable access\", \"description\": \"Does not grant access after Sep 2020\", \"expression\": \"request.time < timestamp('2020-10-01T00:00:00.000Z')\", } } ], \"etag\": \"BwWWja0YfJA=\", \"version\": 3 } YAML example: bindings: - members: - user:mike@example.com - group:admins@example.com - domain:google.com - serviceAccount:my-project-id@appspot.gserviceaccount.com role: roles/resourcemanager.organizationAdmin - members: - user:eve@example.com role: roles/resourcemanager.organizationViewer condition: title: expirable access description: Does not grant access after Sep 2020 expression: request.time < timestamp('2020-10-01T00:00:00.000Z') etag: BwWWja0YfJA= version: 3 For a description of IAM and its features, see the IAM documentation .",
+          "For example, if the bindings grant 50 different roles to user:alice@example.com , and not to any other principal, then you can add another 1,450 principals to the bindings in the Policy . auditConfigs[] object ( AuditConfig ) Specifies cloud audit logging configuration for this policy. etag string ( bytes format) etag is used for optimistic concurrency control as a way to help prevent simultaneous updates of a policy from overwriting each other."
+        ]
+      },
+      {
+        "title": "Deploy a Cloud Run function \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/run/docs/deploy-functions",
+        "source_id": "site-docs-reference-required-4",
+        "final_score": 112,
+        "relevance": "",
+        "evidence_snippets": [
+          "Enable the Artifact Registry, Cloud Build, Cloud Run Admin API, and Cloud Logging APIs: gcloud services enable artifactregistry.googleapis.com \\ cloudbuild.googleapis.com \\ run.googleapis.com \\ logging.googleapis.com Optionally, enable the Eventarc API to use event triggers: gcloud services enable eventarc.googleapis.com If you are under a domain restriction organization policy restricting unauthenticated invocations for your project, you will need to access your deployed service as described under Testing private services .",
+          "Note: The iam.automaticIamGrantsForDefaultServiceAccounts organization policy constraint prevents the Editor role from being automatically granted to default service accounts.",
+          "Worker pool flags for specifying which worker pool to use in VPC Service Controls secured build context."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "appspot.gserviceaccount.com",
+      "artifactregistry.googleapis.com",
+      "artifactregistry.reader",
+      "cloudbuild.googleapis.com",
+      "docker.pkg.dev",
+      "eventarc.googleapis.com",
+      "example.com",
+      "iam.automaticIamGrantsForDefaultServiceAccounts",
+      "iam.serviceAccountUser",
+      "iap.admin",
+      "iap.iam.gserviceaccount.com",
+      "iap.settingsAdmin",
+      "logging.googleapis.com",
+      "oauthconfig.editor",
+      "request.time",
+      "resourcemanager.organizationAdmin",
+      "resourcemanager.organizationViewer",
+      "run.admin",
+      "run.googleapis.com",
+      "run.invoker",
+      "service.default.location",
+      "service.default.name",
+      "service.default.project",
+      "settings.yaml"
+    ],
+    "missing_inventory_roles": [
+      "roles/artifactregistry.reader",
+      "roles/iam.serviceAccountUser",
+      "roles/iap.admin",
+      "roles/iap.settingsAdmin",
+      "roles/oauthconfig.editor",
+      "roles/resourcemanager.organizationAdmin",
+      "roles/resourcemanager.organizationViewer",
+      "roles/run.admin",
+      "roles/run.invoker"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/securing/identity-aware-proxy-cloud-run",
+        "https://docs.cloud.google.com/run/docs/deploy-functions",
+        "https://docs.cloud.google.com/run/docs/reference/rest/Shared.Types/Policy"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/securing/identity-aware-proxy-cloud-run",
+        "https://docs.cloud.google.com/run/docs/deploy-functions",
+        "https://docs.cloud.google.com/run/docs/reference/rest/Shared.Types/Policy"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/securing/identity-aware-proxy-cloud-run",
+        "https://docs.cloud.google.com/run/docs/deploy-functions",
+        "https://docs.cloud.google.com/run/docs/reference/rest/Shared.Types/Policy"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/securing/identity-aware-proxy-cloud-run",
+        "https://docs.cloud.google.com/run/docs/deploy-functions",
+        "https://docs.cloud.google.com/run/docs/reference/rest/Shared.Types/Policy"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/securing/identity-aware-proxy-cloud-run",
+        "https://docs.cloud.google.com/run/docs/deploy-functions",
+        "https://docs.cloud.google.com/run/docs/reference/rest/Shared.Types/Policy"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/securing/identity-aware-proxy-cloud-run",
+        "https://docs.cloud.google.com/run/docs/deploy-functions",
+        "https://docs.cloud.google.com/run/docs/reference/rest/Shared.Types/Policy"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/securing/identity-aware-proxy-cloud-run",
+        "https://docs.cloud.google.com/run/docs/deploy-functions",
+        "https://docs.cloud.google.com/run/docs/reference/rest/Shared.Types/Policy"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/securing/identity-aware-proxy-cloud-run",
+        "https://docs.cloud.google.com/run/docs/deploy-functions",
+        "https://docs.cloud.google.com/run/docs/reference/rest/Shared.Types/Policy"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/securing/identity-aware-proxy-cloud-run",
+        "https://docs.cloud.google.com/run/docs/deploy-functions",
+        "https://docs.cloud.google.com/run/docs/reference/rest/Shared.Types/Policy"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/securing/identity-aware-proxy-cloud-run",
+        "https://docs.cloud.google.com/run/docs/deploy-functions",
+        "https://docs.cloud.google.com/run/docs/reference/rest/Shared.Types/Policy"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/securing/identity-aware-proxy-cloud-run",
+        "https://docs.cloud.google.com/run/docs/deploy-functions",
+        "https://docs.cloud.google.com/run/docs/reference/rest/Shared.Types/Policy"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/securing/identity-aware-proxy-cloud-run",
+        "https://docs.cloud.google.com/run/docs/deploy-functions",
+        "https://docs.cloud.google.com/run/docs/reference/rest/Shared.Types/Policy"
+      ]
+    }
+  ]
+}

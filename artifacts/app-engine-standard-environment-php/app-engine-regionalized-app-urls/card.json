@@ -1,0 +1,118 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:16.336Z",
+  "source_step08_card": "data/step-08/current/products/app-engine-standard-environment-php/card.json",
+  "product_name": "App Engine standard environment PHP",
+  "product_slug": "app-engine-standard-environment-php",
+  "feature_name": "App Engine regionalized app URLs",
+  "feature_slug": "app-engine-regionalized-app-urls",
+  "summary": "App Engine now supports URLs that include a region ID (for example `<project-id>.<region-id>.r.appspot.com`) to improve request routing.",
+  "extended_definition": "App Engine now supports URLs that include a region ID (for example `<project-id>.<region-id>.r.appspot.com`) to improve request routing.",
+  "lifecycle": {
+    "latest_feature_date": "2020-02-11",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/appengine/docs/standard/how-requests-are-routed",
+      "https://docs.cloud.google.com/appengine/docs/standard/php7/config/appref",
+      "https://docs.cloud.google.com/appengine/docs/standard/php7/how-requests-are-routed"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"How requests are routed \\_|\\_ App Engine standard environment \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/how-requests-are-routed",
+        "source_id": "site-docs-reference",
+        "final_score": 213,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "REGION ID .r.appspot.com portion of the hostname, but includes a service, version, or instance name that does not exist, then the request is routed to the default service.",
+          "REGION ID .r.appspot.com https:// CUSTOM DOMAIN Requests are received by any version that is configured for traffic in the default service.",
+          "HTTPS requests sent to the REGION ID .r.appspot.com must use the string \" -dot- \" to separate subdomains instead of \" . \"."
+        ]
+      },
+      {
+        "title": "\"How requests are routed \\_|\\_ App Engine standard environment \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/php7/how-requests-are-routed",
+        "source_id": "site-docs-reference-4",
+        "final_score": 213,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "REGION ID .r.appspot.com portion of the hostname, but includes a service, version, or instance name that does not exist, then the request is routed to the default service.",
+          "REGION ID .r.appspot.com https:// CUSTOM DOMAIN Requests are received by any version that is configured for traffic in the default service.",
+          "HTTPS requests sent to the REGION ID .r.appspot.com must use the string \" -dot- \" to separate subdomains instead of \" . \"."
+        ]
+      },
+      {
+        "title": "\"App Engine app.yaml reference \\_|\\_ App Engine standard environment \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/php7/config/appref",
+        "source_id": "site-docs-reference-4",
+        "final_score": 167,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Python example handlers : - url : /youraccount/. secure : always script : auto To target a specific version of your app using the REGION ID .r.appspot.com domain, you replace the periods that would usually separate the subdomain components of the URL with the string \" -dot- \", for example: https:// VERSION ID -dot-default-dot- PROJECT ID .",
+          "Tip: To allow everyone access to your assets, you can use the wildcard ' ' , instead of https://mygame.uc.r.appspot.com . login To use this element, app engine apis must be set to true .",
+          "REGION ID .r.appspot.com To use custom domains with HTTPS, you must first activate and configure SSL certificates for that domain ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "app.yaml",
+      "mygame.uc.r.appspot.com",
+      "r.appspot.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/how-requests-are-routed",
+        "https://docs.cloud.google.com/appengine/docs/standard/php7/how-requests-are-routed",
+        "https://docs.cloud.google.com/appengine/docs/standard/php7/config/appref"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/how-requests-are-routed",
+        "https://docs.cloud.google.com/appengine/docs/standard/php7/how-requests-are-routed",
+        "https://docs.cloud.google.com/appengine/docs/standard/php7/config/appref"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/how-requests-are-routed",
+        "https://docs.cloud.google.com/appengine/docs/standard/php7/how-requests-are-routed",
+        "https://docs.cloud.google.com/appengine/docs/standard/php7/config/appref"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/how-requests-are-routed",
+        "https://docs.cloud.google.com/appengine/docs/standard/php7/how-requests-are-routed",
+        "https://docs.cloud.google.com/appengine/docs/standard/php7/config/appref"
+      ]
+    }
+  ]
+}

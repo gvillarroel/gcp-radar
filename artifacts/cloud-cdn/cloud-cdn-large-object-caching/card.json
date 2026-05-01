@@ -1,0 +1,130 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:23.081Z",
+  "source_step08_card": "data/step-08/current/products/cloud-cdn/card.json",
+  "product_name": "Cloud CDN",
+  "product_slug": "cloud-cdn",
+  "feature_name": "Cloud CDN Large Object Caching",
+  "feature_slug": "cloud-cdn-large-object-caching",
+  "summary": "Cloud CDN Large Object Caching supports caching objects up to 5 TB; Cloud CDN Large Object Caching is available in beta and supports object sizes up to 5 TB.",
+  "extended_definition": "Cloud CDN Large Object Caching supports caching objects up to 5 TB; Cloud CDN Large Object Caching is available in beta and supports object sizes up to 5 TB.",
+  "lifecycle": {
+    "latest_feature_date": "2018-08-01",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/cdn/docs/caching",
+      "https://docs.cloud.google.com/cdn/docs/cdn-logging-monitoring",
+      "https://docs.cloud.google.com/cdn/docs/setting-up-cdn-with-third-party-storage"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Caching overview \\_|\\_ Cloud CDN \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/cdn/docs/caching",
+        "source_id": "site-docs-reference-2",
+        "final_score": 167,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "This can actively reduce the load on the origin, and applies to both item requests (responses fetched directly) and chunk requests , where Cloud CDN uses Range requests to fetch larger objects more efficiently.",
+          "If you have Cloud Storage objects larger than 10 MB, make sure that they don't have Content-Encoding: gzip metadata.",
+          "Cloud Storage supports byte range requests for most objects."
+        ]
+      },
+      {
+        "title": "\"Logs and metrics for backend services \\_|\\_ Cloud CDN \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/cdn/docs/cdn-logging-monitoring",
+        "source_id": "site-docs-root-2",
+        "final_score": 111,
+        "relevance": "",
+        "evidence_snippets": [
+          "Serverless objects include App Engine, Cloud Run, and Cloud Run functions.",
+          "To finish editing the load balancer, click Update . gcloud Create a backend service and enable logging by using the gcloud compute backend-services create command . gcloud compute backend-services create BACKEND SERVICE \\ --global \\ --enable-logging \\ --logging-sample-rate= VALUE \\ --load-balancing-scheme=EXTERNAL MANAGED \\ --logging-optional= LOGGING OPTIONAL MODE \\ --logging-optional-fields= OPTIONAL FIELDS The gcloud compute backend-services create command supports the following fields: --global indicates that the backend service is global.",
+          "Field Type Description backend service name string The name of the backend service. forwarding rule name string The name of the forwarding rule object. project id string The identifier of the Google Cloud project associated with this resource. target proxy name string The name of the target proxy object referenced by the forwarding rule. url map name string The name of the URL map object configured to select a backend service. zone string The zone in which the load balancer is running."
+        ]
+      },
+      {
+        "title": "Set up third-party object storage \\_|\\_ Cloud CDN \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/cdn/docs/setting-up-cdn-with-third-party-storage",
+        "source_id": "site-docs-root",
+        "final_score": 106,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Make sure that either the Amazon S3 bucket and the objects in the bucket are public or that you have configured private origin authentication for the Amazon S3 bucket.",
+          "These instructions assume that you are using an Amazon S3 bucket and have the required permissions to make changes to the Amazon S3 bucket and objects.",
+          "Alternatively, you can keep your bucket and objects private if you configure private origin authentication ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/cdn/docs/caching",
+        "https://docs.cloud.google.com/cdn/docs/cdn-logging-monitoring",
+        "https://docs.cloud.google.com/cdn/docs/setting-up-cdn-with-third-party-storage"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/cdn/docs/caching",
+        "https://docs.cloud.google.com/cdn/docs/cdn-logging-monitoring",
+        "https://docs.cloud.google.com/cdn/docs/setting-up-cdn-with-third-party-storage"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/cdn/docs/caching",
+        "https://docs.cloud.google.com/cdn/docs/cdn-logging-monitoring",
+        "https://docs.cloud.google.com/cdn/docs/setting-up-cdn-with-third-party-storage"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/cdn/docs/caching",
+        "https://docs.cloud.google.com/cdn/docs/cdn-logging-monitoring",
+        "https://docs.cloud.google.com/cdn/docs/setting-up-cdn-with-third-party-storage"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/cdn/docs/caching",
+        "https://docs.cloud.google.com/cdn/docs/cdn-logging-monitoring",
+        "https://docs.cloud.google.com/cdn/docs/setting-up-cdn-with-third-party-storage"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/cdn/docs/caching",
+        "https://docs.cloud.google.com/cdn/docs/cdn-logging-monitoring",
+        "https://docs.cloud.google.com/cdn/docs/setting-up-cdn-with-third-party-storage"
+      ]
+    }
+  ]
+}

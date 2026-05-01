@@ -1,0 +1,114 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:32.732Z",
+  "source_step08_card": "data/step-08/current/products/dataflow/card.json",
+  "product_name": "Dataflow",
+  "product_slug": "dataflow",
+  "feature_name": "Dataflow Shuffle in Warsaw (europe-central2)",
+  "feature_slug": "dataflow-shuffle-in-warsaw-europe-central2",
+  "summary": "This feature makes Dataflow Shuffle available in zones in the Warsaw region europe-central2.",
+  "extended_definition": "This feature makes Dataflow Shuffle available in zones in the Warsaw region europe-central2.",
+  "lifecycle": {
+    "latest_feature_date": "2021-03-24",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dataflow/docs/guides/common-errors",
+      "https://docs.cloud.google.com/dataflow/docs/guides/notebook-advanced",
+      "https://docs.cloud.google.com/dataflow/docs/resources/locations"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Dataflow locations \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataflow/docs/resources/locations",
+        "source_id": "site-docs-reference-required-4",
+        "final_score": 104,
+        "relevance": "",
+        "evidence_snippets": [
+          "Region description Region name Warsaw europe-central2 Finland europe-north1 Stockholm europe-north2 Madrid europe-southwest1 Belgium europe-west1 London europe-west2 Frankfurt europe-west3 Netherlands europe-west4 Zurich europe-west6 Milan europe-west8 Paris europe-west9 Berlin europe-west10 Turin europe-west12 Middle East The following table lists the regions in the Middle East where Dataflow is available.",
+          "Region description Region name Taiwan asia-east1 Hong Kong asia-east2 Tokyo asia-northeast1 Osaka asia-northeast2 Seoul asia-northeast3 Mumbai asia-south1 Delhi asia-south2 Singapore asia-southeast1 Jakarta asia-southeast2 Bangkok asia-southeast3 Sydney australia-southeast1 Melbourne australia-southeast2 Europe The following table lists the regions in Europe where Dataflow is available.",
+          "Region description Region name Doha me-central1 Dammam, Saudi Arabia me-central2 Tel Aviv me-west1 Africa The following table lists the regions in Africa where Dataflow is available."
+        ]
+      },
+      {
+        "title": "Troubleshoot Dataflow errors \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataflow/docs/guides/common-errors",
+        "source_id": "site-docs-reference-2",
+        "final_score": 79,
+        "relevance": "",
+        "evidence_snippets": [
+          "Java --workerDiskType=pd-ssd Python --worker disk type=pd-ssd Go disk type=pd-ssd No space left on device When a job runs out of disk space, the following error might appear in the worker logs: No space left on device This error can occur for one of the following reasons: The worker persistent storage runs out of free space, which can occur for one of the following reasons: A job downloads large dependencies at runtime A job uses large custom containers A job writes many temporary data to local disk When using Dataflow Shuffle , Dataflow sets lower default disk size .",
+          "The following example demonstrates the Google Cloud CLI command: gcloud compute firewall-rules create FIREWALL RULE NAME \\ --network NETWORK \\ --action allow \\ --direction IN \\ --target-tags dataflow \\ --source-tags dataflow \\ --priority 0 \\ --rules tcp:12345-12346 Replace the following: FIREWALL RULE NAME : the name of your firewall rule NETWORK : the name of your network Your job is shuffle-bound .",
+          "When you run a Dataflow job that doesn't use Dataflow Shuffle or Streaming Engine, workers need to communicate with each other using TCP ports 12345 and 12346 within the VPC network."
+        ]
+      },
+      {
+        "title": "\"Use Apache Beam notebook advanced features \\_|\\_ Cloud Dataflow \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/dataflow/docs/guides/notebook-advanced",
+        "source_id": "site-docs-reference-2",
+        "final_score": 75,
+        "relevance": "",
+        "evidence_snippets": [
+          "Home Documentation Data analytics Cloud Dataflow Guides Send feedback Use Apache Beam notebook advanced features Stay organized with collections Save and categorize content based on your preferences.",
+          "You can check the beam sql magic usage with the -h or --help option: You can create a PCollection from constant values: You can join multiple PCollections : You can launch a Dataflow job with the -r DataflowRunner or --runner DataflowRunner option: To learn more, see the example notebook Apache Beam SQL in notebooks .",
+          "For general Apache Beam container usage, see: Container environments Managing Python Pipeline Dependencies For Dataflow container usage, see: Use custom containers in Dataflow Disable external IP addresses When creating an Apache Beam notebook instance, to increase security, disable external IP addresses."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataflow/docs/resources/locations",
+        "https://docs.cloud.google.com/dataflow/docs/guides/common-errors",
+        "https://docs.cloud.google.com/dataflow/docs/guides/notebook-advanced"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataflow/docs/resources/locations",
+        "https://docs.cloud.google.com/dataflow/docs/guides/common-errors",
+        "https://docs.cloud.google.com/dataflow/docs/guides/notebook-advanced"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataflow/docs/resources/locations",
+        "https://docs.cloud.google.com/dataflow/docs/guides/common-errors",
+        "https://docs.cloud.google.com/dataflow/docs/guides/notebook-advanced"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataflow/docs/resources/locations",
+        "https://docs.cloud.google.com/dataflow/docs/guides/common-errors",
+        "https://docs.cloud.google.com/dataflow/docs/guides/notebook-advanced"
+      ]
+    }
+  ]
+}

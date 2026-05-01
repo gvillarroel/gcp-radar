@@ -1,0 +1,173 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:26.812Z",
+  "source_step08_card": "data/step-08/current/products/cloud-sql-for-mysql/card.json",
+  "product_name": "Cloud SQL for MySQL",
+  "product_slug": "cloud-sql-for-mysql",
+  "feature_name": "MySQL 5.6 and 5.7 compatibility",
+  "feature_slug": "mysql-5-6-and-5-7-compatibility",
+  "summary": "Cloud SQL Second Generation supports MySQL 5.6 and MySQL 5.7 compatibility.",
+  "extended_definition": "Cloud SQL Second Generation supports MySQL 5.6 and MySQL 5.7 compatibility.",
+  "lifecycle": {
+    "latest_feature_date": "2016-08-01",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/sql/docs/mysql/admin-api/rest/v1/instances",
+      "https://docs.cloud.google.com/sql/docs/mysql/configure-performance-capture",
+      "https://docs.cloud.google.com/sql/docs/mysql/create-instance"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "REST Resource: instances \\_|\\_ Cloud SQL for MySQL \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/sql/docs/mysql/admin-api/rest/v1/instances",
+        "source_id": "site-docs-reference-3",
+        "final_score": 84,
+        "relevance": "",
+        "evidence_snippets": [
+          "Target metrics for read pool auto scaling. enabled boolean Indicates whether read pool auto scaling is enabled. minNodeCount integer Minimum number of read pool nodes to be maintained. maxNodeCount integer Maximum number of read pool nodes to be maintained. disableScaleIn boolean Indicates whether read pool auto scaling supports scale in operations (removing nodes). scaleInCooldownSeconds integer The cooldown period for scale-in operations. scaleOutCooldownSeconds integer The cooldown period for scale-out operations.",
+          "If you must use the requireSsl flag for backward compatibility, then only the following value pairs are valid: For PostgreSQL and MySQL: sslMode=ALLOW UNENCRYPTED AND ENCRYPTED and requireSsl=false sslMode=ENCRYPTED ONLY and requireSsl=false sslMode=TRUSTED CLIENT CERTIFICATE REQUIRED and requireSsl=true For SQL Server: sslMode=ALLOW UNENCRYPTED AND ENCRYPTED and requireSsl=false sslMode=ENCRYPTED ONLY and requireSsl=true The value of sslMode has priority over the value of requireSsl .",
+          "MySQL's default is 60 seconds. masterHeartbeatPeriod string ( Int64Value format) Interval in milliseconds between replication heartbeats. caCertificate string PEM representation of the trusted CA's x509 certificate. clientCertificate string PEM representation of the replica's x509 certificate. clientKey string PEM representation of the replica's private key."
+        ]
+      },
+      {
+        "title": "\"Configure performance capture \\_|\\_ Cloud SQL for MySQL \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/sql/docs/mysql/configure-performance-capture",
+        "source_id": "site-docs-reference-required-5",
+        "final_score": 51,
+        "relevance": "",
+        "evidence_snippets": [
+          "For example: gcloud beta sql instances create my-instance \\ --database-version = MYSQL 8 0 \\ --edition = ENTERPRISE PLUS \\ --tier = db-perf-optimized-N-4 \\ --region = us-west1 \\ --performance-capture-config = \"enabled=true,probing-interval-seconds=30,probe-threshold=5,running-threads-threshold=10,transaction-duration-threshold=300\" Update an existing instance To enable performance capture for an existing Cloud SQL instance, run the following command: gcloud beta sql instances patch INSTANCE NAME \\ --performance-capture-config = \"enabled=true, PROBE CONFIGURATION , PERFORMANCE CAPTURE THRESHOLDS \" For the performance-capture-config flag, include enabled=true .",
+          "If you specify MYSQL 8 4 for the database version (or don't specify a database version), but the region you specify doesn't support Cloud SQL Enterprise Plus edition, then you must specify a region that supports Cloud SQL Enterprise Plus edition , or create an Cloud SQL Enterprise edition instance instead.",
+          "If you specify MYSQL 8 4 for the database version (or don't specify a database version), but the region you specify doesn't support Cloud SQL Enterprise Plus edition, then you must specify a region that supports Cloud SQL Enterprise Plus edition , or create an Cloud SQL Enterprise edition instance instead."
+        ]
+      },
+      {
+        "title": "Create instances \\_|\\_ Cloud SQL for MySQL \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/sql/docs/mysql/create-instance",
+        "source_id": "site-docs-reference-3",
+        "final_score": 51,
+        "relevance": "",
+        "evidence_snippets": [
+          "Execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method GET -Headers $headers -Uri \"https://sqladmin.googleapis.com/sql/v1beta4/projects/ project-id /instances/ instance-id \" Select-Object -Expand Content You should receive a JSON response similar to the following: { \"kind\": \"sql#instance\", \"state\": \"RUNNABLE\", \"databaseVersion\": \"MYSQL 8 0 18\", \"settings\": { \"authorizedGaeApplications\": [], \"tier\": \"db-f1-micro\", \"kind\": \"sql#settings\", \"pricingPlan\": \"PER USE\", \"replicationType\": \"SYNCHRONOUS\", \"activationPolicy\": \"ALWAYS\", \"ipConfiguration\": { \"authorizedNetworks\": [], \"ipv4Enabled\": true }, \"locationPreference\": { \"zone\": \"us-west1-a\", \"kind\": \"sql#locationPreference\" }, \"dataDiskType\": \"PD SSD\", \"backupConfiguration\": { \"startTime\": \"18:00\", \"kind\": \"sql#backupConfiguration\", \"enabled\": true, \"binaryLogEnabled\": true }, \"settingsVersion\": \"1\", \"storageAutoResizeLimit\": \"0\", \"storageAutoResize\": true, \"dataDiskSizeGb\": \"10\" }, \"etag\": \"--redacted--\", \"ipAddresses\": [ { \"type\": \"PRIMARY\", \"ipAddress\": \" 10.0.0.1 \" } ], \"serverCaCert\": { ... }, \"instanceType\": \"CLOUD SQL INSTANCE\", \"project\": \" project-id \", \"serviceAccountEmailAddress\": \"redacted@gcp-sa-cloud-sql.iam.gserviceaccount.com\", \"backendType\": \"SECOND GEN\", \"selfLink\": \"https://sqladmin.googleapis.com/sql/v1beta4/projects/ project-id /instances/ instance-id \", \"connectionName\": \" project-id:region:instance-id \", \"name\": \" instance-id \", \"region\": \"us-west1\", \"gceZone\": \"us-west1-a\" } Look for the ipAddress field in the response.",
+          "Execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method GET -Headers $headers -Uri \"https://sqladmin.googleapis.com/v1/projects/ project-id /instances/ instance-id \" Select-Object -Expand Content You should receive a JSON response similar to the following: { \"kind\": \"sql#instance\", \"state\": \"RUNNABLE\", \"databaseVersion\": \"MYSQL 8 0 18\", \"settings\": { \"authorizedGaeApplications\": [], \"tier\": \"db-f1-micro\", \"kind\": \"sql#settings\", \"pricingPlan\": \"PER USE\", \"replicationType\": \"SYNCHRONOUS\", \"activationPolicy\": \"ALWAYS\", \"ipConfiguration\": { \"authorizedNetworks\": [], \"ipv4Enabled\": true }, \"locationPreference\": { \"zone\": \"us-west1-a\", \"kind\": \"sql#locationPreference\" }, \"dataDiskType\": \"PD SSD\", \"backupConfiguration\": { \"startTime\": \"18:00\", \"kind\": \"sql#backupConfiguration\", \"enabled\": true, \"binaryLogEnabled\": true }, \"settingsVersion\": \"1\", \"storageAutoResizeLimit\": \"0\", \"storageAutoResize\": true, \"dataDiskSizeGb\": \"10\" }, \"etag\": \"--redacted--\", \"ipAddresses\": [ { \"type\": \"PRIMARY\", \"ipAddress\": \" 10.0.0.1 \" } ], \"serverCaCert\": { ... }, \"instanceType\": \"CLOUD SQL INSTANCE\", \"project\": \" project-id \", \"serviceAccountEmailAddress\": \"redacted@gcp-sa-cloud-sql.iam.gserviceaccount.com\", \"backendType\": \"SECOND GEN\", \"selfLink\": \"https://sqladmin.googleapis.com/v1/projects/ project-id /instances/ instance-id \", \"connectionName\": \" project-id:region:instance-id \", \"name\": \" instance-id \", \"region\": \"us-west1\", \"gceZone\": \"us-west1-a\" } Look for the ipAddress field in the response.",
+          "If you specify MYSQL 8 4 for the database version (or don't specify a database version), but the region you selected doesn't support Cloud SQL Enterprise Plus edition, then you must specify a region that supports Cloud SQL Enterprise Plus edition , or create an Cloud SQL Enterprise edition instance instead. ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "sql.iam.gserviceaccount.com",
+      "sqladmin.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-api/rest/v1/instances",
+        "https://docs.cloud.google.com/sql/docs/mysql/configure-performance-capture",
+        "https://docs.cloud.google.com/sql/docs/mysql/create-instance"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-api/rest/v1/instances",
+        "https://docs.cloud.google.com/sql/docs/mysql/configure-performance-capture",
+        "https://docs.cloud.google.com/sql/docs/mysql/create-instance"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-api/rest/v1/instances",
+        "https://docs.cloud.google.com/sql/docs/mysql/configure-performance-capture",
+        "https://docs.cloud.google.com/sql/docs/mysql/create-instance"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-api/rest/v1/instances",
+        "https://docs.cloud.google.com/sql/docs/mysql/configure-performance-capture",
+        "https://docs.cloud.google.com/sql/docs/mysql/create-instance"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-api/rest/v1/instances",
+        "https://docs.cloud.google.com/sql/docs/mysql/configure-performance-capture",
+        "https://docs.cloud.google.com/sql/docs/mysql/create-instance"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-api/rest/v1/instances",
+        "https://docs.cloud.google.com/sql/docs/mysql/configure-performance-capture",
+        "https://docs.cloud.google.com/sql/docs/mysql/create-instance"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-api/rest/v1/instances",
+        "https://docs.cloud.google.com/sql/docs/mysql/configure-performance-capture",
+        "https://docs.cloud.google.com/sql/docs/mysql/create-instance"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-api/rest/v1/instances",
+        "https://docs.cloud.google.com/sql/docs/mysql/configure-performance-capture",
+        "https://docs.cloud.google.com/sql/docs/mysql/create-instance"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-api/rest/v1/instances",
+        "https://docs.cloud.google.com/sql/docs/mysql/configure-performance-capture",
+        "https://docs.cloud.google.com/sql/docs/mysql/create-instance"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-api/rest/v1/instances",
+        "https://docs.cloud.google.com/sql/docs/mysql/configure-performance-capture",
+        "https://docs.cloud.google.com/sql/docs/mysql/create-instance"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-api/rest/v1/instances",
+        "https://docs.cloud.google.com/sql/docs/mysql/configure-performance-capture",
+        "https://docs.cloud.google.com/sql/docs/mysql/create-instance"
+      ]
+    }
+  ]
+}

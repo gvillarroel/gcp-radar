@@ -1,0 +1,174 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:22.583Z",
+  "source_step08_card": "data/step-08/current/products/chrome-enterprise-premium/card.json",
+  "product_name": "Chrome Enterprise Premium",
+  "product_slug": "chrome-enterprise-premium",
+  "feature_name": "BeyondCorp Enterprise Policy Remediator",
+  "feature_slug": "beyondcorp-enterprise-policy-remediator",
+  "summary": "The BeyondCorp Enterprise Policy Remediator provides users with guided steps to remediate access-denied issues.",
+  "extended_definition": "The BeyondCorp Enterprise Policy Remediator provides users with guided steps to remediate access-denied issues.",
+  "lifecycle": {
+    "latest_feature_date": "2023-10-09",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/chrome-enterprise-premium/docs/policy-remediator",
+      "https://docs.cloud.google.com/chrome-enterprise-premium/docs/security-gateway-private-web-apps",
+      "https://docs.cloud.google.com/chrome-enterprise-premium/docs/security-gateway-saas-apps"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Remediate denied access with the Policy Remediator \\_|\\_ Chrome Enterprise\\",
+        "url": "https://docs.cloud.google.com/chrome-enterprise-premium/docs/policy-remediator",
+        "source_id": "site-iam-reference",
+        "final_score": 154,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "You can use the Policy Remediator to provide users with actionable steps that they can take to remediate their issue before reaching out to an administrator for additional help.",
+          "Grant the remediator role To give users permission to remediate denied access to IAP resources, run the following command in the Google Cloud CLI: gcloud iap web add-iam-policy-binding \\ --member=' PRINCIPAL ' \\ --role='roles/iap.remediatorUser' Replace PRINCIPAL with an identifier for the principal, or member, which usually has the following form: PRINCIPAL TYPE:ID .",
+          "To give users permission to remediate access to IAP resources at a project level, run the following command in the Google Cloud CLI: gcloud projects add-iam-policy-binding PROJECT ID \\ --member PRINCIPAL \\ --role roles/iap.remediatorUser Replace the following: PROJECT ID : the Google Cloud project ID."
+        ]
+      },
+      {
+        "title": "\"Secure access to SaaS applications \\_|\\_ Chrome Enterprise Premium \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/chrome-enterprise-premium/docs/security-gateway-saas-apps",
+        "source_id": "site-docs-root",
+        "final_score": 126,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "The following example policy grants access only if the source IP address is within a specified access level: { \"version\" : 3 , \"bindings\" : [ { \"role\" : \"roles/beyondcorp.securityGatewayUser\" , \"members\" : [ \"group:group@example.com\" ], \"condition\" : { \"expression\" : \"request.auth.access levels.contains('accessPolicies/1234567890/accessLevels/in us')\" , \"title\" : \"Source IP must be in US\" } } ], \"etag\" : \"BwXN8 d-bOM=\" } To apply this policy, follow the steps described earlier.",
+          "The following example policy grants access only if the source IP address is within a specified access level: { \"version\" : 3 , \"bindings\" : [ { \"role\" : \"roles/beyondcorp.securityGatewayUser\" , \"members\" : [ \"group:group@example.com\" ], \"condition\" : { \"expression\" : \"request.auth.access levels.contains('accessPolicies/1234567890/accessLevels/in us')\" , \"title\" : \"Source IP must be in US\" } } ], \"etag\" : \"BwXN8 d-bOM=\" } To apply this policy, follow the steps described earlier.",
+          "This command uses the etag from your file to ensure that you update the correct version. jq '{policy: .}' policy.json curl -X POST \\ -H \"Authorization: Bearer $( gcloud auth print-access-token ) \" \\ -H \"Content-Type: application/json\" \\ -d @- \\ \"https://beyondcorp.googleapis.com/v1/projects/ PROJECT ID /locations/global/securityGateways/ SECURITY GATEWAY ID /applications/ APPLICATION ID :setIamPolicy\" Replace the following: PROJECT ID : the ID of the project where the secure gateway is configured SECURITY GATEWAY ID : the ID of the secure gateway APPLICATION ID : the ID of the application resource Add a conditional access policy You can also set access policies with conditions."
+        ]
+      },
+      {
+        "title": "\"Secure access to private web applications \\_|\\_ Chrome Enterprise Premium\\",
+        "url": "https://docs.cloud.google.com/chrome-enterprise-premium/docs/security-gateway-private-web-apps",
+        "source_id": "site-docs-root",
+        "final_score": 110,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "The following example policy grants access only if the source IP address is within a specified access level: { \"version\" : 3 , \"bindings\" : [ { \"role\" : \"roles/beyondcorp.securityGatewayUser\" , \"members\" : [ \"group:group@example.com\" ], \"condition\" : { \"expression\" : \"request.auth.access levels.contains('accessPolicies/1234567890/accessLevels/in us')\" , \"title\" : \"Source IP must be in US\" } } ], \"etag\" : \"BwXN8 d-bOM=\" } To apply this policy, follow the steps described earlier.",
+          "The following example policy grants access only if the source IP address is within a specified access level: { \"version\" : 3 , \"bindings\" : [ { \"role\" : \"roles/beyondcorp.securityGatewayUser\" , \"members\" : [ \"group:group@example.com\" ], \"condition\" : { \"expression\" : \"request.auth.access levels.contains('accessPolicies/1234567890/accessLevels/in us')\" , \"title\" : \"Source IP must be in US\" } } ], \"etag\" : \"BwXN8 d-bOM=\" } To apply this policy, follow the steps described earlier.",
+          "To create the application resource, click Create . gcloud To create the application resource using gcloud, run the following command: gcloud beyondcorp security-gateways applications create APPLICATION ID \\ --project = PROJECT ID \\ --security-gateway = SECURITY GATEWAY ID \\ --location = global \\ --display-name = \" APP DISPLAY NAME \" \\ --endpoint-matchers = \"hostname= HOST NAME ,ports=[ 443 ]\" \\ --upstreams = network = name = \" PRIVATE NETWORK RESOURCE NAME \" To specify an egress region (for example, when using static routes), add the --egress-regions flag: gcloud beyondcorp security-gateways applications create APPLICATION ID \\ --project = PROJECT ID \\ --security-gateway = SECURITY GATEWAY ID \\ --location = global \\ --display-name = \" APP DISPLAY NAME \" \\ --endpoint-matchers = \"hostname= HOST NAME ,ports=[ 443 ]\" \\ --upstreams = network = name = \" PRIVATE NETWORK RESOURCE NAME \" ,egressPolicy = regions = us-central1 Replace us-central1 with the Google Cloud region (such as europe-west1 or asia-northeast1 ) that aligns with your regional static routing setup."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "application.json",
+      "beyondcorp.googleapis.com",
+      "beyondcorp.securityGatewayUser",
+      "example.com",
+      "iap.remediatorUser",
+      "levels.contains",
+      "policy.json",
+      "request.auth.access"
+    ],
+    "missing_inventory_roles": [
+      "roles/beyondcorp.securityGatewayUser",
+      "roles/iap.remediatorUser"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/policy-remediator",
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/security-gateway-saas-apps",
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/security-gateway-private-web-apps"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/policy-remediator",
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/security-gateway-saas-apps",
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/security-gateway-private-web-apps"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/policy-remediator",
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/security-gateway-saas-apps",
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/security-gateway-private-web-apps"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/policy-remediator",
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/security-gateway-saas-apps",
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/security-gateway-private-web-apps"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/policy-remediator",
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/security-gateway-saas-apps",
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/security-gateway-private-web-apps"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/policy-remediator",
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/security-gateway-saas-apps",
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/security-gateway-private-web-apps"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/policy-remediator",
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/security-gateway-saas-apps",
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/security-gateway-private-web-apps"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/policy-remediator",
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/security-gateway-saas-apps",
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/security-gateway-private-web-apps"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/policy-remediator",
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/security-gateway-saas-apps",
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/security-gateway-private-web-apps"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/policy-remediator",
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/security-gateway-saas-apps",
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/security-gateway-private-web-apps"
+      ]
+    }
+  ]
+}

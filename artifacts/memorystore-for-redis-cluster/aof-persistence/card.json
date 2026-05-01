@@ -1,0 +1,115 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:43.560Z",
+  "source_step08_card": "data/step-08/current/products/memorystore-for-redis-cluster/card.json",
+  "product_name": "Memorystore for Redis Cluster",
+  "product_slug": "memorystore-for-redis-cluster",
+  "feature_name": "AOF persistence",
+  "feature_slug": "aof-persistence",
+  "summary": "Memorystore for Redis Cluster supports AOF persistence in Preview.",
+  "extended_definition": "Memorystore for Redis Cluster supports AOF persistence in Preview.",
+  "lifecycle": {
+    "latest_feature_date": "2024-04-05",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/memorystore/docs/cluster/about-aof-persistence",
+      "https://docs.cloud.google.com/memorystore/docs/cluster/about-rdb-persistence",
+      "https://docs.cloud.google.com/memorystore/docs/cluster/create-instances",
+      "https://docs.cloud.google.com/memorystore/docs/cluster/persistence-overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"About AOF persistence \\_|\\_ Memorystore for Redis Cluster \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/memorystore/docs/cluster/about-aof-persistence",
+        "source_id": "site-docs-root",
+        "final_score": 362,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Memorystore for Redis Cluster also supports RDB persistence, but you must choose either the AOF or RDB persistence mode, because both can't be enabled at the same time.",
+          "Home Documentation Databases Memorystore Memorystore for Redis Cluster Guides Send feedback About AOF persistence Stay organized with collections Save and categorize content based on your preferences.",
+          "This page provides an overview of AOF persistence for Memorystore for Redis Cluster."
+        ]
+      },
+      {
+        "title": "\"Persistence overview \\_|\\_ Memorystore for Redis Cluster \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/memorystore/docs/cluster/persistence-overview",
+        "source_id": "site-docs-root",
+        "final_score": 328,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Memorystore for Redis Cluster supports two types of persistence: AOF persistence RDB persistence Note: You can either enable AOF or RDB persistence for your instance, not both.",
+          "Home Documentation Databases Memorystore Memorystore for Redis Cluster Guides Send feedback Persistence overview Stay organized with collections Save and categorize content based on your preferences.",
+          "This page provides an overview of persistence for Memorystore for Redis Cluster."
+        ]
+      },
+      {
+        "title": "\"About RDB persistence \\_|\\_ Memorystore for Redis Cluster \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/memorystore/docs/cluster/about-rdb-persistence",
+        "source_id": "site-docs-root",
+        "final_score": 306,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Memorystore for Redis Cluster also supports AOF persistence, but you must choose either the AOF or RDB persistence mode, because both can't be enabled at the same time.",
+          "Home Documentation Databases Memorystore Memorystore for Redis Cluster Guides Send feedback About RDB persistence Stay organized with collections Save and categorize content based on your preferences.",
+          "Recovery behavior Memorystore for Redis Cluster nodes failover to replicas as the primary recovery mechanism, rather than loading from a snapshot."
+        ]
+      },
+      {
+        "title": "\"Create instances \\_|\\_ Memorystore for Redis Cluster \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/memorystore/docs/cluster/create-instances",
+        "source_id": "site-docs-root",
+        "final_score": 304,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "In the Data persistence strategy section, specify how you want Memorystore for Redis Cluster to persist the data in your cluster.",
+          "In the Data persistence strategy section, specify how you want Memorystore for Redis Cluster to persist the data in your cluster.",
+          "Click Create cluster . gcloud To create a single-zone instance, run the create command: gcloud redis clusters create INSTANCE ID \\ --region= REGION ID \\ --network= NETWORK \\ --replica-count= REPLICA COUNT \\ --node-type= NODE TYPE \\ --shard-count= SHARD COUNT \\ --zone-distribution-mode= ZONE DISTRIBUTION MODE \\ --zone= ZONE Replace the following: INSTANCE ID is the ID of the Memorystore for Redis Cluster instance you're creating."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "redis.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/cluster/about-aof-persistence",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/persistence-overview",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/about-rdb-persistence",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/create-instances"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/cluster/about-aof-persistence",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/persistence-overview",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/about-rdb-persistence",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/create-instances"
+      ]
+    }
+  ]
+}

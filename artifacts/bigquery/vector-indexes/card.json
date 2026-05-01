@@ -1,0 +1,136 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:18.771Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery",
+  "feature_name": "Vector indexes",
+  "feature_slug": "vector-indexes",
+  "summary": "BigQuery supports vector indexes to accelerate VECTOR_SEARCH with approximate results.",
+  "extended_definition": "BigQuery supports vector indexes to accelerate VECTOR_SEARCH with approximate results.",
+  "lifecycle": {
+    "latest_feature_date": "2024-01-31",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 1,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "coverage_low",
+        "message": "The feature ended with coverage LOW.",
+        "suggested_steps": [
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/inference-tutorial-mobilenet",
+      "https://docs.cloud.google.com/bigquery/docs/vector-search-intro"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Introduction to embeddings and vector search \\_|\\_ BigQuery \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/vector-search-intro",
+        "source_id": "site-docs-root",
+        "final_score": 26,
+        "relevance": "",
+        "evidence_snippets": [
+          "When a vector index is used, the VECTOR SEARCH and AI.SEARCH functions use the Approximate Nearest Neighbor search technique to improve vector search performance, with the trade-off of reducing recall and so returning more approximate results.",
+          "Limitations Queries that contain the VECTOR SEARCH or AI.SEARCH function aren't accelerated by BigQuery BI Engine .",
+          "Some possible use cases are as follows: Retrieval-augmented generation (RAG) : Parse documents, perform vector search on content, and generate summarized answers to natural language questions using Gemini models, all within BigQuery."
+        ]
+      },
+      {
+        "title": "\"Tutorial: Run inference on an object table by using a feature vector model\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/inference-tutorial-mobilenet",
+        "source_id": "site-docs-reference-2",
+        "final_score": 23,
+        "relevance": "",
+        "evidence_snippets": [
+          "DECODE IMAGE ( data ), 224 , 224 , FALSE ) AS inputs FROM mobilenet inference test . sample images ) ); The results should look similar to the following: -------------------------------------------------------------------------------------------------------------- feature vector uri inputs — ------------------------------------------------------------------------------------------------------------- 0 .",
+          "Go to BigQuery In the Editor pane, run the following SQL statement: CREATE EXTERNAL TABLE mobilenet inference test . sample images WITH CONNECTION us.lake-connection OPTIONS ( object metadata = 'SIMPLE' , uris = [ 'gs:// BUCKET NAME /flowers/ ' ] ); Replace BUCKET NAME with the name of the bucket you previously created. bq In Cloud Shell, run the bq mk command to create the connection: bq mk --table \\ --external table definition = 'gs:// BUCKET NAME /flowers/ @us.lake-connection' \\ --object metadata = SIMPLE \\ mobilenet inference test.sample images Replace BUCKET NAME with the name of the bucket you previously created.",
+          "To load the model into BigQuery ML, you need the following permissions: bigquery.jobs.create bigquery.models.create bigquery.models.getData bigquery.models.updateData To run inference, you need the following permissions: bigquery.tables.getData on the object table bigquery.models.getData on the model bigquery.jobs.create Costs In this document, you use the following billable components of Google Cloud: BigQuery : You incur storage costs for the object table you create in BigQuery."
+        ]
+      },
+      {
+        "title": "SEARCH_INDEXES view \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/information-schema-indexes",
+        "source_id": "site-docs-reference-3",
+        "final_score": 21,
+        "relevance": "",
+        "evidence_snippets": [
+          "SEARCH INDEXES WHERE index status = 'ACTIVE' ; The results should look like the following: +-------------+-------------+--------------------------------------------------------------------------------------+---------------------+----------------+ table name index name ddl coverage percentage analyzer +-------------+-------------+--------------------------------------------------------------------------------------+---------------------+----------------+ small table names index CREATE SEARCH INDEX names index ON my project.my dataset.small table(names) 0 NO OP ANALYZER large table logs index CREATE SEARCH INDEX logs index ON my project.my dataset.large table(ALL COLUMNS) 100 LOG ANALYZER +-------------+-------------+--------------------------------------------------------------------------------------+---------------------+----------------+ Troubleshooting To enable this view, you can set the value of enable info schema storage to TRUE on your project or organization.",
+          "Schema When you query the INFORMATION SCHEMA.SEARCH INDEXES view, the query results contain one row for each search index in a dataset.",
+          "The INFORMATION SCHEMA.SEARCH INDEXES view has the following schema: Column name Data type Value index catalog STRING The name of the project that contains the dataset. index schema STRING The name of the dataset that contains the index. table name STRING The name of the base table that the index is created on. index name STRING The name of the index. index status STRING The status of the index: ACTIVE , PENDING DISABLEMENT , TEMPORARILY DISABLED , or PERMANENTLY DISABLED ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "bigquery.connections.create",
+      "bigquery.connections.delegate",
+      "bigquery.connections.get",
+      "bigquery.jobs.create",
+      "bigquery.models.create",
+      "bigquery.models.getData",
+      "bigquery.models.updateData",
+      "bigquery.tables.create",
+      "bigquery.tables.getData",
+      "bigquery.tables.update",
+      "dataset.large",
+      "dataset.small",
+      "project.my",
+      "resourcemanager.projects.setIamPolicy",
+      "storage.buckets.create",
+      "test.sample",
+      "us.lake"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/vector-search-intro",
+        "https://docs.cloud.google.com/bigquery/docs/inference-tutorial-mobilenet"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/vector-search-intro",
+        "https://docs.cloud.google.com/bigquery/docs/inference-tutorial-mobilenet"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/vector-search-intro",
+        "https://docs.cloud.google.com/bigquery/docs/inference-tutorial-mobilenet"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/vector-search-intro",
+        "https://docs.cloud.google.com/bigquery/docs/inference-tutorial-mobilenet"
+      ]
+    }
+  ]
+}

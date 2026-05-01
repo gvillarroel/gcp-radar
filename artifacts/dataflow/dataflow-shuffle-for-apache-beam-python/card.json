@@ -1,0 +1,94 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:32.732Z",
+  "source_step08_card": "data/step-08/current/products/dataflow/card.json",
+  "product_name": "Dataflow",
+  "product_slug": "dataflow",
+  "feature_name": "Dataflow Shuffle for Apache Beam Python",
+  "feature_slug": "dataflow-shuffle-for-apache-beam-python",
+  "summary": "Dataflow Shuffle is available for pipelines using Apache Beam SDK for Python version 2.1 or later.",
+  "extended_definition": "Dataflow Shuffle is available for pipelines using Apache Beam SDK for Python version 2.1 or later.",
+  "lifecycle": {
+    "latest_feature_date": "2017-10-30",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dataflow/docs/guides/installing-beam-sdk",
+      "https://docs.cloud.google.com/dataflow/docs/guides/notebook-advanced",
+      "https://docs.cloud.google.com/dataflow/docs/guides/sql/dataflow-sql-intro"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Use Apache Beam notebook advanced features \\_|\\_ Cloud Dataflow \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/dataflow/docs/guides/notebook-advanced",
+        "source_id": "site-docs-reference-2",
+        "final_score": 193,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For general Apache Beam container usage, see: Container environments Managing Python Pipeline Dependencies For Dataflow container usage, see: Use custom containers in Dataflow Disable external IP addresses When creating an Apache Beam notebook instance, to increase security, disable external IP addresses.",
+          "Accelerate using JIT compiler and GPU You can use libraries such as numba and GPUs to accelerate your Python code and Apache Beam pipelines.",
+          "In your Apache Beam pipelines, when referring to non-Python dependencies, use their COPY destinations."
+        ]
+      },
+      {
+        "title": "\"Use Apache Beam notebook advanced features \\_|\\_ Cloud Dataflow \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/dataflow/docs/guides/sql/dataflow-sql-intro",
+        "source_id": "site-docs-reference-2",
+        "final_score": 193,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For general Apache Beam container usage, see: Container environments Managing Python Pipeline Dependencies For Dataflow container usage, see: Use custom containers in Dataflow Disable external IP addresses When creating an Apache Beam notebook instance, to increase security, disable external IP addresses.",
+          "Accelerate using JIT compiler and GPU You can use libraries such as numba and GPUs to accelerate your Python code and Apache Beam pipelines.",
+          "In your Apache Beam pipelines, when referring to non-Python dependencies, use their COPY destinations."
+        ]
+      },
+      {
+        "title": "Install the Apache Beam SDK \\_|\\_ Cloud Dataflow \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataflow/docs/guides/installing-beam-sdk",
+        "source_id": "site-docs-reference-required-3",
+        "final_score": 186,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Set up your development environment For information about setting up your Google Cloud project and development environment to use Dataflow, follow one of the tutorials: Create a Dataflow pipeline using Java Create a Dataflow pipeline using Python Create a Dataflow pipeline using Go Source code and examples The Apache Beam source code is available in the Apache Beam repository on GitHub.",
+          "To upgrade an existing installation of apache-beam, use the --upgrade flag: pip install --upgrade 'apache-beam[gcp]' As of October 7, 2020, Dataflow no longer supports Python 2 pipelines.",
+          "You define these pipelines with an Apache Beam program and can choose a runner, such as Dataflow, to execute your pipeline."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "beam.apache.org",
+      "pkg.dev",
+      "python3.7"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataflow/docs/guides/notebook-advanced",
+        "https://docs.cloud.google.com/dataflow/docs/guides/sql/dataflow-sql-intro",
+        "https://docs.cloud.google.com/dataflow/docs/guides/installing-beam-sdk"
+      ]
+    }
+  ]
+}

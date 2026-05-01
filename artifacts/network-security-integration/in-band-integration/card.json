@@ -1,0 +1,113 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:44.893Z",
+  "source_step08_card": "data/step-08/current/products/network-security-integration/card.json",
+  "product_name": "Network Security Integration",
+  "product_slug": "network-security-integration",
+  "feature_name": "In-band integration",
+  "feature_slug": "in-band-integration",
+  "summary": "In-band integration places network security appliances directly in the traffic path to inspect traffic before it reaches its destination.",
+  "extended_definition": "In-band integration places network security appliances directly in the traffic path to inspect traffic before it reaches its destination.",
+  "lifecycle": {
+    "latest_feature_date": "2026-01-14",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/network-security-integration/docs/in-band/in-band-integration-overview",
+      "https://docs.cloud.google.com/network-security-integration/docs/in-band/in-band-integration-tutorial",
+      "https://docs.cloud.google.com/network-security-integration/docs/in-band/monitor-in-band-integration",
+      "https://docs.cloud.google.com/network-security-integration/docs/out-of-band/out-of-band-integration-overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"In-band integration overview \\_|\\_ Network Security Integration \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/network-security-integration/docs/in-band/in-band-integration-overview",
+        "source_id": "site-docs-root",
+        "final_score": 463,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Network Security Integration in-band integration lets you insert your own network security appliances, such as firewalls or intrusion detection systems, directly in the network traffic path for inspection.",
+          "In-band integration uses Generic Network Virtualization Encapsulation (GENEVE) encapsulation to securely transport packets between the sending or receiving virtual machines (VMs), and the packet processing VMs (your network appliances).",
+          "Benefits of in-band integration In-band integration provides the following benefits: Scalability : deploys packet processing VMs that function as VM-based firewalls, intrusion detection systems, or network appliances."
+        ]
+      },
+      {
+        "title": "\"Monitor in-band integration \\_|\\_ Network Security Integration \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/network-security-integration/docs/in-band/monitor-in-band-integration",
+        "source_id": "site-docs-root",
+        "final_score": 409,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "What's next Network Security Integration overview In-band integration overview Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Home Documentation Networking Network Security Integration Guides Send feedback Monitor in-band integration Stay organized with collections Save and categorize content based on your preferences.",
+          "Network Security Integration in-band integration exports monitoring data about intercepted traffic to Cloud Monitoring ."
+        ]
+      },
+      {
+        "title": "\"Set up in-band integration for a producer-consumer model \\_|\\_ Network Security\\",
+        "url": "https://docs.cloud.google.com/network-security-integration/docs/in-band/in-band-integration-tutorial",
+        "source_id": "site-iam-reference",
+        "final_score": 389,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Networking Network Security Integration Guides Send feedback Set up in-band integration for a producer-consumer model Stay organized with collections Save and categorize content based on your preferences.",
+          "Open the Google Cloud CLI and run the following command to increase the maximum transmission unit (MTU) of the VPC network. gcloud compute networks update producer-network \\ --mtu=1856 In the command, you specify MTU of 1856 bytes, which is the sum of the default MTU of a VPC network (1460 bytes) and the Network Security Integration GENEVE encapsulation overhead (396 bytes). gcloud Create a VPC network. gcloud compute networks create producer-network \\ --subnet-mode=custom \\ --mtu=1856 \\ --description=\"Producer VPC network\" In the command, you specify maximum transmission unit (MTU) of 1856 bytes, which is the sum of the default MTU of a VPC network (1460 bytes) and the Network Security Integration GENEVE encapsulation overhead (396 bytes).",
+          "It uses in-band integration with packet intercept technology to insert third-party network devices into the network traffic flow and perform deep packet inspection."
+        ]
+      },
+      {
+        "title": "\"Out-of-band integration overview \\_|\\_ Network Security Integration \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/network-security-integration/docs/out-of-band/out-of-band-integration-overview",
+        "source_id": "site-docs-root",
+        "final_score": 373,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Third-party appliances support Supported by hierarchical firewall policies Supported by regional network firewall policies Supported by global network firewall policies VPC and Network Security Integration Packet Mirroring interoperability On the workload level, the Network Security Integration Packet Mirroring takes precedence over VPC Packet Mirroring.",
+          "What's next Set up producer services Set up consumer services Monitor out-of-band integration Network Security Integration overview Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Home Documentation Networking Network Security Integration Guides Send feedback Out-of-band integration overview Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-security-integration/docs/in-band/in-band-integration-overview",
+        "https://docs.cloud.google.com/network-security-integration/docs/in-band/monitor-in-band-integration",
+        "https://docs.cloud.google.com/network-security-integration/docs/in-band/in-band-integration-tutorial",
+        "https://docs.cloud.google.com/network-security-integration/docs/out-of-band/out-of-band-integration-overview"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-security-integration/docs/in-band/in-band-integration-overview",
+        "https://docs.cloud.google.com/network-security-integration/docs/in-band/monitor-in-band-integration",
+        "https://docs.cloud.google.com/network-security-integration/docs/in-band/in-band-integration-tutorial",
+        "https://docs.cloud.google.com/network-security-integration/docs/out-of-band/out-of-band-integration-overview"
+      ]
+    }
+  ]
+}

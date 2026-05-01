@@ -1,0 +1,90 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:12.801Z",
+  "source_step08_card": "data/step-08/current/products/alloydb/card.json",
+  "product_name": "AlloyDB",
+  "product_slug": "alloydb",
+  "feature_name": "Cache-aware costing",
+  "feature_slug": "cache-aware-costing",
+  "summary": "Cache-aware costing improves query planning for index scans by making the AlloyDB query planner aware of cache effects to reduce I/O costs.",
+  "extended_definition": "Cache-aware costing improves query planning for index scans by making the AlloyDB query planner aware of cache effects to reduce I/O costs.",
+  "lifecycle": {
+    "latest_feature_date": "2025-09-30",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/alloydb/docs/reference/execution-plan-nodes",
+      "https://docs.cloud.google.com/alloydb/docs/reference/indexing-strategies",
+      "https://docs.cloud.google.com/alloydb/docs/reference/query-tuning-and-optimization"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"AlloyDB database indexing strategies \\_|\\_ AlloyDB for PostgreSQL \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/alloydb/docs/reference/indexing-strategies",
+        "source_id": "site-api-reference",
+        "final_score": 143,
+        "relevance": "",
+        "evidence_snippets": [
+          "205 rows = 500000 loops = 1 ) Output : random , sequential , value Index Cond : (( brin test . sequential >= '0' :: double precision ) AND ( brin test . sequential '500000' :: double precision )) Buffers : shared hit = 4554 Columnar Check : table is not in the columnar store Settings : effective cache size = '9830040kB' , max parallel workers per gather = '0' , random page cost = '1.1' , work mem = '256MB' Query Identifier : 9074149420177182574 Planning : Buffers : shared hit = 4 Planning Time : 0 .",
+          "046 rows = 32000 loops = 1 ) Index Cond : (( brin test . sequential >= '0' :: double precision ) AND ( brin test . sequential '500000' :: double precision )) Buffers : shared hit = 2 Columnar Check : table is not in the columnar store Settings : effective cache size = '9830040kB' , max parallel workers per gather = '0' , random page cost = '1.1' , work mem = '256MB' Query Identifier : 9074149420177182574 Planning : Buffers : shared hit = 5 Planning Time : 0 .",
+          "003 rows = 1 loops = 1 ) Output : up . product id Index Cond : ( up . product id = mt . product id ) Heap Fetches : 0 Buffers : shared hit = 2 Columnar Check : table is too small Settings : effective cache size = '9830040kB' , random page cost = '1.1' , work mem = '256MB' Query Identifier : - 6472913602500700033 Planning : Buffers : shared hit = 37 Planning Time : 0 ."
+        ]
+      },
+      {
+        "title": "\"Execution plan node types \\_|\\_ AlloyDB for PostgreSQL \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/alloydb/docs/reference/execution-plan-nodes",
+        "source_id": "site-api-reference",
+        "final_score": 133,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "022 rows = 50 loops = 1 ) Output : pgbench branches . bbalance , pgbench branches . filler , pgbench branches . bid Buffers : shared hit = 1 Columnar Check : table is too small Settings : effective cache size = '19690120kB' , enable hashjoin = 'off' , enable nestloop = 'off' , max parallel workers per gather = '0' , random page cost = '1.1' , work mem = '256MB' Query Identifier : 6650290151587259687 Planning : Buffers : shared hit = 4 Planning Time : 0 .",
+          "11 rows = 1 width = 27 ) ( never executed ) Output : id , value , product id , effective date Filter : ( index advisor test . product id = 1 ) Query Identifier : - 4660018746142248761 Planning Time : 0 .",
+          "655 Settings : effective cache size = '19690120kB' , random page cost = '1.1' , work mem = '256MB' Query Identifier : - 5140071079400709055 Planning : Buffers : shared hit = 36 Planning Time : 0 ."
+        ]
+      },
+      {
+        "title": "\"AlloyDB query tuning and optimization \\_|\\_ AlloyDB for PostgreSQL \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/alloydb/docs/reference/query-tuning-and-optimization",
+        "source_id": "site-api-reference",
+        "final_score": 131,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Specifically, you can use pg proctab to determine how much memory your idle connections are using, as shown: SELECT sa . pid , SUBSTR ( sa . query , 0 , 50 ) as query , pg size pretty ( ps . rss 1024 ) AS memory consumption FROM pg stat activity sa JOIN pg proctab () ps ON sa . pid = ps . pid WHERE sa . state = 'idle' ; pg systat The pg systat command-line tool can be executed remotely to retrieve statistics about databases, tables, indexes, tablespaces, vacuum, and standby instances.",
+          "The following is an example of the report: The following is a list of some database elements that the report helps you tune: Vacuum Identification of unused indexes Full parameter list, with identification of parameters that might need tuning Abandoned replication slots pev2 The pev2 tool allows the visualization of PostgreSQL EXPLAIN output query plans.",
+          "Memoize nodes: these are used in some query plans to cache the results of lookups, particularly in nested loop joins where there are many duplicates, and to avoid returning the same results."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/reference/indexing-strategies",
+        "https://docs.cloud.google.com/alloydb/docs/reference/execution-plan-nodes",
+        "https://docs.cloud.google.com/alloydb/docs/reference/query-tuning-and-optimization"
+      ]
+    }
+  ]
+}

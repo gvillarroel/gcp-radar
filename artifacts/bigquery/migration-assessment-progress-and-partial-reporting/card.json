@@ -1,0 +1,108 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:18.771Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery",
+  "feature_name": "Migration assessment progress and partial reporting",
+  "feature_slug": "migration-assessment-progress-and-partial-reporting",
+  "summary": "BigQuery migration assessments can display partial report data, progress, and estimated completion time while running.",
+  "extended_definition": "BigQuery migration assessments can display partial report data, progress, and estimated completion time while running.",
+  "lifecycle": {
+    "latest_feature_date": "2024-07-18",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners",
+      "https://docs.cloud.google.com/bigquery/docs/hadoop-metadata",
+      "https://docs.cloud.google.com/bigquery/docs/migration-intro"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Introduction to BigQuery Migration Service \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/migration-intro",
+        "source_id": "site-docs-root",
+        "final_score": 85,
+        "relevance": "",
+        "evidence_snippets": [
+          "The BigQuery Migration Service includes the following features: BigQuery migration assessment : Assess and plan your data warehouse migration by running a BigQuery migration assessment .",
+          "For more information on BigQuery migration assessment, see BigQuery migration assessment .",
+          "You can also use the following open-source tools to help you with your migration process: Data migration tool : Use the data migration tool to automate your data warehouse migration to BigQuery."
+        ]
+      },
+      {
+        "title": "Google Cloud Ready - BigQuery Partners \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners",
+        "source_id": "site-docs-reference-5",
+        "final_score": 78,
+        "relevance": "",
+        "evidence_snippets": [
+          "Partner references Data Intelligence Platform Cloud migration with Collibra & BigQuery Enterprise-wide data privacy: Collibra + BigQuery Enterprise-scale data quality: Collibra + BigQuery Data quality without the complexity: BigQuery & Collibra Partner Advantage page Direct link Datahub Solution DataHub Cloud Category Data Governance, Security, & MDM Description Datahub is an open source metadata platform that helps organizations discover, understand, and govern their data assets.",
+          "Partner references SqlDBM + BigQuery Google BigQuery - Direct Connect and Reverse Engineer Partner Advantage page Direct link Stelo Data Solution Stelo Data Replication Category ETL & Data Integration Description Stelo is an enterprise-class Change Data Capture (CDC) tool that delivers data dynamically from anywhere to anywhere for BI analysis, reporting, and managing business operations and supply chains.",
+          "Partner references Tamr Master Data Management BigQuery Import Getting The Most From Your Migration Partner Advantage page Direct link Vaultree Solution Vaultree Category Data Governance, Security, & MDM Description Vaultree offers a data-in-use encryption solution that solves the industry's fundamental security issue: persistent data encryption, even in the event of a leak."
+        ]
+      },
+      {
+        "title": "\"Extracting metadata from Apache Hive for migration \\_|\\_ BigQuery \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/hadoop-metadata",
+        "source_id": "site-api-reference",
+        "final_score": 71,
+        "relevance": "",
+        "evidence_snippets": [
+          "Cloudera Run the following command to extract metadata from Cloudera using the dwh-migration-dumper tool. dwh-migration-dumper \\ --connector cloudera-manager \\ --url CLOUDERA-URL \\ --user CLOUDERA-USER \\ --password CLOUDERA-PASSWORD \\ --output gs:// MIGRATION-BUCKET /cloudera-dumper-output.zip \\ --yarn-application-types APPLICATION-TYPES \\ --pagination-page-size PAGE-SIZE \\ --assessment \\ Replace the following: CLOUDERA-URL : the URL for Cloudera Manager CLOUDERA-USER : the username of the Cloudera user CLOUDERA-PASSWORD : the password of the Cloudera user MIGRATION-BUCKET : the Cloud Storage bucket that you are using to store the migration files.",
+          "Apache Ranger Run the following command to extract metadata from Apache Ranger using the dwh-migration-dumper tool. dwh-migration-dumper \\ --connector ranger \\ --host RANGER-HOST \\ --port 6080 \\ --user RANGER-USER \\ --password RANGER-PASSWORD \\ --ranger-scheme RANGER-SCHEME \\ --output gs:// MIGRATION-BUCKET /ranger-dumper-output.zip \\ --assessment \\ Replace the following: RANGER-HOST : the hostname of the Apache Ranger instance RANGER-USER : the username of the Apache Ranger user RANGER-PASSWORD : the password of the Apache Ranger user RANGER-SCHEME : specify if Apache Ranger is using http or https .",
+          "HDFS Run the following command to extract metadata from HDFS using the dwh-migration-dumper tool. dwh-migration-dumper \\ --connector hdfs \\ --host HDFS-HOST \\ --port HDFS-PORT \\ --output gs:// MIGRATION-BUCKET /hdfs-dumper-output.zip \\ --assessment \\ Replace the following: HDFS-HOST : the HDFS NameNode hostname HDFS-PORT : the HDFS NameNode port number."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "output.zip"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/migration-intro",
+        "https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners",
+        "https://docs.cloud.google.com/bigquery/docs/hadoop-metadata"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/migration-intro",
+        "https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners",
+        "https://docs.cloud.google.com/bigquery/docs/hadoop-metadata"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/migration-intro",
+        "https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners",
+        "https://docs.cloud.google.com/bigquery/docs/hadoop-metadata"
+      ]
+    }
+  ]
+}

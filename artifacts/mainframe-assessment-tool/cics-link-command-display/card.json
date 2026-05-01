@@ -1,0 +1,144 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:42.971Z",
+  "source_step08_card": "data/step-08/current/products/mainframe-assessment-tool/card.json",
+  "product_name": "Mainframe Assessment Tool",
+  "product_slug": "mainframe-assessment-tool",
+  "feature_name": "CICS LINK command display",
+  "feature_slug": "cics-link-command-display",
+  "summary": "Shows LINK commands as part of CICS calls.",
+  "extended_definition": "Shows LINK commands as part of CICS calls.",
+  "lifecycle": {
+    "latest_feature_date": "2024-11-14",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/mainframe-assessment-tool/docs/create-instance",
+      "https://docs.cloud.google.com/mainframe-assessment-tool/docs/create-vm",
+      "https://docs.cloud.google.com/mainframe-assessment-tool/docs/review-results"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"View and understand assessment results \\_|\\_ Mainframe Assessment Tool \\_\\",
+        "url": "https://docs.cloud.google.com/mainframe-assessment-tool/docs/review-results",
+        "source_id": "site-docs-reference",
+        "final_score": 135,
+        "relevance": "",
+        "evidence_snippets": [
+          "CICS Calls Shows the CICS calls made from each program and their parameters.",
+          "Transactions Displays the extracted relationships between programs, transactions, and screens for IMS and CICS.",
+          "Connected jobs based on a shared data source: shows the connection between two jobs if one job writes data to a shared data source and the other job reads from that same data source."
+        ]
+      },
+      {
+        "title": "Set up and access Mainframe Assessment Tool \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/mainframe-assessment-tool/docs/create-instance",
+        "source_id": "site-docs-reference",
+        "final_score": 38,
+        "relevance": "",
+        "evidence_snippets": [
+          "Go to the Google Cloud console To create a Mainframe Assessment Tool VM instance, run the following command: gcloud compute instances create mainframe - assessment - tool - 1 - instance \\ -- machine - type = MACHINE TYPE \\ -- service - account = SERVICE ACCOUNT NAME @ PROJECT ID . iam.gserviceaccount.com \\ -- scopes = cloud - platform -- image - project = migrate - modernize - public \\ -- image - family = mainframe - assessment - tool -- zone = ZONE \\ -- boot - disk - size = DISK SIZE Replace the following: MACHINE TYPE : the machine type of the VM.",
+          "To create encrypted port forwarding, follow these steps: To configure access to the cluster, run the following command: gcloud container clusters get-credentials CLUSTER NAME \\ --zone ZONE --project PROJECT ID To configure port forwarding, run the following command: kubectl port-forward service/assessor-frontend LOCAL PORT :4000 -n VERSION Replace the following: LOCAL PORT : a port number on your local machine used for the tunneled connection to Mainframe Assessment Tool.",
+          "To bind your Google Cloud service account (GSA) to the Kubernetes service account (KSA), run the following command: gcloud iam service - accounts add - iam - policy - binding \\ SERVICE ACCOUNT NAME @ PROJECT ID . iam.gserviceaccount.com \\ -- role = \"roles/iam.workloadIdentityUser\" \\ -- member = \"serviceAccount: PROJECT ID .svc.id.goog[ VERSION /mat-service-account]\" Replace the following: PROJECT ID : your Google Cloud project ID."
+        ]
+      },
+      {
+        "title": "Set up and access Mainframe Assessment Tool \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/mainframe-assessment-tool/docs/create-vm",
+        "source_id": "site-docs-reference",
+        "final_score": 38,
+        "relevance": "",
+        "evidence_snippets": [
+          "Go to the Google Cloud console To create a Mainframe Assessment Tool VM instance, run the following command: gcloud compute instances create mainframe - assessment - tool - 1 - instance \\ -- machine - type = MACHINE TYPE \\ -- service - account = SERVICE ACCOUNT NAME @ PROJECT ID . iam.gserviceaccount.com \\ -- scopes = cloud - platform -- image - project = migrate - modernize - public \\ -- image - family = mainframe - assessment - tool -- zone = ZONE \\ -- boot - disk - size = DISK SIZE Replace the following: MACHINE TYPE : the machine type of the VM.",
+          "To create encrypted port forwarding, follow these steps: To configure access to the cluster, run the following command: gcloud container clusters get-credentials CLUSTER NAME \\ --zone ZONE --project PROJECT ID To configure port forwarding, run the following command: kubectl port-forward service/assessor-frontend LOCAL PORT :4000 -n VERSION Replace the following: LOCAL PORT : a port number on your local machine used for the tunneled connection to Mainframe Assessment Tool.",
+          "To bind your Google Cloud service account (GSA) to the Kubernetes service account (KSA), run the following command: gcloud iam service - accounts add - iam - policy - binding \\ SERVICE ACCOUNT NAME @ PROJECT ID . iam.gserviceaccount.com \\ -- role = \"roles/iam.workloadIdentityUser\" \\ -- member = \"serviceAccount: PROJECT ID .svc.id.goog[ VERSION /mat-service-account]\" Replace the following: PROJECT ID : your Google Cloud project ID."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "iam.gserviceaccount.com",
+      "iam.workloadIdentityUser",
+      "svc.id.goog"
+    ],
+    "missing_inventory_roles": [
+      "roles/iam.workloadIdentityUser"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/mainframe-assessment-tool/docs/review-results",
+        "https://docs.cloud.google.com/mainframe-assessment-tool/docs/create-instance",
+        "https://docs.cloud.google.com/mainframe-assessment-tool/docs/create-vm"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/mainframe-assessment-tool/docs/review-results",
+        "https://docs.cloud.google.com/mainframe-assessment-tool/docs/create-instance",
+        "https://docs.cloud.google.com/mainframe-assessment-tool/docs/create-vm"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/mainframe-assessment-tool/docs/review-results",
+        "https://docs.cloud.google.com/mainframe-assessment-tool/docs/create-instance",
+        "https://docs.cloud.google.com/mainframe-assessment-tool/docs/create-vm"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/mainframe-assessment-tool/docs/review-results",
+        "https://docs.cloud.google.com/mainframe-assessment-tool/docs/create-instance",
+        "https://docs.cloud.google.com/mainframe-assessment-tool/docs/create-vm"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/mainframe-assessment-tool/docs/review-results",
+        "https://docs.cloud.google.com/mainframe-assessment-tool/docs/create-instance",
+        "https://docs.cloud.google.com/mainframe-assessment-tool/docs/create-vm"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/mainframe-assessment-tool/docs/review-results",
+        "https://docs.cloud.google.com/mainframe-assessment-tool/docs/create-instance",
+        "https://docs.cloud.google.com/mainframe-assessment-tool/docs/create-vm"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/mainframe-assessment-tool/docs/review-results",
+        "https://docs.cloud.google.com/mainframe-assessment-tool/docs/create-instance",
+        "https://docs.cloud.google.com/mainframe-assessment-tool/docs/create-vm"
+      ]
+    }
+  ]
+}

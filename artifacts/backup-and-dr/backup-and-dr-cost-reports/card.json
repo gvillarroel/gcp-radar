@@ -1,0 +1,122 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:18.295Z",
+  "source_step08_card": "data/step-08/current/products/backup-and-dr/card.json",
+  "product_name": "Backup and DR",
+  "product_slug": "backup-and-dr",
+  "feature_name": "Backup and DR cost reports",
+  "feature_slug": "backup-and-dr-cost-reports",
+  "summary": "Cost reports became generally available in Backup and DR Service to provide resource-specific billing visibility; Cost reports are available in Backup and DR Service for viewing resource-specific service spending.",
+  "extended_definition": "Cost reports became generally available in Backup and DR Service to provide resource-specific billing visibility; Cost reports are available in Backup and DR Service for viewing resource-specific service spending.",
+  "lifecycle": {
+    "latest_feature_date": "2026-01-20",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/backup-disaster-recovery/docs/monitor-reports/monitor-jobs",
+      "https://docs.cloud.google.com/compute/docs/accelerator-optimized-machines",
+      "https://docs.cloud.google.com/compute/docs/compute-optimized-machines"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Accelerator-optimized machine family \\_|\\_ Compute Engine \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/compute/docs/accelerator-optimized-machines",
+        "source_id": "site-docs-reference-2",
+        "final_score": 79,
+        "relevance": "",
+        "evidence_snippets": [
+          "The following GPU sharing options are available for G4 instances: Fractional GPU (vGPU) support ( Preview ): this feature allows a single physical GPU to be shared by multiple virtual machine (VM) instances. vGPUs provide multi-tenant security isolation because each vGPU is a separate VM instance.",
+          "The G4 machine series also provide a low-cost solution for performing single host inference and model tuning compared with A series machine types.",
+          "G4 machine types also provide a low-cost solution for performing single host inference and model tuning compared with A series machine types."
+        ]
+      },
+      {
+        "title": "\"Monitor jobs in the appliance management console \\_|\\_ Backup and DR \\_\\",
+        "url": "https://docs.cloud.google.com/backup-disaster-recovery/docs/monitor-reports/monitor-jobs",
+        "source_id": "site-docs-root",
+        "final_score": 68,
+        "relevance": "",
+        "evidence_snippets": [
+          "Queue of on-demand backup jobs Backup and DR Service supports queuing of on-demand jobs to provide the flexibility to create your images without concern for the number of on-demand job slots available to start the job.",
+          "The job couldn't run during its backup plan period due to some constraint, for example the scheduler is disabled, destination pool is full, source image is missing or unsuitable, connectivity issue, or there are no available job slots.",
+          "When a reserved slot is not available because all the slots of that category are running jobs, the backup/recovery appliance checks whether an unreserved slot is available."
+        ]
+      },
+      {
+        "title": "Compute-optimized machine family for Compute Engine \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/compute/docs/compute-optimized-machines",
+        "source_id": "site-docs-reference-2",
+        "final_score": 67,
+        "relevance": "",
+        "evidence_snippets": [
+          "Machine Workloads H4D machine series HPC workloads and multi-node workloads Manufacturing Weather forecasting Electronic design automation (EDA) Healthcare and life sciences Scientific computing H3 machine series HPC workloads Computational fluid dynamics Crash safety Genomics Financial modeling General scientific and engineering computing C2D machine series Memory-bound workloads Gaming (AAA game servers) High performance computing (HPC) High performance databases Electronic Design Automation (EDA) Media transcoding C2 machine series Compute-bound workloads High-performance web serving Gaming (AAA game servers) Ad serving High performance computing (HPC) Media transcoding AI/ML The following machine series are available in this machine family: H4D instances are powered by Titanium and fifth generation AMD EPYC Turin processors which have a base frequency of 2.7 GHz and a maximum frequency of 4.1 GHz.",
+          "C2D machine types C2D instances are available as predefined configurations in sizes ranging from 2 vCPUs to 112 vCPUs and up to 896 GB of memory. standard: 4 GB memory per vCPU highcpu: 2 GB memory per vCPU highmem: 8 GB memory per vCPU C2D standard Machine types vCPUs 1 Memory (GB) Local SSD 2 Default egress bandwidth (Gbps) 3 Tier 1 egress bandwidth (Gbps) 4 c2d-standard-2 2 8 1, 2, 4, or 8 Up to 10 N/A c2d-standard-4 4 16 1, 2, 4, or 8 Up to 10 N/A c2d-standard-8 8 32 1, 2, 4, or 8 Up to 16 N/A c2d-standard-16 16 64 1, 2, 4, or 8 Up to 32 N/A c2d-standard-32 32 128 2, 4, or 8 Up to 32 Up to 50 c2d-standard-56 56 224 4 or 8 Up to 32 Up to 50 c2d-standard-112 112 448 8 Up to 32 Up to 100 1 A vCPU represents a single logical CPU thread.",
+          "If you are looking to optimize workloads for single thread performance , particularly with respect to floating point, choose a machine type in this series to take advantage of AVX-512 capabilities only available on Intel."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/compute/docs/accelerator-optimized-machines",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/monitor-reports/monitor-jobs",
+        "https://docs.cloud.google.com/compute/docs/compute-optimized-machines"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/compute/docs/accelerator-optimized-machines",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/monitor-reports/monitor-jobs",
+        "https://docs.cloud.google.com/compute/docs/compute-optimized-machines"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/compute/docs/accelerator-optimized-machines",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/monitor-reports/monitor-jobs",
+        "https://docs.cloud.google.com/compute/docs/compute-optimized-machines"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/compute/docs/accelerator-optimized-machines",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/monitor-reports/monitor-jobs",
+        "https://docs.cloud.google.com/compute/docs/compute-optimized-machines"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/compute/docs/accelerator-optimized-machines",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/monitor-reports/monitor-jobs",
+        "https://docs.cloud.google.com/compute/docs/compute-optimized-machines"
+      ]
+    }
+  ]
+}

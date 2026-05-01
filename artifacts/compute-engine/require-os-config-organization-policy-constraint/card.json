@@ -1,0 +1,191 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:29.281Z",
+  "source_step08_card": "data/step-08/current/products/compute-engine/card.json",
+  "product_name": "Compute Engine",
+  "product_slug": "compute-engine",
+  "feature_name": "Require OS Config organization policy constraint",
+  "feature_slug": "require-os-config-organization-policy-constraint",
+  "summary": "The Require OS Config organization policy constraint can automatically enable VM Manager for new VMs in an organization, folder, or project; This organization policy constraint can automatically enable VM Manager for new VMs at the organization, folder, or project level.",
+  "extended_definition": "The Require OS Config organization policy constraint can automatically enable VM Manager for new VMs in an organization, folder, or project; This organization policy constraint can automatically enable VM Manager for new VMs at the organization, folder, or project level.",
+  "lifecycle": {
+    "latest_feature_date": "2024-06-17",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/compute/docs/access/custom-constraints",
+      "https://docs.cloud.google.com/compute/docs/access/managed-constraints",
+      "https://docs.cloud.google.com/network-connectivity/docs/vpn/concepts/overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Custom constraints \\_|\\_ Compute Engine \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/compute/docs/access/custom-constraints",
+        "source_id": "site-docs-reference-required-6",
+        "final_score": 179,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To see the exact permissions that are required, expand the Required permissions section: Required permissions The following permissions are required to manage organization policies for Compute Engine resources: orgpolicy.constraints.list orgpolicy.policies.create orgpolicy.policies.delete orgpolicy.policies.list orgpolicy.policies.update orgpolicy.policy.get orgpolicy.policy.set To test the constraints: compute.instances.create on the project To use a custom image to create the VM: compute.images.useReadOnly on the image To use a snapshot to create the VM: compute.snapshots.useReadOnly on the snapshot To use an instance template to create the VM: compute.instanceTemplates.useReadOnly on the instance template To assign a legacy network to the VM: compute.networks.use on the project To specify a static IP address for the VM: compute.addresses.use on the project To assign an external IP address to the VM when using a legacy network: compute.networks.useExternalIp on the project To specify a subnet for the VM: compute.subnetworks.use on the project or on the chosen subnet To assign an external IP address to the VM when using a VPC network: compute.subnetworks.useExternalIp on the project or on the chosen subnet To set VM instance metadata for the VM: compute.instances.setMetadata on the project To set tags for the VM: compute.instances.setTags on the VM To set labels for the VM: compute.instances.setLabels on the VM To set a service account for the VM to use: compute.instances.setServiceAccount on the VM To create a new disk for the VM: compute.disks.create on the project To attach an existing disk in read-only or read-write mode: compute.disks.use on the disk To attach an existing disk in read-only mode: compute.disks.useReadOnly on the disk You might also be able to get these permissions with custom roles or other predefined roles .",
+          "Required roles To get the permissions that you need to manage organization policies for Compute Engine resources, ask your administrator to grant you the following IAM roles: Organization policy administrator ( roles/orgpolicy.policyAdmin ) on the organization resource To test the constraints: Compute Instance Admin (v1) ( roles/compute.instanceAdmin.v1 ) on the project For more information about granting roles, see Manage access to projects, folders, and organizations .",
+          "When you have entered a value into each field, the equivalent YAML configuration for this custom constraint appears on the right. gcloud To create a custom constraint using the gcloud CLI, create a YAML file for the custom constraint: name : organizations/ ORGANIZATION ID /customConstraints/ CONSTRAINT NAME resource types : compute.googleapis.com/ RESOURCE NAME method types : CREATE condition : CONDITION action type : ACTION display name : DISPLAY NAME description : DESCRIPTION Replace the following: ORGANIZATION ID : your organization ID, such as 123456789 ."
+        ]
+      },
+      {
+        "title": "Cloud VPN overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/network-connectivity/docs/vpn/concepts/overview",
+        "source_id": "site-docs-reference-3",
+        "final_score": 171,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Stack type Supported gateway external IP addresses IPV4 ONLY IPv4 IPV4 IPV6 IPv4, IPv6 IPV6 ONLY IPv6 Organization policy constraints for IPv6 You can disable the creation of all IPv6 hybrid resources in your project by setting the following organization policy to true: constraints/compute.disableHybridCloudIpv6 For HA VPN, this organization policy constraint prevents the creation of any dual-stack HA VPN gateways and IPv6-only HA VPN gateways in the project.",
+          "Restricting peer IP addresses through a Cloud VPN tunnel If you're an Organization Policy Administrator ( roles/orgpolicy.policyAdmin ) , you can create a policy constraint that restricts the IP addresses that users can specify for peer VPN gateways.",
+          "This applies to Cloud VPN addresses configured by you for Classic VPN or to automatically assigned IP addresses for HA VPN."
+        ]
+      },
+      {
+        "title": "Managed constraints \\_|\\_ Compute Engine \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/compute/docs/access/managed-constraints",
+        "source_id": "site-docs-reference-required-6",
+        "final_score": 171,
+        "relevance": "",
+        "evidence_snippets": [
+          "To see the exact permissions that are required, expand the Required permissions section: Required permissions The following permissions are required to manage organization policies with managed constraints: orgpolicy.constraints.list orgpolicy.policies.create orgpolicy.policies.delete orgpolicy.policies.list orgpolicy.policies.update orgpolicy.policy.get orgpolicy.policy.set To test the constraints: compute.instances.create on the project To use a custom image to create the VM: compute.images.useReadOnly on the image To use a snapshot to create the VM: compute.snapshots.useReadOnly on the snapshot To use an instance template to create the VM: compute.instanceTemplates.useReadOnly on the instance template To assign a legacy network to the VM: compute.networks.use on the project To specify a static IP address for the VM: compute.addresses.use on the project To assign an external IP address to the VM when using a legacy network: compute.networks.useExternalIp on the project To specify a subnet for the VM: compute.subnetworks.use on the project or on the chosen subnet To assign an external IP address to the VM when using a VPC network: compute.subnetworks.useExternalIp on the project or on the chosen subnet To set VM instance metadata for the VM: compute.instances.setMetadata on the project To set tags for the VM: compute.instances.setTags on the VM To set labels for the VM: compute.instances.setLabels on the VM To set a service account for the VM to use: compute.instances.setServiceAccount on the VM To create a new disk for the VM: compute.disks.create on the project To attach an existing disk in read-only or read-write mode: compute.disks.use on the disk To attach an existing disk in read-only mode: compute.disks.useReadOnly on the disk You might also be able to get these permissions with custom roles or other predefined roles .",
+          "Metadata-based constraints and levels Constraint Metadata key Metadata hierarchy levels compute.managed.disableSerialPortAccess serial-port-enable Project, Zonal, Instance compute.managed.requireOsLogin enable-oslogin Project, Zonal, Instance compute.managed.disableGuestAttributesAccess enable-guest-attributes Project, Zonal, Instance compute.managed.requireOsConfig enable-osconfig Project, Zonal, Instance compute.managed.disallowGlobalDns VmDnsSetting Project, Instance Safe rollout: The policy lifecycle To prevent service disruptions when you gradually implement new constraints, Google recommends that you implement managed constraints by following these steps: Analyze with Policy Simulator Before enforcing a policy, use Policy Simulator to see which existing resources violate the policy.",
+          "Required roles To get the permissions that you need to manage organization policies with managed constraints, ask your administrator to grant you the following IAM roles: Organization policy administrator ( roles/orgpolicy.policyAdmin ) on the organization resource To test the constraints: Compute Instance Admin (v1) ( roles/compute.instanceAdmin.v1 ) on the project For more information about granting roles, see Manage access to projects, folders, and organizations ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "compute.addresses.use",
+      "compute.disableHybridCloudIpv6",
+      "compute.disks.create",
+      "compute.disks.use",
+      "compute.disks.useReadOnly",
+      "compute.googleapis.com",
+      "compute.images.useReadOnly",
+      "compute.instanceAdmin.v1",
+      "compute.instances.create",
+      "compute.instances.setLabels",
+      "compute.instances.setMetadata",
+      "compute.instances.setServiceAccount",
+      "compute.instances.setTags",
+      "compute.instanceTemplates.useReadOnly",
+      "compute.managed.disableGuestAttributesAccess",
+      "compute.managed.disableSerialPortAccess",
+      "compute.managed.disallowGlobalDns",
+      "compute.managed.requireOsConfig",
+      "compute.managed.requireOsLogin",
+      "compute.networks.use",
+      "compute.networks.useExternalIp",
+      "compute.snapshots.useReadOnly",
+      "compute.subnetworks.use",
+      "compute.subnetworks.useExternalIp",
+      "constraint.yaml",
+      "orgpolicy.constraints.list",
+      "orgpolicy.policies.create",
+      "orgpolicy.policies.delete",
+      "orgpolicy.policies.list",
+      "orgpolicy.policies.update",
+      "orgpolicy.policy.get",
+      "orgpolicy.policy.set",
+      "orgpolicy.policyAdmin"
+    ],
+    "missing_inventory_roles": [
+      "roles/compute.instanceAdmin.v1",
+      "roles/orgpolicy.policyAdmin"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/compute/docs/access/custom-constraints",
+        "https://docs.cloud.google.com/compute/docs/access/managed-constraints",
+        "https://docs.cloud.google.com/network-connectivity/docs/vpn/concepts/overview"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/compute/docs/access/custom-constraints",
+        "https://docs.cloud.google.com/compute/docs/access/managed-constraints",
+        "https://docs.cloud.google.com/network-connectivity/docs/vpn/concepts/overview"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/compute/docs/access/custom-constraints",
+        "https://docs.cloud.google.com/compute/docs/access/managed-constraints",
+        "https://docs.cloud.google.com/network-connectivity/docs/vpn/concepts/overview"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/compute/docs/access/custom-constraints",
+        "https://docs.cloud.google.com/compute/docs/access/managed-constraints",
+        "https://docs.cloud.google.com/network-connectivity/docs/vpn/concepts/overview"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/compute/docs/access/custom-constraints",
+        "https://docs.cloud.google.com/compute/docs/access/managed-constraints",
+        "https://docs.cloud.google.com/network-connectivity/docs/vpn/concepts/overview"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/compute/docs/access/custom-constraints",
+        "https://docs.cloud.google.com/compute/docs/access/managed-constraints",
+        "https://docs.cloud.google.com/network-connectivity/docs/vpn/concepts/overview"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/compute/docs/access/custom-constraints",
+        "https://docs.cloud.google.com/compute/docs/access/managed-constraints",
+        "https://docs.cloud.google.com/network-connectivity/docs/vpn/concepts/overview"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/compute/docs/access/custom-constraints",
+        "https://docs.cloud.google.com/compute/docs/access/managed-constraints",
+        "https://docs.cloud.google.com/network-connectivity/docs/vpn/concepts/overview"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/compute/docs/access/custom-constraints",
+        "https://docs.cloud.google.com/compute/docs/access/managed-constraints",
+        "https://docs.cloud.google.com/network-connectivity/docs/vpn/concepts/overview"
+      ]
+    }
+  ]
+}

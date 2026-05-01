@@ -1,0 +1,93 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:46.193Z",
+  "source_step08_card": "data/step-08/current/products/sensitive-data-protection/card.json",
+  "product_name": "Sensitive Data Protection",
+  "product_slug": "sensitive-data-protection",
+  "feature_name": "Adjustment rules",
+  "feature_slug": "adjustment-rules",
+  "summary": "Adjusts finding likelihood based on contextual evidence.",
+  "extended_definition": "Adjusts finding likelihood based on contextual evidence.",
+  "lifecycle": {
+    "latest_feature_date": "2026-02-23",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/sensitive-data-protection/docs/concepts-infotypes",
+      "https://docs.cloud.google.com/sensitive-data-protection/docs/creating-custom-infotypes-rules",
+      "https://docs.cloud.google.com/sensitive-data-protection/docs/reference/rest/v2/InspectConfig"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Modifying infoType detectors to refine scan results \\_|\\_ Sensitive Data\\",
+        "url": "https://docs.cloud.google.com/sensitive-data-protection/docs/creating-custom-infotypes-rules",
+        "source_id": "site-api-reference-required-2",
+        "final_score": 204,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Adjustment rules Adjustment rules can help you refine detection accuracy by increasing (also called boosting ) or decreasing the likelihood values of findings based on the context in which they appear.",
+          "Adjustment rules , which help adjust the likelihood of findings based on the context in which they appear.",
+          "Notice that the four rules are specified in an array within the rules element. @param string $projectId The Google Cloud project id to use as a parent resource. @param string $textToInspect The string to inspect. / function inspect string multiple rules( // TODO(developer): Replace sample parameters before running the code. string $projectId, string $textToInspect = 'patient: Jane Doe' ): void { // Instantiate a client. $dlp = new DlpServiceClient(); $parent = \"projects/$projectId/locations/global\"; // Specify what content you want the service to Inspect. $item = (new ContentItem()) ->setValue($textToInspect); // Construct hotword rules $patientRule = (new HotwordRule()) ->setHotwordRegex((new Regex()) ->setPattern('patient')) ->setProximity((new Proximity()) ->setWindowBefore(10)) ->setLikelihoodAdjustment((new LikelihoodAdjustment()) ->setFixedLikelihood(Likelihood::VERY LIKELY)); $doctorRule = (new HotwordRule()) ->setHotwordRegex((new Regex()) ->setPattern('doctor')) ->setProximity((new Proximity()) ->setWindowBefore(10)) ->setLikelihoodAdjustment((new LikelihoodAdjustment()) ->setFixedLikelihood(Likelihood::VERY UNLIKELY)); // Construct exclusion rules $wordList = (new Dictionary()) ->setWordList((new WordList()) ->setWords(['Quasimodo'])); $quasimodoRule = (new ExclusionRule()) ->setMatchingType(MatchingType::MATCHING TYPE PARTIAL MATCH) ->setDictionary($wordList); $redactedRule = (new ExclusionRule()) ->setMatchingType(MatchingType::MATCHING TYPE PARTIAL MATCH) ->setRegex((new Regex()) ->setPattern('REDACTED')); // Specify the exclusion rule and build-in info type the inspection will look for. $personName = (new InfoType()) ->setName('PERSON NAME'); $inspectionRuleSet = (new InspectionRuleSet()) ->setInfoTypes([$personName]) ->setRules([ (new InspectionRule()) ->setHotwordRule($patientRule), (new InspectionRule()) ->setHotwordRule($doctorRule), (new InspectionRule()) ->setExclusionRule($quasimodoRule), (new InspectionRule()) ->setExclusionRule($redactedRule), ]); // Construct the configuration for the Inspect request, including the ruleset. $inspectConfig = (new InspectConfig()) ->setInfoTypes([$personName]) ->setIncludeQuote(true) ->setRuleSet([$inspectionRuleSet]); // Run request $inspectContentRequest = (new InspectContentRequest()) ->setParent($parent) ->setInspectConfig($inspectConfig) ->setItem($item); $response = $dlp->inspectContent($inspectContentRequest); // Print the results $findings = $response->getResult()->getFindings(); if (count($findings) == 0) { printf('No findings.' ."
+        ]
+      },
+      {
+        "title": "\"InfoTypes and infoType detectors \\_|\\_ Sensitive Data Protection \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/sensitive-data-protection/docs/concepts-infotypes",
+        "source_id": "site-api-reference-required-2",
+        "final_score": 188,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Adjustment rules Adjustment rules can help you refine detection accuracy by increasing (also called boosting ) or decreasing the likelihood values of findings based on the context in which they appear.",
+          "For example, you can use an adjustment rule to increase the likelihood values of GENERIC ID findings when they appear in documents that match DOCUMENT TYPE/CONTEXT/FINANCE .",
+          "DlpServiceClient (); // The project ID to run the API call under // const projectId = 'my-project'; // The string to inspect // const string = 'My email is gary@example.com and my phone number is (223) 456-7890.'; // The minimum likelihood required before returning a match // const minLikelihood = 'LIKELIHOOD UNSPECIFIED'; // The maximum number of findings to report per request (0 = server maximum) // const maxFindings = 0; // The infoTypes of information to match // See https://cloud.google.com/dlp/docs/concepts-infotypes for more information // about supported infoTypes. // const infoTypes = [{ name: 'PHONE NUMBER' }]; // The customInfoTypes of information to match // const customInfoTypes = [{ infoType: { name: 'DICT TYPE' }, dictionary: { wordList: { words: ['foo', 'bar', 'baz']}}}, // { infoType: { name: 'REGEX TYPE' }, regex: {pattern: '\\\\(\\\\d{3}\\\\) \\\\d{3}-\\\\d{4}'}}]; // Whether to include the matching string // const includeQuote = true; async function inspectPhoneNumber () { // Construct item to inspect const item = { value : string }; // Construct request const request = { parent : projects/ ${ projectId } /locations/global , inspectConfig : { infoTypes : infoTypes , customInfoTypes : customInfoTypes , minLikelihood : minLikelihood , includeQuote : includeQuote , limits : { maxFindingsPerRequest : maxFindings , }, }, item : item , }; // Run request const [ response ] = await dlp . inspectContent ( request ); const findings = response . result . findings ; if ( findings . length > 0 ) { console . log ( 'Findings:' ); findings . forEach ( finding = > { if ( includeQuote ) { console . log ( \\tQuote: ${ finding . quote } ); } console . log ( \\tInfo type: ${ finding . infoType . name } ); console . log ( \\tLikelihood: ${ finding . likelihood } ); }); } else { console . log ( 'No findings.' ); } } inspectPhoneNumber (); PHP To learn how to install and use the client library for Sensitive Data Protection, see Sensitive Data Protection client libraries ."
+        ]
+      },
+      {
+        "title": "InspectConfig \\_|\\_ Sensitive Data Protection \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/sensitive-data-protection/docs/reference/rest/v2/InspectConfig",
+        "source_id": "site-api-reference",
+        "final_score": 164,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "JSON representation Likelihood InfoTypeLikelihood JSON representation FindingLimits JSON representation InfoTypeLimit JSON representation CustomInfoType JSON representation SurrogateType StoredType JSON representation MetadataKeyValueExpression JSON representation DetectionRule JSON representation HotwordRule JSON representation Proximity JSON representation LikelihoodAdjustment JSON representation ExclusionType ContentOption InspectionRuleSet JSON representation InspectionRule JSON representation ExclusionRule JSON representation ExcludeInfoTypes JSON representation ExcludeByHotword JSON representation ExcludeByImageFindings JSON representation ImageContainmentType JSON representation Encloses FullyInside Overlap MatchingType AdjustmentRule JSON representation AdjustByMatchingInfoTypes JSON representation AdjustByImageFindings JSON representation Configuration description of the scanning process.",
+          "If the likelihood is lower than this value, Sensitive Data Protection doesn't adjust the likelihood of the InspectionRuleSet.info types finding. matchingType enum ( MatchingType ) How the adjustment rule is applied.",
+          "JSON representation { \"infoTypes\" : [ { object ( InfoType ) } ] , \"minLikelihood\" : enum ( Likelihood ) , \"minLikelihoodPerInfoType\" : [ { object ( InfoTypeLikelihood ) } ] , \"limits\" : { object ( FindingLimits ) } , \"includeQuote\" : boolean , \"excludeInfoTypes\" : boolean , \"customInfoTypes\" : [ { object ( CustomInfoType ) } ] , \"contentOptions\" : [ enum ( ContentOption ) ] , \"ruleSet\" : [ { object ( InspectionRuleSet ) } ] } Fields infoTypes[] object ( InfoType ) Restricts what infoTypes to look for."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "dlp.googleapis.com",
+      "example.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/creating-custom-infotypes-rules",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/concepts-infotypes",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/reference/rest/v2/InspectConfig"
+      ]
+    }
+  ]
+}

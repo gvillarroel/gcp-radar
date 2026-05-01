@@ -1,0 +1,149 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:39.542Z",
+  "source_step08_card": "data/step-08/current/products/google-kubernetes-engine/card.json",
+  "product_name": "Google Kubernetes Engine",
+  "product_slug": "google-kubernetes-engine",
+  "feature_name": "Multi-Instance GPU on GKE",
+  "feature_slug": "multi-instance-gpu-on-gke",
+  "summary": "Multi-Instance GPU on GKE lets a single GPU be partitioned into multiple isolated instances for workloads; Multi-Instance GPU on GKE is available in Preview.",
+  "extended_definition": "Multi-Instance GPU on GKE lets a single GPU be partitioned into multiple isolated instances for workloads; Multi-Instance GPU on GKE is available in Preview.",
+  "lifecycle": {
+    "latest_feature_date": "2021-09-02",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-custom-compute-classes",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/stateful-workloads/mysql"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Security bulletins \\_|\\_ Google Kubernetes Engine (GKE) \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "source_id": "site-docs-reference-2",
+        "final_score": 141,
+        "relevance": "",
+        "evidence_snippets": [
+          "You can use the following tools to check inbound traffic to your resources running in Google Cloud: VPC Flow Logs for visibility into network throughput and performance Cloud Logging to search and analyze logging data and events from Google Cloud services and applications configured to send logs Firewall Rules Logging to audit, verify, and analyze the effects of your firewall rules Security Command Center for visibility into security findings indicating suspicious network activity Your application logs High GDC (VMware) Description Severity A security issue was discovered that impacts Multi-Cluster Gateway (MCG), a GKE feature that allows customers to load balance traffic across multiple clusters.",
+          "For this specific attack, a user can potentially exploit a race condition by starting multiple pods on a single node simultaneously, all of which share the same volume mount with a symlink.",
+          "For this specific attack, a user can potentially exploit a race condition by starting multiple pods on a single node simultaneously, all of which share the same volume mount with a symlink."
+        ]
+      },
+      {
+        "title": "\"Deploy a stateful MySQL cluster on GKE \\_|\\_ Kubernetes Engine \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/stateful-workloads/mysql",
+        "source_id": "site-docs-root-2",
+        "final_score": 133,
+        "relevance": "",
+        "evidence_snippets": [
+          "Prepare the primary MySQL InnoDB Cluster To configure a MySQL InnoDB Cluster, follow these steps: In the Cloud Shell terminal, set the group replication configurations for the MySQL instances to be added to your cluster. bash ../scripts/c1-clustersetup.sh POD ORDINAL START = ${ 1 :- 0 } POD ORDINAL END = ${ 2 :- 2 } for i in $( seq ${ POD ORDINAL START } ${ POD ORDINAL END } ) ; do echo \"Configuring pod mysql1/dbc1- ${ i } \" cat << ' EOF' kubectl -n mysql1 exec -i dbc1- ${ i } -- bash -c 'mysql -uroot -proot --password=${MYSQL ROOT PASSWORD}' INSTALL PLUGIN group replication SONAME 'group replication.so' ; RESET PERSIST IF EXISTS group replication ip allowlist ; RESET PERSIST IF EXISTS binlog transaction dependency tracking ; SET @@PERSIST.group replication ip allowlist = 'mysql.mysql1.svc.cluster.local' ; SET @@PERSIST.binlog transaction dependency tracking = 'WRITESET' ; EOF done The script will remotely connect into each of the three MySQL instances to set and persist the following environment variables: group replication ip allowlist : allows the instance within the cluster to connect to any instance in the group. binlog transaction dependency tracking='WRITESET' : allows parallelized transactions which won't conflict.",
+          "A Deployment is a Kubernetes API object that lets you run multiple replicas of Pods that are distributed among the nodes in a cluster.. apiVersion : apps/v1 kind : Deployment metadata : name : prepare-three-zone-ha labels : app : prepare-three-zone-ha spec : replicas : 3 selector : matchLabels : app : prepare-three-zone-ha template : metadata : labels : app : prepare-three-zone-ha spec : affinity : Tell Kubernetes to avoid scheduling a replica in a zone where there is already a replica with the label \"app: prepare-three-zone-ha\" podAntiAffinity : requiredDuringSchedulingIgnoredDuringExecution : - labelSelector : matchExpressions : - key : app operator : In values : - prepare-three-zone-ha topologyKey : \"topology.kubernetes.io/zone\" containers : - name : prepare-three-zone-ha image : busybox:latest command : - \"/bin/sh\" - \"-c\" - \"while true; do sleep 3600; done\" resources : limits : cpu : \"500m\" ephemeral-storage : \"10Mi\" memory : \"0.5Gi\" requests : cpu : \"500m\" ephemeral-storage : \"10Mi\" memory : \"0.5Gi\" kubectl apply -f prepare-for-ha.yaml By default, Autopilot provisions resources in two zones.",
+          "For detailed steps, see Resize a node pool gcloud In Cloud Shell, resize the default node pool to eight instances in each managed instance group. gcloud container clusters resize ${ CLUSTER NAME } \\ --node-pool default-pool \\ --num-nodes = 8 Console To add nodes to your Standard cluster: Open the gkemulti-west1 Cluster page in the Google Cloud console."
+        ]
+      },
+      {
+        "title": "\"About custom ComputeClasses \\_|\\_ Google Kubernetes Engine (GKE) \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-custom-compute-classes",
+        "source_id": "site-docs-reference-2",
+        "final_score": 130,
+        "relevance": "",
+        "evidence_snippets": [
+          "Group node pools Starting with GKE version 1.32.2-gke.1359000, you can group multiple node pools into a single logical unit called a collection by using the nodePoolGroup field in your ComputeClass specification.",
+          "For more information, see the following: Plan TPUs in GKE Multi-host TPU slice node pools Schedule TPU collections for inference workloads Node pool configuration The nodePoolConfig field in your ComputeClass specification lets you apply configuration that is reflected in all nodes within the node pools created using that class.",
+          "When you use ComputeClasses, update your workloads to remove the following labels from node selectors and configure the corresponding field in the ComputeClasses that you create: Node label ComputeClass field cloud.google.com/machine-family priorities.machineFamily cloud.google.com/machine-type priorities.machineType cloud.google.com/gke-spot priorities.spot cloud.google.com/gke-accelerator priorities.gpu.type cloud.google.com/gke-gpu-driver-version priorities.gpu.driverVersion cloud.google.com/reservation-name priorities.reservations.specific.name cloud.google.com/reservation-project priorities.reservations.specific.project cloud.google.com/reservation-affinity priorities.reservations.affinity cloud.google.com/gke-ephemeral-storage-local-ssd priorities.storage.localSSDCount cloud.google.com/gke-boot-disk priorities.storage.bootDiskType cloud.google.com/gke-boot-disk-size priorities.storage.bootDiskSize cloud.google.com/gke-node-pool-group-name nodePoolGroup.name cloud.google.com/gke-workload-type nodePoolConfig.workloadType node.kubernetes.io/instance-type priorities.machineType Limitations The name of your ComputeClass can't begin with gke or autopilot ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "clustersetup.sh",
+      "gke.1359000",
+      "ha.yaml",
+      "mysql.mysql1.svc.cluster.local",
+      "node.kubernetes.io",
+      "priorities.gpu.driverVersion",
+      "priorities.gpu.type",
+      "priorities.machineFamily",
+      "priorities.machineType",
+      "priorities.reservations.affinity",
+      "priorities.reservations.specific.name",
+      "priorities.reservations.specific.project",
+      "priorities.spot",
+      "priorities.storage.bootDiskSize",
+      "priorities.storage.bootDiskType",
+      "priorities.storage.localSSDCount",
+      "replication.so",
+      "topology.kubernetes.io"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/stateful-workloads/mysql",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-custom-compute-classes"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/stateful-workloads/mysql",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-custom-compute-classes"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/stateful-workloads/mysql",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-custom-compute-classes"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/stateful-workloads/mysql",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-custom-compute-classes"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/stateful-workloads/mysql",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-custom-compute-classes"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/stateful-workloads/mysql",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-custom-compute-classes"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,118 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:18.295Z",
+  "source_step08_card": "data/step-08/current/products/backup-and-dr/card.json",
+  "product_name": "Backup and DR",
+  "product_slug": "backup-and-dr",
+  "feature_name": "Backup Vault CMEK support for Compute Engine",
+  "feature_slug": "backup-vault-cmek-support-for-compute-engine",
+  "summary": "Backup Vault now supports CMEK-protected Compute Engine instances and Persistent Disks for backup protection.",
+  "extended_definition": "Backup Vault now supports CMEK-protected Compute Engine instances and Persistent Disks for backup protection.",
+  "lifecycle": {
+    "latest_feature_date": "2025-12-17",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backup-vault",
+      "https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/cmek",
+      "https://docs.cloud.google.com/compute/docs/compute-optimized-machines"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Customer-managed encryption keys (CMEK) \\_|\\_ Backup and DR \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/cmek",
+        "source_id": "site-iam-reference",
+        "final_score": 175,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "If constraints/gcp.restrictCmekCryptoKeyProjects is enforced, resources protected by CMEK must use a key from an allowed project or folder: Compute Engine instance backup : If the backup vault is CMEK-encrypted, its key must be from an allowed project or folder.",
+          "The following table summarizes which encryption key is used for backups of different workload types: Workload Encryption Key Used for Backup CMEK Support Status Compute Engine instance Backup vault CMEK key Supported Compute Engine disk Source disk's encryption key Supported Cloud SQL - Not supported AlloyDB cluster - Not supported Filestore instance - Not supported Google Cloud VMware Engine, Oracle database, and SQL Server database - Not supported Limitations Backup and DR support for CMEK has the following limitations: CMEK protection is only supported for Compute Engine instance and Persistent Disk backups stored in backup vaults.",
+          "Backups at rest When you use CMEK organization policies, the following constraints can be enforced when backups are created: If constraints/gcp.restrictNonCmekServices is enforced for backupdr.googleapis.com , new backups cannot be created if they use Google-managed encryption instead of CMEK: Compute Engine instance backup : Backup fails if the target backup vault uses Google-managed encryption."
+        ]
+      },
+      {
+        "title": "\"Backup vault for immutable and indelible backups \\_|\\_ Backup and DR \\_\\",
+        "url": "https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backup-vault",
+        "source_id": "site-docs-reference",
+        "final_score": 169,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Supported backup vault regions Compute Engine instance No All supported locations including multi-region and cross-region Compute Engine disk No All supported locations including multi-region (and cross-region ( Preview )) Cloud SQL instance Yes All supported regions including multi-region AlloyDB cluster Yes Not multi-regions Filestore instance Yes Not multi-regions Google Cloud VMware Engine, Oracle database, and SQL Server database No Not multi-regions If a workload supports use of multi-region backup vaults, the source workload location must be compatible with the multi-region backup vault location.",
+          "What's next Create and manage a backup vault in the Google Cloud console Manage data sources in the Google Cloud console Manage backups in the Google Cloud console Create and manage a backup vault in the Google Cloud console Back up Compute Engine instances to a backup vault Back up Cloud SQL instances to a backup vault Back up AlloyDB clusters to a backup vault Back up Filestore instances to a backup vault Back up disks to a backup vault Manage data sources in the Google Cloud console Manage backups in the Google Cloud console Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Workload Managed by Compute Engine instance Google Cloud console Compute Engine disk Google Cloud console Filestore instance (invitation only) Google Cloud console Cloud SQL instance Google Cloud console AlloyDB cluster Google Cloud console Google Cloud VMware Engine, Oracle database, and SQL Server database appliance management console Note: AlloyDB clusters and Filestore instances in backup vaults are not supported for multi-regions."
+        ]
+      },
+      {
+        "title": "Compute-optimized machine family for Compute Engine \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/compute/docs/compute-optimized-machines",
+        "source_id": "site-docs-reference-2",
+        "final_score": 155,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Machine Workloads H4D machine series HPC workloads and multi-node workloads Manufacturing Weather forecasting Electronic design automation (EDA) Healthcare and life sciences Scientific computing H3 machine series HPC workloads Computational fluid dynamics Crash safety Genomics Financial modeling General scientific and engineering computing C2D machine series Memory-bound workloads Gaming (AAA game servers) High performance computing (HPC) High performance databases Electronic Design Automation (EDA) Media transcoding C2 machine series Compute-bound workloads High-performance web serving Gaming (AAA game servers) Ad serving High performance computing (HPC) Media transcoding AI/ML The following machine series are available in this machine family: H4D instances are powered by Titanium and fifth generation AMD EPYC Turin processors which have a base frequency of 2.7 GHz and a maximum frequency of 4.1 GHz.",
+          "Home Documentation Compute Compute Engine Guides Send feedback Compute-optimized machine family for Compute Engine Stay organized with collections Save and categorize content based on your preferences.",
+          "Maintenance experience for H4D instances During the lifecycle of a Compute Engine instance , the host machine that your instance runs on undergoes multiple host events ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "backupdr.googleapis.com",
+      "gcp.restrictCmekCryptoKeyProjects",
+      "gcp.restrictNonCmekServices"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/cmek",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backup-vault",
+        "https://docs.cloud.google.com/compute/docs/compute-optimized-machines"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/cmek",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backup-vault",
+        "https://docs.cloud.google.com/compute/docs/compute-optimized-machines"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/cmek",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backup-vault",
+        "https://docs.cloud.google.com/compute/docs/compute-optimized-machines"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/cmek",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backup-vault",
+        "https://docs.cloud.google.com/compute/docs/compute-optimized-machines"
+      ]
+    }
+  ]
+}

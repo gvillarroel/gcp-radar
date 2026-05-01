@@ -1,0 +1,125 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:48.769Z",
+  "source_step08_card": "data/step-08/current/products/vertex-ai-search/card.json",
+  "product_name": "Vertex AI Search",
+  "product_slug": "vertex-ai-search",
+  "feature_name": "Media Search query mode configuration and auto-selection",
+  "feature_slug": "media-search-query-mode-configuration-and-auto-selection",
+  "summary": "Media Search now supports full-query and search-as-you-type result modes, with an auto mode that dynamically selects the best mode and is enabled by default.",
+  "extended_definition": "Media Search now supports full-query and search-as-you-type result modes, with an auto mode that dynamically selects the best mode and is enabled by default.",
+  "lifecycle": {
+    "latest_feature_date": "2025-05-20",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/generative-ai-app-builder/docs/answer",
+      "https://docs.cloud.google.com/generative-ai-app-builder/docs/configure-autocomplete",
+      "https://docs.cloud.google.com/generative-ai-app-builder/docs/create-data-store-es"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Configure autocomplete \\_|\\_ Vertex AI Search \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/generative-ai-app-builder/docs/configure-autocomplete",
+        "source_id": "site-docs-reference",
+        "final_score": 168,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Example command and result curl -X PATCH \\ -H \"Authorization: Bearer $(gcloud auth print-access-token)\" \\ -H \"Content-Type: application/json\" \\$ curl -X PATCH \\ -H \"X-Goog-User-Project: my-project-123\" \\t-access-token)\" \\ https://discoveryengine.googleapis.com/v1alpha/projects/my-project-123/locations/global/collections/default collection/dataStores/my-data-store/completionConfig?updateMask=queryFrequencyThreshold \\ -d '{ \"name\": \"projects/my-project-123/locations/global/collections/default collection/dataStores/my-data-store/completionConfig\", \"queryFrequencyThreshold\": 30 }' { \"name\": \"projects/123456/locations/global/collections/default collection/dataStores/my-data-store/completionConfig\", \"matchingOrder\": \"exact-prefix\", \"maxSuggestions\": 20, \"minPrefixLength\": 1, \"queryModel\": \"automatic\", \"enableMode\": \"AUTOMATIC\", \"queryFrequencyThreshold\": 30 } Update the CompletionConfig.numUniqueUsersThreshold field: curl -X PATCH \\ -H \"Authorization: Bearer $( gcloud auth print-access-token ) \" \\ -H \"Content-Type: application/json\" \\ -H \"X-Goog-User-Project: PROJECT ID \" \\ https://discoveryengine.googleapis.com/v1alpha/projects/ PROJECT ID /locations/global/collections/default collection/dataStores/ DATA STORE ID /completionConfig?updateMask = numUniqueUsersThreshold \\ -d '{ \"name\": \"projects/ PROJECT ID /locations/global/collections/default collection/dataStores/ DATA STORE ID /completionConfig\", \"numUniqueUsersThreshold\": UNIQUE USERS }' Replace UNIQUE USERS with an integer value that represents the minimum number of unique users who must enter a given search query before it can be returned as an autocomplete suggestion.",
+          "DataStoreName ; public class SyncCompleteQuery { public static void main ( String [] args ) throws Exception { syncCompleteQuery (); } public static void syncCompleteQuery () throws Exception { // This snippet has been automatically generated and should be regarded as a code template only. // It will require modifications to work: // - It may require correct/in-range values for request initialization. // - It may require specifying regional endpoints when creating the service client as shown in // https://cloud.google.com/java/docs/setup#configure endpoints for the client library try ( CompletionServiceClient completionServiceClient = CompletionServiceClient . create ()) { CompleteQueryRequest request = CompleteQueryRequest . newBuilder () . setDataStore ( DataStoreName . ofProjectLocationDataStoreName ( \"[PROJECT]\" , \"[LOCATION]\" , \"[DATA STORE]\" ) . toString ()) . setQuery ( \"query107944136\" ) . setQueryModel ( \"queryModel-184930495\" ) . setUserPseudoId ( \"userPseudoId-1155274652\" ) . setIncludeTailSuggestions ( true ) . build (); CompleteQueryResponse response = completionServiceClient . completeQuery ( request ); } } } Node.js For more information, see the Vertex AI Search Node.js API reference documentation .",
+          "Query suggestions model Data source Website data Structured data Unstructured data Document Imported ✔ (default) ✔ (default) Completable fields Imported ✔ Search history Automatically collected ✔ (default) ✔ ✔ User events Imported or automatically collected by widget ✔ ✔ ✔ Web-crawled content Crawled from content from public websites that you specify ✔ † : The document schema must contain title or description fields, or there must be fields that have been specified as title or description key properties."
+        ]
+      },
+      {
+        "title": "Create a search data store \\_|\\_ Vertex AI Search \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/generative-ai-app-builder/docs/create-data-store-es",
+        "source_id": "site-docs-root",
+        "final_score": 144,
+        "relevance": "",
+        "evidence_snippets": [
+          "Import data from Bigtable. curl -X POST \\ -H \"Authorization: Bearer $( gcloud auth print-access-token ) \" \\ -H \"Content-Type: application/json\" \\ \"https://discoveryengine.googleapis.com/v1/projects/ PROJECT ID /locations/global/collections/default collection/dataStores/ DATA STORE ID /branches/0/documents:import\" \\ -d '{ \"bigtableSource \": { \"projectId\": \" BIGTABLE PROJECT ID \", \"instanceId\": \" INSTANCE ID \", \"tableId\": \" TABLE ID \", \"bigtableOptions\": { \"keyFieldName\": \" KEY FIELD NAME \", \"families\": { \"key\": \" KEY \", \"value\": { \"fieldName\": \" FIELD NAME \", \"encoding\": \" ENCODING \", \"type\": \" TYPE \", \"columns\": [ { \"qualifier\": \" QUALIFIER \", \"fieldName\": \" FIELD NAME \", \"encoding\": \" COLUMN ENCODING \", \"type\": \" COLUMN VALUES TYPE \" } ] } } ... } }, \"reconciliationMode\": \" RECONCILIATION MODE \", \"autoGenerateIds\": \" AUTO GENERATE IDS \", \"idField\": \" ID FIELD \", }' Replace the following: PROJECT ID : the ID of your Vertex AI Search project.",
+          "If you defined a schema, make sure the data conforms to that schema. curl -X POST \\ -H \"Authorization: Bearer $( gcloud auth print-access-token ) \" \\ -H \"Content-Type: application/json\" \\ \"https://discoveryengine.googleapis.com/v1/projects/ PROJECT ID /locations/global/collections/default collection/dataStores/ DATA STORE ID /branches/0/documents:import\" \\ -d '{ \"bigquerySource\": { \"projectId\": \" PROJECT ID \", \"datasetId\":\" DATASET ID \", \"tableId\": \" TABLE ID \", \"dataSchema\": \" DATA SCHEMA \", \"aclEnabled\": \" BOOLEAN \" }, \"reconciliationMode\": \" RECONCILIATION MODE \", \"autoGenerateIds\": \" AUTO GENERATE IDS \", \"idField\": \" ID FIELD \", \"errorConfig\": { \"gcsPrefix\": \" ERROR DIRECTORY \" } }' Replace the following: PROJECT ID : the ID of your Google Cloud project.",
+          "Import data from Spanner. curl -X POST \\ -H \"Authorization: Bearer $( gcloud auth print-access-token ) \" \\ -H \"Content-Type: application/json\" \\ \"https://discoveryengine.googleapis.com/v1/projects/ PROJECT ID /locations/global/collections/default collection/dataStores/ DATA STORE ID /branches/0/documents:import\" \\ -d '{ \"cloudSpannerSource\": { \"projectId\": \" SPANNER PROJECT ID \", \"instanceId\": \" INSTANCE ID \", \"databaseId\": \" DATABASE ID \", \"tableId\": \" TABLE ID \", \"enableDataBoost\": \" DATA BOOST BOOLEAN \" }, \"reconciliationMode\": \" RECONCILIATION MODE \", \"autoGenerateIds\": \" AUTO GENERATE IDS \", \"idField\": \" ID FIELD \", }' Replace the following: PROJECT ID : the ID of your Vertex AI Search project."
+        ]
+      },
+      {
+        "title": "Get answers and follow-ups \\_|\\_ Vertex AI Search \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/generative-ai-app-builder/docs/answer",
+        "source_id": "site-docs-reference",
+        "final_score": 144,
+        "relevance": "",
+        "evidence_snippets": [
+          "When ...\", \"snippetStatus\": \"SUCCESS\" } ] } ] } }, { \"searchAction\": { \"query\": \" What is the performance of Spanner? \" }, \"observation\": { \"searchResults\": [ { \"document\": \"projects/123456/locations/global/collections/default collection/dataStores/my-data-store/branches/0/documents/f3d036b60379873acf7c73081c5e5b5c\", \"uri\": \"https://cloud.google.com/spanner/docs/performance\", \"title\": \"Performance overview Spanner Google Cloud\", \"snippetInfo\": [ { \"snippet\": \"These \\u003cb\\u003eperformance\\u003c/b\\u003e improvements should result in higher throughput and better latency in \\u003cb\\u003eSpanner\\u003c/b\\u003e nodes in both regional and multi-region instance configurations.\", \"snippetStatus\": \"SUCCESS\" } ] }, { \"document\": \"projects/123456/locations/global/collections/default collection/dataStores/my-data-store/branches/0/documents/422496248ade354c73b4c906b8eb9b5f\", \"uri\": \"https://cloud.google.com/blog/products/databases/announcing-cloud-spanner-price-performance-updates\", \"title\": \"Announcing Cloud Spanner price-performance updates Google Cloud Blog\", \"snippetInfo\": [ { \"snippet\": \"Alongside lower costs, Cloud \\u003cb\\u003eSpanner\\u003c/b\\u003e provides single-digit ms latencies and strong consistency across multiple availability zones in the same region.\", \"snippetStatus\": \"SUCCESS\" } ] }, { \"document\": \"projects/123456/locations/global/collections/default collection/dataStores/my-data-store/branches/0/documents/53c2a1a6990480ba4aa05cc6b4404562\", \"uri\": \"https://cloud.google.com/blog/topics/developers-practitioners/understanding-cloud-spanner-performance-metrics-scale-key-visualizer\", \"title\": \"Understanding Cloud Spanner performance metrics at scale with Key Visualizer Google Cloud Blog\", \"snippetInfo\": [ { \"snippet\": \"Designed for \\u003cb\\u003eperformance\\u003c/b\\u003e tuning and instance sizing, you can use Key Visualizer today in the web-based Cloud Console for all \\u003cb\\u003eSpanner\\u003c/b\\u003e databases at no additional ...\", \"snippetStatus\": \"SUCCESS\" } ] }, ... { \"document\": \"projects/123456/locations/global/collections/default collection/dataStores/my-data-store/branches/0/documents/a6501ecd5d6391e3ade49097bab0ad3a\", \"uri\": \"https://cloud.google.com/blog/products/databases/a-technical-overview-of-cloud-spanners-query-optimizer\", \"title\": \"A technical overview of Cloud Spanner's query optimizer Google Cloud Blog\", \"snippetInfo\": [ { \"snippet\": \"... performance.",
+          "Example command and partial result curl -X POST -H \"Authorization: Bearer $(gcloud auth print-access-token)\" \\ -H \"Content-Type: application/json\" \\ \"https://discoveryengine.googleapis.com/v1/projects/123456/locations/global/collections/default collection/engines/my-app/servingConfigs/default search:answer\" \\ -d '{ \"query\": { \"text\": \"When can an NCD be made?\"}, \"groundingSpec\": { \"filtering level\": \"FILTERING LEVEL HIGH\" } }' { answer { state: SUCCEEDED answer text: \"We do not have a summary for your query.\" steps { state: SUCCEEDED description: \"Rephrase the query and search.\" actions { search action { query: \"test?\" } observation { search results { document: \"projects/123456/locations/global/collections/default collection/dataStores/my-data-store/branches/0/documents/f7f5cfde02\" uri: \"gs://my-bucket-123/data/CoverageDocumentation.pdf\" title: \"ABC345 0101\" chunk info { content: \"This notice implements part of section 731 of the Medicare Prescription Drug, Improvement, and Modernization Act of 2003 by describing a method of developing, and making available to the public, guidance documents under the Medicare program… \" } ... search results { document: \"projects/123456/locations/global/collections/default collection/dataStores/my-data-store/branches/0/documents/f7f5cfde02\" uri: \"gs://my-bucket-123/data/CoverageDocumentation.pdf\" title: \"ABC345 0101\" chunk info { content: \"For the purposes of this notice, the term guidance documents means documents prepared for our staff, potential requestors of National Coverage Determinations, and other interested parties explaining the NCD process… \" } } } } } answer skipped reasons: LOW GROUNDED CONTENT } In this example, no answer is returned because the high threshold wasn't met.",
+          "The user was seeking help to stop the automatic replies. \\n\", \"steps\": [ { \"state\": \"SUCCEEDED\", \"description\": \"Rephrase the query and search.\", \"actions\": [ { \"searchAction\": { \"query\": \"Hello!\" }, \"observation\": { \"searchResults\": [ { \"document\": \"projects/123456/locations/global/collections/default collection/dataStores/my-data-store/branches/0/documents/69e92e5b1de5b1e583fbe95f94dd4cbf\", \"uri\": \"https://support.google.com/voice/thread/152245405/google-voice-is-randomly-automatically-sending-hello-replies-to-incoming-texts?hl=en\", \"title\": \"Google voice is randomly/automatically sending \\\"Hello!\\\" replies to incoming texts\", \"snippetInfo\": [ { \"snippet\": \"There IS a new \"Smart reply\" feature on the Android or iOS client apps, but you'd have to a) receive a SMS/MMS, b) open it up, c) look at the three suggested ...\", \"snippetStatus\": \"SUCCESS\" } ] }, { \"document\": \"projects/123456/locations/global/collections/default collection/dataStores/my-data-store/branches/0/documents/44fb313bcc09877e7239f3810ddb132b\", \"uri\": \"https://support.google.com/mail/thread/58174131/gmail-sends-random-email-saying-hello-to-my-emails-without-me-touching-it?hl=en\", \"title\": \"Gmail sends random email saying \\\"Hello!!\\\" to my emails without me touching it\", \"snippetInfo\": [ { \"snippet\": \"Gmail sends random email saying \"\\u003cb\\u003eHello\\u003c/b\\u003e!!\" to my emails without me touching it."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "discoveryengine.googleapis.com",
+      "support.google.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/configure-autocomplete",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/answer",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/create-data-store-es"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/configure-autocomplete",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/answer",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/create-data-store-es"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/configure-autocomplete",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/answer",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/create-data-store-es"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/configure-autocomplete",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/answer",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/create-data-store-es"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/configure-autocomplete",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/answer",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/create-data-store-es"
+      ]
+    }
+  ]
+}

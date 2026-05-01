@@ -1,0 +1,122 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:26.812Z",
+  "source_step08_card": "data/step-08/current/products/cloud-sql-for-mysql/card.json",
+  "product_name": "Cloud SQL for MySQL",
+  "product_slug": "cloud-sql-for-mysql",
+  "feature_name": "Import and export cancellation",
+  "feature_slug": "import-and-export-cancellation",
+  "summary": "Cloud SQL supports cancelling data import and export operations for Cloud SQL for MySQL instances.",
+  "extended_definition": "Cloud SQL supports cancelling data import and export operations for Cloud SQL for MySQL instances.",
+  "lifecycle": {
+    "latest_feature_date": "2023-07-11",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/sql/docs/mysql/import-export/import-export-csv",
+      "https://docs.cloud.google.com/sql/docs/mysql/import-export/import-export-sql",
+      "https://docs.cloud.google.com/sql/docs/mysql/troubleshooting"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Export and import using CSV files \\_|\\_ Cloud SQL for MySQL \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/sql/docs/mysql/import-export/import-export-csv",
+        "source_id": "site-docs-root",
+        "final_score": 181,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Export data from your local MySQL server to a CSV file To export a MySQL table for import into Cloud SQL, we recommend that you format the file using the following command: mysql --host = INSTANCE IP --user = USER NAME --password DATABASE \\ -e \" SELECT FROM TABLE INTO OUTFILE ' FILE NAME ' CHARACTER SET 'utf8mb4' FIELDS TERMINATED BY ',' OPTIONALLY ENCLOSED BY '\\\"' ESCAPED BY '\\\"' \" You can customize the format of your CSV export file.",
+          "Home Documentation Databases Cloud SQL MySQL Guides Send feedback Export and import using CSV files Stay organized with collections Save and categorize content based on your preferences.",
+          "Export and import operations use database resources, but they do not interfere with normal database operations unless the instance is under-provisioned."
+        ]
+      },
+      {
+        "title": "\"Export and import using SQL dump files \\_|\\_ Cloud SQL for MySQL \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/sql/docs/mysql/import-export/import-export-sql",
+        "source_id": "site-docs-root",
+        "final_score": 181,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Export from your local MySQL server using mysqldump If you are exporting data from an on-premises MySQL database for import into a Cloud SQL database, you must use the mysqldump utility with the following flags: --databases You must use the --databases option to specify an explicit list of databases to export, and this list must not contain the mysql system database. --hex-blob If your database contains any binary fields, you must use this flag to ensure that your binary fields are imported correctly. --set-gtid-purged=OFF GTID information must not be included in the SQL dump file, and binary logging must not be disabled by the SQL dump file. (Not required for MySQL 5.5 or external replication.) --single-transaction Starts a transaction before running.",
+          "Home Documentation Databases Cloud SQL MySQL Guides Send feedback Export and import using SQL dump files Stay organized with collections Save and categorize content based on your preferences.",
+          "MySQL PostgreSQL SQL Server This page describes exporting and importing data into Cloud SQL instances using SQL dump files."
+        ]
+      },
+      {
+        "title": "Troubleshoot \\_|\\_ Cloud SQL for MySQL \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/sql/docs/mysql/troubleshooting",
+        "source_id": "site-docs-root",
+        "final_score": 108,
+        "relevance": "",
+        "evidence_snippets": [
+          "MySQL PostgreSQL SQL Server Check if your question or problem has already been addressed on one of the following pages: FAQ Known issues Error messages Diagnose issues Debug connection issues Orphan tables Issues updating storage capacity Topics in this page include: Backup and recovery Cancel import and export Cloning Connectivity Creating instances External primary External replica Flags High availability Import and export Logging Managing instances Private Service Connect Replication Backup and recovery Issue Troubleshooting You can't see the current operation's status.",
+          "Cloud SQL doesn't support the cancellation of the operation because it has an operation type other than IMPORT or EXPORT .",
+          "To learn more about using mysqldump flags for managed import migration, see Allowed and default initial sync flags The initial data migration was successful, but no data is being replicated."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/import-export/import-export-csv",
+        "https://docs.cloud.google.com/sql/docs/mysql/import-export/import-export-sql",
+        "https://docs.cloud.google.com/sql/docs/mysql/troubleshooting"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/import-export/import-export-csv",
+        "https://docs.cloud.google.com/sql/docs/mysql/import-export/import-export-sql",
+        "https://docs.cloud.google.com/sql/docs/mysql/troubleshooting"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/import-export/import-export-csv",
+        "https://docs.cloud.google.com/sql/docs/mysql/import-export/import-export-sql",
+        "https://docs.cloud.google.com/sql/docs/mysql/troubleshooting"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/import-export/import-export-csv",
+        "https://docs.cloud.google.com/sql/docs/mysql/import-export/import-export-sql",
+        "https://docs.cloud.google.com/sql/docs/mysql/troubleshooting"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/import-export/import-export-csv",
+        "https://docs.cloud.google.com/sql/docs/mysql/import-export/import-export-sql",
+        "https://docs.cloud.google.com/sql/docs/mysql/troubleshooting"
+      ]
+    }
+  ]
+}

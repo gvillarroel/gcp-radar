@@ -1,0 +1,121 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:22.874Z",
+  "source_step08_card": "data/step-08/current/products/cloud-build/card.json",
+  "product_name": "Cloud Build",
+  "product_slug": "cloud-build",
+  "feature_name": "gke-deploy builder",
+  "feature_slug": "gke-deploy-builder",
+  "summary": "Cloud Build introduced the gke-deploy builder.",
+  "extended_definition": "Cloud Build introduced the gke-deploy builder.",
+  "lifecycle": {
+    "latest_feature_date": "2019-06-19",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/build/docs/configuring-builds/build-test-deploy-artifacts",
+      "https://docs.cloud.google.com/build/docs/deploying-builds/deploy-cloud-run",
+      "https://docs.cloud.google.com/build/docs/deploying-builds/deploy-gke"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Deploying to GKE \\_|\\_ Cloud Build \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/build/docs/deploying-builds/deploy-gke",
+        "source_id": "site-docs-root",
+        "final_score": 143,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Building and deploying a new container image To build a new container image and deploy the new container image: Update your Kubernetes resource file with the new container image using the --image attribute: YAML steps : build the container image - name : \"gcr.io/cloud-builders/docker\" args : [ \"build\" , \"-t\" , \" LOCATION -docker.pkg.dev/ PROJECT / REPOSITORY / IMAGE NAME : TAG \" , \".\" ] push container image - name : \"gcr.io/cloud-builders/docker\" args : [ \"push\" , \" LOCATION -docker.pkg.dev/ PROJECT / REPOSITORY / IMAGE NAME : TAG \" ] deploy container image to GKE - name : \"gcr.io/cloud-builders/gke-deploy\" args : - run - --filename= KUBERNETES RESOURCE FILE - --image= LOCATION -docker.pkg.dev/ PROJECT / REPOSITORY / IMAGE NAME : TAG - --location= CLUSTER LOCATION - --cluster= CLUSTER JSON { \"steps\" : [ { \"name\" : \"gcr.io/cloud-builders/docker\" , \"args\" : [ \"build\" , \"-t\" , \" LOCATION -docker.pkg.dev/ PROJECT / REPOSITORY / IMAGE NAME : TAG \" , \".\" ] }, { \"name\" : \"gcr.io/cloud-builders/docker\" , \"args\" : [ \"push\" , \" LOCATION -docker.pkg.dev/ PROJECT / REPOSITORY / IMAGE NAME : TAG \" ] }, { \"name\" : \"gcr.io/cloud-builders/gke-deploy\" , \"args\" : [ \"run\" , \"--filename= KUBERNETES RESOURCE FILE \" , \"--image= LOCATION -docker.pkg.dev/ PROJECT / REPOSITORY / IMAGE NAME : TAG \" , \"--location= CLUSTER LOCATION \" , \"--cluster= CLUSTER \" ] } ] } Where: LOCATION is one of the supported build locations .",
+          "If you want to deploy to a different cluster, you can use the same build configuration and only need to change the values of the substitution variables: YAML steps : ... deploy container image to GKE - name : \"gcr.io/cloud-builders/gke-deploy\" args : - run - --filename= KUBERNETES RESOURCE FILE - --image= LOCATION -docker.pkg.dev/ PROJECT / REPOSITORY / IMAGE NAME : TAG - --location=${ CLOUDSDK COMPUTE ZONE} - --cluster=${ CLOUDSDK CONTAINER CLUSTER} JSON { \"steps\" : [ { \"name\" : \"gcr.io/cloud-builders/gke-deploy\" , \"args\" : [ \"run\" , \"--filename= KUBERNETES RESOURCE FILE \" , \"--image= LOCATION -docker.pkg.dev/ PROJECT / REPOSITORY / IMAGE NAME : TAG \" , \"--location=${ CLOUDSDK COMPUTE ZONE}\" , \"--cluster=${ CLOUDSDK CONTAINER CLUSTER}\" ] } ] } Where: KUBERNETES RESOURCE FILE is the path of your Kubernetes configuration file or the directory path containing your Kubernetes resource files.",
+          "Add the gke-deploy step in your build configuration file : YAML steps : ... deploy container image to GKE - name : \"gcr.io/cloud-builders/gke-deploy\" args : - run - --filename= KUBERNETES RESOURCE FILE - --location= CLUSTER LOCATION - --cluster= CLUSTER JSON { \"steps\" : [ { \"name\" : \"gcr.io/cloud-builders/gke-deploy\" , \"args\" : [ \"run\" , \"--filename= KUBERNETES RESOURCE FILE \" , \"--location= CLUSTER LOCATION \" , \"--cluster= CLUSTER \" ] } ] } Where: KUBERNETES RESOURCE FILE is the path of your Kubernetes resource file or the directory path containing your Kubernetes resource files."
+        ]
+      },
+      {
+        "title": "Deploying to Cloud Run using Cloud Build \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/build/docs/deploying-builds/deploy-cloud-run",
+        "source_id": "site-docs-root",
+        "final_score": 109,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To automate your deployment: In your repository root, add a config file named cloudbuild.yaml with steps to build the image, push the image to Artifact Registry, and then invoke the gcloud run deploy command: steps : Build the image - name : 'gcr.io/cloud-builders/docker' args : [ 'build' , '-t' , ' LOCATION -docker.pkg.dev/ PROJECT ID / REPOSITORY / IMAGE / SERVICE NAME :$COMMIT SHA' , '.' ] Push the image to Artifact Registry - name : 'gcr.io/cloud-builders/docker' args : [ 'push' , ' LOCATION -docker.pkg.dev/ PROJECT ID / REPOSITORY / IMAGE / SERVICE NAME :$COMMIT SHA' ] Deploy image to Cloud Run - name : 'gcr.io/google.com/cloudsdktool/cloud-sdk' entrypoint : gcloud args : - 'run' - 'deploy' - ' SERVICE NAME ' - '--image' - ' LOCATION -docker.pkg.dev/ PROJECT ID / REPOSITORY / IMAGE / SERVICE NAME :$COMMIT SHA' - '--region' - ' SERVICE REGION ' images : - ' LOCATION -docker.pkg.dev/ PROJECT ID / REPOSITORY / IMAGE / SERVICE NAME :$COMMIT SHA' Where: REPOSITORY is the name of the Artifact Registry repository from where you deploy your image.",
+          "In the build config file, add docker build steps to build the image and push it to Artifact Registry, and then add a gcloud build step to invoke the gcloud run deploy command to deploy the image on Cloud Run: steps : Build the image - name : 'gcr.io/cloud-builders/docker' args : [ 'build' , '-t' , ' LOCATION -docker.pkg.dev/ PROJECT ID / REPOSITORY / IMAGE ' , '.' ] Push the image to Artifact Registry - name : 'gcr.io/cloud-builders/docker' args : [ 'push' , ' LOCATION -docker.pkg.dev/ PROJECT ID / REPOSITORY / IMAGE ' ] Deploy image to Cloud Run - name : 'gcr.io/google.com/cloudsdktool/cloud-sdk' entrypoint : gcloud args : [ 'run' , 'deploy' , ' SERVICE NAME ' , '--image' , ' LOCATION -docker.pkg.dev/ PROJECT ID / REPOSITORY / IMAGE ' , '--region' , ' SERVICE REGION ' ] images : - ' LOCATION -docker.pkg.dev/ PROJECT ID / REPOSITORY / IMAGE ' Where: REPOSITORY is the name of the Artifact Registry repository from where you deploy your image.",
+          "Required Identity and Access Management permissions In the Google Cloud console, go to the settings Cloud Build Permissions page: Go to Permissions For your specified Cloud Build service account or default Cloud Build service account , set the status of the following roles to Enabled : Cloud Run Admin ( roles/run.admin ) Lets Cloud Build deploy new services to Cloud Run."
+        ]
+      },
+      {
+        "title": "Deploying to Cloud Run using Cloud Build \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/build/docs/configuring-builds/build-test-deploy-artifacts",
+        "source_id": "site-docs-root",
+        "final_score": 99,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To automate your deployment: In your repository root, add a config file named cloudbuild.yaml with steps to build the image, push the image to Artifact Registry, and then invoke the gcloud run deploy command: steps : Build the image - name : 'gcr.io/cloud-builders/docker' args : [ 'build' , '-t' , ' LOCATION -docker.pkg.dev/ PROJECT ID / REPOSITORY / IMAGE / SERVICE NAME :$COMMIT SHA' , '.' ] Push the image to Artifact Registry - name : 'gcr.io/cloud-builders/docker' args : [ 'push' , ' LOCATION -docker.pkg.dev/ PROJECT ID / REPOSITORY / IMAGE / SERVICE NAME :$COMMIT SHA' ] Deploy image to Cloud Run - name : 'gcr.io/google.com/cloudsdktool/cloud-sdk' entrypoint : gcloud args : - 'run' - 'deploy' - ' SERVICE NAME ' - '--image' - ' LOCATION -docker.pkg.dev/ PROJECT ID / REPOSITORY / IMAGE / SERVICE NAME :$COMMIT SHA' - '--region' - ' SERVICE REGION ' images : - ' LOCATION -docker.pkg.dev/ PROJECT ID / REPOSITORY / IMAGE / SERVICE NAME :$COMMIT SHA' Where: REPOSITORY is the name of the Artifact Registry repository from where you deploy your image.",
+          "In the build config file, add docker build steps to build the image and push it to Artifact Registry, and then add a gcloud build step to invoke the gcloud run deploy command to deploy the image on Cloud Run: steps : Build the image - name : 'gcr.io/cloud-builders/docker' args : [ 'build' , '-t' , ' LOCATION -docker.pkg.dev/ PROJECT ID / REPOSITORY / IMAGE ' , '.' ] Push the image to Artifact Registry - name : 'gcr.io/cloud-builders/docker' args : [ 'push' , ' LOCATION -docker.pkg.dev/ PROJECT ID / REPOSITORY / IMAGE ' ] Deploy image to Cloud Run - name : 'gcr.io/google.com/cloudsdktool/cloud-sdk' entrypoint : gcloud args : [ 'run' , 'deploy' , ' SERVICE NAME ' , '--image' , ' LOCATION -docker.pkg.dev/ PROJECT ID / REPOSITORY / IMAGE ' , '--region' , ' SERVICE REGION ' ] images : - ' LOCATION -docker.pkg.dev/ PROJECT ID / REPOSITORY / IMAGE ' Where: REPOSITORY is the name of the Artifact Registry repository from where you deploy your image.",
+          "Required Identity and Access Management permissions In the Google Cloud console, go to the settings Cloud Build Permissions page: Go to Permissions For your specified Cloud Build service account or default Cloud Build service account , set the status of the following roles to Enabled : Cloud Run Admin ( roles/run.admin ) Lets Cloud Build deploy new services to Cloud Run."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cloudbuild.yaml",
+      "docker.pkg.dev",
+      "gcr.io",
+      "run.admin"
+    ],
+    "missing_inventory_roles": [
+      "roles/run.admin"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/build/docs/deploying-builds/deploy-gke",
+        "https://docs.cloud.google.com/build/docs/deploying-builds/deploy-cloud-run",
+        "https://docs.cloud.google.com/build/docs/configuring-builds/build-test-deploy-artifacts"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/build/docs/deploying-builds/deploy-gke",
+        "https://docs.cloud.google.com/build/docs/deploying-builds/deploy-cloud-run",
+        "https://docs.cloud.google.com/build/docs/configuring-builds/build-test-deploy-artifacts"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/build/docs/deploying-builds/deploy-gke",
+        "https://docs.cloud.google.com/build/docs/deploying-builds/deploy-cloud-run",
+        "https://docs.cloud.google.com/build/docs/configuring-builds/build-test-deploy-artifacts"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/build/docs/deploying-builds/deploy-gke",
+        "https://docs.cloud.google.com/build/docs/deploying-builds/deploy-cloud-run",
+        "https://docs.cloud.google.com/build/docs/configuring-builds/build-test-deploy-artifacts"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,161 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:28.926Z",
+  "source_step08_card": "data/step-08/current/products/cloud-vpn/card.json",
+  "product_name": "Cloud VPN",
+  "product_slug": "cloud-vpn",
+  "feature_name": "VPN tunnel utilization recommender",
+  "feature_slug": "vpn-tunnel-utilization-recommender",
+  "summary": "Cloud VPN provides a recommender that identifies VPN tunnel overutilization.",
+  "extended_definition": "Cloud VPN provides a recommender that identifies VPN tunnel overutilization.",
+  "lifecycle": {
+    "latest_feature_date": "2021-06-08",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/network-connectivity/docs/vpn/concepts/topologies",
+      "https://docs.cloud.google.com/network-connectivity/docs/vpn/how-to/creating-ha-vpn",
+      "https://docs.cloud.google.com/network-connectivity/docs/vpn/how-to/moving-to-ha-vpn",
+      "https://docs.cloud.google.com/network-connectivity/docs/vpn/how-to/viewing-logs-metrics"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "View logs and metrics \\_|\\_ Cloud VPN \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/network-connectivity/docs/vpn/how-to/viewing-logs-metrics",
+        "source_id": "site-docs-root",
+        "final_score": 143,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For example, if you want to view traffic bandwidth traversing the VPN tunnel between Google Cloud and the on-premises network, expand the entities until you see that VPN tunnel connection.",
+          "Setting 50% alerting policies on your Cloud VPN tunnel bandwidth usage helps to ensure that you have sufficient capacity in the event of tunnel failover.",
+          "The Monitoring tab includes various metrics that help you quickly monitor the selected Cloud VPN tunnel."
+        ]
+      },
+      {
+        "title": "Create an HA VPN gateway to a peer VPN gateway \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/network-connectivity/docs/vpn/how-to/creating-ha-vpn",
+        "source_id": "site-docs-root",
+        "final_score": 140,
+        "relevance": "",
+        "evidence_snippets": [
+          "For the second VPN tunnel Add a second interface to the Cloud Router. gcloud compute routers add-interface ROUTER NAME \\ --interface-name= ROUTER INTERFACE NAME 1 \\ --vpn-tunnel= TUNNEL NAME 1 \\ --region= REGION \\ --ip-version=IPV6 Add a BGP peer configuration to the interface for the second tunnel . gcloud compute routers add-bgp-peer ROUTER NAME \\ --peer-name= PEER NAME 1 \\ --peer-asn= PEER ASN \\ --interface= ROUTER INTERFACE NAME 1 \\ --region= REGION \\ --enable-ipv4 \\ --ipv4-nexthop-address= IPV4 NEXTHOP ADDRESS \\ --peer-ipv4-nexthop-address= PEER IPV4 NEXTHOP ADDRESS In the following commands, replace the following: PEER NAME 1 with a name for the peer VPN interface PEER ASN with the ASN configured for the peer VPN gateway IPV4 NEXTHOP ADDRESS : the next hop address for IPv4 routes that are advertised by Cloud Router; the address must be in the 169.254.0.0/16 IPv4 address range PEER IPV4 NEXTHOP ADDRESS : the next hop address for IPv4 routes that are learned by Cloud Router from the BGP peer; the address must be in the 169.254.0.0/16 IPv4 address range API To create BGP sessions, follow these steps: To create a Cloud Router interface and assign it an IPv6 address, make either a PATCH or UPDATE request by using the routers.patch method or the routers.update method .",
+          "Note: The VPN tunnels that you create aren't available until the corresponding partner tunnels have been created on your peer VPN gateway or gateways. gcloud compute vpn-tunnels create TUNNEL NAME IF0 \\ --peer-external-gateway= PEER GW NAME \\ --peer-external-gateway-interface= PEER EXT GW IF0 \\ --region= REGION \\ --ike-version= IKE VERS \\ --shared-secret= SHARED SECRET \\ --router= ROUTER NAME \\ --vpn-gateway= GW NAME \\ [--vpn-gateway-region= VPN GATEWAY REGION ] \\ --interface= INT NUM 0 gcloud compute vpn-tunnels create TUNNEL NAME IF1 \\ --peer-external-gateway= PEER GW NAME \\ --peer-external-gateway-interface= PEER EXT GW IF1 \\ --region= REGION \\ --ike-version= IKE VERS \\ --shared-secret= SHARED SECRET \\ --router= ROUTER NAME \\ --vpn-gateway= GW NAME \\ [--vpn-gateway-region= VPN GATEWAY REGION ] \\ --interface= INT NUM 1 Replace the following: TUNNEL NAME IF0 and TUNNEL NAME IF1 : a name for the tunnel; naming the tunnels by including the gateway interface name can help identify the tunnels later PEER GW NAME : a name of the external peer gateway created earlier PEER EXT GW IF0 and PEER EXT GW IF1 : the interface number configured earlier on the external peer gateway IKE VERS : 1 for IKEv1 or 2 for IKEv2; if possible, use IKEv2 for the IKE version.",
+          "For example, to configure ciphers for the VPN tunnel 0, run the following command: POST https://www.googleapis.com/compute/{version}/projects/ PROJECT ID /regions/ REGION /vpntunnels/ha-vpn-gw-a-tunnel-0 { \"name\": \"ha-vpn-gw-a-tunnel-0\", \"ikeVersion\": 2, \"peerExternalGateway\": \"https://www.googleapis.com/compute/v1/projects/ PROJECT ID /global/externalVpnGateways/my-peer-gateway\", \"peerExternalGatewayInterface\": 0, \"router\": \"https://www.googleapis.com/compute/v1/projects/ PROJECT ID /regions/ REGION /routers/router-a\", \"sharedSecret\": \" SHARED SECRET \", \"vpnGateway\": \"https://www.googleapis.com/compute/v1/projects/ PROJECT ID /regions/ REGION /vpnGateways/ha-vpn-gw-a\", \"vpnGatewayInterface\": 0 \"ciphers\": { \"phase1\": { \"encryption\": \"3DES-CBC,AES-GCM-16-192,AES-GCM-16-256\", \"integrity\": \"AES-XCBC-96,HMAC-SHA2-256-128\", \"prf\": \"PRF-AES128-XCBC,PRF-AES128-CMAC,PRF-HMAC-SHA1\", \"dh\": \"Group-14,Group-15,Group-16\" }, \"phase2\": { \"encryption\": \"AES-CBC-128,AES-GCM-16-192,AES-GCM-16-256\", \"integrity\": \"HMAC-SHA2-256-128,HMAC-SHA2-512-256\", \"pfs\": \"Group-14,Group-15,Group-16\" } } } For phase 1, specify the following values: encryption : a comma-separated list of encryption algorithms that are supported for phase 1 IKE security association (SA) negotiations."
+        ]
+      },
+      {
+        "title": "HA VPN topologies \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/network-connectivity/docs/vpn/concepts/topologies",
+        "source_id": "site-docs-root",
+        "final_score": 140,
+        "relevance": "",
+        "evidence_snippets": [
+          "Two tunnels on each of the following interfaces on the HA VPN gateway connect to the interfaces on the VM: Tunnel 0 from interface 0 to us-central1-vm-a in the us-central1-a zone Tunnel 1 from interface 1 to us-central1-vm-a in the us-central1-a zone Tunnel 2 from interface 0 to us-central1-vm-b in the us-central1-b zone Tunnel 3 from interface 1 to us-central1-vm-b in the us-central1-b zone Connect HA VPN gateway HA VPN to a single VM instance HA VPN lets you connect a HA VPN gateway to a Compute Engine virtual machine (VM) instance that works as a network virtual appliance and runs an IPsec VPN implementation.",
+          "Configure for 99.9% availability SLA To help ensure 99.9% availability SLA if the VPN gateways are in different regions, configure each HA VPN gateway with two tunnels so that both of the following are true: Tunnel 0 connects interface 0 on one HA VPN gateway to interface 0 on the other HA VPN gateway.",
+          "The following example does not provide 99.99% availability SLA: HA VPN interface 0 to peer interface 0 A topology that doesn't provide high availability (click to enlarge) Active-active and active-passive routing options for HA VPN If a Cloud VPN tunnel goes down, it restarts automatically."
+        ]
+      },
+      {
+        "title": "Move from Classic VPN to HA VPN \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/network-connectivity/docs/vpn/how-to/moving-to-ha-vpn",
+        "source_id": "site-docs-root",
+        "final_score": 132,
+        "relevance": "",
+        "evidence_snippets": [
+          "Verify that the new tunnels are working , and check the configuration of your HA VPN gateway for high availability.",
+          "Migration steps To move from Classic VPN to HA VPN gateways and tunnels, perform the following steps: Create a new HA VPN gateway, Cloud Router, and VPN tunnels to connect your Virtual Private Cloud network to your peer network.",
+          "Create Cloud Routers When configuring a new HA VPN gateway, you can create a new Cloud Router, or you can use an existing Cloud Router with existing Cloud VPN tunnels or VLAN attachments."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "routers.patch",
+      "routers.update"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-connectivity/docs/vpn/how-to/viewing-logs-metrics",
+        "https://docs.cloud.google.com/network-connectivity/docs/vpn/how-to/creating-ha-vpn",
+        "https://docs.cloud.google.com/network-connectivity/docs/vpn/concepts/topologies",
+        "https://docs.cloud.google.com/network-connectivity/docs/vpn/how-to/moving-to-ha-vpn"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-connectivity/docs/vpn/how-to/viewing-logs-metrics",
+        "https://docs.cloud.google.com/network-connectivity/docs/vpn/how-to/creating-ha-vpn",
+        "https://docs.cloud.google.com/network-connectivity/docs/vpn/concepts/topologies",
+        "https://docs.cloud.google.com/network-connectivity/docs/vpn/how-to/moving-to-ha-vpn"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-connectivity/docs/vpn/how-to/viewing-logs-metrics",
+        "https://docs.cloud.google.com/network-connectivity/docs/vpn/how-to/creating-ha-vpn",
+        "https://docs.cloud.google.com/network-connectivity/docs/vpn/concepts/topologies",
+        "https://docs.cloud.google.com/network-connectivity/docs/vpn/how-to/moving-to-ha-vpn"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-connectivity/docs/vpn/how-to/viewing-logs-metrics",
+        "https://docs.cloud.google.com/network-connectivity/docs/vpn/how-to/creating-ha-vpn",
+        "https://docs.cloud.google.com/network-connectivity/docs/vpn/concepts/topologies",
+        "https://docs.cloud.google.com/network-connectivity/docs/vpn/how-to/moving-to-ha-vpn"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-connectivity/docs/vpn/how-to/viewing-logs-metrics",
+        "https://docs.cloud.google.com/network-connectivity/docs/vpn/how-to/creating-ha-vpn",
+        "https://docs.cloud.google.com/network-connectivity/docs/vpn/concepts/topologies",
+        "https://docs.cloud.google.com/network-connectivity/docs/vpn/how-to/moving-to-ha-vpn"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-connectivity/docs/vpn/how-to/viewing-logs-metrics",
+        "https://docs.cloud.google.com/network-connectivity/docs/vpn/how-to/creating-ha-vpn",
+        "https://docs.cloud.google.com/network-connectivity/docs/vpn/concepts/topologies",
+        "https://docs.cloud.google.com/network-connectivity/docs/vpn/how-to/moving-to-ha-vpn"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-connectivity/docs/vpn/how-to/viewing-logs-metrics",
+        "https://docs.cloud.google.com/network-connectivity/docs/vpn/how-to/creating-ha-vpn",
+        "https://docs.cloud.google.com/network-connectivity/docs/vpn/concepts/topologies",
+        "https://docs.cloud.google.com/network-connectivity/docs/vpn/how-to/moving-to-ha-vpn"
+      ]
+    }
+  ]
+}

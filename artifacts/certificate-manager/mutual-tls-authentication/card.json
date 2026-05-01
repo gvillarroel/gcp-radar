@@ -1,0 +1,132 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:22.422Z",
+  "source_step08_card": "data/step-08/current/products/certificate-manager/card.json",
+  "product_name": "Certificate Manager",
+  "product_slug": "certificate-manager",
+  "feature_name": "Mutual TLS authentication",
+  "feature_slug": "mutual-tls-authentication",
+  "summary": "Certificate Manager supports Mutual TLS (mTLS) authentication; Certificate Manager supports Mutual TLS (mTLS) authentication in public preview.",
+  "extended_definition": "Certificate Manager provides mTLS-related security resources including trust configs, trust stores, and trust anchors that are described specifically for use in mutual TLS (mTLS) authentication scenarios. Its deployment and core-component documentation points to Cloud Load Balancing for the mTLS workflow, indicating the feature is implemented as part of Certificate Manager assets used in mTLS setups.",
+  "lifecycle": {
+    "latest_feature_date": "2023-09-28",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/certificate-manager/docs/audit-logging-publicca",
+      "https://docs.cloud.google.com/certificate-manager/docs/core-components",
+      "https://docs.cloud.google.com/certificate-manager/docs/deploy"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Deployment overview \\_|\\_ Certificate Manager \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/certificate-manager/docs/deploy",
+        "source_id": "site-docs-root",
+        "final_score": 35,
+        "relevance": "",
+        "evidence_snippets": [
+          "If you want to use mutual TLS authentication (mTLS), see Mutual TLS authentication in the Cloud Load Balancing documentation."
+        ]
+      },
+      {
+        "title": "Core components of Certificate Manager \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/certificate-manager/docs/core-components",
+        "source_id": "site-iam-reference",
+        "final_score": 33,
+        "relevance": "",
+        "evidence_snippets": [
+          "To learn more about mutual TLS (mTLS) authentication, see Mutual TLS overview in the Cloud Load Balancing documentation.",
+          "Trust configs A trust config is a resource that represents your public key infrastructure (PKI) configuration in Certificate Manager for use in mutual TLS authentication scenarios.",
+          "Trust stores A trust store represents the trust secret configuration in Certificate Manager for use in mutual TLS authentication scenarios."
+        ]
+      },
+      {
+        "title": "\"Public Certificate Authority audit logging \\_|\\_ Certificate Manager \\_\\",
+        "url": "https://docs.cloud.google.com/certificate-manager/docs/audit-logging-publicca",
+        "source_id": "site-iam-reference",
+        "final_score": 30,
+        "relevance": "",
+        "evidence_snippets": []
+      }
+    ],
+    "evidence_summary": "The cited docs confirm that Certificate Manager defines trust-oriented resources for mTLS and references mTLS setup guidance through Cloud Load Balancing."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/certificate-manager/docs/core-components",
+        "https://docs.cloud.google.com/certificate-manager/docs/deploy",
+        "https://docs.cloud.google.com/certificate-manager/docs/audit-logging-publicca"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/certificate-manager/docs/core-components",
+        "https://docs.cloud.google.com/certificate-manager/docs/deploy",
+        "https://docs.cloud.google.com/certificate-manager/docs/audit-logging-publicca"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/certificate-manager/docs/core-components",
+        "https://docs.cloud.google.com/certificate-manager/docs/deploy",
+        "https://docs.cloud.google.com/certificate-manager/docs/audit-logging-publicca"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/certificate-manager/docs/core-components",
+        "https://docs.cloud.google.com/certificate-manager/docs/deploy",
+        "https://docs.cloud.google.com/certificate-manager/docs/audit-logging-publicca"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/certificate-manager/docs/core-components",
+        "https://docs.cloud.google.com/certificate-manager/docs/deploy",
+        "https://docs.cloud.google.com/certificate-manager/docs/audit-logging-publicca"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/certificate-manager/docs/core-components",
+        "https://docs.cloud.google.com/certificate-manager/docs/deploy",
+        "https://docs.cloud.google.com/certificate-manager/docs/audit-logging-publicca"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/certificate-manager/docs/core-components",
+        "https://docs.cloud.google.com/certificate-manager/docs/deploy",
+        "https://docs.cloud.google.com/certificate-manager/docs/audit-logging-publicca"
+      ]
+    }
+  ]
+}

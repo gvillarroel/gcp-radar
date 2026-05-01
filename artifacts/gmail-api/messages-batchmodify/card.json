@@ -1,0 +1,168 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:38.402Z",
+  "source_step08_card": "data/step-08/current/products/gmail-api/card.json",
+  "product_name": "Gmail API",
+  "product_slug": "gmail-api",
+  "feature_name": "messages.batchModify",
+  "feature_slug": "messages-batchmodify",
+  "summary": "The messages.batchModify method modifies labels on multiple messages in a single batch operation.",
+  "extended_definition": "The messages.batchModify method modifies labels on multiple messages in a single batch operation.",
+  "lifecycle": {
+    "latest_feature_date": "2016-11-30",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/workspace/gmail/api/reference/quota",
+      "https://developers.google.com/workspace/gmail/api/reference/rest",
+      "https://developers.google.com/workspace/gmail/api/reference/rest/v1/users.messages/batchModify"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Method: users.messages.batchModify \\_|\\_ Gmail \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/workspace/gmail/api/reference/rest/v1/users.messages/batchModify",
+        "source_id": "site-docs-reference",
+        "final_score": 214,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Home Google Workspace Gmail Reference Send feedback Method: users.messages.batchModify Stay organized with collections Save and categorize content based on your preferences.",
+          "HTTP request POST https://gmail.googleapis.com/gmail/v1/users/{userId}/messages/batchModify The URL uses gRPC Transcoding syntax.",
+          "Modifies the labels on the specified messages."
+        ]
+      },
+      {
+        "title": "Usage limits \\_|\\_ Gmail \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/workspace/gmail/api/reference/quota",
+        "source_id": "site-docs-reference",
+        "final_score": 108,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "The following table outlines the per-method quota unit usage: Method Quota units drafts.create 10 drafts.delete 10 drafts.get 5 drafts.list 5 drafts.send 100 drafts.update 15 getProfile 1 history.list 2 labels.create 5 labels.delete 5 labels.get 1 labels.list 1 labels.update 5 messages.attachments.get 5 messages.batchDelete 50 messages.batchModify 50 messages.delete 10 messages.get 5 messages.import 25 messages.insert 25 messages.list 5 messages.modify 5 messages.send 100 messages.trash 5 messages.untrash 5 settings.delegates.create 100 settings.delegates.delete 5 settings.delegates.get 1 settings.delegates.list 1 settings.filters.create 5 settings.filters.delete 5 settings.filters.get 1 settings.filters.list 1 settings.forwardingAddresses.create 100 settings.forwardingAddresses.delete 5 settings.forwardingAddresses.get 1 settings.forwardingAddresses.list 1 settings.getAutoForwarding 1 settings.getImap 1 settings.getPop 1 settings.getVacation 1 settings.sendAs.create 100 settings.sendAs.delete 5 settings.sendAs.get 1 settings.sendAs.list 1 settings.sendAs.update 100 settings.sendAs.verify 100 settings.updateAutoForwarding 5 settings.updateImap 5 settings.updatePop 100 settings.updateVacation 5 stop 50 threads.delete 20 threads.get 10 threads.list 10 threads.modify 10 threads.trash 10 threads.untrash 10 watch 100 When using the Gmail API, there's also a limit of 500 recipients per email message.",
+          "Per-method quota usage The number of quota units consumed by a request varies depending on the method called.",
+          "The Gmail API is subject to usage limits which restrict the rate at which methods of the API can be called."
+        ]
+      },
+      {
+        "title": "Gmail API \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/workspace/gmail/api/reference/rest",
+        "source_id": "site-docs-reference",
+        "final_score": 106,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "REST Resource: v1.users.messages Methods batchDelete POST /gmail/v1/users/{userId}/messages/batchDelete Deletes many messages by message ID. batchModify POST /gmail/v1/users/{userId}/messages/batchModify Modifies the labels on the specified messages. delete DELETE /gmail/v1/users/{userId}/messages/{id} Immediately and permanently deletes the specified message. get GET /gmail/v1/users/{userId}/messages/{id} Gets the specified message. import POST /gmail/v1/users/{userId}/messages/import POST /upload/gmail/v1/users/{userId}/messages/import Imports a message into only this user's mailbox, with standard email delivery scanning and classification similar to receiving via SMTP. insert POST /gmail/v1/users/{userId}/messages POST /upload/gmail/v1/users/{userId}/messages Directly inserts a message into only this user's mailbox similar to IMAP APPEND , bypassing most scanning and classification. list GET /gmail/v1/users/{userId}/messages Lists the messages in the user's mailbox. modify POST /gmail/v1/users/{userId}/messages/{id}/modify Modifies the labels on the specified message. send POST /gmail/v1/users/{userId}/messages/send POST /upload/gmail/v1/users/{userId}/messages/send Sends the specified message to the recipients in the To , Cc , and Bcc headers. trash POST /gmail/v1/users/{userId}/messages/{id}/trash Moves the specified message to the trash. untrash POST /gmail/v1/users/{userId}/messages/{id}/untrash Removes the specified message from the trash.",
+          "REST Resource: v1.users.threads Methods delete DELETE /gmail/v1/users/{userId}/threads/{id} Immediately and permanently deletes the specified thread. get GET /gmail/v1/users/{userId}/threads/{id} Gets the specified thread. list GET /gmail/v1/users/{userId}/threads Lists the threads in the user's mailbox. modify POST /gmail/v1/users/{userId}/threads/{id}/modify Modifies the labels applied to the thread. trash POST /gmail/v1/users/{userId}/threads/{id}/trash Moves the specified thread to the trash. untrash POST /gmail/v1/users/{userId}/threads/{id}/untrash Removes the specified thread from the trash.",
+          "REST Resource: v1.users.labels Methods create POST /gmail/v1/users/{userId}/labels Creates a new label. delete DELETE /gmail/v1/users/{userId}/labels/{id} Immediately and permanently deletes the specified label and removes it from any messages and threads that it is applied to. get GET /gmail/v1/users/{userId}/labels/{id} Gets the specified label. list GET /gmail/v1/users/{userId}/labels Lists all labels in the user's mailbox. patch PATCH /gmail/v1/users/{userId}/labels/{id} Patch the specified label. update PUT /gmail/v1/users/{userId}/labels/{id} Updates the specified label."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "developers.google.com",
+      "drafts.create",
+      "drafts.delete",
+      "drafts.get",
+      "drafts.list",
+      "drafts.send",
+      "drafts.update",
+      "gmail.googleapis.com",
+      "history.list",
+      "labels.create",
+      "labels.delete",
+      "labels.get",
+      "labels.list",
+      "labels.update",
+      "messages.attachments.get",
+      "messages.batchDelete",
+      "messages.batchModify",
+      "messages.delete",
+      "messages.get",
+      "messages.import",
+      "messages.insert",
+      "messages.list",
+      "messages.modify",
+      "messages.send",
+      "messages.trash",
+      "messages.untrash",
+      "settings.delegates.create",
+      "settings.delegates.delete",
+      "settings.delegates.get",
+      "settings.delegates.list",
+      "settings.filters.create",
+      "settings.filters.delete",
+      "settings.filters.get",
+      "settings.filters.list",
+      "settings.forwardingAddresses.create",
+      "settings.forwardingAddresses.delete",
+      "settings.forwardingAddresses.get",
+      "settings.forwardingAddresses.list",
+      "settings.getAutoForwarding",
+      "settings.getImap",
+      "settings.getPop",
+      "settings.getVacation",
+      "settings.sendAs.create",
+      "settings.sendAs.delete",
+      "settings.sendAs.get",
+      "settings.sendAs.list",
+      "settings.sendAs.update",
+      "settings.sendAs.verify",
+      "settings.updateAutoForwarding",
+      "settings.updateImap",
+      "settings.updatePop",
+      "settings.updateVacation",
+      "threads.delete",
+      "threads.get",
+      "threads.list",
+      "threads.modify",
+      "threads.trash",
+      "threads.untrash",
+      "users.messages",
+      "users.messages.batchDelete",
+      "users.messages.batchModify",
+      "users.messages.list",
+      "v1.users",
+      "v1.users.drafts",
+      "v1.users.history",
+      "v1.users.labels",
+      "v1.users.messages",
+      "v1.users.messages.attachments",
+      "v1.users.settings",
+      "v1.users.settings.cse.identities",
+      "v1.users.settings.cse.keypairs",
+      "v1.users.settings.delegates",
+      "v1.users.settings.filters",
+      "v1.users.settings.forwardingAddresses",
+      "v1.users.settings.sendAs",
+      "v1.users.settings.sendAs.smimeInfo",
+      "v1.users.threads"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://developers.google.com/workspace/gmail/api/reference/rest/v1/users.messages/batchModify",
+        "https://developers.google.com/workspace/gmail/api/reference/quota",
+        "https://developers.google.com/workspace/gmail/api/reference/rest"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,221 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:14.044Z",
+  "source_step08_card": "data/step-08/current/products/apigee-advanced-api-security/card.json",
+  "product_name": "Apigee Advanced API Security",
+  "product_slug": "apigee-advanced-api-security",
+  "feature_name": "Terraform management of Abuse Detection exclusion lists",
+  "feature_slug": "terraform-management-of-abuse-detection-exclusion-lists",
+  "summary": "Terraform support was added to create and manage Abuse Detection exclusion lists for excluding safe CIDR ranges or IP addresses from incident reporting.",
+  "extended_definition": "Terraform support was added to create and manage Abuse Detection exclusion lists for excluding safe CIDR ranges or IP addresses from incident reporting.",
+  "lifecycle": {
+    "latest_feature_date": "2026-01-12",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/apigee/docs/api-platform/get-started/terraform-overview",
+      "https://docs.cloud.google.com/apigee/docs/api-security/abuse-detection",
+      "https://docs.cloud.google.com/apigee/docs/api-security/security-actions"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Abuse detection \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-security/abuse-detection",
+        "source_id": "site-docs-reference-required-7",
+        "final_score": 174,
+        "relevance": "",
+        "evidence_snippets": [
+          "Exclude traffic from abuse detection by adding attributes to exclusion lists , which specify the traffic to exclude and the reasons why.",
+          "Manage exclusion lists To manage exclusion lists directly: Select an environment for abuse detection.",
+          "Exclusion lists Exclusion lists collect the attributes to exclude from detection."
+        ]
+      },
+      {
+        "title": "Use Terraform with Apigee \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-platform/get-started/terraform-overview",
+        "source_id": "site-docs-root-2",
+        "final_score": 120,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Provision API hub with Terraform Configure Advanced API Security Configure risk assessment security profiles and monitoring conditions (v2) Configure abuse detection exclusion lists Configure security actions Configure Advanced API Security with Terraform Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Enable the Cloud Resource Manager and Identity, Access Management (IAM) APIs: Roles required to enable APIs To enable APIs, you need the Service Usage Admin IAM role ( roles/serviceusage.serviceUsageAdmin ), which contains the serviceusage.services.enable permission.",
+          "Before you begin In order to set up Terraform for your Apigee project: Prepare your development environment, either Cloud Shell or a local shell: Cloud Shell To use an online terminal with the gcloud CLI and Terraform already set up, activate Cloud Shell."
+        ]
+      },
+      {
+        "title": "Security actions overview and UI | Apigee | Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-security/security-actions",
+        "source_id": "feature-recovery-direct-http",
+        "final_score": 118,
+        "relevance": "",
+        "evidence_snippets": [
+          "API MONITORING API Monitoring overview Compare API Monitoring with Apigee Analytics Using the Timeline view Using the Investigate view Using the Recent view Setting up alerts and notifications Examples of alerts Fault codes ADVANCED API SECURITY Overview of Advanced API Security Apigee and Apigee hybrid Overview Getting started Detection rules Best practices Security reports Overview Manage security reports in the UI Manage security reports using the API Risk assessment Risk assessment overview and UI Security scores and profiles API Abuse detection Abuse detection UI Security stats API Incidents API Security feedback API Security alerts Security actions Security actions overview and UI Security actions API Multi-gateway risk assessment Overview API OBSERVATION Overview of API Observation Shadow APIs Shadow API Discovery overview Shadow API Discovery management APIs Shadow API Discovery audit logging Application Integration Use Application Integration Application Integration and Apigee proxy Integration target Subscription entitlements Application Integration policies IntegrationCallout policy SetIntegrationRequest policy Connectors Overview Get started with connectors Release notes API HUB What is Apigee API hub?",
+          "Provision API hub Provision using Cloud console Provision using Command line Provision using Terraform Get started with API hub Quickstarts Overview Auto-register Apigee proxies Register an API Create an API version Create and edit attributes Create an Eventarc trigger API resources Overview Register an API Register MCP APIs Manage API resources Auto-register APIs View API resource insights View security scores for APIs Manage API resources Versions Overview Manage versions Operations and MCP tools Overview Manage operations Manage MCP tools Specifications Overview Manage specifications Deployments Overview Manage deployments API supply chain Overview Create a dependency Manage dependencies API observations in API hub Overview Configure API observations in API hub Manage API observations in API hub Advanced API security for multiple Apigee organizations and gateways Advanced API security for multi-gateway projects Configure Advanced API security for multi-gateway projects View security scores across all projects and gateways Manage security profiles for multi-gateway assessments Manage monitoring conditions for multi-gateway assessments Advanced API security advisor tool API insights Overview Configure API insights in API hub API insights dashboards Add-on management Manage add-ons Validate OpenAPI specification Search APIs using semantic search Specification boost Settings Overview Manage attributes Manage project associations Plugins Overview Manage Google Cloud plugins and plugin instances Manage third-party plugins and plugin instances Manage custom plugins and plugin instances Create plugin instances Manage plugins instances Curations Overview Create curations Manage curations Actions Overview Manage Agent Registry integration Deprovision API hub Audit logging for API hub Access Control Predefined IAM roles Add IAM conditions Attach and manage tags VPC Service Controls for API hub gcloud CLI for API hub API hub locations Tutorials Enrich API data with custom curation in API hub Ingest Azure API data into API hub Reference Limits REST Reference v1 Overview Resources REST Resources projects.locations Overview collectApiData get list lookupRuntimeProjectAttachment retrieveApiViews searchResources projects.locations.addons Overview get list manageConfig projects.locations.apiHubInstances Overview create delete get lookup projects.locations.apis Overview create delete get list patch projects.locations.apis.versions Overview create delete get list patch projects.locations.apis.versions.definitions Overview get projects.locations.apis.versions.operations Overview create delete get list patch projects.locations.apis.versions.specs Overview create delete fetchAdditionalSpecContent get getContents lint list patch projects.locations.attributes Overview create delete get list patch projects.locations.curations Overview create delete get list patch projects.locations.dependencies Overview create delete get list patch projects.locations.deployments Overview create delete get list patch projects.locations.discoveredApiObservations Overview get list projects.locations.discoveredApiObservations.discoveredApiOperations Overview get list projects.locations.externalApis Overview create delete get list patch projects.locations.hostProjectRegistrations Overview create get list projects.locations.operations Overview cancel delete get list projects.locations.plugins Overview create delete disable enable get getStyleGuide list updateStyleGuide projects.locations.plugins.instances Overview create delete disableAction enableAction executeAction get list manageSourceData patch projects.locations.plugins.styleGuide Overview getContents projects.locations.runtimeProjectAttachments Overview create delete get list Types AggregationFunction AllowedValue AttributeValues AuthType CollectApiDataResponse ConfigValueOption DisablePluginInstanceActionResponse Documentation EnablePluginInstanceActionResponse EnumerateExtendedApisRequest EnumerateExtendedApisResponse ExecutePluginInstanceActionResponse GoogleServiceAccountConfig HttpOperation InitializeSystemOwnedPluginRequest InitializeSystemOwnedPluginResponse InsightsMetric OperationMetadata Owner QueryApiMetricsRequest QueryApiMetricsResponse QueryDependencyMetricsRequest QueryDependencyMetricsResponse RemoveSystemOwnedPluginRequest RemoveSystemOwnedPluginResponse SourceMetadata StyleGuide StyleGuideContents WaitOperationRequest RPC Reference Overview google.cloud.apihub.v1 google.cloud.apihub.v1main google.cloud.common google.cloud.location google.longrunning google.rpc Client libraries Overview C# Go Java Node.js PHP Python Release notes Envoy Adapter v2.0.x Concepts Getting started Native Envoy example for Apigee and hybrid Apigee hybrid example with Kubernetes Operation Reference Troubleshooting v1.4.x Concepts Getting started Apigee hybrid example Operation Reference Troubleshooting v1.3.x Concepts Getting started Apigee hybrid example Operation Reference Troubleshooting v1.2.x Concepts Getting started Apigee hybrid example Operation Reference Troubleshooting v1.1.x Concepts Getting started Apigee hybrid example Operation Reference Troubleshooting v1.0.x Concepts Getting started Apigee hybrid example Operation Reference Troubleshooting Release notes HYBRID RUNTIME Supported platforms and versions Kubernetes and custom resources used by Apigee v1.16 What is Apigee hybrid?",
+          "One way to identify which requests to take action on is to use the Abuse detection Detected traffic or Incident views, which show IP addresses and API keys that are sources of abuse."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cloudresourcemanager.googleapis.com",
+      "iam.googleapis.com",
+      "projects.locations",
+      "projects.locations.addons",
+      "projects.locations.apiHubInstances",
+      "projects.locations.apis",
+      "projects.locations.apis.versions",
+      "projects.locations.apis.versions.definitions",
+      "projects.locations.apis.versions.operations",
+      "projects.locations.apis.versions.specs",
+      "projects.locations.attributes",
+      "projects.locations.curations",
+      "projects.locations.dependencies",
+      "projects.locations.deployments",
+      "projects.locations.discoveredApiObservations",
+      "projects.locations.discoveredApiObservations.discoveredApiOperations",
+      "projects.locations.externalApis",
+      "projects.locations.hostProjectRegistrations",
+      "projects.locations.operations",
+      "projects.locations.plugins",
+      "projects.locations.plugins.instances",
+      "projects.locations.plugins.styleGuide",
+      "projects.locations.runtimeProjectAttachments",
+      "serviceusage.services.enable",
+      "serviceusage.serviceUsageAdmin",
+      "v1.0.x",
+      "v1.1.x",
+      "v1.16",
+      "v1.2.x",
+      "v1.3.x",
+      "v1.4.x",
+      "v2.0.x"
+    ],
+    "missing_inventory_roles": [
+      "roles/serviceusage.serviceUsageAdmin"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-security/abuse-detection",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/get-started/terraform-overview",
+        "https://docs.cloud.google.com/apigee/docs/api-security/security-actions"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-security/abuse-detection",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/get-started/terraform-overview",
+        "https://docs.cloud.google.com/apigee/docs/api-security/security-actions"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-security/abuse-detection",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/get-started/terraform-overview",
+        "https://docs.cloud.google.com/apigee/docs/api-security/security-actions"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-security/abuse-detection",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/get-started/terraform-overview",
+        "https://docs.cloud.google.com/apigee/docs/api-security/security-actions"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-security/abuse-detection",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/get-started/terraform-overview",
+        "https://docs.cloud.google.com/apigee/docs/api-security/security-actions"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-security/abuse-detection",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/get-started/terraform-overview",
+        "https://docs.cloud.google.com/apigee/docs/api-security/security-actions"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-security/abuse-detection",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/get-started/terraform-overview",
+        "https://docs.cloud.google.com/apigee/docs/api-security/security-actions"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-security/abuse-detection",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/get-started/terraform-overview",
+        "https://docs.cloud.google.com/apigee/docs/api-security/security-actions"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-security/abuse-detection",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/get-started/terraform-overview",
+        "https://docs.cloud.google.com/apigee/docs/api-security/security-actions"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-security/abuse-detection",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/get-started/terraform-overview",
+        "https://docs.cloud.google.com/apigee/docs/api-security/security-actions"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-security/abuse-detection",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/get-started/terraform-overview",
+        "https://docs.cloud.google.com/apigee/docs/api-security/security-actions"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-security/abuse-detection",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/get-started/terraform-overview",
+        "https://docs.cloud.google.com/apigee/docs/api-security/security-actions"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-security/abuse-detection",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/get-started/terraform-overview",
+        "https://docs.cloud.google.com/apigee/docs/api-security/security-actions"
+      ]
+    }
+  ]
+}

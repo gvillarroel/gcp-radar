@@ -1,0 +1,135 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:18.771Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery",
+  "feature_name": "Sovereign Controls by Partners compliance support",
+  "feature_slug": "sovereign-controls-by-partners-compliance-support",
+  "summary": "BigQuery supports the Sovereign Controls by Partners compliance program.",
+  "extended_definition": "BigQuery supports the Sovereign Controls by Partners compliance program.",
+  "lifecycle": {
+    "latest_feature_date": "2023-06-29",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 2,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "coverage_low",
+        "message": "The feature ended with coverage LOW.",
+        "suggested_steps": [
+          "step-06"
+        ]
+      },
+      {
+        "severity": "warn",
+        "rule": "generic_supporting_pages",
+        "message": "Supporting pages do not mention any informative feature tokens.",
+        "suggested_steps": [
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/samples/bigquerystorage-arrow-quickstart",
+      "https://docs.cloud.google.com/bigquery/docs/samples/bigquerystorage-quickstart",
+      "https://docs.cloud.google.com/bigquery/docs/timesfm-anomaly-detection-tutorial"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Detect anomalies in multiple time series with the TimesFM model \\_|\\_ BigQuery\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/timesfm-anomaly-detection-tutorial",
+        "source_id": "site-docs-reference-2",
+        "final_score": 22,
+        "relevance": "",
+        "evidence_snippets": [
+          "Go to BigQuery In the query editor, paste in the following query and click Run , the query takes 1-2 minutes to complete: WITH bike share trips AS ( SELECT TIMESTAMP TRUNC ( start date , HOUR ) AS trip hour , COUNT ( ) AS num trips FROM bigquery-public-data.san francisco bikeshare.bikeshare trips GROUP BY TIMESTAMP TRUNC ( start date , HOUR ) ) SELECT FROM AI .",
+          "Go to BigQuery In the query editor, paste in the following query and click Run : WITH bike share trips AS ( SELECT TIMESTAMP TRUNC ( start date , HOUR ) AS trip hour , COUNT ( ) AS num trips , subscriber type FROM bigquery-public-data.san francisco bikeshare.bikeshare trips GROUP BY TIMESTAMP TRUNC ( start date , HOUR ), subscriber type ) SELECT FROM AI .",
+          "Home Documentation Data analytics BigQuery Guides Send feedback Detect anomalies in multiple time series with the TimesFM model Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"Download table data in the Arrow data format \\_|\\_ BigQuery \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/samples/bigquerystorage-arrow-quickstart",
+        "source_id": "site-docs-reference-required-15",
+        "final_score": 22,
+        "relevance": "",
+        "evidence_snippets": [
+          "ArrowRecordBatch deserializedBatch = MessageSerializer . deserializeRecordBatch ( new ReadChannel ( new ByteArrayReadableSeekableByteChannel ( batch . getSerializedRecordBatch (). toByteArray ())), allocator ); loader . load ( deserializedBatch ); // Release buffers from batch (they are still held in the vectors in root). deserializedBatch . close (); System . out . println ( root . contentToTSVString ()); // Release buffers from vectors in root. root . clear (); } @Override public void close () { root . close (); allocator . close (); } } public static void main ( String ... args ) throws Exception { // Sets your Google Cloud Platform project ID. // String projectId = \"YOUR PROJECT ID\"; String projectId = args [ 0 ] ; Integer snapshotMillis = null ; if ( args . length > 1 ) { snapshotMillis = Integer . parseInt ( args [ 1 ] ); } try ( BigQueryReadClient client = BigQueryReadClient . create ()) { String parent = String . format ( \"projects/%s\" , projectId ); // This example uses baby name data from the public datasets.",
+          "String srcTable = String . format ( \"projects/%s/datasets/%s/tables/%s\" , \"bigquery-public-data\" , \"usa names\" , \"usa 1910 current\" ); // We specify the columns to be projected by adding them to the selected fields, // and set a simple filter to restrict which rows are transmitted.",
+          "Explore further For detailed documentation that includes this code sample, see the following: BigQuery Storage API Client Libraries Code sample Java Before trying this sample, follow the Java setup instructions in the BigQuery quickstart using client libraries ."
+        ]
+      },
+      {
+        "title": "\"Download table data in the Avro data format \\_|\\_ BigQuery \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/samples/bigquerystorage-quickstart",
+        "source_id": "site-docs-reference-required-15",
+        "final_score": 22,
+        "relevance": "",
+        "evidence_snippets": [
+          "For more information, see Set up authentication for client libraries . // Includes the autoloader for libraries installed with composer require DIR . '/vendor/autoload.php'; use Google\\Cloud\\BigQuery\\Storage\\V1\\Client\\BigQueryReadClient; use Google\\Cloud\\BigQuery\\Storage\\V1\\CreateReadSessionRequest; use Google\\Cloud\\BigQuery\\Storage\\V1\\DataFormat; use Google\\Cloud\\BigQuery\\Storage\\V1\\ReadRowsRequest; use Google\\Cloud\\BigQuery\\Storage\\V1\\ReadSession; use Google\\Cloud\\BigQuery\\Storage\\V1\\ReadSession\\TableModifiers; use Google\\Cloud\\BigQuery\\Storage\\V1\\ReadSession\\TableReadOptions; use Google\\Protobuf\\Timestamp; // Instantiates the client and sets the project $client = new BigQueryReadClient(); $project = $client->projectName('YOUR PROJECT ID'); $snapshotMillis = 'YOUR SNAPSHOT MILLIS'; // This example reads baby name data from the below public dataset. $table = $client->tableName( 'bigquery-public-data', 'usa names', 'usa 1910 current' ); // This API can also deliver data serialized in Apache Arrow format. // This example leverages Apache Avro. $readSession = new ReadSession(); $readSession->setTable($table)->setDataFormat(DataFormat::AVRO); // We limit the output columns to a subset of those allowed in the table, // and set a simple filter to only report names from the state of // Washington (WA). $readOptions = new TableReadOptions(); $readOptions->setSelectedFields(['name', 'number', 'state']); $readOptions->setRowRestriction('state = \"WA\"'); $readSession->setReadOptions($readOptions); // With snapshot millis if present if (!empty($snapshotMillis)) { $timestamp = new Timestamp(); $timestamp->setSeconds($snapshotMillis / 1000); $timestamp->setNanos((int) ($snapshotMillis % 1000) 1000000); $tableModifier = new TableModifiers(); $tableModifier->setSnapshotTime($timestamp); $readSession->setTableModifiers($tableModifier); } try { $createReadSessionRequest = (new CreateReadSessionRequest()) ->setParent($project) ->setReadSession($readSession) ->setMaxStreamCount(1); $session = $client->createReadSession($createReadSessionRequest); $readRowsRequest = (new ReadRowsRequest()) ->setReadStream($session->getStreams()[0]->getName()); $stream = $client->readRows($readRowsRequest); // Do any local processing by iterating over the responses.",
+          "Timestamp ; import java.io.IOException ; import org.apache.avro.Schema ; import org.apache.avro.generic.GenericDatumReader ; import org.apache.avro.generic.GenericRecord ; import org.apache.avro.io.BinaryDecoder ; import org.apache.avro.io.DatumReader ; import org.apache.avro.io.DecoderFactory ; public class StorageSample { / SimpleRowReader handles deserialization of the Avro-encoded row blocks transmitted from the storage API using a generic datum decoder. / private static class SimpleRowReader { private final DatumReader<GenericRecord> datumReader ; // Decoder object will be reused to avoid re-allocation and too much garbage collection. private BinaryDecoder decoder = null ; // GenericRecord object will be reused. private GenericRecord row = null ; public SimpleRowReader ( Schema schema ) { Preconditions . checkNotNull ( schema ); datumReader = new GenericDatumReader <> ( schema ); } / Sample method for processing AVRO rows which only validates decoding. @param avroRows object returned from the ReadRowsResponse. / public void processRows ( AvroRows avroRows ) throws IOException { decoder = DecoderFactory . get () . binaryDecoder ( avroRows . getSerializedBinaryRows (). toByteArray (), decoder ); while ( ! decoder . isEnd ()) { // Reusing object row row = datumReader . read ( row , decoder ); System . out . println ( row . toString ()); } } } public static void main ( String ... args ) throws Exception { // Sets your Google Cloud Platform project ID. // String projectId = \"YOUR PROJECT ID\"; String projectId = args [ 0 ] ; Integer snapshotMillis = null ; if ( args . length > 1 ) { snapshotMillis = Integer . parseInt ( args [ 1 ] ); } try ( BigQueryReadClient client = BigQueryReadClient . create ()) { String parent = String . format ( \"projects/%s\" , projectId ); // This example uses baby name data from the public datasets.",
+          "For more information, see Set up authentication for client libraries . #include \"google/cloud/bigquery/storage/v1/bigquery read client.h\" #include <iostream> namespace { void ProcessRowsInAvroFormat ( :: google :: cloud :: bigquery :: storage :: v1 :: AvroSchema const & , :: google :: cloud :: bigquery :: storage :: v1 :: AvroRows const & ) { // Code to deserialize avro rows should be added here. } } // namespace int main ( int argc , char argv []) try { if ( argc != 3 ) { std :: cerr << \"Usage: \" << argv [ 0 ] << \" <project-id> <table-name> \\n \" ; return 1 ; } // project name should be in the format \"projects/<your-gcp-project>\" std :: string const project name = \"projects/\" + std :: string ( argv [ 1 ]); // table name should be in the format: // \"projects/<project-table-resides-in>/datasets/<dataset-table resides-in>/tables/<table // name>\" The project values in project name and table name do not have to be // identical. std :: string const table name = argv [ 2 ]; // Create a namespace alias to make the code easier to read. namespace bigquery storage = :: google :: cloud :: bigquery storage v1 ; constexpr int kMaxReadStreams = 1 ; // Create the ReadSession. auto client = bigquery storage :: BigQueryReadClient ( bigquery storage :: MakeBigQueryReadConnection ()); :: google :: cloud :: bigquery :: storage :: v1 :: ReadSession read session ; read session . set data format ( google :: cloud :: bigquery :: storage :: v1 :: DataFormat :: AVRO ); read session . set table ( table name ); auto session = client ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "autoload.php",
+      "bikeshare.bikeshare",
+      "client.h",
+      "data.san",
+      "java.io.IOException",
+      "org.apache.avro.generic.GenericDatumReader",
+      "org.apache.avro.generic.GenericRecord",
+      "org.apache.avro.io.BinaryDecoder",
+      "org.apache.avro.io.DatumReader",
+      "org.apache.avro.io.DecoderFactory",
+      "org.apache.avro.Schema"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquerystorage-arrow-quickstart",
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquerystorage-quickstart",
+        "https://docs.cloud.google.com/bigquery/docs/timesfm-anomaly-detection-tutorial"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquerystorage-arrow-quickstart",
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquerystorage-quickstart",
+        "https://docs.cloud.google.com/bigquery/docs/timesfm-anomaly-detection-tutorial"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquerystorage-arrow-quickstart",
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquerystorage-quickstart",
+        "https://docs.cloud.google.com/bigquery/docs/timesfm-anomaly-detection-tutorial"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,140 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:17.437Z",
+  "source_step08_card": "data/step-08/current/products/apps-script/card.json",
+  "product_name": "Apps Script",
+  "product_slug": "apps-script",
+  "feature_name": "Form trigger builder",
+  "feature_slug": "form-trigger-builder",
+  "summary": "FormTriggerBuilder was added to let scripts respond to Google Forms events.",
+  "extended_definition": "FormTriggerBuilder was added to let scripts respond to Google Forms events.",
+  "lifecycle": {
+    "latest_feature_date": "2013-05-13",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/apps-script/guides/triggers/installable",
+      "https://developers.google.com/apps-script/reference/spreadsheet/conditional-format-rule-builder",
+      "https://developers.google.com/apps-script/releases"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Class ConditionalFormatRuleBuilder \\_|\\_ Apps Script \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/apps-script/reference/spreadsheet/conditional-format-rule-builder",
+        "source_id": "site-docs-reference-required-4",
+        "final_score": 137,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "ConditionalFormatRuleBuilder Builder for conditional format rules. // Adds a conditional format rule to a sheet that causes cells in range A1:B3 to // turn red if they contain a number between 1 and 10. const sheet = SpreadsheetApp . getActiveSheet (); const range = sheet . getRange ( 'A1:B3' ); const rule = SpreadsheetApp . newConditionalFormatRule () . whenNumberBetween ( 1 , 10 ) . setBackground ( '#FF0000' ) . setRanges ([ range ]) . build (); const rules = sheet . getConditionalFormatRules (); rules . push ( rule ); sheet . setConditionalFormatRules ( rules ); Methods Method Return type Brief description build() Conditional Format Rule Constructs a conditional format rule from the settings applied to the builder. copy() Conditional Format Rule Builder Returns a rule builder preset with this rule's settings. get Boolean Condition() Boolean Condition null Retrieves the rule's Boolean Condition information if this rule uses boolean condition criteria. get Gradient Condition() Gradient Condition null Retrieves the rule's Gradient Condition information, if this rule uses gradient condition criteria. get Ranges() Range[] Retrieves the ranges to which this conditional format rule is applied. set Background(color) Conditional Format Rule Builder Sets the background color for the conditional format rule's format. set Background Object(color) Conditional Format Rule Builder Sets the background color for the conditional format rule's format. set Bold(bold) Conditional Format Rule Builder Sets text bolding for the conditional format rule's format. set Font Color(color) Conditional Format Rule Builder Sets the font color for the conditional format rule's format. set Font Color Object(color) Conditional Format Rule Builder Sets the font color for the conditional format rule's format. set Gradient Maxpoint(color) Conditional Format Rule Builder Clears the conditional format rule's gradient maxpoint value, and instead uses the maximum value in the rule's ranges. set Gradient Maxpoint Object(color) Conditional Format Rule Builder Clears the conditional format rule's gradient maxpoint value, and instead uses the maximum value in the rule's ranges. set Gradient Maxpoint Object With Value(color, type, value) Conditional Format Rule Builder Sets the conditional format rule's gradient maxpoint fields. set Gradient Maxpoint With Value(color, type, value) Conditional Format Rule Builder Sets the conditional format rule's gradient maxpoint fields. set Gradient Midpoint Object With Value(color, type, value) Conditional Format Rule Builder Sets the conditional format rule's gradient midpoint fields. set Gradient Midpoint With Value(color, type, value) Conditional Format Rule Builder Sets the conditional format rule's gradient midpoint fields. set Gradient Minpoint(color) Conditional Format Rule Builder Clears the conditional format rule's gradient minpoint value, and instead uses the minimum value in the rule's ranges. set Gradient Minpoint Object(color) Conditional Format Rule Builder Clears the conditional format rule's gradient minpoint value, and instead uses the minimum value in the rule's ranges. set Gradient Minpoint Object With Value(color, type, value) Conditional Format Rule Builder Sets the conditional format rule's gradient minpoint fields. set Gradient Minpoint With Value(color, type, value) Conditional Format Rule Builder Sets the conditional format rule's gradient minpoint fields. set Italic(italic) Conditional Format Rule Builder Sets text italics for the conditional format rule's format. set Ranges(ranges) Conditional Format Rule Builder Sets one or more ranges to which this conditional format rule is applied. set Strikethrough(strikethrough) Conditional Format Rule Builder Sets text strikethrough for the conditional format rule's format. set Underline(underline) Conditional Format Rule Builder Sets text underlining for the conditional format rule's format. when Cell Empty() Conditional Format Rule Builder Sets the conditional format rule to trigger when the cell is empty. when Cell Not Empty() Conditional Format Rule Builder Sets the conditional format rule to trigger when the cell is not empty. when Date After(date) Conditional Format Rule Builder Sets the conditional format rule to trigger when a date is after the given value. when Date After(date) Conditional Format Rule Builder Sets the conditional format rule to trigger when a date is after the given relative date. when Date Before(date) Conditional Format Rule Builder Sets the conditional format rule to trigger when a date is before the given date. when Date Before(date) Conditional Format Rule Builder Sets the conditional format rule to trigger when a date is before the given relative date. when Date Equal To(date) Conditional Format Rule Builder Sets the conditional format rule to trigger when a date is equal to the given date. when Date Equal To(date) Conditional Format Rule Builder Sets the conditional format rule to trigger when a date is equal to the given relative date. when Formula Satisfied(formula) Conditional Format Rule Builder Sets the conditional format rule to trigger when that the given formula evaluates to true . when Number Between(start, end) Conditional Format Rule Builder Sets the conditional format rule to trigger when a number falls between, or is either of, two specified values. when Number Equal To(number) Conditional Format Rule Builder Sets the conditional format rule to trigger when a number is equal to the given value. when Number Greater Than(number) Conditional Format Rule Builder Sets the conditional format rule to trigger when a number is greater than the given value. when Number Greater Than Or Equal To(number) Conditional Format Rule Builder Sets the conditional format rule to trigger when a number is greater than or equal to the given value. when Number Less Than(number) Conditional Format Rule Builder Sets the conditional conditional format rule to trigger when a number less than the given value. when Number Less Than Or Equal To(number) Conditional Format Rule Builder Sets the conditional format rule to trigger when a number less than or equal to the given value. when Number Not Between(start, end) Conditional Format Rule Builder Sets the conditional format rule to trigger when a number does not fall between, and is neither of, two specified values. when Number Not Equal To(number) Conditional Format Rule Builder Sets the conditional format rule to trigger when a number is not equal to the given value. when Text Contains(text) Conditional Format Rule Builder Sets the conditional format rule to trigger when that the input contains the given value. when Text Does Not Contain(text) Conditional Format Rule Builder Sets the conditional format rule to trigger when that the input does not contain the given value. when Text Ends With(text) Conditional Format Rule Builder Sets the conditional format rule to trigger when that the input ends with the given value. when Text Equal To(text) Conditional Format Rule Builder Sets the conditional format rule to trigger when that the input is equal to the given value. when Text Starts With(text) Conditional Format Rule Builder Sets the conditional format rule to trigger when that the input starts with the given value. with Criteria(criteria, args) Conditional Format Rule Builder Sets the conditional format rule to criteria defined by Boolean Criteria values, typically taken from the criteria and arguments of an existing rule.",
+          "Return ConditionalFormatRuleBuilder — The builder, for chaining. whenCellEmpty() Sets the conditional format rule to trigger when the cell is empty. // Adds a conditional format rule to a sheet that causes cells in range A1:B3 to // turn red if they are empty. const sheet = SpreadsheetApp . getActiveSheet (); const range = sheet . getRange ( 'A1:B3' ); const rule = SpreadsheetApp . newConditionalFormatRule () . whenCellEmpty () . setBackground ( '#FF0000' ) . setRanges ([ range ]) . build (); const rules = sheet . getConditionalFormatRules (); rules . push ( rule ); sheet . setConditionalFormatRules ( rules ); Return ConditionalFormatRuleBuilder — The builder, for chaining. whenCellNotEmpty() Sets the conditional format rule to trigger when the cell is not empty. // Adds a conditional format rule to a sheet that causes cells in range A1:B3 to // turn red if they are not empty. const sheet = SpreadsheetApp . getActiveSheet (); const range = sheet . getRange ( 'A1:B3' ); const rule = SpreadsheetApp . newConditionalFormatRule () . whenCellNotEmpty () . setBackground ( '#FF0000' ) . setRanges ([ range ]) . build (); const rules = sheet . getConditionalFormatRules (); rules . push ( rule ); sheet . setConditionalFormatRules ( rules ); Return ConditionalFormatRuleBuilder — The builder, for chaining. whenDateAfter(date) Sets the conditional format rule to trigger when a date is after the given value. // Adds a conditional format rule to a sheet that causes cells in range A1:B3 to // turn red if they contain a date after 11/4/1993. const sheet = SpreadsheetApp . getActiveSheet (); const range = sheet . getRange ( 'A1:B3' ); const rule = SpreadsheetApp . newConditionalFormatRule () . whenDateAfter ( new Date ( '11/4/1993' )) . setBackground ( '#FF0000' ) . setRanges ([ range ]) . build (); const rules = sheet . getConditionalFormatRules (); rules . push ( rule ); sheet . setConditionalFormatRules ( rules ); Parameters Name Type Description date Date The latest date.",
+          "Return ConditionalFormatRuleBuilder — The builder, for chaining. whenNumberNotBetween(start, end) Sets the conditional format rule to trigger when a number does not fall between, and is neither of, two specified values. // Adds a conditional format rule to a sheet that causes cells in range A1:B3 to // turn red if they contain a number not between 1 and 10. const sheet = SpreadsheetApp . getActiveSheet (); const range = sheet . getRange ( 'A1:B3' ); const rule = SpreadsheetApp . newConditionalFormatRule () . whenNumberNotBetween ( 1 , 10 ) . setBackground ( '#FF0000' ) . setRanges ([ range ]) . build (); const rules = sheet . getConditionalFormatRules (); rules . push ( rule ); sheet . setConditionalFormatRules ( rules ); Parameters Name Type Description start Number The lowest unacceptable value. end Number The highest unacceptable value."
+        ]
+      },
+      {
+        "title": "Google Apps Script release notes \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/apps-script/releases",
+        "source_id": "site-docs-root",
+        "final_score": 121,
+        "relevance": "",
+        "evidence_snippets": [
+          "Added the FormTriggerBuilder class to allow scripts to respond to Forms events.",
+          "The following new classes have been added to the Spreadsheet service : DataSourceChart DataSourceColumn DataSourceFormula DataSourcePivotTable DataSourceRefreshSchedule DataSourceRefreshScheduleFrequency DataSourceSheet DataSourceSheetFilter DataSourceTableColumn DataSourceTableFilter DateTimeGroupingRule PivotGroupLimit SortSpec New methods to support Connected Sheets have been added to the following classes in the Spreadsheet service : BigQueryDataSourceSpecBuilder BigQueryDataSourceSpec DataExecutionStatus DataSourceTable DataSource EmbeddedChart FilterCriteriaBuilder PivotFilter PivotGroup PivotTable PivotValue Range Sheet SpreadsheetApp Spreadsheet August 27, 2020 Feature A new class called DecoratedText has been added to the Card Service .",
+          "Bookmark NamedRange RangeBuilder Document.addBookmark(position) Document.addNamedRange(name, range) Document.getBookmark(id) Document.getBookmarks() Document.getNamedRangeById(id) Document.getNamedRanges() Document.getNamedRanges(name) Document.newPosition(element, offset) Document.newRange() Document.setCursor(position) Document.setSelection(range) Position.insertBookmark() Added the following ScriptApp class and methods, which allow scripts to create state tokens that can be used in callback APIs (like OAuth flows), as well as to retrieve the script's own OAuth 2.0 access token."
+        ]
+      },
+      {
+        "title": "Installable Triggers \\_|\\_ Apps Script \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/apps-script/guides/triggers/installable",
+        "source_id": "site-docs-reference",
+        "final_score": 119,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Time-driven triggers let scripts execute at a particular time or on a recurring interval, as frequently as every minute or as infrequently as once per month. (An add-on can use a time-driven trigger once per hour at most.) The time might be slightly randomized—for example, if you create a recurring 9 AM trigger, Apps Script chooses a time between 9 AM and 10 AM, then keeps that timing consistent from day to day so that 24 hours elapse before the trigger fires again.",
+          "For example, a standalone script can programmatically create an installable trigger for an arbitrary Google Sheets file by calling TriggerBuilder.forSpreadsheet(key) and passing in the spreadsheet's ID.",
+          "There are several installable triggers for Google Workspace applications: An installable open trigger runs when a user opens a spreadsheet, document, or form that they have permission to edit."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "developers.google.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/reference/spreadsheet/conditional-format-rule-builder",
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/guides/triggers/installable"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/reference/spreadsheet/conditional-format-rule-builder",
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/guides/triggers/installable"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/reference/spreadsheet/conditional-format-rule-builder",
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/guides/triggers/installable"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/reference/spreadsheet/conditional-format-rule-builder",
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/guides/triggers/installable"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/reference/spreadsheet/conditional-format-rule-builder",
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/guides/triggers/installable"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/reference/spreadsheet/conditional-format-rule-builder",
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/guides/triggers/installable"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/reference/spreadsheet/conditional-format-rule-builder",
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/guides/triggers/installable"
+      ]
+    }
+  ]
+}

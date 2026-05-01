@@ -1,0 +1,100 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:32.732Z",
+  "source_step08_card": "data/step-08/current/products/dataflow/card.json",
+  "product_name": "Dataflow",
+  "product_slug": "dataflow",
+  "feature_name": "Change Data Capture to BigQuery (Stream) template",
+  "feature_slug": "change-data-capture-to-bigquery-stream-template",
+  "summary": "This Google-provided streaming template loads change data capture records into BigQuery.",
+  "extended_definition": "This Google-provided streaming template loads change data capture records into BigQuery.",
+  "lifecycle": {
+    "latest_feature_date": "2022-03-17",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/cloud-bigtable-change-streams-to-bigquery",
+      "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/cloud-bigtable-change-streams-to-pubsub",
+      "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/cloud-spanner-change-streams-to-bigquery"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Spanner change streams to BigQuery template \\_|\\_ Cloud Dataflow \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/cloud-spanner-change-streams-to-bigquery",
+        "source_id": "site-api-reference",
+        "final_score": 271,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Specifically:\\n\" + \" - For Cloud Spanner JSON type, the order of the members of an object is\" + \" lexicographically ordered, but there is no such guarantee for BigQuery JSON type.\\n\" + \" - Cloud Spanner supports nanoseconds TIMESTAMP type, BigQuery only supports\" + \" microseconds TIMESTAMP type.\\n\" , \"Learn more about <a href=\\\"https://cloud.google.com/spanner/docs/change-streams\\\">change\" + \" streams</a>, <a\" + \" href=\\\"https://cloud.google.com/spanner/docs/change-streams/use-dataflow\\\">how to\" + \" build change streams Dataflow pipelines</a>, and <a\" + \" href=\\\"https://cloud.google.com/spanner/docs/change-streams/use-dataflow#best practices\\\">best\" + \" practices</a>.\" }, optionsClass = SpannerChangeStreamsToBigQueryOptions . class , flexContainerName = \"googlecloud-to-googlecloud\" , documentation = \"https://cloud.google.com/dataflow/docs/guides/templates/provided/cloud-spanner-change-streams-to-bigquery\" , contactInformation = \"https://cloud.google.com/support\" , requirements = { \"The Cloud Spanner instance must exist prior to running the pipeline.\" , \"The Cloud Spanner database must exist prior to running the pipeline.\" , \"The Cloud Spanner metadata instance must exist prior to running the pipeline.\" , \"The Cloud Spanner metadata database must exist prior to running the pipeline.\" , \"The Cloud Spanner change stream must exist prior to running the pipeline.\" , \"The BigQuery dataset must exist prior to running the pipeline.\" }, streaming = true , supportsExactlyOnce = true , supportsAtLeastOnce = true ) public final class SpannerChangeStreamsToBigQuery { / String/String Coder for {@link FailsafeElement}. / public static final FailsafeElementCoder<String , String > FAILSAFE ELEMENT CODER = FailsafeElementCoder . of ( StringUtf8Coder . of (), StringUtf8Coder . of ()); private static final Logger LOG = LoggerFactory . getLogger ( SpannerChangeStreamsToBigQuery . class ); // Max number of deadletter queue retries. private static final int DLQ MAX RETRIES = 5 ; private static final String USE RUNNER V2 EXPERIMENT = \"use runner v2\" ; / Main entry point for executing the pipeline. @param args The command-line arguments to the pipeline. / public static void main ( String [] args ) { UncaughtExceptionLogger . register (); LOG . info ( \"Starting to replicate change records from Spanner change streams to BigQuery\" ); SpannerChangeStreamsToBigQueryOptions options = PipelineOptionsFactory . fromArgs ( args ) . withValidation () . as ( SpannerChangeStreamsToBigQueryOptions . class ); run ( options ); } private static void validateOptions ( SpannerChangeStreamsToBigQueryOptions options ) { if ( options . getDlqRetryMinutes () < = 0 ) { throw new IllegalArgumentException ( \"dlqRetryMinutes must be positive.\" ); } if ( options . getBigQueryChangelogTableNameTemplate () . equals ( BigQueryUtils .",
+          "Mod changeStreamsMod : input . getMods ()) { Mod mod = new Mod ( changeStreamsMod . getKeysJson (), changeStreamsMod . getNewValuesJson (), input . getCommitTimestamp (), input . getServerTransactionId (), input . isLastRecordInTransactionInPartition (), input . getRecordSequence (), input . getTableName (), input . getRowType (). stream (). map ( ModColumnType :: new ). collect ( Collectors . toList ()), input . getModType (), input . getValueCaptureType (), input . getNumberOfRecordsInTransaction (), input . getNumberOfPartitionsInTransaction ()); String modJsonString ; try { modJsonString = mod . toJson (); } catch ( IOException e ) { // Ignore exception and print bad format. modJsonString = String . format ( \"\\\"%s\\\"\" , input ); } receiver . output ( modJsonString ); } } } } Production considerations When running the Spanner Change Streams to BigQuery template in a production environment, consider the following best practices to help ensure reliability and prevent data loss: Worker provisioning and scaling Set maxNumWorkers adequately: Insufficient Dataflow workers can cause the pipeline to fall behind in processing change stream data.",
+          "Extracted from change stream\" + \" data change record.\\n\" + \"- metadata big query commit timestamp: The commit timestamp of when the row is\" + \" inserted into BigQuery.\\n\" , \"Notes:\\n\" + \"- This template does not propagate schema changes from Cloud Spanner to BigQuery.\" + \" Because performing a schema change in Cloud Spanner is likely going to break the\" + \" pipeline, you might need to recreate the pipeline after the schema change.\\n\" + \"- For OLD AND NEW VALUES and NEW VALUES value capture types, when the data change\" + \" record contains an UPDATE change, the template needs to do a stale read to Cloud\" + \" Spanner at the commit timestamp of the data change record to retrieve the unchanged\" + \" but watched columns."
+        ]
+      },
+      {
+        "title": "\"Bigtable change streams to BigQuery template \\_|\\_ Cloud Dataflow \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/cloud-bigtable-change-streams-to-bigquery",
+        "source_id": "site-api-reference",
+        "final_score": 238,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Streams Bigtable data change records and writes them into BigQuery using Dataflow Runner V2.\" , optionsClass = BigtableChangeStreamToBigQueryOptions . class , optionsOrder = { BigtableChangeStreamToBigQueryOptions . class , ReadChangeStreamOptions . class , ReadOptions . class }, skipOptions = { \"bigtableReadAppProfile\" , \"bigtableAdditionalRetryCodes\" , \"bigtableRpcAttemptTimeoutMs\" , \"bigtableRpcTimeoutMs\" }, documentation = \"https://cloud.google.com/dataflow/docs/guides/templates/provided/cloud-bigtable-change-streams-to-bigquery\" , flexContainerName = \"googlecloud-to-googlecloud\" , contactInformation = \"https://cloud.google.com/support\" , streaming = true ) public final class BigtableChangeStreamsToBigQuery { private static final Logger LOG = LoggerFactory . getLogger ( BigtableChangeStreamsToBigQuery . class ); private static final String USE RUNNER V2 EXPERIMENT = \"use runner v2\" ; / Main entry point for executing the pipeline. @param args The command-line arguments to the pipeline. / public static void main ( String [] args ) { LOG . info ( \"Starting to replicate change records from Cloud Bigtable change streams to BigQuery\" ); BigtableChangeStreamToBigQueryOptions options = PipelineOptionsFactory . fromArgs ( args ) . withValidation () . as ( BigtableChangeStreamToBigQueryOptions . class ); run ( options ); } private static void setOptions ( BigtableChangeStreamToBigQueryOptions options ) { options . setStreaming ( true ); options . setEnableStreamingEngine ( true ); // Add use runner v2 to the experiments option, since change streams connector is only supported // on Dataflow runner v2.",
+          "The Bigtable change streams to BigQuery template is a streaming pipeline that streams Bigtable data change records and writes them into BigQuery tables by using Dataflow.",
+          "POST h tt ps : //dataflow.googleapis.com/v1b3/projects/ PROJECT ID /locations/ LOCATION /flexTemplates:launch { \"launch parameter\" : { \"jobName\" : \" JOB NAME \" , \"containerSpecGcsPath\" : \"gs://dataflow-templates- REGION NAME / VERSION /flex/Bigtable Change Streams to BigQuery\" , \"parameters\" : { \"bigtableReadInstanceId\" : \" BIGTABLE INSTANCE ID \" , \"bigtableReadTableId\" : \" BIGTABLE TABLE ID \" , \"bigtableChangeStreamAppProfile\" : \" BIGTABLE APPLICATION PROFILE ID \" , \"bigQueryDataset\" : \" BIGQUERY DESTINATION DATASET \" } } } Replace the following: PROJECT ID : the Google Cloud project ID where you want to run the Dataflow job JOB NAME : a unique job name of your choice VERSION : the version of the template that you want to use You can use the following values: latest to use the latest version of the template, which is available in the non-dated parent folder in the bucket— gs://dataflow-templates- REGION NAME /latest/ the version name, like 2023-09-12-00 RC00 , to use a specific version of the template, which can be found nested in the respective dated parent folder in the bucket— gs://dataflow-templates- REGION NAME / Caution: The latest version of templates might update with breaking changes."
+        ]
+      },
+      {
+        "title": "\"Bigtable change streams to Pub/Sub template \\_|\\_ Cloud Dataflow \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/cloud-bigtable-change-streams-to-pubsub",
+        "source_id": "site-api-reference",
+        "final_score": 238,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "ReadOptions . class }, skipOptions = { \"bigtableReadAppProfile\" , \"bigtableAdditionalRetryCodes\" , \"bigtableRpcAttemptTimeoutMs\" , \"bigtableRpcTimeoutMs\" }, documentation = \"https://cloud.google.com/dataflow/docs/guides/templates/provided/cloud-bigtable-change-streams-to-pubsub\" , flexContainerName = \"googlecloud-to-googlecloud\" , contactInformation = \"https://cloud.google.com/support\" , streaming = true , supportsAtLeastOnce = true ) public final class BigtableChangeStreamsToPubSub { / String/String Coder for {@link FailsafeElement}. / public static final FailsafeElementCoder<String , String > FAILSAFE ELEMENT CODER = FailsafeElementCoder . of ( StringUtf8Coder . of (), StringUtf8Coder . of ()); private static final Logger LOG = LoggerFactory . getLogger ( BigtableChangeStreamsToPubSub . class ); private static final String USE RUNNER V2 EXPERIMENT = \"use runner v2\" ; private static final TupleTag<FailsafeElement<String , String >> INVALID MODS TAG = new TupleTag<FailsafeElement<String , String >> ( \"invalidMods\" ) {}; private static final TupleTag<FailsafeElement<String , String >> VALID MODS TAG = new TupleTag<FailsafeElement<String , String >> ( \"validMods\" ) {}; / Main entry point for executing the pipeline. @param args The command-line arguments to the pipeline. / public static void main ( String [] args ) { LOG . info ( \"Starting to replicate change records from Cloud Bigtable change streams to PubSub\" ); BigtableChangeStreamsToPubSubOptions options = PipelineOptionsFactory . fromArgs ( args ) . withValidation () . as ( BigtableChangeStreamsToPubSubOptions . class ); run ( options ); } private static void validateOptions ( BigtableChangeStreamsToPubSubOptions options ) { if ( options . getDlqRetryMinutes () < = 0 ) { throw new IllegalArgumentException ( \"dlqRetryMinutes must be positive.\" ); } if ( options . getDlqMaxRetries () < 0 ) { throw new IllegalArgumentException ( \"dlqMaxRetries cannot be negative.\" ); } if ( options . getBigtableReadChangeStreamTimeoutMs () != null && options . getBigtableReadChangeStreamTimeoutMs () < = 0 ) { throw new IllegalArgumentException ( \"bigtableReadChangeStreamTimeoutMs must be greater than 0.\" ); } } private static void setOptions ( BigtableChangeStreamsToPubSubOptions options ) { options . setStreaming ( true ); options . setEnableStreamingEngine ( true ); // Add use runner v2 to the experiments option, since change streams connector is only supported // on Dataflow runner v2.",
+          "The Bigtable change streams to Pub/Sub template is a streaming pipeline that streams Bigtable data change records and publishes them to a Pub/Sub topic by using Dataflow.",
+          "POST h tt ps : //dataflow.googleapis.com/v1b3/projects/ PROJECT ID /locations/ LOCATION /flexTemplates:launch { \"launch parameter\" : { \"jobName\" : \" JOB NAME \" , \"containerSpecGcsPath\" : \"gs://dataflow-templates- REGION NAME / VERSION /flex/Bigtable Change Streams to PubSub\" , \"parameters\" : { \"bigtableReadInstanceId\" : \" BIGTABLE INSTANCE ID \" , \"bigtableReadTableId\" : \" BIGTABLE TABLE ID \" , \"bigtableChangeStreamAppProfile\" : \" BIGTABLE APPLICATION PROFILE ID \" , \"pubSubTopic\" : \" PUBSUB TOPIC \" } } } Replace the following: PROJECT ID : the Google Cloud project ID where you want to run the Dataflow job JOB NAME : a unique job name of your choice VERSION : the version of the template that you want to use You can use the following values: latest to use the latest version of the template, which is available in the non-dated parent folder in the bucket— gs://dataflow-templates- REGION NAME /latest/ the version name, like 2023-09-12-00 RC00 , to use a specific version of the template, which can be found nested in the respective dated parent folder in the bucket— gs://dataflow-templates- REGION NAME / Caution: The latest version of templates might update with breaking changes."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "dataflow.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/cloud-spanner-change-streams-to-bigquery",
+        "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/cloud-bigtable-change-streams-to-bigquery",
+        "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/cloud-bigtable-change-streams-to-pubsub"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/cloud-spanner-change-streams-to-bigquery",
+        "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/cloud-bigtable-change-streams-to-bigquery",
+        "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/cloud-bigtable-change-streams-to-pubsub"
+      ]
+    }
+  ]
+}

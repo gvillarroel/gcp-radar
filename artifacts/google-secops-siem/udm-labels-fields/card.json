@@ -1,0 +1,149 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:41.049Z",
+  "source_step08_card": "data/step-08/current/products/google-secops-siem/card.json",
+  "product_name": "Google SecOps SIEM",
+  "product_slug": "google-secops-siem",
+  "feature_name": "UDM labels fields",
+  "feature_slug": "udm-labels-fields",
+  "summary": "Google SecOps is deprecating labels fields on several UDM nouns and recommends using additional.fields key and value settings instead; deprecated on 2024-11-29.",
+  "extended_definition": "Google SecOps is deprecating labels fields on several UDM nouns and recommends using additional.fields key and value settings instead; deprecated on 2024-11-29.",
+  "lifecycle": {
+    "latest_feature_date": "2024-04-15",
+    "deprecation_date": "2024-11-29",
+    "status": "deprecation_noted"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/chronicle/docs/deprecations",
+      "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Search for events and alerts \\_|\\_ Google Security Operations \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "source_id": "site-api-reference",
+        "final_score": 223,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For example: additional.fields[\"key\"]=\"value\" Examples of searches using specific key-value pairs in the additional and labels fields: Search for events containing specified key-value pairs: additional.fields[\"pod name\"] = \"kube-scheduler\" metadata.ingestion labels[\"MetadataKeyDeletion\"] = \"startup-script\" Use the AND operator with key-value pair searches: additional.fields[\"pod name\"] = \"kube-scheduler\" AND additional.fields[\"pod name1\"] = \"kube-scheduler1\" Search for all events that contain the specified key, regardless of the value: additional.fields[\"pod name\"] != \"\" Search for events that contain a specific key, using a regular expression: additional.fields.value.string value = \"mystring\" Note: You can also use value.bool value or value.number value for boolean and numeric matches.",
+          "Use a block comment: additional.fields[\"pod name\"] = \"kube-scheduler\" / Block comments can span multiple lines. / AND additional.fields[\"pod name1\"] = \"kube-scheduler1\" Use a single-line comment: additional.fields[\"pod name\"] != \"\" // my single-line comment Search settings You can set the maximum number of search results in UDM search settings .",
+          "Search for events that use multiple keys with the same name, using a regular expression: additional.fields.key = /myKeynumber / Use regular expressions and the nocase operator: additional.fields[\"pod name\"] = /br/ additional.fields[\"pod name\"] = bar nocase Use block and single-line comments."
+        ]
+      },
+      {
+        "title": "\"Feature deprecations \\_|\\_ Google Security Operations \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/deprecations",
+        "source_id": "site-api-reference",
+        "final_score": 135,
+        "relevance": "",
+        "evidence_snippets": [
+          "We recommend that you update the existing rules to use the key/value settings in the additional.fields UDM fields instead of the deprecated labels UDM fields.",
+          "For new parsers, the key/value settings in additional.fields UDM fields are used instead of the deprecated labels UDM fields.",
+          "For existing parsers, in addition to these UDM fields, the logs fields are also mapped to key/value additional.fields UDM fields."
+        ]
+      },
+      {
+        "title": "Detection Engine \\_|\\_ Google Security Operations \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/chronicle/docs/reference/detection-engine-api",
+        "source_id": "site-api-reference",
+        "final_score": 69,
+        "relevance": "",
+        "evidence_snippets": [
+          "CuratedRuleDetection fields type string Type of detection (type is always \"GCTI FINDING\"). detection.ruleName string Name of the Google SecOps rule generating the detection. detection.ruleId string Identifier for the Google SecOps rule generating the detection. detection.alertState string Indicates whether the Google SecOps rule generating this detection currently has alerting enabled or disabled. detection.ruleType string Whether the Google SecOps rule generating this detection is a single event or multi-event rule (\"SINGLE EVENT\" or \"MULTI EVENT\"). detection.urlBackToProduct string URL pointing to the Google SecOps application page for this detection. detection.detectionFields list List of fields matching the Google SecOps rule's requested match variables, for \"MULTI EVENT\" rules. detection.detectionFields.key string Key for a field specified in the Google SecOps rule, for \"MULTI EVENT\" rules. detection.detectionFields.value string Value for a field specified in the Google SecOps rule, for \"MULTI EVENT\" rules. detection.ruleLabels list List of fields specified in Google SecOps rule metadata. detection.ruleLabels.key string Key for a field specified in the Google SecOps rule metadata. detection.ruleLabels.value string Value for a field specified in the Google SecOps rule metadata. detection.summary string Summary for the generated detection. detection.ruleSet string Identifier of the Google SecOps rule set that generated this detection. detection.ruleSetDisplayName string Display name of the Google SecOps rule set that generated this detection. detection.description string Description of the Google SecOps rule that generated the detection. detection.severity string Severity of the detection (\"INFORMATIONAL\" or \"LOW\" or \"HIGH\"). createdTime string Time the detection was created. detectionTime string String representing the time period the detection was found in. id string Identifier for the detection. timeWindow.startTime string String representing the start of the time window in which the detection was found, in RFC 3339 format. timeWindow.endTime string String representing the end of the time window in which the detection was found, in RFC 3339 format. collectionElements list A list of references to sample UDM events causing this detection, grouped by variable. collectionElements.label string The variable a given set of UDM events belongs to. collectionElements.references list A list of references to sample UDM events, grouped by the given label. collectionElements.references.event UDM A UDM event. lastUpdatedTime string Time the detection was last updated. tags list A list of MITRE tactic and technique IDs covered by the Google SecOps rule.",
+          "Only populated for RULE DETECTION type detections. detection.alertState string Indicates whether the rule generating this detection currently has alerting enabled or disabled. detection.ruleType string Whether the rule generating this detection is a single event or multi-event rule (\"SINGLE EVENT\" or \"MULTI EVENT\"). detection.urlBackToProduct string URL pointing to the Google SecOps application page for this detection. detection.detectionFields list List of fields matching the rules requested match variables, for \"MULTI EVENT\" rules. detection.detectionFields.key string Key for a field specified in the rule, for \"MULTI EVENT\" rules. detection.detectionFields.value string Value for a field specified in the rule, for \"MULTI EVENT\" rules. detection.ruleLabels list List of fields specified in rule metadata. detection.ruleLabels.key string Key for a field specified in the rule metadata. detection.ruleLabels.value string Value for a field specified in the rule metadata. detection.summary string Summary for the generated detection.",
+          "Use the following format to specify the rule: {ruleId}@v {int64} {int64} Sample request https://backstory.googleapis.com/v2/detect/rules/ru 1f54ab4b-e523-48f7-ae25-271b5ea8337d/detections/de eaccfe15-5fe6-0cf3-b54c-2d6435f53ee4 Response Response fields Field Name Type type string Type of detection (type is always RULE DETECTION). detection.ruleName string Name of the rule generating the detection, as parsed from ruleText. detection.ruleId string Identifier for the rule generating the detection. detection.ruleVersion string Identifier for the rule version generating the detection. detection.alertState string Indicates whether the rule generating this detection currently has alerting enabled or disabled. detection.ruleType string Whether the rule generating this detection is a single event or multi-event rule (\"SINGLE EVENT\" or \"MULTI EVENT\"). detection.urlBackToProduct string URL pointing to the Google SecOps application page for this detection. detection.description string Description of the rule that generated the detection."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "about.labels",
+      "additional.fields",
+      "additional.fields.key",
+      "additional.fields.value.string",
+      "backstory.googleapis.com",
+      "detection.alertState",
+      "detection.description",
+      "detection.detectionFields",
+      "detection.detectionFields.key",
+      "detection.detectionFields.value",
+      "detection.ruleId",
+      "detection.ruleLabels",
+      "detection.ruleLabels.key",
+      "detection.ruleLabels.value",
+      "detection.ruleName",
+      "detection.ruleSet",
+      "detection.ruleSetDisplayName",
+      "detection.ruleType",
+      "detection.ruleVersion",
+      "detection.severity",
+      "detection.summary",
+      "detection.urlBackToProduct",
+      "intermediary.labels",
+      "metadata.ingestion",
+      "observer.labels",
+      "principal.labels",
+      "references.event",
+      "result.about.labels",
+      "src.labels",
+      "target.labels",
+      "value.bool",
+      "value.number"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/deprecations"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/deprecations"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/deprecations"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/deprecations"
+      ]
+    },
+    {
+      "capability": "threat",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/deprecations"
+      ]
+    }
+  ]
+}

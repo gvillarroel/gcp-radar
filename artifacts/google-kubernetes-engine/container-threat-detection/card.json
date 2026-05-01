@@ -1,0 +1,154 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:39.542Z",
+  "source_step08_card": "data/step-08/current/products/google-kubernetes-engine/card.json",
+  "product_name": "Google Kubernetes Engine",
+  "product_slug": "google-kubernetes-engine",
+  "feature_name": "Container Threat Detection",
+  "feature_slug": "container-threat-detection",
+  "summary": "Detects common container runtime attacks and can alert in Security Command Center or Cloud Logging.",
+  "extended_definition": "Detects common container runtime attacks and can alert in Security Command Center or Cloud Logging.",
+  "lifecycle": {
+    "latest_feature_date": "2020-05-15",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/shared-responsibility",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/resources/autopilot-partners",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Security bulletins \\_|\\_ Google Kubernetes Engine (GKE) \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "source_id": "site-docs-reference-2",
+        "final_score": 149,
+        "relevance": "",
+        "evidence_snippets": [
+          "Upgrade your admin clusters and user clusters to one of the following versions: 1.8.3 1.7.4 High GCP-2021-017 Published: 2021-09-01 Updated: 2021-09-23 Reference: CVE-2021-33909 CVE-2021-33910 GKE Description Severity 2021-09-23 update: Containers running inside of GKE Sandbox are unaffected by this vulnerability for attacks originating inside the container.",
+          "GKE platforms don't use components such as ingress-nginx and the CRI-O container runtime, and are unaffected by any vulnerabilities in those components.",
+          "Built detection rules into Event Threat Detection (GKE CONTROL PLANE CREATE SENSITIVE BINDING) as part of Security Command Center."
+        ]
+      },
+      {
+        "title": "\"Autopilot partners \\_|\\_ Google Kubernetes Engine (GKE) \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/resources/autopilot-partners",
+        "source_id": "site-docs-reference-2",
+        "final_score": 123,
+        "relevance": "",
+        "evidence_snippets": [
+          "The platform offers visibility into processes, connections, and Kubernetes RBAC security controls by providing security monitoring, compliance capabilities, and threat detection across containerized workloads and nodes.",
+          "Its eBPF-based sensor for GKE Autopilot clusters provides runtime context for posture management, real-time threat detection, and defense measures, to help ensure security.",
+          "It helps prevent pre-runtime and runtime vulnerabilities, attacks, and misconfigurations in containerized applications."
+        ]
+      },
+      {
+        "title": "GKE shared responsibility \\_|\\_ GKE security \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/shared-responsibility",
+        "source_id": "site-iam-reference",
+        "final_score": 113,
+        "relevance": "",
+        "evidence_snippets": [
+          "Building and operating threat detection for container-specific threats into the kernel with Container Threat Detection (priced separately with Security Command Center).",
+          "This includes: vTPM-backed trusted bootstrap mechanism for issuing kubelet TLS certificates and auto-rotation of the certificates Hardened kubelet configuration following CIS benchmarks GKE metadata server for Workload identity GKE's native Container Network Interface plugin and Calico for NetworkPolicy GKE Kubernetes storage integrations such as the CSI driver GKE logging and monitoring agents Hardening and patching the control plane.",
+          "Customer's responsibilities Maintain your workloads, including your application code, build files, container images, data, Role-based access control (RBAC)/IAM policy, and containers and pods that you are running."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/shared-responsibility",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/resources/autopilot-partners"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/shared-responsibility",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/resources/autopilot-partners"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/shared-responsibility",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/resources/autopilot-partners"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/shared-responsibility",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/resources/autopilot-partners"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/shared-responsibility",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/resources/autopilot-partners"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/shared-responsibility",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/resources/autopilot-partners"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/shared-responsibility",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/resources/autopilot-partners"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/shared-responsibility",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/resources/autopilot-partners"
+      ]
+    },
+    {
+      "capability": "threat",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/shared-responsibility",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/resources/autopilot-partners"
+      ]
+    }
+  ]
+}

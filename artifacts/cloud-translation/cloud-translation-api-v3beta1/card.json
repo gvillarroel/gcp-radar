@@ -1,0 +1,197 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:28.821Z",
+  "source_step08_card": "data/step-08/current/products/cloud-translation/card.json",
+  "product_name": "Cloud Translation",
+  "product_slug": "cloud-translation",
+  "feature_name": "Cloud Translation API v3beta1",
+  "feature_slug": "cloud-translation-api-v3beta1",
+  "summary": "Cloud Translation API v3beta1 introduces the v3 beta interface for advanced translation features.",
+  "extended_definition": "Cloud Translation API v3beta1 introduces the v3 beta interface for advanced translation features.",
+  "lifecycle": {
+    "latest_feature_date": "2019-04-10",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/translate/docs/advanced/glossary",
+      "https://docs.cloud.google.com/translate/docs/intro-to-v3",
+      "https://docs.cloud.google.com/translate/docs/reference/api-overview",
+      "https://docs.cloud.google.com/translate/docs/reference/rest"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Cloud Translation API \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/translate/docs/reference/rest",
+        "source_id": "site-api-reference",
+        "final_score": 210,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "This service has the following service endpoint and all URIs below are relative to this service endpoint: https://translate.googleapis.com REST Resource: v3beta1.projects Methods detectLanguage POST /v3beta1/{parent=projects/ }:detectLanguage Detects the language of text within a request. getSupportedLanguages GET /v3beta1/{parent=projects/ }/supportedLanguages Returns a list of supported languages for translation. translateText POST /v3beta1/{parent=projects/ }:translateText Translates input text and returns translated text.",
+          "REST Resource: v3beta1.projects.locations Methods batchTranslateDocument POST /v3beta1/{parent=projects/ /locations/ }:batchTranslateDocument Translates a large volume of document in asynchronous batch mode. batchTranslateText POST /v3beta1/{parent=projects/ /locations/ }:batchTranslateText Translates a large volume of text in asynchronous batch mode. detectLanguage POST /v3beta1/{parent=projects/ /locations/ }:detectLanguage Detects the language of text within a request. get GET /v3beta1/{name=projects/ /locations/ } Gets information about a location. getSupportedLanguages GET /v3beta1/{parent=projects/ /locations/ }/supportedLanguages Returns a list of supported languages for translation. list GET /v3beta1/{name=projects/ }/locations Lists information about the supported locations for this service. translateDocument POST /v3beta1/{parent=projects/ /locations/ }:translateDocument Translates documents in synchronous mode. translateText POST /v3beta1/{parent=projects/ /locations/ }:translateText Translates input text and returns translated text.",
+          "REST Resource: v3beta1.projects REST Resource: v3beta1.projects.locations REST Resource: v3beta1.projects.locations.glossaries REST Resource: v3beta1.projects.locations.operations REST Resource: v3.projects REST Resource: v3.projects.locations REST Resource: v3.projects.locations.adaptiveMtDatasets REST Resource: v3.projects.locations.adaptiveMtDatasets.adaptiveMtFiles REST Resource: v3.projects.locations.adaptiveMtDatasets.adaptiveMtFiles.adaptiveMtSentences REST Resource: v3.projects.locations.adaptiveMtDatasets.adaptiveMtSentences REST Resource: v3.projects.locations.datasets REST Resource: v3.projects.locations.datasets.examples REST Resource: v3.projects.locations.glossaries REST Resource: v3.projects.locations.glossaries.glossaryEntries REST Resource: v3.projects.locations.models REST Resource: v3.projects.locations.operations Service: translate.googleapis.com To call this service, we recommend that you use the Google-provided client libraries ."
+        ]
+      },
+      {
+        "title": "API usage overview \\_|\\_ Cloud Translation \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/translate/docs/reference/api-overview",
+        "source_id": "site-api-reference",
+        "final_score": 165,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Client libraries, REST, and gRPC You can access the API through client libraries, REST, or gRPC (Cloud Translation - Advanced only).",
+          "API usage overview This guide provides an overview of using the Cloud Translation API and its reference documentation.",
+          "API editions Cloud Translation offers two editions: Basic (v2) and Advanced (v3)."
+        ]
+      },
+      {
+        "title": "\"Creating and using glossaries (Advanced) \\_|\\_ Cloud Translation \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/translate/docs/advanced/glossary",
+        "source_id": "site-iam-reference",
+        "final_score": 162,
+        "relevance": "",
+        "evidence_snippets": [
+          "Save the request body in a file named request.json , and execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\"; \"x-goog-user-project\" = \" PROJECT NUMBER OR ID \" } Invoke-WebRequest -Method POST -Headers $headers -ContentType: \"application/json; charset=utf-8\" -InFile request.json -Uri \"https://translation.googleapis.com/v3/projects/ PROJECT NUMBER OR ID /locations/us-central1/glossaries\" Select-Object -Expand Content You should receive a JSON response similar to the following: { \"name\": \"projects/ project-number /locations/us-central1/operations/ operation-id \", \"metadata\": { \"@type\": \"type.googleapis.com/google.cloud.translation.v3beta1.CreateGlossaryMetadata\", \"name\": \"projects/ project-number /locations/us-central1/glossaries/ glossary-id \", \"state\": \"RUNNING\", \"submitTime\": \"2019-11-19T19:05:10.650047636Z\" } } Equivalent term sets glossary Once you have the glossary terms identified in your equivalent term set, make the glossary file available to the Cloud Translation API by creating a glossary resource.",
+          "Save the request body in a file named request.json , and execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\"; \"x-goog-user-project\" = \" PROJECT NUMBER OR ID \" } Invoke-WebRequest -Method POST -Headers $headers -ContentType: \"application/json; charset=utf-8\" -InFile request.json -Uri \"https://translation.googleapis.com/v3/projects/ PROJECT NUMBER OR ID /locations/us-central1/glossaries\" Select-Object -Expand Content You should receive a JSON response similar to the following: { \"name\": \"projects/ project-number /locations/us-central1/operations/20191103-09061569945989-5d937985-0000-21ac-816d-f4f5e80782d4\", \"metadata\": { \"@type\": \"type.googleapis.com/google.cloud.translation.v3beta1.CreateGlossaryMetadata\", \"name\": \"projects/ project-number /locations/us-central1/glossaries/ glossary-id \", \"state\": \"RUNNING\", \"submitTime\": \"2019-11-03T16:06:29.134496675Z\" } } Go Before trying this sample, follow the Go setup instructions in the Cloud Translation quickstart using client libraries .",
+          "Save the request body in a file named request.json , and execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\"; \"x-goog-user-project\" = \" PROJECT NUMBER OR ID \" } Invoke-WebRequest -Method PATCH -Headers $headers -ContentType: \"application/json; charset=utf-8\" -InFile request.json -Uri \"https://translation.googleapis.com/v3/projects/ PROJECT NUMBER OR ID /locations/ LOCATION /glossaries/ GLOSSARY ID ?update mask=input config&update mask=display name\" Select-Object -Expand Content You should receive a JSON response similar to the following: { \"name\": \"projects/ PROJECT NUMBER /locations/ LOCATION /operations/ OPERATION ID \", \"metadata\": { \"@type\": \"type.googleapis.com/google.cloud.translation.v3.UpdateGlossaryMetadata\", \"glossary\": { \"name\": \"projects/ PROJECT NUMBER /locations/ LOCATION /glossaries/ GLOSSARY ID \", \"languageCodesSet\": { \"languageCodes\": [\" LANGUAGE CODE \", ...] }, \"inputConfig\": { \"gcsSource\": { \"inputUri\": \"gs:// GLOSSARY FILE PATH \" } }, \"entryCount\": NUMBER OF ENTRIES , \"submitTime\": \"2022-04-22T23:16:30.628806944Z\", \"endTime\": \"2022-04-22T23:41:15.115797Z\", \"displayName\": \" GLOSSARY ID \" }, \"state\": \"RUNNING\", \"submitTime\": \"2022-04-22T23:50:24.337964527Z\" } } Additional languages C# : Please follow the C# setup instructions on the client libraries page and then visit the Cloud Translation reference documentation for .NET."
+        ]
+      },
+      {
+        "title": "Overview of the Cloud Translation API \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/translate/docs/intro-to-v3",
+        "source_id": "site-iam-reference",
+        "final_score": 159,
+        "relevance": "",
+        "evidence_snippets": [
+          "Cloud Translation - Advanced API The Advanced edition is accessed through v3 client libraries and requires service account authentication that's integrated with IAM roles.",
+          "Feature Basic Advanced Translate with the NMT model Translate with the Translation LLM Translate with Adaptive Translation models Translate with custom models Translate multiple strings in a single request Batch translations with Cloud Storage Translate documents Glossary support (control terminology) Train custom models Language Detection Integrated REST API Integrated gRPC API Service Account API Key Audit logging Supports HTML Supports 100+ Languages Romanization support Transliteration support Adaptive Translation Multi-regional endpoint support VPC Service Controls support Refer to Cloud Translation - Advanced API features for more details on Cloud Translation - Advanced API.",
+          "Advanced API features Using Cloud Translation - Advanced API rather than Cloud Translation - Basic API gives you access to the following features that can make your translation solution more robust and better suited to your specific use case: Model selection and customization Cloud Translation - Advanced API model selection lets you dynamically select different models, including models that you customize to suit your particular application."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "request.json",
+      "translate.googleapis.com",
+      "translation.googleapis.com",
+      "type.googleapis.com",
+      "v3.projects",
+      "v3.projects.locations",
+      "v3.projects.locations.adaptiveMtDatasets",
+      "v3.projects.locations.adaptiveMtDatasets.adaptiveMtFiles",
+      "v3.projects.locations.adaptiveMtDatasets.adaptiveMtFiles.adaptiveMtSentences",
+      "v3.projects.locations.adaptiveMtDatasets.adaptiveMtSentences",
+      "v3.projects.locations.datasets",
+      "v3.projects.locations.datasets.examples",
+      "v3.projects.locations.glossaries",
+      "v3.projects.locations.glossaries.glossaryEntries",
+      "v3.projects.locations.models",
+      "v3.projects.locations.operations",
+      "v3beta1.projects",
+      "v3beta1.projects.locations",
+      "v3beta1.projects.locations.glossaries",
+      "v3beta1.projects.locations.operations"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/translate/docs/reference/rest",
+        "https://docs.cloud.google.com/translate/docs/reference/api-overview",
+        "https://docs.cloud.google.com/translate/docs/advanced/glossary",
+        "https://docs.cloud.google.com/translate/docs/intro-to-v3"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/translate/docs/reference/rest",
+        "https://docs.cloud.google.com/translate/docs/reference/api-overview",
+        "https://docs.cloud.google.com/translate/docs/advanced/glossary",
+        "https://docs.cloud.google.com/translate/docs/intro-to-v3"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/translate/docs/reference/rest",
+        "https://docs.cloud.google.com/translate/docs/reference/api-overview",
+        "https://docs.cloud.google.com/translate/docs/advanced/glossary",
+        "https://docs.cloud.google.com/translate/docs/intro-to-v3"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/translate/docs/reference/rest",
+        "https://docs.cloud.google.com/translate/docs/reference/api-overview",
+        "https://docs.cloud.google.com/translate/docs/advanced/glossary",
+        "https://docs.cloud.google.com/translate/docs/intro-to-v3"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/translate/docs/reference/rest",
+        "https://docs.cloud.google.com/translate/docs/reference/api-overview",
+        "https://docs.cloud.google.com/translate/docs/advanced/glossary",
+        "https://docs.cloud.google.com/translate/docs/intro-to-v3"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/translate/docs/reference/rest",
+        "https://docs.cloud.google.com/translate/docs/reference/api-overview",
+        "https://docs.cloud.google.com/translate/docs/advanced/glossary",
+        "https://docs.cloud.google.com/translate/docs/intro-to-v3"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/translate/docs/reference/rest",
+        "https://docs.cloud.google.com/translate/docs/reference/api-overview",
+        "https://docs.cloud.google.com/translate/docs/advanced/glossary",
+        "https://docs.cloud.google.com/translate/docs/intro-to-v3"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/translate/docs/reference/rest",
+        "https://docs.cloud.google.com/translate/docs/reference/api-overview",
+        "https://docs.cloud.google.com/translate/docs/advanced/glossary",
+        "https://docs.cloud.google.com/translate/docs/intro-to-v3"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/translate/docs/reference/rest",
+        "https://docs.cloud.google.com/translate/docs/reference/api-overview",
+        "https://docs.cloud.google.com/translate/docs/advanced/glossary",
+        "https://docs.cloud.google.com/translate/docs/intro-to-v3"
+      ]
+    }
+  ]
+}

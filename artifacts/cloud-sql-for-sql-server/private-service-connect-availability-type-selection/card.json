@@ -1,0 +1,149 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:27.901Z",
+  "source_step08_card": "data/step-08/current/products/cloud-sql-for-sql-server/card.json",
+  "product_name": "Cloud SQL for SQL Server",
+  "product_slug": "cloud-sql-for-sql-server",
+  "feature_name": "Private Service Connect availability type selection",
+  "feature_slug": "private-service-connect-availability-type-selection",
+  "summary": "Cloud SQL lets you choose REGIONAL or ZONAL availability for Private Service Connect-enabled instances; Cloud SQL lets you choose REGIONAL or ZONAL availability for Private Service Connect-enabled instances.",
+  "extended_definition": "Cloud SQL lets you choose REGIONAL or ZONAL availability for Private Service Connect-enabled instances; Cloud SQL lets you choose REGIONAL or ZONAL availability for Private Service Connect-enabled instances.",
+  "lifecycle": {
+    "latest_feature_date": "2024-03-25",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/sql/docs/sqlserver/about-private-service-connect",
+      "https://docs.cloud.google.com/sql/docs/sqlserver/configure-ha",
+      "https://docs.cloud.google.com/sql/docs/sqlserver/create-instance"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Create instances \\_|\\_ Cloud SQL for SQL Server \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/sql/docs/sqlserver/create-instance",
+        "source_id": "site-docs-root",
+        "final_score": 144,
+        "relevance": "",
+        "evidence_snippets": [
+          "Execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method GET -Headers $headers -Uri \"https://sqladmin.googleapis.com/sql/v1beta4/projects/ PROJECT ID /instances/ INSTANCE ID \" Select-Object -Expand Content You should receive a JSON response similar to the following: { \"kind\": \"sql#instance\", \"state\": \"RUNNABLE\", \"databaseVersion\": \" DATABASE VERSION \", \"settings\": { \"authorizedGaeApplications\": [], \"tier\": \" MACHINE TYPE \", \"kind\": \"sql#settings\", \"pricingPlan\": \"PER USE\", \"replicationType\": \"SYNCHRONOUS\", \"activationPolicy\": \"ALWAYS\", \"ipConfiguration\": { \"authorizedNetworks\": [], \"ipv4Enabled\": true }, \"locationPreference\": { \"zone\": \" ZONE \", \"kind\": \"sql#locationPreference\" }, \"dataDiskType\": \"PD SSD\", \"backupConfiguration\": { \"startTime\": \"19:00\", \"kind\": \"sql#backupConfiguration\", \"enabled\": true }, \"settingsVersion\": \"1\", \"dataDiskSizeGb\": \"10\" }, \"etag\": \"--redacted--\", \"ipAddresses\": [ { \"type\": \"PRIMARY\", \" ipAddress \": \" 10.0.0.1 \" } ], \"serverCaCert\": { ... }, \"instanceType\": \"CLOUD SQL INSTANCE\", \"project\": \" PROJECT ID \", \"serviceAccountEmailAddress\": \"redacted@gcp-sa-cloud-sql.iam.gserviceaccount.com\", \"backendType\": \" BACKEND TYPE \", \"selfLink\": \"https://sqladmin.googleapis.com/sql/v1beta4/projects/ PROJECT ID /instances/ INSTANCE ID \", \"connectionName\": \" PROJECT ID:REGION:INSTANCE ID \", \"name\": \" INSTANCE ID \", \"region\": \" REGION \", \"gceZone\": \" ZONE \" } To see how the underlying REST API request is constructed for this task, see the APIs Explorer on the instances:insert page .",
+          "Execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method GET -Headers $headers -Uri \"https://sqladmin.googleapis.com/v1/projects/ PROJECT ID /instances/ INSTANCE ID \" Select-Object -Expand Content You should receive a JSON response similar to the following: { \"kind\": \"sql#instance\", \"state\": \"RUNNABLE\", \"databaseVersion\": \" DATABASE VERSION \", \"settings\": { \"authorizedGaeApplications\": [], \"tier\": \" MACHINE TYPE \", \"kind\": \"sql#settings\", \"pricingPlan\": \"PER USE\", \"replicationType\": \"SYNCHRONOUS\", \"activationPolicy\": \"ALWAYS\", \"ipConfiguration\": { \"authorizedNetworks\": [], \"ipv4Enabled\": true }, \"locationPreference\": { \"zone\": \" ZONE \", \"kind\": \"sql#locationPreference\" }, \"dataDiskType\": \"PD SSD\", \"backupConfiguration\": { \"startTime\": \"19:00\", \"kind\": \"sql#backupConfiguration\", \"enabled\": true }, \"settingsVersion\": \"1\", \"dataDiskSizeGb\": \"10\" }, \"etag\": \"--redacted--\", \"ipAddresses\": [ { \"type\": \"PRIMARY\", \" ipAddress \": \" 10.0.0.1 \" } ], \"serverCaCert\": { ... }, \"instanceType\": \"CLOUD SQL INSTANCE\", \"project\": \" PROJECT ID \", \"serviceAccountEmailAddress\": \"redacted@gcp-sa-cloud-sql.iam.gserviceaccount.com\", \"backendType\": \" BACKEND TYPE \", \"selfLink\": \"https://sqladmin.googleapis.com/v1/projects/ PROJECT ID /instances/ INSTANCE ID \", \"connectionName\": \" PROJECT ID:REGION:INSTANCE ID \", \"name\": \" INSTANCE ID \", \"region\": \" REGION \", \"gceZone\": \" ZONE \" } REST v1beta4 1.",
+          "Machine type vCPU/Memory Not applicable 1 vCPU, 3.75 GB 2 vCPUs, 8 GB 4 vCPUs, 16 GB 8 vCPUs, 32 GB Custom 1 to 32 vCPUs, 3.75 GB to 208 GB SQL Server 2017 Standard, SQL Server 2019 Standard, SQL Server 2022 Standard, and SQL Server 2025 Standard Machine type vCPU/Memory Not applicable 1 vCPU, 3.75 GB 2 vCPUs, 8 GB 4 vCPUs, 16 GB 8 vCPUs, 32 GB Custom 1 to 48 vCPUs, 3.75 GB to 312 GB SQL Server 2017 Enterprise, SQL Server 2019 Enterprise, SQL Server 2022 Enterprise, and SQL Server 2025 Enterprise Machine type vCPU/Memory Not applicable 1 vCPU, 3.75 GB 2 vCPUs, 8 GB 4 vCPUs, 16 GB 8 vCPUs, 32 GB Custom 2 to 96 vCPUs, 3.75 GB to 624 GB Performance-optimized (Cloud SQL Enterprise Plus only) 2 vCPUs, 16 GB 4 vCPUs, 32 GB 8 vCPUs, 64 GB 16 vCPUs, 128 GB 32 vCPUs, 256 GB 48 vCPUs, 384 GB 64 vCPUs, 512 GB 80 vCPUs, 640 GB 96 vCPUs, 768 GB 128 vCPUs, 864 GB Memory-optimized (Cloud SQL Enterprise Plus only) 4 vCPUs, 128 GB 8 vCPUs, 256 GB 16 vCPUs, 512 GB Simultaneous multithreading Simultaneous multithreading (SMT) on Cloud SQL for SQL Server lets you run two virtual CPUs (vCPUs) as independent, separate threads on one physical core."
+        ]
+      },
+      {
+        "title": "\"Private Service Connect overview \\_|\\_ Cloud SQL for SQL Server \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/sql/docs/sqlserver/about-private-service-connect",
+        "source_id": "site-docs-reference-required-4",
+        "final_score": 131,
+        "relevance": "",
+        "evidence_snippets": [
+          "Service connection policy A service connection policy lets you authorize a specified service class to create a Private Service Connect connection between VPC networks.",
+          "You can use Private Service Connect for the following purposes: Connect to a Cloud SQL instance from multiple VPC networks that belong to different groups, teams, projects, or organizations Connect to either a primary instance or any of its read replicas Private Service Connect endpoint You can use Private Service Connect endpoints to access Cloud SQL instances privately from your consumer VPC networks.",
+          "To use Private Service Connect backends, you must setup the following resources for each serving port on which you want to access a given Cloud SQL instance: Private Service Connect Network Endpoint Group (NEG) , which must reference the service attachment and a serving port of the Cloud SQL instance."
+        ]
+      },
+      {
+        "title": "\"Enable and disable high availability \\_|\\_ Cloud SQL for SQL Server \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/sql/docs/sqlserver/configure-ha",
+        "source_id": "site-docs-root",
+        "final_score": 130,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Console Important: You can't use the Google Cloud console to deactivate high availability for instances that have Private Service Connect enabled.",
+          "Console Important: You can't use the Google Cloud console to configure instances that have Private Service Connect enabled for high availability.",
+          "Before using any of the request data, make the following replacements: project-id : The project ID instance-name : The instance name database-version : The database version enum string region The GCP region machine-type The machine type HTTP method and URL: POST https://sqladmin.googleapis.com/sql/v1beta4/projects/ project-id /instances Request JSON body: { \"name\": \" instance-name \", \"region\": \" region \", \"databaseVersion\": \" database-version \", \"settings\": { \"tier\": \" machine-type \", \"backupConfiguration\": { \"enabled\": true }, \"availabilityType\": \"REGIONAL\" } } To send your request, expand one of these options: curl (Linux, macOS, or Cloud Shell) Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "sql.iam.gserviceaccount.com",
+      "sqladmin.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/create-instance",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/configure-ha",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/about-private-service-connect"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/create-instance",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/configure-ha",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/about-private-service-connect"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/create-instance",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/configure-ha",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/about-private-service-connect"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/create-instance",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/configure-ha",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/about-private-service-connect"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/create-instance",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/configure-ha",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/about-private-service-connect"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/create-instance",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/configure-ha",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/about-private-service-connect"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/create-instance",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/configure-ha",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/about-private-service-connect"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/create-instance",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/configure-ha",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/about-private-service-connect"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,104 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:23.307Z",
+  "source_step08_card": "data/step-08/current/products/cloud-deploy/card.json",
+  "product_name": "Cloud Deploy",
+  "product_slug": "cloud-deploy",
+  "feature_name": "Sample custom targets",
+  "feature_slug": "sample-custom-targets",
+  "summary": "Sample custom targets provide example implementations for custom target integrations such as Terraform Infrastructure Manager, GitOps, Vertex AI, and Helm.",
+  "extended_definition": "Sample custom targets provide example implementations for custom target integrations such as Terraform Infrastructure Manager, GitOps, Vertex AI, and Helm.",
+  "lifecycle": {
+    "latest_feature_date": "2023-12-18",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/deploy/docs/api/reference/rest/v1/projects.locations.customTargetTypes",
+      "https://docs.cloud.google.com/deploy/docs/create-pipeline-targets",
+      "https://docs.cloud.google.com/deploy/docs/custom-targets"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "About custom targets \\_|\\_ Cloud Deploy \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/deploy/docs/custom-targets",
+        "source_id": "site-docs-reference-2",
+        "final_score": 263,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Example deploy results file The following is a sample results.json file output from a custom deploy: { \"resultStatus\" : \"SUCCEEDED\" , \"artifactFiles\" : [ \"gs://bucket/my-pipeline/release-001/rollout-a/01234/custom-output/file1.yaml\" , \"gs://bucket/my-pipeline/release-001/rollout-a/01234/custom-output/file2.yaml\" ], \"failureMessage\" : \"\" , \"skipMessage\" : \"\" , \"metadata\" : { \"key1\" : \"val\" , \"key2\" : \"val\" } } Further information about custom targets Here are some things to keep in mind when setting up and using custom target types.",
+          "Example render results file The following is a sample results.json file output from a custom render: { \"resultStatus\" : \"SUCCEEDED\" , \"manifestFile\" : \"gs://bucket/my-pipeline/release-001/rollout-a/01234/custom-output/manifest.yaml\" , \"failureMessage\" : \"\" , \"metadata\" : { \"key1\" : \"val\" , \"key2\" : \"val\" } } Inputs to custom deploys For custom deploys, Cloud Deploy provides the following inputs, as environment variables: CLOUD DEPLOY PROJECT The Google Cloud project number for the project in which the custom target is created.",
+          "Custom target examples The cloud-deploy-samples repository contains a set of sample custom target implementations."
+        ]
+      },
+      {
+        "title": "\"Create your delivery pipeline and targets \\_|\\_ Cloud Deploy \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/deploy/docs/create-pipeline-targets",
+        "source_id": "site-docs-reference-required-3",
+        "final_score": 209,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "A single-file example The command in this example registers a delivery pipeline and targets that are all defined in the same file: gcloud deploy apply -- file = clouddeploy . yaml -- region = us - central1 An example using separate files For this example, there are three targets defined in three separate files, so you run four commands: gcloud deploy apply -- file = delivery - pipeline . yaml -- region = us - central1 && \\ gcloud deploy apply -- file = target dev . yaml -- region = us - central1 && \\ gcloud deploy apply -- file = target staging . yaml -- region = us - central1 && \\ gcloud deploy apply -- file = target prod . yaml -- region = us - central1 The --region flag is required unless you've set a default (using gcloud config set deploy/region [REGION] ).",
+          "Create the delivery pipeline and targets using Terraform You can also use the Google Cloud Terraform provider to create delivery pipeline and target resources.",
+          "Within a delivery pipeline, all targets must reference the same runtime type (all GKE, or all Cloud Run, for example)."
+        ]
+      },
+      {
+        "title": "\"REST Resource: projects.locations.customTargetTypes \\_|\\_ Cloud Deploy \\_\\",
+        "url": "https://docs.cloud.google.com/deploy/docs/api/reference/rest/v1/projects.locations.customTargetTypes",
+        "source_id": "site-api-reference-required-1",
+        "final_score": 209,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "JSON representation { \"name\" : string , \"customTargetTypeId\" : string , \"uid\" : string , \"description\" : string , \"annotations\" : { string : string , ... } , \"labels\" : { string : string , ... } , \"createTime\" : string , \"updateTime\" : string , \"etag\" : string , // Union field definition can be only one of the following: \"customActions\" : { object ( CustomTargetSkaffoldActions ) } // End of list of possible types for union field definition . } Fields name string Identifier.",
+          "Resource: CustomTargetType JSON representation CustomTargetSkaffoldActions JSON representation SkaffoldModules JSON representation SkaffoldGitSource JSON representation SkaffoldGCSSource JSON representation SkaffoldGCBRepoSource JSON representation Methods Resource: CustomTargetType A CustomTargetType resource in the Cloud Deploy API.",
+          "Defines the CustomTargetType renderer and deployer. definition can be only one of the following: customActions object ( CustomTargetSkaffoldActions ) Optional."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "file1.yaml",
+      "file2.yaml",
+      "manifest.yaml",
+      "projects.locations.customTargetTypes",
+      "results.json"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/deploy/docs/custom-targets",
+        "https://docs.cloud.google.com/deploy/docs/create-pipeline-targets",
+        "https://docs.cloud.google.com/deploy/docs/api/reference/rest/v1/projects.locations.customTargetTypes"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/deploy/docs/custom-targets",
+        "https://docs.cloud.google.com/deploy/docs/create-pipeline-targets",
+        "https://docs.cloud.google.com/deploy/docs/api/reference/rest/v1/projects.locations.customTargetTypes"
+      ]
+    }
+  ]
+}

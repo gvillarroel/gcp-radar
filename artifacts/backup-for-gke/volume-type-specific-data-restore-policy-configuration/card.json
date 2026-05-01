@@ -1,0 +1,145 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:18.457Z",
+  "source_step08_card": "data/step-08/current/products/backup-for-gke/card.json",
+  "product_name": "Backup for GKE",
+  "product_slug": "backup-for-gke",
+  "feature_name": "Volume-type-specific data restore policy configuration",
+  "feature_slug": "volume-type-specific-data-restore-policy-configuration",
+  "summary": "Backup for GKE allows configuring volume data restore policies by volume type, with overrides for specific volumes.",
+  "extended_definition": "Backup for GKE allows configuring volume data restore policies by volume type, with overrides for specific volumes.",
+  "lifecycle": {
+    "latest_feature_date": "2024-06-03",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/how-to/restore-plan",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/reference/rest/v1/RestoreConfig",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/reference/rest/v1/VolumeDataRestorePolicy"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Plan a set of restores \\_|\\_ Backup for GKE \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/how-to/restore-plan",
+        "source_id": "site-docs-root",
+        "final_score": 185,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Click Merge replace (destructive) if a specific resource already exists, replace that resource with the one from backup and the associated volume data by following the volume data restore policy.",
+          "Click Merge replace volume (destructive) if a specific resource already exists, skip restoring that resource but replace the underlying persistent volume using the volume data restore policy.",
+          "Create a restore plan for all namespaces The following command creates a restore plan to restore all namespaces and cluster resources: gcloud beta container backup-restore restore-plans create RESTORE PLAN \\ --location = LOCATION \\ --backup-plan = projects/ PROJECT ID /locations/ BACKUP LOCATION /backupPlans/ BACKUP PLAN NAME \\ --cluster = CLUSTER \\ --namespaced-resource-restore-mode = fail-on-conflict \\ --all-namespaces \\ --cluster-resource-conflict-policy = use-existing-version \\ --cluster-resource-scope-all-group-kinds \\ --volume-data-restore-policy = restore-volume-data-from-backup Create a restore plan to roll back a namespace The following command creates a restore plan to roll back the namespace my-ns from backup: gcloud beta container backup-restore restore-plans create RESTORE PLAN \\ --location = LOCATION \\ --backup-plan = projects/ PROJECT ID /locations/ BACKUP LOCATION /backupPlans/ BACKUP PLAN NAME \\ --cluster = CLUSTER \\ --namespaced-resource-restore-mode = delete-and-restore \\ --selected-namespaces = my-ns \\ --cluster-resource-conflict-policy = use-existing-version \\ --cluster-resource-scope-selected-group-kinds = apiextension.k8s.io/CustomResourceDefinition,storage.k8s.io/StorageClass \\ --volume-data-restore-policy = restore-volume-data-from-backup Create a restore plan to roll back a ProtectedApplication to reconnect original volumes The following command creates a restore plan to roll back the protected application my-ns/my-app to reconnect original volumes: gcloud beta container backup-restore restore-plans create RESTORE PLAN \\ --location = LOCATION \\ --backup-plan = projects/ PROJECT ID /locations/ BACKUP LOCATION /backupPlans/ BACKUP PLAN NAME \\ --cluster = CLUSTER \\ --namespaced-resource-restore-mode = delete-and-restore \\ --selected-applications = my-ns/my-app \\ --cluster-resource-conflict-policy = use-existing-version \\ --cluster-resource-scope-no-group-kinds \\ --volume-data-restore-policy = reuse-volume-handle-from-backup Create a restore plan to restore cluster resources only The following command creates a restore plan to restore all cluster resources: gcloud beta container backup-restore restore-plans create RESTORE PLAN \\ --location = LOCATION \\ --backup-plan = projects/ PROJECT ID /locations/ BACKUP LOCATION /backupPlans/ BACKUP PLAN NAME \\ --cluster = CLUSTER \\ --namespaced-resource-restore-mode = fail-on-conflict \\ --no-namespaces \\ --cluster-resource-conflict-policy = use-existing-version \\ --cluster-resource-scope-all-group-kinds Console Use the following instructions to create a restore plan in the Google Cloud console: Go to the Google Kubernetes Engine page in the Google Cloud console."
+        ]
+      },
+      {
+        "title": "RestoreConfig \\_|\\_ Backup for GKE \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/reference/rest/v1/RestoreConfig",
+        "source_id": "site-api-reference",
+        "final_score": 177,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "JSON representation ClusterResourceConflictPolicy NamespacedResourceRestoreMode ClusterResourceRestoreScope JSON representation SubstitutionRule JSON representation TransformationRule JSON representation TransformationRuleAction JSON representation Op ResourceFilter JSON representation VolumeDataRestorePolicyBinding JSON representation VolumeType RestoreOrder JSON representation GroupKindDependency JSON representation Configuration of a restore.",
+          "JSON representation { \"volumeDataRestorePolicy\" : enum ( VolumeDataRestorePolicy ) , \"clusterResourceConflictPolicy\" : enum ( ClusterResourceConflictPolicy ) , \"namespacedResourceRestoreMode\" : enum ( NamespacedResourceRestoreMode ) , \"clusterResourceRestoreScope\" : { object ( ClusterResourceRestoreScope ) } , \"substitutionRules\" : [ { object ( SubstitutionRule ) } ] , \"transformationRules\" : [ { object ( TransformationRule ) } ] , \"volumeDataRestorePolicyBindings\" : [ { object ( VolumeDataRestorePolicyBinding ) } ] , \"restoreOrder\" : { object ( RestoreOrder ) } , // Union field namespaced resource restore scope can be only one of the // following: \"allNamespaces\" : boolean , \"selectedNamespaces\" : { object ( Namespaces ) } , \"selectedApplications\" : { object ( NamespacedNames ) } , \"noNamespaces\" : boolean , \"excludedNamespaces\" : { object ( Namespaces ) } // End of list of possible types for union field // namespaced resource restore scope . } Fields volumeDataRestorePolicy enum ( VolumeDataRestorePolicy ) Optional.",
+          "JSON representation { \"policy\" : enum ( VolumeDataRestorePolicy ) , // Union field scope can be only one of the following: \"volumeType\" : enum ( VolumeType ) // End of list of possible types for union field scope . } Fields policy enum ( VolumeDataRestorePolicy ) Required."
+        ]
+      },
+      {
+        "title": "VolumeDataRestorePolicy \\_|\\_ Backup for GKE \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/reference/rest/v1/VolumeDataRestorePolicy",
+        "source_id": "site-api-reference",
+        "final_score": 154,
+        "relevance": "",
+        "evidence_snippets": [
+          "Home Documentation Application hosting Google Kubernetes Engine (GKE) Documentation Reference Send feedback VolumeDataRestorePolicy Stay organized with collections Save and categorize content based on your preferences.",
+          "Enums VOLUME DATA RESTORE POLICY UNSPECIFIED Unspecified (illegal).",
+          "RESTORE VOLUME DATA FROM BACKUP For each PVC to be restored, create a new underlying volume and PV from the corresponding VolumeBackup contained within the Backup."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "apiextension.k8s.io",
+      "gkebackup.gke.io",
+      "metrics.k8s.io",
+      "migration.k8s.io",
+      "snapshot.storage.k8s.io",
+      "storage.k8s.io"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/how-to/restore-plan",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/reference/rest/v1/RestoreConfig",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/reference/rest/v1/VolumeDataRestorePolicy"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/how-to/restore-plan",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/reference/rest/v1/RestoreConfig",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/reference/rest/v1/VolumeDataRestorePolicy"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/how-to/restore-plan",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/reference/rest/v1/RestoreConfig",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/reference/rest/v1/VolumeDataRestorePolicy"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/how-to/restore-plan",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/reference/rest/v1/RestoreConfig",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/reference/rest/v1/VolumeDataRestorePolicy"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/how-to/restore-plan",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/reference/rest/v1/RestoreConfig",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/reference/rest/v1/VolumeDataRestorePolicy"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/how-to/restore-plan",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/reference/rest/v1/RestoreConfig",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/reference/rest/v1/VolumeDataRestorePolicy"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/how-to/restore-plan",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/reference/rest/v1/RestoreConfig",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/reference/rest/v1/VolumeDataRestorePolicy"
+      ]
+    }
+  ]
+}

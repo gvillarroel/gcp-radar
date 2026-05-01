@@ -1,0 +1,103 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:23.307Z",
+  "source_step08_card": "data/step-08/current/products/cloud-deploy/card.json",
+  "product_name": "Cloud Deploy",
+  "product_slug": "cloud-deploy",
+  "feature_name": "Anthos user cluster deployments",
+  "feature_slug": "anthos-user-cluster-deployments",
+  "summary": "Cloud Deploy supports deploying applications to Anthos user clusters.",
+  "extended_definition": "Cloud Deploy supports deploying applications to Anthos user clusters.",
+  "lifecycle": {
+    "latest_feature_date": "2022-02-28",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 1,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "coverage_low",
+        "message": "The feature ended with coverage LOW.",
+        "suggested_steps": [
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/deploy/docs/anthos-targets",
+      "https://docs.cloud.google.com/deploy/docs/custom-targets",
+      "https://docs.cloud.google.com/deploy/docs/hooks"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Run hooks before and after deploying \\_|\\_ Cloud Deploy \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/deploy/docs/hooks",
+        "source_id": "site-docs-reference-2",
+        "final_score": 40,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "You can configure each hook to run in a specified Cloud Deploy execution environment , but if you're deploying to Google Kubernetes Engine you can optionally configure it to run on the GKE cluster where you're deploying your application.",
+          "To run hooks on the application cluster, you must configure them as customActions in your skaffold.yaml , and reference them using actions in the predeploy or postdeploy stanza in your delivery pipeline stage configuration: serialPipeline : stages : - targetId : hooks-staging profiles : [] strategy : standard : predeploy : actions : [ \"my-predeploy-action\" ] postdeploy : actions : [ \"my-postdeploy-action\" ] Note: If you configure hooks using tasks , those hooks run only in the Cloud Deploy execution environment.",
+          "The following is an example customActions stanza that includes executionMode to invoke the hook container on the application cluster: customActions : - name : predeploy-action containers : - name : predeploy-echo image : ubuntu command : [ \"/bin/sh\" ] args : [ \"-c\" , 'echo \"this is a predeploy action\"' ] executionMode : kubernetesCluster : {} The executionMode stanza is optional, and if you omit it, Skaffold runs the custom action container in the Cloud Deploy execution environment."
+        ]
+      },
+      {
+        "title": "Deploy to GKE attached clusters \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/deploy/docs/anthos-targets",
+        "source_id": "site-docs-reference-2",
+        "final_score": 39,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The following is an example target configuration: apiVersion: deploy.cloud.google.com/v1 kind: Target metadata: name: qsdev description: development cluster anthosCluster: membership: projects/my-app/locations/global/memberships/my-app-dev-cluster What's next Learn more about configuring Cloud Deploy targets Learn about Cloud Deploy execution environments .",
+          "The cluster you're deploying to, including GKE attached clusters, does not need to be in the same project as your delivery pipeline. [ membership name ] is the name that you chose when you registered the cluster to a fleet.",
+          "This document describes how to deploy your applications to GKE attached clusters ."
+        ]
+      },
+      {
+        "title": "About custom targets \\_|\\_ Cloud Deploy \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/deploy/docs/custom-targets",
+        "source_id": "site-docs-reference-2",
+        "final_score": 35,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Cloud Deploy supports canary deployments as long as the custom renderer and deployer support the canary feature.",
+          "The following are the valid statuses: SUCCEEDED FAILED SKIPPED This is for canary deployments where canary phases are skipped , to go straight to stable . (Optional) a list of deploy artifact files, in the form of Cloud Storage paths The path is the full URI.",
+          "A custom target is a target that represents an arbitrary output environment other than a runtime that Cloud Deploy supports."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "deploy.cloud.google.com",
+      "projects.locations.deliveryPipelines",
+      "skaffold.yaml"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/deploy/docs/anthos-targets",
+        "https://docs.cloud.google.com/deploy/docs/hooks",
+        "https://docs.cloud.google.com/deploy/docs/custom-targets"
+      ]
+    }
+  ]
+}

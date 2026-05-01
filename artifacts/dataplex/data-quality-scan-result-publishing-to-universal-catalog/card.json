@@ -1,0 +1,335 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:33.146Z",
+  "source_step08_card": "data/step-08/current/products/dataplex/card.json",
+  "product_name": "Dataplex",
+  "product_slug": "dataplex",
+  "feature_name": "Data quality scan result publishing to Universal Catalog",
+  "feature_slug": "data-quality-scan-result-publishing-to-universal-catalog",
+  "summary": "Dataplex can publish data quality scan results as Dataplex Universal Catalog metadata on source table entries.",
+  "extended_definition": "Dataplex can publish data quality scan results as Dataplex Universal Catalog metadata on source table entries.",
+  "lifecycle": {
+    "latest_feature_date": "2025-06-18",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dataplex/docs/auto-data-quality-overview",
+      "https://docs.cloud.google.com/dataplex/docs/dataplex-custom-constraints",
+      "https://docs.cloud.google.com/dataplex/docs/use-auto-data-quality",
+      "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataplex/latest/com.google.cloud.dataplex.v1"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Manage Dataplex Universal Catalog resources using custom constraints \\_\\",
+        "url": "https://docs.cloud.google.com/dataplex/docs/dataplex-custom-constraints",
+        "source_id": "site-docs-root-2",
+        "final_score": 298,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Resource Field dataplex.googleapis.com/AspectType resource.authorization.alternateUsePermission resource.description resource.displayName resource.metadataTemplate.annotations.deprecated resource.metadataTemplate.annotations.description resource.metadataTemplate.annotations.displayName resource.metadataTemplate.annotations.displayOrder resource.metadataTemplate.annotations.stringType resource.metadataTemplate.annotations.stringValues resource.metadataTemplate.constraints.required resource.metadataTemplate.enumValues.deprecated resource.metadataTemplate.enumValues.index resource.metadataTemplate.enumValues.name resource.metadataTemplate.index resource.metadataTemplate.name resource.metadataTemplate.type resource.metadataTemplate.typeId resource.metadataTemplate.typeRef dataplex.googleapis.com/DataScan resource.data.entity resource.data.resource resource.dataDiscoverySpec.bigqueryPublishingConfig.connection resource.dataDiscoverySpec.bigqueryPublishingConfig.location resource.dataDiscoverySpec.bigqueryPublishingConfig.tableType resource.dataDiscoverySpec.storageConfig.csvOptions.delimiter resource.dataDiscoverySpec.storageConfig.csvOptions.encoding resource.dataDiscoverySpec.storageConfig.csvOptions.headerRows resource.dataDiscoverySpec.storageConfig.csvOptions.quote resource.dataDiscoverySpec.storageConfig.csvOptions.typeInferenceDisabled resource.dataDiscoverySpec.storageConfig.excludePatterns resource.dataDiscoverySpec.storageConfig.includePatterns resource.dataDiscoverySpec.storageConfig.jsonOptions.encoding resource.dataDiscoverySpec.storageConfig.jsonOptions.typeInferenceDisabled resource.dataProfileSpec.excludeFields.fieldNames resource.dataProfileSpec.includeFields.fieldNames resource.dataProfileSpec.postScanActions.bigqueryExport.resultsTable resource.dataProfileSpec.rowFilter resource.dataProfileSpec.samplingPercent resource.dataQualitySpec.postScanActions.bigqueryExport.resultsTable resource.dataQualitySpec.postScanActions.notificationReport.recipients.emails resource.dataQualitySpec.postScanActions.notificationReport.scoreThresholdTrigger.scoreThreshold resource.dataQualitySpec.rowFilter resource.dataQualitySpec.rules.column resource.dataQualitySpec.rules.description resource.dataQualitySpec.rules.dimension resource.dataQualitySpec.rules.ignoreNull resource.dataQualitySpec.rules.name resource.dataQualitySpec.rules.rangeExpectation.maxValue resource.dataQualitySpec.rules.rangeExpectation.minValue resource.dataQualitySpec.rules.rangeExpectation.strictMaxEnabled resource.dataQualitySpec.rules.rangeExpectation.strictMinEnabled resource.dataQualitySpec.rules.regexExpectation.regex resource.dataQualitySpec.rules.rowConditionExpectation.sqlExpression resource.dataQualitySpec.rules.setExpectation.values resource.dataQualitySpec.rules.sqlAssertion.sqlStatement resource.dataQualitySpec.rules.statisticRangeExpectation.maxValue resource.dataQualitySpec.rules.statisticRangeExpectation.minValue resource.dataQualitySpec.rules.statisticRangeExpectation.statistic resource.dataQualitySpec.rules.statisticRangeExpectation.strictMaxEnabled resource.dataQualitySpec.rules.statisticRangeExpectation.strictMinEnabled resource.dataQualitySpec.rules.suspended resource.dataQualitySpec.rules.tableConditionExpectation.sqlExpression resource.dataQualitySpec.rules.threshold resource.dataQualitySpec.samplingPercent resource.description resource.displayName resource.executionSpec.field resource.executionSpec.trigger.schedule.cron dataplex.googleapis.com/EntryGroup resource.description resource.displayName dataplex.googleapis.com/EntryType resource.authorization.alternateUsePermission resource.description resource.displayName resource.platform resource.requiredAspects.type resource.system resource.typeAliases dataplex.googleapis.com/MetadataJob resource.exportSpec.outputPath resource.exportSpec.scope.aspectTypes resource.exportSpec.scope.entryGroups resource.exportSpec.scope.entryTypes resource.exportSpec.scope.organizationLevel resource.exportSpec.scope.projects resource.importSpec.aspectSyncMode resource.importSpec.entrySyncMode resource.importSpec.logLevel resource.importSpec.scope.aspectTypes resource.importSpec.scope.entryGroups resource.importSpec.scope.entryTypes resource.importSpec.sourceCreateTime resource.importSpec.sourceStorageUri resource.type What's next Learn more about Organization Policy Service .",
+          "Description Constraint syntax Require a specific aspect type for entry types name : organizations/ ORGANIZATION ID /customConstraints/custom.requireAspectTypeForEntryType resourceTypes : - dataplex.googleapis.com/EntryType methodTypes : - CREATE - UPDATE condition : \"resource.requiredAspects.exists(value, value.type ==\" projects/ PROJECT ID /locations/ LOCATION /aspectTypes/exampleAspectType\") actionType : DENY displayName : All entry types require aspect type exampleAspectType description : All entry types require the aspect type exampleAspectType Require a minimum sampling rate for data profiling scans name : organizations/ ORGANIZATION ID /customConstraints/custom.minimumSamplingDataScans resourceTypes : - dataplex.googleapis.com/DataScan methodTypes : - CREATE - UPDATE condition : \"resource.dataProfileSpec.samplingPercent > = 20.0\" actionType : ALLOW displayName : Require minimum sampling for data profiling scans description : All data profiling scans need at least 20% sampling rate Dataplex Universal Catalog supported resources The following table lists the Dataplex Universal Catalog resources that you can reference in custom constraints.",
+          "Home Documentation Data analytics Knowledge Catalog Guides Send feedback Manage Dataplex Universal Catalog resources using custom constraints Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "Use auto data quality \\_|\\_ Knowledge Catalog \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataplex/docs/use-auto-data-quality",
+        "source_id": "site-docs-root",
+        "final_score": 288,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "When you use the gcloud CLI to create or update a data quality scan, you can use a YAML file like this as input to the --data-quality-spec-file argument. rules : - uniquenessExpectation : {} column : transaction id dimension : UNIQUENESS - nonNullExpectation : {} column : amount dimension : COMPLETENESS threshold : 1 - regexExpectation : regex : '^[0-9]{8}[a-zA-Z]{16}$' column : customer id ignoreNull : true dimension : VALIDITY threshold : 1 - setExpectation : values : - 'USD' - 'JPY' - 'INR' - 'GBP' - 'CAN' column : currency id ignoreNull : true dimension : VALIDITY threshold : 1 - rangeExpectation : minValue : '0' maxValue : '100' column : discount pct ignoreNull : true dimension : VALIDITY threshold : 1 - rowConditionExpectation : sqlExpression : 0 < discount pct AND discount pct < 100 column : discount pct dimension : VALIDITY threshold : 1 - rowConditionExpectation : sqlExpression : currency id in (select id from my project id.dim dataset.dim currency) column : currency id dimension : VALIDITY threshold : 1 - tableConditionExpectation : sqlExpression : 30 < avg(discount pct) AND avg(discount pct) < 50 dimension : VALIDITY - rowConditionExpectation : sqlExpression : TIMESTAMP(transaction timestamp) < CURRENT TIMESTAMP() column : transaction timestamp dimension : VALIDITY threshold : 1 - sqlAssertion : sqlStatement : SELECT FROM my project id.dim dataset.dim currency WHERE discount pct > 100 dimension : VALIDITY debugQueries : - sqlStatement : SELECT MAX(discount pct) FROM my project id.dim dataset.dim currency samplingPercent : 50 rowFilter : discount pct > 100 postScanActions : bigqueryExport : resultsTable : projects/my project id/datasets/dim dataset/tables/dim currency notificationReport : recipients : emails : - '222larabrown@gmail.com' - 'cloudysanfrancisco@gmail.com' scoreThresholdTrigger : scoreThreshold : 50 jobFailureTrigger : {} jobEndTrigger : {} catalogPublishingEnabled : true Configure execution identity By default, data quality scans run using the Knowledge Catalog service account.",
+          "Set alerts on data quality failures for a BigQuery table that isn't organized in a Knowledge Catalog lake: resource.type=\"dataplex.googleapis.com/DataScan\" AND jsonPayload.dataSource=\"//bigquery.googleapis.com/projects/test-project/datasets/testdataset/table/chicago taxi trips\" AND labels.\"dataplex.googleapis.com/data scan state\"=\"SUCCEEDED\" AND resource.labels.resource container=\"projects/112233445566\" AND NOT jsonPayload.dataQuality.passed=true Set alerts on data quality failures for a BigQuery table that's organized in a Knowledge Catalog lake: resource.type=\"dataplex.googleapis.com/DataScan\" AND jsonPayload.dataSource=\"projects/test-project/datasets/testdataset/table/chicago taxi trips\" AND labels.\"dataplex.googleapis.com/data scan state\"=\"SUCCEEDED\" AND resource.labels.resource container=\"projects/112233445566\" AND NOT jsonPayload.dataQuality.passed=true Sample queries to set per rule alerts A sample query to set alerts on all failing data quality rules with the specified custom rule name for a data quality scan: resource.type=\"dataplex.googleapis.com/DataScan\" AND jsonPayload.ruleName=\"custom-name\" AND jsonPayload.result=\"FAILED\" A sample query to set alerts on all failing data quality rules of a specific evaluation type for a data quality scan: resource.type=\"dataplex.googleapis.com/DataScan\" AND jsonPayload.evalutionType=\"PER ROW\" AND jsonPayload.result=\"FAILED\" A sample query to set alerts on all failing data quality rules for a column in the table used for a data quality scan: resource.type=\"dataplex.googleapis.com/DataScan\" AND jsonPayload.column=\"CInteger\" AND jsonPayload.result=\"FAILED\" Troubleshoot a data quality failure For each job with row-level rules that fail, Knowledge Catalog provides a query to get the failed records.",
+          "To see the exact permissions that are required, expand the Required permissions section: Required permissions The following permissions are required to read data from various sources and export results: Read BigQuery table data: bigquery.tables.get on BigQuery tables bigquery.tables.getData on BigQuery tables Export scan results to a BigQuery table: bigquery.datasets.get on results dataset and table bigquery.tables.create on results dataset and table bigquery.tables.get on results dataset and table bigquery.tables.getData on results dataset and table bigquery.tables.update on results dataset and table bigquery.tables.updateData on results dataset and table Scan BigQuery data organized in a Knowledge Catalog lake: dataplex.lakes.list on Dataplex resources dataplex.lakes.get on Dataplex resources dataplex.zones.list on Dataplex resources dataplex.zones.get on Dataplex resources dataplex.entities.list on Dataplex resources dataplex.entities.get on Dataplex resources dataplex.operations.get on Dataplex resources Scan a BigQuery external table from Cloud Storage: storage.buckets.get on the Cloud Storage bucket storage.objects.get on the Cloud Storage bucket Your administrator might also be able to give the Knowledge Catalog service account of the project containing the data quality scan these permissions with custom roles or other predefined roles ."
+        ]
+      },
+      {
+        "title": "Auto data quality overview \\_|\\_ Knowledge Catalog \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataplex/docs/auto-data-quality-overview",
+        "source_id": "site-docs-root",
+        "final_score": 282,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Note: If an existing data quality scan published the results to the BigQuery and Knowledge Catalog pages in the Google Cloud console, and you instead want to publish future scan results as Knowledge Catalog metadata, you must edit the scan to re-enable publishing.",
+          "Execution identity By default, Knowledge Catalog uses a centralized service agent ( service-PROJECT NUMBER@gcp-sa-dataplex.iam.gserviceaccount.com ) to run data quality scans.",
+          "Creating and using a data quality scan consists of the following steps: Define data quality rules Configure rule execution Analyze data quality scan results Set up monitoring and alerting Troubleshoot data quality failures Rule definition Data quality rules associated with a data quality scan define data expectations."
+        ]
+      },
+      {
+        "title": "\"Package com.google.cloud.dataplex.v1 (1.86.0) \\_|\\_ Java client libraries\\",
+        "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataplex/latest/com.google.cloud.dataplex.v1",
+        "source_id": "site-java-reference",
+        "final_score": 264,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Data Scan Catalog Publishing Status The status of publishing the data scan result as Dataplex Universal Catalog metadata.",
+          "Builder The status of publishing the data scan result as Dataplex Universal Catalog metadata.",
+          "Cmek Service Client Service Description: Dataplex Universal Catalog Customer Managed Encryption Keys (CMEK) Service This class provides the ability to make remote calls to the backing service through method calls that map to API methods."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "bigquery.datasets.get",
+      "bigquery.googleapis.com",
+      "bigquery.jobs.create",
+      "bigquery.tables.create",
+      "bigquery.tables.get",
+      "bigquery.tables.getData",
+      "bigquery.tables.update",
+      "bigquery.tables.updateData",
+      "com.google.cloud.dataplex.v1",
+      "custom.minimumSamplingDataScans",
+      "custom.requireAspectTypeForEntryType",
+      "dataplex.datascans.create",
+      "dataplex.datascans.delete",
+      "dataplex.datascans.get",
+      "dataplex.datascans.getData",
+      "dataplex.datascans.getIamPolicy",
+      "dataplex.datascans.list",
+      "dataplex.datascans.run",
+      "dataplex.datascans.setIamPolicy",
+      "dataplex.datascans.update",
+      "dataplex.entities.get",
+      "dataplex.entities.list",
+      "dataplex.entryGroups.useDataQualityScorecardAspect",
+      "dataplex.googleapis.com",
+      "dataplex.iam.gserviceaccount.com",
+      "dataplex.lakes.get",
+      "dataplex.lakes.list",
+      "dataplex.operations.get",
+      "dataplex.zones.get",
+      "dataplex.zones.list",
+      "dataset.dim",
+      "gmail.com",
+      "id.dim",
+      "resource.authorization.alternateUsePermission",
+      "resource.data.entity",
+      "resource.data.resource",
+      "resource.dataDiscoverySpec.bigqueryPublishingConfig.connection",
+      "resource.dataDiscoverySpec.bigqueryPublishingConfig.location",
+      "resource.dataDiscoverySpec.bigqueryPublishingConfig.tableType",
+      "resource.dataDiscoverySpec.storageConfig.csvOptions.delimiter",
+      "resource.dataDiscoverySpec.storageConfig.csvOptions.encoding",
+      "resource.dataDiscoverySpec.storageConfig.csvOptions.headerRows",
+      "resource.dataDiscoverySpec.storageConfig.csvOptions.quote",
+      "resource.dataDiscoverySpec.storageConfig.csvOptions.typeInferenceDisabled",
+      "resource.dataDiscoverySpec.storageConfig.excludePatterns",
+      "resource.dataDiscoverySpec.storageConfig.includePatterns",
+      "resource.dataDiscoverySpec.storageConfig.jsonOptions.encoding",
+      "resource.dataDiscoverySpec.storageConfig.jsonOptions.typeInferenceDisabled",
+      "resource.dataProfileSpec.excludeFields.fieldNames",
+      "resource.dataProfileSpec.includeFields.fieldNames",
+      "resource.dataProfileSpec.postScanActions.bigqueryExport.resultsTable",
+      "resource.dataProfileSpec.rowFilter",
+      "resource.dataProfileSpec.samplingPercent",
+      "resource.dataQualitySpec.postScanActions.bigqueryExport.resultsTable",
+      "resource.dataQualitySpec.postScanActions.notificationReport.recipients.emails",
+      "resource.dataQualitySpec.postScanActions.notificationReport.scoreThresholdTrigger.scoreThreshold",
+      "resource.dataQualitySpec.rowFilter",
+      "resource.dataQualitySpec.rules.column",
+      "resource.dataQualitySpec.rules.description",
+      "resource.dataQualitySpec.rules.dimension",
+      "resource.dataQualitySpec.rules.ignoreNull",
+      "resource.dataQualitySpec.rules.name",
+      "resource.dataQualitySpec.rules.rangeExpectation.maxValue",
+      "resource.dataQualitySpec.rules.rangeExpectation.minValue",
+      "resource.dataQualitySpec.rules.rangeExpectation.strictMaxEnabled",
+      "resource.dataQualitySpec.rules.rangeExpectation.strictMinEnabled",
+      "resource.dataQualitySpec.rules.regexExpectation.regex",
+      "resource.dataQualitySpec.rules.rowConditionExpectation.sqlExpression",
+      "resource.dataQualitySpec.rules.setExpectation.values",
+      "resource.dataQualitySpec.rules.sqlAssertion.sqlStatement",
+      "resource.dataQualitySpec.rules.statisticRangeExpectation.maxValue",
+      "resource.dataQualitySpec.rules.statisticRangeExpectation.minValue",
+      "resource.dataQualitySpec.rules.statisticRangeExpectation.statistic",
+      "resource.dataQualitySpec.rules.statisticRangeExpectation.strictMaxEnabled",
+      "resource.dataQualitySpec.rules.statisticRangeExpectation.strictMinEnabled",
+      "resource.dataQualitySpec.rules.suspended",
+      "resource.dataQualitySpec.rules.tableConditionExpectation.sqlExpression",
+      "resource.dataQualitySpec.rules.threshold",
+      "resource.dataQualitySpec.samplingPercent",
+      "resource.description",
+      "resource.displayName",
+      "resource.executionSpec.field",
+      "resource.executionSpec.trigger.schedule.cron",
+      "resource.exportSpec.outputPath",
+      "resource.exportSpec.scope.aspectTypes",
+      "resource.exportSpec.scope.entryGroups",
+      "resource.exportSpec.scope.entryTypes",
+      "resource.exportSpec.scope.organizationLevel",
+      "resource.exportSpec.scope.projects",
+      "resource.importSpec.aspectSyncMode",
+      "resource.importSpec.entrySyncMode",
+      "resource.importSpec.logLevel",
+      "resource.importSpec.scope.aspectTypes",
+      "resource.importSpec.scope.entryGroups",
+      "resource.importSpec.scope.entryTypes",
+      "resource.importSpec.sourceCreateTime",
+      "resource.importSpec.sourceStorageUri",
+      "resource.labels.resource",
+      "resource.metadataTemplate.annotations.deprecated",
+      "resource.metadataTemplate.annotations.description",
+      "resource.metadataTemplate.annotations.displayName",
+      "resource.metadataTemplate.annotations.displayOrder",
+      "resource.metadataTemplate.annotations.stringType",
+      "resource.metadataTemplate.annotations.stringValues",
+      "resource.metadataTemplate.constraints.required",
+      "resource.metadataTemplate.enumValues.deprecated",
+      "resource.metadataTemplate.enumValues.index",
+      "resource.metadataTemplate.enumValues.name",
+      "resource.metadataTemplate.index",
+      "resource.metadataTemplate.name",
+      "resource.metadataTemplate.type",
+      "resource.metadataTemplate.typeId",
+      "resource.metadataTemplate.typeRef",
+      "resource.platform",
+      "resource.requiredAspects.exists",
+      "resource.requiredAspects.type",
+      "resource.system",
+      "resource.type",
+      "resource.typeAliases",
+      "storage.buckets.get",
+      "storage.objects.get",
+      "value.type"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataplex/docs/dataplex-custom-constraints",
+        "https://docs.cloud.google.com/dataplex/docs/use-auto-data-quality",
+        "https://docs.cloud.google.com/dataplex/docs/auto-data-quality-overview",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataplex/latest/com.google.cloud.dataplex.v1"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataplex/docs/dataplex-custom-constraints",
+        "https://docs.cloud.google.com/dataplex/docs/use-auto-data-quality",
+        "https://docs.cloud.google.com/dataplex/docs/auto-data-quality-overview",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataplex/latest/com.google.cloud.dataplex.v1"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataplex/docs/dataplex-custom-constraints",
+        "https://docs.cloud.google.com/dataplex/docs/use-auto-data-quality",
+        "https://docs.cloud.google.com/dataplex/docs/auto-data-quality-overview",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataplex/latest/com.google.cloud.dataplex.v1"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataplex/docs/dataplex-custom-constraints",
+        "https://docs.cloud.google.com/dataplex/docs/use-auto-data-quality",
+        "https://docs.cloud.google.com/dataplex/docs/auto-data-quality-overview",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataplex/latest/com.google.cloud.dataplex.v1"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataplex/docs/dataplex-custom-constraints",
+        "https://docs.cloud.google.com/dataplex/docs/use-auto-data-quality",
+        "https://docs.cloud.google.com/dataplex/docs/auto-data-quality-overview",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataplex/latest/com.google.cloud.dataplex.v1"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataplex/docs/dataplex-custom-constraints",
+        "https://docs.cloud.google.com/dataplex/docs/use-auto-data-quality",
+        "https://docs.cloud.google.com/dataplex/docs/auto-data-quality-overview",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataplex/latest/com.google.cloud.dataplex.v1"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataplex/docs/dataplex-custom-constraints",
+        "https://docs.cloud.google.com/dataplex/docs/use-auto-data-quality",
+        "https://docs.cloud.google.com/dataplex/docs/auto-data-quality-overview",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataplex/latest/com.google.cloud.dataplex.v1"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataplex/docs/dataplex-custom-constraints",
+        "https://docs.cloud.google.com/dataplex/docs/use-auto-data-quality",
+        "https://docs.cloud.google.com/dataplex/docs/auto-data-quality-overview",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataplex/latest/com.google.cloud.dataplex.v1"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataplex/docs/dataplex-custom-constraints",
+        "https://docs.cloud.google.com/dataplex/docs/use-auto-data-quality",
+        "https://docs.cloud.google.com/dataplex/docs/auto-data-quality-overview",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataplex/latest/com.google.cloud.dataplex.v1"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataplex/docs/dataplex-custom-constraints",
+        "https://docs.cloud.google.com/dataplex/docs/use-auto-data-quality",
+        "https://docs.cloud.google.com/dataplex/docs/auto-data-quality-overview",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataplex/latest/com.google.cloud.dataplex.v1"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataplex/docs/dataplex-custom-constraints",
+        "https://docs.cloud.google.com/dataplex/docs/use-auto-data-quality",
+        "https://docs.cloud.google.com/dataplex/docs/auto-data-quality-overview",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataplex/latest/com.google.cloud.dataplex.v1"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataplex/docs/dataplex-custom-constraints",
+        "https://docs.cloud.google.com/dataplex/docs/use-auto-data-quality",
+        "https://docs.cloud.google.com/dataplex/docs/auto-data-quality-overview",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataplex/latest/com.google.cloud.dataplex.v1"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataplex/docs/dataplex-custom-constraints",
+        "https://docs.cloud.google.com/dataplex/docs/use-auto-data-quality",
+        "https://docs.cloud.google.com/dataplex/docs/auto-data-quality-overview",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataplex/latest/com.google.cloud.dataplex.v1"
+      ]
+    }
+  ]
+}

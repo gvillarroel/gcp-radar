@@ -1,0 +1,114 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:24.125Z",
+  "source_step08_card": "data/step-08/current/products/cloud-load-balancing/card.json",
+  "product_name": "Cloud Load Balancing",
+  "product_slug": "cloud-load-balancing",
+  "feature_name": "Distributed Envoy health checks",
+  "feature_slug": "distributed-envoy-health-checks",
+  "summary": "Regional external HTTP(S), internal HTTP(S), and regional internal TCP proxy load balancers use distributed Envoy health checks originating from proxy-only subnets.",
+  "extended_definition": "Regional external HTTP(S), internal HTTP(S), and regional internal TCP proxy load balancers use distributed Envoy health checks originating from proxy-only subnets.",
+  "lifecycle": {
+    "latest_feature_date": "2023-09-26",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/load-balancing/docs/health-check-concepts",
+      "https://docs.cloud.google.com/load-balancing/docs/health-check-logging",
+      "https://docs.cloud.google.com/load-balancing/docs/l7-internal"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Internal Application Load Balancer overview \\_|\\_ Cloud Load Balancing \\_\\",
+        "url": "https://docs.cloud.google.com/load-balancing/docs/l7-internal",
+        "source_id": "site-docs-root",
+        "final_score": 272,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The following table specifies the scope of health checks supported by internal Application Load Balancers: Load balancer mode Health check type Cross-region internal Application Load Balancer healthChecks Regional internal Application Load Balancer regionHealthChecks For more information about health checks, see the following: Health checks overview Create health checks Firewall rules An internal Application Load Balancer requires the following firewall rules: An ingress allow rule that permits traffic from Google's central health check ranges.",
+          "Returns HTTP 503 Regional internal Application Load Balancer Automatic failover to healthy backends in the same region.",
+          "For details, see Distributed Envoy health checks ."
+        ]
+      },
+      {
+        "title": "\"Health check logging information \\_|\\_ Cloud Load Balancing \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/load-balancing/docs/health-check-logging",
+        "source_id": "site-docs-reference-required-3",
+        "final_score": 262,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Not supported for distributed Envoy health checks for hybrid NEGs and regional internet NEGs. probeCompletionTimestamp google.protobuf.Timestamp Probe completion timestamp. connectLatency google.protobuf.Duration Time spent on setting up the connection for connection-oriented health check protocols TCP, SSL, HTTP, HTTPS, and HTTP/2.",
+          "Not supported for distributed Envoy health checks for hybrid NEGs and regional internet NEGs. probeRequest string For HTTP, HTTPS, and HTTP/2, this is the URL request path ( requestPath field in the resource config).",
+          "Not supported for distributed Envoy health checks for hybrid NEGs and regional internet NEGs. previousDetailedHealthState enum(DetailedHealthState) The previous detailed health status of the endpoint."
+        ]
+      },
+      {
+        "title": "Health checks overview \\_|\\_ Cloud Load Balancing \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/load-balancing/docs/health-check-concepts",
+        "source_id": "site-docs-reference-required-3",
+        "final_score": 245,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Load balancer Health check category and scope Global external Application Load Balancer Classic Application Load Balancer Global external proxy Network Load Balancer Classic proxy Network Load Balancer Cross-region internal Application Load Balancer Cross-region internal proxy Network Load Balancer Health check ( global ) Regional external Application Load Balancer Regional internal Application Load Balancer Regional internal proxy Network Load Balancer Regional external proxy Network Load Balancer Health check ( regional ) Regional external passthrough Network Load Balancer Backend service-based load balancer: Health check ( regional ) Target pool-based load balancer: Legacy health check ( global with the HTTP protocol ) Internal passthrough Network Load Balancer Health check ( global or regional ) For external Application Load Balancers, legacy health checks are not recommended but are sometimes supported, depending on the load balancer mode.",
+          "The following table shows the source IP ranges to allow for each load balancer: Product Health check probe source IP ranges Global external Application Load Balancer Global external proxy Network Load Balancer 35.191.0.0/16 130.211.0.0/22 For IPv6 traffic to the backends: 2600:2d00:1:b029::/64 2600:2d00:1:1::/64 Regional external Application Load Balancer 1, 2 Cross-region internal Application Load Balancer 1 Regional internal Application Load Balancer 1, 2 Regional external proxy Network Load Balancer 1, 2 Regional internal proxy Network Load Balancer 1, 2 Cross-region internal proxy Network Load Balancer 1 35.191.0.0/16 130.211.0.0/22 For IPv6 traffic to the backends: 2600:2d00:1:b029::/64 Classic proxy Network Load Balancer Classic Application Load Balancer Cloud Service Mesh, except for internet NEG backends and hybrid NEG backends 35.191.0.0/16 130.211.0.0/22 Regional external passthrough Network Load Balancer 3 For IPv4 traffic to the backends: 35.191.0.0/16 209.85.152.0/22 209.85.204.0/22 For IPv6 traffic to the backends: 2600:1901:8001::/48 Internal passthrough Network Load Balancer For IPv4 traffic to the backends: 35.191.0.0/16 130.211.0.0/22 For IPv6 traffic to the backends: 2600:2d00:1:b029::/64 Cloud Service Mesh with internet NEG backends and hybrid NEG backends IP addresses of the VMs running the Envoy software For a sample configuration, see the Cloud Service Mesh documentation 1 Allowing traffic from Google's health check probe ranges isn't required for hybrid NEGs.",
+          "Global external Application Load Balancer Cross-region internal Application Load Balancer Regional external Application Load Balancer Regional internal Application Load Balancer Returns an HTTP 503 status code to clients when all backends are unhealthy."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/l7-internal",
+        "https://docs.cloud.google.com/load-balancing/docs/health-check-logging",
+        "https://docs.cloud.google.com/load-balancing/docs/health-check-concepts"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/l7-internal",
+        "https://docs.cloud.google.com/load-balancing/docs/health-check-logging",
+        "https://docs.cloud.google.com/load-balancing/docs/health-check-concepts"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/l7-internal",
+        "https://docs.cloud.google.com/load-balancing/docs/health-check-logging",
+        "https://docs.cloud.google.com/load-balancing/docs/health-check-concepts"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/l7-internal",
+        "https://docs.cloud.google.com/load-balancing/docs/health-check-logging",
+        "https://docs.cloud.google.com/load-balancing/docs/health-check-concepts"
+      ]
+    }
+  ]
+}

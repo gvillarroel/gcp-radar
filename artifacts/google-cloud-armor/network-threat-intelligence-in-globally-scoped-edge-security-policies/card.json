@@ -1,0 +1,250 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:38.522Z",
+  "source_step08_card": "data/step-08/current/products/google-cloud-armor/card.json",
+  "product_name": "Google Cloud Armor",
+  "product_slug": "google-cloud-armor",
+  "feature_name": "Network Threat Intelligence in globally scoped edge security policies",
+  "feature_slug": "network-threat-intelligence-in-globally-scoped-edge-security-policies",
+  "summary": "Support for Network Threat Intelligence in globally scoped edge security policies for Media CDN edge cache services; Support for Network Threat Intelligence in globally scoped edge security policies for Media CDN edge cache services.",
+  "extended_definition": "Support for Network Threat Intelligence in globally scoped edge security policies for Media CDN edge cache services; Support for Network Threat Intelligence in globally scoped edge security policies for Media CDN edge cache services.",
+  "lifecycle": {
+    "latest_feature_date": "2025-09-24",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/armor/docs/security-policy-overview",
+      "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations",
+      "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/amazon-guard-duty",
+      "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/attivo"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Security policy overview \\_|\\_ Google Cloud Armor \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/armor/docs/security-policy-overview",
+        "source_id": "site-docs-root",
+        "final_score": 198,
+        "relevance": "",
+        "evidence_snippets": [
+          "Globally scoped security policies Backend security policy Edge security policy Internal service security policy Frontend type Global external Application Load Balancer Classic Application Load Balancer (global only) Global external proxy Network Load Balancer Classic proxy Network Load Balancer Global external Application Load Balancer Classic Application Load Balancer (global only) Global external proxy Network Load Balancer Classic proxy Network Load Balancer Cloud Service Mesh clients Attachment point (protected resource) Backend service Backend service Backend service Backend bucket Cloud Service Mesh endpoint policy Rule actions Allow Deny Redirect ( GOOGLE RECAPTCHA and EXTERNAL 302 ) Throttle Rate-based ban Allow Deny Throttle Rate-based ban Allow Deny Fairshare Client IP address Client geography Client ASN Media CDN only Rate limiting TLS fingerprinting (JA3 and JA4) Bot management HTTP filtering Media CDN only WAF Adaptive Protection Address Group Google Threat Intelligence Media CDN only Security Command Center Cloud Monitoring Request logging Regionally scoped security policies Regional backend security policy Network edge security policy Frontend type Regional external Application Load Balancer Regional internal Application Load Balancer External passthrough Network Load Balancer External protocol forwarding VMs with NICs that have external IP addresses Attachment point (protected resource) Backend service (regional) Backend service (regional) Target pool Target instance Backend service (regional) Instance Rule actions Allow Deny Throttle Rate-based ban Allow Deny Throttle Rate-based ban Allow Deny Client IP address Client geography Client ASN Rate limiting TLS fingerprinting (JA3 and JA4) JA3 only JA3 only Bot management HTTP filtering WAF Adaptive Protection Address Group Google Threat Intelligence Byte offset filtering Security Command Center Cloud Monitoring Request logging Backend security policies Backend security policies are used with backend services exposed by the following load balancer types: Global external Application Load Balancer Classic Application Load Balancer Regional external Application Load Balancer Regional internal Application Load Balancer Global external proxy Network Load Balancer Classic proxy Network Load Balancer You use backend security policies to filter requests and protect backend services that reference instance groups or any of the supported NEG types behind the previously listed load balancer types.",
+          "You can configure network edge security policies for the following resources: External passthrough Network Load Balancers Protocol forwarding VMs with public IP addresses Network edge security policies support filtering based on some of the same parameters as backend security policies, and are the only security policy type to support byte offset filtering .",
+          "Enforcing network edge security policies doesn't consume VM or host resources, which helps prevent high volume traffic from exhausting resources on the target workload or otherwise causing a denial of service."
+        ]
+      },
+      {
+        "title": "\"Integrate Amazon GuardDuty with Google SecOps \\_|\\_ Google Security Operations\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/amazon-guard-duty",
+        "source_id": "site-docs-root-2",
+        "final_score": 184,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Brute force attacks are used to gain unauthorized access to your instance by guessing the RDP password.\" , \"Id\" : \" ID \" , \"Partition\" : \"aws\" , \"Region\" : \"us-east-1\" , \"Resource\" : { \"InstanceDetails\" : { \"AvailabilityZone\" : \"us-east-1e\" , \"ImageId\" : \"ami- IMAGE ID \" , \"InstanceId\" : \"i- INSTANCE ID \" , \"InstanceState\" : \"running\" , \"InstanceType\" : \"t2.micro\" , \"LaunchTime\" : \"2020-05-27T08:54:03Z\" , \"NetworkInterfaces\" : [{ \"Ipv6Addresses\" : [], \"NetworkInterfaceId\" : \"eni-012d9b8a1a3b4e40a\" , \"PrivateDnsName\" : \"ip-192.0.2.1.ec2.internal\" , \"PrivateIpAddress\" : \"192.0.2.1\" , \"PrivateIpAddresses\" : [{ \"PrivateDnsName\" : \"ip-192.0.2.1.ec2.internal\" , \"PrivateIpAddress\" : \"192.0.2.1\" }], \"PublicDnsName\" : \"ec2-54-234-69-236.compute-1.amazonaws.com\" , \"PublicIp\" : \"198.51.100.236\" , \"SecurityGroups\" : [{ \"GroupId\" : \"sg-0fa42e04e9cd15407\" , \"GroupName\" : \"Windows Server 2016\" }], \"SubnetId\" : \"subnet-2edddf10\" , \"VpcId\" : \"vpc-48a7ac32\" }], \"Platform\" : \"windows\" , \"ProductCodes\" : [], \"Tags\" : [{ \"Key\" : \"Name\" , \"Value\" : \"CiscoAMP-win2012\" }]}, \"ResourceType\" : \"Instance\" }, \"SchemaVersion\" : \"2.0\" , \"Service\" : { \"Action\" : { \"ActionType\" : \"NETWORK CONNECTION\" , \"NetworkConnectionAction\" : { \"Blocked\" : false , \"ConnectionDirection\" : \"INBOUND\" , \"LocalPortDetails\" : { \"Port\" : 3389 , \"PortName\" : \"RDP\" }, \"Protocol\" : \"TCP\" , \"LocalIpDetails\" : { \"IpAddressV4\" : \"192.0.2.1\" }, \"RemoteIpDetails\" : { \"IpAddressV4\" : \"203.0.113.9\" , \"Organization\" : { \"Asn\" : \"24875\" , \"AsnOrg\" : \"Example Inc.\" , \"Isp\" : \"Example Inc.\" , \"Org\" : \"Example Inc.\" }}, \"RemotePortDetails\" : { \"Port\" : 1549 , \"PortName\" : \"Unknown\" }}}, \"Archived\" : false , \"Count\" : 5 , \"DetectorId\" : \" DETECTOR ID \" , \"EventFirstSeen\" : \"2020-10-06T05:10:58Z\" , \"EventLastSeen\" : \"2020-10-06T05:46:59Z\" , \"ResourceRole\" : \"TARGET\" , \"ServiceName\" : \"guardduty\" }, \"Severity\" : 2 , \"Title\" : \"203.0.113.9 is performing RDP brute force attacks against i- INSTANCE ID .\" , \"Type\" : \"UnauthorizedAccess:EC2/RDPBruteForce\" , \"UpdatedAt\" : \"2020-10-06T06:01:46.380Z\" }] } Case wall Result type Description Type Output message The action should not fail nor stop a playbook execution: If \"ErrorCode\" is reported (is success=false): \"Action wasn't able to get Findings details.",
+          "Action results Script result Script result name Value options Example is success True or False is success=False JSON result { \"Format\" : \"TXT\" , \"Location\" : \"https: //example.s3.amazonaws.com/test.txt\" , \"Name\" : \"API Test\" , \"ResponseMetadata\" : { \"HTTPHeaders\" : { \"connection\" : \"keep-alive\" , \"content-length\" : \"149\" , \"content-type\" : \"application/json\" , \"date\" : \"Mon,19 Oct 2020 06: 23: 22 GMT\" , \"x-amz-apigw-id\" : \" ID \" , \"x-amzn-requestid\" : \" REQUEST ID \" , \"x-amzn-trace-id\" : \" TRACE ID \" }, \"HTTPStatusCode\" : 200 , \"RequestId\" : \" REQUEST ID \" , \"RetryAttempts\" : 0 }, \"Status\" : \"ERROR\" , \"Tags\" : {} } Case wall Result type Description Type Output message The action should not fail nor stop a playbook execution: If successfully returned details about at list one set (is success=true): \"Successfully retrieved details about the following Threat Intelligence Sets from Amazon GuardDuty:\\n{0}.\".format(list of ids)\" If unsuccessful for some of the IDs (is success=true): \"Action wasn't able to retrieve details about the following Threat Intelligence Sets from Amazon GuardDuty:\\n{0}.\".format(list of ids)\" If no IDs are used: \"No details were retrieved about the provided Threat Intelligence Sets.\".format(list of ids) The action should fail and stop a playbook execution: If a fatal error, SDK error, like wrong credentials, no connection to the server, other is reported: \"Error executing action \"List Threat Intelligence Sets\".",
+          "Action results Script result Script result name Value options Example is success True or False is success=False Case wall Result type Description Type Output message The action should not fail nor stop a playbook execution: If successfully returned details about at list one set (is success=true): \"Successfully deleted the following Threat Intelligence Sets in Amazon GuardDuty:\\n{0}.\".format(list of ids) If unsuccessful for some of the IDs (is success=true): \"Action wasn't able to delete the following Threat Intelligence Sets in Amazon GuardDuty:\\n{0}.\".format(list of ids) If no IDs are used: \"No Threat Intelligence Sets were deleted.\".format(list of ids) The action should fail and stop a playbook execution: Invalid detector ID should raise an exception as well, stop the playbook and set is success to false."
+        ]
+      },
+      {
+        "title": "\"Integrate Attivo with Google SecOps \\_|\\_ Google Security Operations \\_\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/attivo",
+        "source_id": "site-docs-root-2",
+        "final_score": 168,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Action results Script result Script result name Value options Example is success True/False is success=False JSON result { \"upgradeToVersion\" : null , \"quarantineStatus\" : 0 , \"acmId\" : -1 , \"tostatus\" : 0 , \"systemtype\" : \"VM\" , \"adsErrorMessage\" : \"\" , \"accessprotection\" : false , \"functionalId\" : { \"templateName\" : null , \"usersid\" : null , \"errorCode\" : 0 , \"debugInfo\" : \"\" , \"userName\" : \"example\\\\Administrator\" , \"status\" : null , \"timestamp\" : 1636558715000 }, \"ondAssigned\" : false , \"usersInfo\" : [ { \"templateName\" : \"Default ThreatStrike Profile:2\" , \"usersid\" : \"S-1-5-21-2143737273-3756110848-2070699859-500\" , \"errorCode\" : 0 , \"debugInfo\" : \"Error:0 lsass UnInstallation\\\\nError:0 webftp UnInstallation\\\\nError:0 cookies UnInstallation\\\\nError:0 mstsc UnInstallation\\\\nError:0 SMB UnInstallation\\\\nError:0 Web Credential UnInstallation\\\\nError:0 outlook UnInstallation\\\\nError:0 iexplorer UnInstallation\\\\nError:0 Putty UnInstallation\\\\nError:0 Mozilla UnInstallation\\\\nError:0 Chrome UnInstallation\\\\nError:0 FileZilla UnInstallation\\\\nError:0 lsass UnInstallation\\\\nError:0 AWS UnInstallation\\\\nError:0 Telnet UnInstallation\\\\nError:0 OracleDBClient UnInstallation\\\\nError:0 IEFavorite UnInstallation\\\\nError:0 WindowsDNS UnInstallation\\\\nError:0 RasVPN UnInstallation\" , \"userName\" : \"exlab.local\\\\Administrator\" , \"status\" : \"INSTALLED\" , \"timestamp\" : 1636558727000 } ], \"id\" : 101 , \"epVersion\" : \"5.0.1.25\" , \"activeDirectory\" : { \"groups\" : [ \"Domain Computers\" ], \"organizationalUnit\" : \"Computers\" }, \"installMode\" : 2 , \"processor arch\" : \" 64-bit\" , \"tdDeflectMessage\" : \"\" , \"clientGroupId\" : \"ThreatStrike-Default-Client\" , \"deployMode\" : 0 , \"latestExecutableStatus\" : \"INSTALLED\" , \"subscriberId\" : 1 , \"botsinkDocumentId\" : 0 , \"executableStatus\" : [ { \"timestamp\" : 1636558715000 , \"status\" : \"INSTALLED\" } ], \"processor cpuSpeed\" : \"2300 MHz\" , \"guid\" : \"27f018b6-47c8-4b20-ab62-545c672ddf7cexample\" , \"ondMessage\" : \"\" , \"debugCollect\" : false , \"ondInActive\" : false , \"adsstatus\" : 1 , \"upgradeRequired\" : false , \"ondstatus\" : 0 , \"hostName\" : \"example\" , \"memory\" : \"8190 MB\" , \"lastModifiedTime\" : \"2021-11-11T15:41:16.254Z\" , \"arstatus\" : 1 , \"dnsName\" : \"example.example\" , \"botsinkDeviceId\" : 0 , \"endpoint os type\" : 1 , \"disabledInClientGroup\" : false , \"tddstatus\" : 1 , \"adsenabled\" : false , \"tdDeflectStatus\" : 0 , \"osType\" : \"Non-Server\" , \"featuresstatusforusers\" : [ { \"tddstatus\" : 1 , \"tsstatus\" : 1 , \"tostatus\" : 0 , \"usersid\" : \"user-id\" , \"adsstatus\" : 1 , \"logIn\" : 1636558717 , \"ondstatus\" : 0 , \"logOut\" : 0 , \"tpstatus\" : 1 , \"live\" : true , \"username\" : \"example\\\\Administrator\" } ], \"interfaces\" : [ { \"subnet\" : \"192.0.2.0/24\" , \"score\" : 1400.133919820602 , \"macAddress\" : \"01:23:45:AB:CD:EF\" , \"ipAddress\" : \"192.0.2.198\" , \"name\" : \"Intel(R) 82574L Gigabit Network Connection\" , \"type\" : \"Wired\" , \"timestamp\" : 1636645218000 } ], \"migrateCL\" : false , \"debugStatus\" : false , \"osName\" : \"Windows 10 64-bit\" , \"uptime\" : \"134836\" , \"tsstatus\" : 1 , \"processor numOfCpu\" : 4 , \"newClientGroup\" : null , \"tpstatus\" : 1 , \"threatPaths\" : [ { \"destIp\" : \"192.0.2.198\" , \"permissionId\" : -1 , \"reason\" : null , \"srcHostName\" : \"Unmanaged host\" , \"acmId\" : -1 , \"source\" : null , \"type\" : \"Paths\" , \"permScore\" : \"Medium\" , \"cancellable\" : false , \"targetScore\" : \"Medium\" , \"crRuleName\" : \"System Default: Domain Admin Pilferage\" , \"credOuPath\" : \"CN=Users,DC=example,DC=example\" , \"submissionId\" : -1 , \"credAcctStatus\" : \"Enabled\" , \"credential\" : \"example\\\\administrator\" , \"srcId\" : \"dummy-endpoint-1SUB1\" } ], \"vulnerabilities\" : [ \"More than two Administrators were found on this computer\" , \"Presence of local administrative privileges for domain user account\" ], \"credentials\" : [ { \"isDeceptive\" : true , \"service\" : \"putty\" , \"domain\" : \"EXAMPLE-W10H66.example\\\\accessDBuser\" , \"serverIp\" : \"EXAMPLE-W10H66.example\" , \"isShortcut\" : false }, { \"isDeceptive\" : true , \"service\" : \"putty\" , \"domain\" : \"EXAMPLE-W10H77.example\\\\accessDBadm\" , \"serverIp\" : \"EXAMPLE-W10H77.example\" , \"isShortcut\" : false } ] } Enrichment Table Enrichment field name Logic - When to apply os When available in JSON ip When available in JSON mac When available in JSON hostname When available in JSON users When available in JSON type When available in JSON uptime When available in JSON num threatpaths When available in JSON num vulnerabilities When available in JSON num deceptive creds When available in JSON num real creds When available in JSON Case wall Result type Description Type Output message The action should not fail nor stop a playbook execution: If data is available for one entity (is success=true): \"Successfully enriched the following entities using information from Attivo: {entity.identifier}\".",
+          "Potential movement to Computers/HOST02SMIME.\" , \"cid\" : \"rdp0\" , \"permissionName\" : \"\" , \"destOu\" : \"Computers\" , \"critical\" : true , \"isgrouppath\" : false , \"credUpn\" : \"Administrator@example.com\" , \"credCreatedTime\" : 1610374114000 , \"memberList\" : null , \"memberOf\" : null , \"remediateStatus\" : null , \"severity\" : \"High\" , \"srcOu\" : \"Unmanaged\" , \"target\" : \"example(192.0.2.198)\" , \"loggedOn\" : false , \"credSamAcctName\" : \"Administrator\" , \"service\" : \"RDP Memory Credential\" , \"credDisplayName\" : null , \"ukey\" : null , \"category\" : \"Saved credential\" } ] } Case wall Result type Description Type Output message The action should not fail nor stop a playbook execution: If data is available (is success=true): \"Successfully found critical ThreatPaths for the provided criteria in Attivo\".",
+          "Reason: {0}''.format(error.Stacktrace) General Case Wall Table Table Title: {entity.identifier} Table Columns: Key Value Entity Case Wall Table (If vulnerabilities are available) Table Name: {entity identifier} Vulnerabilities Table Column: Name General Case Wall Table (If threatpaths are available) Table Name: {entity identifier} ThreatPaths Table Columns: Dest IP Src Ip Src Host Dest Host Name Credential Description Critical Severity Service Category General Case Wall Table (If credentials are available) Table Name: {entity identifier} Credentials Table Columns: Deceptive Service Domain Server IP Shortcut General List Critical ThreatPath List available critical threat paths in Attivo."
+        ]
+      },
+      {
+        "title": "Google Security Operations response integrations \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations",
+        "source_id": "site-docs-root-2",
+        "final_score": 168,
+        "relevance": "",
+        "evidence_snippets": [
+          "Active Directory Akamai Alexa AlgoSec AlienVault USM Anywhere AlienVault USM Appliance AlienVaultTI Amazon Macie Anomali Anomali Staxx Anomali ThreatStream Any.Run APIVoid AppSheet ArcSight ArcSight Logger Area1 Armis Atlassian Confluence Server Attivo Automox AWS Cloud Trail AWS CloudWatch AWS Elastic Compute Cloud (EC2) AWS GuardDuty AWS IAM Access Analyzer AWS Identity and Access Management (IAM) AWS S3 AWS Security Hub AWS WAF Axonius Azure Active Directory Azure API Azure Monitor BitSight BlueLiv BMC Helix Remedyforce BMC Remedy ITSM BulkWhoIs CA Service Desk Manager Carbon Black Defense Carbon Black Protection Carbon Black Response Check Point Cloud Guard Check Point Firewall Check Point SandBlast Check Point Threat Reputation Cisco AMP Cisco FirePower Management Center Cisco ISE Cisco Orbital Cisco Threat Grid CiscoUmbrella Cloudflare Cloud Logging Cofense Triage ConnectWise CrowdStrike Falcon CSV Cuckoo CyberArk PAM CyberArk Vault Cybereason Cyberint CyberX Cylance Cynet Darktrace DeepSight Devo Digital Shadows DomainTools DShield Easy Vista Elastica CloudSOC ElasticSearch ElasticSearchV7 Email EmailV2 Endgame Exabeam Advanced Analytics Exchange Exchange Extension Pack ExtraHop F5 Big IQ F5 BIG-IP Access Policy Manager F5 BIG-IP iControl API Falcon Sandbox FileOperation FireEye AX FireEye CM FireEye ETP FireEye EX FireEye Helix FireEye HX FireEye NX ForeScout CounterACT FortiAnalyzer Fortinet FortiSIEM Forti Manager FortiGate Freshworks Freshservice Gmail Google Alert Center Google BigQuery Google Chat Google Chronicle Google Cloud API Google Cloud Armor Google Cloud Asset Inventory Google Cloud Compute Google Cloud IAM Google Cloud Policy Intelligence Google Cloud Recommender Google Cloud Storage Google Forms Google Kubernetes Engine Google Rapid Response (GRR) Google Security Command Center Google Threat Intelligence Google Translate Google Workspace Harmony Mobile HashiCorp Vault HaveIBeenPwned HCL BigFix Inventory HTTP Rest API HTTP v2 Humio iBoss Illusive Networks Internet Storm Center Intezer IntSights IPInfo IPVoid IronPort IronScales Ivanti Endpoint Manager Jira JoeSandbox JuniperVSRX Lastline LogPoint LogRhythm MalShare Malware Domain List Mandiant Mandiant ASM Mandiant Digital Threat Monitoring Mandiant Managed Defense Mandiant Threat Intelligence McAfee NSM McAfee Active Response McAfee ATD McAfee EPO McAfee ESM McAfee Mvision EDR McAfee Mvision EPO McAfee TIEDXL McAfee Web Gateway Micro Focus ITSMA Microsoft 365 Identity Protection Microsoft Defender For Cloud Microsoft Defender For Endpoint Microsoft Defender For XDR Microsoft Graph Mail Microsoft Graph Mail Delegated Microsoft Graph Security Microsoft Intune Microsoft Sentinel Microsoft Teams Mimecast MISP MITRE ATT&CK MobileIron MongoDB MSSQL MySQL MX Toolbox NessusScanner Netskope Nmap Nozomi Networks O365 Management API ObserveIT Office 365 CloudApp Security Okta OpenSearch Opswat Metadefender Orca Security Outpost24 Palo Alto AutoFocus Palo Alto Cortex XDR Palo Alto Next Gen Firewall Palo Alto Panorama Palo Alto Networks Prisma Cloud PassiveTotal PhishingInitiative PhishRod Portnox PostgreSQL Proofpoint Cloud Threat Response Proofpoint PS Proofpoint TAP Proofpoint Threat Protection Protectwise Pub/Sub QRadar Qualys EDR Qualys VM Rapid7 InsightIDR Rapid7 InsightVm Recorded Future Redis Remote Agent Utilities Reversinglabs A1000 ReversingLabs Titanium RSA Archer RSA NetWitness RSA NetWitness EDR RSA NetWitness Platform Runners Salesforce SCCM ScreenshotMachine SentinelOne SentinelOneV2 Service Desk Plus Service Desk Plus V3 ServiceNow Shodan Siemplify Siemplify ThreatFuse SiemplifyUtilities Site24x7 Slack Snowflake Solar Winds Orion SonicWall-Beta Sophos Splash Splunk SpyCloud SSH SSL Labs Stealthwatch Stealthwatch V6.10 Stellar Cyber Starlight Sumologic Sumo Logic Cloud SIEM Symantec ATP Symantec Blue Coat ProxySG Symantec Content Analysis Symantec Email Security Cloud Symantec Endpoint Protection Symantec Endpoint Protection 12 Symantec Endpoint Security Complete Cloud Symantec ICDX SysAid Sysdig Secure Talos ThreatSource Tanium Tenable.io Tenable Security Center ThreatConnect ThreatCrowd ThreatExchange ThreatQ Tor Trend Micro Apex Central Trend Micro Cloud App Security Trend Micro DDAN Trend Micro Deep Security Trend Micro Vision One Trend Vision One TruSTAR Twilio UnshortenMe UrlScan.io URLVoid Varonis Data Security Platform Vectra Vertex AI VirusTotal VirusTotalV3 VMRay VMware Carbon Black Cloud VMware Carbon Black Endpoint Standard Live Response VMware Carbon Black Enterprise EDR VSphere Web Risk Websense WildFire Wiz WMI XForce Zabbix Zendesk ZeroFox Zoho Desk ZScaler Need more help?",
+          "Google Security Operations response integrations Google SecOps lets you get the most out of the incorporated solutions by using integrations, investigating threats, and automating your SOC team's work.",
+          "Need to tell us more? [[[\"Easy to understand\",\"easyToUnderstand\",\"thumb-up\"],[\"Solved my problem\",\"solvedMyProblem\",\"thumb-up\"],[\"Other\",\"otherUp\",\"thumb-up\"]],[[\"Hard to understand\",\"hardToUnderstand\",\"thumb-down\"],[\"Incorrect information or sample code\",\"incorrectInformationOrSampleCode\",\"thumb-down\"],[\"Missing the information/samples I need\",\"missingTheInformationSamplesINeed\",\"thumb-down\"],[\"Other\",\"otherDown\",\"thumb-down\"]],[\"Last updated 2026-04-10 UTC.\"],[],[]]"
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "amazonaws.com",
+      "ec2.internal",
+      "entity.identifier",
+      "error.Stacktrace",
+      "example.com",
+      "example.example",
+      "example.s3.amazonaws.com",
+      "exlab.local",
+      "t2.micro",
+      "test.txt"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/armor/docs/security-policy-overview",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/amazon-guard-duty",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/attivo",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/armor/docs/security-policy-overview",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/amazon-guard-duty",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/attivo",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations"
+      ]
+    },
+    {
+      "capability": "armor",
+      "evidence_links": [
+        "https://docs.cloud.google.com/armor/docs/security-policy-overview",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/amazon-guard-duty",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/attivo",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/armor/docs/security-policy-overview",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/amazon-guard-duty",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/attivo",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/armor/docs/security-policy-overview",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/amazon-guard-duty",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/attivo",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/armor/docs/security-policy-overview",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/amazon-guard-duty",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/attivo",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/armor/docs/security-policy-overview",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/amazon-guard-duty",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/attivo",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/armor/docs/security-policy-overview",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/amazon-guard-duty",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/attivo",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/armor/docs/security-policy-overview",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/amazon-guard-duty",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/attivo",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/armor/docs/security-policy-overview",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/amazon-guard-duty",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/attivo",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/armor/docs/security-policy-overview",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/amazon-guard-duty",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/attivo",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/armor/docs/security-policy-overview",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/amazon-guard-duty",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/attivo",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/armor/docs/security-policy-overview",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/amazon-guard-duty",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/attivo",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/armor/docs/security-policy-overview",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/amazon-guard-duty",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/attivo",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/armor/docs/security-policy-overview",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/amazon-guard-duty",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/attivo",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations"
+      ]
+    },
+    {
+      "capability": "threat",
+      "evidence_links": [
+        "https://docs.cloud.google.com/armor/docs/security-policy-overview",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/amazon-guard-duty",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/attivo",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations"
+      ]
+    }
+  ]
+}

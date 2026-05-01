@@ -1,0 +1,157 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:36.704Z",
+  "source_step08_card": "data/step-08/current/products/filestore/card.json",
+  "product_name": "Filestore",
+  "product_slug": "filestore",
+  "feature_name": "Cloud Filestore",
+  "feature_slug": "cloud-filestore",
+  "summary": "Cloud Filestore is a managed file storage service for applications that need shared file storage; Cloud Filestore is a managed file storage service for applications that need shared file storage.",
+  "extended_definition": "Cloud Filestore is a managed file storage service for applications that need shared file storage; Cloud Filestore is a managed file storage service for applications that need shared file storage.",
+  "lifecycle": {
+    "latest_feature_date": "2019-04-08",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/filestore/docs/backup-persistent-storage-gke",
+      "https://docs.cloud.google.com/filestore/docs/csi-driver",
+      "https://docs.cloud.google.com/python/docs/reference/file/latest/google.cloud.filestore_v1.services.cloud_filestore_manager.CloudFilestoreManagerAsyncClient",
+      "https://docs.cloud.google.com/python/docs/reference/file/latest/google.cloud.filestore_v1.services.cloud_filestore_manager.CloudFilestoreManagerClient"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Access Filestore instances with the Filestore CSI driver \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/filestore/docs/csi-driver",
+        "source_id": "site-docs-root",
+        "final_score": 292,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Create a volume using the Filestore CSI driver The following sections describe the typical process for using a Kubernetes volume backed by a Filestore CSI driver in GKE: Create a StorageClass Use a PersistentVolumeClaim to access the volume Create a Deployment that consumes the volume Create a StorageClass After you enable the Filestore CSI driver, GKE automatically installs the following StorageClasses for provisioning Filestore instances: zonal-rwx , using the Filestore zonal tier . enterprise-rwx , using the Filestore enterprise tier , where each Kubernetes PersistentVolume maps to a Filestore instance. enterprise-multishare-rwx , using the Filestore enterprise tier , where each Kubernetes PersistentVolume maps to a share of a given Filestore instance.",
+          "Access pre-existing Filestore instances using the Filestore CSI driver This section describes the typical process for using a Kubernetes volume to access pre-existing Filestore instances using Filestore CSI driver in GKE: Create a PersistentVolume and a PersistentVolumeClaim to access the instance Create a manifest file like the one shown in the following example, and name it preprov-filestore.yaml : apiVersion : v1 kind : PersistentVolume metadata : name : PV NAME spec : storageClassName : \"\" capacity : storage : 1Ti accessModes : - ReadWriteMany persistentVolumeReclaimPolicy : Retain volumeMode : Filesystem csi : driver : filestore.csi.storage.gke.io volumeHandle : \"modeInstance/ FILESTORE INSTANCE LOCATION / FILESTORE INSTANCE NAME / FILESTORE SHARE NAME \" volumeAttributes : ip : FILESTORE INSTANCE IP volume : FILESTORE SHARE NAME protocol : FILESYSTEM PROTOCOL claimRef : name : PVC NAME namespace : NAMESPACE --- kind : PersistentVolumeClaim apiVersion : v1 metadata : name : PVC NAME namespace : NAMESPACE spec : accessModes : - ReadWriteMany storageClassName : \"\" resources : requests : storage : 1Ti To create the PersistentVolumeClaim and PersistentVolume resources based on the preprov-filestore.yaml manifest file, run the following command: kubectl apply -f preprov-filestore.yaml To specify the NFSv4.1 file system protocol, set the protocol field to NFS V4 1 in the volumeAttributes field of a PersistentVolume object.",
+          "Save the following manifest as filestore-example-deployment.yaml : apiVersion : apps/v1 kind : Deployment metadata : name : web-server-deployment labels : app : nginx spec : replicas : 3 selector : matchLabels : app : nginx template : metadata : labels : app : nginx spec : containers : - name : nginx image : nginx volumeMounts : - mountPath : /usr/share/nginx/html name : mypvc volumes : - name : mypvc persistentVolumeClaim : claimName : podpvc --- kind : PersistentVolumeClaim apiVersion : v1 metadata : name : podpvc spec : accessModes : - ReadWriteMany storageClassName : filestore-example resources : requests : storage : 1Ti To create a Deployment based on the filestore-example-deployment.yaml manifest file, run the following command: kubectl apply -f filestore-example-deployment.yaml Confirm the Deployment was successfully created: kubectl get deployment It might take a while for Filestore instances to complete provisioning."
+        ]
+      },
+      {
+        "title": "\"Class CloudFilestoreManagerAsyncClient (1.16.0) \\_|\\_ Python client libraries\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/file/latest/google.cloud.filestore_v1.services.cloud_filestore_manager.CloudFilestoreManagerAsyncClient",
+        "source_id": "site-python-reference",
+        "final_score": 292,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "As such, Filestore instances are resources of the form: /projects/{project number}/locations/{location id}/instances/{instance id} and backups are resources of the form: /projects/{project number}/locations/{location id}/backup/{backup id} Note that location id must be a Google Cloud zone for instances, but a Google Cloud region for backups; for example: projects/12345/locations/us-central1-c/instances/my-filestore projects/12345/locations/us-central1/backups/my-backup Properties api endpoint Return the API endpoint used by the client instance.",
+          "It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import filestore v1 async def sample restore instance(): Create a client client = filestore v1 .",
+          "It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import filestore v1 async def sample create instance(): Create a client client = filestore v1 ."
+        ]
+      },
+      {
+        "title": "\"Class CloudFilestoreManagerClient (1.16.0) \\_|\\_ Python client libraries\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/file/latest/google.cloud.filestore_v1.services.cloud_filestore_manager.CloudFilestoreManagerClient",
+        "source_id": "site-python-reference",
+        "final_score": 292,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "As such, Filestore instances are resources of the form: /projects/{project number}/locations/{location id}/instances/{instance id} and backups are resources of the form: /projects/{project number}/locations/{location id}/backup/{backup id} Note that location id must be a Google Cloud zone for instances, but a Google Cloud region for backups; for example: projects/12345/locations/us-central1-c/instances/my-filestore projects/12345/locations/us-central1/backups/my-backup Properties api endpoint Return the API endpoint used by the client instance.",
+          "It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import filestore v1 def sample restore instance(): Create a client client = filestore v1 .",
+          "It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import filestore v1 def sample create instance(): Create a client client = filestore v1 ."
+        ]
+      },
+      {
+        "title": "\"Back up and restore persistent storage for your GKE clusters \\_|\\_ Filestore\\",
+        "url": "https://docs.cloud.google.com/filestore/docs/backup-persistent-storage-gke",
+        "source_id": "site-docs-root-2",
+        "final_score": 288,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "You can check the status by running the following command: kubectl get volumesnapshot \\ -o custom-columns = 'NAME:.metadata.name,READY:.status.readyToUse' If the snapshot is ready to use, the output is similar to the following: NAME READY my-snapshot true Delete the test file Delete the test file that you created: kubectl exec POD NAME \\ -- sh -c 'rm /usr/share/hello/hello.txt' Verify that the file no longer exists: kubectl exec POD NAME \\ -- sh -c 'cat /usr/share/hello/hello.txt' The output is similar to the following: cat: /usr/share/hello/hello.txt: No such file or directory Restore the volume snapshot Save the following manifest as pvc-restore.yaml : Filestore apiVersion : v1 kind : PersistentVolumeClaim metadata : name : pvc-restore spec : dataSource : name : my-snapshot kind : VolumeSnapshot apiGroup : snapshot.storage.k8s.io storageClassName : enterprise-rwx accessModes : - ReadWriteMany resources : requests : storage : 1Ti Note: The namespace of the PersistentVolumeClaim must be the same as the namespace of the VolumeSnapshot .",
+          "Both volumeSnapshotRef.name and volumeSnapshotRef.namespace must point to the previously created VolumeSnapshot for the bi-directional binding to be valid. apiVersion : snapshot.storage.k8s.io/v1 kind : VolumeSnapshotContent metadata : name : restored-snapshot-content spec : deletionPolicy : Retain driver : filestore.csi.storage.gke.io source : snapshotHandle : projects/ PROJECT ID /global/snapshots /SNAPSHOT NAME volumeSnapshotRef : kind : VolumeSnapshot name : restored-snapshot namespace : default Apply the manifest: kubectl apply -f restored-snapshot-content.yaml Save the following PersistentVolumeClaim manifest as restored-pvc.yaml .",
+          "Home Documentation Storage Filestore Guides Send feedback Back up and restore persistent storage for your GKE clusters Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.cloud.filestore.v1.CloudFilestoreManagerClient",
+      "com.google.cloud.filestore.v1.CloudFilestoreManagerGrpc.CloudFilestoreManagerBlockingStub",
+      "content.yaml",
+      "deployment.yaml",
+      "filestore.csi.storage.gke.io",
+      "filestore.yaml",
+      "googleapis.dev",
+      "hello.txt",
+      "metadata.name",
+      "options.html",
+      "pd.csi.storage.gke.io",
+      "pvc.yaml",
+      "restore.yaml",
+      "snapshot.storage.k8s.io",
+      "status.readyToUse",
+      "storage.k8s.io"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/filestore/docs/csi-driver",
+        "https://docs.cloud.google.com/python/docs/reference/file/latest/google.cloud.filestore_v1.services.cloud_filestore_manager.CloudFilestoreManagerAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/file/latest/google.cloud.filestore_v1.services.cloud_filestore_manager.CloudFilestoreManagerClient",
+        "https://docs.cloud.google.com/filestore/docs/backup-persistent-storage-gke"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/filestore/docs/csi-driver",
+        "https://docs.cloud.google.com/python/docs/reference/file/latest/google.cloud.filestore_v1.services.cloud_filestore_manager.CloudFilestoreManagerAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/file/latest/google.cloud.filestore_v1.services.cloud_filestore_manager.CloudFilestoreManagerClient",
+        "https://docs.cloud.google.com/filestore/docs/backup-persistent-storage-gke"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/filestore/docs/csi-driver",
+        "https://docs.cloud.google.com/python/docs/reference/file/latest/google.cloud.filestore_v1.services.cloud_filestore_manager.CloudFilestoreManagerAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/file/latest/google.cloud.filestore_v1.services.cloud_filestore_manager.CloudFilestoreManagerClient",
+        "https://docs.cloud.google.com/filestore/docs/backup-persistent-storage-gke"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/filestore/docs/csi-driver",
+        "https://docs.cloud.google.com/python/docs/reference/file/latest/google.cloud.filestore_v1.services.cloud_filestore_manager.CloudFilestoreManagerAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/file/latest/google.cloud.filestore_v1.services.cloud_filestore_manager.CloudFilestoreManagerClient",
+        "https://docs.cloud.google.com/filestore/docs/backup-persistent-storage-gke"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/filestore/docs/csi-driver",
+        "https://docs.cloud.google.com/python/docs/reference/file/latest/google.cloud.filestore_v1.services.cloud_filestore_manager.CloudFilestoreManagerAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/file/latest/google.cloud.filestore_v1.services.cloud_filestore_manager.CloudFilestoreManagerClient",
+        "https://docs.cloud.google.com/filestore/docs/backup-persistent-storage-gke"
+      ]
+    }
+  ]
+}

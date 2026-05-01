@@ -1,0 +1,141 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:48.769Z",
+  "source_step08_card": "data/step-08/current/products/vertex-ai-search/card.json",
+  "product_name": "Vertex AI Search",
+  "product_slug": "vertex-ai-search",
+  "feature_name": "Pricing model switching for Vertex AI Search apps and data stores",
+  "feature_slug": "pricing-model-switching-for-vertex-ai-search-apps-and-data-stores",
+  "summary": "Allows projects with configurable pricing enabled to switch Vertex AI Search apps and data stores between pay-as-you-go and monthly subscription pricing models.",
+  "extended_definition": "Allows projects with configurable pricing enabled to switch Vertex AI Search apps and data stores between pay-as-you-go and monthly subscription pricing models.",
+  "lifecycle": {
+    "latest_feature_date": "2026-01-26",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/generative-ai-app-builder/docs/answer",
+      "https://docs.cloud.google.com/generative-ai-app-builder/docs/create-data-store-es",
+      "https://docs.cloud.google.com/generative-ai-app-builder/docs/create-datastore-ingest"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Get answers and follow-ups \\_|\\_ Vertex AI Search \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/generative-ai-app-builder/docs/answer",
+        "source_id": "site-docs-reference",
+        "final_score": 113,
+        "relevance": "",
+        "evidence_snippets": [
+          "The user was seeking help to stop the automatic replies. \\n\", \"steps\": [ { \"state\": \"SUCCEEDED\", \"description\": \"Rephrase the query and search.\", \"actions\": [ { \"searchAction\": { \"query\": \"Hello!\" }, \"observation\": { \"searchResults\": [ { \"document\": \"projects/123456/locations/global/collections/default collection/dataStores/my-data-store/branches/0/documents/69e92e5b1de5b1e583fbe95f94dd4cbf\", \"uri\": \"https://support.google.com/voice/thread/152245405/google-voice-is-randomly-automatically-sending-hello-replies-to-incoming-texts?hl=en\", \"title\": \"Google voice is randomly/automatically sending \\\"Hello!\\\" replies to incoming texts\", \"snippetInfo\": [ { \"snippet\": \"There IS a new \"Smart reply\" feature on the Android or iOS client apps, but you'd have to a) receive a SMS/MMS, b) open it up, c) look at the three suggested ...\", \"snippetStatus\": \"SUCCESS\" } ] }, { \"document\": \"projects/123456/locations/global/collections/default collection/dataStores/my-data-store/branches/0/documents/44fb313bcc09877e7239f3810ddb132b\", \"uri\": \"https://support.google.com/mail/thread/58174131/gmail-sends-random-email-saying-hello-to-my-emails-without-me-touching-it?hl=en\", \"title\": \"Gmail sends random email saying \\\"Hello!!\\\" to my emails without me touching it\", \"snippetInfo\": [ { \"snippet\": \"Gmail sends random email saying \"\\u003cb\\u003eHello\\u003c/b\\u003e!!\" to my emails without me touching it.",
+          "Here are some search results. \", \"steps\": [ { \"state\": \"SUCCEEDED\", \"description\": \"Rephrase the query and search.\", \"actions\": [ { \"searchAction\": { \"query\": \"Hello\" }, \"observation\": { \"searchResults\": [ { \"document\": \"projects/123456/locations/global/collections/default collection/dataStores/my-data-store/branches/0/documents/69e92e5b1de5b1e583fbe95f94dd4cbf\", \"uri\": \"https://support.google.com/voice/thread/152245405/google-voice-is-randomly-automatically-sending-hello-replies-to-incoming-texts?hl=en\", \"title\": \"Google voice is randomly/automatically sending \\\"Hello!\\\" replies to incoming texts\", \"snippetInfo\": [ { \"snippet\": \"There IS a new \"Smart reply\" feature on the Android or iOS client apps, but you'd have to a) receive a SMS/MMS, b) open it up, c) look at the three suggested ...\", \"snippetStatus\": \"SUCCESS\" } ] }, { \"document\": \"projects/123456/locations/global/collections/default collection/dataStores/my-data-store/branches/0/documents/16d65e2af7fa854d1a00995525646dc3\", \"uri\": \"https://support.google.com/voice/thread/112990484/google-voice-sending-hello-in-response-to-text-messages?hl=en\", \"title\": \"Google Voice sending \\\"Hello,\\\" in response to text messages\", \"snippetInfo\": [ { \"snippet\": \"When I receive text messages, a reply is instantly sent out reading \"\\u003cb\\u003eHello\\u003c/b\\u003e,\" and I cannot figure out how this is happening.",
+          "Example command curl -X POST -H \"Authorization: Bearer $(gcloud auth print-access-token)\" \\ -H \"Content-Type: application/json\" \\ \"https://discoveryengine.googleapis.com/v1/projects/my-project-123/locations/global/collections/default collection/engines/my-app/servingConfigs/default search:answer\" \\ -d '{ \"query\": { \"text\": \"How much longer does it take to train a recommendations model than a search model\"}, \"queryUnderstandingSpec\": { \"queryRephraserSpec\": { \"maxRephraseSteps\": 5 } } }' Python For more information, see the Vertex AI Search Python API reference documentation ."
+        ]
+      },
+      {
+        "title": "About apps and data stores \\_|\\_ Vertex AI Search \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/generative-ai-app-builder/docs/create-datastore-ingest",
+        "source_id": "site-docs-root",
+        "final_score": 105,
+        "relevance": "",
+        "evidence_snippets": [
+          "Home Documentation AI and ML Vertex AI Search Send feedback About apps and data stores Stay organized with collections Save and categorize content based on your preferences.",
+          "Data stores and apps In Vertex AI Search, there are various kinds of data stores.",
+          "This page describes Vertex AI Search apps and data stores."
+        ]
+      },
+      {
+        "title": "Create a search data store \\_|\\_ Vertex AI Search \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/generative-ai-app-builder/docs/create-data-store-es",
+        "source_id": "site-docs-root",
+        "final_score": 96,
+        "relevance": "",
+        "evidence_snippets": [
+          "Import data from Bigtable. curl -X POST \\ -H \"Authorization: Bearer $( gcloud auth print-access-token ) \" \\ -H \"Content-Type: application/json\" \\ \"https://discoveryengine.googleapis.com/v1/projects/ PROJECT ID /locations/global/collections/default collection/dataStores/ DATA STORE ID /branches/0/documents:import\" \\ -d '{ \"bigtableSource \": { \"projectId\": \" BIGTABLE PROJECT ID \", \"instanceId\": \" INSTANCE ID \", \"tableId\": \" TABLE ID \", \"bigtableOptions\": { \"keyFieldName\": \" KEY FIELD NAME \", \"families\": { \"key\": \" KEY \", \"value\": { \"fieldName\": \" FIELD NAME \", \"encoding\": \" ENCODING \", \"type\": \" TYPE \", \"columns\": [ { \"qualifier\": \" QUALIFIER \", \"fieldName\": \" FIELD NAME \", \"encoding\": \" COLUMN ENCODING \", \"type\": \" COLUMN VALUES TYPE \" } ] } } ... } }, \"reconciliationMode\": \" RECONCILIATION MODE \", \"autoGenerateIds\": \" AUTO GENERATE IDS \", \"idField\": \" ID FIELD \", }' Replace the following: PROJECT ID : the ID of your Vertex AI Search project.",
+          "This page describes how to create a data store and ingest data for custom search apps in Vertex AI Search. go to the section for the source you plan to use: Create a data store using website content Import from BigQuery Import from Cloud Storage Sync from Google Drive Sync from Gmail (Public preview) Sync from Google Sites (Public preview) Sync from Google Calendar (Public preview) Sync from Google Groups (Public preview) Import from Cloud SQL Import from Spanner (Public preview) Import from Firestore Import from Bigtable (Public Preview) Import from AlloyDB for PostgreSQL (Public Preview) Upload structured JSON data with the API Create a data store using Terraform To sync data from a third-party data source instead, see Connect a third-party data source .",
+          "Import data from Spanner. curl -X POST \\ -H \"Authorization: Bearer $( gcloud auth print-access-token ) \" \\ -H \"Content-Type: application/json\" \\ \"https://discoveryengine.googleapis.com/v1/projects/ PROJECT ID /locations/global/collections/default collection/dataStores/ DATA STORE ID /branches/0/documents:import\" \\ -d '{ \"cloudSpannerSource\": { \"projectId\": \" SPANNER PROJECT ID \", \"instanceId\": \" INSTANCE ID \", \"databaseId\": \" DATABASE ID \", \"tableId\": \" TABLE ID \", \"enableDataBoost\": \" DATA BOOST BOOLEAN \" }, \"reconciliationMode\": \" RECONCILIATION MODE \", \"autoGenerateIds\": \" AUTO GENERATE IDS \", \"idField\": \" ID FIELD \", }' Replace the following: PROJECT ID : the ID of your Vertex AI Search project."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "discoveryengine.googleapis.com",
+      "support.google.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/answer",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/create-datastore-ingest",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/create-data-store-es"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/answer",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/create-datastore-ingest",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/create-data-store-es"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/answer",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/create-datastore-ingest",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/create-data-store-es"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/answer",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/create-datastore-ingest",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/create-data-store-es"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/answer",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/create-datastore-ingest",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/create-data-store-es"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/answer",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/create-datastore-ingest",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/create-data-store-es"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/answer",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/create-datastore-ingest",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/create-data-store-es"
+      ]
+    }
+  ]
+}

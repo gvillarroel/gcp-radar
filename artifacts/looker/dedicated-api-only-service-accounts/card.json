@@ -1,0 +1,148 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:42.371Z",
+  "source_step08_card": "data/step-08/current/products/looker/card.json",
+  "product_name": "Looker",
+  "product_slug": "looker",
+  "feature_name": "dedicated API-only service accounts",
+  "feature_slug": "dedicated-api-only-service-accounts",
+  "summary": "Lets admins create dedicated service accounts for API-only access and migrate eligible user accounts to them.",
+  "extended_definition": "Lets admins create dedicated service accounts for API-only access and migrate eligible user accounts to them.",
+  "lifecycle": {
+    "latest_feature_date": "2026-01-08",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-google",
+      "https://docs.cloud.google.com/looker/docs/admin-panel-users-users",
+      "https://docs.cloud.google.com/looker/docs/best-practices/admin-managed-api-keys-deprecation"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Admin settings - Users \\_|\\_ Looker \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/looker/docs/admin-panel-users-users",
+        "source_id": "site-docs-reference",
+        "final_score": 197,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "This is to ensure admins can either create or migrate service accounts from existing standard users if they require access to users' API credentials.",
+          "This is to ensure admins can either create or migrate service accounts from existing standard users if they require access to users' API credentials.",
+          "From the Edit User page you can do the following: Enable or disable the service account Edit the service account name Manage the service account API keys Assign different groups and Roles Edit the user attributes that are associated with the service account Migrating user accounts to service accounts Important: Starting with the Looker 26.8 release, the following changes will occur: Looker (original) admins will no longer be able to access or manage the API credentials of their standard users."
+        ]
+      },
+      {
+        "title": "Admin settings - Google authentication \\_|\\_ Looker \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-google",
+        "source_id": "site-docs-reference",
+        "final_score": 170,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To add a user with an email address that is not in your Google Domain: Enable the Alternate login for admins and specified users option on the Google Auth page Create or modify an existing user role to add the login special email permission Go to Add Users from the users panel ( /admin/users/new ) Add the email address(es) you would like to include, and the roles those users should have, which must include a role with the login special email permission Those users are now able to sign in using https://mycompany.looker.com/login/email (hidden URL) Note: If a user has authenticated into the Looker instance using only Google, you can enable alternate login only by using the Looker API.",
+          "Note: If you have a permission that provides access to only select pages in the Admin panel, such as manage schedules , manage themes , or see admin , but you don't have the Admin role , the page or pages that are described here may not be visible to you in the Admin panel.",
+          "Warning: The following behaviors might affect your decision to use Google OAuth: When enabling Google OAuth, the Looker instance can merge existing user accounts with the Google-registered domain, but only for accounts whose email address matches the domain."
+        ]
+      },
+      {
+        "title": "\"Discontinuing the admin capability to create, view, and manage API credentials\\",
+        "url": "https://docs.cloud.google.com/looker/docs/best-practices/admin-managed-api-keys-deprecation",
+        "source_id": "site-docs-reference",
+        "final_score": 168,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Key changes As of January 12, 2026, admins can perform the following tasks: Create new service accounts and migrate existing users as service accounts Manage the API credentials of these service accounts Starting with the Looker 26.8 release, which will release in May 2026, the following changes will occur: Admins will no longer be able to access or manage the API credentials of their standard users Admins will be able to manage which users have access to individually owned API credentials Note: Starting with the Looker 26.8 release, users with access to API credentials will be able to access and manage their own API credentials.",
+          "This is to ensure that admins can either create or migrate service accounts from existing standard users if they require access to users' API credentials.",
+          "As of that date, admins can perform the following tasks: Create new service accounts Migrate existing users to service account Fully manage API credentials for service accounts We've provided additional information to help you understand this change."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "mycompany.looker.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/admin-panel-users-users",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-google",
+        "https://docs.cloud.google.com/looker/docs/best-practices/admin-managed-api-keys-deprecation"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/admin-panel-users-users",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-google",
+        "https://docs.cloud.google.com/looker/docs/best-practices/admin-managed-api-keys-deprecation"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/admin-panel-users-users",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-google",
+        "https://docs.cloud.google.com/looker/docs/best-practices/admin-managed-api-keys-deprecation"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/admin-panel-users-users",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-google",
+        "https://docs.cloud.google.com/looker/docs/best-practices/admin-managed-api-keys-deprecation"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/admin-panel-users-users",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-google",
+        "https://docs.cloud.google.com/looker/docs/best-practices/admin-managed-api-keys-deprecation"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/admin-panel-users-users",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-google",
+        "https://docs.cloud.google.com/looker/docs/best-practices/admin-managed-api-keys-deprecation"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/admin-panel-users-users",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-google",
+        "https://docs.cloud.google.com/looker/docs/best-practices/admin-managed-api-keys-deprecation"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/admin-panel-users-users",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-google",
+        "https://docs.cloud.google.com/looker/docs/best-practices/admin-managed-api-keys-deprecation"
+      ]
+    }
+  ]
+}

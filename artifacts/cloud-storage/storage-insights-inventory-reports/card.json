@@ -1,0 +1,277 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:28.180Z",
+  "source_step08_card": "data/step-08/current/products/cloud-storage/card.json",
+  "product_name": "Cloud Storage",
+  "product_slug": "cloud-storage",
+  "feature_name": "Storage Insights inventory reports",
+  "feature_slug": "storage-insights-inventory-reports",
+  "summary": "Storage Insights inventory reports provide metadata overviews for all objects in a bucket.",
+  "extended_definition": "Storage Insights inventory reports provide metadata overviews for all objects in a bucket.",
+  "lifecycle": {
+    "latest_feature_date": "2023-04-17",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/storage/docs/access-control/iam-gcloud",
+      "https://docs.cloud.google.com/storage/docs/access-control/iam-permissions",
+      "https://docs.cloud.google.com/storage/docs/audit-logging",
+      "https://docs.cloud.google.com/storage/docs/insights/v1"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Cloud Audit Logs with Cloud Storage \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/storage/docs/audit-logging",
+        "source_id": "site-iam-reference",
+        "final_score": 242,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Audit log type Sub-type Cloud Storage operations Admin Activity ADMIN WRITE Setting bucket or managed folder IAM policies Setting object ACLs 1 Creating buckets Deleting buckets Restoring soft-deleted buckets Relocating buckets Updating bucket metadata Creating tag bindings on buckets Deleting tag bindings on buckets Creating managed folders Deleting managed folders Updating Storage Intelligence configuration for a project, a folder, or an organization Creating Rapid Cache caches Pausing Rapid Cache caches Resuming Rapid Cache caches Disabling Rapid Cache caches Updating Rapid Cache caches Creating HMAC keys Deleting HMAC keys Updating HMAC keys Cancelling long-running operations Deleting long-running operations Creating Storage Insights inventory report configurations Updating Storage Insights inventory report configurations Deleting Storage Insights inventory report configurations Creating Storage Insights dataset configurations Updating Storage Insights dataset configurations Deleting Storage Insights dataset configurations Linking Storage Insights dataset configurations Unlinking Storage Insights dataset configurations Data Access ADMIN READ Getting bucket or managed folder IAM policies Getting object ACLs Getting bucket metadata Listing buckets Listing tag bindings on buckets Listing effective tags on buckets Getting managed folder metadata Listing managed folders Getting Storage Intelligence configuration for a project, a folder, or an organization Getting Rapid Cache caches Listing Rapid Cache caches Getting HMAC keys Listing HMAC keys Getting long-running operations Listing long-running operations Getting Storage Insights inventory report configurations Listing Storage Insights inventory report configurations Getting Storage Insights inventory reports Listing Storage Insights inventory reports Getting Storage Insights dataset configurations Listing Storage Insights dataset configurations Data Access DATA READ Getting object data Getting object metadata Listing objects Getting folder metadata Listing folders Copying objects 2 Composing objects 2 Listing ongoing XML API multipart uploads Listing XML API multipart upload parts Data Access DATA WRITE Creating objects Deleting objects Deleting multiple objects using the XML API Restoring soft-deleted objects Moving objects Updating non-ACL object metadata Setting retentions for objects Overriding unlocked retentions for objects Copying objects 2 Composing objects 2 Initiating XML API multipart uploads Creating parts in an XML API multipart upload Aborting XML API multipart uploads Completing XML API multipart uploads Creating folders Deleting folders Renaming folders System Event Start of bucket relocate process 3 End of bucket relocate process 1 Admin Activity audit logs are not generated if/when ACLs are initially set at object creation.",
+          "For example: gcloud storage sign-url gs://example bucket/example object.jpeg --private-key-file=example-key.json --duration=10m --query-params=x-goog-custom-audit-job=job name,x-goog-custom-audit-user=test user Example log entry protoPayload: { @type: \"type.googleapis.com/google.cloud.audit.Auditlog\", ... metadata: { audit context: { app context: \"EXTERNAL\", audit info: { x-goog-custom-audit-job: \"job name\", x-goog-custom-audit-user: \"test user\" } } } } For more information on the fields included in the protoPayload object with the type type.googleapis.com/google.cloud.audit.Auditlog , see the AuditLog reference documentation .",
+          "Audit logs for multi-object delete XML API When you use the XML API to delete multiple objects in a single request, Cloud Storage generates two types of data access audit logs, provided you enable data access audit logs : Parent request audit log : A log is generated for the overall multi-object delete request."
+        ]
+      },
+      {
+        "title": "IAM permissions for Cloud Storage \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/storage/docs/access-control/iam-permissions",
+        "source_id": "site-docs-reference",
+        "final_score": 198,
+        "relevance": "",
+        "evidence_snippets": [
+          "This permission alone does not allow you to read IAM policies or IP filtering rules. storage.buckets.getIamPolicy Read bucket IAM policies. storage.buckets.getIpFilter Lists or reads the IP filtering rules on a bucket. storage.buckets.getObjectInsights Read object metadata for generating inventory reports and Storage Insights datasets . storage.buckets.list List buckets in a project including read bucket metadata.",
+          "Storage Insights inventory report permissions Inventory report permission name Description storageinsights.reportConfigs.create Create inventory report configurations. storageinsights.reportConfigs.delete Delete inventory report configurations. storageinsights.reportConfigs.get Retrieve inventory report configurations. storageinsights.reportConfigs.list List inventory report configurations. storageinsights.reportConfigs.update Modify inventory report configurations. storageinsights.reportDetails.get Retrieve inventory reports. storageinsights.reportDetails.list List inventory reports.",
+          "Bucket permissions Bucket permission name Description storage.buckets.create Create new buckets in a project. storage.buckets.createTagBinding Create a new tag binding to a bucket. storage.buckets.delete Delete buckets. storage.buckets.deleteTagBinding Delete the tag binding on a bucket. storage.buckets.enableObjectRetention Enable object retention configurations on a bucket. storage.buckets.exemptFromIpFilter Exempts the user or service account from IP filtering rules for bucket-level operations. storage.buckets.get Read bucket metadata, including listing or reading the Pub/Sub notification configurations on a bucket."
+        ]
+      },
+      {
+        "title": "\"IAM permissions for gcloud storage commands \\_|\\_ Cloud Storage \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/storage/docs/access-control/iam-gcloud",
+        "source_id": "site-docs-reference",
+        "final_score": 196,
+        "relevance": "",
+        "evidence_snippets": [
+          "Command Flag Required IAM Permissions batch-operations jobs create storagebatchoperations.jobs.create batch-operations jobs cancel storagebatchoperations.jobs.cancel batch-operations jobs delete storagebatchoperations.jobs.delete batch-operations jobs get storagebatchoperations.jobs.get batch-operations jobs list storagebatchoperations.jobs.list buckets add-iam-policy-binding storage.buckets.get storage.buckets.getIamPolicy storage.buckets.setIamPolicy storage.buckets.update buckets anywhere-caches create storage.anywhereCaches.create buckets anywhere-caches describe storage.anywhereCaches.get buckets anywhere-caches list storage.anywhereCaches.list buckets anywhere-caches update storage.anywhereCaches.update buckets anywhere-caches pause storage.anywhereCaches.pause buckets anywhere-caches resume storage.anywhereCaches.resume buckets anywhere-caches disable storage.anywhereCaches.disable buckets create storage.buckets.create storage.buckets.setIpFilter 15 buckets delete storage.buckets.delete buckets describe storage.buckets.get storage.buckets.getIamPolicy 1 storage.buckets.getIpFilter 16 buckets get-iam-policy storage.buckets.get storage.buckets.getIamPolicy buckets list storage.buckets.list storage.buckets.getIamPolicy 1 buckets notifications create storage.buckets.get storage.buckets.update pubsub.topics.get (for the project containing the Pub/Sub topic) pubsub.topics.create 3 (for the project containing the Pub/Sub topic) pubsub.topics.getIamPolicy (for Pub/Sub topic receiving notifications) pubsub.topics.setIamPolicy 3 (for Pub/Sub topic receiving notifications) buckets notifications create --skip-topic-setup storage.buckets.get storage.buckets.update buckets notifications delete storage.buckets.get storage.buckets.update buckets notifications describe storage.buckets.get buckets notifications list storage.buckets.get buckets relocate storage.buckets.relocate buckets remove-iam-policy-binding storage.buckets.get storage.buckets.getIamPolicy storage.buckets.setIamPolicy storage.buckets.update buckets set-iam-policy storage.buckets.setIamPolicy storage.buckets.update buckets update storage.buckets.update storage.buckets.setIpFilter 15 buckets update --no-requester-pays storage.buckets.update resourcemanager.projects.createBillingAssignment 2 buckets update --recovery-point-objective --rpo --[no-]uniform-bucket-level-access storage.buckets.get storage.buckets.update buckets update --clear-pap --clear-public-access-prevention --[no-]pap --[no-]public-access-prevention storage.buckets.get storage.buckets.update storage.buckets.setIamPolicy cat storage.objects.get storage.objects.list 13 cp storage.objects.get (for the source objects) storage.objects.create (for the destination bucket) storage.objects.list 4 (for the destination bucket) storage.objects.delete 5 (for the destination bucket) storage.buckets.get 12 (for the destination bucket) du storage.objects.list folders create storage.folders.create folders delete storage.folders.delete folders describe storage.folders.get folders list storage.folders.list folders rename storage.folders.rename (for the source bucket) storage.folders.create (for the destination bucket) hash storage.objects.get hmac create storage.hmacKeys.create hmac delete storage.hmacKeys.delete hmac describe storage.hmacKeys.get hmac list storage.hmacKeys.list hmac update storage.hmacKeys.update insights dataset-configs create storageinsights.datasetConfigs.create insights dataset-configs create-link storageinsights.datasetConfigs.linkDataset insights dataset-configs delete storageinsights.datasetConfigs.delete insights dataset-configs delete-link storageinsights.datasetConfigs.unlinkDataset insights dataset-configs describe storageinsights.datasetConfigs.get insights dataset-configs list storageinsights.datasetConfigs.list insights dataset-configs update storageinsights.datasetConfigs.update insights inventory-reports create storageinsights.reportConfigs.create insights inventory-reports delete storageinsights.reportConfigs.delete insights inventory-reports details list storageinsights.reportDetails.list insights inventory-reports details describe storageinsights.reportDetails.get insights inventory-reports list storageinsights.reportConfigs.list insights inventory-reports update storageinsights.reportConfigs.get storageinsights.reportConfigs.update ls (for bucket listing) storage.buckets.list storage.buckets.getIamPolicy 6 ls (for object listing) storage.objects.get 7 storage.objects.list storage.objects.getIamPolicy 8 ls --buckets storage.buckets.get storage.buckets.getIamPolicy 6 storage intelligence-config enable storage.intelligenceConfigs.update storage-intelligence disable storage.intelligenceConfigs.update storage-intelligence describe storage.intelligenceConfigs.get storage-intelligence update storage.intelligenceConfigs.update mv storage.objects.get (for the source objects) storage.objects.delete (for the source bucket) storage.objects.create (for the destination bucket) storage.objects.list 4 (for the destination bucket) storage.objects.delete 5 (for the destination bucket) storage.buckets.get 12 (for the destination bucket) objects compose storage.objects.get storage.objects.create storage.objects.delete 9 objects describe storage.objects.get storage.objects.getIamPolicy 8 objects list storage.objects.list storage.objects.getIamPolicy 8 objects update storage.objects.get storage.objects.list storage.objects.update objects update --storage-class --encryption-key --clear-encryption-key storage.objects.get storage.objects.list storage.objects.create storage.objects.delete objects update --retention-mode --retain-until --clear-retention storage.objects.get storage.objects.list storage.objects.update storage.objects.setRetention storage.objects.overrideUnlockedRetention 11 operations cancel storage.bucketOperations.cancel operations describe storage.bucketOperations.get operations list storage.bucketOperations.list restore storage.objects.create storage.objects.delete 9 storage.objects.restore restore --async storage.objects.create storage.objects.delete 14 storage.objects.restore storage.buckets.restore rm storage.buckets.delete storage.objects.delete storage.objects.list rsync storage.objects.list (for the source bucket) storage.objects.get (for the source objects) storage.objects.list (for the destination bucket) storage.objects.get (for the destination bucket) storage.objects.create (for the destination bucket) storage.objects.delete 10 (for the destination bucket) storage.buckets.get 12 (for the destination bucket) rsync --dry-run storage.objects.list (for the source and destination buckets) service-agent resourceManager.projects.get sign-url None; however, the service account whose key is used as part of this command must have permission to perform the request being encoded into the signed URL.",
+          "Home Documentation Storage Cloud Storage Reference Send feedback IAM permissions for gcloud storage commands Stay organized with collections Save and categorize content based on your preferences.",
+          "For example, buckets notification create requires only storage.buckets.get and storage.buckets.update to use, but you must have additional permissions for the feature to work properly."
+        ]
+      },
+      {
+        "title": "Storage Insights API \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/storage/docs/insights/v1",
+        "source_id": "site-docs-reference",
+        "final_score": 192,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "This service has the following service endpoint and all URIs below are relative to this service endpoint: https://storageinsights.googleapis.com REST Resource: v1.projects.locations Methods get GET /v1/{name=projects/ /locations/ } Gets information about a location. list GET /v1/{name=projects/ }/locations Lists information about the supported locations for this service.",
+          "REST Resource: v1.projects.locations.reportConfigs.reportDetails Methods get GET /v1/{name=projects/ /locations/ /reportConfigs/ /reportDetails/ } Gets an existing inventory report in a given project for a given location. list GET /v1/{parent=projects/ /locations/ /reportConfigs/ }/reportDetails Lists the inventory reports in a given project for a given location.",
+          "Provides insights capability on Google Cloud Storage Service: storageinsights.googleapis.com Service endpoint A service endpoint is a base URL that specifies the network address of an API service."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.cloud.storage",
+      "key.json",
+      "object.jpeg",
+      "projects.get",
+      "pubsub.topics.create",
+      "pubsub.topics.get",
+      "pubsub.topics.getIamPolicy",
+      "pubsub.topics.setIamPolicy",
+      "resourcemanager.projects.createBillingAssignment",
+      "storage.anywhereCaches.create",
+      "storage.anywhereCaches.disable",
+      "storage.anywhereCaches.get",
+      "storage.anywhereCaches.list",
+      "storage.anywhereCaches.pause",
+      "storage.anywhereCaches.resume",
+      "storage.anywhereCaches.update",
+      "storage.bucketOperations.cancel",
+      "storage.bucketOperations.get",
+      "storage.bucketOperations.list",
+      "storage.buckets.create",
+      "storage.buckets.createTagBinding",
+      "storage.buckets.delete",
+      "storage.buckets.deleteTagBinding",
+      "storage.buckets.enableObjectRetention",
+      "storage.buckets.exemptFromIpFilter",
+      "storage.buckets.get",
+      "storage.buckets.getIamPolicy",
+      "storage.buckets.getIpFilter",
+      "storage.buckets.getObjectInsights",
+      "storage.buckets.list",
+      "storage.buckets.relocate",
+      "storage.buckets.restore",
+      "storage.buckets.setIamPolicy",
+      "storage.buckets.setIpFilter",
+      "storage.buckets.update",
+      "storage.folders.create",
+      "storage.folders.delete",
+      "storage.folders.get",
+      "storage.folders.list",
+      "storage.folders.rename",
+      "storage.hmacKeys.create",
+      "storage.hmacKeys.delete",
+      "storage.hmacKeys.get",
+      "storage.hmacKeys.list",
+      "storage.hmacKeys.update",
+      "storage.intelligenceConfigs.get",
+      "storage.intelligenceConfigs.update",
+      "storage.objects.create",
+      "storage.objects.delete",
+      "storage.objects.get",
+      "storage.objects.getIamPolicy",
+      "storage.objects.list",
+      "storage.objects.move",
+      "storage.objects.overrideUnlockedRetention",
+      "storage.objects.restore",
+      "storage.objects.setIamPolicy",
+      "storage.objects.setRetention",
+      "storage.objects.update",
+      "storagebatchoperations.jobs.cancel",
+      "storagebatchoperations.jobs.create",
+      "storagebatchoperations.jobs.delete",
+      "storagebatchoperations.jobs.get",
+      "storagebatchoperations.jobs.list",
+      "storageinsights.datasetConfigs.create",
+      "storageinsights.datasetConfigs.delete",
+      "storageinsights.datasetConfigs.get",
+      "storageinsights.datasetConfigs.linkDataset",
+      "storageinsights.datasetConfigs.list",
+      "storageinsights.datasetConfigs.unlinkDataset",
+      "storageinsights.datasetConfigs.update",
+      "storageinsights.googleapis.com",
+      "storageinsights.reportConfigs.create",
+      "storageinsights.reportConfigs.delete",
+      "storageinsights.reportConfigs.get",
+      "storageinsights.reportConfigs.list",
+      "storageinsights.reportConfigs.update",
+      "storageinsights.reportDetails.get",
+      "storageinsights.reportDetails.list",
+      "type.googleapis.com",
+      "v1.projects.locations",
+      "v1.projects.locations.reportConfigs",
+      "v1.projects.locations.reportConfigs.reportDetails"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/audit-logging",
+        "https://docs.cloud.google.com/storage/docs/access-control/iam-permissions",
+        "https://docs.cloud.google.com/storage/docs/access-control/iam-gcloud",
+        "https://docs.cloud.google.com/storage/docs/insights/v1"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/audit-logging",
+        "https://docs.cloud.google.com/storage/docs/access-control/iam-permissions",
+        "https://docs.cloud.google.com/storage/docs/access-control/iam-gcloud",
+        "https://docs.cloud.google.com/storage/docs/insights/v1"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/audit-logging",
+        "https://docs.cloud.google.com/storage/docs/access-control/iam-permissions",
+        "https://docs.cloud.google.com/storage/docs/access-control/iam-gcloud",
+        "https://docs.cloud.google.com/storage/docs/insights/v1"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/audit-logging",
+        "https://docs.cloud.google.com/storage/docs/access-control/iam-permissions",
+        "https://docs.cloud.google.com/storage/docs/access-control/iam-gcloud",
+        "https://docs.cloud.google.com/storage/docs/insights/v1"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/audit-logging",
+        "https://docs.cloud.google.com/storage/docs/access-control/iam-permissions",
+        "https://docs.cloud.google.com/storage/docs/access-control/iam-gcloud",
+        "https://docs.cloud.google.com/storage/docs/insights/v1"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/audit-logging",
+        "https://docs.cloud.google.com/storage/docs/access-control/iam-permissions",
+        "https://docs.cloud.google.com/storage/docs/access-control/iam-gcloud",
+        "https://docs.cloud.google.com/storage/docs/insights/v1"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/audit-logging",
+        "https://docs.cloud.google.com/storage/docs/access-control/iam-permissions",
+        "https://docs.cloud.google.com/storage/docs/access-control/iam-gcloud",
+        "https://docs.cloud.google.com/storage/docs/insights/v1"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/audit-logging",
+        "https://docs.cloud.google.com/storage/docs/access-control/iam-permissions",
+        "https://docs.cloud.google.com/storage/docs/access-control/iam-gcloud",
+        "https://docs.cloud.google.com/storage/docs/insights/v1"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/audit-logging",
+        "https://docs.cloud.google.com/storage/docs/access-control/iam-permissions",
+        "https://docs.cloud.google.com/storage/docs/access-control/iam-gcloud",
+        "https://docs.cloud.google.com/storage/docs/insights/v1"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/audit-logging",
+        "https://docs.cloud.google.com/storage/docs/access-control/iam-permissions",
+        "https://docs.cloud.google.com/storage/docs/access-control/iam-gcloud",
+        "https://docs.cloud.google.com/storage/docs/insights/v1"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/audit-logging",
+        "https://docs.cloud.google.com/storage/docs/access-control/iam-permissions",
+        "https://docs.cloud.google.com/storage/docs/access-control/iam-gcloud",
+        "https://docs.cloud.google.com/storage/docs/insights/v1"
+      ]
+    }
+  ]
+}

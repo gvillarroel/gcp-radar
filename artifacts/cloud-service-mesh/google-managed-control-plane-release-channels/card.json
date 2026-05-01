@@ -1,0 +1,182 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:26.404Z",
+  "source_step08_card": "data/step-08/current/products/cloud-service-mesh/card.json",
+  "product_name": "Cloud Service Mesh",
+  "product_slug": "cloud-service-mesh",
+  "feature_name": "Google-managed control plane release channels",
+  "feature_slug": "google-managed-control-plane-release-channels",
+  "summary": "Google-managed control plane release channels let users choose a managed upgrade cadence that balances stability and feature availability; Google-managed control plane release channels let users choose a managed upgrade cadence that balances stability and feature availability.",
+  "extended_definition": "Google-managed control plane release channels let users choose a managed upgrade cadence that balances stability and feature availability; Google-managed control plane release channels let users choose a managed upgrade cadence that balances stability and feature availability.",
+  "lifecycle": {
+    "latest_feature_date": "2021-06-24",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/service-mesh/docs/managed-control-plane-overview",
+      "https://docs.cloud.google.com/service-mesh/docs/onboarding/provision-control-plane",
+      "https://docs.cloud.google.com/service-mesh/docs/security-bulletins",
+      "https://docs.cloud.google.com/service-mesh/docs/supported-features-managed"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Provision a managed Cloud Service Mesh control plane on GKE \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/service-mesh/docs/onboarding/provision-control-plane",
+        "source_id": "site-docs-root",
+        "final_score": 240,
+        "relevance": "",
+        "evidence_snippets": [
+          "Use the following instructions: Run the following command to locate the available release channels: kubectl -n istio-system get controlplanerevision The output is similar to the following: NAME AGE asm-managed-rapid 6d7h NOTE: If two control plane revisions appear in the list above, remove one.",
+          "Use the following instructions: Run the following command to locate the available release channels: kubectl -n istio-system get controlplanerevision The output is similar to the following: NAME AGE asm-managed-rapid 6d7h NOTE: If two control plane revisions appear in the list above, remove one.",
+          "Delete old control plane After you install and confirm that all namespaces use the Google-managed control plane, you can delete the old control plane. kubectl delete Service,Deployment,HorizontalPodAutoscaler,PodDisruptionBudget istiod -n istio-system --ignore-not-found=true If you used istioctl kube-inject instead of automatic injection, or if you installed additional gateways, check the metrics for the control plane, and verify that the number of connected endpoints is zero."
+        ]
+      },
+      {
+        "title": "\"Supported features using Istio APIs (managed control plane) \\_|\\_ Cloud\\",
+        "url": "https://docs.cloud.google.com/service-mesh/docs/supported-features-managed",
+        "source_id": "site-docs-root",
+        "final_score": 220,
+        "relevance": "",
+        "evidence_snippets": [
+          "Users whose existing usage is not compatible with the TRAFFIC DIRECTOR implementation without changes will continue to receive the ISTIOD implementation until September 8, 2024. (These users received a Service Announcement.) If any GKE on Google Cloud cluster in your fleet contains an in-cluster Cloud Service Mesh control plane when you provision managed Cloud Service Mesh, you will receive the ISTIOD control plane implementation.",
+          "Service entry Feature Managed (TD) Managed (istiod) ServiceEntry v1beta1 † † The TRAFFIC DIRECTOR control plane implementation does not support following fields and values in fields: workloadSelector field endpoints[].network field endpoints[].locality field endpoints[].weight field endpoints[].serviceAccount field DNS ROUND ROBIN value in resolution field MESH INTERNAL value in location field Unix domain socket address in endpoints[].address field subjectAltNames field Two or more endpoints[] entries if resolution field has DNS value Destination rule Feature Managed (TD) Managed (istiod) DestinationRule v1beta1 † † The TRAFFIC DIRECTOR control plane implementation does not support following fields. trafficPolicy.loadBalancer.localityLbSetting field trafficPolicy.tunnel field trafficPolicy.tls.credentialName field trafficPolicy.portLevelSettings[].tls.credentialName field Additionally, the TRAFFIC DIRECTOR control plane implementation requires that the destination rule defining subsets is in the same namespace and cluster with the Kubernetes service or ServiceEntry.",
+          "Environments Feature Managed (TD) Managed (istiod) GKE versions currently available in release channels , in one of the supported regions GKE versions currently available in release channels , in one of the supported regions , GKE Autopilot clusters Environments outside of Google Cloud (GKE Enterprise on-premises, GKE Enterprise on other public clouds, Amazon EKS, Microsoft AKS, or other Kubernetes clusters) Scale Refer to the Scalability Limits page Platform environment Feature Managed (TD) Managed (istiod) Single network Multi-network Single-project Multi-project with Shared VPC Multi-cluster deployment Feature Managed (TD) Managed (istiod) Multi-primary Primary-remote Multi-cluster endpoint discovery with declarative API Multi-cluster endpoint discovery with remote secrets Multi-cluster endpoint discovery with declarative API and a simple topology Notes on terminology A multi-primary configuration means that the configuration must be replicated in all clusters."
+        ]
+      },
+      {
+        "title": "Security bulletins \\_|\\_ Cloud Service Mesh \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/service-mesh/docs/security-bulletins",
+        "source_id": "site-docs-root",
+        "final_score": 201,
+        "relevance": "",
+        "evidence_snippets": [
+          "These versions support configuring the Envoy proxies in the system with more normalization options: 1.9.5-asm.2 1.8.6-asm.3 1.7.8-asm.8 Note: The rollout of the Cloud Service Mesh Managed Control Plane (available only in 1.9.x versions) will complete in the next few days.",
+          "Mitigation Update your clusters to the latest Cloud Service Mesh versions: 1.9.5-asm.2 1.8.6-asm.3 1.7.8-asm.8 Note: The rollout of the Cloud Service Mesh Managed Control Plane (available only in 1.9.x versions) will complete in the next few days.",
+          "Check if your clusters are impacted Your cluster is impacted if it uses an in-cluster Cloud Service Mesh patch version earlier than: 1.27.4-asm.1 1.26.7-asm.1 1.25.6-asm.1 This CVE does not affect Cloud Service Mesh with a managed control plane."
+        ]
+      },
+      {
+        "title": "\"Managed control plane for continuing customers \\_|\\_ Cloud Service Mesh\\",
+        "url": "https://docs.cloud.google.com/service-mesh/docs/managed-control-plane-overview",
+        "source_id": "site-docs-root-2",
+        "final_score": 190,
+        "relevance": "",
+        "evidence_snippets": [
+          "Control plane for new meshes Starting on July 1, 2024, most existing users of the managed istiod control plane implementation began to receive the updated managed control plane with Google's globally available implementation - the Traffic Director (TD) control plane, in new fleets.",
+          "Users whose existing usage of managed Cloud Service Mesh with the istiod control plane implementation was not compatible with the Traffic Director implementation without changes continued to get the istiod implementation until September 8, 2024.",
+          "If you onboard a new fleet to managed Cloud Service Mesh, and this fleet is not in a Google Cloud Organization or it is in a new Google Cloud Organization, then you will get the new managed control plane with the TD implementation from the Cloud Service Mesh launch date."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "asm.1",
+      "asm.2",
+      "asm.3",
+      "asm.8",
+      "tls.credentialName"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/docs/onboarding/provision-control-plane",
+        "https://docs.cloud.google.com/service-mesh/docs/supported-features-managed",
+        "https://docs.cloud.google.com/service-mesh/docs/security-bulletins",
+        "https://docs.cloud.google.com/service-mesh/docs/managed-control-plane-overview"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/docs/onboarding/provision-control-plane",
+        "https://docs.cloud.google.com/service-mesh/docs/supported-features-managed",
+        "https://docs.cloud.google.com/service-mesh/docs/security-bulletins",
+        "https://docs.cloud.google.com/service-mesh/docs/managed-control-plane-overview"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/docs/onboarding/provision-control-plane",
+        "https://docs.cloud.google.com/service-mesh/docs/supported-features-managed",
+        "https://docs.cloud.google.com/service-mesh/docs/security-bulletins",
+        "https://docs.cloud.google.com/service-mesh/docs/managed-control-plane-overview"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/docs/onboarding/provision-control-plane",
+        "https://docs.cloud.google.com/service-mesh/docs/supported-features-managed",
+        "https://docs.cloud.google.com/service-mesh/docs/security-bulletins",
+        "https://docs.cloud.google.com/service-mesh/docs/managed-control-plane-overview"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/docs/onboarding/provision-control-plane",
+        "https://docs.cloud.google.com/service-mesh/docs/supported-features-managed",
+        "https://docs.cloud.google.com/service-mesh/docs/security-bulletins",
+        "https://docs.cloud.google.com/service-mesh/docs/managed-control-plane-overview"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/docs/onboarding/provision-control-plane",
+        "https://docs.cloud.google.com/service-mesh/docs/supported-features-managed",
+        "https://docs.cloud.google.com/service-mesh/docs/security-bulletins",
+        "https://docs.cloud.google.com/service-mesh/docs/managed-control-plane-overview"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/docs/onboarding/provision-control-plane",
+        "https://docs.cloud.google.com/service-mesh/docs/supported-features-managed",
+        "https://docs.cloud.google.com/service-mesh/docs/security-bulletins",
+        "https://docs.cloud.google.com/service-mesh/docs/managed-control-plane-overview"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/docs/onboarding/provision-control-plane",
+        "https://docs.cloud.google.com/service-mesh/docs/supported-features-managed",
+        "https://docs.cloud.google.com/service-mesh/docs/security-bulletins",
+        "https://docs.cloud.google.com/service-mesh/docs/managed-control-plane-overview"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/docs/onboarding/provision-control-plane",
+        "https://docs.cloud.google.com/service-mesh/docs/supported-features-managed",
+        "https://docs.cloud.google.com/service-mesh/docs/security-bulletins",
+        "https://docs.cloud.google.com/service-mesh/docs/managed-control-plane-overview"
+      ]
+    }
+  ]
+}

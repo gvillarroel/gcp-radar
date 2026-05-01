@@ -1,0 +1,145 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:29.281Z",
+  "source_step08_card": "data/step-08/current/products/compute-engine/card.json",
+  "product_name": "Compute Engine",
+  "product_slug": "compute-engine",
+  "feature_name": "OS inventory management v2.0",
+  "feature_slug": "os-inventory-management-v2-0",
+  "summary": "OS inventory management v2.0 lets users query the OS Config API for VM inventory and vulnerability report data in a specific zone.",
+  "extended_definition": "OS inventory management v2.0 lets users query the OS Config API for VM inventory and vulnerability report data in a specific zone.",
+  "lifecycle": {
+    "latest_feature_date": "2021-04-29",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/compute/docs/licensemanager/rest/v1/projects.locations.configurations/queryLicenseUsage",
+      "https://docs.cloud.google.com/compute/docs/licensemanager/rest/v1/projects.locations.configurations/queryLicenseUsage",
+      "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/ncc-gateway-overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Method: projects.locations.configurations.queryLicenseUsage \\_|\\_ Compute\\",
+        "url": "https://docs.cloud.google.com/compute/docs/licensemanager/rest/v1/projects.locations.configurations/queryLicenseUsage",
+        "source_id": "site-api-reference",
+        "final_score": 120,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Compute Compute Engine APIs & Reference Send feedback Method: projects.locations.configurations.queryLicenseUsage Stay organized with collections Save and categorize content based on your preferences.",
+          "HTTP request Path parameters Query parameters Request body Response body JSON representation Authorization scopes IAM Permissions UserCountUsage JSON representation License Usage information for a Configuration.",
+          "IAM Permissions Requires the following IAM permission on the name resource: licensemanager.configurations.queryLicenseUsage For more information, see the IAM documentation ."
+        ]
+      },
+      {
+        "title": "\"Method: projects.locations.configurations.queryLicenseUsage \\_|\\_ Compute\\",
+        "url": "https://developers.google.com/compute/docs/licensemanager/rest/v1/projects.locations.configurations/queryLicenseUsage",
+        "source_id": "site-docs-root-3",
+        "final_score": 112,
+        "relevance": "",
+        "evidence_snippets": [
+          "Home Documentation Compute Compute Engine APIs & Reference Send feedback Method: projects.locations.configurations.queryLicenseUsage Stay organized with collections Save and categorize content based on your preferences.",
+          "HTTP request Path parameters Query parameters Request body Response body JSON representation Authorization scopes IAM Permissions UserCountUsage JSON representation License Usage information for a Configuration.",
+          "IAM Permissions Requires the following IAM permission on the name resource: licensemanager.configurations.queryLicenseUsage For more information, see the IAM documentation ."
+        ]
+      },
+      {
+        "title": "\"NCC Gateway overview \\_|\\_ Network Connectivity Center \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/ncc-gateway-overview",
+        "source_id": "site-docs-reference-2",
+        "final_score": 111,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "This query lets you see which particular gateway instance receives the traffic if you send a packet from that particular region.",
+          "This traffic requires an additional 2 Gbps of gateway bandwidth because it is processed by the gateway in the following two places: 1 Gbps as packets leave the hub and enter the gateway spoke 1 Gbps as packets leave the gateway spoke and are sent to the VLAN attachments that connect to the branch We recommend the following strategy for configuring gateway processing capacity and VLAN attachment bandwidth: The gateway processing capacity is the sum of bandwidth required, in each direction, among all gateway NICs.",
+          "Use cases for Google Cloud users include the following: Branch users to the internet Branch users to private applications Private applications to the internet Some supported partners offer one or more of the following use cases: Mobile users to the internet Mobile users to private applications Branch users to partner applications Private applications to partner applications Traffic flows This section describes the traffic flow paths in NCC Gateway depending on each use case."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "developers.google.com",
+      "licensemanager.configurations.queryLicenseUsage",
+      "licensemanager.googleapis.com",
+      "projects.locations.configurations",
+      "projects.locations.configurations.queryLicenseUsage",
+      "v2.0"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/compute/docs/licensemanager/rest/v1/projects.locations.configurations/queryLicenseUsage",
+        "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/ncc-gateway-overview",
+        "https://developers.google.com/compute/docs/licensemanager/rest/v1/projects.locations.configurations/queryLicenseUsage"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/compute/docs/licensemanager/rest/v1/projects.locations.configurations/queryLicenseUsage",
+        "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/ncc-gateway-overview",
+        "https://developers.google.com/compute/docs/licensemanager/rest/v1/projects.locations.configurations/queryLicenseUsage"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/compute/docs/licensemanager/rest/v1/projects.locations.configurations/queryLicenseUsage",
+        "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/ncc-gateway-overview",
+        "https://developers.google.com/compute/docs/licensemanager/rest/v1/projects.locations.configurations/queryLicenseUsage"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/compute/docs/licensemanager/rest/v1/projects.locations.configurations/queryLicenseUsage",
+        "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/ncc-gateway-overview",
+        "https://developers.google.com/compute/docs/licensemanager/rest/v1/projects.locations.configurations/queryLicenseUsage"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/compute/docs/licensemanager/rest/v1/projects.locations.configurations/queryLicenseUsage",
+        "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/ncc-gateway-overview",
+        "https://developers.google.com/compute/docs/licensemanager/rest/v1/projects.locations.configurations/queryLicenseUsage"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/compute/docs/licensemanager/rest/v1/projects.locations.configurations/queryLicenseUsage",
+        "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/ncc-gateway-overview",
+        "https://developers.google.com/compute/docs/licensemanager/rest/v1/projects.locations.configurations/queryLicenseUsage"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/compute/docs/licensemanager/rest/v1/projects.locations.configurations/queryLicenseUsage",
+        "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/ncc-gateway-overview",
+        "https://developers.google.com/compute/docs/licensemanager/rest/v1/projects.locations.configurations/queryLicenseUsage"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,158 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:49.581Z",
+  "source_step08_card": "data/step-08/current/products/virtual-private-cloud/card.json",
+  "product_name": "Virtual Private Cloud",
+  "product_slug": "virtual-private-cloud",
+  "feature_name": "Firewall rule egress and deny support",
+  "feature_slug": "firewall-rule-egress-and-deny-support",
+  "summary": "Firewall rules were expanded to support egress traffic controls, deny actions, and explicit rule evaluation ordering.",
+  "extended_definition": "Firewall rules were expanded to support egress traffic controls, deny actions, and explicit rule evaluation ordering.",
+  "lifecycle": {
+    "latest_feature_date": "2017-09-05",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/states/reasons-dropped-packets",
+      "https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/tutorials/tutorial-troubleshooting-workflow",
+      "https://docs.cloud.google.com/network-intelligence-center/docs/firewall-insights/concepts/overview",
+      "https://docs.cloud.google.com/vpc/docs/create-modify-vpc-networks"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Identify and fix ICMP issues \\_|\\_ Network Intelligence Center - Connectivity\\",
+        "url": "https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/tutorials/tutorial-troubleshooting-workflow",
+        "source_id": "site-iam-reference",
+        "final_score": 177,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Create a firewall rule default-deny-outgoing-ping After you have created the VMs, create an egress VPC firewall rule called default-deny-outgoing-ping .",
+          "Console UI snapshot of the trace containing the denied outgoing ping Run a second trace after disabling firewall rule default-deny-outgoing-ping To allow the ping test to vm2 , temporarily disable the VPC firewall rule default-deny-outgoing-ping .",
+          "This time, Connectivity Tests tells you that the packet has been delivered to vm2 and that the matched firewall rule, allow-ping-from-known-ranges , allows an inbound ICMP packet to the external IP address of vm2 ."
+        ]
+      },
+      {
+        "title": "\"Firewall Insights overview \\_|\\_ Network Intelligence Center - Firewall\\",
+        "url": "https://docs.cloud.google.com/network-intelligence-center/docs/firewall-insights/concepts/overview",
+        "source_id": "site-iam-reference",
+        "final_score": 162,
+        "relevance": "",
+        "evidence_snippets": [
+          "Note: For firewall rules in hierarchical firewall policies and global network firewall policies, insights are generated based on firewall logging data gathered only after February 27, 2023.",
+          "Insights help you identify firewall rules that overlap existing rules, rules with no hits, and unused firewall rule attributes such as IP address and port ranges.",
+          "Optimize firewall rules and tighten security boundaries by identifying overly permissive allow rules and reviewing predictions about their future usage."
+        ]
+      },
+      {
+        "title": "\"Quickstart: Create and manage VPC networks \\_|\\_ Virtual Private Cloud \\_\\",
+        "url": "https://docs.cloud.google.com/vpc/docs/create-modify-vpc-networks",
+        "source_id": "site-docs-root",
+        "final_score": 157,
+        "relevance": "",
+        "evidence_snippets": [
+          "In both the IPv4 firewall rules tab and the IPv6 firewall rules tab, there is an editable predefined ingress firewall rule; the IPv4 rule is named NETWORK -allow-custom and the IPv6 rule is named NETWORK -allow-ipv6-custom .",
+          "Resources that reference the network include VPC Network Peering connections , Cloud VPN gateways , Cloud Routers , Serverless VPC Access connectors and their connected services, firewall rules , and custom static routes .",
+          "About firewall rules After you create a network, create firewall rules to allow or deny traffic between resources in the network, such as communication between VM instances."
+        ]
+      },
+      {
+        "title": "\"Reasons for dropped test packets \\_|\\_ Network Intelligence Center - Connectivity\\",
+        "url": "https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/states/reasons-dropped-packets",
+        "source_id": "site-iam-reference",
+        "final_score": 156,
+        "relevance": "",
+        "evidence_snippets": [
+          "Every VPC network has two implied firewall rules that allow egress traffic to everywhere and block incoming traffic from everywhere.",
+          "For connectivity to succeed, you need an egress firewall rule at the source allowing access to the destination endpoint, and an ingress firewall rule at the destination to allow this connection.",
+          "Network tags are not supported by Direct VPC egress in ingress firewall rules The packet is dropped because Direct VPC egress doesn't support source network tags in ingress firewall rules."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/tutorials/tutorial-troubleshooting-workflow",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/firewall-insights/concepts/overview",
+        "https://docs.cloud.google.com/vpc/docs/create-modify-vpc-networks",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/states/reasons-dropped-packets"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/tutorials/tutorial-troubleshooting-workflow",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/firewall-insights/concepts/overview",
+        "https://docs.cloud.google.com/vpc/docs/create-modify-vpc-networks",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/states/reasons-dropped-packets"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/tutorials/tutorial-troubleshooting-workflow",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/firewall-insights/concepts/overview",
+        "https://docs.cloud.google.com/vpc/docs/create-modify-vpc-networks",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/states/reasons-dropped-packets"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/tutorials/tutorial-troubleshooting-workflow",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/firewall-insights/concepts/overview",
+        "https://docs.cloud.google.com/vpc/docs/create-modify-vpc-networks",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/states/reasons-dropped-packets"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/tutorials/tutorial-troubleshooting-workflow",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/firewall-insights/concepts/overview",
+        "https://docs.cloud.google.com/vpc/docs/create-modify-vpc-networks",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/states/reasons-dropped-packets"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/tutorials/tutorial-troubleshooting-workflow",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/firewall-insights/concepts/overview",
+        "https://docs.cloud.google.com/vpc/docs/create-modify-vpc-networks",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/states/reasons-dropped-packets"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/tutorials/tutorial-troubleshooting-workflow",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/firewall-insights/concepts/overview",
+        "https://docs.cloud.google.com/vpc/docs/create-modify-vpc-networks",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/states/reasons-dropped-packets"
+      ]
+    }
+  ]
+}

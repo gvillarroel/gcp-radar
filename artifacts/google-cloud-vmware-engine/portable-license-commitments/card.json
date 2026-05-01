@@ -1,0 +1,152 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:39.256Z",
+  "source_step08_card": "data/step-08/current/products/google-cloud-vmware-engine/card.json",
+  "product_name": "Google Cloud VMware Engine",
+  "product_slug": "google-cloud-vmware-engine",
+  "feature_name": "Portable License commitments",
+  "feature_slug": "portable-license-commitments",
+  "summary": "Allows purchase of portable license commitments for VMware Engine.",
+  "extended_definition": "Allows purchase of portable license commitments for VMware Engine.",
+  "lifecycle": {
+    "latest_feature_date": "2024-07-29",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/backup-disaster-recovery/docs/configuration/cud",
+      "https://docs.cloud.google.com/backup-disaster-recovery/docs/configuration/cud-oracle",
+      "https://docs.cloud.google.com/vmware-engine/docs/cud"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Committed use discounts \\_|\\_ Google Cloud VMware Engine \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/vmware-engine/docs/cud",
+        "source_id": "site-docs-reference",
+        "final_score": 151,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "VMware Engine CUD agreement type VMware Engine gives you the following commitment options for node types: Portable License commitment : includes only VMware Engine nodes.",
+          "VMware Engine CUDs apply to all VMware Engine nodes for the region for which you have purchased commitments.",
+          "Alternatively, you can make a purchase with a custom role with the following permissions: enterprisepurchasing.gcveCuds.list enterprisepurchasing.gcveNodePricingInfo.list enterprisepurchasing.gcveCuds.create billing.accounts.get billing.subscriptions.create vmwareengine.projectState.get consumerprocurement.orders.place resourcemanager.projects.get See VMware Engine IAM roles and permissions for more information."
+        ]
+      },
+      {
+        "title": "\"Committed use discounts for Backup and DR for Google Cloud VMware Engine\\",
+        "url": "https://docs.cloud.google.com/backup-disaster-recovery/docs/configuration/cud",
+        "source_id": "site-docs-reference-2",
+        "final_score": 94,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "When you purchase a Backup and DR for VMware Engine committed use discount, you pay the same commitment fee for the entirety of the commitment term, even if the price of applicable usage changes.",
+          "To purchase a commitment for Backup and DR for VMware Engine in your project for a specific node type, do the following: Note: Upfront or prepaid CUD is an allowlist GA feature.",
+          "CUD pricing Backup and DR for VMware Engine CUDs give you the following discounts on on-demand pricing: Workload 1 year in advance 1 year monthly 3 years in advance 3 years monthly Google Cloud VMware Engine 30% 24.4% 50% 42.5% In advance charges are invoiced in full at the start of the contract for a one-year or a three-year commitment Monthly charges are invoiced monthly for a one-year or a three-year commitment These discount percentages are the same in every region."
+        ]
+      },
+      {
+        "title": "\"Committed use discounts for Backup and DR for Oracle \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/backup-disaster-recovery/docs/configuration/cud-oracle",
+        "source_id": "site-docs-reference-2",
+        "final_score": 86,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Purchase commitments To learn more about purchasing spend-based commitments, see the Google Cloud Committed use discounts page.",
+          "To purchase or manage CUDs for a Cloud Billing account, follow the instructions at Purchasing spend-based commitments .",
+          "For other Backup and DR CUDs, see Committed use discounts for Backup and DR for VMware Engine ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "explicit",
+    "explicit_roles": [
+      "roles/accessapproval.admin",
+      "roles/accessapproval.approver",
+      "roles/accessapproval.configEditor"
+    ],
+    "explicit_permissions": [
+      {
+        "permission": "resourcemanager.projects.get",
+        "group": "resourcemanager",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver",
+          "roles/accessapproval.configEditor"
+        ]
+      }
+    ],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "billing.accounts.get",
+      "billing.subscriptions.create",
+      "consumerprocurement.orders.place",
+      "enterprisepurchasing.gcveCuds.create",
+      "enterprisepurchasing.gcveCuds.list",
+      "enterprisepurchasing.gcveNodePricingInfo.list",
+      "vmwareengine.projectState.get"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vmware-engine/docs/cud",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/configuration/cud",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/configuration/cud-oracle"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vmware-engine/docs/cud",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/configuration/cud",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/configuration/cud-oracle"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vmware-engine/docs/cud",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/configuration/cud",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/configuration/cud-oracle"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vmware-engine/docs/cud",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/configuration/cud",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/configuration/cud-oracle"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vmware-engine/docs/cud",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/configuration/cud",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/configuration/cud-oracle"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vmware-engine/docs/cud",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/configuration/cud",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/configuration/cud-oracle"
+      ]
+    }
+  ]
+}

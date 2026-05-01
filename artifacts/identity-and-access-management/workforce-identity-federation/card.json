@@ -1,0 +1,241 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:41.786Z",
+  "source_step08_card": "data/step-08/current/products/identity-and-access-management/card.json",
+  "product_name": "Identity and Access Management",
+  "product_slug": "identity-and-access-management",
+  "feature_name": "Workforce Identity Federation",
+  "feature_slug": "workforce-identity-federation",
+  "summary": "Lets you authenticate and authorize users from external identity providers to access supported Google Cloud products.",
+  "extended_definition": "Lets you authenticate and authorize users from external identity providers to access supported Google Cloud products.",
+  "lifecycle": {
+    "latest_feature_date": "2022-07-07",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/iam/docs/audit-logging/examples-workforce-identity",
+      "https://docs.cloud.google.com/iam/docs/configuring-workforce-identity-federation",
+      "https://docs.cloud.google.com/iam/docs/federated-identity-supported-services",
+      "https://docs.cloud.google.com/iam/docs/tutorial-cloud-run-workload-id-federation"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Configure Workforce Identity Federation \\_|\\_ Identity and Access Management\\",
+        "url": "https://docs.cloud.google.com/iam/docs/configuring-workforce-identity-federation",
+        "source_id": "site-docs-root-2",
+        "final_score": 321,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Security IAM Identity and Access Management (IAM) Guides Send feedback Configure Workforce Identity Federation Stay organized with collections Save and categorize content based on your preferences.",
+          "Configure Workforce Identity Federation To configure Workforce Identity Federation, you create a workforce identity pool and a workforce identity pool provider .",
+          "Delete workforce identity federation encryption keys To delete SAML encryption keys run the following command: gcloud iam workforce-pools providers keys delete KEY ID \\ --workforce-pool WORKFORCE POOL ID \\ --provider WORKFORCE PROVIDER ID \\ --location global Replace the following: KEY ID : the key name WORKFORCE POOL ID : the pool ID WORKFORCE PROVIDER ID : the workforce identity pool provider ID Supported SAML encryption algorithms Workforce identity federation supports the following key transport algorithms: http://www.w3.org/2001/04/xmlenc#rsa-oaep-mgf1p http://www.w3.org/2009/xmlenc11#rsa-oaep\" http://www.w3.org/2001/04/xmlenc#rsa-1 5\" Workforce identity federation supports the following block encryption algorithms: http://www.w3.org/2001/04/xmlenc#aes128-cbc http://www.w3.org/2001/04/xmlenc#aes192-cbc http://www.w3.org/2001/04/xmlenc#aes256-cbc http://www.w3.org/2009/xmlenc11#aes128-gcm http://www.w3.org/2009/xmlenc11#aes256-gcm SAML X.509 signing key requirements The following key specifications apply to SAML X.509 signing keys: An RSA public key that is wrapped in an X.509 v3 certificate ."
+        ]
+      },
+      {
+        "title": "\"Example logs for Workforce Identity Federation \\_|\\_ Identity and Access\\",
+        "url": "https://docs.cloud.google.com/iam/docs/audit-logging/examples-workforce-identity",
+        "source_id": "site-docs-root-2",
+        "final_score": 303,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Security IAM Guides Send feedback Example logs for Workforce Identity Federation Stay organized with collections Save and categorize content based on your preferences.",
+          "Either modify your attribute mapping or the incoming assertion to produce a mapped attribute that is less than 400.\" }, \"authenticationInfo\": { \"principalSubject\": \"3Kn-kJQal4N-WXVjxMqcOF1tQcCdBliu97lV-2P-Khc\" }, \"requestMetadata\": { \"callerIp\": \"2601:647:4680:9140:9d68:88c9:cab9:a908\", \"callerSuppliedUserAgent\": \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10 15 7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36\", \"requestAttributes\": { \"time\": \"2025-04-09T18:32:34.979311Z\", \"auth\": {} }, \"destinationAttributes\": {} }, \"serviceName\": \"sts.googleapis.com\", \"methodName\": \"google.identity.sts.SecurityTokenService.WebSignIn\", \"authorizationInfo\": [ { \"permission\": \"sts.identityProviders.checkLogging\", \"granted\": false, \"permissionType\": \"ADMIN READ\" } ], \"resourceName\": \"locations/global/workforcePools/my-pool/providers/my-provider\", \"request\": { \"@type\": \"type.googleapis.com/google.identity.sts.SecurityTokenService.WebSignInRequest\", \"provider\": \"//iam.googleapis.com/locations/global/workforcePools/my-pool/providers/my-provider\", \"host\": \"auth-staging.corp.cloud.google\" }, \"metadata\": { \"mappedAttributes\": { \"google.subject\": \"3Nk-kJQal4N-WXVjxMqcOF1tQcCdBliu97lV-2P-Khc\", \"google.providerId\": \"my-provider-id\", \"google.groups\": \"[group-claim-1, group-claim-2, ..., group-claim-800]\" } } }, \"insertId\": \"-llnhbmck3a\", \"resource\": { \"type\": \"audited resource\", \"labels\": { \"service\": \"sts.googleapis.com\", \"method\": \"google.identity.sts.SecurityTokenService.WebSignIn\" } }, \"timestamp\": \"2025-04-09T18:32:34.208412Z\", \"severity\": \"ERROR\", \"logName\": \"organizations/123456789012/logs/cloudaudit.googleapis.com%2Fdata access\", \"receiveTimestamp\": \"2025-04-09T18:32:35.059811619Z\" } Logs for signed and encrypted SAML assertions This section describes the Cloud Audit Logs log entries that Security Token Service creates when it attempts to verify signed SAML assertions or decrypt encrypted assertions that are sent from your IdP.",
+          "In this case, the following Cloud Audit Logs entry is generated: Note: The Cloud Audit Logs entry is written only for the initiator of the sign-out action. { \"logName\" : \"organizations/my-organization-id/logs/cloudaudit.googleapis.com%2Fdata access\" , \"protoPayload\" : { \"@type\" : \"type.googleapis.com/google.cloud.audit.AuditLog\" , \"authenticationInfo\" : { \"principalSubject\" : \"user@example.com\" , }, \"serviceName\" : \"sts.googleapis.com\" , \"methodName\" : \"google.identity.sts.SecurityTokenService.WebSignOut\" , \"resourceName\" : \"locations/global/workforcePools/my-pool/providers/my-provider\" , \"request\" : { \"@type\" : \"type.googleapis.com/google.identity.sts.SecurityTokenService.WebSignOutRequest\" , \"provider\" : \"//iam.googleapis.com/locations/global/workforcePools/my-pool/providers/my-provider\" , \"host\" : \"http://auth.cloud.google\" }, \"metadata\" : { \"mappedPrincipal\" : \"principal://iam.googleapis.com/locations/global/workforcePools/my-pool/subject/user@example.com\" , } }, \"resource\" : { \"type\" : \"audited resource\" , \"labels\" : { \"service\" : \"sts.googleapis.com\" , \"method\" : \"google.identity.sts.SecurityTokenService.WebSignOut\" } }, } Logs for signing in with OAuth flow After you set up your workforce identity pool and workforce identity pool provider, you can use Google Cloud resources using the OAuth flow."
+        ]
+      },
+      {
+        "title": "\"Identity federation: products and limitations \\_|\\_ Identity and Access\\",
+        "url": "https://docs.cloud.google.com/iam/docs/federated-identity-supported-services",
+        "source_id": "site-api-reference",
+        "final_score": 289,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Workforce Identity Federation Workforce Identity Federation lets your workforce—employees, vendors, partners, and other users—access Google Cloud products by using an identity provider (IdP).",
+          "To grant the role to Workforce Identity Federation users, you must go to the IAM page and specify a Workforce Identity Federation principal identifier or contact the project owner to do so.",
+          "Other: No known limitations AlloyDB for PostgreSQL GA Console (federated): The following fleet health features aren't supported while using Workforce Identity Federation: Performance and Backups summary cards Data in the clusters table, such as CPU percentage and Memory Available Google Cloud API: No known limitations Other: No known limitations Anti Money Laundering AI GA Console (federated): No known limitations Google Cloud API: No known limitations Other: No known limitations API Gateway GA Console (federated): No known limitations Google Cloud API: No known limitations Other: No known limitations Apigee GA Console (federated): Features in Preview aren't supported for Workforce Identity Federation users."
+        ]
+      },
+      {
+        "title": "\"Integrate Cloud Run and Workload Identity Federation \\_|\\_ Identity and\\",
+        "url": "https://docs.cloud.google.com/iam/docs/tutorial-cloud-run-workload-id-federation",
+        "source_id": "site-docs-root-2",
+        "final_score": 264,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "External workload authentication using Workload Identity Federation Workload Identity Federation lets you authenticate workloads outside of Google Cloud without using a static service account key.",
+          "When you complete this tutorial, you can see how Workload Identity Federation lets you authenticate your Jenkins application with Google Cloud by using OpenID Connect authentication.",
+          "Workload Identity Federation lets you use your IdP to authenticate directly with Google Cloud."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "auth.cloud.google",
+      "certificate.cer",
+      "certificate.pem",
+      "cloudaudit.googleapis.com",
+      "example.com",
+      "iam.googleapis.com",
+      "staging.corp.cloud.google",
+      "sts.googleapis.com",
+      "sts.identityProviders.checkLogging",
+      "type.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iam/docs/configuring-workforce-identity-federation",
+        "https://docs.cloud.google.com/iam/docs/audit-logging/examples-workforce-identity",
+        "https://docs.cloud.google.com/iam/docs/federated-identity-supported-services",
+        "https://docs.cloud.google.com/iam/docs/tutorial-cloud-run-workload-id-federation"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iam/docs/configuring-workforce-identity-federation",
+        "https://docs.cloud.google.com/iam/docs/audit-logging/examples-workforce-identity",
+        "https://docs.cloud.google.com/iam/docs/federated-identity-supported-services",
+        "https://docs.cloud.google.com/iam/docs/tutorial-cloud-run-workload-id-federation"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iam/docs/configuring-workforce-identity-federation",
+        "https://docs.cloud.google.com/iam/docs/audit-logging/examples-workforce-identity",
+        "https://docs.cloud.google.com/iam/docs/federated-identity-supported-services",
+        "https://docs.cloud.google.com/iam/docs/tutorial-cloud-run-workload-id-federation"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iam/docs/configuring-workforce-identity-federation",
+        "https://docs.cloud.google.com/iam/docs/audit-logging/examples-workforce-identity",
+        "https://docs.cloud.google.com/iam/docs/federated-identity-supported-services",
+        "https://docs.cloud.google.com/iam/docs/tutorial-cloud-run-workload-id-federation"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iam/docs/configuring-workforce-identity-federation",
+        "https://docs.cloud.google.com/iam/docs/audit-logging/examples-workforce-identity",
+        "https://docs.cloud.google.com/iam/docs/federated-identity-supported-services",
+        "https://docs.cloud.google.com/iam/docs/tutorial-cloud-run-workload-id-federation"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iam/docs/configuring-workforce-identity-federation",
+        "https://docs.cloud.google.com/iam/docs/audit-logging/examples-workforce-identity",
+        "https://docs.cloud.google.com/iam/docs/federated-identity-supported-services",
+        "https://docs.cloud.google.com/iam/docs/tutorial-cloud-run-workload-id-federation"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iam/docs/configuring-workforce-identity-federation",
+        "https://docs.cloud.google.com/iam/docs/audit-logging/examples-workforce-identity",
+        "https://docs.cloud.google.com/iam/docs/federated-identity-supported-services",
+        "https://docs.cloud.google.com/iam/docs/tutorial-cloud-run-workload-id-federation"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iam/docs/configuring-workforce-identity-federation",
+        "https://docs.cloud.google.com/iam/docs/audit-logging/examples-workforce-identity",
+        "https://docs.cloud.google.com/iam/docs/federated-identity-supported-services",
+        "https://docs.cloud.google.com/iam/docs/tutorial-cloud-run-workload-id-federation"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iam/docs/configuring-workforce-identity-federation",
+        "https://docs.cloud.google.com/iam/docs/audit-logging/examples-workforce-identity",
+        "https://docs.cloud.google.com/iam/docs/federated-identity-supported-services",
+        "https://docs.cloud.google.com/iam/docs/tutorial-cloud-run-workload-id-federation"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iam/docs/configuring-workforce-identity-federation",
+        "https://docs.cloud.google.com/iam/docs/audit-logging/examples-workforce-identity",
+        "https://docs.cloud.google.com/iam/docs/federated-identity-supported-services",
+        "https://docs.cloud.google.com/iam/docs/tutorial-cloud-run-workload-id-federation"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iam/docs/configuring-workforce-identity-federation",
+        "https://docs.cloud.google.com/iam/docs/audit-logging/examples-workforce-identity",
+        "https://docs.cloud.google.com/iam/docs/federated-identity-supported-services",
+        "https://docs.cloud.google.com/iam/docs/tutorial-cloud-run-workload-id-federation"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iam/docs/configuring-workforce-identity-federation",
+        "https://docs.cloud.google.com/iam/docs/audit-logging/examples-workforce-identity",
+        "https://docs.cloud.google.com/iam/docs/federated-identity-supported-services",
+        "https://docs.cloud.google.com/iam/docs/tutorial-cloud-run-workload-id-federation"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iam/docs/configuring-workforce-identity-federation",
+        "https://docs.cloud.google.com/iam/docs/audit-logging/examples-workforce-identity",
+        "https://docs.cloud.google.com/iam/docs/federated-identity-supported-services",
+        "https://docs.cloud.google.com/iam/docs/tutorial-cloud-run-workload-id-federation"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iam/docs/configuring-workforce-identity-federation",
+        "https://docs.cloud.google.com/iam/docs/audit-logging/examples-workforce-identity",
+        "https://docs.cloud.google.com/iam/docs/federated-identity-supported-services",
+        "https://docs.cloud.google.com/iam/docs/tutorial-cloud-run-workload-id-federation"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iam/docs/configuring-workforce-identity-federation",
+        "https://docs.cloud.google.com/iam/docs/audit-logging/examples-workforce-identity",
+        "https://docs.cloud.google.com/iam/docs/federated-identity-supported-services",
+        "https://docs.cloud.google.com/iam/docs/tutorial-cloud-run-workload-id-federation"
+      ]
+    }
+  ]
+}

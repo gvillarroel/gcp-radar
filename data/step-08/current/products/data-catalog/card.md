@@ -1,0 +1,53 @@
+# Data Catalog
+
+Schema version: `step-08-product-feature-cards-v1`
+Generated at: `2026-05-01T19:03:49.387Z`
+Product status: `PASS`
+
+## Summary
+
+- Feature cards: 28
+- Step 07 failed features: 0
+- Step 07 warned features: 1
+- Corpus health: healthy
+- IAM mapping: 23 explicit, 0 derived, 5 unknown
+
+## Service Card
+
+- Service card ID: `data-catalog:service`
+- Latest feature date: 2025-03-17
+- Official source links: 23
+- Security capabilities: 25
+
+## Features
+
+| Feature | Coverage | Gate | IAM | Sources |
+| --- | --- | --- | --- | --- |
+| Data Catalog regional availability in europe-north2 | MEDIUM | PASS | explicit | [source](https://docs.cloud.google.com/iam/docs/custom-roles-permissions-support)<br>[source](https://docs.cloud.google.com/iam/docs/deny-permissions-support)<br>[source](https://docs.cloud.google.com/python/docs/reference/datacatalog/latest/google.cloud.datacatalog_v1.services.data_catalog.DataCatalogAsyncClient) |
+| Dataplex Catalog transition support | MEDIUM | PASS | explicit | [source](https://docs.cloud.google.com/data-catalog/docs/reference/rest/v1/DataplexTransferStatus)<br>[source](https://docs.cloud.google.com/data-catalog/docs/tags-and-tag-templates)<br>[source](https://docs.cloud.google.com/iam/docs/custom-roles-permissions-support) |
+| Data lineage regional availability | MEDIUM | PASS | explicit | [source](https://docs.cloud.google.com/iam/docs/custom-roles-permissions-support)<br>[source](https://docs.cloud.google.com/iam/docs/deny-permissions-support)<br>[source](https://docs.cloud.google.com/iam/docs/pab-blocked-permissions) |
+| Data lineage list view time filtering | MEDIUM | PASS | explicit | [source](https://docs.cloud.google.com/iam/docs/custom-roles-permissions-support)<br>[source](https://docs.cloud.google.com/iam/docs/deny-permissions-support)<br>[source](https://docs.cloud.google.com/iam/docs/overview) |
+| Data lineage list view | MEDIUM | PASS | explicit | [source](https://docs.cloud.google.com/iam/docs/custom-roles-permissions-support)<br>[source](https://docs.cloud.google.com/iam/docs/deny-permissions-support)<br>[source](https://docs.cloud.google.com/iam/docs/overview) |
+| Column-level data lineage for BigQuery | MEDIUM | PASS | explicit | [source](https://docs.cloud.google.com/data-catalog/docs/tags-and-tag-templates)<br>[source](https://docs.cloud.google.com/iam/docs/custom-roles-permissions-support)<br>[source](https://docs.cloud.google.com/python/docs/reference/datacatalog/latest/google.cloud.datacatalog_v1.services.data_catalog.DataCatalogAsyncClient) |
+| Analytics Hub integration | MEDIUM | PASS | explicit | [source](https://docs.cloud.google.com/data-catalog/docs/how-to/custom-entries)<br>[source](https://docs.cloud.google.com/data-catalog/docs/how-to/search)<br>[source](https://docs.cloud.google.com/data-catalog/docs/support) |
+| Public tags | MEDIUM | PASS | explicit | [source](https://docs.cloud.google.com/data-catalog/docs/tag-bigquery-dataset)<br>[source](https://docs.cloud.google.com/data-catalog/docs/tags-and-tag-templates)<br>[source](https://docs.cloud.google.com/iam/docs/custom-roles-permissions-support) |
+| Search filtering by tag values | MEDIUM | PASS | unknown | [source](https://docs.cloud.google.com/data-catalog/docs/how-to/search)<br>[source](https://docs.cloud.google.com/data-catalog/docs/reference/rest/v1/catalog/search)<br>[source](https://docs.cloud.google.com/data-catalog/docs/tags-and-tag-templates) |
+| Dataset entry detail entry list | MEDIUM | PASS | explicit | [source](https://docs.cloud.google.com/data-catalog/docs/how-to/search)<br>[source](https://docs.cloud.google.com/data-catalog/docs/tag-bigquery-dataset)<br>[source](https://docs.cloud.google.com/iam/docs/deny-permissions-support) |
+| Dataplex entry cataloging and search | MEDIUM | PASS | unknown | [source](https://docs.cloud.google.com/data-catalog/docs/how-to/search)<br>[source](https://docs.cloud.google.com/data-catalog/docs/reference/rest/v1/catalog/search)<br>[source](https://docs.cloud.google.com/python/docs/reference/datacatalog/latest/google.cloud.datacatalog_v1.services.data_catalog.DataCatalogAsyncClient) |
+| Schema and column tags section | MEDIUM | PASS | explicit | [source](https://docs.cloud.google.com/data-catalog/docs/tag-bigquery-dataset)<br>[source](https://docs.cloud.google.com/data-catalog/docs/tags-and-tag-templates)<br>[source](https://docs.cloud.google.com/iam/docs/custom-roles-permissions-support) |
+| Data stewards | MEDIUM | PASS | unknown | [source](https://docs.cloud.google.com/data-catalog/docs/how-to/custom-entries)<br>[source](https://docs.cloud.google.com/data-catalog/docs/how-to/filesets)<br>[source](https://docs.cloud.google.com/data-catalog/docs/tag-bigquery-dataset) |
+| Rich-text overviews | MEDIUM | PASS | explicit | [source](https://docs.cloud.google.com/iam/docs/custom-roles-permissions-support)<br>[source](https://docs.cloud.google.com/java/docs/reference/google-cloud-datacatalog/latest/com.google.cloud.datacatalog.v1.BusinessContext.Builder)<br>[source](https://docs.cloud.google.com/python/docs/reference/datacatalog/latest/google.cloud.datacatalog_v1.services.data_catalog.DataCatalogAsyncClient) |
+| Starring | MEDIUM | PASS | explicit | [source](https://docs.cloud.google.com/iam/docs/custom-roles-permissions-support)<br>[source](https://docs.cloud.google.com/iam/docs/deny-permissions-support)<br>[source](https://docs.cloud.google.com/iam/docs/federated-identity-supported-services) |
+| Data Catalog regional availability in asia-southeast1 | MEDIUM | PASS | explicit | [source](https://docs.cloud.google.com/iam/docs/custom-roles-permissions-support)<br>[source](https://docs.cloud.google.com/iam/docs/deny-permissions-support)<br>[source](https://docs.cloud.google.com/python/docs/reference/datacatalog/latest/google.cloud.datacatalog_v1.services.data_catalog.DataCatalogAsyncClient) |
+| Data Catalog regional availability in asia | MEDIUM | PASS | explicit | [source](https://docs.cloud.google.com/iam/docs/custom-roles-permissions-support)<br>[source](https://docs.cloud.google.com/iam/docs/deny-permissions-support)<br>[source](https://docs.cloud.google.com/python/docs/reference/datacatalog/latest/google.cloud.datacatalog_v1.services.data_catalog.DataCatalogAsyncClient) |
+| Data Catalog regional availability in us-central2 | MEDIUM | PASS | explicit | [source](https://docs.cloud.google.com/iam/docs/custom-roles-permissions-support)<br>[source](https://docs.cloud.google.com/iam/docs/deny-permissions-support)<br>[source](https://docs.cloud.google.com/python/docs/reference/datacatalog/latest/google.cloud.datacatalog_v1.services.data_catalog.DataCatalogAsyncClient) |
+| Data Catalog regional availability in asia-southeast2 | MEDIUM | PASS | explicit | [source](https://docs.cloud.google.com/iam/docs/custom-roles-permissions-support)<br>[source](https://docs.cloud.google.com/iam/docs/deny-permissions-support)<br>[source](https://docs.cloud.google.com/python/docs/reference/datacatalog/latest/google.cloud.datacatalog_v1.services.data_catalog.DataCatalogAsyncClient) |
+| Data Catalog regional availability in asia-northeast3 | MEDIUM | PASS | explicit | [source](https://docs.cloud.google.com/iam/docs/custom-roles-permissions-support)<br>[source](https://docs.cloud.google.com/iam/docs/deny-permissions-support)<br>[source](https://docs.cloud.google.com/python/docs/reference/datacatalog/latest/google.cloud.datacatalog_v1.services.data_catalog.DataCatalogAsyncClient) |
+| Data Catalog regional availability in us-west3 | MEDIUM | PASS | explicit | [source](https://docs.cloud.google.com/iam/docs/custom-roles-permissions-support)<br>[source](https://docs.cloud.google.com/iam/docs/deny-permissions-support)<br>[source](https://docs.cloud.google.com/python/docs/reference/datacatalog/latest/google.cloud.datacatalog_v1.services.data_catalog.DataCatalogAsyncClient) |
+| Data Catalog regional availability in us-west4 | MEDIUM | PASS | explicit | [source](https://docs.cloud.google.com/iam/docs/custom-roles-permissions-support)<br>[source](https://docs.cloud.google.com/iam/docs/deny-permissions-support)<br>[source](https://docs.cloud.google.com/python/docs/reference/datacatalog/latest/google.cloud.datacatalog_v1.services.data_catalog.DataCatalogAsyncClient) |
+| Billing for API calls and storage | MEDIUM | PASS | explicit | [source](https://docs.cloud.google.com/iam/docs/custom-roles-permissions-support)<br>[source](https://docs.cloud.google.com/iam/docs/federated-identity-supported-services)<br>[source](https://docs.cloud.google.com/python/docs/reference/datacatalog/latest/google.cloud.datacatalog_v1.services.data_catalog.DataCatalogAsyncClient) |
+| Data Catalog v1 API and interfaces | MEDIUM | WARN | unknown | [source](https://docs.cloud.google.com/java/docs/reference/google-cloud-datacatalog/latest/com.google.cloud.datacatalog.v1)<br>[source](https://docs.cloud.google.com/python/docs/reference/datacatalog/latest/google.cloud.datacatalog_v1.services.data_catalog.DataCatalogAsyncClient)<br>[source](https://docs.cloud.google.com/python/docs/reference/datacatalog/latest/google.cloud.datacatalog_v1.services.data_catalog.DataCatalogClient) |
+| Regionalized metadata hosting | MEDIUM | PASS | explicit | [source](https://docs.cloud.google.com/data-catalog/docs/reference/rest/v1/catalog/search)<br>[source](https://docs.cloud.google.com/iam/docs/custom-roles-permissions-support)<br>[source](https://docs.cloud.google.com/python/docs/reference/datacatalog/latest/google.cloud.datacatalog_v1.services.data_catalog.DataCatalogAsyncClient) |
+| Custom entries | MEDIUM | PASS | explicit | [source](https://docs.cloud.google.com/data-catalog/docs/how-to/custom-entries)<br>[source](https://docs.cloud.google.com/iam/docs/custom-roles-permissions-support)<br>[source](https://docs.cloud.google.com/python/docs/reference/datacatalog/latest/google.cloud.datacatalog_v1.services.data_catalog.DataCatalogAsyncClient) |
+| Required tag template attributes | MEDIUM | PASS | unknown | [source](https://docs.cloud.google.com/data-catalog/docs/tags-and-tag-templates)<br>[source](https://docs.cloud.google.com/python/docs/reference/datacatalog/latest/google.cloud.datacatalog_v1.services.data_catalog.DataCatalogAsyncClient)<br>[source](https://docs.cloud.google.com/python/docs/reference/datacatalog/latest/google.cloud.datacatalog_v1.services.data_catalog.DataCatalogClient) |
+| Data Catalog | MEDIUM | PASS | explicit | [source](https://docs.cloud.google.com/data-catalog/docs/reference/rest)<br>[source](https://docs.cloud.google.com/iam/docs/roles-permissions/datacatalog)<br>[source](https://docs.cloud.google.com/python/docs/reference/datacatalog/latest/google.cloud.datacatalog_v1.services.data_catalog.DataCatalogAsyncClient) |

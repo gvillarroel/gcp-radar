@@ -1,0 +1,261 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:21.669Z",
+  "source_step08_card": "data/step-08/current/products/bigtable/card.json",
+  "product_name": "Bigtable",
+  "product_slug": "bigtable",
+  "feature_name": "Cloud Bigtable IAM viewer predefined role",
+  "feature_slug": "cloud-bigtable-iam-viewer-predefined-role",
+  "summary": "Cloud Bigtable IAM predefined roles now include a viewer role for basic console access.",
+  "extended_definition": "Cloud Bigtable IAM predefined roles now include a viewer role for basic console access.",
+  "lifecycle": {
+    "latest_feature_date": "2017-09-19",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/iam/docs/roles-overview",
+      "https://docs.cloud.google.com/iam/docs/roles-permissions/actions",
+      "https://docs.cloud.google.com/iam/docs/roles-permissions/bigtable"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Roles and permissions \\_|\\_ Identity and Access Management (IAM) \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/iam/docs/roles-overview",
+        "source_id": "site-iam-reference",
+        "final_score": 192,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "For example, you could include the role's intended purpose, the date a role was created or modified, and any predefined roles that the custom role is based on.",
+          "For predefined roles only: Search the predefined role descriptions to see which permissions the role includes.",
+          "The following table summarizes the permissions that the legacy basic roles give principals across all Google Cloud services: Legacy basic role Permissions Viewer ( roles/viewer ) Permissions for read-only actions that don't affect state, such as viewing (but not modifying) existing resources or data."
+        ]
+      },
+      {
+        "title": "\"Actions roles and permissions \\_|\\_ Identity and Access Management (IAM)\\",
+        "url": "https://docs.cloud.google.com/iam/docs/roles-permissions/actions",
+        "source_id": "site-iam-reference",
+        "final_score": 151,
+        "relevance": "",
+        "evidence_snippets": [
+          "Actions roles Role Permissions Actions Admin ( roles/ actions.Admin ) Access to edit and deploy an action actions. actions. agent. claimContentProvider actions.agent.get actions.agent.update actions.agentVersions.create actions.agentVersions.delete actions.agentVersions.deploy actions.agentVersions.get actions.agentVersions.list firebase.projects.get firebase.projects.update resourcemanager.projects.get resourcemanager.projects.list serviceusage.services.use Actions Viewer ( roles/ actions.Viewer ) Access to view an action actions.agent.get actions.agentVersions.get actions.agentVersions.list firebase.projects.get resourcemanager.projects.get resourcemanager.projects.list serviceusage.services.use Actions permissions Permission Included in roles actions. agent. claimContentProvider Owner ( roles/ owner ) Editor ( roles/ editor ) Actions Admin ( roles/ actions.Admin ) actions.agent.get Owner ( roles/ owner ) Editor ( roles/ editor ) Viewer ( roles/ viewer ) Actions Admin ( roles/ actions.Admin ) Actions Viewer ( roles/ actions.Viewer ) Support User ( roles/ iam.supportUser ) actions.agent.update Owner ( roles/ owner ) Editor ( roles/ editor ) Actions Admin ( roles/ actions.Admin ) actions.agentVersions.create Owner ( roles/ owner ) Editor ( roles/ editor ) Actions Admin ( roles/ actions.Admin ) Dialogflow Console Agent Editor ( roles/ dialogflow.consoleAgentEditor ) actions.agentVersions.delete Owner ( roles/ owner ) Editor ( roles/ editor ) Actions Admin ( roles/ actions.Admin ) actions.agentVersions.deploy Owner ( roles/ owner ) Editor ( roles/ editor ) Actions Admin ( roles/ actions.Admin ) actions.agentVersions.get Owner ( roles/ owner ) Editor ( roles/ editor ) Viewer ( roles/ viewer ) Actions Admin ( roles/ actions.Admin ) Actions Viewer ( roles/ actions.Viewer ) Support User ( roles/ iam.supportUser ) actions.agentVersions.list Owner ( roles/ owner ) Editor ( roles/ editor ) Viewer ( roles/ viewer ) Actions Admin ( roles/ actions.Admin ) Actions Viewer ( roles/ actions.Viewer ) Security Admin ( roles/ iam.securityAdmin ) Security Reviewer ( roles/ iam.securityReviewer ) Security Auditor ( roles/ iam.securityAuditor ) Support User ( roles/ iam.supportUser ) Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Home Documentation Security IAM Reference Send feedback Actions roles and permissions Stay organized with collections Save and categorize content based on your preferences.",
+          "To search through all roles and permissions, see the role and permission index ."
+        ]
+      },
+      {
+        "title": "\"Bigtable roles and permissions \\_|\\_ Identity and Access Management (IAM)\\",
+        "url": "https://docs.cloud.google.com/iam/docs/roles-permissions/bigtable",
+        "source_id": "site-iam-reference",
+        "final_score": 147,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Lowest-level resources where you can grant this role: Table bigtable.appProfiles.get bigtable.appProfiles.list bigtable.authorizedViews.get bigtable.authorizedViews.list bigtable. authorizedViews. readRows bigtable. authorizedViews. sampleRowKeys bigtable.backups.get bigtable.backups.list bigtable.clusters.get bigtable.clusters.list bigtable.hotTablets.list bigtable. instances. executeQuery bigtable.instances.get bigtable.instances.list bigtable.instances.ping bigtable.keyvisualizer. bigtable.keyvisualizer.get bigtable.keyvisualizer.list bigtable.locations.list bigtable.logicalViews.get bigtable.logicalViews.list bigtable.logicalViews.readRows bigtable.materializedViews.get bigtable. materializedViews. list bigtable. materializedViews. readRows bigtable. materializedViews. sampleRowKeys bigtable.schemaBundles.get bigtable.schemaBundles.list bigtable. tables. checkConsistency bigtable. tables. generateConsistencyToken bigtable.tables.get bigtable.tables.list bigtable.tables.readRows bigtable.tables.sampleRowKeys monitoring. metricDescriptors. get monitoring. metricDescriptors. list monitoring.timeSeries. monitoring.timeSeries.create monitoring.timeSeries.list resourcemanager.projects.get Bigtable permissions Permission Included in roles bigtable.appProfiles.create Owner ( roles/ owner ) Editor ( roles/ editor ) Bigtable Administrator ( roles/ bigtable.admin ) Bigtable Editor ( roles/ bigtable.editor ) Databases Admin ( roles/ iam.databasesAdmin ) Service agent roles Warning: Don't grant service agent roles to any principals except service agents .",
+          "Lowest-level resources where you can grant this role: Table bigtable.appProfiles.get bigtable.appProfiles.list bigtable.authorizedViews.get bigtable.authorizedViews.list bigtable. authorizedViews. mutateRows bigtable. authorizedViews. readRows bigtable. authorizedViews. sampleRowKeys bigtable.backups.get bigtable.backups.list bigtable.clusters.get bigtable.clusters.list bigtable.hotTablets.list bigtable. instances. executeQuery bigtable.instances.get bigtable.instances.list bigtable.instances.ping bigtable.keyvisualizer. bigtable.keyvisualizer.get bigtable.keyvisualizer.list bigtable.locations.list bigtable.logicalViews.get bigtable.logicalViews.list bigtable.logicalViews.readRows bigtable.materializedViews.get bigtable. materializedViews. list bigtable. materializedViews. readRows bigtable. materializedViews. sampleRowKeys bigtable.schemaBundles.get bigtable.schemaBundles.list bigtable. tables. checkConsistency bigtable. tables. generateConsistencyToken bigtable.tables.get bigtable.tables.list bigtable.tables.mutateRows bigtable.tables.readRows bigtable.tables.sampleRowKeys monitoring. metricDescriptors. get monitoring. metricDescriptors. list monitoring.timeSeries. monitoring.timeSeries.create monitoring.timeSeries.list resourcemanager.projects.get Bigtable Viewer ( roles/ bigtable.viewer ) Provides no data access.",
+          "Vertex AI Service Agent ( roles/ aiplatform.serviceAgent ) AutoML Service Agent ( roles/ automl.serviceAgent ) Cloud Deployment Manager Service Agent ( roles/ clouddeploymentmanager.serviceAgent ) Cloud Data Fusion API Service Agent ( roles/ datafusion.serviceAgent ) Datapipelines Service Agent ( roles/ datapipelines.serviceAgent ) Cloud Vision AI Service Agent ( roles/ visionai.serviceAgent ) bigtable.tables.getIamPolicy Owner ( roles/ owner ) Editor ( roles/ editor ) Viewer ( roles/ viewer ) Bigtable Administrator ( roles/ bigtable.admin ) Bigtable Editor ( roles/ bigtable.editor ) Security Admin ( roles/ iam.securityAdmin ) Security Reviewer ( roles/ iam.securityReviewer ) Databases Admin ( roles/ iam.databasesAdmin ) Security Auditor ( roles/ iam.securityAuditor ) Support User ( roles/ iam.supportUser ) Service agent roles Warning: Don't grant service agent roles to any principals except service agents ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "explicit",
+    "explicit_roles": [
+      "roles/accessapproval.admin",
+      "roles/accessapproval.approver",
+      "roles/accessapproval.configEditor"
+    ],
+    "explicit_permissions": [
+      {
+        "permission": "resourcemanager.projects.get",
+        "group": "resourcemanager",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver",
+          "roles/accessapproval.configEditor"
+        ]
+      },
+      {
+        "permission": "resourcemanager.projects.list",
+        "group": "resourcemanager",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver",
+          "roles/accessapproval.configEditor"
+        ]
+      }
+    ],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "actions.Admin",
+      "actions.agent.get",
+      "actions.agent.update",
+      "actions.agentVersions.create",
+      "actions.agentVersions.delete",
+      "actions.agentVersions.deploy",
+      "actions.agentVersions.get",
+      "actions.agentVersions.list",
+      "actions.Viewer",
+      "aiplatform.serviceAgent",
+      "automl.serviceAgent",
+      "bigtable.admin",
+      "bigtable.appProfiles.create",
+      "bigtable.appProfiles.get",
+      "bigtable.appProfiles.list",
+      "bigtable.authorizedViews.get",
+      "bigtable.authorizedViews.list",
+      "bigtable.backups.get",
+      "bigtable.backups.list",
+      "bigtable.clusters.get",
+      "bigtable.clusters.list",
+      "bigtable.editor",
+      "bigtable.hotTablets.list",
+      "bigtable.instances.get",
+      "bigtable.instances.list",
+      "bigtable.instances.ping",
+      "bigtable.keyvisualizer",
+      "bigtable.keyvisualizer.get",
+      "bigtable.keyvisualizer.list",
+      "bigtable.locations.list",
+      "bigtable.logicalViews.get",
+      "bigtable.logicalViews.list",
+      "bigtable.logicalViews.readRows",
+      "bigtable.materializedViews.get",
+      "bigtable.schemaBundles.get",
+      "bigtable.schemaBundles.list",
+      "bigtable.tables.get",
+      "bigtable.tables.getIamPolicy",
+      "bigtable.tables.list",
+      "bigtable.tables.mutateRows",
+      "bigtable.tables.readRows",
+      "bigtable.tables.sampleRowKeys",
+      "bigtable.viewer",
+      "clouddeploymentmanager.serviceAgent",
+      "datafusion.serviceAgent",
+      "datapipelines.serviceAgent",
+      "dialogflow.consoleAgentEditor",
+      "dlp.orgdriver",
+      "dlp.projectdriver",
+      "firebase.projects.get",
+      "firebase.projects.update",
+      "iam.databasesAdmin",
+      "iam.securityAdmin",
+      "iam.securityAuditor",
+      "iam.securityReviewer",
+      "iam.siteReliabilityEngineer",
+      "iam.supportUser",
+      "monitoring.timeSeries",
+      "monitoring.timeSeries.create",
+      "monitoring.timeSeries.list",
+      "resourcemanager.tagUser",
+      "resourcemanager.tagViewer",
+      "serviceusage.services.use",
+      "visionai.serviceAgent"
+    ],
+    "missing_inventory_roles": [
+      "roles/editor",
+      "roles/viewer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iam/docs/roles-overview",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/actions",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/bigtable"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iam/docs/roles-overview",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/actions",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/bigtable"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iam/docs/roles-overview",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/actions",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/bigtable"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iam/docs/roles-overview",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/actions",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/bigtable"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iam/docs/roles-overview",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/actions",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/bigtable"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iam/docs/roles-overview",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/actions",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/bigtable"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iam/docs/roles-overview",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/actions",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/bigtable"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iam/docs/roles-overview",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/actions",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/bigtable"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iam/docs/roles-overview",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/actions",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/bigtable"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iam/docs/roles-overview",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/actions",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/bigtable"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iam/docs/roles-overview",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/actions",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/bigtable"
+      ]
+    }
+  ]
+}

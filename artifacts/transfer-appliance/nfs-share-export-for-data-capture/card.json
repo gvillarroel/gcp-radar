@@ -1,0 +1,167 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:48.076Z",
+  "source_step08_card": "data/step-08/current/products/transfer-appliance/card.json",
+  "product_name": "Transfer Appliance",
+  "product_slug": "transfer-appliance",
+  "feature_name": "NFS share export for data capture",
+  "feature_slug": "nfs-share-export-for-data-capture",
+  "summary": "Transfer Appliance now supports using an NFS share as a supported method for data capture.",
+  "extended_definition": "Transfer Appliance now supports using an NFS share as a supported method for data capture.",
+  "lifecycle": {
+    "latest_feature_date": "2018-06-26",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/transfer-appliance/docs",
+      "https://docs.cloud.google.com/transfer-appliance/docs/4.0/known-limitations",
+      "https://docs.cloud.google.com/transfer-appliance/docs/4.0/overview",
+      "https://docs.cloud.google.com/transfer-appliance/docs/4.0/security-and-encryption"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Security and encryption \\_|\\_ Transfer Appliance \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/transfer-appliance/docs/4.0/security-and-encryption",
+        "source_id": "site-docs-reference",
+        "final_score": 201,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "During download to Transfer Appliance : Your data is encrypted in the cloud before it is downloaded to the appliance when data export feature is used.",
+          "You can request a wipe certificate for proof that we've securely sanitized the appliance media within 4 weeks after your data is available within Cloud Storage or after you've returned the appliance after data export.",
+          "Appliance media sanitization After uploading your data or receiving the appliance for data export, we sanitize the drive media in the appliance you returned by applying NIST 800-88 standards for purging information."
+        ]
+      },
+      {
+        "title": "Transfer Appliance \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/transfer-appliance/docs/4.0/overview",
+        "source_id": "site-docs-reference",
+        "final_score": 197,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Minimal software : For Linux and Apple macOS systems, copy directly to Transfer Appliance by mounting the exposed NFS share on the appliance to your workstation, using common software already installed on the system.",
+          "Transfer Appliance is available in the following locations: Location TA40(Rackable) TA300(Rackable) TA40(Freestanding) TA300(Freestanding) United States European Union member states United Kingdom Singapore Japan Canada Australia India For a complete list of countries where Transfer Appliance is available, refer to the Order Appliance page on the Google Cloud console.",
+          "Online transfers offer the following benefits: Quickly transfer data to Cloud Storage with low latency : Online transfers are an accelerated method of transferring your data to Cloud Storage, omitting the need to wait for your appliance to be shipped back to Google before the data is copied to your destination bucket."
+        ]
+      },
+      {
+        "title": "Transfer Appliance \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/transfer-appliance/docs",
+        "source_id": "site-docs-reference",
+        "final_score": 169,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Minimal software : For Linux and Apple macOS systems, copy directly to Transfer Appliance by mounting the exposed NFS share on the appliance to your workstation, using common software already installed on the system.",
+          "Transfer Appliance is available in the following locations: Location TA40(Rackable) TA300(Rackable) TA40(Freestanding) TA300(Freestanding) United States European Union member states United Kingdom Singapore Japan Canada Australia India For a complete list of countries where Transfer Appliance is available, refer to the Order Appliance page on the Google Cloud console.",
+          "Online transfers offer the following benefits: Quickly transfer data to Cloud Storage with low latency : Online transfers are an accelerated method of transferring your data to Cloud Storage, omitting the need to wait for your appliance to be shipped back to Google before the data is copied to your destination bucket."
+        ]
+      },
+      {
+        "title": "Known limitations \\_|\\_ Transfer Appliance \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/transfer-appliance/docs/4.0/known-limitations",
+        "source_id": "site-docs-reference",
+        "final_score": 168,
+        "relevance": "",
+        "evidence_snippets": [
+          "If you anticipate ordering many appliances for a large transfer and cannot follow the limitations listed below, you must perform an initial proof-of-concept transfer with a single Transfer Appliance and representative data to ensure performance is suitable before you order multiple appliances.",
+          "Home Documentation Storage Transfer Appliance Guides Send feedback Known limitations Stay organized with collections Save and categorize content based on your preferences.",
+          "We recommend that you disable object versioning for the bucket you specified as the destination at the time of ordering your Transfer Appliance."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/security-and-encryption",
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/overview",
+        "https://docs.cloud.google.com/transfer-appliance/docs",
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/known-limitations"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/security-and-encryption",
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/overview",
+        "https://docs.cloud.google.com/transfer-appliance/docs",
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/known-limitations"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/security-and-encryption",
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/overview",
+        "https://docs.cloud.google.com/transfer-appliance/docs",
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/known-limitations"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/security-and-encryption",
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/overview",
+        "https://docs.cloud.google.com/transfer-appliance/docs",
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/known-limitations"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/security-and-encryption",
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/overview",
+        "https://docs.cloud.google.com/transfer-appliance/docs",
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/known-limitations"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/security-and-encryption",
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/overview",
+        "https://docs.cloud.google.com/transfer-appliance/docs",
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/known-limitations"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/security-and-encryption",
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/overview",
+        "https://docs.cloud.google.com/transfer-appliance/docs",
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/known-limitations"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/security-and-encryption",
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/overview",
+        "https://docs.cloud.google.com/transfer-appliance/docs",
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/known-limitations"
+      ]
+    }
+  ]
+}

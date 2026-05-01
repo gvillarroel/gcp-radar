@@ -1,0 +1,125 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:13.646Z",
+  "source_step08_card": "data/step-08/current/products/anthos-config-management/card.json",
+  "product_name": "Anthos Config Management",
+  "product_slug": "anthos-config-management",
+  "feature_name": "Config Sync metricsGcpServiceAccountEmail field",
+  "feature_slug": "config-sync-metricsgcpserviceaccountemail-field",
+  "summary": "The gcloud apply spec adds the spec.configSync.metricsGcpServiceAccountEmail field to simplify exporting Config Sync metrics to Cloud Monitoring with Workload Identity.",
+  "extended_definition": "The gcloud apply spec adds the spec.configSync.metricsGcpServiceAccountEmail field to simplify exporting Config Sync metrics to Cloud Monitoring with Workload Identity.",
+  "lifecycle": {
+    "latest_feature_date": "2023-08-21",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/installing-config-sync",
+      "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/reference/gcloud-apply-fields",
+      "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/reference/gcloud-configuration-field-behavior"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "gcloud apply spec fields \\_|\\_ Config Sync \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/reference/gcloud-apply-fields",
+        "source_id": "site-docs-reference",
+        "final_score": 261,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Example gcloud apply spec applySpecVersion : 1 spec : configSync : enabled : true sourceFormat : unstructured syncRepo : https://github.com/GoogleCloudPlatform/anthos-config-management-samples syncBranch : main secretType : none policyDir : config-sync-quickstart/multirepo/root Example gcloud apply spec with deployment resource overrides If you want to customize Config Sync resource requests and limits, add the deploymentOverrides field in your apply spec.",
+          "Home Documentation Application hosting Google Kubernetes Engine (GKE) Config Sync Reference Send feedback gcloud apply spec fields Stay organized with collections Save and categorize content based on your preferences.",
+          "You can't use this field to override other fields in a Deployment, such as the number of replicas. applySpecVersion : 1 spec : configSync : enabled : true deploymentOverrides : - name : reconciler-manager namespace : config-management-system containers : - name : reconciler-manager cpuRequest : 50m cpuLimit : 100m memoryRequest : 256Mi memoryLimit : 512Mi Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License ."
+        ]
+      },
+      {
+        "title": "\"gcloud configuration field behavior \\_|\\_ Config Sync \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/reference/gcloud-configuration-field-behavior",
+        "source_id": "site-docs-reference",
+        "final_score": 211,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "The configSync.deploymentOverrides[].deploymentName field is spec.configSync.deploymentOverrides[].name for the apply command.",
+          "Unsupported fields The --config and --fleet-default-member-config flags on the update and enable commands error if any of the following legacy fields are set: configSync.metricsGcpServiceAccountEmail policyController hierarchyController binauthz management Example configuration files This section provides examples of configurations which can be passed to the --config and --fleet-default-member-config flags on the update and enable commands.",
+          "Default field values Field Description configSync.enabled If the user specifies the configSync field, configSync.enabled defaults to true . version For the --config flag, the Config Sync version defaults to its existing value in the membership configuration, or if it's not configured, the version of Config Sync installed on the membership cluster."
+        ]
+      },
+      {
+        "title": "Customize your Config Sync installation \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/installing-config-sync",
+        "source_id": "site-docs-root",
+        "final_score": 183,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "The following example shows how to use the deploymentOverrides field to set a new CPU request and limit and a new memory request and limit for the reconciler-manager container: applySpecVersion : 1 spec : configSync : enabled : true ... other fields... deploymentOverrides : - name : reconciler-manager namespace : config-management-system containers : - name : reconciler-manager cpuRequest : 50m cpuLimit : 100m memoryRequest : 256Mi memoryLimit : 512Mi After you have create your apply-spec.yaml file, apply it by running the following command: gcloud beta container fleet config-management apply \\ --membership = MEMBERSHIP NAME \\ --config = apply-spec.yaml \\ --project = PROJECT ID For a complete list of the fields that you can override, see the gcloud apply spec fields reference documentation .",
+          "You can override the resource requests and limits for some Config Sync components by using the deploymentOverrides field in your apply-spec.yaml file when you install Config Sync with the gcloud CLI.",
+          "You can then later use kubectl commands to create additional RootSync objects or RepoSyncs that you can fully manage using kubectl commands later. apply-spec.yaml applySpecVersion : 1 spec : configSync : enabled : true If you don't have a source of truth yet, omit the following fields."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cluster.default.fleet",
+      "data.google",
+      "feature.configmanagement",
+      "feature.name",
+      "github.com",
+      "project.default.project",
+      "spec.configSync.deploymentOverrides",
+      "spec.configSync.metricsGcpServiceAccountEmail",
+      "spec.configSync.secretType",
+      "spec.yaml"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/reference/gcloud-apply-fields",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/reference/gcloud-configuration-field-behavior",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/installing-config-sync"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/reference/gcloud-apply-fields",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/reference/gcloud-configuration-field-behavior",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/installing-config-sync"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/reference/gcloud-apply-fields",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/reference/gcloud-configuration-field-behavior",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/installing-config-sync"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/reference/gcloud-apply-fields",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/reference/gcloud-configuration-field-behavior",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/installing-config-sync"
+      ]
+    }
+  ]
+}

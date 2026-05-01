@@ -1,0 +1,159 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:33.605Z",
+  "source_step08_card": "data/step-08/current/products/dataproc-metastore/card.json",
+  "product_name": "Dataproc Metastore",
+  "product_slug": "dataproc-metastore",
+  "feature_name": "Shared VPC support",
+  "feature_slug": "shared-vpc-support",
+  "summary": "Shared VPC support lets users create Dataproc Metastore services in cross-product networks.",
+  "extended_definition": "Shared VPC support lets users create Dataproc Metastore services in cross-product networks.",
+  "lifecycle": {
+    "latest_feature_date": "2021-02-03",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dataproc-metastore/docs/access-service",
+      "https://docs.cloud.google.com/dataproc-metastore/docs/create-service",
+      "https://docs.cloud.google.com/python/docs/reference/metastore/latest/google.cloud.metastore_v1.services.dataproc_metastore_federation.DataprocMetastoreFederationClient",
+      "https://docs.cloud.google.com/python/docs/reference/metastore/latest/google.cloud.metastore_v1.services.dataproc_metastore.DataprocMetastoreClient"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Create a Dataproc Metastore service \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataproc-metastore/docs/create-service",
+        "source_id": "site-docs-root",
+        "final_score": 263,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Create a Dataproc Metastore service using Shared VPC A Shared VPC lets you connect Dataproc Metastore resources from multiple projects to a common VPC network.",
+          "Caution: This IAM policy change grants Dataproc Metastore users with the metastore.services.create permission in the service project to indirectly create addresses and peerings in the network project. gcloud projects add-iam-policy-binding NETWORK PROJECT ID \\ --role \"roles/metastore.serviceAgent\" \\ --member \"serviceAccount:service- SERVICE PROJECT NUMBER @gcp-sa-metastore.iam.gserviceaccount.com\" Note: If you have never created a Dataproc Metastore service in the service project, then the gcloud projects add-iam-policy-binding command might fail with an error message containing Service account [SERVICE ACCOUNT NAME] does not exist.",
+          "IAM roles required for Shared VPC networks To create a Dataproc Metastore service with a VPC that is accessible in a network belonging to a different project, you must grant roles/metastore.serviceAgent to the service project's Dataproc Metastore service agent ( service- SERVICE PROJECT NUMBER @gcp-sa-metastore.iam.gserviceaccount.com ) in the network project's IAM policy."
+        ]
+      },
+      {
+        "title": "Dataproc Metastore networking overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataproc-metastore/docs/access-service",
+        "source_id": "site-iam-reference",
+        "final_score": 245,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Additional network settings Shared VPC networks You can optionally choose to create Dataproc Metastore services in a Shared VPC network.",
+          "Shared VPC network You can create Dataproc Metastore services in a Shared VPC network .",
+          "Dataproc Metastore VPC network configuration Description of the networking example: On the Google services side of the VPC peering, Google creates a project for the customer."
+        ]
+      },
+      {
+        "title": "\"Class DataprocMetastoreClient (1.22.0) \\_|\\_ Python client libraries \\_\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/metastore/latest/google.cloud.metastore_v1.services.dataproc_metastore.DataprocMetastoreClient",
+        "source_id": "site-python-reference",
+        "final_score": 238,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The Dataproc Metastore API defines the following resource model: The service works with a collection of Google Cloud projects, named: /projects/ Each project has a collection of available locations, named: /locations/ (a location must refer to a Google Cloud region ) Each location has a collection of services, named: /services/ Dataproc Metastore services are resources with names of the form: /projects/{project number}/locations/{location id}/services/{service id} .",
+          "It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import metastore v1 def sample list services(): Create a client client = metastore v1.",
+          "Returns Type Description DataprocMetastoreClient The constructed client. from service account json from service account json ( filename : str , args , kwargs ) Creates an instance of this client using the provided credentials file."
+        ]
+      },
+      {
+        "title": "\"Class DataprocMetastoreFederationClient (1.22.0) \\_|\\_ Python client libraries\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/metastore/latest/google.cloud.metastore_v1.services.dataproc_metastore_federation.DataprocMetastoreFederationClient",
+        "source_id": "site-python-reference",
+        "final_score": 238,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Returns Type Description google.cloud.metastore v1.services.dataproc metastore federation.pagers.ListFederationsPager Response message for ListFederations Iterating over this object will yield results and resolve additional pages automatically. list locations list locations ( request : typing .",
+          "Returns Type Description DataprocMetastoreFederationClient The constructed client. from service account json from service account json ( filename : str , args , kwargs ) Creates an instance of this client using the provided credentials file.",
+          "Returns Type Description DataprocMetastoreFederationClient The constructed client. from service account info from service account info ( info : dict , args , kwargs ) Creates an instance of this client using the provided credentials info."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "federation.pagers.ListFederationsPager",
+      "googleapis.dev",
+      "metastore.iam.gserviceaccount.com",
+      "metastore.serviceAgent",
+      "metastore.services.create",
+      "options.html",
+      "v1.services.dataproc"
+    ],
+    "missing_inventory_roles": [
+      "roles/metastore.serviceAgent"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc-metastore/docs/create-service",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/access-service",
+        "https://docs.cloud.google.com/python/docs/reference/metastore/latest/google.cloud.metastore_v1.services.dataproc_metastore.DataprocMetastoreClient",
+        "https://docs.cloud.google.com/python/docs/reference/metastore/latest/google.cloud.metastore_v1.services.dataproc_metastore_federation.DataprocMetastoreFederationClient"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc-metastore/docs/create-service",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/access-service",
+        "https://docs.cloud.google.com/python/docs/reference/metastore/latest/google.cloud.metastore_v1.services.dataproc_metastore.DataprocMetastoreClient",
+        "https://docs.cloud.google.com/python/docs/reference/metastore/latest/google.cloud.metastore_v1.services.dataproc_metastore_federation.DataprocMetastoreFederationClient"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc-metastore/docs/create-service",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/access-service",
+        "https://docs.cloud.google.com/python/docs/reference/metastore/latest/google.cloud.metastore_v1.services.dataproc_metastore.DataprocMetastoreClient",
+        "https://docs.cloud.google.com/python/docs/reference/metastore/latest/google.cloud.metastore_v1.services.dataproc_metastore_federation.DataprocMetastoreFederationClient"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc-metastore/docs/create-service",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/access-service",
+        "https://docs.cloud.google.com/python/docs/reference/metastore/latest/google.cloud.metastore_v1.services.dataproc_metastore.DataprocMetastoreClient",
+        "https://docs.cloud.google.com/python/docs/reference/metastore/latest/google.cloud.metastore_v1.services.dataproc_metastore_federation.DataprocMetastoreFederationClient"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc-metastore/docs/create-service",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/access-service",
+        "https://docs.cloud.google.com/python/docs/reference/metastore/latest/google.cloud.metastore_v1.services.dataproc_metastore.DataprocMetastoreClient",
+        "https://docs.cloud.google.com/python/docs/reference/metastore/latest/google.cloud.metastore_v1.services.dataproc_metastore_federation.DataprocMetastoreFederationClient"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc-metastore/docs/create-service",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/access-service",
+        "https://docs.cloud.google.com/python/docs/reference/metastore/latest/google.cloud.metastore_v1.services.dataproc_metastore.DataprocMetastoreClient",
+        "https://docs.cloud.google.com/python/docs/reference/metastore/latest/google.cloud.metastore_v1.services.dataproc_metastore_federation.DataprocMetastoreFederationClient"
+      ]
+    }
+  ]
+}

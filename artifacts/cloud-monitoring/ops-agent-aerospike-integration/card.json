@@ -1,0 +1,98 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:24.989Z",
+  "source_step08_card": "data/step-08/current/products/cloud-monitoring/card.json",
+  "product_name": "Cloud Monitoring",
+  "product_slug": "cloud-monitoring",
+  "feature_name": "Ops Agent Aerospike integration",
+  "feature_slug": "ops-agent-aerospike-integration",
+  "summary": "The Ops Agent can collect Aerospike metrics.",
+  "extended_definition": "The Ops Agent can collect Aerospike metrics.",
+  "lifecycle": {
+    "latest_feature_date": "2022-07-26",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/monitoring/agent/ops-agent",
+      "https://docs.cloud.google.com/monitoring/agent/ops-agent/prometheus",
+      "https://docs.cloud.google.com/monitoring/docs/collect-metrics-overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Collect metrics overview \\_|\\_ Cloud Monitoring \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/monitoring/docs/collect-metrics-overview",
+        "source_id": "site-docs-reference",
+        "final_score": 155,
+        "relevance": "",
+        "evidence_snippets": [
+          "Metrics from third-party monitoring applications Cloud Monitoring provides integrations that let you collect telemetry from applications such as Apache Web Server, MySQL, Redis, and others for deployments running on Compute Engine and Google Kubernetes Engine: When using Compute Engine, third-party telemetry is collected by the Ops Agent .",
+          "To collect additional system metrics from your Compute Engine instances, install an agent.",
+          "Home Documentation Observability Cloud Monitoring Guides Send feedback Collect metrics overview Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "Collect Prometheus metrics \\_|\\_ Cloud Monitoring \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/monitoring/agent/ops-agent/prometheus",
+        "source_id": "site-iam-reference",
+        "final_score": 147,
+        "relevance": "",
+        "evidence_snippets": [
+          "For example, if you are using the Apache Web Server (httpd) integration , the Ops Agent collects five scalar metrics ; each data point counts as 8 bytes.",
+          "The metrics ingested by using an existing integration are subject to byte-based pricing for agent-collected metrics.",
+          "The prometheus target resource has the following labels, which you can use for filtering and manipulating queried data: project id : The identifier of the Google Cloud project, like my-project , in which the Ops Agent is running. location : The Google Cloud region or zone in which the Ops Agent is running; for example, us-east1-a . cluster : Always gce for Prometheus metrics collected by using the Ops Agent. namespace : The Compute Engine instance ID of the VM on which the Ops Agent is running. job : The value of the job name field in the receiver configuration. instance : The instance label of the Prometheus target, taken from the receiver configuration; defaults to the target."
+        ]
+      },
+      {
+        "title": "Ops Agent overview \\_|\\_ Cloud Monitoring \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/monitoring/agent/ops-agent",
+        "source_id": "site-iam-reference",
+        "final_score": 141,
+        "relevance": "",
+        "evidence_snippets": [
+          "Metrics collected include: cpu metrics disk metrics iis metrics (Windows only) interface metrics gpu metrics (Linux only) memory metrics mssql metrics (Windows only) pagefile metrics (Windows only) swap metrics network metrics processes metrics agent self metrics : Third-party application support Curated integrations for third-party application metrics , which collect common app metrics and offer sample dashboards and alert policies.",
+          "Combining the collection of logs, metrics, and traces into a single process, the Ops Agent uses Fluent Bit for logs, which supports high-throughput logging, and the OpenTelemetry Collector for metrics and traces.",
+          "You can install the Ops Agent on Managed Service for Apache Spark clusters that use image version 2.2 and later to collect syslog logs and host metrics."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/monitoring/docs/collect-metrics-overview",
+        "https://docs.cloud.google.com/monitoring/agent/ops-agent/prometheus",
+        "https://docs.cloud.google.com/monitoring/agent/ops-agent"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/monitoring/docs/collect-metrics-overview",
+        "https://docs.cloud.google.com/monitoring/agent/ops-agent/prometheus",
+        "https://docs.cloud.google.com/monitoring/agent/ops-agent"
+      ]
+    }
+  ]
+}

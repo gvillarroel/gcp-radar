@@ -1,0 +1,152 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:30.193Z",
+  "source_step08_card": "data/step-08/current/products/config-connector/card.json",
+  "product_name": "Config Connector",
+  "product_slug": "config-connector",
+  "feature_name": "config-connector print-resources CLI command",
+  "feature_slug": "config-connector-print-resources-cli-command",
+  "summary": "The Config Connector CLI includes a print-resources command that shows resource export and bulk-export support levels.",
+  "extended_definition": "The Config Connector CLI includes a print-resources command that shows resource export and bulk-export support levels.",
+  "lifecycle": {
+    "latest_feature_date": "2021-01-22",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/config-connector/docs/how-to/import-export/bulk-export",
+      "https://docs.cloud.google.com/config-connector/docs/how-to/import-export/export",
+      "https://docs.cloud.google.com/config-connector/docs/troubleshooting"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Bulk importing and exporting existing Google Cloud resources \\_|\\_ Config\\",
+        "url": "https://docs.cloud.google.com/config-connector/docs/how-to/import-export/bulk-export",
+        "source_id": "site-docs-reference",
+        "final_score": 112,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Bulk importing and exporting existing Google Cloud resources This page describes the config-connector bulk-export command and how to use it to export Google Cloud resources into Config Connector YAML files which you can subsequently import into Config Connector. config-connector bulk-export uses Cloud Asset Inventory 's Export functionality to discover existing Google Cloud resources.",
+          "For example, if you want to only import PubSubTopic assets from the file EXPORT FILE , run the following command: cat EXPORT FILE jq '. select( .asset type == \"pubsub.googleapis.com/Topic\" )' config-connector bulk-export Exporting an inventory with config-connector The config-connector bulk-export tool can export resources from a Google Cloud Resource hierarchy .",
+          "Options are 'continue', 'halt', or 'ignore'. halt : stop execution on any error (default) continue : continue processing resources, print the error to STDERR ignore : continue processing resources and don't print the error --iam-format : Specifies the kind of IAM resources output with your export."
+        ]
+      },
+      {
+        "title": "Export and import resources to Config Connector \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/config-connector/docs/how-to/import-export/export",
+        "source_id": "site-docs-reference",
+        "final_score": 104,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The output should resemble the following example: apiVersion : pubsub.cnrm.cloud.google.com/v1beta1 kind : PubSubTopic metadata : annotations : cnrm.cloud.google.com/project-id : my-example-project name : sample-topic Import a resource into Config Connector After you have the YAML file for the resource that you want Config Connector to acquire, complete the following steps: Pass your resource into Config Connector by running the following command: config-connector export RESOURCE ID kubectl apply -f - --namespace NAMESPACE Replace NAMESPACE with the namespace that Config Connector manages resources from.",
+          "After Config Connector acquires the resource, you can manage that resource by following the steps in Managing and deleting resources . config-connector CLI tool optional fields When running the config-connector export command, you can pass the following optional fields: config-connector export RESOURCE NAME \\ --output FILENAME \\ --oauth2-token TOKEN \\ --iam-format [policy policymember none] \\ --filter-deleted-iam-members [true false] \\ --verbose --output : An optional output path that disables standard output.",
+          "Export and import resources to Config Connector This page describes the config-connector export command and how to use it to export Google Cloud resources into YAML files, which you can subsequently import into Config Connector."
+        ]
+      },
+      {
+        "title": "Troubleshoot Config Connector \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/config-connector/docs/troubleshooting",
+        "source_id": "site-docs-reference",
+        "final_score": 94,
+        "relevance": "",
+        "evidence_snippets": [
+          "Check Config Connector status and conditions Check the version of Config Connector Run the following command to get the installed Config Connector version, and cross-reference the release notes to verify that the running version supports the features and resources that you want to use: kubectl get ns cnrm-system -o jsonpath = '{.metadata.annotations.cnrm\\.cloud\\.google\\.com/version}' Check the resource's status and events Usually, you can determine the issue with your Config Connector resources by inspecting the state of your resources in Kubernetes .",
+          "You can check the controller Pod's logs by running: kubectl logs -n cnrm-system \\ -l cnrm.cloud.google.com/component = cnrm-controller-manager \\ -c manager If you have Config Connector installed in namespaced-mode , then the previous command shows the logs of all controller Pods combined.",
+          "Type of issue Common issues Reconciliation Resource keeps updating every 5-15 mins Resource has no status KNV2005: syncer excessively updating resource Resource deleted by Config Connector Controller Pod OOMKilled Deletion Deletions of namespaces stuck at Terminating Deletions of resources stuck at DeleteFailed after project was deleted Permissions Compute Engine Metadata not defined Error 403: Request had insufficient authentication scopes 403 Forbidden: The caller does not have permission Error 403: Caller is missing IAM permission Update error with IAMPolicy, IAMPartialPolicy and IAMPolicyMember Installation and upgrades Version not supported in Config Connector add-on installations failed calling webhook PodSecurityPolicy prevents upgrades Configuration Cannot make changes to immutable fields No matches for kind \"Foo\" Labels are not propagated to the Google Cloud resource Error due to special characters in resource name Unable to remove fields from resource spec Reconciliation The following section lists common issues related to reconciliation of resources by Config Connector."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cnrm.cloud.google.com",
+      "iam.gserviceaccount.com",
+      "metadata.annotations.cnrm",
+      "pubsub.cnrm.cloud.google.com",
+      "pubsub.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/how-to/import-export/bulk-export",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/import-export/export",
+        "https://docs.cloud.google.com/config-connector/docs/troubleshooting"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/how-to/import-export/bulk-export",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/import-export/export",
+        "https://docs.cloud.google.com/config-connector/docs/troubleshooting"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/how-to/import-export/bulk-export",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/import-export/export",
+        "https://docs.cloud.google.com/config-connector/docs/troubleshooting"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/how-to/import-export/bulk-export",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/import-export/export",
+        "https://docs.cloud.google.com/config-connector/docs/troubleshooting"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/how-to/import-export/bulk-export",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/import-export/export",
+        "https://docs.cloud.google.com/config-connector/docs/troubleshooting"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/how-to/import-export/bulk-export",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/import-export/export",
+        "https://docs.cloud.google.com/config-connector/docs/troubleshooting"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/how-to/import-export/bulk-export",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/import-export/export",
+        "https://docs.cloud.google.com/config-connector/docs/troubleshooting"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/how-to/import-export/bulk-export",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/import-export/export",
+        "https://docs.cloud.google.com/config-connector/docs/troubleshooting"
+      ]
+    }
+  ]
+}

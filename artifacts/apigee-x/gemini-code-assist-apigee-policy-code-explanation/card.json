@@ -1,0 +1,109 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:14.688Z",
+  "source_step08_card": "data/step-08/current/products/apigee-x/card.json",
+  "product_name": "Apigee X",
+  "product_slug": "apigee-x",
+  "feature_name": "Gemini Code Assist Apigee policy code explanation",
+  "feature_slug": "gemini-code-assist-apigee-policy-code-explanation",
+  "summary": "Gemini Code Assist can explain selected Apigee policy XML code while editing proxy policies.",
+  "extended_definition": "Gemini Code Assist can explain selected Apigee policy XML code while editing proxy policies.",
+  "lifecycle": {
+    "latest_feature_date": "2024-05-29",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/what-you-need-know-about-policy-errors",
+      "https://docs.cloud.google.com/apigee/docs/api-platform/reference/policies/decode-jws-policy",
+      "https://docs.cloud.google.com/apigee/docs/api-platform/reference/policies/decode-jwt-policy"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "DecodeJWS policy \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-platform/reference/policies/decode-jws-policy",
+        "source_id": "site-api-reference",
+        "final_score": 108,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Presence Optional Type String Valid values An Apigee flow variable name Flow variables Upon success, the Verify JWS and Decode JWS policies set context variables according to this pattern: jws . { policy name } . { variable name } For example, if the policy name is verify-jws , then the policy will store the algorithm specified in the JWS to this context variable: jws.verify-jws.header.algorithm Variable name Description decoded.header. name The JSON-parsable value of a header in the payload.",
+          "Example fault rule <FaultRules> <FaultRule name=\"JWS Policy Errors\"> <Step> <Name>JavaScript-1</Name> <Condition>(fault.name Matches \"TokenExpired\")</Condition> </Step> <Condition>JWS.failed=true</Condition> </FaultRule> </FaultRules> Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "The fault name is the last part of the fault code. fault.name Matches \"TokenExpired\" JWS.failed All JWS policies set the same variable in the case of a failure. jws.JWS-Policy.failed = true Example error response For error handling, the best practice is to trap the errorcode part of the error response."
+        ]
+      },
+      {
+        "title": "DecodeJWT policy \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-platform/reference/policies/decode-jwt-policy",
+        "source_id": "site-api-reference",
+        "final_score": 108,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Presence Optional Type String Valid values An Apigee flow variable name Flow variables Upon success, the Verify JWT and Decode JWT policies set context variables according to this pattern: jwt . { policy name } . { variable name } For example, if the policy name is jwt-parse-token , then the policy will store the subject specified in the JWT to the context variable named jwt.jwt-parse-token.decoded.claim.sub . (For backward compatibility, it will also be available in jwt.jwt-parse-token.claim.subject ) Variable name Description claim.audience The JWT audience claim.",
+          "Example fault rule <FaultRules> <FaultRule name=\"JWT Policy Errors\"> <Step> <Name>JavaScript-1</Name> <Condition>(fault.name Matches \"InvalidToken\")</Condition> </Step> <Condition>JWT.failed=true</Condition> </FaultRule> </FaultRules> Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "The policy can obtain the JWT from any flow variable. < DecodeJWT name = \"JWT-Decode-HS256\" > < DisplayName>JWT Verify HS256 < / DisplayName > < Source>var . jwt < / Source > < / DecodeJWT > The policy writes its output to context variables so that subsequent policies or conditions in the API proxy can examine those values."
+        ]
+      },
+      {
+        "title": "\"What you need to know about policy errors \\_|\\_ Apigee \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/what-you-need-know-about-policy-errors",
+        "source_id": "site-docs-reference-required-3",
+        "final_score": 92,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "As explained in Handling faults , it's a common practice to trap the system-generated policy errors and perform a subsequent action such as to create a custom error response.",
+          "The fault.name variable When a policy throws an error, it sets the flow variable fault.name to the error name part of the errorcode (as described in the previous section).",
+          "A prefix that is specific to the type of policy you are checking. (We'll explain how to find the prefix below.) To illustrate, here's another fault rule example."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "claim.audience",
+      "decoded.header",
+      "fault.name",
+      "header..signature",
+      "jws.header.algorithm",
+      "jws.JWS",
+      "jws.verify",
+      "jwt.jwt",
+      "token.claim.subject",
+      "token.decoded.claim.sub"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/policies/decode-jwt-policy",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/policies/decode-jws-policy",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/what-you-need-know-about-policy-errors"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/policies/decode-jwt-policy",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/policies/decode-jws-policy",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/what-you-need-know-about-policy-errors"
+      ]
+    }
+  ]
+}

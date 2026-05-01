@@ -1,0 +1,194 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:41.049Z",
+  "source_step08_card": "data/step-08/current/products/google-secops-siem/card.json",
+  "product_name": "Google SecOps SIEM",
+  "product_slug": "google-secops-siem",
+  "feature_name": "UDM Search grouped fields",
+  "feature_slug": "udm-search-grouped-fields",
+  "summary": "Grouped fields let users query related UDM fields together without typing each field individually.",
+  "extended_definition": "Grouped fields let users query related UDM fields together without typing each field individually.",
+  "lifecycle": {
+    "latest_feature_date": "2023-03-30",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/chronicle/docs/administration/configure-datarbac-users",
+      "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+      "https://docs.cloud.google.com/chronicle/docs/yara-l/functions"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Search for events and alerts \\_|\\_ Google Security Operations \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "source_id": "site-api-reference",
+        "final_score": 172,
+        "relevance": "",
+        "evidence_snippets": [
+          "Types of grouped UDM fields You can search across all of the following grouped UDM fields: Grouped field name Associated UDM fields domain about.administrative domain about.asset.network domain network.dns.questions.name network.dns domain principal.administrative domain principal.asset.network domain target.administrative domain target.asset.hostname target.asset.network domain target.hostname email intermediary.user.email addresses network.email.from network.email.to principal.user.email addresses security result.about.user.email addresses target.user.email addresses file path principal.file.full path principal.process.file.full path principal.process.parent process.file.full path target.file.full path target.process.file.full path target.process.parent process.file.full path hash about.file.md5 about.file.sha1 about.file.sha256 principal.process.file.md5 principal.process.file.sha1 principal.process.file.sha256 security result.about.file.sha256 target.file.md5 target.file.sha1 target.file.sha256 target.process.file.md5 target.process.file.sha1 target.process.file.sha256 hostname intermediary.hostname observer.hostname principal.asset.hostname principal.hostname src.asset.hostname src.hostname target.asset.hostname target.hostname ip intermediary.ip observer.ip principal.artifact.ip principal.asset.ip principal.ip src.artifact.ip src.asset.ip src.ip target.artifact.ip target.asset.ip target.ip namespace principal.namespace src.namespace target.namespace process id principal.process.parent process.pid principal.process.parent process.product specific process id principal.process.pid principal.process.product specific process id target.process.parent process.pid target.process.parent process.product specific process id target.process.pid target.process.product specific process id user about.user.userid observer.user.userid principal.user.user display name principal.user.userid principal.user.windows sid src.user.userid target.user.user display name target.user.userid target.user.windows sid Find a UDM field for search query While writing a search query, you may not know which UDM field to include.",
+          "Search grouped fields Grouped fields are aliases for groups of related UDM fields.",
+          "For example, if you have a database called suspicious with a column of IP addresses you know are problematic, you can reference that database in Search instead of manually entering individual IP addresses in Search: events: $e.principal.ip in %susupicious.ip You can narrow your results by searching for specific metadata in addition to IP addresses, for example you might be specifically concerned with changes to user resources: events: $e.metadata.event type = \"USER RESOURCE UPDATE CONTENT\" $e.principal.ip in %susupicious.ip You can narrow a search against interrelated UDM fields and match against multiple data table columns."
+        ]
+      },
+      {
+        "title": "Functions \\_|\\_ Google Security Operations \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/chronicle/docs/yara-l/functions",
+        "source_id": "site-docs-reference-required-1",
+        "final_score": 150,
+        "relevance": "",
+        "evidence_snippets": [
+          "Note: For search, you can use grouped fields in the events section, but not in the match and outcome sections.",
+          "In UDM search, grouped fields are used to search across multiple fields of a similar type.",
+          "Parameter type: Event type Return type: Grouped event fields Code samples Example: Aggregate and count IP addresses Group all IP addresses together and provide a descending count of the most prevalent IP addresses in the time range scanned. $ip = group(principal.ip, about.ip, target.ip) $ip != \"\" match: $ip outcome: $count = count distinct(metadata.id) order: $count desc Example: Count distinct events for each IP address In the following example, the group() function gathers all the IP addresses found in the principal.ip , target.ip , and src.ip fields across all events that triggered the detection."
+        ]
+      },
+      {
+        "title": "\"Configure data RBAC for users \\_|\\_ Google Security Operations \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/administration/configure-datarbac-users",
+        "source_id": "site-docs-reference-required-1",
+        "final_score": 119,
+        "relevance": "",
+        "evidence_snippets": [
+          "Functional limitations Custom Label query don't support the following advanced features: Reference lists Enrichment fields Data tables Query execution time : Custom label query is subject to a maximum execution time limit of 5 seconds.",
+          "You can refine the query and click Run Search until the results display the data that you want to label.",
+          "You can refine the query and click Run Search until the results display the data that you want to label."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "about.administrative",
+      "about.asset.network",
+      "about.file.md5",
+      "about.file.sha1",
+      "about.file.sha256",
+      "about.ip",
+      "about.user.userid",
+      "e.metadata.event",
+      "e.network.dhcp.yiaddr",
+      "e.principal.ip",
+      "intermediary.hostname",
+      "intermediary.ip",
+      "intermediary.user.email",
+      "metadata.id",
+      "net.ip",
+      "network.dns",
+      "network.dns.questions.name",
+      "network.email.from",
+      "network.email.to",
+      "observer.hostname",
+      "observer.ip",
+      "observer.user.userid",
+      "principal.administrative",
+      "principal.artifact.ip",
+      "principal.asset.hostname",
+      "principal.asset.ip",
+      "principal.asset.network",
+      "principal.file.full",
+      "principal.hostname",
+      "principal.ip",
+      "principal.namespace",
+      "principal.process.file.full",
+      "principal.process.file.md5",
+      "principal.process.file.sha1",
+      "principal.process.file.sha256",
+      "principal.process.parent",
+      "principal.process.pid",
+      "principal.process.product",
+      "principal.user.email",
+      "principal.user.user",
+      "principal.user.userid",
+      "principal.user.windows",
+      "process.file.full",
+      "process.pid",
+      "process.product",
+      "re.regex",
+      "result.about.file.sha256",
+      "result.about.user.email",
+      "src.artifact.ip",
+      "src.asset.hostname",
+      "src.asset.ip",
+      "src.hostname",
+      "src.ip",
+      "src.namespace",
+      "src.user.userid",
+      "susupicious.ip",
+      "target.administrative",
+      "target.artifact.ip",
+      "target.asset.hostname",
+      "target.asset.ip",
+      "target.asset.network",
+      "target.file.full",
+      "target.file.md5",
+      "target.file.sha1",
+      "target.file.sha256",
+      "target.hostname",
+      "target.ip",
+      "target.namespace",
+      "target.process.file.full",
+      "target.process.file.md5",
+      "target.process.file.sha1",
+      "target.process.file.sha256",
+      "target.process.parent",
+      "target.process.pid",
+      "target.process.product",
+      "target.user.email",
+      "target.user.user",
+      "target.user.userid",
+      "target.user.windows"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/yara-l/functions",
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/administration/configure-datarbac-users"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/yara-l/functions",
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/administration/configure-datarbac-users"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/yara-l/functions",
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/administration/configure-datarbac-users"
+      ]
+    },
+    {
+      "capability": "threat",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/yara-l/functions",
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/administration/configure-datarbac-users"
+      ]
+    }
+  ]
+}

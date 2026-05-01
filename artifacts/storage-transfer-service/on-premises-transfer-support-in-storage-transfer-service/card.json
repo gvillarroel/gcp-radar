@@ -1,0 +1,190 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:47.727Z",
+  "source_step08_card": "data/step-08/current/products/storage-transfer-service/card.json",
+  "product_name": "Storage Transfer Service",
+  "product_slug": "storage-transfer-service",
+  "feature_name": "On-premises transfer support in Storage Transfer Service",
+  "feature_slug": "on-premises-transfer-support-in-storage-transfer-service",
+  "summary": "Storage Transfer Service added support for on-premises transfers, with this capability entering beta.",
+  "extended_definition": "Storage Transfer Service added support for on-premises transfers, with this capability entering beta.",
+  "lifecycle": {
+    "latest_feature_date": "2019-12-04",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/storage-transfer/docs/create-transfers/agent-based/s3-compatible",
+      "https://docs.cloud.google.com/storage-transfer/docs/event-driven-transfers",
+      "https://docs.cloud.google.com/storage-transfer/docs/on-prem-vpc-sc"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Configure VPC Service Controls for file system transfers | Storage Transfer Service | Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/storage-transfer/docs/on-prem-vpc-sc",
+        "source_id": "site-docs-reference-required-3-http",
+        "final_score": 81,
+        "relevance": "",
+        "evidence_snippets": [
+          "If you are concerned about transfers from on-premises to Cloud Storage buckets outside of the service perimeter, you need to configure Private Google Access with VPC Service Controls to prevent agents from accessing buckets outside of the service perimeter.",
+          "If transfer agents can be added to the service perimeter that contains your Cloud Storage bucket and Storage Transfer Service project, configure Private Google Access with VPC Service Controls for the on-premises network used by transfer agents.",
+          "Storage Transfer Service supports on-premises transfers to Cloud Storage buckets protected by VPC Service Controls, under the following conditions: Creating a transfer with Storage Transfer Service API protects all transferred data."
+        ]
+      },
+      {
+        "title": "\"Event-driven transfers \\_|\\_ Storage Transfer Service \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/storage-transfer/docs/event-driven-transfers",
+        "source_id": "site-docs-root",
+        "final_score": 74,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Learn how Set up event-driven transfers from Cloud Storage Set up event-driven transfers from AWS S3 Set up event-driven transfers from Azure Blob Storage or Data Lake Storage Gen2 Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Home Documentation Storage Storage Transfer Service Send feedback Event-driven transfers Stay organized with collections Save and categorize content based on your preferences.",
+          "Storage Transfer Service can listen to event notifications in AWS, Azure, or Google Cloud to automatically transfer data that has been added or updated in the source location."
+        ]
+      },
+      {
+        "title": "\"Transfer from S3-compatible storage to Cloud Storage \\_|\\_ Storage Transfer\\",
+        "url": "https://docs.cloud.google.com/storage-transfer/docs/create-transfers/agent-based/s3-compatible",
+        "source_id": "site-docs-root",
+        "final_score": 71,
+        "relevance": "",
+        "evidence_snippets": [
+          "Storage Transfer Service supports transfers from cloud or on-premises object storage systems that are compatible with the Amazon S3 API.",
+          "StorageTransferServiceClient (); / Creates a transfer from an AWS S3-compatible source to GCS / async function transferFromS3CompatibleSource () { // Runs the request and creates the job const [ transferJob ] = await client . createTransferJob ({ transferJob : { projectId , transferSpec : { sourceAgentPoolName , awsS3CompatibleDataSource : { region , s3Metadata : { authMethod , protocol , requestModel , }, endpoint , bucketName : sourceBucketName , path : sourcePath , }, gcsDataSink : { bucketName : gcsSinkBucket , path : gcsPath , }, }, status : ' ENABLED ' , }, }); await client . runTransferJob ({ jobName : transferJob . name , projectId , }); console . log ( Created and ran a transfer job from ' ${ sourceBucketName } ' to ' ${ gcsSinkBucket } ' with name ${ transferJob . name } ` ); } transferFromS3CompatibleSource (); Python To learn how to install and use the client library for Storage Transfer Service, see Storage Transfer Service client libraries .",
+          "POST https: //storagetransfer.googleapis.com/v1/transferJobs { ... \"transferSpec\" : { \"source agent pool name\" : \" POOL NAME \" , \"awsS3CompatibleData\" : { \"region\" : \"us-east-1\" , \"s3Metadata\" : { \"protocol\" : \"NETWORK PROTOCOL HTTPS\" , \"requestModel\" : \"REQUEST MODEL VIRTUAL HOSTED STYLE\" , \"authMethod\" : \"AUTH METHOD AWS SIGNATURE V4\" }, \"endpoint\" : \"example.com\" , \"bucketName\" : \" BUCKET NAME \" , \"path\" : \" PATH \" , }, \"gcsDataSink\" : { \"bucketName\" : \" SINK NAME \" , \"path\" : \" SINK PATH \" }, \"transferOptions\" : { \"deleteObjectsFromSourceAfterTransfer\" : false } } } See the AwsS3CompatibleData API reference for field descriptions."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "example.com",
+      "protos.google.storagetransfer.v1.S3CompatibleMetadata",
+      "storagetransfer.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/on-prem-vpc-sc",
+        "https://docs.cloud.google.com/storage-transfer/docs/create-transfers/agent-based/s3-compatible",
+        "https://docs.cloud.google.com/storage-transfer/docs/event-driven-transfers"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/on-prem-vpc-sc",
+        "https://docs.cloud.google.com/storage-transfer/docs/create-transfers/agent-based/s3-compatible",
+        "https://docs.cloud.google.com/storage-transfer/docs/event-driven-transfers"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/on-prem-vpc-sc",
+        "https://docs.cloud.google.com/storage-transfer/docs/create-transfers/agent-based/s3-compatible",
+        "https://docs.cloud.google.com/storage-transfer/docs/event-driven-transfers"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/on-prem-vpc-sc",
+        "https://docs.cloud.google.com/storage-transfer/docs/create-transfers/agent-based/s3-compatible",
+        "https://docs.cloud.google.com/storage-transfer/docs/event-driven-transfers"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/on-prem-vpc-sc",
+        "https://docs.cloud.google.com/storage-transfer/docs/create-transfers/agent-based/s3-compatible",
+        "https://docs.cloud.google.com/storage-transfer/docs/event-driven-transfers"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/on-prem-vpc-sc",
+        "https://docs.cloud.google.com/storage-transfer/docs/create-transfers/agent-based/s3-compatible",
+        "https://docs.cloud.google.com/storage-transfer/docs/event-driven-transfers"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/on-prem-vpc-sc",
+        "https://docs.cloud.google.com/storage-transfer/docs/create-transfers/agent-based/s3-compatible",
+        "https://docs.cloud.google.com/storage-transfer/docs/event-driven-transfers"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/on-prem-vpc-sc",
+        "https://docs.cloud.google.com/storage-transfer/docs/create-transfers/agent-based/s3-compatible",
+        "https://docs.cloud.google.com/storage-transfer/docs/event-driven-transfers"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/on-prem-vpc-sc",
+        "https://docs.cloud.google.com/storage-transfer/docs/create-transfers/agent-based/s3-compatible",
+        "https://docs.cloud.google.com/storage-transfer/docs/event-driven-transfers"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/on-prem-vpc-sc",
+        "https://docs.cloud.google.com/storage-transfer/docs/create-transfers/agent-based/s3-compatible",
+        "https://docs.cloud.google.com/storage-transfer/docs/event-driven-transfers"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/on-prem-vpc-sc",
+        "https://docs.cloud.google.com/storage-transfer/docs/create-transfers/agent-based/s3-compatible",
+        "https://docs.cloud.google.com/storage-transfer/docs/event-driven-transfers"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/on-prem-vpc-sc",
+        "https://docs.cloud.google.com/storage-transfer/docs/create-transfers/agent-based/s3-compatible",
+        "https://docs.cloud.google.com/storage-transfer/docs/event-driven-transfers"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/on-prem-vpc-sc",
+        "https://docs.cloud.google.com/storage-transfer/docs/create-transfers/agent-based/s3-compatible",
+        "https://docs.cloud.google.com/storage-transfer/docs/event-driven-transfers"
+      ]
+    }
+  ]
+}

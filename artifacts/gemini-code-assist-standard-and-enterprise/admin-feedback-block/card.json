@@ -1,0 +1,187 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:37.462Z",
+  "source_step08_card": "data/step-08/current/products/gemini-code-assist-standard-and-enterprise/card.json",
+  "product_name": "Gemini Code Assist Standard and Enterprise",
+  "product_slug": "gemini-code-assist-standard-and-enterprise",
+  "feature_name": "admin feedback block",
+  "feature_slug": "admin-feedback-block",
+  "summary": "Admins can control whether developers are allowed to send Gemini Code Assist feedback.",
+  "extended_definition": "Admins can control whether developers are allowed to send Gemini Code Assist feedback.",
+  "lifecycle": {
+    "latest_feature_date": "2024-10-30",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/gemini/docs/codeassist/code-customization",
+      "https://docs.cloud.google.com/gemini/docs/codeassist/control-individuals-access",
+      "https://docs.cloud.google.com/gemini/docs/codeassist/security-privacy-compliance",
+      "https://docs.cloud.google.com/gemini/docs/codeassist/use-in-ide"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Security, privacy, and compliance for Gemini Code Assist Standard and Enterprise\\",
+        "url": "https://docs.cloud.google.com/gemini/docs/codeassist/security-privacy-compliance",
+        "source_id": "site-docs-root",
+        "final_score": 147,
+        "relevance": "",
+        "evidence_snippets": [
+          "VPC Service Controls lets you define security policies that prevent access to Google-managed services outside of a trusted perimeter, block access to data from untrusted locations, and mitigate data exfiltration risks.",
+          "If required by your organization, you can configure additional security controls to further protect traffic on the Google Cloud network and traffic between the Google Cloud network and your corporate network.",
+          "Alternatively, if your organization uses Cloud Workstations , developers can interact with Gemini Code Assist Standard and Enterprise in their workstations."
+        ]
+      },
+      {
+        "title": "\"Configure Gemini Code Assist code customization \\_|\\_ Gemini for Google\\",
+        "url": "https://docs.cloud.google.com/gemini/docs/codeassist/code-customization",
+        "source_id": "site-docs-reference",
+        "final_score": 138,
+        "relevance": "",
+        "evidence_snippets": [
+          "Subset of the index You can create multiple repository groups and assign IAM roles to different IAM principals. data \"google iam policy\" \"foo\" { binding { role = \"roles/cloudaicompanion.repositoryGroupsUser\" members = [ \"test-user@example.com\" ] } } resource \"google gemini repository group iam policy\" \"foo\" { project = \" PROJECT ID \" location = \" REGION \" code repository index id = \" INDEX NAME \" repository group id = \" GROUP NAME \" policy data = data.google iam policy.foo.policy data } data \"google gemini repository group iam policy\" \"foo\" { project = \" PROJECT ID \" location = \" REGION \" code repository index id = \" INDEX NAME \" repository group id = \" GROUP NAME \" depends on = [ google gemini repository group iam policy.foo ] } You can also create a binding: resource \"google gemini repository group iam binding\" \"foo\" { project = \" PROJECT ID \" location = \" REGION \" code repository index id = \" INDEX NAME \" repository group id = \" GROUP NAME \" role = \"roles/cloudaicompanion.repositoryGroupsUser\" members = [ \"test-user@example.com\" ] } Replace the following: GROUP NAME : the repository group name you created in a preceding step to control access to your index using repository groups.",
+          "You also can create a repository group with repositories defined in a JSON (or YAML) file, formatted as follows: JSON [ { \"resource\" : \" REPOSITORY RESOURCE NAME \" , \"branchPattern\" : \"main dev\" }, { \"resource\" : \" REPOSITORY RESOURCE NAME \" , \"branchPattern\" : \"dev\" } ] YAML - resource : REPOSITORY RESOURCE NAME branchPattern : main dev - resource : REPOSITORY RESOURCE NAME branchPattern : dev To create a repository group based on a JSON or YAML file, in a shell environment, use the gemini code-repository-indexes repository-groups create command : JSON gcloud gemini code-repository-indexes repository-groups create REPOSITORY GROUP \\ --project = PROJECT ID \\ --location = REGION \\ --code-repository-index = INDEX NAME \\ --repositories = FILEPATH .json YAML gcloud gemini code-repository-indexes repository-groups create REPOSITORY GROUP \\ --project = PROJECT ID \\ --location = REGION \\ --code-repository-index = INDEX NAME \\ --repositories = FILEPATH .yaml If preferred, you can encrypt and control your data with a customer-managed encryption key (CMEK) through Cloud Key Management Service .",
+          "You also can create a repository group with repositories defined in a JSON (or YAML) file, formatted as follows: JSON [ { \"resource\" : \" REPOSITORY RESOURCE NAME \" , \"branchPattern\" : \"main dev\" }, { \"resource\" : \" REPOSITORY RESOURCE NAME \" , \"branchPattern\" : \"dev\" } ] YAML - resource : REPOSITORY RESOURCE NAME branchPattern : main dev - resource : REPOSITORY RESOURCE NAME branchPattern : dev To create a repository group based on a JSON or YAML file, in a shell environment, use the gemini code-repository-indexes repository-groups create command : JSON gcloud gemini code-repository-indexes repository-groups create REPOSITORY GROUP \\ --project = PROJECT ID \\ --location = REGION \\ --code-repository-index = INDEX NAME \\ --repositories = FILEPATH .json YAML gcloud gemini code-repository-indexes repository-groups create REPOSITORY GROUP \\ --project = PROJECT ID \\ --location = REGION \\ --code-repository-index = INDEX NAME \\ --repositories = FILEPATH .yaml If preferred, you can encrypt and control your data with a customer-managed encryption key (CMEK) through Cloud Key Management Service ."
+        ]
+      },
+      {
+        "title": "\"Control access to Gemini Code Assist for individuals \\_|\\_ Gemini for Google\\",
+        "url": "https://docs.cloud.google.com/gemini/docs/codeassist/control-individuals-access",
+        "source_id": "site-docs-reference",
+        "final_score": 131,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "As an administrator for your Google Cloud organization, you can control access to Gemini Code Assist for individuals , the free version of Gemini Code Assist service which includes IDE support , Gemini CLI , and Antigravity , by using the Google Admin console within Google Workspace.",
+          "Home Documentation AI and ML Gemini for Google Cloud Guides Send feedback Control access to Gemini Code Assist for individuals Stay organized with collections Save and categorize content based on your preferences.",
+          "Allow or block access to Gemini Code Assist for individuals To toggle access to Gemini Code Assist for individuals, do the following: Go to the Google Workspace Admin console."
+        ]
+      },
+      {
+        "title": "\"Code with Gemini Code Assist Standard and Enterprise \\_|\\_ Gemini for Google\\",
+        "url": "https://docs.cloud.google.com/gemini/docs/codeassist/use-in-ide",
+        "source_id": "site-docs-root",
+        "final_score": 126,
+        "relevance": "",
+        "evidence_snippets": [
+          "You can still press Control+Enter (for Windows and Linux) or Control+Return (for macOS) to manually trigger inline suggestions.",
+          "A successful check results in the following output: $ grpc-health-probe -addr cloudaicompanion.googleapis.com:443 -tls error: this server does not implement the grpc health protocol (grpc.health.v1.Health): GRPC target method can't be resolved An unsuccessful check results in the following output: timeout: failed to connect service \"cloudaicompanion.googleapis.com:443\" within 1s To obtain more details, run the following before grpc-health-probe : export GRPC GO LOG SEVERITY LEVEL=info IntelliJ There are no known issues for Gemini Code Assist for IntelliJ and other supported JetBrains IDEs.",
+          "Prompt Gemini Code Assist in a code file with a comment If you prefer, you can also prompt Gemini Code Assist in your code file with a comment by following these steps: VS Code On a new line, enter the comment Function to create a Cloud Storage bucket , and then press Enter (for Windows and Linux) or Return (for macOS)."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cloudaicompanion.googleapis.com",
+      "cloudaicompanion.repositoryGroupsUser",
+      "data.google",
+      "example.com",
+      "gmail.com",
+      "grpc.health.v1.Health",
+      "policy.foo",
+      "policy.foo.policy"
+    ],
+    "missing_inventory_roles": [
+      "roles/cloudaicompanion.repositoryGroupsUser"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/docs/codeassist/security-privacy-compliance",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/code-customization",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/control-individuals-access",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/use-in-ide"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/docs/codeassist/security-privacy-compliance",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/code-customization",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/control-individuals-access",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/use-in-ide"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/docs/codeassist/security-privacy-compliance",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/code-customization",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/control-individuals-access",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/use-in-ide"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/docs/codeassist/security-privacy-compliance",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/code-customization",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/control-individuals-access",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/use-in-ide"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/docs/codeassist/security-privacy-compliance",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/code-customization",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/control-individuals-access",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/use-in-ide"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/docs/codeassist/security-privacy-compliance",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/code-customization",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/control-individuals-access",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/use-in-ide"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/docs/codeassist/security-privacy-compliance",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/code-customization",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/control-individuals-access",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/use-in-ide"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/docs/codeassist/security-privacy-compliance",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/code-customization",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/control-individuals-access",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/use-in-ide"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/docs/codeassist/security-privacy-compliance",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/code-customization",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/control-individuals-access",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/use-in-ide"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,165 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:17.437Z",
+  "source_step08_card": "data/step-08/current/products/apps-script/card.json",
+  "product_name": "Apps Script",
+  "product_slug": "apps-script",
+  "feature_name": "DocsListDialog OAuth token support",
+  "feature_slug": "docslistdialog-oauth-token-support",
+  "summary": "DocsListDialog can accept an OAuth 2.0 token for fetching user-specific dialog data.",
+  "extended_definition": "DocsListDialog can accept an OAuth 2.0 token for fetching user-specific dialog data.",
+  "lifecycle": {
+    "latest_feature_date": "2014-09-04",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/apps-script/guides/admin/monitor-restrict-oauth-scopes",
+      "https://developers.google.com/apps-script/guides/service-account",
+      "https://developers.google.com/apps-script/releases"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Google Apps Script release notes \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/apps-script/releases",
+        "source_id": "site-docs-root",
+        "final_score": 143,
+        "relevance": "",
+        "evidence_snippets": [
+          "Feature Added the UiService method DocsListDialog.setOAuthToken(oAuthToken) , which sets an OAuth 2.0 token to use when fetching data for the dialog, on behalf of the user whose content should be shown.",
+          "StateTokenBuilder ScriptApp.getOAuthToken() `ScriptApp.newStateToken() Added the method showModalDialog(userInterface, title) to the Ui class, and replaced the method showDialog(userInterface) with showModelessDialog(userInterface, title) .",
+          "Change The UiService widget DocsListDialog now requires that you call DocsListDialog.setOAuthToken(oAuthToken) before calling DocsListDialog.showDocsPicker() ."
+        ]
+      },
+      {
+        "title": "Monitor & restrict data access \\_|\\_ Apps Script \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/apps-script/guides/admin/monitor-restrict-oauth-scopes",
+        "source_id": "site-docs-root",
+        "final_score": 98,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Monitor OAuth grant events by scope To view events where users grant access to a specific scope or scopes, follow these steps: In the Google Admin console, go to Menu menu Security Security center Investigation tool .",
+          "To revoke access to a scope, follow the steps for Monitor OAuth grant events by scope , then select the events you want to revoke and click Revoke access tokens for users .",
+          "If an app requests access to a restricted high-risk OAuth scope, and you have not specifically trusted the app, users cannot authorize it."
+        ]
+      },
+      {
+        "title": "\"Authenticate as an Google Apps Script project using service accounts \\_\\",
+        "url": "https://developers.google.com/apps-script/guides/service-account",
+        "source_id": "site-docs-root",
+        "final_score": 90,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Call an API using service account credentials To use the service account credentials from your Apps Script project, you can use the following function getServiceAccountService() : / Get a new OAuth2 service for a given service account. / function getServiceAccountService () { const serviceAccountKeyString = PropertiesService . getScriptProperties () . getProperty ( 'SERVICE ACCOUNT KEY' ); if ( ! serviceAccountKeyString ) { throw new Error ( 'SERVICE ACCOUNT KEY property is not set. ' + 'Please follow the setup instructions.' ); } const serviceAccountKey = JSON . parse ( serviceAccountKeyString ); const CLIENT EMAIL = serviceAccountKey . client email ; const PRIVATE KEY = serviceAccountKey . private key ; // Replace with the specific scopes required for your API. const SCOPES = [ ' SCOPE ' ]; return OAuth2 . createService ( 'ServiceAccount' ) . setTokenUrl ( 'https://oauth2.googleapis.com/token' ) . setPrivateKey ( PRIVATE KEY ) . setIssuer ( CLIENT EMAIL ) . setPropertyStore ( PropertiesService . getScriptProperties ()) . setScope ( SCOPES ); } Replace SCOPE with the authorization scope that you need to call the API.",
+          "If you're calling Google APIs using UrlFetchApp , you can get an access token for the script user by calling ScriptApp.getOAuthToken .",
+          "The authentication method ScriptApp.getOAuthToken can fail when you share the project with other users."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "developers.google.com",
+      "oauth2.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/guides/admin/monitor-restrict-oauth-scopes",
+        "https://developers.google.com/apps-script/guides/service-account"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/guides/admin/monitor-restrict-oauth-scopes",
+        "https://developers.google.com/apps-script/guides/service-account"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/guides/admin/monitor-restrict-oauth-scopes",
+        "https://developers.google.com/apps-script/guides/service-account"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/guides/admin/monitor-restrict-oauth-scopes",
+        "https://developers.google.com/apps-script/guides/service-account"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/guides/admin/monitor-restrict-oauth-scopes",
+        "https://developers.google.com/apps-script/guides/service-account"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/guides/admin/monitor-restrict-oauth-scopes",
+        "https://developers.google.com/apps-script/guides/service-account"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/guides/admin/monitor-restrict-oauth-scopes",
+        "https://developers.google.com/apps-script/guides/service-account"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/guides/admin/monitor-restrict-oauth-scopes",
+        "https://developers.google.com/apps-script/guides/service-account"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/guides/admin/monitor-restrict-oauth-scopes",
+        "https://developers.google.com/apps-script/guides/service-account"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/guides/admin/monitor-restrict-oauth-scopes",
+        "https://developers.google.com/apps-script/guides/service-account"
+      ]
+    }
+  ]
+}

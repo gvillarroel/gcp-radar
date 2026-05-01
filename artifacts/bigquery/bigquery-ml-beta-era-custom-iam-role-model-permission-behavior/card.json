@@ -1,0 +1,345 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:18.771Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery",
+  "feature_name": "BigQuery ML beta-era custom IAM role model permission behavior",
+  "feature_slug": "bigquery-ml-beta-era-custom-iam-role-model-permission-behavior",
+  "summary": "BigQuery ML separates model permissions from table permissions by enforcing new IAM permissions for models; deprecated on 2019-06-06.",
+  "extended_definition": "BigQuery ML separates model permissions from table permissions by enforcing new IAM permissions for models; deprecated on 2019-06-06.",
+  "lifecycle": {
+    "latest_feature_date": "2019-04-04",
+    "deprecation_date": "2019-06-06",
+    "status": "deprecation_noted"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/access-control",
+      "https://docs.cloud.google.com/bigquery/docs/export-model-tutorial",
+      "https://docs.cloud.google.com/bigquery/docs/time-series-forecasting-holidays-tutorial"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "BigQuery IAM roles and permissions \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/access-control",
+        "source_id": "site-docs-reference-2",
+        "final_score": 143,
+        "relevance": "",
+        "evidence_snippets": [
+          "Role Permissions BigQuery Data Policy Admin ( roles/ bigquerydatapolicy.admin ) Role for managing Data Policies in BigQuery This role can only be granted on Resource Manager resources (projects, folders, and organizations). bigquery.dataPolicies.attach bigquery.dataPolicies.create bigquery.dataPolicies.delete bigquery.dataPolicies.get bigquery. dataPolicies. getIamPolicy bigquery.dataPolicies.list bigquery. dataPolicies. setIamPolicy bigquery.dataPolicies.update Bigquerydatapolicy Editor ( roles/ bigquerydatapolicy.editor ) Editor role for bigquerydatapolicy bigquery.bireservations. bigquery.bireservations.get bigquery.bireservations.update bigquery. capacityCommitments. get bigquery. capacityCommitments. list bigquery. capacityCommitments. update bigquery.config. bigquery.config.get bigquery.config.update bigquery.connections.create bigquery.connections.delete bigquery.connections.get bigquery. connections. getIamPolicy bigquery.connections.list bigquery.connections.update bigquery.connections.updateTag bigquery.connections.use bigquery.dataPolicies.attach bigquery.dataPolicies.create bigquery.dataPolicies.delete bigquery.dataPolicies.get bigquery. dataPolicies. getIamPolicy bigquery.dataPolicies.list bigquery.dataPolicies.update bigquery.datasets.create bigquery.datasets.get bigquery.datasets.getIamPolicy bigquery. datasets. listEffectiveTags bigquery. datasets. listTagBindings bigquery.datasets.updateTag bigquery.jobs.create bigquery. jobs. createGlobalQuery bigquery.jobs.delete bigquery.jobs.get bigquery.jobs.list bigquery. jobs. listExecutionMetadata bigquery.models. bigquery.models.create bigquery.models.delete bigquery.models.export bigquery.models.getData bigquery.models.getMetadata bigquery.models.list bigquery.models.updateData bigquery.models.updateMetadata bigquery.models.updateTag bigquery.objectRefs. bigquery.objectRefs.read bigquery.objectRefs.write bigquery.readsessions. bigquery.readsessions.create bigquery.readsessions.getData bigquery.readsessions.update bigquery. reservationAssignments. bigquery. reservationAssignments. create bigquery. reservationAssignments. delete bigquery. reservationAssignments. list bigquery. reservationAssignments. search bigquery.reservationGroups. bigquery. reservationGroups. create bigquery. reservationGroups. delete bigquery.reservationGroups.get bigquery. reservationGroups. list bigquery.reservations.create bigquery.reservations.delete bigquery.reservations.get bigquery. reservations. getIamPolicy bigquery.reservations.list bigquery. reservations. listFailoverDatasets bigquery.reservations.update bigquery.reservations.use bigquery.routines. bigquery.routines.create bigquery.routines.delete bigquery.routines.get bigquery.routines.list bigquery.routines.update bigquery.routines.updateTag bigquery. rowAccessPolicies. create bigquery. rowAccessPolicies. delete bigquery.rowAccessPolicies.get bigquery. rowAccessPolicies. getIamPolicy bigquery. rowAccessPolicies. list bigquery. rowAccessPolicies. update bigquery.savedqueries. bigquery.savedqueries.create bigquery.savedqueries.delete bigquery.savedqueries.get bigquery.savedqueries.list bigquery.savedqueries.update bigquery.tables.createIndex bigquery.tables.createSnapshot bigquery.tables.deleteIndex bigquery.tables.getIamPolicy bigquery. tables. listEffectiveTags bigquery. tables. listTagBindings bigquery.tables.replicateData bigquery. tables. restoreSnapshot bigquery.tables.updateIndex bigquery.transfers. bigquery.transfers.get bigquery.transfers.update resourcemanager.projects.get resourcemanager.projects.list BigQuery Data Policy Viewer ( roles/ bigquerydatapolicy.viewer ) Role for viewing Data Policies in BigQuery This role can only be granted on Resource Manager resources (projects, folders, and organizations). bigquery.dataPolicies.get bigquery.dataPolicies.list Masked Reader ( roles/ bigquerydatapolicy.maskedReader ) Masked read access to sub-resources tagged by the policy tag associated with a data policy, for example, BigQuery columns This role can only be granted on Resource Manager resources (projects, folders, and organizations). bigquery. dataPolicies. maskedGet Raw Data Reader Beta ( roles/ bigquerydatapolicy.rawDataReader ) Raw read access to sub-resources associated with a data policy, for example, BigQuery columns This role can only be granted on Resource Manager resources (projects, folders, and organizations). bigquery. dataPolicies. getRawData BigQuery Data Transfer Service roles This table lists the predefined IAM roles and permissions for BigQuery Data Transfer Service.",
+          "Vertex AI Batch Prediction Service Agent ( roles/ aiplatform.batchPredictionServiceAgent ) Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent ) Vertex AI Model Monitoring Service Agent ( roles/ aiplatform.modelMonitoringServiceAgent ) Vertex AI RAG Data Service Agent ( roles/ aiplatform.ragServiceAgent ) Vertex AI Service Agent ( roles/ aiplatform.serviceAgent ) Vertex AI Tuning Service Agent ( roles/ aiplatform.tuningServiceAgent ) Audit Manager Auditing Service Agent ( roles/ auditmanager.serviceAgent ) AutoML Service Agent ( roles/ automl.serviceAgent ) Recommendations AI Service Agent ( roles/ automlrecommendations.serviceAgent ) Connected Sheets Service Agent ( roles/ bigquery.connectedSheetsServiceAgent ) Customer Engagement Suite Service Agent ( roles/ ces.serviceAgent ) Cloud Asset Service Agent ( roles/ cloudasset.serviceAgent ) Cloud Deployment Manager Service Agent ( roles/ clouddeploymentmanager.serviceAgent ) Cloud Security Compliance Service Agent ( roles/ cloudsecuritycompliance.serviceAgent ) Contact Center AI Insights Service Agent ( roles/ contactcenterinsights.serviceAgent ) Kubernetes Engine Service Agent ( roles/ container.serviceAgent ) Cloud Dataflow Service Agent ( roles/ dataflow.serviceAgent ) Cloud Data Fusion API Service Agent ( roles/ datafusion.serviceAgent ) Data Labeling Service Agent ( roles/ datalabeling.serviceAgent ) Dataplex Discovery Publishing Service Agent ( roles/ dataplex.discoveryPublishingServiceAgent ) Cloud Dataplex Service Agent ( roles/ dataplex.serviceAgent ) Dataprep Service Agent ( roles/ dataprep.serviceAgent ) Datastream Service Agent ( roles/ datastream.serviceAgent ) Discovery Engine Service Agent ( roles/ discoveryengine.serviceAgent ) DLP API Service Agent ( roles/ dlp.serviceAgent ) Enterprise Knowledge Graph Service Agent ( roles/ enterpriseknowledgegraph.serviceAgent ) Firebase Service Management Service Agent ( roles/ firebase.managementServiceAgent ) Firebase Crashlytics Service Agent ( roles/ firebasecrashlytics.serviceAgent ) FleetEngine Service Agent ( roles/ fleetengine.serviceAgent ) Cloud Logging Service Agent ( roles/ logging.serviceAgent ) Looker Service Agent ( roles/ looker.serviceAgent ) AI Platform Service Agent ( roles/ ml.serviceAgent ) Observability Service Agent ( roles/ observability.serviceAgent ) Retail Service Agent ( roles/ retail.serviceAgent ) Security Center Control Service Agent ( roles/ securitycenter.controlServiceAgent ) Security Health Analytics Service Agent ( roles/ securitycenter.securityHealthAnalyticsServiceAgent ) Security Center Service Agent ( roles/ securitycenter.serviceAgent ) Cloud Vision AI Service Agent ( roles/ visionai.serviceAgent ) bigquery.datasets.getIamPolicy Owner ( roles/ owner ) Editor ( roles/ editor ) Viewer ( roles/ viewer ) BigQuery Admin ( roles/ bigquery.admin ) Bigquerydatapolicy Editor ( roles/ bigquerydatapolicy.editor ) Security Admin ( roles/ iam.securityAdmin ) Security Reviewer ( roles/ iam.securityReviewer ) BigQuery Data Editor ( roles/ bigquery.dataEditor ) BigQuery Data Owner ( roles/ bigquery.dataOwner ) BigQuery Data Viewer ( roles/ bigquery.dataViewer ) BigQuery Metadata Viewer ( roles/ bigquery.metadataViewer ) BigQuery Security Admin ( roles/ bigquery.securityAdmin ) BigQuery Studio Admin ( roles/ bigquery.studioAdmin ) BigQuery User ( roles/ bigquery.user ) DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver ) DLP Project Data Profiles Driver ( roles/ dlp.projectdriver ) Data Scientist ( roles/ iam.dataScientist ) Databases Admin ( roles/ iam.databasesAdmin ) ML Engineer ( roles/ iam.mlEngineer ) Security Auditor ( roles/ iam.securityAuditor ) Site Reliability Engineer ( roles/ iam.siteReliabilityEngineer ) Support User ( roles/ iam.supportUser ) SLZ BQDW Blueprint Project Level Remediator ( roles/ securedlandingzone.bqdwProjectRemediator ) Service agent roles Warning: Don't grant service agent roles to any principals except service agents .",
+          "This role can only be granted on Resource Manager resources (projects, folders, and organizations). bigquery.bireservations.get bigquery. capacityCommitments. get bigquery. capacityCommitments. list bigquery.jobs.get bigquery.jobs.list bigquery.jobs.listAll bigquery. jobs. listExecutionMetadata bigquery. reservationAssignments. list bigquery. reservationAssignments. search bigquery.reservationGroups.get bigquery. reservationGroups. list bigquery.reservations.get bigquery.reservations.list bigquery. reservations. listFailoverDatasets resourcemanager.projects.get resourcemanager.projects.list BigQuery Authorized Routine Admin Beta ( roles/ bigquery.routineAdmin ) Role for Authorized Routine to administer supported resources bigquery.connections.use bigquery.datasets.get bigquery.models.getData bigquery.models.getMetadata bigquery.routines.get bigquery.routines.list bigquery.tables.create bigquery.tables.delete bigquery.tables.get bigquery.tables.getData bigquery.tables.list bigquery.tables.update bigquery.tables.updateData BigQuery Authorized Routine Data Editor Beta ( roles/ bigquery.routineDataEditor ) Role for Authorized Routine to edit contents of supported resources bigquery.datasets.get bigquery.models.getData bigquery.models.getMetadata bigquery.routines.get bigquery.routines.list bigquery.tables.create bigquery.tables.delete bigquery.tables.get bigquery.tables.getData bigquery.tables.list bigquery.tables.update bigquery.tables.updateData BigQuery Authorized Routine Data Viewer Beta ( roles/ bigquery.routineDataViewer ) Role for Authorized Routine to view data and contents of supported resources bigquery.datasets.get bigquery.models.getData bigquery.models.getMetadata bigquery.routines.get bigquery.routines.list bigquery.tables.get bigquery.tables.getData bigquery.tables.list BigQuery Authorized Routine Metadata Viewer Beta ( roles/ bigquery.routineMetadataViewer ) Role for Authorized Routine to view metadata of supported resources bigquery.datasets.get bigquery.models.getMetadata bigquery.routines.get bigquery.routines.list bigquery.tables.get bigquery.tables.list BigQuery Security Admin Beta ( roles/ bigquery.securityAdmin ) Administer all BigQuery security controls bigquery.dataPolicies.attach bigquery.dataPolicies.create bigquery.dataPolicies.delete bigquery.dataPolicies.get bigquery. dataPolicies. getIamPolicy bigquery.dataPolicies.list bigquery. dataPolicies. setIamPolicy bigquery.dataPolicies.update bigquery. datasets. createTagBinding bigquery. datasets. deleteTagBinding bigquery.datasets.get bigquery.datasets.getIamPolicy bigquery. datasets. listEffectiveTags bigquery. datasets. listSharedDatasetUsage bigquery. datasets. listTagBindings bigquery.datasets.setIamPolicy bigquery.datasets.update bigquery.datasets.updateTag bigquery. rowAccessPolicies. create bigquery. rowAccessPolicies. delete bigquery.rowAccessPolicies.get bigquery. rowAccessPolicies. getIamPolicy bigquery. rowAccessPolicies. list bigquery. rowAccessPolicies. setIamPolicy bigquery. rowAccessPolicies. update bigquery. tables. createTagBinding bigquery. tables. deleteTagBinding bigquery.tables.get bigquery.tables.getIamPolicy bigquery.tables.list bigquery. tables. listEffectiveTags bigquery. tables. listTagBindings bigquery. tables. setColumnDataPolicy bigquery.tables.setIamPolicy bigquery.tables.update bigquery.tables.updateTag dataplex.projects.search BigQuery Studio Admin ( roles/ bigquery.studioAdmin ) Combination role of BigQuery Admin, Dataform Admin, Notebook Runtime Admin and Dataproc Serverless Editor."
+        ]
+      },
+      {
+        "title": "Export a BigQuery ML model for online prediction \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/export-model-tutorial",
+        "source_id": "site-docs-reference",
+        "final_score": 141,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Note: For serving on Vertex AI Prediction, follow Request Predictions and use the following containers for your region respectively: 1) us-docker.pkg.dev/vertex-ai/bigquery-ml/xgboost-cpu.1-0:latest 2) europe-docker.pkg.dev/vertex-ai/bigquery-ml/xgboost-cpu.1-0:latest 3) asia-docker.pkg.dev/vertex-ai/bigquery-ml/xgboost-cpu.1-0:latest For more information about deploying a model to Vertex AI for online or batch predictions using custom routines, see Deploy a model to an endpoint .",
+          "3) (optional) Get information about your new version: gcloud ai-platform versions describe $VERSION NAME --model $MODEL NAME You should see output similar to this: createTime: '2020-02-28T16:30:45Z' deploymentUri: gs://your bucket name framework: TENSORFLOW machineType: mls1-c1-m2 name: projects/[YOUR-PROJECT-ID]/models/IRIS MODEL/versions/v1 pythonVersion: '2.7' runtimeVersion: '1.15' state: READY Online prediction For more information about running online predictions against a deployed model, see Get online inferences from a custom trained model .",
+          "Create a model resource MODEL NAME=\"BOOSTED TREE IRIS MODEL\" gcloud ai-platform models create $MODEL NAME Create a model version 1) Set the environment variables: MODEL DIR=\"gs://some/gcs/path/boosted tree iris model\" VERSION NAME=\"v1\" 2) Create the version: gcloud beta ai-platform versions create $VERSION NAME --model= $MODEL NAME --origin= $MODEL DIR --package-uris= ${ MODEL DIR } /xgboost predictor-0.1.tar.gz --prediction-class=predictor.Predictor --runtime-version=1.15 This step might take a few minutes to complete."
+        ]
+      },
+      {
+        "title": "\"Use custom holidays in an ARIMA_PLUS time-series forecasting model \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/time-series-forecasting-holidays-tutorial",
+        "source_id": "site-docs-reference-2",
+        "final_score": 124,
+        "relevance": "",
+        "evidence_snippets": [
+          "Go to BigQuery In the SQL editor pane, run the following SQL statement: CREATE OR REPLACE MODEL bqml tutorial.forecast googleio with custom holiday OPTIONS ( model type = 'ARIMA PLUS' , holiday region = 'US' , time series timestamp col = 'date' , time series data col = 'views' , data frequency = 'DAILY' , horizon = 365 ) AS ( training data AS ( SELECT FROM bqml tutorial.googleio page views WHERE date '2022-01-01' ), custom holiday AS ( SELECT 'US' AS region , 'GoogleIO' AS holiday name , primary date , 1 AS preholiday days , 2 AS postholiday days FROM UNNEST ( [ DATE ( '2017-05-17' ), DATE ( '2018-05-08' ), DATE ( '2019-05-07' ), -- cancelled in 2020 due to pandemic DATE ( '2021-05-18' ), DATE ( '2022-05-11' ) ] ) AS primary date ) ); Visualize the forecasted results After you create the model using custom holidays, join the original data from the bqml tutorial.googleio page views table with the forecasted value from the ML.EXPLAIN FORECAST function , and then visualize it by using Data Studio : Go to the BigQuery page.",
+          "Go to BigQuery In the SQL editor pane, run the following SQL statement: SELECT \"original\" AS model type , FROM ml . evaluate ( MODEL bqml tutorial.forecast googleio , ( SELECT FROM bqml tutorial.googleio page views WHERE date >= '2022-05-08' AND date '2022-05-12' ), STRUCT ( 365 AS horizon , TRUE AS perform aggregation )) UNION ALL SELECT \"with custom holiday\" AS model type , FROM ml . evaluate ( MODEL bqml tutorial.forecast googleio with custom holiday , ( SELECT FROM bqml tutorial.googleio page views WHERE date >= '2022-05-08' AND date '2022-05-12' ), STRUCT ( 365 AS horizon , TRUE AS perform aggregation )); The results show that the second model offers a significant performance improvement: Clean up Caution : Deleting a project has the following effects: Everything in the project is deleted.",
+          "To create the model, you need the following permissions: bigquery.jobs.create bigquery.models.create bigquery.models.getData bigquery.models.updateData To run inference, you need the following permissions: bigquery.models.getData bigquery.jobs.create For more information about IAM roles and permissions in BigQuery, see Introduction to IAM ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "explicit",
+    "explicit_roles": [
+      "roles/accessapproval.admin",
+      "roles/accessapproval.approver",
+      "roles/accessapproval.configEditor"
+    ],
+    "explicit_permissions": [
+      {
+        "permission": "resourcemanager.projects.get",
+        "group": "resourcemanager",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver",
+          "roles/accessapproval.configEditor"
+        ]
+      },
+      {
+        "permission": "resourcemanager.projects.list",
+        "group": "resourcemanager",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver",
+          "roles/accessapproval.configEditor"
+        ]
+      }
+    ],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "aiplatform.batchPredictionServiceAgent",
+      "aiplatform.customCodeServiceAgent",
+      "aiplatform.modelMonitoringServiceAgent",
+      "aiplatform.ragServiceAgent",
+      "aiplatform.serviceAgent",
+      "aiplatform.tuningServiceAgent",
+      "auditmanager.serviceAgent",
+      "automl.serviceAgent",
+      "automlrecommendations.serviceAgent",
+      "bigquery.admin",
+      "bigquery.bireservations",
+      "bigquery.bireservations.get",
+      "bigquery.bireservations.update",
+      "bigquery.config",
+      "bigquery.config.get",
+      "bigquery.config.update",
+      "bigquery.connectedSheetsServiceAgent",
+      "bigquery.connections.create",
+      "bigquery.connections.delete",
+      "bigquery.connections.get",
+      "bigquery.connections.list",
+      "bigquery.connections.update",
+      "bigquery.connections.updateTag",
+      "bigquery.connections.use",
+      "bigquery.dataEditor",
+      "bigquery.dataOwner",
+      "bigquery.dataPolicies.attach",
+      "bigquery.dataPolicies.create",
+      "bigquery.dataPolicies.delete",
+      "bigquery.dataPolicies.get",
+      "bigquery.dataPolicies.list",
+      "bigquery.dataPolicies.update",
+      "bigquery.datasets.create",
+      "bigquery.datasets.get",
+      "bigquery.datasets.getIamPolicy",
+      "bigquery.datasets.setIamPolicy",
+      "bigquery.datasets.update",
+      "bigquery.datasets.updateTag",
+      "bigquery.dataViewer",
+      "bigquery.jobs.create",
+      "bigquery.jobs.delete",
+      "bigquery.jobs.get",
+      "bigquery.jobs.list",
+      "bigquery.jobs.listAll",
+      "bigquery.metadataViewer",
+      "bigquery.models",
+      "bigquery.models.create",
+      "bigquery.models.delete",
+      "bigquery.models.export",
+      "bigquery.models.getData",
+      "bigquery.models.getMetadata",
+      "bigquery.models.list",
+      "bigquery.models.updateData",
+      "bigquery.models.updateMetadata",
+      "bigquery.models.updateTag",
+      "bigquery.objectRefs",
+      "bigquery.objectRefs.read",
+      "bigquery.objectRefs.write",
+      "bigquery.readsessions",
+      "bigquery.readsessions.create",
+      "bigquery.readsessions.getData",
+      "bigquery.readsessions.update",
+      "bigquery.reservationGroups",
+      "bigquery.reservationGroups.get",
+      "bigquery.reservations.create",
+      "bigquery.reservations.delete",
+      "bigquery.reservations.get",
+      "bigquery.reservations.list",
+      "bigquery.reservations.update",
+      "bigquery.reservations.use",
+      "bigquery.routineAdmin",
+      "bigquery.routineDataEditor",
+      "bigquery.routineDataViewer",
+      "bigquery.routineMetadataViewer",
+      "bigquery.routines",
+      "bigquery.routines.create",
+      "bigquery.routines.delete",
+      "bigquery.routines.get",
+      "bigquery.routines.list",
+      "bigquery.routines.update",
+      "bigquery.routines.updateTag",
+      "bigquery.rowAccessPolicies.get",
+      "bigquery.savedqueries",
+      "bigquery.savedqueries.create",
+      "bigquery.savedqueries.delete",
+      "bigquery.savedqueries.get",
+      "bigquery.savedqueries.list",
+      "bigquery.savedqueries.update",
+      "bigquery.securityAdmin",
+      "bigquery.studioAdmin",
+      "bigquery.tables.create",
+      "bigquery.tables.createIndex",
+      "bigquery.tables.createSnapshot",
+      "bigquery.tables.delete",
+      "bigquery.tables.deleteIndex",
+      "bigquery.tables.get",
+      "bigquery.tables.getData",
+      "bigquery.tables.getIamPolicy",
+      "bigquery.tables.list",
+      "bigquery.tables.replicateData",
+      "bigquery.tables.setIamPolicy",
+      "bigquery.tables.update",
+      "bigquery.tables.updateData",
+      "bigquery.tables.updateIndex",
+      "bigquery.tables.updateTag",
+      "bigquery.transfers",
+      "bigquery.transfers.get",
+      "bigquery.transfers.update",
+      "bigquery.user",
+      "bigquerydatapolicy.admin",
+      "bigquerydatapolicy.editor",
+      "bigquerydatapolicy.maskedReader",
+      "bigquerydatapolicy.rawDataReader",
+      "bigquerydatapolicy.viewer",
+      "ces.serviceAgent",
+      "chronicle.serviceAgent",
+      "cloudasset.serviceAgent",
+      "clouddeploymentmanager.serviceAgent",
+      "cloudsecuritycompliance.serviceAgent",
+      "contactcenterinsights.serviceAgent",
+      "container.serviceAgent",
+      "cpu.1",
+      "dataflow.serviceAgent",
+      "datafusion.serviceAgent",
+      "datalabeling.serviceAgent",
+      "datapipelines.serviceAgent",
+      "dataplex.discoveryPublishingServiceAgent",
+      "dataplex.projects.search",
+      "dataplex.serviceAgent",
+      "dataplex.storageDataOwner",
+      "dataplex.storageDataReader",
+      "dataprep.serviceAgent",
+      "datasets.insert",
+      "datastream.bigqueryWriter",
+      "datastream.serviceAgent",
+      "dialogflow.serviceAgent",
+      "discoveryengine.serviceAgent",
+      "dlp.orgdriver",
+      "dlp.projectdriver",
+      "dlp.serviceAgent",
+      "docker.pkg.dev",
+      "enterpriseknowledgegraph.serviceAgent",
+      "firebase.managementServiceAgent",
+      "firebasecrashlytics.serviceAgent",
+      "fleetengine.serviceAgent",
+      "iam.databasesAdmin",
+      "iam.dataScientist",
+      "iam.mlEngineer",
+      "iam.securityAdmin",
+      "iam.securityAuditor",
+      "iam.securityReviewer",
+      "iam.siteReliabilityEngineer",
+      "iam.supportUser",
+      "logging.serviceAgent",
+      "looker.serviceAgent",
+      "ml.serviceAgent",
+      "observability.serviceAgent",
+      "predictor.Predictor",
+      "retail.serviceAgent",
+      "securedlandingzone.bqdwProjectRemediator",
+      "securitycenter.controlServiceAgent",
+      "securitycenter.securityHealthAnalyticsServiceAgent",
+      "securitycenter.serviceAgent",
+      "tar.gz",
+      "tutorial.forecast",
+      "tutorial.googleio",
+      "visionai.serviceAgent"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/access-control",
+        "https://docs.cloud.google.com/bigquery/docs/export-model-tutorial",
+        "https://docs.cloud.google.com/bigquery/docs/time-series-forecasting-holidays-tutorial"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/access-control",
+        "https://docs.cloud.google.com/bigquery/docs/export-model-tutorial",
+        "https://docs.cloud.google.com/bigquery/docs/time-series-forecasting-holidays-tutorial"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/access-control",
+        "https://docs.cloud.google.com/bigquery/docs/export-model-tutorial",
+        "https://docs.cloud.google.com/bigquery/docs/time-series-forecasting-holidays-tutorial"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/access-control",
+        "https://docs.cloud.google.com/bigquery/docs/export-model-tutorial",
+        "https://docs.cloud.google.com/bigquery/docs/time-series-forecasting-holidays-tutorial"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/access-control",
+        "https://docs.cloud.google.com/bigquery/docs/export-model-tutorial",
+        "https://docs.cloud.google.com/bigquery/docs/time-series-forecasting-holidays-tutorial"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/access-control",
+        "https://docs.cloud.google.com/bigquery/docs/export-model-tutorial",
+        "https://docs.cloud.google.com/bigquery/docs/time-series-forecasting-holidays-tutorial"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/access-control",
+        "https://docs.cloud.google.com/bigquery/docs/export-model-tutorial",
+        "https://docs.cloud.google.com/bigquery/docs/time-series-forecasting-holidays-tutorial"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/access-control",
+        "https://docs.cloud.google.com/bigquery/docs/export-model-tutorial",
+        "https://docs.cloud.google.com/bigquery/docs/time-series-forecasting-holidays-tutorial"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/access-control",
+        "https://docs.cloud.google.com/bigquery/docs/export-model-tutorial",
+        "https://docs.cloud.google.com/bigquery/docs/time-series-forecasting-holidays-tutorial"
+      ]
+    }
+  ]
+}

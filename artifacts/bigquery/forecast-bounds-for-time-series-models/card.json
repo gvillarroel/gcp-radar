@@ -1,0 +1,95 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:18.771Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery",
+  "feature_name": "Forecast bounds for time series models",
+  "feature_slug": "forecast-bounds-for-time-series-models",
+  "summary": "BigQuery ML time series forecasting lets you set lower and upper bounds on forecasted values.",
+  "extended_definition": "BigQuery ML time series forecasting lets you set lower and upper bounds on forecasted values.",
+  "lifecycle": {
+    "latest_feature_date": "2023-11-06",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/arima-plus-xreg-single-time-series-forecasting-tutorial",
+      "https://docs.cloud.google.com/bigquery/docs/arima-time-series-forecasting-with-limits-tutorial",
+      "https://docs.cloud.google.com/bigquery/docs/time-series-forecasting-holidays-tutorial"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Use custom holidays in an ARIMA_PLUS time-series forecasting model \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/time-series-forecasting-holidays-tutorial",
+        "source_id": "site-docs-reference-2",
+        "final_score": 257,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Go to BigQuery In the SQL editor pane, run the following SQL statement: CREATE OR REPLACE TABLE bqml tutorial.googleio page views AS SELECT DATETIME TRUNC ( datehour , DAY ) AS date , SUM ( views ) AS views FROM bigquery-public-data.wikipedia.pageviews WHERE datehour >= '2017-01-01' AND datehour '2023-01-01' AND title = 'Google I/O' GROUP BY DATETIME TRUNC ( datehour , DAY ) Create a time-series forecasting model that uses built-in holidays Create a model that forecasts daily page views for the Wikipedia \"Google I/O\" page, based on page view data before 2022 and taking built-in holidays into account: Go to the BigQuery page.",
+          "Go to BigQuery In the SQL editor pane, run the following SQL statement: CREATE OR REPLACE MODEL bqml tutorial.forecast googleio with custom holiday OPTIONS ( model type = 'ARIMA PLUS' , holiday region = 'US' , time series timestamp col = 'date' , time series data col = 'views' , data frequency = 'DAILY' , horizon = 365 ) AS ( training data AS ( SELECT FROM bqml tutorial.googleio page views WHERE date '2022-01-01' ), custom holiday AS ( SELECT 'US' AS region , 'GoogleIO' AS holiday name , primary date , 1 AS preholiday days , 2 AS postholiday days FROM UNNEST ( [ DATE ( '2017-05-17' ), DATE ( '2018-05-08' ), DATE ( '2019-05-07' ), -- cancelled in 2020 due to pandemic DATE ( '2021-05-18' ), DATE ( '2022-05-11' ) ] ) AS primary date ) ); Visualize the forecasted results After you create the model using custom holidays, join the original data from the bqml tutorial.googleio page views table with the forecasted value from the ML.EXPLAIN FORECAST function , and then visualize it by using Data Studio : Go to the BigQuery page.",
+          "Go to BigQuery In the SQL editor pane, run the following SQL statement: CREATE OR REPLACE MODEL bqml tutorial.forecast googleio OPTIONS ( model type = 'ARIMA PLUS' , holiday region = 'US' , time series timestamp col = 'date' , time series data col = 'views' , data frequency = 'DAILY' , horizon = 365 ) AS SELECT FROM bqml tutorial.googleio page views WHERE date '2022-01-01' ; Visualize the forecasted results After you create the model using built-in holidays, join the original data from the bqml tutorial.googleio page views table with the forecasted value from the ML.EXPLAIN FORECAST function , and then visualize it by using Data Studio : Go to the BigQuery page."
+        ]
+      },
+      {
+        "title": "\"Limit forecasted values for an ARIMA_PLUS time series model \\_|\\_ BigQuery\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/arima-time-series-forecasting-with-limits-tutorial",
+        "source_id": "site-docs-reference",
+        "final_score": 243,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "This option causes the model to only forecast values that are greater than 0, based on the values in the column specified by the time series data col argument, in this case num trips . #standardSQL CREATE OR REPLACE MODEL bqml tutorial . nyc citibike arima model OPTIONS ( model type = 'ARIMA PLUS' , time series timestamp col = 'date' , time series data col = 'num trips' , time series id col = 'start station id' , forecast limit lower bound = 0 ) AS SELECT EXTRACT ( DATE FROM starttime ) AS date , COUNT ( ) AS num trips , start station id FROM bigquery-public-data . new york . citibike trips WHERE starttime > '2014-07-11' AND starttime '2015-02-11' GROUP BY date , start station id ; Run the CREATE MODEL query to create and train your model: In the Google Cloud console, click the Compose new query button.",
+          "Enter the following GoogleSQL query in the query editor. #standardSQL CREATE OR REPLACE MODEL bqml tutorial . nyc citibike arima model OPTIONS ( model type = 'ARIMA PLUS' , time series timestamp col = 'date' , time series data col = 'num trips' , time series id col = 'start station id' , forecast limit lower bound = 0 ) AS SELECT EXTRACT ( DATE FROM starttime ) AS date , COUNT ( ) AS num trips , start station id FROM bigquery-public-data . new york . citibike trips WHERE starttime > '2014-07-11' AND starttime '2015-02-11' GROUP BY date , start station id ; Click Run .",
+          "What's next Learn how to perform multiple time-series forecasting with a single query from NYC Citi Bike trips data ."
+        ]
+      },
+      {
+        "title": "\"Forecast a single time series with a multivariate model \\_|\\_ BigQuery \\_\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/arima-plus-xreg-single-time-series-forecasting-tutorial",
+        "source_id": "site-docs-reference",
+        "final_score": 241,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Go to BigQuery In the query editor, paste in the following query and click Run : CREATE OR REPLACE MODEL bqml tutorial.seattle pm25 xreg model OPTIONS ( MODEL TYPE = 'ARIMA PLUS XREG' , time series timestamp col = 'date' , # Identifies the column that contains time points time series data col = 'pm25' ) # Identifies the column to forecast AS SELECT date , # The column that contains time points pm25 , # The column to forecast temperature , # Temperature input to use in forecasting wind speed # Wind speed input to use in forecasting FROM bqml tutorial.seattle air quality daily WHERE date BETWEEN DATE ( '2012-01-01' ) AND DATE ( '2020-12-31' ); The query takes about 20 seconds to complete, after which you can access the seattle pm25 xreg model model.",
+          "What's next Learn how to forecast a single time series with a univariate model Learn how to forecast multiple time series with a univariate model Learn how to scale a univariate model when forecasting multiple time series over many rows .",
+          "In time series forecasting, the prediction interval, as represented by the prediction interval lower bound and prediction interval upper bound column values, is as important as the forecast value column value."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "data.wikipedia.pageviews",
+      "tutorial.forecast",
+      "tutorial.googleio",
+      "tutorial.seattle"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/time-series-forecasting-holidays-tutorial",
+        "https://docs.cloud.google.com/bigquery/docs/arima-time-series-forecasting-with-limits-tutorial",
+        "https://docs.cloud.google.com/bigquery/docs/arima-plus-xreg-single-time-series-forecasting-tutorial"
+      ]
+    }
+  ]
+}

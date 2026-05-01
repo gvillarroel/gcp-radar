@@ -1,0 +1,222 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:33.146Z",
+  "source_step08_card": "data/step-08/current/products/dataplex/card.json",
+  "product_name": "Dataplex",
+  "product_slug": "dataplex",
+  "feature_name": "Dataplex Explore",
+  "feature_slug": "dataplex-explore",
+  "summary": "Dataplex Explore is an exploration capability being retired in favor of BigQuery Studio; deprecated on 2024-07-22.",
+  "extended_definition": "Dataplex Explore is an exploration capability being retired in favor of BigQuery Studio; deprecated on 2024-07-22.",
+  "lifecycle": {
+    "latest_feature_date": "2024-07-22",
+    "deprecation_date": "2024-07-22",
+    "status": "deprecation_noted"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dataplex/docs/lineage-use-cases-impact-analysis",
+      "https://docs.cloud.google.com/dataplex/docs/manage-glossaries",
+      "https://docs.cloud.google.com/dataplex/docs/transition-to-dataplex-catalog",
+      "https://docs.cloud.google.com/dataplex/docs/use-data-profiling"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Analyze the impact of data changes on workflows \\_|\\_ Knowledge Catalog\\",
+        "url": "https://docs.cloud.google.com/dataplex/docs/lineage-use-cases-impact-analysis",
+        "source_id": "site-docs-root-2",
+        "final_score": 154,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "In the Lineage Explorer pane, do the following: In the Column Level Lineage section, select the medicare participation indicator column name from the list.",
+          "After you finish the environment setup, use BigQuery and Lineage Explorer to track data transformations and the effect they have on the workflows.",
+          "In the Lineage Explorer pane, do the following: In the Column Level Lineage section, select the nppes credentials column name from the list."
+        ]
+      },
+      {
+        "title": "Manage a business glossary \\_|\\_ Knowledge Catalog \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataplex/docs/manage-glossaries",
+        "source_id": "site-docs-root",
+        "final_score": 149,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "COLUMN NAME \" , } , { \"name\" : \"projects/ TERM PROJECT NUMBER /locations/ TERM LOCATION ID /entryGroups/@dataplex/entries/projects/ TERM PROJECT NUMBER /locations/ TERM LOCATION ID /glossaries/ TERM GLOSSARY ID /terms/ TERM ID \" , \"type\" : \"TARGET\" } ] } EOF ) \" Replace the following: PROJECT NUMBER : the project number of the data asset being linked to ENTRY LOCATION ID : the location ID of the data asset being linked to ENTRY GROUP ID : the entry group of the data asset being linked to ENTRY LINK ID : an ID for the link between the term and the Knowledge Catalog entry that represents the data asset TERM PROJECT NUMBER : the project number for the term being linked COLUMN NAME : the column to which you want to attach the term Lookup data assets linked to a term REST alias gcurl = 'curl -H \"Authorization: Bearer $(gcloud auth print-access-token)\" -H \"Content-Type: application/json\"' gcurl -X POST https://dataplex.googleapis.com/v1/projects/ TERM PROJECT ID /locations/ DEFINITION LINKS LOCATION ID :lookupEntryLinks?entry = projects/ TERM PROJECT NUMBER /locations/ TERM LOCATION ID /entryGroups/@dataplex/entries/projects/ TERM PROJECT NUMBER /locations/ TERM LOCATION ID /glossaries/ TERM GLOSSARY ID /terms/ TERM ID & entry link types = projects/dataplex-types/locations/global/entryLinkTypes/definition & entry mode = TARGET & page size = 10 Replace the following: TERM PROJECT ID : the project ID of the term whose definition links you are looking up.",
+          "REST alias gcurl = 'curl -H \"Authorization: Bearer $(gcloud auth print-access-token)\" -H \"Content-Type: application/json\"' gcurl -X POST https://dataplex.googleapis.com/v1/projects/ PROJECT NUMBER /locations/ ENTRY LOCATION ID /entryGroups/ ENTRY GROUP ID /entryLinks?entry link id = ENTRY LINK ID -d \" $( cat<<EOF { \"entry link type\" : \"projects/dataplex-types/locations/global/entryLinkTypes/definition\" , \"entry references\" : [{ \"name\" : \"projects/ PROJECT NUMBER /locations/ ENTRY LOCATION ID /entryGroups/ ENTRY GROUP ID /entries/ ENTRY ID \" , \"type\" : \"SOURCE\" } , { \"name\" : \"projects/ TERM PROJECT NUMBER /locations/ TERM LOCATION ID /entryGroups/@dataplex/entries/projects/ TERM PROJECT NUMBER /locations/ TERM LOCATION ID /glossaries/ TERM GLOSSARY ID /terms/ TERM ID \" , \"type\" : \"TARGET\" } ] } EOF ) \" Replace the following: PROJECT NUMBER : the project number of the data asset being linked to ENTRY LOCATION ID : the location ID of the data asset being linked to ENTRY GROUP ID : the entry group of the data asset being linked to ENTRY LINK ID : an ID for the link between the term and the Knowledge Catalog entry that represents the data asset.",
+          "These files are of the following format: Sample format for terms and categories of a glossary { \"entry\" : { \"name\" : \"projects/ PROJECT NUMBER /locations/ LOCATION ID /entryGroups/@dataplex/entries/projects/ PROJECT NUMBER /locations/ LOCATION ID /glossaries/ GLOSSARY ID /categories/ CATEGORY ID \" , \"entryType\" : \"projects/dataplex-types/locations/global/entryTypes/glossary-category\" , \"aspects\" : { \"dataplex-types.global.glossary-category-aspect\" : { \"data\" : {}} , \"dataplex-types.global.overview\" : { \"data\" : { \"content\" : \" CONTENT \" }} , \"dataplex-types.global.contacts\" : { \"data\" : { \"identities\" : [{ role: \"steward\" , name: \" CONTACT DISPLAY NAME \" , id: \" CONTACT EMAIL \" }]}}} , \"parentEntry\" : \"projects/ PROJECT NUMBER /locations/ LOCATION ID /entryGroups/@dataplex/entries/projects/ PROJECT NUMBER /locations/ LOCATION ID /glossaries/ GLOSSARY ID \" , \"entrySource\" : { \"resource\" : \"projects/ PROJECT NUMBER /locations/ LOCATION ID /glossaries/ GLOSSARY ID /categories/ CATEGORY ID \" , \"displayName\" : \" CATEGORY NAME \" , \"description\" : \" CATEGORY DESCRIPTION \" , \"ancestors\" : [{ \"name\" : \"projects/ PROJECT NUMBER /locations/ LOCATION ID /entryGroups/@dataplex/entries/projects/ PROJECT NUMBER /locations/ LOCATION ID /glossaries/ GLOSSARY ID \" , \"type\" : \"projects/dataplex-types/locations/global/entryTypes/glossary\" }]}}} { \"entry\" : { \"name\" : \"projects/ PROJECT NUMBER /locations/ LOCATION ID /entryGroups/@dataplex/entries/projects/ PROJECT NUMBER /locations/ LOCATION ID /glossaries/ GLOSSARY ID /terms/ TERM1 ID \" , \"entryType\" : \"projects/dataplex-types/locations/global/entryTypes/glossary-term\" , \"aspects\" : { \"dataplex-types.global.glossary-term-aspect\" : { \"data\" : {}} , \"dataplex-types.global.overview\" : { \"data\" : { \"content\" : \" TERM1 CONTENT \" }} , \"dataplex-types.global.contacts\" : { \"data\" : { \"identities\" : [{ role: \"steward\" , name: \" CONTACT DISPLAY NAME \" , id: \" CONTACT EMAIL \" }]}}} , \"parentEntry\" : \"projects/ PROJECT NUMBER /locations/ LOCATION ID /entryGroups/@dataplex/entries/projects/ PROJECT NUMBER /locations/ LOCATION ID /glossaries/ GLOSSARY ID \" , \"entrySource\" : { \"resource\" : \"projects/ PROJECT NUMBER /locations/ LOCATION ID /glossaries/ GLOSSARY ID /terms/ TERM1 ID \" , \"displayName\" : \" TERM1 DISPLAY NAME \" , \"description\" : \" TERM1 DESCRIPTION \" , \"ancestors\" : [{ \"name\" : \"projects/ PROJECT NUMBER /locations/ LOCATION ID /entryGroups/@dataplex/entries/projects/ PROJECT NUMBER /locations/ LOCATION ID /glossaries/ GLOSSARY ID \" , \"type\" : \"projects/dataplex-types/locations/global/entryTypes/glossary\" } , { \"name\" : \"projects/ PROJECT NUMBER /locations/ LOCATION ID /entryGroups/@dataplex/entries/projects/ PROJECT NUMBER /locations/ LOCATION ID /glossaries/ GLOSSARY ID /categories/ CATEGORY ID \" , \"type\" : \"projects/dataplex-types/locations/global/entryTypes/glossary-category\" }]}}} { \"entry\" : { \"name\" : \"projects/ PROJECT NUMBER /locations/ LOCATION ID /entryGroups/@dataplex/entries/projects/ PROJECT NUMBER /locations/ LOCATION ID /glossaries/ GLOSSARY ID /terms/ TERM2 ID \" , \"entryType\" : \"projects/dataplex-types/locations/global/entryTypes/glossary-term\" , \"aspects\" : { \"dataplex-types.global.glossary-term-aspect\" : { \"data\" : {}} , \"dataplex-types.global.overview\" : { \"data\" : { \"content\" : \" TERM1 CONTENT \" }} , \"dataplex-types.global.contacts\" : { \"data\" : { \"identities\" : [{ role: \"steward\" , name: \" CONTACT DISPLAY NAME \" , id: \" CONTACT EMAIL \" }]}}} , \"parentEntry\" : \"projects/ PROJECT NUMBER /locations/ LOCATION ID /entryGroups/@dataplex/entries/projects/ PROJECT NUMBER /locations/ LOCATION ID /glossaries/ GLOSSARY ID \" , \"entrySource\" : { \"resource\" : \"projects/ PROJECT NUMBER /locations/ LOCATION ID /glossaries/ GLOSSARY ID /terms/ TERM2 ID \" , \"displayName\" : \" TERM2 DISPLAY NAME \" , \"description\" : \" TERM2 DESCRIPTION \" , \"ancestors\" : [{ \"name\" : \"projects/ PROJECT NUMBER /locations/ LOCATION ID /entryGroups/@dataplex/entries/projects/ PROJECT NUMBER /locations/ LOCATION ID /glossaries/ GLOSSARY ID \" , \"type\" : \"projects/dataplex-types/locations/global/entryTypes/glossary\" } , { \"name\" : \"projects/ PROJECT NUMBER /locations/ LOCATION ID /entryGroups/@dataplex/entries/projects/ PROJECT NUMBER /locations/ LOCATION ID /glossaries/ GLOSSARY ID /categories/ CATEGORY ID \" , \"type\" : \"projects/dataplex-types/locations/global/entryTypes/glossary-category\" }]}}} Sample format for links between terms { \"entryLink\" : { \"name\" : \"projects/ PROJECT NUMBER /locations/global/entryGroups/@dataplex/entryLinks/el-import-0606e3f2-8206-4f3a-aba9-32c6196f6048\" , \"entryLinkType\" : \"projects/dataplex-types/locations/global/entryLinkTypes/synonym\" , \"entryReferences\" : [{ \"name\" : \"projects/ PROJECT NUMBER /locations/global/entryGroups/@dataplex/entries/projects/ PROJECT NUMBER /locations/global/glossaries/import-glossary/terms/term-1\" } , { \"name\" : \"projects/ PROJECT NUMBER /locations/global/entryGroups/@dataplex/entries/projects/ PROJECT NUMBER /locations/global/glossaries/import-glossary/terms/term-2\" }]}} { \"entryLink\" : { \"name\" : \"projects/ PROJECT NUMBER /locations/global/entryGroups/@dataplex/entryLinks/el-import-2f7408e3-af3d-405d-81bb-861cf9ec5146\" , \"entryLinkType\" : \"projects/dataplex-types/locations/global/entryLinkTypes/related\" , \"entryReferences\" : [{ \"name\" : \"projects/ PROJECT NUMBER /locations/global/entryGroups/@dataplex/entries/projects/ PROJECT NUMBER /locations/global/glossaries/import-glossary/terms/term-1\" } , { \"name\" : \"projects/ PROJECT NUMBER /locations/global/entryGroups/@dataplex/entries/projects/ PROJECT NUMBER /locations/global/glossaries/import-glossary/terms/term-2\" }]}} Sample format for links between terms and data assets projects/ PROJECT NUMBER /locations/us-central1/entryGroups/entry-group-1/entries/entry-1 and term projects/ PROJECT NUMBER /locations/global/entryGroups/@dataplex/entries/projects/ PROJECT NUMBER /locations/global/glossaries/import-glossary/terms/term-1 { \"entryLink\" : { \"name\" : \"projects/ PROJECT NUMBER /locations/global/entryGroups/@dataplex/entryLinks/el-import-0606e3f2-8206-4f3a-aba9-32c6196f6048\" , \"entryLinkType\" : \"projects/dataplex-types/locations/global/entryLinkTypes/definition\" , \"entryReferences\" : [{ \"name\" : \"projects/ PROJECT NUMBER /locations/global/entryGroups/@dataplex/entries/projects/ PROJECT NUMBER /locations/global/glossaries/import-glossary/terms/term-1\" } , { \"name\" : \"projects/ PROJECT NUMBER /locations/us-central1/entryGroups/entry-group-1/entries/entry-1\" }]}} Set GCURL alias alias gcurl = 'curl -H \"Authorization: Bearer $(gcloud auth print-access-token)\" -H \"Content-Type: application/json\"' gcurl https:// DATAPLEX API /metadataJobs?metadata job id = JOB ID -d \" $( cat<<EOF { \"type\" : \"IMPORT\" , \"import spec\" : { \"log level\" : \"DEBUG\" , \"source storage uri\" : \"gs:// STORAGE BUCKET /\" , \"entry sync mode\" : \"FULL\" , \"aspect sync mode\" : \"INCREMENTAL\" , \"scope\" : { \"glossaries\" : \" GLOSSARY NAME \" } } } EOF ) \" Replace DATAPLEX API with the Dataplex API endpoint of the format dataplex.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION ID ."
+        ]
+      },
+      {
+        "title": "Transition from Data Catalog to Knowledge Catalog \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataplex/docs/transition-to-dataplex-catalog",
+        "source_id": "site-docs-root",
+        "final_score": 141,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To enable this capability, configuration changes are required as outlined in the preparatory phase .",
+          "Need to tell us more? [[[\"Easy to understand\",\"easyToUnderstand\",\"thumb-up\"],[\"Solved my problem\",\"solvedMyProblem\",\"thumb-up\"],[\"Other\",\"otherUp\",\"thumb-up\"]],[[\"Hard to understand\",\"hardToUnderstand\",\"thumb-down\"],[\"Incorrect information or sample code\",\"incorrectInformationOrSampleCode\",\"thumb-down\"],[\"Missing the information/samples I need\",\"missingTheInformationSamplesINeed\",\"thumb-down\"],[\"Other\",\"otherDown\",\"thumb-down\"]],[\"Last updated 2026-04-10 UTC.\"],[],[]]",
+          "Required roles To get the permissions that you need to transition from Data Catalog to Knowledge Catalog, grant the following IAM roles on the resource: Update private tag templates to public: Data Catalog TagTemplate Owner ( roles/datacatalog.tagTemplateOwner ) This predefined role contains the datacatalog.tagTemplates.update permission, which is required to update private tag templates to public."
+        ]
+      },
+      {
+        "title": "\"Create and use data profile scans \\_|\\_ Knowledge Catalog \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/dataplex/docs/use-data-profiling",
+        "source_id": "site-docs-root",
+        "final_score": 136,
+        "relevance": "",
+        "evidence_snippets": [
+          "Export table schema If you want to export the data profile scan results to an existing BigQuery table, make sure that it is compatible with the following table schema: Column name Column data type Sub field name (if applicable) Sub field data type Mode Example data profile scan struct/record resource name string nullable //dataplex.googleapis.com/projects/test-project/locations/europe-west2/datascans/test-datascan project id string nullable test-project location string nullable us-central1 data scan id string nullable test-datascan data source struct/record resource name string nullable Entity case: //dataplex.googleapis.com/projects/test-project/locations/europe-west2/lakes/test-lake/zones/test-zone/entities/test-entity Table case: //bigquery.googleapis.com/projects/test-project/datasets/test-dataset/tables/test-table dataplex entity project id string nullable test-project dataplex entity project number integer nullable 123456789012 dataplex lake id string nullable (Valid only if source is entity) test-lake dataplex zone id string nullable (Valid only if source is entity) test-zone dataplex entity id string nullable (Valid only if source is entity) test-entity table project id string nullable dataplex-table table project number int64 nullable 345678901234 dataset id string nullable (Valid only if source is table) test-dataset table id string nullable (Valid only if source is table) test-table data profile job id string nullable caeba234-cfde-4fca-9e5b-fe02a9812e38 data profile job configuration json trigger string nullable ondemand / schedule incremental boolean nullable true / false sampling percent float nullable (0-100) 20.0 (indicates 20%) row filter string nullable col1 >= 0 AND col2 column filter json nullable {\"include fields\":[\"col1\",\"col2\"], \"exclude fields\":[\"col3\"]} job labels json nullable {\"key1\":value1} job start time timestamp nullable 2023-01-01 00:00:00 UTC job end time timestamp nullable 2023-01-01 00:00:00 UTC job rows scanned integer nullable 7500 column name string nullable column-1 column type string nullable string column mode string nullable repeated percent null float nullable (0.0-100.0) 20.0 (indicates 20%) percent unique float nullable (0.0-100.0) 92.5 min string length integer nullable (Valid only if column type is string) 10 max string length integer nullable (Valid only if column type is string) 4 average string length float nullable (Valid only if column type is string) 7.2 min value float nullable (Valid only if column type is numeric - integer/float) max value float nullable (Valid only if column type is numeric - integer/float) average value float nullable (Valid only if column type is numeric - integer/float) standard deviation float nullable (Valid only if column type is numeric - integer/float) quartile lower integer nullable (Valid only if column type is numeric - integer/float) quartile median integer nullable (Valid only if column type is numeric - integer/float) quartile upper integer nullable (Valid only if column type is numeric - integer/float) top n struct/record - repeated value string nullable \"4009\" count integer nullable 20 percent float nullable 10 (indicates 10%) Export table setup When you export to BigQueryExport tables, follow these guidelines: For the field resultsTable , use the format: //bigquery.googleapis.com/projects/{project-id}/datasets/{dataset-id}/tables/{table-id} .",
+          "To see the exact permissions that are required, expand the Required permissions section: Required permissions The following permissions are required to create and manage data profile scans: Create, run, update, and delete data profile scans: dataplex.datascans.create on project dataplex.datascans.update on data scan dataplex.datascans.delete on data scan dataplex.datascans.run on data scan dataplex.datascans.get on data scan dataplex.datascans.list on project dataplex.dataScanJobs.get on data scan job dataplex.dataScanJobs.list on data scan View data profile scan results, jobs, and history: dataplex.datascans.getData on data scan dataplex.datascans.list on project dataplex.dataScanJobs.get on data scan job dataplex.dataScanJobs.list on data scan Publish data profile scan results to Knowledge Catalog: dataplex.entryGroups.useDataProfileAspect on entry group bigquery.tables.update on table dataplex.entries.update on entry View published data profile results for a table in BigQuery or Knowledge Catalog: bigquery.tables.get on table bigquery.tables.getData on table You might also be able to get these permissions with custom roles or other predefined roles .",
+          "For more information, see Set up authentication for a local development environment . using Google.Cloud.Dataplex.V1 ; using Google.LongRunning ; using Google.Protobuf.WellKnownTypes ; public sealed partial class GeneratedDataScanServiceClientSnippets { /// <summary>Snippet for UpdateDataScan</summary> /// <remarks> /// This snippet has been automatically generated and should be regarded as a code template only. /// It will require modifications to work: /// - It may require correct/in-range values for request initialization. /// - It may require specifying regional endpoints when creating the service client as shown in /// https://cloud.google.com/dotnet/docs/reference/help/client-configuration#endpoint. /// </remarks> public void UpdateDataScanRequestObject () { // Create client DataScanServiceClient dataScanServiceClient = DataScanServiceClient ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "bigquery.googleapis.com",
+      "bigquery.tables.get",
+      "bigquery.tables.getData",
+      "bigquery.tables.update",
+      "com.google.cloud.dataplex.v1",
+      "datacatalog.migrationConfig.set",
+      "datacatalog.migrationConfigAdmin",
+      "datacatalog.tagTemplateOwner",
+      "datacatalog.tagTemplates.update",
+      "dataplex.dataScanJobs.get",
+      "dataplex.dataScanJobs.list",
+      "dataplex.datascans.create",
+      "dataplex.datascans.delete",
+      "dataplex.datascans.get",
+      "dataplex.datascans.getData",
+      "dataplex.datascans.list",
+      "dataplex.datascans.run",
+      "dataplex.datascans.update",
+      "dataplex.entries.update",
+      "dataplex.entryGroups.useDataProfileAspect",
+      "dataplex.googleapis.com",
+      "types.global.contacts",
+      "types.global.glossary",
+      "types.global.overview"
+    ],
+    "missing_inventory_roles": [
+      "roles/datacatalog.migrationConfigAdmin",
+      "roles/datacatalog.tagTemplateOwner"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataplex/docs/lineage-use-cases-impact-analysis",
+        "https://docs.cloud.google.com/dataplex/docs/manage-glossaries",
+        "https://docs.cloud.google.com/dataplex/docs/transition-to-dataplex-catalog",
+        "https://docs.cloud.google.com/dataplex/docs/use-data-profiling"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataplex/docs/lineage-use-cases-impact-analysis",
+        "https://docs.cloud.google.com/dataplex/docs/manage-glossaries",
+        "https://docs.cloud.google.com/dataplex/docs/transition-to-dataplex-catalog",
+        "https://docs.cloud.google.com/dataplex/docs/use-data-profiling"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataplex/docs/lineage-use-cases-impact-analysis",
+        "https://docs.cloud.google.com/dataplex/docs/manage-glossaries",
+        "https://docs.cloud.google.com/dataplex/docs/transition-to-dataplex-catalog",
+        "https://docs.cloud.google.com/dataplex/docs/use-data-profiling"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataplex/docs/lineage-use-cases-impact-analysis",
+        "https://docs.cloud.google.com/dataplex/docs/manage-glossaries",
+        "https://docs.cloud.google.com/dataplex/docs/transition-to-dataplex-catalog",
+        "https://docs.cloud.google.com/dataplex/docs/use-data-profiling"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataplex/docs/lineage-use-cases-impact-analysis",
+        "https://docs.cloud.google.com/dataplex/docs/manage-glossaries",
+        "https://docs.cloud.google.com/dataplex/docs/transition-to-dataplex-catalog",
+        "https://docs.cloud.google.com/dataplex/docs/use-data-profiling"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataplex/docs/lineage-use-cases-impact-analysis",
+        "https://docs.cloud.google.com/dataplex/docs/manage-glossaries",
+        "https://docs.cloud.google.com/dataplex/docs/transition-to-dataplex-catalog",
+        "https://docs.cloud.google.com/dataplex/docs/use-data-profiling"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataplex/docs/lineage-use-cases-impact-analysis",
+        "https://docs.cloud.google.com/dataplex/docs/manage-glossaries",
+        "https://docs.cloud.google.com/dataplex/docs/transition-to-dataplex-catalog",
+        "https://docs.cloud.google.com/dataplex/docs/use-data-profiling"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataplex/docs/lineage-use-cases-impact-analysis",
+        "https://docs.cloud.google.com/dataplex/docs/manage-glossaries",
+        "https://docs.cloud.google.com/dataplex/docs/transition-to-dataplex-catalog",
+        "https://docs.cloud.google.com/dataplex/docs/use-data-profiling"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataplex/docs/lineage-use-cases-impact-analysis",
+        "https://docs.cloud.google.com/dataplex/docs/manage-glossaries",
+        "https://docs.cloud.google.com/dataplex/docs/transition-to-dataplex-catalog",
+        "https://docs.cloud.google.com/dataplex/docs/use-data-profiling"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataplex/docs/lineage-use-cases-impact-analysis",
+        "https://docs.cloud.google.com/dataplex/docs/manage-glossaries",
+        "https://docs.cloud.google.com/dataplex/docs/transition-to-dataplex-catalog",
+        "https://docs.cloud.google.com/dataplex/docs/use-data-profiling"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataplex/docs/lineage-use-cases-impact-analysis",
+        "https://docs.cloud.google.com/dataplex/docs/manage-glossaries",
+        "https://docs.cloud.google.com/dataplex/docs/transition-to-dataplex-catalog",
+        "https://docs.cloud.google.com/dataplex/docs/use-data-profiling"
+      ]
+    }
+  ]
+}

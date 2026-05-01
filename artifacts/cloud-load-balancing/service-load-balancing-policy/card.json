@@ -1,0 +1,156 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:24.125Z",
+  "source_step08_card": "data/step-08/current/products/cloud-load-balancing/card.json",
+  "product_name": "Cloud Load Balancing",
+  "product_slug": "cloud-load-balancing",
+  "feature_name": "Service load balancing policy",
+  "feature_slug": "service-load-balancing-policy",
+  "summary": "Global external Application Load Balancers can use service load balancing policies to control backend traffic distribution parameters such as algorithm choice and auto-capacity draining; Global external Application Load Balancers can use service load balancing policies to control backend traffic distribution parameters such as algorithm choice and auto-capacity draining.",
+  "extended_definition": "Global external Application Load Balancers can use service load balancing policies to control backend traffic distribution parameters such as algorithm choice and auto-capacity draining; Global external Application Load Balancers can use service load balancing policies to control backend traffic distribution parameters such as algorithm choice and auto-capacity draining.",
+  "lifecycle": {
+    "latest_feature_date": "2024-07-15",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/load-balancing/docs/auth-policy/set-up-auth-policy-app-lb",
+      "https://docs.cloud.google.com/load-balancing/docs/backend-service",
+      "https://docs.cloud.google.com/load-balancing/docs/features"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Set up authorization policies for Application Load Balancers \\_|\\_ Cloud\\",
+        "url": "https://docs.cloud.google.com/load-balancing/docs/auth-policy/set-up-auth-policy-app-lb",
+        "source_id": "site-docs-reference-required-3",
+        "final_score": 180,
+        "relevance": "",
+        "evidence_snippets": [
+          "See the following example: { httpRequest: {8} insertId: \"example-id\" jsonPayload: { @type: \"type.googleapis.com/google.cloud.loadbalancing.type.LoadBalancerLogEntry\" authzPolicyInfo: { policies: [ 0: { details: \"name: \"projects/12345567/locations/global/authzPolicies/deny-authz-policy-test\"\" result: \"DENIED\" } ] result: \"DENIED\" } backendTargetProjectNumber: \"projects/12345567\" cacheDecision: [2] remoteIp: \"00.100.11.104\" statusDetails: \"denied by authz policy\" } logName: \"projects/example-project/logs/requests\" receiveTimestamp: \"2024-08-28T15:33:56.046651035Z\" resource: {2} severity: \"WARNING\" spanId: \"3e1a09a8e5e3e14d\" timestamp: \"2024-08-28T15:33:55.355042Z\" trace: \"projects/example-project/traces/8c8b3dbf9a19c85954d0fa2d958ca509\" } If you're using a regional internal Application Load Balancer, regional external Application Load Balancer, or cross-region internal Application Load Balancer, proxyStatus is set to error=\\\"http request error\\\"; details=\\\"denied by authz policy\\\" and the name of the policy is logged in policies .",
+          "See the following example: { httpRequest: {8} insertId: \"example-id\" jsonPayload: { @type: \"type.googleapis.com/google.cloud.loadbalancing.type.LoadBalancerLogEntry\" authzPolicyInfo: { policies: [ 0: { details: \"allowed as no deny policies matched request\" result: \"ALLOWED\" } 1: { details: \"name: \"projects/12345567/locations/global/authzPolicies/allow-authz-policy-test\"\" result: \"ALLOWED\" } ] result: \"ALLOWED\" } backendTargetProjectNumber: \"projects/12345567\" cacheDecision: [2] remoteIp: \"00.100.11.104\" } logName: \"projects/example-project/logs/requests\" receiveTimestamp: \"2024-08-28T15:33:56.046651035Z\" resource: {2} severity: \"WARNING\" spanId: \"3e1a09a8e5e3e14d\" timestamp: \"2024-08-28T15:33:55.355042Z\" trace: \"projects/example-project/traces/8c8b3dbf9a19c85954d0fa2d958ca509\" } If you're using a regional internal Application Load Balancer, regional external Application Load Balancer, or cross-region internal Application Load Balancer, there is no proxyStatus field in the log.",
+          "Note: Authorization policy based on principals is not supported on global external Application Load Balancers."
+        ]
+      },
+      {
+        "title": "\"Backend services overview \\_|\\_ Cloud Load Balancing \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/load-balancing/docs/backend-service",
+        "source_id": "site-docs-reference-required-3",
+        "final_score": 168,
+        "relevance": "",
+        "evidence_snippets": [
+          "Table : Supported load balancing locality policy settings Load balancer Load balancing locality policy options Global external Application Load Balancer Regional external Application Load Balancer Cross-region internal Application Load Balancer Regional internal Application Load Balancer Supported options: ROUND ROBIN LEAST REQUEST RING HASH RANDOM ORIGINAL DESTINATION (not supported for global external Application Load Balancers) MAGLEV WEIGHTED ROUND ROBIN Global external proxy Network Load Balancer Regional external proxy Network Load Balancer Cross-region internal proxy Network Load Balancer Regional internal proxy Network Load Balancer Supported options: ROUND ROBIN LEAST REQUEST RING HASH RANDOM MAGLEV ORIGINAL DESTINATION (not supported for global external proxy Network Load Balancers) Regional external passthrough Network Load Balancer Supported options: MAGLEV WEIGHTED MAGLEV Internal passthrough Network Load Balancer Classic Application Load Balancer Classic proxy Network Load Balancer Not supported Note that the effective default value of the load balancing locality policy ( localityLbPolicy ) changes according to your session affinity settings.",
+          "Table: Backend services and supported backend types Product Maximum number of backend services Scope of backend service Supported backend types Load balancing scheme Global external Application Load Balancer Multiple Global Each backend service supports one of the following backend combinations: All instance group backends: One or more managed, unmanaged, or a combination of managed and unmanaged instance group backends 1 All zonal NEGs: One or more GCE VM IP PORT type zonal NEGs 1 All hybrid connectivity NEGs: One or more NON GCP PRIVATE IP PORT type NEGs A combination of zonal and hybrid NEGs: GCE VM IP PORT and NON GCP PRIVATE IP PORT type NEGs 2 All serverless NEGs: One or more App Engine, Cloud Run, or Cloud Run functions resources One global internet NEG for an external backend Private Service Connect NEGs: Google APIs: a single Private Service Connect NEG Managed services: one or more Private Service Connect NEGs EXTERNAL MANAGED Classic Application Load Balancer Multiple Global 3 Each backend service supports one of the following backend combinations: All instance group backends: One or more managed, unmanaged, or a combination of managed and unmanaged instance group backends All zonal NEGs: One or more GCE VM IP PORT type zonal NEGs All hybrid connectivity NEGs: One or more NON GCP PRIVATE IP PORT type NEGs A combination of zonal and hybrid NEGs: GCE VM IP PORT and NON GCP PRIVATE IP PORT type NEGs 2 All serverless NEGs: One or more App Engine, Cloud Run, or Cloud Run functions resources One global internet NEG for an external backend EXTERNAL 4 Regional external Application Load Balancer Multiple Regional Each backend service supports one of the following backend combinations: All instance group backends: One or more managed, unmanaged, or a combination of managed and unmanaged instance group backends 1 All zonal NEGs: One or more GCE VM IP PORT type zonal NEGs 1 All hybrid connectivity NEGs: One or more NON GCP PRIVATE IP PORT type NEGs A combination of zonal and hybrid NEGs: GCE VM IP PORT and NON GCP PRIVATE IP PORT type NEGs 2 A single serverless NEG (for Cloud Run or Cloud Run functions 2nd gen only) A single Private Service Connect NEG All regional internet NEGs for an external backend All published service backends ( Preview ) EXTERNAL MANAGED Cross-region internal Application Load Balancer Multiple Global Each backend service supports one of the following backend combinations: All instance group backends: One or more managed, unmanaged, or a combination of managed and unmanaged instance group backends 1 All zonal NEGs: One or more GCE VM IP PORT type zonal NEGs 1 All hybrid connectivity NEGs: One or more NON GCP PRIVATE IP PORT type NEGs A combination of zonal and hybrid NEGs: GCE VM IP PORT and NON GCP PRIVATE IP PORT type NEGs 2 A single serverless NEG (for Cloud Run or Cloud Run functions 2nd gen only) Private Service Connect NEGs: Google APIs: a single Private Service Connect NEG Managed services: one or more Private Service Connect NEGs INTERNAL MANAGED Regional internal Application Load Balancer Multiple Regional Each backend service supports one of the following backend combinations: All instance group backends: One or more managed, unmanaged, or a combination of managed and unmanaged instance group backends 1 All zonal NEGs: One or more GCE VM IP PORT type zonal NEGs 1 All hybrid connectivity NEGs: One or more NON GCP PRIVATE IP PORT type NEGs A combination of zonal and hybrid NEGs: GCE VM IP PORT and NON GCP PRIVATE IP PORT type NEGs 2 A single serverless NEG (for Cloud Run or Cloud Run functions 2nd gen only) A single Private Service Connect NEG All regional internet NEGs for an external backend All published service backends ( Preview ) INTERNAL MANAGED Global external proxy Network Load Balancer 1 Global 3 The backend service supports one of the following backend combinations: All instance group backends: One or more managed, unmanaged, or a combination of managed and unmanaged instance group backends 1 All zonal NEGs: One or more GCE VM IP PORT type zonal NEGs 1 All hybrid connectivity NEGs: One or more NON GCP PRIVATE IP PORT type NEGs A combination of zonal and hybrid NEGs: GCE VM IP PORT and NON GCP PRIVATE IP PORT type NEGs 2 Private Service Connect NEGs: Google APIs: a single Private Service Connect NEG Managed services: one or more Private Service Connect NEGs EXTERNAL MANAGED Classic proxy Network Load Balancer 1 Global 3 The backend service supports one of the following backend combinations: All instance group backends: One or more managed, unmanaged, or a combination of managed and unmanaged instance group backends All zonal NEGs: One or more GCE VM IP PORT type zonal NEGs All hybrid connectivity NEGs: One or more NON GCP PRIVATE IP PORT type NEGs A combination of zonal and hybrid NEGs: GCE VM IP PORT and NON GCP PRIVATE IP PORT type NEGs 2 EXTERNAL Regional external proxy Network Load Balancer Without TLS routes: 1 With TLS routes: Multiple Regional The backend service supports one of the following backend combinations: All instance group backends: One or more managed, unmanaged, or a combination of managed and unmanaged instance group backends 1 All zonal NEGs: One or more GCE VM IP PORT type zonal NEGs 1 All hybrid connectivity NEGs: One or more NON GCP PRIVATE IP PORT type NEGs A combination of zonal and hybrid NEGs: GCE VM IP PORT and NON GCP PRIVATE IP PORT type NEGs All regional internet NEGs for an external backend A single Private Service Connect NEG All published service backends ( Preview ) EXTERNAL MANAGED Regional internal proxy Network Load Balancer Without TLS routes: 1 With TLS routes: Multiple Regional The backend service supports one of the following backend combinations: All instance group backends: One or more managed, unmanaged, or a combination of managed and unmanaged instance group backends 1 All zonal NEGs: One or more GCE VM IP PORT type zonal NEGs 1 All hybrid connectivity NEGs: One or more NON GCP PRIVATE IP PORT type NEGs A combination of zonal and hybrid NEGs: GCE VM IP PORT and NON GCP PRIVATE IP PORT type NEGs All regional internet NEGs for an external backend A single Private Service Connect NEG All published service backends ( Preview ) INTERNAL MANAGED Cross-region internal proxy Network Load Balancer Without TLS routes: 1 With TLS routes: Multiple Global The backend service supports one of the following backend combinations: All instance group backends: One or more managed, unmanaged, or a combination of managed and unmanaged instance group backends 1 All zonal NEGs: One or more GCE VM IP PORT type zonal NEGs 1 All hybrid connectivity NEGs: One or more NON GCP PRIVATE IP PORT type NEGs A combination of zonal and hybrid NEGs: GCE VM IP PORT and NON GCP PRIVATE IP PORT type NEGs Private Service Connect NEGs: Google APIs: a single Private Service Connect NEG Managed services: one or more Private Service Connect NEGs INTERNAL MANAGED Regional external passthrough Network Load Balancer 1 Regional The backend service supports one of the following backend combinations: All instance group backends: One or more managed, unmanaged, or a combination of managed and unmanaged instance group backends All zonal NEGs: One or more GCE VM IP type zonal NEGs EXTERNAL Internal passthrough Network Load Balancer 1 Regional, but configurable to be globally accessible The backend service supports one of the following backend combinations: All instance group backends: One or more managed, unmanaged, or a combination of managed and unmanaged instance group backends All zonal NEGs: One or more GCE VM IP type zonal NEGs One port mapping NEG INTERNAL Cloud Service Mesh Multiple Global Each backend service supports one of the following backend combinations: All instance group backends: One or more managed, unmanaged, or a combination of managed and unmanaged instance group backends All zonal NEGs: One or more GCE VM IP PORT or NON GCP PRIVATE IP PORT type zonal NEGs One internet NEG of type INTERNET FQDN PORT One or more Service Directory service bindings ( Preview ) All published service backends ( Preview ) INTERNAL SELF MANAGED 1 These load balancers support IPv4-only and dual-stack (IPv4 and IPv6) instance groups and zonal NEG backends.",
+          "Advanced traffic management features To learn about advanced traffic management features that are configured on the backend services and URL maps associated with load balancers, see the following: Traffic management overview for internal Application Load Balancers Traffic management overview for global external Application Load Balancers Traffic management overview for regional external Application Load Balancers API and gcloud reference For more information about the properties of the backend service resource, see the following references: Global backend service API resource Regional backend service API resource gcloud compute backend-services page, for both global and regional backend services What's next For related documentation and information about how backend services are used in load balancing, review the following: Create custom headers Create an external Application Load Balancer External Application Load Balancer overview Enable connection draining Encryption in transit in Google Cloud For related videos: How to configure backend services for global external Application Load Balancers Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License ."
+        ]
+      },
+      {
+        "title": "\"Load balancer feature comparison \\_|\\_ Cloud Load Balancing \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/load-balancing/docs/features",
+        "source_id": "site-docs-reference-required-3",
+        "final_score": 168,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Routing and traffic management Filter this table: Feature Application Load Balancer Proxy Network Load Balancer Passthrough Network Load Balancer Internal External Internal External Internal External HTTP or Layer 7 request routing info info Fault injection info (Only global and regional modes) Configurable timeouts info info info info Retries info info Redirects info global classic regional URL rewrites info global classic regional Request and response header transformations (configured on the URL map) info (Only global and regional modes) Traffic splitting info (Only global and regional modes) Traffic mirroring info 1 (Only global and regional modes) (Only regional mode) Outlier detection info (Only global and regional modes) Retry failed requests info (Only global and regional modes) Custom request and response headers (configured on the backend service) (Only global and regional modes) Custom error responses (Only global mode) Service load balancing policy (Only cross-region mode) (Only global mode) (Only cross-region mode) (Only global mode) Connection tracking policy info info 1 Source IP-based traffic steering info 2 1 This feature is not supported with load balancers that use serverless NEG backends.",
+          "Filter this table: Feature Application Load Balancer Proxy Network Load Balancer Passthrough Network Load Balancer Internal External Internal External Internal External Balancing mode: connection Balancing mode: custom metrics 1 1 Balancing mode: in-flight ( Preview ) 1 1 (Only global and regional modes) Balancing mode: rate (requests per second) 1 1 Balancing mode: backend utilization (instance group backends only) 1 1 Load balancing locality policy info info (Only global and regional modes) info info (Only global and regional modes) info Configurable maximum capacity per backend instance group or NEG 1 1 Circuit breaking 1 (Only regional mode) (Only regional mode) Prefers region closest to client on the internet 2 (Only global and classic 3 modes) (Only global and classic 3 modes) Prefers region closest to the load balancer 2 (Only global and classic 3 modes) (Only classic 3 modes) Weight-based load balancing (Only global and regional modes) 4 info Within zone/region load balancing policy info info info info info info 1 This feature is not supported with load balancers that use serverless NEG backends.",
+          "Network topologies Filter this table: Feature Application Load Balancer Proxy Network Load Balancer Passthrough Network Load Balancer Internal External Internal External Internal External Network Service Tiers support Premium Tier Global mode: Premium Tier Classic and regional mode: Premium or Standard Tier Premium Tier Global mode: Premium Tier Classic and regional mode: Premium or Standard Tier Premium Tier Premium or Standard Tier Relationships between VPC networks, load balancers, and their backends Load balancer and backends in different VPC networks info info info info Backends can use a Shared VPC network Cross-project service referencing info info (Only global and regional mode) Client access to load balancers Google Cloud or on-premises clients must access the load balancer privately 1 Google Cloud client VMs require external IP addresses or a NAT solution like Cloud NAT to access the load balancer On-premises client VMs require internet access to access the load balancer Google Cloud client VMs can be located in any region info (Only global and classic 2 modes) info info Google Cloud client VMs can be located in any project More topologies Load balancer as next hop info Specify network interface of a backend VM 3 4 3 4 info info 5 Multi-NIC load balancing info info info info info info 1 Google Cloud or on-premises clients must access the load balancer privately by being either in the same VPC network, in a peered VPC network, or in another network connected using Cloud VPN tunnels or Cloud Interconnect attachments (VLANs) 2 Supported for Premium Tier 3 For regional load balancers, the backend VM's nic0 must be in the same network and region used by the forwarding rule."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "type.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/backend-service",
+        "https://docs.cloud.google.com/load-balancing/docs/features",
+        "https://docs.cloud.google.com/load-balancing/docs/auth-policy/set-up-auth-policy-app-lb"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/backend-service",
+        "https://docs.cloud.google.com/load-balancing/docs/features",
+        "https://docs.cloud.google.com/load-balancing/docs/auth-policy/set-up-auth-policy-app-lb"
+      ]
+    },
+    {
+      "capability": "armor",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/backend-service",
+        "https://docs.cloud.google.com/load-balancing/docs/features",
+        "https://docs.cloud.google.com/load-balancing/docs/auth-policy/set-up-auth-policy-app-lb"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/backend-service",
+        "https://docs.cloud.google.com/load-balancing/docs/features",
+        "https://docs.cloud.google.com/load-balancing/docs/auth-policy/set-up-auth-policy-app-lb"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/backend-service",
+        "https://docs.cloud.google.com/load-balancing/docs/features",
+        "https://docs.cloud.google.com/load-balancing/docs/auth-policy/set-up-auth-policy-app-lb"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/backend-service",
+        "https://docs.cloud.google.com/load-balancing/docs/features",
+        "https://docs.cloud.google.com/load-balancing/docs/auth-policy/set-up-auth-policy-app-lb"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/backend-service",
+        "https://docs.cloud.google.com/load-balancing/docs/features",
+        "https://docs.cloud.google.com/load-balancing/docs/auth-policy/set-up-auth-policy-app-lb"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/backend-service",
+        "https://docs.cloud.google.com/load-balancing/docs/features",
+        "https://docs.cloud.google.com/load-balancing/docs/auth-policy/set-up-auth-policy-app-lb"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/backend-service",
+        "https://docs.cloud.google.com/load-balancing/docs/features",
+        "https://docs.cloud.google.com/load-balancing/docs/auth-policy/set-up-auth-policy-app-lb"
+      ]
+    }
+  ]
+}

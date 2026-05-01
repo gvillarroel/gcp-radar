@@ -1,0 +1,174 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:37.235Z",
+  "source_step08_card": "data/step-08/current/products/gemini/card.json",
+  "product_name": "Gemini",
+  "product_slug": "gemini",
+  "feature_name": "Next Edit Predictions",
+  "feature_slug": "next-edit-predictions",
+  "summary": "Next Edit Predictions forecasts the next code suggestions in the current file in VS Code Gemini Code Assist.",
+  "extended_definition": "Next Edit Predictions forecasts the next code suggestions in the current file in VS Code Gemini Code Assist.",
+  "lifecycle": {
+    "latest_feature_date": "2025-09-26",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/gemini/docs/api/reference/rest/v1/projects.locations.codeToolsSettings.settingBindings/get",
+      "https://docs.cloud.google.com/gemini/docs/codeassist/chat-gemini",
+      "https://docs.cloud.google.com/gemini/docs/codeassist/code-customization",
+      "https://docs.cloud.google.com/gemini/docs/codeassist/write-code-gemini"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Code with Gemini Code Assist Standard and Enterprise \\_|\\_ Gemini for Google\\",
+        "url": "https://docs.cloud.google.com/gemini/docs/codeassist/write-code-gemini",
+        "source_id": "site-docs-root-2",
+        "final_score": 329,
+        "relevance": "",
+        "evidence_snippets": [
+          "While code completion only suggests changes at your cursor in a code file, Next Edit Predictions provide predicted code suggestions throughout the file, even in locations away from the cursor.",
+          "To use Next Edit Predictions in your IDE, follow these steps: VS Code To begin using Next Edit Predictions, enable the setting: Navigate to settings Manage Settings .",
+          "Now that you've enabled the setting, you can start using Next Edit Predictions in a code file by performing these steps: In your code file, start writing code."
+        ]
+      },
+      {
+        "title": "\"Chat with Gemini Code Assist Standard and Enterprise \\_|\\_ Gemini for Google\\",
+        "url": "https://docs.cloud.google.com/gemini/docs/codeassist/chat-gemini",
+        "source_id": "site-docs-root",
+        "final_score": 234,
+        "relevance": "",
+        "evidence_snippets": [
+          "If Gemini Code Assist suggests multiple changes throughout your code file(s), click View above the suggestion and then click Next or Previous , to cycles through the other suggestions.",
+          "The outline for the active file appears in the tab. (Optional): Click the Eye icon associated with the file outline to display the outline in-line in the code file itself. (Optional): Click the Eye icon that appears next to the Outline tab to display all available outlines in-line in their respective code files.",
+          "You can also invoke the custom command with the in-editor prompt by performing the following tasks: In your code file, highlight the code that you want to modify, and press Alt+\\ (for Windows and Linux) or Cmd+\\ (for macOS) to open the Gemini Code Assist Quick Pick menu."
+        ]
+      },
+      {
+        "title": "\"Method: projects.locations.codeToolsSettings.settingBindings.get \\_|\\_ Gemini\\",
+        "url": "https://docs.cloud.google.com/gemini/docs/api/reference/rest/v1/projects.locations.codeToolsSettings.settingBindings/get",
+        "source_id": "site-api-reference",
+        "final_score": 234,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Need to tell us more? [[[\"Easy to understand\",\"easyToUnderstand\",\"thumb-up\"],[\"Solved my problem\",\"solvedMyProblem\",\"thumb-up\"],[\"Other\",\"otherUp\",\"thumb-up\"]],[[\"Hard to understand\",\"hardToUnderstand\",\"thumb-down\"],[\"Incorrect information or sample code\",\"incorrectInformationOrSampleCode\",\"thumb-down\"],[\"Missing the information/samples I need\",\"missingTheInformationSamplesINeed\",\"thumb-down\"],[\"Other\",\"otherDown\",\"thumb-down\"]],[\"Last updated 2025-06-09 UTC.\"],[],[]]",
+          "IAM Permissions Requires the following IAM permission on the name resource: cloudaicompanion.settingBindings.codeToolsSettingsGet For more information, see the IAM documentation .",
+          "HTTP request GET https://cloudaicompanion.googleapis.com/v1/{name=projects/ /locations/ /codeToolsSettings/ /settingBindings/ } The URL uses gRPC Transcoding syntax."
+        ]
+      },
+      {
+        "title": "\"Configure Gemini Code Assist code customization \\_|\\_ Gemini for Google\\",
+        "url": "https://docs.cloud.google.com/gemini/docs/codeassist/code-customization",
+        "source_id": "site-docs-root",
+        "final_score": 228,
+        "relevance": "",
+        "evidence_snippets": [
+          "Optional: To delete the index, in a shell environment, use the gemini code-repository-indexes delete command : gcloud gemini code-repository-indexes delete INDEX NAME \\ --location= REGION \\ --project= PROJECT ID What's next Start using Gemini Code Assist: VS Code, IntelliJ, and other supported JetBrains IDEs: Code with Gemini Code Assist Cloud Shell Editor: Code with Gemini Code Assist Cloud Workstations: Code with Gemini Code Assist Learn how to use code customization and best practices.",
+          "Code customization relies on an index to analyze and parse your repository for quicker code generation suggestions and lookups. resource \"google gemini code repository index\" \"example\" { location = \" REGION \" code repository index id = \" INDEX NAME \" } Replace the following: INDEX NAME : your index name.",
+          "Subset of the index You can create multiple repository groups and assign IAM roles to different IAM principals. data \"google iam policy\" \"foo\" { binding { role = \"roles/cloudaicompanion.repositoryGroupsUser\" members = [ \"test-user@example.com\" ] } } resource \"google gemini repository group iam policy\" \"foo\" { project = \" PROJECT ID \" location = \" REGION \" code repository index id = \" INDEX NAME \" repository group id = \" GROUP NAME \" policy data = data.google iam policy.foo.policy data } data \"google gemini repository group iam policy\" \"foo\" { project = \" PROJECT ID \" location = \" REGION \" code repository index id = \" INDEX NAME \" repository group id = \" GROUP NAME \" depends on = [ google gemini repository group iam policy.foo ] } You can also create a binding: resource \"google gemini repository group iam binding\" \"foo\" { project = \" PROJECT ID \" location = \" REGION \" code repository index id = \" INDEX NAME \" repository group id = \" GROUP NAME \" role = \"roles/cloudaicompanion.repositoryGroupsUser\" members = [ \"test-user@example.com\" ] } Replace the following: GROUP NAME : the repository group name you created in a preceding step to control access to your index using repository groups."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cloudaicompanion.googleapis.com",
+      "cloudaicompanion.repositoryGroupsUser",
+      "cloudaicompanion.settingBindings.codeToolsSettingsGet",
+      "data.google",
+      "example.com",
+      "policy.foo",
+      "policy.foo.policy",
+      "projects.locations.codeToolsSettings.settingBindings",
+      "projects.locations.codeToolsSettings.settingBindings.create",
+      "projects.locations.codeToolsSettings.settingBindings.delete",
+      "projects.locations.codeToolsSettings.settingBindings.get",
+      "projects.locations.codeToolsSettings.settingBindings.list",
+      "projects.locations.codeToolsSettings.settingBindings.patch"
+    ],
+    "missing_inventory_roles": [
+      "roles/cloudaicompanion.repositoryGroupsUser"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/docs/codeassist/write-code-gemini",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/chat-gemini",
+        "https://docs.cloud.google.com/gemini/docs/api/reference/rest/v1/projects.locations.codeToolsSettings.settingBindings/get",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/code-customization"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/docs/codeassist/write-code-gemini",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/chat-gemini",
+        "https://docs.cloud.google.com/gemini/docs/api/reference/rest/v1/projects.locations.codeToolsSettings.settingBindings/get",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/code-customization"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/docs/codeassist/write-code-gemini",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/chat-gemini",
+        "https://docs.cloud.google.com/gemini/docs/api/reference/rest/v1/projects.locations.codeToolsSettings.settingBindings/get",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/code-customization"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/docs/codeassist/write-code-gemini",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/chat-gemini",
+        "https://docs.cloud.google.com/gemini/docs/api/reference/rest/v1/projects.locations.codeToolsSettings.settingBindings/get",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/code-customization"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/docs/codeassist/write-code-gemini",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/chat-gemini",
+        "https://docs.cloud.google.com/gemini/docs/api/reference/rest/v1/projects.locations.codeToolsSettings.settingBindings/get",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/code-customization"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/docs/codeassist/write-code-gemini",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/chat-gemini",
+        "https://docs.cloud.google.com/gemini/docs/api/reference/rest/v1/projects.locations.codeToolsSettings.settingBindings/get",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/code-customization"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/docs/codeassist/write-code-gemini",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/chat-gemini",
+        "https://docs.cloud.google.com/gemini/docs/api/reference/rest/v1/projects.locations.codeToolsSettings.settingBindings/get",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/code-customization"
+      ]
+    }
+  ]
+}

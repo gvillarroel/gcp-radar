@@ -1,0 +1,199 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:33.243Z",
+  "source_step08_card": "data/step-08/current/products/dataproc/card.json",
+  "product_name": "Dataproc",
+  "product_slug": "dataproc",
+  "feature_name": "Dataproc Metastore integration with Trino",
+  "feature_slug": "dataproc-metastore-integration-with-trino",
+  "summary": "Dataproc supports Dataproc Metastore integration with Trino.",
+  "extended_definition": "Dataproc supports Dataproc Metastore integration with Trino.",
+  "lifecycle": {
+    "latest_feature_date": "2023-01-23",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 1,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "coverage_low",
+        "message": "The feature ended with coverage LOW.",
+        "suggested_steps": [
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dataproc-metastore/docs/about-endpoint-protocols",
+      "https://docs.cloud.google.com/dataproc-metastore/docs/apache-iceberg",
+      "https://docs.cloud.google.com/dataproc-metastore/docs/org-policy-custom-constraints"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Use Apache Iceberg tables with Dataproc Metastore \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataproc-metastore/docs/apache-iceberg",
+        "source_id": "site-docs-root-2",
+        "final_score": 41,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Data analytics Dataproc Metastore Guides Send feedback Use Apache Iceberg tables with Dataproc Metastore Stay organized with collections Save and categorize content based on your preferences.",
+          "This page explains how to use Apache Iceberg tables with a Dataproc Metastore service attached to a Managed Service for Apache Spark cluster.",
+          "Drivers Select Insert Create Table Spark ✓ ✓ ✓ Hive ✓ ✓ Presto ✓ ✓ ✓ Before you begin Create a Dataproc Metastore service ."
+        ]
+      },
+      {
+        "title": "\"Create custom organization policy constraints \\_|\\_ Dataproc Metastore \\_\\",
+        "url": "https://docs.cloud.google.com/dataproc-metastore/docs/org-policy-custom-constraints",
+        "source_id": "site-docs-root-2",
+        "final_score": 39,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Resource Field metastore.googleapis.com/Backup resource.description resource.name metastore.googleapis.com/MetadataImport resource.databaseDump.gcsUri resource.databaseDump.sourceDatabase resource.databaseDump.type resource.description resource.name metastore.googleapis.com/Service resource.databaseType resource.deletionProtection resource.encryptionConfig.kmsKey resource.hiveMetastoreConfig.auxiliaryVersions[ ].configOverrides resource.hiveMetastoreConfig.auxiliaryVersions[ ].version resource.hiveMetastoreConfig.configOverrides resource.hiveMetastoreConfig.endpointProtocol resource.hiveMetastoreConfig.kerberosConfig.keytab.cloudSecret resource.hiveMetastoreConfig.kerberosConfig.krb5ConfigGcsUri resource.hiveMetastoreConfig.kerberosConfig.principal resource.hiveMetastoreConfig.version resource.maintenanceWindow.dayOfWeek resource.maintenanceWindow.hourOfDay resource.metadataIntegration.dataCatalogConfig.enabled resource.name resource.network resource.networkConfig.consumers.subnetwork resource.port resource.releaseChannel resource.scalingConfig.autoscalingConfig.autoscalingEnabled resource.scalingConfig.autoscalingConfig.limitConfig.maxScalingFactor resource.scalingConfig.autoscalingConfig.limitConfig.minScalingFactor resource.scalingConfig.instanceSize resource.scalingConfig.scalingFactor resource.scheduledBackup.backupLocation resource.scheduledBackup.cronSchedule resource.scheduledBackup.enabled resource.scheduledBackup.timeZone resource.telemetryConfig.logFormat resource.tier What's next Learn more about Organization Policy Service .",
+          "Description Constraint syntax Restrict logging for Dataproc Metastore instances name : organizations/ ORGANIZATION ID /customConstraints/custom.allowDataprocMetastoreService resourceTypes : - metastore.googleapis.com/Service methodTypes : - CREATE condition : resource.tier == 'ENTERPRISE' actionType : ALLOW displayName : Allow only the creation of Enterprise DPMS instances description : All DPMS instances should use the enterprise tier Dataproc Metastore supported resources The following table lists the Dataproc Metastore resources that you can reference in custom constraints.",
+          "Home Documentation Data analytics Dataproc Metastore Guides Send feedback Create custom organization policy constraints Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "About Dataproc Metastore endpoint protocols \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataproc-metastore/docs/about-endpoint-protocols",
+        "source_id": "site-docs-root-2",
+        "final_score": 39,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "When you create a Dataproc Metastore service, you must choose to use one of the following endpoint protocols: The Apache Thrift protocol The gRPC protocol This protocol defines how your Hive Metastore clients access metadata stored in your Dataproc Metastore service.",
+          "Your cluster then uses Dataproc Metastore as its Hive metastore. gRPC The gRPC protocol is the modern, portable, high performance option that you must explicitly select when you create a Dataproc Metastore service.",
+          "Home Documentation Data analytics Dataproc Metastore Guides Send feedback About Dataproc Metastore endpoint protocols Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "custom.allowDataprocMetastoreService",
+      "metastore.googleapis.com",
+      "resource.databaseDump.gcsUri",
+      "resource.databaseDump.sourceDatabase",
+      "resource.databaseDump.type",
+      "resource.databaseType",
+      "resource.deletionProtection",
+      "resource.description",
+      "resource.encryptionConfig.kmsKey",
+      "resource.hiveMetastoreConfig.auxiliaryVersions",
+      "resource.hiveMetastoreConfig.configOverrides",
+      "resource.hiveMetastoreConfig.endpointProtocol",
+      "resource.hiveMetastoreConfig.kerberosConfig.keytab.cloudSecret",
+      "resource.hiveMetastoreConfig.kerberosConfig.krb5ConfigGcsUri",
+      "resource.hiveMetastoreConfig.kerberosConfig.principal",
+      "resource.hiveMetastoreConfig.version",
+      "resource.maintenanceWindow.dayOfWeek",
+      "resource.maintenanceWindow.hourOfDay",
+      "resource.metadataIntegration.dataCatalogConfig.enabled",
+      "resource.name",
+      "resource.network",
+      "resource.networkConfig.consumers.subnetwork",
+      "resource.port",
+      "resource.releaseChannel",
+      "resource.scalingConfig.autoscalingConfig.autoscalingEnabled",
+      "resource.scalingConfig.autoscalingConfig.limitConfig.maxScalingFactor",
+      "resource.scalingConfig.autoscalingConfig.limitConfig.minScalingFactor",
+      "resource.scalingConfig.instanceSize",
+      "resource.scalingConfig.scalingFactor",
+      "resource.scheduledBackup.backupLocation",
+      "resource.scheduledBackup.cronSchedule",
+      "resource.scheduledBackup.enabled",
+      "resource.scheduledBackup.timeZone",
+      "resource.telemetryConfig.logFormat",
+      "resource.tier"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc-metastore/docs/org-policy-custom-constraints",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/apache-iceberg",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/about-endpoint-protocols"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc-metastore/docs/org-policy-custom-constraints",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/apache-iceberg",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/about-endpoint-protocols"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc-metastore/docs/org-policy-custom-constraints",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/apache-iceberg",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/about-endpoint-protocols"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc-metastore/docs/org-policy-custom-constraints",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/apache-iceberg",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/about-endpoint-protocols"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc-metastore/docs/org-policy-custom-constraints",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/apache-iceberg",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/about-endpoint-protocols"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc-metastore/docs/org-policy-custom-constraints",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/apache-iceberg",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/about-endpoint-protocols"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc-metastore/docs/org-policy-custom-constraints",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/apache-iceberg",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/about-endpoint-protocols"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc-metastore/docs/org-policy-custom-constraints",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/apache-iceberg",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/about-endpoint-protocols"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc-metastore/docs/org-policy-custom-constraints",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/apache-iceberg",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/about-endpoint-protocols"
+      ]
+    }
+  ]
+}

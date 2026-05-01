@@ -1,0 +1,201 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:37.604Z",
+  "source_step08_card": "data/step-08/current/products/gemini-enterprise/card.json",
+  "product_name": "Gemini Enterprise",
+  "product_slug": "gemini-enterprise",
+  "feature_name": "Microsoft Entra ID data store",
+  "feature_slug": "microsoft-entra-id-data-store",
+  "summary": "You can connect a data store to ingest content from Microsoft Entra ID.",
+  "extended_definition": "You can connect a data store to ingest content from Microsoft Entra ID.",
+  "lifecycle": {
+    "latest_feature_date": "2025-07-31",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/gemini/enterprise/docs/configure-identity-provider",
+      "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/box/set-up-data-store",
+      "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/confluence-cloud/set-up-data-store",
+      "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/confluence-dc/set-up-data-store"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Configure identity provider \\_|\\_ Gemini Enterprise \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/gemini/enterprise/docs/configure-identity-provider",
+        "source_id": "site-docs-root",
+        "final_score": 271,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Configure Workforce Identity Federation For details on configuring Workforce Identity Federation with your third-party identity connector, see the following resources: Identity provider Resources Entra ID Note: When using data ingestion to connect to Microsoft data sources like SharePoint, OneDrive, or Outlook, you must use Microsoft Entra ID groups to control document access.",
+          "Third-party identity provider When you only connect Gemini Enterprise to third-party data sources, and you are already using a third-party identity provider that supports OIDC or SAML 2.0, such as Microsoft Entra ID, Active Directory Federation Services (AD FS), Okta, and others, you must use Workforce Identity Federation.",
+          "For example: \"metadata\": { \"mapped attributes\": { \"attributes.as user identifier 1\": \"alex@admin.altostrat.com\" \"google.subject\": \"alex@altostrat.com\" \"google.groups\": \"[123abc-456d, efg-h789-ijk]\" } }, Limitations When connecting your data sources using a connector to create data stores, the following limitations apply: 3000 readers are allowed per document."
+        ]
+      },
+      {
+        "title": "\"Set up a Confluence Cloud data store \\_|\\_ Gemini Enterprise \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/confluence-cloud/set-up-data-store",
+        "source_id": "site-docs-root",
+        "final_score": 244,
+        "relevance": "",
+        "evidence_snippets": [
+          "What's next To provide a user interface for querying your Confluence Cloud data, create an app and connect it to the Confluence Cloud data store .",
+          "To set up the Confluence Cloud data store, you must use the new centralized Atlassian user management model.",
+          "Create subscriptions only for entities already added to your data store to avoid ingesting unwanted data."
+        ]
+      },
+      {
+        "title": "\"Set up a Confluence Data Center data store \\_|\\_ Gemini Enterprise \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/confluence-dc/set-up-data-store",
+        "source_id": "site-docs-root",
+        "final_score": 227,
+        "relevance": "",
+        "evidence_snippets": [
+          "What's next To provide a user interface for querying your Confluence Data Center data, create an app and connect it to the Confluence Data Center data store .",
+          "If the region of your Private Service Connect service attachment is different from the region of your data store, select the Enable PSC Global Access checkbox.",
+          "The data store status remains as Creating in the Data Stores page until you click Accept project on the service details page within Private Service Connect."
+        ]
+      },
+      {
+        "title": "Set up a Box data store \\_|\\_ Gemini Enterprise \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/box/set-up-data-store",
+        "source_id": "site-docs-root",
+        "final_score": 227,
+        "relevance": "",
+        "evidence_snippets": [
+          "What's next To provide a user interface for querying your data, create an app and connect it to the Box federated data store .",
+          "Home Documentation AI and ML Gemini Enterprise Send feedback Set up a Box data store Stay organized with collections Save and categorize content based on your preferences.",
+          "Before you begin Before you set up your Box connection, ensure you perform the following: Grant the Discovery Engine Editor role ( roles/discoveryengine.editor )."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "admin.altostrat.com",
+      "altostrat.com",
+      "attributes.as",
+      "discoveryengine.editor"
+    ],
+    "missing_inventory_roles": [
+      "roles/discoveryengine.editor"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/enterprise/docs/configure-identity-provider",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/confluence-cloud/set-up-data-store",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/confluence-dc/set-up-data-store",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/box/set-up-data-store"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/enterprise/docs/configure-identity-provider",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/confluence-cloud/set-up-data-store",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/confluence-dc/set-up-data-store",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/box/set-up-data-store"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/enterprise/docs/configure-identity-provider",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/confluence-cloud/set-up-data-store",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/confluence-dc/set-up-data-store",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/box/set-up-data-store"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/enterprise/docs/configure-identity-provider",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/confluence-cloud/set-up-data-store",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/confluence-dc/set-up-data-store",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/box/set-up-data-store"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/enterprise/docs/configure-identity-provider",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/confluence-cloud/set-up-data-store",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/confluence-dc/set-up-data-store",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/box/set-up-data-store"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/enterprise/docs/configure-identity-provider",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/confluence-cloud/set-up-data-store",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/confluence-dc/set-up-data-store",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/box/set-up-data-store"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/enterprise/docs/configure-identity-provider",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/confluence-cloud/set-up-data-store",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/confluence-dc/set-up-data-store",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/box/set-up-data-store"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/enterprise/docs/configure-identity-provider",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/confluence-cloud/set-up-data-store",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/confluence-dc/set-up-data-store",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/box/set-up-data-store"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/enterprise/docs/configure-identity-provider",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/confluence-cloud/set-up-data-store",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/confluence-dc/set-up-data-store",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/box/set-up-data-store"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/enterprise/docs/configure-identity-provider",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/confluence-cloud/set-up-data-store",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/confluence-dc/set-up-data-store",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/box/set-up-data-store"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/enterprise/docs/configure-identity-provider",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/confluence-cloud/set-up-data-store",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/confluence-dc/set-up-data-store",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/box/set-up-data-store"
+      ]
+    }
+  ]
+}

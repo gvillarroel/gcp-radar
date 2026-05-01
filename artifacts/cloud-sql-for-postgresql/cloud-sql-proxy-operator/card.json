@@ -1,0 +1,133 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:27.301Z",
+  "source_step08_card": "data/step-08/current/products/cloud-sql-for-postgresql/card.json",
+  "product_name": "Cloud SQL for PostgreSQL",
+  "product_slug": "cloud-sql-for-postgresql",
+  "feature_name": "Cloud SQL Proxy Operator",
+  "feature_slug": "cloud-sql-proxy-operator",
+  "summary": "The Cloud SQL Proxy Operator is generally available; The Cloud SQL Proxy Operator is available in public preview for automating GKE workload connections to Cloud SQL.",
+  "extended_definition": "The Cloud SQL Proxy Operator is generally available; The Cloud SQL Proxy Operator is available in public preview for automating GKE workload connections to Cloud SQL.",
+  "lifecycle": {
+    "latest_feature_date": "2023-05-16",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/sql/docs/mysql/connect-auth-proxy",
+      "https://docs.cloud.google.com/sql/docs/postgres/connect-auth-proxy",
+      "https://docs.cloud.google.com/sql/docs/postgres/create-instance"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Connect using the Cloud SQL Auth Proxy \\_|\\_ Cloud SQL for MySQL \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/sql/docs/mysql/connect-auth-proxy",
+        "source_id": "site-iam-reference",
+        "final_score": 109,
+        "relevance": "",
+        "evidence_snippets": [
+          "INSTANCE UNIX SOCKET , // e.g. '/cloudsql/project:region:instance' // Specify additional properties here. ... config , }); }; C# To see this snippet in the context of a web application, view the README on GitHub . using MySql.Data.MySqlClient ; using System ; namespace CloudSql { public class MySqlUnix { public static MySqlConnectionStringBuilder NewMysqlUnixSocketConnectionString () { // Equivalent connection string: // \"Server=<INSTANCE UNIX SOCKET>;Uid=<DB USER>;Pwd=<DB PASS>;Database=<DB NAME>;Protocol=unix\" var connectionString = new MySqlConnectionStringBuilder () { // The Cloud SQL proxy provides encryption between the proxy and instance.",
+          "Linux On Linux or macOS, use a trailing & on the command line to launch the Cloud SQL Auth Proxy in a separate process: . / cloud - sql - proxy INSTANCE CONNECTION NAME --credentials-file PATH TO KEY FILE & Windows In Windows PowerShell, use the Start-Process command to launch the Cloud SQL Auth Proxy in a separate process: Start - Process --filepath \"cloud-sql-proxy.exe\" --ArgumentList \" --credentials-file PATH TO KEY FILE INSTANCE CONNECTION NAME \" Run the Cloud SQL Auth Proxy in a Docker container To run the Cloud SQL Auth Proxy in a Docker container, use the Cloud SQL Auth Proxy Docker image available from the Google Container Registry .",
+          "The Cloud SQL Auth Proxy: Works with both public and private IP endpoints Validates connections using credentials for a user or service account Wraps the connection in a SSL/TLS layer that's authorized for a Cloud SQL instance Some Google Cloud services and applications use the Cloud SQL Auth Proxy to provide connections for public IP paths with encryption and authorization, including: App Engine standard environment App Engine flexible environment Cloud Run Applications running in Google Kubernetes Engine can connect using the Cloud SQL Auth Proxy ."
+        ]
+      },
+      {
+        "title": "\"Connect using the Cloud SQL Auth Proxy \\_|\\_ Cloud SQL for PostgreSQL \\_\\",
+        "url": "https://docs.cloud.google.com/sql/docs/postgres/connect-auth-proxy",
+        "source_id": "site-iam-reference",
+        "final_score": 109,
+        "relevance": "",
+        "evidence_snippets": [
+          "Linux On Linux or macOS, use a trailing & on the command line to launch the Cloud SQL Auth Proxy in a separate process: . / cloud - sql - proxy INSTANCE CONNECTION NAME --credentials-file PATH TO KEY FILE & Windows In Windows PowerShell, use the Start-Process command to launch the Cloud SQL Auth Proxy in a separate process: Start - Process --filepath \"cloud-sql-proxy.exe\" --ArgumentList \" --credentials-file PATH TO KEY FILE INSTANCE CONNECTION NAME \" Run the Cloud SQL Auth Proxy in a Docker container To run the Cloud SQL Auth Proxy in a Docker container, use the Cloud SQL Auth Proxy Docker image available from the Google Container Registry .",
+          "Specify additional properties here. ... config , }); }; C# To see this snippet in the context of a web application, view the README on GitHub . using Npgsql ; using System ; namespace CloudSql { public class PostgreSqlUnix { public static NpgsqlConnectionStringBuilder NewPostgreSqlUnixSocketConnectionString () { // Equivalent connection string: // \"Server=<INSTANCE UNIX SOCKET>;Uid=<DB USER>;Pwd=<DB PASS>;Database=<DB NAME>\" var connectionString = new NpgsqlConnectionStringBuilder () { // The Cloud SQL proxy provides encryption between the proxy and instance.",
+          "The Cloud SQL Auth Proxy: Works with both public and private IP endpoints Validates connections using credentials for a user or service account Wraps the connection in a SSL/TLS layer that's authorized for a Cloud SQL instance Some Google Cloud services and applications use the Cloud SQL Auth Proxy to provide connections for public IP paths with encryption and authorization, including: App Engine standard environment App Engine flexible environment Cloud Run Applications running in Google Kubernetes Engine can connect using the Cloud SQL Auth Proxy ."
+        ]
+      },
+      {
+        "title": "Create instances \\_|\\_ Cloud SQL for PostgreSQL \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/sql/docs/postgres/create-instance",
+        "source_id": "site-docs-root",
+        "final_score": 91,
+        "relevance": "",
+        "evidence_snippets": [
+          "This feature is available in Preview and for CUSTOMER MANAGED CAS CA instances only.",
+          "This feature is available in Preview and for CUSTOMER MANAGED CAS CA instances only.",
+          "Available only for the beta command ( gcloud beta sql instances create ). --no-assign-ip : Instance will only have a private IP address. --allocated-ip-range-name : If specified, sets a range name for which an IP range is allocated."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "e.g",
+      "proxy.exe"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/connect-auth-proxy",
+        "https://docs.cloud.google.com/sql/docs/postgres/connect-auth-proxy",
+        "https://docs.cloud.google.com/sql/docs/postgres/create-instance"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/connect-auth-proxy",
+        "https://docs.cloud.google.com/sql/docs/postgres/connect-auth-proxy",
+        "https://docs.cloud.google.com/sql/docs/postgres/create-instance"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/connect-auth-proxy",
+        "https://docs.cloud.google.com/sql/docs/postgres/connect-auth-proxy",
+        "https://docs.cloud.google.com/sql/docs/postgres/create-instance"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/connect-auth-proxy",
+        "https://docs.cloud.google.com/sql/docs/postgres/connect-auth-proxy",
+        "https://docs.cloud.google.com/sql/docs/postgres/create-instance"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/connect-auth-proxy",
+        "https://docs.cloud.google.com/sql/docs/postgres/connect-auth-proxy",
+        "https://docs.cloud.google.com/sql/docs/postgres/create-instance"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/connect-auth-proxy",
+        "https://docs.cloud.google.com/sql/docs/postgres/connect-auth-proxy",
+        "https://docs.cloud.google.com/sql/docs/postgres/create-instance"
+      ]
+    }
+  ]
+}

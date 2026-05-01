@@ -1,0 +1,103 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:32.419Z",
+  "source_step08_card": "data/step-08/current/products/cortex/card.json",
+  "product_name": "Cortex",
+  "product_slug": "cortex",
+  "feature_name": "Google Analytics 4 (GA4)",
+  "feature_slug": "google-analytics-4-ga4",
+  "summary": "Google Analytics 4 (GA4) is a marketing data source for analyzing website engagement, conversions, and purchase behavior.",
+  "extended_definition": "Google Analytics 4 (GA4) is a marketing data source for analyzing website engagement, conversions, and purchase behavior.",
+  "lifecycle": {
+    "latest_feature_date": "2024-09-30",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/cortex/docs/data-sources-and-workloads",
+      "https://docs.cloud.google.com/cortex/docs/marketing-google-analytics",
+      "https://docs.cloud.google.com/cortex/docs/overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Integration with Google Analytics 4 | Google Cloud Cortex Framework | Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/cortex/docs/marketing-google-analytics",
+        "source_id": "feature-recovery-http",
+        "final_score": 142,
+        "relevance": "",
+        "evidence_snippets": [
+          "Integration with Google Analytics 4 | Google Cloud Cortex Framework | Google Cloud Documentation Skip to main content Technology areas close AI and ML Application development Application hosting Compute Data analytics and pipelines Databases Distributed, hybrid, and multicloud Industry solutions Migration Networking Observability and monitoring Security Storage Cross-product tools close Access and resources management Costs and usage management Infrastructure as code SDK, languages, frameworks, and tools / Console English Deutsch Español Español – América Latina Français Indonesia Italiano Português Português – Brasil 中文 – 简体 中文 – 繁體 日本語 한국어 Sign in Google Cloud Cortex Framework Start free Overview Guides Resources Technology areas More Overview Guides Resources Cross-product tools More Console Cortex Framework Overview Data sources and workloads Support Deployment Quickstart demo Prerequisites Step 1: Establish workloads Step 2: Clone repository Step 3: Determine integration mechanism Step 4: Set up components Step 5: Configure deployment Step 6: Execute deployment Optional steps Use different projects to segregate access Cloud Build features Configure external datasets Turbo mode Telemetry opt out Configure common dimensions Task dependent DAGs Workloads integration Operational SAP Salesforce Sales Cloud (SFDC) Oracle EBS Marketing Google Ads Campaign Manager 360 TikTok LiveRamp Meta Salesforce Marketing Cloud (SFMC) YouTube (with DV360) Google Analytics 4 Cross Media & Product Connected Insights Sustainability Dun & Bradstreet Cortex for Marketing Mix Modelling (MMM) Cortex for Meridian Cortex for Meridian Quickstart demo Additional guides Data Mesh Concepts User guide Change Data Capture Gathering Cloud Composer settings Upgrade recommedations External DAGs migration from v4.2 to v5.0 Looker Blocks and Dashboards Overview Deploy Looker Blocks Operational Looker Block for SAP Looker Block for Salesforce Sales Cloud (SFDC) Looker Block for Oracle EBS Marketing Looker Block for Salesforce Marketing Cloud (SFMC) Looker Block for Meta Looker Block for YouTube (with DV360) Looker Block for Cross Media & Product Connected Insights Sustainability Looker Studio dashboard for Dun & Bradstreet Customize Looker Blocks AI and ML Application development Application hosting Compute Data analytics and pipelines Databases Distributed, hybrid, and multicloud Industry solutions Migration Networking Observability and monitoring Security Storage Access and resources management Costs and usage management Infrastructure as code SDK, languages, frameworks, and tools Home Documentation Data analytics Google Cloud Cortex Framework Guides Send feedback Stay organized with collections Save and categorize content based on your preferences.",
+          "This file contains the following parameters for GA4: \"marketing\" : { \"deployGA4\" : true , \"GA4\" : { \"datasets\" : { \"cdc\" : [ { \"property_id\" : 0 , \"name\" : \"\" } ], \"reporting\" : \"REPORTING_GA4\" } } } The following table describes the value for each marketing parameter: Parameter Meaning Default Value Description marketing.deployGA4 Deploy GA4 true Execute the deployment for GA4 data source. marketing.GA4.datasets.cdc BigQuery Export datasets for GA4 [{\"property_id\": 0, \"name\": \"\"}] Array of Google Analytics 4 BigQuery Export datasets.",
+          "Integration with Google Analytics 4 This page describes the required configurations to bring data from Google Analytics 4 (GA4) as a data source of the marketing workload of Cortex Framework Data Foundation."
+        ]
+      },
+      {
+        "title": "\"Data sources and workloads \\_|\\_ Google Cloud Cortex Framework \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/cortex/docs/data-sources-and-workloads",
+        "source_id": "site-docs-reference",
+        "final_score": 103,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The following are the marketing related data sources available: Salesforce Marketing Cloud Google Ads Campaign Manager 360 (CM360) TikTok Meta LiveRamp YouTube (with DV360) Google Analytics 4 Cross Media & Product Connected Insights Cortex for Meridian Operational Cortex Framework incorporates operational platforms such as SAP (SAP ECC and SAP S/4 HANA) and Salesforce as valuable data sources to get real-time insights to improve efficiency and productivity in different areas.",
+          "By integrating data from diverse sources and using Cortex Framework's predefined models, you can make informed decisions, optimize resources, and gain accurate, up-to-date insights into your marketing efforts.",
+          "The following are the operational related data sources available: SAP (SAP ECC and SAP S/4 HANA) Salesforce Sales Cloud Oracle EBS Sustainability Cortex Framework for Sustainability empowers organizations to proactively address their environmental, social, and governance (ESG) responsibilities."
+        ]
+      },
+      {
+        "title": "Overview \\_|\\_ Google Cloud Cortex Framework \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/cortex/docs/overview",
+        "source_id": "site-docs-root",
+        "final_score": 75,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The following diagram describes how Cortex Framework uses various components to provide a unified platform for storing, managing, and analyzing data from diverse data sources: Figure 1 .",
+          "Data can come from various data sources such as Salesforce Marketing Cloud, some Google platforms (like Google Ads and CM360), TikTok, Meta, SAP, and more.",
+          "Cortex Framework focuses on solving specific problems and offers pre built solutions for business areas like Marketing, Sales, Supply Chain, Manufacturing, Finance, and Sustainability."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "marketing.deployGA4",
+      "marketing.GA4.datasets.cdc",
+      "v4.2",
+      "v5.0"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/cortex/docs/marketing-google-analytics",
+        "https://docs.cloud.google.com/cortex/docs/data-sources-and-workloads",
+        "https://docs.cloud.google.com/cortex/docs/overview"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/cortex/docs/marketing-google-analytics",
+        "https://docs.cloud.google.com/cortex/docs/data-sources-and-workloads",
+        "https://docs.cloud.google.com/cortex/docs/overview"
+      ]
+    }
+  ]
+}

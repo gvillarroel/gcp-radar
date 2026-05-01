@@ -1,0 +1,127 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:18.771Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery",
+  "feature_name": "Conversational analytics ObjectRef support",
+  "feature_slug": "conversational-analytics-objectref-support",
+  "summary": "BigQuery conversational analytics can use ObjectRef functions to reference and interact with unstructured Cloud Storage data.",
+  "extended_definition": "BigQuery conversational analytics can use ObjectRef functions to reference and interact with unstructured Cloud Storage data.",
+  "lifecycle": {
+    "latest_feature_date": "2026-03-09",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/conversational-analytics",
+      "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/geography_functions",
+      "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/string_functions"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Conversational analytics overview \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/conversational-analytics",
+        "source_id": "site-docs-reference-5",
+        "final_score": 158,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "BigQuery ML support Conversational analytics supports the following BigQuery ML functions in response to chats with data agents and data sources, and in verified SQL queries that you create.",
+          "Conversational analytics is powered by Gemini for Google Cloud and supports some BigQuery ML functions.",
+          "The following table shows examples of one-shot prompts that activate the use of BigQuery ML: Use case Sample usage Public dataset Forecasting \"Predict the number of trips for the next month.\" bigquery-public-data.san francisco bikeshare.bikeshare trips Anomaly detection \"Find outliers in trips per day for 2018 using 2017 as a baseline.\" bigquery-public-data.san francisco bikeshare.bikeshare trips LLM text generation \"For each article in the 'sports' category, summarize the body column in 1-2 sentences.\" bigquery-public-data.bbc news.fulltext Security You can manage access to conversational analytics in BigQuery using Conversational Analytics API IAM roles and permissions ."
+        ]
+      },
+      {
+        "title": "Geography functions \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/geography_functions",
+        "source_id": "site-docs-reference-required-7",
+        "final_score": 101,
+        "relevance": "",
+        "evidence_snippets": [
+          "Home Documentation Data analytics BigQuery Reference Send feedback Geography functions Stay organized with collections Save and categorize content based on your preferences.",
+          "GoogleSQL for BigQuery supports the following functions that can be used to analyze geographical data, determine spatial relationships between geographical features, and construct or manipulate GEOGRAPHY s.",
+          "The following formats are supported: A URI from an image table provided by Google Earth Engine in BigQuery sharing (formerly Analytics Hub)."
+        ]
+      },
+      {
+        "title": "String functions \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/string_functions",
+        "source_id": "site-docs-root",
+        "final_score": 97,
+        "relevance": "",
+        "evidence_snippets": [
+          "Home Documentation Data analytics BigQuery Reference Send feedback String functions Stay organized with collections Save and categorize content based on your preferences.",
+          "GoogleSQL for BigQuery supports string functions.",
+          "SELECT CONTAINS SUBSTR ( 'hello' , NULL ) AS result ; -- Throws an error The following examples reference a table called Recipes that you can emulate with a WITH clause like this: WITH Recipes AS ( SELECT 'Blueberry pancakes' as Breakfast , 'Egg salad sandwich' as Lunch , 'Potato dumplings' as Dinner UNION ALL SELECT 'Potato pancakes' , 'Toasted cheese sandwich' , 'Beef stroganoff' UNION ALL SELECT 'Ham scramble' , 'Steak avocado salad' , 'Tomato pasta' UNION ALL SELECT 'Avocado toast' , 'Tomato soup' , 'Blueberry salmon' UNION ALL SELECT 'Corned beef hash' , 'Lentil potato soup' , 'Glazed ham' ) SELECT FROM Recipes ; / -------------------+-------------------------+------------------+ Breakfast Lunch Dinner +-------------------+-------------------------+------------------+ Bluberry pancakes Egg salad sandwich Potato dumplings Potato pancakes Toasted cheese sandwich Beef stroganoff Ham scramble Steak avocado salad Tomato pasta Avocado toast Tomato soup Blueberry samon Corned beef hash Lentil potato soup Glazed ham +-------------------+-------------------------+------------------ / The following query searches across all columns of the Recipes table for the value toast and returns the rows that contain this value."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "bikeshare.bikeshare",
+      "data.bbc",
+      "data.san",
+      "news.fulltext"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/conversational-analytics",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/geography_functions",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/string_functions"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/conversational-analytics",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/geography_functions",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/string_functions"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/conversational-analytics",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/geography_functions",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/string_functions"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/conversational-analytics",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/geography_functions",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/string_functions"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/conversational-analytics",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/geography_functions",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/string_functions"
+      ]
+    }
+  ]
+}

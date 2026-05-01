@@ -1,0 +1,118 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:39.391Z",
+  "source_step08_card": "data/step-08/current/products/google-distributed-cloud-software-only-for-bare-metal/card.json",
+  "product_name": "Google Distributed Cloud (software only) for bare metal",
+  "product_slug": "google-distributed-cloud-software-only-for-bare-metal",
+  "feature_name": "bmctl upgrade intermediate-version",
+  "feature_slug": "bmctl-upgrade-intermediate-version",
+  "summary": "The bmctl upgrade intermediate-version command prints the intermediate version needed for a skip minor version upgrade.",
+  "extended_definition": "The bmctl upgrade intermediate-version command prints the intermediate version needed for a skip minor version upgrade.",
+  "lifecycle": {
+    "latest_feature_date": "2025-12-11",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/getting-support",
+      "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/how-to/upgrade",
+      "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/reference/cluster-config-ref"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Upgrade clusters \\_|\\_ Google Distributed Cloud (software only) for bare\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/how-to/upgrade",
+        "source_id": "site-docs-root",
+        "final_score": 230,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To prepare your registry mirror for a skip upgrade, follow these steps: Using the version of bmctl that corresponds to the target version of the skip upgrade, find out what's the intermediate version for the skip upgrade: bmctl upgrade intermediate-version The command response consists of the specific Google Distributed Cloud patch version that the system uses as the intermediate version during the skip upgrade.",
+          "The following cluster configuration file snippet shows the anthosBareMetalVersion field updated to the latest version: --- apiVersion : baremetal.cluster.gke.io/v1 kind : Cluster metadata : name : cluster1 namespace : cluster-cluster1 spec : type : admin Anthos cluster version. anthosBareMetalVersion : 1.34.200-gke.68 Use the bmctl upgrade cluster command to complete the upgrade: bmctl upgrade cluster -c CLUSTER NAME --kubeconfig ADMIN KUBECONFIG Replace the following: CLUSTER NAME : the name of the cluster to upgrade.",
+          "To roll back a node pool upgrade, use the following steps: bmctl When you use bmctl to roll back a node pool upgrade, you edit the cluster configuration file and apply your changes with the bmctl update command: Edit the NodePool specs in the cluster configuration file for the worker node pools that you want to roll back to the previous version."
+        ]
+      },
+      {
+        "title": "\"Cluster configuration field reference \\_|\\_ Google Distributed Cloud (software\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/reference/cluster-config-ref",
+        "source_id": "site-docs-root",
+        "final_score": 133,
+        "relevance": "",
+        "evidence_snippets": [
+          "For more information, see Node upgrade strategy . apiVersion : baremetal.cluster.gke.io/v1 kind : NodePool metadata : name : np1 namespace : cluster-cluster1 spec : clusterName : cluster1 nodes : - address : 10.200.0.1 ... upgradeStrategy : parallelUpgrade : concurrentNodes : 2 minimumAvailableNodes : 5 NodePool resource Optional Mutable upgradeStrategy.parallelUpgrade.concurrentNodes Optional.",
+          "Update the nodePoolUpgradeStrategy.pause value to true to pause an active cluster upgrade: apiVersion : baremetal.cluster.gke.io/v1 kind : Cluster metadata : name : cluster1 namespace : cluster-cluster1 annotations : preview.baremetal.cluster.gke.io/upgrade-pause-and-resume spec : ... nodePoolUpgradeStrategy : pause : true ...",
+          "When you set concurrentNodePools to 0 , every worker node pool in the cluster upgrades in parallel. apiVersion : baremetal.cluster.gke.io/v1 kind : Cluster metadata : name : cluster1 namespace : cluster-cluster1 spec : ... nodePoolUpgradeStrategy : concurrentNodePools : 0 ..."
+        ]
+      },
+      {
+        "title": "\"Get support \\_|\\_ Google Distributed Cloud (software only) for bare metal\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/getting-support",
+        "source_id": "site-docs-reference",
+        "final_score": 131,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "When you upgrade node pools, in some cases, you can skip a minor version.",
+          "The following table provides a more complete list of what is and isn't supported: Google Cloud supported Not supported Kubernetes and the container runtime Customer choice of load balancer (manual load balancing) Connect and the Connect Agent Customer code (see Developer Support ) Google Cloud operations, Monitoring, Logging, and agents Customer choice of operating system Bundled load balancer Physical or virtual server, storage, and network Ingress controller External DNS, DHCP, and identity systems GKE Identity Service Cloud Service Mesh Policy Controller Config Sync Config Controller Version Support Policy The objective of this Version Support Policy is to give you the flexibility to schedule upgrades when it meets your business needs, while balancing the rapid evolution of both Kubernetes and Google Distributed Cloud.",
+          "Support tools To troubleshoot a Google Distributed Cloud incident, Cloud Customer Care relies on three pieces of information: Your environment configuration Logs from your clusters Metrics from your clusters Your environment configuration When you open a support case, provide key information about your cluster setup by running the following commands: For all your cluster types, capture information about Kubernetes and your nodes by running the bmctl check cluster --snapshot command."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "baremetal.cluster.gke.io",
+      "gke.68",
+      "preview.baremetal.cluster.gke.io"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/how-to/upgrade",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/getting-support",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/reference/cluster-config-ref"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/how-to/upgrade",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/getting-support",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/reference/cluster-config-ref"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/how-to/upgrade",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/getting-support",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/reference/cluster-config-ref"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/how-to/upgrade",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/getting-support",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/reference/cluster-config-ref"
+      ]
+    }
+  ]
+}

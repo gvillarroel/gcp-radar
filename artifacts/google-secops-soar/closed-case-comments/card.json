@@ -1,0 +1,151 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:41.382Z",
+  "source_step08_card": "data/step-08/current/products/google-secops-soar/card.json",
+  "product_name": "Google SecOps SOAR",
+  "product_slug": "google-secops-soar",
+  "feature_name": "Closed case comments",
+  "feature_slug": "closed-case-comments",
+  "summary": "Users can add comments to cases even after the cases have been closed.",
+  "extended_definition": "Users can add comments to cases even after the cases have been closed.",
+  "lifecycle": {
+    "latest_feature_date": "2023-07-19",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/user-secops/map-users-in-the-secops-platform",
+      "https://docs.cloud.google.com/chronicle/docs/soar/investigate/working-with-cases/cases-overview",
+      "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/active-directory",
+      "https://docs.cloud.google.com/chronicle/docs/soar/reference/case-manipulation"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Cases overview \\_|\\_ Google Security Operations \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/chronicle/docs/soar/investigate/working-with-cases/cases-overview",
+        "source_id": "site-docs-root",
+        "final_score": 228,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Analysts can also: Automatically group additional alerts into existing cases based on shared entities and configurable rules.",
+          "When you open this tab, you can view case-related information such as tasks, user comments, pinned chat messages, manual and system actions, and file attachments (up to 50 MB per file).",
+          "The case queue—automatically refreshed every minute—lists all active cases and lets you manually refresh, sort, filter, add, or close cases as needed."
+        ]
+      },
+      {
+        "title": "Case manipulation \\_|\\_ Google Security Operations \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/chronicle/docs/soar/reference/case-manipulation",
+        "source_id": "site-docs-root",
+        "final_score": 179,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Methods Name Siemplify SiemplifyAction Description add tag N/A add tag Adds a new tag to the current case change case stage N/A change case stage Sets the current case's stage to a specific stage change case priority change case priority change case priority Sets the current case's priority to a specific value mark case as important mark case as important mark case as important Marks the current case with the 'importance triangle' sign Data retrieval Name Siemplify SiemplifyAction Description get case comments get case comments get case comments Retrieve comments on the case get alerts ticket ids from cases closed since timestamp N/A get alerts ticket ids from cases closed since timestamp get similar cases N/A get similar cases Retrieve similar cases in the system Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Name Siemplify SiemplifyAction Description close case N/A close case Closes the current case with the selected close reason and given comment add comment add comment add comment Adds a comment to the current case's case wall close alert N/A close alert Closes the current alert with the selected close reason and given comment raise incident raise incident raise incident Changes the current case into an incident assign case assign case assign case Assigns the current case to the selected analyst or group add entity to case add entity to case add entity to case Creates a new entity in the case add attachment add attachment add attachment Adds attachment to the case.",
+          "Need to tell us more? [[[\"Easy to understand\",\"easyToUnderstand\",\"thumb-up\"],[\"Solved my problem\",\"solvedMyProblem\",\"thumb-up\"],[\"Other\",\"otherUp\",\"thumb-up\"]],[[\"Hard to understand\",\"hardToUnderstand\",\"thumb-down\"],[\"Incorrect information or sample code\",\"incorrectInformationOrSampleCode\",\"thumb-down\"],[\"Missing the information/samples I need\",\"missingTheInformationSamplesINeed\",\"thumb-down\"],[\"Other\",\"otherDown\",\"thumb-down\"]],[\"Last updated 2026-04-10 UTC.\"],[],[]]"
+        ]
+      },
+      {
+        "title": "\"Integrate Active Directory with Google SecOps \\_|\\_ Google Security Operations\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/active-directory",
+        "source_id": "site-api-reference",
+        "final_score": 171,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Action outputs The Add User to Group action provides the following outputs: Action output type Availability Case wall attachment Not available Case wall link Not available Case wall table Not available Enrichment table Not available JSON result Not available Output messages Available Script result Available Output messages The Add User to Group action can return the following output messages: Output message Message description Successfully added the following users to the group \" GROUP NAME \" in Active Directory: ENTITY ID The following users were already a part of the group \" GROUP NAME \" in Active Directory: ENTITY ID Action wasn't able to add the following users to the group \" GROUP NAME \" in Active Directory: ENTITY ID No users were added to the group \" GROUP NAME \" in Active Directory.",
+          "Use cases The Active Directory integration can help you solve the following use cases: Activate and deactivate users: use Google SecOps capabilities to deactivate a potentially compromised user account and prevent further unauthorized access.",
+          "Action outputs The Remove User From Group action provides the following outputs: Action output type Availability Case wall attachment Not available Case wall link Not available Case wall table Not available Enrichment table Not available JSON result Not available Output messages Available Script result Available Output messages The Remove User From Group action can return the following output messages: Output message Message description Successfully removed the following users from the group \" GROUP NAME \" in Active Directory: ENTITY ID The following users were not a part of the group \" GROUP NAME \" in Active Directory: ENTITY ID Action wasn't able to remove the following users from the group \" GROUP NAME \" in Active Directory: ENTITY ID No users were removed from the group \" GROUP NAME \" in Active Directory."
+        ]
+      },
+      {
+        "title": "\"Map users in the Google SecOps platform \\_|\\_ Google Security Operations\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/user-secops/map-users-in-the-secops-platform",
+        "source_id": "site-iam-reference",
+        "final_score": 169,
+        "relevance": "",
+        "evidence_snippets": [
+          "Users can see cases assigned to them, their role, or additional roles.",
+          "While mapping groups to parameters may require you to create more groups initially, once the mapping is set, new users can join Google SecOps without the need to create additional groups.",
+          "Instead of assigning cases, actions, or playbooks to individuals, they can be assigned to a SOC role."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "example.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/investigate/working-with-cases/cases-overview",
+        "https://docs.cloud.google.com/chronicle/docs/soar/reference/case-manipulation",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/active-directory",
+        "https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/user-secops/map-users-in-the-secops-platform"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/investigate/working-with-cases/cases-overview",
+        "https://docs.cloud.google.com/chronicle/docs/soar/reference/case-manipulation",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/active-directory",
+        "https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/user-secops/map-users-in-the-secops-platform"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/investigate/working-with-cases/cases-overview",
+        "https://docs.cloud.google.com/chronicle/docs/soar/reference/case-manipulation",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/active-directory",
+        "https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/user-secops/map-users-in-the-secops-platform"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/investigate/working-with-cases/cases-overview",
+        "https://docs.cloud.google.com/chronicle/docs/soar/reference/case-manipulation",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/active-directory",
+        "https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/user-secops/map-users-in-the-secops-platform"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/investigate/working-with-cases/cases-overview",
+        "https://docs.cloud.google.com/chronicle/docs/soar/reference/case-manipulation",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/active-directory",
+        "https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/user-secops/map-users-in-the-secops-platform"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/investigate/working-with-cases/cases-overview",
+        "https://docs.cloud.google.com/chronicle/docs/soar/reference/case-manipulation",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/active-directory",
+        "https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/user-secops/map-users-in-the-secops-platform"
+      ]
+    }
+  ]
+}

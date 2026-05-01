@@ -1,0 +1,145 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:32.516Z",
+  "source_step08_card": "data/step-08/current/products/data-catalog/card.json",
+  "product_name": "Data Catalog",
+  "product_slug": "data-catalog",
+  "feature_name": "Search filtering by tag values",
+  "feature_slug": "search-filtering-by-tag-values",
+  "summary": "Data Catalog search can filter results based on tag values.",
+  "extended_definition": "Data Catalog search can filter results based on tag values.",
+  "lifecycle": {
+    "latest_feature_date": "2022-08-24",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/data-catalog/docs/how-to/search",
+      "https://docs.cloud.google.com/data-catalog/docs/reference/rest/v1/catalog/search",
+      "https://docs.cloud.google.com/data-catalog/docs/tags-and-tag-templates",
+      "https://docs.cloud.google.com/python/docs/reference/datacatalog/latest/google.cloud.datacatalog_v1.services.data_catalog.DataCatalogAsyncClient"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Tags and tag templates \\_|\\_ Data Catalog \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/data-catalog/docs/tags-and-tag-templates",
+        "source_id": "site-docs-root",
+        "final_score": 254,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Searching for private tags in the Data Catalog page requires that you use the tag: search syntax or the search filters.",
+          "The fields in a tag are defined by a tag template, and each field can be used to store one or more values .",
+          "You can then search for the template fields and values using Data Catalog."
+        ]
+      },
+      {
+        "title": "\"Method: catalog.search \\_|\\_ Data Catalog Documentation \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/data-catalog/docs/reference/rest/v1/catalog/search",
+        "source_id": "site-api-reference",
+        "final_score": 251,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "If successful, the response body contains data with the following structure: JSON representation { \"results\" : [ { object ( SearchCatalogResult ) } ] , \"totalSize\" : integer , \"nextPageToken\" : string , \"unreachable\" : [ string ] } Fields results[] object ( SearchCatalogResult ) Search results. totalSize integer The approximate total number of entries matched by the query. nextPageToken string Pagination token that can be used in subsequent calls to retrieve the next page of results. unreachable[] string Unreachable locations.",
+          "HTTP request POST https://datacatalog.googleapis.com/v1/catalog:search Request body The request body contains data with the following structure: JSON representation { \"scope\" : { object ( Scope ) } , \"query\" : string , \"pageSize\" : integer , \"pageToken\" : string , \"orderBy\" : string , \"adminSearch\" : boolean } Fields scope object ( Scope ) Required.",
+          "Currently supported case-sensitive values are: relevance that can only be descending last modified timestamp [asc desc] with descending ( desc ) as default default that can only be descending Search queries don't guarantee full recall."
+        ]
+      },
+      {
+        "title": "Search data assets with Data Catalog \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/data-catalog/docs/how-to/search",
+        "source_id": "site-docs-root",
+        "final_score": 242,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To search for data assets publicly available in Google Cloud in addition to the assets available to you, select Include public datasets Additionally, you can do the following: Filter your search by adding a keyword : value to your search terms in the search field: Keyword Description name: Match data asset name column: Match column name or nested column name description: Match table description Perform a tag search by adding one of the following tag keyword prefixes to your search terms in the search field: Tag Description tag: project-name . tag template name Match tag name tag: project-name . tag template name . key Match a tag key tag: project-name . tag template name . key : value Match tag key:string value pair Search expression tips Enclose your search expression in quotes (\" search terms \") if it contains spaces.",
+          "For example, if you completed the Tag a BigQuery table by using Data Catalog quickstart, you can search for demo-dataset and select the trips table.",
+          "You can use the playlist add Customize menu to further refine results and filter by specific tag values."
+        ]
+      },
+      {
+        "title": "\"Class DataCatalogAsyncClient (3.29.0) \\_|\\_ Python client libraries \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/datacatalog/latest/google.cloud.datacatalog_v1.services.data_catalog.DataCatalogAsyncClient",
+        "source_id": "site-python-reference",
+        "final_score": 238,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import datacatalog v1 async def sample rename tag template field enum value(): Create a client client = datacatalog v1 .",
+          "It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import datacatalog v1 async def sample create tag template field(): Create a client client = datacatalog v1 .",
+          "It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import datacatalog v1 async def sample delete tag template field(): Create a client client = datacatalog v1 ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "catalog.search",
+      "datacatalog.googleapis.com",
+      "googleapis.dev",
+      "options.html"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/data-catalog/docs/tags-and-tag-templates",
+        "https://docs.cloud.google.com/data-catalog/docs/reference/rest/v1/catalog/search",
+        "https://docs.cloud.google.com/data-catalog/docs/how-to/search",
+        "https://docs.cloud.google.com/python/docs/reference/datacatalog/latest/google.cloud.datacatalog_v1.services.data_catalog.DataCatalogAsyncClient"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/data-catalog/docs/tags-and-tag-templates",
+        "https://docs.cloud.google.com/data-catalog/docs/reference/rest/v1/catalog/search",
+        "https://docs.cloud.google.com/data-catalog/docs/how-to/search",
+        "https://docs.cloud.google.com/python/docs/reference/datacatalog/latest/google.cloud.datacatalog_v1.services.data_catalog.DataCatalogAsyncClient"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/data-catalog/docs/tags-and-tag-templates",
+        "https://docs.cloud.google.com/data-catalog/docs/reference/rest/v1/catalog/search",
+        "https://docs.cloud.google.com/data-catalog/docs/how-to/search",
+        "https://docs.cloud.google.com/python/docs/reference/datacatalog/latest/google.cloud.datacatalog_v1.services.data_catalog.DataCatalogAsyncClient"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/data-catalog/docs/tags-and-tag-templates",
+        "https://docs.cloud.google.com/data-catalog/docs/reference/rest/v1/catalog/search",
+        "https://docs.cloud.google.com/data-catalog/docs/how-to/search",
+        "https://docs.cloud.google.com/python/docs/reference/datacatalog/latest/google.cloud.datacatalog_v1.services.data_catalog.DataCatalogAsyncClient"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/data-catalog/docs/tags-and-tag-templates",
+        "https://docs.cloud.google.com/data-catalog/docs/reference/rest/v1/catalog/search",
+        "https://docs.cloud.google.com/data-catalog/docs/how-to/search",
+        "https://docs.cloud.google.com/python/docs/reference/datacatalog/latest/google.cloud.datacatalog_v1.services.data_catalog.DataCatalogAsyncClient"
+      ]
+    }
+  ]
+}

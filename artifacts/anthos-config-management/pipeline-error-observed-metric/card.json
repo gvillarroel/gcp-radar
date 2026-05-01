@@ -1,0 +1,83 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:13.646Z",
+  "source_step08_card": "data/step-08/current/products/anthos-config-management/card.json",
+  "product_name": "Anthos Config Management",
+  "product_slug": "anthos-config-management",
+  "feature_name": "pipeline_error_observed metric",
+  "feature_slug": "pipeline-error-observed-metric",
+  "summary": "This metric captures whether errors occur in rendering, sync, source, or readiness pipeline stages.",
+  "extended_definition": "This metric captures whether errors occur in rendering, sync, source, or readiness pipeline stages.",
+  "lifecycle": {
+    "latest_feature_date": "2021-12-09",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/monitor-config-sync-cloud-monitoring",
+      "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/monitor-config-sync-prometheus",
+      "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/monitoring-config-sync"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Config Sync metrics \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/monitoring-config-sync",
+        "source_id": "site-docs-root",
+        "final_score": 178,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Metric might not appear in query results if no internal error has happened. last sync timestamp Last Value status The timestamp of the most recent sync from Git. parser duration seconds Distribution status, trigger, source The latency distribution of different stages involved in syncing from source of truth to a cluster. pipeline error observed Last Value name, reconciler, component The status of RootSync and RepoSync custom resources.",
+          "Understand the pipeline error observed metric The pipeline error observed metric is a metric that can help you quickly identify RepoSync or RootSync CRs that are not in sync or contain resources that are not reconciled to the desired state.",
+          "Name Type Tags Description rg reconcile duration seconds Distribution stallreason The distribution of time taken to reconcile a ResourceGroup CR resource group total Last Value The current number of ResourceGroup CRs resource count Last Value resourcegroup The total number of resources tracked by a ResourceGroup ready resource count Last Value resourcegroup The total number of ready resources in a ResourceGroup resource ns count Last Value resourcegroup The number of namespaces used by resources in a ResourceGroup cluster scoped resource count Last Value resourcegroup The number of cluster scoped resources in a ResourceGroup crd count Last Value resourcegroup The number of CRDs in a ResourceGroup kcc resource count Last Value resourcegroup The total number of KCC resources in a ResourceGroup pipeline error observed Last Value name, reconciler, component The status of RootSync and RepoSync custom resources."
+        ]
+      },
+      {
+        "title": "Monitor Config Sync with Prometheus \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/monitor-config-sync-prometheus",
+        "source_id": "site-docs-root",
+        "final_score": 134,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Metric might not appear if no internal error has happened config sync kcc resource count Gauge resourcegroup Number of Config Connector resources in a ResourceGroup config sync last apply timestamp Gauge commit, status Timestamp of the most recent apply operation config sync last sync timestamp Gauge commit, status Timestamp of the most recent sync from Git config sync parser duration seconds bucket Histogram status, trigger, source Latency distribution of different stages involved in syncing from source of truth to a cluster config sync parser duration seconds count Histogram status, trigger, source Latency distribution of different stages involved in syncing from source of truth to a cluster (ignoring duration) config sync parser duration seconds sum Histogram status, trigger, source Sum of the latencies of different stages involved in syncing from source of truth to a cluster config sync pipeline error observed Gauge name, reconciler, component Status of RootSync and RepoSync custom resources.",
+          "In Prometheus, you can use the following filters for the RootSyncs or RepoSyncs: Querying RootSync config sync reconciler errors{configsync sync name= ROOT SYNC NAME } Querying RepoSync config sync reconciler errors{configsync sync name= REPO SYNC NAME } Query import and sync operations by status In Prometheus, you could use the following queries: Check for errors that occurred when sourcing configs. config sync reconciler errors{component=\"source\"} Check for errors that occurred when syncing configs to the cluster. config sync reconciler errors{component=\"sync\"} You can also check the metrics for the source and sync processes themselves: config sync parser duration seconds{status=\"error\"} config sync apply duration seconds{status=\"error\"} config sync remediate duration seconds{status=\"error\"} Monitor resources with Google Cloud Managed Service for Prometheus Google Cloud Managed Service for Prometheus is Google Cloud's fully managed multi-cloud solution for Prometheus metrics.",
+          "You can see if any errors have occurred, and can even set up alerts for them . config sync reconciler errors Query metrics by reconciler If you are using Config Sync RootSync and RepoSync APIs, then you can monitor the RootSync and RepoSync objects."
+        ]
+      },
+      {
+        "title": "Monitor Config Sync with Cloud Monitoring \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/monitor-config-sync-cloud-monitoring",
+        "source_id": "site-docs-root",
+        "final_score": 132,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Default list of metrics in Cloud Monitoring Name Type api duration seconds Distribution apply duration seconds Distribution apply operations total Count declared resources Last Value internal errors total Count last sync timestamp Last Value pipeline error observed Last Value reconciler errors Last Value resource fights total Count reconcile duration seconds Distribution resource group total Last Value resource count Last Value ready resource count Last Value resource ns count Last Value cluster scoped resource count Last Value kcc resource count Gauge Note: Metrics without data don't appear in Metric Explorer.",
+          "Almost all metrics are tagged by the reconciler name, so you can see if any errors have occurred and can set up alerts for them in Cloud Monitoring.",
+          "The reconciler errors metric is labeled by component so you can see where any errors occurred."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "custom.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": []
+}

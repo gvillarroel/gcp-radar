@@ -1,0 +1,92 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:22.874Z",
+  "source_step08_card": "data/step-08/current/products/cloud-build/card.json",
+  "product_name": "Cloud Build",
+  "product_slug": "cloud-build",
+  "feature_name": "Cloud Build CI/CD developer hub",
+  "feature_slug": "cloud-build-ci-cd-developer-hub",
+  "summary": "Cloud Build made the CI/CD developer hub available.",
+  "extended_definition": "Cloud Build made the CI/CD developer hub available.",
+  "lifecycle": {
+    "latest_feature_date": "2019-08-29",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/build/docs/automating-builds/gitlab/build-repos-from-gitlab",
+      "https://docs.cloud.google.com/build/docs/automating-builds/gitlab/build-repos-from-gitlab-enterprise-edition",
+      "https://docs.cloud.google.com/python/docs/reference/cloudbuild/latest/google.cloud.devtools.cloudbuild_v1.services.cloud_build.pagers"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Build repositories from GitLab \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/build/docs/automating-builds/gitlab/build-repos-from-gitlab",
+        "source_id": "site-docs-root-2",
+        "final_score": 67,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Click Create to create your GitLab Enterprise Edition trigger. gcloud CLI To create GitLab triggers using gcloud commands, run the following command: gcloud alpha builds triggers create developer connect -- name = TRIGGER NAME \\ -- git - repository - link = projects / PROJECT ID / locations / REGION / connections / CONNECTION NAME / gitRepositoryLinks / REPO NAME \\ -- branch - pattern = BRANCH PATTERN # or -- tag - pattern = TAG PATTERN \\ -- build - config = BUILD CONFIG FILE \\ -- region = REGION \\ -- service - account = SERVICE - ACCOUNT Where: TRIGGER NAME is the name of your trigger.",
+          "API To create a GitLab trigger with the API, use the following JSON template: { \"filename\" : \"cloudbuild.yaml\" , \"name\" : \"curl-trigger\" , \"description\" : \"curl trigger\" , \"developer connect config\" { \"git repository link\" : \" PROJECT ID /locations/ REGION /connections/ CONNECTION NAME /gitRepositoryLinks/ REPO NAME \" , \"git repository link type\" : \"GITLAB\" , // Field filter must be only one of the following: \"pullRequest\" : \" PULL REQUEST FILTER \" , \"push\" : \" PUSH FILTER \" } } Where: PROJECT ID is your Google Cloud project ID.",
+          "GIT REPOSITORY LINK is the link to your Git repository. \" REPO NAME \" is the name of your repository. \" PULL REQUEST FILTER \" is an instance of PullRequestFilter , which defines the filter that allows Cloud Build to trigger a build when a matching pull request is made in GitLab. \" PUSH FILTER \" is an instance of PushFilter , which defines the filter that allows Cloud Build to trigger a build when a matching push is made in GitLab."
+        ]
+      },
+      {
+        "title": "Build repositories from GitLab Enterprise Edition \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/build/docs/automating-builds/gitlab/build-repos-from-gitlab-enterprise-edition",
+        "source_id": "site-docs-root-2",
+        "final_score": 67,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Click Create to create your GitLab Enterprise Edition trigger. gcloud CLI To create GitLab Enterprise Edition triggers using gcloud commands, run the following command: gcloud alpha builds triggers create developer connect -- name = TRIGGER NAME \\ -- git - repository - link = projects / PROJECT ID / locations / REGION / connections / CONNECTION NAME / gitRepositoryLinks / REPO NAME \\ -- branch - pattern = BRANCH PATTERN # or -- tag - pattern = TAG PATTERN \\ -- build - config = BUILD CONFIG FILE \\ -- region = REGION \\ -- service - account = SERVICE - ACCOUNT Where: TRIGGER NAME is the name of your trigger.",
+          "API To create a GitLab Enterprise Edition trigger with the API, use the following JSON template: { \"filename\" : \"cloudbuild.yaml\" , \"name\" : \"curl-trigger\" , \"description\" : \"curl trigger\" , \"developer connect config\" { \"git repository link\" : \" PROJECT ID /locations/ REGION /connections/ CONNECTION NAME /gitRepositoryLinks/ REPO NAME \" , \"git repository link type\" : \"GITLAB ENTERPRISE\" , // Field filter must be only one of the following: \"pullRequest\" : \" PULL REQUEST FILTER \" , \"push\" : \" PUSH FILTER \" } } Where: PROJECT ID is your Google Cloud project ID.",
+          "GIT REPOSITORY LINK is the link to your Git repository. \" REPO NAME \" is the name of your repository. \" PULL REQUEST FILTER \" is an instance of PullRequestFilter , which defines the filter that allows Cloud Build to trigger a build when a matching pull request is made in GitLab Enterprise Edition. \" PUSH FILTER \" is an instance of PushFilter , which defines the filter that allows Cloud Build to trigger a build when a matching push is made in GitLab Enterprise Edition."
+        ]
+      },
+      {
+        "title": "\"Module pagers (3.35.0) \\_|\\_ Python client libraries \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/cloudbuild/latest/google.cloud.devtools.cloudbuild_v1.services.cloud_build.pagers",
+        "source_id": "site-python-reference",
+        "final_score": 65,
+        "relevance": "",
+        "evidence_snippets": [
+          "Home Documentation Developer tools Python Client libraries Send feedback Module pagers (3.35.0) Stay organized with collections Save and categorize content based on your preferences.",
+          "If multiple requests are made, only the most recent response is retained, and thus used for attribute lookup.",
+          "If multiple requests are made, only the most recent response is retained, and thus used for attribute lookup."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cloudbuild.yaml"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/build/docs/automating-builds/gitlab/build-repos-from-gitlab",
+        "https://docs.cloud.google.com/build/docs/automating-builds/gitlab/build-repos-from-gitlab-enterprise-edition",
+        "https://docs.cloud.google.com/python/docs/reference/cloudbuild/latest/google.cloud.devtools.cloudbuild_v1.services.cloud_build.pagers"
+      ]
+    }
+  ]
+}

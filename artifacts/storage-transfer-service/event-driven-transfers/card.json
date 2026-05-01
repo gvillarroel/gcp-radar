@@ -1,0 +1,138 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:47.727Z",
+  "source_step08_card": "data/step-08/current/products/storage-transfer-service/card.json",
+  "product_name": "Storage Transfer Service",
+  "product_slug": "storage-transfer-service",
+  "feature_name": "Event-driven transfers",
+  "feature_slug": "event-driven-transfers",
+  "summary": "Event-driven transfers enable serverless, real-time replication from AWS S3 to Cloud Storage and between Cloud Storage buckets.",
+  "extended_definition": "Event-driven transfers enable serverless, real-time replication from AWS S3 to Cloud Storage and between Cloud Storage buckets.",
+  "lifecycle": {
+    "latest_feature_date": "2023-07-25",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/storage-transfer/docs/event-driven-aws",
+      "https://docs.cloud.google.com/storage-transfer/docs/event-driven-google",
+      "https://docs.cloud.google.com/storage-transfer/docs/event-driven-transfers"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Event-driven transfers \\_|\\_ Storage Transfer Service \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/storage-transfer/docs/event-driven-transfers",
+        "source_id": "site-docs-root",
+        "final_score": 293,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Benefits of event-driven transfers Because event-driven transfers listen for changes to the source bucket, updates are copied to the destination in near-real time.",
+          "Event-driven transfers with Storage Transfer Service differ from typical Cloud Storage replication by creating a copy of your data in a different bucket.",
+          "Learn how Set up event-driven transfers from Cloud Storage Set up event-driven transfers from AWS S3 Set up event-driven transfers from Azure Blob Storage or Data Lake Storage Gen2 Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License ."
+        ]
+      },
+      {
+        "title": "\"Event-driven transfers from Cloud Storage \\_|\\_ Storage Transfer Service\\",
+        "url": "https://docs.cloud.google.com/storage-transfer/docs/event-driven-google",
+        "source_id": "site-docs-root",
+        "final_score": 283,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "REST To create an event-driven transfer using the REST API, send the following JSON object to the transferJobs.create endpoint: transfer job { \"description\" : \"YOUR DESCRIPTION\" , \"status\" : \"ENABLED\" , \"projectId\" : \"PROJECT ID\" , \"transferSpec\" { \"gcsDataSource\" { \"bucketName\" : \"GCS SOURCE NAME\" }, \"gcsDataSink\" : { \"bucketName\" : \"GCS SINK NAME\" } } \"eventStream\" { \"name\" : \"projects/ PROJECT NAME /subscriptions/ SUBSCRIPTION ID \" , \"eventStreamStartTime\" : \"2022-12-02T01:00:00+00:00\" , \"eventStreamExpirationTime\" : \"2023-01-31T01:00:00+00:00\" } } The eventStreamStartTime and eventStreamExpirationTime are optional.",
+          "For more information, see Set up authentication for a local development environment . // Imports the Google Cloud client library const { StorageTransferServiceClient , } = require ( ' @google-cloud/storage-transfer ' ); / TODO(developer): Uncomment the following lines before running the sample. / // The ID of the Google Cloud Platform Project that owns the job // projectId = 'my-project-id' // Google Cloud Storage source bucket name // gcsSourceBucket = 'my-gcs-source-bucket' // Google Cloud Storage destination bucket name // gcsSinkBucket = 'my-gcs-destination-bucket' // The subscription ID to a Pubsub queue to track // pubsubId = 'projects/PROJECT NAME/subscriptions/SUBSCRIPTION ID' // Creates a client const client = new StorageTransferServiceClient (); / Creates an event driven transfer that tracks a Pubsub subscription. / async function createEventDrivenGcsTransfer () { const [ transferJob ] = await client . createTransferJob ({ transferJob : { projectId , status : ' ENABLED ' , transferSpec : { gcsDataSource : { bucketName : gcsSourceBucket , }, gcsDataSink : { bucketName : gcsSinkBucket , }, }, eventStream : { name : pubsubId , }, }, }); console . log ( Created an event driven transfer from ' ${ gcsSourceBucket } ' to ' ${ gcsSinkBucket } ' with name ${ transferJob . name } ); } createEventDrivenGcsTransfer (); Python To learn how to install and use the client library for Storage Transfer Service, see Storage Transfer Service client libraries .",
+          "StorageTransferServiceClient () The ID of the Google Cloud Platform Project that owns the job project id = 'my-project-id' A description of this job description = 'Creates an event-driven transfer that tracks a pubsub subscription' Google Cloud Storage source bucket name source bucket = 'my-gcs-source-bucket' Google Cloud Storage destination bucket name sink bucket = 'my-gcs-destination-bucket' The Pubsub Subscription ID to track pubsub id = 'projects/PROJECT NAME/subscriptions/SUBSCRIPTION ID' transfer job request = storage transfer ."
+        ]
+      },
+      {
+        "title": "\"Event-driven transfers from AWS S3 \\_|\\_ Storage Transfer Service \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/storage-transfer/docs/event-driven-aws",
+        "source_id": "site-docs-root",
+        "final_score": 271,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "REST To create an event-driven transfer using the REST API, send the following JSON object to the transferJobs.create endpoint: transfer job { \"description\" : \"YOUR DESCRIPTION\" , \"status\" : \"ENABLED\" , \"projectId\" : \"PROJECT ID\" , \"transferSpec\" { \"awsS3DataSource\" { \"bucketName\" : \"AWS SOURCE NAME\" , \"roleArn\" : \"arn:aws:iam::1234567891011:role/role for federated auth\" }, \"gcsDataSink\" : { \"bucketName\" : \"GCS SINK NAME\" } } \"eventStream\" { \"name\" : \"arn:aws:sqs:us-east-1:1234567891011:s3-notification-queue\" , \"eventStreamStartTime\" : \"2022-12-02T01:00:00+00:00\" , \"eventStreamExpirationTime\" : \"2023-01-31T01:00:00+00:00\" } } The eventStreamStartTime and eventStreamExpirationTime are optional.",
+          "Should be accessed via environment variable for security. // awsSecretAccessKey = 'HEAoMK2.../...ku8' // Creates a client const client = new StorageTransferServiceClient (); / Creates an event driven transfer that tracks an SQS queue. / async function createEventDrivenAwsTransfer () { const [ transferJob ] = await client . createTransferJob ({ transferJob : { projectId , status : ' ENABLED ' , transferSpec : { awsS3DataSource : { bucketName : s3SourceBucket , awsAccessKey : { accessKeyId : awsAccessKeyId , secretAccessKey : awsSecretAccessKey , }, }, gcsDataSink : { bucketName : gcsSinkBucket , }, }, eventStream : { name : sqsQueueArn , }, }, }); console . log ( Created an event driven transfer from ' ${ s3SourceBucket } ' to ' ${ gcsSinkBucket } ' with name ${ transferJob . name } ); } createEventDrivenAwsTransfer (); Python To learn how to install and use the client library for Storage Transfer Service, see Storage Transfer Service client libraries .",
+          "StorageTransferServiceClient () The ID of the Google Cloud Platform Project that owns the job project id = 'my-project-id' A description of this job description = 'Creates an event-driven transfer that tracks an SQS queue' AWS S3 source bucket name source s3 bucket = 'my-s3-source-bucket' Google Cloud Storage destination bucket name sink gcs bucket = 'my-gcs-destination-bucket' The ARN of the SQS queue to subscribe to pubsub id = 'arn:aws:sqs:us-east-1:1234567891011:s3-notification-queue' AWS Access Key ID."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/event-driven-transfers",
+        "https://docs.cloud.google.com/storage-transfer/docs/event-driven-google",
+        "https://docs.cloud.google.com/storage-transfer/docs/event-driven-aws"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/event-driven-transfers",
+        "https://docs.cloud.google.com/storage-transfer/docs/event-driven-google",
+        "https://docs.cloud.google.com/storage-transfer/docs/event-driven-aws"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/event-driven-transfers",
+        "https://docs.cloud.google.com/storage-transfer/docs/event-driven-google",
+        "https://docs.cloud.google.com/storage-transfer/docs/event-driven-aws"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/event-driven-transfers",
+        "https://docs.cloud.google.com/storage-transfer/docs/event-driven-google",
+        "https://docs.cloud.google.com/storage-transfer/docs/event-driven-aws"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/event-driven-transfers",
+        "https://docs.cloud.google.com/storage-transfer/docs/event-driven-google",
+        "https://docs.cloud.google.com/storage-transfer/docs/event-driven-aws"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/event-driven-transfers",
+        "https://docs.cloud.google.com/storage-transfer/docs/event-driven-google",
+        "https://docs.cloud.google.com/storage-transfer/docs/event-driven-aws"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/event-driven-transfers",
+        "https://docs.cloud.google.com/storage-transfer/docs/event-driven-google",
+        "https://docs.cloud.google.com/storage-transfer/docs/event-driven-aws"
+      ]
+    }
+  ]
+}

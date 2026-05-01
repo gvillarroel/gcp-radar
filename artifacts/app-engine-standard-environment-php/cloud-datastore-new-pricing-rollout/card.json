@@ -1,0 +1,124 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:16.336Z",
+  "source_step08_card": "data/step-08/current/products/app-engine-standard-environment-php/card.json",
+  "product_name": "App Engine standard environment PHP",
+  "product_slug": "app-engine-standard-environment-php",
+  "feature_name": "Cloud Datastore new pricing rollout",
+  "feature_slug": "cloud-datastore-new-pricing-rollout",
+  "summary": "The new Cloud Datastore pricing model was made effective.",
+  "extended_definition": "The new Cloud Datastore pricing model was made effective.",
+  "lifecycle": {
+    "latest_feature_date": "2016-07-01",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/appengine/docs/quotas",
+      "https://docs.cloud.google.com/appengine/docs/standard/configuring-datastore-indexes-with-index-yaml",
+      "https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Quotas and limits \\_|\\_ App Engine standard environment \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/quotas",
+        "source_id": "site-docs-reference-4",
+        "final_score": 69,
+        "relevance": "",
+        "evidence_snippets": [
+          "US/Europe Resource Cost Code & Static Data Storage - First 1 GB Free Code & Static Data Storage - Exceeding 1 GB 0.026/GB/month Asia (Japan) Resource Cost Code & Static Data Storage - First 1 GB Free Code & Static Data Storage - Exceeding 1 GB 0.023/GB/month\"> Firestore in Datastore mode (Datastore) The Stored Data (billable) quota refers to all data stored for the application in Datastore and Blobstore.",
+          "App Engine resets all resource measurements at the beginning of each calendar day (except for Stored Data, which always represents the amount of datastore storage in use).",
+          "Each entity stored in the datastore requires the following metadata: The entity key, including the kind, the ID or key name, and the keys of the entity's ancestors."
+        ]
+      },
+      {
+        "title": "\"Configure Datastore indexes with index.yaml \\_|\\_ App Engine standard environment\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/configuring-datastore-indexes-with-index-yaml",
+        "source_id": "site-docs-reference",
+        "final_score": 62,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Sample index.yaml Every Datastore query made by an application needs a corresponding index.",
+          "When you are sure that old indexes are no longer needed, you can delete them from App Engine as follows: gcloud datastore indexes cleanup index.yaml Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "When you are testing in your local environment, you can use the gcloud emulator command to start a service that emulates Datastore before you run your app: gcloud beta emulators datastore start --data-dir DATA-DIR Use the --data-dir flag to specify the directory where the auto-generated index.yaml file will appear."
+        ]
+      },
+      {
+        "title": "\"Connecting to a VPC network \\_|\\_ App Engine standard environment \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc",
+        "source_id": "site-docs-reference",
+        "final_score": 42,
+        "relevance": "",
+        "evidence_snippets": [
+          "Set the priority for this rule to be a lower value than the priority of the rule you made in the previous step. gcloud compute firewall-rules create RULE NAME \\ --allow = PROTOCOL \\ --destination-ranges = RESOURCE CIDR RANGE \\ --direction = EGRESS \\ --network = VPC NETWORK \\ --target-tags = VPC CONNECTOR NETWORK TAG \\ --priority = PRIORITY Replace the following: RULE NAME : the name of your new firewall rule.",
+          "Set the priority for this rule to be a lower value than the priority of the rule you made in the previous step. gcloud compute firewall-rules create RULE NAME \\ --allow = PROTOCOL \\ --source-ranges = VPC CONNECTOR CIDR RANGE \\ --direction = INGRESS \\ --network = VPC NETWORK \\ --target-tags = RESOURCE TAG \\ --priority = PRIORITY Replace the following: RULE NAME : the name of your new firewall rule.",
+          "Set the priority for this rule to be a lower value than the priority of the rule you made in the previous step. gcloud compute firewall-rules create RULE NAME \\ --allow = PROTOCOL \\ --source-tags = VPC CONNECTOR NETWORK TAG \\ --direction = INGRESS \\ --network = VPC NETWORK \\ --target-tags = RESOURCE TAG \\ --priority = PRIORITY Replace the following: RULE NAME : the name of your new firewall rule."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "index.yaml"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/quotas",
+        "https://docs.cloud.google.com/appengine/docs/standard/configuring-datastore-indexes-with-index-yaml",
+        "https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/quotas",
+        "https://docs.cloud.google.com/appengine/docs/standard/configuring-datastore-indexes-with-index-yaml",
+        "https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/quotas",
+        "https://docs.cloud.google.com/appengine/docs/standard/configuring-datastore-indexes-with-index-yaml",
+        "https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/quotas",
+        "https://docs.cloud.google.com/appengine/docs/standard/configuring-datastore-indexes-with-index-yaml",
+        "https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/quotas",
+        "https://docs.cloud.google.com/appengine/docs/standard/configuring-datastore-indexes-with-index-yaml",
+        "https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,170 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:33.800Z",
+  "source_step08_card": "data/step-08/current/products/datastream/card.json",
+  "product_name": "Datastream",
+  "product_slug": "datastream",
+  "feature_name": "PostgreSQL backfill for tables of any size",
+  "feature_slug": "postgresql-backfill-for-tables-of-any-size",
+  "summary": "Datastream supports backfill for PostgreSQL tables of any size.",
+  "extended_definition": "Datastream supports backfill for PostgreSQL tables of any size.",
+  "lifecycle": {
+    "latest_feature_date": "2023-05-11",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/datastream/docs/faq",
+      "https://docs.cloud.google.com/datastream/docs/implementing-datastream-dataflow-analytics",
+      "https://docs.cloud.google.com/datastream/docs/manage-backfill-for-the-objects-of-a-stream",
+      "https://docs.cloud.google.com/datastream/docs/using-datastream-apis"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Manage backfill for the objects of a stream \\_|\\_ Datastream \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/datastream/docs/manage-backfill-for-the-objects-of-a-stream",
+        "source_id": "site-docs-root",
+        "final_score": 272,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Data analytics Datastream Guides Send feedback Manage backfill for the objects of a stream Stay organized with collections Save and categorize content based on your preferences.",
+          "If this happens, then when new tables are added to the source, there's no automatic backfill task created for them (because new tables typically don't have any \"historical\" data to backfill).",
+          "To have Datastream stream a snapshot of all existing data from the source to the destination, you must initiate backfill for the objects that contain this data."
+        ]
+      },
+      {
+        "title": "FAQ \\_|\\_ Datastream \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/datastream/docs/faq",
+        "source_id": "site-docs-root",
+        "final_score": 247,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "If you can't grant the GRANT SELECT ANY TABLE permission, then you can grant SELECT permissions to the following list of tables: ALL COL COMMENTS ALL CONS COLUMNS ALL CONSTRAINTS ALL DB LINKS ALL EXTERNAL TABLES ALL IND COLUMNS ALL INDEXES ALL LOG GROUPS ALL MVIEWS ALL OBJECTS ALL PART TABLES ALL SEQUENCES ALL SOURCE ALL SYNONYMS ALL TAB COLS ALL TAB COLUMNS ALL TAB COMMENTS ALL TABLES ALL TRIGGERS ALL TRIGGER COLS ALL TYPES ALL USERS ALL VIEWS DATABASE PROPERTIES DBA ROLE PRIVS DUAL PRODUCT COMPONENT VERSION ROLE SYS PRIVS USER ROLE PRIVS USER TAB PRIVS To stream changes using Datastream, you also need read access to all tables included in the stream.",
+          "Datastream enables seamless replication of data from relational database sources such as AlloyDB for PostgreSQL, PostgreSQL, MySQL, SQL Server and Oracle, as well as from Salesforce and MongoDB, directly into BigQuery.",
+          "In some edge cases, for example when replicating very large tables that can't be backfilled using Datastream, you might need to load the data into BigQuery first before starting the stream."
+        ]
+      },
+      {
+        "title": "Implement Datastream and Dataflow for analytics \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/datastream/docs/implementing-datastream-dataflow-analytics",
+        "source_id": "site-docs-root",
+        "final_score": 235,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "In the Template for the dataset to contain replica tables. field, enter My integration dataset final because this is the dataset where the changes that are staged in the My integration dataset log dataset merge to create a one-to-one replica of the tables in the source database.",
+          "Configure information about the source database for the stream In this section, you configure information about the source database for the stream by specifying the tables and schemas in the source database that Datastream: Can transfer into the destination.",
+          "Verify the integration In the Verify the stream section of this tutorial, you confirmed that Datastream transferred the data from all tables of a source MySQL database into the /integration/tutorial folder of your Cloud Storage destination bucket."
+        ]
+      },
+      {
+        "title": "Using Datastream APIs \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/datastream/docs/using-datastream-apis",
+        "source_id": "site-docs-root",
+        "final_score": 228,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "DATASTREAM API VERSION .OperationMetadata\" , \"createTime\" : \" DATE AND TIME STAMP \" , \"target\" : \" PROJECT PATH /streams/ STREAM ID \" , \"verb\" : \"start\" , \"requestedCancellation\" : false , \"apiVersion\" : \" DATASTREAM API VERSION \" }, \"done\" : false } Retrieve information about the stream to confirm that it's paused. curl -H \"Authorization: Bearer $TOKEN\" -H \"Content-Type: application/json\" https://datastream.googleapis.com/ DATASTREAM API VERSION / PROJECT PATH /streams/ STREAM ID Verify that the state of the stream has changed from RUNNING to PAUSED . { \"name\" : \" PROJECT PATH /streams/ STREAM ID \" , \"createTime\" : \" DATE AND TIME STAMP \" , \"updateTime\" : \" DATE AND TIME STAMP \" , \"displayName\" : \" DISPLAY NAME \" , \"sourceConfig\" : { \"sourceConnectionProfileName\" : \"projects/ YOUR PROJECT NUMBER /locations/ YOUR PROJECT LOCATION /connectionProfiles/ SOURCE CONNECTION PROFILE ID \" , \"oracleSourceConfig\" : { \"allowlist\" : { \"oracleSchemas\" : [ { \"schema\" : \"ROOT\" } ] }, \"rejectlist\" : {} } }, \"destinationConfig\" : { \"destinationConnectionProfileName\" : \"projects/ YOUR PROJECT NUMBER /locations/ YOUR PROJECT LOCATION /connectionProfiles/ DESTINATION CONNECTION PROFILE ID \" , \"gcsDestinationConfig\" : { \"fileRotationMb\" : 100 , \"fileRotationInterval\" : \"15s\" \"avroFileFormat\" : {} } }, \"state\" : \"PAUSED\" , \"backfillAll\" : {} } When a stream is paused, Datastream won't pull any new data from the source database into the destination.",
+          "If any data exceeds this size, then the data will be segmented into multiple 5-MB files. file rotation interval The number of seconds that will elapse before Datastream closes an existing file in a folder of the Cloud Storage destination bucket and opens another file to contain data being transferred from the source database.",
+          "DATASTREAM API VERSION .OperationMetadata\" , \"createTime\" : \" DATE AND TIME STAMP \" , \"target\" : \" PROJECT PATH /streams/ STREAM ID \" , \"verb\" : \"start\" , \"requestedCancellation\" : false , \"apiVersion\" : \" DATASTREAM API VERSION \" }, \"done\" : false } After a few seconds, retrieve information about the stream to confirm that it's running again. curl -H \"Authorization: Bearer $TOKEN\" -H \"Content-Type: application/json\" https://datastream.googleapis.com/ DATASTREAM API VERSION / PROJECT PATH /streams/ STREAM ID Verify that the state of the stream has changed from PAUSED back to RUNNING . { \"name\" : \" PROJECT PATH /streams/ STREAM ID \" , \"createTime\" : \" DATE AND TIME STAMP \" , \"updateTime\" : \" DATE AND TIME STAMP \" , \"displayName\" : \" DISPLAY NAME \" , \"sourceConfig\" : { \"sourceConnectionProfileName\" : \"projects/ YOUR PROJECT NUMBER /locations/ YOUR PROJECT LOCATION /connectionProfiles/ SOURCE CONNECTION PROFILE ID \" , \"oracleSourceConfig\" : { \"allowlist\" : { \"oracleSchemas\" : [ { \"schema\" : \"ROOT\" } ] }, \"rejectlist\" : {} } }, \"destinationConfig\" : { \"destinationConnectionProfileName\" : \"projects/ YOUR PROJECT NUMBER /locations/ YOUR PROJECT LOCATION /connectionProfiles/ DESTINATION CONNECTION PROFILE ID \" , \"gcsDestinationConfig\" : { \"fileRotationMb\" : 100 , \"fileRotationInterval\" : \"15s\" \"avroFileFormat\" : {} } }, \"state\" : \"RUNNING\" , \"backfillAll\" : {} } Now that you created and managed a stream, confirmed that there are no errors associated with the stream, and that the state of the stream is RUNNING , you're ready to verify that it can transfer data from the source database into a folder in the Cloud Storage destination bucket."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.cloud.datastream.v1",
+      "datastream.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastream/docs/manage-backfill-for-the-objects-of-a-stream",
+        "https://docs.cloud.google.com/datastream/docs/faq",
+        "https://docs.cloud.google.com/datastream/docs/implementing-datastream-dataflow-analytics",
+        "https://docs.cloud.google.com/datastream/docs/using-datastream-apis"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastream/docs/manage-backfill-for-the-objects-of-a-stream",
+        "https://docs.cloud.google.com/datastream/docs/faq",
+        "https://docs.cloud.google.com/datastream/docs/implementing-datastream-dataflow-analytics",
+        "https://docs.cloud.google.com/datastream/docs/using-datastream-apis"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastream/docs/manage-backfill-for-the-objects-of-a-stream",
+        "https://docs.cloud.google.com/datastream/docs/faq",
+        "https://docs.cloud.google.com/datastream/docs/implementing-datastream-dataflow-analytics",
+        "https://docs.cloud.google.com/datastream/docs/using-datastream-apis"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastream/docs/manage-backfill-for-the-objects-of-a-stream",
+        "https://docs.cloud.google.com/datastream/docs/faq",
+        "https://docs.cloud.google.com/datastream/docs/implementing-datastream-dataflow-analytics",
+        "https://docs.cloud.google.com/datastream/docs/using-datastream-apis"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastream/docs/manage-backfill-for-the-objects-of-a-stream",
+        "https://docs.cloud.google.com/datastream/docs/faq",
+        "https://docs.cloud.google.com/datastream/docs/implementing-datastream-dataflow-analytics",
+        "https://docs.cloud.google.com/datastream/docs/using-datastream-apis"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastream/docs/manage-backfill-for-the-objects-of-a-stream",
+        "https://docs.cloud.google.com/datastream/docs/faq",
+        "https://docs.cloud.google.com/datastream/docs/implementing-datastream-dataflow-analytics",
+        "https://docs.cloud.google.com/datastream/docs/using-datastream-apis"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastream/docs/manage-backfill-for-the-objects-of-a-stream",
+        "https://docs.cloud.google.com/datastream/docs/faq",
+        "https://docs.cloud.google.com/datastream/docs/implementing-datastream-dataflow-analytics",
+        "https://docs.cloud.google.com/datastream/docs/using-datastream-apis"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastream/docs/manage-backfill-for-the-objects-of-a-stream",
+        "https://docs.cloud.google.com/datastream/docs/faq",
+        "https://docs.cloud.google.com/datastream/docs/implementing-datastream-dataflow-analytics",
+        "https://docs.cloud.google.com/datastream/docs/using-datastream-apis"
+      ]
+    }
+  ]
+}

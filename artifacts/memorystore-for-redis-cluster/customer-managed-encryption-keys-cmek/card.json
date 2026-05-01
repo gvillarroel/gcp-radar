@@ -1,0 +1,187 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:43.560Z",
+  "source_step08_card": "data/step-08/current/products/memorystore-for-redis-cluster/card.json",
+  "product_name": "Memorystore for Redis Cluster",
+  "product_slug": "memorystore-for-redis-cluster",
+  "feature_name": "Customer-managed encryption keys (CMEK)",
+  "feature_slug": "customer-managed-encryption-keys-cmek",
+  "summary": "The service supports customer-managed encryption keys for instances and instance management.",
+  "extended_definition": "The service supports customer-managed encryption keys for instances and instance management.",
+  "lifecycle": {
+    "latest_feature_date": "2025-01-17",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/memorystore/docs/cluster/about-cmek",
+      "https://docs.cloud.google.com/memorystore/docs/cluster/about-in-transit-encryption",
+      "https://docs.cloud.google.com/memorystore/docs/cluster/create-instances",
+      "https://docs.cloud.google.com/memorystore/docs/cluster/reference/mcp/tools_list/create_cluster"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"About customer-managed encryption keys (CMEK) \\_|\\_ Memorystore for Redis\\",
+        "url": "https://docs.cloud.google.com/memorystore/docs/cluster/about-cmek",
+        "source_id": "site-iam-reference",
+        "final_score": 375,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "If you want to control your encryption keys, then you can use customer-managed encryption keys (CMEKs) in Cloud KMS with CMEK-integrated services including Memorystore for Redis Cluster.",
+          "Google-managed encryption versus customer-managed encryption The CMEK feature lets you use your own cryptographic keys for data at rest in Memorystore for Redis Cluster.",
+          "Home Documentation Databases Memorystore Memorystore for Redis Cluster Guides Send feedback About customer-managed encryption keys (CMEK) Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"Create instances \\_|\\_ Memorystore for Redis Cluster \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/memorystore/docs/cluster/create-instances",
+        "source_id": "site-docs-root",
+        "final_score": 241,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Cloud KMS key : you want to manage the encryption of your data by using customer-managed encryption keys (CMEKs) in Cloud Key Management Service (Cloud KMS) with CMEK-integrated services, such as Memorystore for Redis Cluster.",
+          "Cloud KMS key : you want to manage the encryption of your data by using customer-managed encryption keys (CMEKs) in Cloud Key Management Service (Cloud KMS) with CMEK-integrated services, such as Memorystore for Redis Cluster.",
+          "For example: gcloud alpha redis clusters create my-instance \\ --region=us-central1 \\ --network=projects/my-project-335118/global/networks/default \\ --replica-count=2 \\ --node-type=redis-highmem-medium \\ --shard-count=8 By default, in-transit encryption is disabled, and the authorized network is default ."
+        ]
+      },
+      {
+        "title": "\"About in-transit encryption \\_|\\_ Memorystore for Redis Cluster \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/memorystore/docs/cluster/about-in-transit-encryption",
+        "source_id": "site-docs-root",
+        "final_score": 202,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The following are sample use cases for using in-transit encryption: Protect sensitive cached data : If you use Memorystore for Redis Cluster to store high-value information, such as session tokens, Personal Identifiable Information (PII), or API keys, then in-transit encryption prevents attackers with VPC access from accessing your data.",
+          "Server certificate rotation Every week, Memorystore for Redis Cluster conducts server-side certificate rotation for clusters that use the per-instance CA, shared CA, and customer-managed CA modes.",
+          "In-transit encryption prerequisites To use in-transit encryption with Memorystore for Redis Cluster, you need the following: A Redis client that supports TLS or a third-party TLS sidecar."
+        ]
+      },
+      {
+        "title": "\"MCP Tools Reference: redis.googleapis.com \\_|\\_ Memorystore for Redis Cluster\\",
+        "url": "https://docs.cloud.google.com/memorystore/docs/cluster/reference/mcp/tools_list/create_cluster",
+        "source_id": "site-api-reference",
+        "final_score": 166,
+        "relevance": "",
+        "evidence_snippets": [
+          "Cluster JSON representation { \"name\" : string , \"createTime\" : string , \"state\" : enum ( State ) , \"uid\" : string , \"authorizationMode\" : enum ( AuthorizationMode ) , \"transitEncryptionMode\" : enum ( TransitEncryptionMode ) , \"pscConfigs\" : [ { object ( PscConfig ) } ] , \"discoveryEndpoints\" : [ { object ( DiscoveryEndpoint ) } ] , \"pscConnections\" : [ { object ( PscConnection ) } ] , \"stateInfo\" : { object ( StateInfo ) } , \"nodeType\" : enum ( NodeType ) , \"persistenceConfig\" : { object ( ClusterPersistenceConfig ) } , \"redisConfigs\" : { string : string , ... } , \"zoneDistributionConfig\" : { object ( ZoneDistributionConfig ) } , \"crossClusterReplicationConfig\" : { object ( CrossClusterReplicationConfig ) } , \"pscServiceAttachments\" : [ { object ( PscServiceAttachment ) } ] , \"clusterEndpoints\" : [ { object ( ClusterEndpoint ) } ] , \"automatedBackupConfig\" : { object ( AutomatedBackupConfig ) } , \"encryptionInfo\" : { object ( EncryptionInfo ) } , \"availableMaintenanceVersions\" : [ string ] , \"allowFewerZonesDeployment\" : boolean , \"labels\" : { string : string , ... } , \"aclPolicy\" : string , // Union field import sources can be only one of the following: \"gcsSource\" : { object ( GcsBackupSource ) } , \"managedBackupSource\" : { object ( ManagedBackupSource ) } // End of list of possible types for union field import sources . // Union field replica count can be only one of the following: \"replicaCount\" : integer // End of list of possible types for union field replica count . // Union field size gb can be only one of the following: \"sizeGb\" : integer // End of list of possible types for union field size gb . // Union field shard count can be only one of the following: \"shardCount\" : integer // End of list of possible types for union field shard count . // Union field precise size gb can be only one of the following: \"preciseSizeGb\" : number // End of list of possible types for union field precise size gb . // Union field deletion protection enabled can be only one of the following: \"deletionProtectionEnabled\" : boolean // End of list of possible types for union field deletion protection enabled . // Union field maintenance policy can be only one of the following: \"maintenancePolicy\" : { object ( ClusterMaintenancePolicy ) } // End of list of possible types for union field maintenance policy . // Union field maintenance schedule can be only one of the following: \"maintenanceSchedule\" : { object ( ClusterMaintenanceSchedule ) } // End of list of possible types for union field maintenance schedule . // Union field satisfies pzs can be only one of the following: \"satisfiesPzs\" : boolean // End of list of possible types for union field satisfies pzs . // Union field satisfies pzi can be only one of the following: \"satisfiesPzi\" : boolean // End of list of possible types for union field satisfies pzi . // Union field simulate maintenance event can be only one of the following: \"simulateMaintenanceEvent\" : boolean // End of list of possible types for union field simulate maintenance event . // Union field backup collection can be only one of the following: \"backupCollection\" : string // End of list of possible types for union field backup collection . // Union field kms key can be only one of the following: \"kmsKey\" : string // End of list of possible types for union field kms key . // Union field ondemand maintenance can be only one of the following: \"ondemandMaintenance\" : boolean // End of list of possible types for union field ondemand maintenance . // Union field async cluster endpoints deletion enabled can be only one of the // following: \"asyncClusterEndpointsDeletionEnabled\" : boolean // End of list of possible types for union field // async cluster endpoints deletion enabled . // Union field maintenance version can be only one of the following: \"maintenanceVersion\" : string // End of list of possible types for union field maintenance version . // Union field effective maintenance version can be only one of the following: \"effectiveMaintenanceVersion\" : string // End of list of possible types for union field // effective maintenance version . // Union field server ca mode can be only one of the following: \"serverCaMode\" : enum ( ServerCaMode ) // End of list of possible types for union field server ca mode . // Union field server ca pool can be only one of the following: \"serverCaPool\" : string // End of list of possible types for union field server ca pool . // Union field rotate server certificate can be only one of the following: \"rotateServerCertificate\" : boolean // End of list of possible types for union field rotate server certificate . // Union field acl policy in sync can be only one of the following: \"aclPolicyInSync\" : boolean // End of list of possible types for union field acl policy in sync . } Fields name string Required.",
+          "Customer-managed CA pool for the cluster.",
+          "A PSC connection to a cluster could either be created through Service Connectivity Automation (auto-registered connection) during the cluster creation, or it could be created by customer themselves (user-registered connection). connection can be only one of the following: pscAutoConnection object ( PscAutoConnection ) Detailed information of a PSC connection that is created through service connectivity automation. pscConnection object ( PscConnection ) Detailed information of a PSC connection that is created by the customer who owns the cluster."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "redis.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/cluster/about-cmek",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/create-instances",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/about-in-transit-encryption",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/reference/mcp/tools_list/create_cluster"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/cluster/about-cmek",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/create-instances",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/about-in-transit-encryption",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/reference/mcp/tools_list/create_cluster"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/cluster/about-cmek",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/create-instances",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/about-in-transit-encryption",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/reference/mcp/tools_list/create_cluster"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/cluster/about-cmek",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/create-instances",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/about-in-transit-encryption",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/reference/mcp/tools_list/create_cluster"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/cluster/about-cmek",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/create-instances",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/about-in-transit-encryption",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/reference/mcp/tools_list/create_cluster"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/cluster/about-cmek",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/create-instances",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/about-in-transit-encryption",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/reference/mcp/tools_list/create_cluster"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/cluster/about-cmek",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/create-instances",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/about-in-transit-encryption",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/reference/mcp/tools_list/create_cluster"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/cluster/about-cmek",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/create-instances",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/about-in-transit-encryption",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/reference/mcp/tools_list/create_cluster"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/cluster/about-cmek",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/create-instances",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/about-in-transit-encryption",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/reference/mcp/tools_list/create_cluster"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/cluster/about-cmek",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/create-instances",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/about-in-transit-encryption",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/reference/mcp/tools_list/create_cluster"
+      ]
+    }
+  ]
+}

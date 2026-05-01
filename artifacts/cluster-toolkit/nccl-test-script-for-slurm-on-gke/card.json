@@ -1,0 +1,117 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:29.076Z",
+  "source_step08_card": "data/step-08/current/products/cluster-toolkit/card.json",
+  "product_name": "Cluster Toolkit",
+  "product_slug": "cluster-toolkit",
+  "feature_name": "NCCL test script for Slurm on GKE",
+  "feature_slug": "nccl-test-script-for-slurm-on-gke",
+  "summary": "Cluster Toolkit provides an example NCCL test script for Slurm on GKE deployments.",
+  "extended_definition": "Cluster Toolkit provides an example NCCL test script for Slurm on GKE deployments.",
+  "lifecycle": {
+    "latest_feature_date": "2025-12-18",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/cluster-toolkit/docs/gke/reconfigure-gke-cluster",
+      "https://docs.cloud.google.com/cluster-toolkit/docs/machine-learning/a3-mega-enable-gpudirect-tcpxo",
+      "https://docs.cloud.google.com/cluster-toolkit/docs/setup/configure-mpi-application",
+      "https://docs.cloud.google.com/cluster-toolkit/docs/setup/update-cluster-toolkit"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Enable GPUDirect-TCPXO optimized NCCL communication \\_|\\_ Cluster Toolkit\\",
+        "url": "https://docs.cloud.google.com/cluster-toolkit/docs/machine-learning/a3-mega-enable-gpudirect-tcpxo",
+        "source_id": "site-docs-reference",
+        "final_score": 258,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Slurm would otherwise only pass these env vars to the job environment on the host. shellcheck disable=SC2001 HOST VARS = $( sed 's/ \\{1,\\}/,/g' <<< \" ${ !NCCL } \" ) Mount /var/tmp to allow the rest of the enroot container to be read-only, and mount current $PWD to /nccl to for accessing nccl-tests binary CONTAINER MOUNTS = \"/var/tmp:/var/tmp\" Mount PWD to /nccl in the enroot container CONTAINER MOUNTS = ${ CONTAINER MOUNTS } , \" $PWD :/nccl\" Mount required directories for GPUDirect-TCPXO functionality CONTAINER MOUNTS = ${ CONTAINER MOUNTS } , \"/var/lib/tcpxo/lib64/\" Run the workload srun -l \\ -N \" ${ SLURM NNODES } \" \\ --mpi = pmi2 \\ --ntasks-per-node = 8 \\ --container-image = \" ${ CONTAINER IMAGE } \" \\ --container-env = \" ${ HOST VARS } \" \\ --container-mounts = \" ${ CONTAINER MOUNTS } \" \\ sh -c \" export LD LIBRARY PATH=/var/lib/tcpxo/lib64:/usr/lib/x86 64-linux-gnu:\\$LD LIBRARY PATH; /nccl/nccl-tests/build/all gather perf -b 8M -e 8G -f 2 -g 1 -w 5 --iters 200; \" Submit the script. sbatch run-nccl-tests.sh This results in a slurm-XX.out file that contains the results of the nccl all gather perf benchmark.",
+          "This document provides an overview of how to enable GPUDirect-TCPXO for optimizing communication in multi-node workloads, such as ML training, by using a NCCL tests to measure NCCL collective performance between two nodes of an A3 Mega a3-megagpu-8g Slurm cluster.",
+          "Run NCCL test As part of the cluster deployment process, a Slurm prolog and epilog are installed which handles automatic installation of both a custom libnccl-net.so and the running of a sidecar process that enables GPUDirect-TCPXO optimized communication."
+        ]
+      },
+      {
+        "title": "Reconfigure a GKE cluster \\_|\\_ Cluster Toolkit \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/cluster-toolkit/docs/gke/reconfigure-gke-cluster",
+        "source_id": "site-docs-reference",
+        "final_score": 250,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Reconfigure the cluster For GKE clusters, you can update the cluster as follows: Edit the deployment blueprint to update the supported parameters.",
+          "Home Documentation Compute Cluster Toolkit Guides Send feedback Reconfigure a GKE cluster Stay organized with collections Save and categorize content based on your preferences.",
+          "Limitations The following changes can't be made by editing the blueprint: You can't switch from a zonal to a regional GKE cluster."
+        ]
+      },
+      {
+        "title": "\"Set up and scale MPI applications on H4D VMs with Cloud RDMA \\_|\\_ Cluster\\",
+        "url": "https://docs.cloud.google.com/cluster-toolkit/docs/setup/configure-mpi-application",
+        "source_id": "site-docs-reference",
+        "final_score": 235,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Example for Intel MPI in a Slurm script #SBATCH --nodes= NUMBER OF NODES #SBATCH --ntasks-per-node= PROCESSES PER NODE Load Intel MPI module if necessary module load intelmpi Set environment variables for Cloud RDMA export FI PROVIDER = \"verbs;ofi rxm\" export FI VERBS INLINE SIZE: 39 export FI OFI RXM BUFFER SIZE: 4096 export FI UNIVERSE SIZE: N MPI RANKS Run the application mpirun ./your application Replace the following: NUMBER OF NODES : the number of instances in your cluster PROCESSES PER NODE : the number of processes per node N MPI RANKS : number of MPI ranks.",
+          "Set up the HPC cluster and MPI with Cluster Toolkit To set up the cluster and MPI using Cluster Toolkit, Terraform, and Slurm, complete the following steps: Clone a GitHub repository that contains Terraform scripts for deploying a Slurm cluster, for example the GoogleCloudPlatform/cluster-toolkit/examples/hpc-slurm-h4d folder.",
+          "The following configuration steps are handled by the startup scripts within the Cluster Toolkit blueprint, which are run during deployment: Creates VM instances that use a pre-curated Google HPC VM image designed for H4D, which includes the necessary network tunings, Intel RDMA drivers, and ibverbs libraries."
+        ]
+      },
+      {
+        "title": "Update Cluster Toolkit version \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/cluster-toolkit/docs/setup/update-cluster-toolkit",
+        "source_id": "site-docs-reference",
+        "final_score": 229,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For instructions, see the documentation for your environment: For Compute Engine and Slurm: Reconfigure a running cluster For Google Kubernetes Engine: Reconfigure a GKE cluster To modify the hardware infrastructure, change immutable properties of the cluster, or if Cluster Toolkit software has a major change, then follow these steps: Delete the existing cluster.",
+          "Google Kubernetes Engine For Google Kubernetes Engine environments: See Reconfigure a GKE cluster for instructions on managing nodes within a GKE cluster.",
+          "Windows To update on Windows, pull the latest changes from the GitHub repository and rebuild the binary as follows: Go to the toolkit directory where you originally cloned the repository: cd cluster-toolkit Pull the updates from the upstream repository: git pull Note: If you have made local changes that conflict with the latest updates, then a prompt with a request to resolve them appears."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "blueprint.yaml",
+      "net.so",
+      "tests.sh"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/cluster-toolkit/docs/machine-learning/a3-mega-enable-gpudirect-tcpxo",
+        "https://docs.cloud.google.com/cluster-toolkit/docs/gke/reconfigure-gke-cluster",
+        "https://docs.cloud.google.com/cluster-toolkit/docs/setup/configure-mpi-application",
+        "https://docs.cloud.google.com/cluster-toolkit/docs/setup/update-cluster-toolkit"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/cluster-toolkit/docs/machine-learning/a3-mega-enable-gpudirect-tcpxo",
+        "https://docs.cloud.google.com/cluster-toolkit/docs/gke/reconfigure-gke-cluster",
+        "https://docs.cloud.google.com/cluster-toolkit/docs/setup/configure-mpi-application",
+        "https://docs.cloud.google.com/cluster-toolkit/docs/setup/update-cluster-toolkit"
+      ]
+    }
+  ]
+}

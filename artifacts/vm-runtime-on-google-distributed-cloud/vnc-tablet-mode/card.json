@@ -1,0 +1,125 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:49.943Z",
+  "source_step08_card": "data/step-08/current/products/vm-runtime-on-google-distributed-cloud/card.json",
+  "product_name": "VM Runtime on Google Distributed Cloud",
+  "product_slug": "vm-runtime-on-google-distributed-cloud",
+  "feature_name": "VNC tablet mode",
+  "feature_slug": "vnc-tablet-mode",
+  "summary": "VM Runtime on Google Distributed Cloud now improves VNC access by adding a tablet mode for a better VNC experience.",
+  "extended_definition": "VM Runtime on Google Distributed Cloud now improves VNC access by adding a tablet mode for a better VNC experience.",
+  "lifecycle": {
+    "latest_feature_date": "2023-04-27",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/connect-vms",
+      "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/edit-vm",
+      "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/eviction-policy",
+      "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/storage-classes"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Connect to VMs that use VM Runtime on GDC \\_|\\_ Google Distributed Cloud\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/connect-vms",
+        "source_id": "site-docs-reference",
+        "final_score": 273,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Technology areas Google Distributed Cloud GDC for bare metal Guides Send feedback Connect to VMs that use VM Runtime on GDC Stay organized with collections Save and categorize content based on your preferences.",
+          "When you use the kubectl virt vnc command, VM Runtime on GDC opens VNC for you, so you aren't required to enable VNC in the guest OS.",
+          "After you confirm (or force) the password reset, the command returns the new password for the specified VM and username: Resetting and retrieving password for USERNAME on VM NAME vm name: VM NAME username: USERNAME password: PASSWORD What's next Manage the power state of a VM in Google Distributed Cloud ."
+        ]
+      },
+      {
+        "title": "\"Edit VM configuration in VM Runtime on GDC \\_|\\_ Google Distributed Cloud\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/edit-vm",
+        "source_id": "site-docs-reference",
+        "final_score": 252,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Technology areas Google Distributed Cloud GDC for bare metal Guides Send feedback Edit VM configuration in VM Runtime on GDC Stay organized with collections Save and categorize content based on your preferences.",
+          "This document is intended for application owners that use VM Runtime on GDC to run virtual machines (VMs) in clusters created with Google Distributed Cloud (software only) on bare metal.",
+          "If you edit compute settings, VM Runtime on GDC restarts your VM automatically when you save your changes. apiVersion : vm.cluster.gke.io/v1 kind : VirtualMachine metadata : ... name : vm-sample-01 namespace : default resourceVersion : \"16711824\" uid : ed623879-0cfa-52de-ad2c-b63308e6116c spec : autoRestartOnConfigurationChange : true compute : cpu : vcpus : 2 ..."
+        ]
+      },
+      {
+        "title": "\"Configure the eviction policies for VMs in Google Distributed Cloud \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/eviction-policy",
+        "source_id": "site-docs-reference",
+        "final_score": 243,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "VM Runtime on GDC now applies the eviction policy to VMs in your cluster.",
+          "To enable and configure the eviction policy, complete the following steps: Edit the VMRuntime custom resource: kubectl edit vmruntime vmruntime Add or update the evictionPolicy section with an empty object to use the default eviction policy settings, or add your desired settings: apiVersion : vm.cluster.gke.io/v1 kind : VMRuntime metadata : name : vmruntime spec : disableCDIUploadProxyVIP : false enabled : true evictionPolicy : {} useEmulation : false If the evictionPolicy isn't populated, such as evictionPolicy: null or isn't included in the manifest, no special action is taken.",
+          "The cluster can retry the live migration up to 3 times, with a 30-second timeout on the process each time to start: apiVersion : vm.cluster.gke.io/v1 kind : VMRuntime metadata : name : vmruntime spec : disableCDIUploadProxyVIP : false enabled : true evictionPolicy : evictionStrategy : LiveMigrate maxMigrationAttemptsPerVM : 3 migrationTargetInitializationTimeout : 30s useEmulation : false Restart The following example eviction policy makes no attempt at migration for any VMs during eviction."
+        ]
+      },
+      {
+        "title": "\"Create and use storage classes in VM Runtime on GDC \\_|\\_ Google Distributed\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/storage-classes",
+        "source_id": "site-docs-root",
+        "final_score": 241,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Technology areas Google Distributed Cloud GDC for bare metal Guides Send feedback Create and use storage classes in VM Runtime on GDC Stay organized with collections Save and categorize content based on your preferences.",
+          "Set or update the default StorageClass Initially, Google Distributed Cloud with VM Runtime on GDC have no default StorageClass configured.",
+          "Edit the VMRuntime custom resource: kubectl edit vmruntime Add or update the spec.storage section that specifies the default StorageClass to use: apiVersion : vm.cluster.gke.io/v1 kind : VMRuntime metadata : name : vmruntime spec : enabled : true storage : defaultStorageClass : STORAGE CLASS NAME ..."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "spec.storage",
+      "vm.cluster.gke.io"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/connect-vms",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/edit-vm",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/eviction-policy",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/storage-classes"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/connect-vms",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/edit-vm",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/eviction-policy",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/storage-classes"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/connect-vms",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/edit-vm",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/eviction-policy",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/storage-classes"
+      ]
+    }
+  ]
+}

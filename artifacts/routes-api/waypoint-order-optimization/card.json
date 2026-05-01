@@ -1,0 +1,108 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:45.956Z",
+  "source_step08_card": "data/step-08/current/products/routes-api/card.json",
+  "product_name": "Routes API",
+  "product_slug": "routes-api",
+  "feature_name": "Waypoint order optimization",
+  "feature_slug": "waypoint-order-optimization",
+  "summary": "The Routes API can optimize the order of up to 25 intermediate waypoints when calculating a route.",
+  "extended_definition": "The Routes API can optimize the order of up to 25 intermediate waypoints when calculating a route.",
+  "lifecycle": {
+    "latest_feature_date": "2023-06-29",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/maps/documentation/routes/compute-route-over",
+      "https://developers.google.com/maps/documentation/routes/opt-way",
+      "https://developers.google.com/maps/documentation/routes/overview",
+      "https://developers.google.com/maps/documentation/routes/reference/rest/v2/TopLevel/computeRoutes"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Optimize the order of stops on your route \\_|\\_ Routes API \\_|\\_ Google\\",
+        "url": "https://developers.google.com/maps/documentation/routes/opt-way",
+        "source_id": "site-docs-root",
+        "final_score": 257,
+        "relevance": "",
+        "evidence_snippets": [
+          "Example This request asks for optimization for a route from Adelaide, South Australia, to each of South Australia's main wine regions, and then returning to Adelaide. curl - X POST - H 'co ntent - t ype : applica t io n /jso n ' - d ' { \"origin\" : { \"address\" : \"Adelaide,SA\" }, \"destination\" : { \"address\" : \"Adelaide,SA\" }, \"intermediates\" : [ { \"address\" : \"Barossa+Valley,SA\" }, { \"address\" : \"Clare,SA\" }, { \"address\" : \"Coonawarra,SA\" }, { \"address\" : \"McLaren+Vale,SA\" } ], \"travelMode\" : \"DRIVE\" , \"optimizeWaypointOrder\" : \"true\" } ' \\ - H 'Co ntent - Type : applica t io n /jso n ' \\ - H 'X - Goog - Api - Key : YOUR API KEY ' \\ - H 'X - Goog - FieldMask : rou tes , geocodi n gResul ts .i nter media tes .i nter media te Waypoi nt Reques t I n dex' \\ 'h tt ps : //routes.googleapis.com/directions/v2:computeRoutes' The Routes API indexes the intermediate waypoints provided in the request, starting at 0.",
+          "Need to tell us more? [[[\"Easy to understand\",\"easyToUnderstand\",\"thumb-up\"],[\"Solved my problem\",\"solvedMyProblem\",\"thumb-up\"],[\"Other\",\"otherUp\",\"thumb-up\"]],[[\"Missing the information I need\",\"missingTheInformationINeed\",\"thumb-down\"],[\"Too complicated / too many steps\",\"tooComplicatedTooManySteps\",\"thumb-down\"],[\"Out of date\",\"outOfDate\",\"thumb-down\"],[\"Samples / code issue\",\"samplesCodeIssue\",\"thumb-down\"],[\"Other\",\"otherDown\",\"thumb-down\"]],[\"Last updated 2026-04-09 UTC.\"],[],[\"The Routes API can optimize the order of stopover waypoints to create a more efficient route.",
+          "Page Summary outlined flag The Routes API's Compute Routes method can optimize the order of stops (waypoints) for greater efficiency by considering factors like travel time, distance, and turns."
+        ]
+      },
+      {
+        "title": "Method: computeRoutes \\_|\\_ Routes API \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/maps/documentation/routes/reference/rest/v2/TopLevel/computeRoutes",
+        "source_id": "site-api-reference",
+        "final_score": 233,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Request body The request body contains data with the following structure: JSON representation { \"origin\" : { object ( Waypoint ) } , \"destination\" : { object ( Waypoint ) } , \"intermediates\" : [ { object ( Waypoint ) } ] , \"travelMode\" : enum ( RouteTravelMode ) , \"routingPreference\" : enum ( RoutingPreference ) , \"polylineQuality\" : enum ( PolylineQuality ) , \"polylineEncoding\" : enum ( PolylineEncoding ) , \"departureTime\" : string , \"arrivalTime\" : string , \"computeAlternativeRoutes\" : boolean , \"routeModifiers\" : { object ( RouteModifiers ) } , \"languageCode\" : string , \"regionCode\" : string , \"units\" : enum ( Units ) , \"optimizeWaypointOrder\" : boolean , \"requestedReferenceRoutes\" : [ enum ( ReferenceRoute ) ] , \"extraComputations\" : [ enum ( ExtraComputation ) ] , \"trafficModel\" : enum ( TrafficModel ) , \"transitPreferences\" : { object ( TransitPreferences ) } } Fields origin object ( Waypoint ) Required.",
+          "Page Summary outlined flag The Compute Routes API calculates optimal routes between specified waypoints based on preferences like travel mode and route optimization.",
+          "Use ComputeRoutesResponse.Routes.optimized intermediate waypoint index to find the new ordering."
+        ]
+      },
+      {
+        "title": "Compute Routes Overview \\_|\\_ Routes API \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/maps/documentation/routes/compute-route-over",
+        "source_id": "site-docs-reference",
+        "final_score": 204,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "A series of waypoints that you can optimize for the most efficient order in which to travel to them.",
+          "With the Routes API Compute Routes method, you can do the following things: Get directions for different ways to travel , and for a single or multiple destinations: Modes of transportation: transit, driving, two-wheel vehicles, walking, or bicycling.",
+          "Example curl - X POST - d ' { \"origin\" : { \"address\" : \"1800 Amphitheatre Parkway, Mountain View, CA 94043\" }, \"destination\" : { \"address\" : \"Sloat Blvd &, Upper Great Hwy, San Francisco, CA 94132\" }, \"travelMode\" : \"DRIVE\" } ' \\ - H 'Co ntent - Type : applica t io n /jso n ' - H 'X - Goog - Api - Key : YOUR API KEY ' \\ - H 'X - Goog - FieldMask : rou tes .dura t io n , rou tes .dis tan ceMe ters ' \\ 'h tt ps : //routes.googleapis.com/directions/v2:computeRoutes' The service then calculates the requested route, and returns the fields you've requested."
+        ]
+      },
+      {
+        "title": "Compute Routes Overview \\_|\\_ Routes API \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/maps/documentation/routes/overview",
+        "source_id": "site-docs-root",
+        "final_score": 204,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "A series of waypoints that you can optimize for the most efficient order in which to travel to them.",
+          "With the Routes API Compute Routes method, you can do the following things: Get directions for different ways to travel , and for a single or multiple destinations: Modes of transportation: transit, driving, two-wheel vehicles, walking, or bicycling.",
+          "Example curl - X POST - d ' { \"origin\" : { \"address\" : \"1800 Amphitheatre Parkway, Mountain View, CA 94043\" }, \"destination\" : { \"address\" : \"Sloat Blvd &, Upper Great Hwy, San Francisco, CA 94132\" }, \"travelMode\" : \"DRIVE\" } ' \\ - H 'Co ntent - Type : applica t io n /jso n ' - H 'X - Goog - Api - Key : YOUR API KEY ' \\ - H 'X - Goog - FieldMask : rou tes .dura t io n , rou tes .dis tan ceMe ters ' \\ 'h tt ps : //routes.googleapis.com/directions/v2:computeRoutes' The service then calculates the requested route, and returns the fields you've requested."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "developers.google.com",
+      "routes.googleapis.com",
+      "routes.optimizedIntermediateWaypointIndex"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://developers.google.com/maps/documentation/routes/opt-way",
+        "https://developers.google.com/maps/documentation/routes/reference/rest/v2/TopLevel/computeRoutes",
+        "https://developers.google.com/maps/documentation/routes/compute-route-over",
+        "https://developers.google.com/maps/documentation/routes/overview"
+      ]
+    }
+  ]
+}

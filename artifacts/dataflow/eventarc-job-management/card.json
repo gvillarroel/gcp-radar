@@ -1,0 +1,138 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:32.732Z",
+  "source_step08_card": "data/step-08/current/products/dataflow/card.json",
+  "product_name": "Dataflow",
+  "product_slug": "dataflow",
+  "feature_name": "Eventarc job management",
+  "feature_slug": "eventarc-job-management",
+  "summary": "Eventarc job management lets you manage Dataflow jobs by using Eventarc.",
+  "extended_definition": "Eventarc job management lets you manage Dataflow jobs by using Eventarc.",
+  "lifecycle": {
+    "latest_feature_date": "2023-04-19",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dataflow/docs/guides/customer-managed-encryption-keys",
+      "https://docs.cloud.google.com/dataflow/docs/guides/job-notifications-using-eventarc",
+      "https://docs.cloud.google.com/dataflow/docs/guides/manage-dependencies"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Use Eventarc to manage Dataflow jobs \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataflow/docs/guides/job-notifications-using-eventarc",
+        "source_id": "site-docs-reference-2",
+        "final_score": 154,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Data analytics Cloud Dataflow Guides Send feedback Use Eventarc to manage Dataflow jobs Stay organized with collections Save and categorize content based on your preferences.",
+          "Dataflow integration with Eventarc lets you trigger an action when a job changes state.",
+          "The following shows an example payload: { \"id\" : \"2023-04-13 16 28 37-12345678\" , \"projectId\" : \"my-project\" , \"name\" : \"job1\" , \"currentState\" : \"JOB STATE QUEUED\" , \"currentStateTime\" : \"2023-04-13T23:28:37.437622Z\" , \"createTime\" : \"2023-04-13T23:28:37.437622Z\" , \"location\" : \"us-central1\" , \"startTime\" : \"2023-04-13T23:28:37.437622Z\" } For more information about job states, see the following topics: JobState Life of a Dataflow job What's next Design Dataflow pipeline workflows ."
+        ]
+      },
+      {
+        "title": "Manage pipeline dependencies in Dataflow \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataflow/docs/guides/manage-dependencies",
+        "source_id": "site-docs-root-2",
+        "final_score": 116,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Python When you run Dataflow jobs by using the Apache Beam Python SDK, dependency management is useful in the following scenarios: Your pipeline uses public packages from the Python Package Index (PiPy), and you want to make these packages available remotely.",
+          "Go When you run Dataflow jobs by using the Apache Beam Go SDK, Go Modules are used to manage dependencies.",
+          "Home Documentation Data analytics Cloud Dataflow Guides Send feedback Manage pipeline dependencies in Dataflow Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"Use customer-managed encryption keys \\_|\\_ Cloud Dataflow \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/dataflow/docs/guides/customer-managed-encryption-keys",
+        "source_id": "site-docs-reference-2",
+        "final_score": 108,
+        "relevance": "",
+        "evidence_snippets": [
+          "For Encryption type: \"Google-Managed key\" For Encryption type: \"Customer-Managed key\" CLI Run the describe command using the gcloud CLI: gcloud dataflow jobs describe JOB ID Search for the line that contains serviceKmsKeyName .",
+          "Encryption of pipeline state artifacts Data that a Dataflow pipeline reads from user-specified data sources is encrypted, except for the data keys that you specify for key-based transforms in streaming jobs.",
+          "Home Documentation Data analytics Cloud Dataflow Guides Send feedback Use customer-managed encryption keys Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataflow/docs/guides/job-notifications-using-eventarc",
+        "https://docs.cloud.google.com/dataflow/docs/guides/manage-dependencies",
+        "https://docs.cloud.google.com/dataflow/docs/guides/customer-managed-encryption-keys"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataflow/docs/guides/job-notifications-using-eventarc",
+        "https://docs.cloud.google.com/dataflow/docs/guides/manage-dependencies",
+        "https://docs.cloud.google.com/dataflow/docs/guides/customer-managed-encryption-keys"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataflow/docs/guides/job-notifications-using-eventarc",
+        "https://docs.cloud.google.com/dataflow/docs/guides/manage-dependencies",
+        "https://docs.cloud.google.com/dataflow/docs/guides/customer-managed-encryption-keys"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataflow/docs/guides/job-notifications-using-eventarc",
+        "https://docs.cloud.google.com/dataflow/docs/guides/manage-dependencies",
+        "https://docs.cloud.google.com/dataflow/docs/guides/customer-managed-encryption-keys"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataflow/docs/guides/job-notifications-using-eventarc",
+        "https://docs.cloud.google.com/dataflow/docs/guides/manage-dependencies",
+        "https://docs.cloud.google.com/dataflow/docs/guides/customer-managed-encryption-keys"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataflow/docs/guides/job-notifications-using-eventarc",
+        "https://docs.cloud.google.com/dataflow/docs/guides/manage-dependencies",
+        "https://docs.cloud.google.com/dataflow/docs/guides/customer-managed-encryption-keys"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataflow/docs/guides/job-notifications-using-eventarc",
+        "https://docs.cloud.google.com/dataflow/docs/guides/manage-dependencies",
+        "https://docs.cloud.google.com/dataflow/docs/guides/customer-managed-encryption-keys"
+      ]
+    }
+  ]
+}

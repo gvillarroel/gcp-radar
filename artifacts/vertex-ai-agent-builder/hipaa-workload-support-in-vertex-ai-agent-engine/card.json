@@ -1,0 +1,155 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:48.720Z",
+  "source_step08_card": "data/step-08/current/products/vertex-ai-agent-builder/card.json",
+  "product_name": "Vertex AI Agent Builder",
+  "product_slug": "vertex-ai-agent-builder",
+  "feature_name": "HIPAA workload support in Vertex AI Agent Engine",
+  "feature_slug": "hipaa-workload-support-in-vertex-ai-agent-engine",
+  "summary": "Vertex AI Agent Engine is supported for HIPAA workloads as part of the Vertex AI Platform.",
+  "extended_definition": "Vertex AI Agent Engine is supported for HIPAA workloads as part of the Vertex AI Platform.",
+  "lifecycle": {
+    "latest_feature_date": "2025-08-21",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/agent-builder/agent-engine/agent-identity",
+      "https://docs.cloud.google.com/agent-builder/agent-engine/develop/llama-index/query-pipeline",
+      "https://docs.cloud.google.com/agent-builder/agent-engine/evaluate",
+      "https://docs.cloud.google.com/agent-builder/agent-engine/memory-bank/quickstart-api"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Use agent identity with Vertex AI Agent Engine \\_|\\_ Vertex AI Agent Builder\\",
+        "url": "https://docs.cloud.google.com/agent-builder/agent-engine/agent-identity",
+        "source_id": "site-docs-root",
+        "final_score": 334,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The Agent Engine instance is created with a read-only, system attested agent identity (a principal identifier ): Agent identity Format principal:// TRUST DOMAIN / NAMESPACE / AGENT NAME Example agent identity principal://agents.global.org- ORGANIZATION ID .system.id.goog/resources/aiplatform/projects/ PROJECT NUMBER /locations/ LOCATION /reasoningEngines/ AGENT ENGINE ID The following parts are auto-provisioned to you as part of agent identity: TRUST DOMAIN : A trust domain is provisioned for you when you enable the Vertex AI API: If you have an organization, the trust domain is created at the organization level with the format agents.global.org- ORGANIZATION ID .system.id.goog .",
+          "Define the agent in your preferred framework: from google.adk.agents import Agent agent = Agent ( model = \"gemini-2.5-flash\" , name = \"minimal agent\" , instruction = \"You are a helpful assistant.\" , ) Then, deploy it: import vertexai from vertexai import types from vertexai.agent engines import AdkApp Initialize the Vertex AI client with v1beta1 API for agent identity support client = vertexai .",
+          "Create an Agent Engine instance while deploying agent code : If you want to provision the agent identity while deploying your agent code, use the Vertex AI SDK for Python and the identity type=AGENT IDENTITY flag."
+        ]
+      },
+      {
+        "title": "\"Evaluate agents using the GenAI Client in Vertex AI SDK \\_|\\_ Vertex AI\\",
+        "url": "https://docs.cloud.google.com/agent-builder/agent-engine/evaluate",
+        "source_id": "site-docs-root",
+        "final_score": 319,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For more information on developing an agent, see Develop an Agent Development Kit agent . from google.adk import Agent Define Agent Tools def search products ( query : str ): \"\"\"Searches for products based on a query.\"\"\" Mock response for demonstration if \"headphones\" in query . lower (): return { \"products\" : [{ \"name\" : \"Wireless Headphones\" , \"id\" : \"B08H8H8H8H\" }]} else : return { \"products\" : []} def get product details ( product id : str ): \"\"\"Gets the details for a given product ID.\"\"\" if product id == \"B08H8H8H8H\" : return { \"details\" : \"Noise-cancelling, 20-hour battery life.\" } else : return { \"error\" : \"Product not found.\" } def add to cart ( product id : str , quantity : int ): \"\"\"Adds a specified quantity of a product to the cart.\"\"\" return { \"status\" : f \"Added { quantity } of { product id } to cart.\" } Define Agent my agent = Agent ( model = \"gemini-2.5-flash\" , name = 'ecommerce agent' , instruction = 'You are an ecommerce expert' , tools = [ search products , get product details , add to cart ], ) Deploy agent Deploy your agent to Vertex AI Agent Engine Runtime.",
+          "AdkApp ( agent = root agent , ) remote app = client . agent engines . create ( agent = app , config = { \"staging bucket\" : gs : // BUCKET NAME , \"requirements\" : [ 'google-cloud-aiplatform[adk,agent engines]' ], \"env vars\" : { \"GOOGLE CLOUD AGENT ENGINE ENABLE TELEMETRY\" : \"true\" } } ) return remote app agent engine = deploy adk agent ( my agent ) agent engine resource name = agent engine . api resource . name To get the list of agents that are deployed to Vertex AI Agent Engine, see Manage deployed agents .",
+          "To see an example of Create a Gen AI Agent Evaluation for a Deployed Agent, run the \"Create & Deploy Agent and Run Gen AI Agent Evaluation\" notebook in one of the following environments: Open in Colab Open in Colab Enterprise Open in Vertex AI Workbench View on GitHub Before you begin Sign in to your Google Cloud account."
+        ]
+      },
+      {
+        "title": "\"Develop a LlamaIndex Query Pipeline agent \\_|\\_ Vertex AI Agent Builder\\",
+        "url": "https://docs.cloud.google.com/agent-builder/agent-engine/develop/llama-index/query-pipeline",
+        "source_id": "site-docs-reference",
+        "final_score": 316,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "NEXT : '3' > : RelatedNodeInfo ( node id = 'f7d2cb7e-fa0c-40bf-b8e7-b888e36b87f9' , node type = '1' , metadata = {}, hash = 'db7cc1a67fa3afd1e5f24c8c61583781ce6a00c444da8f25a5374468c17b7de0' ) }, metadata template = ' {key} : {value} ' , metadata separator = ' \\n ' , text = 'So I looked around to see what I could salvage from the wreckage of my plans, and there was Lisp...' , mimetype = 'text/plain' , start char idx = 7166 , end char idx = 11549 , metadata separator = ' \\n ' , text template = ' {metadata str} \\n\\n {content} ' ), score = 0.7403571819090398 ) ] To use the retriever inside LlamaIndexQueryPipelineAgent , add it under the retriever builder= argument: from vertexai.preview import reasoning engines agent = reasoning engines .",
+          "Request () creds . refresh ( auth req ) if model kwargs is None : model kwargs = {} endpoint = f \"https:// { location } -aiplatform.googleapis.com\" api base = f ' { endpoint } /v1beta1/projects/ { project } /locations/ { location } /endpoints/openapi' return OpenAILike ( model = model name , api base = api base , api key = creds . token , model kwargs , ) Use the model in LlamaIndexQueryPipelineAgent : from vertexai.preview import reasoning engines agent = reasoning engines .",
+          "ChatPromptTemplate ( message templates = message templates ) You can use the full prompt template when you instantiate the agent in the following example: from vertexai.preview import reasoning engines system instruction = \"I help to find what is Paul Graham's life in College\" agent = reasoning engines ."
+        ]
+      },
+      {
+        "title": "\"Quickstart with Vertex AI Agent Engine SDK \\_|\\_ Vertex AI Agent Builder\\",
+        "url": "https://docs.cloud.google.com/agent-builder/agent-engine/memory-bank/quickstart-api",
+        "source_id": "site-docs-root",
+        "final_score": 310,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To see an example of using Memory Bank with the Agent Engine SDK, run the \"Get started with Memory Bank\" notebook in one of the following environments: Open in Colab Open in Colab Enterprise Open in Vertex AI Workbench View on GitHub To see an example of using Memory Bank with LangGraph, run the \"Get started with Memory Bank - LangGraph\" notebook in one of the following environments: Open in Colab Open in Colab Enterprise Open in Vertex AI Workbench View on GitHub Before you begin To complete the steps demonstrated in this tutorial, you must first follow the steps in Set up for Memory Bank .",
+          "Otherwise, you can delete the individual resources you created in this tutorial, as follows: Use the following code sample to delete the Vertex AI Agent Engine instance, which also deletes any sessions or memories associated with the Vertex AI Agent Engine instance. agent engine . delete ( force = True ) Delete any locally created files.",
+          "This tutorial uses the following steps: Create memories using the following options: Generate memories using Vertex AI Agent Engine Memory Bank : Write sessions and events to Vertex AI Agent Engine Sessions as sources for Vertex AI Agent Engine Memory Bank to generate memories."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "agents.global.org",
+      "aiplatform.googleapis.com",
+      "system.id.goog",
+      "vertexai.agent",
+      "vertexai.preview"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/agent-builder/agent-engine/agent-identity",
+        "https://docs.cloud.google.com/agent-builder/agent-engine/evaluate",
+        "https://docs.cloud.google.com/agent-builder/agent-engine/develop/llama-index/query-pipeline",
+        "https://docs.cloud.google.com/agent-builder/agent-engine/memory-bank/quickstart-api"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/agent-builder/agent-engine/agent-identity",
+        "https://docs.cloud.google.com/agent-builder/agent-engine/evaluate",
+        "https://docs.cloud.google.com/agent-builder/agent-engine/develop/llama-index/query-pipeline",
+        "https://docs.cloud.google.com/agent-builder/agent-engine/memory-bank/quickstart-api"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/agent-builder/agent-engine/agent-identity",
+        "https://docs.cloud.google.com/agent-builder/agent-engine/evaluate",
+        "https://docs.cloud.google.com/agent-builder/agent-engine/develop/llama-index/query-pipeline",
+        "https://docs.cloud.google.com/agent-builder/agent-engine/memory-bank/quickstart-api"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/agent-builder/agent-engine/agent-identity",
+        "https://docs.cloud.google.com/agent-builder/agent-engine/evaluate",
+        "https://docs.cloud.google.com/agent-builder/agent-engine/develop/llama-index/query-pipeline",
+        "https://docs.cloud.google.com/agent-builder/agent-engine/memory-bank/quickstart-api"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/agent-builder/agent-engine/agent-identity",
+        "https://docs.cloud.google.com/agent-builder/agent-engine/evaluate",
+        "https://docs.cloud.google.com/agent-builder/agent-engine/develop/llama-index/query-pipeline",
+        "https://docs.cloud.google.com/agent-builder/agent-engine/memory-bank/quickstart-api"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/agent-builder/agent-engine/agent-identity",
+        "https://docs.cloud.google.com/agent-builder/agent-engine/evaluate",
+        "https://docs.cloud.google.com/agent-builder/agent-engine/develop/llama-index/query-pipeline",
+        "https://docs.cloud.google.com/agent-builder/agent-engine/memory-bank/quickstart-api"
+      ]
+    }
+  ]
+}

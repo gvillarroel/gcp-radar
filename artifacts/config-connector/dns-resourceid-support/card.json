@@ -1,0 +1,271 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:30.193Z",
+  "source_step08_card": "data/step-08/current/products/config-connector/card.json",
+  "product_name": "Config Connector",
+  "product_slug": "config-connector",
+  "feature_name": "DNS resourceID support",
+  "feature_slug": "dns-resourceid-support",
+  "summary": "DNS resources support the resourceID field.",
+  "extended_definition": "DNS resources support the resourceID field.",
+  "lifecycle": {
+    "latest_feature_date": "2021-01-27",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/dns/dnsmanagedzone",
+      "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/dns/dnspolicy",
+      "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/dns/dnsrecordset"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "DNSPolicy | Config Connector | Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/dns/dnspolicy",
+        "source_id": "feature-recovery-http",
+        "final_score": 168,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "DNSPolicy Property Value Google Cloud Service Name Cloud DNS Google Cloud Service Documentation /dns/docs/ Google Cloud REST Resource Name v1beta2.policy Google Cloud REST Resource Documentation /dns/docs/reference/rest/v1beta2/policies Config Connector Resource Short Names gcpdnspolicy gcpdnspolicies dnspolicy Config Connector Service Name dns.googleapis.com Config Connector Resource Fully Qualified Name dnspolicies.dns.cnrm.cloud.google.com Can Be Referenced by IAMPolicy/IAMPolicyMember No Config Connector Default Average Reconcile Interval In Seconds 600 Custom Resource Definition Properties Annotations Fields cnrm.cloud.google.com/project-id Spec Schema alternativeNameServerConfig : targetNameServers : - forwardingPath : string ipv4Address : string description : string enableInboundForwarding : boolean enableLogging : boolean networks : - networkRef : external : string name : string namespace : string resourceID : string Fields alternativeNameServerConfig Optional object Sets an alternative name server for the associated networks.",
+          "When set to 'private', Cloud DNS will always send queries through VPC for this target Possible values: [\"default\", \"private\"]. alternativeNameServerConfig.targetNameServers[].ipv4Address Required* string IPv4 address to forward to. description Optional string A textual description field.",
+          "DNSPolicy | Config Connector | Google Cloud Documentation Skip to main content Domaines technologiques close IA et ML Développement d'applications Hébergement d'applications Calcul Analyses de données et pipelines Bases de données Solutions distribuées, hybrides et multicloud Solutions par secteur d'activité Migration Mise en réseau Observabilité et surveillance Sécurité Storage Outils de produits croisés close Gestion des accès et des ressources Gestion des coûts et de l'utilisation Infrastructure as Code SDK, langages, frameworks et outils / Console English Deutsch Español – América Latina Français Português – Brasil 中文 – 简体 日本語 한국어 Sign in Config Connector Commencer l'essai gratuit Aperçu Guides API et documentation de référence Ressources Domaines technologiques More Aperçu Guides API et documentation de référence Ressources Outils de produits croisés More Console Config Connector Présentation des ressources d'API AccessContextManager AccessContextManagerAccessLevel AccessContextManagerAccessPolicy AccessContextManagerServicePerimeter AccessContextManagerServicePerimeterResource AlloyDB AlloyDBBackup AlloyDBCluster AlloyDBInstance AlloyDBUser API Gateway APIGatewayAPI App Hub AppHubApplication Apigee ApigeeEndpointAttachment ApigeeEnvgroup ApigeeEnvgroupAttachment ApigeeEnvironment ApigeeInstance ApigeeInstanceAttachment ApigeeOrganization ArtifactRegistry ArtifactRegistryRepository Sauvegarde et reprise après sinistre BackupDRBackupPlan BackupDRBackupPlanAssociation BackupDRBackupVault BigQueryAnalyticsHub BigQueryAnalyticsHubDataExchange BigQueryAnalyticsHubListing BigQuery BigLake BigLakeTable BigQuery BigqueryConnectionConnection BigQueryDataset BigQueryJob BigQueryRoutine BigQueryTable BigQueryDataTransferConfig Réservation BigQuery BigQueryReservationAssignment BigQueryReservationReservation BillingBudgets BillingBudgetsBudget BinaryAuthorization BinaryAuthorizationAttestor BinaryAuthorizationPolicy Gestionnaire de certificats CertificateManagerCertificate CertificateManagerCertificateMap CertificateManagerCertificateMapEntry CertificateManagerDNSAuthorization inventaire des éléments cloud AssetFeed AssetSavedQuery Cloud Bigtable BigtableAppProfile BigtableGCPolicy BigtableInstance BigtableTable Cloud Build CloudBuildTrigger CloudBuildWorkerPool Cloud Composer ComposerEnvironment Cloud Deploy CloudDeployDeliveryPipeline Cloud Quotas APIQuotaAdjusterSettings APIQuotaPreference Cloud Functions CloudFunctionsFunction Cloud Identity CloudIdentityGroup CloudIdentityMembership Cloud Intrusion Detection System CloudIDSEndpoint Cloud Scheduler Tâche Cloud Scheduler Config Controller ConfigControllerInstance Cloud DLP DLPDeidentifyTemplate DLPInspectTemplate DLPJobTrigger DLPStoredInfoType Cloud DNS DNSManagedZone DNSPolicy DNSRecordSet Cloud Key Management Service KMSAutokeyConfig KMSCryptoKey KMSImportJob KMSKeyHandle KMSKeyRing Eventarc EventarcTrigger Identity and Access Management (IAM) IAMAccessBoundaryPolicy IAMAuditConfig IAMCustomRole IAMPartialPolicy IAMPolicy IAMPolicyMember IAMServiceAccount IAMServiceAccountKey IAMWorkforcePool IAMWorkforcePoolProvider IAMWorkloadIdentityPool IAMWorkloadIdentityPoolProvider Identity-Aware Proxy (IAP) IAPBrand IAPIdentityAwareProxyClient IAPSettings Identity Platform IdentityPlatformConfig IdentityPlatformTenant IdentityPlatformTenantOAuthIDPConfig IdentityPlatformOAuthIDPConfig Cloud Logging LoggingLink LoggingLogBucket LoggingLogExclusion LoggingLogMetric LoggingLogSink LoggingLogView Cloud Memorystore pour Memcached MemcacheInstance Cloud Monitoring MonitoringAlertPolicy MonitoringDashboard MonitoringGroup MonitoringMetricDescriptor MonitoringMonitoredProject MonitoringNotificationChannel MonitoringService MonitoringServiceLevelObjective MonitoringUptimeCheckConfig OS Config OSConfigGuestPolicy OSConfigOSPolicyAssignment Règles d'administration OrgPolicyCustomConstraint Cloud Source Repositories SourceRepoRepository Speech-to-Text SpeechCustomClass SpeechPhraseSet SpeechRecognizer Cloud Spanner SpannerBackupSchedule SpannerDatabase SpannerInstance Cloud SQL SQLDatabase SQLInstance SQLSSLCert SQLUser Cloud Storage StorageBucket StorageAnywhereCache StorageBucketAccessControl StorageDefaultObjectAccessControl StorageNotification Compute Engine ComputeAddress ComputeBackendBucket ComputeBackendService ComputeDisk ComputeExternalVPNGateway ComputeFirewall ComputeFirewallPolicy ComputeFirewallPolicyAssociation ComputeFirewallPolicyRule ComputeForwardingRule ComputeHealthCheck ComputeHTTPHealthCheck ComputeHTTPSHealthCheck ComputeImage ComputeInstance ComputeInstanceGroup ComputeInstanceGroupManager ComputeInstanceTemplate ComputeInterconnectAttachment ComputeManagedSSLCertificate ComputeNetwork ComputeNetworkEndpointGroup ComputeNetworkFirewallPolicy ComputeNetworkFirewallPolicyAssociation ComputeNetworkPeering ComputeNodeGroup ComputeNodeTemplate ComputePacketMirroring ComputeProjectMetadata ComputeRegionNetworkEndpointGroup ComputeReservation ComputeResourcePolicy ComputeRoute ComputeRouter ComputeRouterInterface ComputeRouterNAT ComputeRouterPeer ComputeSecurityPolicy ComputeServiceAttachment ComputeSharedVPCHostProject ComputeSharedVPCServiceProject ComputeSnapshot ComputeSSLCertificate ComputeSSLPolicy ComputeSubnetwork ComputeTargetGRPCProxy ComputeTargetHTTPProxy ComputeTargetHTTPSProxy ComputeTargetInstance ComputeTargetPool ComputeTargetSSLProxy ComputeTargetTCPProxy ComputeTargetVPNGateway ComputeURLMap ComputeVPNGateway ComputeVPNTunnel Container Analysis ContainerAnalysisNote Conteneur associé ContainerAttachedCluster Data Catalog DataCatalogPolicyTag DataCatalogTaxonomy Dataflow DataflowJob DataflowFlexTemplateJob Dataform DataformRepository Data Fusion DataFusionInstance Dataproc DataprocAutoscalingPolicy DataprocCluster DataprocWorkflowTemplate Dataproc Metastore MetastoreBackup Filestore FilestoreBackup FilestoreInstance Firestore FirestoreDatabase FirestoreIndex Google Kubernetes Engine (GKE) ContainerCluster ContainerNodePool Service Cloud Edge distribué EdgeContainerCluster EdgeContainerNodePool EdgeContainerVPNConnection EdgeNetworkNetwork EdgeNetworkSubnet Document AI DocumentAIProcessorVersion Contacts essentiels EssentialContactsContact GKE Hub GKEHubFeature GKEHubFeatureMembership GKEHubMembership Managed Kafka ManagedKafkaCluster ManagedKafkaTopic Memorystore (Redis) RedisCluster RedisInstance Memorystore pour Valkey MemorystoreInstance Connectivité réseau NetworkConnectivityHub NetworkConnectivitySpoke Sécurité réseau NetworkSecurityAuthorizationPolicy NetworkSecurityClientTLSPolicy NetworkSecurityServerTLSPolicy Services réseau NetworkServicesEndpointPolicy NetworkServicesGateway NetworkServicesGRPCRoute NetworkServicesHTTPRoute NetworkServicesMesh NetworkServicesTCPRoute NetworkServicesTLSRoute Notebooks NotebooksInstance CA privée PrivateCACAPool PrivateCACertificate PrivateCACertificateAuthority PrivateCACertificateTemplate Privileged Access Manager PrivilegedAccessManagerEntitlement Pub/Sub PubSubSchema PubSubSnapshot PubSubSubscription PubSubTopic Pub/Sub Lite PubSubLiteReservation reCAPTCHA Enterprise RecaptchaEnterpriseKey Gestionnaire de ressources Dossier Projet ResourceManagerLien ResourceManagerPolicy Cloud Run RunJob RunService SecretManager SecretManagerSecret SecretManagerSecretVersion SecureSourceManager SecureSourceManagerInstance SecureSourceManagerRepository Annuaire des services ServiceDirectoryEndpoint ServiceDirectoryNamespace ServiceDirectoryService Réseaux de services ServiceNetworkingConnection Service Usage Service ServiceIdentity Service de transfert de stockage StorageTransferJob Tags TagsLocationTagBinding TagsTagBinding TagsTagKey TagsTagValue Vertex AI VertexAIDataset VertexAIEndpoint VertexAIIndex VertexAIMetadataStore VMware Engine VMwareEngineExternalAddress Accès VPC VPCAccessConnector Stations de travail WorkstationCluster WorkstationConfig Station de travail Annotations IA et ML Développement d'applications Hébergement d'applications Calcul Analyses de données et pipelines Bases de données Solutions distribuées, hybrides et multicloud Solutions par secteur d'activité Migration Mise en réseau Observabilité et surveillance Sécurité Storage Gestion des accès et des ressources Gestion des coûts et de l'utilisation Infrastructure as Code SDK, langages, frameworks et outils Home Documentation Access and resource management Config Connector API et documentation de référence Send feedback Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "DNSManagedZone | Config Connector | Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/dns/dnsmanagedzone",
+        "source_id": "feature-recovery-http",
+        "final_score": 156,
+        "relevance": "",
+        "evidence_snippets": [
+          "DNSManagedZone Property Value Google Cloud Service Name Cloud DNS Google Cloud Service Documentation /dns/docs/ Google Cloud REST Resource Name v1beta2.managedZones Google Cloud REST Resource Documentation /dns/docs/reference/v1beta2/managedZones Config Connector Resource Short Names gcpdnsmanagedzone gcpdnsmanagedzones dnsmanagedzone Config Connector Service Name dns.googleapis.com Config Connector Resource Fully Qualified Name dnsmanagedzones.dns.cnrm.cloud.google.com Can Be Referenced by IAMPolicy/IAMPolicyMember Yes Supports IAM Conditions No Supports IAM Audit Configs No IAM External Reference Format projects/{{project}}/managedZones/{{name}} Config Connector Default Average Reconcile Interval In Seconds 600 Custom Resource Definition Properties Annotations Fields cnrm.cloud.google.com/force-destroy cnrm.cloud.google.com/project-id Spec Schema cloudLoggingConfig : enableLogging : boolean description : string dnsName : string dnssecConfig : defaultKeySpecs : - algorithm : string keyLength : integer keyType : string kind : string kind : string nonExistence : string state : string forwardingConfig : targetNameServers : - forwardingPath : string ipv4Address : string peeringConfig : targetNetwork : networkRef : external : string name : string namespace : string privateVisibilityConfig : gkeClusters : - gkeClusterNameRef : external : string name : string namespace : string networks : - networkRef : external : string name : string namespace : string resourceID : string reverseLookup : boolean serviceDirectoryConfig : namespace : namespaceUrl : string visibility : string Fields cloudLoggingConfig Optional object Cloud logging configuration. cloudLoggingConfig.enableLogging Required* boolean If set, enable query logging for this ManagedZone.",
+          "When set to 'private', Cloud DNS will always send queries through VPC for this target Possible values: [\"default\", \"private\"]. forwardingConfig.targetNameServers[].ipv4Address Required* string IPv4 address of a target name server. peeringConfig Optional object The presence of this field indicates that DNS Peering is enabled for this zone.",
+          "Possible values: [\"nsec\", \"nsec3\"]. dnssecConfig.state Optional string Specifies whether DNSSEC is enabled, and what mode it is in Possible values: [\"off\", \"on\", \"transfer\"]. forwardingConfig Optional object The presence for this field indicates that outbound forwarding is enabled for this zone."
+        ]
+      },
+      {
+        "title": "DNSRecordSet | Config Connector | Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/dns/dnsrecordset",
+        "source_id": "feature-recovery-http",
+        "final_score": 139,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "DNSRecordSet Property Value Google Cloud Service Name Cloud DNS Google Cloud Service Documentation /dns/docs/ Google Cloud REST Resource Name v1beta2.resourceRecordSets Google Cloud REST Resource Documentation /dns/docs/reference/v1beta2/resourceRecordSets Config Connector Resource Short Names gcpdnsrecordset gcpdnsrecordsets dnsrecordset Config Connector Service Name dns.googleapis.com Config Connector Resource Fully Qualified Name dnsrecordsets.dns.cnrm.cloud.google.com Can Be Referenced by IAMPolicy/IAMPolicyMember No Config Connector Default Average Reconcile Interval In Seconds 600 Custom Resource Definition Properties Annotations Fields cnrm.cloud.google.com/project-id Spec Schema managedZoneRef : external : string name : string namespace : string name : string routingPolicy : enableGeoFencing : boolean geo : - healthCheckedTargets : internalLoadBalancers : - ipAddressRef : external : string name : string namespace : string ipProtocol : string loadBalancerType : string networkRef : external : string name : string namespace : string port : string projectRef : external : string name : string namespace : string regionRef : external : string name : string namespace : string location : string rrdatasRefs : - external : string kind : string name : string namespace : string primaryBackup : backupGeo : - healthCheckedTargets : internalLoadBalancers : - ipAddressRef : external : string name : string namespace : string ipProtocol : string loadBalancerType : string networkRef : external : string name : string namespace : string port : string projectRef : external : string name : string namespace : string regionRef : external : string name : string namespace : string location : string rrdatasRefs : - external : string name : string namespace : string enableGeoFencingForBackups : boolean primary : internalLoadBalancers : - ipAddressRef : external : string name : string namespace : string ipProtocol : string loadBalancerType : string networkRef : external : string name : string namespace : string port : string projectRef : external : string name : string namespace : string regionRef : external : string name : string namespace : string trickleRatio : float wrr : - healthCheckedTargets : internalLoadBalancers : - ipAddressRef : external : string name : string namespace : string ipProtocol : string loadBalancerType : string networkRef : external : string name : string namespace : string port : string projectRef : external : string name : string namespace : string regionRef : external : string name : string namespace : string rrdatasRefs : - external : string kind : string name : string namespace : string weight : float rrdatas : - string rrdatasRefs : - external : string kind : string name : string namespace : string ttl : integer type : string Fields managedZoneRef Required object managedZoneRef.external Optional string Allowed value: The `name` field of a `DNSManagedZone` resource. managedZoneRef.name Optional string Name of the referent.",
+          "More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/ ttl Optional integer The time-to-live of this record set (seconds). type Required string The DNS record set type. * Field is required when parent field is specified Status Schema conditions : - lastTransitionTime : string message : string reason : string status : string type : string observedGeneration : integer Fields conditions list (object) Conditions represent the latest available observation of the resource's current state. conditions[] object conditions[].lastTransitionTime string Last time the condition transitioned from one status to another. conditions[].message string Human-readable message indicating details about last transition. conditions[].reason string Unique, one-word, CamelCase reason for the condition's last transition. conditions[].status string Status is the status of the condition.",
+          "Note that if DNSSEC is enabled for this zone, only one of `rrdatas` or `health_checked_targets` can be set. routingPolicy.wrr[].healthCheckedTargets.internalLoadBalancers Required* list (object) The list of internal load balancers to health check. routingPolicy.wrr[].healthCheckedTargets.internalLoadBalancers[] Required* object routingPolicy.wrr[].healthCheckedTargets.internalLoadBalancers[].ipAddressRef Required* object routingPolicy.wrr[].healthCheckedTargets.internalLoadBalancers[].ipAddressRef.external Optional string Allowed value: The `address` field of a `ComputeAddress` resource. routingPolicy.wrr[].healthCheckedTargets.internalLoadBalancers[].ipAddressRef.name Optional string Name of the referent."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "a1.googledomains.com",
+      "a2.googledomains.com",
+      "a3.googledomains.com",
+      "a4.googledomains.com",
+      "alt1.gmr",
+      "alt2.gmr",
+      "alt3.gmr",
+      "alt4.gmr",
+      "cnrm.cloud.google.com",
+      "compute.cnrm.cloud.google.com",
+      "dns.cnrm.cloud.google.com",
+      "dns.googleapis.com",
+      "dnsmanagedzones.dns.cnrm.cloud.google.com",
+      "dnspolicies.dns.cnrm.cloud.google.com",
+      "dnsrecordsets.dns.cnrm.cloud.google.com",
+      "example.com",
+      "geo.com",
+      "host.secure.example.com",
+      "in.l.google.com",
+      "kubernetes.io",
+      "mail.example.com",
+      "secure.example.com",
+      "service.secure.example.com",
+      "tcpserver.cnrm",
+      "v1beta2.managedZones",
+      "v1beta2.policy",
+      "v1beta2.resourceRecordSets",
+      "wrr.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/dns/dnspolicy",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/dns/dnsmanagedzone",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/dns/dnsrecordset"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/dns/dnspolicy",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/dns/dnsmanagedzone",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/dns/dnsrecordset"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/dns/dnspolicy",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/dns/dnsmanagedzone",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/dns/dnsrecordset"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/dns/dnspolicy",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/dns/dnsmanagedzone",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/dns/dnsrecordset"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/dns/dnspolicy",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/dns/dnsmanagedzone",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/dns/dnsrecordset"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/dns/dnspolicy",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/dns/dnsmanagedzone",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/dns/dnsrecordset"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/dns/dnspolicy",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/dns/dnsmanagedzone",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/dns/dnsrecordset"
+      ]
+    },
+    {
+      "capability": "dnssec",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/dns/dnspolicy",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/dns/dnsmanagedzone",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/dns/dnsrecordset"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/dns/dnspolicy",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/dns/dnsmanagedzone",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/dns/dnsrecordset"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/dns/dnspolicy",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/dns/dnsmanagedzone",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/dns/dnsrecordset"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/dns/dnspolicy",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/dns/dnsmanagedzone",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/dns/dnsrecordset"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/dns/dnspolicy",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/dns/dnsmanagedzone",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/dns/dnsrecordset"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/dns/dnspolicy",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/dns/dnsmanagedzone",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/dns/dnsrecordset"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/dns/dnspolicy",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/dns/dnsmanagedzone",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/dns/dnsrecordset"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/dns/dnspolicy",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/dns/dnsmanagedzone",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/dns/dnsrecordset"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/dns/dnspolicy",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/dns/dnsmanagedzone",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/dns/dnsrecordset"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/dns/dnspolicy",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/dns/dnsmanagedzone",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/dns/dnsrecordset"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/dns/dnspolicy",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/dns/dnsmanagedzone",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/dns/dnsrecordset"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/dns/dnspolicy",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/dns/dnsmanagedzone",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/dns/dnsrecordset"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/dns/dnspolicy",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/dns/dnsmanagedzone",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/dns/dnsrecordset"
+      ]
+    }
+  ]
+}

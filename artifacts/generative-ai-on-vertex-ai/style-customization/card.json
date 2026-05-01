@@ -1,0 +1,151 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:37.873Z",
+  "source_step08_card": "data/step-08/current/products/generative-ai-on-vertex-ai/card.json",
+  "product_name": "Generative AI on Vertex AI",
+  "product_slug": "generative-ai-on-vertex-ai",
+  "feature_name": "Style Customization",
+  "feature_slug": "style-customization",
+  "summary": "A customization mode for transferring a reference style to generated images.",
+  "extended_definition": "A customization mode for transferring a reference style to generated images.",
+  "lifecycle": {
+    "latest_feature_date": "2024-12-10",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/model-garden/deploy-and-inference-tutorial",
+      "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/reference/express-mode/rest/v1/publishers.models/countTokens",
+      "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/reference/express-mode/rest/v1beta1/publishers.models/countTokens",
+      "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/reference/rest/Shared.Types/EditMode"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Method: publishers.models.countTokens \\_|\\_ Generative AI on Vertex AI \\_\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/reference/express-mode/rest/v1/publishers.models/countTokens",
+        "source_id": "site-api-reference",
+        "final_score": 168,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation AI and ML Vertex AI Generative AI on Vertex AI API reference Send feedback Method: publishers.models.countTokens Stay organized with collections Save and categorize content based on your preferences.",
+          "A Tool is a piece of code that enables the system to interact with external systems to perform an action, or set of actions, outside of knowledge and scope of the model. systemInstruction object ( Content ) Optional.",
+          "Endpoint post https: / /aiplatform.googleapis.com /v1 /{model}:countTokens Path parameters model string Required."
+        ]
+      },
+      {
+        "title": "\"Method: publishers.models.countTokens \\_|\\_ Generative AI on Vertex AI \\_\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/reference/express-mode/rest/v1beta1/publishers.models/countTokens",
+        "source_id": "site-api-reference",
+        "final_score": 168,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation AI and ML Vertex AI Generative AI on Vertex AI API reference Send feedback Method: publishers.models.countTokens Stay organized with collections Save and categorize content based on your preferences.",
+          "A Tool is a piece of code that enables the system to interact with external systems to perform an action, or set of actions, outside of knowledge and scope of the model. systemInstruction object ( Content ) Optional.",
+          "Endpoint post https: / /aiplatform.googleapis.com /v1beta1 /{model}:countTokens Path parameters model string Required."
+        ]
+      },
+      {
+        "title": "\"Deploy and inference Gemma using Model Garden and Vertex AI GPU-backed endpoints\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/model-garden/deploy-and-inference-tutorial",
+        "source_id": "site-docs-root",
+        "final_score": 157,
+        "relevance": "",
+        "evidence_snippets": [
+          "QUERY PARAMETERS \" Select-Object -Expand Content You receive a JSON response similar to the following. { \"publisherModels\": [ { \"name\": \"publishers/google/models/gemma3\", \"versionId\": \"gemma-3-1b-it\", \"openSourceCategory\": \"GOOGLE OWNED OSS WITH GOOGLE CHECKPOINT\", \"supportedActions\": { \"openNotebook\": { \"references\": { \"us-central1\": { \"uri\": \"https://colab.research.google.com/github/GoogleCloudPlatform/vertex-ai-samples/blob/main/notebooks/community/model garden/model garden gradio streaming chat completions.ipynb\" } }, \"resourceTitle\": \"Notebook\", \"resourceUseCase\": \"Chat Completion Playground\", \"resourceDescription\": \"Chat with deployed Gemma 2 endpoints via Gradio UI.\" }, \"deploy\": { \"modelDisplayName\": \"gemma-3-1b-it\", \"containerSpec\": { \"imageUri\": \"us-docker.pkg.dev/vertex-ai/vertex-vision-model-garden-dockers/pytorch-vllm-serve:20250312 0916 RC01\", \"args\": [ \"python\", \"-m\", \"vllm.entrypoints.api server\", \"--host=0.0.0.0\", \"--port=8080\", \"--model=gs://vertex-model-garden-restricted-us/gemma3/gemma-3-1b-it\", \"--tensor-parallel-size=1\", \"--swap-space=16\", \"--gpu-memory-utilization=0.95\", \"--disable-log-stats\" ], \"env\": [ { \"name\": \"MODEL ID\", \"value\": \"google/gemma-3-1b-it\" }, { \"name\": \"DEPLOY SOURCE\", \"value\": \"UI NATIVE MODEL\" } ], \"ports\": [ { \"containerPort\": 8080 } ], \"predictRoute\": \"/generate\", \"healthRoute\": \"/ping\" }, \"dedicatedResources\": { \"machineSpec\": { \"machineType\": \"g2-standard-12\", \"acceleratorType\": \"NVIDIA L4\", \"acceleratorCount\": 1 } }, \"publicArtifactUri\": \"gs://vertex-model-garden-restricted-us/gemma3/gemma3.tar.gz\", \"deployTaskName\": \"vLLM 128K context\", \"deployMetadata\": { \"sampleRequest\": \"{\\n \\\"instances\\\": [\\n {\\n \\\"@requestFormat\\\": \\\"chatCompletions\\\",\\n \\\"messages\\\": [\\n {\\n \\\"role\\\": \\\"user\\\",\\n \\\"content\\\": \\\"What is machine learning?\\\"\\n }\\n ],\\n \\\"max tokens\\\": 100\\n }\\n ]\\n}\\n\" } }, ...",
+          "Run the following command in the terminal to create or overwrite this file in the current directory: @' { \"hugging face model id\": \" MODEL ID \", \"hugging face access token\": \" ACCESS TOKEN \", \"model config\": { \"accept eula\": \"true\" } } '@ Out-File -FilePath request.json -Encoding utf8 Then execute the following command to send your REST request: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method POST -Headers $headers -ContentType: \"application/json; charset=utf-8\" -InFile request.json -Uri \"https:// LOCATION -aiplatform.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION :deploy\" Select-Object -Expand Content You receive a JSON response similar to the following. { \"name\": \"projects/ PROJECT ID /locations/us-central1 LOCATION /operations/ OPERATION ID \", \"metadata\": { \"@type\": \"type.googleapis.com/google.cloud.aiplatform.v1.DeployOperationMetadata\", \"genericMetadata\": { \"createTime\": \"2025-03-13T21:44:44.538780Z\", \"updateTime\": \"2025-03-13T21:44:44.538780Z\" }, \"publisherModel\": \"publishers/ PUBLISHER NAME /model/ MODEL NAME \", \"destination\": \"projects/ PROJECT ID /locations/ LOCATION \", \"projectNumber\": \" PROJECT ID \" } } Deploy a model with customizations Before using any of the request data, make the following replacements: LOCATION : A region where the model is deployed.",
+          "For more information, see the Python API reference documentation . \"\"\" Sample to run inference on a Gemma2 model deployed to a Vertex AI endpoint with GPU accellerators. \"\"\" from google.cloud import aiplatform from google.protobuf import json format from google.protobuf.struct pb2 import Value TODO(developer): Update & uncomment lines below PROJECT ID = \"your-project-id\" ENDPOINT REGION = \"your-vertex-endpoint-region\" ENDPOINT ID = \"your-vertex-endpoint-id\" Default configuration config = { \"max tokens\" : 1024 , \"temperature\" : 0.9 , \"top p\" : 1.0 , \"top k\" : 1 } Prompt used in the prediction prompt = \"Why is the sky blue?\" Encapsulate the prompt in a correct format for GPUs Example format: [{'inputs': 'Why is the sky blue?', 'parameters': {'temperature': 0.9}}] input = { \"inputs\" : prompt , \"parameters\" : config } Convert input message to a list of GAPIC instances for model input instances = [ json format ."
+        ]
+      },
+      {
+        "title": "EditMode \\_|\\_ Generative AI on Vertex AI \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/reference/rest/Shared.Types/EditMode",
+        "source_id": "site-api-reference",
+        "final_score": 153,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Pass a style image to define a generation style for the prompt EDIT MODE BGSWAP Background swap mode.",
+          "Need to tell us more? [[[\"Easy to understand\",\"easyToUnderstand\",\"thumb-up\"],[\"Solved my problem\",\"solvedMyProblem\",\"thumb-up\"],[\"Other\",\"otherUp\",\"thumb-up\"]],[[\"Hard to understand\",\"hardToUnderstand\",\"thumb-down\"],[\"Incorrect information or sample code\",\"incorrectInformationOrSampleCode\",\"thumb-down\"],[\"Missing the information/samples I need\",\"missingTheInformationSamplesINeed\",\"thumb-down\"],[\"Other\",\"otherDown\",\"thumb-down\"]],[\"Last updated 2025-10-20 UTC.\"],[],[]]",
+          "Home Documentation AI and ML Vertex AI Generative AI on Vertex AI API reference Send feedback EditMode Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "aiplatform.googleapis.com",
+      "colab.research.google.com",
+      "completions.ipynb",
+      "docker.pkg.dev",
+      "gemma3.tar.gz",
+      "publishers.models",
+      "publishers.models.countTokens",
+      "request.json",
+      "type.googleapis.com",
+      "vllm.entrypoints.api"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/reference/express-mode/rest/v1/publishers.models/countTokens",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/reference/express-mode/rest/v1beta1/publishers.models/countTokens",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/model-garden/deploy-and-inference-tutorial",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/reference/rest/Shared.Types/EditMode"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/reference/express-mode/rest/v1/publishers.models/countTokens",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/reference/express-mode/rest/v1beta1/publishers.models/countTokens",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/model-garden/deploy-and-inference-tutorial",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/reference/rest/Shared.Types/EditMode"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/reference/express-mode/rest/v1/publishers.models/countTokens",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/reference/express-mode/rest/v1beta1/publishers.models/countTokens",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/model-garden/deploy-and-inference-tutorial",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/reference/rest/Shared.Types/EditMode"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/reference/express-mode/rest/v1/publishers.models/countTokens",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/reference/express-mode/rest/v1beta1/publishers.models/countTokens",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/model-garden/deploy-and-inference-tutorial",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/reference/rest/Shared.Types/EditMode"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/reference/express-mode/rest/v1/publishers.models/countTokens",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/reference/express-mode/rest/v1beta1/publishers.models/countTokens",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/model-garden/deploy-and-inference-tutorial",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/reference/rest/Shared.Types/EditMode"
+      ]
+    }
+  ]
+}

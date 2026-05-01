@@ -1,0 +1,38 @@
+# Service Consumer Management API tenancy unit management
+
+Product: Service Infrastructure
+Feature slug: `service-consumer-management-api-tenancy-unit-management`
+Coverage: `MEDIUM`
+IAM mapping: `unknown`
+
+## Technical Summary
+
+Introduces additional tenancy-unit management capabilities in the Service Consumer Management API.
+
+## Lifecycle
+
+- Latest feature date: 2019-03-01
+- Deprecation date: none recorded
+- Status: feature_observed
+
+## IAM
+
+No defensible IAM mapping was found in the current evidence.
+
+## Security Capabilities
+
+- access
+- auth
+- authorization
+- iam
+- permission
+- policy
+- private
+- role
+
+## Official Evidence
+
+- [https://docs.cloud.google.com/service-infrastructure/docs/manage-tenancy-units](https://docs.cloud.google.com/service-infrastructure/docs/manage-tenancy-units)
+- [https://docs.cloud.google.com/service-infrastructure/docs/service-consumer-management/reference/rest](https://docs.cloud.google.com/service-infrastructure/docs/service-consumer-management/reference/rest)
+- [https://docs.cloud.google.com/service-infrastructure/docs/service-consumer-management/reference/rest/v1/services.tenancyUnits](https://docs.cloud.google.com/service-infrastructure/docs/service-consumer-management/reference/rest/v1/services.tenancyUnits)
+- [https://docs.cloud.google.com/service-infrastructure/docs/service-consumer-management/reference/rest/v1/services.tenancyUnits/addProject](https://docs.cloud.google.com/service-infrastructure/docs/service-consumer-management/reference/rest/v1/services.tenancyUnits/addProject)

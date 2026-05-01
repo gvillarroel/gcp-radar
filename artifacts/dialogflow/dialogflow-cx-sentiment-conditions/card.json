@@ -1,0 +1,85 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:34.519Z",
+  "source_step08_card": "data/step-08/current/products/dialogflow/card.json",
+  "product_name": "Dialogflow",
+  "product_slug": "dialogflow",
+  "feature_name": "Dialogflow CX sentiment conditions",
+  "feature_slug": "dialogflow-cx-sentiment-conditions",
+  "summary": "Dialogflow CX conditions can use sentiment in conditional logic.",
+  "extended_definition": "Dialogflow CX conditions can use sentiment in conditional logic.",
+  "lifecycle": {
+    "latest_feature_date": "2021-02-01",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dialogflow/cx/docs/reference/condition",
+      "https://docs.cloud.google.com/dialogflow/cx/docs/reference/rest/v3/Fulfillment",
+      "https://docs.cloud.google.com/dialogflow/docs/editions"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Conditions reference \\_|\\_ Dialogflow CX \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dialogflow/cx/docs/reference/condition",
+        "source_id": "site-docs-reference",
+        "final_score": 92,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "You can build more complex conditions which evaluate to true for cases like: A parameter equals a specific value A parameter is less than or greater than a specific value A parameter is in a range of values One parameter is greater than another parameter A form has been completed End-user sentiment is positive or negative A probability from a random function To set conditions in the console, see the handler documentation .",
+          "Example conditions that use sentiment: $request.sentiment.score < 0 $request.sentiment.score > 0 $request.sentiment.magnitude > 3.6 $request.sentiment.succeeded = true $request.sentiment.succeeded = false Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Home Documentation AI and ML Dialogflow Dialogflow CX Reference Send feedback Conditions reference Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "Editions \\_|\\_ Dialogflow \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dialogflow/docs/editions",
+        "source_id": "site-docs-root-2",
+        "final_score": 56,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Category Dialogflow ES agent Dialogflow CX agent Editions Dialogflow CX Trial Edition, Dialogflow CX Essentials Edition Dialogflow CX Edition Agent building blocks Flat structure of intents Graph structure of flows and pages Conversation control Linear conversation paths that simulate nonlinear paths using intents as nodes and contexts to control paths State machine model with explicit conversation control using pages as nodes and state handlers to control paths Console user experience Mostly text forms Visual graphs showing conversation paths and text forms for configurations Intent reusability Intents are coupled with fulfillment, events, and responses; specific to a conversation state, so difficult to reuse Intents are simplified to remove this coupling and made highly reusable Webhook error handling Errors quietly ignored by agent, passed to API caller if present Explicit error event handling built-in to your agent Event handling Invoked events trigger intent matches Events handlers are first-class types with powerful controls Conditional response messages Requires webhook calls Can be configured statically in fulfillment , with static conditions for a route , or with webhooks calls Parameter scope Can be scoped to intent , context , or event Can be scoped to intent , form , or session Built in testing Not provided Provided Redaction Not provided Provided Conditional logic Not provided Provided DTMF input Not provided Provided System functions for advanced responses and conditions Not provided Provided Advanced NLU Not provided Provided Agents per project 1 1000 Recommended agent size Up to medium size agents Up to very large Recommended agent complexity Up to moderately complex agents Up to highly complex Learning curve to design a simple agent Basic Moderate Learning curve to design a complex agent High Moderate Pricing and quotas Granular Simplified Edition comparison The following editions are available: Term Definition Dialogflow CX Trial Edition A no-cost edition that provides most of the features of the standard Dialogflow ES agent type.",
+          "Dialogflow CX Agent Feature Dialogflow CX Edition Text (includes all DetectIntent, StreamingDetectIntent, and FulfillIntent requests that do not contain audio) 1200 requests per minute $0.007 per request Audio input/output (speech recognition, speech-to-text, STT, speech synthesis, text-to-speech, TTS, telephony) 600 requests per minute $0.06 per minute Service Level Agreement SLA Support Eligible for Cloud Support packages with committed response times for supporting production applications Terms of Service Google Cloud Platform ToS Dialogflow ES Agent Feature Trial Edition Essentials Edition Text (includes all DetectIntent and StreamingDetectIntent requests that do not contain audio) Production-ready quota No charge Production-ready quota $0.002 per request Audio input (also known as speech recognition, speech-to-text, STT) Limited quota No charge Production-ready quota $0.0065 per 15 seconds of audio Audio output (also known as speech synthesis, text-to-speech, TTS) Limited quota No charge Production-ready quota $4 to $16 per million characters Knowledge connectors (Beta) Limited quota No charge Production-ready quota No charge Sentiment analysis Not available Unlimited quota $0.25 to $1.00 per 1000 requests Dialogflow ES phone gateway Includes audio input and output.",
+          "Toll-free number not available Limited quota No charge Production-ready quota $0.05 to $0.06 per minute Mega agent Limited quota No charge Unlimited quota $0.002 to $0.006 per request Service Level Agreement None SLA Support Community support and via email Eligible for Cloud Support packages with committed response times for supporting production applications Terms of Service Dialogflow ES Trial Edition ToS Google Cloud Platform ToS Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License ."
+        ]
+      },
+      {
+        "title": "Fulfillment \\_|\\_ Dialogflow CX \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dialogflow/cx/docs/reference/rest/v3/Fulfillment",
+        "source_id": "site-docs-reference",
+        "final_score": 49,
+        "relevance": "",
+        "evidence_snippets": [
+          "ConditionalCases A list of cascading if-else conditions.",
+          "JSON representation ResponseMessage JSON representation ConversationSuccess JSON representation OutputAudioText JSON representation LiveAgentHandoff JSON representation EndInteraction PlayAudio JSON representation MixedAudio JSON representation Segment JSON representation TelephonyTransferCall JSON representation KnowledgeInfoCard ToolCall JSON representation ResponseType SetParameterAction JSON representation ConditionalCases JSON representation Case JSON representation CaseContent JSON representation GeneratorSettings JSON representation A fulfillment can do one or more of the following actions at the same time: Generate rich message responses.",
+          "JSON representation { \"messages\" : [ { object ( ResponseMessage ) } ] , \"webhook\" : string , \"returnPartialResponses\" : boolean , \"tag\" : string , \"setParameterActions\" : [ { object ( SetParameterAction ) } ] , \"conditionalCases\" : [ { object ( ConditionalCases ) } ] , \"advancedSettings\" : { object ( AdvancedSettings ) } , \"enableGenerativeFallback\" : boolean , \"generators\" : [ { object ( GeneratorSettings ) } ] } Fields messages[] object ( ResponseMessage ) The list of rich message responses to present to the user. webhook string The webhook to call."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "request.sentiment.magnitude",
+      "request.sentiment.score",
+      "request.sentiment.succeeded"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": []
+}

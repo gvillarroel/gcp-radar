@@ -1,0 +1,96 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:24.989Z",
+  "source_step08_card": "data/step-08/current/products/cloud-monitoring/card.json",
+  "product_name": "Cloud Monitoring",
+  "product_slug": "cloud-monitoring",
+  "feature_name": "Google Chat space notification channels",
+  "feature_slug": "google-chat-space-notification-channels",
+  "summary": "This feature lets Cloud Monitoring send notifications to Google Chat spaces.",
+  "extended_definition": "This feature lets Cloud Monitoring send notifications to Google Chat spaces.",
+  "lifecycle": {
+    "latest_feature_date": "2023-10-02",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/python/docs/reference/monitoring/latest/google.cloud.monitoring_v3.services.notification_channel_service.NotificationChannelServiceAsyncClient",
+      "https://docs.cloud.google.com/python/docs/reference/monitoring/latest/google.cloud.monitoring_v3.services.notification_channel_service.NotificationChannelServiceClient",
+      "https://docs.cloud.google.com/python/docs/reference/monitoring/latest/google.cloud.monitoring_v3.services.notification_channel_service.pagers.ListNotificationChannelsAsyncPager"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Class NotificationChannelServiceAsyncClient (2.30.0) \\_|\\_ Python client\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/monitoring/latest/google.cloud.monitoring_v3.services.notification_channel_service.NotificationChannelServiceAsyncClient",
+        "source_id": "site-python-reference",
+        "final_score": 148,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import monitoring v3 async def sample send notification channel verification code(): Create a client client = monitoring v3 .",
+          "It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import monitoring v3 async def sample list notification channels(): Create a client client = monitoring v3 .",
+          "The expected syntax is: :: projects/[PROJECT ID OR NUMBER] Note that this names https://cloud.google.com/monitoring/api/v3#project name the parent container in which to look for the descriptors; to retrieve a single descriptor by name, use the GetNotificationChannelDescriptor][google.monitoring.v3.NotificationChannelService.GetNotificationChannelDescriptor] operation, instead."
+        ]
+      },
+      {
+        "title": "\"Class NotificationChannelServiceClient (2.30.0) \\_|\\_ Python client libraries\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/monitoring/latest/google.cloud.monitoring_v3.services.notification_channel_service.NotificationChannelServiceClient",
+        "source_id": "site-python-reference",
+        "final_score": 148,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import monitoring v3 def sample send notification channel verification code(): Create a client client = monitoring v3 .",
+          "It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import monitoring v3 def sample list notification channels(): Create a client client = monitoring v3 .",
+          "The expected syntax is: :: projects/[PROJECT ID OR NUMBER] Note that this names https://cloud.google.com/monitoring/api/v3#project name the parent container in which to look for the descriptors; to retrieve a single descriptor by name, use the GetNotificationChannelDescriptor][google.monitoring.v3.NotificationChannelService.GetNotificationChannelDescriptor] operation, instead."
+        ]
+      },
+      {
+        "title": "\"Class ListNotificationChannelsAsyncPager (2.30.0) \\_|\\_ Python client libraries\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/monitoring/latest/google.cloud.monitoring_v3.services.notification_channel_service.pagers.ListNotificationChannelsAsyncPager",
+        "source_id": "site-python-reference",
+        "final_score": 136,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Parameters Name Description method Callable The method that was originally called, and which instantiated this pager. request google.cloud.monitoring v3.types.ListNotificationChannelsRequest The initial request object. response google.cloud.monitoring v3.types.ListNotificationChannelsResponse The initial response object. retry google.api core.retry.AsyncRetry Designation of what errors, if any, should be retried. timeout float The timeout for this request. metadata Sequence[Tuple[str, Union[str, bytes]]] Key/value pairs which should be sent along with the request as metadata.",
+          "Home Documentation Developer tools Python Client libraries Send feedback Class ListNotificationChannelsAsyncPager (2.30.0) Stay organized with collections Save and categorize content based on your preferences.",
+          "ListNotificationChannelsResponse ], ], request : google . cloud . monitoring v3 . types . notification service ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "core.retry.AsyncRetry",
+      "googleapis.dev",
+      "options.html",
+      "v3.types.ListNotificationChannelsRequest",
+      "v3.types.ListNotificationChannelsResponse"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/monitoring/latest/google.cloud.monitoring_v3.services.notification_channel_service.NotificationChannelServiceAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/monitoring/latest/google.cloud.monitoring_v3.services.notification_channel_service.NotificationChannelServiceClient",
+        "https://docs.cloud.google.com/python/docs/reference/monitoring/latest/google.cloud.monitoring_v3.services.notification_channel_service.pagers.ListNotificationChannelsAsyncPager"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,105 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:24.398Z",
+  "source_step08_card": "data/step-08/current/products/cloud-logging/card.json",
+  "product_name": "Cloud Logging",
+  "product_slug": "cloud-logging",
+  "feature_name": "Folder-level default settings for CMEK and storage location",
+  "feature_slug": "folder-level-default-settings-for-cmek-and-storage-location",
+  "summary": "Cloud Logging supports configuring CMEK and a default storage location for individual folders.",
+  "extended_definition": "Cloud Logging supports configuring CMEK and a default storage location for individual folders.",
+  "lifecycle": {
+    "latest_feature_date": "2023-06-05",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/java/docs/reference/google-cloud-logging/latest/com.google.cloud.logging.ContextHandler.ContextPriority",
+      "https://docs.cloud.google.com/java/docs/reference/google-cloud-logging/latest/com.google.cloud.logging.LoggingHandler.LogTarget",
+      "https://docs.cloud.google.com/logging/docs/reference/v2/rest/v2/Settings"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Settings \\_|\\_ Cloud Logging \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/logging/docs/reference/v2/rest/v2/Settings",
+        "source_id": "site-docs-reference",
+        "final_score": 44,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "JSON representation { \"name\" : string , \"kmsKeyName\" : string , \"kmsServiceAccountId\" : string , \"storageLocation\" : string , \"disableDefaultSink\" : boolean , \"defaultSinkConfig\" : { object ( DefaultSinkConfig ) } , \"loggingServiceAccountId\" : string } Fields name string Output only.",
+          "The storage location for the Default and Required log buckets of newly created projects and folders, unless the storage location is explicitly provided.",
+          "See Configure CMEK for Cloud Logging for more information. storageLocation string Optional."
+        ]
+      },
+      {
+        "title": "\"Enum ContextHandler.ContextPriority (3.29.0) \\_|\\_ Java client libraries\\",
+        "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-logging/latest/com.google.cloud.logging.ContextHandler.ContextPriority",
+        "source_id": "site-java-reference",
+        "final_score": 42,
+        "relevance": "MODERATE",
+        "evidence_snippets": []
+      },
+      {
+        "title": "\"Enum LoggingHandler.LogTarget (3.29.0) \\_|\\_ Java client libraries \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-logging/latest/com.google.cloud.logging.LoggingHandler.LogTarget",
+        "source_id": "site-java-reference",
+        "final_score": 42,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Inherited Members Enum.<T>valueOf(Class<T>,String) Enum.clone() Enum.compareTo(E) Enum.equals(Object) Enum.finalize() Enum.getDeclaringClass() Enum.hashCode() Enum.name() Enum.ordinal() Enum.toString() Object.getClass() Object.notify() Object.notifyAll() Object.wait() Object.wait(long) Object.wait(long,int) Static Fields Name Description CLOUD LOGGING Sends logs to the Cloud Logging API.",
+          "Home Documentation Developer tools Java Client libraries Send feedback Enum LoggingHandler.LogTarget (3.29.0) Stay organized with collections Save and categorize content based on your preferences.",
+          "3.29.0 (latest) 3.28.0 3.26.0 3.24.0 3.23.10 3.22.6 3.21.4 3.20.7 3.19.0 3.18.0 3.17.2 3.16.2 3.15.17 3.14.9 3.13.7 3.12.1 3.11.10 3.10.7 3.9.0 3.8.0 3.7.6 3.6.4 3.5.3 public enum LoggingHandler ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.cloud.logging.ContextHandler.ContextPriority",
+      "com.google.cloud.logging.LoggingHandler.LogTarget"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/reference/v2/rest/v2/Settings",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-logging/latest/com.google.cloud.logging.ContextHandler.ContextPriority",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-logging/latest/com.google.cloud.logging.LoggingHandler.LogTarget"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/reference/v2/rest/v2/Settings",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-logging/latest/com.google.cloud.logging.ContextHandler.ContextPriority",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-logging/latest/com.google.cloud.logging.LoggingHandler.LogTarget"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/reference/v2/rest/v2/Settings",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-logging/latest/com.google.cloud.logging.ContextHandler.ContextPriority",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-logging/latest/com.google.cloud.logging.LoggingHandler.LogTarget"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,215 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:42.052Z",
+  "source_step08_card": "data/step-08/current/products/identity-aware-proxy/card.json",
+  "product_name": "Identity-Aware Proxy",
+  "product_slug": "identity-aware-proxy",
+  "feature_name": "Custom OAuth clients for IAP",
+  "feature_slug": "custom-oauth-clients-for-iap",
+  "summary": "Identity-Aware Proxy can use custom OAuth clients for organization-external users, branded consent screens, and inherited default clients.",
+  "extended_definition": "Identity-Aware Proxy can use custom OAuth clients for organization-external users, branded consent screens, and inherited default clients.",
+  "lifecycle": {
+    "latest_feature_date": "2026-03-13",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/iap/docs/custom-oauth-configuration",
+      "https://docs.cloud.google.com/iap/docs/customizing",
+      "https://docs.cloud.google.com/iap/docs/enabling-compute-howto",
+      "https://docs.cloud.google.com/iap/docs/tutorial-gce"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Use custom OAuth clients with IAP \\_|\\_ Identity-Aware Proxy \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/iap/docs/custom-oauth-configuration",
+        "source_id": "site-docs-root",
+        "final_score": 325,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "This document describes when and how to use custom OAuth clients for Identity-Aware Proxy (IAP) .",
+          "Home Documentation Security Identity-Aware Proxy Guides Send feedback Use custom OAuth clients with IAP Stay organized with collections Save and categorize content based on your preferences.",
+          "Terraform To apply the custom OAuth client using Terraform, do the following: resource \"google iap settings\" \"iap settings\" { name = IAP RESOURCE NAME access settings { oauth settings { oauth client id = CLIENT ID oauth client secret = CLIENT SECRET } } } Replace the following: IAP RESOURCE NAME : the resource name of the iap settings resource for the service, which has the following format: projects/ PROJECT NUMBER /iap web/ REGION /services/ SERVICE NAME CLIENT ID : the client ID from the OAuth credentials that you generated earlier CLIENT SECRET : the client secret from the OAuth credentials that you generated earlier REST API Create a settings JSON file. cat iap-oauth.json { \"accessSettings\": { \"oauthSettings\": { \"clientId\": \" CLIENT ID \", \"clientSecret\": \" CLIENT SECRET \" } } } EOF Replace the following: CLIENT ID : The client ID from the OAuth credentials that you generated earlier."
+        ]
+      },
+      {
+        "title": "\"Enable IAP for Compute Engine \\_|\\_ Identity-Aware Proxy \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/iap/docs/enabling-compute-howto",
+        "source_id": "site-docs-root",
+        "final_score": 301,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Security Identity-Aware Proxy Guides Send feedback Enable IAP for Compute Engine Stay organized with collections Save and categorize content based on your preferences.",
+          "The policy allows clients with an IP address range of 10.0.0.0/24 to enable IAP on a forwarding rule. $ cat << EOF > policy.yaml action : CUSTOM description : authz policy with Cloud IAP name : AUTHZ POLICY NAME httpRules : - from : sources : - ipBlocks : - prefix : \"10.0.0.0\" length : 24 customProvider : cloudIap : {} target : loadBalancingScheme : EXTERNAL MANAGED resources : - https://www.googleapis.com/compute/v1/projects/ PROJECT ID /regions/ LOCATION /forwardingRules/ FORWARDING RULE ID EOF Run the following command to enable IAP on a forwarding rule. gcloud network-security authz-policies import AUTHZ POLICY NAME \\ --source=policy.yaml \\ --location= LOCATION \\ --project= PROJECT ID Replace the following: PROJECT ID : The Google Cloud project ID.",
+          "Turning on IAP On the Identity-Aware Proxy page, under APPLICATIONS , find the load balancer that serves the instance group you want to restrict access to."
+        ]
+      },
+      {
+        "title": "Customize IAP \\_|\\_ Identity-Aware Proxy \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/iap/docs/customizing",
+        "source_id": "site-docs-root",
+        "final_score": 286,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Customize IAP settings IAP provides the following customization settings: Field Description access settings.cors settings.allow http options Control HTTP OPTIONS (CORS preflight) access settings.oauth settings.login hint Simplify login for users of a G Suite domain application settings.access denied page settings.access denied page uri Show a custom error page when access is denied application settings.csm settings.rctoken aud Issue GKE Enterprise and Istio RCTokens access settings.gcip settings Authenticate with Identity Platform access settings.ReauthSettings Set a reauthentication policy.",
+          "Home Documentation Security Identity-Aware Proxy Guides Send feedback Customize IAP Stay organized with collections Save and categorize content based on your preferences.",
+          "To learn more about roles and permissions for IAP, see Identity-Aware Proxy roles and permissions ."
+        ]
+      },
+      {
+        "title": "\"Setting up IAP for Compute Engine \\_|\\_ Identity-Aware Proxy \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/iap/docs/tutorial-gce",
+        "source_id": "site-docs-root",
+        "final_score": 272,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "GO TO THE IDENTITY-AWARE PROXY PAGE If you haven't configured your project's OAuth consent screen, you're prompted to do so: Caution: Don't enter any confidential information on the OAuth consent screen.",
+          "Set up IAP To set up IAP for your project, follow these steps: In the Google Cloud console, go to the Security > Identity-Aware Proxy page and select the project that you want to enable IAP for.",
+          "Home Documentation Security Identity-Aware Proxy Guides Send feedback Setting up IAP for Compute Engine Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "oauth.json",
+      "policy.yaml",
+      "settings.access",
+      "settings.allow",
+      "settings.cors",
+      "settings.csm",
+      "settings.gcip",
+      "settings.login",
+      "settings.oauth",
+      "settings.rctoken",
+      "settings.ReauthSettings"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/custom-oauth-configuration",
+        "https://docs.cloud.google.com/iap/docs/enabling-compute-howto",
+        "https://docs.cloud.google.com/iap/docs/customizing",
+        "https://docs.cloud.google.com/iap/docs/tutorial-gce"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/custom-oauth-configuration",
+        "https://docs.cloud.google.com/iap/docs/enabling-compute-howto",
+        "https://docs.cloud.google.com/iap/docs/customizing",
+        "https://docs.cloud.google.com/iap/docs/tutorial-gce"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/custom-oauth-configuration",
+        "https://docs.cloud.google.com/iap/docs/enabling-compute-howto",
+        "https://docs.cloud.google.com/iap/docs/customizing",
+        "https://docs.cloud.google.com/iap/docs/tutorial-gce"
+      ]
+    },
+    {
+      "capability": "confidential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/custom-oauth-configuration",
+        "https://docs.cloud.google.com/iap/docs/enabling-compute-howto",
+        "https://docs.cloud.google.com/iap/docs/customizing",
+        "https://docs.cloud.google.com/iap/docs/tutorial-gce"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/custom-oauth-configuration",
+        "https://docs.cloud.google.com/iap/docs/enabling-compute-howto",
+        "https://docs.cloud.google.com/iap/docs/customizing",
+        "https://docs.cloud.google.com/iap/docs/tutorial-gce"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/custom-oauth-configuration",
+        "https://docs.cloud.google.com/iap/docs/enabling-compute-howto",
+        "https://docs.cloud.google.com/iap/docs/customizing",
+        "https://docs.cloud.google.com/iap/docs/tutorial-gce"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/custom-oauth-configuration",
+        "https://docs.cloud.google.com/iap/docs/enabling-compute-howto",
+        "https://docs.cloud.google.com/iap/docs/customizing",
+        "https://docs.cloud.google.com/iap/docs/tutorial-gce"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/custom-oauth-configuration",
+        "https://docs.cloud.google.com/iap/docs/enabling-compute-howto",
+        "https://docs.cloud.google.com/iap/docs/customizing",
+        "https://docs.cloud.google.com/iap/docs/tutorial-gce"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/custom-oauth-configuration",
+        "https://docs.cloud.google.com/iap/docs/enabling-compute-howto",
+        "https://docs.cloud.google.com/iap/docs/customizing",
+        "https://docs.cloud.google.com/iap/docs/tutorial-gce"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/custom-oauth-configuration",
+        "https://docs.cloud.google.com/iap/docs/enabling-compute-howto",
+        "https://docs.cloud.google.com/iap/docs/customizing",
+        "https://docs.cloud.google.com/iap/docs/tutorial-gce"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/custom-oauth-configuration",
+        "https://docs.cloud.google.com/iap/docs/enabling-compute-howto",
+        "https://docs.cloud.google.com/iap/docs/customizing",
+        "https://docs.cloud.google.com/iap/docs/tutorial-gce"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/custom-oauth-configuration",
+        "https://docs.cloud.google.com/iap/docs/enabling-compute-howto",
+        "https://docs.cloud.google.com/iap/docs/customizing",
+        "https://docs.cloud.google.com/iap/docs/tutorial-gce"
+      ]
+    }
+  ]
+}

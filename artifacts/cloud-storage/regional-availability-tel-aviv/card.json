@@ -1,0 +1,113 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:28.180Z",
+  "source_step08_card": "data/step-08/current/products/cloud-storage/card.json",
+  "product_name": "Cloud Storage",
+  "product_slug": "cloud-storage",
+  "feature_name": "Regional availability: Tel Aviv",
+  "feature_slug": "regional-availability-tel-aviv",
+  "summary": "Cloud Storage is available in the Tel Aviv region (me-west1).",
+  "extended_definition": "Cloud Storage is available in the Tel Aviv region (me-west1).",
+  "lifecycle": {
+    "latest_feature_date": "2022-09-13",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/storage/docs/analyze-data-gemini-cloud-assist",
+      "https://docs.cloud.google.com/storage/docs/availability-durability",
+      "https://docs.cloud.google.com/storage/docs/locations",
+      "https://docs.cloud.google.com/storage/docs/storage-classes"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Data availability and durability \\_|\\_ Cloud Storage \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/storage/docs/availability-durability",
+        "source_id": "site-iam-reference",
+        "final_score": 229,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "In the unlikely event of an availability zone outage, such as one caused by a natural disaster, regional buckets remain available, with no need to change storage paths.",
+          "This page explains the concepts of availability and durability within Cloud Storage: Availability: The ability to access data immediately upon request.",
+          "If one of the regions in which an object is stored becomes unavailable after the object is successfully uploaded but prior to it being replicated for georedundancy, Cloud Storage's strong consistency ensures that stale versions of the object won't be served and that subsequent overwrites aren't reverted when the region becomes available again."
+        ]
+      },
+      {
+        "title": "Bucket locations \\_|\\_ Cloud Storage \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/storage/docs/locations",
+        "source_id": "site-docs-root",
+        "final_score": 210,
+        "relevance": "",
+        "evidence_snippets": [
+          "The following regions are available: Geographic Area Region Name Region Description North America NORTHAMERICA-NORTHEAST1 1 Montréal Low CO 2 NORTHAMERICA-NORTHEAST2 Toronto Low CO 2 NORTHAMERICA-SOUTH1 1 Querétaro US-CENTRAL1 Iowa Low CO 2 US-EAST1 South Carolina US-EAST4 Northern Virginia US-EAST5 Columbus US-SOUTH1 Dallas Low CO 2 US-WEST1 Oregon Low CO 2 US-WEST2 Los Angeles US-WEST3 Salt Lake City US-WEST4 Las Vegas South America SOUTHAMERICA-EAST1 São Paulo Low CO 2 SOUTHAMERICA-WEST1 Santiago Low CO 2 Europe EUROPE-CENTRAL2 Warsaw EUROPE-NORTH1 Finland Low CO 2 EUROPE-NORTH2 Stockholm Low CO 2 EUROPE-SOUTHWEST1 Madrid Low CO 2 EUROPE-WEST1 Belgium Low CO 2 EUROPE-WEST2 London Low CO 2 EUROPE-WEST3 Frankfurt EUROPE-WEST4 Netherlands Low CO 2 EUROPE-WEST6 Zürich Low CO 2 EUROPE-WEST8 Milan EUROPE-WEST9 Paris Low CO 2 EUROPE-WEST10 Berlin EUROPE-WEST12 Turin Asia ASIA-EAST1 Taiwan ASIA-EAST2 Hong Kong ASIA-NORTHEAST1 Tokyo ASIA-NORTHEAST2 1 Osaka ASIA-NORTHEAST3 Seoul ASIA-SOUTHEAST1 Singapore India ASIA-SOUTH1 Mumbai ASIA-SOUTH2 Delhi Indonesia ASIA-SOUTHEAST2 Jakarta Thailand ASIA-SOUTHEAST3 Bangkok Middle East ME-CENTRAL1 Doha ME-CENTRAL2 Dammam, Saudi Arabia ME-WEST1 Tel Aviv Australia AUSTRALIA-SOUTHEAST1 Sydney AUSTRALIA-SOUTHEAST2 Melbourne Africa AFRICA-SOUTH1 Johannesburg 1 Montréal, Osaka, and Querétaro each have three zones housed in one or two physical data centers.",
+          "Lowest storage price No replication charges No outbound data transfer charges when reading data inside the same region Highest storage price Replication charges apply on write No outbound data transfer charges when reading data within either region Higher storage price than regions, but lower than dual-regions Replication charges apply on write Outbound data transfer charges always apply when reading data Location recommendations Requirements Recommended bucket location Workload examples Ultra-low latency Ultra-high bandwidth and I/O High performance Zone 1 Artificial Intelligence (AI) and Machine Learning (ML) High-performance computing Data-intensive analytics Optimized latency and bandwidth Lowest data storage cost Cross-zone redundancy Region 2 Analytics Backup and archive Optimized latency and bandwidth Cross-region redundancy, with precise control of the locations where copies of data are stored Dual-region 3 Analytics Backup and archive Disaster recovery Cross-geography data access Cross-region redundancy Multi-region Content serving Zonal locations for buckets are only available through Rapid Bucket .",
+          "Note that bucket relocation is available only if you've configured Storage Intelligence ."
+        ]
+      },
+      {
+        "title": "Storage classes \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/storage/docs/storage-classes",
+        "source_id": "site-docs-root",
+        "final_score": 199,
+        "relevance": "",
+        "evidence_snippets": [
+          "Storage Class Name for APIs and CLIs Minimum storage duration Retrieval fees Typical monthly availability 1 Rapid storage 2 RAPID None None 99.95% in zones Standard storage STANDARD None None 99.99% in multi-regions and dual-regions 99.99% in regions Nearline storage NEARLINE 30 days Yes 99.95% in multi-regions and dual-regions 99.9% in regions Coldline storage COLDLINE 90 days Yes 99.95% in multi-regions and dual-regions 99.9% in regions Archive storage ARCHIVE 365 days Yes 99.95% in multi-regions and dual-regions 99.9% in regions 1 See the class descriptions for the availability SLA for each storage class.",
+          "Availability The availability of Nearline storage data is: Location type Availability SLA 1 Typical monthly availability multi-region 99.9% 99.95% dual-region 99.9% 99.95% region 99.0% 99.9% 1 The availability SLA is the monthly uptime percentage backed by the Cloud Storage SLA .",
+          "Availability The availability of Coldline storage data is: Location type Availability SLA 1 Typical monthly availability multi-region 99.9% 99.95% dual-region 99.9% 99.95% region 99.0% 99.9% 1 The availability SLA is the monthly uptime percentage backed by the Cloud Storage SLA ."
+        ]
+      },
+      {
+        "title": "\"Analyze your stored data with Gemini Cloud Assist \\_|\\_ Cloud Storage \\_\\",
+        "url": "https://docs.cloud.google.com/storage/docs/analyze-data-gemini-cloud-assist",
+        "source_id": "site-iam-reference",
+        "final_score": 191,
+        "relevance": "",
+        "evidence_snippets": [
+          "When you use Gemini Cloud Assist alone without a Storage Intelligence subscription, you can ask prompts about how Cloud Storage generally works, such as the following: \"How do I transition objects from one storage class to another?\" \"How do I enable soft delete on a bucket?\" When you enable a Storage Intelligence subscription , you can also ask prompts related to cost saving opportunities, security and compliance, and data discovery.",
+          "The following data is not available in Storage Insights datasets, meaning that Gemini Cloud Assist lacks the proper context to respond to prompts relating to that data: Specific cost data, for example: \"how much does my bucket cost per month\".",
+          "If you want to enter prompts related to specific buckets and objects, you must also complete the following prerequisite steps: Enable Storage Intelligence, which gives you access to using Storage Insights datasets."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/availability-durability",
+        "https://docs.cloud.google.com/storage/docs/locations",
+        "https://docs.cloud.google.com/storage/docs/storage-classes",
+        "https://docs.cloud.google.com/storage/docs/analyze-data-gemini-cloud-assist"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/availability-durability",
+        "https://docs.cloud.google.com/storage/docs/locations",
+        "https://docs.cloud.google.com/storage/docs/storage-classes",
+        "https://docs.cloud.google.com/storage/docs/analyze-data-gemini-cloud-assist"
+      ]
+    }
+  ]
+}

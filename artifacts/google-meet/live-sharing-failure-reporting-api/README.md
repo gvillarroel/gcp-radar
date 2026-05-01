@@ -1,0 +1,42 @@
+# Live Sharing failure reporting API
+
+Product: Google Meet
+Feature slug: `live-sharing-failure-reporting-api`
+Coverage: `MEDIUM`
+IAM mapping: `unknown`
+
+## Technical Summary
+
+The SDK adds notifyLiveSharingFailureEvent for reporting Live Sharing failures.
+
+## Lifecycle
+
+- Latest feature date: 2023-01-03
+- Deprecation date: none recorded
+- Status: feature_observed
+
+## IAM
+
+No defensible IAM mapping was found in the current evidence.
+
+## Security Capabilities
+
+- access
+- auth
+- authorization
+- credential
+- identity
+- permission
+- secret
+- token
+
+## Official Evidence
+
+- [https://developers.google.com/workspace/meet/api/guides/authenticate-authorize](https://developers.google.com/workspace/meet/api/guides/authenticate-authorize)
+- [https://developers.google.com/workspace/meet/api/guides/overview](https://developers.google.com/workspace/meet/api/guides/overview)
+- [https://developers.google.com/workspace/meet/api/guides/tutorial-events-python](https://developers.google.com/workspace/meet/api/guides/tutorial-events-python)
+- [https://developers.google.com/workspace/meet/api/reference/rest/v2](https://developers.google.com/workspace/meet/api/reference/rest/v2)
+
+## Validation Findings
+
+- `warn:thin_token_overlap` Supporting pages only weakly overlap with informative feature tokens.

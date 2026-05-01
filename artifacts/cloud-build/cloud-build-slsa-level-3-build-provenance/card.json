@@ -1,0 +1,81 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:22.874Z",
+  "source_step08_card": "data/step-08/current/products/cloud-build/card.json",
+  "product_name": "Cloud Build",
+  "product_slug": "cloud-build",
+  "feature_name": "Cloud Build SLSA Level 3 build provenance",
+  "feature_slug": "cloud-build-slsa-level-3-build-provenance",
+  "summary": "Cloud Build can generate build provenance at SLSA Level 3.",
+  "extended_definition": "Cloud Build can generate build provenance at SLSA Level 3.",
+  "lifecycle": {
+    "latest_feature_date": "2023-06-23",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/build/docs/building/build-go",
+      "https://docs.cloud.google.com/build/docs/building/build-java",
+      "https://docs.cloud.google.com/build/docs/overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Overview of Cloud Build \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/build/docs/overview",
+        "source_id": "site-docs-root",
+        "final_score": 125,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Cloud Build can generate build provenance for container images that provide SLSA level 3 assurance.",
+          "This panel displays the following information: Supply-chain Levels for Software Artifacts (SLSA) Level : Identifies the maturity level of your software build process in accordance with the SLSA specification .",
+          "In the requirements for the SLSA framework, automated builds are a requirement for SLSA level 1, and using a build service instead of developer environments for builds is a requirement for SLSA level 2."
+        ]
+      },
+      {
+        "title": "Build and test Go applications \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/build/docs/building/build-go",
+        "source_id": "site-docs-root-2",
+        "final_score": 83,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Optional: Enable provenance generation Cloud Build can generate verifiable Supply chain Levels for Software Artifacts (SLSA) build provenance metadata to help secure your continuous integration pipeline.",
+          "This page explains how to use Cloud Build to build and test your Go applications, upload your artifacts to Artifact Registry, generate provenance information, and save your test logs in Cloud Storage.",
+          "To enable provenance generation, add requestedVerifyOption: VERIFIED to the options section in your config file."
+        ]
+      },
+      {
+        "title": "Build and test Java applications \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/build/docs/building/build-java",
+        "source_id": "site-docs-root",
+        "final_score": 83,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Optional: Enable provenance generation Cloud Build can generate verifiable Supply chain Levels for Software Artifacts (SLSA) build provenance metadata to help secure your continuous integration pipeline.",
+          "This page explains how to use Cloud Build to build and test Java-based applications, store built artifacts in a Maven repository in Artifact Registry, and generate build provenance information.",
+          "To enable provenance generation, add requestedVerifyOption: VERIFIED to the options section in your config file."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": []
+}

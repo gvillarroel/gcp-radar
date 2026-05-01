@@ -1,0 +1,175 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:48.769Z",
+  "source_step08_card": "data/step-08/current/products/vertex-ai-search/card.json",
+  "product_name": "Vertex AI Search",
+  "product_slug": "vertex-ai-search",
+  "feature_name": "Vertex AI Search third-party data connectors for Enterprise Search data stores",
+  "feature_slug": "vertex-ai-search-third-party-data-connectors-for-enterprise-search-data-stores",
+  "summary": "Vertex AI Search adds support for syncing Enterprise Search data stores with external sources like Jira, Confluence, and Salesforce through third-party data connectors in private preview.",
+  "extended_definition": "Vertex AI Search adds support for syncing Enterprise Search data stores with external sources like Jira, Confluence, and Salesforce through third-party data connectors in private preview.",
+  "lifecycle": {
+    "latest_feature_date": "2023-09-22",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/generative-ai-app-builder/docs/cmek",
+      "https://docs.cloud.google.com/generative-ai-app-builder/docs/create-data-store-es",
+      "https://docs.cloud.google.com/generative-ai-app-builder/docs/data-source-access-control"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Customer-managed encryption keys \\_|\\_ Vertex AI Search \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/generative-ai-app-builder/docs/cmek",
+        "source_id": "site-docs-reference",
+        "final_score": 151,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Healthcare search data stores and third-party connectors are CMEK-compliant.",
+          "Important: Do not rotate keys on data stores associated with recommendations apps or with any apps that need analytics, and don't rotate the single-region keys used for third-party connectors.",
+          "An example response looks like this: { \"name\": \"projects/969795412903/locations/us/collections/default collection/dataStores/my-data-store-1\", \"displayName\": \"my-data-store-1\", \"industryVertical\": \"GENERIC\", \"createTime\": \"2023-09-05T21:20:21.520552Z\", \"solutionTypes\": [ \"SOLUTION TYPE SEARCH\" ], \"defaultSchemaId\": \"default schema\", \"cmekConfig\": { \"name\": \"projects/969795412903/locations/us/collections/default collection/dataStores/my-data-store-1/cmekConfigs/default cmek config\", \"kmsKey\": \"projects/my-ai-app-project-123/locations/us/keyRings/my-key-ring/cryptoKeys/my-key\" } } Other data protected by the Cloud KMS key In addition to data in the data stores, your keys can protect other types of app-owned core information held by Vertex AI Search, such as the session data generated during search with follow-ups ."
+        ]
+      },
+      {
+        "title": "Create a search data store \\_|\\_ Vertex AI Search \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/generative-ai-app-builder/docs/create-data-store-es",
+        "source_id": "site-docs-root",
+        "final_score": 149,
+        "relevance": "",
+        "evidence_snippets": [
+          "This page describes how to create a data store and ingest data for custom search apps in Vertex AI Search. go to the section for the source you plan to use: Create a data store using website content Import from BigQuery Import from Cloud Storage Sync from Google Drive Sync from Gmail (Public preview) Sync from Google Sites (Public preview) Sync from Google Calendar (Public preview) Sync from Google Groups (Public preview) Import from Cloud SQL Import from Spanner (Public preview) Import from Firestore Import from Bigtable (Public Preview) Import from AlloyDB for PostgreSQL (Public Preview) Upload structured JSON data with the API Create a data store using Terraform To sync data from a third-party data source instead, see Connect a third-party data source .",
+          "Connect a third-party data source Connecting third-party data sources to Vertex AI Search is no longer supported.",
+          "CreateDataStoreMetadata ( operation . metadata ) Handle the response print ( response ) print ( metadata ) return operation . operation . name Import websites from google.api core.client options import ClientOptions from google.cloud import discoveryengine v1 as discoveryengine # TODO(developer): Uncomment these variables before running the sample. # project id = \"YOUR PROJECT ID\" # location = \"YOUR LOCATION\" # Values: \"global\" # data store id = \"YOUR DATA STORE ID\" # NOTE: Do not include http or https protocol in the URI pattern # uri pattern = \"cloud.google.com/generative-ai-app-builder/docs/ \" # For more information, refer to: # https://cloud.google.com/generative-ai-app-builder/docs/locations#specify a multi-region for your data store client options = ( ClientOptions(api endpoint=f\"{location}-discoveryengine.googleapis.com\") if location != \"global\" else None ) # Create a client client = discoveryengine.SiteSearchEngineServiceClient( client options=client options ) # The full resource name of the data store # e.g. projects/{project}/locations/{location}/dataStores/{data store id} site search engine = client.site search engine path( project=project id, location=location, data store=data store id ) # Target Site to index target site = discoveryengine.TargetSite( provided uri pattern=uri pattern, # Options: INCLUDE, EXCLUDE type =discoveryengine.TargetSite.Type.INCLUDE, exact match=False, ) # Make the request operation = client.create target site( parent=site search engine, target site=target site, ) print(f\"Waiting for operation to complete: {operation.operation.name}\") response = operation.result() # After the operation is complete, # get information from operation metadata metadata = discoveryengine.CreateTargetSiteMetadata(operation.metadata) # Handle the response print(response) print(metadata) Next steps To attach your website data store to an app, create an app with Enterprise features enabled and select your data store following the steps in Create a search app ."
+        ]
+      },
+      {
+        "title": "\"Set up data source access control \\_|\\_ Vertex AI Search \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/generative-ai-app-builder/docs/data-source-access-control",
+        "source_id": "site-docs-reference",
+        "final_score": 87,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "You have configured SSO with Google Identity such that your users begin their sign in using Google Identity and then get directed to your third-party identity provider. (You might have already done this sync when setting up other Google Cloud resources or Google Workspace.) Third-party identity provider federation: If you use an external identity provider—for example, Microsoft Entra ID, Okta, or Ping, but don't want to sync your identities into Google Cloud Identity, then you must set up Workforce Identity Federation in Google Cloud before you can turn on data source access control for Vertex AI Search.",
+          "When following the steps for data import in Create a search data store , make sure to do the following: If using the console, then when specifying the kind of data you're uploading, select JSONL for structured data with metadata If using the API, set BigQuerySource.dataSchema to document Preview results in the Workforce Identity Federation console To preview results for apps with third-party access control in the Google Cloud console, you must sign in with your organization's credentials.",
+          "If you use third-party connectors , the google.subject attribute must map to the email address field in the external identity provider."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "client.create",
+      "client.site",
+      "core.client",
+      "discoveryengine.CreateTargetSiteMetadata",
+      "discoveryengine.googleapis.com",
+      "discoveryengine.SiteSearchEngineServiceClient",
+      "discoveryengine.TargetSite",
+      "discoveryengine.TargetSite.Type.INCLUDE",
+      "e.g",
+      "operation.metadata",
+      "operation.operation.name",
+      "operation.result"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/cmek",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/create-data-store-es",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/data-source-access-control"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/cmek",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/create-data-store-es",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/data-source-access-control"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/cmek",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/create-data-store-es",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/data-source-access-control"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/cmek",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/create-data-store-es",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/data-source-access-control"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/cmek",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/create-data-store-es",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/data-source-access-control"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/cmek",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/create-data-store-es",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/data-source-access-control"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/cmek",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/create-data-store-es",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/data-source-access-control"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/cmek",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/create-data-store-es",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/data-source-access-control"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/cmek",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/create-data-store-es",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/data-source-access-control"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/cmek",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/create-data-store-es",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/data-source-access-control"
+      ]
+    }
+  ]
+}

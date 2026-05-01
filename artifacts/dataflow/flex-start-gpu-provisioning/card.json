@@ -1,0 +1,107 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:32.732Z",
+  "source_step08_card": "data/step-08/current/products/dataflow/card.json",
+  "product_name": "Dataflow",
+  "product_slug": "dataflow",
+  "feature_name": "Flex-start GPU provisioning",
+  "feature_slug": "flex-start-gpu-provisioning",
+  "summary": "Dataflow supports the flex-start provisioning model for GPU jobs in batch pipelines to improve access to constrained GPU resources.",
+  "extended_definition": "Dataflow supports the flex-start provisioning model for GPU jobs in batch pipelines to improve access to constrained GPU resources.",
+  "lifecycle": {
+    "latest_feature_date": "2025-09-24",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 1,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "coverage_low",
+        "message": "The feature ended with coverage LOW.",
+        "suggested_steps": [
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dataflow/docs/guides/flexrs",
+      "https://docs.cloud.google.com/dataflow/docs/overview",
+      "https://docs.cloud.google.com/dataflow/docs/resources"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Resources \\_|\\_ Cloud Dataflow \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataflow/docs/resources",
+        "source_id": "site-docs-reference-required-4",
+        "final_score": 46,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Data analytics Cloud Dataflow Resources Send feedback Resources Stay organized with collections Save and categorize content based on your preferences.",
+          "Quotas & limits This page provides information on the resource quotas associated with using Dataflow.",
+          "Shared responsibility The shared security and compliance responsibilities when you use Dataflow."
+        ]
+      },
+      {
+        "title": "Dataflow overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataflow/docs/overview",
+        "source_id": "site-docs-reference-required-4",
+        "final_score": 35,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Observable data pipeline jobs You can monitor the status of your Dataflow jobs through the Dataflow monitoring interface in the Google Cloud console.",
+          "Dataflow supports several different ways to create and execute pipelines, depending on your needs: Write code using the Apache Beam SDKs.",
+          "How data pipelines work for stream and batch processing Dataflow uses a data pipeline model, where data moves through a series of stages."
+        ]
+      },
+      {
+        "title": "Use Flexible Resource Scheduling in Cloud Dataflow \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataflow/docs/guides/flexrs",
+        "source_id": "site-docs-reference-2",
+        "final_score": 31,
+        "relevance": "",
+        "evidence_snippets": [
+          "Pricing FlexRS jobs are billed for the following resources: Regular and preemptible CPUs Memory resources Dataflow Shuffle resources 25 GB per worker of Persistent Disk resources While Dataflow uses both preemptible and regular workers to execute your FlexRS job, you are billed a uniform discounted rate compared to regular Dataflow prices regardless of the worker type.",
+          "The Dataflow service selects the zone for all FlexRS jobs in the region that you specified with the region parameter.",
+          "The Dataflow service selects the zone for all FlexRS jobs in the region that you specified with the region parameter."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataflow/docs/overview",
+        "https://docs.cloud.google.com/dataflow/docs/resources",
+        "https://docs.cloud.google.com/dataflow/docs/guides/flexrs"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataflow/docs/overview",
+        "https://docs.cloud.google.com/dataflow/docs/resources",
+        "https://docs.cloud.google.com/dataflow/docs/guides/flexrs"
+      ]
+    }
+  ]
+}

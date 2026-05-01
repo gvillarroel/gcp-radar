@@ -1,0 +1,140 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:45.292Z",
+  "source_step08_card": "data/step-08/current/products/pub-sub/card.json",
+  "product_name": "Pub/Sub",
+  "product_slug": "pub-sub",
+  "feature_name": "Pub/Sub subscription byte cost metric",
+  "feature_slug": "pub-sub-subscription-byte-cost-metric",
+  "summary": "Pub/Sub exposes a quota metric for subscription byte cost.",
+  "extended_definition": "Pub/Sub exposes a quota metric for subscription byte cost.",
+  "lifecycle": {
+    "latest_feature_date": "2015-12-01",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/pubsub/docs/bigquery-troubleshooting",
+      "https://docs.cloud.google.com/pubsub/docs/create-bigquery-subscription",
+      "https://docs.cloud.google.com/pubsub/docs/create-cloudstorage-subscription",
+      "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/create_subscription"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Troubleshooting BigQuery subscriptions \\_|\\_ Pub/Sub \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/pubsub/docs/bigquery-troubleshooting",
+        "source_id": "site-docs-root-2",
+        "final_score": 235,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To check if you're encountering quota limitations, examine the push requests metric ( subscription/push request count ) for any resource exhausted errors.",
+          "Search for the relevant quota, either pubsub.googleapis.com/regionalpushsubscriber or bigquerystorage.googleapis.com/write/append bytes .",
+          "Select the metric pubsub.googleapis.com/subscription/push request count and filter by response code=invalid argument ."
+        ]
+      },
+      {
+        "title": "Create BigQuery subscriptions \\_|\\_ Pub/Sub \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/pubsub/docs/create-bigquery-subscription",
+        "source_id": "site-docs-root-2",
+        "final_score": 235,
+        "relevance": "",
+        "evidence_snippets": [
+          "For more information, see the Pub/Sub Ruby API reference documentation . project id = \"your-project-id\" topic id = \"your-topic-id\" subscription id = \"your-subscription-id\" bigquery table id = \"my-project:dataset-id.table-id\" pubsub = Google :: Cloud :: PubSub . new project id : project id subscription admin = pubsub . subscription admin subscription = subscription admin . create subscription \\ name : pubsub . subscription path ( subscription id ), topic : pubsub . topic path ( topic id ), bigquery config : { table : bigquery table id , write metadata : true } puts \"BigQuery subscription created: #{ subscription id } .\" puts \"Table for subscription is: #{ bigquery table id } \" Monitor a BigQuery subscription Cloud Monitoring provides a number of metrics to monitor subscriptions .",
+          "Parameters subscription name STRING Name of a subscription. message id STRING ID of a message publish time TIMESTAMP The time of publishing a message. data BYTES, STRING, or JSON The message body.",
+          "String projectId = \"your-project-id\" ; String topicId = \"your-topic-id\" ; String subscriptionId = \"your-subscription-id\" ; String bigqueryTableId = \"your-project.your-dataset.your-table\" ; createBigQuerySubscription ( projectId , topicId , subscriptionId , bigqueryTableId ); } public static void createBigQuerySubscription ( String projectId , String topicId , String subscriptionId , String bigqueryTableId ) throws IOException { try ( SubscriptionAdminClient subscriptionAdminClient = SubscriptionAdminClient . create ()) { ProjectTopicName topicName = ProjectTopicName . of ( projectId , topicId ); ProjectSubscriptionName subscriptionName = ProjectSubscriptionName . of ( projectId , subscriptionId ); BigQueryConfig bigqueryConfig = BigQueryConfig . newBuilder (). setTable ( bigqueryTableId ). setWriteMetadata ( true ). build (); Subscription subscription = subscriptionAdminClient . createSubscription ( Subscription . newBuilder () . setName ( subscriptionName . toString ()) . setTopic ( topicName . toString ()) . setBigqueryConfig ( bigqueryConfig ) . build ()); System . out . println ( \"Created a BigQuery subscription: \" + subscription . getAllFields ()); } } } Node.js Before trying this sample, follow the Node.js setup instructions in Quickstart: Using Client Libraries ."
+        ]
+      },
+      {
+        "title": "Create Cloud Storage subscriptions \\_|\\_ Pub/Sub \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/pubsub/docs/create-cloudstorage-subscription",
+        "source_id": "site-docs-root-2",
+        "final_score": 235,
+        "relevance": "",
+        "evidence_snippets": [
+          "To create a Cloud Storage subscription, run the gcloud pubsub subscriptions create command . gcloud pubsub subscriptions create SUBSCRIPTION ID \\ --topic = TOPIC ID \\ --cloud-storage-bucket = BUCKET NAME \\ --cloud-storage-file-prefix = CLOUD STORAGE FILE PREFIX \\ --cloud-storage-file-suffix = CLOUD STORAGE FILE SUFFIX \\ --cloud-storage-file-datetime-format = CLOUD STORAGE FILE DATETIME FORMAT \\ --cloud-storage-max-duration = CLOUD STORAGE MAX DURATION \\ --cloud-storage-max-bytes = CLOUD STORAGE MAX BYTES \\ --cloud-storage-max-messages = CLOUD STORAGE MAX MESSAGES \\ --cloud-storage-output-format = CLOUD STORAGE OUTPUT FORMAT \\ --cloud-storage-write-metadata --cloud-storage-use-topic-schema If you want to use a custom service account, provide it as an additional argument: gcloud pubsub subscriptions create SUBSCRIPTION ID \\ --topic = TOPIC ID \\ --cloud-storage-bucket = BUCKET NAME \\ --cloud-storage-file-prefix = CLOUD STORAGE FILE PREFIX \\ --cloud-storage-file-suffix = CLOUD STORAGE FILE SUFFIX \\ --cloud-storage-file-datetime-format = CLOUD STORAGE FILE DATETIME FORMAT \\ --cloud-storage-max-duration = CLOUD STORAGE MAX DURATION \\ --cloud-storage-max-bytes = CLOUD STORAGE MAX BYTES \\ --cloud-storage-max-messages = CLOUD STORAGE MAX MESSAGES \\ --cloud-storage-output-format = CLOUD STORAGE OUTPUT FORMAT \\ --cloud-storage-write-metadata --cloud-storage-use-topic-schema --cloud-storage-service-account-email = SERVICE ACCOUNT NAME In the command, only SUBSCRIPTION ID , the --topic flag, and the --cloud-storage-bucket flag are required.",
+          "Here is the Avro schema for the output messages with write metadata disabled: { \"type\" : \"record\" , \"namespace\" : \"com.google.pubsub\" , \"name\" : \"PubsubMessage\" , \"fields\" : [ { \"name\" : \"data\" , \"type\" : \"bytes\" } ] } Here is the Avro schema for the output messages with write metadata enabled: { \"type\" : \"record\" , \"namespace\" : \"com.google.pubsub\" , \"name\" : \"PubsubMessageWithMetadata\" , \"fields\" : [ { \"name\" : \"subscription name\" , \"type\" : \"string\" }, { \"name\" : \"message id\" , \"type\" : \"string\" }, { \"name\" : \"publish time\" , \"type\" : { \"type\" : \"long\" , \"logicalType\" : \"timestamp-micros\" } }, { \"name\" : \"attributes\" , \"type\" : { \"type\" : \"map\" , \"values\" : \"string\" } }, { \"name\" : \"data\" , \"type\" : \"bytes\" } ] } Use topic schema : This option lets Pub/Sub use the schema of the Pub/Sub topic to which the subscription is attached when writing Avro files.",
+          "CloudStorageConfig ( bucket = bucket , filename prefix = filename prefix , filename suffix = filename suffix , avro config = avro config , Min 1 minutes, max 10 minutes max duration = max duration , Min 1 KB, max 10 GiB max bytes = 10000000 , ) Wrap the subscriber in a 'with' block to automatically call close() to close the underlying gRPC channel when done. with subscriber : subscription = subscriber . create subscription ( request = { \"name\" : subscription path , \"topic\" : topic path , \"cloud storage config\" : cloudstorage config , } ) print ( f \"CloudStorage subscription created: { subscription } .\" ) print ( f \"Bucket for subscription is: { bucket } \" ) print ( f \"Prefix is: { filename prefix } \" ) print ( f \"Suffix is: { filename suffix } \" ) Monitor a Cloud Storage subscription Cloud Monitoring provides a number of metrics to monitor subscriptions ."
+        ]
+      },
+      {
+        "title": "\"MCP Tools Reference: pubsub.googleapis.com \\_|\\_ Pub/Sub \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/create_subscription",
+        "source_id": "site-api-reference",
+        "final_score": 231,
+        "relevance": "",
+        "evidence_snippets": [
+          "Curl Request curl --location 'https://pubsub.googleapis.com/mcp' \\ --header 'content-type: application/json' \\ --header 'accept: application/json, text/event-stream' \\ --data '{ \"method\": \"tools/call\", \"params\": { \"name\": \"create subscription\", \"arguments\": { // provide these details according to the tool' s MCP specification } } , \"jsonrpc\" : \"2.0\" , \"id\" : 1 } ' Input Schema A subscription resource.",
+          "The Pub/Sub service account associated with this subscriptions's parent project (i.e., service-{project number}@gcp-sa-pubsub.iam.gserviceaccount.com) must have permission to Acknowledge() messages on this subscription. retryPolicy object ( RetryPolicy ) Optional.",
+          "The Pub/Sub service account associated with this subscriptions's parent project (i.e., service-{project number}@gcp-sa-pubsub.iam.gserviceaccount.com) must have permission to Acknowledge() messages on this subscription. retryPolicy object ( RetryPolicy ) Optional."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "bigquerystorage.googleapis.com",
+      "com.google.pubsub",
+      "dataset.your",
+      "i.e",
+      "id.table",
+      "project.your",
+      "pubsub.googleapis.com",
+      "pubsub.iam.gserviceaccount.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/pubsub/docs/bigquery-troubleshooting",
+        "https://docs.cloud.google.com/pubsub/docs/create-bigquery-subscription",
+        "https://docs.cloud.google.com/pubsub/docs/create-cloudstorage-subscription",
+        "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/create_subscription"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/pubsub/docs/bigquery-troubleshooting",
+        "https://docs.cloud.google.com/pubsub/docs/create-bigquery-subscription",
+        "https://docs.cloud.google.com/pubsub/docs/create-cloudstorage-subscription",
+        "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/create_subscription"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/pubsub/docs/bigquery-troubleshooting",
+        "https://docs.cloud.google.com/pubsub/docs/create-bigquery-subscription",
+        "https://docs.cloud.google.com/pubsub/docs/create-cloudstorage-subscription",
+        "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/create_subscription"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/pubsub/docs/bigquery-troubleshooting",
+        "https://docs.cloud.google.com/pubsub/docs/create-bigquery-subscription",
+        "https://docs.cloud.google.com/pubsub/docs/create-cloudstorage-subscription",
+        "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/create_subscription"
+      ]
+    }
+  ]
+}

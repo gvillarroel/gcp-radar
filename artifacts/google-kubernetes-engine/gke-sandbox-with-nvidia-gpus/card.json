@@ -1,0 +1,118 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:39.542Z",
+  "source_step08_card": "data/step-08/current/products/google-kubernetes-engine/card.json",
+  "product_name": "Google Kubernetes Engine",
+  "product_slug": "google-kubernetes-engine",
+  "feature_name": "GKE Sandbox with NVIDIA GPUs",
+  "feature_slug": "gke-sandbox-with-nvidia-gpus",
+  "summary": "GKE Sandbox supports NVIDIA GPUs on Standard and Autopilot clusters in public preview.",
+  "extended_definition": "GKE Sandbox supports NVIDIA GPUs on Standard and Autopilot clusters in public preview.",
+  "lifecycle": {
+    "latest_feature_date": "2024-04-26",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/gpus",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/sandbox-pods",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/gpus"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Run GPUs in GKE Standard node pools \\_|\\_ GKE AI/ML \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/gpus",
+        "source_id": "site-docs-root",
+        "final_score": 219,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "For example: apiVersion: v1 kind: Pod metadata: name: my-gpu-pod spec: containers: - name: my-gpu-container image: nvidia/cuda:11.0.3-runtime-ubuntu20.04 command: [\"/bin/bash\", \"-c\", \"--\"] args: [\"while true; do sleep 600; done;\"] resources: limits: nvidia.com/gpu: 2 nodeSelector: cloud.google.com/gke-accelerator: nvidia-tesla-t4 Upgrade node pools using accelerators (GPUs and TPUs) GKE automatically upgrades Standard clusters, including node pools.",
+          "The following manifest is an example of a Pod specification that consumes GPUs: apiVersion: v1 kind: Pod metadata: name: my-gpu-pod spec: Optional: Use GKE Sandbox runtimeClassName: gvisor containers: - name: my-gpu-container image: nvidia/cuda:11.0.3-runtime-ubuntu20.04 command: [\"/bin/bash\", \"-c\", \"--\"] args: [\"while true; do sleep 600; done;\"] resources: limits: nvidia.com/gpu: 2 Note: If you run the workload with GKE Sandbox, you need to create a GKE Sandbox node pool.",
+          "Standard This page shows you how to run and optimize your compute-intensive workloads, such as artificial intelligence (AI) and graphics processing, by attaching and using NVIDIA® graphics processing unit (GPU) hardware accelerators in your Google Kubernetes Engine (GKE) Standard clusters' nodes ."
+        ]
+      },
+      {
+        "title": "GKE Sandbox \\_|\\_ GKE security \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/sandbox-pods",
+        "source_id": "site-iam-reference",
+        "final_score": 209,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Direct access to hardware or virtualization Applies to Autopilot and Standard clusters If your workload needs any of the following, GKE Sandbox might not be a good fit because it prevents direct access to the host kernel on the node: Direct access to the node's hardware Kernel-level virtualization features Privileged containers What's next Configure GKE Sandbox .",
+          "System calls Applies to Autopilot and Standard clusters Workloads that generate a large volume of low-overhead system calls, such as a large number of small I/O operations, may require more system resources when running in a sandbox, so you may need to use more powerful nodes or add additional nodes to your cluster.",
+          "External dependencies Applies to Autopilot and Standard clusters Untrusted code running inside the sandbox may be allowed to reach external services such as database servers, APIs, other containers, and CSI drivers ."
+        ]
+      },
+      {
+        "title": "\"About GPUs in Google Kubernetes Engine (GKE) \\_|\\_ GKE AI/ML \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/gpus",
+        "source_id": "site-docs-root",
+        "final_score": 197,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "This page helps you to consider choices for requesting GPUs in GKE, including the following: Choosing your GPU quota , the maximum number of GPUs that can run in your project Deciding between Autopilot and Standard modes Manage the GPU stack through GKE or NVIDIA GPU Operator on GKE Choosing features to reduce the amount of underutilized GPU resources Accessing NVIDIA CUDA-X libraries for CUDA applications Monitoring GPU node metrics Handling disruption due to node maintenance Use GKE Sandbox to secure GPU workloads Available GPU models The GPU hardware that's available for use in GKE is a subset of the GPU models available on Compute Engine .",
+          "Get started with GKE for GPU node management by choosing one of the following: Deploy GPU workloads in Autopilot Run GPUs in Standard node pools Deploy clusters with NVIDIA B200 or NVIDIA H200 141GB GPUs The NVIDIA GPU Operator may be used as an alternative to fully managed GPU support on GKE on both Container-Optimized OS (COS) and Ubuntu node images.",
+          "Improve GPU utilization Multi-instance GPUs Time-sharing GPUs Multi-instance GPUs Time-sharing GPUs NVIDIA MPS Security GPUs with GKE Sandbox GPUs with Confidential GKE Nodes GPUs with GKE Sandbox GPUs with Confidential GKE Nodes Pricing Autopilot GPU Pod pricing Compute Engine GPU pricing To choose the GKE mode of operation that's the best fit for your workloads, see Choose a GKE mode of operation ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "gke.1297000",
+      "nvidia.com",
+      "ubuntu20.04"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/gpus",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/sandbox-pods",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/gpus"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/gpus",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/sandbox-pods",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/gpus"
+      ]
+    },
+    {
+      "capability": "confidential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/gpus",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/sandbox-pods",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/gpus"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/gpus",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/sandbox-pods",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/gpus"
+      ]
+    }
+  ]
+}

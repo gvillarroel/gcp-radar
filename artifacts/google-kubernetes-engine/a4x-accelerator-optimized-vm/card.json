@@ -1,0 +1,108 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:39.542Z",
+  "source_step08_card": "data/step-08/current/products/google-kubernetes-engine/card.json",
+  "product_name": "Google Kubernetes Engine",
+  "product_slug": "google-kubernetes-engine",
+  "feature_name": "A4X accelerator-optimized VM",
+  "feature_slug": "a4x-accelerator-optimized-vm",
+  "summary": "The A4X accelerator-optimized VM is now generally available on GKE for AI, machine learning, and high-performance computing workloads.",
+  "extended_definition": "The A4X accelerator-optimized VM is now generally available on GKE for AI, machine learning, and high-performance computing workloads.",
+  "lifecycle": {
+    "latest_feature_date": "2025-09-11",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-custom-compute-classes",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/gpus",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/gpus"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Run GPUs in GKE Standard node pools \\_|\\_ GKE AI/ML \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/gpus",
+        "source_id": "site-docs-root",
+        "final_score": 95,
+        "relevance": "",
+        "evidence_snippets": [
+          "To install the DaemonSet on COS , add the following block in your Terraform configuration: data \"http\" \"nvidia driver installer manifest\" { url = \"https://raw.githubusercontent.com/GoogleCloudPlatform/container-engine-accelerators/master/nvidia-driver-installer/cos/daemonset-preloaded.yaml\" } resource \"kubectl manifest\" \"nvidia driver installer\" { yaml body = data.http.nvidia driver installer manifest.body } To install DaemonSet on Ubuntu , add the following block in your Terraform configuration: data \"http\" \"nvidia driver installer manifest\" { url = \"https://raw.githubusercontent.com/GoogleCloudPlatform/container-engine-accelerators/master/nvidia-driver-installer/ubuntu/daemonset-preloaded.yaml\" } resource \"kubectl manifest\" \"nvidia driver installer\" { yaml body = data.http.nvidia driver installer manifest.body } Map the GKE version and Container-Optimized OS node image version to the GPU driver version To find the GPU driver versions that are mapped with GKE versions and Container-Optimized OS node image versions, do the following steps: Map Container-Optimized OS node image versions to GKE patch versions for the specific GKE version where you want to find the GPU driver version.",
+          "Use the following table which lists the available GPU driver versions in each GKE version: GKE NVIDIA driver versions 1.33 R535 (default), R570, R575, or R580 1.32 R535 (default), R570, R575, or R580 1.31 R535 (default), R570, R575, or R580 1.30 R535 (default) or R550 1.29 R535 (default) or R550 1.28 R535 (default) or R550 1.27 R470 (default), R525, R535, or R550 1.26 R470 (default), R525, R535, or R550 Ubuntu The installation DaemonSet that you deploy depends on the GPU type and on the GKE node version as follows: For all GPUs except NVIDIA H200 GPUs, run the following command: kubectl apply -f https://raw.githubusercontent.com/GoogleCloudPlatform/container-engine-accelerators/master/nvidia-driver-installer/ubuntu/daemonset-preloaded.yaml For NVIDIA H200 GPUs, install the R550 driver: kubectl apply -f https://raw.githubusercontent.com/GoogleCloudPlatform/container-engine-accelerators/refs/heads/master/nvidia-driver-installer/ubuntu/daemonset-preloaded-R550.yaml The installation takes several seconds to complete.",
+          "For example, you might want to update the GPU driver to switch to the latest available driver: gcloud container node-pools update p100 \\ --accelerator type = nvidia-tesla-p100,count = 2 , gpu-driver-version = latest \\ --cluster p100-cluster \\ --location us-central1 Console To create a node pool with GPUs: Go to the Google Kubernetes Engine page in the Google Cloud console."
+        ]
+      },
+      {
+        "title": "\"About GPUs in Google Kubernetes Engine (GKE) \\_|\\_ GKE AI/ML \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/gpus",
+        "source_id": "site-docs-root",
+        "final_score": 93,
+        "relevance": "",
+        "evidence_snippets": [
+          "Monitor your GPU node workload performance If your GKE cluster has system metrics enabled, then the following metrics are available in Cloud Monitoring to monitor your GPU workload performance: Duty Cycle ( container/accelerator/duty cycle ): Percentage of time over the past sample period (10 seconds) during which the accelerator was actively processing.",
+          "This page is intended for Platform admins and operators and Machine learning (ML) engineers who want to ensure that accelerator infrastructure is optimized for your workloads.",
+          "This page helps you to consider choices for requesting GPUs in GKE, including the following: Choosing your GPU quota , the maximum number of GPUs that can run in your project Deciding between Autopilot and Standard modes Manage the GPU stack through GKE or NVIDIA GPU Operator on GKE Choosing features to reduce the amount of underutilized GPU resources Accessing NVIDIA CUDA-X libraries for CUDA applications Monitoring GPU node metrics Handling disruption due to node maintenance Use GKE Sandbox to secure GPU workloads Available GPU models The GPU hardware that's available for use in GKE is a subset of the GPU models available on Compute Engine ."
+        ]
+      },
+      {
+        "title": "\"About custom ComputeClasses \\_|\\_ Google Kubernetes Engine (GKE) \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-custom-compute-classes",
+        "source_id": "site-docs-reference-2",
+        "final_score": 91,
+        "relevance": "",
+        "evidence_snippets": [
+          "If the prioritized instance types aren't available, GKE then falls back to any matching reservations in the specification: apiVersion : cloud.google.com/v1 kind : ComputeClass metadata : name : accelerator-reservations spec : nodePoolAutoCreation : enabled : true priorities : - machineType : a3-highgpu-1g storage : localSSDCount : 2 gpu : type : nvidia-h100-80gb count : 1 reservations : specific : - name : a3-shared-reservation project : reservation-project affinity : Specific - machineType : a3-highgpu-1g storage : localSSDCount : 2 gpu : type : nvidia-h100-80gb count : 1 reservations : affinity : AnyBestEffort whenUnsatisfiable : DoNotScaleUp If you deploy a Pod that uses the accelerator-reservations ComputeClass, GKE first attempts to use the a3-shared-reservation reservation when creating new a3-highgpu-1g instances to run the Pod.",
+          "For example, the following manifest requests the cost-optimized ComputeClass: apiVersion : apps/v1 kind : Deployment metadata : name : custom-workload spec : replicas : 2 selector : matchLabels : app : custom-workload template : metadata : labels : app : custom-workload spec : nodeSelector : cloud.google.com/compute-class : cost-optimized containers : - name : test image : registry.k8s.io/pause resources : requests : cpu : 1.5 memory : \"4Gi\" Node selectors for system node labels GKE adds system labels to nodes to identify nodes by criteria like the machine type, attached hardware accelerators, or the boot disk type.",
+          "This fallback model helps ensure that even when compute resources are unavailable, your workloads still run on optimized hardware with minimal scheduling delays."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "data.http.nvidia",
+      "manifest.body",
+      "node.kubernetes.io",
+      "preloaded.yaml",
+      "priorities.gpu.driverVersion",
+      "priorities.gpu.type",
+      "priorities.machineFamily",
+      "priorities.machineType",
+      "priorities.reservations.affinity",
+      "priorities.reservations.specific.name",
+      "priorities.reservations.specific.project",
+      "priorities.spot",
+      "priorities.storage.bootDiskSize",
+      "priorities.storage.bootDiskType",
+      "priorities.storage.localSSDCount",
+      "raw.githubusercontent.com",
+      "registry.k8s.io"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/gpus",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-custom-compute-classes",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/gpus"
+      ]
+    }
+  ]
+}

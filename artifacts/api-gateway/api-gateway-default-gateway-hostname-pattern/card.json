@@ -1,0 +1,134 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:13.986Z",
+  "source_step08_card": "data/step-08/current/products/api-gateway/card.json",
+  "product_name": "API Gateway",
+  "product_slug": "api-gateway",
+  "feature_name": "API Gateway default gateway hostname pattern",
+  "feature_slug": "api-gateway-default-gateway-hostname-pattern",
+  "summary": "Newly created gateways now use the default hostname format with GATEWAY_ID and HASH; Newly created gateways now use the default hostname format with GATEWAY_ID and HASH.",
+  "extended_definition": "Newly created gateways now use the default hostname format with GATEWAY_ID and HASH; Newly created gateways now use the default hostname format with GATEWAY_ID and HASH.",
+  "lifecycle": {
+    "latest_feature_date": "2020-09-08",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/api-gateway/docs/creating-api-config",
+      "https://docs.cloud.google.com/api-gateway/docs/quickstart",
+      "https://docs.cloud.google.com/api-gateway/docs/secure-traffic-gcloud"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Quickstart: Secure traffic to a service with the gcloud CLI \\_|\\_ API Gateway\\",
+        "url": "https://docs.cloud.google.com/api-gateway/docs/secure-traffic-gcloud",
+        "source_id": "site-docs-reference",
+        "final_score": 208,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "For example: gcloud api-gateway gateways create my-gateway \\ --api= my-api --api-config= my-config \\ --location= us-central1 On successful completion, use the following command to view details about the gateway: gcloud api-gateway gateways describe GATEWAY ID \\ --location= GCP REGION For example: gcloud api-gateway gateways describe my-gateway \\ --location= us-central1 This command returns the following: apiConfig: projects/my-project/locations/global/apis/my-api/configs/my-config createTime: '2020-02-05T13:44:12.997862831Z' defaultHostname: my-gateway-a12bcd345e67f89g0h.uc.gateway.dev displayName: my-gateway name: projects/my-project/locations/us-central1/gateways/my-gateway serviceAccount: email: 0000000000000-compute@developer.gserviceaccount.com state: ACTIVE updateTime: '2020-02-05T13:45:00.844705087Z' Note the value of the defaultHostname property.",
+          "API KEY specifies the API key you created in the previous step. curl https:// DEFAULT HOSTNAME /hello?key= API KEY Now you should see Hello World! in the response from your API.",
+          "Create a new API config with the modified OpenAPI spec using the following command: gcloud api-gateway api-configs create NEW CONFIG ID \\ --api= API ID --openapi-spec= NEW API DEFINITION \\ --backend-auth-service-account= SERVICE ACCOUNT EMAIL For example: gcloud api-gateway api-configs create my-config-key \\ --api= my-api --openapi-spec= openapi2-functions.yaml \\ --project= my-project --backend-auth-service-account= 0000000000000compute@developer.gserviceaccount.com Run the following command to update your existing gateway with the new API config: gcloud api-gateway gateways update GATEWAY ID \\ --api= API ID --api-config= NEW CONFIG ID \\ --location= GCP REGION For example: gcloud api-gateway gateways update my-gateway \\ --api= my-api --api-config= my-config-key \\ --location= us-central1 Test your API key Once you have created and deployed the modified API, try making a request to it."
+        ]
+      },
+      {
+        "title": "Create an API config \\_|\\_ API Gateway \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/api-gateway/docs/creating-api-config",
+        "source_id": "site-docs-reference-required-2",
+        "final_score": 135,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Validate the project ID returned from the following command to make sure that the service isn't created in the wrong project. gcloud config list project If you need to change the default project, run the following command and replace PROJECT ID with the Google Cloud project ID in which you want to create the service: gcloud config set project PROJECT ID View help for the api-configs create command: gcloud api-gateway api-configs create --help Run the following command to create the API config: gcloud api-gateway api-configs create CONFIG ID \\ --api= API ID --openapi-spec= API DEFINITION \\ --project= PROJECT ID --backend-auth-service-account= SERVICE ACCOUNT EMAIL where: CONFIG ID specifies the ID of the new API config.",
+          "For example: gcloud api-gateway api-configs create CONFIG ID \\ --api= API ID --openapi-spec= API DEFINITION \\ --backend-auth-service-account= SERVICE ACCOUNT EMAIL \\ --async --display-name=MyConfig --labels=a=1,b=2 You can see the labels in the output of the describe command shown, or in the list command by including the --format option: gcloud api-gateway api-configs list \\ --api= API ID --format=\"table(name, labels)\" List API configs List all of the API Gateways deployed in your Google Cloud project.",
+          "The default value is CONFIG ID . --labels= KEY1 = VALUE1 , KEY2 = VALUE2 ,... : Specifies labels associated with the API config."
+        ]
+      },
+      {
+        "title": "\"Quickstart: Secure traffic to a service with the gcloud CLI \\_|\\_ API Gateway\\",
+        "url": "https://docs.cloud.google.com/api-gateway/docs/quickstart",
+        "source_id": "site-docs-reference-required-2",
+        "final_score": 118,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "For example: gcloud api-gateway gateways create my-gateway \\ --api= my-api --api-config= my-config \\ --location= us-central1 On successful completion, use the following command to view details about the gateway: gcloud api-gateway gateways describe GATEWAY ID \\ --location= GCP REGION For example: gcloud api-gateway gateways describe my-gateway \\ --location= us-central1 This command returns the following: apiConfig: projects/my-project/locations/global/apis/my-api/configs/my-config createTime: '2020-02-05T13:44:12.997862831Z' defaultHostname: my-gateway-a12bcd345e67f89g0h.uc.gateway.dev displayName: my-gateway name: projects/my-project/locations/us-central1/gateways/my-gateway serviceAccount: email: 0000000000000-compute@developer.gserviceaccount.com state: ACTIVE updateTime: '2020-02-05T13:45:00.844705087Z' Note the value of the defaultHostname property.",
+          "API KEY specifies the API key you created in the previous step. curl https:// DEFAULT HOSTNAME /hello?key= API KEY Now you should see Hello World! in the response from your API.",
+          "Create a new API config with the modified OpenAPI spec using the following command: gcloud api-gateway api-configs create NEW CONFIG ID \\ --api= API ID --openapi-spec= NEW API DEFINITION \\ --backend-auth-service-account= SERVICE ACCOUNT EMAIL For example: gcloud api-gateway api-configs create my-config-key \\ --api= my-api --openapi-spec= openapi2-functions.yaml \\ --project= my-project --backend-auth-service-account= 0000000000000compute@developer.gserviceaccount.com Run the following command to update your existing gateway with the new API config: gcloud api-gateway gateways update GATEWAY ID \\ --api= API ID --api-config= NEW CONFIG ID \\ --location= GCP REGION For example: gcloud api-gateway gateways update my-gateway \\ --api= my-api --api-config= my-config-key \\ --location= us-central1 Test your API key Once you have created and deployed the modified API, try making a request to it."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "a12bcd345e67f89g0h.uc.gateway.dev",
+      "developer.gserviceaccount.com",
+      "functions.yaml"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/api-gateway/docs/secure-traffic-gcloud",
+        "https://docs.cloud.google.com/api-gateway/docs/creating-api-config",
+        "https://docs.cloud.google.com/api-gateway/docs/quickstart"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/api-gateway/docs/secure-traffic-gcloud",
+        "https://docs.cloud.google.com/api-gateway/docs/creating-api-config",
+        "https://docs.cloud.google.com/api-gateway/docs/quickstart"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/api-gateway/docs/secure-traffic-gcloud",
+        "https://docs.cloud.google.com/api-gateway/docs/creating-api-config",
+        "https://docs.cloud.google.com/api-gateway/docs/quickstart"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/api-gateway/docs/secure-traffic-gcloud",
+        "https://docs.cloud.google.com/api-gateway/docs/creating-api-config",
+        "https://docs.cloud.google.com/api-gateway/docs/quickstart"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/api-gateway/docs/secure-traffic-gcloud",
+        "https://docs.cloud.google.com/api-gateway/docs/creating-api-config",
+        "https://docs.cloud.google.com/api-gateway/docs/quickstart"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/api-gateway/docs/secure-traffic-gcloud",
+        "https://docs.cloud.google.com/api-gateway/docs/creating-api-config",
+        "https://docs.cloud.google.com/api-gateway/docs/quickstart"
+      ]
+    }
+  ]
+}

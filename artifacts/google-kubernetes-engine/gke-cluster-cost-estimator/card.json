@@ -1,0 +1,101 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:39.542Z",
+  "source_step08_card": "data/step-08/current/products/google-kubernetes-engine/card.json",
+  "product_name": "Google Kubernetes Engine",
+  "product_slug": "google-kubernetes-engine",
+  "feature_name": "GKE cluster cost estimator",
+  "feature_slug": "gke-cluster-cost-estimator",
+  "summary": "GKE can estimate cluster cost during cluster creation using the cluster cost widget.",
+  "extended_definition": "GKE can estimate cluster cost during cluster creation using the cluster cost widget.",
+  "lifecycle": {
+    "latest_feature_date": "2022-05-25",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/cluster-autoscaler",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/reducing-costs-by-scaling-down-gke-off-hours"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Reducing costs by scaling down GKE clusters during off-peak hours \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/reducing-costs-by-scaling-down-gke-off-hours",
+        "source_id": "site-docs-reference-required-5",
+        "final_score": 153,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Home Documentation Application hosting Google Kubernetes Engine (GKE) Documentation Guides Send feedback Reducing costs by scaling down GKE clusters during off-peak hours Stay organized with collections Save and categorize content based on your preferences.",
+          "Scaling down a cluster if you have committed use discounts This tutorial explains how to reduce costs by scaling down your GKE clusters to the minimum during off-peak hours.",
+          "Costs In this document, you use the following billable components of Google Cloud: Cloud Monitoring Artifact Registry Google Kubernetes Engine To generate a cost estimate based on your projected usage, use the pricing calculator ."
+        ]
+      },
+      {
+        "title": "\"About GKE cluster autoscaling \\_|\\_ Google Kubernetes Engine (GKE) \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/cluster-autoscaler",
+        "source_id": "site-docs-reference-2",
+        "final_score": 143,
+        "relevance": "",
+        "evidence_snippets": [
+          "GKE will try to provision these VMs first. spot : true gpu : type : nvidia-l4 count : 2 If GKE can't satisfy the preceding rule, request on-demand nodes with the same configuration - machineType : g2-standard-24 spot : false gpu : type : nvidia-l4 count : 2 nodePoolAutoCreation : enabled : true Configures active migration behavior for workloads using this ComputeClass. activeMigration : optimizeRulePriority : true Enables Cluster Autoscaler to attempt to migrate workloads to Spot VMs if Spot capacity becomes available and the workload is currently running on an on-demand VM (based on the priority rules in this example).",
+          "However, the following conditions apply to this behavior of cluster autoscaler: The cluster autoscaler takes into account the reduced cost of node pools that contain Spot VMs, which are preemptible.",
+          "Cluster autoscaler considers the relative cost of the instance types in the various pools, and attempts to expand the least expensive possible node pool."
+        ]
+      },
+      {
+        "title": "\"MCP Tools Reference: container.googleapis.com \\_|\\_ Google Kubernetes Engine\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster",
+        "source_id": "site-api-reference",
+        "final_score": 119,
+        "relevance": "",
+        "evidence_snippets": [
+          "Format: projects/{project}/regions/{region}/subnetworks/{subnetwork} If the cluster is associated with multiple subnetworks, the subnetwork can be either: - A user supplied subnetwork name during node pool creation (e.g., my-subnet ).",
+          "Tags are used to identify valid sources or targets for network firewalls and are specified by the client during cluster or node pool creation.",
+          "Only populated if enabled. privateEndpointSubnetwork string Subnet to provision the master's private endpoint during cluster creation."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "container.googleapis.com",
+      "e.g"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/reducing-costs-by-scaling-down-gke-off-hours",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/cluster-autoscaler",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/reducing-costs-by-scaling-down-gke-off-hours",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/cluster-autoscaler",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster"
+      ]
+    }
+  ]
+}

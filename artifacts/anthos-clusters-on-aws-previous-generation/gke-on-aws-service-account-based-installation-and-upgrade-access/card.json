@@ -1,0 +1,152 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:13.260Z",
+  "source_step08_card": "data/step-08/current/products/anthos-clusters-on-aws-previous-generation/card.json",
+  "product_name": "Anthos clusters on AWS (previous generation)",
+  "product_slug": "anthos-clusters-on-aws-previous-generation",
+  "feature_name": "GKE on AWS Service Account-based Installation and Upgrade Access",
+  "feature_slug": "gke-on-aws-service-account-based-installation-and-upgrade-access",
+  "summary": "Installation and upgrade of Anthos GKE on AWS can be performed with any authenticated Google Cloud service account without requiring allowlist access.",
+  "extended_definition": "Installation and upgrade of Anthos GKE on AWS can be performed with any authenticated Google Cloud service account without requiring allowlist access.",
+  "lifecycle": {
+    "latest_feature_date": "2020-10-02",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/troubleshooting",
+      "https://docs.cloud.google.com/service-mesh/v1.21/docs/upgrade/upgrade",
+      "https://docs.cloud.google.com/service-mesh/v1.22/docs/upgrade/upgrade"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Upgrade Cloud Service Mesh \\_|\\_ Cloud Service Mesh v1.21 \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/service-mesh/v1.21/docs/upgrade/upgrade",
+        "source_id": "site-docs-reference",
+        "final_score": 130,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Before you begin Warning: GitOps tools (including Config Sync, Argo CD, Terraform, and Jenkins) may interfere with your Cloud Service Mesh installation, migration, or upgrade processes.",
+          "Control plane customizations If you customized the previous installation, you need the same customizations when you upgrade to a new Cloud Service Mesh version or migrate from Istio.",
+          "Deploying and redeploying workloads Your installation (or upgrade) isn't complete until you enable automatic sidecar proxy injection (auto-injection)."
+        ]
+      },
+      {
+        "title": "\"Upgrade Cloud Service Mesh \\_|\\_ Cloud Service Mesh v1.22 \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/service-mesh/v1.22/docs/upgrade/upgrade",
+        "source_id": "site-docs-reference-2",
+        "final_score": 130,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Before you begin Warning: GitOps tools (including Config Sync, Argo CD, Terraform, and Jenkins) may interfere with your Cloud Service Mesh installation, migration, or upgrade processes.",
+          "Control plane customizations If you customized the previous installation, you need the same customizations when you upgrade to a new Cloud Service Mesh version or migrate from Istio.",
+          "Deploying and redeploying workloads Your installation (or upgrade) isn't complete until you enable automatic sidecar proxy injection (auto-injection)."
+        ]
+      },
+      {
+        "title": "Troubleshoot common issues \\_|\\_ GKE on AWS \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/troubleshooting",
+        "source_id": "site-docs-root-2",
+        "final_score": 101,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Forbidden user The following error occurs when your username does not have administrator access to your cluster: Error from server (Forbidden): users \"administrator@example.com\" is forbidden: User \"system:serviceaccount:gke-connect:connect-agent-sa\" cannot impersonate resource \"users\" in API group \"\" at the cluster scope You can configure additional users by passing the --admin-users flag when you create a cluster.",
+          "If the output of the gcloud containers aws clusters describe and gcloud config get-value account don't match, run gcloud auth login and authenticate as the username with administrative access to the cluster.",
+          "Cannot delete cluster If you receive an error similar to the following when you try to delete a cluster, your GKE Multi-Cloud API role might not exist: ERROR: (gcloud.container.aws.clusters.delete) FAILED PRECONDITION: Could not assume role \"arn:aws:iam:: ACCOUNT NUMBER :role/gke123456-anthos-api-role\" through service account \"service-123456789@gcp-sa-gkemulticloud.iam.gserviceaccount.com\"."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "example.com",
+      "gcloud.container.aws.clusters.delete",
+      "gkemulticloud.iam.gserviceaccount.com",
+      "v1.21",
+      "v1.22"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/v1.21/docs/upgrade/upgrade",
+        "https://docs.cloud.google.com/service-mesh/v1.22/docs/upgrade/upgrade",
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/troubleshooting"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/v1.21/docs/upgrade/upgrade",
+        "https://docs.cloud.google.com/service-mesh/v1.22/docs/upgrade/upgrade",
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/troubleshooting"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/v1.21/docs/upgrade/upgrade",
+        "https://docs.cloud.google.com/service-mesh/v1.22/docs/upgrade/upgrade",
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/troubleshooting"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/v1.21/docs/upgrade/upgrade",
+        "https://docs.cloud.google.com/service-mesh/v1.22/docs/upgrade/upgrade",
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/troubleshooting"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/v1.21/docs/upgrade/upgrade",
+        "https://docs.cloud.google.com/service-mesh/v1.22/docs/upgrade/upgrade",
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/troubleshooting"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/v1.21/docs/upgrade/upgrade",
+        "https://docs.cloud.google.com/service-mesh/v1.22/docs/upgrade/upgrade",
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/troubleshooting"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/v1.21/docs/upgrade/upgrade",
+        "https://docs.cloud.google.com/service-mesh/v1.22/docs/upgrade/upgrade",
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/troubleshooting"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/v1.21/docs/upgrade/upgrade",
+        "https://docs.cloud.google.com/service-mesh/v1.22/docs/upgrade/upgrade",
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/troubleshooting"
+      ]
+    }
+  ]
+}

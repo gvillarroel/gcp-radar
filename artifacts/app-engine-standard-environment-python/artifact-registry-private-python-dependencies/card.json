@@ -1,0 +1,109 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:16.544Z",
+  "source_step08_card": "data/step-08/current/products/app-engine-standard-environment-python/card.json",
+  "product_name": "App Engine standard environment Python",
+  "product_slug": "app-engine-standard-environment-python",
+  "feature_name": "Artifact Registry private Python dependencies",
+  "feature_slug": "artifact-registry-private-python-dependencies",
+  "summary": "Python 3 apps can install private dependencies hosted in an Artifact Registry Python repository through requirements.txt.",
+  "extended_definition": "Python 3 apps can install private dependencies hosted in an Artifact Registry Python repository through requirements.txt.",
+  "lifecycle": {
+    "latest_feature_date": "2022-02-15",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/appengine/docs/standard/python3",
+      "https://docs.cloud.google.com/appengine/docs/standard/python3/runtime",
+      "https://docs.cloud.google.com/appengine/docs/standard/python3/specifying-dependencies"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Specifying dependencies | App Engine standard environment | Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/python3/specifying-dependencies",
+        "source_id": "feature-recovery-http",
+        "final_score": 280,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "To include private dependencies, add the Artifact Registry URL and the relevant packages in your requirements.txt file.",
+          "Then, install dependencies: cd YOUR_SAMPLE_CODE_DIR pip install -r requirements.txt This ensures that when you run your app locally, only the dependencies that are declared in the requirements.txt file are available.",
+          "The dependencies installed by App Engine during deployment are based on the contents of the requirements.txt file, not the contents of the env/ directory."
+        ]
+      },
+      {
+        "title": "Python 3 Runtime Environment | App Engine standard environment | Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/python3/runtime",
+        "source_id": "feature-recovery-http",
+        "final_score": 128,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Dependencies During deployment, App Engine uses the Python package manager pip to install dependencies defined in the requirements.txt metadata file located in your project's root directory.",
+          "Entrypoint best practices Ensure the Python module required to run the specified entrypoint in app.yaml is present in the requirements.txt file.",
+          "If you have configured a Gunicorn web server entrypoint in the app.yaml file, you must also add gunicorn to your requirements.txt file."
+        ]
+      },
+      {
+        "title": "\"Python 3 Runtime Environment \\_|\\_ App Engine standard environment \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/python3",
+        "source_id": "site-docs-reference-4",
+        "final_score": 115,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Dependencies During deployment, App Engine uses the Python package manager pip to install dependencies defined in the requirements.txt metadata file located in your project's root directory.",
+          "Entrypoint best practices Ensure the Python module required to run the specified entrypoint in app.yaml is present in the requirements.txt file.",
+          "If you have configured a Gunicorn web server entrypoint in the app.yaml file, you must also add gunicorn to your requirements.txt file."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "app.yaml",
+      "requirements.txt"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/python3/specifying-dependencies",
+        "https://docs.cloud.google.com/appengine/docs/standard/python3/runtime",
+        "https://docs.cloud.google.com/appengine/docs/standard/python3"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/python3/specifying-dependencies",
+        "https://docs.cloud.google.com/appengine/docs/standard/python3/runtime",
+        "https://docs.cloud.google.com/appengine/docs/standard/python3"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/python3/specifying-dependencies",
+        "https://docs.cloud.google.com/appengine/docs/standard/python3/runtime",
+        "https://docs.cloud.google.com/appengine/docs/standard/python3"
+      ]
+    }
+  ]
+}

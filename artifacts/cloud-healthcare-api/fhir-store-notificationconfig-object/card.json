@@ -1,0 +1,170 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:23.577Z",
+  "source_step08_card": "data/step-08/current/products/cloud-healthcare-api/card.json",
+  "product_name": "Cloud Healthcare API",
+  "product_slug": "cloud-healthcare-api",
+  "feature_name": "FHIR store notificationConfig object",
+  "feature_slug": "fhir-store-notificationconfig-object",
+  "summary": "The notificationConfig object on a FHIR store has been deprecated and replaced by notificationConfigs; deprecated on 2023-05-30.",
+  "extended_definition": "The notificationConfig object on a FHIR store has been deprecated and replaced by notificationConfigs; deprecated on 2023-05-30.",
+  "lifecycle": {
+    "latest_feature_date": "2023-05-30",
+    "deprecation_date": "2023-05-30",
+    "status": "deprecation_noted"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/healthcare-api/docs/dicom-pubsub",
+      "https://docs.cloud.google.com/healthcare-api/docs/fhir-pubsub",
+      "https://docs.cloud.google.com/healthcare-api/docs/how-tos/fhir"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"FHIR Pub/Sub notifications \\_|\\_ Cloud Healthcare API \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/healthcare-api/docs/fhir-pubsub",
+        "source_id": "site-docs-root-2",
+        "final_score": 178,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "View FHIR notifications using the NotificationConfig configuration (Deprecated) Deprecated: Configuring FHIR notifications using the NotificationConfig object has been deprecated.",
+          "Run the following command in the terminal to create or overwrite this file in the current directory: @' { \"notificationConfigs\": [ { \"pubsubTopic\": \"projects/ PROJECT ID /topics/ PUBSUB TOPIC ID \", \"sendFullResource\": true, \"sendPreviousResourceOnDelete\": true } ] } '@ Out-File -FilePath request.json -Encoding utf8 Then execute the following command to send your REST request: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method PATCH -Headers $headers -ContentType: \"application/json; charset=utf-8\" -InFile request.json -Uri \"https://healthcare.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /fhirStores/ FHIR STORE ID ?updateMask=notificationConfigs\" Select-Object -Expand Content You should receive a JSON response similar to the following: Response { \"name\": \"projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /fhirStores/ FHIR STORE ID \", \"version\": \"R4\", \"notificationConfigs\": [ { \"pubsubTopic\": \"projects/ PROJECT ID /topics/ PUBSUB TOPIC ID \", \"sendFullResource\": true, \"sendPreviousResourceOnDelete\": true } ] } Create a FHIR resource Create a FHIR resource in the FHIR store.",
+          "Notification configuration You can configure Pub/Sub notifications and their behavior in a FhirNotificationConfig object on a FHIR store."
+        ]
+      },
+      {
+        "title": "\"Creating and managing FHIR stores \\_|\\_ Cloud Healthcare API \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/healthcare-api/docs/how-tos/fhir",
+        "source_id": "site-docs-root",
+        "final_score": 162,
+        "relevance": "",
+        "evidence_snippets": [
+          "Run the following command in the terminal to create or overwrite this file in the current directory: @' { \"notificationConfigs\": [ { \"pubsubTopic\": \"projects/ PROJECT ID /topics/ PUBSUB TOPIC ID \" } ], \"labels\": { \" KEY1 \": \" VALUE1 \", \" KEY2 \": \" VALUE2 \" } } '@ Out-File -FilePath request.json -Encoding utf8 Then execute the following command to send your REST request: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method PATCH -Headers $headers -ContentType: \"application/json; charset=utf-8\" -InFile request.json -Uri \"https://healthcare.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /fhirStores/ FHIR STORE ID ?updateMask=notificationConfig,labels\" Select-Object -Expand Content APIs Explorer Copy the request body and open the method reference page .",
+          "Before using any of the command data below, make the following replacements: PROJECT ID : the ID of your Google Cloud project LOCATION : the dataset location DATASET ID : the FHIR store's parent dataset FHIR STORE ID : the FHIR store ID PUBSUB TOPIC ID : a Pub/Sub topic to which messages are published when an event occurs in a data store Execute the following command: Linux, macOS, or Cloud Shell Note: Ensure you have initialized the Google Cloud CLI with authentication and a project by running either gcloud init ; or gcloud auth login and gcloud config set project . gcloud healthcare fhir-stores update FHIR STORE ID \\ --dataset = DATASET ID \\ --location = LOCATION \\ --pubsub-topic = projects/ PROJECT ID /topics/ PUBSUB TOPIC ID Windows (PowerShell) Note: Ensure you have initialized the Google Cloud CLI with authentication and a project by running either gcloud init ; or gcloud auth login and gcloud config set project . gcloud healthcare fhir-stores update FHIR STORE ID --dataset = DATASET ID --location = LOCATION --pubsub-topic = projects/ PROJECT ID /topics/ PUBSUB TOPIC ID Windows (cmd.exe) Note: Ensure you have initialized the Google Cloud CLI with authentication and a project by running either gcloud init ; or gcloud auth login and gcloud config set project . gcloud healthcare fhir-stores update FHIR STORE ID ^ --dataset = DATASET ID ^ --location = LOCATION ^ --pubsub-topic = projects/ PROJECT ID /topics/ PUBSUB TOPIC ID You should receive a response similar to the following: Response Updated fhirStore [ FHIR STORE ID ]. name: projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /fhirStores/ FHIR STORE ID notificationConfig: pubsubTopic: projects/ PROJECT ID /topics/ PUBSUB TOPIC ID version: FHIR STORE VERSION REST To edit a FHIR store, use the projects.locations.datasets.fhirStores.patch method.",
+          "See https://github.com/GoogleCloudPlatform/python-docs-samples/tree/main/healthcare/api-client/v1/fhir before running the sample.\"\"\" Imports the Google API Discovery Service. from googleapiclient import discovery api version = \"v1\" service name = \"healthcare\" Instantiates an authorized API client by discovering the Healthcare API and using GOOGLE APPLICATION CREDENTIALS environment variable. client = discovery . build ( service name , api version ) TODO(developer): Uncomment these lines and replace with your values. project id = 'my-project' # replace with your GCP project ID location = 'us-central1' # replace with the dataset's location dataset id = 'my-dataset' # replace with your dataset ID fhir store id = 'my-fhir-store' # replace with the FHIR store's ID pubsub topic = 'projects/{project id}/topics/{topic id}' # replace with your Pub/Sub topic fhir store parent = \"projects/ {} /locations/ {} /datasets/ {} \" . format ( project id , location , dataset id ) fhir store name = f \" { fhir store parent } /fhirStores/ { fhir store id } \" patch = { \"notificationConfigs\" : [{ \"pubsubTopic\" : pubsub topic }] if pubsub topic else [] } request = ( client . projects () . locations () . datasets () . fhirStores () . patch ( name = fhir store name , updateMask = \"notificationConfigs\" , body = patch ) ) response = request . execute () print ( f \"Patched FHIR store { fhir store id } with Cloud Pub/Sub topic: { pubsub topic or 'None' } \" ) return response Getting FHIR store details The following samples show how to get details about a FHIR store."
+        ]
+      },
+      {
+        "title": "\"Configure DICOM Pub/Sub notifications \\_|\\_ Cloud Healthcare API \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/healthcare-api/docs/dicom-pubsub",
+        "source_id": "site-docs-root-2",
+        "final_score": 142,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Here are the key differences: dicomStore.notificationConfig supports only one subscriber, while dicomStore.notificationConfigs supports multiple subscribers. dicomStore.notificationConfig uses NotificationConfig , which is being deprecated and replaced by DicomNotificationConfig . dicomStore.notificationConfigs supports sending notifications for all available DICOM operations automatically, such as ImportDicomData , DeleteInstances , and others.",
+          "Before using any of the command data below, make the following replacements: PROJECT ID : the ID of your Google Cloud project LOCATION : the dataset location DATASET ID : the DICOM store's parent dataset DICOM STORE ID : the DICOM store ID PUBSUB TOPIC : a Pub/Sub topic to which messages are published when an event occurs in a data store Execute the following command: Linux, macOS, or Cloud Shell Note: Ensure you have initialized the Google Cloud CLI with authentication and a project by running either gcloud init ; or gcloud auth login and gcloud config set project . gcloud healthcare dicom-stores update DICOM STORE ID \\ --dataset = DATASET ID \\ --location = LOCATION \\ --pubsub-topic = projects/ PROJECT ID /topics/ PUBSUB TOPIC \\ --send-for-bulk-import Windows (PowerShell) Note: Ensure you have initialized the Google Cloud CLI with authentication and a project by running either gcloud init ; or gcloud auth login and gcloud config set project . gcloud healthcare dicom-stores update DICOM STORE ID --dataset = DATASET ID --location = LOCATION --pubsub-topic = projects/ PROJECT ID /topics/ PUBSUB TOPIC --send-for-bulk-import Windows (cmd.exe) Note: Ensure you have initialized the Google Cloud CLI with authentication and a project by running either gcloud init ; or gcloud auth login and gcloud config set project . gcloud healthcare dicom-stores update DICOM STORE ID ^ --dataset = DATASET ID ^ --location = LOCATION ^ --pubsub-topic = projects/ PROJECT ID /topics/ PUBSUB TOPIC ^ --send-for-bulk-import You should receive a response similar to the following: Response Updated dicomStore [ DICOM STORE ID ]. ... name: projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /dicomStores/ DICOM STORE ID notificationConfig: pubsubTopic: projects/ PROJECT ID /topics/ PUBSUB TOPIC sendForBulkImport: true Store or import a DICOM instance and view the Pub/Sub notification Permissions required for this task To perform this task, you must have been granted the following permissions or the following Identity and Access Management (IAM) roles: Permissions healthcare.dicomStores.dicomWebWrite to store DICOM instances in the requested DICOM store. healthcare.dicomStores.import to import DICOM instances into the requested DICOM store.",
+          "Run the following command in the terminal to create or overwrite this file in the current directory: @' { \"notificationConfigs\": [ { \"pubsubTopic\": \"projects/ PROJECT ID /topics/ PUBSUB TOPIC SAMPLE 1 \", }, { \"pubsubTopic\": \"projects/ PROJECT ID /topics/ PUBSUB TOPIC SAMPLE 2 \", } ] } '@ Out-File -FilePath request.json -Encoding utf8 Then execute the following command to send your REST request: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method PATCH -Headers $headers -ContentType: \"application/json; charset=utf-8\" -InFile request.json ` -Uri \"https://healthcare.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /dicomStores/ DICOM STORE ID ?updateMask=notificationConfig,notificationConfigs\" Select-Object -Expand Content APIs Explorer Copy the request body and open the method reference page ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cmd.exe",
+      "github.com",
+      "healthcare.dicomStores.dicomWebWrite",
+      "healthcare.dicomStores.import",
+      "healthcare.googleapis.com",
+      "projects.locations.datasets.fhirStores.patch",
+      "request.json"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/fhir",
+        "https://docs.cloud.google.com/healthcare-api/docs/fhir-pubsub",
+        "https://docs.cloud.google.com/healthcare-api/docs/dicom-pubsub"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/fhir",
+        "https://docs.cloud.google.com/healthcare-api/docs/fhir-pubsub",
+        "https://docs.cloud.google.com/healthcare-api/docs/dicom-pubsub"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/fhir",
+        "https://docs.cloud.google.com/healthcare-api/docs/fhir-pubsub",
+        "https://docs.cloud.google.com/healthcare-api/docs/dicom-pubsub"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/fhir",
+        "https://docs.cloud.google.com/healthcare-api/docs/fhir-pubsub",
+        "https://docs.cloud.google.com/healthcare-api/docs/dicom-pubsub"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/fhir",
+        "https://docs.cloud.google.com/healthcare-api/docs/fhir-pubsub",
+        "https://docs.cloud.google.com/healthcare-api/docs/dicom-pubsub"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/fhir",
+        "https://docs.cloud.google.com/healthcare-api/docs/fhir-pubsub",
+        "https://docs.cloud.google.com/healthcare-api/docs/dicom-pubsub"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/fhir",
+        "https://docs.cloud.google.com/healthcare-api/docs/fhir-pubsub",
+        "https://docs.cloud.google.com/healthcare-api/docs/dicom-pubsub"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/fhir",
+        "https://docs.cloud.google.com/healthcare-api/docs/fhir-pubsub",
+        "https://docs.cloud.google.com/healthcare-api/docs/dicom-pubsub"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/fhir",
+        "https://docs.cloud.google.com/healthcare-api/docs/fhir-pubsub",
+        "https://docs.cloud.google.com/healthcare-api/docs/dicom-pubsub"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/fhir",
+        "https://docs.cloud.google.com/healthcare-api/docs/fhir-pubsub",
+        "https://docs.cloud.google.com/healthcare-api/docs/dicom-pubsub"
+      ]
+    }
+  ]
+}

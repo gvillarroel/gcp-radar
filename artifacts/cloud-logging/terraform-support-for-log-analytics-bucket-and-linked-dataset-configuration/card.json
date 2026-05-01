@@ -1,0 +1,264 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:24.398Z",
+  "source_step08_card": "data/step-08/current/products/cloud-logging/card.json",
+  "product_name": "Cloud Logging",
+  "product_slug": "cloud-logging",
+  "feature_name": "Terraform support for Log Analytics bucket and linked dataset configuration",
+  "feature_slug": "terraform-support-for-log-analytics-bucket-and-linked-dataset-configuration",
+  "summary": "Terraform modules can configure Log Analytics on Cloud Logging buckets and BigQuery linked datasets.",
+  "extended_definition": "Terraform modules can configure Log Analytics on Cloud Logging buckets and BigQuery linked datasets.",
+  "lifecycle": {
+    "latest_feature_date": "2023-04-18",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/logging/docs/access-control",
+      "https://docs.cloud.google.com/logging/docs/buckets",
+      "https://docs.cloud.google.com/python/docs/reference/logging/latest/changelog"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Configure log buckets \\_|\\_ Cloud Logging \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/logging/docs/buckets",
+        "source_id": "site-docs-root",
+        "final_score": 172,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "After Logging displays the linked dataset name on the Logs Storage page, it might take several minutes before BigQuery recognizes the dataset. gcloud To create a linked dataset for a log bucket that is upgraded to use Observability Analytics, run the gcloud logging links create command: gcloud logging links create LINK ID --bucket= BUCKET ID --location= LOCATION The LINK ID that you provide is used as the name of the BigQuery dataset, and the value of this field must be unique for your Google Cloud project.",
+          "REST To create a linked a BigQuery dataset for an existing log bucket that is upgraded use Observability Analytics, call the asynchronous projects.locations.buckets.links.create method of the Cloud Logging API.",
+          "If you attempt to create a linked dataset for a log bucket that isn't upgraded to use Observability Analytics, then the following error is reported: A link can only be created for an analytics-enabled bucket."
+        ]
+      },
+      {
+        "title": "Changelog \\_|\\_ Python client libraries \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/python/docs/reference/logging/latest/changelog",
+        "source_id": "site-python-reference",
+        "final_score": 152,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "3.15.0 (latest) 3.13.0 3.12.1 3.11.3 3.10.0 3.9.0 3.8.0 3.7.0 3.6.0 3.5.0 3.4.0 3.3.1 3.2.5 3.1.2 3.0.0 2.7.2 2.6.0 2.5.0 2.4.0 2.3.1 2.2.0 2.1.1 2.0.2 1.15.3 1.14.0 1.13.0 1.12.1 PyPI History 3.15.0 (2026-03-26) Features Allow Protobuf 7.x ( 1eb7c268482e55971966e284dac2cbeb903adcbb ) Bug Fixes Require Python 3.9 ( 1eb7c268482e55971966e284dac2cbeb903adcbb ) Require google-api-core >= 2.11.0 ( 1eb7c268482e55971966e284dac2cbeb903adcbb ) Improve type checking ( 1eb7c268482e55971966e284dac2cbeb903adcbb ) 3.14.0 (2026-03-05) Features support mTLS certificates when available (#1071) ( c73e43906298e99405830d69a8383f71b85bd75b ) 3.13.0 (2025-12-15) Features Add support for python 3.14 (#1065) ( 6be3df6aa94539cd2ab22a4fac55b343862228b2 ) Bug Fixes remove setup.cfg configuration for creating universal wheels (#981) ( 70f612c3281f1df13f3aba6b19bc4e9397297f3d ) 3.12.1 (2025-04-21) Bug Fixes Make logging handler close conditional to having the transport opened ( #990 ) ( 66c6b91 ) 3.12.0 (2025-04-10) Features Add REST Interceptors which support reading metadata ( 681bcc5 ) Add support for opt-in debug logging ( 681bcc5 ) Added flushes/close functionality to logging handlers ( #917 ) ( d179304 ) Bug Fixes Allow protobuf 6.x ( #977 ) ( 6757890 ) deps: Require google-cloud-audit-log >= 0.3.1 ( #979 ) ( 1cc00ec ) Fix typing issue with gRPC metadata when key ends in -bin ( 681bcc5 ) Documentation Added documentation on log level and excluded loggers params in setup logging ( #971 ) ( 70d9d25 ) Update README to break infinite redirect loop ( #972 ) ( 52cd907 ) 3.11.4 (2025-01-22) Bug Fixes Made write entries raise ValueError on ParseError s ( #958 ) ( 5309478 ) Require proto-plus >= 1.25 for Python 3.13 ( #955 ) ( 7baed8e ) Require proto-plus >= 1.25 for Python 3.13 ( #955 ) ( 002b1fc ) 3.11.3 (2024-10-15) Bug Fixes 16-bit hexadecimal formatting for XCTC span IDs ( #946 ) ( 1f2b190 ) 3.11.2 (2024-08-15) Bug Fixes deps: Require google-cloud-appengine-logging>=0.1.3 ( 550abca ) deps: Require google-cloud-audit-log >= 0.2.4 ( 550abca ) deps: Require opentelemetry-api>=1.9.0 ( 550abca ) Fixed type hinting issue with specifying Transport class ( #930 ) ( e2875d6 ) 3.11.1 (2024-08-06) Bug Fixes Allow protobuf 5.x ( #888 ) ( 7746e64 ) 3.11.0 (2024-07-15) Features OpenTelemetry trace/spanID integration for Python handlers ( #889 ) ( 78168a3 ) Bug Fixes Added environment specific labels to client library when running in Cloud Run Jobs ( #877 ) ( 9c5e8f0 ) Added missing import into logger.py ( #896 ) ( 9ca242d ) Added type hints to CloudLoggingHandler constructor ( #903 ) ( 6959345 ) Documentation Add summary overview template ( #878 ) ( b60714c ) Changed table in web-framework-integration to bulleted list ( #875 ) ( a4aa3a7 ) Documentation update for OpenTelemetry ( #915 ) ( 2a0539a ) Update dictConfig snippet ( #885 ) ( 6264107 ) 3.10.0 (2024-03-13) Features Allow users to explicitly configure universe domain ( #846 ) ( e998a21 ) Bug Fixes Added placeholder kwargs to StructuredLogHandler ( #845 ) ( 9bc0a37 ) Allowed for a partial override of loggers that get excluded from setup client ( #831 ) ( 870c940 ) Remove usage in including default value fields to prepare for protobuf 5.x ( #866 ) ( 66a534d ) Use value of cluster-location in GKE for tagging location ( #830 ) ( c15847c ) Documentation Added documentation for Django/Flask integrations and dictConfig ( #848 ) ( c65ec92 ) 3.9.0 (2023-12-08) Features Add support for Python 3.12 ( #813 ) ( 6591b53 ) Use native namespaces instead of pkg resources ( #812 ) ( 10ad75d ) Bug Fixes Fixed DeprecationWarning for datetime objects for Python 3.12 ( #824 ) ( 2384981 ) Fixed object paths in autogenerated code in owlbot.py ( #804 ) ( b14bb14 ) Updated protobuf JSON formatting to support nested protobufs ( #797 ) ( a00c261 ) Use retry async instead of retry in async client ( #816 ) ( c79f7f5 ) Use warning instead of warn in system tests to avoid DeprecationWarning ( #821 ) ( c447175 ) 3.8.0 (2023-10-03) Features Add cloud run job monitored resource type. ( #788 ) ( 3b310d6 ) 3.7.0 (2023-09-25) Features Add ConfigServiceV2.CreateBucketAsync method for creating Log Buckets asynchronously ( 30f24a8 ) Add ConfigServiceV2.CreateLink method for creating linked datasets for Log Analytics Buckets ( 30f24a8 ) Add ConfigServiceV2.DeleteLink method for deleting linked datasets ( 30f24a8 ) Add ConfigServiceV2.GetLink methods for describing linked datasets ( 30f24a8 ) Add ConfigServiceV2.ListLinks method for listing linked datasets ( 30f24a8 ) Add ConfigServiceV2.UpdateBucketAsync method for creating Log Buckets asynchronously ( 30f24a8 ) Add LogBucket.analytics enabled field that specifies whether Log Bucket’s Analytics features are enabled ( 30f24a8 ) Add LogBucket.index configs field that contains a list of Log Bucket’s indexed fields and related configuration data ( 30f24a8 ) Log Analytics features of the Cloud Logging API ( 30f24a8 ) Bug Fixes Add async context manager return types ( 30f24a8 ) Add severity to structured log write ( #783 ) ( 31a7f69 ) Handle exceptions raised when fetching Django request data ( #758 ) ( 5ecf886 ) Unintended exception omittion ( #736 ) ( 022dc54 ) Documentation Documentation for the Log Analytics features of the Cloud Logging API ( 30f24a8 ) Minor formatting ( 30f24a8 ) 3.6.0 (2023-07-05) Features Add logic to convert severity string to uppercase ( #744 ) ( c1c8ce1 ) Bug Fixes Properly handle None from metadata server ( #718 ) ( dedaff9 ) Documentation Fix formatting of request arg in docstring ( #734 ) ( dbb1794 ) 3.5.0 (2023-01-24) Features Add support for Python 3.11 ( 412d481 ) Bug Fixes Add context manager return types ( e2278c1 ) Instrumentation entries should not contain user labels ( #703 ) ( e05d132 ) Require proto-plus 1.22.2 for Python 3.11 ( 412d481 ) Send StructuredLogHandler instrumentation log using an explicit logger ( #705 ) ( ac6a2c6 ) Documentation Add documentation for enums ( e2278c1 ) 3.4.0 (2022-12-15) Features Add typing to proto.Message based class attributes ( 9d505f1 ) Bug Fixes Add dict typing for client options ( 9d505f1 ) deps: Require google-api-core >=1.34.0, >=2.11.0 ( 9d505f1 ) Drop usage of pkg resources ( 9d505f1 ) Fix timeout default values ( 9d505f1 ) Documentation samples: Snippetgen handling of repeated enum field ( 9d505f1 ) samples: Snippetgen should call await on the operation coroutine before calling result ( 9d505f1 ) 3.3.1 (2022-12-05) Bug Fixes Client info default values ( #681 ) ( b74d2a8 ) 3.3.0 (2022-11-26) Features Add support to custom JSON encoders ( #657 ) ( 77e621c ) Include context on batch log errors ( #650 ) ( d08be9a ) Set partial success to default to true for batched logs ( #649 ) ( e56d3e8 ) Support Django asgi middleware ( #625 ) ( f52b3aa ) Bug Fixes deps: Allow protobuf 3.19.5 ( #644 ) ( 12f3001 ) Json fields dictionary has modification side effect ( #654 ) ( a62a0d6 ) 3.2.4 (2022-10-04) Bug Fixes deps: Require protobuf >= 3.20.2 ( #633 ) ( b4da4ce ) 3.2.3 (2022-09-30) Bug Fixes Mimic the pubsub test to clean up bigquery datasets ( #639 ) ( 44deb1b ) Nested json with structured log handler ( #636 ) ( b840435 ) Structured log handler drops reserved fields in json fields ( #634 ) ( 4ef38b3 ) 3.2.2 (2022-08-12) Bug Fixes deps: allow protobuf < 5.0.0 ( #600 ) ( 8495dac ) deps: require proto-plus >= 1.22.0 ( 8495dac ) 3.2.1 (2022-07-13) Bug Fixes deps: require google-api-core>=1.32.0,>=2.8.0 ( #585 ) ( de35eab ) 3.2.0 (2022-07-11) Features add audience parameter ( a2eed8c ) Add support for library instrumentation ( #551 ) ( 8ba0023 ) Bug Fixes deps: require google-api-core >= 2.8.0 ( #575 ) ( a2eed8c ) deps: require google-cloud-core >= 2.0.0 ( a2eed8c ) require python 3.7+ ( #580 ) ( 0b3eb52 ) 3.1.2 (2022-06-03) Bug Fixes deps: require protobuf <4.0.0dev ( #564 ) ( cb0720c ) Documentation fix changelog header to consistent size ( #562 ) ( 3f16107 ) Update README image to absolute URL, fix PyPI rendering ( #561 ) ( 76413b1 ) 3.1.1 (2022-05-23) Documentation Change button in README to .png file ( #554 ) ( e297747 ) 3.1.0 (2022-05-08) Features KMS configuration in settings ( #489 ) ( 6699f8c ) Update Logging API with latest changes ( 6699f8c ) Bug Fixes deps: require google-api-core>=1.31.5, >=2.3.2 ( #494 ) ( ab14563 ) fix system test for mtls ( #485 ) ( 96bb6f7 ) Reenable staleness bot ( #535 ) ( 1595e42 ) remove unnecessary detect resource calls from CloudLoggingHandler ( #484 ) ( def7440 ) resolve DuplicateCredentialArgs error when using credentials file ( 265061e ) Dependencies Pin jinja2 version to fix CI ( #522 ) ( 383f2f0 ) Documentation add generated snippets ( 6699f8c ) Add link to interactive walkthrough ( #541 ) ( 422a77d ) 3.0.0 (2022-01-27) ⚠ BREAKING CHANGES make logging API more friendly to use (#422) api consistency between HTTP and Gapic layers (#375) support string-encoded json (#339) Infer default resource in logger (#315) support json logs (#316) deprecate AppEngineHandler and ContainerEngineHandler (#310) Features add api key support ( #472 ) ( 81ca8c6 ) add json fields extras argument for adding to jsonPayload ( #447 ) ( a760e02 ) avoid importing grpc when explicitly disabled ( #416 ) ( 818213e ) Infer default resource in logger ( #315 ) ( c632503 ) make logging API more friendly to use ( #422 ) ( 83d9ca8 ) support json logs ( #316 ) ( 5267152 ) support string-encoded json ( #339 ) ( 6fa1773 ) trace improvements ( #450 ) ( e0c5fc0 ) Bug Fixes allow reading logs from non-project paths ( #444 ) ( 97e32b6 ) api consistency between HTTP and Gapic layers ( #375 ) ( e1506fa ) Miscellaneous Chores deprecate AppEngineHandler and ContainerEngineHandler ( #310 ) ( e3cac88 ) Documentation update usage guide for v3.0.0 ( #456 ) ( 8a67b73 ) 2.7.0 (2021-11-02) Features add context manager support in client ( #415 ) ( f5af164 ) added support for iam AuditData proto ( #396 ) ( e3a1eba ) use structured logging on GCF with python 3.7 ( #434 ) ( 5055919 ) Bug Fixes add ‘dict’ annotation type to ‘request’ ( 76ac729 ) add ‘dict’ annotation type to ‘request’ ( 23f9e1f ) deps: drop packaging dependency ( 9d38995 ) deps: require google-api-core >= 1.28.0 ( 9d38995 ) deps: require proto-plus==1.15.0 ( 76ac729 ) exception log message format ( #394 ) ( c426bf5 ) improper types in pagers generation ( 76ac729 ) improper types in pagers generation ( 6a837a5 ) Documentation list oneofs in docstring ( 9d38995 ) 2.6.0 (2021-07-28) Features add always use jwt access ( #334 ) ( ae67d10 ) Bug Fixes deps: pin ‘google-{api,cloud}-core’, ‘google-auth’ to allow 2.x versions ( #356 ) ( a970dd2 ) disable always use jwt access ( #342 ) ( a95e401 ) enable self signed jwt for grpc ( #360 ) ( 707fad1 ) Documentation omit mention of Python 2.7 in ‘CONTRIBUTING.rst’ ( #1127 ) ( #327 ) ( faa6fb9 ), closes #1126 add Samples section to CONTRIBUTING.rst ( #357 ) ( 8771716 ) 2.5.0 (2021-06-10) Features support AuditLog and RequestLog protos ( #274 ) ( 5d91be9 ) Bug Fixes deps: add packaging requirement ( #300 ) ( 68c5cec ) structured log handler formatting issues ( #319 ) ( db9da37 ) 2.4.0 (2021-05-12) Features allow custom labels with standard library logging ( #264 ) ( fe4de39 ) Improve source location overrides ( #258 ) ( 6b10b74 ) record source locations ( #254 ) ( a5c2f8e ) support span inference ( #267 ) ( fcd26eb ) use standard output logs on serverless environments ( #228 ) ( a78f577 ) Bug Fixes changed region format on serverless ( #291 ) ( 8872d6f ) changed region format on serverless ( #291 ) ( 360d3d2 ) deps: fix minimum required version of google-api-core ( #244 ) ( 874fdfa ) deps: fix minimum required version of google-api-core ( #244 ) ( 37d33fc ) improve API compatibility for next release ( #292 ) ( 1f9517d ) remove noisy logs ( #290 ) ( bdf8273 ) 2.3.1 (2021-03-24) Bug Fixes detect project from environment instead of from logger ( #238 ) ( 813b97c ) revert default resource behavior to avoid breaking changes ( #237 ) ( 24a0a5e ) 2.3.0 (2021-03-15) Features Add json setting to allow unicodes to show in log instead of ascii ch… ( #193 ) ( e8c8e30 ) detect monitored resources on all GCP environments ( #200 ) ( 4eda681 ) Bug Fixes logger uses default resource ( #207 ) ( 0f90a79 ) no duplicate logs on GCF or GAE ( #209 ) ( 37e6c8e ) Documentation add python std logging to sample browser ( #173 ) ( 7cc7275 ) 2.2.0 (2021-01-27) Features add ‘from service account info’ factory to clients ( a9ff2b7 ) Bug Fixes django content length extraction bug ( #160 ) ( 93eeaef ) fix sphinx identifiers ( a9ff2b7 ) 2.1.1 (2021-01-14) Bug Fixes use dict for http request ( #156 ) ( dc26668 ) 2.1.0 (2021-01-12) Features allow modifying LogEntry data using extra argument ( #129 ) ( 92b287f ) support http request field ( #120 ) ( ba94afb ) Bug Fixes add InternalServerError to list of expected errors ( #151 ) ( 9bf49f5 ) Documentation fix usage guide ( #140 ) ( 1ca3981 ) 2.0.2 (2020-12-14) Bug Fixes Add submodule imports for handlers to logging alias ( #117 ) ( 6843a3a ) remove client recv msg limit fix: add enums to types/ init .py ( #131 ) ( 6349b89 ) Remove keyword only argument for RequestsMiddleware ( #113 ) ( e704f28 ) 2.0.1 (2020-12-02) Bug Fixes remove duplicate stream handler ( #106 ) ( eb5cf40 ) Documentation fix logger documentation ( #100 ) ( 6a46b46 ) 2.0.0 (2020-11-19) ⚠ BREAKING CHANGES Use microgenerator for GAPIC layer.",
+          "Use ‘python-3.6’ for ‘blacken’ run. ( #7064 ) 1.9.1 12-17-2018 16:49 PST Implementation Changes Allow setting name, args on default handler (post-blacken) ( #6828 ) Documentation Document Python 2 deprecation ( #6910 ) Normalize docs for page size / max results / page token . ( #6842 ) 1.9.0 12-10-2018 12:55 PST Implementation Changes Import iam.policy from google.api core . ( #6741 ) Pick up fixes to GAPIC generator. ( #6631 ) Fix client info bug, update docstrings via synth. ( #6435 ) Revert “Allow turning on JSON Detection in StackDriver” ( #6352 ) Allow turning on JSON Detection in StackDriver ( #6293 ) New Features Add support for additional ‘LogEntry’ fields ( #6229 ) Dependencies Update dependency to google-cloud-core ( #6835 ) Bump minimum api core version for all GAPIC libs to 1.4.1. ( #6391 ) Internal / Testing Changes Change the url to the canonical one ( #6843 ) Omit local deps ( #6701 ) Run black at end of synth.py ( #6698 ) Blackening Continued… ( #6667 ) Add templates for flake8, coveragerc, noxfile, and black. ( #6642 ) Logging: add ‘synth.py’. ( #6081 ) 1.8.0 10-17-2018 14:23 PDT Implementation Changes Logging: allow more tries on inner retry for ‘ list entries’. ( #6179 ) Accommodate payload-less log entries. ( #6103 ) New Features Logging: support request-correlated logging in App Engine standard python37 runtime ( #6118 ) Documentation Logging: fix class reference in docstring ( #6153 ) Translate / Logging / Language: restore detailed usage docs. ( #5999 ) Redirect renamed ‘usage.html’/’client.html’ -> ‘index.html’. ( #5996 ) Internal / Testing Changes Use new Nox ( #6175 ) Logging: harden systest teardown against ‘DeadlineExceeded’ retry errors. ( #6182 ) Logging: fix lint errors. ( #6183 ) Harden sink / metric creation against transient errors. ( #6180 ) Logging: test both GCLOUD PROJECT and GOOGLE CLOUD PROJECT env vars ( #6138 ) Harden ‘test list entry with unregistered’ against 429 errors. ( #6181 ) Prep logging docs for repo split. ( #5943 ) 1.7.0 Implementation Changes Print to stderr instead of stdout when exiting the program ( #5569 ) Avoid overwriting ‘ module ’ of messages from shared modules. ( #5364 ) Support older Django versions in request middleware #5024 Fix bad trove classifier #5386 New Features Add support for trace and span id to logging async API ( #5908 ) Add support for span id attribute of log entries ( #5885 ) Add support for trace attribute of log entries ( #5878 ) Add support for Python 3.7 and remove 3.4 ( #5295 ) Documentation Replace links to ‘/stable/’ with ‘/latest/’. ( #5901 ) Internal / Testing Changes Nox: use inplace installs ( #5865 ) Unflake logging systests ( #5698 ) Harden list entries system test further against backoff failure. ( #5551 ) Harden logging systests ( #5496 ) Harden system tests against ‘ResourceExhausted’ quota errors. ( #5486 ) Modify system tests to use prerelease versions of grpcio ( #5304 ) Plug leaky sink in systests. ( #5247 ) 1.6.0 Dependencies The minimum version for google-api-core has been updated to version 1.0.0."
+        ]
+      },
+      {
+        "title": "Access control with IAM \\_|\\_ Cloud Logging \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/logging/docs/access-control",
+        "source_id": "site-docs-root",
+        "final_score": 142,
+        "relevance": "",
+        "evidence_snippets": [
+          "Save and use private queries logging.queries.usePrivate logging.queries.{listShared,getShared} Save and use shared queries logging.queries.{share, getShared, updateShared, deleteShared, listShared} Use recent queries logging.queries.{create, list} Create and manage log scopes logging.logScopes.{create, delete, get, list, update} Set and manage the default log scope observability.scopes.{get, update} Create and manage analytics views observability.analyticsViews.{create, delete, get, list, update} Create and manage linked datasets logging.links.{create, delete, get, list} You might need additional IAM roles to query the linked dataset.",
+          "This role lets you create or modify any of the following: Log sinks Log buckets Log views Linked data sets Log scopes Analytics views This role isn't sufficient to create log-based metrics or log-based alerting policies .",
+          "Lowest-level resources where you can grant this role: View logging.buckets.get logging.buckets.list logging.exclusions.get logging.exclusions.list logging.links.get logging.links.list logging.locations. logging.locations.get logging.locations.list logging.logEntries.list logging.logMetrics.get logging.logMetrics.list logging.logScopes.get logging.logScopes.list logging.logServiceIndexes.list logging.logServices.list logging.logs.list logging.operations.get logging.operations.list logging.queries.getShared logging.queries.listShared logging.queries.usePrivate logging.sinks.get logging.sinks.list logging.usage.get logging.views.get logging.views.list observability.scopes.get resourcemanager.projects.get Logs Configuration Writer ( roles/ logging.configWriter ) Provides permissions to read and write the configurations of logs-based metrics and sinks for exporting logs."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "explicit",
+    "explicit_roles": [
+      "roles/accessapproval.admin",
+      "roles/accessapproval.approver",
+      "roles/accessapproval.configEditor"
+    ],
+    "explicit_permissions": [
+      {
+        "permission": "resourcemanager.projects.get",
+        "group": "resourcemanager",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver",
+          "roles/accessapproval.configEditor"
+        ]
+      }
+    ],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "client.html",
+      "iam.policy",
+      "index.html",
+      "logger.py",
+      "logging.buckets.get",
+      "logging.buckets.list",
+      "logging.configWriter",
+      "logging.exclusions.get",
+      "logging.exclusions.list",
+      "logging.links",
+      "logging.links.get",
+      "logging.links.list",
+      "logging.locations",
+      "logging.locations.get",
+      "logging.locations.list",
+      "logging.logEntries.list",
+      "logging.logMetrics.get",
+      "logging.logMetrics.list",
+      "logging.logs.list",
+      "logging.logScopes",
+      "logging.logScopes.get",
+      "logging.logScopes.list",
+      "logging.logServiceIndexes.list",
+      "logging.logServices.list",
+      "logging.operations.get",
+      "logging.operations.list",
+      "logging.queries",
+      "logging.queries.getShared",
+      "logging.queries.listShared",
+      "logging.queries.usePrivate",
+      "logging.sinks.get",
+      "logging.sinks.list",
+      "logging.usage.get",
+      "logging.viewer",
+      "logging.views.get",
+      "logging.views.list",
+      "observability.analyticsViews",
+      "observability.scopes",
+      "observability.scopes.get",
+      "owlbot.py",
+      "projects.locations.buckets.links.create",
+      "proto.Message",
+      "setup.cfg",
+      "synth.py",
+      "usage.html",
+      "v3.0.0"
+    ],
+    "missing_inventory_roles": [
+      "roles/logging.viewer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/buckets",
+        "https://docs.cloud.google.com/python/docs/reference/logging/latest/changelog",
+        "https://docs.cloud.google.com/logging/docs/access-control"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/buckets",
+        "https://docs.cloud.google.com/python/docs/reference/logging/latest/changelog",
+        "https://docs.cloud.google.com/logging/docs/access-control"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/buckets",
+        "https://docs.cloud.google.com/python/docs/reference/logging/latest/changelog",
+        "https://docs.cloud.google.com/logging/docs/access-control"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/buckets",
+        "https://docs.cloud.google.com/python/docs/reference/logging/latest/changelog",
+        "https://docs.cloud.google.com/logging/docs/access-control"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/buckets",
+        "https://docs.cloud.google.com/python/docs/reference/logging/latest/changelog",
+        "https://docs.cloud.google.com/logging/docs/access-control"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/buckets",
+        "https://docs.cloud.google.com/python/docs/reference/logging/latest/changelog",
+        "https://docs.cloud.google.com/logging/docs/access-control"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/buckets",
+        "https://docs.cloud.google.com/python/docs/reference/logging/latest/changelog",
+        "https://docs.cloud.google.com/logging/docs/access-control"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/buckets",
+        "https://docs.cloud.google.com/python/docs/reference/logging/latest/changelog",
+        "https://docs.cloud.google.com/logging/docs/access-control"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/buckets",
+        "https://docs.cloud.google.com/python/docs/reference/logging/latest/changelog",
+        "https://docs.cloud.google.com/logging/docs/access-control"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/buckets",
+        "https://docs.cloud.google.com/python/docs/reference/logging/latest/changelog",
+        "https://docs.cloud.google.com/logging/docs/access-control"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/buckets",
+        "https://docs.cloud.google.com/python/docs/reference/logging/latest/changelog",
+        "https://docs.cloud.google.com/logging/docs/access-control"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/buckets",
+        "https://docs.cloud.google.com/python/docs/reference/logging/latest/changelog",
+        "https://docs.cloud.google.com/logging/docs/access-control"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/buckets",
+        "https://docs.cloud.google.com/python/docs/reference/logging/latest/changelog",
+        "https://docs.cloud.google.com/logging/docs/access-control"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/buckets",
+        "https://docs.cloud.google.com/python/docs/reference/logging/latest/changelog",
+        "https://docs.cloud.google.com/logging/docs/access-control"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/buckets",
+        "https://docs.cloud.google.com/python/docs/reference/logging/latest/changelog",
+        "https://docs.cloud.google.com/logging/docs/access-control"
+      ]
+    }
+  ]
+}

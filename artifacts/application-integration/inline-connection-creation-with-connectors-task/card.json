@@ -1,0 +1,126 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:17.262Z",
+  "source_step08_card": "data/step-08/current/products/application-integration/card.json",
+  "product_name": "Application Integration",
+  "product_slug": "application-integration",
+  "feature_name": "Inline connection creation with Connectors task",
+  "feature_slug": "inline-connection-creation-with-connectors-task",
+  "summary": "Application Integration now supports directly creating new Integration Connectors connections from the Connectors task.",
+  "extended_definition": "Application Integration now supports directly creating new Integration Connectors connections from the Connectors task.",
+  "lifecycle": {
+    "latest_feature_date": "2023-06-13",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/application-integration/docs/automate-salesforce-case-routing",
+      "https://docs.cloud.google.com/application-integration/docs/configure-connectors-task",
+      "https://docs.cloud.google.com/application-integration/docs/configure-hubspot-trigger"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Connectors task \\_|\\_ Application Integration \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/application-integration/docs/configure-connectors-task",
+        "source_id": "site-docs-reference-2",
+        "final_score": 162,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Inline connection creation You can use the Connectors task to directly create a new connection in Integration Connectors .",
+          "Before you begin Add a Connector task Create new connection To create a new connection from Application Integration, perform the following steps: Click the Connectors task element on the designer to view the Connectors task configuration pane.",
+          "To view the updated schema in your existing connector tasks, follow these steps: In Integration Connectors, open the Connection details page of the connection, and then click Refresh connection schema ."
+        ]
+      },
+      {
+        "title": "HubSpot trigger \\_|\\_ Application Integration \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/application-integration/docs/configure-hubspot-trigger",
+        "source_id": "site-docs-reference-2",
+        "final_score": 118,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "To configure the HubSpot trigger , you can either use an existing HubSpot connection available in Integration Connectors, or create a new HubSpot connection using the inline connection creation option.",
+          "Before you begin If you plan to create or configure a new connection for the HubSpot trigger , make sure that you have the following Identity and Access Management (IAM) role on the project: Connector Admin ( roles/connectors.admin ) For information about granting roles, see Manage access .",
+          "Therefore, after the connection creation is successful, perform the following additional steps: Go the connection details page of the newly created connection, and copy the webhook URL for event subscription."
+        ]
+      },
+      {
+        "title": "\"Automate Salesforce case routing assignments \\_|\\_ Application Integration\\",
+        "url": "https://docs.cloud.google.com/application-integration/docs/automate-salesforce-case-routing",
+        "source_id": "site-docs-root",
+        "final_score": 117,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "The following edge condition controls the flow of the integration based on the type of the Salesforce case: Add an edge connection from the Get case type task to the Mapping for issue creation task with the following edge condition: $sf case type$ = \"Engineering\" Add another edge connection from the Get case type task to the Mapping for incident creation task with the following edge condition: $sf case type$ = \"Sales\" Sample integration flow The following figure shows a sample layout of the integration created using this tutorial.",
+          "Connect to the Salesforce account Perform the following steps to add and configure a Connectors task to retrieve the case details using the Salesforce connection: In the integration editor, click Tasks to display a list of available tasks.",
+          "Add an edge connection from the Mapping for incident creation task to the Create incident in ServiceNow connector."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "connectors.admin"
+    ],
+    "missing_inventory_roles": [
+      "roles/connectors.admin"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/application-integration/docs/configure-connectors-task",
+        "https://docs.cloud.google.com/application-integration/docs/configure-hubspot-trigger",
+        "https://docs.cloud.google.com/application-integration/docs/automate-salesforce-case-routing"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/application-integration/docs/configure-connectors-task",
+        "https://docs.cloud.google.com/application-integration/docs/configure-hubspot-trigger",
+        "https://docs.cloud.google.com/application-integration/docs/automate-salesforce-case-routing"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/application-integration/docs/configure-connectors-task",
+        "https://docs.cloud.google.com/application-integration/docs/configure-hubspot-trigger",
+        "https://docs.cloud.google.com/application-integration/docs/automate-salesforce-case-routing"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/application-integration/docs/configure-connectors-task",
+        "https://docs.cloud.google.com/application-integration/docs/configure-hubspot-trigger",
+        "https://docs.cloud.google.com/application-integration/docs/automate-salesforce-case-routing"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/application-integration/docs/configure-connectors-task",
+        "https://docs.cloud.google.com/application-integration/docs/configure-hubspot-trigger",
+        "https://docs.cloud.google.com/application-integration/docs/automate-salesforce-case-routing"
+      ]
+    }
+  ]
+}

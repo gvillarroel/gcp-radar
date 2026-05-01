@@ -1,0 +1,160 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:33.800Z",
+  "source_step08_card": "data/step-08/current/products/datastream/card.json",
+  "product_name": "Datastream",
+  "product_slug": "datastream",
+  "feature_name": "Resource tags support",
+  "feature_slug": "resource-tags-support",
+  "summary": "Datastream supports tags on private connectivity configurations, connection profiles, and streams for fine-grained access control.",
+  "extended_definition": "Datastream supports tags on private connectivity configurations, connection profiles, and streams for fine-grained access control.",
+  "lifecycle": {
+    "latest_feature_date": "2022-06-16",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/datastream/docs/access-control-with-tags",
+      "https://docs.cloud.google.com/datastream/docs/create-a-private-connectivity-configuration",
+      "https://docs.cloud.google.com/datastream/docs/create-connection-profiles",
+      "https://docs.cloud.google.com/datastream/docs/reference/rest/v1/projects.locations.connectionProfiles"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Create a private connectivity configuration \\_|\\_ Datastream \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/datastream/docs/create-a-private-connectivity-configuration",
+        "source_id": "site-docs-root",
+        "final_score": 294,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Datastream automatically deletes private connectivity configurations that haven't been used for a period of six consecutive months.",
+          "Home Documentation Data analytics Datastream Guides Send feedback Create a private connectivity configuration Stay organized with collections Save and categorize content based on your preferences.",
+          "You need to provide the private IP addresses when setting up the private connectivity configuration because Datastream doesn't support Domain Name System (DNS) resolution in private connections."
+        ]
+      },
+      {
+        "title": "\"REST Resource: projects.locations.connectionProfiles \\_|\\_ Datastream \\_\\",
+        "url": "https://docs.cloud.google.com/datastream/docs/reference/rest/v1/projects.locations.connectionProfiles",
+        "source_id": "site-api-reference",
+        "final_score": 266,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Resource: ConnectionProfile JSON representation OracleProfile JSON representation OracleSslConfig JSON representation OracleAsmConfig JSON representation GcsProfile JSON representation MysqlProfile JSON representation MysqlSslConfig JSON representation BigQueryProfile PostgresqlProfile JSON representation PostgresqlSslConfig JSON representation ServerVerification JSON representation ServerAndClientVerification JSON representation SqlServerProfile JSON representation SqlServerSslConfig JSON representation EncryptionNotEnforced BasicEncryption EncryptionAndServerValidation JSON representation SalesforceProfile JSON representation UserCredentials JSON representation Oauth2ClientCredentials JSON representation MongodbProfile JSON representation HostAddress JSON representation MongodbSslConfig JSON representation SrvConnectionFormat StandardConnectionFormat JSON representation SpannerProfile JSON representation StaticServiceIpConnectivity ForwardSshTunnelConnectivity JSON representation PrivateConnectivity JSON representation Methods Resource: ConnectionProfile A set of reusable connection configurations to be used as a source or destination for a stream.",
+          "JSON representation { \"name\" : string , \"createTime\" : string , \"updateTime\" : string , \"labels\" : { string : string , ... } , \"displayName\" : string , \"satisfiesPzs\" : boolean , \"satisfiesPzi\" : boolean , // Union field profile can be only one of the following: \"oracleProfile\" : { object ( OracleProfile ) } , \"gcsProfile\" : { object ( GcsProfile ) } , \"mysqlProfile\" : { object ( MysqlProfile ) } , \"bigqueryProfile\" : { object ( BigQueryProfile ) } , \"postgresqlProfile\" : { object ( PostgresqlProfile ) } , \"sqlServerProfile\" : { object ( SqlServerProfile ) } , \"salesforceProfile\" : { object ( SalesforceProfile ) } , \"mongodbProfile\" : { object ( MongodbProfile ) } , \"spannerProfile\" : { object ( SpannerProfile ) } // End of list of possible types for union field profile . // Union field connectivity can be only one of the following: \"staticServiceIpConnectivity\" : { object ( StaticServiceIpConnectivity ) } , \"forwardSshConnectivity\" : { object ( ForwardSshTunnelConnectivity ) } , \"privateConnectivity\" : { object ( PrivateConnectivity ) } // End of list of possible types for union field connectivity . } Fields name string Output only.",
+          "Connectivity options used to establish a connection to the profile. connectivity can be only one of the following: staticServiceIpConnectivity object ( StaticServiceIpConnectivity ) Static Service IP connectivity. forwardSshConnectivity object ( ForwardSshTunnelConnectivity ) Forward SSH tunnel connectivity. privateConnectivity object ( PrivateConnectivity ) Private connectivity."
+        ]
+      },
+      {
+        "title": "Create connection profiles \\_|\\_ Datastream \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/datastream/docs/create-connection-profiles",
+        "source_id": "site-docs-root",
+        "final_score": 256,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Private connectivity: this method lets you establish secure connectivity between Datastream and the source database, internally within Google Cloud, or with external sources connected over VPN or Interconnect.",
+          "Private connectivity: this method lets you establish secure connectivity between Datastream and the source database, internally within Google Cloud, or with external sources connected over VPN or Interconnect.",
+          "Private connectivity: this method lets you establish secure connectivity between Datastream and the source database, internally within Google Cloud, or with external sources connected over VPN or Interconnect."
+        ]
+      },
+      {
+        "title": "Access control with tags \\_|\\_ Datastream \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/datastream/docs/access-control-with-tags",
+        "source_id": "site-docs-root-2",
+        "final_score": 239,
+        "relevance": "",
+        "evidence_snippets": [
+          "Tags are attached to resources, such as a project or a Datastream private connectivity configuration, connection profile, or stream, through the Resource Manager , which is used across Google Cloud.",
+          "These resources include private connectivity configurations, connection profiles, and streams.",
+          "Restrictions Tags have the following restrictions: Organization policies can conditionally reference tags inherited from the project level and higher, but don't support tags that are directly attached to Datastream resources."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "projects.locations.connectionProfiles"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastream/docs/create-a-private-connectivity-configuration",
+        "https://docs.cloud.google.com/datastream/docs/reference/rest/v1/projects.locations.connectionProfiles",
+        "https://docs.cloud.google.com/datastream/docs/create-connection-profiles",
+        "https://docs.cloud.google.com/datastream/docs/access-control-with-tags"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastream/docs/create-a-private-connectivity-configuration",
+        "https://docs.cloud.google.com/datastream/docs/reference/rest/v1/projects.locations.connectionProfiles",
+        "https://docs.cloud.google.com/datastream/docs/create-connection-profiles",
+        "https://docs.cloud.google.com/datastream/docs/access-control-with-tags"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastream/docs/create-a-private-connectivity-configuration",
+        "https://docs.cloud.google.com/datastream/docs/reference/rest/v1/projects.locations.connectionProfiles",
+        "https://docs.cloud.google.com/datastream/docs/create-connection-profiles",
+        "https://docs.cloud.google.com/datastream/docs/access-control-with-tags"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastream/docs/create-a-private-connectivity-configuration",
+        "https://docs.cloud.google.com/datastream/docs/reference/rest/v1/projects.locations.connectionProfiles",
+        "https://docs.cloud.google.com/datastream/docs/create-connection-profiles",
+        "https://docs.cloud.google.com/datastream/docs/access-control-with-tags"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastream/docs/create-a-private-connectivity-configuration",
+        "https://docs.cloud.google.com/datastream/docs/reference/rest/v1/projects.locations.connectionProfiles",
+        "https://docs.cloud.google.com/datastream/docs/create-connection-profiles",
+        "https://docs.cloud.google.com/datastream/docs/access-control-with-tags"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastream/docs/create-a-private-connectivity-configuration",
+        "https://docs.cloud.google.com/datastream/docs/reference/rest/v1/projects.locations.connectionProfiles",
+        "https://docs.cloud.google.com/datastream/docs/create-connection-profiles",
+        "https://docs.cloud.google.com/datastream/docs/access-control-with-tags"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastream/docs/create-a-private-connectivity-configuration",
+        "https://docs.cloud.google.com/datastream/docs/reference/rest/v1/projects.locations.connectionProfiles",
+        "https://docs.cloud.google.com/datastream/docs/create-connection-profiles",
+        "https://docs.cloud.google.com/datastream/docs/access-control-with-tags"
+      ]
+    }
+  ]
+}

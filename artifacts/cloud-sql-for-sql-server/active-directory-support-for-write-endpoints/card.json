@@ -1,0 +1,154 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:27.901Z",
+  "source_step08_card": "data/step-08/current/products/cloud-sql-for-sql-server/card.json",
+  "product_name": "Cloud SQL for SQL Server",
+  "product_slug": "cloud-sql-for-sql-server",
+  "feature_name": "Active Directory support for write endpoints",
+  "feature_slug": "active-directory-support-for-write-endpoints",
+  "summary": "Active Directory support for write endpoints enables AD-based access for Cloud SQL write endpoints across forests.",
+  "extended_definition": "Active Directory support for write endpoints enables AD-based access for Cloud SQL write endpoints across forests.",
+  "lifecycle": {
+    "latest_feature_date": "2025-07-08",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/sql/docs/sqlserver/admin-api/metrics",
+      "https://docs.cloud.google.com/sql/docs/sqlserver/create-instance",
+      "https://docs.cloud.google.com/sql/docs/sqlserver/flags"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Create instances \\_|\\_ Cloud SQL for SQL Server \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/sql/docs/sqlserver/create-instance",
+        "source_id": "site-docs-root",
+        "final_score": 151,
+        "relevance": "",
+        "evidence_snippets": [
+          "To create an instance that is integrated with Managed Service for Microsoft Active Directory, specify a domain, such as subdomain.mydomain.com , for the domain field.",
+          "Console Note: If you plan to integrate with Managed Service for Microsoft Active Directory, review the prerequisites for integration .",
+          "Execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method GET -Headers $headers -Uri \"https://sqladmin.googleapis.com/sql/v1beta4/projects/ PROJECT ID /instances/ INSTANCE ID \" Select-Object -Expand Content You should receive a JSON response similar to the following: { \"kind\": \"sql#instance\", \"state\": \"RUNNABLE\", \"databaseVersion\": \" DATABASE VERSION \", \"settings\": { \"authorizedGaeApplications\": [], \"tier\": \" MACHINE TYPE \", \"kind\": \"sql#settings\", \"pricingPlan\": \"PER USE\", \"replicationType\": \"SYNCHRONOUS\", \"activationPolicy\": \"ALWAYS\", \"ipConfiguration\": { \"authorizedNetworks\": [], \"ipv4Enabled\": true }, \"locationPreference\": { \"zone\": \" ZONE \", \"kind\": \"sql#locationPreference\" }, \"dataDiskType\": \"PD SSD\", \"backupConfiguration\": { \"startTime\": \"19:00\", \"kind\": \"sql#backupConfiguration\", \"enabled\": true }, \"settingsVersion\": \"1\", \"dataDiskSizeGb\": \"10\" }, \"etag\": \"--redacted--\", \"ipAddresses\": [ { \"type\": \"PRIMARY\", \" ipAddress \": \" 10.0.0.1 \" } ], \"serverCaCert\": { ... }, \"instanceType\": \"CLOUD SQL INSTANCE\", \"project\": \" PROJECT ID \", \"serviceAccountEmailAddress\": \"redacted@gcp-sa-cloud-sql.iam.gserviceaccount.com\", \"backendType\": \" BACKEND TYPE \", \"selfLink\": \"https://sqladmin.googleapis.com/sql/v1beta4/projects/ PROJECT ID /instances/ INSTANCE ID \", \"connectionName\": \" PROJECT ID:REGION:INSTANCE ID \", \"name\": \" INSTANCE ID \", \"region\": \" REGION \", \"gceZone\": \" ZONE \" } To see how the underlying REST API request is constructed for this task, see the APIs Explorer on the instances:insert page ."
+        ]
+      },
+      {
+        "title": "\"Configure database flags \\_|\\_ Cloud SQL for SQL Server \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/sql/docs/sqlserver/flags",
+        "source_id": "site-docs-root",
+        "final_score": 127,
+        "relevance": "",
+        "evidence_snippets": [
+          "Save the request body in a file named request.json , and execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method PATCH -Headers $headers -ContentType: \"application/json; charset=utf-8\" -InFile request.json -Uri \"https://sqladmin.googleapis.com/v1/projects/ project-id /instances/ instance-id \" Select-Object -Expand Content You should receive a JSON response similar to the following: Response { \"kind\": \"sql#operation\", \"targetLink\": \"https://sqladmin.googleapis.com/v1/projects/ project-id /instances/ instance-id \", \"status\": \"PENDING\", \"user\": \"user@example.com\", \"insertTime\": \"2020-01-21T22:43:37.981Z\", \"operationType\": \"UPDATE\", \"name\": \" operation-id \", \"targetId\": \" instance-id \", \"selfLink\": \"https://sqladmin.googleapis.com/v1/projects/ project-id /operations/ operation-id \", \"targetProject\": \" project-id \" } REST v1beta4 To clear all flags for an existing instance: Before using any of the request data, make the following replacements: project-id : The project ID instance-id : The instance ID HTTP method and URL: PATCH https://sqladmin.googleapis.com/sql/v1beta4/projects/ project-id /instances/ instance-id Request JSON body: { \"settings\": { \"databaseFlags\": [] } } To send your request, expand one of these options: curl (Linux, macOS, or Cloud Shell) Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI .",
+          "Execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method GET -Headers $headers -Uri \"https://sqladmin.googleapis.com/sql/v1beta4/projects/ project-id /instances/ instance-id \" Select-Object -Expand Content You should receive a JSON response similar to the following: Response { \"settings\": { \"authorizedGaeApplications\": [], \"tier\": \" machine-type \", \"kind\": \"sql#settings\", \"availabilityType\": \"REGIONAL\", \"pricingPlan\": \"PER USE\", \"replicationType\": \"SYNCHRONOUS\", \"activationPolicy\": \"ALWAYS\", \"ipConfiguration\": { \"privateNetwork\": \"projects/ project-id /global/networks/default\", \"authorizedNetworks\": [], \"ipv4Enabled\": false }, \"locationPreference\": { \"zone\": \" zone \", \"kind\": \"sql#locationPreference\" }, \"databaseFlags\": [ { \"name\": \"general log\", \"value\": \"on\" } ], \"dataDiskType\": \"PD SSD\", \"maintenanceWindow\": { \"kind\": \"sql#maintenanceWindow\", \"hour\": 0, \"day\": 0 }, \"backupConfiguration\": { \"startTime\": \"03:00\", \"kind\": \"sql#backupConfiguration\", \"enabled\": true, \"binaryLogEnabled\": true }, \"settingsVersion\": \"54\", \"storageAutoResizeLimit\": \"0\", \"storageAutoResize\": true, \"dataDiskSizeGb\": \"10\" } } In the output, look for the databaseFlags field.",
+          "Execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method GET -Headers $headers -Uri \"https://sqladmin.googleapis.com/v1/projects/ project-id /instances/ instance-id \" Select-Object -Expand Content You should receive a JSON response similar to the following: Response { \"settings\": { \"authorizedGaeApplications\": [], \"tier\": \" machine-type \", \"kind\": \"sql#settings\", \"availabilityType\": \"REGIONAL\", \"pricingPlan\": \"PER USE\", \"replicationType\": \"SYNCHRONOUS\", \"activationPolicy\": \"ALWAYS\", \"ipConfiguration\": { \"privateNetwork\": \"projects/ project-id /global/networks/default\", \"authorizedNetworks\": [], \"ipv4Enabled\": false }, \"locationPreference\": { \"zone\": \" zone \", \"kind\": \"sql#locationPreference\" }, \"databaseFlags\": [ { \"name\": \"general log\", \"value\": \"on\" } ], \"dataDiskType\": \"PD SSD\", \"maintenanceWindow\": { \"kind\": \"sql#maintenanceWindow\", \"hour\": 0, \"day\": 0 }, \"backupConfiguration\": { \"startTime\": \"03:00\", \"kind\": \"sql#backupConfiguration\", \"enabled\": true, \"binaryLogEnabled\": true }, \"settingsVersion\": \"54\", \"storageAutoResizeLimit\": \"0\", \"storageAutoResize\": true, \"dataDiskSizeGb\": \"10\" } } In the output, look for the databaseFlags field."
+        ]
+      },
+      {
+        "title": "Cloud SQL metrics \\_|\\_ Cloud SQL for SQL Server \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/sql/docs/sqlserver/admin-api/metrics",
+        "source_id": "site-api-reference",
+        "final_score": 127,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "CUMULATIVE , INT64 , 1 cloudsql instance database Shared blocks (regular tables & indexed) accessed by statement execution. user : The user of the database. client addr : The IP address of the database client. access type : The block access type (hit/miss). database/postgresql/insights/perquery/execution time GA (project) Per query execution times CUMULATIVE , INT64 , us{CPU} cloudsql instance database Accumulated execution times per user per database per query.This is the sum of cpu time, io wait time, lock wait time, process context switch, and scheduling for all the processes involved in the query execution. querystring : The normalized query. user : The user of the database. client addr : The IP address of the database client. query hash : A unique hash of the query string. database/postgresql/insights/perquery/io time GA (project) Per query IO time CUMULATIVE , INT64 , us cloudsql instance database Accumulated IO time per user per database per query. querystring : The normalized query. user : The user of the database. client addr : The IP address of the database client. io type : The IO type (read/write). query hash : A unique hash of the query string. database/postgresql/insights/perquery/latencies GA (project) Per query latency CUMULATIVE , DISTRIBUTION , us cloudsql instance database Query latency distribution per user per database per query. querystring : The normalized query. user : The user of the database. client addr : The IP address of the database client. query hash : A unique hash of the query string. database/postgresql/insights/perquery/lock time GA (project) Per query lock time CUMULATIVE , INT64 , us cloudsql instance database Accumulated lock wait time per user per database per query. querystring : The normalized query. user : The user of the database. client addr : The IP address of the database client. lock type : The lock type (lw/hw/buffer pin). query hash : A unique hash of the query string. database/postgresql/insights/perquery/row count GA (project) Per query affected rows CUMULATIVE , INT64 , 1 cloudsql instance database Total number of rows affected during query execution. querystring : The normalized query. user : The user of the database. client addr : The IP address of the database client. query hash : A unique hash of the query string. database/postgresql/insights/perquery/shared blk access count GA (project) Per query Shared blocks cache access CUMULATIVE , INT64 , 1 cloudsql instance database Shared blocks (regular tables & indexed) accesssed by statement execution. querystring : The normalized query. user : The user of the database. client addr : The IP address of the database client. access type : The block access type (hit/miss). query hash : A unique hash of the query string. database/postgresql/insights/pertag/execution time GA (project) Per tag execution time CUMULATIVE , INT64 , us{CPU} cloudsql instance database Accumulated execution times per user per database per tag.This is the sum of cpu time, io wait time, lock wait time, process context switch, and scheduling for all the processes involved in the query execution. user : The user of the database. client addr : The IP address of the database client. action : The name of the action. application : The name of the application. controller : The name of the controller. db driver : The name of the db driver. framework : The name of the framework. route : The name of the route. tag hash : A unique hash of the tag string. database/postgresql/insights/pertag/io time GA (project) Per tag IO time CUMULATIVE , INT64 , us cloudsql instance database Accumulated IO write time per user per database per tag. user : The user of the database. client addr : The IP address of the database client. action : The name of the action. application : The name of the application. controller : The name of the controller. db driver : The name of the db driver. framework : The name of the framework. route : The name of the route. io type : The IO type (read/write). tag hash : A unique hash of the tag string. database/postgresql/insights/pertag/latencies GA (project) Per tag latency CUMULATIVE , DISTRIBUTION , us cloudsql instance database Query latency distribution per user per database per tag. user : The user of the database. client addr : The IP address of the database client. action : The name of the action. application : The name of the application. controller : The name of the controller. db driver : The name of the db driver. framework : The name of the framework. route : The name of the route. tag hash : A unique hash of the tag string. database/postgresql/insights/pertag/lock time GA (project) Per tag lock time CUMULATIVE , INT64 , us cloudsql instance database Accumulated lock wait time per user per database per tag. user : The user of the database. client addr : The IP address of the database client. action : The name of the action. application : The name of the application. controller : The name of the controller. db driver : The name of the db driver. framework : The name of the framework. route : The name of the route. lock type : The lock type (lw/hw/buffer pin). tag hash : A unique hash of the tag string. database/postgresql/insights/pertag/row count GA (project) Per tag affected rows CUMULATIVE , INT64 , 1 cloudsql instance database Total number of rows affected during query execution. user : The user of the database. client addr : The IP address of the database client. action : The name of the action. application : The name of the application. controller : The name of the controller. db driver : The name of the db driver. framework : The name of the framework. route : The name of the route. tag hash : A unique hash of the tag string. database/postgresql/insights/pertag/shared blk access count GA (project) Per tag shared blocks cache accessed CUMULATIVE , INT64 , 1 cloudsql instance database Shared blocks (regular tables & indexed) accessed by statement execution. user : The user of the database. client addr : The IP address of the database client. action : The name of the action. application : The name of the application. controller : The name of the controller. db driver : The name of the db driver. framework : The name of the framework. route : The name of the route. access type : The block access type (hit/miss). tag hash : A unique hash of the tag string. database/postgresql/new connection count GA (project) PostgreSQL new connections count DELTA , INT64 , 1 cloudsql database Count of new connections added to the postgres instance.",
+          "This is the sum of cpu time, io wait time, lock wait time, process context switch, and scheduling for all the processes involved in the query execution. user : The user of the database. client addr : The IP address of the database client. database/postgresql/insights/aggregate/io time GA (project) IO time CUMULATIVE , INT64 , us cloudsql instance database Accumulated IO time per user per database. user : The user of the database. client addr : The IP address of the database client. io type : The IO type (read/write). database/postgresql/insights/aggregate/latencies GA (project) Latency CUMULATIVE , DISTRIBUTION , us cloudsql instance database Query latency distribution per user per database. user : The user of the database. client addr : The IP address of the database client. database/postgresql/insights/aggregate/lock time GA (project) Aggregated lock time CUMULATIVE , INT64 , us cloudsql instance database Accumulated lock wait time per user per database. user : The user of the database. client addr : The IP address of the database client. lock type : The lock type (lw/hw/buffer pin). database/postgresql/insights/aggregate/row count GA (project) Affected rows CUMULATIVE , INT64 , 1 cloudsql instance database Total number of rows affected during query execution. user : The user of the database. client addr : The IP address of the database client. database/postgresql/insights/aggregate/shared blk access count GA (project) Shared blocks cache access.",
+          "After sampling, data is not visible for up to 165 seconds. operation type : Kind of operation handler type, one of [delete, read first, read key, read last, read next, read prev, read rnd, read rnd next, update, write]. database/mysql/innodb/active transactions GA (project) InnoDB Active Transactions GAUGE , INT64 , 1 cloudsql database Number of active Transaction details(trx which are in progress), Values in bracket are meant for innodb transaction state (Total/running/lock wait/rolling back/committing)."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "example.com",
+      "query.This",
+      "request.json",
+      "sql.iam.gserviceaccount.com",
+      "sqladmin.googleapis.com",
+      "subdomain.mydomain.com",
+      "tag.This"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/create-instance",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/admin-api/metrics",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/flags"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/create-instance",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/admin-api/metrics",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/flags"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/create-instance",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/admin-api/metrics",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/flags"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/create-instance",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/admin-api/metrics",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/flags"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/create-instance",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/admin-api/metrics",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/flags"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/create-instance",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/admin-api/metrics",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/flags"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/create-instance",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/admin-api/metrics",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/flags"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/create-instance",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/admin-api/metrics",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/flags"
+      ]
+    }
+  ]
+}

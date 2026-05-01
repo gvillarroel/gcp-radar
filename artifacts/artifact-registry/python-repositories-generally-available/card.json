@@ -1,0 +1,118 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:18.066Z",
+  "source_step08_card": "data/step-08/current/products/artifact-registry/card.json",
+  "product_name": "Artifact Registry",
+  "product_slug": "artifact-registry",
+  "feature_name": "Python repositories generally available",
+  "feature_slug": "python-repositories-generally-available",
+  "summary": "Support for Python repositories in Artifact Registry reaches general availability.",
+  "extended_definition": "Support for Python repositories in Artifact Registry reaches general availability.",
+  "lifecycle": {
+    "latest_feature_date": "2021-09-08",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/artifact-registry/docs/reference/rest/v1/projects.locations.repositories",
+      "https://docs.cloud.google.com/python/docs/reference/artifactregistry/latest/google.cloud.artifactregistry_v1.services.artifact_registry.ArtifactRegistryAsyncClient",
+      "https://docs.cloud.google.com/python/docs/reference/artifactregistry/latest/google.cloud.artifactregistry_v1.services.artifact_registry.ArtifactRegistryClient"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"REST Resource: projects.locations.repositories \\_|\\_ Artifact Registry \\_\\",
+        "url": "https://docs.cloud.google.com/artifact-registry/docs/reference/rest/v1/projects.locations.repositories",
+        "source_id": "site-api-reference",
+        "final_score": 129,
+        "relevance": "",
+        "evidence_snippets": [
+          "Address of the remote repository. upstream can be only one of the following: publicRepository enum ( PublicRepository ) One of the publicly available Python repositories supported by Artifact Registry. customRepository object ( CustomRepository ) Customer-specified remote repository.",
+          "Repositories that are generally available or in public preview use this to calculate storage costs. satisfiesPzs boolean Output only.",
+          "PublicRepository Predefined list of publicly available Python repositories like PyPI.org."
+        ]
+      },
+      {
+        "title": "\"Class ArtifactRegistryAsyncClient (1.20.0) \\_|\\_ Python client libraries\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/artifactregistry/latest/google.cloud.artifactregistry_v1.services.artifact_registry.ArtifactRegistryAsyncClient",
+        "source_id": "site-python-reference",
+        "final_score": 109,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import artifactregistry v1 async def sample list repositories(): Create a client client = artifactregistry v1 .",
+          "Dict [ str , str ] Parses a yum artifact path into its component segments. project settings path project settings path ( project : str ) - > str Returns a fully-qualified project settings string. python package path python package path ( project : str , location : str , repository : str , python package : str ) - > str Returns a fully-qualified python package string. repository path repository path ( project : str , location : str , repository : str ) - > str Returns a fully-qualified repository string. rule path rule path ( project : str , location : str , repository : str , rule : str ) - > str Returns a fully-qualified rule string. secret version path secret version path ( project : str , secret : str , secret version : str ) - > str Returns a fully-qualified secret version string. set iam policy set iam policy ( request : typing .",
+          "It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import artifactregistry v1 import google.iam.v1.iam policy pb2 as iam policy pb2 # type: ignore async def sample test iam permissions(): Create a client client = artifactregistry v1 ."
+        ]
+      },
+      {
+        "title": "\"Class ArtifactRegistryClient (1.20.0) \\_|\\_ Python client libraries \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/artifactregistry/latest/google.cloud.artifactregistry_v1.services.artifact_registry.ArtifactRegistryClient",
+        "source_id": "site-python-reference",
+        "final_score": 109,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import artifactregistry v1 def sample list repositories(): Create a client client = artifactregistry v1 .",
+          "Dict [ str , str ] Parses a yum artifact path into its component segments. project settings path project settings path ( project : str ) - > str Returns a fully-qualified project settings string. python package path python package path ( project : str , location : str , repository : str , python package : str ) - > str Returns a fully-qualified python package string. repository path repository path ( project : str , location : str , repository : str ) - > str Returns a fully-qualified repository string. rule path rule path ( project : str , location : str , repository : str , rule : str ) - > str Returns a fully-qualified rule string. secret version path secret version path ( project : str , secret : str , secret version : str ) - > str Returns a fully-qualified secret version string. set iam policy set iam policy ( request : typing .",
+          "It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import artifactregistry v1 import google.iam.v1.iam policy pb2 as iam policy pb2 # type: ignore def sample test iam permissions(): Create a client client = artifactregistry v1 ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "googleapis.dev",
+      "options.html",
+      "projects.locations.repositories"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/artifactregistry/latest/google.cloud.artifactregistry_v1.services.artifact_registry.ArtifactRegistryAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/artifactregistry/latest/google.cloud.artifactregistry_v1.services.artifact_registry.ArtifactRegistryClient",
+        "https://docs.cloud.google.com/artifact-registry/docs/reference/rest/v1/projects.locations.repositories"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/artifactregistry/latest/google.cloud.artifactregistry_v1.services.artifact_registry.ArtifactRegistryAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/artifactregistry/latest/google.cloud.artifactregistry_v1.services.artifact_registry.ArtifactRegistryClient",
+        "https://docs.cloud.google.com/artifact-registry/docs/reference/rest/v1/projects.locations.repositories"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/artifactregistry/latest/google.cloud.artifactregistry_v1.services.artifact_registry.ArtifactRegistryAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/artifactregistry/latest/google.cloud.artifactregistry_v1.services.artifact_registry.ArtifactRegistryClient",
+        "https://docs.cloud.google.com/artifact-registry/docs/reference/rest/v1/projects.locations.repositories"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/artifactregistry/latest/google.cloud.artifactregistry_v1.services.artifact_registry.ArtifactRegistryAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/artifactregistry/latest/google.cloud.artifactregistry_v1.services.artifact_registry.ArtifactRegistryClient",
+        "https://docs.cloud.google.com/artifact-registry/docs/reference/rest/v1/projects.locations.repositories"
+      ]
+    }
+  ]
+}

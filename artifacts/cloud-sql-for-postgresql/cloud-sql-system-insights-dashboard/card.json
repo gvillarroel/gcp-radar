@@ -1,0 +1,133 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:27.301Z",
+  "source_step08_card": "data/step-08/current/products/cloud-sql-for-postgresql/card.json",
+  "product_name": "Cloud SQL for PostgreSQL",
+  "product_slug": "cloud-sql-for-postgresql",
+  "feature_name": "Cloud SQL System Insights dashboard",
+  "feature_slug": "cloud-sql-system-insights-dashboard",
+  "summary": "The Cloud SQL System Insights dashboard is generally available with more metrics and dashboard customization; The Cloud SQL System Insights dashboard includes additional metrics, an events timeline, and auto refresh.",
+  "extended_definition": "The Cloud SQL System Insights dashboard is generally available with more metrics and dashboard customization; The Cloud SQL System Insights dashboard includes additional metrics, an events timeline, and auto refresh.",
+  "lifecycle": {
+    "latest_feature_date": "2023-06-15",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/sql/docs/postgres/admin-api/metrics",
+      "https://docs.cloud.google.com/sql/docs/postgres/admin-api/rest/v1/instances",
+      "https://docs.cloud.google.com/sql/docs/postgres/ai-overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Cloud SQL metrics \\_|\\_ Cloud SQL for PostgreSQL \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/sql/docs/postgres/admin-api/metrics",
+        "source_id": "site-api-reference",
+        "final_score": 158,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The lazy writer is a system process that flushes out batches of dirty, aged buffers (buffers that contain changes that must be written back to disk before the buffer can be reused for a different page) and makes them available to user processes.",
+          "CUMULATIVE , INT64 , 1 cloudsql instance database Shared blocks (regular tables & indexed) accessed by statement execution. user : The user of the database. client addr : The IP address of the database client. access type : The block access type (hit/miss). database/postgresql/insights/perquery/execution time GA (project) Per query execution times CUMULATIVE , INT64 , us{CPU} cloudsql instance database Accumulated execution times per user per database per query.This is the sum of cpu time, io wait time, lock wait time, process context switch, and scheduling for all the processes involved in the query execution. querystring : The normalized query. user : The user of the database. client addr : The IP address of the database client. query hash : A unique hash of the query string. database/postgresql/insights/perquery/io time GA (project) Per query IO time CUMULATIVE , INT64 , us cloudsql instance database Accumulated IO time per user per database per query. querystring : The normalized query. user : The user of the database. client addr : The IP address of the database client. io type : The IO type (read/write). query hash : A unique hash of the query string. database/postgresql/insights/perquery/latencies GA (project) Per query latency CUMULATIVE , DISTRIBUTION , us cloudsql instance database Query latency distribution per user per database per query. querystring : The normalized query. user : The user of the database. client addr : The IP address of the database client. query hash : A unique hash of the query string. database/postgresql/insights/perquery/lock time GA (project) Per query lock time CUMULATIVE , INT64 , us cloudsql instance database Accumulated lock wait time per user per database per query. querystring : The normalized query. user : The user of the database. client addr : The IP address of the database client. lock type : The lock type (lw/hw/buffer pin). query hash : A unique hash of the query string. database/postgresql/insights/perquery/row count GA (project) Per query affected rows CUMULATIVE , INT64 , 1 cloudsql instance database Total number of rows affected during query execution. querystring : The normalized query. user : The user of the database. client addr : The IP address of the database client. query hash : A unique hash of the query string. database/postgresql/insights/perquery/shared blk access count GA (project) Per query Shared blocks cache access CUMULATIVE , INT64 , 1 cloudsql instance database Shared blocks (regular tables & indexed) accesssed by statement execution. querystring : The normalized query. user : The user of the database. client addr : The IP address of the database client. access type : The block access type (hit/miss). query hash : A unique hash of the query string. database/postgresql/insights/pertag/execution time GA (project) Per tag execution time CUMULATIVE , INT64 , us{CPU} cloudsql instance database Accumulated execution times per user per database per tag.This is the sum of cpu time, io wait time, lock wait time, process context switch, and scheduling for all the processes involved in the query execution. user : The user of the database. client addr : The IP address of the database client. action : The name of the action. application : The name of the application. controller : The name of the controller. db driver : The name of the db driver. framework : The name of the framework. route : The name of the route. tag hash : A unique hash of the tag string. database/postgresql/insights/pertag/io time GA (project) Per tag IO time CUMULATIVE , INT64 , us cloudsql instance database Accumulated IO write time per user per database per tag. user : The user of the database. client addr : The IP address of the database client. action : The name of the action. application : The name of the application. controller : The name of the controller. db driver : The name of the db driver. framework : The name of the framework. route : The name of the route. io type : The IO type (read/write). tag hash : A unique hash of the tag string. database/postgresql/insights/pertag/latencies GA (project) Per tag latency CUMULATIVE , DISTRIBUTION , us cloudsql instance database Query latency distribution per user per database per tag. user : The user of the database. client addr : The IP address of the database client. action : The name of the action. application : The name of the application. controller : The name of the controller. db driver : The name of the db driver. framework : The name of the framework. route : The name of the route. tag hash : A unique hash of the tag string. database/postgresql/insights/pertag/lock time GA (project) Per tag lock time CUMULATIVE , INT64 , us cloudsql instance database Accumulated lock wait time per user per database per tag. user : The user of the database. client addr : The IP address of the database client. action : The name of the action. application : The name of the application. controller : The name of the controller. db driver : The name of the db driver. framework : The name of the framework. route : The name of the route. lock type : The lock type (lw/hw/buffer pin). tag hash : A unique hash of the tag string. database/postgresql/insights/pertag/row count GA (project) Per tag affected rows CUMULATIVE , INT64 , 1 cloudsql instance database Total number of rows affected during query execution. user : The user of the database. client addr : The IP address of the database client. action : The name of the action. application : The name of the application. controller : The name of the controller. db driver : The name of the db driver. framework : The name of the framework. route : The name of the route. tag hash : A unique hash of the tag string. database/postgresql/insights/pertag/shared blk access count GA (project) Per tag shared blocks cache accessed CUMULATIVE , INT64 , 1 cloudsql instance database Shared blocks (regular tables & indexed) accessed by statement execution. user : The user of the database. client addr : The IP address of the database client. action : The name of the action. application : The name of the application. controller : The name of the controller. db driver : The name of the db driver. framework : The name of the framework. route : The name of the route. access type : The block access type (hit/miss). tag hash : A unique hash of the tag string. database/postgresql/new connection count GA (project) PostgreSQL new connections count DELTA , INT64 , 1 cloudsql database Count of new connections added to the postgres instance.",
+          "This is the sum of cpu time, io wait time, lock wait time, process context switch, and scheduling for all the processes involved in the query execution. user : The user of the database. client addr : The IP address of the database client. database/postgresql/insights/aggregate/io time GA (project) IO time CUMULATIVE , INT64 , us cloudsql instance database Accumulated IO time per user per database. user : The user of the database. client addr : The IP address of the database client. io type : The IO type (read/write). database/postgresql/insights/aggregate/latencies GA (project) Latency CUMULATIVE , DISTRIBUTION , us cloudsql instance database Query latency distribution per user per database. user : The user of the database. client addr : The IP address of the database client. database/postgresql/insights/aggregate/lock time GA (project) Aggregated lock time CUMULATIVE , INT64 , us cloudsql instance database Accumulated lock wait time per user per database. user : The user of the database. client addr : The IP address of the database client. lock type : The lock type (lw/hw/buffer pin). database/postgresql/insights/aggregate/row count GA (project) Affected rows CUMULATIVE , INT64 , 1 cloudsql instance database Total number of rows affected during query execution. user : The user of the database. client addr : The IP address of the database client. database/postgresql/insights/aggregate/shared blk access count GA (project) Shared blocks cache access."
+        ]
+      },
+      {
+        "title": "\"Build generative AI applications using Cloud SQL \\_|\\_ Cloud SQL for PostgreSQL\\",
+        "url": "https://docs.cloud.google.com/sql/docs/postgres/ai-overview",
+        "source_id": "site-docs-root",
+        "final_score": 155,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To view these metrics, use the Cloud SQL System Insights dashboard .",
+          "Cloud SQL provides the following metrics in the Metrics Explorer in Cloud Monitoring: Metric Description Metric label Data cache used The data cache usage (in bytes) database/data cache/bytes used Data cache quota The maximum data cache size (in bytes) database/data cache/quota Data cache hit count The total number of data cache hit read operations for an instance database/postgresql/data cache/hit count Data cache miss count The total number of data cache miss read operations for an instance database/postgresql/data cache/miss count Data cache hit ratio The ratio of data cache hit read operations to data cache miss read operations for an instance database/postgresql/data cache/hit ratio System Insights : provide system metrics such as CPU utilization, disk utilization, and throughput to help you monitor the health of instances and troubleshoot issues that affect the performance of your generative AI applications.",
+          "You can use the Cloud SQL Query Insights dashboard to observe the performance of top queries and analyze these queries by using visual query plans."
+        ]
+      },
+      {
+        "title": "\"REST Resource: instances \\_|\\_ Cloud SQL for PostgreSQL \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/sql/docs/postgres/admin-api/rest/v1/instances",
+        "source_id": "site-api-reference",
+        "final_score": 126,
+        "relevance": "",
+        "evidence_snippets": [
+          "Resource: DatabaseInstance JSON representation SqlInstanceState Settings JSON representation SqlAvailabilityType SqlPricingPlan SqlReplicationType SqlActivationPolicy IpConfiguration JSON representation AclEntry JSON representation SslMode PscConfig JSON representation PscAutoConnectionConfig JSON representation CaMode ServerCertificateRotationMode LocationPreference JSON representation DatabaseFlags JSON representation SqlDataDiskType MaintenanceWindow JSON representation SqlUpdateTrack BackupConfiguration JSON representation BackupRetentionSettings JSON representation RetentionUnit TransactionalLogStorageState BackupTier SqlActiveDirectoryConfig JSON representation ActiveDirectoryMode DenyMaintenancePeriod JSON representation InsightsConfig JSON representation PasswordValidationPolicy JSON representation Complexity SqlServerAuditConfig JSON representation Edition ConnectorEnforcement AdvancedMachineFeatures JSON representation DataCacheConfig JSON representation ConnectionPoolConfig JSON representation ConnectionPoolFlags JSON representation FinalBackupConfig JSON representation ReadPoolAutoScaleConfig JSON representation TargetMetric JSON representation DataApiAccess IpMapping JSON representation SqlIpAddressType SqlInstanceType OnPremisesConfiguration JSON representation InstanceReference JSON representation SelectedObjects JSON representation SslOption ReplicaConfiguration JSON representation MySqlReplicaConfiguration JSON representation SqlBackendType SqlSuspensionReason SqlScheduledMaintenance JSON representation SqlOutOfDiskReport JSON representation SqlOutOfDiskState AvailableDatabaseVersion JSON representation SqlNetworkArchitecture ReplicationCluster JSON representation GeminiInstanceConfig JSON representation PoolNodeConfig JSON representation DnsNameMapping JSON representation ConnectionType DnsScope RecordManager Methods Resource: DatabaseInstance A Cloud SQL instance resource.",
+          "REGIONAL : The instance can serve data from more than one zone in a region (it is highly available)./ For more information, see Overview of the High Availability Configuration . pricingPlan enum ( SqlPricingPlan ) The pricing plan for this instance.",
+          "JSON representation { \"kind\" : string , \"state\" : enum ( SqlInstanceState ) , \"databaseVersion\" : enum ( SqlDatabaseVersion ) , \"settings\" : { object ( Settings ) } , \"etag\" : string , \"failoverReplica\" : { \"name\" : string , \"available\" : boolean } , \"masterInstanceName\" : string , \"replicaNames\" : [ string ] , \"maxDiskSize\" : string , \"currentDiskSize\" : string , \"ipAddresses\" : [ { object ( IpMapping ) } ] , \"serverCaCert\" : { object ( SslCert ) } , \"instanceType\" : enum ( SqlInstanceType ) , \"project\" : string , \"ipv6Address\" : string , \"serviceAccountEmailAddress\" : string , \"onPremisesConfiguration\" : { object ( OnPremisesConfiguration ) } , \"replicaConfiguration\" : { object ( ReplicaConfiguration ) } , \"backendType\" : enum ( SqlBackendType ) , \"selfLink\" : string , \"suspensionReason\" : [ enum ( SqlSuspensionReason ) ] , \"connectionName\" : string , \"name\" : string , \"region\" : string , \"gceZone\" : string , \"secondaryGceZone\" : string , \"diskEncryptionConfiguration\" : { object ( DiskEncryptionConfiguration ) } , \"diskEncryptionStatus\" : { object ( DiskEncryptionStatus ) } , \"rootPassword\" : string , \"scheduledMaintenance\" : { object ( SqlScheduledMaintenance ) } , \"satisfiesPzs\" : boolean , \"databaseInstalledVersion\" : string , \"createTime\" : string , \"availableMaintenanceVersions\" : [ string ] , \"maintenanceVersion\" : string , \"upgradableDatabaseVersions\" : [ { object ( AvailableDatabaseVersion ) } ] , \"replicationCluster\" : { object ( ReplicationCluster ) } , \"satisfiesPzi\" : boolean , \"tags\" : { string : string , ... } , \"nodes\" : [ { object ( PoolNodeConfig ) } ] , \"dnsNames\" : [ { object ( DnsNameMapping ) } ] , \"outOfDiskReport\" : { object ( SqlOutOfDiskReport ) } , \"sqlNetworkArchitecture\" : enum ( SqlNetworkArchitecture ) , \"pscServiceAttachmentLink\" : string , \"dnsName\" : string , \"primaryDnsName\" : string , \"writeEndpoint\" : string , \"geminiConfig\" : { object ( GeminiInstanceConfig ) } , \"switchTransactionLogsToCloudStorageEnabled\" : boolean , \"includeReplicasForMajorVersionUpgrade\" : boolean , \"nodeCount\" : integer } Fields kind string This is always sql#instance . state enum ( SqlInstanceState ) The current serving state of the Cloud SQL instance. databaseVersion enum ( SqlDatabaseVersion ) The database engine type and version."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "query.This",
+      "tag.This"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/ai-overview",
+        "https://docs.cloud.google.com/sql/docs/postgres/admin-api/metrics",
+        "https://docs.cloud.google.com/sql/docs/postgres/admin-api/rest/v1/instances"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/ai-overview",
+        "https://docs.cloud.google.com/sql/docs/postgres/admin-api/metrics",
+        "https://docs.cloud.google.com/sql/docs/postgres/admin-api/rest/v1/instances"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/ai-overview",
+        "https://docs.cloud.google.com/sql/docs/postgres/admin-api/metrics",
+        "https://docs.cloud.google.com/sql/docs/postgres/admin-api/rest/v1/instances"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/ai-overview",
+        "https://docs.cloud.google.com/sql/docs/postgres/admin-api/metrics",
+        "https://docs.cloud.google.com/sql/docs/postgres/admin-api/rest/v1/instances"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/ai-overview",
+        "https://docs.cloud.google.com/sql/docs/postgres/admin-api/metrics",
+        "https://docs.cloud.google.com/sql/docs/postgres/admin-api/rest/v1/instances"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/ai-overview",
+        "https://docs.cloud.google.com/sql/docs/postgres/admin-api/metrics",
+        "https://docs.cloud.google.com/sql/docs/postgres/admin-api/rest/v1/instances"
+      ]
+    }
+  ]
+}

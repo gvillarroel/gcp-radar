@@ -1,0 +1,248 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:30.193Z",
+  "source_step08_card": "data/step-08/current/products/config-connector/card.json",
+  "product_name": "Config Connector",
+  "product_slug": "config-connector",
+  "feature_name": "Project folderRef and organizationRef",
+  "feature_slug": "project-folderref-and-organizationref",
+  "summary": "Config Connector supports the folderRef and organizationRef fields on Project.",
+  "extended_definition": "Config Connector supports the folderRef and organizationRef fields on Project.",
+  "lifecycle": {
+    "latest_feature_date": "2021-03-23",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 1,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "coverage_low",
+        "message": "The feature ended with coverage LOW.",
+        "suggested_steps": [
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/config-connector/docs/how-to/monitoring-prometheus",
+      "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/resourcemanager/folder",
+      "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/resourcemanager/project"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Project | Config Connector | Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/resourcemanager/project",
+        "source_id": "feature-recovery-http",
+        "final_score": 36,
+        "relevance": "",
+        "evidence_snippets": [
+          "Property Value Google Cloud Service Name Cloud Resource Manager Google Cloud Service Documentation /resource-manager/docs/ Google Cloud REST Resource Name v1.projects Google Cloud REST Resource Documentation /resource-manager/reference/rest/v1/projects Config Connector Resource Short Names gcpproject gcpprojects project Config Connector Service Name cloudresourcemanager.googleapis.com Config Connector Resource Fully Qualified Name projects.resourcemanager.cnrm.cloud.google.com Can Be Referenced by IAMPolicy/IAMPolicyMember Yes Supports IAM Conditions Yes Supports IAM Audit Configs Yes IAM External Reference Format projects/{{project_id}} Config Connector Default Average Reconcile Interval In Seconds 600 Custom Resource Definition Properties Annotations Fields cnrm.cloud.google.com/auto-create-network Spec Schema billingAccountRef : external : string name : string namespace : string folderRef : external : string name : string namespace : string name : string organizationRef : external : string name : string namespace : string resourceID : string Fields billingAccountRef Optional object billingAccountRef.external Optional string Allowed value: The `name` field of a `BillingAccount` resource. billingAccountRef.name Optional string Name of the referent.",
+          "Sample YAML(s) Project In Folder # Copyright 2020 Google LLC # # Licensed under the Apache License, Version 2.0 (the \"License\"); # you may not use this file except in compliance with the License. # You may obtain a copy of the License at # # http://www.apache.org/licenses/LICENSE-2.0 # # Unless required by applicable law or agreed to in writing, software # distributed under the License is distributed on an \"AS IS\" BASIS, # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. # See the License for the specific language governing permissions and # limitations under the License. apiVersion : resourcemanager.cnrm.cloud.google.com/v1beta1 kind : Project metadata : annotations : cnrm.cloud.google.com/auto-create-network : \"false\" labels : label-one : \"value-one\" name : project-sample-in-folder spec : name : Config Connector Sample folderRef : # Replace \"${FOLDER_ID?}\" with the numeric ID of the parent folder external : \"${FOLDER_ID?}\" Project In Org # Copyright 2020 Google LLC # # Licensed under the Apache License, Version 2.0 (the \"License\"); # you may not use this file except in compliance with the License. # You may obtain a copy of the License at # # http://www.apache.org/licenses/LICENSE-2.0 # # Unless required by applicable law or agreed to in writing, software # distributed under the License is distributed on an \"AS IS\" BASIS, # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. # See the License for the specific language governing permissions and # limitations under the License. apiVersion : resourcemanager.cnrm.cloud.google.com/v1beta1 kind : Project metadata : annotations : cnrm.cloud.google.com/auto-create-network : \"false\" labels : label-one : \"value-one\" name : project-sample-in-org spec : name : Config Connector Sample organizationRef : # Replace \"${ORG_ID?}\" with the numeric ID of the parent organization external : \"${ORG_ID?}\" Note: If you have any trouble with instantiating the resource, refer to Troubleshoot Config Connector .",
+          "More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/ name Required string The display name of the project. organizationRef Optional object The organization that this resource belongs to."
+        ]
+      },
+      {
+        "title": "Folder \\_|\\_ Config Connector \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/resourcemanager/folder",
+        "source_id": "site-docs-root-2",
+        "final_score": 34,
+        "relevance": "",
+        "evidence_snippets": [
+          "Property Value Google Cloud Service Name Cloud Resource Manager Google Cloud Service Documentation /resource-manager/docs/ Google Cloud REST Resource Name v2.folders Google Cloud REST Resource Documentation /resource-manager/reference/rest/v2/folders Config Connector Resource Short Names gcpfolder gcpfolders folder Config Connector Service Name cloudresourcemanager.googleapis.com Config Connector Resource Fully Qualified Name folders.resourcemanager.cnrm.cloud.google.com Can Be Referenced by IAMPolicy/IAMPolicyMember Yes Supports IAM Conditions Yes Supports IAM Audit Configs Yes IAM External Reference Format folders/{{folder id}} Config Connector Default Average Reconcile Interval In Seconds 600 Custom Resource Definition Properties Spec Schema displayName : string folderRef : external : string name : string namespace : string organizationRef : external : string name : string namespace : string resourceID : string Fields displayName Required string The folder's display name.",
+          "Folder Warning: There is a known issue where you cannot delete a Folder and its child Folder or Project resources at the same time.",
+          "Only one of folderRef or organizationRef may be specified. organizationRef.external Optional string Allowed value: The name field of an Organization resource. organizationRef.name Optional string Name of the referent."
+        ]
+      },
+      {
+        "title": "Monitoring Config Connector with Prometheus \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/config-connector/docs/how-to/monitoring-prometheus",
+        "source_id": "site-docs-reference",
+        "final_score": 34,
+        "relevance": "",
+        "evidence_snippets": []
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cloudresourcemanager.googleapis.com",
+      "cnrm.cloud.google.com",
+      "folders.resourcemanager.cnrm.cloud.google.com",
+      "kubernetes.io",
+      "projects.resourcemanager.cnrm.cloud.google.com",
+      "resourcemanager.cnrm.cloud.google.com",
+      "v1.projects",
+      "v2.folders"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/resourcemanager/project",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/resourcemanager/folder",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/monitoring-prometheus"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/resourcemanager/project",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/resourcemanager/folder",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/monitoring-prometheus"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/resourcemanager/project",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/resourcemanager/folder",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/monitoring-prometheus"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/resourcemanager/project",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/resourcemanager/folder",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/monitoring-prometheus"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/resourcemanager/project",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/resourcemanager/folder",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/monitoring-prometheus"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/resourcemanager/project",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/resourcemanager/folder",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/monitoring-prometheus"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/resourcemanager/project",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/resourcemanager/folder",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/monitoring-prometheus"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/resourcemanager/project",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/resourcemanager/folder",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/monitoring-prometheus"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/resourcemanager/project",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/resourcemanager/folder",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/monitoring-prometheus"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/resourcemanager/project",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/resourcemanager/folder",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/monitoring-prometheus"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/resourcemanager/project",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/resourcemanager/folder",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/monitoring-prometheus"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/resourcemanager/project",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/resourcemanager/folder",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/monitoring-prometheus"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/resourcemanager/project",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/resourcemanager/folder",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/monitoring-prometheus"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/resourcemanager/project",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/resourcemanager/folder",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/monitoring-prometheus"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/resourcemanager/project",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/resourcemanager/folder",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/monitoring-prometheus"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/resourcemanager/project",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/resourcemanager/folder",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/monitoring-prometheus"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/resourcemanager/project",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/resourcemanager/folder",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/monitoring-prometheus"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/resourcemanager/project",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/resourcemanager/folder",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/monitoring-prometheus"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/resourcemanager/project",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/resourcemanager/folder",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/monitoring-prometheus"
+      ]
+    }
+  ]
+}

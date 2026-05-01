@@ -1,0 +1,167 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:33.800Z",
+  "source_step08_card": "data/step-08/current/products/datastream/card.json",
+  "product_name": "Datastream",
+  "product_slug": "datastream",
+  "feature_name": "PostgreSQL SSL/TLS without client certificates",
+  "feature_slug": "postgresql-ssl-tls-without-client-certificates",
+  "summary": "Datastream supports SSL/TLS encryption for PostgreSQL source connections that do not require client certificates.",
+  "extended_definition": "Datastream supports SSL/TLS encryption for PostgreSQL source connections that do not require client certificates.",
+  "lifecycle": {
+    "latest_feature_date": "2023-11-22",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/datastream/docs/reference/mcp/tools_list/list_connection_profiles",
+      "https://docs.cloud.google.com/datastream/docs/reference/rest/v1/projects.locations.connectionProfiles",
+      "https://docs.cloud.google.com/python/docs/reference/datastream/latest/google.cloud.datastream_v1.services.datastream.DatastreamAsyncClient",
+      "https://docs.cloud.google.com/python/docs/reference/datastream/latest/google.cloud.datastream_v1.services.datastream.DatastreamClient"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "MCP Tools Reference: datastream \\_|\\_ Datastream \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/datastream/docs/reference/mcp/tools_list/list_connection_profiles",
+        "source_id": "site-api-reference",
+        "final_score": 230,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "This value will be used during the SSL/TLS handshake, allowing the PostgreSQL server to authenticate the client's identity, i.e. identity of the Datastream. caCertificate string Required.",
+          "This captures various SSL mode supported by PostgreSQL, which includes TLS encryption with server verification, TLS encryption with both server and client verification and no TLS encryption. encryption setting can be only one of the following: serverVerification object ( ServerVerification ) If this field is set, the communication will be encrypted with TLS encryption and the server identity will be authenticated. serverAndClientVerification object ( ServerAndClientVerification ) If this field is set, the communication will be encrypted with TLS encryption and both the server identity and the client identity will be authenticated.",
+          "This captures various options like no TLS encryption from client if server doesn't ask for it, only encryption without validation and both encryption as well as validation of server certificate. encryption setting can be only one of the following: encryptionNotEnforced object ( EncryptionNotEnforced ) If set, Datastream will not enforce encryption."
+        ]
+      },
+      {
+        "title": "\"REST Resource: projects.locations.connectionProfiles \\_|\\_ Datastream \\_\\",
+        "url": "https://docs.cloud.google.com/datastream/docs/reference/rest/v1/projects.locations.connectionProfiles",
+        "source_id": "site-api-reference",
+        "final_score": 220,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "This value will be used during the SSL/TLS handshake, allowing the PostgreSQL server to authenticate the client's identity, i.e. identity of the Datastream. caCertificate string Required.",
+          "This captures various SSL mode supported by PostgreSQL, which includes TLS encryption with server verification, TLS encryption with both server and client verification and no TLS encryption. encryption setting can be only one of the following: serverVerification object ( ServerVerification ) If this field is set, the communication will be encrypted with TLS encryption and the server identity will be authenticated. serverAndClientVerification object ( ServerAndClientVerification ) If this field is set, the communication will be encrypted with TLS encryption and both the server identity and the client identity will be authenticated.",
+          "This captures various options like no TLS encryption from client if server doesn't ask for it, only encryption without validation and both encryption as well as validation of server certificate. encryption setting can be only one of the following: encryptionNotEnforced object ( EncryptionNotEnforced ) If set, Datastream will not enforce encryption."
+        ]
+      },
+      {
+        "title": "\"Class DatastreamAsyncClient (1.18.0) \\_|\\_ Python client libraries \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/datastream/latest/google.cloud.datastream_v1.services.datastream.DatastreamAsyncClient",
+        "source_id": "site-python-reference",
+        "final_score": 185,
+        "relevance": "",
+        "evidence_snippets": [
+          "CreateConnectionProfileRequest ( parent=\"parent value\", connection profile id=\"connection profile id value\", connection profile=connection profile, ) Make the request operation = client. create connection profile (request=request) print(\"Waiting for operation to complete...\") response = (await operation).result() Handle the response print(response) Parameters Name Description request Optional[Union[ google.cloud.datastream v1.types.CreateConnectionProfileRequest , dict]] The request object.",
+          "CreatePrivateConnectionRequest ( parent=\"parent value\", private connection id=\"private connection id value\", private connection=private connection, ) Make the request operation = client. create private connection (request=request) print(\"Waiting for operation to complete...\") response = (await operation).result() Handle the response print(response) Parameters Name Description request Optional[Union[ google.cloud.datastream v1.types.CreatePrivateConnectionRequest , dict]] The request object.",
+          "UpdateConnectionProfileRequest ( connection profile=connection profile, ) Make the request operation = client. update connection profile (request=request) print(\"Waiting for operation to complete...\") response = (await operation).result() Handle the response print(response) Parameters Name Description request Optional[Union[ google.cloud.datastream v1.types.UpdateConnectionProfileRequest , dict]] The request object."
+        ]
+      },
+      {
+        "title": "\"Class DatastreamClient (1.18.0) \\_|\\_ Python client libraries \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/datastream/latest/google.cloud.datastream_v1.services.datastream.DatastreamClient",
+        "source_id": "site-python-reference",
+        "final_score": 185,
+        "relevance": "",
+        "evidence_snippets": [
+          "CreateConnectionProfileRequest ( parent=\"parent value\", connection profile id=\"connection profile id value\", connection profile=connection profile, ) Make the request operation = client. create connection profile (request=request) print(\"Waiting for operation to complete...\") response = operation.result() Handle the response print(response) Parameters Name Description request Union[ google.cloud.datastream v1.types.CreateConnectionProfileRequest , dict] The request object.",
+          "CreatePrivateConnectionRequest ( parent=\"parent value\", private connection id=\"private connection id value\", private connection=private connection, ) Make the request operation = client. create private connection (request=request) print(\"Waiting for operation to complete...\") response = operation.result() Handle the response print(response) Parameters Name Description request Union[ google.cloud.datastream v1.types.CreatePrivateConnectionRequest , dict] The request object.",
+          "Only if this property is not set and transport was not explicitly provided, the endpoint is determined by the GOOGLE API USE MTLS ENDPOINT environment variable, which have one of the following values: \"always\" (always use the default mTLS endpoint), \"never\" (always use the default regular endpoint) and \"auto\" (auto-switch to the default mTLS endpoint if client certificate is present; this is the default value)."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.cloud.datastream.v1",
+      "i.e",
+      "operation.result",
+      "options.api",
+      "projects.locations.connectionProfiles",
+      "v1.types.CreateConnectionProfileRequest",
+      "v1.types.CreatePrivateConnectionRequest",
+      "v1.types.UpdateConnectionProfileRequest"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastream/docs/reference/mcp/tools_list/list_connection_profiles",
+        "https://docs.cloud.google.com/datastream/docs/reference/rest/v1/projects.locations.connectionProfiles",
+        "https://docs.cloud.google.com/python/docs/reference/datastream/latest/google.cloud.datastream_v1.services.datastream.DatastreamAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/datastream/latest/google.cloud.datastream_v1.services.datastream.DatastreamClient"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastream/docs/reference/mcp/tools_list/list_connection_profiles",
+        "https://docs.cloud.google.com/datastream/docs/reference/rest/v1/projects.locations.connectionProfiles",
+        "https://docs.cloud.google.com/python/docs/reference/datastream/latest/google.cloud.datastream_v1.services.datastream.DatastreamAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/datastream/latest/google.cloud.datastream_v1.services.datastream.DatastreamClient"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastream/docs/reference/mcp/tools_list/list_connection_profiles",
+        "https://docs.cloud.google.com/datastream/docs/reference/rest/v1/projects.locations.connectionProfiles",
+        "https://docs.cloud.google.com/python/docs/reference/datastream/latest/google.cloud.datastream_v1.services.datastream.DatastreamAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/datastream/latest/google.cloud.datastream_v1.services.datastream.DatastreamClient"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastream/docs/reference/mcp/tools_list/list_connection_profiles",
+        "https://docs.cloud.google.com/datastream/docs/reference/rest/v1/projects.locations.connectionProfiles",
+        "https://docs.cloud.google.com/python/docs/reference/datastream/latest/google.cloud.datastream_v1.services.datastream.DatastreamAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/datastream/latest/google.cloud.datastream_v1.services.datastream.DatastreamClient"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastream/docs/reference/mcp/tools_list/list_connection_profiles",
+        "https://docs.cloud.google.com/datastream/docs/reference/rest/v1/projects.locations.connectionProfiles",
+        "https://docs.cloud.google.com/python/docs/reference/datastream/latest/google.cloud.datastream_v1.services.datastream.DatastreamAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/datastream/latest/google.cloud.datastream_v1.services.datastream.DatastreamClient"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastream/docs/reference/mcp/tools_list/list_connection_profiles",
+        "https://docs.cloud.google.com/datastream/docs/reference/rest/v1/projects.locations.connectionProfiles",
+        "https://docs.cloud.google.com/python/docs/reference/datastream/latest/google.cloud.datastream_v1.services.datastream.DatastreamAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/datastream/latest/google.cloud.datastream_v1.services.datastream.DatastreamClient"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastream/docs/reference/mcp/tools_list/list_connection_profiles",
+        "https://docs.cloud.google.com/datastream/docs/reference/rest/v1/projects.locations.connectionProfiles",
+        "https://docs.cloud.google.com/python/docs/reference/datastream/latest/google.cloud.datastream_v1.services.datastream.DatastreamAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/datastream/latest/google.cloud.datastream_v1.services.datastream.DatastreamClient"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,81 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:32.732Z",
+  "source_step08_card": "data/step-08/current/products/dataflow/card.json",
+  "product_name": "Dataflow",
+  "product_slug": "dataflow",
+  "feature_name": "Streaming autoscaling",
+  "feature_slug": "streaming-autoscaling",
+  "summary": "Streaming autoscaling automatically adjusts resources for streaming pipelines that use Streaming Engine.",
+  "extended_definition": "Streaming autoscaling automatically adjusts resources for streaming pipelines that use Streaming Engine.",
+  "lifecycle": {
+    "latest_feature_date": "2019-04-10",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dataflow/docs/guides/autoscaling-metrics",
+      "https://docs.cloud.google.com/dataflow/docs/guides/deploying-a-pipeline",
+      "https://docs.cloud.google.com/dataflow/docs/guides/right-fitting"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Deploy Dataflow pipelines \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataflow/docs/guides/deploying-a-pipeline",
+        "source_id": "site-docs-reference-2",
+        "final_score": 158,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Dataflow fully manages Google Cloud services for you, such as Compute Engine and Cloud Storage to run your Dataflow job, and automatically spins up and tears down necessary resources.",
+          "Streaming Engine By default, the Dataflow pipeline runner executes the steps of your streaming pipeline entirely on worker virtual machines, consuming worker CPU, memory, and Persistent Disk storage.",
+          "Job optimizations In addition to managing Google Cloud resources, Dataflow automatically performs and optimizes many aspects of distributed parallel processing for you."
+        ]
+      },
+      {
+        "title": "Monitor Dataflow autoscaling \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataflow/docs/guides/autoscaling-metrics",
+        "source_id": "site-docs-reference-2",
+        "final_score": 154,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "What's next Tune Horizontal Autoscaling for streaming pipelines Troubleshoot Dataflow autoscaling Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Each metric is organized into the following charts: Autoscaling Backlog (Streaming Engine only) CPU utilization The autoscaling action bar displays the current autoscaling status and workers count.",
+          "Autoscaling rationale (Streaming Engine only) The Autoscaling rationale chart shows why the autoscaler scaled up, scaled down, or took no actions during a given time period."
+        ]
+      },
+      {
+        "title": "Right fitting \\_|\\_ Cloud Dataflow \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataflow/docs/guides/right-fitting",
+        "source_id": "site-docs-reference-2",
+        "final_score": 138,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Verify right fitting You can verify that right fitting is enabled by viewing the autoscaling metrics and verifying that the Worker pool column is visible and lists different pools: Streaming right fitting performance Streaming pipelines with right fitting enabled might not always perform better than pipelines without right fitting enabled.",
+          "Right fitting is supported with streaming pipelines with horizontal autoscaling enabled.",
+          "If you use Compute Engine reservations with Auto VM Selection, note the following: If you have reservations that are consumed automatically , they might be used if Compute Engine provisions VMs of a matching machine type."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": []
+}

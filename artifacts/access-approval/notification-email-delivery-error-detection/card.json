@@ -1,0 +1,161 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:12.343Z",
+  "source_step08_card": "data/step-08/current/products/access-approval/card.json",
+  "product_name": "Access Approval",
+  "product_slug": "access-approval",
+  "feature_name": "Notification email delivery error detection",
+  "feature_slug": "notification-email-delivery-error-detection",
+  "summary": "Access Approval alerts users when access request notification emails are undeliverable because of an incorrect configured email address.",
+  "extended_definition": "Access Approval alerts users when access request notification emails are undeliverable because of an incorrect configured email address.",
+  "lifecycle": {
+    "latest_feature_date": "2022-05-25",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/assured-workloads/access-approval/docs/review-approve-access-requests-google-keys",
+      "https://docs.cloud.google.com/python/docs/reference/accessapproval/latest/google.cloud.accessapproval_v1.services.access_approval.AccessApprovalAsyncClient",
+      "https://docs.cloud.google.com/python/docs/reference/accessapproval/latest/google.cloud.accessapproval_v1.services.access_approval.AccessApprovalClient"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Class AccessApprovalAsyncClient (1.19.0) \\_|\\_ Python client libraries \\_\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/accessapproval/latest/google.cloud.accessapproval_v1.services.access_approval.AccessApprovalAsyncClient",
+        "source_id": "site-python-reference",
+        "final_score": 71,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Only the top level fields of AccessApprovalSettings (notification emails & enrolled services) are supported.",
+          "Exceptions Type Description google.auth.exceptions.MutualTlsChannelError If mutual TLS transport creation failed for any reason. access approval service account path access approval service account path ( project : str ) - > str Returns a fully-qualified access approval service account string. access approval settings path access approval settings path ( project : str ) - > str Returns a fully-qualified access approval settings string. approval request path approval request path ( project : str , approval request : str ) - > str Returns a fully-qualified approval request string. approve approval request approve approval request ( request : typing .",
+          "Format: \"{projects folders organizations}/{id}/accessApprovalSettings\" This corresponds to the name field on the request instance; if request is provided, this should not be set. retry google.api core.retry async.AsyncRetry Designation of what errors, if any, should be retried. timeout float The timeout for this request. metadata Sequence[Tuple[str, Union[str, bytes]]] Key/value pairs which should be sent along with the request as metadata."
+        ]
+      },
+      {
+        "title": "\"Class AccessApprovalClient (1.19.0) \\_|\\_ Python client libraries \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/accessapproval/latest/google.cloud.accessapproval_v1.services.access_approval.AccessApprovalClient",
+        "source_id": "site-python-reference",
+        "final_score": 71,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Only the top level fields of AccessApprovalSettings (notification emails & enrolled services) are supported.",
+          "Exiting the with block will CLOSE the transport and may cause errors in other clients! access approval service account path access approval service account path ( project : str ) - > str Returns a fully-qualified access approval service account string. access approval settings path access approval settings path ( project : str ) - > str Returns a fully-qualified access approval settings string. approval request path approval request path ( project : str , approval request : str ) - > str Returns a fully-qualified approval request string. approve approval request approve approval request ( request : typing .",
+          "Format: \"{projects folders organizations}/{id}/accessApprovalSettings\" This corresponds to the name field on the request instance; if request is provided, this should not be set. retry google.api core.retry.Retry Designation of what errors, if any, should be retried. timeout float The timeout for this request. metadata Sequence[Tuple[str, Union[str, bytes]]] Key/value pairs which should be sent along with the request as metadata."
+        ]
+      },
+      {
+        "title": "\"Review and approve access requests using the Google-managed signing key\\",
+        "url": "https://docs.cloud.google.com/assured-workloads/access-approval/docs/review-approve-access-requests-google-keys",
+        "source_id": "site-docs-root",
+        "final_score": 56,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Review Approval requests After you enroll in Access Approval and add yourself as an approver for access requests, you can expect to receive email notifications for access requests.",
+          "This document shows you how to set up Access Approval using the Google Cloud console to receive email notifications of access requests for a project.",
+          "The following image shows a sample email notification that Access Approval sends when Google personnel request access to Customer Data."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "derived_from_permission_prefix",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [
+      "roles/accessapproval.admin",
+      "roles/accessapproval.approver"
+    ],
+    "derived_permissions": [
+      {
+        "permission": "accessapproval.requests.approve",
+        "group": "accessapproval",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver"
+        ],
+        "match_score": 2
+      },
+      {
+        "permission": "accessapproval.requests.dismiss",
+        "group": "accessapproval",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver"
+        ],
+        "match_score": 1
+      },
+      {
+        "permission": "accessapproval.requests.get",
+        "group": "accessapproval",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver"
+        ],
+        "match_score": 1
+      },
+      {
+        "permission": "accessapproval.requests.invalidate",
+        "group": "accessapproval",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver"
+        ],
+        "match_score": 1
+      },
+      {
+        "permission": "accessapproval.requests.list",
+        "group": "accessapproval",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver"
+        ],
+        "match_score": 1
+      }
+    ],
+    "related_permission_groups": [
+      "accessapproval"
+    ],
+    "missing_inventory_permissions": [
+      "async.AsyncRetry",
+      "core.retry",
+      "core.retry.Retry"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/accessapproval/latest/google.cloud.accessapproval_v1.services.access_approval.AccessApprovalAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/accessapproval/latest/google.cloud.accessapproval_v1.services.access_approval.AccessApprovalClient",
+        "https://docs.cloud.google.com/assured-workloads/access-approval/docs/review-approve-access-requests-google-keys"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/accessapproval/latest/google.cloud.accessapproval_v1.services.access_approval.AccessApprovalAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/accessapproval/latest/google.cloud.accessapproval_v1.services.access_approval.AccessApprovalClient",
+        "https://docs.cloud.google.com/assured-workloads/access-approval/docs/review-approve-access-requests-google-keys"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/accessapproval/latest/google.cloud.accessapproval_v1.services.access_approval.AccessApprovalAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/accessapproval/latest/google.cloud.accessapproval_v1.services.access_approval.AccessApprovalClient",
+        "https://docs.cloud.google.com/assured-workloads/access-approval/docs/review-approve-access-requests-google-keys"
+      ]
+    }
+  ]
+}

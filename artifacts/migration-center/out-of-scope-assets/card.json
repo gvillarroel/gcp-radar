@@ -1,0 +1,140 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:44.028Z",
+  "source_step08_card": "data/step-08/current/products/migration-center/card.json",
+  "product_name": "Migration Center",
+  "product_slug": "migration-center",
+  "feature_name": "Out-of-scope assets",
+  "feature_slug": "out-of-scope-assets",
+  "summary": "Migration Center lets you mark assets as out of scope so they are hidden from groups and excluded from TCO reports.",
+  "extended_definition": "Migration Center lets you mark assets as out of scope so they are hidden from groups and excluded from TCO reports.",
+  "lifecycle": {
+    "latest_feature_date": "2023-11-15",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/migration-center/docs/migration-execution",
+      "https://docs.cloud.google.com/migration-center/docs/view-assets",
+      "https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterAsyncClient",
+      "https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterClient"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "View the collected assets \\_|\\_ Migration Center \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/migration-center/docs/view-assets",
+        "source_id": "site-docs-root",
+        "final_score": 318,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Out of scope assets Migration Center lets you mark assets as out of scope.",
+          "After you add your assets to Migration Center with an automatic scan by using one of the available collection methods , you can review the basic information about your infrastructure directly in Migration Center, both at the asset level, and in aggregate.",
+          "For example, you can see the following structured attributes for an EKS cluster: cluster endpoint access cluster vpc id endpoint kubernetes version logging platform version role arn status Label assets Migration Center lets you assign labels to your assets to help you organize your resources."
+        ]
+      },
+      {
+        "title": "\"Class MigrationCenterAsyncClient (0.4.0) \\_|\\_ Python client libraries \\_\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterAsyncClient",
+        "source_id": "site-python-reference",
+        "final_score": 303,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Returns Type Description google.cloud.migrationcenter v1.types.BatchUpdateAssetsResponse Response for updating a list of assets. cancel operation cancel operation ( request : typing .",
+          "RemoveAssetsFromGroupRequest ( group=\"group value\", assets=assets, ) Make the request operation = client. remove assets from group (request=request) print(\"Waiting for operation to complete...\") response = (await operation).result() Handle the response print(response) Parameters Name Description request Optional[Union[ google.cloud.migrationcenter v1.types.RemoveAssetsFromGroupRequest , dict]] The request object.",
+          "It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import migrationcenter v1 async def sample remove assets from group(): Create a client client = migrationcenter v1 ."
+        ]
+      },
+      {
+        "title": "\"Class MigrationCenterClient (0.4.0) \\_|\\_ Python client libraries \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterClient",
+        "source_id": "site-python-reference",
+        "final_score": 303,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Returns Type Description google.cloud.migrationcenter v1.types.BatchUpdateAssetsResponse Response for updating a list of assets. cancel operation cancel operation ( request : typing .",
+          "Returns Type Description google.cloud.migrationcenter v1.types.Source Source represents an object from which asset information is streamed to Migration Center. group path group path ( project : str , location : str , group : str ) - > str Returns a fully-qualified group string. import data file path import data file path ( project : str , location : str , import job : str , import data file : str ) - > str Returns a fully-qualified import data file string. import job path import job path ( project : str , location : str , import job : str ) - > str Returns a fully-qualified import job string. list assets list assets ( request : typing .",
+          "It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import migrationcenter v1 def sample remove assets from group(): Create a client client = migrationcenter v1 ."
+        ]
+      },
+      {
+        "title": "Execute your migration \\_|\\_ Migration Center \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/migration-center/docs/migration-execution",
+        "source_id": "site-docs-root",
+        "final_score": 254,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "You must continue to perform discovery and assessment throughout your cloud migration project to recalibrate and enrich data relating to the following aspects: Application and database mapping to infrastructure mapping (to identify all of the infrastructure and platform components for a business workload) Mapping between infrastructure to applications, databases, and services (to identify all of the business workloads attached to an infrastructure or platform component) Dependencies across business workloads Resource consumption by workloads Identification of any workloads that were not discovered in the initial wave of assessment Identification of new or changed landing zone requirements that have not been identified in the initial wave of assessment Identification of blocking issues that potentially prevent the migration An ongoing assessment is critical to continuously calibrate and refine move group, identify and mitigate risks, and refine and optimize migration wave plans.",
+          "The outputs of the deployment phase are the following: Migration plan updates (status per step, notes) Migration issue tracker updates Post-migration test results CMDB updates (if applicable) Migration results communication to stakeholders If the deployment is unsuccessful, for example, if the migration plan fails, the tests fail or the fix is impossible within the defined migration timeframe, you need to execute the rollback plan.",
+          "The outputs of this phase are the following: Move group(s) within the scope of the current sprint Migration sprint checklist Mitigations to remediate blocking issues Migrate, build, test, and deployment plan Rollback plan Scheduling of execution Low-level detailed planning is critical for a successful deployment that follows."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "googleapis.dev",
+      "options.html",
+      "projects.locations.assets",
+      "projects.locations.assets.batchUpdate",
+      "projects.locations.assets.patch",
+      "v1.types.BatchUpdateAssetsResponse",
+      "v1.types.RemoveAssetsFromGroupRequest",
+      "v1.types.Source"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migration-center/docs/view-assets",
+        "https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterClient",
+        "https://docs.cloud.google.com/migration-center/docs/migration-execution"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migration-center/docs/view-assets",
+        "https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterClient",
+        "https://docs.cloud.google.com/migration-center/docs/migration-execution"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migration-center/docs/view-assets",
+        "https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterClient",
+        "https://docs.cloud.google.com/migration-center/docs/migration-execution"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migration-center/docs/view-assets",
+        "https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterClient",
+        "https://docs.cloud.google.com/migration-center/docs/migration-execution"
+      ]
+    }
+  ]
+}

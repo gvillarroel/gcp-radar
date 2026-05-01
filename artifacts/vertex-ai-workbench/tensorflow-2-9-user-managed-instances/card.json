@@ -1,0 +1,136 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:49.125Z",
+  "source_step08_card": "data/step-08/current/products/vertex-ai-workbench/card.json",
+  "product_name": "Vertex AI Workbench",
+  "product_slug": "vertex-ai-workbench",
+  "feature_name": "TensorFlow 2.9 user-managed instances",
+  "feature_slug": "tensorflow-2-9-user-managed-instances",
+  "summary": "TensorFlow 2.9 user-managed Vertex AI Workbench instances are a notebook compute option based on a user-managed environment; TensorFlow 2.9 user-managed Vertex AI Workbench instances are a notebook compute option based on a user-managed environment; deprecated on 2023-08-10.",
+  "extended_definition": "TensorFlow 2.9 user-managed Vertex AI Workbench instances are a notebook compute option based on a user-managed environment; TensorFlow 2.9 user-managed Vertex AI Workbench instances are a notebook compute option based on a user-managed environment; deprecated on 2023-08-10.",
+  "lifecycle": {
+    "latest_feature_date": "2023-08-10",
+    "deprecation_date": "2023-08-10",
+    "status": "deprecation_noted"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/vertex-ai/docs/workbench/managed/manage-access",
+      "https://docs.cloud.google.com/vertex-ai/docs/workbench/managed/manage-access-jupyterlab",
+      "https://docs.cloud.google.com/vertex-ai/docs/workbench/user-managed/iam"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Vertex AI Workbench user-managed notebooks access control \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/workbench/user-managed/iam",
+        "source_id": "site-docs-reference-2",
+        "final_score": 181,
+        "relevance": "",
+        "evidence_snippets": [
+          "Vertex AI Workbench uses IAM to manage access to user-managed notebooks instances and an access mode to manage access to each instance's JupyterLab interface.",
+          "To continue using Vertex AI Workbench, we recommend that you migrate your user-managed notebooks instances to Vertex AI Workbench instances .",
+          "For example, you can grant users roles/notebooks.viewer permissions at the project level so that they can view all Vertex AI Workbench resources in the project, and then you can grant each user roles/notebooks.admin permissions on a specific user-managed notebooks instance so that they have all of the admin abilities to administer that instance."
+        ]
+      },
+      {
+        "title": "\"Manage access to a Vertex AI Workbench managed notebooks instance \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/workbench/managed/manage-access",
+        "source_id": "site-docs-reference-2",
+        "final_score": 155,
+        "relevance": "",
+        "evidence_snippets": [
+          "To continue using Vertex AI Workbench, we recommend that you migrate your managed notebooks instances to Vertex AI Workbench instances .",
+          "Grant access to managed notebooks instances To grant users permission to access a specific managed notebooks instance, set an IAM policy on the instance.",
+          "This guide describes how you can grant access to a specific Vertex AI Workbench managed notebooks instance."
+        ]
+      },
+      {
+        "title": "\"Manage access to a Vertex AI Workbench managed notebooks instance's JupyterLab\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/workbench/managed/manage-access-jupyterlab",
+        "source_id": "site-docs-reference-2",
+        "final_score": 155,
+        "relevance": "",
+        "evidence_snippets": [
+          "To continue using Vertex AI Workbench, we recommend that you migrate your managed notebooks instances to Vertex AI Workbench instances .",
+          "JupyterLab access modes Managed notebooks instances support the following access modes: Single user only : The Single user only access mode grants access only to the user that you specify.",
+          "Manage access to a managed notebooks instance's JupyterLab interface Vertex AI Workbench managed notebooks is deprecated ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "notebooks.admin",
+      "notebooks.viewer"
+    ],
+    "missing_inventory_roles": [
+      "roles/notebooks.admin",
+      "roles/notebooks.viewer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/user-managed/iam",
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/managed/manage-access",
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/managed/manage-access-jupyterlab"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/user-managed/iam",
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/managed/manage-access",
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/managed/manage-access-jupyterlab"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/user-managed/iam",
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/managed/manage-access",
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/managed/manage-access-jupyterlab"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/user-managed/iam",
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/managed/manage-access",
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/managed/manage-access-jupyterlab"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/user-managed/iam",
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/managed/manage-access",
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/managed/manage-access-jupyterlab"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/user-managed/iam",
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/managed/manage-access",
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/managed/manage-access-jupyterlab"
+      ]
+    }
+  ]
+}

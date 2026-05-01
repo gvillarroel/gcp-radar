@@ -1,0 +1,100 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:43.150Z",
+  "source_step08_card": "data/step-08/current/products/mainframe-connector/card.json",
+  "product_name": "Mainframe Connector",
+  "product_slug": "mainframe-connector",
+  "feature_name": "remoteUrl option",
+  "feature_slug": "remoteurl-option",
+  "summary": "Remote mode commands can use remoteUrl instead of separate remoteHost and remotePort settings.",
+  "extended_definition": "Remote mode commands can use remoteUrl instead of separate remoteHost and remotePort settings.",
+  "lifecycle": {
+    "latest_feature_date": "2024-07-01",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/mainframe-connector/docs/api-command-reference",
+      "https://docs.cloud.google.com/mainframe-connector/docs/api-reference",
+      "https://docs.cloud.google.com/mainframe-connector/docs/remote-transcoding",
+      "https://docs.cloud.google.com/mainframe-connector/docs/standalone-mode"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Mainframe Connector API commands \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/mainframe-connector/docs/api-reference",
+        "source_id": "site-docs-reference",
+        "final_score": 216,
+        "relevance": "",
+        "evidence_snippets": [
+          "Note: For the commands that support remote execution, you can use the option remoteUrl instead of remoteHost and remotePort .",
+          "If you execute the gsutil cp or bq export commands with the --remote flag to perform remote transcoding , Mainframe Connector uses the local value set for the BQSH FEATURE CUSTOM CHARSET environment variable.",
+          "The following table lists the BigQuery, Cloud Storage, and other Google Cloud commands that you can use with Mainframe Connector."
+        ]
+      },
+      {
+        "title": "Mainframe Connector command-line reference \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/mainframe-connector/docs/api-command-reference",
+        "source_id": "site-docs-reference",
+        "final_score": 192,
+        "relevance": "",
+        "evidence_snippets": [
+          "You can use one of the following options: directstorage : the binary file is saved locally (default) gcsoutput : the binary file is saved in Cloud Storage --sql = SQL (Optional) Specify the BigQuery SQL query to execute. --stats table = TABLE (Optional) Specify the table to insert statistics into. --timeOutMinutes = MINUTES (Optional) Set the timeout in minutes for the remote grpc call.",
+          "You can use --gcsOutUri instead. --compress (Optional) Compress output with gzip. --count or -n = RECORDS (Optional) Specify the number of records to copy.",
+          "The default value is true. --use legacy sql (Optional) Use legacy SQL instead of standard SQL. cloud run job cancel Cancel a specific job execution."
+        ]
+      },
+      {
+        "title": "Run Mainframe Connector in standalone mode \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/mainframe-connector/docs/standalone-mode",
+        "source_id": "site-docs-root-2",
+        "final_score": 153,
+        "relevance": "",
+        "evidence_snippets": [
+          "Mainframe Connector provides two ways in which you can export BigQuery table: Using qsam commands (release 5.16.0 and later) Using the bq export command Use qsam commands environmentVariables: - name: \"QUERY\" value: \" QUERY PATH \" - name: \"OUTFILE\" value: \" OUTFILE \" - name: \"COPYBOOK\" value: \" COPYBOOK PATH \" - name: \"TRANSCODE CONFIGURATION\" value: \" TRANSCODE CONFIGURATION PATH \" - name: \"PROJECT ID\" value: \" PROJECT ID \" - name: \"LOCATION\" value: \" LOCATION \" - name: \"LOG PROJECT\" value: \" LOG PROJECT \" - name: \"IBM JAVA OPTIONS\" value: \"-XX:+UseContainerSupport\" command: qsam encode \\ $QUERY $OUTFILE --copybook ${COPYBOOK PATH} --transcode-configuration ${TRANSCODE CONFIGURATION PATH} --input-format=BIGQUERY \\ --input-parameter project id=${PROJECT ID} \\ --input-parameter location=${LOCATION} Replace the following: QUERY PATH : The SQL query to execute.",
+          "Transcode data using Mainframe Connector in standalone mode on Cloud Run Mainframe Connector provides two ways in which you can run Mainframe Connector as a standalone job on Google Cloud: Using qsam commands (release 5.16.0 and later) Using the gsutil cp command Advantages of qsam commands The qsam commands provide the following advantages: Support for compound data types, including the OCCURS clause (lists), REDEFINES clause, and nested records.",
+          "The following is an example YAML file: environmentVariables: - name: \"COPYBOOK\" value: \"gs://inputbucket/copybook.cpy\" - name: \"LOG PROJECT\" value: \"my-log-project\" - name: \"IBM JAVA OPTIONS\" value: \"-XX:+UseContainerSupport\" command: bq export --project id=\"my-project\" --run mode=\"gcsoutput\" --location=US --sql=\"select from project.dataset.table\" --bucket=\"gs://outputbucket/data.dat\" Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License ."
+        ]
+      },
+      {
+        "title": "\"Transcode mainframe data remotely on Google Cloud \\_|\\_ Mainframe Connector\\",
+        "url": "https://docs.cloud.google.com/mainframe-connector/docs/remote-transcoding",
+        "source_id": "site-docs-root",
+        "final_score": 123,
+        "relevance": "",
+        "evidence_snippets": [
+          "For the complete list of environment variables supported by Mainframe Connector, see Environment variables . //STEP01 EXEC BQSH //INFILE DD DSN=<HLQ>.DATA.FILENAME,DISP=SHR //COPYBOOK DD DISP=SHR,DSN=<HLQ>.COPYBOOK.FILENAME //STDIN DD gsutil cp --replace gs://mybucket/tablename.orc --remote \\ --remoteHost <mainframe-connector-url>.a.run.app \\ --remotePort 443 / If you want to log the commands executed during this process, you can enable load statistics . (Optional) Create and submit a BigQuery query job that executes a SQL read from the QUERY DD file .",
+          "To avoid this, you can use Cloud Run to move and transcode mainframe data remotely on Google Cloud to optimized row columnar (ORC) format and then move the data to Cloud Storage.",
+          "The following figure describes how you can move your mainframe data to Google Cloud and transcode it remotely to ORC format using Cloud Run, and then move the content to BigQuery."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "a.run.app",
+      "copybook.cpy",
+      "data.dat",
+      "project.dataset.table",
+      "tablename.orc"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": []
+}

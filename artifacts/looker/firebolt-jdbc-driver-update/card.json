@@ -1,0 +1,457 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:42.371Z",
+  "source_step08_card": "data/step-08/current/products/looker/card.json",
+  "product_name": "Looker",
+  "product_slug": "looker",
+  "feature_name": "Firebolt JDBC driver update",
+  "feature_slug": "firebolt-jdbc-driver-update",
+  "summary": "The Firebolt JDBC driver was updated to version 3.5.0 for connections to Firebolt.",
+  "extended_definition": "The Firebolt JDBC driver was updated to version 3.5.0 for connections to Firebolt.",
+  "lifecycle": {
+    "latest_feature_date": "2025-06-11",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/access-control",
+      "https://docs.cloud.google.com/looker/docs/best-practices/oauth-read-only",
+      "https://docs.cloud.google.com/looker/docs/reference/looker-api/latest/methods/Artifact/update_artifacts"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Create or update artifacts \\_|\\_ Looker \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/looker/docs/reference/looker-api/latest/methods/Artifact/update_artifacts",
+        "source_id": "site-api-reference",
+        "final_score": 111,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The version must be provided for any updates to an existing artifact. namespace lock string Artifact storage namespace. created at lock string Timestamp when this artifact was created. updated at lock string Timestamp when this artifact was updated. value size lock integer Size (in bytes) of the stored value. created by userid lock string User id of the artifact creator. updated by userid lock string User id of the artifact updater.",
+          "Need to tell us more? [[[\"Easy to understand\",\"easyToUnderstand\",\"thumb-up\"],[\"Solved my problem\",\"solvedMyProblem\",\"thumb-up\"],[\"Other\",\"otherUp\",\"thumb-up\"]],[[\"Hard to understand\",\"hardToUnderstand\",\"thumb-down\"],[\"Incorrect information or sample code\",\"incorrectInformationOrSampleCode\",\"thumb-down\"],[\"Missing the information/samples I need\",\"missingTheInformationSamplesINeed\",\"thumb-down\"],[\"Other\",\"otherDown\",\"thumb-down\"]],[\"Last updated 2026-03-25 UTC.\"],[],[]]",
+          "The version must be provided for any updates to an existing artifact. query HTTP Query Expand HTTP Query definition... fields string Comma-delimited names of fields to return in responses."
+        ]
+      },
+      {
+        "title": "\"Restricting OAuth scope to read-only for Google BigQuery connections \\_\\",
+        "url": "https://docs.cloud.google.com/looker/docs/best-practices/oauth-read-only",
+        "source_id": "site-docs-reference",
+        "final_score": 105,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "INSTANCE NAME /explore/system activity/scheduled plan oauth events?fields=user.name,count,query.model&f[query.model]=-NULL&f[count]=0&sorts=user.name&limit=500&column limit=50&query timezone=America%2FLos Angeles&vis=%7B%22show view names%22%3Afalse%2C%22show row numbers%22%3Atrue%2C%22transpose%22%3Afalse%2C%22truncate text%22%3Atrue%2C%22hide totals%22%3Afalse%2C%22hide row totals%22%3Afalse%2C%22size to fit%22%3Atrue%2C%22table theme%22%3A%22white%22%2C%22limit displayed rows%22%3Afalse%2C%22enable conditional formatting%22%3Afalse%2C%22header text alignment%22%3A%22left%22%2C%22header font size%22%3A12%2C%22rows font size%22%3A12%2C%22conditional formatting include totals%22%3Afalse%2C%22conditional formatting include nulls%22%3Afalse%2C%22x axis gridlines%22%3Afalse%2C%22y axis gridlines%22%3Atrue%2C%22show y axis labels%22%3Atrue%2C%22show y axis ticks%22%3Atrue%2C%22y axis tick density%22%3A%22default%22%2C%22y axis tick density custom%22%3A5%2C%22show x axis label%22%3Atrue%2C%22show x axis ticks%22%3Atrue%2C%22y axis scale mode%22%3A%22linear%22%2C%22x axis reversed%22%3Afalse%2C%22y axis reversed%22%3Afalse%2C%22plot size by field%22%3Afalse%2C%22trellis%22%3A%22%22%2C%22stacking%22%3A%22%22%2C%22legend position%22%3A%22center%22%2C%22point style%22%3A%22none%22%2C%22show value labels%22%3Afalse%2C%22label density%22%3A25%2C%22x axis scale%22%3A%22auto%22%2C%22y axis combined%22%3Atrue%2C%22ordering%22%3A%22none%22%2C%22show null labels%22%3Afalse%2C%22show totals labels%22%3Afalse%2C%22show silhouette%22%3Afalse%2C%22totals color%22%3A%22%23808080%22%2C%22type%22%3A%22looker grid%22%2C%22defaults version%22%3A1%2C%22series types%22%3A%7B%7D%2C%22hidden fields%22%3A%5B%22count%22%5D%7D&filter config=%7B%22query.model%22%3A%5B%7B%22type%22%3A%22%21null%22%2C%22values%22%3A%5B%7B%7D%2C%7B%7D%5D%2C%22id%22%3A0%7D%5D%2C%22count%22%3A%5B%7B%22type%22%3A%22%3D%22%2C%22values%22%3A%5B%7B%22constant%22%3A%220%22%7D%2C%7B%7D%5D%2C%22id%22%3A1%7D%5D%2C%22 %21internal%21 %22%3A%5B%22OR%22%2C%5B%5B%22AND%22%2C%5B%5B%22FILTER%22%2C%7B%22field%22%3A%22query.model%22%2C%22value%22%3A%22-NULL%22%2C%22type%22%3A%22%21null%22%7D%5D%2C%5B%22FILTER%22%2C%7B%22field%22%3A%22count%22%2C%22value%22%3A%220%22%7D%5D%5D%5D%5D%5D%7D&dynamic fields=%5B%7B%22category%22%3A%22measure%22%2C%22expression%22%3Anull%2C%22label%22%3A%22Count%22%2C%22value format%22%3Anull%2C%22value format name%22%3Anull%2C%22based on%22%3A%22event attribute.value%22%2C%22 kind hint%22%3A%22measure%22%2C%22measure%22%3A%22count%22%2C%22type%22%3A%22count distinct%22%2C%22 type hint%22%3A%22number%22%2C%22filters%22%3A%7B%22event attribute.value%22%3A%22%25%2Fauth%2Fbigquery.readonly%25%22%7D%7D%5D&origin=share-expanded Each of these users will need to reauthorize their OAuth connection credentials to ensure uninterrupted schedule delivery. (Optional) Force read-only scope usage across your Looker instance To sign out all your users who have OAuth credentials that allow read and write scope from any of your BigQuery connections, follow these steps: Navigate to the Admin settings - General settings page.",
+          "Need to tell us more? [[[\"Easy to understand\",\"easyToUnderstand\",\"thumb-up\"],[\"Solved my problem\",\"solvedMyProblem\",\"thumb-up\"],[\"Other\",\"otherUp\",\"thumb-up\"]],[[\"Hard to understand\",\"hardToUnderstand\",\"thumb-down\"],[\"Incorrect information or sample code\",\"incorrectInformationOrSampleCode\",\"thumb-down\"],[\"Missing the information/samples I need\",\"missingTheInformationSamplesINeed\",\"thumb-down\"],[\"Other\",\"otherDown\",\"thumb-down\"]],[\"Last updated 2026-04-10 UTC.\"],[],[]]",
+          "To ensure a seamless transition to the updated OAuth credentials, follow the steps in the proceeding sections: Reauthorize your OAuth connection credentials Generate a list of all users with potentially affected schedules (Optional) Force read-only scope usage across your Looker instance Reauthorize your OAuth connection credentials To update your OAuth credentials to use a read-only scope, follow these steps: Navigate to the Account page ."
+        ]
+      },
+      {
+        "title": "BigQuery IAM roles and permissions \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/access-control",
+        "source_id": "site-docs-reference-required-6",
+        "final_score": 102,
+        "relevance": "",
+        "evidence_snippets": [
+          "Lowest-level resources where you can grant this role: Dataset These resources within a dataset: Table View Routine Connection Saved query Data canvas Data preparation Pipeline Repository This role can also be granted on Resource Manager resources (projects, folders, and organizations). aiplatform.locations.get aiplatform. notebookRuntimeTemplates. aiplatform. notebookRuntimeTemplates. apply aiplatform. notebookRuntimeTemplates. create aiplatform. notebookRuntimeTemplates. delete aiplatform. notebookRuntimeTemplates. get aiplatform. notebookRuntimeTemplates. getIamPolicy aiplatform. notebookRuntimeTemplates. list aiplatform. notebookRuntimeTemplates. setIamPolicy aiplatform. notebookRuntimeTemplates. update aiplatform.notebookRuntimes. aiplatform. notebookRuntimes. assign aiplatform. notebookRuntimes. delete aiplatform. notebookRuntimes. get aiplatform. notebookRuntimes. list aiplatform. notebookRuntimes. start aiplatform. notebookRuntimes. update aiplatform. notebookRuntimes. upgrade aiplatform.operations.list bigquery.bireservations. bigquery.bireservations.get bigquery.bireservations.update bigquery.capacityCommitments. bigquery. capacityCommitments. create bigquery. capacityCommitments. delete bigquery. capacityCommitments. get bigquery. capacityCommitments. list bigquery. capacityCommitments. update bigquery.config. bigquery.config.get bigquery.config.update bigquery.connections. bigquery.connections.create bigquery.connections.delegate bigquery.connections.delete bigquery.connections.get bigquery. connections. getIamPolicy bigquery.connections.list bigquery. connections. setIamPolicy bigquery.connections.update bigquery.connections.updateTag bigquery.connections.use bigquery.dataPolicies.attach bigquery.dataPolicies.create bigquery.dataPolicies.delete bigquery.dataPolicies.get bigquery. dataPolicies. getIamPolicy bigquery.dataPolicies.list bigquery. dataPolicies. setIamPolicy bigquery.dataPolicies.update bigquery.datasets. bigquery.datasets.create bigquery. datasets. createTagBinding bigquery.datasets.delete bigquery. datasets. deleteTagBinding bigquery.datasets.get bigquery.datasets.getIamPolicy bigquery.datasets.link bigquery. datasets. listEffectiveTags bigquery. datasets. listSharedDatasetUsage bigquery. datasets. listTagBindings bigquery.datasets.setIamPolicy bigquery.datasets.update bigquery.datasets.updateTag bigquery.jobs. bigquery.jobs.create bigquery. jobs. createGlobalQuery bigquery.jobs.delete bigquery.jobs.get bigquery.jobs.list bigquery.jobs.listAll bigquery. jobs. listExecutionMetadata bigquery.jobs.update bigquery.models. bigquery.models.create bigquery.models.delete bigquery.models.export bigquery.models.getData bigquery.models.getMetadata bigquery.models.list bigquery.models.updateData bigquery.models.updateMetadata bigquery.models.updateTag bigquery.objectRefs. bigquery.objectRefs.read bigquery.objectRefs.write bigquery.readsessions. bigquery.readsessions.create bigquery.readsessions.getData bigquery.readsessions.update bigquery. reservationAssignments. bigquery. reservationAssignments. create bigquery. reservationAssignments. delete bigquery. reservationAssignments. list bigquery. reservationAssignments. search bigquery.reservationGroups. bigquery. reservationGroups. create bigquery. reservationGroups. delete bigquery.reservationGroups.get bigquery. reservationGroups. list bigquery.reservations. bigquery.reservations.create bigquery.reservations.delete bigquery.reservations.get bigquery. reservations. getIamPolicy bigquery.reservations.list bigquery. reservations. listFailoverDatasets bigquery. reservations. setIamPolicy bigquery.reservations.update bigquery.reservations.use bigquery.routines. bigquery.routines.create bigquery.routines.delete bigquery.routines.get bigquery.routines.list bigquery.routines.update bigquery.routines.updateTag bigquery. rowAccessPolicies. create bigquery. rowAccessPolicies. delete bigquery.rowAccessPolicies.get bigquery. rowAccessPolicies. getIamPolicy bigquery. rowAccessPolicies. list bigquery. rowAccessPolicies. overrideTimeTravelRestrictions bigquery. rowAccessPolicies. setIamPolicy bigquery. rowAccessPolicies. update bigquery.savedqueries. bigquery.savedqueries.create bigquery.savedqueries.delete bigquery.savedqueries.get bigquery.savedqueries.list bigquery.savedqueries.update bigquery.tables. bigquery.tables.create bigquery.tables.createIndex bigquery.tables.createSnapshot bigquery. tables. createTagBinding bigquery.tables.delete bigquery.tables.deleteIndex bigquery.tables.deleteSnapshot bigquery. tables. deleteTagBinding bigquery.tables.export bigquery.tables.get bigquery.tables.getData bigquery.tables.getIamPolicy bigquery.tables.list bigquery. tables. listEffectiveTags bigquery. tables. listTagBindings bigquery.tables.replicateData bigquery. tables. restoreSnapshot bigquery.tables.setCategory bigquery. tables. setColumnDataPolicy bigquery.tables.setIamPolicy bigquery.tables.update bigquery.tables.updateData bigquery.tables.updateIndex bigquery.tables.updateTag bigquery.transfers. bigquery.transfers.get bigquery.transfers.update bigquerymigration. translation. translate cloudaicompanion. aiDevToolsSettings. cloudaicompanion. aiDevToolsSettings. create cloudaicompanion. aiDevToolsSettings. delete cloudaicompanion. aiDevToolsSettings. get cloudaicompanion. aiDevToolsSettings. list cloudaicompanion. aiDevToolsSettings. update cloudaicompanion. codeToolsSettings. cloudaicompanion. codeToolsSettings. create cloudaicompanion. codeToolsSettings. delete cloudaicompanion. codeToolsSettings. get cloudaicompanion. codeToolsSettings. list cloudaicompanion. codeToolsSettings. update cloudaicompanion.companions. cloudaicompanion. companions. generateChat cloudaicompanion. companions. generateCode cloudaicompanion. dataSharingWithGoogleSettings. cloudaicompanion. dataSharingWithGoogleSettings. create cloudaicompanion. dataSharingWithGoogleSettings. delete cloudaicompanion. dataSharingWithGoogleSettings. get cloudaicompanion. dataSharingWithGoogleSettings. list cloudaicompanion. dataSharingWithGoogleSettings. update cloudaicompanion. entitlements. get cloudaicompanion. geminiGcpEnablementSettings. cloudaicompanion. geminiGcpEnablementSettings. create cloudaicompanion. geminiGcpEnablementSettings. delete cloudaicompanion. geminiGcpEnablementSettings. get cloudaicompanion. geminiGcpEnablementSettings. list cloudaicompanion. geminiGcpEnablementSettings. update cloudaicompanion.instances. cloudaicompanion. instances. completeCode cloudaicompanion. instances. completeTask cloudaicompanion. instances. exportMetrics cloudaicompanion. instances. generateCode cloudaicompanion. instances. generateText cloudaicompanion. instances. queryEffectiveSetting cloudaicompanion. instances. queryEffectiveSettingBindings cloudaicompanion. licenses. selfAssign cloudaicompanion. loggingSettings. cloudaicompanion. loggingSettings. create cloudaicompanion. loggingSettings. delete cloudaicompanion. loggingSettings. get cloudaicompanion. loggingSettings. list cloudaicompanion. loggingSettings. update cloudaicompanion. operations. get cloudaicompanion. releaseChannelSettings. cloudaicompanion. releaseChannelSettings. create cloudaicompanion. releaseChannelSettings. delete cloudaicompanion. releaseChannelSettings. get cloudaicompanion. releaseChannelSettings. list cloudaicompanion. releaseChannelSettings. update cloudaicompanion. settingBindings. cloudaicompanion. settingBindings. aiDevToolsSettingsCreate cloudaicompanion. settingBindings. aiDevToolsSettingsDelete cloudaicompanion. settingBindings. aiDevToolsSettingsGet cloudaicompanion. settingBindings. aiDevToolsSettingsList cloudaicompanion. settingBindings. aiDevToolsSettingsUpdate cloudaicompanion. settingBindings. aiDevToolsSettingsUse cloudaicompanion. settingBindings. codeToolsSettingsCreate cloudaicompanion. settingBindings. codeToolsSettingsDelete cloudaicompanion. settingBindings. codeToolsSettingsGet cloudaicompanion. settingBindings. codeToolsSettingsList cloudaicompanion. settingBindings. codeToolsSettingsUpdate cloudaicompanion. settingBindings. codeToolsSettingsUse cloudaicompanion. settingBindings. dataSharingWithGoogleSettingsCreate cloudaicompanion. settingBindings. dataSharingWithGoogleSettingsDelete cloudaicompanion. settingBindings. dataSharingWithGoogleSettingsGet cloudaicompanion. settingBindings. dataSharingWithGoogleSettingsList cloudaicompanion. settingBindings. dataSharingWithGoogleSettingsUpdate cloudaicompanion. settingBindings. dataSharingWithGoogleSettingsUse cloudaicompanion. settingBindings. geminiGcpEnablementSettingsCreate cloudaicompanion. settingBindings. geminiGcpEnablementSettingsDelete cloudaicompanion. settingBindings. geminiGcpEnablementSettingsGet cloudaicompanion. settingBindings. geminiGcpEnablementSettingsList cloudaicompanion. settingBindings. geminiGcpEnablementSettingsUpdate cloudaicompanion. settingBindings. geminiGcpEnablementSettingsUse cloudaicompanion. settingBindings. loggingSettingsCreate cloudaicompanion. settingBindings. loggingSettingsDelete cloudaicompanion. settingBindings. loggingSettingsGet cloudaicompanion. settingBindings. loggingSettingsList cloudaicompanion. settingBindings. loggingSettingsUpdate cloudaicompanion. settingBindings. loggingSettingsUse cloudaicompanion. settingBindings. releaseChannelSettingsCreate cloudaicompanion. settingBindings. releaseChannelSettingsDelete cloudaicompanion. settingBindings. releaseChannelSettingsGet cloudaicompanion. settingBindings. releaseChannelSettingsList cloudaicompanion. settingBindings. releaseChannelSettingsUpdate cloudaicompanion. settingBindings. releaseChannelSettingsUse cloudaicompanion.topics.create cloudkms.keyHandles. cloudkms.keyHandles.create cloudkms.keyHandles.get cloudkms.keyHandles.list cloudkms.operations.get cloudkms. projects. showEffectiveAutokeyConfig compute.projects.get compute.regions. compute.regions.get compute.regions.list compute.reservations.get compute.reservations.list compute.zones. compute.zones.get compute.zones.list dataform. dataform.commentThreads.create dataform.commentThreads.delete dataform.commentThreads.get dataform.commentThreads.list dataform.commentThreads.update dataform.comments.create dataform.comments.delete dataform.comments.get dataform.comments.list dataform.comments.update dataform. compilationResults. create dataform. compilationResults. get dataform. compilationResults. list dataform. compilationResults. query dataform.config.get dataform.config.update dataform.folders.addContents dataform.folders.create dataform.folders.delete dataform.folders.deleteTree dataform.folders.get dataform.folders.getIamPolicy dataform.folders.move dataform.folders.queryContents dataform.folders.setIamPolicy dataform.folders.update dataform.locations.get dataform.locations.list dataform.operations.cancel dataform.operations.delete dataform.operations.get dataform.operations.list dataform.releaseConfigs.create dataform.releaseConfigs.delete dataform.releaseConfigs.get dataform.releaseConfigs.list dataform.releaseConfigs.update dataform.repositories.commit dataform. repositories. computeAccessTokenStatus dataform.repositories.create dataform.repositories.delete dataform. repositories. fetchHistory dataform. repositories. fetchRemoteBranches dataform.repositories.get dataform. repositories. getIamPolicy dataform.repositories.list dataform.repositories.move dataform. repositories. queryDirectoryContents dataform.repositories.readFile dataform. repositories. scheduleRelease dataform. repositories. scheduleWorkflow dataform. repositories. setIamPolicy dataform.repositories.update dataform.teamFolders.create dataform.teamFolders.delete dataform. teamFolders. deleteTree dataform.teamFolders.get dataform. teamFolders. getIamPolicy dataform. teamFolders. setIamPolicy dataform.teamFolders.update dataform. workflowConfigs. create dataform. workflowConfigs. delete dataform.workflowConfigs.get dataform.workflowConfigs.list dataform. workflowConfigs. update dataform. workflowInvocations. cancel dataform. workflowInvocations. create dataform. workflowInvocations. delete dataform. workflowInvocations. get dataform. workflowInvocations. list dataform. workflowInvocations. query dataform.workspaces.commit dataform.workspaces.create dataform.workspaces.delete dataform. workspaces. fetchFileDiff dataform. workspaces. fetchFileGitStatuses dataform. workspaces. fetchGitAheadBehind dataform.workspaces.get dataform. workspaces. getIamPolicy dataform. workspaces. installNpmPackages dataform.workspaces.list dataform. workspaces. makeDirectory dataform. workspaces. moveDirectory dataform.workspaces.moveFile dataform.workspaces.pull dataform.workspaces.push dataform. workspaces. queryDirectoryContents dataform.workspaces.readFile dataform. workspaces. removeDirectory dataform.workspaces.removeFile dataform.workspaces.reset dataform. workspaces. searchFiles dataform. workspaces. setIamPolicy dataform.workspaces.writeFile dataplex.datascans. dataplex.datascans.create dataplex.datascans.delete dataplex.datascans.get dataplex.datascans.getData dataplex. datascans. getIamPolicy dataplex.datascans.list dataplex.datascans.run dataplex. datascans. setIamPolicy dataplex.datascans.update dataplex.operations.get dataplex.operations.list dataplex.projects.search dataproc.batches. dataproc.batches.analyze dataproc.batches.cancel dataproc.batches.create dataproc.batches.delete dataproc.batches.get dataproc.batches.list dataproc. batches. sparkApplicationRead dataproc. batches. sparkApplicationWrite dataproc.operations.cancel dataproc.operations.delete dataproc.operations.get dataproc.operations.list dataproc.sessionTemplates. dataproc. sessionTemplates. create dataproc. sessionTemplates. delete dataproc.sessionTemplates.get dataproc.sessionTemplates.list dataproc. sessionTemplates. update dataproc.sessions. dataproc.sessions.create dataproc.sessions.delete dataproc.sessions.get dataproc.sessions.list dataproc. sessions. sparkApplicationRead dataproc. sessions. sparkApplicationWrite dataproc.sessions.terminate dataprocrm.nodePools. dataprocrm.nodePools.create dataprocrm.nodePools.delete dataprocrm. nodePools. deleteNodes dataprocrm.nodePools.get dataprocrm.nodePools.list dataprocrm.nodePools.resize dataprocrm.nodes.get dataprocrm.nodes.heartbeat dataprocrm.nodes.list dataprocrm.nodes.update dataprocrm.operations.get dataprocrm.operations.list dataprocrm.workloads. dataprocrm.workloads.cancel dataprocrm.workloads.create dataprocrm.workloads.delete dataprocrm.workloads.get dataprocrm.workloads.list geminidataanalytics. locations. useDataEngineeringAgent resourcemanager.projects.get resourcemanager.projects.list BigQuery Studio User ( roles/ bigquery.studioUser ) Combination role of BigQuery Job User, BigQuery Read Session User, Dataform Code Creator, Notebook Runtime User and Dataproc Serverless Editor.",
+          "Lowest-level resources where you can grant this role: Dataset These resources within a dataset: Table View Routine Connection Saved query Data canvas Pipeline Data preparation Repository This role can also be granted on Resource Manager resources (projects, folders, and organizations). bigquery.bireservations. bigquery.bireservations.get bigquery.bireservations.update bigquery.capacityCommitments. bigquery. capacityCommitments. create bigquery. capacityCommitments. delete bigquery. capacityCommitments. get bigquery. capacityCommitments. list bigquery. capacityCommitments. update bigquery.config. bigquery.config.get bigquery.config.update bigquery.connections. bigquery.connections.create bigquery.connections.delegate bigquery.connections.delete bigquery.connections.get bigquery. connections. getIamPolicy bigquery.connections.list bigquery. connections. setIamPolicy bigquery.connections.update bigquery.connections.updateTag bigquery.connections.use bigquery.dataPolicies.attach bigquery.dataPolicies.create bigquery.dataPolicies.delete bigquery.dataPolicies.get bigquery. dataPolicies. getIamPolicy bigquery.dataPolicies.list bigquery. dataPolicies. setIamPolicy bigquery.dataPolicies.update bigquery.datasets. bigquery.datasets.create bigquery. datasets. createTagBinding bigquery.datasets.delete bigquery. datasets. deleteTagBinding bigquery.datasets.get bigquery.datasets.getIamPolicy bigquery.datasets.link bigquery. datasets. listEffectiveTags bigquery. datasets. listSharedDatasetUsage bigquery. datasets. listTagBindings bigquery.datasets.setIamPolicy bigquery.datasets.update bigquery.datasets.updateTag bigquery.jobs. bigquery.jobs.create bigquery. jobs. createGlobalQuery bigquery.jobs.delete bigquery.jobs.get bigquery.jobs.list bigquery.jobs.listAll bigquery. jobs. listExecutionMetadata bigquery.jobs.update bigquery.models. bigquery.models.create bigquery.models.delete bigquery.models.export bigquery.models.getData bigquery.models.getMetadata bigquery.models.list bigquery.models.updateData bigquery.models.updateMetadata bigquery.models.updateTag bigquery.objectRefs. bigquery.objectRefs.read bigquery.objectRefs.write bigquery.readsessions. bigquery.readsessions.create bigquery.readsessions.getData bigquery.readsessions.update bigquery. reservationAssignments. bigquery. reservationAssignments. create bigquery. reservationAssignments. delete bigquery. reservationAssignments. list bigquery. reservationAssignments. search bigquery.reservationGroups. bigquery. reservationGroups. create bigquery. reservationGroups. delete bigquery.reservationGroups.get bigquery. reservationGroups. list bigquery.reservations. bigquery.reservations.create bigquery.reservations.delete bigquery.reservations.get bigquery. reservations. getIamPolicy bigquery.reservations.list bigquery. reservations. listFailoverDatasets bigquery. reservations. setIamPolicy bigquery.reservations.update bigquery.reservations.use bigquery.routines. bigquery.routines.create bigquery.routines.delete bigquery.routines.get bigquery.routines.list bigquery.routines.update bigquery.routines.updateTag bigquery. rowAccessPolicies. create bigquery. rowAccessPolicies. delete bigquery.rowAccessPolicies.get bigquery. rowAccessPolicies. getIamPolicy bigquery. rowAccessPolicies. list bigquery. rowAccessPolicies. overrideTimeTravelRestrictions bigquery. rowAccessPolicies. setIamPolicy bigquery. rowAccessPolicies. update bigquery.savedqueries. bigquery.savedqueries.create bigquery.savedqueries.delete bigquery.savedqueries.get bigquery.savedqueries.list bigquery.savedqueries.update bigquery.tables. bigquery.tables.create bigquery.tables.createIndex bigquery.tables.createSnapshot bigquery. tables. createTagBinding bigquery.tables.delete bigquery.tables.deleteIndex bigquery.tables.deleteSnapshot bigquery. tables. deleteTagBinding bigquery.tables.export bigquery.tables.get bigquery.tables.getData bigquery.tables.getIamPolicy bigquery.tables.list bigquery. tables. listEffectiveTags bigquery. tables. listTagBindings bigquery.tables.replicateData bigquery. tables. restoreSnapshot bigquery.tables.setCategory bigquery. tables. setColumnDataPolicy bigquery.tables.setIamPolicy bigquery.tables.update bigquery.tables.updateData bigquery.tables.updateIndex bigquery.tables.updateTag bigquery.transfers. bigquery.transfers.get bigquery.transfers.update bigquerymigration. translation. translate cloudkms.keyHandles. cloudkms.keyHandles.create cloudkms.keyHandles.get cloudkms.keyHandles.list cloudkms.operations.get cloudkms. projects. showEffectiveAutokeyConfig dataform. dataform.commentThreads.create dataform.commentThreads.delete dataform.commentThreads.get dataform.commentThreads.list dataform.commentThreads.update dataform.comments.create dataform.comments.delete dataform.comments.get dataform.comments.list dataform.comments.update dataform. compilationResults. create dataform. compilationResults. get dataform. compilationResults. list dataform. compilationResults. query dataform.config.get dataform.config.update dataform.folders.addContents dataform.folders.create dataform.folders.delete dataform.folders.deleteTree dataform.folders.get dataform.folders.getIamPolicy dataform.folders.move dataform.folders.queryContents dataform.folders.setIamPolicy dataform.folders.update dataform.locations.get dataform.locations.list dataform.operations.cancel dataform.operations.delete dataform.operations.get dataform.operations.list dataform.releaseConfigs.create dataform.releaseConfigs.delete dataform.releaseConfigs.get dataform.releaseConfigs.list dataform.releaseConfigs.update dataform.repositories.commit dataform. repositories. computeAccessTokenStatus dataform.repositories.create dataform.repositories.delete dataform. repositories. fetchHistory dataform. repositories. fetchRemoteBranches dataform.repositories.get dataform. repositories. getIamPolicy dataform.repositories.list dataform.repositories.move dataform. repositories. queryDirectoryContents dataform.repositories.readFile dataform. repositories. scheduleRelease dataform. repositories. scheduleWorkflow dataform. repositories. setIamPolicy dataform.repositories.update dataform.teamFolders.create dataform.teamFolders.delete dataform. teamFolders. deleteTree dataform.teamFolders.get dataform. teamFolders. getIamPolicy dataform. teamFolders. setIamPolicy dataform.teamFolders.update dataform. workflowConfigs. create dataform. workflowConfigs. delete dataform.workflowConfigs.get dataform.workflowConfigs.list dataform. workflowConfigs. update dataform. workflowInvocations. cancel dataform. workflowInvocations. create dataform. workflowInvocations. delete dataform. workflowInvocations. get dataform. workflowInvocations. list dataform. workflowInvocations. query dataform.workspaces.commit dataform.workspaces.create dataform.workspaces.delete dataform. workspaces. fetchFileDiff dataform. workspaces. fetchFileGitStatuses dataform. workspaces. fetchGitAheadBehind dataform.workspaces.get dataform. workspaces. getIamPolicy dataform. workspaces. installNpmPackages dataform.workspaces.list dataform. workspaces. makeDirectory dataform. workspaces. moveDirectory dataform.workspaces.moveFile dataform.workspaces.pull dataform.workspaces.push dataform. workspaces. queryDirectoryContents dataform.workspaces.readFile dataform. workspaces. removeDirectory dataform.workspaces.removeFile dataform.workspaces.reset dataform. workspaces. searchFiles dataform. workspaces. setIamPolicy dataform.workspaces.writeFile dataplex.datascans. dataplex.datascans.create dataplex.datascans.delete dataplex.datascans.get dataplex.datascans.getData dataplex. datascans. getIamPolicy dataplex.datascans.list dataplex.datascans.run dataplex. datascans. setIamPolicy dataplex.datascans.update dataplex.operations.get dataplex.operations.list dataplex.projects.search resourcemanager.projects.get resourcemanager.projects.list BigQuery Connection Admin ( roles/ bigquery.connectionAdmin ) Lowest-level resources where you can grant this role: Connection This role can also be granted on Resource Manager resources (projects, folders, and organizations). bigquery.connections. bigquery.connections.create bigquery.connections.delegate bigquery.connections.delete bigquery.connections.get bigquery. connections. getIamPolicy bigquery.connections.list bigquery. connections. setIamPolicy bigquery.connections.update bigquery.connections.updateTag bigquery.connections.use BigQuery Connection User ( roles/ bigquery.connectionUser ) Lowest-level resources where you can grant this role: Connection This role can also be granted on Resource Manager resources (projects, folders, and organizations). bigquery.connections.get bigquery. connections. getIamPolicy bigquery.connections.list bigquery.connections.use BigQuery Data Editor ( roles/ bigquery.dataEditor ) When granted on a dataset, this role grants these permissions: Get metadata and permissions for the dataset.",
+          "Role Permissions BigQuery Data Policy Admin ( roles/ bigquerydatapolicy.admin ) Role for managing Data Policies in BigQuery This role can only be granted on Resource Manager resources (projects, folders, and organizations). bigquery.dataPolicies.attach bigquery.dataPolicies.create bigquery.dataPolicies.delete bigquery.dataPolicies.get bigquery. dataPolicies. getIamPolicy bigquery.dataPolicies.list bigquery. dataPolicies. setIamPolicy bigquery.dataPolicies.update Bigquerydatapolicy Editor ( roles/ bigquerydatapolicy.editor ) Editor role for bigquerydatapolicy bigquery.bireservations. bigquery.bireservations.get bigquery.bireservations.update bigquery. capacityCommitments. get bigquery. capacityCommitments. list bigquery. capacityCommitments. update bigquery.config. bigquery.config.get bigquery.config.update bigquery.connections.create bigquery.connections.delete bigquery.connections.get bigquery. connections. getIamPolicy bigquery.connections.list bigquery.connections.update bigquery.connections.updateTag bigquery.connections.use bigquery.dataPolicies.attach bigquery.dataPolicies.create bigquery.dataPolicies.delete bigquery.dataPolicies.get bigquery. dataPolicies. getIamPolicy bigquery.dataPolicies.list bigquery.dataPolicies.update bigquery.datasets.create bigquery.datasets.get bigquery.datasets.getIamPolicy bigquery. datasets. listEffectiveTags bigquery. datasets. listTagBindings bigquery.datasets.updateTag bigquery.jobs.create bigquery. jobs. createGlobalQuery bigquery.jobs.delete bigquery.jobs.get bigquery.jobs.list bigquery. jobs. listExecutionMetadata bigquery.models. bigquery.models.create bigquery.models.delete bigquery.models.export bigquery.models.getData bigquery.models.getMetadata bigquery.models.list bigquery.models.updateData bigquery.models.updateMetadata bigquery.models.updateTag bigquery.objectRefs. bigquery.objectRefs.read bigquery.objectRefs.write bigquery.readsessions. bigquery.readsessions.create bigquery.readsessions.getData bigquery.readsessions.update bigquery. reservationAssignments. bigquery. reservationAssignments. create bigquery. reservationAssignments. delete bigquery. reservationAssignments. list bigquery. reservationAssignments. search bigquery.reservationGroups. bigquery. reservationGroups. create bigquery. reservationGroups. delete bigquery.reservationGroups.get bigquery. reservationGroups. list bigquery.reservations.create bigquery.reservations.delete bigquery.reservations.get bigquery. reservations. getIamPolicy bigquery.reservations.list bigquery. reservations. listFailoverDatasets bigquery.reservations.update bigquery.reservations.use bigquery.routines. bigquery.routines.create bigquery.routines.delete bigquery.routines.get bigquery.routines.list bigquery.routines.update bigquery.routines.updateTag bigquery. rowAccessPolicies. create bigquery. rowAccessPolicies. delete bigquery.rowAccessPolicies.get bigquery. rowAccessPolicies. getIamPolicy bigquery. rowAccessPolicies. list bigquery. rowAccessPolicies. update bigquery.savedqueries. bigquery.savedqueries.create bigquery.savedqueries.delete bigquery.savedqueries.get bigquery.savedqueries.list bigquery.savedqueries.update bigquery.tables.createIndex bigquery.tables.createSnapshot bigquery.tables.deleteIndex bigquery.tables.getIamPolicy bigquery. tables. listEffectiveTags bigquery. tables. listTagBindings bigquery.tables.replicateData bigquery. tables. restoreSnapshot bigquery.tables.updateIndex bigquery.transfers. bigquery.transfers.get bigquery.transfers.update resourcemanager.projects.get resourcemanager.projects.list BigQuery Data Policy Viewer ( roles/ bigquerydatapolicy.viewer ) Role for viewing Data Policies in BigQuery This role can only be granted on Resource Manager resources (projects, folders, and organizations). bigquery.dataPolicies.get bigquery.dataPolicies.list Masked Reader ( roles/ bigquerydatapolicy.maskedReader ) Masked read access to sub-resources tagged by the policy tag associated with a data policy, for example, BigQuery columns This role can only be granted on Resource Manager resources (projects, folders, and organizations). bigquery. dataPolicies. maskedGet Raw Data Reader Beta ( roles/ bigquerydatapolicy.rawDataReader ) Raw read access to sub-resources associated with a data policy, for example, BigQuery columns This role can only be granted on Resource Manager resources (projects, folders, and organizations). bigquery. dataPolicies. getRawData BigQuery Data Transfer Service roles This table lists the predefined IAM roles and permissions for BigQuery Data Transfer Service."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "explicit",
+    "explicit_roles": [
+      "roles/accessapproval.admin",
+      "roles/accessapproval.approver",
+      "roles/accessapproval.configEditor"
+    ],
+    "explicit_permissions": [
+      {
+        "permission": "resourcemanager.projects.get",
+        "group": "resourcemanager",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver",
+          "roles/accessapproval.configEditor"
+        ]
+      },
+      {
+        "permission": "resourcemanager.projects.list",
+        "group": "resourcemanager",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver",
+          "roles/accessapproval.configEditor"
+        ]
+      }
+    ],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "aiplatform.locations.get",
+      "aiplatform.notebookRuntimes",
+      "aiplatform.operations.list",
+      "attribute.value",
+      "bigquery.bireservations",
+      "bigquery.bireservations.get",
+      "bigquery.bireservations.update",
+      "bigquery.capacityCommitments",
+      "bigquery.config",
+      "bigquery.config.get",
+      "bigquery.config.update",
+      "bigquery.connectionAdmin",
+      "bigquery.connections",
+      "bigquery.connections.create",
+      "bigquery.connections.delegate",
+      "bigquery.connections.delete",
+      "bigquery.connections.get",
+      "bigquery.connections.list",
+      "bigquery.connections.update",
+      "bigquery.connections.updateTag",
+      "bigquery.connections.use",
+      "bigquery.connectionUser",
+      "bigquery.dataEditor",
+      "bigquery.dataPolicies.attach",
+      "bigquery.dataPolicies.create",
+      "bigquery.dataPolicies.delete",
+      "bigquery.dataPolicies.get",
+      "bigquery.dataPolicies.list",
+      "bigquery.dataPolicies.update",
+      "bigquery.datasets",
+      "bigquery.datasets.create",
+      "bigquery.datasets.delete",
+      "bigquery.datasets.get",
+      "bigquery.datasets.getIamPolicy",
+      "bigquery.datasets.link",
+      "bigquery.datasets.setIamPolicy",
+      "bigquery.datasets.update",
+      "bigquery.datasets.updateTag",
+      "bigquery.jobs",
+      "bigquery.jobs.create",
+      "bigquery.jobs.delete",
+      "bigquery.jobs.get",
+      "bigquery.jobs.list",
+      "bigquery.jobs.listAll",
+      "bigquery.jobs.update",
+      "bigquery.models",
+      "bigquery.models.create",
+      "bigquery.models.delete",
+      "bigquery.models.export",
+      "bigquery.models.getData",
+      "bigquery.models.getMetadata",
+      "bigquery.models.list",
+      "bigquery.models.updateData",
+      "bigquery.models.updateMetadata",
+      "bigquery.models.updateTag",
+      "bigquery.objectRefs",
+      "bigquery.objectRefs.read",
+      "bigquery.objectRefs.write",
+      "bigquery.readsessions",
+      "bigquery.readsessions.create",
+      "bigquery.readsessions.getData",
+      "bigquery.readsessions.update",
+      "bigquery.reservationGroups",
+      "bigquery.reservationGroups.get",
+      "bigquery.reservations",
+      "bigquery.reservations.create",
+      "bigquery.reservations.delete",
+      "bigquery.reservations.get",
+      "bigquery.reservations.list",
+      "bigquery.reservations.update",
+      "bigquery.reservations.use",
+      "bigquery.routineAdmin",
+      "bigquery.routineDataEditor",
+      "bigquery.routineDataViewer",
+      "bigquery.routineMetadataViewer",
+      "bigquery.routines",
+      "bigquery.routines.create",
+      "bigquery.routines.delete",
+      "bigquery.routines.get",
+      "bigquery.routines.list",
+      "bigquery.routines.update",
+      "bigquery.routines.updateTag",
+      "bigquery.rowAccessPolicies.get",
+      "bigquery.savedqueries",
+      "bigquery.savedqueries.create",
+      "bigquery.savedqueries.delete",
+      "bigquery.savedqueries.get",
+      "bigquery.savedqueries.list",
+      "bigquery.savedqueries.update",
+      "bigquery.securityAdmin",
+      "bigquery.studioAdmin",
+      "bigquery.studioUser",
+      "bigquery.tables",
+      "bigquery.tables.create",
+      "bigquery.tables.createIndex",
+      "bigquery.tables.createSnapshot",
+      "bigquery.tables.delete",
+      "bigquery.tables.deleteIndex",
+      "bigquery.tables.deleteSnapshot",
+      "bigquery.tables.export",
+      "bigquery.tables.get",
+      "bigquery.tables.getData",
+      "bigquery.tables.getIamPolicy",
+      "bigquery.tables.list",
+      "bigquery.tables.replicateData",
+      "bigquery.tables.setCategory",
+      "bigquery.tables.setIamPolicy",
+      "bigquery.tables.update",
+      "bigquery.tables.updateData",
+      "bigquery.tables.updateIndex",
+      "bigquery.tables.updateTag",
+      "bigquery.transfers",
+      "bigquery.transfers.get",
+      "bigquery.transfers.update",
+      "bigquerydatapolicy.admin",
+      "bigquerydatapolicy.editor",
+      "bigquerydatapolicy.maskedReader",
+      "bigquerydatapolicy.rawDataReader",
+      "bigquerydatapolicy.viewer",
+      "cloudaicompanion.companions",
+      "cloudaicompanion.instances",
+      "cloudaicompanion.topics.create",
+      "cloudkms.keyHandles",
+      "cloudkms.keyHandles.create",
+      "cloudkms.keyHandles.get",
+      "cloudkms.keyHandles.list",
+      "cloudkms.operations.get",
+      "compute.projects.get",
+      "compute.regions",
+      "compute.regions.get",
+      "compute.regions.list",
+      "compute.reservations.get",
+      "compute.reservations.list",
+      "compute.zones",
+      "compute.zones.get",
+      "compute.zones.list",
+      "dataform.comments.create",
+      "dataform.comments.delete",
+      "dataform.comments.get",
+      "dataform.comments.list",
+      "dataform.comments.update",
+      "dataform.commentThreads.create",
+      "dataform.commentThreads.delete",
+      "dataform.commentThreads.get",
+      "dataform.commentThreads.list",
+      "dataform.commentThreads.update",
+      "dataform.config.get",
+      "dataform.config.update",
+      "dataform.folders.addContents",
+      "dataform.folders.create",
+      "dataform.folders.delete",
+      "dataform.folders.deleteTree",
+      "dataform.folders.get",
+      "dataform.folders.getIamPolicy",
+      "dataform.folders.move",
+      "dataform.folders.queryContents",
+      "dataform.folders.setIamPolicy",
+      "dataform.folders.update",
+      "dataform.locations.get",
+      "dataform.locations.list",
+      "dataform.operations.cancel",
+      "dataform.operations.delete",
+      "dataform.operations.get",
+      "dataform.operations.list",
+      "dataform.releaseConfigs.create",
+      "dataform.releaseConfigs.delete",
+      "dataform.releaseConfigs.get",
+      "dataform.releaseConfigs.list",
+      "dataform.releaseConfigs.update",
+      "dataform.repositories.commit",
+      "dataform.repositories.create",
+      "dataform.repositories.delete",
+      "dataform.repositories.get",
+      "dataform.repositories.list",
+      "dataform.repositories.move",
+      "dataform.repositories.readFile",
+      "dataform.repositories.update",
+      "dataform.teamFolders.create",
+      "dataform.teamFolders.delete",
+      "dataform.teamFolders.get",
+      "dataform.teamFolders.update",
+      "dataform.workflowConfigs.get",
+      "dataform.workflowConfigs.list",
+      "dataform.workspaces.commit",
+      "dataform.workspaces.create",
+      "dataform.workspaces.delete",
+      "dataform.workspaces.get",
+      "dataform.workspaces.list",
+      "dataform.workspaces.moveFile",
+      "dataform.workspaces.pull",
+      "dataform.workspaces.push",
+      "dataform.workspaces.readFile",
+      "dataform.workspaces.removeFile",
+      "dataform.workspaces.reset",
+      "dataform.workspaces.writeFile",
+      "dataplex.datascans",
+      "dataplex.datascans.create",
+      "dataplex.datascans.delete",
+      "dataplex.datascans.get",
+      "dataplex.datascans.getData",
+      "dataplex.datascans.list",
+      "dataplex.datascans.run",
+      "dataplex.datascans.update",
+      "dataplex.operations.get",
+      "dataplex.operations.list",
+      "dataplex.projects.search",
+      "dataproc.batches",
+      "dataproc.batches.analyze",
+      "dataproc.batches.cancel",
+      "dataproc.batches.create",
+      "dataproc.batches.delete",
+      "dataproc.batches.get",
+      "dataproc.batches.list",
+      "dataproc.operations.cancel",
+      "dataproc.operations.delete",
+      "dataproc.operations.get",
+      "dataproc.operations.list",
+      "dataproc.sessions",
+      "dataproc.sessions.create",
+      "dataproc.sessions.delete",
+      "dataproc.sessions.get",
+      "dataproc.sessions.list",
+      "dataproc.sessions.terminate",
+      "dataproc.sessionTemplates",
+      "dataproc.sessionTemplates.get",
+      "dataproc.sessionTemplates.list",
+      "dataprocrm.nodePools",
+      "dataprocrm.nodePools.create",
+      "dataprocrm.nodePools.delete",
+      "dataprocrm.nodePools.get",
+      "dataprocrm.nodePools.list",
+      "dataprocrm.nodePools.resize",
+      "dataprocrm.nodes.get",
+      "dataprocrm.nodes.heartbeat",
+      "dataprocrm.nodes.list",
+      "dataprocrm.nodes.update",
+      "dataprocrm.operations.get",
+      "dataprocrm.operations.list",
+      "dataprocrm.workloads",
+      "dataprocrm.workloads.cancel",
+      "dataprocrm.workloads.create",
+      "dataprocrm.workloads.delete",
+      "dataprocrm.workloads.get",
+      "dataprocrm.workloads.list",
+      "example.cloud.looker.com",
+      "query.model",
+      "user.name"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/reference/looker-api/latest/methods/Artifact/update_artifacts",
+        "https://docs.cloud.google.com/looker/docs/best-practices/oauth-read-only",
+        "https://docs.cloud.google.com/bigquery/docs/access-control"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/reference/looker-api/latest/methods/Artifact/update_artifacts",
+        "https://docs.cloud.google.com/looker/docs/best-practices/oauth-read-only",
+        "https://docs.cloud.google.com/bigquery/docs/access-control"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/reference/looker-api/latest/methods/Artifact/update_artifacts",
+        "https://docs.cloud.google.com/looker/docs/best-practices/oauth-read-only",
+        "https://docs.cloud.google.com/bigquery/docs/access-control"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/reference/looker-api/latest/methods/Artifact/update_artifacts",
+        "https://docs.cloud.google.com/looker/docs/best-practices/oauth-read-only",
+        "https://docs.cloud.google.com/bigquery/docs/access-control"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/reference/looker-api/latest/methods/Artifact/update_artifacts",
+        "https://docs.cloud.google.com/looker/docs/best-practices/oauth-read-only",
+        "https://docs.cloud.google.com/bigquery/docs/access-control"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/reference/looker-api/latest/methods/Artifact/update_artifacts",
+        "https://docs.cloud.google.com/looker/docs/best-practices/oauth-read-only",
+        "https://docs.cloud.google.com/bigquery/docs/access-control"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/reference/looker-api/latest/methods/Artifact/update_artifacts",
+        "https://docs.cloud.google.com/looker/docs/best-practices/oauth-read-only",
+        "https://docs.cloud.google.com/bigquery/docs/access-control"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/reference/looker-api/latest/methods/Artifact/update_artifacts",
+        "https://docs.cloud.google.com/looker/docs/best-practices/oauth-read-only",
+        "https://docs.cloud.google.com/bigquery/docs/access-control"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/reference/looker-api/latest/methods/Artifact/update_artifacts",
+        "https://docs.cloud.google.com/looker/docs/best-practices/oauth-read-only",
+        "https://docs.cloud.google.com/bigquery/docs/access-control"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/reference/looker-api/latest/methods/Artifact/update_artifacts",
+        "https://docs.cloud.google.com/looker/docs/best-practices/oauth-read-only",
+        "https://docs.cloud.google.com/bigquery/docs/access-control"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/reference/looker-api/latest/methods/Artifact/update_artifacts",
+        "https://docs.cloud.google.com/looker/docs/best-practices/oauth-read-only",
+        "https://docs.cloud.google.com/bigquery/docs/access-control"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/reference/looker-api/latest/methods/Artifact/update_artifacts",
+        "https://docs.cloud.google.com/looker/docs/best-practices/oauth-read-only",
+        "https://docs.cloud.google.com/bigquery/docs/access-control"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/reference/looker-api/latest/methods/Artifact/update_artifacts",
+        "https://docs.cloud.google.com/looker/docs/best-practices/oauth-read-only",
+        "https://docs.cloud.google.com/bigquery/docs/access-control"
+      ]
+    }
+  ]
+}

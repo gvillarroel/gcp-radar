@@ -1,0 +1,110 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:46.193Z",
+  "source_step08_card": "data/step-08/current/products/sensitive-data-protection/card.json",
+  "product_name": "Sensitive Data Protection",
+  "product_slug": "sensitive-data-protection",
+  "feature_name": "Structured Avro scanning",
+  "feature_slug": "structured-avro-scanning",
+  "summary": "Avro files are scanned as structured data with findings surfaced as rows and columns.",
+  "extended_definition": "Avro files are scanned as structured data with findings surfaced as rows and columns.",
+  "lifecycle": {
+    "latest_feature_date": "2019-06-12",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/sensitive-data-protection/docs/inspecting-storage",
+      "https://docs.cloud.google.com/sensitive-data-protection/docs/known-issues",
+      "https://docs.cloud.google.com/sensitive-data-protection/docs/supported-file-types"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Supported file types and scanning modes \\_|\\_ Sensitive Data Protection\\",
+        "url": "https://docs.cloud.google.com/sensitive-data-protection/docs/supported-file-types",
+        "source_id": "site-docs-reference-3",
+        "final_score": 193,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "File cluster File extensions Limits Scanning mode Text asc, eml, htm, html, ini, json, jsonL, log, markdown, md, mkd, plist, shtm, shtml, sql, tex, text, txt, vcard, vcs, xsd, xsl Plain text Source Code bat, brf, c, c++, cc, cmd, cpp, cs, css, cxx, dart, go, h, hh, hpp, hs, hxx, java, js, lhs, m, ml, ocaml, php, phtm, phtml, pl, ps1, py, pyw, rb, rbw, rc, rs, scala, scpt, scr, script, sh, sql, vb, vbs, wml, xml, yaml, yml Plain text Structured Data avro, csv, tsv, proto Structured parsing for avro, csv, and tsv files.",
+          "RecordLocation Scanning structured files in structured parsing mode When you scan a structured file—such as an Avro, CSV, or TSV file—Sensitive Data Protection attempts to scan the file in structured parsing scanning mode .",
+          "OCR Image content detection Image content classification Executables ac, air, apk, app, appimage, bas, bin, bms, class, cls, com, command, ctl, ctx, dca, ddf, dep, dll, dob, dox, dsr, dsx, dws, exe, frm, frx, gadget, ipa, mpk, oca, ocx, pag, pgx, pif, pyc, res, run, scb, tlb, vbd, vbg, vbl, vbp, vbr, vbw, vbz, vlx, wct, widget, workflow, wsf, x86, x86 64, xap, xbe, xlm Not scanned at this time Archives 7z, a, ace, afa, alz, apk, ar, arc, arj, ark, b1, b6z, ba, bh, cab, car, cdx, cfs, cpio, cpt, dar, dd, dgc, dmg, ear, esd, gca, genozip, gz, ha, hki, ice, ima, img, iso, jar, kgb, lha, lpaq# , lzh, lzx, mou, pak, paq# , paq6, paq7, paq8 and variants, partimg, pea, phar, pim, pit, qda, rar, rk, run, s7z, sda, sea, sen, sfx, shar, shk, sit, sitx, sqx, swm, tar, tar.bz2, tar.gz, tar.lz4, tar.lzma, tar.xz, tar.z, tgz, uc, uc0, uc2, uca, ucn, ue2, uha, ur2, war, wim, xar, xp3, yz1, zip, zipx, zoo, zpaq, zz Sensitive Data Protection scans files within archives that have these file extensions: bz2, cpio, gz, jar, lz4, lzma, tar, tar.bz2, tar.gz, tar.lz4, tar.lzma, tar.xz, tar.z, xz, z, zip The scanning mode used for each file depends on the type of the file."
+        ]
+      },
+      {
+        "title": "\"Inspect Google Cloud storage and databases for sensitive data \\_|\\_ Sensitive\\",
+        "url": "https://docs.cloud.google.com/sensitive-data-protection/docs/inspecting-storage",
+        "source_id": "site-docs-reference-3",
+        "final_score": 187,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "JSON output: { \"name\" : \"projects/[PROJECT-ID]/dlpJobs/[JOB-ID]\" , \"type\" : \"INSPECT JOB\" , \"state\" : \"PENDING\" , \"inspectDetails\" :{ \"requestedOptions\" :{ \"snapshotInspectTemplate\" :{ } , \"jobConfig\" :{ \"storageConfig\" :{ \"cloudStorageOptions\" :{ \"fileSet\" :{ \"url\" : \"gs://[BUCKET NAME]/ \" } , \"bytesLimitPerFile\" : \"200\" , \"fileTypes\" : [ \"TEXT FILE\" ] , \"sampleMethod\" : \"TOP\" , \"filesLimitPercent\" : 90 } } , \"inspectConfig\" :{ \"infoTypes\" : [ { \"name\":\"PERSON NAME\" } ] , \"minLikelihood\" : \"POSSIBLE\" , \"limits\" :{ } , \"includeQuote\" : true , \"excludeInfoTypes\" : true } , \"actions\" : [ { \"saveFindings\":{ \"outputConfig\":{ \"table\":{ \"projectId\":\"[PROJECT-ID ] \", \" datasetId \":\" [ DATASET-ID ] \", \" tableId \":\" [ TABLE-ID ] \" }, \" outputSchema \":\" BASIC COLUMNS \" } } } ] } } }, \" createTime \":\" 2018 - 05 - 30 T22 : 22 : 08.279 Z \" } Limit BigQuery scans To enable sampling in BigQuery by limiting the amount of data that is scanned, specify the following optional fields within BigQueryOptions : rowsLimit : The maximum number of rows to scan.",
+          "For more information, see Set up authentication for a local development environment . import threading from typing import List import google.cloud.dlp import google.cloud.pubsub def inspect gcs with sampling ( project : str , bucket : str , topic id : str , subscription id : str , info types : List [ str ] = None , file types : List [ str ] = None , min likelihood : str = None , max findings : int = None , timeout : int = 300 , ) - > None : \"\"\"Uses the Data Loss Prevention API to analyze files in GCS by limiting the amount of data to be scanned.",
+          "When scanning files in Cloud Storage locations, Sensitive Data Protection supports scanning of binary, text, image, Microsoft Word, Microsoft Excel, Microsoft Powerpoint, PDF, and Apache Avro files."
+        ]
+      },
+      {
+        "title": "Known issues \\_|\\_ Sensitive Data Protection \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/sensitive-data-protection/docs/known-issues",
+        "source_id": "site-docs-reference-3",
+        "final_score": 166,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Structured files being scanned in binary mode In certain cases, files that are typically scanned in structured parsing mode might be scanned in binary mode, which doesn't include the enhancements of the structured parsing mode.",
+          "For more information, see Scanning structured files in structured parsing mode .",
+          "Exported findings do not have values for the row number field When you configure Sensitive Data Protection to save findings to BigQuery, the location.content locations.record location.record key.big query key.row number field in the generated BigQuery table is inferred at the time the input table is scanned."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "key.big",
+      "key.row",
+      "location.content",
+      "location.record",
+      "locations.record",
+      "tar.bz2",
+      "tar.gz",
+      "tar.lz4",
+      "tar.lzma",
+      "tar.xz",
+      "tar.z"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/supported-file-types",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/inspecting-storage",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/known-issues"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/supported-file-types",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/inspecting-storage",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/known-issues"
+      ]
+    }
+  ]
+}

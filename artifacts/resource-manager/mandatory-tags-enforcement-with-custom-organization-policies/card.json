@@ -1,0 +1,144 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:45.649Z",
+  "source_step08_card": "data/step-08/current/products/resource-manager/card.json",
+  "product_name": "Resource Manager",
+  "product_slug": "resource-manager",
+  "feature_name": "Mandatory tags enforcement with custom organization policies",
+  "feature_slug": "mandatory-tags-enforcement-with-custom-organization-policies",
+  "summary": "Custom organization policies can enforce mandatory tags on newly created resources.",
+  "extended_definition": "Custom organization policies can enforce mandatory tags on newly created resources.",
+  "lifecycle": {
+    "latest_feature_date": "2025-03-17",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/resource-manager/docs/essentialcontacts-custom-org-policies",
+      "https://docs.cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing",
+      "https://docs.cloud.google.com/resource-manager/docs/tags/tags-overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Create and manage tags \\_|\\_ Resource Manager \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing",
+        "source_id": "site-docs-reference-2",
+        "final_score": 233,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To learn more about tags enforcement, see Enforcement of mandatory tags using organization policies .",
+          "Set up a custom constraint with the following parameters: Enforcement method : Govern tags Resource type : the fully qualified name of the Google Cloud REST resource that you want to enforce mandatory tags on, for example, file.googleapis.com/Instance Condition : a Common Expression Language (CEL) condition specifying the tag keys that you want to enforce on the resource, for example resource.hasDirectTagKey(\"1234567890/owner\") to enforce a tag binding for the tag key 1234567890/owner .",
+          "To enforce mandatory tags on resources, create a custom organization policy and set the policy on an organization, folder, or project resource to enforce the custom constraint."
+        ]
+      },
+      {
+        "title": "Tags overview \\_|\\_ Resource Manager \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/resource-manager/docs/tags/tags-overview",
+        "source_id": "site-docs-reference-2",
+        "final_score": 227,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Enforcement of mandatory tags using organization policies Preview This product or feature is subject to the \"Pre-GA Offerings Terms\" in the General Service Terms section of the Service Specific Terms .",
+          "When you enforce mandatory tags, you can only create resources that comply with your organization's tagging policies; that is, resources are bound with the tag values for the mandatory tag keys specified in the policy.",
+          "You can enforce mandatory tags on resources by using a custom organization policy."
+        ]
+      },
+      {
+        "title": "\"Create custom constraints for Essential Contacts \\_|\\_ Resource Manager\\",
+        "url": "https://docs.cloud.google.com/resource-manager/docs/essentialcontacts-custom-org-policies",
+        "source_id": "site-docs-reference-2",
+        "final_score": 176,
+        "relevance": "",
+        "evidence_snippets": [
+          "After you verify that the organization policy in dry-run mode works as intended, set the live policy by clicking Set policy . gcloud To create an organization policy with boolean rules, create a policy YAML file that references the constraint: name : projects/ PROJECT ID /policies/ CONSTRAINT NAME spec : rules : - enforce : true dryRunSpec : rules : - enforce : true Replace the following: PROJECT ID : the project that you want to enforce your constraint on.",
+          "Apply the constraint: gcloud org-policies set-custom-constraint constraint-technical-notification.yaml Verify that the constraint exists: gcloud org-policies list-custom-constraints --organization = ORGANIZATION ID The output is similar to the following: CUSTOM CONSTRAINT ACTION TYPE METHOD TYPES RESOURCE TYPES DISPLAY NAME custom.onlyTechnicalNotificationsAllowed ALLOW CREATE,UPDATE essentialcontacts.googleapis.com/Contact TechnicalNotifications ...",
+          "This page shows you how to use Organization Policy Service custom constraints to restrict specific operations on the following Google Cloud resources: essentialcontacts.googleapis.com/Contact To learn more about Organization Policy, see Custom organization policies ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "custom.onlyTechnicalNotificationsAllowed",
+      "essentialcontacts.googleapis.com",
+      "file.googleapis.com",
+      "notification.yaml",
+      "resource.hasDirectTagKey"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing",
+        "https://docs.cloud.google.com/resource-manager/docs/tags/tags-overview",
+        "https://docs.cloud.google.com/resource-manager/docs/essentialcontacts-custom-org-policies"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing",
+        "https://docs.cloud.google.com/resource-manager/docs/tags/tags-overview",
+        "https://docs.cloud.google.com/resource-manager/docs/essentialcontacts-custom-org-policies"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing",
+        "https://docs.cloud.google.com/resource-manager/docs/tags/tags-overview",
+        "https://docs.cloud.google.com/resource-manager/docs/essentialcontacts-custom-org-policies"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing",
+        "https://docs.cloud.google.com/resource-manager/docs/tags/tags-overview",
+        "https://docs.cloud.google.com/resource-manager/docs/essentialcontacts-custom-org-policies"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing",
+        "https://docs.cloud.google.com/resource-manager/docs/tags/tags-overview",
+        "https://docs.cloud.google.com/resource-manager/docs/essentialcontacts-custom-org-policies"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing",
+        "https://docs.cloud.google.com/resource-manager/docs/tags/tags-overview",
+        "https://docs.cloud.google.com/resource-manager/docs/essentialcontacts-custom-org-policies"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing",
+        "https://docs.cloud.google.com/resource-manager/docs/tags/tags-overview",
+        "https://docs.cloud.google.com/resource-manager/docs/essentialcontacts-custom-org-policies"
+      ]
+    }
+  ]
+}

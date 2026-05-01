@@ -1,0 +1,128 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:47.927Z",
+  "source_step08_card": "data/step-08/current/products/text-to-speech/card.json",
+  "product_name": "Text-to-Speech",
+  "product_slug": "text-to-speech",
+  "feature_name": "Cloud Text-to-Speech API",
+  "feature_slug": "cloud-text-to-speech-api",
+  "summary": "The Cloud Text-to-Speech API is introduced as a new beta offering.",
+  "extended_definition": "The Cloud Text-to-Speech API is introduced as a new beta offering.",
+  "lifecycle": {
+    "latest_feature_date": "2018-03-27",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/text-to-speech/docs/authentication",
+      "https://docs.cloud.google.com/text-to-speech/docs/create-audio-text-long-audio-synthesis",
+      "https://docs.cloud.google.com/text-to-speech/docs/reference/rest"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Quickstart: Create long-form audio \\_|\\_ Cloud Text-to-Speech \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/text-to-speech/docs/create-audio-text-long-audio-synthesis",
+        "source_id": "site-docs-reference-2",
+        "final_score": 51,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Save the request body in a file named request.json , and execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method POST -Headers $headers -ContentType: \"application/json; charset=utf-8\" -InFile request.json -Uri \"https://texttospeech.googleapis.com/v1beta1/projects/12345/locations/global:synthesizeLongAudio\" Select-Object -Expand Content You should receive a JSON response similar to the following: { \"name\": \"23456\", \"metadata\": { \"@type\": \"type.googleapis.com/google.cloud.texttospeech.v1beta1.SynthesizeLongAudioMetadata\", \"progressPercentage\": 0, \"startTime\": \"2022-12-20T00:46:56.296191037Z\", \"lastUpdateTime\": \"2022-12-20T00:46:56.296191037Z\" }, \"done\": false } The JSON output for the REST command contains the long operation name in the name field.",
+          "HTTP method and URL: POST https://texttospeech.googleapis.com/v1beta1/projects/12345/locations/global:synthesizeLongAudio Request JSON body: { \"parent\": \"projects/12345/locations/global\", \"audio config\":{ \"audio encoding\":\"LINEAR16\" }, \"input\":{ \"text\":\"hello\" }, \"voice\":{ \"language code\":\"en-us\", \"name\":\"en-us-Standard-A\" }, \"output gcs uri\": \"gs://bucket name/file name.wav\" } To send your request, expand one of these options: curl (Linux, macOS, or Cloud Shell) Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI .",
+          "Execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method GET -Headers $headers -Uri \"https://texttospeech.googleapis.com/v1beta1/projects/12345/locations/global/operations/23456\" Select-Object -Expand Content You should receive a JSON response similar to the following: { \"name\": \"projects/12345/locations/global/operations/23456\", \"metadata\": { \"@type\": \"type.googleapis.com/google.cloud.texttospeech.v1beta1.SynthesizeLongAudioMetadata\", \"progressPercentage\": 100 }, \"done\": true } Query the list of all operations running under a given project, execute the REST request."
+        ]
+      },
+      {
+        "title": "Cloud Text-to-Speech API \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/text-to-speech/docs/reference/rest",
+        "source_id": "site-api-reference",
+        "final_score": 37,
+        "relevance": "",
+        "evidence_snippets": [
+          "REST Resource: v1beta1.projects.locations REST Resource: v1beta1.projects.locations.operations REST Resource: v1beta1.text REST Resource: v1beta1.voices REST Resource: v1.operations REST Resource: v1.projects.locations REST Resource: v1.projects.locations.operations REST Resource: v1.text REST Resource: v1.voices Service: texttospeech.googleapis.com To call this service, we recommend that you use the Google-provided client libraries .",
+          "This service has the following service endpoint and all URIs below are relative to this service endpoint: https://texttospeech.googleapis.com REST Resource: v1beta1.projects.locations Methods synthesizeLongAudio POST /v1beta1/{parent=projects/ /locations/ }:synthesizeLongAudio Synthesizes long form text asynchronously.",
+          "This service provides the following discovery documents: https://texttospeech.googleapis.com/$discovery/rest?version=v1 https://texttospeech.googleapis.com/$discovery/rest?version=v1beta1 Service endpoint A service endpoint is a base URL that specifies the network address of an API service."
+        ]
+      },
+      {
+        "title": "\"Authenticate to Cloud TTS \\_|\\_ Cloud Text-to-Speech \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/text-to-speech/docs/authentication",
+        "source_id": "site-api-reference",
+        "final_score": 34,
+        "relevance": "",
+        "evidence_snippets": [
+          "Home Documentation AI and ML Cloud Text-to-Speech Reference Send feedback Authenticate to Cloud TTS Stay organized with collections Save and categorize content based on your preferences.",
+          "How you authenticate to Cloud Text-to-Speech depends on the interface you use to access the API and the environment where your code is running.",
+          "This document describes how to authenticate to Cloud Text-to-Speech programmatically."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "name.wav",
+      "request.json",
+      "texttospeech.googleapis.com",
+      "type.googleapis.com",
+      "v1.operations",
+      "v1.projects.locations",
+      "v1.projects.locations.operations",
+      "v1.text",
+      "v1.voices",
+      "v1beta1.projects.locations",
+      "v1beta1.projects.locations.operations",
+      "v1beta1.text",
+      "v1beta1.voices"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/text-to-speech/docs/reference/rest",
+        "https://docs.cloud.google.com/text-to-speech/docs/create-audio-text-long-audio-synthesis",
+        "https://docs.cloud.google.com/text-to-speech/docs/authentication"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/text-to-speech/docs/reference/rest",
+        "https://docs.cloud.google.com/text-to-speech/docs/create-audio-text-long-audio-synthesis",
+        "https://docs.cloud.google.com/text-to-speech/docs/authentication"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/text-to-speech/docs/reference/rest",
+        "https://docs.cloud.google.com/text-to-speech/docs/create-audio-text-long-audio-synthesis",
+        "https://docs.cloud.google.com/text-to-speech/docs/authentication"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/text-to-speech/docs/reference/rest",
+        "https://docs.cloud.google.com/text-to-speech/docs/create-audio-text-long-audio-synthesis",
+        "https://docs.cloud.google.com/text-to-speech/docs/authentication"
+      ]
+    }
+  ]
+}

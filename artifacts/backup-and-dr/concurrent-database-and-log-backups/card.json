@@ -1,0 +1,110 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:18.295Z",
+  "source_step08_card": "data/step-08/current/products/backup-and-dr/card.json",
+  "product_name": "Backup and DR",
+  "product_slug": "backup-and-dr",
+  "feature_name": "Concurrent database and log backups",
+  "feature_slug": "concurrent-database-and-log-backups",
+  "summary": "Backup and DR Service added support for running database backups and log backups concurrently.",
+  "extended_definition": "Backup and DR Service added support for running database backups and log backups concurrently.",
+  "lifecycle": {
+    "latest_feature_date": "2023-08-21",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/backup-disaster-recovery/docs/configuration/prepare-otherdb",
+      "https://docs.cloud.google.com/backup-disaster-recovery/docs/deployment/deployment-plan",
+      "https://docs.cloud.google.com/backup-disaster-recovery/docs/quickstarts/sap-hana-on-gce-backup-recovery"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Protect and recover SAP HANA databases in Compute Engine instances \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/backup-disaster-recovery/docs/quickstarts/sap-hana-on-gce-backup-recovery",
+        "source_id": "site-docs-reference",
+        "final_score": 162,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Note: When using the Persistent Disk snapshot backup capture method, concurrent database and log backups are not supported; they will execute sequentially according to the backup plan.",
+          "Procedure Connect to the HANA database system using SSH and log into (sid)adm: su - (sid)adm Change directory: cd exe Create entries in hdbuserstore using command hdbuserstore : ./hdbuserstore SET (key name) (host name):(port) (DB user name) (DB user password) In this example: ` ./hdbuserstore SET ACTBACKUP s4hana:30013 ACTBACKUP (DB user password) Check the keystore: ./hdbuserstore list Set up the log mode and log backup in HANA Studio Using the HANA Studio set the HANA log mode and log backup location for Backup and DR to take backups of HANA DB transaction logs: In SAP HANA HDB studio, make sure log backup is set correctly under DATABASE (SYSTEMDB FOR HANA 2.0) > Backup > Configuration page: Destination type is File .",
+          "About this quickstart exercise This exercise guides you through the steps of discovering and protecting an SAP HANA database running in a Compute Engine instance, and finally mounting a fully-functional new HANA database from the backup image to a new location."
+        ]
+      },
+      {
+        "title": "\"Prepare other self-managed databases for Backup and DR \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/backup-disaster-recovery/docs/configuration/prepare-otherdb",
+        "source_id": "site-api-reference",
+        "final_score": 95,
+        "relevance": "",
+        "evidence_snippets": [
+          "SAP MaxDB database prerequisites Before you begin, on the SAP MaxDB server: If there are multiple MaxDB instances running on a server, then the DB username and password must be common for all MaxDB instance running on that server.",
+          "Add or update the parameters in the file /pgdata/11/data/postgresql.conf wal level = replica archive mode = always archive command = 'test ! -f /pglog/%f && cp %p /pglog/%f' Restart the PostgreSQL: /usr/pgsql-11/bin/pg ctl stop -D /pgdata/11/data /usr/pgsql-11/bin/pg ctl start -D /pgdata/11/data Add or update entry in pg hba.conf on Primary to accept database connection from standby. host postgres <db-user> <standby-ip/32> <connection method> Example: host postgres postgres 10.128.0.29/32 trust Test the archive generation (as postgres user): ls -l /pglog/ Run this log switch command: /usr/pgsql-11/bin/psql -h 10 .128.0.28 -p5432 -c \"select pg switch wal();\" sleep 5 # log shipping may take some time depending on network ls -l /pglog/ SAP ASE database prerequisites Before you begin, on the SAP ASE server complete the following: A backup user account must be created with backup privilege—either oper role or sa role .",
+          "The procedures on this page are for most self-managed databases: For Review Then use IBM Db2 Backup and DR for IBM Db2 Db2 database prerequisites PostgreSQL Backup and DR for PostgreSQL PostgreSQL database prerequisites SAP ASE Backup and DR for SAP ASE SAP ASE database prerequisites SAP IQ Backup and DR for SAP IQ SAP IQ database prerequisites SAP MaxDB Backup and DR for SAP MaxDB SAP MaxDB database prerequisites SAP HANA Backup and DR for SAP HANA Prepare SAP HANA databases for backup Microsoft SQL Server Backup and DR for SQL Server Prepare SQL server databases for Backup and DR Service Oracle Backup and DR for Oracle Prerequisites for backing up an Oracle database and its following pages For all other Backup and DR supported databases, follow these procedures."
+        ]
+      },
+      {
+        "title": "\"Set up and plan a backup/recovery appliance deployment \\_|\\_ Backup and\\",
+        "url": "https://docs.cloud.google.com/backup-disaster-recovery/docs/deployment/deployment-plan",
+        "source_id": "site-docs-reference",
+        "final_score": 92,
+        "relevance": "",
+        "evidence_snippets": [
+          "Standard for Compute Engine VMs or SAP HANA databases : This e2-standard-4 machine type is best for backing up Compute Engine instances, Cloud SQL instances, and data resources that use Persistent Disk for backups: IBM Db2 and SAP HANA databases configured to use Persistent Disk.",
+          "Purpose Source Target Port (TCP) Support traffic (support to appliance) SSH CLIENT IP Backup/recovery appliance 26 iSCSI backup (host to appliance) AGENT HOST IP Backup/recovery appliance 3260 StreamSnap traffic (appliance to appliance) SOURCE APPLIANCE IP Backup/recovery appliance 5107 Backup/recovery appliance connectivity to management console APPLIANCE IP .backupdr.googleusercontent.com 443 Replace the following: SSH CLIENT IP: the IP address of the host running the SSH client.",
+          "Set up Backup and DR Service in the Google Cloud console Go to the Google Cloud console to activate the Backup and DR Service API and set up permissions for your account: Activate Google Cloud Backup and DR Backup/recovery appliance types Backup and DR Service provides appliance types that are optimized for different workloads—Compute Engine VMs, VMware VMs, databases, and file systems."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "backupdr.googleusercontent.com",
+      "hba.conf",
+      "postgresql.conf"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/quickstarts/sap-hana-on-gce-backup-recovery",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/configuration/prepare-otherdb",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/deployment/deployment-plan"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/quickstarts/sap-hana-on-gce-backup-recovery",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/configuration/prepare-otherdb",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/deployment/deployment-plan"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/quickstarts/sap-hana-on-gce-backup-recovery",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/configuration/prepare-otherdb",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/deployment/deployment-plan"
+      ]
+    }
+  ]
+}

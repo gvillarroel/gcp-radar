@@ -1,0 +1,140 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:36.791Z",
+  "source_step08_card": "data/step-08/current/products/firestore/card.json",
+  "product_name": "Firestore",
+  "product_slug": "firestore",
+  "feature_name": "Cloud Firestore in Datastore mode",
+  "feature_slug": "cloud-firestore-in-datastore-mode",
+  "summary": "Cloud Firestore can be created in Datastore mode to use Datastore client libraries on Cloud Firestore's storage layer with improved consistency.",
+  "extended_definition": "Cloud Firestore can be created in Datastore mode to use Datastore client libraries on Cloud Firestore's storage layer with improved consistency.",
+  "lifecycle": {
+    "latest_feature_date": "2018-08-08",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/datastore/docs/reference/libraries",
+      "https://docs.cloud.google.com/firestore/docs/firestore-or-datastore",
+      "https://docs.cloud.google.com/firestore/docs/manage-databases"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Datastore mode client libraries \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/datastore/docs/reference/libraries",
+        "source_id": "site-docs-root",
+        "final_score": 184,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Google App Engine Standard Environment Client Libraries Integrate Firestore in Datastore mode with your App Engine Standard Environment applications by using the App Engine client libraries.",
+          "Home Documentation Databases Datastore Guides Send feedback Datastore mode client libraries Stay organized with collections Save and categorize content based on your preferences.",
+          "Entity ( key = task key ) task [ \"description\" ] = \"Buy milk\" Saves the entity datastore client . put ( task ) print ( f \"Saved { task . key . name } : { task [ 'description' ] } \" ) Ruby Imports the Google Cloud client library require \"google/cloud/datastore\" Instantiate a client datastore = Google :: Cloud :: Datastore . new The kind for the new entity kind = \"Task\" The name/ID for the new entity task name = \"sampleTask\" The Cloud Datastore key for the new entity task key = datastore . key kind , task name Prepares the new entity task = datastore . entity task key do t t [ \"description\" ] = \"Buy milk\" end Saves the entity datastore . save task puts \"Saved #{ task . key . name } : #{ task [ 'description' ] } \" task key = datastore . find task key Additional resources C# The following list contains links to more resources related to the client library for C#: API reference Client libraries best practices Issue tracker google-cloud-datastore on Stack Overflow Source code Go The following list contains links to more resources related to the client library for Go: API reference Client libraries best practices Issue tracker google-cloud-datastore on Stack Overflow Source code Java The following list contains links to more resources related to the client library for Java: API reference Client libraries best practices Issue tracker google-cloud-datastore on Stack Overflow Source code Node.js The following list contains links to more resources related to the client library for Node.js: API reference Client libraries best practices Issue tracker google-cloud-datastore on Stack Overflow Source code PHP The following list contains links to more resources related to the client library for PHP: API reference Client libraries best practices Issue tracker google-cloud-datastore on Stack Overflow Source code Python The following list contains links to more resources related to the client library for Python: API reference Client libraries best practices Issue tracker google-cloud-datastore on Stack Overflow Source code Ruby The following list contains links to more resources related to the client library for Ruby: API reference Client libraries best practices Issue tracker google-cloud-datastore on Stack Overflow Source code Dependency on App Engine application See App Engine Requirement ."
+        ]
+      },
+      {
+        "title": "Choosing between Native mode and Datastore mode \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/firestore/docs/firestore-or-datastore",
+        "source_id": "site-docs-reference",
+        "final_score": 172,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Not supported Client libraries Firestore client libraries: Java Python PHP Go Ruby C# Node.js Android iOS+ Web C++ Unity Datastore client libraries: Java Python PHP Go Ruby C# Node.js C++ Security Identity and Access Management (IAM) manages database access Firestore Security Rules support serverless authentication and authorization for the mobile and web client libraries IAM manages database access SLA Firestore SLA Firestore SLA Locations Both modes support the same locations.",
+          "Firestore introduces the following features: A strongly consistent storage layer A collection and document data model Real-time updates Mobile and Web client libraries Firestore is backwards compatible with Datastore, but the new data model, real-time updates, and mobile and web client library features are not.",
+          "For more details about pricing, see the following pages: Firestore in Native mode pricing Firestore in Datastore mode pricing Console Firebase Console and Google Cloud console Firestore Viewer Google Cloud console Datastore Viewer Namespaces Not supported Namespaces supported App Engine client library integration Not supported in the App Engine standard environment Python 2.7 and PHP 5.5 runtimes Supported in the App Engine standard environment , all other runtimes Supported in the App Engine flexible environment , all runtimes Supported in all runtimes Create a new database You can create a new Firestore database in either Native mode or Datastore mode."
+        ]
+      },
+      {
+        "title": "\"Create and manage databases \\_|\\_ Firestore in Native mode \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/firestore/docs/manage-databases",
+        "source_id": "site-docs-reference",
+        "final_score": 144,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "DATABASE TYPE : either firestore-native for Native mode or datastore-mode for Datastore mode. --delete-protection is an optional flag to enable deletion protection.",
+          "By default, the Firebase SDKs and Google API Client Libraries connect to the (default) Firestore database in a project.",
+          "The data access mode configures which API and which client libraries you can use with your database."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "autoload.php"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastore/docs/reference/libraries",
+        "https://docs.cloud.google.com/firestore/docs/firestore-or-datastore",
+        "https://docs.cloud.google.com/firestore/docs/manage-databases"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastore/docs/reference/libraries",
+        "https://docs.cloud.google.com/firestore/docs/firestore-or-datastore",
+        "https://docs.cloud.google.com/firestore/docs/manage-databases"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastore/docs/reference/libraries",
+        "https://docs.cloud.google.com/firestore/docs/firestore-or-datastore",
+        "https://docs.cloud.google.com/firestore/docs/manage-databases"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastore/docs/reference/libraries",
+        "https://docs.cloud.google.com/firestore/docs/firestore-or-datastore",
+        "https://docs.cloud.google.com/firestore/docs/manage-databases"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastore/docs/reference/libraries",
+        "https://docs.cloud.google.com/firestore/docs/firestore-or-datastore",
+        "https://docs.cloud.google.com/firestore/docs/manage-databases"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastore/docs/reference/libraries",
+        "https://docs.cloud.google.com/firestore/docs/firestore-or-datastore",
+        "https://docs.cloud.google.com/firestore/docs/manage-databases"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastore/docs/reference/libraries",
+        "https://docs.cloud.google.com/firestore/docs/firestore-or-datastore",
+        "https://docs.cloud.google.com/firestore/docs/manage-databases"
+      ]
+    }
+  ]
+}

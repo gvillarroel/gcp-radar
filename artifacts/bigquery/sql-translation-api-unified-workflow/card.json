@@ -1,0 +1,109 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:18.771Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery",
+  "feature_name": "SQL translation API unified workflow",
+  "feature_slug": "sql-translation-api-unified-workflow",
+  "summary": "The SQL translation API combines interactive and batch translation into a single workflow for translation jobs.",
+  "extended_definition": "The SQL translation API combines interactive and batch translation into a single workflow for translation jobs.",
+  "lifecycle": {
+    "latest_feature_date": "2024-02-29",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/api-sql-translator",
+      "https://docs.cloud.google.com/bigquery/docs/batch-sql-translator",
+      "https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Migrate code with the batch SQL translator \\_|\\_ BigQuery \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/batch-sql-translator",
+        "source_id": "site-docs-reference-5",
+        "final_score": 178,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The batch SQL translator can translate the following SQL dialects into GoogleSQL: Amazon Redshift SQL Apache HiveQL and Beeline CLI IBM Netezza SQL and NZPLSQL Teradata and Teradata Vantage: SQL Basic Teradata Query (BTEQ) Teradata Parallel Transport (TPT) Additionally, translation of the following SQL dialects is supported in preview : Apache Impala SQL Apache Spark SQL Azure Synapse T-SQL GoogleSQL (BigQuery) Greenplum SQL IBM DB2 SQL MySQL SQL Oracle SQL, PL/SQL, Exadata PostgreSQL SQL Trino or PrestoSQL Snowflake SQL SQL Server T-SQL SQLite Vertica SQL Important: Translation is done on a best effort basis.",
+          "To start an interactive SQL translation by using a batch translation configuration ID, follow these steps: In the Google Cloud console, go to the SQL Translation page.",
+          "To debug a batch translation file in the interactive SQL translator, follow these steps: In the Google Cloud console, go to the SQL Translation page."
+        ]
+      },
+      {
+        "title": "Google Cloud Ready - BigQuery Partners \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners",
+        "source_id": "site-docs-reference-5",
+        "final_score": 162,
+        "relevance": "",
+        "evidence_snippets": [
+          "Partner references BigQuery Integration Query Results Save Detection Google Cloud Monitoring Partner Advantage page Direct link Datafold Solution Datafold Category Data Quality, Observability, & FinOps Description Datafold is the unified platform for proactive data quality that combines automated data testing, data reconciliation, and observability to help data teams prevent data quality issues and accelerate their development velocity.",
+          "Partner references Connect to a Google BigQuery database from Preset PuppyGraph Solution PuppyGraph Category BI, ML, & Advanced Analytics Description PuppyGraph is the first and only graph analytics engine in the market, empowering companies to transform existing relational data stores into a unified graph model in under 10 minutes, bypassing traditional graph database costs, latency, and maintenance hurdles.",
+          "Partner references BigQuery Integration in Datafold OAuth integration into BigQuery Decube Solution Data Trust Platform Category Data Quality, Observability, & FinOps Description Decube is a unified platform that integrates with your data stack enabling you to effortlessly monitor, manage, and govern your data assets with its Data Observability, Catalog and Governance modules."
+        ]
+      },
+      {
+        "title": "\"Translate SQL queries with the translation API \\_|\\_ BigQuery \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/api-sql-translator",
+        "source_id": "site-docs-reference-5",
+        "final_score": 156,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Locations The translation API is available in the following processing locations: Region description Region name Details Asia Pacific Bangkok asia-southeast3 Delhi asia-south2 Hong Kong asia-east2 Jakarta asia-southeast2 Melbourne australia-southeast2 Mumbai asia-south1 Osaka asia-northeast2 Seoul asia-northeast3 Singapore asia-southeast1 Sydney australia-southeast1 Taiwan asia-east1 Tokyo asia-northeast1 Europe Belgium europe-west1 Low CO 2 Berlin europe-west10 EU multi-region eu Finland europe-north1 Low CO 2 Frankfurt europe-west3 London europe-west2 Low CO 2 Madrid europe-southwest1 Low CO 2 Milan europe-west8 Netherlands europe-west4 Low CO 2 Paris europe-west9 Low CO 2 Stockholm europe-north2 Low CO 2 Turin europe-west12 Warsaw europe-central2 Zürich europe-west6 Low CO 2 Americas Columbus, Ohio us-east5 Dallas us-south1 Low CO 2 Iowa us-central1 Low CO 2 Las Vegas us-west4 Los Angeles us-west2 Mexico northamerica-south1 Northern Virginia us-east4 Oregon us-west1 Low CO 2 Québec northamerica-northeast1 Low CO 2 São Paulo southamerica-east1 Low CO 2 Salt Lake City us-west3 Santiago southamerica-west1 Low CO 2 South Carolina us-east1 Toronto northamerica-northeast2 Low CO 2 US multi-region us Africa Johannesburg africa-south1 MiddleEast Dammam me-central2 Doha me-central1 Israel me-west1 Submit a translation job To submit a translation job using the translation API, use the projects.locations.workflows.create method and supply an instance of the MigrationWorkflow resource with a supported task type .",
+          "If the task succeeds, you will find the translated SQL in the response message: { \"name\" : \"projects/123456789/locations/us/workflows/12345678-9abc-def1-2345-6789abcdef00\" , \"tasks\" : { \"string\" : { \"id\" : \"0fedba98-7654-3210-1234-56789abcdef\" , \"type\" : \"HiveQL2BigQuery Translation\" , / ... / \"taskResult\" : { \"translationTaskResult\" : { \"translatedLiterals\" : [ { \"relativePath\" : \"sql/input file\" , \"literalString\" : \"-- Translation time: 2023-10-05T21:50:49.885839Z\\n-- Translation job ID: projects/123456789/locations/us/workflows/12345678-9abc-def1-2345-6789abcdef00\\n-- Source: input file\\n-- Translated from: Hive\\n-- Translated to: BigQuery\\n\\nSELECT\\n 1\\n;\\n\" } ], \"reportLogMessages\" : [ ... ] } }, / ... / } }, \"state\" : \"COMPLETED\" , \"createTime\" : \"2023-10-05T21:50:49.543221Z\" , \"lastUpdateTime\" : \"2023-10-05T21:50:50.462758Z\" } Explore the translation output After running the translation job, retrieve the results by specifying the translation job workflow ID using the following command: curl \\ -H \"Content-Type:application/json\" \\ -H \"Authorization:Bearer TOKEN \" -X GET https://bigquerymigration.googleapis.com/v2alpha/projects/ PROJECT ID /locations/ LOCATION /workflows/ WORKFLOW ID Replace the following: TOKEN : the token for authentication.",
+          "Supported task types The translation API can translate the following SQL dialects into GoogleSQL: Amazon Redshift SQL - Redshift2BigQuery Translation Apache HiveQL and Beeline CLI - HiveQL2BigQuery Translation Apache Impala - Impala2BigQuery Translation Apache Spark SQL - SparkSQL2BigQuery Translation Azure Synapse T-SQL - AzureSynapse2BigQuery Translation GoogleSQL (BigQuery) - Bigquery2Bigquery Translation Greenplum SQL - Greenplum2BigQuery Translation IBM Db2 SQL - Db22BigQuery Translation IBM Netezza SQL and NZPLSQL - Netezza2BigQuery Translation MySQL SQL - MySQL2BigQuery Translation Oracle SQL, PL/SQL, Exadata - Oracle2BigQuery Translation PostgreSQL SQL - Postgresql2BigQuery Translation Presto or Trino SQL - Presto2BigQuery Translation Snowflake SQL - Snowflake2BigQuery Translation SQLite - SQLite2BigQuery Translation SQL Server T-SQL - SQLServer2BigQuery Translation Teradata and Teradata Vantage - Teradata2BigQuery Translation Vertica SQL - Vertica2BigQuery Translation Handling unsupported SQL functions with helper UDFs When translating SQL from a source dialect to BigQuery, some functions might not have a direct equivalent."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "bigquerymigration.googleapis.com",
+      "projects.locations.workflows.create"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/batch-sql-translator",
+        "https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners",
+        "https://docs.cloud.google.com/bigquery/docs/api-sql-translator"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/batch-sql-translator",
+        "https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners",
+        "https://docs.cloud.google.com/bigquery/docs/api-sql-translator"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/batch-sql-translator",
+        "https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners",
+        "https://docs.cloud.google.com/bigquery/docs/api-sql-translator"
+      ]
+    }
+  ]
+}

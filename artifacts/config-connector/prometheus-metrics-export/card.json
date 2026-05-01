@@ -1,0 +1,238 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:30.193Z",
+  "source_step08_card": "data/step-08/current/products/config-connector/card.json",
+  "product_name": "Config Connector",
+  "product_slug": "config-connector",
+  "feature_name": "Prometheus metrics export",
+  "feature_slug": "prometheus-metrics-export",
+  "summary": "Config Connector can export Prometheus metrics.",
+  "extended_definition": "Config Connector can export Prometheus metrics.",
+  "lifecycle": {
+    "latest_feature_date": "2019-12-23",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/config-connector/docs/how-to/monitoring-prometheus",
+      "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster",
+      "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/monitoring/monitoringdashboard"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Monitoring Config Connector with Prometheus \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/config-connector/docs/how-to/monitoring-prometheus",
+        "source_id": "site-docs-reference",
+        "final_score": 100,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For example, If you are using the Prometheus Operator and configure it with ServiceMonitor , you can apply the following configuration to scrape metrics from Config Connector. spec : endpoints : - interval : 10s port : metrics namespaceSelector : matchNames : - cnrm-system selector : matchLabels : cnrm.cloud.google.com/monitored : \"true\" cnrm.cloud.google.com/system : \"true\" Example queries Prometheus uses a query language called PromQL .",
+          "Configuring Prometheus Before you can scrape metrics, you might need to configure Prometheus for Kubernetes Service Discovery (SD) to discover scrape targets from the Kubernetes REST API.",
+          "Monitoring Config Connector with Prometheus You can use Prometheus to collect and show metrics from Config Connector."
+        ]
+      },
+      {
+        "title": "ContainerCluster \\_|\\_ Config Connector \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster",
+        "source_id": "site-docs-reference",
+        "final_score": 89,
+        "relevance": "",
+        "evidence_snippets": [
+          "For more details on how to debug and fix an issue which could lead to a permanent diff, please refer to the Config Connector Troubleshooting page Property Value Google Cloud Service Name Kubernetes Engine Google Cloud Service Documentation /kubernetes-engine/docs/ Google Cloud REST Resource Name v1.projects.locations.clusters Google Cloud REST Resource Documentation /kubernetes-engine/docs/reference/rest/v1/projects.locations.clusters Config Connector Resource Short Names gcpcontainercluster gcpcontainerclusters containercluster Config Connector Service Name container.googleapis.com Config Connector Resource Fully Qualified Name containerclusters.container.cnrm.cloud.google.com Can Be Referenced by IAMPolicy/IAMPolicyMember No Config Connector Default Average Reconcile Interval In Seconds 600 Custom Resource Definition Properties Annotations Fields cnrm.cloud.google.com/project-id cnrm.cloud.google.com/remove-default-node-pool Spec Schema addonsConfig : cloudrunConfig : disabled : boolean loadBalancerType : string configConnectorConfig : enabled : boolean dnsCacheConfig : enabled : boolean gcePersistentDiskCsiDriverConfig : enabled : boolean gcpFilestoreCsiDriverConfig : enabled : boolean gcsFuseCsiDriverConfig : enabled : boolean gkeBackupAgentConfig : enabled : boolean horizontalPodAutoscaling : disabled : boolean httpLoadBalancing : disabled : boolean istioConfig : auth : string disabled : boolean kalmConfig : enabled : boolean networkPolicyConfig : disabled : boolean allowNetAdmin : boolean authenticatorGroupsConfig : securityGroup : string binaryAuthorization : enabled : boolean evaluationMode : string clusterAutoscaling : autoProvisioningDefaults : bootDiskKMSKeyRef : external : string name : string namespace : string diskSize : integer imageType : string management : autoRepair : boolean autoUpgrade : boolean upgradeOptions : - autoUpgradeStartTime : string description : string minCpuPlatform : string oauthScopes : - string serviceAccountRef : external : string name : string namespace : string shieldedInstanceConfig : enableIntegrityMonitoring : boolean enableSecureBoot : boolean upgradeSettings : blueGreenSettings : nodePoolSoakDuration : string standardRolloutPolicy : batchNodeCount : integer batchPercentage : float batchSoakDuration : string maxSurge : integer maxUnavailable : integer strategy : string autoscalingProfile : string defaultComputeClassConfig : enabled : boolean enabled : boolean resourceLimits : - maximum : integer minimum : integer resourceType : string clusterIpv4Cidr : string clusterTelemetry : type : string confidentialNodes : enabled : boolean controlPlaneEndpointsConfig : dnsEndpointConfig : allowExternalTraffic : boolean enableK8sTokensViaDns : boolean ipEndpointsConfig : enabled : boolean costManagementConfig : enabled : boolean databaseEncryption : keyName : string state : string datapathProvider : string defaultMaxPodsPerNode : integer defaultSnatStatus : disabled : boolean description : string dnsConfig : clusterDns : string clusterDnsDomain : string clusterDnsScope : string enableAutopilot : boolean enableBinaryAuthorization : boolean enableCiliumClusterwideNetworkPolicy : boolean enableFqdnNetworkPolicy : boolean enableIntranodeVisibility : boolean enableK8sBetaApis : enabledApis : - string enableKubernetesAlpha : boolean enableL4IlbSubsetting : boolean enableLegacyAbac : boolean enableMultiNetworking : boolean enableShieldedNodes : boolean enableTpu : boolean gatewayApiConfig : channel : string identityServiceConfig : enabled : boolean initialNodeCount : integer ipAllocationPolicy : additionalPodRangesConfig : podRangeNames : - string clusterIpv4CidrBlock : string clusterSecondaryRangeName : string podCidrOverprovisionConfig : disabled : boolean servicesIpv4CidrBlock : string servicesSecondaryRangeName : string stackType : string location : string loggingConfig : enableComponents : - string loggingService : string maintenancePolicy : dailyMaintenanceWindow : duration : string startTime : string maintenanceExclusion : - endTime : string exclusionName : string exclusionOptions : scope : string startTime : string recurringWindow : endTime : string recurrence : string startTime : string masterAuth : clientCertificate : string clientCertificateConfig : issueClientCertificate : boolean clientKey : string clusterCaCertificate : string password : value : string valueFrom : secretKeyRef : key : string name : string username : string masterAuthorizedNetworksConfig : cidrBlocks : - cidrBlock : string displayName : string gcpPublicCidrsAccessEnabled : boolean meshCertificates : enableCertificates : boolean minMasterVersion : string monitoringConfig : advancedDatapathObservabilityConfig : - enableMetrics : boolean relayMode : string enableComponents : - string managedPrometheus : enabled : boolean monitoringService : string networkPolicy : enabled : boolean provider : string networkRef : external : string name : string namespace : string networkingMode : string nodeConfig : advancedMachineFeatures : enableNestedVirtualization : boolean threadsPerCore : integer bootDiskKMSCryptoKeyRef : external : string name : string namespace : string confidentialNodes : enabled : boolean diskSizeGb : integer diskType : string ephemeralStorageConfig : localSsdCount : integer ephemeralStorageLocalSsdConfig : localSsdCount : integer fastSocket : enabled : boolean gcfsConfig : enabled : boolean guestAccelerator : - count : integer gpuDriverInstallationConfig : gpuDriverVersion : string gpuPartitionSize : string gpuSharingConfig : gpuSharingStrategy : string maxSharedClientsPerGpu : integer type : string gvnic : enabled : boolean hostMaintenancePolicy : maintenanceInterval : string imageType : string kubeletConfig : cpuCfsQuota : boolean cpuCfsQuotaPeriod : string cpuManagerPolicy : string podPidsLimit : integer labels : string : string linuxNodeConfig : cgroupMode : string sysctls : string : string localNvmeSsdBlockConfig : localSsdCount : integer localSsdCount : integer loggingVariant : string machineType : string metadata : string : string minCpuPlatform : string nodeGroupRef : external : string name : string namespace : string oauthScopes : - string preemptible : boolean reservationAffinity : consumeReservationType : string key : string values : - string resourceLabels : string : string sandboxConfig : sandboxType : string serviceAccountRef : external : string name : string namespace : string shieldedInstanceConfig : enableIntegrityMonitoring : boolean enableSecureBoot : boolean soleTenantConfig : nodeAffinity : - key : string operator : string values : - string spot : boolean tags : - string taint : - effect : string key : string value : string workloadMetadataConfig : mode : string nodeMetadata : string nodeLocations : - string nodePoolAutoConfig : networkTags : tags : - string nodePoolDefaults : nodeConfigDefaults : gcfsConfig : enabled : boolean loggingVariant : string nodeVersion : string notificationConfig : pubsub : enabled : boolean filter : eventType : - string topicRef : external : string name : string namespace : string podSecurityPolicyConfig : enabled : boolean privateClusterConfig : enablePrivateEndpoint : boolean enablePrivateNodes : boolean masterGlobalAccessConfig : enabled : boolean masterIpv4CidrBlock : string peeringName : string privateEndpoint : string privateEndpointSubnetworkRef : external : string name : string namespace : string publicEndpoint : string privateIpv6GoogleAccess : string protectConfig : workloadConfig : auditMode : string workloadVulnerabilityMode : string releaseChannel : channel : string resourceID : string resourceUsageExportConfig : bigqueryDestination : datasetId : string enableNetworkEgressMetering : boolean enableResourceConsumptionMetering : boolean securityPostureConfig : mode : string vulnerabilityMode : string serviceExternalIpsConfig : enabled : boolean subnetworkRef : external : string name : string namespace : string verticalPodAutoscaling : enabled : boolean workloadIdentityConfig : identityNamespace : string workloadPool : string Fields addonsConfig Optional object The configuration for addons supported by GKE. addonsConfig.cloudrunConfig Optional object The status of the CloudRun addon.",
+          "Valid values include SYSTEM COMPONENTS, APISERVER, SCHEDULER, CONTROLLER MANAGER, STORAGE, HPA, POD, DAEMONSET, DEPLOYMENT, STATEFULSET and WORKLOADS. monitoringConfig.enableComponents[] Optional string monitoringConfig.managedPrometheus Optional object Configuration for Google Cloud Managed Services for Prometheus. monitoringConfig.managedPrometheus.enabled Required boolean Whether or not the managed collection is enabled. monitoringService Optional string The monitoring service that the cluster should write metrics to.",
+          "If unset, the cluster's version will be set by GKE to the version of the most recent official release (which is not necessarily the latest version). monitoringConfig Optional object Monitoring configuration for the cluster. monitoringConfig.advancedDatapathObservabilityConfig Optional list (object) Configuration of Advanced Datapath Observability features. monitoringConfig.advancedDatapathObservabilityConfig[] Optional object monitoringConfig.advancedDatapathObservabilityConfig[].enableMetrics Required boolean Whether or not the advanced datapath metrics are enabled. monitoringConfig.advancedDatapathObservabilityConfig[].relayMode Optional string Mode used to make Relay available. monitoringConfig.enableComponents Optional list (string) GKE components exposing metrics."
+        ]
+      },
+      {
+        "title": "MonitoringDashboard | Config Connector | Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/monitoring/monitoringdashboard",
+        "source_id": "feature-recovery-http",
+        "final_score": 72,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "MonitoringDashboard Property Value Google Cloud Service Name Cloud Monitoring Google Cloud Service Documentation /monitoring/dashboards/ Google Cloud REST Resource Name v3.projects.dashboards Google Cloud REST Resource Documentation monitoring/api/ref_v3/rest/v1/projects.dashboards/ Config Connector Resource Short Names gcpmonitoringdashboard gcpmonitoringdashboards monitoringdashboard Config Connector Service Name monitoring.googleapis.com Config Connector Resource Fully Qualified Name monitoringdashboards.monitoring.cnrm.cloud.google.com Can Be Referenced by IAMPolicy/IAMPolicyMember No Config Connector Default Average Reconcile Interval In Seconds 600 Custom Resource Definition Properties Spec Schema columnLayout : columns : - weight : integer widgets : - alertChart : alertPolicyRef : external : string name : string namespace : string blank : {} collapsibleGroup : collapsed : boolean errorReportingPanel : projectRefs : - external : string kind : string name : string namespace : string services : - string versions : - string id : string incidentList : monitoredResources : - labels : string : string type : string policyRefs : - external : string name : string namespace : string logsPanel : filter : string resourceNames : - external : string kind : string name : string namespace : string pieChart : chartType : string dataSets : - minAlignmentPeriod : string sliceNameTemplate : string timeSeriesQuery : outputFullDuration : boolean prometheusQuery : string timeSeriesFilter : aggregation : alignmentPeriod : string crossSeriesReducer : string groupByFields : - string perSeriesAligner : string filter : string pickTimeSeriesFilter : direction : string numTimeSeries : integer rankingMethod : string secondaryAggregation : alignmentPeriod : string crossSeriesReducer : string groupByFields : - string perSeriesAligner : string timeSeriesFilterRatio : denominator : aggregation : alignmentPeriod : string crossSeriesReducer : string groupByFields : - string perSeriesAligner : string filter : string numerator : aggregation : alignmentPeriod : string crossSeriesReducer : string groupByFields : - string perSeriesAligner : string filter : string pickTimeSeriesFilter : direction : string numTimeSeries : integer rankingMethod : string secondaryAggregation : alignmentPeriod : string crossSeriesReducer : string groupByFields : - string perSeriesAligner : string timeSeriesQueryLanguage : string unitOverride : string showLabels : boolean scorecard : blankView : {} gaugeView : lowerBound : float upperBound : float sparkChartView : minAlignmentPeriod : string sparkChartType : string thresholds : - color : string direction : string label : string targetAxis : string value : float timeSeriesQuery : outputFullDuration : boolean prometheusQuery : string timeSeriesFilter : aggregation : alignmentPeriod : string crossSeriesReducer : string groupByFields : - string perSeriesAligner : string filter : string pickTimeSeriesFilter : direction : string numTimeSeries : integer rankingMethod : string secondaryAggregation : alignmentPeriod : string crossSeriesReducer : string groupByFields : - string perSeriesAligner : string timeSeriesFilterRatio : denominator : aggregation : alignmentPeriod : string crossSeriesReducer : string groupByFields : - string perSeriesAligner : string filter : string numerator : aggregation : alignmentPeriod : string crossSeriesReducer : string groupByFields : - string perSeriesAligner : string filter : string pickTimeSeriesFilter : direction : string numTimeSeries : integer rankingMethod : string secondaryAggregation : alignmentPeriod : string crossSeriesReducer : string groupByFields : - string perSeriesAligner : string timeSeriesQueryLanguage : string unitOverride : string sectionHeader : dividerBelow : boolean subtitle : string singleViewGroup : {} text : content : string format : string style : backgroundColor : string fontSize : string horizontalAlignment : string padding : string pointerLocation : string textColor : string verticalAlignment : string timeSeriesTable : columnSettings : - column : string visible : boolean dataSets : - minAlignmentPeriod : string tableDisplayOptions : shownColumns : - string tableTemplate : string timeSeriesQuery : outputFullDuration : boolean prometheusQuery : string timeSeriesFilter : aggregation : alignmentPeriod : string crossSeriesReducer : string groupByFields : - string perSeriesAligner : string filter : string pickTimeSeriesFilter : direction : string numTimeSeries : integer rankingMethod : string secondaryAggregation : alignmentPeriod : string crossSeriesReducer : string groupByFields : - string perSeriesAligner : string timeSeriesFilterRatio : denominator : aggregation : alignmentPeriod : string crossSeriesReducer : string groupByFields : - string perSeriesAligner : string filter : string numerator : aggregation : alignmentPeriod : string crossSeriesReducer : string groupByFields : - string perSeriesAligner : string filter : string pickTimeSeriesFilter : direction : string numTimeSeries : integer rankingMethod : string secondaryAggregation : alignmentPeriod : string crossSeriesReducer : string groupByFields : - string perSeriesAligner : string timeSeriesQueryLanguage : string unitOverride : string metricVisualization : string title : string xyChart : chartOptions : mode : string dataSets : - legendTemplate : string minAlignmentPeriod : string plotType : string targetAxis : string timeSeriesQuery : outputFullDuration : boolean prometheusQuery : string timeSeriesFilter : aggregation : alignmentPeriod : string crossSeriesReducer : string groupByFields : - string perSeriesAligner : string filter : string pickTimeSeriesFilter : direction : string numTimeSeries : integer rankingMethod : string secondaryAggregation : alignmentPeriod : string crossSeriesReducer : string groupByFields : - string perSeriesAligner : string timeSeriesFilterRatio : denominator : aggregation : alignmentPeriod : string crossSeriesReducer : string groupByFields : - string perSeriesAligner : string filter : string numerator : aggregation : alignmentPeriod : string crossSeriesReducer : string groupByFields : - string perSeriesAligner : string filter : string pickTimeSeriesFilter : direction : string numTimeSeries : integer rankingMethod : string secondaryAggregation : alignmentPeriod : string crossSeriesReducer : string groupByFields : - string perSeriesAligner : string timeSeriesQueryLanguage : string unitOverride : string thresholds : - color : string direction : string label : string targetAxis : string value : float timeshiftDuration : string xAxis : label : string scale : string y2Axis : label : string scale : string yAxis : label : string scale : string dashboardFilters : - filterType : string labelKey : string stringValue : string templateVariable : string displayName : string gridLayout : columns : integer widgets : - alertChart : alertPolicyRef : external : string name : string namespace : string blank : {} collapsibleGroup : collapsed : boolean errorReportingPanel : projectRefs : - external : string kind : string name : string namespace : string services : - string versions : - string id : string incidentList : monitoredResources : - labels : string : string type : string policyRefs : - external : string name : string namespace : string logsPanel : filter : string resourceNames : - external : string kind : string name : string namespace : string pieChart : chartType : string dataSets : - minAlignmentPeriod : string sliceNameTemplate : string timeSeriesQuery : outputFullDuration : boolean prometheusQuery : string timeSeriesFilter : aggregation : alignmentPeriod : string crossSeriesReducer : string groupByFields : - string perSeriesAligner : string filter : string pickTimeSeriesFilter : direction : string numTimeSeries : integer rankingMethod : string secondaryAggregation : alignmentPeriod : string crossSeriesReducer : string groupByFields : - string perSeriesAligner : string timeSeriesFilterRatio : denominator : aggregation : alignmentPeriod : string crossSeriesReducer : string groupByFields : - string perSeriesAligner : string filter : string numerator : aggregation : alignmentPeriod : string crossSeriesReducer : string groupByFields : - string perSeriesAligner : string filter : string pickTimeSeriesFilter : direction : string numTimeSeries : integer rankingMethod : string secondaryAggregation : alignmentPeriod : string crossSeriesReducer : string groupByFields : - string perSeriesAligner : string timeSeriesQueryLanguage : string unitOverride : string showLabels : boolean scorecard : blankView : {} gaugeView : lowerBound : float upperBound : float sparkChartView : minAlignmentPeriod : string sparkChartType : string thresholds : - color : string direction : string label : string targetAxis : string value : float timeSeriesQuery : outputFullDuration : boolean prometheusQuery : string timeSeriesFilter : aggregation : alignmentPeriod : string crossSeriesReducer : string groupByFields : - string perSeriesAligner : string filter : string pickTimeSeriesFilter : direction : string numTimeSeries : integer rankingMethod : string secondaryAggregation : alignmentPeriod : string crossSeriesReducer : string groupByFields : - string perSeriesAligner : string timeSeriesFilterRatio : denominator : aggregation : alignmentPeriod : string crossSeriesReducer : string groupByFields : - string perSeriesAligner : string filter : string numerator : aggregation : alignmentPeriod : string crossSeriesReducer : string groupByFields : - string perSeriesAligner : string filter : string pickTimeSeriesFilter : direction : string numTimeSeries : integer rankingMethod : string secondaryAggregation : alignmentPeriod : string crossSeriesReducer : string groupByFields : - string perSeriesAligner : string timeSeriesQueryLanguage : string unitOverride : string sectionHeader : dividerBelow : boolean subtitle : string singleViewGroup : {} text : content : string format : string style : backgroundColor : string fontSize : string horizontalAlignment : string padding : string pointerLocation : string textColor : string verticalAlignment : string timeSeriesTable : columnSettings : - column : string visible : boolean dataSets : - minAlignmentPeriod : string tableDisplayOptions : shownColumns : - string tableTemplate : string timeSeriesQuery : outputFullDuration : boolean prometheusQuery : string timeSeriesFilter : aggregation : alignmentPeriod : string crossSeriesReducer : string groupByFields : - string perSeriesAligner : string filter : string pickTimeSeriesFilter : direction : string numTimeSeries : integer rankingMethod : string secondaryAggregation : alignmentPeriod : string crossSeriesReducer : string groupByFields : - string perSeriesAligner : string timeSeriesFilterRatio : denominator : aggregation : alignmentPeriod : string crossSeriesReducer : string groupByFields : - string perSeriesAligner : string filter : string numerator : aggregation : alignmentPeriod : string crossSeriesReducer : string groupByFields : - string perSeriesAligner : string filter : string pickTimeSeriesFilter : direction : string numTimeSeries : integer rankingMethod : string secondaryAggregation : alignmentPeriod : string crossSeriesReducer : string groupByFields : - string perSeriesAligner : string timeSeriesQueryLanguage : string unitOverride : string metricVisualization : string title : string xyChart : chartOptions : mode : string dataSets : - legendTemplate : string minAlignmentPeriod : string plotType : string targetAxis : string timeSeriesQuery : outputFullDuration : boolean prometheusQuery : string timeSeriesFilter : aggregation : alignmentPeriod : string crossSeriesReducer : string groupByFields : - string perSeriesAligner : string filter : string pickTimeSeriesFilter : direction : string numTimeSeries : integer rankingMethod : string secondaryAggregation : alignmentPeriod : string crossSeriesReducer : string groupByFields : - string perSeriesAligner : string timeSeriesFilterRatio : denominator : aggregation : alignmentPeriod : string crossSeriesReducer : string groupByFields : - string perSeriesAligner : string filter : string numerator : aggregation : alignmentPeriod : string crossSeriesReducer : string groupByFields : - string perSeriesAligner : string filter : string pickTimeSeriesFilter : direction : string numTimeSeries : integer rankingMethod : string secondaryAggregation : alignmentPeriod : string crossSeriesReducer : string groupByFields : - string perSeriesAligner : string timeSeriesQueryLanguage : string unitOverride : string thresholds : - color : string direction : string label : string targetAxis : string value : float timeshiftDuration : string xAxis : label : string scale : string y2Axis : label : string scale : string yAxis : label : string scale : string mosaicLayout : columns : integer tiles : - height : integer widget : alertChart : alertPolicyRef : external : string name : string namespace : string blank : {} collapsibleGroup : collapsed : boolean errorReportingPanel : projectRefs : - external : string kind : string name : string namespace : string services : - string versions : - string id : string incidentList : monitoredResources : - labels : string : string type : string policyRefs : - external : string name : string namespace : string logsPanel : filter : string resourceNames : - external : string kind : string name : string namespace : string pieChart : chartType : string dataSets : - minAlignmentPeriod : string sliceNameTemplate : string timeSeriesQuery : outputFullDuration : boolean prometheusQuery : string timeSeriesFilter : aggregation : alignmentPeriod : string crossSeriesReducer : string groupByFields : - string perSeriesAligner : string filter : string pickTimeSeriesFilter : direction : string numTimeSeries : integer rankingMethod : string secondaryAggregation : alignmentPeriod : string crossSeriesReducer : string groupByFields : - string perSeriesAligner : string timeSeriesFilterRatio : denominator : aggregation : alignmentPeriod : string crossSeriesReducer : string groupByFields : - string perSeriesAligner : string filter : string numerator : aggregation : alignmentPeriod : string crossSeriesReducer : string groupByFields : - string perSeriesAligner : string filter : string pickTimeSeriesFilter : direction : string numTimeSeries : integer rankingMethod : string secondaryAggregation : alignmentPeriod : string crossSeriesReducer : string groupByFields : - string perSeriesAligner : string timeSeriesQueryLanguage : string unitOverride : string showLabels : boolean scorecard : blankView : {} gaugeView : lowerBound : float upperBound : float sparkChartView : minAlignmentPeriod : string sparkChartType : string thresholds : - color : string direction : string label : string targetAxis : string value : float timeSeriesQuery : outputFullDuration : boolean prometheusQuery : string timeSeriesFilter : aggregation : alignmentPeriod : string crossSeriesReducer : string groupByFields : - string perSeriesAligner : string filter : string pickTimeSeriesFilter : direction : string numTimeSeries : integer rankingMethod : string secondaryAggregation : alignmentPeriod : string crossSeriesReducer : string groupByFields : - string perSeriesAligner : string timeSeriesFilterRatio : denominator : aggregation : alignmentPeriod : string crossSeriesReducer : string groupByFields : - string perSeriesAligner : string filter : string numerator : aggregation : alignmentPeriod : string crossSeriesReducer : string groupByFields : - string perSeriesAligner : string filter : string pickTimeSeriesFilter : direction : string numTimeSeries : integer rankingMethod : string secondaryAggregation : alignmentPeriod : string crossSeriesReducer : string groupByFields : - string perSeriesAligner : string timeSeriesQueryLanguage : string unitOverride : string sectionHeader : dividerBelow : boolean subtitle : string singleViewGroup : {} text : content : string format : string style : backgroundColor : string fontSize : string horizontalAlignment : string padding : string pointerLocation : string textColor : string verticalAlignment : string timeSeriesTable : columnSettings : - column : string visible : boolean dataSets : - minAlignmentPeriod : string tableDisplayOptions : shownColumns : - string tableTemplate : string timeSeriesQuery : outputFullDuration : boolean prometheusQuery : string timeSeriesFilter : aggregation : alignmentPeriod : string crossSeriesReducer : string groupByFields : - string perSeriesAligner : string filter : string pickTimeSeriesFilter : direction : string numTimeSeries : integer rankingMethod : string secondaryAggregation : alignmentPeriod : string crossSeriesReducer : string groupByFields : - string perSeriesAligner : string timeSeriesFilterRatio : denominator : aggregation : alignmentPeriod : string crossSeriesReducer : string groupByFields : - string perSeriesAligner : string filter : string numerator : aggregation : alignmentPeriod : string crossSeriesReducer : string groupByFields : - string perSeriesAligner : string filter : string pickTimeSeriesFilter : direction : string numTimeSeries : integer rankingMethod : string secondaryAggregation : alignmentPeriod : string crossSeriesReducer : string groupByFields : - string perSeriesAligner : string timeSeriesQueryLanguage : string unitOverride : string metricVisualization : string title : string xyChart : chartOptions : mode : string dataSets : - legendTemplate : string minAlignmentPeriod : string plotType : string targetAxis : string timeSeriesQuery : outputFullDuration : boolean prometheusQuery : string timeSeriesFilter : aggregation : alignmentPeriod : string crossSeriesReducer : string groupByFields : - string perSeriesAligner : string filter : string pickTimeSeriesFilter : direction : string numTimeSeries : integer rankingMethod : string secondaryAggregation : alignmentPeriod : string crossSeriesReducer : string groupByFields : - string perSeriesAligner : string timeSeriesFilterRatio : denominator : aggregation : alignmentPeriod : string crossSeriesReducer : string groupByFields : - string perSeriesAligner : string filter : string numerator : aggregation : alignmentPeriod : string crossSeriesReducer : string groupByFields : - string perSeriesAligner : string filter : string pickTimeSeriesFilter : direction : string numTimeSeries : integer rankingMethod : string secondaryAggregation : alignmentPeriod : string crossSeriesReducer : string groupByFields : - string perSeriesAligner : string timeSeriesQueryLanguage : string unitOverride : string thresholds : - color : string direction : string label : string targetAxis : string value : float timeshiftDuration : string xAxis : label : string scale : string y2Axis : label : string scale : string yAxis : label : string scale : string width : integer xPos : integer yPos : integer projectRef : external : string kind : string name : string namespace : string resourceID : string rowLayout : rows : - weight : integer widgets : - alertChart : alertPolicyRef : external : string name : string namespace : string blank : {} collapsibleGroup : collapsed : boolean errorReportingPanel : projectRefs : - external : string kind : string name : string namespace : string services : - string versions : - string id : string incidentList : monitoredResources : - labels : string : string type : string policyRefs : - external : string name : string namespace : string logsPanel : filter : string resourceNames : - external : string kind : string name : string namespace : string pieChart : chartType : string dataSets : - minAlignmentPeriod : string sliceNameTemplate : string timeSeriesQuery : outputFullDuration : boolean prometheusQuery : string timeSeriesFilter : aggregation : alignmentPeriod : string crossSeriesReducer : string groupByFields : - string perSeriesAligner : string filter : string pickTimeSeriesFilter : direction : string numTimeSeries : integer rankingMethod : string secondaryAggregation : alignmentPeriod : string crossSeriesReducer : string groupByFields : - string perSeriesAligner : string timeSeriesFilterRatio : denominator : aggregation : alignmentPeriod : string crossSeriesReducer : string groupByFields : - string perSeriesAligner : string filter : string numerator : aggregation : alignmentPeriod : string crossSeriesReducer : string groupByFields : - string perSeriesAligner : string filter : string pickTimeSeriesFilter : direction : string numTimeSeries : integer rankingMethod : string secondaryAggregation : alignmentPeriod : string crossSeriesReducer : string groupByFields : - string perSeriesAligner : string timeSeriesQueryLanguage : string unitOverride : string showLabels : boolean scorecard : blankView : {} gaugeView : lowerBound : float upperBound : float sparkChartView : minAlignmentPeriod : string sparkChartType : string thresholds : - color : string direction : string label : string targetAxis : string value : float timeSeriesQuery : outputFullDuration : boolean prometheusQuery : string timeSeriesFilter : aggregation : alignmentPeriod : string crossSeriesReducer : string groupByFields : - string perSeriesAligner : string filter : string pickTimeSeriesFilter : direction : string numTimeSeries : integer rankingMethod : string secondaryAggregation : alignmentPeriod : string crossSeriesReducer : string groupByFields : - string perSeriesAligner : string timeSeriesFilterRatio : denominator : aggregation : alignmentPeriod : string crossSeriesReducer : string groupByFields : - string perSeriesAligner : string filter : string numerator : aggregation : alignmentPeriod : string crossSeriesReducer : string groupByFields : - string perSeriesAligner : string filter : string pickTimeSeriesFilter : direction : string numTimeSeries : integer rankingMethod : string secondaryAggregation : alignmentPeriod : string crossSeriesReducer : string groupByFields : - string perSeriesAligner : string timeSeriesQueryLanguage : string unitOverride : string sectionHeader : dividerBelow : boolean subtitle : string singleViewGroup : {} text : content : string format : string style : backgroundColor : string fontSize : string horizontalAlignment : string padding : string pointerLocation : string textColor : string verticalAlignment : string timeSeriesTable : columnSettings : - column : string visible : boolean dataSets : - minAlignmentPeriod : string tableDisplayOptions : shownColumns : - string tableTemplate : string timeSeriesQuery : outputFullDuration : boolean prometheusQuery : string timeSeriesFilter : aggregation : alignmentPeriod : string crossSeriesReducer : string groupByFields : - string perSeriesAligner : string filter : string pickTimeSeriesFilter : direction : string numTimeSeries : integer rankingMethod : string secondaryAggregation : alignmentPeriod : string crossSeriesReducer : string groupByFields : - string perSeriesAligner : string timeSeriesFilterRatio : denominator : aggregation : alignmentPeriod : string crossSeriesReducer : string groupByFields : - string perSeriesAligner : string filter : string numerator : aggregation : alignmentPeriod : string crossSeriesReducer : string groupByFields : - string perSeriesAligner : string filter : string pickTimeSeriesFilter : direction : string numTimeSeries : integer rankingMethod : string secondaryAggregation : alignmentPeriod : string crossSeriesReducer : string groupByFields : - string perSeriesAligner : string timeSeriesQueryLanguage : string unitOverride : string metricVisualization : string title : string xyChart : chartOptions : mode : string dataSets : - legendTemplate : string minAlignmentPeriod : string plotType : string targetAxis : string timeSeriesQuery : outputFullDuration : boolean prometheusQuery : string timeSeriesFilter : aggregation : alignmentPeriod : string crossSeriesReducer : string groupByFields : - string perSeriesAligner : string filter : string pickTimeSeriesFilter : direction : string numTimeSeries : integer rankingMethod : string secondaryAggregation : alignmentPeriod : string crossSeriesReducer : string groupByFields : - string perSeriesAligner : string timeSeriesFilterRatio : denominator : aggregation : alignmentPeriod : string crossSeriesReducer : string groupByFields : - string perSeriesAligner : string filter : string numerator : aggregation : alignmentPeriod : string crossSeriesReducer : string groupByFields : - string perSeriesAligner : string filter : string pickTimeSeriesFilter : direction : string numTimeSeries : integer rankingMethod : string secondaryAggregation : alignmentPeriod : string crossSeriesReducer : string groupByFields : - string perSeriesAligner : string timeSeriesQueryLanguage : string unitOverride : string thresholds : - color : string direction : string label : string targetAxis : string value : float timeshiftDuration : string xAxis : label : string scale : string y2Axis : label : string scale : string yAxis : label : string scale : string Fields columnLayout Optional object The content is divided into equally spaced columns and the widgets are arranged vertically. columnLayout.columns Optional list (object) The columns of content to display. columnLayout.columns[] Optional object columnLayout.columns[].weight Optional integer The relative weight of this column.",
+          "If set, Cloud Monitoring will treat the full query duration as the alignment period so that there will be only 1 output value. columnLayout.columns[].widgets[].timeSeriesTable.dataSets[].timeSeriesQuery.prometheusQuery Optional string A query used to fetch time series with PromQL. columnLayout.columns[].widgets[].timeSeriesTable.dataSets[].timeSeriesQuery.timeSeriesFilter Optional object Filter parameters to fetch time series. columnLayout.columns[].widgets[].timeSeriesTable.dataSets[].timeSeriesQuery.timeSeriesFilter.aggregation Optional object By default, the raw time series data is returned.",
+          "If set, Cloud Monitoring will treat the full query duration as the alignment period so that there will be only 1 output value. mosaicLayout.tiles[].widget.timeSeriesTable.dataSets[].timeSeriesQuery.prometheusQuery Optional string A query used to fetch time series with PromQL. mosaicLayout.tiles[].widget.timeSeriesTable.dataSets[].timeSeriesQuery.timeSeriesFilter Optional object Filter parameters to fetch time series. mosaicLayout.tiles[].widget.timeSeriesTable.dataSets[].timeSeriesQuery.timeSeriesFilter.aggregation Optional object By default, the raw time series data is returned."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cnrm.cloud.google.com",
+      "container.googleapis.com",
+      "containerclusters.container.cnrm.cloud.google.com",
+      "metadata.name",
+      "monitoring.googleapis.com",
+      "monitoringdashboards.monitoring.cnrm.cloud.google.com",
+      "projects.dashboards",
+      "projects.locations.clusters",
+      "v1.projects.locations.clusters",
+      "v3.projects.dashboards",
+      "widget.timeSeriesTable.dataSets"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/how-to/monitoring-prometheus",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/monitoring/monitoringdashboard"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/how-to/monitoring-prometheus",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/monitoring/monitoringdashboard"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/how-to/monitoring-prometheus",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/monitoring/monitoringdashboard"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/how-to/monitoring-prometheus",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/monitoring/monitoringdashboard"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/how-to/monitoring-prometheus",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/monitoring/monitoringdashboard"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/how-to/monitoring-prometheus",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/monitoring/monitoringdashboard"
+      ]
+    },
+    {
+      "capability": "confidential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/how-to/monitoring-prometheus",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/monitoring/monitoringdashboard"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/how-to/monitoring-prometheus",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/monitoring/monitoringdashboard"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/how-to/monitoring-prometheus",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/monitoring/monitoringdashboard"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/how-to/monitoring-prometheus",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/monitoring/monitoringdashboard"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/how-to/monitoring-prometheus",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/monitoring/monitoringdashboard"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/how-to/monitoring-prometheus",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/monitoring/monitoringdashboard"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/how-to/monitoring-prometheus",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/monitoring/monitoringdashboard"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/how-to/monitoring-prometheus",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/monitoring/monitoringdashboard"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/how-to/monitoring-prometheus",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/monitoring/monitoringdashboard"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/how-to/monitoring-prometheus",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/monitoring/monitoringdashboard"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/how-to/monitoring-prometheus",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/monitoring/monitoringdashboard"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/how-to/monitoring-prometheus",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/monitoring/monitoringdashboard"
+      ]
+    }
+  ]
+}

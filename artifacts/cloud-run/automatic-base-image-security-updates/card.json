@@ -1,0 +1,129 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:25.811Z",
+  "source_step08_card": "data/step-08/current/products/cloud-run/card.json",
+  "product_name": "Cloud Run",
+  "product_slug": "cloud-run",
+  "feature_name": "Automatic base image security updates",
+  "feature_slug": "automatic-base-image-security-updates",
+  "summary": "Automatic base image security updates provide security updates for services deployed from source when a runtime base image is specified.",
+  "extended_definition": "Automatic base image security updates provide security updates for services deployed from source when a runtime base image is specified.",
+  "lifecycle": {
+    "latest_feature_date": "2024-08-21",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/run/docs/container-contract",
+      "https://docs.cloud.google.com/run/docs/deploy-functions",
+      "https://docs.cloud.google.com/run/docs/reference/container-contract"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Deploy a Cloud Run function \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/run/docs/deploy-functions",
+        "source_id": "site-docs-reference-required-4",
+        "final_score": 207,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Create a new main.tf file with this content: provider \"google\" { project = \" PROJECT-ID \" } resource \"google cloud run v2 service\" \"default\" { name = \" SERVICE \" location = \" REGION \" client = \"terraform\" template { containers { name = \" SERVICE \" image = \" IMAGE URL \" # Container image built from your function in the previous step. base image uri = \" BASE IMAGE \" } } build config { function target = \" FUNCTION TARGET \" image uri = \" IMAGE URL \" base image = \" BASE IMAGE \" enable automatic updates = true } } resource \"google cloud run v2 service iam member\" \"noauth\" { location = google cloud run v2 service.default.location name = google cloud run v2 service.default.name role = \"roles/run.invoker\" member = \"allUsers\" } Replace: PROJECT-ID with the Google Cloud project ID.",
+          "Click mode Edit runtime and security updates next to Base image , and select a different Runtime or Environment from the list as needed, and click Save .",
+          "Follow the instructions for building a function on scratch to create a container image that is compatible with automatic security updates ."
+        ]
+      },
+      {
+        "title": "Container runtime contract \\_|\\_ Cloud Run \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/run/docs/container-contract",
+        "source_id": "site-docs-root",
+        "final_score": 193,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For functions deployed with Cloud Run, you can use one of the Cloud Run runtime base images that are published by Google Cloud's buildpacks to receive automatic security and maintenance updates.",
+          "Supported languages and images Your container image can run code written in the programming language of your choice and use any base image, provided that it respects the constraints listed in this page.",
+          "For Cloud Run worker pools with Direct VPC ingress, such as database connections or any other custom TCP-based protocol, the container must listen for TCP connections on the port exposed in your container image through the Dockerfile or specified by the PORT environment variable."
+        ]
+      },
+      {
+        "title": "Container runtime contract \\_|\\_ Cloud Run \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/run/docs/reference/container-contract",
+        "source_id": "site-docs-root",
+        "final_score": 193,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For functions deployed with Cloud Run, you can use one of the Cloud Run runtime base images that are published by Google Cloud's buildpacks to receive automatic security and maintenance updates.",
+          "Supported languages and images Your container image can run code written in the programming language of your choice and use any base image, provided that it respects the constraints listed in this page.",
+          "For Cloud Run worker pools with Direct VPC ingress, such as database connections or any other custom TCP-based protocol, the container must listen for TCP connections on the port exposed in your container image through the Dockerfile or specified by the PORT environment variable."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "main.tf",
+      "run.invoker",
+      "service.default.location",
+      "service.default.name"
+    ],
+    "missing_inventory_roles": [
+      "roles/run.invoker"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/deploy-functions",
+        "https://docs.cloud.google.com/run/docs/container-contract",
+        "https://docs.cloud.google.com/run/docs/reference/container-contract"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/deploy-functions",
+        "https://docs.cloud.google.com/run/docs/container-contract",
+        "https://docs.cloud.google.com/run/docs/reference/container-contract"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/deploy-functions",
+        "https://docs.cloud.google.com/run/docs/container-contract",
+        "https://docs.cloud.google.com/run/docs/reference/container-contract"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/deploy-functions",
+        "https://docs.cloud.google.com/run/docs/container-contract",
+        "https://docs.cloud.google.com/run/docs/reference/container-contract"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/deploy-functions",
+        "https://docs.cloud.google.com/run/docs/container-contract",
+        "https://docs.cloud.google.com/run/docs/reference/container-contract"
+      ]
+    }
+  ]
+}

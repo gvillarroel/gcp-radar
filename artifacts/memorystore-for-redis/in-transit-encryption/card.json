@@ -1,0 +1,158 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:43.466Z",
+  "source_step08_card": "data/step-08/current/products/memorystore-for-redis/card.json",
+  "product_name": "Memorystore for Redis",
+  "product_slug": "memorystore-for-redis",
+  "feature_name": "In-transit encryption",
+  "feature_slug": "in-transit-encryption",
+  "summary": "Memorystore for Redis supports in-transit encryption.",
+  "extended_definition": "Memorystore for Redis supports in-transit encryption.",
+  "lifecycle": {
+    "latest_feature_date": "2021-03-05",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/memorystore/docs/redis/about-in-transit-encryption",
+      "https://docs.cloud.google.com/memorystore/docs/redis/connect-redis-instance",
+      "https://docs.cloud.google.com/memorystore/docs/redis/create-manage-instances",
+      "https://docs.cloud.google.com/memorystore/docs/redis/memorystore-for-redis-overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"About in-transit encryption \\_|\\_ Memorystore for Redis \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/memorystore/docs/redis/about-in-transit-encryption",
+        "source_id": "site-docs-root-2",
+        "final_score": 391,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "In-transit encryption prerequisites In order to use in-transit encryption with Memorystore for Redis, you need: A Redis client that supports TLS or a third-party TLS sidecar A Certificate Authority installed on the client machine accessing your Redis instance Native TLS was not supported prior to open source Redis version 6.0.",
+          "Home Documentation Databases Memorystore Memorystore for Redis Guides Send feedback About in-transit encryption Stay organized with collections Save and categorize content based on your preferences.",
+          "Redis version 7.0 performance improvements Using Redis version 7.0 on Memorystore for Redis improves the performance of in-transit encryption."
+        ]
+      },
+      {
+        "title": "\"Connect to a Redis instance \\_|\\_ Memorystore for Redis \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/memorystore/docs/redis/connect-redis-instance",
+        "source_id": "site-docs-root",
+        "final_score": 333,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "From the terminal, telnet to the read endpoint IP address of the Redis instance, replacing variables with appropriate values. telnet read-endpoint-ip 6379 If successful, the command will return this result: Trying read-endpoint-ip … Connected to read-endpoint-ip In the telnet session, enter some Redis commands: Enter: PING Result: PONG Connect to a Redis instance securely by using Stunnel and telnet This section provides an example of how to connect to a Redis instance that has in-transit encryption enabled using Stunnel .",
+          "Connect to a Redis instance from a Compute Engine VM using telnet You can connect to the Memorystore for Redis instance from any Compute Engine VM that uses the instance's authorized network with a supported RFC 1918 IP address .",
+          "Home Documentation Databases Memorystore Memorystore for Redis Guides Send feedback Connect to a Redis instance Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"Create and manage Redis instances \\_|\\_ Memorystore for Redis \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/memorystore/docs/redis/create-manage-instances",
+        "source_id": "site-docs-root",
+        "final_score": 319,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Create a Redis instance that uses customer managed encryption keys For instructions on how to create a Redis instance that uses customer managed encryption keys (CMEK), see Creating a Memorystore for Redis instance that uses CMEK .",
+          "Memorystore for Redis Click the ID of an instance about which you want to view summary information. gcloud To view summary information about an instance, use the gcloud redis instances describe command: gcloud redis instances describe INSTANCE ID \\ --region= REGION ID Make the following replacements: INSTANCE ID : the ID of the instance about which you want to view summary information REGION ID : the region where the instance is located For example: gcloud redis instances describe my-instance \\ --region=us-central1 Edit instances To edit an instance: Console Go to the Memorystore for Redis page in the Google Cloud console.",
+          "To choose one of the available OSS Redis versions for Memorystore for Redis, use the --redis-version flag with one of the following values: redis 7 2 redis 7 0 (Default) redis 6 X redis 5 0 redis 4 0 redis 3 2 For example: gcloud redis instances create myinstance --size=5 --region=us-central1 \\ --zone=us-central1-a --redis-version=redis 6 X Networking You can create Redis instances using one of two connection modes : --connect-mode=PRIVATE SERVICE ACCESS or --connect-mode=DIRECT PEERING ."
+        ]
+      },
+      {
+        "title": "Memorystore for Redis overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/memorystore/docs/redis/memorystore-for-redis-overview",
+        "source_id": "site-docs-root",
+        "final_score": 283,
+        "relevance": "",
+        "evidence_snippets": [
+          "Scale, as needed: Memorystore for Redis enables scaling your instances up to a maximum of 300 GB and supports up to 16 Gbps of network throughput.",
+          "Memorystore for Redis currently supports RDB snapshots and exporting data .",
+          "Tier capabilities The following table describes the differences between the available Memorystore for Redis service tiers: Specifications Basic Tier Standard Tier (read replicas disabled) Standard Tier (read replicas enabled) Description Provides a cache with no replication Provides redundancy and availability using replication Provides redundancy and availability using replication to backup data, and multiple Read replicas to increase read throughput Max Redis primary size 300 GB 300 GB 300 GB Max network bandwidth 16 Gbps 16 Gbps 16 Gbps total for writes."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/redis/about-in-transit-encryption",
+        "https://docs.cloud.google.com/memorystore/docs/redis/connect-redis-instance",
+        "https://docs.cloud.google.com/memorystore/docs/redis/create-manage-instances",
+        "https://docs.cloud.google.com/memorystore/docs/redis/memorystore-for-redis-overview"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/redis/about-in-transit-encryption",
+        "https://docs.cloud.google.com/memorystore/docs/redis/connect-redis-instance",
+        "https://docs.cloud.google.com/memorystore/docs/redis/create-manage-instances",
+        "https://docs.cloud.google.com/memorystore/docs/redis/memorystore-for-redis-overview"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/redis/about-in-transit-encryption",
+        "https://docs.cloud.google.com/memorystore/docs/redis/connect-redis-instance",
+        "https://docs.cloud.google.com/memorystore/docs/redis/create-manage-instances",
+        "https://docs.cloud.google.com/memorystore/docs/redis/memorystore-for-redis-overview"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/redis/about-in-transit-encryption",
+        "https://docs.cloud.google.com/memorystore/docs/redis/connect-redis-instance",
+        "https://docs.cloud.google.com/memorystore/docs/redis/create-manage-instances",
+        "https://docs.cloud.google.com/memorystore/docs/redis/memorystore-for-redis-overview"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/redis/about-in-transit-encryption",
+        "https://docs.cloud.google.com/memorystore/docs/redis/connect-redis-instance",
+        "https://docs.cloud.google.com/memorystore/docs/redis/create-manage-instances",
+        "https://docs.cloud.google.com/memorystore/docs/redis/memorystore-for-redis-overview"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/redis/about-in-transit-encryption",
+        "https://docs.cloud.google.com/memorystore/docs/redis/connect-redis-instance",
+        "https://docs.cloud.google.com/memorystore/docs/redis/create-manage-instances",
+        "https://docs.cloud.google.com/memorystore/docs/redis/memorystore-for-redis-overview"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/redis/about-in-transit-encryption",
+        "https://docs.cloud.google.com/memorystore/docs/redis/connect-redis-instance",
+        "https://docs.cloud.google.com/memorystore/docs/redis/create-manage-instances",
+        "https://docs.cloud.google.com/memorystore/docs/redis/memorystore-for-redis-overview"
+      ]
+    }
+  ]
+}

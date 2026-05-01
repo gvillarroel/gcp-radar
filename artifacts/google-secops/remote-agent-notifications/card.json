@@ -1,0 +1,168 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:40.586Z",
+  "source_step08_card": "data/step-08/current/products/google-secops/card.json",
+  "product_name": "Google SecOps",
+  "product_slug": "google-secops",
+  "feature_name": "Remote agent notifications",
+  "feature_slug": "remote-agent-notifications",
+  "summary": "Remote agent notifications alert users to new version releases and agent downtime based on permissions and environments.",
+  "extended_definition": "Remote agent notifications alert users to new version releases and agent downtime based on permissions and environments.",
+  "lifecycle": {
+    "latest_feature_date": "2025-08-10",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/chronicle/docs/secops/triage-investigation-agent",
+      "https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/advanced/migrate-to-gcp",
+      "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/any-run"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"SOAR migration overview \\_|\\_ Google Security Operations \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/advanced/migrate-to-gcp",
+        "source_id": "site-api-reference",
+        "final_score": 136,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Perform a major version upgrade of the remote agent.",
+          "What's Next SOAR migration pre-validation guide Migrate a SOAR standalone instance of an MSSP Migrate SOAR endpoints to the Chronicle API Migrate remote agents Migrate SOAR permissions to Google Cloud IAM Frequently asked questions Need more help?",
+          "Migrate Remote Agents You can migrate the Remote Agents to Google Cloud by doing the following: Create a Service Account instead of an API key for the remote agent."
+        ]
+      },
+      {
+        "title": "\"Use Triage and Investigation Agent to investigate alerts \\_|\\_ Google Security\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/secops/triage-investigation-agent",
+        "source_id": "site-docs-reference-2",
+        "final_score": 111,
+        "relevance": "",
+        "evidence_snippets": [
+          "Default Supported Log Types The agent supports automatic investigation for alerts that contain events with the following metadata.log type values: Source metadata.log type values Amazon AWS CLOUDTRAIL , AWS IAM , AWS NETWORK FIREWALL , AWS VPC FLOW Cisco CISCO ASA FIREWALL, CISCO FIREPOWER FIREWALL, CISCO ISE, CISCO MERAKI CrowdStrike CROWDSTRIKE IOC , CS ALERTS , CS CEF EDR , CS DETECTS , CS EDR , CS IDP Fortinet FORTINET FIREWALL , FORTINET FORTIEDR , FORTINET WEBPROXY Google GCP CLOUDAUDIT , GCP CLOUDIDENTITY DEVICES , GCP CLOUDIDENTITY DEVICEUSERS , GCP DNS , GCP NGFW ENTERPRISE , GCP VPC FLOW , WORKSPACE ACTIVITY , WORKSPACE ALERTS , WORKSPACE USERS Microsoft ADFS , AZURE AD , AZURE AD AUDIT , AZURE AD CONTEXT , AZURE AD SIGNIN , AZURE FIREWALL , AZURE NSG FLOW , GITHUB , MICROSOFT DEFENDER ATP , MICROSOFT DEFENDER ENDPOINT , MICROSOFT DEFENDER ENDPOINT IOS , MICROSOFT DEFENDER IDENTITY , MICROSOFT GRAPH ALERT , OFFICE 365 , SENTINELONE ACTIVITY , SENTINELONE ALERT , SENTINELONE CF , SENTINEL DV , SENTINEL EDR , WINDOWS AD , WINDOWS DEFENDER ATP , WINDOWS DEFENDER AV , WINDOWS DHCP , WINDOWS DNS , WINDOWS FIREWALL , WINDOWS SYSMON , WINEVTLOG Okta OKTA , OKTA ACCESS GATEWAY , OKTA USER CONTEXT Other BARRACUDA FIREWALL , BOX , BRO DNS , CB APP CONTROL , CB DEFENSE , CB EDR , CHECKPOINT EDR , CHECKPOINT FIREWALL , CLOUDFLARE WAF , CYBERARK EPM , CYBEREASON EDR , DUO AUTH , DUO USER CONTEXT , ELASTIC EDR , F5 AFM , F5 ASM , F5 BIGIP LTM , FIREEYE HX , FIREEYE NX , FORCEPOINT FIREWALL , INFOBLOX DNS , JUNIPER FIREWALL , KEYCLOAK , LIMACHARLIE EDR , MALWAREBYTES EDR , MCAFEE EDR , NETFILTER IPTABLES , ONELOGIN SSO , ONE IDENTITY IDENTITY MANAGER , OPENSSH , PAN FIREWALL , PING , SALESFORCE , SEP , SOPHOS EDR , SOPHOS FIREWALL , SQUID WEBPROXY , SURICATA EVE , SURICATA IDS , SYMANTEC EDR , TANIUM EDR , TANIUM THREAT RESPONSE , TRENDMICRO EDR , UMBRELLA DNS , UMBRELLA FIREWALL , UMBRELLA WEBPROXY , ZEEK , ZSCALER FIREWALL , ZSCALER WEBPROXY .",
+          "Use Triage and Investigation Agent to investigate alerts Supported in: Google secops The Triage and Investigation Agent (TIN) is an AI-powered investigation assistant embedded in Google Security Operations.",
+          "Investigation tools The agent uses the following built-in tools to complete its analysis: Dynamic search queries: Runs and refines searches in SecOps to collect additional context for the alert."
+        ]
+      },
+      {
+        "title": "\"Integrate ANY.RUN with Google SecOps \\_|\\_ Google Security Operations \\_\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/any-run",
+        "source_id": "site-api-reference",
+        "final_score": 98,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Once checked, the option appears to select the remote user (agent).",
+          "Action results Script result Script result name Value options Example is success True or False is success:False JSON result { \"error\" : false , \"data\" :{ \"tasks\" :[ { \"verdict\" : \"No threats detected\" , \"name\" : \"http://users.tpg.com.au/locthuy/employment/qs/unix/Hardening%20your%20AIX%20Security.pdf\" , \"related\" : \"https://app.any.run/tasks/ ID \" , \"pcap\" : \"https://content.any.run/tasks/ ID /download/pcap\" , \"file\" : \"https://content.any.run/tasks/ ID /download/files/ FILE NAME \" , \"json\" : \"https://api.any.run/report/ ID /summary/json\" , \"misp\" : \"https://api.any.run/report/ ID /summary/misp\" , \"tags\" :[ ], \"date\" : \"2020-10-12T08:05:57.587Z\" , \"hashes\" :{ \"ssdeep\" : \"768:iSDksqjqvXbB/6rtilCec397sUiZc9Yky:TDegY539gUiCXy\" , \"head hash\" : \"3c90557306fa01f30693541b28db5785\" , \"sha256\" : \"8ebc1257f9155134bb00315bdd2380990cdc413ba298d0cf473579ccfe03d6e5\" , \"sha1\" : \"c125ba414416668b84ac737ec6db1b7f94bf32af\" , \"md5\" : \"5e19377a19ef7657707872377bea14b7\" } } ] } } Case wall Result type Description Type Output message Action should not fail and not stop playbook execution: If successful and found reports: \"Found ANY.RUN reports for the provided search parameters\".",
+          "Run Remotely Checkbox Unchecked No Check the field in order to run the configured integration remotely."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "api.any.run",
+      "app.any.run",
+      "content.any.run",
+      "metadata.log",
+      "users.tpg.com.au"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/advanced/migrate-to-gcp",
+        "https://docs.cloud.google.com/chronicle/docs/secops/triage-investigation-agent",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/any-run"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/advanced/migrate-to-gcp",
+        "https://docs.cloud.google.com/chronicle/docs/secops/triage-investigation-agent",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/any-run"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/advanced/migrate-to-gcp",
+        "https://docs.cloud.google.com/chronicle/docs/secops/triage-investigation-agent",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/any-run"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/advanced/migrate-to-gcp",
+        "https://docs.cloud.google.com/chronicle/docs/secops/triage-investigation-agent",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/any-run"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/advanced/migrate-to-gcp",
+        "https://docs.cloud.google.com/chronicle/docs/secops/triage-investigation-agent",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/any-run"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/advanced/migrate-to-gcp",
+        "https://docs.cloud.google.com/chronicle/docs/secops/triage-investigation-agent",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/any-run"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/advanced/migrate-to-gcp",
+        "https://docs.cloud.google.com/chronicle/docs/secops/triage-investigation-agent",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/any-run"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/advanced/migrate-to-gcp",
+        "https://docs.cloud.google.com/chronicle/docs/secops/triage-investigation-agent",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/any-run"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/advanced/migrate-to-gcp",
+        "https://docs.cloud.google.com/chronicle/docs/secops/triage-investigation-agent",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/any-run"
+      ]
+    },
+    {
+      "capability": "threat",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/advanced/migrate-to-gcp",
+        "https://docs.cloud.google.com/chronicle/docs/secops/triage-investigation-agent",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/any-run"
+      ]
+    }
+  ]
+}

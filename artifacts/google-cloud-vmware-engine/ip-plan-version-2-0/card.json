@@ -1,0 +1,173 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:39.256Z",
+  "source_step08_card": "data/step-08/current/products/google-cloud-vmware-engine/card.json",
+  "product_name": "Google Cloud VMware Engine",
+  "product_slug": "google-cloud-vmware-engine",
+  "feature_name": "IP Plan version 2.0",
+  "feature_slug": "ip-plan-version-2-0",
+  "summary": "IP Plan version 2.0 changes subnet allocations for newly created private clouds and includes HCX addressing in the management CIDR.",
+  "extended_definition": "IP Plan version 2.0 changes subnet allocations for newly created private clouds and includes HCX addressing in the management CIDR.",
+  "lifecycle": {
+    "latest_feature_date": "2022-11-17",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/backup-disaster-recovery/docs/create-plan/dynamic-protection",
+      "https://docs.cloud.google.com/backup-disaster-recovery/docs/quickstarts/sap-hana-on-gce-backup-recovery",
+      "https://docs.cloud.google.com/vmware-engine/docs/private-clouds/howto-manage-private-cloud"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Manage private cloud resources and activity \\_|\\_ Google Cloud VMware Engine\\",
+        "url": "https://docs.cloud.google.com/vmware-engine/docs/private-clouds/howto-manage-private-cloud",
+        "source_id": "site-docs-root",
+        "final_score": 148,
+        "relevance": "",
+        "evidence_snippets": [
+          "Verify IP address layout version Private clouds created after November 2022 adhere to IP address layout (IP Plan) version 2.0 subnet allocations.",
+          "Almost all private clouds created before November 2022 adhere to IP Plan version 1.0 subnet allocations.",
+          "The list includes the HCX subnets created when the private cloud was created."
+        ]
+      },
+      {
+        "title": "\"Protect and recover SAP HANA databases in Compute Engine instances \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/backup-disaster-recovery/docs/quickstarts/sap-hana-on-gce-backup-recovery",
+        "source_id": "site-docs-reference-2",
+        "final_score": 110,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "HANA 2.0 (SPS01 to SPS04): Click the System privilege tab and assign privileges by selecting the following: Backup admin Catalog read Database admin Database start Database stop HANA 2.0 (SPS05 and later): Click the System privilege tab and assign privileges by selecting the following: Backup admin Catalog read Database backup operator Database recovery operator Database admin Database start Database stop Deploy the newly created system user by clicking the green arrow .",
+          "In the Manage section, apply the policy template and the resource profile that you created in Create a backup plan for the SAP HANA databases .",
+          "You created a backup plan for the Compute Engine instance in Get started with Backup and DR: protect and recover a Compute Engine instance ."
+        ]
+      },
+      {
+        "title": "\"Automate protection of Compute Engine instances \\_|\\_ Backup and DR \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/backup-disaster-recovery/docs/create-plan/dynamic-protection",
+        "source_id": "site-docs-reference-2",
+        "final_score": 95,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "You can wait for the scheduled dynamic protection job to run at 4:15 AM or 4:15 PM local time for it to take effect, or you can run a dynamic protection job on-demand by following the steps in Run Manual Auto Protection . variable \"project id\" { description = \"The ID of the existing Google Cloud project\" type = string } variable \"region\" { description = \"The Google Cloud region where demo-instance should be created\" type = string } variable \"zone\" { description = \"The Google Cloud zone where demo-instance should be created\" type = string } provider \"google\" { project = var.project id region = var.region zone = var.zone } data \"google project\" \"project\" { project id = var.project id } Reference: https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/tags tag key resource \"google tags tag key\" \"key\" { parent = \"projects/${var.project id}\" short name = \"backupdr-dynamicprotect\" description = \"Tag key for Dynamic Protection.\" } Reference: https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/tags tag value resource \"google tags tag value\" \"value\" { parent = \"tagKeys/${google tags tag key.key.name}\" short name = \"backupdr-gold\" # This value should be present in the \"Management Console UI\" > \"Backup Plans\" > \"Dynamic Protection Tags\" description = \"Tag value for gold plan.\" } Reference: https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/compute instance Ensure not to define tag in \"resource manager tags\" block while creating VM instance.",
+          "A mounted VM on any existing host or newly created host won't carry over the same protection tag as the source VM, so it won't be protected automatically after the mount operation.",
+          "Administer Dynamic Protection Tags To create, update, and delete Dynamic Protection Tags, you need to have the appropriate permissions for your role to be sure you have one of the following roles assigned: Backup and DR Admin Backup and DR Backup User Backup and DR User V2 Project Editor Project Owner a custom role that includes the following permissions: Required permissions backupdr.managementServers.listDynamicProtection backupdr.managementServers.getDynamicProtection backupdr.managementServers.createDynamicProtection backupdr.managementServers.deleteDynamicProtection compute.instances.listEffectiveTags Learn more about Backup and DR Service roles ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "backupdr.managementServers.createDynamicProtection",
+      "backupdr.managementServers.deleteDynamicProtection",
+      "backupdr.managementServers.getDynamicProtection",
+      "backupdr.managementServers.listDynamicProtection",
+      "compute.instances.listEffectiveTags",
+      "key.key.name",
+      "registry.terraform.io",
+      "var.project",
+      "var.region",
+      "var.zone"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vmware-engine/docs/private-clouds/howto-manage-private-cloud",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/quickstarts/sap-hana-on-gce-backup-recovery",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/create-plan/dynamic-protection"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vmware-engine/docs/private-clouds/howto-manage-private-cloud",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/quickstarts/sap-hana-on-gce-backup-recovery",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/create-plan/dynamic-protection"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vmware-engine/docs/private-clouds/howto-manage-private-cloud",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/quickstarts/sap-hana-on-gce-backup-recovery",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/create-plan/dynamic-protection"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vmware-engine/docs/private-clouds/howto-manage-private-cloud",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/quickstarts/sap-hana-on-gce-backup-recovery",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/create-plan/dynamic-protection"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vmware-engine/docs/private-clouds/howto-manage-private-cloud",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/quickstarts/sap-hana-on-gce-backup-recovery",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/create-plan/dynamic-protection"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vmware-engine/docs/private-clouds/howto-manage-private-cloud",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/quickstarts/sap-hana-on-gce-backup-recovery",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/create-plan/dynamic-protection"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vmware-engine/docs/private-clouds/howto-manage-private-cloud",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/quickstarts/sap-hana-on-gce-backup-recovery",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/create-plan/dynamic-protection"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vmware-engine/docs/private-clouds/howto-manage-private-cloud",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/quickstarts/sap-hana-on-gce-backup-recovery",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/create-plan/dynamic-protection"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vmware-engine/docs/private-clouds/howto-manage-private-cloud",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/quickstarts/sap-hana-on-gce-backup-recovery",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/create-plan/dynamic-protection"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vmware-engine/docs/private-clouds/howto-manage-private-cloud",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/quickstarts/sap-hana-on-gce-backup-recovery",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/create-plan/dynamic-protection"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,109 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:18.771Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery",
+  "feature_name": "Snowflake SQL to GoogleSQL translation",
+  "feature_slug": "snowflake-sql-to-googlesql-translation",
+  "summary": "BigQuery Migration Service translates Snowflake SQL to GoogleSQL with broader SQL and data type support.",
+  "extended_definition": "BigQuery Migration Service translates Snowflake SQL to GoogleSQL with broader SQL and data type support.",
+  "lifecycle": {
+    "latest_feature_date": "2026-04-02",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/api-sql-translator",
+      "https://docs.cloud.google.com/bigquery/docs/batch-sql-translator",
+      "https://docs.cloud.google.com/bigquery/docs/config-yaml-translation"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Transform SQL translations using configuration YAML files \\_|\\_ BigQuery\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/config-yaml-translation",
+        "source_id": "site-docs-reference-5",
+        "final_score": 150,
+        "relevance": "",
+        "evidence_snippets": [
+          "Configuration YAML file requirements Before creating a configuration YAML file, review the following information to ensure that your YAML file is compatible to use with the BigQuery Migration Service: You must upload the configuration YAML files in the directory of the Cloud Storage bucket that contains your SQL translation input files.",
+          "The interactive SQL translator, BigQuery Migration API, the batch SQL translator, and the batch translation Python client supports the use of multiple configuration YAML files in a single translation job.",
+          "When using the BigQuery interactive SQL translator , using the BigQuery Migration API , or performing a batch SQL translation , you can provide configuration YAML files to modify a SQL query translation."
+        ]
+      },
+      {
+        "title": "\"Translate SQL queries with the translation API \\_|\\_ BigQuery \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/api-sql-translator",
+        "source_id": "site-docs-reference-5",
+        "final_score": 134,
+        "relevance": "",
+        "evidence_snippets": [
+          "Supported task types The translation API can translate the following SQL dialects into GoogleSQL: Amazon Redshift SQL - Redshift2BigQuery Translation Apache HiveQL and Beeline CLI - HiveQL2BigQuery Translation Apache Impala - Impala2BigQuery Translation Apache Spark SQL - SparkSQL2BigQuery Translation Azure Synapse T-SQL - AzureSynapse2BigQuery Translation GoogleSQL (BigQuery) - Bigquery2Bigquery Translation Greenplum SQL - Greenplum2BigQuery Translation IBM Db2 SQL - Db22BigQuery Translation IBM Netezza SQL and NZPLSQL - Netezza2BigQuery Translation MySQL SQL - MySQL2BigQuery Translation Oracle SQL, PL/SQL, Exadata - Oracle2BigQuery Translation PostgreSQL SQL - Postgresql2BigQuery Translation Presto or Trino SQL - Presto2BigQuery Translation Snowflake SQL - Snowflake2BigQuery Translation SQLite - SQLite2BigQuery Translation SQL Server T-SQL - SQLServer2BigQuery Translation Teradata and Teradata Vantage - Teradata2BigQuery Translation Vertica SQL - Vertica2BigQuery Translation Handling unsupported SQL functions with helper UDFs When translating SQL from a source dialect to BigQuery, some functions might not have a direct equivalent.",
+          "If the task succeeds, you will find the translated SQL in the response message: { \"name\" : \"projects/123456789/locations/us/workflows/12345678-9abc-def1-2345-6789abcdef00\" , \"tasks\" : { \"string\" : { \"id\" : \"0fedba98-7654-3210-1234-56789abcdef\" , \"type\" : \"HiveQL2BigQuery Translation\" , / ... / \"taskResult\" : { \"translationTaskResult\" : { \"translatedLiterals\" : [ { \"relativePath\" : \"sql/input file\" , \"literalString\" : \"-- Translation time: 2023-10-05T21:50:49.885839Z\\n-- Translation job ID: projects/123456789/locations/us/workflows/12345678-9abc-def1-2345-6789abcdef00\\n-- Source: input file\\n-- Translated from: Hive\\n-- Translated to: BigQuery\\n\\nSELECT\\n 1\\n;\\n\" } ], \"reportLogMessages\" : [ ... ] } }, / ... / } }, \"state\" : \"COMPLETED\" , \"createTime\" : \"2023-10-05T21:50:49.543221Z\" , \"lastUpdateTime\" : \"2023-10-05T21:50:50.462758Z\" } Explore the translation output After running the translation job, retrieve the results by specifying the translation job workflow ID using the following command: curl \\ -H \"Content-Type:application/json\" \\ -H \"Authorization:Bearer TOKEN \" -X GET https://bigquerymigration.googleapis.com/v2alpha/projects/ PROJECT ID /locations/ LOCATION /workflows/ WORKFLOW ID Replace the following: TOKEN : the token for authentication.",
+          "The following example translates the Teradata SQL scripts located in the gs://my data bucket/teradata/input/ Cloud Storage directory and stores results in the Cloud Storage directory gs://my data bucket/teradata/output/ with additional AI suggestion: { \"tasks\" : { \"task name\" : { \"type\" : \"Teradata2BigQuery Translation\" , \"translation details\" : { \"target base uri\" : \"gs://my data bucket/teradata/output/\" , \"source target mapping\" : { \"source spec\" : { \"base uri\" : \"gs://my data bucket/teradata/input/\" } }, \"target types\" : \"suggestion\" , } } } } Note: To generate AI suggestions, the Cloud Storage source directory must contain at least one configuration YAML file with a suffix of .ai config.yaml ."
+        ]
+      },
+      {
+        "title": "\"Migrate code with the batch SQL translator \\_|\\_ BigQuery \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/batch-sql-translator",
+        "source_id": "site-docs-reference-5",
+        "final_score": 118,
+        "relevance": "",
+        "evidence_snippets": [
+          "The batch SQL translator can translate the following SQL dialects into GoogleSQL: Amazon Redshift SQL Apache HiveQL and Beeline CLI IBM Netezza SQL and NZPLSQL Teradata and Teradata Vantage: SQL Basic Teradata Query (BTEQ) Teradata Parallel Transport (TPT) Additionally, translation of the following SQL dialects is supported in preview : Apache Impala SQL Apache Spark SQL Azure Synapse T-SQL GoogleSQL (BigQuery) Greenplum SQL IBM DB2 SQL MySQL SQL Oracle SQL, PL/SQL, Exadata PostgreSQL SQL Trino or PrestoSQL Snowflake SQL SQL Server T-SQL SQLite Vertica SQL Important: Translation is done on a best effort basis.",
+          "The following example shows a translation configuration YAML file for a Teradata to BigQuery translation: tasks: translation task: type: Teradata2BigQuery Translation translationDetails: sourceTargetMapping: - sourceSpec: baseUri: gs://bq-translations/input targetSpec: relativePath: output targetBaseUri: gs://bq-translations targetTypes: - sql sourceEnvironment: defaultDatabase: default db schemaSearchPath: - foo The following example shows a translation configuration JSON file for a Teradata to BigQuery translation: { \"tasks\" : { \"translation task\" : { \"type\" : \"Teradata2BigQuery Translation\" , \"translationDetails\" : { \"sourceTargetMapping\" : [ { \"sourceSpec\" : { \"literal\" : { \"literalString\" : \"sel 1\" , \"relativePath\" : \"my input 1\" } , \"encoding\" : \"UTF-8\" } } , { \"sourceSpec\" : { \"literal\" : { \"literalString\" : \"sel 2\" , \"relativePath\" : \"my input 2\" } , \"encoding\" : \"UTF-8\" } } ] , \"targetReturnLiterals\" : [ \"sql/my input 1\" , \"sql/my input 2\" ] } } } } Once the translation configuration is created, run the following command to run the translation job. bq mk --migration workflow --location = LOCATION --config file = CONFIG FILE NAME .json Replace the following: LOCATION : the location of the Google Cloud project that is running this translation job.",
+          "Upload input files to Cloud Storage If you want to use the Google Cloud console or the BigQuery Migration API to perform a translation job, you must upload the source files containing the queries and scripts you want to translate to Cloud Storage."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "bigquerymigration.googleapis.com",
+      "config.yaml"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/config-yaml-translation",
+        "https://docs.cloud.google.com/bigquery/docs/api-sql-translator",
+        "https://docs.cloud.google.com/bigquery/docs/batch-sql-translator"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/config-yaml-translation",
+        "https://docs.cloud.google.com/bigquery/docs/api-sql-translator",
+        "https://docs.cloud.google.com/bigquery/docs/batch-sql-translator"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/config-yaml-translation",
+        "https://docs.cloud.google.com/bigquery/docs/api-sql-translator",
+        "https://docs.cloud.google.com/bigquery/docs/batch-sql-translator"
+      ]
+    }
+  ]
+}

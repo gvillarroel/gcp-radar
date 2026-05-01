@@ -1,0 +1,90 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:21.669Z",
+  "source_step08_card": "data/step-08/current/products/bigtable/card.json",
+  "product_name": "Bigtable",
+  "product_slug": "bigtable",
+  "feature_name": "Cloud Bigtable CPU utilization by app profile",
+  "feature_slug": "cloud-bigtable-cpu-utilization-by-app-profile",
+  "summary": "Adds a Cloud Bigtable metric for CPU utilization by app profile, method, and table for finer-grained observability.",
+  "extended_definition": "Adds a Cloud Bigtable metric for CPU utilization by app profile, method, and table for finer-grained observability.",
+  "lifecycle": {
+    "latest_feature_date": "2021-10-04",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigtable/docs/app-profiles",
+      "https://docs.cloud.google.com/bigtable/docs/client-side-metrics-descriptions",
+      "https://docs.cloud.google.com/bigtable/docs/cloud-bigtable-for-cassandra-users"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Client-side metrics descriptions \\_|\\_ Bigtable \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigtable/docs/client-side-metrics-descriptions",
+        "source_id": "site-docs-root-2",
+        "final_score": 108,
+        "relevance": "",
+        "evidence_snippets": [
+          "Supported Bigtable operations ReadRow ReadRows MutateRow MutateRows SampleRowKeys CheckAndMutateRow BulkReadRows BulkMutateRows Type Distribution Available dimensions project ID instance ID table cluster zone app profile ID method name final operation status streaming operation client name Client library support The following table shows the minimum client library versions required to use the operation latencies metric.",
+          "Supported Bigtable operations ReadRow ReadRows MutateRow MutateRows SampleRowKeys CheckAndMutateRow BulkReadRows BulkMutateRows Type Distribution Available dimensions project ID instance ID table cluster zone app profile ID method name attempt status streaming operation client name Client library support The following table shows the minimum client library versions required to use the attempt latencies metric.",
+          "Supported Bigtable operations ReadRow ReadRows MutateRow MutateRows SampleRowKeys CheckAndMutateRow BulkReadRows BulkMutateRows Type Distribution Available dimensions project ID instance ID table cluster zone app profile ID method name attempt status streaming operation client name Client library support The following table shows the minimum client library versions required to use the server latencies metric."
+        ]
+      },
+      {
+        "title": "Bigtable for Cassandra users \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigtable/docs/cloud-bigtable-for-cassandra-users",
+        "source_id": "site-docs-root",
+        "final_score": 107,
+        "relevance": "",
+        "evidence_snippets": [
+          "The Bigtable Google Cloud console page comes with prebuilt dashboards for tracking throughput and utilization metrics at the instance, cluster, and table levels.",
+          "You can also use the application profile as a tag to segment metrics.",
+          "When comparing the two databases, you should understand how each database physically stores data differently in the following aspects: The data distribution strategy The number of cell versions available The storage disk type The data durability and replication mechanism Data distribution In Cassandra, a consistent hash of the primary key's partition columns is the recommended method of determining data distribution across the various SSTables served by cluster nodes."
+        ]
+      },
+      {
+        "title": "App profiles overview \\_|\\_ Bigtable \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigtable/docs/app-profiles",
+        "source_id": "site-docs-reference-2",
+        "final_score": 106,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Monitoring the CPU utilization per app profile for a workload using a standard app profile can help you troubleshoot CPU utilization issues or make decisions about the size or location of the cluster, so you can optimize usage and reduce costs.",
+          "Observability Using separate app profiles for different workloads gives you better insight into your applications' usage of Bigtable, because metrics are available per app profile.",
+          "Metrics at the app profile level are useful if you need to seek support , because you're better able to share the exact workload that is causing an issue."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigtable/docs/cloud-bigtable-for-cassandra-users",
+        "https://docs.cloud.google.com/bigtable/docs/app-profiles",
+        "https://docs.cloud.google.com/bigtable/docs/client-side-metrics-descriptions"
+      ]
+    }
+  ]
+}

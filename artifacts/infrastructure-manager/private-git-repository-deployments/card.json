@@ -1,0 +1,154 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:42.121Z",
+  "source_step08_card": "data/step-08/current/products/infrastructure-manager/card.json",
+  "product_name": "Infrastructure Manager",
+  "product_slug": "infrastructure-manager",
+  "feature_name": "Private Git repository deployments",
+  "feature_slug": "private-git-repository-deployments",
+  "summary": "Deploy infrastructure from Terraform configurations stored in a private Git repository.",
+  "extended_definition": "Deploy infrastructure from Terraform configurations stored in a private Git repository.",
+  "lifecycle": {
+    "latest_feature_date": "2024-03-14",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/infrastructure-manager/docs/automate-git",
+      "https://docs.cloud.google.com/infrastructure-manager/docs/deploy-resources",
+      "https://docs.cloud.google.com/infrastructure-manager/docs/deploy-vpc-with-terraform",
+      "https://docs.cloud.google.com/infrastructure-manager/docs/preview-deployment"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Deploy infrastructure using Infrastructure Manager \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/infrastructure-manager/docs/deploy-resources",
+        "source_id": "site-docs-root",
+        "final_score": 286,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Connect your private Git repository and host to Cloud Build If you are deploying a Terraform configuration from a private Git repository , you need to connect your Git host and repository to Cloud Build.",
+          "Deploy the Terraform configuration: gcloud infra-manager deployments apply projects/ PROJECT ID /locations/ LOCATION /deployments/ DEPLOYMENT ID \\ --service-account projects/ SERVICE ACCOUNT PROJECT ID /serviceAccounts/ SERVICE ACCOUNT \\ --git-source-repo = \" GIT REPO \" \\ --git-source-directory = \" DIRECTORY \" \\ --git-source-ref = \" REF \" \\ --quota-validation = QUOTA VALIDATION \\ --input-values = INPUT 1 NAME = VALUE , INPUT 2 NAME = VALUE \\ --tf-version-constraint = TERRAFORM VERSION \\ --annotations = \" ANNOTATION KEY = ANNOTATION VALUE \" --provider-source = SERVICE MAINTAINED Replace: PROJECT ID : the project ID where Infra Manager runs.",
+          "Use Infra Manager in Google Cloud CLI to deploy Terraform configurations from: Cloud Storage buckets Git repositories Local directories See Terraform modules and blueprints for Google Cloud for examples and template Terraform configurations you can use with Infra Manager."
+        ]
+      },
+      {
+        "title": "Preview a deployment \\_|\\_ Infrastructure Manager \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/infrastructure-manager/docs/preview-deployment",
+        "source_id": "site-iam-reference",
+        "final_score": 236,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To preview the deployment: gcloud infra - manager previews create projects / PROJECT ID / locations / LOCATION / previews / PREVIEW ID \\ -- service - account projects / SERVICE ACCOUNT PROJECT ID / serviceAccounts / SERVICE ACCOUNT \\ -- git - source - repo = \" GIT REPO \" \\ -- git - source - directory = \" DIRECTORY \" \\ -- git - source - ref = \" REF \" \\ -- input - values = INPUT 1 NAME = VALUE , INPUT 2 NAME = VALUE \\ -- tf - version - constraint = TERRAFORM VERSION \\ -- annotations = \" ANNOTATION KEY = ANNOTATION VALUE \" -- provider - source = SERVICE MAINTAINED Replace: PROJECT ID is the project ID where Infrastructure Manager runs.",
+          "To update a deployment stored in a Git repository: If you are using a private Git repository, ensure that you have connected to your GitHub host and GitHub repository using Cloud Build to provide Infra Manager access to your repository.",
+          "Preview using a Terraform configuration stored in a Git repository When you update a deployment, some of the existing resources might not change."
+        ]
+      },
+      {
+        "title": "\"Automate the deployment of Google Cloud resources \\_|\\_ Infrastructure Manager\\",
+        "url": "https://docs.cloud.google.com/infrastructure-manager/docs/automate-git",
+        "source_id": "site-iam-reference",
+        "final_score": 227,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Copy the im cloudbuild workspace module into the main.tf file within your Git repository: module \"im-workspace\" { source = \"terraform-google-modules/bootstrap/google//modules/im cloudbuild workspace\" version = \" > 7.0\" project id = \" PROJECT ID \" deployment id = \" DEPLOYMENT ID \" im deployment repo uri = \" GIT REPO \" im deployment ref = \" REF \" github app installation id = \" GIT APP ID \" github personal access token = \" TOKEN \" } Replace: PROJECT ID : the project ID where Infrastructure Manager runs.",
+          "To automate Terraform configuration deployments when the repository is updated: Install the Cloud Build GitHub App on your GitHub account or in an organization you own.",
+          "Create a deployment (or update your existing deployment) with the im cloudbuild workspace module: gcloud infra-manager deployments apply projects/ PROJECT ID /locations/ LOCATION /deployments/ DEPLOYMENT ID \\ --service-account projects/ SERVICE ACCOUNT PROJECT ID /serviceAccounts/ SERVICE ACCOUNT \\ --git-source-repo = GIT REPO \\ --git-source-directory = DIRECTORY \\ --git-source-ref = REF Replace: PROJECT ID : the project ID where Infrastructure Manager runs."
+        ]
+      },
+      {
+        "title": "\"Quickstart: Deploy a VPC with Infrastructure Manager \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/infrastructure-manager/docs/deploy-vpc-with-terraform",
+        "source_id": "site-docs-root",
+        "final_score": 226,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The following command adds these values: your project ID, the service account name, the location us-central1 , and the name quickstart-vpc for the network you're creating. gcloud infra-manager deployments apply projects/ PROJECT ID /locations/us-central 1 /deployments/quickstart-deployment \\ --service-account = projects/ PROJECT ID /serviceAccounts/ SERVICE ACCOUNT NAME @ PROJECT ID . iam.gserviceaccount.com \\ --git-source-repo = https : //github.com/terraform-google-modules/terraform-google-network \\ --git-source-directory = modules/vpc \\ --git-source-ref = main \\ --input-values = project id = PROJECT ID , network name = quickstart-vpc When the deployment is done, you see: Creating the deployment...done The VPC is now created and configured as described in the configuration.",
+          "Deploy a VPC with Terraform Learn how to use Infrastructure Manager to deploy a Virtual Private Cloud (VPC).",
+          "This quickstart uses a Terraform configuration that is stored in a public GitHub repository."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "deployment...done",
+      "github.com",
+      "iam.gserviceaccount.com",
+      "main.tf"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/infrastructure-manager/docs/deploy-resources",
+        "https://docs.cloud.google.com/infrastructure-manager/docs/preview-deployment",
+        "https://docs.cloud.google.com/infrastructure-manager/docs/automate-git",
+        "https://docs.cloud.google.com/infrastructure-manager/docs/deploy-vpc-with-terraform"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/infrastructure-manager/docs/deploy-resources",
+        "https://docs.cloud.google.com/infrastructure-manager/docs/preview-deployment",
+        "https://docs.cloud.google.com/infrastructure-manager/docs/automate-git",
+        "https://docs.cloud.google.com/infrastructure-manager/docs/deploy-vpc-with-terraform"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/infrastructure-manager/docs/deploy-resources",
+        "https://docs.cloud.google.com/infrastructure-manager/docs/preview-deployment",
+        "https://docs.cloud.google.com/infrastructure-manager/docs/automate-git",
+        "https://docs.cloud.google.com/infrastructure-manager/docs/deploy-vpc-with-terraform"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/infrastructure-manager/docs/deploy-resources",
+        "https://docs.cloud.google.com/infrastructure-manager/docs/preview-deployment",
+        "https://docs.cloud.google.com/infrastructure-manager/docs/automate-git",
+        "https://docs.cloud.google.com/infrastructure-manager/docs/deploy-vpc-with-terraform"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/infrastructure-manager/docs/deploy-resources",
+        "https://docs.cloud.google.com/infrastructure-manager/docs/preview-deployment",
+        "https://docs.cloud.google.com/infrastructure-manager/docs/automate-git",
+        "https://docs.cloud.google.com/infrastructure-manager/docs/deploy-vpc-with-terraform"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/infrastructure-manager/docs/deploy-resources",
+        "https://docs.cloud.google.com/infrastructure-manager/docs/preview-deployment",
+        "https://docs.cloud.google.com/infrastructure-manager/docs/automate-git",
+        "https://docs.cloud.google.com/infrastructure-manager/docs/deploy-vpc-with-terraform"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,83 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:18.771Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery",
+  "feature_name": "Batch queries",
+  "feature_slug": "batch-queries",
+  "summary": "Batch queries run queries asynchronously using idle resources and can fall back to interactive priority after a delay; Batch queries let BigQuery execute queries later at lower cost than immediate interactive queries.",
+  "extended_definition": "Batch queries run queries asynchronously using idle resources and can fall back to interactive priority after a delay; Batch queries let BigQuery execute queries later at lower cost than immediate interactive queries.",
+  "lifecycle": {
+    "latest_feature_date": "2014-03-25",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/continuous-queries-introduction",
+      "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+      "https://docs.cloud.google.com/bigquery/docs/troubleshoot-quotas"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Data definition language (DDL) statements in GoogleSQL \\_|\\_ BigQuery \\_\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "source_id": "site-docs-reference",
+        "final_score": 152,
+        "relevance": "",
+        "evidence_snippets": [
+          "Sets the default queue timeout for interactive queries in the us region to 30 minutes. default batch query queue timeout ms INT64 The default amount of time that a batch query is queued.",
+          "Sets the default queue timeout for interactive queries in the us region to 30 minutes. default batch query queue timeout ms INT64 The default amount of time that a batch query is queued.",
+          "Sets the default queue timeout for batch queries in the us region to 30 minutes. default query optimizer options STRING The history-based query optimizations."
+        ]
+      },
+      {
+        "title": "Introduction to continuous queries \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/continuous-queries-introduction",
+        "source_id": "site-docs-reference-5",
+        "final_score": 136,
+        "relevance": "",
+        "evidence_snippets": [
+          "Idle slot sharing Continuous queries can use idle slot sharing to share unused slot resources with other reservations and job types .",
+          "Writes from the results of a batch query to a permanent table Writes from the results of a BigQuery continuous query to a permanent table A Pub/Sub BigQuery subscription Writes from Dataflow to BigQuery Writes from Datastream to BigQuery using append-only write mode You can use continuous queries to perform time-sensitive tasks, such as creating and immediately acting on insights, applying real-time machine learning (ML) inference, and replicating data into other platforms.",
+          "Continuous queries can process data that has been written to standard BigQuery tables by using one of the following methods: The BigQuery Storage Write API The tabledata.insertAll method Batch load The INSERT DML statement Mutating data manipulation language (DML) statements such as DELETE , UPDATE , and MERGE when exporting data to Pub/Sub ."
+        ]
+      },
+      {
+        "title": "Troubleshoot quota and limit errors \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/troubleshoot-quotas",
+        "source_id": "site-docs-root",
+        "final_score": 126,
+        "relevance": "",
+        "evidence_snippets": [
+          "All query results, including both interactive and batch queries, are cached in temporary tables for approximately 24 hours with some exceptions .",
+          "Query queue limit errors You might encounter this error if a project queues more interactive or batch queries than its queue limit permits.",
+          "Because you can queue more batch queries than interactive queries, use batch priority jobs instead of interactive queries."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "tabledata.insertAll"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": []
+}

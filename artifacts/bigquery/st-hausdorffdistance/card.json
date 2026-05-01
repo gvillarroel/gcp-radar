@@ -1,0 +1,194 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:18.771Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery",
+  "feature_name": "ST_HAUSDORFFDISTANCE",
+  "feature_slug": "st-hausdorffdistance",
+  "summary": "The ST_HAUSDORFFDISTANCE geography function computes the discrete Hausdorff distance between two geometries.",
+  "extended_definition": "The ST_HAUSDORFFDISTANCE geography function computes the discrete Hausdorff distance between two geometries.",
+  "lifecycle": {
+    "latest_feature_date": "2023-10-12",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/functions-all",
+      "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/geography_functions"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Geography functions | BigQuery | Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/geography_functions",
+        "source_id": "feature-recovery-http",
+        "final_score": 365,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "WITH example AS ( SELECT ST_GEOGFROMTEXT ( 'POINT(0 1)' ) AS geography UNION ALL SELECT ST_GEOGFROMTEXT ( 'MULTILINESTRING((2 2, 3 4), (5 6, 7 7))' ) UNION ALL SELECT ST_GEOGFROMTEXT ( 'GEOMETRYCOLLECTION(MULTIPOINT(-1 2, 0 12), LINESTRING(-2 4, 0 6))' ) UNION ALL SELECT ST_GEOGFROMTEXT ( 'GEOMETRYCOLLECTION EMPTY' )) SELECT geography AS WKT , ST_GEOMETRYTYPE ( geography ) AS geometry_type_name FROM example ; /*-------------------------------------------------------------------+-----------------------+ | WKT | geometry_type_name | +-------------------------------------------------------------------+-----------------------+ | POINT(0 1) | ST_Point | | MULTILINESTRING((2 2, 3 4), (5 6, 7 7)) | ST_MultiLineString | | GEOMETRYCOLLECTION(MULTIPOINT(-1 2, 0 12), LINESTRING(-2 4, 0 6)) | ST_GeometryCollection | | GEOMETRYCOLLECTION EMPTY | ST_GeometryCollection | +-------------------------------------------------------------------+-----------------------*/ ST_HAUSDORFFDISTANCE ST_HAUSDORFFDISTANCE ( geography_1 , geography_2 [ , directed = > { TRUE | FALSE } ] ) Description Gets the discrete Hausdorff distance , which is the greatest of all the distances from a discrete point in one geography to the closest discrete point in another geography.",
+          "WITH data AS ( SELECT ST_GEOGFROMTEXT ( 'LINESTRING(20 70, 70 60, 10 70, 70 70)' ) AS geo1 , ST_GEOGFROMTEXT ( 'LINESTRING(20 90, 30 90, 60 10, 90 10)' ) AS geo2 ) SELECT ST_HAUSDORFFDISTANCE ( geo1 , geo2 ) AS distance FROM data ; ST_HAUSDORFFDWITHIN ST_HAUSDORFFDWITHIN ( geography_1 , geography_2 , distance [ , directed = > { TRUE | FALSE } ] ) Description Returns TRUE if the Hausdorff distance between geography_1 and geography_2 is less than or equal to the distance given by the distance argument; otherwise, returns FALSE .",
+          "ST_HAUSDORFFDISTANCE Gets the discrete Hausdorff distance between two geometries."
+        ]
+      },
+      {
+        "title": "String functions \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/string_functions",
+        "source_id": "site-docs-root",
+        "final_score": 68,
+        "relevance": "",
+        "evidence_snippets": [
+          "SELECT CONTAINS SUBSTR ( JSON '{\"lunch\":\"soup\"}' , \"lunch\" , json scope = > \"JSON KEYS\" ) AS result ; / --------+ result +--------+ TRUE +-------- / EDIT DISTANCE EDIT DISTANCE ( value1 , value2 , [ max distance = > max distance value ] ) Description Computes the Levenshtein distance between two STRING or BYTES values.",
+          "EDIT DISTANCE Computes the Levenshtein distance between two STRING or BYTES values.",
+          "Represents the maximum distance between the two values to compute."
+        ]
+      },
+      {
+        "title": "Functions (alphabetical) \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/functions-all",
+        "source_id": "site-docs-reference",
+        "final_score": 67,
+        "relevance": "",
+        "evidence_snippets": [
+          "ST HAUSDORFFDISTANCE Gets the discrete Hausdorff distance between two geometries.",
+          "ST HAUSDORFFDWITHIN Checks if the Hausdorff distance between two GEOGRAPHY values is within a given distance.",
+          "EDIT DISTANCE Computes the Levenshtein distance between two STRING or BYTES values."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "bar.org",
+      "buz.net",
+      "foo.com",
+      "foo.computer",
+      "organizations.locations.dataExchanges",
+      "projects.dataSources",
+      "projects.locations",
+      "projects.locations.capacityCommitments",
+      "projects.locations.connections",
+      "projects.locations.dataExchanges",
+      "projects.locations.dataExchanges.listings",
+      "projects.locations.dataExchanges.queryTemplates",
+      "projects.locations.dataPolicies",
+      "projects.locations.dataSources",
+      "projects.locations.reservationGroups",
+      "projects.locations.reservations",
+      "projects.locations.reservations.assignments",
+      "projects.locations.subscriptions",
+      "projects.locations.transferConfigs",
+      "projects.locations.transferConfigs.runs",
+      "projects.locations.transferConfigs.runs.transferLogs",
+      "projects.locations.transferConfigs.transferResources",
+      "projects.locations.workflows",
+      "projects.locations.workflows.subtasks",
+      "projects.transferConfigs",
+      "projects.transferConfigs.runs",
+      "projects.transferConfigs.runs.transferLogs",
+      "projects.transferConfigs.transferResources"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/geography_functions",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/functions-all"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/geography_functions",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/functions-all"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/geography_functions",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/functions-all"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/geography_functions",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/functions-all"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/geography_functions",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/functions-all"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/geography_functions",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/functions-all"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/geography_functions",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/functions-all"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/geography_functions",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/functions-all"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/geography_functions",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/functions-all"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/geography_functions",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/functions-all"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/geography_functions",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/functions-all"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/geography_functions",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/functions-all"
+      ]
+    }
+  ]
+}

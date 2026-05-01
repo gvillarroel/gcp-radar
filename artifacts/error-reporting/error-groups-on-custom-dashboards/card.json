@@ -1,0 +1,84 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:36.552Z",
+  "source_step08_card": "data/step-08/current/products/error-reporting/card.json",
+  "product_name": "Error Reporting",
+  "product_slug": "error-reporting",
+  "feature_name": "Error groups on custom dashboards",
+  "feature_slug": "error-groups-on-custom-dashboards",
+  "summary": "Error Reporting can display error groups on custom dashboards.",
+  "extended_definition": "Error Reporting can display error groups on custom dashboards.",
+  "lifecycle": {
+    "latest_feature_date": "2023-10-17",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/error-reporting/docs/viewing-errors",
+      "https://docs.cloud.google.com/python/docs/reference/clouderrorreporting/latest/google.cloud.errorreporting_v1beta1.services.error_group_service.ErrorGroupServiceAsyncClient",
+      "https://docs.cloud.google.com/python/docs/reference/clouderrorreporting/latest/google.cloud.errorreporting_v1beta1.services.error_group_service.ErrorGroupServiceClient"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "View and filter error groups \\_|\\_ Error Reporting \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/error-reporting/docs/viewing-errors",
+        "source_id": "site-docs-root",
+        "final_score": 98,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Note : If you see the message \"Set up Error Reporting\" on the Error Reporting page, then your Google Cloud project has no error groups to display.",
+          "The Error Reporting page displays a list of error groups that match the current filter.",
+          "When you filter error groups by text, the bar graphs show grey bars to represent the number of error events that didn't match the text filter: For information on how Error Reporting organizes error events into error groups, see How error events are grouped ."
+        ]
+      },
+      {
+        "title": "\"Class ErrorGroupServiceAsyncClient (1.15.0) \\_|\\_ Python client libraries\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/clouderrorreporting/latest/google.cloud.errorreporting_v1beta1.services.error_group_service.ErrorGroupServiceAsyncClient",
+        "source_id": "site-python-reference",
+        "final_score": 88,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Call [groupStats.list] [google.devtools.clouderrorreporting.v1beta1.ErrorStatsService.ListGroupStats] to return a list of groups belonging to this project.",
+          "ErrorGroupServiceAsyncClient () Initialize request argument(s) request = errorreporting v1beta1.",
+          "ErrorGroupServiceAsyncClient () Initialize request argument(s) request = errorreporting v1beta1."
+        ]
+      },
+      {
+        "title": "\"Class ErrorGroupServiceClient (1.15.0) \\_|\\_ Python client libraries \\_\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/clouderrorreporting/latest/google.cloud.errorreporting_v1beta1.services.error_group_service.ErrorGroupServiceClient",
+        "source_id": "site-python-reference",
+        "final_score": 88,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Call [groupStats.list] [google.devtools.clouderrorreporting.v1beta1.ErrorStatsService.ListGroupStats] to return a list of groups belonging to this project.",
+          "ErrorGroupServiceClient () Initialize request argument(s) request = errorreporting v1beta1.",
+          "ErrorGroupServiceClient () Initialize request argument(s) request = errorreporting v1beta1."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "googleapis.dev",
+      "options.html"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": []
+}

@@ -1,0 +1,83 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:34.519Z",
+  "source_step08_card": "data/step-08/current/products/dialogflow/card.json",
+  "product_name": "Dialogflow",
+  "product_slug": "dialogflow",
+  "feature_name": "Dialogflow CX regionalization",
+  "feature_slug": "dialogflow-cx-regionalization",
+  "summary": "Dialogflow CX supports regionalized deployment across multiple global regions.",
+  "extended_definition": "Dialogflow CX supports regionalized deployment across multiple global regions.",
+  "lifecycle": {
+    "latest_feature_date": "2020-12-15",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dialogflow/cx/docs/concept/agent-design",
+      "https://docs.cloud.google.com/dialogflow/cx/docs/concept/continuous-tests",
+      "https://docs.cloud.google.com/java/docs/reference/google-cloud-dialogflow/latest/com.google.cloud.dialogflow.v2"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Package com.google.cloud.dialogflow.v2 (4.94.0) \\_|\\_ Java client libraries\\",
+        "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-dialogflow/latest/com.google.cloud.dialogflow.v2",
+        "source_id": "site-java-reference",
+        "final_score": 62,
+        "relevance": "",
+        "evidence_snippets": [
+          "This is the aggregated score for each metric across all conversations that are selected for summarization evaluation. com. google. cloud. dialogflow. v2.",
+          "This is the aggregated score for each metric across all conversations that are selected for summarization evaluation. com. google. cloud. dialogflow. v2.",
+          "Environment You can create multiple versions of your agent and publish them to separate environments. com. google. cloud. dialogflow. v2."
+        ]
+      },
+      {
+        "title": "Continuous tests and deployment \\_|\\_ Dialogflow CX \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dialogflow/cx/docs/concept/continuous-tests",
+        "source_id": "site-docs-root",
+        "final_score": 55,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation AI and ML Dialogflow Dialogflow CX Send feedback Continuous tests and deployment Stay organized with collections Save and categorize content based on your preferences.",
+          "Manage continuous tests and deployment To manage continuous tests and deployment: Console Open the Dialogflow CX console .",
+          "To prevent a bad version from becoming live in the environment, you can also use continuous deployment to run the same set of verification tests before deploying a flow version to the environment."
+        ]
+      },
+      {
+        "title": "\"General agent design best practices \\_|\\_ Dialogflow CX \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/dialogflow/cx/docs/concept/agent-design",
+        "source_id": "site-docs-root",
+        "final_score": 48,
+        "relevance": "",
+        "evidence_snippets": [
+          "Intent reuse If you find yourself defining multiple intents with similar training phrases, consider reusing intents across multiple pages.",
+          "Integrations and connecting your services There are multiple ways to integrate with Dialogflow CX agents.",
+          "For example: Annotated training phrase Semantic meaning of annotated text I am 7 years old A person's age The contract is valid for 7 years A time duration Dialogflow CX's machine learning models consider semantic meaning when matching system entities."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.cloud.dialogflow.v2"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": []
+}

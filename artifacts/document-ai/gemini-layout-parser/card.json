@@ -1,0 +1,176 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:35.157Z",
+  "source_step08_card": "data/step-08/current/products/document-ai/card.json",
+  "product_name": "Document AI",
+  "product_slug": "document-ai",
+  "feature_name": "Gemini layout parser",
+  "feature_slug": "gemini-layout-parser",
+  "summary": "The Gemini layout parser improves table recognition, reading order, and text recognition for PDF files; The Gemini layout parser improves table recognition, reading order, and text recognition for PDF files.",
+  "extended_definition": "The Gemini layout parser improves table recognition, reading order, and text recognition for PDF files; The Gemini layout parser improves table recognition, reading order, and text recognition for PDF files.",
+  "lifecycle": {
+    "latest_feature_date": "2025-11-07",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/document-ai/docs/fields",
+      "https://docs.cloud.google.com/document-ai/docs/languages",
+      "https://docs.cloud.google.com/document-ai/docs/layout-parse-chunk",
+      "https://docs.cloud.google.com/document-ai/docs/layout-parse-quickstart"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Process documents with Gemini layout parser \\_|\\_ Document AI \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/document-ai/docs/layout-parse-chunk",
+        "source_id": "site-docs-root-2",
+        "final_score": 281,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Gemini layout parser accurately parses the entire table structure, preserving the data's integrity.",
+          "Process documents with Gemini layout parser The Document AI layout parser is an advanced text parsing and document understanding service that converts unstructured content from complex files into highly structured, precise and machine-readable information.",
+          "Reduced hallucinations Unlike pure LLM-based parsers that try to read text that isn't there, Gemini layout parser's foundation in advanced OCR grounds it in the document's actual content."
+        ]
+      },
+      {
+        "title": "Layout parser Quickstart \\_|\\_ Document AI \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/document-ai/docs/layout-parse-quickstart",
+        "source_id": "site-docs-root",
+        "final_score": 203,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "HTTP method and URL: POST https:// LOCATION -documentai.googleapis.com/v1beta3/projects/ PROJECT ID /locations/ LOCATION /processors/ PROCESSOR ID /processorVersions/ pretrained-layout-parser-v1.5-2025-08-25 :process Request JSON body: { \"gcsDocument\": { \"gcsUri\": \" GCS FILE PATH \", \"mimeType\": \" MIME TYPE \" }, \"processOptions\": { \"layoutConfig\": { \"enableTableAnnotation\": \"true\", \"enableImageAnnotation\": \"true\", \"chunkingConfig\": { \"chunkSize\": \" CHUNK SIZE \", \"includeAncestorHeadings\": \" INCLUDE ANCESTOR HEADINGS \", } } } } To send your request, choose one of these options: curl Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI .",
+          "Previous arrow back Gemini layout parser Next Enterprise Document OCR arrow forward Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "ProcessRequest ( name = name , gcs document = gcs document , process options = process options , ) Process the document result = client . process document ( request = request ) document = result . document print ( f \"Document processing complete. \\n \" ) print ( \"--- RAG-Ready Chunks (with context) ---\" ) for i , chunk in enumerate ( document . chunked document . chunks ): print ( f \" \\n --- Chunk {i} ---\" ) Print the chunk's content print ( f \"Text: {chunk.content}\" ) return result Batch process documents with layout parser Use the following procedure to parse and chunk multiple documents in a single request."
+        ]
+      },
+      {
+        "title": "Processor list \\_|\\_ Document AI \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/document-ai/docs/fields",
+        "source_id": "site-docs-reference",
+        "final_score": 157,
+        "relevance": "",
+        "evidence_snippets": [
+          "Note: If it's used for non-PDF files, it will have the same behavior as the stable pretrained-layout-parser-v1.0-2024-06-03 . pretrained-layout-parser-v1.5-pro-2025-08-25 Release Candidate Public Preview Preview version powered by Gemini 2.5 Pro LLM for better layout analysis on PDF files. v1.5-pro has higher latency than v1.5.",
+          "Note: If it's used for non-PDF files, it will have the same behavior as the stable pretrained-layout-parser-v1.0-2024-06-03 . pretrained-layout-parser-v1.6-pro-2025-12-01 Release Candidate Public Preview Preview version powered by Gemini 3.0 Pro LLM.",
+          "Includes access to all OCR add-ons. pretrained-ocr-v2.1-2024-08-07 Stable GA The main areas of improvement for v2.1 are: better printed text recognition, more precise checkbox detection and more accurate reading order. pretrained-ocr-v2.1.1-2025-01-31 Release candidate Public Preview v2.1.1 is similar to V2.1, and is available in all regions except: US , EU , and asia-southeast1 ."
+        ]
+      },
+      {
+        "title": "Processor list \\_|\\_ Document AI \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/document-ai/docs/languages",
+        "source_id": "site-docs-reference",
+        "final_score": 157,
+        "relevance": "",
+        "evidence_snippets": [
+          "Note: If it's used for non-PDF files, it will have the same behavior as the stable pretrained-layout-parser-v1.0-2024-06-03 . pretrained-layout-parser-v1.5-pro-2025-08-25 Release Candidate Public Preview Preview version powered by Gemini 2.5 Pro LLM for better layout analysis on PDF files. v1.5-pro has higher latency than v1.5.",
+          "Note: If it's used for non-PDF files, it will have the same behavior as the stable pretrained-layout-parser-v1.0-2024-06-03 . pretrained-layout-parser-v1.6-pro-2025-12-01 Release Candidate Public Preview Preview version powered by Gemini 3.0 Pro LLM.",
+          "Includes access to all OCR add-ons. pretrained-ocr-v2.1-2024-08-07 Stable GA The main areas of improvement for v2.1 are: better printed text recognition, more precise checkbox detection and more accurate reading order. pretrained-ocr-v2.1.1-2025-01-31 Release candidate Public Preview v2.1.1 is similar to V2.1, and is available in all regions except: US , EU , and asia-southeast1 ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "chunk.content",
+      "documentai.googleapis.com",
+      "request.json",
+      "v1.0",
+      "v1.5",
+      "v1.6",
+      "v2.1",
+      "v2.1.1"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/document-ai/docs/layout-parse-chunk",
+        "https://docs.cloud.google.com/document-ai/docs/layout-parse-quickstart",
+        "https://docs.cloud.google.com/document-ai/docs/fields",
+        "https://docs.cloud.google.com/document-ai/docs/languages"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/document-ai/docs/layout-parse-chunk",
+        "https://docs.cloud.google.com/document-ai/docs/layout-parse-quickstart",
+        "https://docs.cloud.google.com/document-ai/docs/fields",
+        "https://docs.cloud.google.com/document-ai/docs/languages"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/document-ai/docs/layout-parse-chunk",
+        "https://docs.cloud.google.com/document-ai/docs/layout-parse-quickstart",
+        "https://docs.cloud.google.com/document-ai/docs/fields",
+        "https://docs.cloud.google.com/document-ai/docs/languages"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/document-ai/docs/layout-parse-chunk",
+        "https://docs.cloud.google.com/document-ai/docs/layout-parse-quickstart",
+        "https://docs.cloud.google.com/document-ai/docs/fields",
+        "https://docs.cloud.google.com/document-ai/docs/languages"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/document-ai/docs/layout-parse-chunk",
+        "https://docs.cloud.google.com/document-ai/docs/layout-parse-quickstart",
+        "https://docs.cloud.google.com/document-ai/docs/fields",
+        "https://docs.cloud.google.com/document-ai/docs/languages"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/document-ai/docs/layout-parse-chunk",
+        "https://docs.cloud.google.com/document-ai/docs/layout-parse-quickstart",
+        "https://docs.cloud.google.com/document-ai/docs/fields",
+        "https://docs.cloud.google.com/document-ai/docs/languages"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/document-ai/docs/layout-parse-chunk",
+        "https://docs.cloud.google.com/document-ai/docs/layout-parse-quickstart",
+        "https://docs.cloud.google.com/document-ai/docs/fields",
+        "https://docs.cloud.google.com/document-ai/docs/languages"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/document-ai/docs/layout-parse-chunk",
+        "https://docs.cloud.google.com/document-ai/docs/layout-parse-quickstart",
+        "https://docs.cloud.google.com/document-ai/docs/fields",
+        "https://docs.cloud.google.com/document-ai/docs/languages"
+      ]
+    }
+  ]
+}

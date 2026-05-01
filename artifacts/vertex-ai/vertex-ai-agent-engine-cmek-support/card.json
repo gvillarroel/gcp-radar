@@ -1,0 +1,124 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:48.184Z",
+  "source_step08_card": "data/step-08/current/products/vertex-ai/card.json",
+  "product_name": "Vertex AI",
+  "product_slug": "vertex-ai",
+  "feature_name": "Vertex AI Agent Engine CMEK support",
+  "feature_slug": "vertex-ai-agent-engine-cmek-support",
+  "summary": "Vertex AI Agent Engine now supports customer-managed encryption keys (CMEK) to encrypt data at rest.",
+  "extended_definition": "Vertex AI Agent Engine now supports customer-managed encryption keys (CMEK) to encrypt data at rest.",
+  "lifecycle": {
+    "latest_feature_date": "2025-08-21",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/vertex-ai/docs/ai-agent-ecosystem-partners",
+      "https://docs.cloud.google.com/vertex-ai/docs/general/cmek",
+      "https://docs.cloud.google.com/vertex-ai/docs/workbench/instances/create"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Customer-managed encryption keys (CMEK) \\_|\\_ Vertex AI \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/general/cmek",
+        "source_id": "site-docs-reference-3",
+        "final_score": 171,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Deploy and manage public endpoints Deploy and manage index endpoints in a VPC network Vector Search Private Service Connect Colab Enterprise runtime The boot disk and data disks of the runtime's VM Use customer-managed encryption keys (CMEK) in Colab Enterprise Colab Enterprise notebook The notebook file and its comments Use customer-managed encryption keys (CMEK) in Colab Enterprise Vertex AI Agent Engine The copy of your agent source files, including code, scripts, and any dependency files The container images built from your agent source files The running instances deployed from your agent container images Vertex AI Agent Engine overview CMEK support for Generative AI tuning pipelines CMEK support is provided in the tuning pipeline of the following models: BERT T5 image-generation (GPU) Limitations CMEK support isn't provided in the following: AutoML image model batch prediction ( BatchPredictionJob ) TPU tuning Configure CMEK for your resources The following sections describe how to create a key ring and key in Cloud Key Management Service, grant Vertex AI encrypter and decrypter permissions for your key, and create resources that use CMEK.",
+          "Home Documentation AI and ML Vertex AI Send feedback Customer-managed encryption keys (CMEK) Stay organized with collections Save and categorize content based on your preferences.",
+          "If you want to control your encryption keys, then you can use customer-managed encryption keys (CMEKs) in Cloud KMS with CMEK-integrated services including Vertex AI."
+        ]
+      },
+      {
+        "title": "AI Agent Ecosystem partners \\_|\\_ Vertex AI \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/ai-agent-ecosystem-partners",
+        "source_id": "site-docs-reference-3",
+        "final_score": 105,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Partner references Accenture AI Services and Solutions Partner Advantage page Direct link Bain Solution AI agent enhancing customer conversations and generating call summaries Description Bain supports SEB's wealth management division with an AI agent that enhances end-customer conversations with suggested responses and generates call summaries that help increase efficiency by 15%.",
+          "Partner references SDLC agent solution Partner Advantage page Direct link Wipro Solution Developing and adjusting contracts with agent technology Description Wipro supports a national healthcare provider in using agent technology to develop and adjust contracts, streamlining a complex and time-consuming task while improving accuracy.",
+          "Home Documentation AI and ML Vertex AI Resources Send feedback AI Agent Ecosystem partners Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "Create a Vertex AI Workbench instance \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/workbench/instances/create",
+        "source_id": "site-docs-reference-required-5",
+        "final_score": 99,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Encryption : Select Google-managed encryption key or Customer-managed encryption key (CMEK) .",
+          "To use CMEK, see Customer-managed encryption keys .",
+          "To use CMEK, see Customer-managed encryption keys ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "hello.sh"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/general/cmek",
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/instances/create",
+        "https://docs.cloud.google.com/vertex-ai/docs/ai-agent-ecosystem-partners"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/general/cmek",
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/instances/create",
+        "https://docs.cloud.google.com/vertex-ai/docs/ai-agent-ecosystem-partners"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/general/cmek",
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/instances/create",
+        "https://docs.cloud.google.com/vertex-ai/docs/ai-agent-ecosystem-partners"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/general/cmek",
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/instances/create",
+        "https://docs.cloud.google.com/vertex-ai/docs/ai-agent-ecosystem-partners"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/general/cmek",
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/instances/create",
+        "https://docs.cloud.google.com/vertex-ai/docs/ai-agent-ecosystem-partners"
+      ]
+    }
+  ]
+}

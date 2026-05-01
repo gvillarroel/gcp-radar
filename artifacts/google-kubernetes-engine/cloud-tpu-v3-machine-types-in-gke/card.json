@@ -1,0 +1,110 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:39.542Z",
+  "source_step08_card": "data/step-08/current/products/google-kubernetes-engine/card.json",
+  "product_name": "Google Kubernetes Engine",
+  "product_slug": "google-kubernetes-engine",
+  "feature_name": "Cloud TPU v3 machine types in GKE",
+  "feature_slug": "cloud-tpu-v3-machine-types-in-gke",
+  "summary": "Cloud TPU v3 ct3-hightpu-4t and ct3p-hightpu-4t machine types are generally available for supported GKE clusters in selected zones.",
+  "extended_definition": "Cloud TPU v3 ct3-hightpu-4t and ct3p-hightpu-4t machine types are generally available for supported GKE clusters in selected zones.",
+  "lifecycle": {
+    "latest_feature_date": "2024-10-31",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/node-auto-provisioning",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/tpus",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/serve-llm-tpu-ray"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Serve an LLM using TPUs on GKE with KubeRay \\_|\\_ GKE AI/ML \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/serve-llm-tpu-ray",
+        "source_id": "site-docs-reference-required-4",
+        "final_score": 92,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Set up your environment: export ASSIST MODEL ID = meta-llama/Meta-Llama-3-8B-Instruct export SUMMARIZER MODEL ID = google/gemma-7b-it For Standard clusters, create an additional single-host TPU slice node pool: gcloud container node-pools create tpu-2 \\ --location = ${ COMPUTE ZONE } \\ --cluster = ${ CLUSTER NAME } \\ --machine-type = MACHINE TYPE \\ --num-nodes = 1 Replace the MACHINE TYPE with any of the following machine types: ct5lp-hightpu-8t to provision TPU v5e. ct6e-standard-8t to provision TPU v6e.",
+          "Use Cloud Shell to create an Autopilot or Standard cluster: Autopilot Create a GKE Autopilot cluster with the Ray Operator add-on enabled: gcloud container clusters create-auto ${ CLUSTER NAME } \\ --enable-ray-operator \\ --release-channel = rapid \\ --location = ${ COMPUTE REGION } Standard Create a Standard cluster with the Ray Operator add-on enabled: gcloud container clusters create ${ CLUSTER NAME } \\ --release-channel = rapid \\ --location = ${ COMPUTE ZONE } \\ --workload-pool = ${ PROJECT ID } .svc.id.goog \\ --machine-type = \"n1-standard-4\" \\ --addons = RayOperator,GcsFuseCsiDriver Create a single-host TPU slice node pool: Llama-3-8B-Instruct gcloud container node-pools create tpu-1 \\ --location = ${ COMPUTE ZONE } \\ --cluster = ${ CLUSTER NAME } \\ --machine-type = ct5lp-hightpu-8t \\ --num-nodes = 1 GKE creates a TPU v5e node pool with a ct5lp-hightpu-8t machine type.",
+          "Mistral-7B gcloud container node-pools create tpu-1 \\ --location = ${ COMPUTE ZONE } \\ --cluster = ${ CLUSTER NAME } \\ --machine-type = ct5lp-hightpu-8t \\ --num-nodes = 1 GKE creates a TPU v5e node pool with a ct5lp-hightpu-8t machine type."
+        ]
+      },
+      {
+        "title": "\"About node pool auto-creation \\_|\\_ Google Kubernetes Engine (GKE) \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/node-auto-provisioning",
+        "source_id": "site-docs-reference-2",
+        "final_score": 84,
+        "relevance": "",
+        "evidence_snippets": [
+          "When you create this example Deployment, GKE creates a node pool that contains a TPU v4 slice with a 2x2x2 topology and two ct4p-hightpu-4t machines. apiVersion: apps/v1 kind: Deployment metadata: name: tpu-workload labels: app: tpu-workload spec: replicas: 2 template: spec: nodeSelector: cloud.google.com/gke-tpu-accelerator: tpu-v4-podslice cloud.google.com/gke-tpu-topology: 2x2x2 containers: - name: tpu-job image: us-docker.pkg.dev/cloud-tpu-images/jax-ai-image/tpu:latest ports: - containerPort: 8431 # Port to export TPU runtime metrics, if supported. securityContext: privileged: true # Required for GKE versions earlier than 1.28 to access TPUs. command: - bash - -c - python -c 'import jax; print(\"Total TPU chips:\", jax.device count())' resources: requests: google.com/tpu: 4 limits: google.com/tpu: 4 ports: - containerPort: 80 In this manifest, the following fields define TPU configuration: cloud.google.com/gke-tpu-accelerator : the TPU version and type .",
+          "These priorities help to ensure that your clusters have efficient compute resource usage at scale, like in the following example scenarios: In clusters that have a small number of node pools and less resource usage, GKE creates new node pools more frequently and uses smaller machine types for those node pools.",
+          "GKE creates new node pools less frequently and uses larger machine types for those node pools, so that Pod scheduling can continue while also slowing down progress towards cluster scalability and latency limits."
+        ]
+      },
+      {
+        "title": "About TPUs in GKE \\_|\\_ GKE AI/ML \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/tpus",
+        "source_id": "site-docs-reference-2",
+        "final_score": 84,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Consider the following scenarios: The machine type ct5lp-hightpu-4t with a 2x4 topology contains two TPU slice nodes with four TPU chips each, for a total of eight TPU chips.",
+          "For example, with a TPU node pool that has the ct5lp-hightpu-4t machine type and a topology of 16x16 , the node pool always has either 64 nodes or zero nodes.",
+          "GKE Autopilot then provisions the underlying nodes with the appropriate machine types to satisfy the request."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "docker.pkg.dev",
+      "jax.device",
+      "svc.id.goog"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/serve-llm-tpu-ray",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/node-auto-provisioning",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/tpus"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/serve-llm-tpu-ray",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/node-auto-provisioning",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/tpus"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/serve-llm-tpu-ray",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/node-auto-provisioning",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/tpus"
+      ]
+    }
+  ]
+}

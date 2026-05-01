@@ -1,0 +1,100 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:21.669Z",
+  "source_step08_card": "data/step-08/current/products/bigtable/card.json",
+  "product_name": "Bigtable",
+  "product_slug": "bigtable",
+  "feature_name": "Protobuf schema support for Bigtable field queries",
+  "feature_slug": "protobuf-schema-support-for-bigtable-field-queries",
+  "summary": "Bigtable now supports protocol buffer schemas for querying individual fields in protobuf messages via GoogleSQL for Bigtable or BigQuery external tables.",
+  "extended_definition": "Bigtable now supports protocol buffer schemas for querying individual fields in protobuf messages via GoogleSQL for Bigtable or BigQuery external tables.",
+  "lifecycle": {
+    "latest_feature_date": "2025-11-03",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigtable/docs/cloud-bigtable-for-cassandra-users",
+      "https://docs.cloud.google.com/bigtable/docs/reference/admin/mcp/tools_list/create_table",
+      "https://docs.cloud.google.com/bigtable/docs/schema-design"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Schema design best practices \\_|\\_ Bigtable \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigtable/docs/schema-design",
+        "source_id": "site-docs-root",
+        "final_score": 145,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Storing data in a protobuf format To reduce storage costs and improve read and write efficiency, you can group related data into a protocol buffer (protobuf) message and store it in a single column instead of storing each field in its own column.",
+          "In Bigtable, a schema is a blueprint or model of a table, including the structure of the following table components: Row keys Column families, including their garbage collection policies Columns Key Point: Design your schema for the queries that you plan to use.",
+          "If you store data as protobuf messages, you can take advantage of the following Bigtable features: Using protocol buffers to store flexible data structures reduces storage costs by keeping your data in place and avoiding duplication."
+        ]
+      },
+      {
+        "title": "Bigtable for Cassandra users \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigtable/docs/cloud-bigtable-for-cassandra-users",
+        "source_id": "site-docs-root",
+        "final_score": 122,
+        "relevance": "",
+        "evidence_snippets": [
+          "CQL : the Cassandra Query Language , a language like SQL that's used for table creation, schema changes, row mutations, and queries.",
+          "In a blog post (2012) , Ilya Grigorik writes the following: \"An SSTable is a simple abstraction to efficiently store large numbers of key-value pairs while optimizing for high throughput, sequential read or write workloads.\" The following table outlines and describes shared concepts and the corresponding terminology that each product uses: Cassandra Bigtable primary key : a unique single or multi-field value that determines data placement and ordering. partition key : a single or multi-field value that determines data placement by consistent hash. clustering column : a single or multi-field value that determines the lexicographical data sorting within a partition. row key : a unique, single byte string that determines the placement of data by a lexicographical sort.",
+          "Multiple timestamped versions can be stored and retrieved for each cell. counter : an incrementable field type optimized for integer sum operations. counters : cells that use specialized data types for integer sum operations."
+        ]
+      },
+      {
+        "title": "\"MCP Tools Reference: bigtableadmin.googleapis.com \\_|\\_ Bigtable \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/bigtable/docs/reference/admin/mcp/tools_list/create_table",
+        "source_id": "site-docs-reference",
+        "final_score": 117,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Proto JSON representation { \"schemaBundleId\" : string , \"messageName\" : string } Fields schemaBundleId string The ID of the schema bundle that this proto is defined in. messageName string The fully qualified name of the protobuf message, including package.",
+          "Enum JSON representation { \"schemaBundleId\" : string , \"enumName\" : string } Fields schemaBundleId string The ID of the schema bundle that this enum is defined in. enumName string The fully qualified name of the protobuf enum message, including package.",
+          "For example, if key = \"some id#2024-04-30#\\x00\\x13\\x00\\xf3\" with the following schema: { fields { field name: \"id\" type { string { encoding: utf8 bytes {} } } } fields { field name: \"date\" type { string { encoding: utf8 bytes {} } } } fields { field name: \"product code\" type { int64 { encoding: big endian bytes {} } } } encoding { delimited bytes { delimiter: \"#\" } } } The decoded key parts would be: id = \"some id\", date = \"2024-04-30\", product code = 1245427 The query \"SELECT key, product code FROM table\" will return two columns: /------------------------------------------------------\\ key product code -------------------------------------- -------------- \"some id#2024-04-30#\\x00\\x13\\x00\\xf3\" 1245427 ------------------------------------------------------/ The schema has the following invariants: (1) The decoded field values are order-preserved."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "bigtableadmin.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigtable/docs/schema-design",
+        "https://docs.cloud.google.com/bigtable/docs/reference/admin/mcp/tools_list/create_table",
+        "https://docs.cloud.google.com/bigtable/docs/cloud-bigtable-for-cassandra-users"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigtable/docs/schema-design",
+        "https://docs.cloud.google.com/bigtable/docs/reference/admin/mcp/tools_list/create_table",
+        "https://docs.cloud.google.com/bigtable/docs/cloud-bigtable-for-cassandra-users"
+      ]
+    }
+  ]
+}

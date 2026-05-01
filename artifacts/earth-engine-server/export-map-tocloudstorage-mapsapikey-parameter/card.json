@@ -1,0 +1,255 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:36.223Z",
+  "source_step08_card": "data/step-08/current/products/earth-engine-server/card.json",
+  "product_name": "Earth Engine Server",
+  "product_slug": "earth-engine-server",
+  "feature_name": "Export.map.toCloudStorage() mapsApiKey parameter",
+  "feature_slug": "export-map-tocloudstorage-mapsapikey-parameter",
+  "summary": "Lets map exports specify a Google Maps API key for the export viewer.",
+  "extended_definition": "Lets map exports specify a Google Maps API key for the export viewer.",
+  "lifecycle": {
+    "latest_feature_date": "2018-12-07",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/earth-engine/apidocs/export-map-tocloudstorage",
+      "https://developers.google.com/earth-engine/guides/exporting_images",
+      "https://developers.google.com/earth-engine/guides/exporting_map_tiles"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Exporting Map Tiles \\_|\\_ Google Earth Engine \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/earth-engine/guides/exporting_map_tiles",
+        "source_id": "site-docs-root-2",
+        "final_score": 173,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Export . map . toCloudStorage ({ image : landsatImage , description : 'mapTilesForMapsPlatform' , bucket : 'yourBucketName' , // replace with your GCS bucket name fileFormat : 'auto' , maxZoom : 13 , region : exportRegion , writePublicTiles : true , bucketCorsUris : [ ' ' ], // ' ' = All domains = risk of misuse // For better protection, specify the domain(s) where the // tiles will be used, eg: ['https://mysite.mydomain.com'] mapsApiKey : 'fakeMapsApiKey012345' // replace with a valid API Key }); Python setup See the Python Environment page for information on the Python API and using geemap for interactive development. import ee import geemap.core as geemap Colab (Python) --- Export Map Tiles for use with Maps Platform APIs --- Use image setup code from example at top of the page.",
+          "Export . map . toCloudStorage ( image = landsat image , description = 'mapTilesForMapsPlatform' , bucket = 'yourBucketName' , # replace with your GCS bucket name fileFormat = 'auto' , maxZoom = 13 , region = export region , writePublicTiles = True , bucketCorsUris = [ ' ' ], # ' ' = All domains = risk of misuse For better protection, specify the domain(s) where the tiles will be used, eg: ['https://mysite.mydomain.com'] mapsApiKey = 'fakeMapsApiKey012345' , # replace with a valid API Key ) task . start () Publishing to Google Earth (on the web) To create a set of map tiles for publishing publicly via Google Earth, you will need to set the Access Level to 'Publicly Accessible', and set the JS Access Level to allow 'https://earth.google.com' (or 'Publicly Accessible').",
+          "Export . map . toCloudStorage ({ image : landsatImage , description : 'mapTilesForMapPreview' , bucket : 'yourBucketName' , // replace with your GCS bucket name fileFormat : 'auto' , maxZoom : 13 , region : exportRegion , writePublicTiles : true , mapsApiKey : 'fakeMapsApiKey012345' // replace with a valid API Key }); Python setup See the Python Environment page for information on the Python API and using geemap for interactive development. import ee import geemap.core as geemap Colab (Python) --- Export Map Tiles for use with Map Preview --- Use image setup code from example at top of the page."
+        ]
+      },
+      {
+        "title": "Export.map.toCloudStorage | Google Earth Engine | Google for Developers",
+        "url": "https://developers.google.com/earth-engine/apidocs/export-map-tocloudstorage",
+        "source_id": "feature-recovery-http",
+        "final_score": 151,
+        "relevance": "",
+        "evidence_snippets": [
+          "The core action is using `Export.map.toCloudStorage` to create a batch task, specifying parameters like the `image`, `bucket`, `fileFormat`, and zoom levels (`minZoom`, `maxZoom`, or `scale`).",
+          "Export.map.toCloudStorage | Google Earth Engine | Google for Developers Skip to main content Earth Engine / English Deutsch Español Español – América Latina Français Indonesia Italiano Polski Português – Brasil Tiếng Việt Türkçe Русский עברית العربيّة فارسی हिंदी বাংলা ภาษาไทย 中文 – 简体 中文 – 繁體 日本語 한국어 Sign in Home Guides Reference Support Community Data Catalog Earth Engine Home Guides Reference Support Community Data Catalog API Reference Overview Client Libraries JavaScript/Python ee.Algorithms CannyEdgeDetector Collection CrossCorrelation Date Describe Dictionary FMask.fillMinima FMask.matchClouds Feature GeometryConstructors.BBox GeometryConstructors.LineString GeometryConstructors.LinearRing GeometryConstructors.MultiGeometry GeometryConstructors.MultiLineString GeometryConstructors.MultiPoint GeometryConstructors.MultiPolygon GeometryConstructors.Point GeometryConstructors.Polygon GeometryConstructors.Rectangle HillShadow HoughTransform If Image.Segmentation.GMeans Image.Segmentation.KMeans Image.Segmentation.SNIC Image.Segmentation.seedGrid IsEqual Landsat.TOA Landsat.calibratedRadiance Landsat.pathRowLimit Landsat.simpleCloudScore Landsat.simpleComposite ObjectType ProjectionTransform Sentinel2.CDI String TemporalSegmentation.C2c TemporalSegmentation.Ccdc TemporalSegmentation.Ewmacd TemporalSegmentation.LandTrendr TemporalSegmentation.LandTrendrFit TemporalSegmentation.StructuralChangeBreakpoints TemporalSegmentation.VCT TemporalSegmentation.Verdet Terrain ee.Array ee.Array abs accum acos add and argmax asin atan atan2 bitCount bitsToArray bitwiseAnd bitwiseNot bitwiseOr bitwiseXor byte cat cbrt ceil cos cosh cut digamma divide dotProduct double eigen eq erf erfInv erfc erfcInv exp first firstNonZero float floor gamma gammainc get gt gte hypot identity int int16 int32 int64 int8 lanczos leftShift length log log10 long lt lte mask matrixCholeskyDecomposition matrixDeterminant matrixDiagonal matrixFnorm matrixInverse matrixLUDecomposition matrixMultiply matrixPseudoInverse matrixQRDecomposition matrixSingularValueDecomposition matrixSolve matrixToDiag matrixTrace matrixTranspose max min mod multiply neq not or pad pow project reduce repeat reshape rightShift round short signum sin sinh slice sort sqrt subtract tan tanh toByte toDouble toFloat toInt toInt16 toInt32 toInt64 toInt8 toList toLong toShort toUint16 toUint32 toUint8 transpose trigamma uint16 uint32 uint8 ee.Blob ee.Blob string url ee.Classifier amnhMaxent confusionMatrix decisionTree decisionTreeEnsemble explain libsvm load minimumDistance mode schema setOutputMode smileCart smileGradientTreeBoost smileKNN smileNaiveBayes smileRandomForest spectralRegion train ee.Clusterer schema train wekaCascadeKMeans wekaCobweb wekaKMeans wekaLVQ wekaXMeans ee.ConfusionMatrix ee.ConfusionMatrix accuracy array consumersAccuracy fscore kappa order producersAccuracy ee.Date ee.Date advance aside difference evaluate format fromYMD get getFraction getInfo getRange getRelative millis parse serialize unitRatio update ee.DateRange ee.DateRange contains end intersection intersects isEmpty isUnbounded start unbounded union ee.Dictionary ee.Dictionary aside combine contains evaluate fromLists get getArray getGeometry getInfo getNumber getString keys map remove rename select serialize set size toArray toImage values ee.ErrorMargin ee.ErrorMargin ee.Feature ee.Feature area aside bounds buffer centroid closestPoint closestPoints containedIn contains convexHull copyProperties cutLines difference disjoint dissolve distance evaluate geometry get getArray getInfo getMapId getNumber getString hersDescriptor id intersection intersects length perimeter propertyNames select serialize set setGeometry simplify symmetricDifference toArray toDictionary transform union withinDistance ee.FeatureCollection ee.FeatureCollection aggregate_array aggregate_count aggregate_count_distinct aggregate_first aggregate_histogram aggregate_max aggregate_mean aggregate_min aggregate_product aggregate_sample_sd aggregate_sample_var aggregate_stats aggregate_sum aggregate_total_sd aggregate_total_var aside bounds classify cluster copyProperties distance distinct draw errorMatrix evaluate filter filterBounds filterDate first flatten geometry get getArray getDownloadURL getInfo getMapId getNumber getString inverseDistance iterate kriging limit loadBigQueryTable makeArray map merge propertyNames randomColumn randomPoints reduceColumns reduceToImage remap runBigQuery select serialize set size sort style toDictionary toList union ee.Filter ee.Filter and area aside bounds calendarRange contains date dateRangeContains dayOfYear disjoint eq equals evaluate expression getInfo greaterThan greaterThanOrEquals gt gte hasType inList intersects isContained lessThan lessThanOrEquals listContains lt lte maxDifference neq not notEquals notNull or rangeContains serialize stringContains stringEndsWith stringStartsWith withinDistance ee.Geometry ee.Geometry BBox BBox.area BBox.aside BBox.bounds BBox.buffer BBox.centroid BBox.closestPoint BBox.closestPoints BBox.containedIn BBox.contains BBox.convexHull BBox.coordinates BBox.coveringGrid BBox.cutLines BBox.difference BBox.disjoint BBox.dissolve BBox.distance BBox.edgesAreGeodesics BBox.evaluate BBox.geodesic BBox.geometries BBox.getInfo BBox.intersection BBox.intersects BBox.isUnbounded BBox.length BBox.perimeter BBox.projection BBox.serialize BBox.simplify BBox.symmetricDifference BBox.toGeoJSON BBox.toGeoJSONString BBox.transform BBox.type BBox.union BBox.withinDistance LineString LineString.area LineString.aside LineString.bounds LineString.buffer LineString.centroid LineString.closestPoint LineString.closestPoints LineString.containedIn LineString.contains LineString.convexHull LineString.coordinates LineString.coveringGrid LineString.cutLines LineString.difference LineString.disjoint LineString.dissolve LineString.distance LineString.edgesAreGeodesics LineString.evaluate LineString.geodesic LineString.geometries LineString.getInfo LineString.intersection LineString.intersects LineString.isUnbounded LineString.length LineString.perimeter LineString.projection LineString.serialize LineString.simplify LineString.symmetricDifference LineString.toGeoJSON LineString.toGeoJSONString LineString.transform LineString.type LineString.union LineString.withinDistance LinearRing LinearRing.area LinearRing.aside LinearRing.bounds LinearRing.buffer LinearRing.centroid LinearRing.closestPoint LinearRing.closestPoints LinearRing.containedIn LinearRing.contains LinearRing.convexHull LinearRing.coordinates LinearRing.coveringGrid LinearRing.cutLines LinearRing.difference LinearRing.disjoint LinearRing.dissolve LinearRing.distance LinearRing.edgesAreGeodesics LinearRing.evaluate LinearRing.geodesic LinearRing.geometries LinearRing.getInfo LinearRing.intersection LinearRing.intersects LinearRing.isUnbounded LinearRing.length LinearRing.perimeter LinearRing.projection LinearRing.serialize LinearRing.simplify LinearRing.symmetricDifference LinearRing.toGeoJSON LinearRing.toGeoJSONString LinearRing.transform LinearRing.type LinearRing.union LinearRing.withinDistance MultiLineString MultiLineString.area MultiLineString.aside MultiLineString.bounds MultiLineString.buffer MultiLineString.centroid MultiLineString.closestPoint MultiLineString.closestPoints MultiLineString.containedIn MultiLineString.contains MultiLineString.convexHull MultiLineString.coordinates MultiLineString.coveringGrid MultiLineString.cutLines MultiLineString.difference MultiLineString.disjoint MultiLineString.dissolve MultiLineString.distance MultiLineString.edgesAreGeodesics MultiLineString.evaluate MultiLineString.geodesic MultiLineString.geometries MultiLineString.getInfo MultiLineString.intersection MultiLineString.intersects MultiLineString.isUnbounded MultiLineString.length MultiLineString.perimeter MultiLineString.projection MultiLineString.serialize MultiLineString.simplify MultiLineString.symmetricDifference MultiLineString.toGeoJSON MultiLineString.toGeoJSONString MultiLineString.transform MultiLineString.type MultiLineString.union MultiLineString.withinDistance MultiPoint MultiPoint.area MultiPoint.aside MultiPoint.bounds MultiPoint.buffer MultiPoint.centroid MultiPoint.closestPoint MultiPoint.closestPoints MultiPoint.containedIn MultiPoint.contains MultiPoint.convexHull MultiPoint.coordinates MultiPoint.coveringGrid MultiPoint.cutLines MultiPoint.difference MultiPoint.disjoint MultiPoint.dissolve MultiPoint.distance MultiPoint.edgesAreGeodesics MultiPoint.evaluate MultiPoint.geodesic MultiPoint.geometries MultiPoint.getInfo MultiPoint.intersection MultiPoint.intersects MultiPoint.isUnbounded MultiPoint.length MultiPoint.perimeter MultiPoint.projection MultiPoint.serialize MultiPoint.simplify MultiPoint.symmetricDifference MultiPoint.toGeoJSON MultiPoint.toGeoJSONString MultiPoint.transform MultiPoint.type MultiPoint.union MultiPoint.withinDistance MultiPolygon MultiPolygon.area MultiPolygon.aside MultiPolygon.bounds MultiPolygon.buffer MultiPolygon.centroid MultiPolygon.closestPoint MultiPolygon.closestPoints MultiPolygon.containedIn MultiPolygon.contains MultiPolygon.convexHull MultiPolygon.coordinates MultiPolygon.coveringGrid MultiPolygon.cutLines MultiPolygon.difference MultiPolygon.disjoint MultiPolygon.dissolve MultiPolygon.distance MultiPolygon.edgesAreGeodesics MultiPolygon.evaluate MultiPolygon.geodesic MultiPolygon.geometries MultiPolygon.getInfo MultiPolygon.intersection MultiPolygon.intersects MultiPolygon.isUnbounded MultiPolygon.length MultiPolygon.perimeter MultiPolygon.projection MultiPolygon.serialize MultiPolygon.simplify MultiPolygon.symmetricDifference MultiPolygon.toGeoJSON MultiPolygon.toGeoJSONString MultiPolygon.transform MultiPolygon.type MultiPolygon.union MultiPolygon.withinDistance Point Point.area Point.aside Point.bounds Point.buffer Point.centroid Point.closestPoint Point.closestPoints Point.containedIn Point.contains Point.convexHull Point.coordinates Point.coveringGrid Point.cutLines Point.difference Point.disjoint Point.dissolve Point.distance Point.edgesAreGeodesics Point.evaluate Point.geodesic Point.geometries Point.getInfo Point.intersection Point.intersects Point.isUnbounded Point.length Point.perimeter Point.projection Point.serialize Point.simplify Point.symmetricDifference Point.toGeoJSON Point.toGeoJSONString Point.transform Point.type Point.union Point.withinDistance Polygon Polygon.area Polygon.aside Polygon.bounds Polygon.buffer Polygon.centroid Polygon.closestPoint Polygon.closestPoints Polygon.containedIn Polygon.contains Polygon.convexHull Polygon.coordinates Polygon.coveringGrid Polygon.cutLines Polygon.difference Polygon.disjoint Polygon.dissolve Polygon.distance Polygon.edgesAreGeodesics Polygon.evaluate Polygon.geodesic Polygon.geometries Polygon.getInfo Polygon.intersection Polygon.intersects Polygon.isUnbounded Polygon.length Polygon.perimeter Polygon.projection Polygon.serialize Polygon.simplify Polygon.symmetricDifference Polygon.toGeoJSON Polygon.toGeoJSONString Polygon.transform Polygon.type Polygon.union Polygon.withinDistance Rectangle Rectangle.area Rectangle.aside Rectangle.bounds Rectangle.buffer Rectangle.centroid Rectangle.closestPoint Rectangle.closestPoints Rectangle.containedIn Rectangle.contains Rectangle.convexHull Rectangle.coordinates Rectangle.coveringGrid Rectangle.cutLines Rectangle.difference Rectangle.disjoint Rectangle.dissolve Rectangle.distance Rectangle.edgesAreGeodesics Rectangle.evaluate Rectangle.geodesic Rectangle.geometries Rectangle.getInfo Rectangle.intersection Rectangle.intersects Rectangle.isUnbounded Rectangle.length Rectangle.perimeter Rectangle.projection Rectangle.serialize Rectangle.simplify Rectangle.symmetricDifference Rectangle.toGeoJSON Rectangle.toGeoJSONString Rectangle.transform Rectangle.type Rectangle.union Rectangle.withinDistance area aside bounds buffer centroid closestPoint closestPoints containedIn contains convexHull coordinates coveringGrid cutLines difference disjoint dissolve distance edgesAreGeodesics evaluate fromS2CellId fromS2CellToken geodesic geometries getInfo intersection intersects isUnbounded length perimeter projection s2Cell serialize simplify symmetricDifference toGeoJSON toGeoJSONString transform type union withinDistance ee.Image ee.Image abs acos add addBands and arrayAccum arrayArgmax arrayCat arrayDimensions arrayDotProduct arrayFlatten arrayGet arrayLength arrayLengths arrayMask arrayPad arrayProject arrayReduce arrayRepeat arrayReshape arraySlice arraySort arrayTranspose aside asin atan atan2 bandNames bandTypes bitCount bitsToArrayImage bitwiseAnd bitwiseNot bitwiseOr bitwiseXor blend byte cast cat cbrt ceil changeProj clamp classify clip clipToBoundsAndScale clipToCollection cluster connectedComponents connectedPixelCount constant convolve copyProperties cos cosh cumulativeCost date derivative digamma directionalDistanceTransform displace displacement distance divide double entropy eq erf erfInv erfc erfcInv evaluate exp expression fastDistanceTransform first firstNonZero float floor focalMax focalMean focalMedian focalMin focalMode gamma gammainc geometry get getArray getDownloadURL getInfo getMapId getNumber getString getThumbId getThumbURL glcmTexture gradient gt gte hersDescriptor hersFeature hersImage hsvToRgb hypot id int int16 int32 int64 int8 interpolate lanczos leftShift linkCollection load loadGeoTIFF loadZarrV2Array log log10 long lt lte mask matrixCholeskyDecomposition matrixDeterminant matrixDiagonal matrixFnorm matrixIdentity matrixInverse matrixLUDecomposition matrixMultiply matrixPseudoInverse matrixQRDecomposition matrixSingularValueDecomposition matrixSolve matrixToDiag matrixTrace matrixTranspose max medialAxis metadata min mod multiply neighborhoodToArray neighborhoodToBands neq normalizedDifference not or paint pixelArea pixelCoordinates pixelLonLat polynomial pow projection propertyNames random randomVisualizer reduce reduceConnectedComponents reduceNeighborhood reduceRegion reduceRegions reduceResolution reduceToVectors regexpRename register remap rename reproject resample rgb rgbToHsv rightShift round rsedTransform sample sampleRectangle sampleRegions select selfMask serialize set setDefaultProjection short signum sin sinh sldStyle slice spectralDilation spectralDistance spectralErosion spectralGradient sqrt stratifiedSample subtract tan tanh toArray toByte toDictionary toDouble toFloat toInt toInt16 toInt32 toInt64 toInt8 toLong toShort toUint16 toUint32 toUint8 translate trigamma uint16 uint32 uint8 unitScale unmask unmix updateMask visualize where zeroCrossing ee.ImageCollection ee.ImageCollection aggregate_array aggregate_count aggregate_count_distinct aggregate_first aggregate_histogram aggregate_max aggregate_mean aggregate_min aggregate_product aggregate_sample_sd aggregate_sample_var aggregate_stats aggregate_sum aggregate_total_sd aggregate_total_var and aside bounds cast combine copyProperties count distance distinct draw errorMatrix evaluate filter filterBounds filterDate first flatten formaTrend fromImages geometry get getArray getFilmstripThumbURL getInfo getMapId getNumber getRegion getString getVideoThumbURL iterate limit linkCollection load loadZarrV2Array map max mean median merge min mode mosaic or product propertyNames qualityMosaic randomColumn reduce reduceColumns reduceToImage remap select serialize set size sort style sum toArray toArrayPerBand toBands toDictionary toList union ee.Join apply inner inverted saveAll saveBest saveFirst simple ee.Kernel add chebyshev circle compass cross diamond euclidean fixed gaussian inverse kirsch laplacian4 laplacian8 manhattan octagon plus prewitt rectangle roberts rotate sobel square ee.List ee.List add aside cat contains containsAll distinct equals evaluate filter flatten frequency get getArray getGeometry getInfo getNumber getString indexOf indexOfSublist insert iterate join lastIndexOfSubList length map reduce remove removeAll repeat replace replaceAll reverse rotate sequence serialize set shuffle size slice sort splice swap unzip zip ee.Model fromVertexAi predictImage predictProperties ee.Number ee.Number abs acos add and aside asin atan atan2 bitCount bitwiseAnd bitwiseNot bitwiseOr bitwiseXor byte cbrt ceil clamp cos cosh digamma divide double eq erf erfInv erfc erfcInv evaluate exp expression first firstNonZero float floor format gamma gammainc getInfo gt gte hypot int int16 int32 int64 int8 lanczos leftShift log log10 long lt lte max min mod multiply neq not or parse pow rightShift round serialize short signum sin sinh sqrt subtract tan tanh toByte toDouble toFloat toInt toInt16 toInt32 toInt64 toInt8 toLong toShort toUint16 toUint32 toUint8 trigamma uint16 uint32 uint8 unitScale ee.PixelType ee.PixelType dimensions double float int16 int32 int64 int8 maxValue minValue precision uint16 uint32 uint8 ee.Projection ee.Projection atScale crs nominalScale scale transform translate wkt ee.Reducer allNonZero anyNonZero autoHistogram bitwiseAnd bitwiseOr centeredCovariance circularMean circularStddev circularVariance combine count countDistinct countDistinctNonNull countEvery countRuns covariance disaggregate first firstNonNull fixed2DHistogram fixedHistogram forEach forEachBand forEachElement frequencyHistogram geometricMedian getOutputs group histogram intervalMean kendallsCorrelation kurtosis last lastNonNull linearFit linearRegression max mean median min minMax mode pearsonsCorrelation percentile product repeat ridgeRegression robustLinearRegression sampleStdDev sampleVariance sensSlope setOutputs skew spearmansCorrelation splitWeights stdDev sum toCollection toList unweighted variance ee.String ee.String aside cat compareTo decodeJSON encodeJSON equals evaluate getInfo index length match replace rindex serialize slice split toLowerCase toUpperCase trim ee.Terrain aspect fillMinima hillShadow hillshade products slope ee.apply ee.apply ee.call ee.call ee.data authenticateViaOauth authenticateViaPopup authenticateViaPrivateKey cancelOperation computeValue copyAsset createAsset createAssetHome createFolder deleteAsset getAsset getAssetAcl getAssetRootQuota getDownloadId getFeatureViewTilesKey getFilmstripThumbId getMapId getOperation getTableDownloadId getThumbId getTileUrl getVideoThumbId getWorkloadTag listAssets listBuckets listFeatures listImages listOperations makeDownloadUrl makeTableDownloadUrl makeThumbUrl newTaskId renameAsset resetWorkloadTag setAssetAcl setDefaultWorkloadTag setWorkloadTag startIngestion startProcessing startTableIngestion updateAsset updateTask ee.initialize ee.initialize ee.reset ee.reset Export.classifier toAsset Export.image toAsset toCloudStorage toDrive Export.map toCloudStorage Export.table toAsset toBigQuery toCloudStorage toDrive toFeatureView Export.video toCloudStorage toDrive Code Editor JavaScript Code Editor Map add addLayer centerObject clear drawingTools getBounds getCenter getScale getZoom layers onChangeBounds onChangeCenter onChangeZoom onClick onIdle onTileLoaded remove setCenter setControlVisibility setGestureHandling setLocked setOptions setZoom style unlisten widgets exports exports print print require require ui.Button ui.Button getDisabled getImageUrl getLabel onClick setDisabled setImageUrl setLabel style unlisten ui.Chart ui.Chart array.values feature.byFeature feature.byProperty feature.groups feature.histogram getChartType getDataTable getDownloadable getOptions getView image.byClass image.byRegion image.doySeries image.doySeriesByRegion image.doySeriesByYear image.histogram image.regions image.series image.seriesByRegion onClick setChartType setDataTable setDownloadable setOptions setSeriesNames setView style unlisten ui.Checkbox ui.Checkbox getDisabled getLabel getValue onChange setDisabled setLabel setValue style unlisten ui.DateSlider ui.DateSlider getDisabled getEnd getPeriod getStart getValue onChange setDisabled setEnd setPeriod setStart setValue style unlisten ui.Label ui.Label getImageUrl getUrl getValue setImageUrl setUrl setValue style ui.Map ui.Map CloudStorageLayer CloudStorageLayer.getBucket CloudStorageLayer.getMaxZoom CloudStorageLayer.getName CloudStorageLayer.getOpacity CloudStorageLayer.getPath CloudStorageLayer.getShown CloudStorageLayer.getSuffix CloudStorageLayer.setBucket CloudStorageLayer.setMaxZoom CloudStorageLayer.setName CloudStorageLayer.setOpacity CloudStorageLayer.setPath CloudStorageLayer.setShown CloudStorageLayer.setSuffix DrawingTools DrawingTools.addLayer DrawingTools.clear DrawingTools.draw DrawingTools.edit DrawingTools.get DrawingTools.getDrawModes DrawingTools.getLinked DrawingTools.getMap DrawingTools.getSelected DrawingTools.getShape DrawingTools.getShown DrawingTools.layers DrawingTools.onDraw DrawingTools.onEdit DrawingTools.onErase DrawingTools.onLayerAdd DrawingTools.onLayerConfig DrawingTools.onLayerRemove DrawingTools.onLayerSelect DrawingTools.onSelect DrawingTools.onShapeChange DrawingTools.set DrawingTools.setDrawModes DrawingTools.setLinked DrawingTools.setSelected DrawingTools.setShape DrawingTools.setShown DrawingTools.stop DrawingTools.toFeatureCollection DrawingTools.unlisten FeatureViewLayer FeatureViewLayer.getAssetId FeatureViewLayer.getName FeatureViewLayer.getOpacity FeatureViewLayer.getShown FeatureViewLayer.getVisParams FeatureViewLayer.setAssetId FeatureViewLayer.setName FeatureViewLayer.setOpacity FeatureViewLayer.setShown FeatureViewLayer.setVisParams GeometryLayer GeometryLayer.fromGeometry GeometryLayer.geometries GeometryLayer.get GeometryLayer.getColor GeometryLayer.getEeObject GeometryLayer.getLocked GeometryLayer.getName GeometryLayer.getShown GeometryLayer.openConfigurationDialog GeometryLayer.set GeometryLayer.setColor GeometryLayer.setLocked GeometryLayer.setName GeometryLayer.setShown GeometryLayer.toGeometry Layer Layer.getEeObject Layer.getName Layer.getOpacity Layer.getShown Layer.getVisParams Layer.setEeObject Layer.setName Layer.setOpacity Layer.setShown Layer.setVisParams Linker Linker.add Linker.forEach Linker.get Linker.getJsArray Linker.insert Linker.length Linker.remove Linker.reset Linker.set add addLayer centerObject clear drawingTools getBounds getCenter getScale getZoom insert layers onChangeBounds onChangeCenter onChangeZoom onClick onIdle onTileLoaded remove setCenter setControlVisibility setGestureHandling setLocked setOptions setZoom style unlisten widgets ui.Panel ui.Panel Layout.absolute Layout.flow add clear getLayout insert remove setLayout style widgets ui.Select ui.Select getDisabled getPlaceholder getValue items onChange setDisabled setPlaceholder setValue style unlisten ui.Slider ui.Slider getDisabled getMax getMin getStep getValue onChange onSlide setDisabled setMax setMin setStep setValue style unlisten ui.SplitPanel ui.SplitPanel getFirstPanel getOrientation getPanel getSecondPanel getWipe setFirstPanel setOrientation setPanel setSecondPanel setWipe style unlisten ui.Textbox ui.Textbox getDisabled getPlaceholder getValue onChange setDisabled setPlaceholder setValue style unlisten ui.Thumbnail ui.Thumbnail getImage getParams onClick setImage setParams style unlisten ui.data ActiveDictionary ActiveDictionary.get ActiveDictionary.set ActiveList ActiveList.add ActiveList.forEach ActiveList.get ActiveList.getJsArray ActiveList.insert ActiveList.length ActiveList.remove ActiveList.reset ActiveList.set ui.root add clear getLayout insert onResize remove setKeyHandler setLayout widgets ui.url get set ui.util clear clearTimeout debounce getCurrentPosition rateLimit setInterval setTimeout throttle REST API Overview Quickstart Examples Computed Images Computed Tables Creating Cloud GeoTIFF-backed Assets API Reference Overview v1 REST Resources projects Overview getConfig listAssets updateConfig projects.algorithms Overview list projects.assets Overview copy create delete get getIamPolicy getPixels listAssets listFeatures move patch setIamPolicy testIamPermissions projects.classifier Overview export projects.featureView Overview create projects.featureViews Overview create projects.featureViews.tiles Overview get projects.filmstripThumbnails Overview create getPixels projects.image Overview computePixels export import projects.imageCollection Overview computeImages projects.locations.assets Overview create projects.locations.filmstripThumbnails Overview create projects.locations.maps Overview create projects.locations.tables Overview create projects.locations.thumbnails Overview create projects.locations.videoThumbnails Overview create projects.map Overview export projects.maps Overview create projects.maps.tiles Overview get projects.operations Overview cancel delete get list wait projects.table Overview computeFeatures export import projects.tables Overview create getFeatures projects.thumbnails Overview create getPixels projects.value Overview compute projects.video Overview export projects.videoThumbnails Overview create getPixels Types AffineTransform CloudStorageDestination DoubleRange DriveDestination EarthEngineAssetView EarthEngineDestination Expression Feature GridDimensions ImageFileExportOptions ImageFileFormat ListAssetsResponse PixelGrid ProjectConfig VisualizationOptions v1beta REST Resources projects Overview getConfig listAssets updateConfig projects.algorithms Overview list projects.assets Overview copy create delete get getIamPolicy getPixels listAssets listFeatures move patch setIamPolicy testIamPermissions projects.classifier Overview export projects.featureView Overview create projects.featureViews Overview create projects.featureViews.tiles Overview get projects.filmstripThumbnails Overview create getPixels projects.image Overview computePixels export import projects.imageCollection Overview computeImages projects.locations.assets Overview create projects.locations.filmstripThumbnails Overview create projects.locations.maps Overview create projects.locations.tables Overview create projects.locations.thumbnails Overview create projects.locations.videoThumbnails Overview create projects.map Overview export projects.maps Overview create projects.maps.tiles Overview get projects.operations Overview cancel delete get list wait projects.table Overview computeFeatures export import projects.tables Overview create getFeatures projects.thumbnails Overview create getPixels projects.value Overview compute projects.video Overview export projects.videoThumbnails Overview create getPixels Types AffineTransform CloudStorageDestination DoubleRange DriveDestination EarthEngineAssetView EarthEngineDestination Expression Feature GridDimensions ImageFileExportOptions ImageFileFormat ListAssetsResponse PixelGrid ProjectConfig VisualizationOptions v1alpha REST Resources projects Overview getConfig listAssets updateConfig projects.algorithms Overview list projects.assets Overview copy create delete get getIamPolicy getPixels listAssets listFeatures listImages move patch setIamPolicy testIamPermissions projects.classifier Overview export projects.featureView Overview create projects.featureViews Overview create projects.featureViews.tiles Overview get projects.filmstripThumbnails Overview create getPixels projects.image Overview computePixels export import importExternal projects.imageCollection Overview computeImages projects.locations.assets Overview create projects.locations.filmstripThumbnails Overview create projects.locations.maps Overview create projects.locations.tables Overview create projects.locations.thumbnails Overview create projects.locations.videoThumbnails Overview create projects.map Overview export projects.maps Overview create projects.maps.tiles Overview get projects.operations Overview cancel delete get list wait projects.table Overview computeFeatures export import projects.tables Overview create getFeatures projects.thumbnails Overview create getPixels projects.value Overview compute projects.video Overview export projects.videoThumbnails Overview create getPixels Types AffineTransform CloudStorageDestination DoubleRange DriveDestination EarthEngineAssetView EarthEngineDestination Expression Feature GcsDestination GridDimensions ImageFileExportOptions ImageFileFormat ImageManifest ListAssetsResponse PixelGrid ProjectConfig VisualizationOptions Concepts Additional API Terms Command Line Tool Data Catalog Publisher Data Catalogs Landsat Algorithms Sentinel-1 Algorithms Landsat C1 to C2 Migration Guide Removed Datasets Other Release Notes Glossary Terms of Service Earth Engine is introducing noncommercial quota tiers to safeguard shared compute resources and ensure reliable performance for everyone.",
+          "Usage Returns Export.map.toCloudStorage(image, description , bucket , fileFormat , path , writePublicTiles , maxZoom , scale , minZoom , region , skipEmptyTiles , mapsApiKey , bucketCorsUris , priority ) Argument Type Details image Image The image to export as tiles. description String, optional A human-readable name of the task."
+        ]
+      },
+      {
+        "title": "Exporting Images \\_|\\_ Google Earth Engine \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/earth-engine/guides/exporting_images",
+        "source_id": "site-docs-root-2",
+        "final_score": 148,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Export . image . toCloudStorage ( image = landsat , description = 'imageToCloudExample' , bucket = 'your-bucket-name' , fileNamePrefix = 'exampleExport' , crs = projection [ 'crs' ], crsTransform = projection [ 'transform' ], region = geometry , ) task . start () As with exports to Drive, start the export from the Tasks tab.",
+          "TFRecord See the TFRecord data format page. maxPixels The maxPixels parameter is intended to prevent very large exports from inadvertently being created.",
+          "Rectangle ([ 116.2621 , 39.8412 , 116.4849 , 40.01236 ]) Next define the projection parameters that will be used in the following exports."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "array.values",
+      "developers.google.com",
+      "earth.google.com",
+      "ee.Algorithms",
+      "ee.apply",
+      "ee.Array",
+      "ee.Blob",
+      "ee.call",
+      "ee.Classifier",
+      "ee.Clusterer",
+      "ee.ConfusionMatrix",
+      "ee.data",
+      "ee.Date",
+      "ee.DateRange",
+      "ee.Dictionary",
+      "ee.ErrorMargin",
+      "ee.Feature",
+      "ee.FeatureCollection",
+      "ee.Filter",
+      "ee.Geometry",
+      "ee.Image",
+      "ee.ImageCollection",
+      "ee.initialize",
+      "ee.Join",
+      "ee.Kernel",
+      "ee.List",
+      "ee.Model",
+      "ee.Number",
+      "ee.PixelType",
+      "ee.Projection",
+      "ee.Reducer",
+      "ee.reset",
+      "ee.String",
+      "ee.Terrain",
+      "feature.byFeature",
+      "feature.byProperty",
+      "feature.groups",
+      "feature.histogram",
+      "geemap.core",
+      "image.byClass",
+      "image.byRegion",
+      "image.doySeries",
+      "image.doySeriesByRegion",
+      "image.doySeriesByYear",
+      "image.histogram",
+      "image.regions",
+      "image.series",
+      "image.seriesByRegion",
+      "index.html",
+      "map.toCloudStorage",
+      "mysite.mydomain.com",
+      "projects.algorithms",
+      "projects.assets",
+      "projects.classifier",
+      "projects.featureView",
+      "projects.featureViews",
+      "projects.featureViews.tiles",
+      "projects.filmstripThumbnails",
+      "projects.image",
+      "projects.imageCollection",
+      "projects.locations.assets",
+      "projects.locations.filmstripThumbnails",
+      "projects.locations.maps",
+      "projects.locations.tables",
+      "projects.locations.thumbnails",
+      "projects.locations.videoThumbnails",
+      "projects.map",
+      "projects.maps",
+      "projects.maps.tiles",
+      "projects.operations",
+      "projects.table",
+      "projects.tables",
+      "projects.thumbnails",
+      "projects.value",
+      "projects.video",
+      "projects.videoThumbnails",
+      "ui.Button",
+      "ui.Chart",
+      "ui.Checkbox",
+      "ui.data",
+      "ui.DateSlider",
+      "ui.Label",
+      "ui.Map",
+      "ui.Panel",
+      "ui.root",
+      "ui.Select",
+      "ui.Slider",
+      "ui.SplitPanel",
+      "ui.Textbox",
+      "ui.Thumbnail",
+      "ui.url",
+      "ui.util"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://developers.google.com/earth-engine/guides/exporting_map_tiles",
+        "https://developers.google.com/earth-engine/apidocs/export-map-tocloudstorage",
+        "https://developers.google.com/earth-engine/guides/exporting_images"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://developers.google.com/earth-engine/guides/exporting_map_tiles",
+        "https://developers.google.com/earth-engine/apidocs/export-map-tocloudstorage",
+        "https://developers.google.com/earth-engine/guides/exporting_images"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://developers.google.com/earth-engine/guides/exporting_map_tiles",
+        "https://developers.google.com/earth-engine/apidocs/export-map-tocloudstorage",
+        "https://developers.google.com/earth-engine/guides/exporting_images"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://developers.google.com/earth-engine/guides/exporting_map_tiles",
+        "https://developers.google.com/earth-engine/apidocs/export-map-tocloudstorage",
+        "https://developers.google.com/earth-engine/guides/exporting_images"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://developers.google.com/earth-engine/guides/exporting_map_tiles",
+        "https://developers.google.com/earth-engine/apidocs/export-map-tocloudstorage",
+        "https://developers.google.com/earth-engine/guides/exporting_images"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://developers.google.com/earth-engine/guides/exporting_map_tiles",
+        "https://developers.google.com/earth-engine/apidocs/export-map-tocloudstorage",
+        "https://developers.google.com/earth-engine/guides/exporting_images"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://developers.google.com/earth-engine/guides/exporting_map_tiles",
+        "https://developers.google.com/earth-engine/apidocs/export-map-tocloudstorage",
+        "https://developers.google.com/earth-engine/guides/exporting_images"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://developers.google.com/earth-engine/guides/exporting_map_tiles",
+        "https://developers.google.com/earth-engine/apidocs/export-map-tocloudstorage",
+        "https://developers.google.com/earth-engine/guides/exporting_images"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://developers.google.com/earth-engine/guides/exporting_map_tiles",
+        "https://developers.google.com/earth-engine/apidocs/export-map-tocloudstorage",
+        "https://developers.google.com/earth-engine/guides/exporting_images"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://developers.google.com/earth-engine/guides/exporting_map_tiles",
+        "https://developers.google.com/earth-engine/apidocs/export-map-tocloudstorage",
+        "https://developers.google.com/earth-engine/guides/exporting_images"
+      ]
+    }
+  ]
+}

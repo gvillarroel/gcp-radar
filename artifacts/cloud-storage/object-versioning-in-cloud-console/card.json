@@ -1,0 +1,177 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:28.180Z",
+  "source_step08_card": "data/step-08/current/products/cloud-storage/card.json",
+  "product_name": "Cloud Storage",
+  "product_slug": "cloud-storage",
+  "feature_name": "Object Versioning in Cloud Console",
+  "feature_slug": "object-versioning-in-cloud-console",
+  "summary": "The Cloud Console can manage Object Versioning and perform actions on versioned objects.",
+  "extended_definition": "The Cloud Console can manage Object Versioning and perform actions on versioned objects.",
+  "lifecycle": {
+    "latest_feature_date": "2021-09-20",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/storage/docs/access-control/create-manage-lists",
+      "https://docs.cloud.google.com/storage/docs/access-control/using-iam-for-managed-folders",
+      "https://docs.cloud.google.com/storage/docs/access-control/using-iam-permissions",
+      "https://docs.cloud.google.com/storage/docs/discover-object-storage-console"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Quickstart: Discover object storage with the Google Cloud console \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/storage/docs/discover-object-storage-console",
+        "source_id": "site-docs-reference",
+        "final_score": 264,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Discover object storage with the Google Cloud console Learn how to get started with Cloud Storage using the Google Cloud console.",
+          "The simulated folder and all objects in it are deleted.",
+          "Need to tell us more? [[[\"Easy to understand\",\"easyToUnderstand\",\"thumb-up\"],[\"Solved my problem\",\"solvedMyProblem\",\"thumb-up\"],[\"Other\",\"otherUp\",\"thumb-up\"]],[[\"Hard to understand\",\"hardToUnderstand\",\"thumb-down\"],[\"Incorrect information or sample code\",\"incorrectInformationOrSampleCode\",\"thumb-down\"],[\"Missing the information/samples I need\",\"missingTheInformationSamplesINeed\",\"thumb-down\"],[\"Other\",\"otherDown\",\"thumb-down\"]],[\"Last updated 2026-04-08 UTC.\"],[],[]]"
+        ]
+      },
+      {
+        "title": "\"Set and manage IAM policies on managed folders \\_|\\_ Cloud Storage \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/storage/docs/access-control/using-iam-for-managed-folders",
+        "source_id": "site-iam-reference",
+        "final_score": 264,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "This role contain the following permissions, which are required to set and manage IAM policies for managed folders: storage.managedFolders.getIamPolicy storage.managedFolders.setIamPolicy You can also get these permissions with custom roles .",
+          "If you're looking for other methods of access control, see the following resources: To learn about how to control access to whole buckets and the objects within them, see Set and manage IAM policies on buckets .",
+          "This page describes how to set Identity and Access Management (IAM) policies on managed folders , so you can get fine-grained access control over specific groups of objects within a bucket."
+        ]
+      },
+      {
+        "title": "\"Create and manage access control lists (ACLs) \\_|\\_ Cloud Storage \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/storage/docs/access-control/create-manage-lists",
+        "source_id": "site-iam-reference",
+        "final_score": 240,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "You can use // addAllUsers(), addDomain(), addProject(), addGroup(), and // addAllAuthenticatedUsers() to grant access to different types of entities. // You can also use \"readers\" and \"writers\" to grant different roles. await storage . bucket ( bucketName ). acl . default . owners . addUser ( userEmail ); console . log ( Added user ${ userEmail } as an owner on bucket ${ bucketName } . ); } addBucketDefaultOwner (). catch ( console . error ); The following sample deletes a default object ACL from a bucket: / TODO(developer): Uncomment the following lines before running the sample. / // The ID of your GCS bucket // const bucketName = 'your-unique-bucket-name'; // The email address of the user to remove // const userEmail = 'user-email-to-remove'; // Imports the Google Cloud client library const { Storage } = require ( ' @google-cloud/storage ' ); // Creates a client const storage = new Storage (); async function removeBucketDefaultOwner () { // Removes the user from the access control list of the bucket.",
+          "To see the exact permissions that are required, expand the Required permissions section: Required permissions storage.buckets.get storage.buckets.list This permission is only required for using the Google Cloud console to perform the tasks on this page. storage.buckets.setIamPolicy storage.buckets.update storage.objects.get storage.objects.getIamPolicy storage.objects.setIamPolicy storage.objects.update You can also get these permissions with custom roles .",
+          "To view and change the default object ACL for a bucket: Console You cannot set default object ACLs using the Google Cloud console."
+        ]
+      },
+      {
+        "title": "\"Set and manage IAM policies on buckets \\_|\\_ Cloud Storage \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/storage/docs/access-control/using-iam-permissions",
+        "source_id": "site-iam-reference",
+        "final_score": 240,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For more information, see Set up authentication for client libraries . / TODO(developer): Uncomment the following lines before running the sample. / // The ID of your GCS bucket // const bucketName = 'your-unique-bucket-name'; // The role to grant // const roleName = 'roles/storage.objectViewer'; // The members to grant the new role to // const members = [ // 'user:jdoe@example.com', // 'group:admins@example.com', // ]; // Create a condition // const title = 'Title'; // const description = 'Description'; // const expression = 'resource.name.startsWith(\\\"projects/ /buckets/bucket-name/objects/prefix-a-\\\")'; // Imports the Google Cloud client library const { Storage } = require ( ' @google-cloud/storage ' ); // Creates a client const storage = new Storage (); async function removeBucketConditionalBinding () { // Get a reference to a Google Cloud Storage bucket const bucket = storage . bucket ( bucketName ); // Gets and updates the bucket's IAM policy const [ policy ] = await bucket . iam . getPolicy ({ requestedPolicyVersion : 3 }); // Set the policy's version to 3 to use condition in bindings. policy . version = 3 ; // Finds and removes the appropriate role-member group with specific condition. const index = policy . bindings . findIndex ( binding = > binding . role === roleName && binding . condition && binding . condition . title === title && binding . condition . description === description && binding . condition . expression === expression ); const binding = policy . bindings [ index ]; if ( binding ) { policy . bindings . splice ( index , 1 ); // Updates the bucket's IAM policy await bucket . iam . setPolicy ( policy ); console . log ( 'Conditional Binding was removed.' ); } else { // No matching role-member group with specific condition were found throw new Error ( 'No matching binding group found.' ); } } removeBucketConditionalBinding (). catch ( console . error ); PHP For more information, see the Cloud Storage PHP API reference documentation .",
+          "For more information, see Set up authentication for client libraries . / TODO(developer): Uncomment the following lines before running the sample. / // The ID of your GCS bucket // const bucketName = 'your-unique-bucket-name'; // The role to revoke // const roleName = 'roles/storage.objectViewer'; // The members to revoke the roles from // const members = [ // 'user:jdoe@example.com', // 'group:admins@example.com', // ]; // Imports the Google Cloud client library const { Storage } = require ( ' @google-cloud/storage ' ); // Creates a client const storage = new Storage (); async function removeBucketIamMember () { // Get a reference to a Google Cloud Storage bucket const bucket = storage . bucket ( bucketName ); // For more information please read: // https://cloud.google.com/storage/docs/access-control/iam const [ policy ] = await bucket . iam . getPolicy ({ requestedPolicyVersion : 3 }); // Finds and updates the appropriate role-member group, without a condition. const index = policy . bindings . findIndex ( binding = > binding . role === roleName && ! binding . condition ); const role = policy . bindings [ index ]; if ( role ) { role . members = role . members . filter ( member = > members . indexOf ( member ) === - 1 ); // Updates the policy object with the new (or empty) role-member group if ( role . members . length === 0 ) { policy . bindings . splice ( index , 1 ); } else { policy . bindings . index = role ; } // Updates the bucket's IAM policy await bucket . iam . setPolicy ( policy ); } else { // No matching role-member group(s) were found throw new Error ( 'No matching role-member group(s) found.' ); } console . log ( Removed the following member(s) with role ${ roleName } from ${ bucketName } : ); members . forEach ( member = > { console . log ( ${ member } ); }); } removeBucketIamMember (). catch ( console . error ); PHP For more information, see the Cloud Storage PHP API reference documentation .",
+          "For more information, see Set up authentication for client libraries . / TODO(developer): Uncomment the following lines before running the sample. / // The ID of your GCS bucket // const bucketName = 'your-unique-bucket-name'; // The role to grant // const roleName = 'roles/storage.objectViewer'; // The members to grant the new role to // const members = [ // 'user:jdoe@example.com', // 'group:admins@example.com', // ]; // Create a condition // const title = 'Title'; // const description = 'Description'; // const expression = 'resource.name.startsWith(\\\"projects/ /buckets/bucket-name/objects/prefix-a-\\\")'; // Imports the Google Cloud client library const { Storage } = require ( ' @google-cloud/storage ' ); // Creates a client const storage = new Storage (); async function addBucketConditionalBinding () { // Get a reference to a Google Cloud Storage bucket const bucket = storage . bucket ( bucketName ); // Gets and updates the bucket's IAM policy const [ policy ] = await bucket . iam . getPolicy ({ requestedPolicyVersion : 3 }); // Set the policy's version to 3 to use condition in bindings. policy . version = 3 ; // Adds the new roles to the bucket's IAM policy policy . bindings . push ({ role : roleName , members : members , condition : { title : title , description : description , expression : expression , }, }); // Updates the bucket's IAM policy await bucket . iam . setPolicy ( policy ); console . log ( Added the following member(s) with role ${ roleName } to ${ bucketName } : ); members . forEach ( member = > { console . log ( ${ member } ); }); console . log ( 'with condition:' ); console . log ( Title: ${ title } ); console . log ( Description: ${ description } ); console . log ( Expression: ${ expression } ); } addBucketConditionalBinding (). catch ( console . error ); PHP For more information, see the Cloud Storage PHP API reference documentation ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "example.com",
+      "kitten.png",
+      "resource.name.startsWith",
+      "storage.buckets.get",
+      "storage.buckets.getIamPolicy",
+      "storage.buckets.list",
+      "storage.buckets.setIamPolicy",
+      "storage.buckets.update",
+      "storage.googleapis.com",
+      "storage.managedFolders.getIamPolicy",
+      "storage.managedFolders.setIamPolicy",
+      "storage.objects.get",
+      "storage.objects.getIamPolicy",
+      "storage.objects.setIamPolicy",
+      "storage.objects.update",
+      "storage.objectViewer"
+    ],
+    "missing_inventory_roles": [
+      "roles/storage.objectViewer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/discover-object-storage-console",
+        "https://docs.cloud.google.com/storage/docs/access-control/using-iam-for-managed-folders",
+        "https://docs.cloud.google.com/storage/docs/access-control/create-manage-lists",
+        "https://docs.cloud.google.com/storage/docs/access-control/using-iam-permissions"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/discover-object-storage-console",
+        "https://docs.cloud.google.com/storage/docs/access-control/using-iam-for-managed-folders",
+        "https://docs.cloud.google.com/storage/docs/access-control/create-manage-lists",
+        "https://docs.cloud.google.com/storage/docs/access-control/using-iam-permissions"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/discover-object-storage-console",
+        "https://docs.cloud.google.com/storage/docs/access-control/using-iam-for-managed-folders",
+        "https://docs.cloud.google.com/storage/docs/access-control/create-manage-lists",
+        "https://docs.cloud.google.com/storage/docs/access-control/using-iam-permissions"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/discover-object-storage-console",
+        "https://docs.cloud.google.com/storage/docs/access-control/using-iam-for-managed-folders",
+        "https://docs.cloud.google.com/storage/docs/access-control/create-manage-lists",
+        "https://docs.cloud.google.com/storage/docs/access-control/using-iam-permissions"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/discover-object-storage-console",
+        "https://docs.cloud.google.com/storage/docs/access-control/using-iam-for-managed-folders",
+        "https://docs.cloud.google.com/storage/docs/access-control/create-manage-lists",
+        "https://docs.cloud.google.com/storage/docs/access-control/using-iam-permissions"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/discover-object-storage-console",
+        "https://docs.cloud.google.com/storage/docs/access-control/using-iam-for-managed-folders",
+        "https://docs.cloud.google.com/storage/docs/access-control/create-manage-lists",
+        "https://docs.cloud.google.com/storage/docs/access-control/using-iam-permissions"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/discover-object-storage-console",
+        "https://docs.cloud.google.com/storage/docs/access-control/using-iam-for-managed-folders",
+        "https://docs.cloud.google.com/storage/docs/access-control/create-manage-lists",
+        "https://docs.cloud.google.com/storage/docs/access-control/using-iam-permissions"
+      ]
+    }
+  ]
+}

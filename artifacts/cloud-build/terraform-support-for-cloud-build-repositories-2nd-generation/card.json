@@ -1,0 +1,90 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:22.874Z",
+  "source_step08_card": "data/step-08/current/products/cloud-build/card.json",
+  "product_name": "Cloud Build",
+  "product_slug": "cloud-build",
+  "feature_name": "Terraform support for Cloud Build repositories (2nd generation)",
+  "feature_slug": "terraform-support-for-cloud-build-repositories-2nd-generation",
+  "summary": "Cloud Build repositories (2nd generation) gained end-to-end Terraform support.",
+  "extended_definition": "Cloud Build repositories (2nd generation) gained end-to-end Terraform support.",
+  "lifecycle": {
+    "latest_feature_date": "2023-07-20",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/build/docs/automating-builds/bitbucket/build-repos-from-bitbucket-data-center",
+      "https://docs.cloud.google.com/build/docs/automating-builds/bitbucket/build-repos-from-bitbucket-server",
+      "https://docs.cloud.google.com/build/docs/automating-builds/gitlab/build-repos-from-gitlab"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Build repositories from Bitbucket Data Center \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/build/docs/automating-builds/bitbucket/build-repos-from-bitbucket-data-center",
+        "source_id": "site-docs-root-2",
+        "final_score": 97,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Terraform For sample Terraform code about creating a build trigger and connecting it to your Bitbucket Data Center installation using Developer Connect, see the following topics in the Terraform documentation: Create a Developer Connect push trigger Create a Developer Connect pull trigger Data sharing The data sent to Bitbucket Data Center from Cloud Build helps you identify triggers by name and see build results on your Bitbucket Data Center repositories.",
+          "Create a Bitbucket Data Center trigger This section explains how you can connect your Bitbucket Data Center repositories to Cloud Build and create a trigger to automatically invoke builds on your connected repositories.",
+          "Home Documentation Application development Cloud Build Guides Send feedback Build repositories from Bitbucket Data Center Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "Build repositories from Bitbucket Server \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/build/docs/automating-builds/bitbucket/build-repos-from-bitbucket-server",
+        "source_id": "site-docs-root-2",
+        "final_score": 97,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Terraform For sample Terraform code about creating a build trigger and connecting it to your Bitbucket Server installation using Developer Connect, see the following topics in the Terraform documentation: Create a Developer Connect push trigger Create a Developer Connect pull trigger Data sharing The data sent to Bitbucket Server from Cloud Build helps you identify triggers by name and see build results on Bitbucket Server.",
+          "Create a Bitbucket Server trigger This sections explains how you can connect your Bitbucket Server repositories to Cloud Build and create a trigger to automatically invoke builds on your connected repositories.",
+          "Home Documentation Application development Cloud Build Guides Send feedback Build repositories from Bitbucket Server Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "Build repositories from GitLab \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/build/docs/automating-builds/gitlab/build-repos-from-gitlab",
+        "source_id": "site-docs-root-2",
+        "final_score": 97,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Terraform For sample Terraform code about creating a build trigger and connecting it to your GitLab installation using Developer Connect, see the following topics in the Terraform documentation: Create a Developer Connect push trigger Create a Developer Connect pull trigger Data sharing The data sent to GitLab from Cloud Build helps you identify triggers by name and see build results on your GitLab repositories.",
+          "Home Documentation Application development Cloud Build Guides Send feedback Build repositories from GitLab Stay organized with collections Save and categorize content based on your preferences.",
+          "To disable this behavior, we recommend using manual approvals to gate builds when making pull requests on public repositories."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/build/docs/automating-builds/gitlab/build-repos-from-gitlab",
+        "https://docs.cloud.google.com/build/docs/automating-builds/bitbucket/build-repos-from-bitbucket-data-center",
+        "https://docs.cloud.google.com/build/docs/automating-builds/bitbucket/build-repos-from-bitbucket-server"
+      ]
+    }
+  ]
+}

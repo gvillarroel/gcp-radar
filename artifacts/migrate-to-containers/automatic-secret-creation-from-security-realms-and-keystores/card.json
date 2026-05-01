@@ -1,0 +1,142 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:43.708Z",
+  "source_step08_card": "data/step-08/current/products/migrate-to-containers/card.json",
+  "product_name": "Migrate to Containers",
+  "product_slug": "migrate-to-containers",
+  "feature_name": "Automatic secret creation from security realms and keystores",
+  "feature_slug": "automatic-secret-creation-from-security-realms-and-keystores",
+  "summary": "Secrets are automatically created from extracted security realms configuration and keystores.",
+  "extended_definition": "Secrets are automatically created from extracted security realms configuration and keystores.",
+  "lifecycle": {
+    "latest_feature_date": "2023-03-28",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/websphere/websphere-customizing-a-migration",
+      "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/windows/windows-customizing-a-migration-plan",
+      "https://docs.cloud.google.com/migrate/containers/docs/planning-best-practices"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Customize migration plan for WebSphere workloads \\_|\\_ Migrate to Containers\\",
+        "url": "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/websphere/websphere-customizing-a-migration",
+        "source_id": "site-docs-reference",
+        "final_score": 120,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Defaults to 0 for Liberty profile. group : \"0\" Application ports to be exposed in Kubernetes artifacts. ports : - name : http - tcp - 9080 port : 9080 protocol : TCP - name : https - tcp - 9443 port : 9443 protocol : TCP Specify whether discovered keystores are automatically converted to Kubernetes secrets.",
+          "Defaults to true. enableSecrets : true Exclude applications To exclude applications from the migration, remove them from the applications list. applications: Exclude app1.war: - path: app1.war ... - path: app2.war Control application files To control which application files are included or excluded from the migration, update the configurations and resources fields. applications: - path: app.war resources: keystores: Exclude key1.p12: - key1.p12 Include key2.p12: - key2.p12 additionalResources: Exclude resource1.xml: - resource1.xml Include resource2.xml: - resource2.xml Customize the target Java runtime To customize the target Java runtime for the application, update the targetJavaRuntime field. applications : - path : app . war targetJavaRuntime : se : SE ee : EE vendor : VENDOR Replace the following: SE : the Java SE version.",
+          "To migrate these files as is, you can disable this feature. applications: - path: app.war resources: keystores: - key.p12 targetContainer: Do not migrate keystores to Kubernetes secrets: enableSecrets: false Customize Kubernetes ports To control which ports are exposed by Kubernetes Pods and Services, update the ports field. applications: - path: app.war targetContainer: ports: Exclude http-tcp-9080: - name: http-tcp-9080 port: 9080 protocol: TCP Include https-tcp-9443: - name: https-tcp-9443 port: 9443 protocol: TCP What's next Learn how to execute the migration ."
+        ]
+      },
+      {
+        "title": "\"Customize migration plan for Windows IIS services \\_|\\_ Migrate to Containers\\",
+        "url": "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/windows/windows-customizing-a-migration-plan",
+        "source_id": "site-docs-reference",
+        "final_score": 95,
+        "relevance": "",
+        "evidence_snippets": [
+          "The following is an example migration plan containing identitytype : migrationPlan : applications : iis : applicationhost : apppools : - name : DefaultAppPool Allowed values include: ApplicationPoolIdentity (default), NetworkService, LocalSystem, LocalService identitytype=\"NetworkService\" - managedruntimeversion : v4.0 name : .NET v4.5 Classic - managedruntimeversion : v4.0 name : .NET v4.5 When you execute the migration plan to generate the container artifacts, Migrate to Containers automatically adds the necessary Dockerfile directives according to the identitytype field setting.",
+          "You can modify the list of runtimes in the migration plan by adding or removing members of msvcRuntimes : The complete list of possible values are: (The 2015 runtime also includes support for 2017, 2019, and 2022) msvcRuntimes : - MSVC2012 x64 - MSVC2013 x64 - MSVC2015 x64 - MSVC2012 x86 - MSVC2013 x86 - MSVC2015 x86 The pathEnvVarAdditionalEntries section Windows IIS applications might have non-default PATH environment variable entries, which are automatically detected on the source VM and included in the migration plan.",
+          "For example, if you set identitytype to NetworkService the directive is in the form: RUN c:\\windows\\system32\\inetsrv\\appcmd.exe set apppool \\\"DefaultAppPool\\\" \\\"/-processModel.identityType:NetworkService\\\"; Migrate to Containers automatically adds read ACL directives to the site's folders according to the target identitytype , and for the IUSR built-in user."
+        ]
+      },
+      {
+        "title": "Planning best practices \\_|\\_ Migrate to Containers \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/migrate/containers/docs/planning-best-practices",
+        "source_id": "site-docs-root-2",
+        "final_score": 79,
+        "relevance": "",
+        "evidence_snippets": [
+          "NFS Define NFS mounts as Persistent Volumes When you create the migration plan , NFS client mounts on the source VM are automatically discovered and added to the generated plan.",
+          "Disable unneeded services Migrate to Containers automatically disables hardware- or environment-specific services, and a predefined set of additional services running on VMs.",
+          "Migrating data from source NFS shares If your source VM is using an NFS share mount, this data cannot be migrated automatically."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "app.war",
+      "app1.war",
+      "app2.war",
+      "appcmd.exe",
+      "key.p12",
+      "key1.p12",
+      "key2.p12",
+      "resource1.xml",
+      "resource2.xml",
+      "v4.0",
+      "v4.5"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/websphere/websphere-customizing-a-migration",
+        "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/windows/windows-customizing-a-migration-plan",
+        "https://docs.cloud.google.com/migrate/containers/docs/planning-best-practices"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/websphere/websphere-customizing-a-migration",
+        "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/windows/windows-customizing-a-migration-plan",
+        "https://docs.cloud.google.com/migrate/containers/docs/planning-best-practices"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/websphere/websphere-customizing-a-migration",
+        "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/windows/windows-customizing-a-migration-plan",
+        "https://docs.cloud.google.com/migrate/containers/docs/planning-best-practices"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/websphere/websphere-customizing-a-migration",
+        "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/windows/windows-customizing-a-migration-plan",
+        "https://docs.cloud.google.com/migrate/containers/docs/planning-best-practices"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/websphere/websphere-customizing-a-migration",
+        "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/windows/windows-customizing-a-migration-plan",
+        "https://docs.cloud.google.com/migrate/containers/docs/planning-best-practices"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/websphere/websphere-customizing-a-migration",
+        "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/windows/windows-customizing-a-migration-plan",
+        "https://docs.cloud.google.com/migrate/containers/docs/planning-best-practices"
+      ]
+    }
+  ]
+}

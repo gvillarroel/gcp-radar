@@ -1,0 +1,192 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:42.052Z",
+  "source_step08_card": "data/step-08/current/products/identity-aware-proxy/card.json",
+  "product_name": "Identity-Aware Proxy",
+  "product_slug": "identity-aware-proxy",
+  "feature_name": "Compute Engine",
+  "feature_slug": "compute-engine",
+  "summary": "Cloud Identity-Aware Proxy provides identity-based access protection for App Engine standard environment, Compute Engine, and GKE.",
+  "extended_definition": "Cloud Identity-Aware Proxy provides identity-based access protection for App Engine standard environment, Compute Engine, and GKE.",
+  "lifecycle": {
+    "latest_feature_date": "2017-08-31",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/iap/docs/cloud-iap-context-aware-access-howto",
+      "https://docs.cloud.google.com/iap/docs/enabling-compute-howto",
+      "https://docs.cloud.google.com/iap/docs/managing-access",
+      "https://docs.cloud.google.com/iap/docs/tutorial-gce"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Enable IAP for Compute Engine \\_|\\_ Identity-Aware Proxy \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/iap/docs/enabling-compute-howto",
+        "source_id": "site-docs-root",
+        "final_score": 310,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Security Identity-Aware Proxy Guides Send feedback Enable IAP for Compute Engine Stay organized with collections Save and categorize content based on your preferences.",
+          "This page explains how to secure a Compute Engine instance with Identity-Aware Proxy (IAP) .",
+          "Turning on IAP On the Identity-Aware Proxy page, under APPLICATIONS , find the load balancer that serves the instance group you want to restrict access to."
+        ]
+      },
+      {
+        "title": "\"Setting up IAP for Compute Engine \\_|\\_ Identity-Aware Proxy \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/iap/docs/tutorial-gce",
+        "source_id": "site-docs-root",
+        "final_score": 304,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Security Identity-Aware Proxy Guides Send feedback Setting up IAP for Compute Engine Stay organized with collections Save and categorize content based on your preferences.",
+          "This guide describes how to set up a Compute Engine instance with Identity-Aware Proxy (IAP).",
+          "On the IAM & admin > Identity-Aware Proxy right side Access section, click Add ."
+        ]
+      },
+      {
+        "title": "\"Setting up context-aware access with Identity-Aware Proxy \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/iap/docs/cloud-iap-context-aware-access-howto",
+        "source_id": "site-docs-root",
+        "final_score": 298,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Security Identity-Aware Proxy Guides Send feedback Setting up context-aware access with Identity-Aware Proxy Stay organized with collections Save and categorize content based on your preferences.",
+          "This guide describes how to extend Identity-Aware Proxy (IAP) access policies using access levels and the Identity and Access Management (IAM) Conditions Framework .",
+          "Example policy.json file { \"policy\" : { \"bindings\" : [ { \"role\" : \"roles/iap.httpsResourceAccessor\" , \"members\" : [ \"group\" : EXAMPLE GROUP@GOOGLE.COM , \"user: EXAMPLE USER@GOOGLE.COM \" ], \"condition\" : { \"expression\" : \"\" accessPolicies/ ORGANIZATION NUMBER /accessLevels/ ACCESS LEVEL NAME \" in request.auth.access levels && request.path.startsWith(\" / \")\" , \"title\" : \" CONDITION NAME \" } } ] } } Set your new policy.json file using the setIamPolicy method. curl -i -H \"Content-Type:application/json\" \\ -H \"Authentication: Bearer $(gcloud auth print-access-token)\" \\ ${IAP BASE URL}/compute/services/${BACKEND SERVICE NAME}:setIamPolicy \\ -d @${JSON NEW POLICY} Use hostname and path conditions Access to your app can be secured using the hostname and path of a request URL."
+        ]
+      },
+      {
+        "title": "\"Manage access to IAP-secured resources \\_|\\_ Identity-Aware Proxy \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/iap/docs/managing-access",
+        "source_id": "site-iam-reference",
+        "final_score": 286,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Security Identity-Aware Proxy Guides Send feedback Manage access to IAP-secured resources Stay organized with collections Save and categorize content based on your preferences.",
+          "This page describes how to manage individual or group access to Identity-Aware Proxy (IAP) secured resources at the resource level.",
+          "When you're finished adding email addresses and setting roles, click Add Remove access Go to the Identity-Aware Proxy page ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "iap.httpsResourceAccessor",
+      "policy.json",
+      "request.auth.access",
+      "request.path.startsWith"
+    ],
+    "missing_inventory_roles": [
+      "roles/iap.httpsResourceAccessor"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/enabling-compute-howto",
+        "https://docs.cloud.google.com/iap/docs/tutorial-gce",
+        "https://docs.cloud.google.com/iap/docs/cloud-iap-context-aware-access-howto",
+        "https://docs.cloud.google.com/iap/docs/managing-access"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/enabling-compute-howto",
+        "https://docs.cloud.google.com/iap/docs/tutorial-gce",
+        "https://docs.cloud.google.com/iap/docs/cloud-iap-context-aware-access-howto",
+        "https://docs.cloud.google.com/iap/docs/managing-access"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/enabling-compute-howto",
+        "https://docs.cloud.google.com/iap/docs/tutorial-gce",
+        "https://docs.cloud.google.com/iap/docs/cloud-iap-context-aware-access-howto",
+        "https://docs.cloud.google.com/iap/docs/managing-access"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/enabling-compute-howto",
+        "https://docs.cloud.google.com/iap/docs/tutorial-gce",
+        "https://docs.cloud.google.com/iap/docs/cloud-iap-context-aware-access-howto",
+        "https://docs.cloud.google.com/iap/docs/managing-access"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/enabling-compute-howto",
+        "https://docs.cloud.google.com/iap/docs/tutorial-gce",
+        "https://docs.cloud.google.com/iap/docs/cloud-iap-context-aware-access-howto",
+        "https://docs.cloud.google.com/iap/docs/managing-access"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/enabling-compute-howto",
+        "https://docs.cloud.google.com/iap/docs/tutorial-gce",
+        "https://docs.cloud.google.com/iap/docs/cloud-iap-context-aware-access-howto",
+        "https://docs.cloud.google.com/iap/docs/managing-access"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/enabling-compute-howto",
+        "https://docs.cloud.google.com/iap/docs/tutorial-gce",
+        "https://docs.cloud.google.com/iap/docs/cloud-iap-context-aware-access-howto",
+        "https://docs.cloud.google.com/iap/docs/managing-access"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/enabling-compute-howto",
+        "https://docs.cloud.google.com/iap/docs/tutorial-gce",
+        "https://docs.cloud.google.com/iap/docs/cloud-iap-context-aware-access-howto",
+        "https://docs.cloud.google.com/iap/docs/managing-access"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/enabling-compute-howto",
+        "https://docs.cloud.google.com/iap/docs/tutorial-gce",
+        "https://docs.cloud.google.com/iap/docs/cloud-iap-context-aware-access-howto",
+        "https://docs.cloud.google.com/iap/docs/managing-access"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/enabling-compute-howto",
+        "https://docs.cloud.google.com/iap/docs/tutorial-gce",
+        "https://docs.cloud.google.com/iap/docs/cloud-iap-context-aware-access-howto",
+        "https://docs.cloud.google.com/iap/docs/managing-access"
+      ]
+    }
+  ]
+}

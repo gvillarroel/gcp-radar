@@ -1,0 +1,138 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:18.771Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery",
+  "feature_name": "Cloud Storage to BigQuery transfer write modes",
+  "feature_slug": "cloud-storage-to-bigquery-transfer-write-modes",
+  "summary": "Cloud Storage transfers to BigQuery can append data or refresh data by overwriting the destination.",
+  "extended_definition": "Cloud Storage transfers to BigQuery can append data or refresh data by overwriting the destination.",
+  "lifecycle": {
+    "latest_feature_date": "2020-02-27",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/blob-storage-transfer",
+      "https://docs.cloud.google.com/bigquery/docs/blob-storage-transfer-intro",
+      "https://docs.cloud.google.com/bigquery/docs/cloud-storage-transfer-overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Introduction to Cloud Storage transfers \\_|\\_ BigQuery \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/cloud-storage-transfer-overview",
+        "source_id": "site-api-reference",
+        "final_score": 215,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Incremental transfers A transfer configuration with an APPEND or WRITE APPEND write preference, also called an incremental transfer, incrementally appends new data since the previous successful transfer to a BigQuery destination table.",
+          "Data ingestion for Cloud Storage transfers You can specify how data is loaded into BigQuery by selecting a Write Preference in the transfer configuration when you set up a Cloud Storage transfer .",
+          "Truncated transfers A transfer configuration with a MIRROR or WRITE TRUNCATE write preference, also called a truncated transfer, overwrites data in the BigQuery destination table during each transfer run with data from all files matching the source URI."
+        ]
+      },
+      {
+        "title": "\"Introduction to Blob Storage transfers \\_|\\_ BigQuery \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/blob-storage-transfer-intro",
+        "source_id": "site-api-reference",
+        "final_score": 211,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Incremental transfers A transfer configuration with an APPEND or WRITE APPEND write preference, also called an incremental transfer, incrementally appends new data since the previous successful transfer to a BigQuery destination table.",
+          "All BigQuery quotas and limits on load jobs apply to recurring Blob Storage transfers, with the following additional considerations: Limit Default Maximum size per load job transfer run 15 TB Maximum number of files per transfer run when the Blob Storage data path includes 0 or 1 wildcards 10,000,000 files Maximum number of files per transfer run when the Blob Storage data path includes 2 or more wildcards 10,000 files What's next Learn more about setting up a Blob Storage transfer .",
+          "Truncated transfers A transfer configuration with a MIRROR or WRITE TRUNCATE write preference, also called a truncated transfer, overwrites data in the BigQuery destination table during each transfer run with data from all files matching the source URI."
+        ]
+      },
+      {
+        "title": "Load Blob Storage data into BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/blob-storage-transfer",
+        "source_id": "site-api-reference",
+        "final_score": 183,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For more information about how BigQuery Data Transfer Service ingests data using either WRITE APPEND or WRITE TRUNCATE , see Data ingestion for Azure Blob transfers .",
+          "Depending on the format of your Blob Storage source data, there may be additional limitations: CSV limitations JSON limitations Limitations on nested and repeated data Data transfers to BigQuery Omni locations are not supported.",
+          "This client only needs to be created // once, and can be reused for multiple requests. try ( DataTransferServiceClient client = DataTransferServiceClient . create ()) { ProjectName parent = ProjectName . of ( projectId ); CreateTransferConfigRequest request = CreateTransferConfigRequest . newBuilder () . setParent ( parent . toString ()) . setTransferConfig ( transferConfig ) . build (); TransferConfig config = client . createTransferConfig ( request ); System . out . println ( \"Azure Blob Storage transfer created successfully: \" + config . getName ()); } catch ( ApiException ex ) { System . out . print ( \"Azure Blob Storage transfer was not created.\" + ex . toString ()); } } } Specify encryption key with transfers You can specify customer-managed encryption keys (CMEKs) to encrypt data for a transfer run."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "bigquery.datasets.get",
+      "bigquery.datasets.getIamPolicy",
+      "bigquery.datasets.setIamPolicy",
+      "bigquery.datasets.update",
+      "bigquery.jobs.create",
+      "bigquery.transfers.get",
+      "bigquery.transfers.update"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/cloud-storage-transfer-overview",
+        "https://docs.cloud.google.com/bigquery/docs/blob-storage-transfer-intro",
+        "https://docs.cloud.google.com/bigquery/docs/blob-storage-transfer"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/cloud-storage-transfer-overview",
+        "https://docs.cloud.google.com/bigquery/docs/blob-storage-transfer-intro",
+        "https://docs.cloud.google.com/bigquery/docs/blob-storage-transfer"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/cloud-storage-transfer-overview",
+        "https://docs.cloud.google.com/bigquery/docs/blob-storage-transfer-intro",
+        "https://docs.cloud.google.com/bigquery/docs/blob-storage-transfer"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/cloud-storage-transfer-overview",
+        "https://docs.cloud.google.com/bigquery/docs/blob-storage-transfer-intro",
+        "https://docs.cloud.google.com/bigquery/docs/blob-storage-transfer"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/cloud-storage-transfer-overview",
+        "https://docs.cloud.google.com/bigquery/docs/blob-storage-transfer-intro",
+        "https://docs.cloud.google.com/bigquery/docs/blob-storage-transfer"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/cloud-storage-transfer-overview",
+        "https://docs.cloud.google.com/bigquery/docs/blob-storage-transfer-intro",
+        "https://docs.cloud.google.com/bigquery/docs/blob-storage-transfer"
+      ]
+    }
+  ]
+}

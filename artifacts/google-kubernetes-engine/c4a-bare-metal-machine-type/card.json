@@ -1,0 +1,95 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:39.542Z",
+  "source_step08_card": "data/step-08/current/products/google-kubernetes-engine/card.json",
+  "product_name": "Google Kubernetes Engine",
+  "product_slug": "google-kubernetes-engine",
+  "feature_name": "C4A bare metal machine type",
+  "feature_slug": "c4a-bare-metal-machine-type",
+  "summary": "GKE Standard clusters can create bare metal nodes with the c4a-highmem-96-metal machine type from the C4A series.",
+  "extended_definition": "GKE Standard clusters can create bare metal nodes with the c4a-highmem-96-metal machine type from the C4A series.",
+  "lifecycle": {
+    "latest_feature_date": "2026-02-24",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/allocate-network-resources-dra",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/autopilot-classes-standard-clusters",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Security bulletins \\_|\\_ Google Kubernetes Engine (GKE) \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "source_id": "site-docs-reference-2",
+        "final_score": 164,
+        "relevance": "",
+        "evidence_snippets": [
+          "For instructions, refer to the following hardening guides: GKE Standard GKE on VMware Google Distributed Cloud Virtual for Bare Metal Update 2022-03-15: GKE on AWS Update 2022-03-15: GKE on Azure Low GCP-2022-008 Published: 2022-02-23 Updated: 2022-04-28 Reference: CVE-2022-23606 , CVE-2022-21655 , CVE-2021-43826 , CVE-2021-43825 , CVE-2021-43824 , CVE-2022-21654 , CVE-2022-21657 , CVE-2022-21656 GKE Description Severity The Envoy project recently discovered a set of vulnerabilities, CVE-2022-23606 , CVE-2022-21655 , CVE-2021-43826 , CVE-2021-43825 , CVE-2021-43824 , CVE-2022-21654 , CVE-2022-21657 , and CVE-2022-21656 which may impact GKE clusters using Anthos Service Mesh , Istio-on-GKE , or custom Istio deployments.",
+          "For instructions, refer to the following hardening guides: GKE Standard GKE on VMware Google Distributed Cloud Virtual for Bare Metal Update 2022-03-15: GKE on AWS Update 2022-03-15: GKE on Azure Addition 2022-03-15: Persistence using mutating webhooks Mutating webhooks were used in the report to establish a privileged foothold in the cluster post-compromise.",
+          "If you have v1.8.0 clusters, download and install the 1.8.1 version of bmctl and upgrade your clusters to the following patched version: 1.8.1 High GCP-2021-011 Published: 2021-06-04 Updated: 2021-10-19 Reference: CVE-2021-30465 2021-10-19 update: Added bulletins for GKE on VMware, GKE on AWS, and GKE on Bare Metal."
+        ]
+      },
+      {
+        "title": "\"Run workloads in Autopilot mode in Standard clusters \\_|\\_ Google Kubernetes\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/autopilot-classes-standard-clusters",
+        "source_id": "site-docs-reference-2",
+        "final_score": 150,
+        "relevance": "",
+        "evidence_snippets": [
+          "For more information about the implications of running an Autopilot workload in your Standard clusters, including differences that you might notice when you deploy those workloads, see About Autopilot mode workloads in GKE Standard .",
+          "Home Documentation Application hosting Google Kubernetes Engine (GKE) Guides Send feedback Run workloads in Autopilot mode in Standard clusters Stay organized with collections Save and categorize content based on your preferences.",
+          "Autopilot Standard Cluster administrators and application operators can get the benefits of Google Kubernetes Engine (GKE) Autopilot, like pricing and pre-configured settings, in Standard mode clusters."
+        ]
+      },
+      {
+        "title": "\"Allocate network resources by using GKE managed DRANET \\_|\\_ GKE networking\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/allocate-network-resources-dra",
+        "source_id": "site-docs-reference-2",
+        "final_score": 136,
+        "relevance": "",
+        "evidence_snippets": [
+          "You must use one of the following accelerator-optimized machine types: Machine series Machine type Accelerator model Networking technology A3 Ultra a3-ultragpu-8g NVIDIA H200 GPU RDMA A4 a4-highgpu-8g NVIDIA B200 GPU RDMA A4X a4x-highgpu-4g NVIDIA GB200 GPU RDMA A4X Max a4x-maxgpu-4g-metal NVIDIA B300 GPU RDMA TPU v7 tpu7x-standard-4t TPU v7 NetDevice TPU v6e ct6e-standard-8t Trillium TPU NetDevice TPU v6e ct6e-standard-4t Trillium TPU NetDevice TPU v6e ct6e-standard-1t Trillium TPU NetDevice Limitations GKE DRANET has the following limitations: You can't use GKE DRANET to allocate the default network interface card (NIC) or virtual NICs (such as veth).",
+          "The number of NICs and their names will vary based on the machine type of the GKE node. eth0 eth1 eth2 lo Enable DRANET with custom ComputeClass To use GKE managed DRANET in Autopilot clusters or with node auto-provisioning in Standard clusters, you must use a custom ComputeClass resource to opt-in to the feature.",
+          "Certain instance types, specifically bare metal nodes like a4x-max , are incompatible with Autoscaling and Autopilot clusters."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "gke.59",
+      "gke.69",
+      "gke.84",
+      "v1.8.0"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/autopilot-classes-standard-clusters",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/allocate-network-resources-dra"
+      ]
+    }
+  ]
+}

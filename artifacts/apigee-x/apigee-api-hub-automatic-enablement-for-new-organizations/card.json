@@ -1,0 +1,160 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:14.688Z",
+  "source_step08_card": "data/step-08/current/products/apigee-x/card.json",
+  "product_name": "Apigee X",
+  "product_slug": "apigee-x",
+  "feature_name": "Apigee API hub automatic enablement for new organizations",
+  "feature_slug": "apigee-api-hub-automatic-enablement-for-new-organizations",
+  "summary": "Apigee API hub is automatically enabled for new Apigee organizations in supported regions.",
+  "extended_definition": "Apigee API hub is automatically enabled for new Apigee organizations in supported regions.",
+  "lifecycle": {
+    "latest_feature_date": "2025-06-03",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/apigee/docs/api-observation/shadow-api-discovery",
+      "https://docs.cloud.google.com/apigee/docs/api-platform/get-started/drz-concepts",
+      "https://docs.cloud.google.com/apigee/docs/api-platform/reference/api-proxy-configuration-reference"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "API proxy configuration reference \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-platform/reference/api-proxy-configuration-reference",
+        "source_id": "site-api-reference",
+        "final_score": 119,
+        "relevance": "",
+        "evidence_snippets": [
+          "VALUE=true curl -Ss -v -X PUT \\ \"https://apigee.googleapis.com/v1/organizations/ MYORG /environments/ MYENV \" \\ -H \"Content-Type: application/json\" \\ -H \"Authorization: Bearer TOKEN \" \\ -d '{ \"name\": \" MYENV \", \"properties\": { \"property\": [{ \"name\": \"features.SSLInfo.Enforce\", \"value\": \"'\"$VALUE\"'\" }] } }' Output: { ... \"properties\": { \"property\": [ { \"name\": \"features.SSLInfo.Enforce\", \"value\": \"true\" } ] }, ... } Sample target endpoint with outbound client authentication enabled <TargetEndpoint name=\"default\"> <HttpTargetConnection> <URL>https://myservice.com</URL> <SSLInfo> <Enabled>true</Enabled> <Enforce>true</Enforce> <ClientAuthEnabled>true</ClientAuthEnabled> <KeyStore>myKeystore</KeyStore> <KeyAlias>myKey</KeyAlias> <TrustStore>myTruststore</TrustStore> </SSLInfo> </HttpTargetConnection> </TargetEndpoint> For detailed instructions, see Options for configuring TLS .",
+          "For example, shown below is a target endpoint that uses a reference to the keystore: <SSLInfo> <Enabled>true</Enabled> <ClientAuthEnabled>false</ClientAuthEnabled> <KeyStore>ref://keystoreref</KeyStore> <KeyAlias>myKeyAlias</KeyAlias> </SSLInfo> Use the following POST API call to create the reference named keystoreref : curl \"https://apigee.googleapis.com/v1/organizations/ {org} /environments/ {env} /references\" \\ -X POST \\ -H \"Authorization: Bearer $TOKEN\" \\ -d '<ResourceReference name=\" keystoreref \"> <Refers> myTestKeystore </Refers> <ResourceType>KeyStore</ResourceType> </ResourceReference>' Where $TOKEN is set to your OAuth 2.0 access token, as described in Obtaining an OAuth 2.0 access token .",
+          "In this example, the GoogleAccessToken element is configured to generate a Google Auth Token to authenticate the target request: <HTTPTargetConnection> <Authentication> <GoogleAccessToken> <Scopes> <Scope>https://www.googleapis.com/auth/cloud-platform</Scope> </Scopes> </GoogleAccessToken> </Authentication> <URL> https://secretmanager.googleapis.com/v1/projects/project-id/secrets/secret-id </URL> </HTTPTargetConnection> The following example shows how to automatically set the audience of the GoogleIDToken."
+        ]
+      },
+      {
+        "title": "Shadow API Discovery overview \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-observation/shadow-api-discovery",
+        "source_id": "site-docs-reference-2",
+        "final_score": 102,
+        "relevance": "",
+        "evidence_snippets": [
+          "Within your centralized Apigee API hub instance, you can attach those projects to view the results of those jobs and automatically compare them to \"known\" APIs documented in API hub.",
+          "The following regions are currently supported for API observation and Shadow APIs: australia-southeast1 europe-west2 europe-west9 us-central1 us-east1 us-west1 Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Enable, disable, and delete observation jobs To change whether an existing observation job is enabled (active), select either Enable or Disable from the Actions menu in the row for that job in the Observation jobs page."
+        ]
+      },
+      {
+        "title": "Introduction to data residency \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-platform/get-started/drz-concepts",
+        "source_id": "site-docs-root-2",
+        "final_score": 97,
+        "relevance": "",
+        "evidence_snippets": [
+          "How to view the region If you have already provisioned your org ( PROJECT ID ) for use with data residency, you can use the getProjectMapping API to display the regions associated with a project: Authorize gcloud to access the Cloud Platform with your Google user credentials: gcloud auth login Call the API: curl -X GET https://apigee.googleapis.com/v1/organizations/ PROJECT ID :getProjectMapping \\ -H \"Authorization: Bearer $(gcloud auth print-access-token)\" Where PROJECT ID is your Apigee organization name or Google Cloud project ID.",
+          "Data residency and FedRAMP compliance Apigee is authorized as a FedRAMP High service for organizations where data residency is enabled.",
+          "The following Apigee offerings are not in scope under Apigee's FedRAMP ATO: API analytics Advanced API Security Integrated portals Apigee evaluation organizations Apigee data collectors For more information about the significance of a FedRAMP ATO, see FedRAMP Compliance ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "apigee.googleapis.com",
+      "features.SSLInfo.Enforce",
+      "myservice.com",
+      "secretmanager.googleapis.com",
+      "xyz.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/api-proxy-configuration-reference",
+        "https://docs.cloud.google.com/apigee/docs/api-observation/shadow-api-discovery",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/get-started/drz-concepts"
+      ]
+    },
+    {
+      "capability": "armor",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/api-proxy-configuration-reference",
+        "https://docs.cloud.google.com/apigee/docs/api-observation/shadow-api-discovery",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/get-started/drz-concepts"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/api-proxy-configuration-reference",
+        "https://docs.cloud.google.com/apigee/docs/api-observation/shadow-api-discovery",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/get-started/drz-concepts"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/api-proxy-configuration-reference",
+        "https://docs.cloud.google.com/apigee/docs/api-observation/shadow-api-discovery",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/get-started/drz-concepts"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/api-proxy-configuration-reference",
+        "https://docs.cloud.google.com/apigee/docs/api-observation/shadow-api-discovery",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/get-started/drz-concepts"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/api-proxy-configuration-reference",
+        "https://docs.cloud.google.com/apigee/docs/api-observation/shadow-api-discovery",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/get-started/drz-concepts"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/api-proxy-configuration-reference",
+        "https://docs.cloud.google.com/apigee/docs/api-observation/shadow-api-discovery",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/get-started/drz-concepts"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/api-proxy-configuration-reference",
+        "https://docs.cloud.google.com/apigee/docs/api-observation/shadow-api-discovery",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/get-started/drz-concepts"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/api-proxy-configuration-reference",
+        "https://docs.cloud.google.com/apigee/docs/api-observation/shadow-api-discovery",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/get-started/drz-concepts"
+      ]
+    }
+  ]
+}

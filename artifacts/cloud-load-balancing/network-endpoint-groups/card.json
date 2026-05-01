@@ -1,0 +1,90 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:24.125Z",
+  "source_step08_card": "data/step-08/current/products/cloud-load-balancing/card.json",
+  "product_name": "Cloud Load Balancing",
+  "product_slug": "cloud-load-balancing",
+  "feature_name": "Network endpoint groups",
+  "feature_slug": "network-endpoint-groups",
+  "summary": "Network endpoint groups let load balancers target individual endpoints rather than only whole instance groups.",
+  "extended_definition": "Network endpoint groups let load balancers target individual endpoints rather than only whole instance groups.",
+  "lifecycle": {
+    "latest_feature_date": "2019-06-20",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/load-balancing/docs/backend-service",
+      "https://docs.cloud.google.com/load-balancing/docs/negs",
+      "https://docs.cloud.google.com/load-balancing/docs/network"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Network endpoint groups overview \\_|\\_ Cloud Load Balancing \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/load-balancing/docs/negs",
+        "source_id": "site-docs-root",
+        "final_score": 217,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Number of endpoints 1 or more Health checks for NEGs attached to backend services Centralized health checks when you use this NEG with the following load balancers: Global external Application Load Balancer Classic Application Load Balancer Global external proxy Network Load Balancer Classic proxy Network Load Balancer Distributed Envoy health checks when you use this NEG with the following load balancers: Regional external Application Load Balancer Regional internal Application Load Balancer Regional external proxy Network Load Balancer Regional internal proxy Network Load Balancer Cross-region internal Application Load Balancer Cross-region internal proxy Network Load Balancer Scope Zonal Routing To an on-premises network or another Cloud provider network by way of Cloud Interconnect VLAN attachment, Cloud VPN tunnel, or Router appliance VM in a VPC network Google Cloud products that use this NEG External Application Load Balancer Set up a global external Application Load Balancer with hybrid connectivity Set up a classic Application Load Balancer with hybrid connectivity Set up a regional external Application Load Balancer with hybrid connectivity Internal Application Load Balancer Set up a regional internal Application Load Balancer with hybrid connectivity Set up a cross-region internal Application Load Balancer with hybrid connectivity External proxy Network Load Balancer Global external proxy Network Load Balancer Classic proxy Network Load Balancer Set up a regional external proxy Network Load Balancer with hybrid connectivity Internal proxy Network Load Balancer Set up a regional internal proxy Network Load Balancer with hybrid connectivity Set up a cross-region internal proxy Network Load Balancer with zonal and hybrid connectivity Cloud Service Mesh: Cloud Service Mesh with hybrid connectivity network endpoint groups Set up network edge services for multi‑environment deployments Private Service Connect NEG Features Details Purpose A single endpoint that resolves to one of the following: A Google-managed regional API endpoint A Google-managed global API endpoint A managed service published using Private Service Connect NetworkEndpointType API name PRIVATE SERVICE CONNECT Number of endpoints 1 Health checks for NEGs attached to backend services Not applicable Scope Regional Routing Private Service Connect: Supported load balancers and targets Google Cloud products that use this NEG Cross-region internal Application Load Balancer Regional internal Application Load Balancer Global external Application Load Balancer Private Service Connect NEGs are not supported by the classic Application Load Balancer.",
+          "Scope Zonal Routing VPC network Google Cloud products that use this NEG Internal passthrough Network Load Balancer ( GCE VM IP endpoints): Set up zonal NEGs for internal passthrough Network Load Balancers External passthrough Network Load Balancer ( GCE VM IP endpoints): Set up zonal NEGs for external passthrough Network Load Balancers Regional internal proxy Network Load Balancer ( GCE VM IP PORT endpoints) Set up zonal NEGs for regional internal proxy Network Load Balancers Cross-region internal proxy Network Load Balancer ( GCE VM IP PORT endpoints) Set up zonal and hybrid NEGs for cross-region internal proxy Network Load Balancers Regional external proxy Network Load Balancer ( GCE VM IP PORT endpoints) Set up zonal NEGs for regional external proxy Network Load Balancers Internal Application Load Balancer ( GCE VM IP PORT endpoints) Set up a regional internal Application Load Balancer with zonal and hybrid NEGs Set up a cross-region internal Application Load Balancer with zonal and hybrid NEGs Global external Application Load Balancer ( GCE VM IP PORT endpoints) Classic Application Load Balancer ( GCE VM IP PORT endpoints) Regional external Application Load Balancer ( GCE VM IP PORT endpoints) Global external proxy Network Load Balancer ( GCE VM IP PORT endpoints) Classic proxy Network Load Balancer ( GCE VM IP PORT endpoints) Cloud Service Mesh ( GCE VM IP PORT endpoints) Related documentation: Zonal NEGs overview Set up Zonal NEGs Internet NEG Features Details Purpose A single internet-routable endpoint that is hosted outside of Google Cloud.",
+          "Home Documentation Networking Load Balancing Guides Send feedback Network endpoint groups overview Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"Backend service-based regional external passthrough Network Load Balancer\\",
+        "url": "https://docs.cloud.google.com/load-balancing/docs/network",
+        "source_id": "site-docs-root",
+        "final_score": 201,
+        "relevance": "",
+        "evidence_snippets": [
+          "Regional external passthrough Network Load Balancers are regional, Layer 4 load balancers that distribute external traffic among backends (instance groups or network endpoint groups (NEGs)) in the same region as the load balancer.",
+          "Location of load balancing resources 1 Required location of IP address resource Host project Host project Service project Service project or host project 1 Includes the forwarding rule, backend service, health check, and backends (NEGs and managed or unmanaged instance groups) Traffic distribution Regional external passthrough Network Load Balancers support a variety of traffic distribution customization options, including session affinity, connection tracking, weighted load balancing, and failover.",
+          "Traffic steering Forwarding rules for regional external passthrough Network Load Balancers can be configured to direct traffic coming from a specific source IP address or a range of IP addresses to a specific backend service (or target instance)."
+        ]
+      },
+      {
+        "title": "\"Backend services overview \\_|\\_ Cloud Load Balancing \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/load-balancing/docs/backend-service",
+        "source_id": "site-docs-reference-required-3",
+        "final_score": 191,
+        "relevance": "",
+        "evidence_snippets": [
+          "Table: Balancing modes for Proxy Network Load Balancers Supported backend Balancing mode CONNECTION RATE IN FLIGHT UTILIZATION CUSTOM METRICS Instance groups Zonal NEGs with GCE VM IP PORT endpoints Zonal hybrid connectivity NEGs Target capacity specifications Target capacity specifications are relevant to Application Load Balancer, Cloud Service Mesh, and proxy Network Load Balancer backends that support balancing mode, target capacity, and capacity scaler settings.",
+          "For more information about how passthrough Network Load Balancers distribute new connections, see the following: Traffic distribution for internal passthrough Network Load Balancers Traffic distribution for regional external passthrough Network Load Balancers Supported backends For Application Load Balancers, Cloud Service Mesh, and proxy Network Load Balancers, the following types of backends support the balancing mode, target capacity, and capacity scaler parameters: Instance group backends Zonal NEGs with GCE VM IP PORT endpoints Zonal hybrid connectivity NEGs Internet NEGs, serverless NEGs, and Private Service Connect NEGs don't support the balancing mode, target capacity, and capacity scaler parameters.",
+          "Application Load Balancers (except classic Application Load Balancers) and Cloud Service Mesh backends with a long traffic duration setting can use the IN FLIGHT balancing mode with one of the following required target capacity parameters: Table : Target capacity parameters for the IN FLIGHT balancing mode Target capacity parameter Supported backend Zonal (managed or unmanaged) instance groups Regional managed instance groups Zonal NEGs with GCE VM IP PORT endpoints Zonal hybrid connectivity NEGs max-in-flight-requests Target number of in-progress HTTP requests per backend zone max-in-flight-requests-per-instance Target number of in-progress HTTP requests per VM instance."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/negs",
+        "https://docs.cloud.google.com/load-balancing/docs/network",
+        "https://docs.cloud.google.com/load-balancing/docs/backend-service"
+      ]
+    }
+  ]
+}

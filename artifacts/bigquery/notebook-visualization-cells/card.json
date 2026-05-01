@@ -1,0 +1,124 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:18.771Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery",
+  "feature_name": "Notebook visualization cells",
+  "feature_slug": "notebook-visualization-cells",
+  "summary": "Visualization cells automatically generate customizable charts from DataFrames in notebooks.",
+  "extended_definition": "Visualization cells automatically generate customizable charts from DataFrames in notebooks.",
+  "lifecycle": {
+    "latest_feature_date": "2025-10-20",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners",
+      "https://docs.cloud.google.com/bigquery/docs/colab-data-science-agent",
+      "https://docs.cloud.google.com/bigquery/docs/visualize-jupyter"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Google Cloud Ready - BigQuery Partners \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners",
+        "source_id": "site-docs-reference-5",
+        "final_score": 120,
+        "relevance": "",
+        "evidence_snippets": [
+          "Users can perform data visualization, create charts and dashboards, and then share analysis with a click.",
+          "Partner references Move your data to BigQuery with millisecond latency BigQuery materialization connector BigQuery Batch Query Connector Partner Advantage page Direct link Fivetran Fivetran Data Pipelines Solution Fivetran Data Pipelines Category ETL & Data Integration Description Fivetran is a leader in automated data integration and delivers ready-to-use connectors that automatically adapt as schemas and APIs change, ensuring consistent, reliable access to data.",
+          "Partner references Configuring BigQuery Data Transformation in BigQuery Partner Advantage page Direct link Databricks Solution Databricks Lakehouse Category BI, ML, & Advanced Analytics Description Databricks SQL provides an easy-to-use platform for analysts who want to run SQL queries on their data lake, create multiple visualization types to explore query results from different perspectives, and build and share dashboards."
+        ]
+      },
+      {
+        "title": "\"Use the Colab Enterprise Data Science Agent with BigQuery \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/colab-data-science-agent",
+        "source_id": "site-docs-reference-5",
+        "final_score": 116,
+        "relevance": "",
+        "evidence_snippets": [
+          "Data visualization : Create visualizations such as histograms, box plots, scatter plots, and bar charts that represent the distributions of individual variables and the relationships between them.",
+          "Generating a plan : Generate and modify a plan to complete a particular task using common tools such as Python, SQL, Managed Service for Apache Spark, and BigQuery DataFrames.",
+          "As the plan runs, generated code and text appear in the notebook."
+        ]
+      },
+      {
+        "title": "\"Visualize geospatial analytics data using a Colab notebook \\_|\\_ BigQuery\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/visualize-jupyter",
+        "source_id": "site-docs-root",
+        "final_score": 114,
+        "relevance": "",
+        "evidence_snippets": [
+          "You then import the h3 and pydeck libraries and the following Python geospatial libraries: geopandas to extend the data types used by pandas to allow spatial operations on geometric types. shapely for manipulation and analysis of individual planar geometric objects. branca to generate HTML and JavaScript colormaps. geemap.deck for visualization with pydeck and earthengine-api .",
+          "You can open a prebuilt version of the notebook in Colab, Colab Enterprise, or BigQuery Studio by clicking the links at the top of the GitHub version of the tutorial— BigQuery Geospatial Visualization in Colab .",
+          "After you complete the authorization flow, no output is generated in your Colab notebook."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "geemap.deck"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/colab-data-science-agent",
+        "https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners",
+        "https://docs.cloud.google.com/bigquery/docs/visualize-jupyter"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/colab-data-science-agent",
+        "https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners",
+        "https://docs.cloud.google.com/bigquery/docs/visualize-jupyter"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/colab-data-science-agent",
+        "https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners",
+        "https://docs.cloud.google.com/bigquery/docs/visualize-jupyter"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/colab-data-science-agent",
+        "https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners",
+        "https://docs.cloud.google.com/bigquery/docs/visualize-jupyter"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/colab-data-science-agent",
+        "https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners",
+        "https://docs.cloud.google.com/bigquery/docs/visualize-jupyter"
+      ]
+    }
+  ]
+}

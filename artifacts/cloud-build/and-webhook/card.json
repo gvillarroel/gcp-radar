@@ -1,0 +1,149 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:22.874Z",
+  "source_step08_card": "data/step-08/current/products/cloud-build/card.json",
+  "product_name": "Cloud Build",
+  "product_slug": "cloud-build",
+  "feature_name": "and webhook",
+  "feature_slug": "and-webhook",
+  "summary": "Cloud Build notifications for email, BigQuery, and webhooks can now be customized using notifier templates.",
+  "extended_definition": "Cloud Build notifications for email, BigQuery, and webhooks can now be customized using notifier templates.",
+  "lifecycle": {
+    "latest_feature_date": "2022-12-27",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/build/docs/automate-builds-webhook-events",
+      "https://docs.cloud.google.com/build/docs/automating-builds/bitbucket/connect-host-bitbucket-data-center",
+      "https://docs.cloud.google.com/build/docs/automating-builds/bitbucket/connect-host-bitbucket-server"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Connect to a Bitbucket Data Center host \\_|\\_ Cloud Build \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/build/docs/automating-builds/bitbucket/connect-host-bitbucket-data-center",
+        "source_id": "site-docs-root-2",
+        "final_score": 80,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Unlike connecting your host using the Google Cloud console, you need to manually store your personal access tokens and webhook secret in Secret Manager before calling the API: { \"hostUri\" : \" HOST URI \" , \"username\" : \" USERNAME \" , \"apiKey\" : \" API KEY \" , \"secrets\" : { \"adminAccessTokenVersionName\" : \" ADMIN ACCESS TOKEN SECRET VERSION \" , \"readAccessTokenVersionName\" : \" READ ACCESS TOKEN SECRET VERSION \" , \"webhookSecretVersionName\" : \" WEBHOOK SECRET SECRET VERSION \" , }, \"peeredNetwork\" : \" PEERED NETWORK \" , \"peeredNetworkIpRange\" : \" PEERED NETWORK IP RANGE \" , \"sslCa\" : \" SSL CERTIFICATE \" } Where: HOST URI is the host URI of your Bitbucket Data Center instance.",
+          "Unlike connecting your host using the Google Cloud console, you'll need to manually store your personal access tokens and webhook secret in Secret Manager before running the following command: gcloud alpha builds enterprise-config bitbucket-data-center create --name = CONFIG NAME \\ --user-name = USERNAME \\ --host-uri = HOST URI \\ --admin-access-token-secret-version = ADMIN ACCESS TOKEN SECRET VERSION \\ --read-access-token-secret-version = READ ACCESS TOKEN SECRET VERSION \\ --webhook-secret-secret-version = WEBHOOK SECRET SECRET VERSION \\ --api-key = API KEY \\ --peered-network = PEERED NETWORK \\ --peered-network-ip-range = PEERED NETWORK IP RANGE \\ --ssl-ca-file = SSL CA FILE Where: CONFIG NAME is the name of your Bitbucket Data Center configuration.",
+          "After creating a host connection, your personal access tokens and webhook secret will be securely stored in Secret Manager."
+        ]
+      },
+      {
+        "title": "\"Connect to a Bitbucket Server host \\_|\\_ Cloud Build \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/build/docs/automating-builds/bitbucket/connect-host-bitbucket-server",
+        "source_id": "site-docs-root-2",
+        "final_score": 80,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Unlike connecting your host using the Google Cloud console, you need to manually store your personal access tokens and webhook secret in Secret Manager before calling the API: { \"hostUri\" : \" HOST URI \" , \"username\" : \" USERNAME \" , \"apiKey\" : \" API KEY \" , \"secrets\" : { \"adminAccessTokenVersionName\" : \" ADMIN ACCESS TOKEN SECRET VERSION \" , \"readAccessTokenVersionName\" : \" READ ACCESS TOKEN SECRET VERSION \" , \"webhookSecretVersionName\" : \" WEBHOOK SECRET SECRET VERSION \" , }, \"peeredNetwork\" : \" PEERED NETWORK \" , \"peeredNetworkIpRange\" : \" PEERED NETWORK IP RANGE \" , \"sslCa\" : \" SSL CERTIFICATE \" } Where: HOST URI is the host URI of your Bitbucket Server instance.",
+          "Unlike connecting your host using the Google Cloud console, you'll need to manually store your personal access tokens and webhook secret in Secret Manager before running the following command: gcloud alpha builds enterprise-config bitbucketserver create --name = CONFIG NAME \\ --user-name = USERNAME \\ --host-uri = HOST URI \\ --admin-access-token-secret-version = ADMIN ACCESS TOKEN SECRET VERSION \\ --read-access-token-secret-version = READ ACCESS TOKEN SECRET VERSION \\ --webhook-secret-secret-version = WEBHOOK SECRET SECRET VERSION \\ --api-key = API KEY \\ --peered-network = PEERED NETWORK \\ --peered-network-ip-range = PEERED NETWORK IP RANGE \\ --ssl-ca-file = SSL CA FILE Where: CONFIG NAME is the name of your Bitbucket Server configuration.",
+          "After creating a host connection, your personal access tokens and webhook secret will be securely stored in Secret Manager."
+        ]
+      },
+      {
+        "title": "\"Automate builds in response to webhook events \\_|\\_ Cloud Build \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/build/docs/automate-builds-webhook-events",
+        "source_id": "site-docs-root-2",
+        "final_score": 66,
+        "relevance": "",
+        "evidence_snippets": [
+          "Click Create to create your build trigger. gcloud To create a webhook trigger: gcloud builds triggers create webhook \\ -- name = TRIGGER NAME \\ -- repo = PATH TO REPO \\ -- repo - type = REPO TYPE \\ -- secret = PATH TO SECRET \\ -- substitutions = SUB ONE = '$ ( body . message . test ) ' , SUB TWO = '$ ( body . message . output ) ' \\ -- subscription - filter = ' SUB ONE == \"prod\" ' \\ -- inline - config = PATH TO INLINE BUILD CONFIG \\ -- tag = TAG NAME -- build - config = PATH TO BUILD CONFIG \\ -- branch = BRANCH NAME Where: + TRIGGER NAME is the name of your trigger. + PATH TO REPO is the path to the repository to invoke a build on.",
+          "Use the following command to invoke a webhook event: curl -X POST -H \"Content-type: application/json\" \"https://cloudbuild.googleapis.com/v1/projects/ ${ PROJECT ID } /locations/ ${ REGION } /triggers/ ${ TRIGGER NAME } :webhook?key= ${ API KEY } & secret= ${ SECRET VALUE } & trigger= ${ TRIGGER NAME } & projectId= ${ PROJECT ID } \" -d \"{}\" After completing these steps, the Secret Manager Secret Accessor role will automatically be granted to your Cloud Build service agent, service-${PROJECT NUMBER}@gcp-sa-cloudbuild.iam.gserviceaccount.com .",
+          "These events, sent to a custom URL, allow you to directly connect external systems and external source code management systems such as Bitbucket.com, Bitbucket Server, or GitLab, to Cloud Build through webhook events."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cloudbuild.googleapis.com",
+      "cloudbuild.iam.gserviceaccount.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/build/docs/automating-builds/bitbucket/connect-host-bitbucket-data-center",
+        "https://docs.cloud.google.com/build/docs/automating-builds/bitbucket/connect-host-bitbucket-server",
+        "https://docs.cloud.google.com/build/docs/automate-builds-webhook-events"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/build/docs/automating-builds/bitbucket/connect-host-bitbucket-data-center",
+        "https://docs.cloud.google.com/build/docs/automating-builds/bitbucket/connect-host-bitbucket-server",
+        "https://docs.cloud.google.com/build/docs/automate-builds-webhook-events"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/build/docs/automating-builds/bitbucket/connect-host-bitbucket-data-center",
+        "https://docs.cloud.google.com/build/docs/automating-builds/bitbucket/connect-host-bitbucket-server",
+        "https://docs.cloud.google.com/build/docs/automate-builds-webhook-events"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/build/docs/automating-builds/bitbucket/connect-host-bitbucket-data-center",
+        "https://docs.cloud.google.com/build/docs/automating-builds/bitbucket/connect-host-bitbucket-server",
+        "https://docs.cloud.google.com/build/docs/automate-builds-webhook-events"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/build/docs/automating-builds/bitbucket/connect-host-bitbucket-data-center",
+        "https://docs.cloud.google.com/build/docs/automating-builds/bitbucket/connect-host-bitbucket-server",
+        "https://docs.cloud.google.com/build/docs/automate-builds-webhook-events"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/build/docs/automating-builds/bitbucket/connect-host-bitbucket-data-center",
+        "https://docs.cloud.google.com/build/docs/automating-builds/bitbucket/connect-host-bitbucket-server",
+        "https://docs.cloud.google.com/build/docs/automate-builds-webhook-events"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/build/docs/automating-builds/bitbucket/connect-host-bitbucket-data-center",
+        "https://docs.cloud.google.com/build/docs/automating-builds/bitbucket/connect-host-bitbucket-server",
+        "https://docs.cloud.google.com/build/docs/automate-builds-webhook-events"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/build/docs/automating-builds/bitbucket/connect-host-bitbucket-data-center",
+        "https://docs.cloud.google.com/build/docs/automating-builds/bitbucket/connect-host-bitbucket-server",
+        "https://docs.cloud.google.com/build/docs/automate-builds-webhook-events"
+      ]
+    }
+  ]
+}

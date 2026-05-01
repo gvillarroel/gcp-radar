@@ -1,0 +1,117 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:23.081Z",
+  "source_step08_card": "data/step-08/current/products/cloud-cdn/card.json",
+  "product_name": "Cloud CDN",
+  "product_slug": "cloud-cdn",
+  "feature_name": "Cloud CDN HTTP/3 support",
+  "feature_slug": "cloud-cdn-http-3-support",
+  "summary": "Cloud CDN, via External HTTP(S) Load Balancing, supports HTTP/3 over QUIC for lower latency and improved throughput.",
+  "extended_definition": "Cloud CDN, via External HTTP(S) Load Balancing, supports HTTP/3 over QUIC for lower latency and improved throughput.",
+  "lifecycle": {
+    "latest_feature_date": "2021-06-22",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/cdn/docs/caching",
+      "https://docs.cloud.google.com/cdn/docs/http-https-over-same-domain",
+      "https://docs.cloud.google.com/cdn/docs/setting-up-cdn-with-external-origin"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Deliver secure and non-secure content over the same hostname \\_|\\_ Cloud\\",
+        "url": "https://docs.cloud.google.com/cdn/docs/http-https-over-same-domain",
+        "source_id": "site-docs-reference-2",
+        "final_score": 179,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "For an classic Application Load Balancer, use load-balancing-scheme=EXTERNAL . gcloud compute forwarding-rules create ipv4-http \\ --load-balancing-scheme= LOAD BALANCING SCHEME \\ --network-tier=PREMIUM \\ --address=ipv4-address \\ --global \\ --target-http-proxy=http-lb-proxy \\ --ports=80 gcloud compute forwarding-rules create ipv4-https \\ --load-balancing-scheme= LOAD BALANCING SCHEME \\ --network-tier=PREMIUM \\ --address=ipv4-address \\ --global \\ --target-https-proxy=https-lb-proxy \\ --ports=443 After creating the global forwarding rules, it can take several minutes for your configuration to propagate worldwide.",
+          "When configuring the external Application Load Balancer, the frontend configuration includes four forwarding rules that use the reserved IP addresses: Name Protocol IP:Port ipv4-http HTTP 34.95.111.204:80 ipv4-https HTTPS 34.95.111.204:443 ipv6-http HTTP [2600:1901:0:b13e::]:80 ipv6-https HTTPS [2600:1901:0:b13e::]:443 For Cloud CDN cache misses, the load balancer distributes requests to the backend origins, based on settings defined in the load balancer's URL map.",
+          "The proxy is the portion of the load balancer that holds the SSL certificate for HTTPS Load Balancing, so you also load your certificate in this step. gcloud compute target-https-proxies create https-lb-proxy \\ --url-map=web-map --ssl-certificates=www-ssl-cert Create two global forwarding rules to route incoming requests to the proxy, one for each of the IP address(es) you created."
+        ]
+      },
+      {
+        "title": "Caching overview \\_|\\_ Cloud CDN \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/cdn/docs/caching",
+        "source_id": "site-docs-reference-2",
+        "final_score": 163,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "N/A Where possible, Cloud CDN endeavors to be RFC-compliant (HTTP RFC 7234), but favors optimizing for cache offload and minimizing the impact that clients can have on hit rate and overall origin load.",
+          "Go to the Load balancing page Click the name of your external Application Load Balancer.",
+          "Request type Default behavior Configurable Benefits of collapsing Chunk requests Enabled No Can significantly reduce origin bandwidth Item requests Enabled Yes Can reduce origin request volume To disable item request collapsing using the Google Cloud CLI for a backend bucket that references a Cloud Storage bucket: Note: Google Cloud CLI support for the --request-coalescing flag was introduced in Google Cloud CLI version 330.0.0 . gcloud Use the gcloud compute backend-services or backend-buckets command: gcloud compute backend-services update BACKEND SERVICE NAME \\ --no-request-coalescing To enable item request collapsing on a backend bucket using the Google Cloud CLI: gcloud Use the gcloud compute backend-buckets command: gcloud compute backend-buckets update BACKEND BUCKET NAME \\ --request-coalescing To enable item request collapsing using the Google Cloud CLI for a backend service, including VM groups and external backends: gcloud Use the gcloud compute backend-services command: gcloud compute backend-services update BACKEND SERVICE NAME \\ --request-coalescing Requests initiated by Cloud CDN When your origin server supports byte range requests , Cloud CDN can send multiple requests to your origin server in reaction to a single client request."
+        ]
+      },
+      {
+        "title": "\"Set up an external backend with an internet NEG \\_|\\_ Cloud CDN \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/cdn/docs/setting-up-cdn-with-external-origin",
+        "source_id": "site-docs-reference-2",
+        "final_score": 159,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "If everything looks correct, click Update . gcloud Create a new backend service for the NEG: gcloud compute backend-services create images \\ --global \\ --enable-cdn \\ --cache-mode= CACHE MODE \\ --protocol=HTTP2 Set the cache mode by replacing CACHE MODE with one of the following: CACHE ALL STATIC : automatically caches static content USE ORIGIN HEADERS (default): requires the origin to set valid caching headers to cache content FORCE CACHE ALL : caches all content, ignoring any private , no-store , or no-cache directives in Cache-Control response headers Configure the backend service to add the custom request header Host: backend.example.com to the request: gcloud compute backend-services update images \\ --custom-request-header \"Host: backend.example.com\" --global Use the backend-services add-backend command to add the internet NEG to the backend service: gcloud compute backend-services add-backend images \\ --network-endpoint-group \"example-fqdn-neg\" \\ --global-network-endpoint-group \\ --global Attach the new backend service to the load balancer's URL map by creating a new matching rule to direct requests to that backend: gcloud compute url-maps add-path-matcher EXAMPLE URL MAP \\ --default-service= GCP SERVICE EXAMPLE \\ --path-matcher-name= CUSTOM ORIGIN PATH MATCHER EXAMPLE \\ --backend-service-path-rules= /CART/ID/1223515 = IMAGES Replace the following: EXAMPLE URL MAP : the name of your existing URL map GCP SERVICE EXAMPLE : the name of an existing default backend service CUSTOM ORIGIN PATH MATCHER EXAMPLE : the name of this new path rule /CART/ID/1223515 : the path IMAGES : the name of the new backend service with the attached internet NEG Allowlist the necessary IP ranges To allow an external Application Load Balancer to send requests to your internet NEG, you must query the cloud-eoips.googleusercontent.com DNS TXT record by using a tool like dig or nslookup .",
+          "Other options would be to configure a load balancer to accept HTTP or HTTPS requests, and use HTTPS when proxying requests to the external backend.",
+          "In the example, the load balancer accepts HTTPS requests from clients and proxies these requests as HTTPS to the external backend."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "backend.example.com",
+      "eoips.googleusercontent.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/cdn/docs/http-https-over-same-domain",
+        "https://docs.cloud.google.com/cdn/docs/caching",
+        "https://docs.cloud.google.com/cdn/docs/setting-up-cdn-with-external-origin"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/cdn/docs/http-https-over-same-domain",
+        "https://docs.cloud.google.com/cdn/docs/caching",
+        "https://docs.cloud.google.com/cdn/docs/setting-up-cdn-with-external-origin"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/cdn/docs/http-https-over-same-domain",
+        "https://docs.cloud.google.com/cdn/docs/caching",
+        "https://docs.cloud.google.com/cdn/docs/setting-up-cdn-with-external-origin"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/cdn/docs/http-https-over-same-domain",
+        "https://docs.cloud.google.com/cdn/docs/caching",
+        "https://docs.cloud.google.com/cdn/docs/setting-up-cdn-with-external-origin"
+      ]
+    }
+  ]
+}

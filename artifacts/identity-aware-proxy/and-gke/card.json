@@ -1,0 +1,222 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:42.052Z",
+  "source_step08_card": "data/step-08/current/products/identity-aware-proxy/card.json",
+  "product_name": "Identity-Aware Proxy",
+  "product_slug": "identity-aware-proxy",
+  "feature_name": "and GKE",
+  "feature_slug": "and-gke",
+  "summary": "Cloud Identity-Aware Proxy provides identity-based access protection for App Engine standard environment, Compute Engine, and GKE.",
+  "extended_definition": "Cloud Identity-Aware Proxy provides identity-based access protection for App Engine standard environment, Compute Engine, and GKE.",
+  "lifecycle": {
+    "latest_feature_date": "2017-08-31",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/iap/docs/cloud-iap-context-aware-access-howto",
+      "https://docs.cloud.google.com/iap/docs/concepts-overview",
+      "https://docs.cloud.google.com/iap/docs/customizing",
+      "https://docs.cloud.google.com/iap/docs/enabling-kubernetes-howto"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Enabling IAP for GKE \\_|\\_ Identity-Aware Proxy \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/iap/docs/enabling-kubernetes-howto",
+        "source_id": "site-docs-root",
+        "final_score": 250,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Security Identity-Aware Proxy Guides Send feedback Enabling IAP for GKE Stay organized with collections Save and categorize content based on your preferences.",
+          "This page explains how to secure a Google Kubernetes Engine (GKE) instance with Identity-Aware Proxy (IAP) .",
+          "Setting up IAP access Go to the Identity-Aware Proxy page ."
+        ]
+      },
+      {
+        "title": "\"Setting up context-aware access with Identity-Aware Proxy \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/iap/docs/cloud-iap-context-aware-access-howto",
+        "source_id": "site-docs-root",
+        "final_score": 246,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Security Identity-Aware Proxy Guides Send feedback Setting up context-aware access with Identity-Aware Proxy Stay organized with collections Save and categorize content based on your preferences.",
+          "This guide describes how to extend Identity-Aware Proxy (IAP) access policies using access levels and the Identity and Access Management (IAM) Conditions Framework .",
+          "Access levels allow access restrictions to resources based on IP address and end-user device attributes."
+        ]
+      },
+      {
+        "title": "Identity-Aware Proxy overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/iap/docs/concepts-overview",
+        "source_id": "site-docs-root",
+        "final_score": 244,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Security Identity-Aware Proxy Guides Send feedback Identity-Aware Proxy overview Stay organized with collections Save and categorize content based on your preferences.",
+          "How IAP works When an application or resource is protected by IAP, it can only be accessed through the proxy by principals , also known as users, who have the correct Identity and Access Management (IAM) role .",
+          "Context-aware access As part of the authorization step, you can use context-aware access to provide secure access to the following types of resources: Google Cloud console and APIs First layer of defense in protecting infrastructure access to Google Cloud."
+        ]
+      },
+      {
+        "title": "Customize IAP \\_|\\_ Identity-Aware Proxy \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/iap/docs/customizing",
+        "source_id": "site-docs-root",
+        "final_score": 222,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Customize IAP settings IAP provides the following customization settings: Field Description access settings.cors settings.allow http options Control HTTP OPTIONS (CORS preflight) access settings.oauth settings.login hint Simplify login for users of a G Suite domain application settings.access denied page settings.access denied page uri Show a custom error page when access is denied application settings.csm settings.rctoken aud Issue GKE Enterprise and Istio RCTokens access settings.gcip settings Authenticate with Identity Platform access settings.ReauthSettings Set a reauthentication policy.",
+          "Home Documentation Security Identity-Aware Proxy Guides Send feedback Customize IAP Stay organized with collections Save and categorize content based on your preferences.",
+          "To manage settings in IAP: Console To view and modify settings using the Google Cloud console: Go to the Identity-Aware Proxy page ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "settings.access",
+      "settings.allow",
+      "settings.cors",
+      "settings.csm",
+      "settings.gcip",
+      "settings.login",
+      "settings.oauth",
+      "settings.rctoken",
+      "settings.ReauthSettings"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/enabling-kubernetes-howto",
+        "https://docs.cloud.google.com/iap/docs/cloud-iap-context-aware-access-howto",
+        "https://docs.cloud.google.com/iap/docs/concepts-overview",
+        "https://docs.cloud.google.com/iap/docs/customizing"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/enabling-kubernetes-howto",
+        "https://docs.cloud.google.com/iap/docs/cloud-iap-context-aware-access-howto",
+        "https://docs.cloud.google.com/iap/docs/concepts-overview",
+        "https://docs.cloud.google.com/iap/docs/customizing"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/enabling-kubernetes-howto",
+        "https://docs.cloud.google.com/iap/docs/cloud-iap-context-aware-access-howto",
+        "https://docs.cloud.google.com/iap/docs/concepts-overview",
+        "https://docs.cloud.google.com/iap/docs/customizing"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/enabling-kubernetes-howto",
+        "https://docs.cloud.google.com/iap/docs/cloud-iap-context-aware-access-howto",
+        "https://docs.cloud.google.com/iap/docs/concepts-overview",
+        "https://docs.cloud.google.com/iap/docs/customizing"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/enabling-kubernetes-howto",
+        "https://docs.cloud.google.com/iap/docs/cloud-iap-context-aware-access-howto",
+        "https://docs.cloud.google.com/iap/docs/concepts-overview",
+        "https://docs.cloud.google.com/iap/docs/customizing"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/enabling-kubernetes-howto",
+        "https://docs.cloud.google.com/iap/docs/cloud-iap-context-aware-access-howto",
+        "https://docs.cloud.google.com/iap/docs/concepts-overview",
+        "https://docs.cloud.google.com/iap/docs/customizing"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/enabling-kubernetes-howto",
+        "https://docs.cloud.google.com/iap/docs/cloud-iap-context-aware-access-howto",
+        "https://docs.cloud.google.com/iap/docs/concepts-overview",
+        "https://docs.cloud.google.com/iap/docs/customizing"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/enabling-kubernetes-howto",
+        "https://docs.cloud.google.com/iap/docs/cloud-iap-context-aware-access-howto",
+        "https://docs.cloud.google.com/iap/docs/concepts-overview",
+        "https://docs.cloud.google.com/iap/docs/customizing"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/enabling-kubernetes-howto",
+        "https://docs.cloud.google.com/iap/docs/cloud-iap-context-aware-access-howto",
+        "https://docs.cloud.google.com/iap/docs/concepts-overview",
+        "https://docs.cloud.google.com/iap/docs/customizing"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/enabling-kubernetes-howto",
+        "https://docs.cloud.google.com/iap/docs/cloud-iap-context-aware-access-howto",
+        "https://docs.cloud.google.com/iap/docs/concepts-overview",
+        "https://docs.cloud.google.com/iap/docs/customizing"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/enabling-kubernetes-howto",
+        "https://docs.cloud.google.com/iap/docs/cloud-iap-context-aware-access-howto",
+        "https://docs.cloud.google.com/iap/docs/concepts-overview",
+        "https://docs.cloud.google.com/iap/docs/customizing"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/enabling-kubernetes-howto",
+        "https://docs.cloud.google.com/iap/docs/cloud-iap-context-aware-access-howto",
+        "https://docs.cloud.google.com/iap/docs/concepts-overview",
+        "https://docs.cloud.google.com/iap/docs/customizing"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/enabling-kubernetes-howto",
+        "https://docs.cloud.google.com/iap/docs/cloud-iap-context-aware-access-howto",
+        "https://docs.cloud.google.com/iap/docs/concepts-overview",
+        "https://docs.cloud.google.com/iap/docs/customizing"
+      ]
+    }
+  ]
+}

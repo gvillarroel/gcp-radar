@@ -1,0 +1,130 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:39.256Z",
+  "source_step08_card": "data/step-08/current/products/google-cloud-vmware-engine/card.json",
+  "product_name": "Google Cloud VMware Engine",
+  "product_slug": "google-cloud-vmware-engine",
+  "feature_name": "VMware Engine network",
+  "feature_slug": "vmware-engine-network",
+  "summary": "VMware Engine networks are available through Cloud Asset Inventory and Cloud Asset APIs.",
+  "extended_definition": "VMware Engine networks are available through Cloud Asset Inventory and Cloud Asset APIs.",
+  "lifecycle": {
+    "latest_feature_date": "2023-12-12",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/python/docs/reference/vmwareengine/latest/google.cloud.vmwareengine_v1.services.vmware_engine.pagers",
+      "https://docs.cloud.google.com/vmware-engine/docs/concepts-asset-inventory-services",
+      "https://docs.cloud.google.com/vmware-engine/docs/private-cloud-networking-for-vmware-engine"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Asset inventory services for VMware Engine \\_|\\_ Google Cloud VMware Engine\\",
+        "url": "https://docs.cloud.google.com/vmware-engine/docs/concepts-asset-inventory-services",
+        "source_id": "site-docs-reference-required-4",
+        "final_score": 167,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Key VMware Engine resources or assets are available through the Cloud Asset API and are also available using the Cloud Asset Inventory UI under Identity and Access Management on your Google Cloud console.",
+          "The Cloud Asset API resources include: PrivateCloud Cluster VMwareEngineNetwork NetworkPeering PrivateConnection NetworkPolicy ExternalAccessRule ExternalAddress For these resources, the Cloud Asset Inventory UI and Cloud Asset API enable the following features: Search and visibility: Search asset metadata, including IAM policies associated with it by using a custom query language.",
+          "Use the global search bar to search for the name of any VMware Engine resource that's available through the Cloud Asset API."
+        ]
+      },
+      {
+        "title": "\"About VMware Engine networks \\_|\\_ Google Cloud VMware Engine \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/vmware-engine/docs/private-cloud-networking-for-vmware-engine",
+        "source_id": "site-docs-root",
+        "final_score": 163,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Network connectivity for Legacy VMware Engine networks To establish communication to VMware Engine from your VPC network, you must enable private services access and create a private connection between your VPC network and the VMware Engine network.",
+          "Network connectivity for Standard VMware Engine networks To establish communication to VMware Engine from your VPC network, you must create a VPC Network peering relationship between your VPC network and a VMware Engine network.",
+          "About VMware Engine networks Google Cloud VMware Engine uses a VMware Engine network to provide network connectivity between one or more private clouds, Google Cloud Virtual Private Cloud networks, and on-premises networks."
+        ]
+      },
+      {
+        "title": "\"Module pagers (1.11.0) \\_|\\_ Python client libraries \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/vmwareengine/latest/google.cloud.vmwareengine_v1.services.vmware_engine.pagers",
+        "source_id": "site-python-reference",
+        "final_score": 151,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "If there are more pages, the aiter method will make additional ListVmwareEngineNetworks requests and continue to iterate through the vmware engine networks field on the corresponding responses.",
+          "If there are more pages, the iter method will make additional ListVmwareEngineNetworks requests and continue to iterate through the vmware engine networks field on the corresponding responses.",
+          "This class thinly wraps an initial ListVmwareEngineNetworksResponse object, and provides an aiter method to iterate through its vmware engine networks field."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vmware-engine/docs/private-cloud-networking-for-vmware-engine",
+        "https://docs.cloud.google.com/python/docs/reference/vmwareengine/latest/google.cloud.vmwareengine_v1.services.vmware_engine.pagers",
+        "https://docs.cloud.google.com/vmware-engine/docs/concepts-asset-inventory-services"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vmware-engine/docs/private-cloud-networking-for-vmware-engine",
+        "https://docs.cloud.google.com/python/docs/reference/vmwareengine/latest/google.cloud.vmwareengine_v1.services.vmware_engine.pagers",
+        "https://docs.cloud.google.com/vmware-engine/docs/concepts-asset-inventory-services"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vmware-engine/docs/private-cloud-networking-for-vmware-engine",
+        "https://docs.cloud.google.com/python/docs/reference/vmwareengine/latest/google.cloud.vmwareengine_v1.services.vmware_engine.pagers",
+        "https://docs.cloud.google.com/vmware-engine/docs/concepts-asset-inventory-services"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vmware-engine/docs/private-cloud-networking-for-vmware-engine",
+        "https://docs.cloud.google.com/python/docs/reference/vmwareengine/latest/google.cloud.vmwareengine_v1.services.vmware_engine.pagers",
+        "https://docs.cloud.google.com/vmware-engine/docs/concepts-asset-inventory-services"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vmware-engine/docs/private-cloud-networking-for-vmware-engine",
+        "https://docs.cloud.google.com/python/docs/reference/vmwareengine/latest/google.cloud.vmwareengine_v1.services.vmware_engine.pagers",
+        "https://docs.cloud.google.com/vmware-engine/docs/concepts-asset-inventory-services"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vmware-engine/docs/private-cloud-networking-for-vmware-engine",
+        "https://docs.cloud.google.com/python/docs/reference/vmwareengine/latest/google.cloud.vmwareengine_v1.services.vmware_engine.pagers",
+        "https://docs.cloud.google.com/vmware-engine/docs/concepts-asset-inventory-services"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,140 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:27.301Z",
+  "source_step08_card": "data/step-08/current/products/cloud-sql-for-postgresql/card.json",
+  "product_name": "Cloud SQL for PostgreSQL",
+  "product_slug": "cloud-sql-for-postgresql",
+  "feature_name": "Cloud SQL Enterprise Plus upgrade with IP allowlists and VPC Peering",
+  "feature_slug": "cloud-sql-enterprise-plus-upgrade-with-ip-allowlists-and-vpc-peering",
+  "summary": "Cloud SQL for PostgreSQL instances can be upgraded to Cloud SQL Enterprise Plus edition while using IP allowlists and VPC Peering.",
+  "extended_definition": "Cloud SQL for PostgreSQL instances can be upgraded to Cloud SQL Enterprise Plus edition while using IP allowlists and VPC Peering.",
+  "lifecycle": {
+    "latest_feature_date": "2023-08-09",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/sql/docs/postgres/admin-api/rest/v1/instances",
+      "https://docs.cloud.google.com/sql/docs/postgres/configure-private-ip",
+      "https://docs.cloud.google.com/sql/docs/postgres/create-instance"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Create instances \\_|\\_ Cloud SQL for PostgreSQL \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/sql/docs/postgres/create-instance",
+        "source_id": "site-docs-root",
+        "final_score": 119,
+        "relevance": "",
+        "evidence_snippets": [
+          "Memory must be: 0.9 to 6.5 GB per vCPU A multiple of 256 MB At least 3.75 GB (3840 MB) For example, the following command creates a Cloud SQL Enterprise edition instance with two vCPUs and 7,680 MB of memory: gcloud sql instances create myinstance \\ --database-version = POSTGRES 16 \\ --cpu = 2 \\ --memory = 7680MB \\ --region = us-central1 The following command creates a Cloud SQL Enterprise Plus edition instance with four cores: gcloud sql instances create myinstance \\ --database-version = POSTGRES 16 \\ --tier = db-perf-optimized-N-4 \\ --edition = ENTERPRISE PLUS \\ --region = us-central1 See Custom instance configuration for more information about how to size --cpu and --memory .",
+          "Before using any of the request data, make the following replacements: PROJECT ID : your project ID INSTANCE ID : your instance ID REGION : the region DATABASE VERSION : enum string of the database version (for example, POSTGRES 18 ) PASSWORD : the password for the root user MACHINE TYPE : enum string of the machine (tier) type, as: db-custom-[CPUS]-[MEMORY MBS] EDITION TYPE : your Cloud SQL edition Note : If the database version for your instance is PostgreSQL 16 and later, then the default edition is Cloud SQL Enterprise Plus edition.",
+          "Before using any of the request data, make the following replacements: PROJECT ID : your project ID INSTANCE ID : your instance ID REGION : the region DATABASE VERSION : enum string of the database version (for example, POSTGRES 18 ) PASSWORD : the password for the root user MACHINE TYPE : enum string of the machine (tier) type, as: db-custom-[CPUS]-[MEMORY MBS] EDITION TYPE : your Cloud SQL edition Note : If the database version for your instance is PostgreSQL 16 and later, then the default edition is Cloud SQL Enterprise Plus edition."
+        ]
+      },
+      {
+        "title": "\"REST Resource: instances \\_|\\_ Cloud SQL for PostgreSQL \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/sql/docs/postgres/admin-api/rest/v1/instances",
+        "source_id": "site-api-reference",
+        "final_score": 103,
+        "relevance": "",
+        "evidence_snippets": [
+          "A DR replica is an optional configuration for Enterprise Plus edition instances.",
+          "Edition The edition of the instance, can be ENTERPRISE or ENTERPRISE PLUS.",
+          "ENTERPRISE PLUS The instance is an Enterprise Plus edition."
+        ]
+      },
+      {
+        "title": "Configure private IP \\_|\\_ Cloud SQL for PostgreSQL \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/sql/docs/postgres/configure-private-ip",
+        "source_id": "site-iam-reference",
+        "final_score": 103,
+        "relevance": "",
+        "evidence_snippets": [
+          "How Cloud SQL creates a write endpoint If you enable the Cloud DNS API for your Google Cloud project, and then you create a primary Cloud SQL Enterprise Plus edition instance , promote the replica for the instance , or upgrade the instance from Cloud SQL Enterprise edition , Cloud SQL generates a write endpoint automatically and assigns it to the instance.",
+          "Note : A write endpoint is available only for Cloud SQL Enterprise Plus edition instances that have private IP addresses and associated networks.",
+          "After you assign a range to an instance, you can't modify the range. gcloud beta sql instances create INSTANCE ID \\ --project = PROJECT ID \\ --network = projects/ NETWORK PROJECT ID /global/networks/ VPC NETWORK NAME \\ --no-assign-ip \\ --allocated-ip-range-name = RANGE NAME \\ --enable-google-private-path \\ --database-version = DATABASE VERSION \\ --cpu = NUMBER OF CPU \\ --memory = MEMORY IN GB \\ --region = REGION NAME \\ --enforce-new-sql-network-architecture Terraform To configure private IP for a new instance, use the following Terraform resources: google compute network google compute global address google service networking connection google sql database instance resource \"google compute network\" \"peering network\" { name = \"private-network\" auto create subnetworks = \"false\" } resource \"google compute global address\" \"private ip address\" { name = \"private-ip-address\" purpose = \"VPC PEERING\" address type = \"INTERNAL\" prefix length = 16 network = google compute network.peering network.id } resource \"google service networking connection\" \"default\" { network = google compute network.peering network.id service = \"servicenetworking.googleapis.com\" reserved peering ranges = [google compute global address.private ip address.name] } resource \"google sql database instance\" \"default\" { name = \"private-ip-sql-instance\" region = \"us-central1\" database version = \"POSTGRES 14\" depends on = [google service networking connection.default] settings { tier = \"db-custom-2-7680\" ip configuration { ipv4 enabled = \"false\" private network = google compute network.peering network.id } } } resource \"google compute network peering routes config\" \"peering routes\" { peering = google service networking connection.default.peering network = google compute network.peering network.name import custom routes = true export custom routes = true } [START cloud sql postgres instance private ip dns] Uncomment this block after adding a valid DNS suffix resource \"google service networking peered dns domain\" \"default\" { name = \"example-com\" network = google compute network.peering network.id dns suffix = \"example.com.\" service = \"servicenetworking.googleapis.com\" } Apply the changes To apply your Terraform configuration in a Google Cloud project, complete the steps in the following sections."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "address.name",
+      "address.private",
+      "connection.default",
+      "connection.default.peering",
+      "example.com",
+      "network.id",
+      "network.name",
+      "network.peering",
+      "servicenetworking.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/create-instance",
+        "https://docs.cloud.google.com/sql/docs/postgres/admin-api/rest/v1/instances",
+        "https://docs.cloud.google.com/sql/docs/postgres/configure-private-ip"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/create-instance",
+        "https://docs.cloud.google.com/sql/docs/postgres/admin-api/rest/v1/instances",
+        "https://docs.cloud.google.com/sql/docs/postgres/configure-private-ip"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/create-instance",
+        "https://docs.cloud.google.com/sql/docs/postgres/admin-api/rest/v1/instances",
+        "https://docs.cloud.google.com/sql/docs/postgres/configure-private-ip"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/create-instance",
+        "https://docs.cloud.google.com/sql/docs/postgres/admin-api/rest/v1/instances",
+        "https://docs.cloud.google.com/sql/docs/postgres/configure-private-ip"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/create-instance",
+        "https://docs.cloud.google.com/sql/docs/postgres/admin-api/rest/v1/instances",
+        "https://docs.cloud.google.com/sql/docs/postgres/configure-private-ip"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/create-instance",
+        "https://docs.cloud.google.com/sql/docs/postgres/admin-api/rest/v1/instances",
+        "https://docs.cloud.google.com/sql/docs/postgres/configure-private-ip"
+      ]
+    }
+  ]
+}

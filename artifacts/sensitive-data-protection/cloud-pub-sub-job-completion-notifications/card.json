@@ -1,0 +1,110 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:46.193Z",
+  "source_step08_card": "data/step-08/current/products/sensitive-data-protection/card.json",
+  "product_name": "Sensitive Data Protection",
+  "product_slug": "sensitive-data-protection",
+  "feature_name": "Cloud Pub/Sub job completion notifications",
+  "feature_slug": "cloud-pub-sub-job-completion-notifications",
+  "summary": "Completion notifications for risk analysis and inspection jobs can be sent to Cloud Pub/Sub.",
+  "extended_definition": "Completion notifications for risk analysis and inspection jobs can be sent to Cloud Pub/Sub.",
+  "lifecycle": {
+    "latest_feature_date": "2018-02-16",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/sensitive-data-protection/docs/compute-k-anonymity",
+      "https://docs.cloud.google.com/sensitive-data-protection/docs/concepts-actions",
+      "https://docs.cloud.google.com/sensitive-data-protection/docs/inspecting-storage"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Enable inspection or risk analysis actions \\_|\\_ Sensitive Data Protection\\",
+        "url": "https://docs.cloud.google.com/sensitive-data-protection/docs/concepts-actions",
+        "source_id": "site-api-reference-required-2",
+        "final_score": 158,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Action BigQuery inspection Cloud Storage inspection Datastore inspection Hybrid inspection Risk analysis Save findings to BigQuery ✓ ✓ ✓ ✓ ✓ Save findings to Cloud Storage ✓ ✓ ✓ ✓ Publish to Pub/Sub ✓ ✓ ✓ ✓ ✓ Publish to Security Command Center ✓ ✓ ✓ Publish to Knowledge Catalog ✓ Publish to Data Catalog ( Deprecated ) ✓ Notify by email ✓ ✓ ✓ ✓ ✓ Publish to Cloud Monitoring ✓ ✓ ✓ ✓ De-identify findings ✓ Specify actions You can specify one or more actions when you configure a job: When you create a new inspection or risk analysis job using Sensitive Data Protection in the Google Cloud console, specify actions in the Add actions section of the job creation workflow.",
+          "Home Documentation Security Sensitive Data Protection Guides Send feedback Enable inspection or risk analysis actions Stay organized with collections Save and categorize content based on your preferences.",
+          "This document describes the actions that Sensitive Data Protection can perform after running an inspection job or risk analysis."
+        ]
+      },
+      {
+        "title": "\"Inspect Google Cloud storage and databases for sensitive data \\_|\\_ Sensitive\\",
+        "url": "https://docs.cloud.google.com/sensitive-data-protection/docs/inspecting-storage",
+        "source_id": "site-docs-reference-3",
+        "final_score": 137,
+        "relevance": "",
+        "evidence_snippets": [
+          "DlpServiceClient (); const pubsub = new PubSub (); // The project ID to run the API call under // const projectId = 'my-project'; // The name of the bucket where the file resides. // const bucketName = 'YOUR-BUCKET'; // The path to the file within the bucket to inspect. // Can contain wildcards, e.g. \"my-image. \" // const fileName = 'my-image.png'; // The minimum likelihood required before returning a match // const minLikelihood = 'LIKELIHOOD UNSPECIFIED'; // The maximum number of findings to report per request (0 = server maximum) // const maxFindings = 0; // The infoTypes of information to match // const infoTypes = [{ name: 'PHONE NUMBER' }, { name: 'EMAIL ADDRESS' }, { name: 'CREDIT CARD NUMBER' }]; // The customInfoTypes of information to match // const customInfoTypes = [{ infoType: { name: 'DICT TYPE' }, dictionary: { wordList: { words: ['foo', 'bar', 'baz']}}}, // { infoType: { name: 'REGEX TYPE' }, regex: {pattern: '\\\\(\\\\d{3}\\\\) \\\\d{3}-\\\\d{4}'}}]; // The name of the Pub/Sub topic to notify once the job completes // TODO(developer): create a Pub/Sub topic to use for this // const topicId = 'MY-PUBSUB-TOPIC' // The name of the Pub/Sub subscription to use when listening for job // completion notifications // TODO(developer): create a Pub/Sub subscription to use for this // const subscriptionId = 'MY-PUBSUB-SUBSCRIPTION' async function inspectGCSFile () { // Get reference to the file to be inspected const storageItem = { cloudStorageOptions : { fileSet : { url : gs:// ${ bucketName } / ${ fileName } }, }, }; // Construct request for creating an inspect job const request = { parent : projects/ ${ projectId } /locations/global , inspectJob : { inspectConfig : { infoTypes : infoTypes , customInfoTypes : customInfoTypes , minLikelihood : minLikelihood , limits : { maxFindingsPerRequest : maxFindings , }, }, storageConfig : storageItem , actions : [ { pubSub : { topic : projects/ ${ projectId } /topics/ ${ topicId } , }, }, ], }, }; // Create a GCS File inspection job and wait for it to complete const [ topicResponse ] = await pubsub . topic ( topicId ). get (); // Verify the Pub/Sub topic and listen for job notifications via an // existing subscription. const subscription = await topicResponse . subscription ( subscriptionId ); const [ jobsResponse ] = await dlp . createDlpJob ( request ); // Get the job's ID const jobName = jobsResponse . name ; // Watch the Pub/Sub topic until the DLP job finishes await new Promise (( resolve , reject ) = > { const messageHandler = message = > { if ( message . attributes && message . attributes .",
+          "DlpServiceClient (); const pubsub = new PubSub (); // The project ID to run the API call under // const projectId = 'my-project'; // The project ID the table is stored under // This may or (for public datasets) may not equal the calling project ID // const dataProjectId = 'my-project'; // The ID of the dataset to inspect, e.g. 'my dataset' // const datasetId = 'my dataset'; // The ID of the table to inspect, e.g. 'my table' // const tableId = 'my table'; // The name of the Pub/Sub topic to notify once the job completes // TODO(developer): create a Pub/Sub topic to use for this // const topicId = 'MY-PUBSUB-TOPIC' // The name of the Pub/Sub subscription to use when listening for job // completion notifications // TODO(developer): create a Pub/Sub subscription to use for this // const subscriptionId = 'MY-PUBSUB-SUBSCRIPTION' // DLP Job max time (in milliseconds) const DLP JOB WAIT TIME = 15 1000 60 ; async function inspectBigqueryWithSampling () { // Specify the type of info the inspection will look for. // See https://cloud.google.com/dlp/docs/infotypes-reference for complete list of info types const infoTypes = [{ name : 'PERSON NAME' }]; // Specify the BigQuery options required for inspection. const storageItem = { bigQueryOptions : { tableReference : { projectId : dataProjectId , datasetId : datasetId , tableId : tableId , }, rowsLimit : 1000 , sampleMethod : DLP . protos . google . privacy . dlp . v2 .",
+          "DlpServiceClient (); const pubsub = new PubSub (); // The project ID to run the API call under // const projectId = 'my-project'; // The gcs file path // const gcsUri = 'gs://\" + \"your-bucket-name\" + \"/path/to/your/file.txt'; // Specify the type of info the inspection will look for. // See https://cloud.google.com/dlp/docs/infotypes-reference for complete list of info types // const infoTypes = [{ name: 'PERSON NAME' }]; // The name of the Pub/Sub topic to notify once the job completes // TODO(developer): create a Pub/Sub topic to use for this // const topicId = 'MY-PUBSUB-TOPIC' // The name of the Pub/Sub subscription to use when listening for job // completion notifications // TODO(developer): create a Pub/Sub subscription to use for this // const subscriptionId = 'MY-PUBSUB-SUBSCRIPTION' // DLP Job max time (in milliseconds) const DLP JOB WAIT TIME = 15 1000 60 ; async function inspectGcsFileSampling () { // Specify the GCS file to be inspected and sampling configuration const storageItemConfig = { cloudStorageOptions : { fileSet : { url : gcsUri }, bytesLimitPerFile : 200 , filesLimitPercent : 90 , fileTypes : [ DLP . protos . google . privacy . dlp . v2 ."
+        ]
+      },
+      {
+        "title": "\"Computing k-anonymity for a dataset \\_|\\_ Sensitive Data Protection \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/sensitive-data-protection/docs/compute-k-anonymity",
+        "source_id": "site-api-reference-required-2",
+        "final_score": 133,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "After completing all of your requests, call // the \"close\" method on the client to safely clean up any remaining background resources. try ( DlpServiceClient dlpServiceClient = DlpServiceClient . create ()) { // Specify the BigQuery table to analyze BigQueryTable bigQueryTable = BigQueryTable . newBuilder () . setProjectId ( projectId ) . setDatasetId ( datasetId ) . setTableId ( tableId ) . build (); // These values represent the column names of quasi-identifiers to analyze List<String> quasiIds = Arrays . asList ( \"Age\" , \"Mystery\" ); // Configure the privacy metric for the job List<FieldId> quasiIdFields = quasiIds . stream () . map ( columnName - > FieldId . newBuilder (). setName ( columnName ). build ()) . collect ( Collectors . toList ()); KAnonymityConfig kanonymityConfig = KAnonymityConfig . newBuilder (). addAllQuasiIds ( quasiIdFields ). build (); PrivacyMetric privacyMetric = PrivacyMetric . newBuilder (). setKAnonymityConfig ( kanonymityConfig ). build (); // Create action to publish job status notifications over Google Cloud Pub/Sub ProjectTopicName topicName = ProjectTopicName . of ( projectId , topicId ); PublishToPubSub publishToPubSub = PublishToPubSub . newBuilder (). setTopic ( topicName . toString ()). build (); Action action = Action . newBuilder (). setPubSub ( publishToPubSub ). build (); // Configure the risk analysis job to perform RiskAnalysisJobConfig riskAnalysisJobConfig = RiskAnalysisJobConfig . newBuilder () . setSourceTable ( bigQueryTable ) . setPrivacyMetric ( privacyMetric ) . addActions ( action ) . build (); // Build the request to be sent by the client CreateDlpJobRequest createDlpJobRequest = CreateDlpJobRequest . newBuilder () . setParent ( LocationName . of ( projectId , \"global\" ). toString ()) . setRiskJob ( riskAnalysisJobConfig ) . build (); // Send the request to the API using the client DlpJob dlpJob = dlpServiceClient . createDlpJob ( createDlpJobRequest ); // Set up a Pub/Sub subscriber to listen on the job completion status final SettableApiFuture<Boolean> done = SettableApiFuture . create (); ProjectSubscriptionName subscriptionName = ProjectSubscriptionName . of ( projectId , subscriptionId ); MessageReceiver messageHandler = ( PubsubMessage pubsubMessage , AckReplyConsumer ackReplyConsumer ) - > { handleMessage ( dlpJob , done , pubsubMessage , ackReplyConsumer ); }; Subscriber subscriber = Subscriber . newBuilder ( subscriptionName , messageHandler ). build (); subscriber . startAsync (); // Wait for job completion semi-synchronously // For long jobs, consider using a truly asynchronous execution model such as Cloud Functions try { done . get ( 15 , TimeUnit .",
+          "DlpServiceClient (); const pubsub = new PubSub (); // The project ID to run the API call under // const projectId = 'my-project'; // The project ID the table is stored under // This may or (for public datasets) may not equal the calling project ID // const tableProjectId = 'my-project'; // The ID of the dataset to inspect, e.g. 'my dataset' // const datasetId = 'my dataset'; // The ID of the table to inspect, e.g. 'my table' // const tableId = 'my table'; // The name of the Pub/Sub topic to notify once the job completes // TODO(developer): create a Pub/Sub topic to use for this // const topicId = 'MY-PUBSUB-TOPIC' // The name of the Pub/Sub subscription to use when listening for job // completion notifications // TODO(developer): create a Pub/Sub subscription to use for this // const subscriptionId = 'MY-PUBSUB-SUBSCRIPTION' // A set of columns that form a composite key ('quasi-identifiers') // const quasiIds = [{ name: 'age' }, { name: 'city' }]; async function kAnonymityAnalysis () { const sourceTable = { projectId : tableProjectId , datasetId : datasetId , tableId : tableId , }; // Construct request for creating a risk analysis job const request = { parent : projects/ ${ projectId } /locations/global , riskJob : { privacyMetric : { kAnonymityConfig : { quasiIds : quasiIds , }, }, sourceTable : sourceTable , actions : [ { pubSub : { topic : projects/ ${ projectId } /topics/ ${ topicId } , }, }, ], }, }; // Create helper function for unpacking values const getValue = obj = > obj [ Object . keys ( obj )[ 0 ]]; // Run risk analysis job const [ topicResponse ] = await pubsub . topic ( topicId ). get (); const subscription = await topicResponse . subscription ( subscriptionId ); const [ jobsResponse ] = await dlp . createDlpJob ( request ); const jobName = jobsResponse . name ; console . log ( Job created.",
+          "DlpServiceClient (); // The project ID to run the API call under. // const projectId = \"your-project-id\"; // The ID of the dataset to inspect, e.g. 'my dataset' // const datasetId = 'my dataset'; // The ID of the table to inspect, e.g. 'my table' // const sourceTableId = 'my source table'; // The ID of the table where outputs are stored // const outputTableId = 'my output table'; async function kAnonymityWithEntityIds () { // Specify the BigQuery table to analyze. const sourceTable = { projectId : projectId , datasetId : datasetId , tableId : sourceTableId , }; // Specify the unique identifier in the source table for the k-anonymity analysis. const uniqueIdField = { name : 'Name' }; // These values represent the column names of quasi-identifiers to analyze const quasiIds = [{ name : 'Age' }, { name : 'Mystery' }]; // Configure the privacy metric to compute for re-identification risk analysis. const privacyMetric = { kAnonymityConfig : { entityId : { field : uniqueIdField , }, quasiIds : quasiIds , }, }; // Create action to publish job status notifications to BigQuery table. const action = [ { saveFindings : { outputConfig : { table : { projectId : projectId , datasetId : datasetId , tableId : outputTableId , }, }, }, }, ]; // Configure the risk analysis job to perform. const riskAnalysisJob = { sourceTable : sourceTable , privacyMetric : privacyMetric , actions : action , }; // Combine configurations into a request for the service. const createDlpJobRequest = { parent : projects/ ${ projectId } /locations/global , riskJob : riskAnalysisJob , }; // Send the request and receive response from the service const [ createdDlpJob ] = await dlp . createDlpJob ( createDlpJobRequest ); const jobName = createdDlpJob . name ; // Waiting for a maximum of 15 minutes for the job to get complete. let job ; let numOfAttempts = 30 ; while ( numOfAttempts > 0 ) { // Fetch DLP Job status [ job ] = await dlp . getDlpJob ({ name : jobName }); // Check if the job has completed. if ( job . state === 'DONE' ) { break ; } if ( job . state === 'FAILED' ) { console . log ( 'Job Failed, Please check the configuration.' ); return ; } // Sleep for a short duration before checking the job status again. await new Promise ( resolve = > { setTimeout (() = > resolve (), 30000 ); }); numOfAttempts -= 1 ; } // Create helper function for unpacking values const getValue = obj = > obj [ Object . keys ( obj )[ 0 ]]; // Print out the results. const histogramBuckets = job . riskDetails . kAnonymityResult . equivalenceClassHistogramBuckets ; histogramBuckets . forEach (( histogramBucket , histogramBucketIdx ) = > { console . log ( Bucket ${ histogramBucketIdx } : ); console . log ( Bucket size range: [ ${ histogramBucket . equivalenceClassSizeLowerBound } , ${ histogramBucket . equivalenceClassSizeUpperBound } ] ); histogramBucket . bucketValues . forEach ( valueBucket = > { const quasiIdValues = valueBucket . quasiIdsValues . map ( getValue ) . join ( ', ' ); console . log ( Quasi-ID values: { ${ quasiIdValues } } ); console . log ( Class size: ${ valueBucket . equivalenceClassSize } ); }); }); } await kAnonymityWithEntityIds (); PHP To learn how to install and use the client library for Sensitive Data Protection, see Sensitive Data Protection client libraries ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "e.g",
+      "file.txt",
+      "image.png"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/concepts-actions",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/inspecting-storage",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/compute-k-anonymity"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/concepts-actions",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/inspecting-storage",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/compute-k-anonymity"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/concepts-actions",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/inspecting-storage",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/compute-k-anonymity"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,107 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:26.812Z",
+  "source_step08_card": "data/step-08/current/products/cloud-sql-for-mysql/card.json",
+  "product_name": "Cloud SQL for MySQL",
+  "product_slug": "cloud-sql-for-mysql",
+  "feature_name": "Automated backup retention settings",
+  "feature_slug": "automated-backup-retention-settings",
+  "summary": "Cloud SQL for MySQL supports configurable retention periods for automated backups from 1 to 365 days.",
+  "extended_definition": "Cloud SQL for MySQL supports configurable retention periods for automated backups from 1 to 365 days.",
+  "lifecycle": {
+    "latest_feature_date": "2020-11-19",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 1,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "coverage_low",
+        "message": "The feature ended with coverage LOW.",
+        "suggested_steps": [
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/backup-options",
+      "https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/backups",
+      "https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/manage-backups-deleted-instance"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Cloud SQL backups overview \\_|\\_ Cloud SQL for MySQL \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/backups",
+        "source_id": "site-docs-reference-3",
+        "final_score": 38,
+        "relevance": "",
+        "evidence_snippets": [
+          "The rolling period is defined based on the retention settings of the instance prior to deletion, which can range from 1 day to 10 years, depending on your instance's selected backup option .",
+          "For example, if your instance's automated backup retention setting was set to 7, then the latest automated backup is deleted 7 days after the instance deletion.",
+          "If you leave the field empty, then Cloud SQL takes the final backup configuration set in instance settings to take a final backup and define its retention."
+        ]
+      },
+      {
+        "title": "\"Manage backups for deleted instances \\_|\\_ Cloud SQL for MySQL \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/manage-backups-deleted-instance",
+        "source_id": "site-docs-reference-required-5",
+        "final_score": 36,
+        "relevance": "",
+        "evidence_snippets": [
+          "Update a final backup You can update the retention settings and the description of a final backup taken before an instance is deleted.",
+          "For retained backups, the retention settings are set based on the retention settings of the backups when the instance was live.",
+          "You can update the description and the retention settings of a final backup taken prior to deleting your instance."
+        ]
+      },
+      {
+        "title": "Choose your backup option \\_|\\_ Cloud SQL for MySQL \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/backup-options",
+        "source_id": "site-docs-reference-required-5",
+        "final_score": 36,
+        "relevance": "",
+        "evidence_snippets": [
+          "If you enable backup retention after instance deletion for your on-demand and automated backups, then those backups follow the same retention settings of 1 to 365 days for automated backups, and indefinitely for on-demand backups.",
+          "The following table provides an overview of the key features available with each backup option: Features Standard backups Enhanced backups Centralized backup management across projects - ✔ Backup vault - ✔ Automated backup schedule Daily Hourly, daily, weekly, monthly, yearly On-demand backups ✔ ✔ Multi-region backups ✔ ✔ Final backup in instance deletion ✔ ✔ Backup retention period 1 year 10 years Retain all backups on instance deletion ✔ ✔ Retain backups on project deletion - ✔ Enforced retention with retention lock - ✔ Point-in-time recovery using logs ✔ ✔ Point-in-time recovery after instance deletion ✔ ✔ Cross-region backup and restore ✔ - CMEK support ✔ - For detailed information about these backup options, see Standard backups and Enhanced backups .",
+          "If you delete your instance, then all of your instance's backups that were created when your instance was live are retained automatically and follow the same retention settings set by the backup plan when the instance was live."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/backups",
+        "https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/backup-options",
+        "https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/manage-backups-deleted-instance"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/backups",
+        "https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/backup-options",
+        "https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/manage-backups-deleted-instance"
+      ]
+    }
+  ]
+}

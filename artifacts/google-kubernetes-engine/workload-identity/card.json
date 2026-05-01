@@ -1,0 +1,191 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:39.542Z",
+  "source_step08_card": "data/step-08/current/products/google-kubernetes-engine/card.json",
+  "product_name": "Google Kubernetes Engine",
+  "product_slug": "google-kubernetes-engine",
+  "feature_name": "Workload Identity",
+  "feature_slug": "workload-identity",
+  "summary": "Workload Identity lets workloads in GKE access Google Cloud services and is the recommended approach for that use case.",
+  "extended_definition": "Workload Identity lets workloads in GKE access Google Cloud services and is the recommended approach for that use case.",
+  "lifecycle": {
+    "latest_feature_date": "2020-03-16",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/workload-identity",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/workload-identity",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/workload-identity-secrets"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"About Workload Identity Federation for GKE \\_|\\_ GKE security \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/workload-identity",
+        "source_id": "site-iam-reference",
+        "final_score": 230,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Workload Identity Federation for GKE lets you use IAM policies to grant Kubernetes workloads in your GKE cluster access to specific Google Cloud APIs without needing manual configuration or less secure methods like service account key files.",
+          "In most cases, Workload Identity Federation for GKE is the recommended way to help secure and manage how your workloads that run on GKE access Google Cloud services.",
+          "Credential flow When a workload sends a request to access a Google Cloud API, for example when using a Google Cloud client library, the following authentication steps occur: Figure 1: How a workload gets a federated access token with Workload Identity Federation for GKE."
+        ]
+      },
+      {
+        "title": "\"Authenticate to Google Cloud APIs from GKE workloads \\_|\\_ GKE security\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/workload-identity",
+        "source_id": "site-docs-root",
+        "final_score": 202,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Autopilot Standard This page shows you how to more securely access Google Cloud APIs from your workloads that run in Google Kubernetes Engine (GKE) clusters by using Workload Identity Federation for GKE .",
+          "For example, to revoke access to an Artifact Registry repository, run the following command: gcloud artifacts repositories remove-iam-policy-binding REPOSITORY NAME \\ --location = REPOSITORY LOCATION \\ --member = 'principal://iam.googleapis.com/projects/ PROJECT NUMBER /locations/global/workloadIdentityPools/ PROJECT ID .svc.id.goog/subject/ns/ NAMESPACE /sa/ KSA NAME ' \\ --role = 'roles/artifactregistry.reader' \\ --all Disable Workload Identity Federation for GKE You can only disable Workload Identity Federation for GKE on Standard clusters. gcloud In the Google Cloud console, activate Cloud Shell.",
+          "Create an IAM allow policy that gives the Kubernetes ServiceAccount access to impersonate the IAM service account: gcloud iam service-accounts add-iam-policy-binding IAM SA NAME @ IAM SA PROJECT ID .iam.gserviceaccount.com \\ --role roles/iam.workloadIdentityUser \\ --member \"serviceAccount: PROJECT ID .svc.id.goog[ NAMESPACE / KSA NAME ]\" The member name must include the namespace and Kubernetes ServiceAccount name."
+        ]
+      },
+      {
+        "title": "\"Access secrets stored outside GKE clusters using client libraries \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/workload-identity-secrets",
+        "source_id": "site-iam-reference",
+        "final_score": 194,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "You can use Workload Identity Federation for GKE to access any Google Cloud APIs from GKE workloads without having to use less secure approaches like static service account key files.",
+          "Using Workload Identity Federation for GKE to access the data lets you avoid the risks associated with managing long-lived service account keys, and lets you control access to your secrets using Identity and Access Management (IAM) instead of in-cluster RBAC rules.",
+          "Create a readonly-ns namespace and an admin-ns namespace: kubectl create namespace readonly-ns kubectl create namespace admin-ns Create a readonly-sa Kubernetes service account and an admin-sa Kubernetes service account: kubectl create serviceaccount readonly-sa --namespace = readonly-ns kubectl create serviceaccount admin-sa --namespace = admin-ns Create IAM allow policies Grant the readonly-sa service account read-only access to the secret: gcloud secrets add-iam-policy-binding bq-readonly-key \\ --member = principal://iam.googleapis.com/projects/ PROJECT NUMBER /locations/global/workloadIdentityPools/ PROJECT ID .svc.id.goog/subject/ns/readonly-ns/sa/readonly-sa \\ --role = 'roles/secretmanager.secretAccessor' \\ --condition = None Replace the following: PROJECT NUMBER : your numerical Google Cloud project number."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "artifactregistry.reader",
+      "iam.googleapis.com",
+      "iam.gserviceaccount.com",
+      "iam.workloadIdentityUser",
+      "secretmanager.secretAccessor",
+      "secretmanager.secretVersionAdder",
+      "svc.id.goog"
+    ],
+    "missing_inventory_roles": [
+      "roles/artifactregistry.reader",
+      "roles/iam.workloadIdentityUser",
+      "roles/secretmanager.secretAccessor",
+      "roles/secretmanager.secretVersionAdder"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/workload-identity",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/workload-identity",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/workload-identity-secrets"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/workload-identity",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/workload-identity",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/workload-identity-secrets"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/workload-identity",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/workload-identity",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/workload-identity-secrets"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/workload-identity",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/workload-identity",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/workload-identity-secrets"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/workload-identity",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/workload-identity",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/workload-identity-secrets"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/workload-identity",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/workload-identity",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/workload-identity-secrets"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/workload-identity",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/workload-identity",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/workload-identity-secrets"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/workload-identity",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/workload-identity",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/workload-identity-secrets"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/workload-identity",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/workload-identity",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/workload-identity-secrets"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/workload-identity",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/workload-identity",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/workload-identity-secrets"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/workload-identity",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/workload-identity",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/workload-identity-secrets"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/workload-identity",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/workload-identity",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/workload-identity-secrets"
+      ]
+    }
+  ]
+}

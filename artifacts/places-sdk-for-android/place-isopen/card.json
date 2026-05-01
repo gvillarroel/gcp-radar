@@ -1,0 +1,142 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:45.094Z",
+  "source_step08_card": "data/step-08/current/products/places-sdk-for-android/card.json",
+  "product_name": "Places SDK for Android",
+  "product_slug": "places-sdk-for-android",
+  "feature_name": "Place.isOpen()",
+  "feature_slug": "place-isopen",
+  "summary": "Deprecated method for checking place open status; use PlacesClient.isOpen() instead; deprecated on 2023-04-13.",
+  "extended_definition": "Deprecated method for checking place open status; use PlacesClient.isOpen() instead; deprecated on 2023-04-13.",
+  "lifecycle": {
+    "latest_feature_date": "2023-04-13",
+    "deprecation_date": "2023-04-13",
+    "status": "deprecation_noted"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/maps/documentation/places/android-sdk/details-place",
+      "https://developers.google.com/maps/documentation/places/android-sdk/legacy/overview-legacy",
+      "https://developers.google.com/maps/documentation/places/android-sdk/overview-legacy",
+      "https://developers.google.com/maps/documentation/places/android-sdk/text-search"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Text Search (New) \\_|\\_ Places SDK for Android \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/maps/documentation/places/android-sdk/text-search",
+        "source_id": "site-docs-root",
+        "final_score": 183,
+        "relevance": "",
+        "evidence_snippets": [
+          "Place.Field.PHOTO METADATAS Place.Field.PLUS CODE Place.Field.PRIMARY TYPE Place.Field.PRIMARY TYPE DISPLAY NAME Place.Field.SHORT FORMATTED ADDRESS Place.Field.SUB DESTINATIONS Place.Field.TYPES Place.Field.UTC OFFSET Place.Field.VIEWPORT The following fields trigger the Text Search Enterprise SKU : Place.Field.CURRENT OPENING HOURS Place.Field.CURRENT SECONDARY OPENING HOURS Place.Field.INTERNATIONAL PHONE NUMBER Use instead of Place.Field.PHONE NUMBER , which is deprecated.",
+          "Place.Field.ADDRESS COMPONENTS Place.Field.ADR FORMAT ADDRESS Place.Field.BUSINESS STATUS Place.Field.FORMATTED ADDRESS Use instead of Place.Field.ADDRESS (deprecated).",
+          "Place.Field.WEBSITE URI The following fields trigger the Text Search Enterprise Plus SKU : Place.Field.ALLOWS DOGS Place.Field.CURBSIDE PICKUP Place.Field.DELIVERY Place.Field.DINE IN Place.Field.EDITORIAL SUMMARY Place.Field.EV CHARGE OPTIONS Place.Field.FUEL OPTIONS Place.Field.GOOD FOR CHILDREN Place.Field.GOOD FOR GROUPS Place.Field.GOOD FOR WATCHING SPORTS Place.Field.LIVE MUSIC Place.Field.MENU FOR CHILDREN Place.Field.OUTDOOR SEATING Place.Field.PARKING OPTIONS Place.Field.PAYMENT OPTIONS Place.Field.RESERVABLE Place.Field.RESTROOM Place.Field.REVIEWS Place.Field.SERVES BEER Place.Field.SERVES BREAKFAST Place.Field.SERVES BRUNCH Place.Field.SERVES COCKTAILS Place.Field.SERVES COFFEE Place.Field.SERVES DESSERT Place.Field.SERVES DINNER Place.Field.SERVES LUNCH Place.Field.SERVES VEGETARIAN FOOD Place.Field.SERVES WINE Place.Field.TAKEOUT To set the field list parameter, call the setPlaceFields() method when building the SearchByTextRequest object."
+        ]
+      },
+      {
+        "title": "Place Details (New) \\_|\\_ Places SDK for Android \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/maps/documentation/places/android-sdk/details-place",
+        "source_id": "site-docs-root",
+        "final_score": 179,
+        "relevance": "",
+        "evidence_snippets": [
+          "Place.Field.PRIMARY TYPE Place.Field.PRIMARY TYPE DISPLAY NAME Place.Field.SUB DESTINATIONS Place.Field.UTC OFFSET The following fields trigger the Place Details Enterprise SKU : Place.Field.CURRENT OPENING HOURS Place.Field.CURRENT SECONDARY OPENING HOURS Place.Field.INTERNATIONAL PHONE NUMBER Use instead of Place.Field.PHONE NUMBER , which is deprecated.",
+          "Place.Field.PLUS CODE Place.Field.SHORT FORMATTED ADDRESS Place.Field.TYPES Place.Field.VIEWPORT The following fields trigger the Place Details Pro SKU : Place.Field.ACCESSIBILITY OPTIONS Use instead of Place.Field.WHEELCHAIR ACCESSIBLE ENTRANCE (deprecated).",
+          "Place.Field.NATIONAL PHONE NUMBER Place.Field.OPENING HOURS Place.Field.PRICE LEVEL Place.Field.RATING Place.Field.SECONDARY OPENING HOURS Place.Field.USER RATING COUNT Use instead of Place.Field.USER RATINGS TOTAL , which is deprecated."
+        ]
+      },
+      {
+        "title": "\"Places SDK (Legacy) overview \\_|\\_ Places SDK for Android \\_|\\_ Google for\\",
+        "url": "https://developers.google.com/maps/documentation/places/android-sdk/legacy/overview-legacy",
+        "source_id": "site-docs-reference",
+        "final_score": 167,
+        "relevance": "",
+        "evidence_snippets": [
+          "SDK features available in each version The following table shows which SDK and API versions are required for each SDK feature: Feature Places API enabled on API key Initialization method Minimum SDK version Autocomplete (New) Places API (New) initializeWithNewPlacesApiEnabled() 3.5.0 Place Details (New) Places API (New) initializeWithNewPlacesApiEnabled() 3.3.0 Nearby Search (New) Places API (New) initializeWithNewPlacesApiEnabled() 3.5.0 Place Photos (New) Places API (New) initializeWithNewPlacesApiEnabled() 3.4.0 Text Search (New) Places API (New) initializeWithNewPlacesApiEnabled() 3.3.0 Place Autocomplete Places API initialize() (Deprecated) Current Place Places API initialize() (Deprecated) Place Details Places API initialize() (Deprecated) Place Photos Places API initialize() (Deprecated) Deprecated: The Places.initialize method is deprecated.",
+          "New features The Places SDK for Android (New) includes the latest versions of all of the SDK features: Autocomplete (New) Place Details (New) Nearby Search (New) Place Photos (New) Text Search (New) New Text Search service Text Search (New) returns information about a set of places based on a string — for example \"pizza in New York\" or \"shoe stores near Ottawa\" or \"123 Main Street\".",
+          "Migrate to the new APIs To migrate to the new APIs, see the following migration guides: Migrate to Place Details (New) Migrate to Place Photo (New) Migrate to Autocomplete (New) Enhancements in Places SDK for Android (New) This section covers key features added to Places SDK for Android (New)."
+        ]
+      },
+      {
+        "title": "\"Places SDK (Legacy) overview \\_|\\_ Places SDK for Android \\_|\\_ Google for\\",
+        "url": "https://developers.google.com/maps/documentation/places/android-sdk/overview-legacy",
+        "source_id": "site-docs-root-2",
+        "final_score": 167,
+        "relevance": "",
+        "evidence_snippets": [
+          "SDK features available in each version The following table shows which SDK and API versions are required for each SDK feature: Feature Places API enabled on API key Initialization method Minimum SDK version Autocomplete (New) Places API (New) initializeWithNewPlacesApiEnabled() 3.5.0 Place Details (New) Places API (New) initializeWithNewPlacesApiEnabled() 3.3.0 Nearby Search (New) Places API (New) initializeWithNewPlacesApiEnabled() 3.5.0 Place Photos (New) Places API (New) initializeWithNewPlacesApiEnabled() 3.4.0 Text Search (New) Places API (New) initializeWithNewPlacesApiEnabled() 3.3.0 Place Autocomplete Places API initialize() (Deprecated) Current Place Places API initialize() (Deprecated) Place Details Places API initialize() (Deprecated) Place Photos Places API initialize() (Deprecated) Deprecated: The Places.initialize method is deprecated.",
+          "New features The Places SDK for Android (New) includes the latest versions of all of the SDK features: Autocomplete (New) Place Details (New) Nearby Search (New) Place Photos (New) Text Search (New) New Text Search service Text Search (New) returns information about a set of places based on a string — for example \"pizza in New York\" or \"shoe stores near Ottawa\" or \"123 Main Street\".",
+          "Migrate to the new APIs To migrate to the new APIs, see the following migration guides: Migrate to Place Details (New) Migrate to Place Photo (New) Migrate to Autocomplete (New) Enhancements in Places SDK for Android (New) This section covers key features added to Places SDK for Android (New)."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "developers.google.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://developers.google.com/maps/documentation/places/android-sdk/text-search",
+        "https://developers.google.com/maps/documentation/places/android-sdk/details-place",
+        "https://developers.google.com/maps/documentation/places/android-sdk/legacy/overview-legacy",
+        "https://developers.google.com/maps/documentation/places/android-sdk/overview-legacy"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://developers.google.com/maps/documentation/places/android-sdk/text-search",
+        "https://developers.google.com/maps/documentation/places/android-sdk/details-place",
+        "https://developers.google.com/maps/documentation/places/android-sdk/legacy/overview-legacy",
+        "https://developers.google.com/maps/documentation/places/android-sdk/overview-legacy"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://developers.google.com/maps/documentation/places/android-sdk/text-search",
+        "https://developers.google.com/maps/documentation/places/android-sdk/details-place",
+        "https://developers.google.com/maps/documentation/places/android-sdk/legacy/overview-legacy",
+        "https://developers.google.com/maps/documentation/places/android-sdk/overview-legacy"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://developers.google.com/maps/documentation/places/android-sdk/text-search",
+        "https://developers.google.com/maps/documentation/places/android-sdk/details-place",
+        "https://developers.google.com/maps/documentation/places/android-sdk/legacy/overview-legacy",
+        "https://developers.google.com/maps/documentation/places/android-sdk/overview-legacy"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://developers.google.com/maps/documentation/places/android-sdk/text-search",
+        "https://developers.google.com/maps/documentation/places/android-sdk/details-place",
+        "https://developers.google.com/maps/documentation/places/android-sdk/legacy/overview-legacy",
+        "https://developers.google.com/maps/documentation/places/android-sdk/overview-legacy"
+      ]
+    }
+  ]
+}

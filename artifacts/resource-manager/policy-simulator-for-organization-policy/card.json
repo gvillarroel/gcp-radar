@@ -1,0 +1,203 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:45.649Z",
+  "source_step08_card": "data/step-08/current/products/resource-manager/card.json",
+  "product_name": "Resource Manager",
+  "product_slug": "resource-manager",
+  "feature_name": "Policy Simulator for Organization Policy",
+  "feature_slug": "policy-simulator-for-organization-policy",
+  "summary": "Policy Simulator for Organization Policy is generally available.",
+  "extended_definition": "Policy Simulator for Organization Policy is generally available.",
+  "lifecycle": {
+    "latest_feature_date": "2025-07-01",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/resource-manager/docs/access-control-org",
+      "https://docs.cloud.google.com/resource-manager/reference/rest/v1/folders/listAvailableOrgPolicyConstraints",
+      "https://docs.cloud.google.com/resource-manager/reference/rest/v1/ListAvailableOrgPolicyConstraintsResponse"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Access control for organization resources with IAM \\_|\\_ Resource Manager\\",
+        "url": "https://docs.cloud.google.com/resource-manager/docs/access-control-org",
+        "source_id": "site-iam-reference",
+        "final_score": 124,
+        "relevance": "",
+        "evidence_snippets": [
+          "Lowest-level resources where you can grant this role: Organization cloudasset. assets. analyzeOrgPolicy cloudasset. assets. exportResource cloudasset.assets.listResource cloudasset. assets. searchAllResources orgpolicy. orgpolicy.constraints.list orgpolicy. customConstraints. create orgpolicy. customConstraints. delete orgpolicy. customConstraints. get orgpolicy. customConstraints. list orgpolicy. customConstraints. update orgpolicy.policies.create orgpolicy.policies.delete orgpolicy.policies.list orgpolicy.policies.update orgpolicy.policy.get orgpolicy.policy.set policysimulator. orgPolicyViolations. list policysimulator. orgPolicyViolationsPreviews. policysimulator. orgPolicyViolationsPreviews. create policysimulator. orgPolicyViolationsPreviews. get policysimulator. orgPolicyViolationsPreviews. list recommender. orgPolicyInsights. recommender. orgPolicyInsights. get recommender. orgPolicyInsights. list recommender. orgPolicyInsights. update recommender. orgPolicyRecommendations. recommender. orgPolicyRecommendations. get recommender. orgPolicyRecommendations. list recommender. orgPolicyRecommendations. update Browser ( roles/ browser ) Read access to browse the hierarchy for a project, including the folder, organization, and allow policy.",
+          "Lowest-level resources where you can grant this role: Project essentialcontacts. essentialcontacts. contacts. create essentialcontacts. contacts. delete essentialcontacts.contacts.get essentialcontacts. contacts. list essentialcontacts. contacts. send essentialcontacts. contacts. update iam.policybindings. iam.policybindings.get iam.policybindings.list orgpolicy.constraints.list orgpolicy.policies.list orgpolicy.policy.get resourcemanager.capabilities. resourcemanager. capabilities. get resourcemanager. capabilities. update resourcemanager. folders. createPolicyBinding resourcemanager. folders. deletePolicyBinding resourcemanager.folders.get resourcemanager. folders. getIamPolicy resourcemanager.folders.list resourcemanager. folders. searchPolicyBindings resourcemanager. folders. setIamPolicy resourcemanager. folders. updatePolicyBinding resourcemanager. organizations. resourcemanager. organizations. createPolicyBinding resourcemanager. organizations. deletePolicyBinding resourcemanager. organizations. get resourcemanager. organizations. getIamPolicy resourcemanager. organizations. searchPolicyBindings resourcemanager. organizations. setIamPolicy resourcemanager. organizations. updatePolicyBinding resourcemanager. projects. createPolicyBinding resourcemanager. projects. deletePolicyBinding resourcemanager.projects.get resourcemanager. projects. getIamPolicy resourcemanager.projects.list resourcemanager. projects. searchPolicyBindings resourcemanager. projects. setIamPolicy resourcemanager. projects. updatePolicyBinding Organization Viewer ( roles/ resourcemanager.organizationViewer ) Provides access to view an organization.",
+          "For example, to make anotheradmin@gcp-test.com an Organization Administrator, change the previous example as follows: { \"bindings\" : [ { \"members\" : [ \"user:testuser1@gcp-test.com\" ], \"role\" : \"roles/editor\" }, { \"members\" : [ \"user:admin@gcp-test.com\" , \"user:anotheradmin@gcp-test.com\" ], \"role\" : \"roles/resourcemanager.organizationAdmin\" }, { \"members\" : [ \"user:testuser20@gcp-test.com\" ], \"role\" : \"roles/resourcemanager.projectCreator\" }, ], \"etag\" : \"BwU1aRxWk30=\" } Update the organization resource's allow policy by running the following command: gcloud alpha organizations set-iam-policy <var>ORGANIZATION ID</var> policy.json API Request: POST h tt ps : //cloudresourcemanager.googleapis.com/v3/organizations/12345:setIamPolicy { \"policy\" : { \"version\" : \"0\" , \"bindings\" : [ { \"role\" : \"roles/resourcemanager.organizationAdmin\" , \"members\" : [ \"user:email1@gmail.com\" ] }, { \"role\" : \"roles/resourcemanager.projectCreator\" , \"members\" : [ \"user:email2@gmail.com\" , \"user:email3@gmail.com\" , \"serviceAccount:my-other-app@appspot.gserviceaccount.com\" ] } ] \"etag\" : \"BwUjHYKHHiQ=\" } } Response: { \"bindings\" : [ { \"role\" : \"roles/resourcemanager.organizationAdmin\" , \"members\" : [ \"user:email1@gmail.com\" ] }, { \"role\" : \"roles/resourcemanager.projectCreator\" , \"members\" : [ \"user:email2@gmail.com\" , \"user:email3@gmail.com\" , \"serviceAccount:my-other-app@appspot.gserviceaccount.com\" ] } ] \"etag\" : \"BwUjHYKJUiQ=\" } The setIamPolicy() method lets you grant roles to users by attaching an allow policy to the organization resource."
+        ]
+      },
+      {
+        "title": "\"ListAvailableOrgPolicyConstraintsResponse \\_|\\_ Resource Manager \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/resource-manager/reference/rest/v1/ListAvailableOrgPolicyConstraintsResponse",
+        "source_id": "site-api-reference",
+        "final_score": 113,
+        "relevance": "",
+        "evidence_snippets": [
+          "Constraints can be configured by the organization's policy administrator to fit the needs of the organzation by setting Policies for Constraints at different locations in the organization's resource hierarchy.",
+          "JSON representation Constraint JSON representation ConstraintDefault ListConstraint JSON representation BooleanConstraint The response returned from the projects.listAvailableOrgPolicyConstraints method.",
+          "Home Technology areas Resource Manager Reference Send feedback ListAvailableOrgPolicyConstraintsResponse Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"Method: folders.listAvailableOrgPolicyConstraints \\_|\\_ Resource Manager\\",
+        "url": "https://docs.cloud.google.com/resource-manager/reference/rest/v1/folders/listAvailableOrgPolicyConstraints",
+        "source_id": "site-api-reference",
+        "final_score": 109,
+        "relevance": "",
+        "evidence_snippets": [
+          "Home Technology areas Resource Manager Reference Send feedback Method: folders.listAvailableOrgPolicyConstraints Stay organized with collections Save and categorize content based on your preferences.",
+          "HTTP request POST https://cloudresourcemanager.googleapis.com/v1/{resource=folders/ }:listAvailableOrgPolicyConstraints The URL uses gRPC Transcoding syntax.",
+          "Response body If successful, the response body contains an instance of ListAvailableOrgPolicyConstraintsResponse ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "explicit",
+    "explicit_roles": [
+      "roles/accessapproval.admin",
+      "roles/accessapproval.approver",
+      "roles/accessapproval.configEditor"
+    ],
+    "explicit_permissions": [
+      {
+        "permission": "resourcemanager.projects.get",
+        "group": "resourcemanager",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver",
+          "roles/accessapproval.configEditor"
+        ]
+      },
+      {
+        "permission": "resourcemanager.projects.list",
+        "group": "resourcemanager",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver",
+          "roles/accessapproval.configEditor"
+        ]
+      }
+    ],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "appspot.gserviceaccount.com",
+      "cloudasset.assets.listResource",
+      "cloudplatformfolders.readonly",
+      "cloudplatformorganizations.readonly",
+      "cloudplatformprojects.readonly",
+      "cloudresourcemanager.googleapis.com",
+      "essentialcontacts.contacts.get",
+      "folders.listAvailableOrgPolicyConstraints",
+      "gmail.com",
+      "iam.policybindings",
+      "iam.policybindings.get",
+      "iam.policybindings.list",
+      "orgpolicy.constraints.list",
+      "orgpolicy.policies.create",
+      "orgpolicy.policies.delete",
+      "orgpolicy.policies.list",
+      "orgpolicy.policies.update",
+      "orgpolicy.policy.get",
+      "orgpolicy.policy.set",
+      "platform.read",
+      "policy.json",
+      "projects.listAvailableOrgPolicyConstraints",
+      "resourcemanager.capabilities",
+      "resourcemanager.folders.get",
+      "resourcemanager.folders.list",
+      "resourcemanager.organizationAdmin",
+      "resourcemanager.organizationViewer",
+      "resourcemanager.projectCreator",
+      "test.com"
+    ],
+    "missing_inventory_roles": [
+      "roles/editor",
+      "roles/resourcemanager.organizationAdmin",
+      "roles/resourcemanager.projectCreator"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/access-control-org",
+        "https://docs.cloud.google.com/resource-manager/reference/rest/v1/ListAvailableOrgPolicyConstraintsResponse",
+        "https://docs.cloud.google.com/resource-manager/reference/rest/v1/folders/listAvailableOrgPolicyConstraints"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/access-control-org",
+        "https://docs.cloud.google.com/resource-manager/reference/rest/v1/ListAvailableOrgPolicyConstraintsResponse",
+        "https://docs.cloud.google.com/resource-manager/reference/rest/v1/folders/listAvailableOrgPolicyConstraints"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/access-control-org",
+        "https://docs.cloud.google.com/resource-manager/reference/rest/v1/ListAvailableOrgPolicyConstraintsResponse",
+        "https://docs.cloud.google.com/resource-manager/reference/rest/v1/folders/listAvailableOrgPolicyConstraints"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/access-control-org",
+        "https://docs.cloud.google.com/resource-manager/reference/rest/v1/ListAvailableOrgPolicyConstraintsResponse",
+        "https://docs.cloud.google.com/resource-manager/reference/rest/v1/folders/listAvailableOrgPolicyConstraints"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/access-control-org",
+        "https://docs.cloud.google.com/resource-manager/reference/rest/v1/ListAvailableOrgPolicyConstraintsResponse",
+        "https://docs.cloud.google.com/resource-manager/reference/rest/v1/folders/listAvailableOrgPolicyConstraints"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/access-control-org",
+        "https://docs.cloud.google.com/resource-manager/reference/rest/v1/ListAvailableOrgPolicyConstraintsResponse",
+        "https://docs.cloud.google.com/resource-manager/reference/rest/v1/folders/listAvailableOrgPolicyConstraints"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/access-control-org",
+        "https://docs.cloud.google.com/resource-manager/reference/rest/v1/ListAvailableOrgPolicyConstraintsResponse",
+        "https://docs.cloud.google.com/resource-manager/reference/rest/v1/folders/listAvailableOrgPolicyConstraints"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/access-control-org",
+        "https://docs.cloud.google.com/resource-manager/reference/rest/v1/ListAvailableOrgPolicyConstraintsResponse",
+        "https://docs.cloud.google.com/resource-manager/reference/rest/v1/folders/listAvailableOrgPolicyConstraints"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,116 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:22.396Z",
+  "source_step08_card": "data/step-08/current/products/certificate-authority-service/card.json",
+  "product_name": "Certificate Authority Service",
+  "product_slug": "certificate-authority-service",
+  "feature_name": "Workforce Identity Federation support",
+  "feature_slug": "workforce-identity-federation-support",
+  "summary": "Certificate Authority Service now supports integration with Workforce Identity Federation.",
+  "extended_definition": "Certificate Authority Service now supports integration with Workforce Identity Federation.",
+  "lifecycle": {
+    "latest_feature_date": "2023-07-04",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/certificate-authority-service/docs/authentication",
+      "https://docs.cloud.google.com/certificate-authority-service/docs/cas-integrations-cloud-services",
+      "https://docs.cloud.google.com/certificate-authority-service/docs/certificate-authority-compliance"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Integration with other Google Cloud services \\_|\\_ Certificate Authority\\",
+        "url": "https://docs.cloud.google.com/certificate-authority-service/docs/cas-integrations-cloud-services",
+        "source_id": "site-iam-reference",
+        "final_score": 56,
+        "relevance": "MODERATE",
+        "evidence_snippets": []
+      },
+      {
+        "title": "\"Authenticate to CA Service \\_|\\_ Certificate Authority Service \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/certificate-authority-service/docs/authentication",
+        "source_id": "site-docs-reference",
+        "final_score": 50,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "After installation, initialize the Google Cloud CLI by running the following command: gcloud init If you're using an external identity provider (IdP), you must first sign in to the gcloud CLI with your federated identity .",
+          "After installation, initialize the Google Cloud CLI by running the following command: gcloud init If you're using an external identity provider (IdP), you must first sign in to the gcloud CLI with your federated identity .",
+          "If an authentication error is returned, and you are using an external identity provider (IdP), confirm that you have signed in to the gcloud CLI with your federated identity ."
+        ]
+      },
+      {
+        "title": "\"Certificate Authority Service security and compliance \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/certificate-authority-service/docs/certificate-authority-compliance",
+        "source_id": "site-docs-root",
+        "final_score": 49,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Certificate Authority Service security and compliance Security Certificate Authority Service supports the following Google Cloud security products: VPC Service Controls (VPC-SC) Access Transparency Access Approval Workforce identity federation Data residency For information about the security measures in place for Google Cloud services, see Google Cloud Security ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/certificate-authority-service/docs/cas-integrations-cloud-services",
+        "https://docs.cloud.google.com/certificate-authority-service/docs/certificate-authority-compliance",
+        "https://docs.cloud.google.com/certificate-authority-service/docs/authentication"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/certificate-authority-service/docs/cas-integrations-cloud-services",
+        "https://docs.cloud.google.com/certificate-authority-service/docs/certificate-authority-compliance",
+        "https://docs.cloud.google.com/certificate-authority-service/docs/authentication"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/certificate-authority-service/docs/cas-integrations-cloud-services",
+        "https://docs.cloud.google.com/certificate-authority-service/docs/certificate-authority-compliance",
+        "https://docs.cloud.google.com/certificate-authority-service/docs/authentication"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/certificate-authority-service/docs/cas-integrations-cloud-services",
+        "https://docs.cloud.google.com/certificate-authority-service/docs/certificate-authority-compliance",
+        "https://docs.cloud.google.com/certificate-authority-service/docs/authentication"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/certificate-authority-service/docs/cas-integrations-cloud-services",
+        "https://docs.cloud.google.com/certificate-authority-service/docs/certificate-authority-compliance",
+        "https://docs.cloud.google.com/certificate-authority-service/docs/authentication"
+      ]
+    }
+  ]
+}

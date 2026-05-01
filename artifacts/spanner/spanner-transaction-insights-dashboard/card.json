@@ -1,0 +1,140 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:46.903Z",
+  "source_step08_card": "data/step-08/current/products/spanner/card.json",
+  "product_name": "Spanner",
+  "product_slug": "spanner",
+  "feature_name": "Spanner Transaction Insights dashboard",
+  "feature_slug": "spanner-transaction-insights-dashboard",
+  "summary": "The Transaction Insights dashboard identifies transactions in Spanner databases that cause lock contention and potential high latency.",
+  "extended_definition": "The Transaction Insights dashboard identifies transactions in Spanner databases that cause lock contention and potential high latency.",
+  "lifecycle": {
+    "latest_feature_date": "2022-10-18",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/java/docs/reference/google-cloud-spanner/latest/com.google.cloud.spanner.AsyncTransactionManager.AsyncTransactionStep",
+      "https://docs.cloud.google.com/spanner/docs/best-practices-gaming-database",
+      "https://docs.cloud.google.com/spanner/docs/change-streams/use-dataflow"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Interface AsyncTransactionManager.AsyncTransactionStep<I,O> (6.111.1) \\_\\",
+        "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-spanner/latest/com.google.cloud.spanner.AsyncTransactionManager.AsyncTransactionStep",
+        "source_id": "site-java-reference",
+        "final_score": 129,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "AsyncTransactionStep<I , O > extends ApiFuture<O> AsyncTransactionStep is returned by TransactionContextFuture#then(AsyncTransactionFunction, Executor) and AsyncTransactionStep#then(AsyncTransactionFunction, Executor) and allows transaction steps that should be executed serially to be chained together.",
+          "Home Documentation Developer tools Java Client libraries Send feedback Interface AsyncTransactionManager.AsyncTransactionStep<I,O> (6.111.1) Stay organized with collections Save and categorize content based on your preferences.",
+          "Parameters Name Description next AsyncTransactionFunction < O , RES > executor Executor Returns Type Description AsyncTransactionStep < O , RES > commitAsync() public abstract AsyncTransactionManager ."
+        ]
+      },
+      {
+        "title": "\"Build change streams connections using Dataflow \\_|\\_ Spanner \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/spanner/docs/change-streams/use-dataflow",
+        "source_id": "site-docs-root",
+        "final_score": 109,
+        "relevance": "",
+        "evidence_snippets": [
+          "The owner of a Dataflow job that uses the SpannerIO connector needs to have the following IAM permissions set with this metadata database: spanner.databases.updateDdl spanner.databases.beginReadOnlyTransaction spanner.databases.beginOrRollbackReadWriteTransaction spanner.databases.read spanner.databases.select spanner.databases.write spanner.sessions.create spanner.sessions.get Configure the connector The Spanner change streams connector can be configured as follows: SpannerConfig spannerConfig = SpannerConfig . create () . withProjectId ( \"my-project-id\" ) . withInstanceId ( \"my-instance-id\" ) . withDatabaseId ( \"my-database-id\" ) . withDatabaseRole ( \"my-database-role\" ); // Needed for fine-grained access control only Timestamp startTime = Timestamp . now (); Timestamp endTime = Timestamp . ofTimeSecondsAndNanos ( startTime . getSeconds () + ( 10 60 ), startTime . getNanos () ); SpannerIO . readChangeStream () . withSpannerConfig ( spannerConfig ) . withChangeStreamName ( \"my-change-stream\" ) . withMetadataInstance ( \"my-meta-instance-id\" ) . withMetadataDatabase ( \"my-meta-database-id\" ) . withMetadataTable ( \"my-meta-table-name\" ) . withRpcPriority ( RpcPriority .",
+          "Collections . sort ( recordsToOutput , new DataChangeRecordComparator ()); context . outputWithTimestamp ( KV . of ( elementKey , recordsToOutput ), context . timestamp ()); LOG . info ( \"Expired at {}, outputting records for key {}\" , context . timestamp (). toString (), elementKey ); } else { LOG . info ( \"Expired at {} with no records\" , context . timestamp (). toString ()); } } Instant nextTimer = context . timestamp (). plus ( Duration . standardSeconds ( incrementIntervalInSeconds )); if ( buffer . isEmpty () != null && ! buffer . isEmpty (). read ()) { LOG . info ( \"Setting next timer to {}\" , nextTimer . toString ()); timer . set ( nextTimer ); } else { LOG . info ( \"Timer not being set since the buffer is empty: \" ); keyString . clear (); } } } Ordering transactions This pipeline can be changed to order by transaction ID and commit timestamp.",
+          "Sample: Assemble transactions This code sample reads data change records, assembles all data change records belonging to the same transaction into a single element, and outputs that element."
+        ]
+      },
+      {
+        "title": "\"Best practices for using Spanner as a gaming database \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/spanner/docs/best-practices-gaming-database",
+        "source_id": "site-docs-root",
+        "final_score": 105,
+        "relevance": "",
+        "evidence_snippets": [
+          "Tracking valuable in-game items or critical player progress typically requires transactions and is challenging to work around in many types of distributed databases.",
+          "These are frequently used because they can provide familiar methodologies and strong guarantees around transactions .",
+          "Even when using Spanner to hold all of your game data worldwide, it offers read-write transactions with even stronger than conventional atomicity, consistency, isolation, and durability (ACID) properties."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.cloud.spanner.AsyncTransactionManager.AsyncTransactionStep",
+      "spanner.databases.beginOrRollbackReadWriteTransaction",
+      "spanner.databases.beginReadOnlyTransaction",
+      "spanner.databases.read",
+      "spanner.databases.select",
+      "spanner.databases.updateDdl",
+      "spanner.databases.write",
+      "spanner.sessions.create",
+      "spanner.sessions.get"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-spanner/latest/com.google.cloud.spanner.AsyncTransactionManager.AsyncTransactionStep",
+        "https://docs.cloud.google.com/spanner/docs/change-streams/use-dataflow",
+        "https://docs.cloud.google.com/spanner/docs/best-practices-gaming-database"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-spanner/latest/com.google.cloud.spanner.AsyncTransactionManager.AsyncTransactionStep",
+        "https://docs.cloud.google.com/spanner/docs/change-streams/use-dataflow",
+        "https://docs.cloud.google.com/spanner/docs/best-practices-gaming-database"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-spanner/latest/com.google.cloud.spanner.AsyncTransactionManager.AsyncTransactionStep",
+        "https://docs.cloud.google.com/spanner/docs/change-streams/use-dataflow",
+        "https://docs.cloud.google.com/spanner/docs/best-practices-gaming-database"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-spanner/latest/com.google.cloud.spanner.AsyncTransactionManager.AsyncTransactionStep",
+        "https://docs.cloud.google.com/spanner/docs/change-streams/use-dataflow",
+        "https://docs.cloud.google.com/spanner/docs/best-practices-gaming-database"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-spanner/latest/com.google.cloud.spanner.AsyncTransactionManager.AsyncTransactionStep",
+        "https://docs.cloud.google.com/spanner/docs/change-streams/use-dataflow",
+        "https://docs.cloud.google.com/spanner/docs/best-practices-gaming-database"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-spanner/latest/com.google.cloud.spanner.AsyncTransactionManager.AsyncTransactionStep",
+        "https://docs.cloud.google.com/spanner/docs/change-streams/use-dataflow",
+        "https://docs.cloud.google.com/spanner/docs/best-practices-gaming-database"
+      ]
+    }
+  ]
+}

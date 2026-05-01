@@ -1,0 +1,115 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:39.542Z",
+  "source_step08_card": "data/step-08/current/products/google-kubernetes-engine/card.json",
+  "product_name": "Google Kubernetes Engine",
+  "product_slug": "google-kubernetes-engine",
+  "feature_name": "TPU metrics dashboard",
+  "feature_slug": "tpu-metrics-dashboard",
+  "summary": "The Observability tab includes a dashboard for TPU metrics on GKE clusters.",
+  "extended_definition": "The Observability tab includes a dashboard for TPU metrics on GKE clusters.",
+  "lifecycle": {
+    "latest_feature_date": "2024-04-02",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/ray-on-gke/how-to/collect-view-logs-metrics",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/kube-state-metrics",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_clusters"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Collect and view kube state metrics \\_|\\_ Google Kubernetes Engine (GKE)\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/kube-state-metrics",
+        "source_id": "site-docs-reference-2",
+        "final_score": 150,
+        "relevance": "",
+        "evidence_snippets": [
+          "To enable kube state metrics from the Observability tab for a cluster, do the following: In the Google Cloud console, go to the Kubernetes clusters page: Go to Kubernetes clusters If you use the search bar to find this page, then select the result whose subheading is Kubernetes Engine .",
+          "On the Observability tab for a cluster, you can filter the set of charts for kube state metrics by the following two items: Workloads State : includes the metrics for Pods, Deployments, StatefulSets, DaemonSets, and HorizontalPodAutoscaler resources.",
+          "Click Save Changes . gcloud Update your cluster to collect metrics: gcloud container clusters update CLUSTER NAME \\ --location = COMPUTE LOCATION \\ --enable-managed-prometheus \\ --monitoring = SYSTEM,DAEMONSET,DEPLOYMENT,HPA,POD,STATEFULSET,STORAGE Replace the following: CLUSTER NAME : the name of the existing cluster."
+        ]
+      },
+      {
+        "title": "\"Collect and view logs and metrics for Ray clusters on Google Kubernetes\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/ray-on-gke/how-to/collect-view-logs-metrics",
+        "source_id": "site-docs-reference-required-4",
+        "final_score": 143,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "For example, the following RayCluster manifests includes the env section for all Ray containers, in both headGroupSpec and workerGroupSpecs specs: Example snippet for a RayCluster manifest apiVersion : ray.io/v1 kind : RayCluster metadata : name : raycluster-structured spec : headGroupSpec : template : spec : containers : - name : ray-head image : rayproject/ray:2.54.0 # Replace with your desired Ray image ... other container settings env : - name : RAY LOGGING CONFIG ENCODING value : \"JSON\" - name : RAY BACKEND LOG JSON value : \"1\" workerGroupSpecs : - groupName : small-group replicas : 1 minReplicas : 1 maxReplicas : 5 template : spec : containers : - name : ray-worker image : rayproject/ray:2.54.0 # Replace with your desired Ray image ... other container settings env : - name : RAY LOGGING CONFIG ENCODING value : \"JSON\" - name : RAY BACKEND LOG JSON value : \"1\" Apply the updated RayCluster manifest: kubectl apply -f your-raycluster.yaml Queries for structured logs Query/filter name Expression All error logs for a specific Ray Job ID resource.type=\"k8s container\" labels.\"k8s-pod/ray io/is-ray-node\"=\"yes\" severity=ERROR jsonPayload.job id=\" YOUR JOB ID \" Logs for a specific Ray worker process ID resource.type=\"k8s container\" labels.\"k8s-pod/ray io/is-ray-node\"=\"yes\" jsonPayload.worker id=\" YOUR WORKER ID \" Error logs for a specific Task ID on a specific worker Pod resource.type=\"k8s container\" resource.labels.pod name=\" YOUR WORKER POD NAME \" labels.\"k8s-pod/ray io/is-ray-node\"=\"yes\" severity=ERROR jsonPayload.task id=\" YOUR TASK ID \" Enable metrics collection for a Ray cluster You can enable metrics collection for Ray clusters with new or existing Autopilot or Standard GKE clusters.",
+          "Home Documentation Application hosting Google Kubernetes Engine (GKE) GKE AI/ML Guides Send feedback Collect and view logs and metrics for Ray clusters on Google Kubernetes Engine (GKE) Stay organized with collections Save and categorize content based on your preferences.",
+          "Autopilot Standard This page shows how to configure Google Kubernetes Engine (GKE) to collect logs and metrics for Ray clusters running on Google Kubernetes Engine (GKE), plus how to view Ray logs and metrics in Cloud Logging and Cloud Monitoring."
+        ]
+      },
+      {
+        "title": "\"MCP Tools Reference: container.googleapis.com \\_|\\_ Google Kubernetes Engine\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_clusters",
+        "source_id": "site-api-reference",
+        "final_score": 133,
+        "relevance": "",
+        "evidence_snippets": [
+          "AdvancedDatapathObservabilityConfig JSON representation { \"enableMetrics\" : boolean , \"relayMode\" : enum ( RelayMode ) , // Union field enable relay can be only one of the following: \"enableRelay\" : boolean // End of list of possible types for union field enable relay . } Fields enableMetrics boolean Expose flow metrics on nodes relayMode enum ( RelayMode ) Method used to make Relay available Union field enable relay . enable relay can be only one of the following: enableRelay boolean Enable Relay component NodePoolAutoConfig JSON representation { \"networkTags\" : { object ( NetworkTags ) } , \"resourceManagerTags\" : { object ( ResourceManagerTags ) } , \"nodeKubeletConfig\" : { object ( NodeKubeletConfig ) } , \"linuxNodeConfig\" : { object ( LinuxNodeConfig ) } } Fields networkTags object ( NetworkTags ) The list of instance tags applied to all nodes.",
+          "RayClusterMonitoringConfig JSON representation { \"enabled\" : boolean } Fields enabled boolean Enable metrics collection for Ray clusters.",
+          "AddonsConfig JSON representation { \"httpLoadBalancing\" : { object ( HttpLoadBalancing ) } , \"horizontalPodAutoscaling\" : { object ( HorizontalPodAutoscaling ) } , \"kubernetesDashboard\" : { object ( KubernetesDashboard ) } , \"networkPolicyConfig\" : { object ( NetworkPolicyConfig ) } , \"cloudRunConfig\" : { object ( CloudRunConfig ) } , \"dnsCacheConfig\" : { object ( DnsCacheConfig ) } , \"configConnectorConfig\" : { object ( ConfigConnectorConfig ) } , \"gcePersistentDiskCsiDriverConfig\" : { object ( GcePersistentDiskCsiDriverConfig ) } , \"gcpFilestoreCsiDriverConfig\" : { object ( GcpFilestoreCsiDriverConfig ) } , \"gkeBackupAgentConfig\" : { object ( GkeBackupAgentConfig ) } , \"gcsFuseCsiDriverConfig\" : { object ( GcsFuseCsiDriverConfig ) } , \"statefulHaConfig\" : { object ( StatefulHAConfig ) } , \"parallelstoreCsiDriverConfig\" : { object ( ParallelstoreCsiDriverConfig ) } , \"rayOperatorConfig\" : { object ( RayOperatorConfig ) } , \"highScaleCheckpointingConfig\" : { object ( HighScaleCheckpointingConfig ) } , \"lustreCsiDriverConfig\" : { object ( LustreCsiDriverConfig ) } , \"sliceControllerConfig\" : { object ( SliceControllerConfig ) } } Fields httpLoadBalancing object ( HttpLoadBalancing ) Configuration for the HTTP (L7) load balancing controller addon, which makes it easy to set up HTTP load balancers for services in a cluster. horizontalPodAutoscaling object ( HorizontalPodAutoscaling ) Configuration for the horizontal pod autoscaling feature, which increases or decreases the number of replica pods a replication controller has based on the resource usage of the existing pods. kubernetesDashboard (deprecated) object ( KubernetesDashboard ) This item is deprecated!"
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "container.googleapis.com",
+      "gke.1357001",
+      "gke.1767000",
+      "gke.1868000",
+      "ray.io",
+      "raycluster.yaml",
+      "resource.labels.pod",
+      "resource.type"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/kube-state-metrics",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/ray-on-gke/how-to/collect-view-logs-metrics",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_clusters"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/kube-state-metrics",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/ray-on-gke/how-to/collect-view-logs-metrics",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_clusters"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/kube-state-metrics",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/ray-on-gke/how-to/collect-view-logs-metrics",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_clusters"
+      ]
+    }
+  ]
+}

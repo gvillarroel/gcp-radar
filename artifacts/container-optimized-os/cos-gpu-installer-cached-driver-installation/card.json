@@ -1,0 +1,104 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:31.901Z",
+  "source_step08_card": "data/step-08/current/products/container-optimized-os/card.json",
+  "product_name": "Container Optimized OS",
+  "product_slug": "container-optimized-os",
+  "feature_name": "cos-gpu-installer cached driver installation",
+  "feature_slug": "cos-gpu-installer-cached-driver-installation",
+  "summary": "Cos-gpu-installer supports cached driver installation when networking is disabled; cos-gpu-installer supports cached driver installation when networking is disabled.",
+  "extended_definition": "Cos-gpu-installer supports cached driver installation when networking is disabled; cos-gpu-installer supports cached driver installation when networking is disabled.",
+  "lifecycle": {
+    "latest_feature_date": "2024-03-11",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/container-optimized-os/docs/how-to/arm",
+      "https://docs.cloud.google.com/container-optimized-os/docs/how-to/logging",
+      "https://docs.cloud.google.com/container-optimized-os/docs/how-to/run-gpus"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Running instances with GPU accelerators \\_|\\_ Container-Optimized OS \\_\\",
+        "url": "https://docs.cloud.google.com/container-optimized-os/docs/how-to/run-gpus",
+        "source_id": "site-docs-reference",
+        "final_score": 113,
+        "relevance": "",
+        "evidence_snippets": [
+          "The following flags apply: -no-verify : Downloads and prepares the driver files but skips kernel module loading and installation verification. -target-gpu : Specifies the GPU device to ensure the correct driver is preloaded, preventing compatibility issues when the GPU device is later attached.",
+          "The following example shows you how to run a CUDA application in a Docker container that consumes /dev/nvidia0 : docker run \\ --volume /var/lib/nvidia/lib64:/usr/local/nvidia/lib64 \\ --volume /var/lib/nvidia/bin:/usr/local/nvidia/bin \\ --device /dev/nvidia0:/dev/nvidia0 \\ --device /dev/nvidia-uvm:/dev/nvidia-uvm \\ --device /dev/nvidiactl:/dev/nvidiactl \\ registry.k8s.io/cuda-vector-add:v0.1 You can run your containers through cloud-init to specify the dependency between driver installation and your containers. see the End-to-end: Running a GPU application on Container-Optimized OS section for more details.",
+          "For example, on a COS VM, you could use the following command to install the NVIDIA driver and load the nvidia.ko kernel module with the NVreg EnableGpuFirmware=0 parameter. sudo cos-extensions install gpu -- --module-arg nvidia.NVreg EnableGpuFirmware=0 Preload the driver You can preload the GPU driver on your Container-Optimized OS instance even when no GPU device is attached."
+        ]
+      },
+      {
+        "title": "Using Cloud Logging with Container-Optimized OS \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/container-optimized-os/docs/how-to/logging",
+        "source_id": "site-docs-reference",
+        "final_score": 50,
+        "relevance": "",
+        "evidence_snippets": [
+          "Known Limitations Compatibility with gcplogs driver Starting with milestone 89 , if the logging agent included with Container-Optimized OS is enabled and Docker gcplogs logging driver is enabled for one or more containers, excessive warning logs may be output by the included logging agent.",
+          "However, if you have a custom logging configuration, you might experience breakage when migrating workloads to images that are based on a different architecture or to a newer version of Container-Optimized OS.",
+          "Note: Logging is automatically available when you choose Container-Optimized OS as the node image for running your Google Kubernetes Engine clusters."
+        ]
+      },
+      {
+        "title": "Using Arm-based Container-Optimized OS images \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/container-optimized-os/docs/how-to/arm",
+        "source_id": "site-docs-reference",
+        "final_score": 46,
+        "relevance": "",
+        "evidence_snippets": [
+          "The following table describes which containers are compatible with Arm-based images: Container images Compatible with Arm-based images gcr.io/cos-cloud/toolbox Yes gcr.io/cos-cloud/cos-gpu-installer No gcr.io/stackdriver-agents/stackdriver-logging-agent No gcr.io/gce-containers/konlet No Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "However, if you have custom fluentd configurations, you might experience breakage when migrating workloads to Arm-based Container-Optimized OS images.",
+          "You can use cloud-init to configure Arm-based instances if you want to start containers when instances are created."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "gcr.io",
+      "nvidia.ko",
+      "nvidia.NVreg",
+      "registry.k8s.io",
+      "v0.1"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/run-gpus",
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/arm",
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/logging"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/run-gpus",
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/arm",
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/logging"
+      ]
+    }
+  ]
+}

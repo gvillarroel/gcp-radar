@@ -1,0 +1,90 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:18.771Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery",
+  "feature_name": "BigQuery Data Transfer Service Facebook Ads connector",
+  "feature_slug": "bigquery-data-transfer-service-facebook-ads-connector",
+  "summary": "BigQuery Data Transfer Service can transfer data from Facebook Ads into BigQuery.",
+  "extended_definition": "BigQuery Data Transfer Service can transfer data from Facebook Ads into BigQuery.",
+  "lifecycle": {
+    "latest_feature_date": "2025-10-28",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/facebook-ads-transfer",
+      "https://docs.cloud.google.com/bigquery/docs/google-ads-transfer",
+      "https://docs.cloud.google.com/bigquery/docs/hubspot-transfer"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Load Facebook Ads data into BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/facebook-ads-transfer",
+        "source_id": "site-api-reference",
+        "final_score": 184,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Load Facebook Ads data into BigQuery You can load data from Facebook Ads to BigQuery using the BigQuery Data Transfer Service for Facebook Ads connector.",
+          "With every transfer run, the Facebook Ads connector transfers all available data from Facebook Ads into BigQuery.",
+          "Data transfer options Support Supported reports The BigQuery Data Transfer Service for Facebook Ads supports the transfer of the following Facebook Ads reports: AdAccounts AdInsights AdInsightsActions For information about how Facebook Ads reports are transformed into BigQuery tables and views, see Facebook Ads report transformation ."
+        ]
+      },
+      {
+        "title": "Load HubSpot data into BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/hubspot-transfer",
+        "source_id": "site-api-reference",
+        "final_score": 127,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "With every transfer run, the HubSpot connector transfers all available data from HubSpot into BigQuery.",
+          "Data type mapping The following table maps HubSpot data types to the corresponding BigQuery data types: HubSpot data type BigQuery data type String STRING Text STRING Integer INTEGER Boolean BOOLEAN Date TIMESTAMP Datetime TIMESTAMP Long BIGNUMERIC Pricing There is no cost to transfer HubSpot data into BigQuery while this feature is in Preview .",
+          "Set up a HubSpot data transfer Add HubSpot data into BigQuery by setting up a transfer configuration using one of the following options: Console Go to the Data transfers page in the Google Cloud console."
+        ]
+      },
+      {
+        "title": "Load Google Ads data into BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/google-ads-transfer",
+        "source_id": "site-api-reference",
+        "final_score": 125,
+        "relevance": "",
+        "evidence_snippets": [
+          "Load Google Ads data into BigQuery You can load data from Google Ads (formerly known as Google AdWords) to BigQuery using the BigQuery Data Transfer Service for Google Ads connector.",
+          "When you trigger a manual transfer, Match Table snapshots for the following tables are not updated: Ad AdGroup AdGroupAudience AdGroupBidModifier AdGroupAdLabel AdGroupCriterion AdGroupCriterionLabel AdGroupLabel AgeRange Asset AssetGroup AssetGroupAsset AssetGroupListingGroupFilter AssetGroupSignal Audience BidGoal Budget Campaign CampaignAudience CampaignCriterion CampaignLabel Customer Gender Keyword LocationBasedCampaignCriterion ParentalStatus Placement Video Custom reports The BigQuery Data Transfer Service for Google Ads connector also supports the use of custom reports using Google Ads Query Language (GAQL) queries in the Google Ads transfer configuration.",
+          "The automatically triggered backfill runs will either overwrite or incrementally update your BigQuery destination table, depending on whether or not incremental updates are supported in the BigQuery Data Transfer Service connector."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/facebook-ads-transfer",
+        "https://docs.cloud.google.com/bigquery/docs/google-ads-transfer",
+        "https://docs.cloud.google.com/bigquery/docs/hubspot-transfer"
+      ]
+    }
+  ]
+}

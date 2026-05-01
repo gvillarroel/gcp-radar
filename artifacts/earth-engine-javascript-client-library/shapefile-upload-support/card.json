@@ -1,0 +1,121 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:36.037Z",
+  "source_step08_card": "data/step-08/current/products/earth-engine-javascript-client-library/card.json",
+  "product_name": "Earth Engine JavaScript Client Library",
+  "product_slug": "earth-engine-javascript-client-library",
+  "feature_name": "Shapefile upload support",
+  "feature_slug": "shapefile-upload-support",
+  "summary": "The JavaScript client library supports uploading shapefiles.",
+  "extended_definition": "The JavaScript client library supports uploading shapefiles.",
+  "lifecycle": {
+    "latest_feature_date": "2017-06-12",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/earth-engine/Earth_Engine_asset_from_cloud_geotiff",
+      "https://developers.google.com/earth-engine/guides",
+      "https://developers.google.com/earth-engine/guides/command_line"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Command Line Tool \\_|\\_ Google Earth Engine \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/earth-engine/guides/command_line",
+        "source_id": "site-docs-reference",
+        "final_score": 54,
+        "relevance": "",
+        "evidence_snippets": [
+          "The options are also described in the Image Manifest guide. table To upload a Shapefile, CSV, or TFRecord from Google Cloud Storage to an Earth Engine table asset, you can use any of: earthengine upload table --asset id=projects/my-project/assets/myUploadedShapefile gs://bucket/foo.shp earthengine upload table --asset id=projects/my-project/assets/myUploadedCSV gs://bucket/foo.csv earthengine upload table --asset id=projects/my-project/assets/myUploadedTFRecord gs://bucket/foo.tfrecord Note: when uploading Shapefiles, you only need to specify the path to the .shp file.",
+          "Set a default project for each new Colab session or if the virtual machine expires from inactivity (credentials are not saved across sessions). !earthengine set project my-project Command Reference authenticate Authenticates the command line tool and Python client library to Earth Engine.",
+          "You can learn more about the options for uploading images to Earth Engine in Uploading image assets: Advanced options ."
+        ]
+      },
+      {
+        "title": "\"Cloud GeoTiff-Backed Earth Engine Assets \\_|\\_ Google Earth Engine \\_|\\_\\",
+        "url": "https://developers.google.com/earth-engine/Earth_Engine_asset_from_cloud_geotiff",
+        "source_id": "site-docs-reference",
+        "final_score": 32,
+        "relevance": "",
+        "evidence_snippets": [
+          "Write an image upload manifest Use the earthengine command-line utility to send an upload command: earthengine upload external image --manifest my manifest.json Sample image manifest with one Tileset The simplest ImageManifest is one with a single Tileset .",
+          "Key actions involve: placing COG files in a designated Google Cloud Storage (GCS) bucket, writing an image upload manifest, and using the earthengine command-line tool or REST API to send an upload command or a POST request to import the external image.",
+          "Page Summary outlined flag Earth Engine supports assets backed by Cloud Optimized GeoTIFFs (COGs), which improve performance in collections by indexing spatial and metadata fields at creation time."
+        ]
+      },
+      {
+        "title": "About Google Earth Engine \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/earth-engine/guides",
+        "source_id": "site-docs-reference",
+        "final_score": 25,
+        "relevance": "",
+        "evidence_snippets": [
+          "Development environments Developers can choose between two primary development environments: Python client library : A flexible interface to Earth Engine for integration with the broader Python ecosystem, facilitating advanced workflows, and interactive analysis in Jupyter notebooks.",
+          "Key Features Geospatial analysis, simplified and scalable Earth Engine integrates an extensive geospatial data catalog with distributed computing, accessible through client libraries.",
+          "Earth Engine offers both interactive and batch processing modes, as well as Python and JavaScript development environments to support different analytical and development needs."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "developers.google.com",
+      "ee.Authenticate",
+      "foo.csv",
+      "foo.shp",
+      "foo.tfrecord",
+      "manifest.json"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://developers.google.com/earth-engine/guides/command_line",
+        "https://developers.google.com/earth-engine/guides",
+        "https://developers.google.com/earth-engine/Earth_Engine_asset_from_cloud_geotiff"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://developers.google.com/earth-engine/guides/command_line",
+        "https://developers.google.com/earth-engine/guides",
+        "https://developers.google.com/earth-engine/Earth_Engine_asset_from_cloud_geotiff"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://developers.google.com/earth-engine/guides/command_line",
+        "https://developers.google.com/earth-engine/guides",
+        "https://developers.google.com/earth-engine/Earth_Engine_asset_from_cloud_geotiff"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://developers.google.com/earth-engine/guides/command_line",
+        "https://developers.google.com/earth-engine/guides",
+        "https://developers.google.com/earth-engine/Earth_Engine_asset_from_cloud_geotiff"
+      ]
+    }
+  ]
+}

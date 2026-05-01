@@ -1,0 +1,108 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:18.771Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery",
+  "feature_name": "Imported model inference in BigQuery ML",
+  "feature_slug": "imported-model-inference-in-bigquery-ml",
+  "summary": "BigQuery ML can import ONNX, XGBoost, and TensorFlow Lite models for inference in the BigQuery ML inference engine.",
+  "extended_definition": "BigQuery ML can import ONNX, XGBoost, and TensorFlow Lite models for inference in the BigQuery ML inference engine.",
+  "lifecycle": {
+    "latest_feature_date": "2023-08-24",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/inference-tutorial-mobilenet",
+      "https://docs.cloud.google.com/bigquery/docs/inference-tutorial-resnet",
+      "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/bigqueryml-syntax-create"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Tutorial: Run inference on an object table by using a classification model\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/inference-tutorial-resnet",
+        "source_id": "site-docs-reference-2",
+        "final_score": 137,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Enable the APIs Create a reservation To use an imported model with an object table, you must create a reservation that uses the BigQuery Enterprise or Enterprise Plus edition , and then create a reservation assignment that uses the QUERY job type.",
+          "Go to BigQuery In the Editor pane, run the following SQL statement: CREATE EXTERNAL TABLE resnet inference test . vision images WITH CONNECTION us.lake-connection OPTIONS ( object metadata = 'SIMPLE' , uris = [ 'gs://cloud-samples-data/vision/ .jpg' ] ); bq In Cloud Shell, run the bq mk command to create the connection: bq mk --table \\ --external table definition='gs://cloud-samples-data/vision/ .jpg@us.lake-connection' \\ --object metadata=SIMPLE \\ resnet inference test . vision images Upload the model to Cloud Storage Get the model files and make them available in Cloud Storage: Download the ResNet 50 model to your local machine.",
+          "To load the model into BigQuery ML, you need the following permissions: bigquery.jobs.create bigquery.models.create bigquery.models.getData bigquery.models.updateData To run inference, you need the following permissions: bigquery.tables.getData on the object table bigquery.models.getData on the model bigquery.jobs.create Costs In this document, you use the following billable components of Google Cloud: BigQuery : You incur storage costs for the object table you create in BigQuery."
+        ]
+      },
+      {
+        "title": "\"Tutorial: Run inference on an object table by using a feature vector model\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/inference-tutorial-mobilenet",
+        "source_id": "site-docs-reference-2",
+        "final_score": 137,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Enable the APIs Create a reservation To use an imported model with an object table, you must create a reservation that uses the BigQuery Enterprise or Enterprise Plus edition , and then create a reservation assignment that uses the QUERY job type.",
+          "To load the model into BigQuery ML, you need the following permissions: bigquery.jobs.create bigquery.models.create bigquery.models.getData bigquery.models.updateData To run inference, you need the following permissions: bigquery.tables.getData on the object table bigquery.models.getData on the model bigquery.jobs.create Costs In this document, you use the following billable components of Google Cloud: BigQuery : You incur storage costs for the object table you create in BigQuery.",
+          "Go to BigQuery In the Editor pane, run the following SQL statement: CREATE MODEL mobilenet inference test.mobilenet OPTIONS ( model type = 'TENSORFLOW' , model path = 'gs:// BUCKET NAME /mobilenet/ ' ); Replace BUCKET NAME with the name of the bucket you previously created."
+        ]
+      },
+      {
+        "title": "The CREATE MODEL statement \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/bigqueryml-syntax-create",
+        "source_id": "site-docs-root",
+        "final_score": 126,
+        "relevance": "",
+        "evidence_snippets": [
+          "For more information about supported SQL statements and functions for each model type, see the following documents: End-to-end user journeys for generative AI models End-to-end user journeys for time series forecasting models End-to-end user journeys for ML models End-to-end user journeys for imported models Contribution analysis user journey Required permissions To create a dataset to store the model, you need the bigquery.datasets.create IAM permission.",
+          "Imported TensorFlow model , Imported TensorFlow lite model , Imported ONNX model , Imported XGBoost model FEEDBACK TYPE Specifies feedback type for matrix factorization models which changes the algorithm that is used during training.",
+          "CREATE MODEL statement for TensorFlow Lite models 'ONNX' Create a model by importing an ONNX model into BigQuery."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "bigquery.datasets.create",
+      "bigquery.jobs.create",
+      "bigquery.models.create",
+      "bigquery.models.getData",
+      "bigquery.models.updateData",
+      "bigquery.tables.getData",
+      "test.mobilenet",
+      "test.resnet",
+      "us.lake"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/inference-tutorial-mobilenet",
+        "https://docs.cloud.google.com/bigquery/docs/inference-tutorial-resnet",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/bigqueryml-syntax-create"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/inference-tutorial-mobilenet",
+        "https://docs.cloud.google.com/bigquery/docs/inference-tutorial-resnet",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/bigqueryml-syntax-create"
+      ]
+    }
+  ]
+}

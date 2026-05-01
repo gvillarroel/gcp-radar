@@ -1,0 +1,102 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:23.390Z",
+  "source_step08_card": "data/step-08/current/products/cloud-deployment-manager/card.json",
+  "product_name": "Cloud Deployment Manager",
+  "product_slug": "cloud-deployment-manager",
+  "feature_name": "Deployment preview query parameter",
+  "feature_slug": "deployment-preview-query-parameter",
+  "summary": "The Deployment Manager API supports a boolean preview query parameter for previewing deployments.",
+  "extended_definition": "The Deployment Manager API supports a boolean preview query parameter for previewing deployments.",
+  "lifecycle": {
+    "latest_feature_date": "2015-07-22",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/deployment-manager/docs/configuration/preview-configuration-file",
+      "https://docs.cloud.google.com/deployment-manager/docs/deployments/updating-deployments",
+      "https://docs.cloud.google.com/deployment-manager/docs/reference/latest/deployments/patch"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Previewing a configuration \\_|\\_ Cloud Deployment Manager \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/deployment-manager/docs/configuration/preview-configuration-file",
+        "source_id": "site-docs-reference",
+        "final_score": 134,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Performing multiple previews If you want to change your configuration and perform another preview, use the update command with the --preview flag: gcloud deployment-manager deployments update example-config \\ --config new-config.yaml --preview In the API, make a PUT() request with an existing deployment and provide the preview=true query parameter.",
+          "Previewing a new configuration Preview a configuration by using the Google Cloud CLI or by making a direct request to the API. gcloud If you're using the Google Cloud CLI, use the create sub-command with the --preview flag: gcloud deployment-manager deployments create example-config --config configuration-file.yaml \\ --preview The server returns a list of resources whose state is IN PREVIEW for you to review: The fingerprint of the deployment is ulPDrJON8E5ySHKC5fcukw== Waiting for create [operation-1492785372594-54dae2ddbff50-58d45d53-12d483cf]...done.",
+          "Home Documentation Infrastructure as code Cloud Deployment Manager Guides Send feedback Previewing a configuration Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "Deployments: patch \\_|\\_ Cloud Deployment Manager \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/deployment-manager/docs/reference/latest/deployments/patch",
+        "source_id": "site-api-reference",
+        "final_score": 96,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Acceptable values are: \" ABANDON \": Removes the resource from Deployment Manager but does not delete the underlying resource. \" DELETE \": Removes the resource from Deployment Manager and deletes the underlying resource. (default) preview boolean If set to true, updates the deployment and creates and updates the \"shell\" resources but does not actually alter or instantiate these resources.",
+          "Request HTTP request PATCH https://www.googleapis.com/deploymentmanager/v2/projects/ project /global/deployments/ deployment Parameters Parameter name Value Description Path parameters deployment string The name of the deployment for this request. project string The project ID for this request.",
+          "After previewing a deployment, you can deploy your resources by making a request with the update() or you can cancelPreview() to remove the preview altogether."
+        ]
+      },
+      {
+        "title": "\"Updating a Deployment \\_|\\_ Cloud Deployment Manager \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/deployment-manager/docs/deployments/updating-deployments",
+        "source_id": "site-docs-root",
+        "final_score": 94,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For example, the following API request previews a simple update: PUT https : //www.googleapis.com/deploymentmanager/v2/projects/myproject/global/deployments/example-deployment?preview=true { \"target\" : { \"config\" : { \"content\" : \"resources:\\n- name: vm-created-by-cloud-config\\n type: compute.v1.instance\\n properties:\\n zone: us-central1-a\\n machineType: https://www.googleapis.com/compute/v1/projects/myproject/zones/us-central1-a/machineTypes/n1-standard-1\\n disks:\\n - deviceName: boot\\n type: PERSISTENT\\n boot: true\\n autoDelete: true\\n initializeParams:\\n diskName: disk-created-by-cloud-config\\n sourceImage: https://www.googleapis.com/compute/v1/projects/debian-cloud/global/images/debian-9-stretch-v20180716\\n networkInterfaces:\\n - network: https://www.googleapis.com/compute/v1/projects/myproject/global/networks/default\" } }, \"name\" : \"example-deployment\" } After previewing a deployment, you can fully deploy the configuration by making the same PUT() request, omitting both the configuration and the preview query parameter.",
+          "Deployment Manager does not instantiate any actual resources when you preview a configuration, giving you the opportunity to see the deployment before committing to it. gcloud With the Google Cloud CLI, make an update request with the --preview parameter: gcloud deployment-manager deployments update example-deployment \\ --config configuration-file.yaml \\ --preview API In the API, create a PUT() request with an existing deployment and provide the preview=true query parameter.",
+          "The fingerprint value looks like this: \"fingerprint\": \"nU2v7bzeA7gBBI8bdbtmFg==\" Your cancelPreview() request looks like this: POST https://www.googleapis.com/deploymentmanager/v2/projects/myproject/global/deployments/example-deployment/cancelPreview { \"fingerprint\": \"nU2v7bzeA7gBBI8bdbtmFg==\" } Make the update request To perform the update: gcloud With the Google Cloud CLI, use the deployments update subcommand, providing a new configuration and optionally, your update policies. gcloud deployment-manager deployments update my-first-deployment \\ --create-policy POLICY \\ --delete-policy POLICY If you previously previewed a configuration, omit the configuration and Deployment Manager uses the last previewed configuration to perform the update. gcloud deployment-manager deployments update my-first-deployment API In the API, make an update request and provide the latest deployment fingerprint."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "compute.v1.instance",
+      "config.yaml",
+      "file.yaml"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/deployment-manager/docs/configuration/preview-configuration-file",
+        "https://docs.cloud.google.com/deployment-manager/docs/reference/latest/deployments/patch",
+        "https://docs.cloud.google.com/deployment-manager/docs/deployments/updating-deployments"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/deployment-manager/docs/configuration/preview-configuration-file",
+        "https://docs.cloud.google.com/deployment-manager/docs/reference/latest/deployments/patch",
+        "https://docs.cloud.google.com/deployment-manager/docs/deployments/updating-deployments"
+      ]
+    }
+  ]
+}

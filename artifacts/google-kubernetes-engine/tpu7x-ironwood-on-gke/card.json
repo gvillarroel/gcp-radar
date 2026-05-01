@@ -1,0 +1,94 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:39.542Z",
+  "source_step08_card": "data/step-08/current/products/google-kubernetes-engine/card.json",
+  "product_name": "Google Kubernetes Engine",
+  "product_slug": "google-kubernetes-engine",
+  "feature_name": "TPU7x (Ironwood) on GKE",
+  "feature_slug": "tpu7x-ironwood-on-gke",
+  "summary": "TPU7x is available in Preview for supported GKE Standard and Autopilot clusters.",
+  "extended_definition": "TPU7x is available in Preview for supported GKE Standard and Autopilot clusters.",
+  "lifecycle": {
+    "latest_feature_date": "2025-11-27",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/tpus",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/autopilot-classes-standard-clusters",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/gpus"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Run workloads in Autopilot mode in Standard clusters \\_|\\_ Google Kubernetes\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/autopilot-classes-standard-clusters",
+        "source_id": "site-docs-reference-2",
+        "final_score": 167,
+        "relevance": "",
+        "evidence_snippets": [
+          "For more information about the implications of running an Autopilot workload in your Standard clusters, including differences that you might notice when you deploy those workloads, see About Autopilot mode workloads in GKE Standard .",
+          "Home Documentation Application hosting Google Kubernetes Engine (GKE) Guides Send feedback Run workloads in Autopilot mode in Standard clusters Stay organized with collections Save and categorize content based on your preferences.",
+          "Autopilot Standard Cluster administrators and application operators can get the benefits of Google Kubernetes Engine (GKE) Autopilot, like pricing and pre-configured settings, in Standard mode clusters."
+        ]
+      },
+      {
+        "title": "About TPUs in GKE \\_|\\_ GKE AI/ML \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/tpus",
+        "source_id": "site-docs-reference-2",
+        "final_score": 151,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "You can configure collection scheduling in the following scenarios: When creating a TPU slice node pool in GKE Standard When deploying workloads on GKE Autopilot When creating a cluster that enables node auto-provisioning What's next To learn how to set up Cloud TPU in GKE, see the following pages: Plan TPUs in GKE to start your TPU setup Deploy TPU workloads in GKE Autopilot Deploy TPU workloads in GKE Standard Learn about best practices for using Cloud TPU for your ML tasks Video: Build large-scale machine learning on Cloud TPU with GKE Serve Large Language Models with KubeRay on TPUs Learn about Sandboxing GPU workloads with GKE Sandbox Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "You specify a topology as the number of TPU chips in each dimension as follows: For TPU v4, v5p, and Ironwood (TPU7x) scheduled in multi-host TPU slice node pools, you define the topology in 3-tuples ( {A}x{B}x{C} ), for example 4x4x4 .",
+          "Autopilot Standard This document describes how Cloud TPU works with Google Kubernetes Engine (GKE), including terminology, the benefits of Tensor Processing Units (TPUs), and workload scheduling considerations."
+        ]
+      },
+      {
+        "title": "Run GPUs in GKE Standard node pools \\_|\\_ GKE AI/ML \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/gpus",
+        "source_id": "site-docs-root",
+        "final_score": 147,
+        "relevance": "",
+        "evidence_snippets": [
+          "For example: apiVersion: v1 kind: Pod metadata: name: my-gpu-pod spec: containers: - name: my-gpu-container image: nvidia/cuda:11.0.3-runtime-ubuntu20.04 command: [\"/bin/bash\", \"-c\", \"--\"] args: [\"while true; do sleep 600; done;\"] resources: limits: nvidia.com/gpu: 2 nodeSelector: cloud.google.com/gke-accelerator: nvidia-tesla-t4 Upgrade node pools using accelerators (GPUs and TPUs) GKE automatically upgrades Standard clusters, including node pools.",
+          "Standard This page shows you how to run and optimize your compute-intensive workloads, such as artificial intelligence (AI) and graphics processing, by attaching and using NVIDIA® graphics processing unit (GPU) hardware accelerators in your Google Kubernetes Engine (GKE) Standard clusters' nodes .",
+          "In GKE Standard mode, you can attach GPU hardware to nodes in your clusters, and then allocate GPU resources to containerized workloads running on those nodes."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "gke.1279000",
+      "nvidia.com",
+      "ubuntu20.04"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/autopilot-classes-standard-clusters",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/tpus",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/gpus"
+      ]
+    }
+  ]
+}

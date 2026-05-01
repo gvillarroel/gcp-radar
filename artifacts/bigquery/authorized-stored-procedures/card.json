@@ -1,0 +1,156 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:18.771Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery",
+  "feature_name": "Authorized stored procedures",
+  "feature_slug": "authorized-stored-procedures",
+  "summary": "Authorized stored procedures let you share procedures without granting direct access to the underlying tables; Authorized stored procedures let users share stored procedures without granting direct access to the underlying tables.",
+  "extended_definition": "Authorized stored procedures let you share procedures without granting direct access to the underlying tables; Authorized stored procedures let users share stored procedures without granting direct access to the underlying tables.",
+  "lifecycle": {
+    "latest_feature_date": "2023-09-25",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/analytics-hub-introduction",
+      "https://docs.cloud.google.com/bigquery/docs/authorized-routines",
+      "https://docs.cloud.google.com/bigquery/docs/control-access-to-resources-iam"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Authorized routines \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/authorized-routines",
+        "source_id": "site-docs-reference-5",
+        "final_score": 173,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The following types of routines can be authorized: Table functions User-defined functions (UDFs) Stored procedures Caution: Stored procedures authorized as routines have DDL and DML access.",
+          "Authorized routines Authorized routines let you share query results with specific users or groups without giving them access to the underlying tables that generated the results.",
+          "Principals with access to authorized stored procedures can bypass Identity and Access Management (IAM) permissions and perform actions that are normally denied to them."
+        ]
+      },
+      {
+        "title": "Control access to resources with IAM \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/control-access-to-resources-iam",
+        "source_id": "site-docs-reference-5",
+        "final_score": 143,
+        "relevance": "",
+        "evidence_snippets": [
+          "Special cases Consider the following scenarios when you create IAM deny policies on a few BigQuery permissions: Access to authorized resources ( views , routines , datasets , or stored procedures ) lets you create , drop , or manipulate a table, along with reading and modifying table data, even if you don't have direct permission to perform those operations.",
+          "It can also get model data or metadata and invoke other stored procedures on the underlying table.",
+          "Modify the policy to remove the desired role or principal, and then apply the updated policy using the Table#setIamPolicy() method. / TODO(developer): Update and un-comment below lines / // const projectId = \"YOUR PROJECT ID\" // const datasetId = \"YOUR DATASET ID\" // const tableId = \"YOUR TABLE ID\" // const roleToRemove = \"YOUR ROLE\" // const principalToRemove = \"YOUR PRINCIPAL ID\" const { BigQuery } = require ( ' @google-cloud/bigquery ' ); // Instantiate a client. const client = new BigQuery (); async function revokeAccessToTableOrView () { const dataset = client . dataset ( datasetId ); const table = dataset . table ( tableId ); // Get the IAM access policy for the table or view. const [ policy ] = await table . getIamPolicy (); // Initialize bindings array. if ( ! policy . bindings ) { policy . bindings = []; } // To revoke access to a table or view, // remove bindings from the Table or View policy. // // Find more details about Policy objects here: // https://cloud.google.com/security-command-center/docs/reference/rest/Shared.Types/Policy if ( principalToRemove ) { // Create a copy of bindings for modifications. const bindings = [... policy . bindings ]; // Filter out the principal from each binding. for ( const binding of bindings ) { if ( binding . members ) { binding . members = binding . members . filter ( m = > m !== principalToRemove ); } } // Filter out bindings with empty members. policy . bindings = bindings . filter ( binding = > binding . members && binding . members . length > 0 ); } if ( roleToRemove ) { // Filter out all bindings with the roleToRemove // and assign a new list back to the policy bindings. policy . bindings = policy . bindings . filter ( b = > b . role !== roleToRemove ); } // Set the IAM access policy with updated bindings. await table . setIamPolicy ( policy ); // Both role and principal are removed if ( roleToRemove !== null && principalToRemove !== null ) { console . log ( Role ' ${ roleToRemove } ' revoked for principal ' ${ principalToRemove } ' on resource ' ${ datasetId } . ${ tableId } '. ); } // Only role is removed if ( roleToRemove !== null && principalToRemove === null ) { console . log ( Role ' ${ roleToRemove } ' revoked for all principals on resource ' ${ datasetId } . ${ tableId } '. ); } // Only principal is removed if ( roleToRemove === null && principalToRemove !== null ) { console . log ( Access revoked for principal ' ${ principalToRemove } ' on resource ' ${ datasetId } . ${ tableId } '. ); } // No changes were made if ( roleToRemove === null && principalToRemove === null ) { console . log ( No changes made to access policy for ' ${ datasetId } . ${ tableId } '. ); } } Work with access controls for routines Preview This feature is subject to the \"Pre-GA Offerings Terms\" in the General Service Terms section of the Service Specific Terms ."
+        ]
+      },
+      {
+        "title": "Introduction to BigQuery sharing \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/analytics-hub-introduction",
+        "source_id": "site-docs-reference-5",
+        "final_score": 139,
+        "relevance": "",
+        "evidence_snippets": [
+          "As a publisher, you create or use an existing BigQuery dataset in your project with the following supported objects that you want to deliver to your subscribers: Authorized views Authorized datasets BigQuery ML models External tables Materialized views Routines User-defined functions (UDFs) Table functions SQL stored procedures Tables Table snapshots Views Shared datasets support column-level security and row-level security .",
+          "Linked datasets support the following objects: Authorized views Authorized datasets Authorized routines Linked Pub/Sub subscriptions Subscribing to a listing with a shared topic creates a linked Pub/Sub subscription in the subscriber project.",
+          "The separation of compute and storage in the BigQuery architecture lets data publishers share datasets with as many subscribers as they want, without having to make multiple copies of the data."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "bigquery.routineAdmin",
+      "bigquery.routineDataEditor",
+      "bigquery.routineDataViewer",
+      "bigquery.routineMetadataViewer"
+    ],
+    "missing_inventory_roles": [
+      "roles/bigquery.routineAdmin",
+      "roles/bigquery.routineDataEditor",
+      "roles/bigquery.routineDataViewer",
+      "roles/bigquery.routineMetadataViewer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/authorized-routines",
+        "https://docs.cloud.google.com/bigquery/docs/control-access-to-resources-iam",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-introduction"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/authorized-routines",
+        "https://docs.cloud.google.com/bigquery/docs/control-access-to-resources-iam",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-introduction"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/authorized-routines",
+        "https://docs.cloud.google.com/bigquery/docs/control-access-to-resources-iam",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-introduction"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/authorized-routines",
+        "https://docs.cloud.google.com/bigquery/docs/control-access-to-resources-iam",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-introduction"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/authorized-routines",
+        "https://docs.cloud.google.com/bigquery/docs/control-access-to-resources-iam",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-introduction"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/authorized-routines",
+        "https://docs.cloud.google.com/bigquery/docs/control-access-to-resources-iam",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-introduction"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/authorized-routines",
+        "https://docs.cloud.google.com/bigquery/docs/control-access-to-resources-iam",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-introduction"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/authorized-routines",
+        "https://docs.cloud.google.com/bigquery/docs/control-access-to-resources-iam",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-introduction"
+      ]
+    }
+  ]
+}

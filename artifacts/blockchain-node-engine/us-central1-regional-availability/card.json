@@ -1,0 +1,108 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:22.024Z",
+  "source_step08_card": "data/step-08/current/products/blockchain-node-engine/card.json",
+  "product_name": "Blockchain Node Engine",
+  "product_slug": "blockchain-node-engine",
+  "feature_name": "us-central1 regional availability",
+  "feature_slug": "us-central1-regional-availability",
+  "summary": "Blockchain Node Engine nodes are supported in the us-central1 region.",
+  "extended_definition": "Blockchain Node Engine identifies each node by a region-qualified resource name in the form `projects/{project}/locations/{location}/blockchainNodes/{node}`, as shown in the REST API method references for create/get/delete operations. The provided examples use `us-central1` in this path (for example, `projects/my-project/locations/us-central1/blockchainNodes/my-node`), which supports us-central1 as an example region in which node resources are addressed, but does not explicitly enumerate all available regions.",
+  "lifecycle": {
+    "latest_feature_date": "2022-11-30",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/blockchain-node-engine/docs/reference/rest/v1/projects.locations.blockchainNodes",
+      "https://docs.cloud.google.com/blockchain-node-engine/docs/reference/rest/v1/projects.locations.blockchainNodes/delete",
+      "https://docs.cloud.google.com/blockchain-node-engine/docs/reference/rest/v1/projects.locations.blockchainNodes/get"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"REST Resource: projects.locations.blockchainNodes \\_|\\_ Blockchain Node\\",
+        "url": "https://docs.cloud.google.com/blockchain-node-engine/docs/reference/rest/v1/projects.locations.blockchainNodes",
+        "source_id": "site-api-reference",
+        "final_score": 67,
+        "relevance": "",
+        "evidence_snippets": [
+          "The fully qualified name of the blockchain node. e.g. projects/my-project/locations/us-central1/blockchainNodes/my-node . createTime string ( Timestamp format) Output only.",
+          "Methods create Creates a new blockchain node in a given project and location. delete Deletes a single blockchain node. get Gets details of a single blockchain node. list Lists blockchain nodes in a given project and location. patch Updates the parameters of a single blockchain node.",
+          "Home Documentation Application hosting Blockchain Node Engine Reference Send feedback REST Resource: projects.locations.blockchainNodes Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"Method: projects.locations.blockchainNodes.delete \\_|\\_ Blockchain Node\\",
+        "url": "https://docs.cloud.google.com/blockchain-node-engine/docs/reference/rest/v1/projects.locations.blockchainNodes/delete",
+        "source_id": "site-api-reference",
+        "final_score": 59,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "The fully qualified name of the blockchain node to delete. e.g. projects/my-project/locations/us-central1/blockchainNodes/my-node .",
+          "Home Documentation Application hosting Blockchain Node Engine Reference Send feedback Method: projects.locations.blockchainNodes.delete Stay organized with collections Save and categorize content based on your preferences.",
+          "IAM Permissions Requires the following IAM permission on the name resource: blockchainnodeengine.blockchainNodes.delete For more information, see the IAM documentation ."
+        ]
+      },
+      {
+        "title": "\"Method: projects.locations.blockchainNodes.get \\_|\\_ Blockchain Node Engine\\",
+        "url": "https://docs.cloud.google.com/blockchain-node-engine/docs/reference/rest/v1/projects.locations.blockchainNodes/get",
+        "source_id": "site-api-reference",
+        "final_score": 59,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "The fully qualified name of the blockchain node to fetch. e.g. projects/my-project/locations/us-central1/blockchainNodes/my-node .",
+          "Home Documentation Application hosting Blockchain Node Engine Reference Send feedback Method: projects.locations.blockchainNodes.get Stay organized with collections Save and categorize content based on your preferences.",
+          "IAM Permissions Requires the following IAM permission on the name resource: blockchainnodeengine.blockchainNodes.get For more information, see the IAM documentation ."
+        ]
+      }
+    ],
+    "evidence_summary": "These pages define the REST resource structure for blockchain nodes and include `us-central1` in example fully qualified resource names for node operations."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "blockchainnodeengine.blockchainNodes.delete",
+      "blockchainnodeengine.blockchainNodes.get",
+      "blockchainnodeengine.googleapis.com",
+      "e.g",
+      "projects.locations.blockchainNodes",
+      "projects.locations.blockchainNodes.create",
+      "projects.locations.blockchainNodes.delete",
+      "projects.locations.blockchainNodes.get",
+      "projects.locations.blockchainNodes.list"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/blockchain-node-engine/docs/reference/rest/v1/projects.locations.blockchainNodes",
+        "https://docs.cloud.google.com/blockchain-node-engine/docs/reference/rest/v1/projects.locations.blockchainNodes/delete",
+        "https://docs.cloud.google.com/blockchain-node-engine/docs/reference/rest/v1/projects.locations.blockchainNodes/get"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/blockchain-node-engine/docs/reference/rest/v1/projects.locations.blockchainNodes",
+        "https://docs.cloud.google.com/blockchain-node-engine/docs/reference/rest/v1/projects.locations.blockchainNodes/delete",
+        "https://docs.cloud.google.com/blockchain-node-engine/docs/reference/rest/v1/projects.locations.blockchainNodes/get"
+      ]
+    }
+  ]
+}

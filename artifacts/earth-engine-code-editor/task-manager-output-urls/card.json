@@ -1,0 +1,125 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:35.934Z",
+  "source_step08_card": "data/step-08/current/products/earth-engine-code-editor/card.json",
+  "product_name": "Earth Engine Code Editor",
+  "product_slug": "earth-engine-code-editor",
+  "feature_name": "Task Manager output URLs",
+  "feature_slug": "task-manager-output-urls",
+  "summary": "The Task Manager now includes an Output URLs list for exported tiled overlays and Maps JavaScript API use.",
+  "extended_definition": "The Task Manager now includes an Output URLs list for exported tiled overlays and Maps JavaScript API use.",
+  "lifecycle": {
+    "latest_feature_date": "2021-11-24",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/earth-engine/guides/command_line",
+      "https://developers.google.com/earth-engine/guides/getstarted",
+      "https://developers.google.com/earth-engine/guides/playground"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Earth Engine Code Editor \\_|\\_ Google Earth Engine \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/earth-engine/guides/playground",
+        "source_id": "site-docs-root",
+        "final_score": 136,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The Code Editor includes essential elements such as a JavaScript editor, map display, API reference, Script Manager, Console output, Task Manager, interactive map query, search tool, and geometry drawing tools.",
+          "The Code Editor has the following elements (illustrated in Figure 1): JavaScript code editor Map display for visualizing geospatial datasets API reference documentation (Docs tab) Git -based Script Manager (Scripts tab) Console output (Console tab) Task Manager (Tasks tab) to handle long-running queries Interactive map query (Inspector tab) Search of the data archive or saved scripts Geometry drawing tools Figure 1.",
+          "Interactive tools like the Layer Manager, Inspector tab, Console, and Profiler help with visualizing data, querying map layers, viewing output, and diagnosing script performance issues."
+        ]
+      },
+      {
+        "title": "\"Get Started with Earth Engine \\_|\\_ Google Earth Engine \\_|\\_ Google for\\",
+        "url": "https://developers.google.com/earth-engine/guides/getstarted",
+        "source_id": "site-docs-root",
+        "final_score": 91,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The right panel has an inspector for querying the map, an output console, and a manager for long-running tasks.",
+          "Map . centerObject ( image , 9 ); Map . addLayer ( image , vizParams , 'Landsat 8 false color' ); Observe that the visualization parameters are defined by an object literal, which includes a list of bands to display, a minimum and maximum reflectance value, and a gamma value. (Learn more about Landsat bands here .",
+          "The lowercase image means that a variable named image refers to an instance of the ee.Image class. 'Hello world!' JavaScript Printing out information to the console is a basic task for getting information about an object, displaying the numeric result of a computation, displaying object metadata or helping with debugging."
+        ]
+      },
+      {
+        "title": "Command Line Tool \\_|\\_ Google Earth Engine \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/earth-engine/guides/command_line",
+        "source_id": "site-docs-reference",
+        "final_score": 80,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Key actions include: authenticate to sign in; acl to manage asset access; asset to view/edit asset metadata; cp/mv to copy/move assets; create to make folders/collections; ls to list contents; model prepare for TensorFlow model transformation; project config to configure project settings; rm to delete assets; set project to set the default cloud project; task to manage long running tasks; and upload to add images or tables from Google Cloud Storage.\\n\"]]",
+          "The following settings can be configured: max concurrent exports , to control the project's maximum batch task parallelism requires the correct permissions For example, to configure a project to only ever allow 10 tasks to run in parallel for the given project: earthengine alpha project config set --max concurrent exports=10 The output displays the updated project configuration, identical to what get returns.",
+          "Before using this command, be sure to set a project using set project . get To view a project configuration, use the get sub-command: earthengine alpha project config get If you have permission to view the project's batch task settings , the output contains: maxConcurrentExports : a number indicating the maximum number of batch tasks that can run in parallel across all users for the given project."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "developers.google.com",
+      "ee.Image"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://developers.google.com/earth-engine/guides/playground",
+        "https://developers.google.com/earth-engine/guides/getstarted",
+        "https://developers.google.com/earth-engine/guides/command_line"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://developers.google.com/earth-engine/guides/playground",
+        "https://developers.google.com/earth-engine/guides/getstarted",
+        "https://developers.google.com/earth-engine/guides/command_line"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://developers.google.com/earth-engine/guides/playground",
+        "https://developers.google.com/earth-engine/guides/getstarted",
+        "https://developers.google.com/earth-engine/guides/command_line"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://developers.google.com/earth-engine/guides/playground",
+        "https://developers.google.com/earth-engine/guides/getstarted",
+        "https://developers.google.com/earth-engine/guides/command_line"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://developers.google.com/earth-engine/guides/playground",
+        "https://developers.google.com/earth-engine/guides/getstarted",
+        "https://developers.google.com/earth-engine/guides/command_line"
+      ]
+    }
+  ]
+}

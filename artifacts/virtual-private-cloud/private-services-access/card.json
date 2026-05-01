@@ -1,0 +1,133 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:49.581Z",
+  "source_step08_card": "data/step-08/current/products/virtual-private-cloud/card.json",
+  "product_name": "Virtual Private Cloud",
+  "product_slug": "virtual-private-cloud",
+  "feature_name": "Private Services Access",
+  "feature_slug": "private-services-access",
+  "summary": "Private Services Access in Virtual Private Cloud reached general availability.",
+  "extended_definition": "Private Services Access in Virtual Private Cloud reached general availability.",
+  "lifecycle": {
+    "latest_feature_date": "2019-03-27",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/vpc/docs/about-accessing-vpc-hosted-services-endpoints",
+      "https://docs.cloud.google.com/vpc/docs/about-controlling-access-published-services",
+      "https://docs.cloud.google.com/vpc/docs/private-services-access",
+      "https://docs.cloud.google.com/vpc/docs/quota"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Private services access \\_|\\_ Virtual Private Cloud \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vpc/docs/private-services-access",
+        "source_id": "site-docs-root",
+        "final_score": 297,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Supported services The following Google VPC-hosted services support private services access: AI Platform Training AlloyDB for PostgreSQL Apigee Backup and DR Service Cloud Build Cloud Intrusion Detection System Cloud SQL (doesn't support DNS peering ) Cloud TPU Converge Enterprise Cloud with IBM Power for Google Cloud Filestore Google Cloud Managed Lustre Google Cloud NetApp Volumes Google Cloud VMware Engine Looker (Google Cloud core) Memorystore for Memcached Memorystore for Redis Vertex AI Note: When you use private services access as a service consumer, you are solely responsible for securing your VPC networks and all resources and data available on them.",
+          "Limitations The following limitations apply to private services access: Because a private connection is implemented as a VPC Network Peering connection, the behaviors and constraints of peering connections also apply to private connections.",
+          "Accessing through NCC For some services that are available through private services access, you can use NCC to make the service reachable by other spokes on a hub by creating a producer VPC spoke ."
+        ]
+      },
+      {
+        "title": "\"About accessing published services through endpoints \\_|\\_ Virtual Private\\",
+        "url": "https://docs.cloud.google.com/vpc/docs/about-accessing-vpc-hosted-services-endpoints",
+        "source_id": "site-docs-root-2",
+        "final_score": 281,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Connection propagation With propagated connections, services that are accessible in one consumer VPC spoke through Private Service Connect endpoints can be privately accessed by other consumer VPC spokes that are connected to the same Network Connectivity Center hub.",
+          "This approach provides the following benefits: Unified connectivity : Supported load balancers and regional Cloud Service Mesh can access published services through the same Private Service Connect endpoint.",
+          "You can use global access to provide high availability across services that are hosted in multiple regions, or to allow clients to access a service that is not in the same region as the client."
+        ]
+      },
+      {
+        "title": "Quotas and limits \\_|\\_ Virtual Private Cloud \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vpc/docs/quota",
+        "source_id": "site-docs-root",
+        "final_score": 243,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Static global internal IPv4 addresses The number of static global internal IPv4 address ranges that you can reserve in your project, such as allocated IPv4 address ranges for private services access and IPv4 addresses reserved for Private Service Connect endpoints that are used to access global Google APIs.",
+          "Excludes traffic sent to Google APIs and services by using Private Google Access .",
+          "Quota name: PSC PROPAGATED CONNECTIONS PER VPC NETWORK Available metrics: compute.googleapis.com/quota/psc propagated connections per vpc network/limit compute.googleapis.com/quota/psc propagated connections per vpc network/usage compute.googleapis.com/quota/psc propagated connections per vpc network/exceeded PSC ILB consumer forwarding rules per producer VPC network The maximum number of Private Service Connect endpoints and propagated connections that can access a service producer VPC network."
+        ]
+      },
+      {
+        "title": "\"About controlling access to published services \\_|\\_ Virtual Private Cloud\\",
+        "url": "https://docs.cloud.google.com/vpc/docs/about-controlling-access-published-services",
+        "source_id": "site-docs-root-2",
+        "final_score": 241,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "About controlling access to published services This page describes the features that you can use to control access to services that are published by using Private Service Connect.",
+          "Prevention of quota exhaustion The total number of Private Service Connect endpoints and propagated connections, from any consumer, that can access your producer VPC network is controlled by the PSC ILB consumer forwarding rules per producer VPC network quota .",
+          "Propagated connections let workloads in consumer VPC spokes access managed services in producer VPC networks as if the two VPC networks were directly connected through endpoints."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "compute.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/private-services-access",
+        "https://docs.cloud.google.com/vpc/docs/about-accessing-vpc-hosted-services-endpoints",
+        "https://docs.cloud.google.com/vpc/docs/quota",
+        "https://docs.cloud.google.com/vpc/docs/about-controlling-access-published-services"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/private-services-access",
+        "https://docs.cloud.google.com/vpc/docs/about-accessing-vpc-hosted-services-endpoints",
+        "https://docs.cloud.google.com/vpc/docs/quota",
+        "https://docs.cloud.google.com/vpc/docs/about-controlling-access-published-services"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/private-services-access",
+        "https://docs.cloud.google.com/vpc/docs/about-accessing-vpc-hosted-services-endpoints",
+        "https://docs.cloud.google.com/vpc/docs/quota",
+        "https://docs.cloud.google.com/vpc/docs/about-controlling-access-published-services"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/private-services-access",
+        "https://docs.cloud.google.com/vpc/docs/about-accessing-vpc-hosted-services-endpoints",
+        "https://docs.cloud.google.com/vpc/docs/quota",
+        "https://docs.cloud.google.com/vpc/docs/about-controlling-access-published-services"
+      ]
+    }
+  ]
+}

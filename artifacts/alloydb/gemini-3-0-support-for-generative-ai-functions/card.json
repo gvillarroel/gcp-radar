@@ -1,0 +1,112 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:12.801Z",
+  "source_step08_card": "data/step-08/current/products/alloydb/card.json",
+  "product_name": "AlloyDB",
+  "product_slug": "alloydb",
+  "feature_name": "Gemini 3.0 support for generative AI functions",
+  "feature_slug": "gemini-3-0-support-for-generative-ai-functions",
+  "summary": "Gemini 3.0 support lets AlloyDB generative AI functions use Gemini 3.0 models such as AI.GENERATE.",
+  "extended_definition": "Gemini 3.0 support lets AlloyDB generative AI functions use Gemini 3.0 models such as AI.GENERATE.",
+  "lifecycle": {
+    "latest_feature_date": "2025-11-18",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/alloydb/docs/ai/ai-query-engine-landing",
+      "https://docs.cloud.google.com/alloydb/docs/ai/evaluate-semantic-queries-ai-operators",
+      "https://docs.cloud.google.com/alloydb/docs/reference/model-endpoint"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Perform intelligent SQL queries using AI functions \\_|\\_ AlloyDB for PostgreSQL\\",
+        "url": "https://docs.cloud.google.com/alloydb/docs/ai/evaluate-semantic-queries-ai-operators",
+        "source_id": "site-docs-reference",
+        "final_score": 251,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "After registering the model, you can use it in AI functions as follows: SELECT ai . generate ( prompt = > 'What is AlloyDB?' , model id = > 'gemini-3-preview-model' ); Use filters in your queries AlloyDB AI offers AI-powered SQL functions that let you use natural language processing and LLMs directly within your database queries, including the ai.if and ai.rank operators.",
+          "This feature includes built-in functions for the following: Filtering ( ai.if ) Semantic ranking ( ai.rank ) Text generation ( ai.generate ) These AI functions use the AlloyDB AI query engine to help your application process data using artificial intelligence models at various scales, from single-row responses to large-scale database operations.",
+          "Fetch results from the output cursor and store them LOOP FETCH result cursor INTO rec ; EXIT WHEN NOT FOUND ; INSERT INTO filtered results VALUES ( rec . input , rec . output ); END LOOP ; CLOSE result cursor ; END $$ ; Text generation and summarization AlloyDB AI offers text generation operators like scalar ai.generate and array-based and cursor-based ai.generate ."
+        ]
+      },
+      {
+        "title": "\"Model endpoint management reference \\_|\\_ AlloyDB for PostgreSQL \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/alloydb/docs/reference/model-endpoint",
+        "source_id": "site-api-reference",
+        "final_score": 145,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "The ai.generate ( Preview ) SQL function in the AI functions, to generate text based on prompts specified in natural language. ai schema AlloyDB reserves, and creates, the ai schema.",
+          "The ai.generate ( Preview ) SQL function in the AI functions, to generate text based on prompts specified in natural language.",
+          "Here is the review: ai.generate() / google ml.generate() function The following shows how to generate embeddings using the default embedding model: SELECT ai . generate ( model id = > ' MODEL ID ' , prompt = > ' PROMPT ' ); Parameter Description MODEL ID (Optional) A unique ID for the model endpoint that you define."
+        ]
+      },
+      {
+        "title": "AI functions overview \\_|\\_ AlloyDB for PostgreSQL \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/alloydb/docs/ai/ai-query-engine-landing",
+        "source_id": "site-docs-reference",
+        "final_score": 124,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "How the AI functions works When you embed an AI operator like ai.if() , ai.rank() , or ai.generate() into your SQL query, the AI functions ( Preview ) detects it.",
+          "Using the ai.generate() ( Preview ) operator, you can ask a foundation model to summarize a product review, or to transform data directly in your query.",
+          "Home Documentation Databases AlloyDB for PostgreSQL Guides Send feedback AI functions overview Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "ai.generate",
+      "ai.if",
+      "ai.rank",
+      "ml.create",
+      "ml.generate"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/ai/evaluate-semantic-queries-ai-operators",
+        "https://docs.cloud.google.com/alloydb/docs/reference/model-endpoint",
+        "https://docs.cloud.google.com/alloydb/docs/ai/ai-query-engine-landing"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/ai/evaluate-semantic-queries-ai-operators",
+        "https://docs.cloud.google.com/alloydb/docs/reference/model-endpoint",
+        "https://docs.cloud.google.com/alloydb/docs/ai/ai-query-engine-landing"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/ai/evaluate-semantic-queries-ai-operators",
+        "https://docs.cloud.google.com/alloydb/docs/reference/model-endpoint",
+        "https://docs.cloud.google.com/alloydb/docs/ai/ai-query-engine-landing"
+      ]
+    }
+  ]
+}

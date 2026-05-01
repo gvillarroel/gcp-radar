@@ -1,0 +1,116 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:24.125Z",
+  "source_step08_card": "data/step-08/current/products/cloud-load-balancing/card.json",
+  "product_name": "Cloud Load Balancing",
+  "product_slug": "cloud-load-balancing",
+  "feature_name": "Cross-project service referencing",
+  "feature_slug": "cross-project-service-referencing",
+  "summary": "Application Load Balancers can reference backend services that reside in different projects, including Shared VPC environments; Regional external HTTP(S) load balancers support Shared VPC cross-project service referencing for centrally managed load balancers with distributed backend services.",
+  "extended_definition": "Application Load Balancers can reference backend services that reside in different projects, including Shared VPC environments; Regional external HTTP(S) load balancers support Shared VPC cross-project service referencing for centrally managed load balancers with distributed backend services.",
+  "lifecycle": {
+    "latest_feature_date": "2024-06-14",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/load-balancing/docs/https",
+      "https://docs.cloud.google.com/load-balancing/docs/l7-internal",
+      "https://docs.cloud.google.com/load-balancing/docs/quotas"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"External Application Load Balancer overview \\_|\\_ Cloud Load Balancing \\_\\",
+        "url": "https://docs.cloud.google.com/load-balancing/docs/https",
+        "source_id": "site-docs-reference-required-3",
+        "final_score": 236,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Cross-project service referencing support differs based on the type of load balancer: For global external Application Load Balancers : your load balancer's frontend and URL map can reference backend services or backend buckets from any project within the same organization.",
+          "However, the following limitations apply: With global external Application Load Balancers, you can't reference a cross-project backend service if the backend service has serverless NEG backends with App Engine.",
+          "With regional external Application Load Balancers, you can't reference a cross-project backend service if the backend service has regional internet NEG backends."
+        ]
+      },
+      {
+        "title": "\"Internal Application Load Balancer overview \\_|\\_ Cloud Load Balancing \\_\\",
+        "url": "https://docs.cloud.google.com/load-balancing/docs/l7-internal",
+        "source_id": "site-docs-root",
+        "final_score": 236,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For internal Application Load Balancers, cross-project service referencing is only supported within Shared VPC environments.",
+          "Service owners can focus on building services in service projects, while network teams can provision and maintain load balancers in another project, and both can be connected by using cross-project service referencing.",
+          "To learn how to configure Shared VPC for an internal Application Load Balancer—with and without cross-project service referencing—see Set up an internal Application Load Balancer with Shared VPC ."
+        ]
+      },
+      {
+        "title": "Quotas and limits \\_|\\_ Cloud Load Balancing \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/load-balancing/docs/quotas",
+        "source_id": "site-docs-root",
+        "final_score": 196,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Quota name: REGIONAL EXTERNAL MANAGED BACKEND SERVICES Available metrics: compute.googleapis.com/quota/regional external managed backend services/limit compute.googleapis.com/quota/regional external managed backend services/usage compute.googleapis.com/quota/regional external managed backend services/exceeded Cross-region internal Application Load Balancer and Cross-region internal proxy Network Load Balancer backend services Quota This is a per-region and per-project quota defining the maximum number of backend services for cross-region internal Application Load Balancers and cross-region internal proxy Network Load Balancers .",
+          "Item Quotas and limits Notes Number of authorization policies Limit: Quota for global external Application Load Balancers, Quota for cross-region internal Application Load Balancers, Quota per region for regional internal Application Load Balancers and Quota per region for regional external Application Load Balancers, and Quota per region for Cloud Service Mesh This quota is per project.",
+          "This quota is used by: Global target HTTPS proxies for: Global external Application Load Balancers Classic Application Load Balancers Cross-region internal Application Load Balancers Global target SSL proxies for: Global external proxy Network Load Balancers Classic proxy Network Load Balancers Regional SSL policies Quota This quota is per region, per project."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "compute.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/https",
+        "https://docs.cloud.google.com/load-balancing/docs/l7-internal",
+        "https://docs.cloud.google.com/load-balancing/docs/quotas"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/https",
+        "https://docs.cloud.google.com/load-balancing/docs/l7-internal",
+        "https://docs.cloud.google.com/load-balancing/docs/quotas"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/https",
+        "https://docs.cloud.google.com/load-balancing/docs/l7-internal",
+        "https://docs.cloud.google.com/load-balancing/docs/quotas"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/https",
+        "https://docs.cloud.google.com/load-balancing/docs/l7-internal",
+        "https://docs.cloud.google.com/load-balancing/docs/quotas"
+      ]
+    }
+  ]
+}

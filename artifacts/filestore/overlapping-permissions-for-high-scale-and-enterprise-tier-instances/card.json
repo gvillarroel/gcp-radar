@@ -1,0 +1,124 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:36.704Z",
+  "source_step08_card": "data/step-08/current/products/filestore/card.json",
+  "product_name": "Filestore",
+  "product_slug": "filestore",
+  "feature_name": "Overlapping permissions for High Scale and Enterprise tier instances",
+  "feature_slug": "overlapping-permissions-for-high-scale-and-enterprise-tier-instances",
+  "summary": "High Scale and Enterprise tier instances support overlapping permissions.",
+  "extended_definition": "High Scale and Enterprise tier instances support overlapping permissions.",
+  "lifecycle": {
+    "latest_feature_date": "2023-02-28",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/filestore/docs/creating-instances",
+      "https://docs.cloud.google.com/filestore/docs/mounting-fileshares",
+      "https://docs.cloud.google.com/filestore/docs/overview",
+      "https://docs.cloud.google.com/filestore/docs/reference/rest/v1/Tier"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Create an instance \\_|\\_ Filestore \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/filestore/docs/creating-instances",
+        "source_id": "site-docs-root",
+        "final_score": 198,
+        "relevance": "",
+        "evidence_snippets": [
+          "The following table summarizes capabilities available by service tier: Capabilities of Filestore service tiers Capability Basic HDD and Basic SSD Zonal Regional Enterprise Capacity 1 TiB to 63.9 TiB 1 TiB to 100 TiB 100 GiB or 1 TiB to 100 TiB 1 TiB to 10 TiB Scalability Basic HDD (1 TiB to 63.9 TiB) : Scales up in increments of 1 GiB Basic SSD (2.5 TiB to 63.9 TiB) : Scales up only in increments of 1 GiB Zonal (1 TiB to 9.75 TiB) : Scales up or down in increments of 256 GiB Zonal (10 TiB to 100 TiB) : Scales up or down in increments of 2.5 TiB Regional Depending on the access to the small instances feature , you can use one of the following options: Users with access to small instances feature: 100 GiB to 10,239 GiB .",
+          "Scales up or down in increments of 256 GiB Regional (10 TiB to 100 TiB) : Scales up or down in increments of 2.5 TiB Scales up or down in increments of 256 GiB Performance Basic HDD : Static Basic SSD : Performance step at 10 TiB Configurable Configurable Scales linearly with capacity Protocol NFSv3 NFSv3, NFSv4.1 NFSv3, NFSv4.1 NFSv3, NFSv4.1 Create operations for zonal, regional, and enterprise instances can take anywhere between 15 minutes and one hour to complete, depending on instance size.",
+          "You can set the default location by running the config set filestore/zone command: gcloud config set filestore/zone zone For the regional or enterprise tier, use the config set filestore/region command: gcloud config set filestore/region region DESCRIPTION A description of the Filestore instance."
+        ]
+      },
+      {
+        "title": "\"Mounting file shares on Compute Engine clients \\_|\\_ Filestore \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/filestore/docs/mounting-fileshares",
+        "source_id": "site-docs-root",
+        "final_score": 182,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For specific service tiers, we recommend specifying the following number of connections between the client and server: Tier Capacity Number of connections Regional, zonal 1-9.75 TiB nconnect=2 Regional, zonal 10-100 TiB nconnect=7 Enterprise - nconnect=2 High scale SSD - nconnect=7 In general, the larger the file share capacity and the fewer the connecting client VMs, the more performance you gain by specifying additional connections with nconnect . ip-address is the IP address for the Filestore instance. file-share is the name of the file share on the instance.",
+          "For specific service tiers, we recommend specifying the following number of connections between the client and server: Tier Capacity Number of connections Regional, zonal 1-9.75 TiB nconnect=2 Regional, zonal 10-100 TiB nconnect=7 Enterprise - nconnect=2 High scale SSD - nconnect=7 In general, the larger the file share capacity and the fewer the connecting client VMs, the more performance you gain by specifying additional connections with nconnect .",
+          "For specific service tiers, we recommend specifying the following number of connections between the client and server: Tier Capacity Number of connections Regional, zonal 1-9.75 TiB nconnect=2 Regional, zonal 10-100 TiB nconnect=7 Enterprise - nconnect=2 High scale SSD - nconnect=7 In general, the larger the file share capacity and the fewer the connecting client VMs, the more performance you gain by specifying additional connections with nconnect ."
+        ]
+      },
+      {
+        "title": "Tier \\_|\\_ Filestore \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/filestore/docs/reference/rest/v1/Tier",
+        "source_id": "site-api-reference",
+        "final_score": 161,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "HIGH SCALE SSD HIGH SCALE instances offer expanded capacity and performance scaling capabilities.",
+          "ENTERPRISE ENTERPRISE instances offer the features and availability needed for mission-critical workloads.",
+          "BASIC HDD is an alias for STANDARD Tier, offering economical performance backed by HDD."
+        ]
+      },
+      {
+        "title": "Filestore overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/filestore/docs/overview",
+        "source_id": "site-api-reference",
+        "final_score": 156,
+        "relevance": "",
+        "evidence_snippets": [
+          "Each service tier is tailored for specific use cases: Zonal tier: Optimized for HPC, batch compute, media rendering, and localized workloads requiring high throughput and low latency.",
+          "Multishares for GKE (Enterprise): Optimized for GKE workloads that require high availability and multishares.",
+          "Instance replication is supported for the Zonal, Regional, and Enterprise tiers."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "projects.locations.instances"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/filestore/docs/creating-instances",
+        "https://docs.cloud.google.com/filestore/docs/mounting-fileshares",
+        "https://docs.cloud.google.com/filestore/docs/reference/rest/v1/Tier",
+        "https://docs.cloud.google.com/filestore/docs/overview"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/filestore/docs/creating-instances",
+        "https://docs.cloud.google.com/filestore/docs/mounting-fileshares",
+        "https://docs.cloud.google.com/filestore/docs/reference/rest/v1/Tier",
+        "https://docs.cloud.google.com/filestore/docs/overview"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/filestore/docs/creating-instances",
+        "https://docs.cloud.google.com/filestore/docs/mounting-fileshares",
+        "https://docs.cloud.google.com/filestore/docs/reference/rest/v1/Tier",
+        "https://docs.cloud.google.com/filestore/docs/overview"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,117 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:31.901Z",
+  "source_step08_card": "data/step-08/current/products/container-optimized-os/card.json",
+  "product_name": "Container Optimized OS",
+  "product_slug": "container-optimized-os",
+  "feature_name": "google-guest-agent network management",
+  "feature_slug": "google-guest-agent-network-management",
+  "summary": "Container-Optimized OS enables the google-guest-agent network management functionality; Enables the network management functionality of google-guest-agent.",
+  "extended_definition": "Container-Optimized OS enables the google-guest-agent network management functionality; Enables the network management functionality of google-guest-agent.",
+  "lifecycle": {
+    "latest_feature_date": "2026-02-20",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/container-optimized-os/docs/how-to/create-configure-instance",
+      "https://docs.cloud.google.com/container-optimized-os/docs/how-to/monitoring",
+      "https://docs.cloud.google.com/container-optimized-os/docs/how-to/osconfig"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Monitoring system health with Node Problem Detector \\_|\\_ Container-Optimized\\",
+        "url": "https://docs.cloud.google.com/container-optimized-os/docs/how-to/monitoring",
+        "source_id": "site-docs-reference",
+        "final_score": 74,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Using user-defined guest policies Container-Optimized OS includes OS Config agent , that uses OS system utilities to maintain the state for the VM that is specified in the guest policy.",
+          "The following guest policy enables the Node problem detector agent on all the instances. recipes: - name: recipe-enable-npd desiredState: INSTALLED installSteps: - scriptRun: interpreter: SHELL script: - #!/bin/bash systemctl start node-problem-detector Viewing the collected metrics Node Problem Detector reports a list of metrics against a Compute Engine instance monitored resource.",
+          "Starting with Milestone 77, Container-Optimized OS includes the Node Problem Detector agent."
+        ]
+      },
+      {
+        "title": "\"Configuring instances with user-defined guest policies \\_|\\_ Container-Optimized\\",
+        "url": "https://docs.cloud.google.com/container-optimized-os/docs/how-to/osconfig",
+        "source_id": "site-docs-reference",
+        "final_score": 72,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Here is an example that shows how users can use assignment and recipes features of guest policies to create a file on instances located at us-central1-a. assignment : zones : - us-central1-a recipes : - name : recipe-runscript desiredState : INSTALLED installSteps : - scriptRun : interpreter : SHELL script : touch /tmp/TOUCH FILE Note: While it is optional to provide an interpreter on other distros, Container-Optimized OS requires interpreter to execute the given script.",
+          "Home Documentation Compute Compute Engine Container-Optimized OS Guides Send feedback Configuring instances with user-defined guest policies Stay organized with collections Save and categorize content based on your preferences.",
+          "You can use OS Config's guest policies to configure your instance. packages and packageRepositories features of guest policies are not supported on Container-Optimized OS."
+        ]
+      },
+      {
+        "title": "\"Creating and configuring instances \\_|\\_ Container-Optimized OS \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/container-optimized-os/docs/how-to/create-configure-instance",
+        "source_id": "site-docs-reference",
+        "final_score": 67,
+        "relevance": "",
+        "evidence_snippets": [
+          "The following entries in the /etc/chrony/chrony.conf configuration file show commented out default configuration values to help the administrator make any desired changes: cat /etc/chrony/chrony.conf Use custom NTP servers server metadata.google.internal prefer iburst Record the rate at which the system clock gains/losses time. driftfile /var/lib/chrony/drift Allow the system clock to be stepped in the first three updates if its offset is larger than 1 second. makestep 1.0 3 Enable kernel synchronization of the real-time clock (RTC). rtcsync The NTP server is set from eth0 's DHCP response, which is usually the Compute Engine's metadata server: networkctl status eth0 grep NTP NTP: 169.254.169.254 Changing the time zone The default time zone of Container-Optimized OS from Google is UTC0.",
+          "Time synchronization Before milestone 85 , Container-Optimized OS uses systemd 's systemd-timesyncd service to synchronize the local system clock with a remote Network Time Protocol (NTP) server via the SNTP protocol.",
+          "Starting from milestone 85, Container-Optimized OS uses chronyd service to synchronize the local system clock with a remote Network Time Protocol (NTP) server via the NTP protocol."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "chrony.conf",
+      "metadata.google.internal"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/monitoring",
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/osconfig",
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/create-configure-instance"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/monitoring",
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/osconfig",
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/create-configure-instance"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/monitoring",
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/osconfig",
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/create-configure-instance"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/monitoring",
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/osconfig",
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/create-configure-instance"
+      ]
+    }
+  ]
+}

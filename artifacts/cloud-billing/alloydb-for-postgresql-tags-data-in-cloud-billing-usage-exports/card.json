@@ -1,0 +1,287 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:22.639Z",
+  "source_step08_card": "data/step-08/current/products/cloud-billing/card.json",
+  "product_name": "Cloud Billing",
+  "product_slug": "cloud-billing",
+  "feature_name": "AlloyDB for PostgreSQL tags data in Cloud Billing usage exports",
+  "feature_slug": "alloydb-for-postgresql-tags-data-in-cloud-billing-usage-exports",
+  "summary": "Cloud Billing now includes AlloyDB for PostgreSQL cluster, instance, and backup usage tags in both Standard and Detailed usage cost exports.",
+  "extended_definition": "Cloud Billing now includes AlloyDB for PostgreSQL cluster, instance, and backup usage tags in both Standard and Detailed usage cost exports.",
+  "lifecycle": {
+    "latest_feature_date": "2024-07-10",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/billing/docs/how-to/export-data-bigquery-tables/detailed-usage",
+      "https://docs.cloud.google.com/billing/docs/how-to/export-data-bigquery-tables/standard-usage",
+      "https://docs.cloud.google.com/iam/docs/roles-permissions/alloydb"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Structure of Detailed data export \\_|\\_ Cloud Billing \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/billing/docs/how-to/export-data-bigquery-tables/detailed-usage",
+        "source_id": "site-docs-root-2",
+        "final_score": 163,
+        "relevance": "",
+        "evidence_snippets": [
+          "Resource-level tags in the Cloud Billing data export are available for the following resources: AlloyDB for PostgreSQL clusters, instances, and backups Artifact Registry repositories Bigtable instances Cloud Run services and jobs Cloud Storage buckets Compute Engine instances Memorystore for Redis instances Secret Manager global and regional secrets Spanner instances Firestore databases Tags limitations Tags might take up to an hour to propagate to BigQuery exports.",
+          "Tags ) AS tag WHERE tag . key = 'gcp-product' AND tag . value = 'vertex ai' AND tag . inherited = TRUE ) AND sl reservation . value = ' RESERVATION NAME ' AND sl project id . value = ' PROJECT ID ' GROUP BY consumer project id , sku description , usage unit ORDER BY consumer project id , sku description , usage unit ; Sample results The following output shows the contribution of each project to total usage costs while consuming the reservation. consumer project id sku description usage unit total usage amount project1 N1 Predefined Instance Core running in Americas seconds 4221572 project1 N1 Predefined Instance Ram running in Americas byte-seconds 16998309356466500 project1 Nvidia Tesla T4 GPU running in Americas seconds 1057391 project2 N1 Predefined Instance Core running in Americas seconds 3996192 project2 N1 Predefined Instance Ram running in Americas byte-seconds 16009292257431300 project2 Nvidia Tesla T4 GPU running in Americas seconds 993985 Related topics For information related to exported Cloud Billing data, see the following: Set up Cloud Billing data export to BigQuery.",
+          "SELECT invoice . month AS invoice month , ROUND (( SUM ( CAST ( cost AS NUMERIC )) + SUM ( IFNULL (( SELECT SUM ( CAST ( c . amount AS NUMERIC )) FROM UNNEST ( credits ) AS c ), 0 ))), 2 ) AS net cost FROM project - ID . dataset . gcp billing export v1 XXXXXX - XXXXXX - XXXXXX WHERE \"color\" NOT IN ( SELECT key FROM UNNEST ( tags )) GROUP BY invoice month ORDER BY invoice month ; For example, the result of the preceding query might be: Row invoice month net cost 1 202202 0 2 202203 16.81 3 202204 54.09 4 202205 55.82 5 202206 54.09 6 202207 55.83 7 202208 31.49 Query using system labels System labels for Google Cloud reservations provide enhanced visibility into your reservation usage."
+        ]
+      },
+      {
+        "title": "\"Structure of Standard data export \\_|\\_ Cloud Billing \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/billing/docs/how-to/export-data-bigquery-tables/standard-usage",
+        "source_id": "site-docs-root-2",
+        "final_score": 143,
+        "relevance": "",
+        "evidence_snippets": [
+          "Resource-level tags in the Cloud Billing data export are available for the following resources: AlloyDB for PostgreSQL clusters, instances, and backups Artifact Registry repositories Bigtable instances Cloud Run services and jobs Cloud Storage buckets Compute Engine instances Memorystore for Redis instances Secret Manager global and regional secrets Spanner instances Firestore databases Tags limitations Tags might take up to an hour to propagate to BigQuery exports.",
+          "SELECT invoice . month AS invoice month , ROUND (( SUM ( CAST ( cost AS NUMERIC )) + SUM ( IFNULL (( SELECT SUM ( CAST ( c . amount AS NUMERIC )) FROM UNNEST ( credits ) AS c ), 0 ))), 2 ) AS net cost FROM project - ID . dataset . gcp billing export v1 XXXXXX - XXXXXX - XXXXXX WHERE \"color\" NOT IN ( SELECT key FROM UNNEST ( tags )) GROUP BY invoice month ORDER BY invoice month ; For example, the result of the preceding query might be: Row invoice month net cost 1 202202 0 2 202203 16.81 3 202204 54.09 4 202205 55.82 5 202206 54.09 6 202207 55.83 7 202208 31.49 Additional query examples Query costs and credits by project for a specified invoice month Note: See Google Cloud usage cost data in BigQuery for a detailed schema.",
+          "For resellers : For usage costs generated by a Cloud Billing subaccount , this is the ID of the subaccount, not the ID of the parent reseller Cloud Billing account. invoice.month String The year and month (YYYYMM) of the invoice that includes the cost line items."
+        ]
+      },
+      {
+        "title": "\"AlloyDB for PostgreSQL roles and permissions \\_|\\_ Identity and Access Management\\",
+        "url": "https://docs.cloud.google.com/iam/docs/roles-permissions/alloydb",
+        "source_id": "site-iam-reference",
+        "final_score": 129,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "AlloyDB for PostgreSQL roles Role Permissions AlloyDB Admin ( roles/ alloydb.admin ) Full access to AlloyDB all resources. alloydb. alloydb.backups.create alloydb. backups. createTagBinding alloydb.backups.delete alloydb. backups. deleteTagBinding alloydb.backups.get alloydb.backups.list alloydb. backups. listEffectiveTags alloydb. backups. listTagBindings alloydb.backups.update alloydb.clusters.create alloydb. clusters. createTagBinding alloydb.clusters.delete alloydb. clusters. deleteTagBinding alloydb.clusters.export alloydb. clusters. generateClientCertificate alloydb.clusters.get alloydb.clusters.import alloydb.clusters.list alloydb. clusters. listEffectiveTags alloydb. clusters. listTagBindings alloydb.clusters.promote alloydb.clusters.switchover alloydb.clusters.update alloydb.clusters.upgrade alloydb.databases.create alloydb.databases.get alloydb.databases.list alloydb.instances.connect alloydb.instances.create alloydb.instances.delete alloydb.instances.executeSql alloydb.instances.failover alloydb.instances.get alloydb.instances.injectFault alloydb.instances.list alloydb.instances.restart alloydb.instances.update alloydb.locations.get alloydb.locations.list alloydb.operations.cancel alloydb.operations.delete alloydb.operations.get alloydb.operations.list alloydb. supportedDatabaseFlags. get alloydb. supportedDatabaseFlags. list alloydb.users.create alloydb.users.delete alloydb.users.get alloydb.users.list alloydb.users.login alloydb.users.update backupdr. backupPlanAssociations. createForAlloydbCluster backupdr. backupPlanAssociations. deleteForAlloydbCluster backupdr. backupPlanAssociations. fetchForAlloydbCluster backupdr. backupPlanAssociations. getForAlloydbCluster backupdr. backupPlanAssociations. triggerBackupForAlloydbCluster backupdr. backupPlanAssociations. updateForAlloydbCluster backupdr.backupPlans.get backupdr.backupPlans.list backupdr. backupPlans. useForAlloydbCluster backupdr.backupVaults.get backupdr.backupVaults.list backupdr. bvbackups. useReadOnlyForAlloydbCluster backupdr. bvdataSources. useReadOnlyForAlloydbCluster backupdr. dataSourceReferences. fetchForAlloydbCluster backupdr. dataSourceReferences. getForAlloydbCluster backupdr.locations.list backupdr.operations.get backupdr. serviceConfig. initialize cloudaicompanion. entitlements. get cloudkms.keyHandles. cloudkms.keyHandles.create cloudkms.keyHandles.get cloudkms.keyHandles.list cloudkms.operations.get cloudkms. projects. showEffectiveAutokeyConfig databasesconsole.locations. databasesconsole.locations.get databasesconsole. locations. list databasesconsole. studioQueries. databasesconsole. studioQueries. create databasesconsole. studioQueries. delete databasesconsole. studioQueries. get databasesconsole. studioQueries. list databasesconsole. studioQueries. search databasesconsole. studioQueries. update recommender. alloydbClusterPerformanceInsights. recommender. alloydbClusterPerformanceInsights. get recommender. alloydbClusterPerformanceInsights. list recommender. alloydbClusterPerformanceInsights. update recommender. alloydbClusterPerformanceRecommendations. recommender. alloydbClusterPerformanceRecommendations. get recommender. alloydbClusterPerformanceRecommendations. list recommender. alloydbClusterPerformanceRecommendations. update recommender. alloydbClusterReliabilityInsights. recommender. alloydbClusterReliabilityInsights. get recommender. alloydbClusterReliabilityInsights. list recommender. alloydbClusterReliabilityInsights. update recommender. alloydbClusterReliabilityRecommendations. recommender. alloydbClusterReliabilityRecommendations. get recommender. alloydbClusterReliabilityRecommendations. list recommender. alloydbClusterReliabilityRecommendations. update recommender. alloydbInstanceSecurityInsights. recommender. alloydbInstanceSecurityInsights. get recommender. alloydbInstanceSecurityInsights. list recommender. alloydbInstanceSecurityInsights. update recommender. alloydbInstanceSecurityRecommendations. recommender. alloydbInstanceSecurityRecommendations. get recommender. alloydbInstanceSecurityRecommendations. list recommender. alloydbInstanceSecurityRecommendations. update resourcemanager.projects.get resourcemanager.projects.list Alloydb Editor ( roles/ alloydb.editor ) Editor role for alloydb alloydb.backups.create alloydb.backups.delete alloydb.backups.get alloydb.backups.list alloydb. backups. listEffectiveTags alloydb. backups. listTagBindings alloydb.backups.update alloydb.clusters.create alloydb.clusters.delete alloydb.clusters.export alloydb. clusters. generateClientCertificate alloydb.clusters.get alloydb.clusters.import alloydb.clusters.list alloydb. clusters. listEffectiveTags alloydb. clusters. listTagBindings alloydb.clusters.promote alloydb.clusters.switchover alloydb.clusters.update alloydb.clusters.upgrade alloydb.databases. alloydb.databases.create alloydb.databases.get alloydb.databases.list alloydb.instances. alloydb.instances.connect alloydb.instances.create alloydb.instances.delete alloydb.instances.executeSql alloydb.instances.failover alloydb.instances.get alloydb.instances.injectFault alloydb.instances.list alloydb.instances.restart alloydb.instances.update alloydb.locations. alloydb.locations.get alloydb.locations.list alloydb.operations. alloydb.operations.cancel alloydb.operations.delete alloydb.operations.get alloydb.operations.list alloydb. supportedDatabaseFlags. alloydb. supportedDatabaseFlags. get alloydb. supportedDatabaseFlags. list alloydb.users. alloydb.users.create alloydb.users.delete alloydb.users.get alloydb.users.list alloydb.users.login alloydb.users.update cloudaicompanion. entitlements. get recommender. alloydbClusterPerformanceInsights. get recommender. alloydbClusterPerformanceInsights. list recommender. alloydbClusterPerformanceRecommendations. get recommender. alloydbClusterPerformanceRecommendations. list recommender. alloydbClusterReliabilityInsights. get recommender. alloydbClusterReliabilityInsights. list recommender. alloydbClusterReliabilityRecommendations. get recommender. alloydbClusterReliabilityRecommendations. list resourcemanager.projects.get resourcemanager.projects.list AlloyDB Viewer ( roles/ alloydb.viewer ) Read-only access to AlloyDB all resources. alloydb.backups.get alloydb.backups.list alloydb. backups. listEffectiveTags alloydb. backups. listTagBindings alloydb.clusters.export alloydb.clusters.get alloydb.clusters.list alloydb. clusters. listEffectiveTags alloydb. clusters. listTagBindings alloydb.databases.get alloydb.databases.list alloydb.instances.get alloydb.instances.list alloydb.locations. alloydb.locations.get alloydb.locations.list alloydb.operations.get alloydb.operations.list alloydb. supportedDatabaseFlags. alloydb. supportedDatabaseFlags. get alloydb. supportedDatabaseFlags. list alloydb.users.get alloydb.users.list cloudaicompanion. entitlements. get recommender. alloydbClusterPerformanceInsights. get recommender. alloydbClusterPerformanceInsights. list recommender. alloydbClusterPerformanceRecommendations. get recommender. alloydbClusterPerformanceRecommendations. list recommender. alloydbClusterReliabilityInsights. get recommender. alloydbClusterReliabilityInsights. list recommender. alloydbClusterReliabilityRecommendations. get recommender. alloydbClusterReliabilityRecommendations. list resourcemanager.projects.get resourcemanager.projects.list AlloyDB Client ( roles/ alloydb.client ) Connectivity access to AlloyDB instances. alloydb. clusters. generateClientCertificate alloydb.clusters.get alloydb.instances.connect alloydb.instances.get monitoring.timeSeries.create resourcemanager.projects.get resourcemanager.projects.list AlloyDB Database User ( roles/ alloydb.databaseUser ) Role allowing access to login as a database user. alloydb.clusters.get alloydb.instances.executeSql alloydb.instances.get alloydb.users.login databasesconsole.locations. databasesconsole.locations.get databasesconsole. locations. list databasesconsole. studioQueries. search resourcemanager.projects.get resourcemanager.projects.list Service agent roles Service agent roles should only be granted to service agents .",
+          "Role Permissions AlloyDB Service Agent ( roles/ alloydb.serviceAgent ) Gives the AlloyDB service account permission to manage customer resources Warning: Do not grant service agent roles to any principals except service agents . alloydb.clusters.list AlloyDB for PostgreSQL permissions Permission Included in roles alloydb.backups.create Owner ( roles/ owner ) Editor ( roles/ editor ) AlloyDB Admin ( roles/ alloydb.admin ) Alloydb Editor ( roles/ alloydb.editor ) Databases Admin ( roles/ iam.databasesAdmin ) alloydb. backups. createTagBinding Owner ( roles/ owner ) AlloyDB Admin ( roles/ alloydb.admin ) Tag User ( roles/ resourcemanager.tagUser ) DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver ) DLP Project Data Profiles Driver ( roles/ dlp.projectdriver ) Databases Admin ( roles/ iam.databasesAdmin ) alloydb.backups.delete Owner ( roles/ owner ) Editor ( roles/ editor ) AlloyDB Admin ( roles/ alloydb.admin ) Alloydb Editor ( roles/ alloydb.editor ) Databases Admin ( roles/ iam.databasesAdmin ) alloydb. backups. deleteTagBinding Owner ( roles/ owner ) AlloyDB Admin ( roles/ alloydb.admin ) Tag User ( roles/ resourcemanager.tagUser ) DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver ) DLP Project Data Profiles Driver ( roles/ dlp.projectdriver ) Databases Admin ( roles/ iam.databasesAdmin ) alloydb.backups.get Owner ( roles/ owner ) Editor ( roles/ editor ) Viewer ( roles/ viewer ) AlloyDB Admin ( roles/ alloydb.admin ) Alloydb Editor ( roles/ alloydb.editor ) AlloyDB Viewer ( roles/ alloydb.viewer ) DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver ) DLP Project Data Profiles Driver ( roles/ dlp.projectdriver ) Data Scientist ( roles/ iam.dataScientist ) Databases Admin ( roles/ iam.databasesAdmin ) Support User ( roles/ iam.supportUser ) alloydb.backups.list Owner ( roles/ owner ) Editor ( roles/ editor ) Viewer ( roles/ viewer ) AlloyDB Admin ( roles/ alloydb.admin ) Alloydb Editor ( roles/ alloydb.editor ) AlloyDB Viewer ( roles/ alloydb.viewer ) Security Admin ( roles/ iam.securityAdmin ) Security Reviewer ( roles/ iam.securityReviewer ) DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver ) DLP Project Data Profiles Driver ( roles/ dlp.projectdriver ) Data Scientist ( roles/ iam.dataScientist ) Databases Admin ( roles/ iam.databasesAdmin ) Security Auditor ( roles/ iam.securityAuditor ) Support User ( roles/ iam.supportUser ) alloydb. backups. listEffectiveTags Owner ( roles/ owner ) Editor ( roles/ editor ) Viewer ( roles/ viewer ) AlloyDB Admin ( roles/ alloydb.admin ) Alloydb Editor ( roles/ alloydb.editor ) AlloyDB Viewer ( roles/ alloydb.viewer ) Tag User ( roles/ resourcemanager.tagUser ) Tag Viewer ( roles/ resourcemanager.tagViewer ) DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver ) DLP Project Data Profiles Driver ( roles/ dlp.projectdriver ) Data Scientist ( roles/ iam.dataScientist ) Databases Admin ( roles/ iam.databasesAdmin ) Security Auditor ( roles/ iam.securityAuditor ) Support User ( roles/ iam.supportUser ) alloydb. backups. listTagBindings Owner ( roles/ owner ) Editor ( roles/ editor ) Viewer ( roles/ viewer ) AlloyDB Admin ( roles/ alloydb.admin ) Alloydb Editor ( roles/ alloydb.editor ) AlloyDB Viewer ( roles/ alloydb.viewer ) Tag User ( roles/ resourcemanager.tagUser ) Tag Viewer ( roles/ resourcemanager.tagViewer ) DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver ) DLP Project Data Profiles Driver ( roles/ dlp.projectdriver ) Data Scientist ( roles/ iam.dataScientist ) Databases Admin ( roles/ iam.databasesAdmin ) Security Auditor ( roles/ iam.securityAuditor ) Support User ( roles/ iam.supportUser ) alloydb.backups.update Owner ( roles/ owner ) Editor ( roles/ editor ) AlloyDB Admin ( roles/ alloydb.admin ) Alloydb Editor ( roles/ alloydb.editor ) Databases Admin ( roles/ iam.databasesAdmin ) alloydb.clusters.create Owner ( roles/ owner ) Editor ( roles/ editor ) AlloyDB Admin ( roles/ alloydb.admin ) Alloydb Editor ( roles/ alloydb.editor ) Databases Admin ( roles/ iam.databasesAdmin ) Service agent roles Warning: Don't grant service agent roles to any principals except service agents .",
+          "AlloyDB Service Agent ( roles/ alloydb.serviceAgent ) Database Migration Service Agent ( roles/ datamigration.serviceAgent ) alloydb. clusters. listEffectiveTags Owner ( roles/ owner ) Editor ( roles/ editor ) Viewer ( roles/ viewer ) AlloyDB Admin ( roles/ alloydb.admin ) Alloydb Editor ( roles/ alloydb.editor ) AlloyDB Viewer ( roles/ alloydb.viewer ) Tag User ( roles/ resourcemanager.tagUser ) Tag Viewer ( roles/ resourcemanager.tagViewer ) DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver ) DLP Project Data Profiles Driver ( roles/ dlp.projectdriver ) Data Scientist ( roles/ iam.dataScientist ) Databases Admin ( roles/ iam.databasesAdmin ) Security Auditor ( roles/ iam.securityAuditor ) Support User ( roles/ iam.supportUser ) alloydb. clusters. listTagBindings Owner ( roles/ owner ) Editor ( roles/ editor ) Viewer ( roles/ viewer ) AlloyDB Admin ( roles/ alloydb.admin ) Alloydb Editor ( roles/ alloydb.editor ) AlloyDB Viewer ( roles/ alloydb.viewer ) Tag User ( roles/ resourcemanager.tagUser ) Tag Viewer ( roles/ resourcemanager.tagViewer ) DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver ) DLP Project Data Profiles Driver ( roles/ dlp.projectdriver ) Data Scientist ( roles/ iam.dataScientist ) Databases Admin ( roles/ iam.databasesAdmin ) Security Auditor ( roles/ iam.securityAuditor ) Support User ( roles/ iam.supportUser ) alloydb.clusters.promote Owner ( roles/ owner ) Editor ( roles/ editor ) AlloyDB Admin ( roles/ alloydb.admin ) Alloydb Editor ( roles/ alloydb.editor ) Databases Admin ( roles/ iam.databasesAdmin ) alloydb.clusters.switchover Owner ( roles/ owner ) Editor ( roles/ editor ) AlloyDB Admin ( roles/ alloydb.admin ) Alloydb Editor ( roles/ alloydb.editor ) Databases Admin ( roles/ iam.databasesAdmin ) alloydb.clusters.update Owner ( roles/ owner ) Editor ( roles/ editor ) AlloyDB Admin ( roles/ alloydb.admin ) Alloydb Editor ( roles/ alloydb.editor ) Databases Admin ( roles/ iam.databasesAdmin ) Service agent roles Warning: Don't grant service agent roles to any principals except service agents ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "explicit",
+    "explicit_roles": [
+      "roles/accessapproval.admin",
+      "roles/accessapproval.approver",
+      "roles/accessapproval.configEditor"
+    ],
+    "explicit_permissions": [
+      {
+        "permission": "resourcemanager.projects.get",
+        "group": "resourcemanager",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver",
+          "roles/accessapproval.configEditor"
+        ]
+      },
+      {
+        "permission": "resourcemanager.projects.list",
+        "group": "resourcemanager",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver",
+          "roles/accessapproval.configEditor"
+        ]
+      }
+    ],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "alloydb.admin",
+      "alloydb.backups.create",
+      "alloydb.backups.delete",
+      "alloydb.backups.get",
+      "alloydb.backups.list",
+      "alloydb.backups.update",
+      "alloydb.client",
+      "alloydb.clusters.create",
+      "alloydb.clusters.delete",
+      "alloydb.clusters.export",
+      "alloydb.clusters.get",
+      "alloydb.clusters.import",
+      "alloydb.clusters.list",
+      "alloydb.clusters.promote",
+      "alloydb.clusters.switchover",
+      "alloydb.clusters.update",
+      "alloydb.clusters.upgrade",
+      "alloydb.databases",
+      "alloydb.databases.create",
+      "alloydb.databases.get",
+      "alloydb.databases.list",
+      "alloydb.databaseUser",
+      "alloydb.editor",
+      "alloydb.instances",
+      "alloydb.instances.connect",
+      "alloydb.instances.create",
+      "alloydb.instances.delete",
+      "alloydb.instances.executeSql",
+      "alloydb.instances.failover",
+      "alloydb.instances.get",
+      "alloydb.instances.injectFault",
+      "alloydb.instances.list",
+      "alloydb.instances.restart",
+      "alloydb.instances.update",
+      "alloydb.locations",
+      "alloydb.locations.get",
+      "alloydb.locations.list",
+      "alloydb.operations",
+      "alloydb.operations.cancel",
+      "alloydb.operations.delete",
+      "alloydb.operations.get",
+      "alloydb.operations.list",
+      "alloydb.serviceAgent",
+      "alloydb.users",
+      "alloydb.users.create",
+      "alloydb.users.delete",
+      "alloydb.users.get",
+      "alloydb.users.list",
+      "alloydb.users.login",
+      "alloydb.users.update",
+      "alloydb.viewer",
+      "backupdr.backupPlans.get",
+      "backupdr.backupPlans.list",
+      "backupdr.backupVaults.get",
+      "backupdr.backupVaults.list",
+      "backupdr.locations.list",
+      "backupdr.operations.get",
+      "cloudkms.keyHandles",
+      "cloudkms.keyHandles.create",
+      "cloudkms.keyHandles.get",
+      "cloudkms.keyHandles.list",
+      "cloudkms.operations.get",
+      "databasesconsole.locations",
+      "databasesconsole.locations.get",
+      "datamigration.serviceAgent",
+      "dlp.orgdriver",
+      "dlp.projectdriver",
+      "iam.databasesAdmin",
+      "iam.dataScientist",
+      "iam.securityAdmin",
+      "iam.securityAuditor",
+      "iam.securityReviewer",
+      "iam.supportUser",
+      "invoice.month",
+      "monitoring.timeSeries.create",
+      "resourcemanager.tagUser",
+      "resourcemanager.tagViewer"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/billing/docs/how-to/export-data-bigquery-tables/detailed-usage",
+        "https://docs.cloud.google.com/billing/docs/how-to/export-data-bigquery-tables/standard-usage",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/alloydb"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/billing/docs/how-to/export-data-bigquery-tables/detailed-usage",
+        "https://docs.cloud.google.com/billing/docs/how-to/export-data-bigquery-tables/standard-usage",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/alloydb"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/billing/docs/how-to/export-data-bigquery-tables/detailed-usage",
+        "https://docs.cloud.google.com/billing/docs/how-to/export-data-bigquery-tables/standard-usage",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/alloydb"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/billing/docs/how-to/export-data-bigquery-tables/detailed-usage",
+        "https://docs.cloud.google.com/billing/docs/how-to/export-data-bigquery-tables/standard-usage",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/alloydb"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/billing/docs/how-to/export-data-bigquery-tables/detailed-usage",
+        "https://docs.cloud.google.com/billing/docs/how-to/export-data-bigquery-tables/standard-usage",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/alloydb"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/billing/docs/how-to/export-data-bigquery-tables/detailed-usage",
+        "https://docs.cloud.google.com/billing/docs/how-to/export-data-bigquery-tables/standard-usage",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/alloydb"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/billing/docs/how-to/export-data-bigquery-tables/detailed-usage",
+        "https://docs.cloud.google.com/billing/docs/how-to/export-data-bigquery-tables/standard-usage",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/alloydb"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/billing/docs/how-to/export-data-bigquery-tables/detailed-usage",
+        "https://docs.cloud.google.com/billing/docs/how-to/export-data-bigquery-tables/standard-usage",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/alloydb"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/billing/docs/how-to/export-data-bigquery-tables/detailed-usage",
+        "https://docs.cloud.google.com/billing/docs/how-to/export-data-bigquery-tables/standard-usage",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/alloydb"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/billing/docs/how-to/export-data-bigquery-tables/detailed-usage",
+        "https://docs.cloud.google.com/billing/docs/how-to/export-data-bigquery-tables/standard-usage",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/alloydb"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/billing/docs/how-to/export-data-bigquery-tables/detailed-usage",
+        "https://docs.cloud.google.com/billing/docs/how-to/export-data-bigquery-tables/standard-usage",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/alloydb"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/billing/docs/how-to/export-data-bigquery-tables/detailed-usage",
+        "https://docs.cloud.google.com/billing/docs/how-to/export-data-bigquery-tables/standard-usage",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/alloydb"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/billing/docs/how-to/export-data-bigquery-tables/detailed-usage",
+        "https://docs.cloud.google.com/billing/docs/how-to/export-data-bigquery-tables/standard-usage",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/alloydb"
+      ]
+    }
+  ]
+}

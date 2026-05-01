@@ -1,0 +1,219 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:24.398Z",
+  "source_step08_card": "data/step-08/current/products/cloud-logging/card.json",
+  "product_name": "Cloud Logging",
+  "product_slug": "cloud-logging",
+  "feature_name": "Organization-owned sinks",
+  "feature_slug": "organization-owned-sinks",
+  "summary": "The Logging API allows organizations as well as projects to own sinks and export logs to destinations in other projects.",
+  "extended_definition": "The Logging API allows organizations as well as projects to own sinks and export logs to destinations in other projects.",
+  "lifecycle": {
+    "latest_feature_date": "2016-11-21",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/logging/docs/audit",
+      "https://docs.cloud.google.com/logging/docs/central-log-storage",
+      "https://docs.cloud.google.com/logging/docs/reference/v2/rest"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Cloud Audit Logs overview \\_|\\_ Cloud Logging \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/logging/docs/audit",
+        "source_id": "site-docs-root",
+        "final_score": 128,
+        "relevance": "",
+        "evidence_snippets": [
+          "To read your Google Cloud project-level audit log entries, run the following command: gcloud logging read \"logName : projects/ PROJECT ID /logs/cloudaudit.googleapis.com\" \\ --project= PROJECT ID To read your folder-level audit log entries, run the following command: gcloud logging read \"logName : folders/ FOLDER ID /logs/cloudaudit.googleapis.com\" \\ --folder= FOLDER ID To read your organization-level audit log entries, run the following command: gcloud logging read \"logName : organizations/ ORGANIZATION ID /logs/cloudaudit.googleapis.com\" \\ --organization= ORGANIZATION ID To read your Cloud Billing account-level audit log entries, run the following command: gcloud logging read \"logName : billingAccounts/ BILLING ACCOUNT ID /logs/cloudaudit.googleapis.com\" \\ --billing-account= BILLING ACCOUNT ID Add the --freshness flag to your command to read logs that are more than 1 day old.",
+          "The following are the audit log names, including variables for the resource identifiers: projects / PROJECT ID / logs / cloudaudit . googleapis . com % 2 Factivity projects / PROJECT ID / logs / cloudaudit . googleapis . com % 2 Fdata access projects / PROJECT ID / logs / cloudaudit . googleapis . com % 2 Fsystem event projects / PROJECT ID / logs / cloudaudit . googleapis . com % 2 Fpolicy folders / FOLDER ID / logs / cloudaudit . googleapis . com % 2 Factivity folders / FOLDER ID / logs / cloudaudit . googleapis . com % 2 Fdata access folders / FOLDER ID / logs / cloudaudit . googleapis . com % 2 Fsystem event folders / FOLDER ID / logs / cloudaudit . googleapis . com % 2 Fpolicy billingAccounts / BILLING ACCOUNT ID / logs / cloudaudit . googleapis . com % 2 Factivity billingAccounts / BILLING ACCOUNT ID / logs / cloudaudit . googleapis . com % 2 Fdata access billingAccounts / BILLING ACCOUNT ID / logs / cloudaudit . googleapis . com % 2 Fsystem event billingAccounts / BILLING ACCOUNT ID / logs / cloudaudit . googleapis . com % 2 Fpolicy organizations / ORGANIZATION ID / logs / cloudaudit . googleapis . com % 2 Factivity organizations / ORGANIZATION ID / logs / cloudaudit . googleapis . com % 2 Fdata access organizations / ORGANIZATION ID / logs / cloudaudit . googleapis . com % 2 Fsystem event organizations / ORGANIZATION ID / logs / cloudaudit . googleapis . com % 2 Fpolicy Caller identities in audit logs Audit logs record the identity that performed the logged operations on the Google Cloud resource.",
+          "For each billing account, Google Cloud project, folder, and organization, Logging automatically creates two log buckets, Required and Default , and correspondingly named sinks ."
+        ]
+      },
+      {
+        "title": "\"Aggregate and store your organization's logs \\_|\\_ Cloud Logging \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/logging/docs/central-log-storage",
+        "source_id": "site-docs-root",
+        "final_score": 118,
+        "relevance": "",
+        "evidence_snippets": [
+          "Before you begin Ensure the following: To get the permissions that you need to configure an aggregated sink, ask your administrator to grant you the following IAM roles on your organization: To create log buckets and sinks in a project: Logs Configuration Writer ( roles/logging.configWriter ) - your project To create an aggregated sink: Logs Configuration Writer ( roles/logging.configWriter ) - your organization To grant roles to principals: Owner ( roles/owner ) - your project For more information about granting roles, see Manage access to projects, folders, and organizations .",
+          "Execute the gcloud logging sinks create command: gcloud logging sinks create SINK NAME \\ logging.googleapis.com/projects/ PROJECT ID \\ --log-filter='logName:cloudaudit.googleapis.com' \\ --description=\" Audit logs from my organization \" \\ --organization= ORGANIZATION ID \\ --include-children The --include-children option is important.",
+          "Verify that the sink was created: gcloud logging sinks list --organization= ORGANIZATION ID Get the name of the service account: gcloud logging sinks describe SINK NAME --organization= ORGANIZATION ID The output looks similar to the following: writerIdentity: serviceAccount:o1234567890- ORGANIZATION ID @gcp-sa-logging.iam.gserviceaccount.com Copy the value of the serviceAccount field into your clipboard."
+        ]
+      },
+      {
+        "title": "Cloud Logging API \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/logging/docs/reference/v2/rest",
+        "source_id": "site-docs-reference",
+        "final_score": 114,
+        "relevance": "",
+        "evidence_snippets": [
+          "REST Resource: v2 REST Resource: v2.billingAccounts REST Resource: v2.billingAccounts.exclusions REST Resource: v2.billingAccounts.locations.buckets REST Resource: v2.billingAccounts.locations.buckets.links REST Resource: v2.billingAccounts.locations.buckets.views REST Resource: v2.billingAccounts.locations.buckets.views.logs REST Resource: v2.billingAccounts.locations.operations REST Resource: v2.billingAccounts.locations.recentQueries REST Resource: v2.billingAccounts.locations.savedQueries REST Resource: v2.billingAccounts.logs REST Resource: v2.billingAccounts.sinks REST Resource: v2.entries REST Resource: v2.exclusions REST Resource: v2.folders REST Resource: v2.folders.exclusions REST Resource: v2.folders.locations.buckets REST Resource: v2.folders.locations.buckets.links REST Resource: v2.folders.locations.buckets.views REST Resource: v2.folders.locations.buckets.views.logs REST Resource: v2.folders.locations.logScopes REST Resource: v2.folders.locations.operations REST Resource: v2.folders.locations.recentQueries REST Resource: v2.folders.locations.savedQueries REST Resource: v2.folders.logs REST Resource: v2.folders.sinks REST Resource: v2.locations.buckets REST Resource: v2.locations.buckets.links REST Resource: v2.locations.buckets.views REST Resource: v2.locations.operations REST Resource: v2.logs REST Resource: v2.monitoredResourceDescriptors REST Resource: v2.organizations REST Resource: v2.organizations.exclusions REST Resource: v2.organizations.locations.buckets REST Resource: v2.organizations.locations.buckets.links REST Resource: v2.organizations.locations.buckets.views REST Resource: v2.organizations.locations.buckets.views.logs REST Resource: v2.organizations.locations.logScopes REST Resource: v2.organizations.locations.operations REST Resource: v2.organizations.locations.recentQueries REST Resource: v2.organizations.locations.savedQueries REST Resource: v2.organizations.logs REST Resource: v2.organizations.sinks REST Resource: v2.projects REST Resource: v2.projects.exclusions REST Resource: v2.projects.locations.buckets REST Resource: v2.projects.locations.buckets.links REST Resource: v2.projects.locations.buckets.views REST Resource: v2.projects.locations.buckets.views.logs REST Resource: v2.projects.locations.logScopes REST Resource: v2.projects.locations.operations REST Resource: v2.projects.locations.recentQueries REST Resource: v2.projects.locations.savedQueries REST Resource: v2.projects.logs REST Resource: v2.projects.metrics REST Resource: v2.projects.sinks REST Resource: v2.sinks Service: logging.googleapis.com To call this service, we recommend that you use the Google-provided client libraries .",
+          "REST Resource: v2.organizations.sinks Methods create POST /v2/{parent=organizations/ }/sinks Creates a sink that exports specified log entries to a destination. delete DELETE /v2/{sinkName=organizations/ /sinks/ } Deletes a sink. get GET /v2/{sinkName=organizations/ /sinks/ } Gets a sink. list GET /v2/{parent=organizations/ }/sinks Lists sinks. patch PATCH /v2/{sinkName=organizations/ /sinks/ } Updates a sink. update PUT /v2/{sinkName=organizations/ /sinks/ } Updates a sink.",
+          "REST Resource: v2.organizations Methods getCmekSettings GET /v2/{name=organizations/ }/cmekSettings Gets the Logging CMEK settings for the given resource. getSettings GET /v2/{name=organizations/ }/settings Gets the settings for the given resource. updateCmekSettings PATCH /v2/{name=organizations/ }/cmekSettings Updates the Log Router CMEK settings for the given resource. updateSettings PATCH /v2/{name=organizations/ }/settings Updates the settings for the given resource."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cloudaudit.googleapis.com",
+      "logging.configWriter",
+      "logging.googleapis.com",
+      "logging.iam.gserviceaccount.com",
+      "v2.billingAccounts",
+      "v2.billingAccounts.exclusions",
+      "v2.billingAccounts.locations.buckets",
+      "v2.billingAccounts.locations.buckets.links",
+      "v2.billingAccounts.locations.buckets.views",
+      "v2.billingAccounts.locations.buckets.views.logs",
+      "v2.billingAccounts.locations.operations",
+      "v2.billingAccounts.locations.recentQueries",
+      "v2.billingAccounts.locations.savedQueries",
+      "v2.billingAccounts.logs",
+      "v2.billingAccounts.sinks",
+      "v2.entries",
+      "v2.exclusions",
+      "v2.folders",
+      "v2.folders.exclusions",
+      "v2.folders.locations.buckets",
+      "v2.folders.locations.buckets.links",
+      "v2.folders.locations.buckets.views",
+      "v2.folders.locations.buckets.views.logs",
+      "v2.folders.locations.logScopes",
+      "v2.folders.locations.operations",
+      "v2.folders.locations.recentQueries",
+      "v2.folders.locations.savedQueries",
+      "v2.folders.logs",
+      "v2.folders.sinks",
+      "v2.locations.buckets",
+      "v2.locations.buckets.links",
+      "v2.locations.buckets.views",
+      "v2.locations.operations",
+      "v2.logs",
+      "v2.monitoredResourceDescriptors",
+      "v2.organizations",
+      "v2.organizations.exclusions",
+      "v2.organizations.locations.buckets",
+      "v2.organizations.locations.buckets.links",
+      "v2.organizations.locations.buckets.views",
+      "v2.organizations.locations.buckets.views.logs",
+      "v2.organizations.locations.logScopes",
+      "v2.organizations.locations.operations",
+      "v2.organizations.locations.recentQueries",
+      "v2.organizations.locations.savedQueries",
+      "v2.organizations.logs",
+      "v2.organizations.sinks",
+      "v2.projects",
+      "v2.projects.exclusions",
+      "v2.projects.locations.buckets",
+      "v2.projects.locations.buckets.links",
+      "v2.projects.locations.buckets.views",
+      "v2.projects.locations.buckets.views.logs",
+      "v2.projects.locations.logScopes",
+      "v2.projects.locations.operations",
+      "v2.projects.locations.recentQueries",
+      "v2.projects.locations.savedQueries",
+      "v2.projects.logs",
+      "v2.projects.metrics",
+      "v2.projects.sinks",
+      "v2.sinks"
+    ],
+    "missing_inventory_roles": [
+      "roles/logging.configWriter",
+      "roles/owner"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/audit",
+        "https://docs.cloud.google.com/logging/docs/central-log-storage",
+        "https://docs.cloud.google.com/logging/docs/reference/v2/rest"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/audit",
+        "https://docs.cloud.google.com/logging/docs/central-log-storage",
+        "https://docs.cloud.google.com/logging/docs/reference/v2/rest"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/audit",
+        "https://docs.cloud.google.com/logging/docs/central-log-storage",
+        "https://docs.cloud.google.com/logging/docs/reference/v2/rest"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/audit",
+        "https://docs.cloud.google.com/logging/docs/central-log-storage",
+        "https://docs.cloud.google.com/logging/docs/reference/v2/rest"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/audit",
+        "https://docs.cloud.google.com/logging/docs/central-log-storage",
+        "https://docs.cloud.google.com/logging/docs/reference/v2/rest"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/audit",
+        "https://docs.cloud.google.com/logging/docs/central-log-storage",
+        "https://docs.cloud.google.com/logging/docs/reference/v2/rest"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/audit",
+        "https://docs.cloud.google.com/logging/docs/central-log-storage",
+        "https://docs.cloud.google.com/logging/docs/reference/v2/rest"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/audit",
+        "https://docs.cloud.google.com/logging/docs/central-log-storage",
+        "https://docs.cloud.google.com/logging/docs/reference/v2/rest"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/audit",
+        "https://docs.cloud.google.com/logging/docs/central-log-storage",
+        "https://docs.cloud.google.com/logging/docs/reference/v2/rest"
+      ]
+    }
+  ]
+}

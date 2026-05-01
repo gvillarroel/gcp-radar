@@ -1,0 +1,133 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:23.852Z",
+  "source_step08_card": "data/step-08/current/products/cloud-key-management-service/card.json",
+  "product_name": "Cloud Key Management Service",
+  "product_slug": "cloud-key-management-service",
+  "feature_name": "RSA_DECRYPT_OAEP_4096_SHA512 algorithm",
+  "feature_slug": "rsa-decrypt-oaep-4096-sha512-algorithm",
+  "summary": "Cloud KMS supports the RSA_DECRYPT_OAEP_4096_SHA512 algorithm.",
+  "extended_definition": "Cloud KMS supports the RSA_DECRYPT_OAEP_4096_SHA512 algorithm.",
+  "lifecycle": {
+    "latest_feature_date": "2018-10-11",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kms/docs/algorithms",
+      "https://docs.cloud.google.com/kms/docs/encrypt-decrypt-rsa",
+      "https://docs.cloud.google.com/kms/docs/reference/inventory/rest/v1/projects.cryptoKeys",
+      "https://docs.cloud.google.com/kms/docs/reference/rest/v1/CryptoKeyVersionAlgorithm"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Key purposes and algorithms \\_|\\_ Cloud Key Management Service \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/kms/docs/algorithms",
+        "source_id": "site-iam-reference",
+        "final_score": 242,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Algorithm (SDK) Algorithm (API) Description rsa-decrypt-oaep-2048-sha1 RSA DECRYPT OAEP 2048 SHA1 RSAES-OAEP 2048 bit key with a SHA-1 digest rsa-decrypt-oaep-2048-sha256 RSA DECRYPT OAEP 2048 SHA256 RSAES-OAEP 2048 bit key with a SHA-256 digest rsa-decrypt-oaep-3072-sha1 RSA DECRYPT OAEP 3072 SHA1 RSAES-OAEP 3072 bit key with a SHA-1 digest rsa-decrypt-oaep-3072-sha256 (recommended) RSA DECRYPT OAEP 3072 SHA256 RSAES-OAEP 3072 bit key with a SHA-256 digest rsa-decrypt-oaep-4096-sha1 RSA DECRYPT OAEP 4096 SHA1 RSAES-OAEP 4096 bit key with a SHA-1 digest rsa-decrypt-oaep-4096-sha256 RSA DECRYPT OAEP 4096 SHA256 RSAES-OAEP 4096 bit key with a SHA-256 digest rsa-decrypt-oaep-4096-sha512 RSA DECRYPT OAEP 4096 SHA512 RSAES-OAEP 4096 bit key with a SHA-512 digest All of these algorithms use Optimal Asymmetric Encryption Padding (OAEP) with the mask generation function MGF1.",
+          "Algorithm (SDK) Algorithm (API) Description rsa-sign-pss-2048-sha256 RSA SIGN PSS 2048 SHA256 RSASSA-PSS 2048 bit key with a SHA-256 digest rsa-sign-pss-3072-sha256 (recommended) RSA SIGN PSS 3072 SHA256 RSASSA-PSS 3072 bit key with a SHA-256 digest rsa-sign-pss-4096-sha256 RSA SIGN PSS 4096 SHA256 RSASSA-PSS 4096 bit key with a SHA-256 digest rsa-sign-pss-4096-sha512 RSA SIGN PSS 4096 SHA512 RSASSA-PSS 4096 bit key with a SHA-512 digest rsa-sign-pkcs1-2048-sha256 RSA SIGN PKCS1 2048 SHA256 RSASSA-PKCS1 v1 5 with a 2048 bit key and a SHA-256 digest rsa-sign-pkcs1-3072-sha256 RSA SIGN PKCS1 3072 SHA256 RSASSA-PKCS1 v1 5 with a 3072 bit key and a SHA-256 digest rsa-sign-pkcs1-4096-sha256 RSA SIGN PKCS1 4096 SHA256 RSASSA-PKCS1 v1 5 with a 4096 bit key and a SHA-256 digest rsa-sign-pkcs1-4096-sha512 RSA SIGN PKCS1 4096 SHA512 RSASSA-PKCS1 v1 5 with a 4096 bit key and a SHA-512 digest rsa-sign-raw-pkcs1-2048 RSA SIGN RAW PKCS1 2048 RSASSA-PKCS1-v1 5 signing without encoding, with a 2048 bit key rsa-sign-raw-pkcs1-3072 RSA SIGN RAW PKCS1 3072 RSASSA-PKCS1-v1 5 signing without encoding, with a 3072 bit key rsa-sign-raw-pkcs1-4096 RSA SIGN RAW PKCS1 4096 RSASSA-PKCS1-v1 5 signing without encoding, with a 4096 bit key For Probabilistic Signature Scheme (PSS), the salt length used is equal to the length of the digest algorithm.",
+          "For example, if you are using the RSA DECRYPT OAEP 3072 SHA256 algorithm, you should use SHA-256 with MGF1 when encrypting data."
+        ]
+      },
+      {
+        "title": "\"CryptoKeyVersionAlgorithm \\_|\\_ Cloud Key Management Service \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/kms/docs/reference/rest/v1/CryptoKeyVersionAlgorithm",
+        "source_id": "site-api-reference",
+        "final_score": 230,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "RSA DECRYPT OAEP 4096 SHA512 RSAES-OAEP 4096 bit key with a SHA512 digest.",
+          "RSA DECRYPT OAEP 4096 SHA256 RSAES-OAEP 4096 bit key with a SHA256 digest.",
+          "RSA DECRYPT OAEP 4096 SHA1 RSAES-OAEP 4096 bit key with a SHA1 digest."
+        ]
+      },
+      {
+        "title": "\"Encrypting and decrypting data with an asymmetric key \\_|\\_ Cloud Key Management\\",
+        "url": "https://docs.cloud.google.com/kms/docs/encrypt-decrypt-rsa",
+        "source_id": "site-docs-root",
+        "final_score": 216,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "As a quick reference, the following algorithms support the following maximum payload sizes ( maxMLen , in bytes): Algorithm Parameters Maximum message length RSA DECRYPT OAEP 2048 SHA256 k = 256; hLen = 32; maxMLen = 190 RSA DECRYPT OAEP 3072 SHA256 k = 384; hLen = 32; maxMLen = 318 RSA DECRYPT OAEP 4096 SHA256 k = 512; hLen = 32; maxMLen = 446 RSA DECRYPT OAEP 4096 SHA512 k = 512; hLen = 64; maxMLen = 382 Asymmetric encryption is not recommended for messages of varying lengths that may be larger than these limits.",
+          "RSA PKCS1 OAEP PADDING , }, plaintextBuffer ); console . log ( Ciphertext: ${ ciphertextBuffer . toString ( 'base64' ) } ); return ciphertextBuffer ; } return encryptAsymmetric (); PHP To run this code, first learn about using PHP on Google Cloud and install the Cloud KMS PHP SDK . function encrypt asymmetric( string $projectId = 'my-project', string $locationId = 'us-east1', string $keyRingId = 'my-key-ring', string $keyId = 'my-key', string $versionId = '123', string $plaintext = '...' ): void { // PHP has limited support for asymmetric encryption operations. // Specifically, openssl public encrypt() does not allow customizing // algorithms or padding.",
+          "OaepSHA256 ); return ciphertext ; } } Go To use Cloud KMS on the command line, first Install or upgrade to the latest version of Google Cloud CLI . import ( \"context\" \"crypto/rand\" \"crypto/rsa\" \"crypto/sha256\" \"crypto/x509\" \"encoding/pem\" \"fmt\" \"io\" kms \"cloud.google.com/go/kms/apiv1\" \"cloud.google.com/go/kms/apiv1/kmspb\" ) // encryptAsymmetric encrypts data on your local machine using an // 'RSA DECRYPT OAEP 2048 SHA256' public key retrieved from Cloud KMS. func encryptAsymmetric ( w io ."
+        ]
+      },
+      {
+        "title": "\"REST Resource: projects.cryptoKeys \\_|\\_ Cloud Key Management Service \\_\\",
+        "url": "https://docs.cloud.google.com/kms/docs/reference/inventory/rest/v1/projects.cryptoKeys",
+        "source_id": "site-api-reference",
+        "final_score": 214,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "RSA DECRYPT OAEP 4096 SHA512 RSAES-OAEP 4096 bit key with a SHA512 digest.",
+          "RSA DECRYPT OAEP 4096 SHA256 RSAES-OAEP 4096 bit key with a SHA256 digest.",
+          "RSA DECRYPT OAEP 4096 SHA1 RSAES-OAEP 4096 bit key with a SHA1 digest."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "projects.cryptoKeys"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/algorithms",
+        "https://docs.cloud.google.com/kms/docs/reference/rest/v1/CryptoKeyVersionAlgorithm",
+        "https://docs.cloud.google.com/kms/docs/encrypt-decrypt-rsa",
+        "https://docs.cloud.google.com/kms/docs/reference/inventory/rest/v1/projects.cryptoKeys"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/algorithms",
+        "https://docs.cloud.google.com/kms/docs/reference/rest/v1/CryptoKeyVersionAlgorithm",
+        "https://docs.cloud.google.com/kms/docs/encrypt-decrypt-rsa",
+        "https://docs.cloud.google.com/kms/docs/reference/inventory/rest/v1/projects.cryptoKeys"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/algorithms",
+        "https://docs.cloud.google.com/kms/docs/reference/rest/v1/CryptoKeyVersionAlgorithm",
+        "https://docs.cloud.google.com/kms/docs/encrypt-decrypt-rsa",
+        "https://docs.cloud.google.com/kms/docs/reference/inventory/rest/v1/projects.cryptoKeys"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/algorithms",
+        "https://docs.cloud.google.com/kms/docs/reference/rest/v1/CryptoKeyVersionAlgorithm",
+        "https://docs.cloud.google.com/kms/docs/encrypt-decrypt-rsa",
+        "https://docs.cloud.google.com/kms/docs/reference/inventory/rest/v1/projects.cryptoKeys"
+      ]
+    }
+  ]
+}

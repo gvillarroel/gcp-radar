@@ -1,0 +1,106 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:18.295Z",
+  "source_step08_card": "data/step-08/current/products/backup-and-dr/card.json",
+  "product_name": "Backup and DR",
+  "product_slug": "backup-and-dr",
+  "feature_name": "Mounted image reports in BigQuery",
+  "feature_slug": "mounted-image-reports-in-bigquery",
+  "summary": "Added support to view mounted image reports in BigQuery.",
+  "extended_definition": "Added support to view mounted image reports in BigQuery.",
+  "lifecycle": {
+    "latest_feature_date": "2024-09-02",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/backup-disaster-recovery/docs/access-data/mount-snapshot-images-of-cloud-instances",
+      "https://docs.cloud.google.com/backup-disaster-recovery/docs/monitor-reports/monitor-jobs",
+      "https://docs.cloud.google.com/backup-disaster-recovery/docs/quickstarts/sap-hana-on-gce-backup-recovery"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Monitor jobs in the appliance management console \\_|\\_ Backup and DR \\_\\",
+        "url": "https://docs.cloud.google.com/backup-disaster-recovery/docs/monitor-reports/monitor-jobs",
+        "source_id": "site-docs-root",
+        "final_score": 110,
+        "relevance": "",
+        "evidence_snippets": [
+          "Migrate (Cancel) Migrate (Cancel) Cancels an in-progress migration, disables future migration jobs for the mounted image, and cleans up any partially migrated/copied data.",
+          "Unmount Delete unmount delete Unmounts an image previously mounted to a host and discards all changes made in that mount.",
+          "Unmount unmount Unmounts an image previously mounted to a host, but keeps the image available for later mounting."
+        ]
+      },
+      {
+        "title": "\"Mount backup images of Compute Engine instances in the appliance management\\",
+        "url": "https://docs.cloud.google.com/backup-disaster-recovery/docs/access-data/mount-snapshot-images-of-cloud-instances",
+        "source_id": "site-docs-reference",
+        "final_score": 106,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "From the Instance Name drop-down, select the Compute Engine instance where you want the instance backup image to be mounted for accessing the data.",
+          "View key version To determine which key version is in use by a snapshot image, follow these steps: Go to Back up & Recover > Recover .",
+          "Once the mount job is complete, the image becomes active and the data from the backup image is accessible on the mounted instance."
+        ]
+      },
+      {
+        "title": "\"Protect and recover SAP HANA databases in Compute Engine instances \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/backup-disaster-recovery/docs/quickstarts/sap-hana-on-gce-backup-recovery",
+        "source_id": "site-docs-reference",
+        "final_score": 98,
+        "relevance": "",
+        "evidence_snippets": [
+          "Discover and protect SAP HANA databases Note: If you are protecting a HANA database that has already been added and that already has LVM backup images, then you must change the capture method from LVM to Persistent Disk.",
+          "Mount a backup for an integrity check This tool runs the SAP HANA persistence checking tool, hdbpersdiag , with the 'check all' option to verify the healthy state of data volumes from the mounted snapshot image.",
+          "Unmount the mounted backup snapshot image To remove or keep the disk after a successful mount: Go to Application > Access page and select the image used for mount."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/monitor-reports/monitor-jobs",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/access-data/mount-snapshot-images-of-cloud-instances",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/quickstarts/sap-hana-on-gce-backup-recovery"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/monitor-reports/monitor-jobs",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/access-data/mount-snapshot-images-of-cloud-instances",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/quickstarts/sap-hana-on-gce-backup-recovery"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/monitor-reports/monitor-jobs",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/access-data/mount-snapshot-images-of-cloud-instances",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/quickstarts/sap-hana-on-gce-backup-recovery"
+      ]
+    }
+  ]
+}

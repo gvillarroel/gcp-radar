@@ -1,0 +1,165 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:24.989Z",
+  "source_step08_card": "data/step-08/current/products/cloud-monitoring/card.json",
+  "product_name": "Cloud Monitoring",
+  "product_slug": "cloud-monitoring",
+  "feature_name": "Monitoring Admin Role",
+  "feature_slug": "monitoring-admin-role",
+  "summary": "The Monitoring Admin role grants administrative IAM permissions for Monitoring.",
+  "extended_definition": "The Monitoring Admin role grants administrative IAM permissions for Monitoring.",
+  "lifecycle": {
+    "latest_feature_date": "2017-07-10",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/monitoring/access-control",
+      "https://docs.cloud.google.com/monitoring/docs/setup-application-monitoring",
+      "https://docs.cloud.google.com/monitoring/docs/troubleshoot-application-monitoring"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Set up Google Cloud Observability for Application Monitoring \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/monitoring/docs/setup-application-monitoring",
+        "source_id": "site-docs-reference",
+        "final_score": 114,
+        "relevance": "",
+        "evidence_snippets": [
+          "Only configure scopes To get the permissions that you need to configure the observability scope, ask your administrator to grant you the following IAM roles: Observability Editor ( roles/observability.editor ) on your App Hub host project or management project Logs Configuration Writer ( roles/logging.configWriter ) on your App Hub host project or management project Monitoring admin ( roles/monitoring.admin ) on your App Hub host project or management project and on each project that you want to add to the metrics scope Cloud Trace User ( roles/cloudtrace.user ) on your App Hub host project or management project App Hub viewer ( roles/apphub.viewer ) on your App Hub host project or management project For more information about granting roles, see Manage access to projects, folders, and organizations .",
+          "Configure sink and scopes To get the permissions that you need to configure observability scopes and to create an aggregated log sink, ask your administrator to grant you the Organization Administrator ( roles/resourcemanager.organizationAdmin ) IAM role on your organization.",
+          "Configure and set the default trace scope Do the following: For each project that will store your application's trace data, we recommend that you enable the Observability API: Roles required to enable APIs To enable APIs, you need the Service Usage Admin IAM role ( roles/serviceusage.serviceUsageAdmin ), which contains the serviceusage.services.enable permission."
+        ]
+      },
+      {
+        "title": "Control access with IAM \\_|\\_ Cloud Monitoring \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/monitoring/access-control",
+        "source_id": "site-iam-reference",
+        "final_score": 112,
+        "relevance": "",
+        "evidence_snippets": [
+          "Monitoring roles The following roles grant general permissions for Monitoring: Name Title Includes permissions roles/monitoring.viewer Monitoring Viewer Grants read-only access to Monitoring in the Google Cloud console and the Cloud Monitoring API. roles/monitoring.editor Monitoring Editor Grants read-write access to Monitoring in the Google Cloud console and the Cloud Monitoring API. roles/monitoring.admin Monitoring Admin Grants full access to Monitoring in the Google Cloud console and the Cloud Monitoring API.",
+          "Metrics scope configuration roles The following roles grant general permissions for metrics scopes : Name Title Description roles/monitoring.metricsScopesViewer Monitoring metrics scopes Viewer Grants read-only access to metrics scopes. roles/monitoring.metricsScopesAdmin Monitoring metrics scopes Admin Grants read-write access to metrics scopes.",
+          "Incident roles The following roles grant permissions only for incidents: Name Title Description roles/monitoring.cloudConsoleIncidentViewer Monitoring Cloud Console Incident Viewer Grants access to view incidents by using the Google Cloud console. roles/monitoring.cloudConsoleIncidentEditor Monitoring Cloud Console Incident Editor Grants access to view, acknowledge, and close incidents by using the Google Cloud console."
+        ]
+      },
+      {
+        "title": "Troubleshoot Application Monitoring \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/monitoring/docs/troubleshoot-application-monitoring",
+        "source_id": "site-docs-reference",
+        "final_score": 78,
+        "relevance": "",
+        "evidence_snippets": [
+          "To get the permissions that you need to save changes to a custom dashboard, ask your administrator to grant you the Monitoring Editor ( roles/monitoring.editor ) IAM role on your App Hub host project or the management project for your app-enabled folder.",
+          "To resolve this failure, do the following: To get the permissions that you need to view log data, ask your administrator to grant you the following IAM roles: Logs Viewer ( roles/logging.viewer ) on your App Hub host project or the management project for your app-enabled folder and any other projects listed its default log scope.",
+          "This role grants access to most log entries in the Default log bucket."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "apphub.viewer",
+      "cloudtrace.user",
+      "logging.configWriter",
+      "logging.viewer",
+      "monitoring.admin",
+      "monitoring.cloudConsoleIncidentEditor",
+      "monitoring.cloudConsoleIncidentViewer",
+      "monitoring.editor",
+      "monitoring.metricsScopesAdmin",
+      "monitoring.metricsScopesViewer",
+      "monitoring.uptimeCheckConfigEditor",
+      "monitoring.uptimeCheckConfigViewer",
+      "monitoring.viewer",
+      "observability.editor",
+      "resourcemanager.organizationAdmin",
+      "serviceusage.services.enable",
+      "serviceusage.serviceUsageAdmin"
+    ],
+    "missing_inventory_roles": [
+      "roles/apphub.viewer",
+      "roles/cloudtrace.user",
+      "roles/logging.configWriter",
+      "roles/logging.viewer",
+      "roles/monitoring.admin",
+      "roles/monitoring.cloudConsoleIncidentEditor",
+      "roles/monitoring.cloudConsoleIncidentViewer",
+      "roles/monitoring.editor",
+      "roles/monitoring.metricsScopesAdmin",
+      "roles/monitoring.metricsScopesViewer",
+      "roles/monitoring.uptimeCheckConfigEditor",
+      "roles/monitoring.uptimeCheckConfigViewer",
+      "roles/monitoring.viewer",
+      "roles/observability.editor",
+      "roles/resourcemanager.organizationAdmin",
+      "roles/serviceusage.serviceUsageAdmin"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/monitoring/access-control",
+        "https://docs.cloud.google.com/monitoring/docs/setup-application-monitoring",
+        "https://docs.cloud.google.com/monitoring/docs/troubleshoot-application-monitoring"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/monitoring/access-control",
+        "https://docs.cloud.google.com/monitoring/docs/setup-application-monitoring",
+        "https://docs.cloud.google.com/monitoring/docs/troubleshoot-application-monitoring"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/monitoring/access-control",
+        "https://docs.cloud.google.com/monitoring/docs/setup-application-monitoring",
+        "https://docs.cloud.google.com/monitoring/docs/troubleshoot-application-monitoring"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/monitoring/access-control",
+        "https://docs.cloud.google.com/monitoring/docs/setup-application-monitoring",
+        "https://docs.cloud.google.com/monitoring/docs/troubleshoot-application-monitoring"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/monitoring/access-control",
+        "https://docs.cloud.google.com/monitoring/docs/setup-application-monitoring",
+        "https://docs.cloud.google.com/monitoring/docs/troubleshoot-application-monitoring"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/monitoring/access-control",
+        "https://docs.cloud.google.com/monitoring/docs/setup-application-monitoring",
+        "https://docs.cloud.google.com/monitoring/docs/troubleshoot-application-monitoring"
+      ]
+    }
+  ]
+}

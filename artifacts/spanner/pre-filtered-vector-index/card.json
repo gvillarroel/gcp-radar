@@ -1,0 +1,90 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:46.903Z",
+  "source_step08_card": "data/step-08/current/products/spanner/card.json",
+  "product_name": "Spanner",
+  "product_slug": "spanner",
+  "feature_name": "Pre-filtered vector index",
+  "feature_slug": "pre-filtered-vector-index",
+  "summary": "Spanner now supports creating pre-filtered vector indexes that restrict ANN searches to rows matching a specified filter condition, improving search performance and recall.",
+  "extended_definition": "Spanner now supports creating pre-filtered vector indexes that restrict ANN searches to rows matching a specified filter condition, improving search performance and recall.",
+  "lifecycle": {
+    "latest_feature_date": "2025-05-15",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/spanner/docs/information-schema",
+      "https://docs.cloud.google.com/spanner/docs/information-schema-pg",
+      "https://docs.cloud.google.com/spanner/docs/vector-search-tutorial"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Information schema for PostgreSQL-dialect databases \\_|\\_ Spanner \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/spanner/docs/information-schema-pg",
+        "source_id": "site-docs-reference",
+        "final_score": 85,
+        "relevance": "",
+        "evidence_snippets": [
+          "Possible values and the states they represent are: NULL : the index type is PRIMARY KEY PREPARE : creating empty tables for a new index WRITE ONLY : backfilling data for a new index WRITE ONLY CLEANUP : cleaning up a new index WRITE ONLY VALIDATE UNIQUE : checking uniqueness of data in a new index READ WRITE : normal index operation spanner is managed character varying Whether the index is managed by Spanner.",
+          "The values include PRIMARY KEY , LOCAL , or GLOBAL . parent table name character varying Secondary indexes can be interleaved in a parent table, as discussed in Creating a secondary index .",
+          "In accordance with the SQL standard, the string is either YES or NO , rather than a Boolean value. is null filtered character varying Whether the index includes entries with NULL values."
+        ]
+      },
+      {
+        "title": "\"Get started using Spanner for generative AI applications \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/spanner/docs/vector-search-tutorial",
+        "source_id": "site-docs-root",
+        "final_score": 83,
+        "relevance": "",
+        "evidence_snippets": [
+          "The following topics help you learn how to: Create an Google Cloud project Create a Spanner instance Create a database Create an embedding model Load data into Spanner Generate embeddings for data Perform KNN vector similarity search Scale vector search with a vector index Clean up resources To learn about Spanner pricing details, see Spanner pricing .",
+          "To scale and use ANN vector search in Spanner, do the following: Create a vector index Modify your query to use an ANN distance function Create a vector index Spanner accelerates ANN vector searches by using a specialized vector index that leverages Google Research's Scalable Nearest Neighbor (ScaNN) .",
+          "Copy and paste the following DDL statement to create the vector index: CREATE VECTOR INDEX ProductDescriptionEmbeddingIndex ON products ( productDescriptionEmbedding ) WHERE productDescriptionEmbedding IS NOT NULL OPTIONS ( distance type = 'COSINE' ); Click Run ."
+        ]
+      },
+      {
+        "title": "\"Information schema for GoogleSQL-dialect databases \\_|\\_ Spanner \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/spanner/docs/information-schema",
+        "source_id": "site-docs-reference",
+        "final_score": 77,
+        "relevance": "",
+        "evidence_snippets": [
+          "PARENT TABLE NAME STRING Secondary indexes can be interleaved in a parent table, as discussed in Creating a secondary index .",
+          "Possible values and the states they represent are: PREPARE : creating empty tables for a new index.",
+          "IS NULL FILTERED BOOL Whether the index includes entries with NULL values."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/information-schema-pg",
+        "https://docs.cloud.google.com/spanner/docs/vector-search-tutorial",
+        "https://docs.cloud.google.com/spanner/docs/information-schema"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,103 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:43.150Z",
+  "source_step08_card": "data/step-08/current/products/mainframe-connector/card.json",
+  "product_name": "Mainframe Connector",
+  "product_slug": "mainframe-connector",
+  "feature_name": "BigQuery table from copybook",
+  "feature_slug": "bigquery-table-from-copybook",
+  "summary": "A BigQuery table can be created from a copybook.",
+  "extended_definition": "A BigQuery table can be created from a copybook.",
+  "lifecycle": {
+    "latest_feature_date": "2024-09-30",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/mainframe-connector/docs/api-command-reference",
+      "https://docs.cloud.google.com/mainframe-connector/docs/api-reference",
+      "https://docs.cloud.google.com/mainframe-connector/docs/standalone-mode",
+      "https://docs.cloud.google.com/mainframe-connector/docs/vtl-transcoding"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Run Mainframe Connector in standalone mode \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/mainframe-connector/docs/standalone-mode",
+        "source_id": "site-docs-root-2",
+        "final_score": 154,
+        "relevance": "",
+        "evidence_snippets": [
+          "The following is an example YAML file: environmentVariables: - name: \"QUERY\" value: \"gs://my bucket/my/input.sql\" - name: \"OUTFILE\" value: \"gs://my bucket/my/output.orc\" - name: \"COPYBOOK\" value: \"gs://my bucket/my/copybook.cpy\" - name: \"TRANSCODE CONFIGURATION\" value: \"gs://my bucket/my/transcode-configuration-file.json\" - name: \"PROJECT ID\" value: \"my-project\" - name: \"LOCATION\" value: \"US\" - name: \"LOG PROJECT\" value: \"my-log-project\" - name: \"IBM JAVA OPTIONS\" value: \"-XX:+UseContainerSupport\" command: qsam encode \\ $QUERY $OUTFILE --copybook ${COPYBOOK PATH} --transcode-configuration ${TRANSCODE CONFIGURATION PATH} --input-format=BIGQUERY \\ --input-parameter project id=${PROJECT ID} \\ --input-parameter location=${LOCATION} Use bq export command environmentVariables: - name: \"COPYBOOK\" value: \" COPYBOOK FILEPATH \" - name: \"LOG PROJECT\" value: \" LOG PROJECT \" - name: \"IBM JAVA OPTIONS\" value: \"-XX:+UseContainerSupport\" command: bq export --project id=\" PROJECT NAME \" --location=\" LOCATION \" --sql=\"select from project.dataset.table\" --bucket=\" BUCKET \" Replace the following: COPYBOOK FILEPATH : The path to the copybook DD.",
+          "Mainframe Connector provides two ways in which you can export BigQuery table: Using qsam commands (release 5.16.0 and later) Using the bq export command Use qsam commands environmentVariables: - name: \"QUERY\" value: \" QUERY PATH \" - name: \"OUTFILE\" value: \" OUTFILE \" - name: \"COPYBOOK\" value: \" COPYBOOK PATH \" - name: \"TRANSCODE CONFIGURATION\" value: \" TRANSCODE CONFIGURATION PATH \" - name: \"PROJECT ID\" value: \" PROJECT ID \" - name: \"LOCATION\" value: \" LOCATION \" - name: \"LOG PROJECT\" value: \" LOG PROJECT \" - name: \"IBM JAVA OPTIONS\" value: \"-XX:+UseContainerSupport\" command: qsam encode \\ $QUERY $OUTFILE --copybook ${COPYBOOK PATH} --transcode-configuration ${TRANSCODE CONFIGURATION PATH} --input-format=BIGQUERY \\ --input-parameter project id=${PROJECT ID} \\ --input-parameter location=${LOCATION} Replace the following: QUERY PATH : The SQL query to execute.",
+          "The following is an example YAML file: environmentVariables: - name: \"COPYBOOK\" value: \"gs://inputbucket/copybook.cpy\" - name: \"LOG PROJECT\" value: \"my-log-project\" - name: \"IBM JAVA OPTIONS\" value: \"-XX:+UseContainerSupport\" command: bq export --project id=\"my-project\" --run mode=\"gcsoutput\" --location=US --sql=\"select from project.dataset.table\" --bucket=\"gs://outputbucket/data.dat\" Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License ."
+        ]
+      },
+      {
+        "title": "\"Transcode mainframe data moved to Google Cloud using virtual tape library\\",
+        "url": "https://docs.cloud.google.com/mainframe-connector/docs/vtl-transcoding",
+        "source_id": "site-docs-root",
+        "final_score": 150,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Example JCL //STEP04 EXEC BQSH //OUTFILE DD DSN=<HLQ>.DATA.FILENAME,DISP=SHR //COPYBOOK DD DISP=SHR,DSN=<HLQ>.COPYBOOK.FILENAME //QUERY DD DSN=<HLQ>.QUERY.FILENAME,DISP=SHR //STDIN DD PROJECT= PROJECT NAME DATASET ID= DATASET ID DESTINATION TABLE= DESTINATION TABLE BUCKET= BUCKET bq export --project id=$PROJECT \\ --dataset id=$DATASET ID \\ --destination table=$DESTINATION TABLE \\ --location=\"US\" \\ --bucket=$BUCKET \\ --remoteHost <mainframe-connector-url>.a.run.app \\ --remotePort 443 / Replace the following: PROJECT NAME : The name of the project in which you want to execute the query.",
+          "For the complete list of environment variables supported by Mainframe Connector, see Environment variables . //STEP01 EXEC BQSH //COPYBOOK DD DISP=SHR,DSN=<HLQ>.COPYBOOK.FILENAME //STDIN DD gsutil cp --replace gs://mybucket/tablename.orc \\ --inDsn INPUT FILENAME \\ --remoteHost <mainframe-connector-url>.a.run.app \\ --remotePort 443 \\ --project id PROJECT NAME / Replace the following: PROJECT NAME : The name of the project in which you want to execute the query.",
+          "If you want to move very large volumes of data (around 500 GB per day or more) from your mainframe to Google Cloud, and don't want to use your mainframe for this effort, you can use a cloud-enabled Virtual Tape Library (VTL) solution to transfer the data to a Cloud Storage bucket."
+        ]
+      },
+      {
+        "title": "Mainframe Connector API commands \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/mainframe-connector/docs/api-reference",
+        "source_id": "site-docs-reference",
+        "final_score": 150,
+        "relevance": "",
+        "evidence_snippets": [
+          "The native copybook parser extracts default values from the VALUE clause within a copybook, and assigns them to the corresponding columns in a newly created BigQuery table.",
+          "Create a BigQuery table from a copybook You can use the bq mk command to generate a BigQuery table directly from parsing COBOL copybooks.",
+          "You can also use the bq mk command to generate a BigQuery table directly from parsing COBOL copybooks."
+        ]
+      },
+      {
+        "title": "Mainframe Connector command-line reference \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/mainframe-connector/docs/api-command-reference",
+        "source_id": "site-docs-reference",
+        "final_score": 150,
+        "relevance": "",
+        "evidence_snippets": [
+          "The default value is true. --schema = SCHEMA (Optional) Specify either the path to a local JSON schema file or a comma-separated list of column definitions in the format FIELD:DATA TYPE , FIELD:DATA TYPE and so on. --schema from copybook = SCHEMA (Optional) Generate the schema from a copybook. --table or -t = TABLE (Optional) Create a table. --time partitioning expiration = SECONDS (Optional) Specify when a time-based partition should be deleted, in seconds.",
+          "If you don't provide a value, Mainframe Connector reads from DD COPYBOOK . --connections = NUMBER (Optional) Specify the number of connections that can made to the remote receiver.",
+          "You can also use the bq mk command to generate a BigQuery table directly from parsing COBOL copybooks using the --schema from copybook flag."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "a.run.app",
+      "copybook.cpy",
+      "data.dat",
+      "file.json",
+      "input.sql",
+      "output.orc",
+      "project.dataset.table",
+      "tablename.orc"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": []
+}

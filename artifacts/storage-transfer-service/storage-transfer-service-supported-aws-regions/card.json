@@ -1,0 +1,175 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:47.727Z",
+  "source_step08_card": "data/step-08/current/products/storage-transfer-service/card.json",
+  "product_name": "Storage Transfer Service",
+  "product_slug": "storage-transfer-service",
+  "feature_name": "Storage Transfer Service supported AWS regions",
+  "feature_slug": "storage-transfer-service-supported-aws-regions",
+  "summary": "Storage Transfer Service documentation was updated to enumerate supported AWS regions.",
+  "extended_definition": "Storage Transfer Service documentation was updated to enumerate supported AWS regions.",
+  "lifecycle": {
+    "latest_feature_date": "2016-08-25",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/python/docs/reference/storagetransfer/latest/changelog",
+      "https://docs.cloud.google.com/storage-transfer/docs/create-transfers",
+      "https://docs.cloud.google.com/storage-transfer/docs/create-transfers/agentless/s3"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Create transfers \\_|\\_ Storage Transfer Service \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/storage-transfer/docs/create-transfers",
+        "source_id": "site-docs-root",
+        "final_score": 89,
+        "relevance": "",
+        "evidence_snippets": [
+          "Storage Transfer Service is able to transfer data from the following Microsoft Azure Storage regions: Americas: East US, East US 2, West US, West US 2, West US 3, Central US, North Central US, South Central US, West Central US, Canada Central, Canada East, Brazil South Asia-Pacific: Australia Central, Australia East, Australia Southeast, Central India, South India, West India, Southeast Asia, East Asia, Japan East, Japan West, Korea South, Korea Central Europe, Middle East, Africa (EMEA): France Central, Germany West Central, Norway East, Sweden Central, Switzerland North, North Europe, West Europe, UK South, UK West, Qatar Central, UAE North, South Africa North Request using transferJobs create : POST h tt ps : //storagetransfer.googleapis.com/v1/transferJobs { \"description\" : \"YOUR DESCRIPTION\" , \"status\" : \"ENABLED\" , \"projectId\" : \"PROJECT ID\" , \"schedule\" : { \"scheduleStartDate\" : { \"day\" : 14 , \"month\" : 2 , \"year\" : 2020 }, \"scheduleEndDate\" : { \"day\" : 14 \"month\" : 2 , \"year\" : 2020 }, \"startTimeOfDay\" : { \"hours\" : 1 , \"minutes\" : 1 } }, \"transferSpec\" : { \"azureBlobStorageDataSource\" : { \"storageAccount\" : \"AZURE SOURCE NAME\" , \"azureCredentials\" : { \"sasToken\" : \"AZURE SAS TOKEN\" , }, \"container\" : \"AZURE CONTAINER\" , }, \"gcsDataSink\" : { \"bucketName\" : \"GCS SINK NAME\" } } } Response: 200 OK { \"transferJob\" : [ { \"creationTime\" : \"2020-02-14T01:01:00.000000000Z\" , \"description\" : \"YOUR DESCRIPTION\" , \"name\" : \"transferJobs/JOB ID\" , \"status\" : \"ENABLED\" , \"lastModificationTime\" : \"2020-02-14T01:01:00.000000000Z\" , \"projectId\" : \"PROJECT ID\" , \"schedule\" : { \"scheduleStartDate\" : { \"day\" : 14 \"month\" : 2 , \"year\" : 2020 }, \"scheduleEndDate\" : { \"day\" : 14 , \"month\" : 2 , \"year\" : 2020 }, \"startTimeOfDay\" : { \"hours\" : 1 , \"minutes\" : 1 } }, \"transferSpec\" : { \"azureBlobStorageDataSource\" : { \"storageAccount\" : \"AZURE SOURCE NAME\" , \"azureCredentials\" : { \"sasToken\" : \"AZURE SAS TOKEN\" , }, \"container\" : \"AZURE CONTAINER\" , }, \"objectConditions\" : {}, \"transferOptions\" : {} } } ] } Transfer from a file system See Transfer from a file system to Cloud Storage .",
+          "Storage Transfer Service is able to transfer data from the following Microsoft Azure Storage regions: Americas: East US, East US 2, West US, West US 2, West US 3, Central US, North Central US, South Central US, West Central US, Canada Central, Canada East, Brazil South Asia-Pacific: Australia Central, Australia East, Australia Southeast, Central India, South India, West India, Southeast Asia, East Asia, Japan East, Japan West, Korea South, Korea Central Europe, Middle East, Africa (EMEA): France Central, Germany West Central, Norway East, Sweden Central, Switzerland North, North Europe, West Europe, UK South, UK West, Qatar Central, UAE North, South Africa North Go To learn how to install and use the client library for Storage Transfer Service, see Storage Transfer Service client libraries .",
+          "Microsoft Azure Blob Storage Storage Transfer Service is able to transfer data from the following Microsoft Azure Storage regions: Americas: East US, East US 2, West US, West US 2, West US 3, Central US, North Central US, South Central US, West Central US, Canada Central, Canada East, Brazil South Asia-Pacific: Australia Central, Australia East, Australia Southeast, Central India, South India, West India, Southeast Asia, East Asia, Japan East, Japan West, Korea South, Korea Central Europe, Middle East, Africa (EMEA): France Central, Germany West Central, Norway East, Sweden Central, Switzerland North, North Europe, West Europe, UK South, UK West, Qatar Central, UAE North, South Africa North Under Source type , select Azure Blob Storage or Data Lake Storage Gen2 ."
+        ]
+      },
+      {
+        "title": "Changelog \\_|\\_ Python client libraries \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/python/docs/reference/storagetransfer/latest/changelog",
+        "source_id": "site-python-reference",
+        "final_score": 72,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "1.20.0 (latest) 1.19.0 1.18.0 1.17.0 1.16.0 1.15.0 1.14.0 1.13.1 1.12.0 1.11.5 1.10.0 1.9.2 1.8.1 1.7.1 1.6.0 1.5.2 1.4.1 1.3.1 1.2.1 1.1.1 1.0.2 0.1.0 PyPI History 1.20.0 (2026-03-26) Features Allow Protobuf 7.x ( 1eb7c268482e55971966e284dac2cbeb903adcbb ) update image to us-central1-docker.pkg.dev/cloud-sdk-librarian-prod/images-prod/python-librarian-generator@sha256:f5426423676c75008c2135037e7b98f78cbb99f78b3c46fe043b6897be92d836 ( 3654fe76d755dd8db62ece81d5770ec58b3624df ) Bug Fixes Require Python 3.9 ( 1eb7c268482e55971966e284dac2cbeb903adcbb ) Require google-api-core >= 2.11.0 ( 1eb7c268482e55971966e284dac2cbeb903adcbb ) Improve type checking ( 1eb7c268482e55971966e284dac2cbeb903adcbb ) 1.19.0 (2026-01-09) Features auto-enable mTLS when supported certificates are detected ( c353aa5bcc937ef9399c8efc90492dadbcf01aa2 ) check Python and dependency versions in generated GAPICs ( c353aa5bcc937ef9399c8efc90492dadbcf01aa2 ) 1.18.0 (2025-10-20) Features Add support for Python 3.14 ( 98ee71abc0f97c88239b50bf0e0827df19630def ) Bug Fixes Deprecate credentials file argument ( 98ee71abc0f97c88239b50bf0e0827df19630def ) 1.17.0 (2025-05-26) Features support Azure federated identity ( 4b52aac ) support BYOSA ( 4b52aac ) Documentation A comment for enum value COPY in enum LoggableAction is changed ( 4b52aac ) A comment for field end time of day in message .google.storagetransfer.v1.Schedule is changed ( 4b52aac ) A comment for field list url in message .google.storagetransfer.v1.HttpData is changed ( 4b52aac ) A comment for field overwrite objects already existing in sink in message .google.storagetransfer.v1.TransferOptions is changed ( 4b52aac ) A comment for message ObjectConditions is changed ( 4b52aac ) 1.16.1 (2025-03-15) Bug Fixes [Many APIs] Allow Protobuf 6.x ( 784a3ca ) remove setup.cfg configuration for creating universal wheels ( #13659 ) ( 59bfd42 ) 1.16.0 (2025-02-12) Features Add REST Interceptors which support reading metadata ( 87b5382 ) Add support for reading selective GAPIC generation methods from service YAML ( 87b5382 ) 1.15.0 (2024-12-18) Features [google-cloud-storage-transfer] support cross-bucket replication ( #13372 ) ( 20d6e4c ) 1.14.0 (2024-12-12) Features Add support for opt-in debug logging ( 856e0f0 ) Bug Fixes Fix typing issue with gRPC metadata when key ends in -bin ( 856e0f0 ) 1.13.1 (2024-11-11) Bug Fixes disable universe-domain validation ( #13246 ) ( bcad563 ) 1.13.0 (2024-10-24) Features Add support for Python 3.13 ( #13210 ) ( 0b62ac6 ) 1.12.0 (2024-08-19) Features add GCS Managed Folders ( 9c54c1d ) add HDFS configuration ( 9c54c1d ) add S3 Cloudfront Domain ( 9c54c1d ) add S3 Managed Private Network ( 9c54c1d ) 1.11.5 (2024-07-30) Bug Fixes Retry and timeout values do not propagate in requests during pagination ( 9cdac77 ) 1.11.4 (2024-07-08) Bug Fixes Allow Protobuf 5.x ( #12870 ) ( 4d16761 ) 1.11.3 (2024-03-05) Bug Fixes deps: Exclude google-auth 2.24.0 and 2.25.0 ( #12387 ) ( 12ce658 ) 1.11.2 (2024-02-22) Bug Fixes deps: [Many APIs] Require google-api-core&gt;=1.34.1 ( #12309 ) ( c23398a ) fix ValueError in test validate universe domain ( 2451e88 ) 1.11.1 (2024-02-06) Bug Fixes Add google-auth as a direct dependency ( 9e8d039 ) Add staticmethod decorator to get client cert source and get api endpoint ( 9e8d039 ) Resolve AttributeError ‘Credentials’ object has no attribute ‘universe domain’ ( 9e8d039 ) 1.11.0 (2024-02-01) Features Allow users to explicitly configure universe domain ( #12243 ) ( e14d4b1 ) 1.10.0 (2023-12-07) Features Add support for python 3.12 ( e9655df ) Introduce compatibility with native namespace packages ( e9655df ) Bug Fixes Require proto-plus >= 1.22.3 ( e9655df ) Use retry async instead of retry in async client ( e9655df ) 1.9.2 (2023-09-13) Documentation Minor formatting ( b9b8298 ) 1.9.1 (2023-07-04) Bug Fixes Add async context manager return types ( #163 ) ( b1d5f2f ) 1.9.0 (2023-06-28) Features Add event driven transfer configuration ( #159 ) ( 9091a10 ) 1.8.1 (2023-03-23) Documentation Fix formatting of request arg in docstring ( #151 ) ( 8af4265 ) 1.8.0 (2023-02-28) Features Enable “rest” transport in Python for services supporting numeric enums ( 20ec491 ) 1.7.1 (2023-01-20) Bug Fixes Add context manager return types ( 9d82949 ) Documentation Add documentation for enums ( 9d82949 ) 1.7.0 (2023-01-10) Features Add support for python 3.11 ( #139 ) ( d561a86 ) 1.6.0 (2022-12-15) Features Add support for google.cloud.storage transfer. version ( d1754b0 ) Add typing to proto.Message based class attributes ( d1754b0 ) Bug Fixes Add dict typing for client options ( d1754b0 ) deps: Require google-api-core >=1.34.0, >=2.11.0 ( a7aabc5 ) Drop usage of pkg resources ( a7aabc5 ) Fix timeout default values ( a7aabc5 ) Documentation samples: Snippetgen handling of repeated enum field ( d1754b0 ) samples: Snippetgen should call await on the operation coroutine before calling result ( a7aabc5 ) 1.5.2 (2022-10-07) Bug Fixes deps: Allow protobuf 3.19.5 ( #128 ) ( 97af8c4 ) 1.5.1 (2022-09-29) Bug Fixes deps: Require protobuf >= 3.20.2 ( #126 ) ( 97051d1 ) 1.5.0 (2022-09-12) Features add AWS S3 compatible data source ( 7bbaafb ) Add default retry configuration ( #123 ) ( 7bbaafb ) add DeleteTransferJob operation ( 7bbaafb ) 1.4.1 (2022-08-11) Bug Fixes deps: allow protobuf < 5.0.0 ( #111 ) ( b0b5273 ) deps: require proto-plus >= 1.22.0 ( b0b5273 ) 1.4.0 (2022-07-16) Features add audience parameter ( 43557a9 ) Bug Fixes deps: require google-api-core>=1.32.0,>=2.8.0 ( #105 ) ( 4143850 ) require python 3.7+ ( #103 ) ( 3d6833b ) 1.3.1 (2022-06-03) Bug Fixes deps: require protobuf <4.0.0dev ( #93 ) ( 1e288aa ) Documentation fix changelog header to consistent size ( #94 ) ( 166df9d ) 1.3.0 (2022-04-14) Features add support for Agent Pools ( #74 ) ( 131bef4 ) add support for Cloud Logging ( 131bef4 ) add support for metadata preservation ( 131bef4 ) add support for transferring a specific list of objects (manifest) ( 131bef4 ) add support for transfers between file systems ( 131bef4 ) 1.2.1 (2022-03-05) Bug Fixes deps: require google-api-core>=1.31.5, >=2.3.2 ( #65 ) ( 346af01 ) 1.2.0 (2022-02-26) Features add api key support ( #52 ) ( 156018b ) Bug Fixes resolve DuplicateCredentialArgs error when using credentials file ( a4047a2 ) Documentation add generated snippets ( #60 ) ( 68c14e6 ) 1.1.1 (2021-11-01) Bug Fixes deps: drop packaging dependency ( 4ab0dba ) deps: require google-api-core >= 1.28.0 ( 4ab0dba ) Documentation list oneofs in docstring ( 4ab0dba ) 1.1.0 (2021-10-15) Features add context manager support in client ( #28 ) ( 54fcd0f ) add support for python 3.10 ( #32 ) ( bd43b0a ) 1.0.2 (2021-09-30) Bug Fixes improper types in pagers generation ( fa6382c ) 1.0.1 (2021-09-24) Bug Fixes add ‘dict’ annotation type to ‘request’ ( aef02f1 ) 1.0.0 (2021-08-31) Features bump release level to production/stable ( #6 ) ( 2c68696 ) 0.1.0 (2021-07-30) Features generate v1 ( c293e10 ) Miscellaneous Chores release as 0.1.0 ( #1 ) ( eab6d8c ) Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Need to tell us more? [[[\"Easy to understand\",\"easyToUnderstand\",\"thumb-up\"],[\"Solved my problem\",\"solvedMyProblem\",\"thumb-up\"],[\"Other\",\"otherUp\",\"thumb-up\"]],[[\"Hard to understand\",\"hardToUnderstand\",\"thumb-down\"],[\"Incorrect information or sample code\",\"incorrectInformationOrSampleCode\",\"thumb-down\"],[\"Missing the information/samples I need\",\"missingTheInformationSamplesINeed\",\"thumb-down\"],[\"Other\",\"otherDown\",\"thumb-down\"]],[\"Last updated 2026-03-31 UTC.\"],[],[]]",
+          "Home Documentation Developer tools Python Client libraries Send feedback Changelog Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"Transfer from Amazon S3 to Cloud Storage \\_|\\_ Storage Transfer Service\\",
+        "url": "https://docs.cloud.google.com/storage-transfer/docs/create-transfers/agentless/s3",
+        "source_id": "site-docs-root",
+        "final_score": 71,
+        "relevance": "",
+        "evidence_snippets": [
+          "Supported regions Storage Transfer Service supports the following Amazon S3 regions: af-south-1 ap-east-1 ap-northeast-1 ap-northeast-2 ap-northeast-3 ap-south-1 ap-south-2 ap-southeast-1 ap-southeast-2 ap-southeast-3 ap-southeast-4 ca-central-1 ca-west-1 eu-central-1 eu-central-2 eu-north-1 eu-south-1 eu-south-2 eu-west-1 eu-west-2 eu-west-3 il-central-1 me-central-1 me-south-1 sa-east-1 us-east-1 us-east-2 us-west-1 us-west-2 Transfers using the managed private network support the following AWS regions: ap-east-1 ap-northeast-1 ap-northeast-2 ap-northeast-3 ap-south-1 ap-south-2 ap-southeast-1 ca-central-1 ca-west-1 eu-central-1 eu-central-2 eu-north-1 eu-south-1 eu-south-2 eu-west-1 eu-west-2 eu-west-3 us-east-1 us-east-2 us-west-1 us-west-2 Transfer options The following Storage Transfer Service features are available for transfers from S3 to Cloud Storage Transfer specific files using a manifest You can pass a list of files for Storage Transfer Service to act on.",
+          "Event-driven transfers Storage Transfer Service can listen to Amazon S3 Event Notifications sent to Amazon SQS to automatically transfer data that has been added or updated in the source location.",
+          "Home Documentation Storage Storage Transfer Service Send feedback Transfer from Amazon S3 to Cloud Storage Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "docker.pkg.dev",
+      "proto.Message",
+      "setup.cfg",
+      "storagetransfer.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/create-transfers",
+        "https://docs.cloud.google.com/storage-transfer/docs/create-transfers/agentless/s3",
+        "https://docs.cloud.google.com/python/docs/reference/storagetransfer/latest/changelog"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/create-transfers",
+        "https://docs.cloud.google.com/storage-transfer/docs/create-transfers/agentless/s3",
+        "https://docs.cloud.google.com/python/docs/reference/storagetransfer/latest/changelog"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/create-transfers",
+        "https://docs.cloud.google.com/storage-transfer/docs/create-transfers/agentless/s3",
+        "https://docs.cloud.google.com/python/docs/reference/storagetransfer/latest/changelog"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/create-transfers",
+        "https://docs.cloud.google.com/storage-transfer/docs/create-transfers/agentless/s3",
+        "https://docs.cloud.google.com/python/docs/reference/storagetransfer/latest/changelog"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/create-transfers",
+        "https://docs.cloud.google.com/storage-transfer/docs/create-transfers/agentless/s3",
+        "https://docs.cloud.google.com/python/docs/reference/storagetransfer/latest/changelog"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/create-transfers",
+        "https://docs.cloud.google.com/storage-transfer/docs/create-transfers/agentless/s3",
+        "https://docs.cloud.google.com/python/docs/reference/storagetransfer/latest/changelog"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/create-transfers",
+        "https://docs.cloud.google.com/storage-transfer/docs/create-transfers/agentless/s3",
+        "https://docs.cloud.google.com/python/docs/reference/storagetransfer/latest/changelog"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/create-transfers",
+        "https://docs.cloud.google.com/storage-transfer/docs/create-transfers/agentless/s3",
+        "https://docs.cloud.google.com/python/docs/reference/storagetransfer/latest/changelog"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/create-transfers",
+        "https://docs.cloud.google.com/storage-transfer/docs/create-transfers/agentless/s3",
+        "https://docs.cloud.google.com/python/docs/reference/storagetransfer/latest/changelog"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/create-transfers",
+        "https://docs.cloud.google.com/storage-transfer/docs/create-transfers/agentless/s3",
+        "https://docs.cloud.google.com/python/docs/reference/storagetransfer/latest/changelog"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/create-transfers",
+        "https://docs.cloud.google.com/storage-transfer/docs/create-transfers/agentless/s3",
+        "https://docs.cloud.google.com/python/docs/reference/storagetransfer/latest/changelog"
+      ]
+    }
+  ]
+}

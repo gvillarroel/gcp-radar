@@ -1,0 +1,155 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:39.194Z",
+  "source_step08_card": "data/step-08/current/products/google-cloud-marketplace-partners/card.json",
+  "product_name": "Google Cloud Marketplace Partners",
+  "product_slug": "google-cloud-marketplace-partners",
+  "feature_name": "Trials for VM solutions on Google Cloud Marketplace",
+  "feature_slug": "trials-for-vm-solutions-on-google-cloud-marketplace",
+  "summary": "Sellers of VM solutions on Google Cloud Marketplace can offer software trials.",
+  "extended_definition": "Sellers of VM solutions on Google Cloud Marketplace can offer software trials.",
+  "lifecycle": {
+    "latest_feature_date": "2018-07-23",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/marketplace/docs/partners/access-control",
+      "https://docs.cloud.google.com/marketplace/docs/partners/data/choose-pricing",
+      "https://docs.cloud.google.com/marketplace/docs/partners/professional-services",
+      "https://docs.cloud.google.com/marketplace/docs/partners/vm"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Configure access control for Producer Portal users \\_|\\_ Google Cloud Marketplace\\",
+        "url": "https://docs.cloud.google.com/marketplace/docs/partners/access-control",
+        "source_id": "site-iam-reference",
+        "final_score": 252,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "If you used the VM guided configuration to create your VM product's deployment package, grant your users the following roles for the Cloud Storage bucket where you store your product's deployment package: Storage Object Viewer Storage Object Creator Access control for previewing your products in Cloud Marketplace If you want users to be able to preview your product's listing as your customers see it in Cloud Marketplace, you must grant them the following role: Service Management Consumer Access control for creating and managing private offers in Producer Portal For users to create and manage private offers in the Private offers tab of Producer Portal, grant them the following roles: Commerce Price Management Private Offers Admin Commerce Producer Viewer Access control for viewing key events for private offers For users to view the history of an offer that your organization has published, grant them the Commerce Price Management Events Viewer role.",
+          "Access control for viewing which resellers are allowed to resell your products For users to view which resellers are allowed to resell your Cloud Marketplace products, or which resellers have been disallowed from reselling your products, grant them one of the following roles: Commerce Business Enablement Configuration Viewer ( roles/commercebusinessenablement.viewer ) Commerce Business Enablement Configuration Admin ( roles/commercebusinessenablement.admin ) Access control for managing which resellers are allowed to resell your products For users to manage which resellers are allowed to resell your Cloud Marketplace products, grant them the Commerce Business Enablement Configuration Admin ( roles/commercebusinessenablement.admin ) role.",
+          "Access control for reselling of your Cloud Marketplace products If you've allowed resellers to resell your Cloud Marketplace products, you can refer to the following guidelines for granting roles within your Google Cloud organization."
+        ]
+      },
+      {
+        "title": "\"Offer professional services \\_|\\_ Google Cloud Marketplace Partners \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/marketplace/docs/partners/professional-services",
+        "source_id": "site-docs-root",
+        "final_score": 228,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "If you offer professional services, you must meet the following requirements: Cloud Marketplace must be able to use the agency transaction model for your private offers that include professional services products.",
+          "The professional services that you offer must fall under one of the following categories: Assessment : Evaluation of the customer's current operating environment to find the right solutions for their organization.",
+          "While your product's listing is publicly accessible in Cloud Marketplace, for customers to be able to purchase your professional services, you (or a reseller) must create private offers for your customers."
+        ]
+      },
+      {
+        "title": "\"Offering virtual machine (VM) products \\_|\\_ Google Cloud Marketplace Partners\\",
+        "url": "https://docs.cloud.google.com/marketplace/docs/partners/vm",
+        "source_id": "site-docs-root",
+        "final_score": 220,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Access and resource management Google Cloud Marketplace Partners Develop Send feedback Offering virtual machine (VM) products Stay organized with collections Save and categorize content based on your preferences.",
+          "This page is an overview of what you need to do to distribute and maintain a VM product on Cloud Marketplace.",
+          "Before you begin If you're new to offering software on Cloud Marketplace, sign up to become a vendor ."
+        ]
+      },
+      {
+        "title": "\"Add pricing information to a config \\_|\\_ Google Cloud Marketplace Partners\\",
+        "url": "https://docs.cloud.google.com/marketplace/docs/partners/data/choose-pricing",
+        "source_id": "site-iam-reference",
+        "final_score": 197,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Previous arrow back Add product details to a config Next Publish your data product arrow forward Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Home Documentation Access and resource management Google Cloud Marketplace Partners Develop Send feedback Add pricing information to a config Stay organized with collections Save and categorize content based on your preferences.",
+          "Free products For data products that you're offering with a free pricing plan, complete the following steps: Under Add subscriptions , for Subscription period 1 , select how long you want subscription periods to last."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "commercebusinessenablement.admin",
+      "commercebusinessenablement.resellerDiscountAdmin",
+      "commercebusinessenablement.resellerDiscountViewer",
+      "commercebusinessenablement.viewer",
+      "commercepricemanagement.viewer",
+      "commerceproducer.viewer"
+    ],
+    "missing_inventory_roles": [
+      "roles/commercebusinessenablement.admin",
+      "roles/commercebusinessenablement.resellerDiscountAdmin",
+      "roles/commercebusinessenablement.resellerDiscountViewer",
+      "roles/commercebusinessenablement.viewer",
+      "roles/commercepricemanagement.viewer",
+      "roles/commerceproducer.viewer",
+      "roles/viewer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/marketplace/docs/partners/access-control",
+        "https://docs.cloud.google.com/marketplace/docs/partners/professional-services",
+        "https://docs.cloud.google.com/marketplace/docs/partners/vm",
+        "https://docs.cloud.google.com/marketplace/docs/partners/data/choose-pricing"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/marketplace/docs/partners/access-control",
+        "https://docs.cloud.google.com/marketplace/docs/partners/professional-services",
+        "https://docs.cloud.google.com/marketplace/docs/partners/vm",
+        "https://docs.cloud.google.com/marketplace/docs/partners/data/choose-pricing"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/marketplace/docs/partners/access-control",
+        "https://docs.cloud.google.com/marketplace/docs/partners/professional-services",
+        "https://docs.cloud.google.com/marketplace/docs/partners/vm",
+        "https://docs.cloud.google.com/marketplace/docs/partners/data/choose-pricing"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/marketplace/docs/partners/access-control",
+        "https://docs.cloud.google.com/marketplace/docs/partners/professional-services",
+        "https://docs.cloud.google.com/marketplace/docs/partners/vm",
+        "https://docs.cloud.google.com/marketplace/docs/partners/data/choose-pricing"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/marketplace/docs/partners/access-control",
+        "https://docs.cloud.google.com/marketplace/docs/partners/professional-services",
+        "https://docs.cloud.google.com/marketplace/docs/partners/vm",
+        "https://docs.cloud.google.com/marketplace/docs/partners/data/choose-pricing"
+      ]
+    }
+  ]
+}

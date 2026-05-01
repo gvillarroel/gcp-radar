@@ -1,0 +1,118 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:29.182Z",
+  "source_step08_card": "data/step-08/current/products/colab-enterprise/card.json",
+  "product_name": "Colab Enterprise",
+  "product_slug": "colab-enterprise",
+  "feature_name": "Gemini error fixing",
+  "feature_slug": "gemini-error-fixing",
+  "summary": "Gemini can suggest fixes when code in a Colab Enterprise notebook produces errors.",
+  "extended_definition": "Gemini can suggest fixes when code in a Colab Enterprise notebook produces errors.",
+  "lifecycle": {
+    "latest_feature_date": "2024-12-10",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/colab/docs/explain-cells",
+      "https://docs.cloud.google.com/colab/docs/explain-errors",
+      "https://docs.cloud.google.com/colab/docs/gemini-in-colab/overview",
+      "https://docs.cloud.google.com/colab/docs/use-code-completion"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Gemini in Colab Enterprise \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/colab/docs/gemini-in-colab/overview",
+        "source_id": "site-iam-reference",
+        "final_score": 192,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Explain and fix errors (Preview): Gemini in Colab Enterprise suggests fixes for syntax errors and provides explanations of other errors.",
+          "The explanations can include sources and suggested code snippets for resolving the error.",
+          "Write code by using code completion and code generation : Gemini in Colab Enterprise suggests code segments while you type in a code cell."
+        ]
+      },
+      {
+        "title": "\"Explain and fix errors with Gemini assistance \\_|\\_ Colab Enterprise \\_\\",
+        "url": "https://docs.cloud.google.com/colab/docs/explain-errors",
+        "source_id": "site-iam-reference",
+        "final_score": 184,
+        "relevance": "",
+        "evidence_snippets": [
+          "Overview When you run code that generates an error, Gemini in Colab Enterprise can suggest a fix or explain the error to help you resolve the issue.",
+          "After evaluating the content, you can do any of the following: If Gemini provides a suggested code edit in its response, you can click: Accept to update the code in your notebook.",
+          "This document describes how you can use Gemini in Colab Enterprise, which is a product in the Gemini for Google Cloud portfolio, to help you explain and fix errors in a Colab Enterprise notebook."
+        ]
+      },
+      {
+        "title": "\"Use code completion and code generation \\_|\\_ Colab Enterprise \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/colab/docs/use-code-completion",
+        "source_id": "site-docs-root",
+        "final_score": 180,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Gemini features not working When you type in a Colab Enterprise notebook, code completion suggestions don't appear.",
+          "Use code completion and code generation This document describes how you can use Gemini in Colab Enterprise, which is a product in the Gemini for Google Cloud portfolio, to help you write and generate code in a Colab Enterprise notebook.",
+          "For more ways to write and edit code with Gemini assistance, see the following: Chat about your notebook with Gemini Explain code cells Explain and fix errors Use the Data Science Agent Learn how Gemini for Google Cloud uses your data ."
+        ]
+      },
+      {
+        "title": "\"Explain code cells with Gemini assistance \\_|\\_ Colab Enterprise \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/colab/docs/explain-cells",
+        "source_id": "site-iam-reference",
+        "final_score": 140,
+        "relevance": "",
+        "evidence_snippets": [
+          "For more ways to write and edit code with Gemini assistance, see the following: Chat about your notebook with Gemini Use code completion and code generation Explain and fix errors Use the Data Science Agent Learn how Gemini for Google Cloud uses your data .",
+          "This document describes how you can use Gemini in Colab Enterprise, which is a product in the Gemini for Google Cloud portfolio, to help you explain code cells in a Colab Enterprise notebook.",
+          "Overview Gemini in Colab Enterprise can help you explain code cells in a Colab Enterprise notebook."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "dataform.codeCreator",
+      "dataform.repositories.list"
+    ],
+    "missing_inventory_roles": [
+      "roles/dataform.codeCreator"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/colab/docs/gemini-in-colab/overview",
+        "https://docs.cloud.google.com/colab/docs/explain-errors",
+        "https://docs.cloud.google.com/colab/docs/use-code-completion",
+        "https://docs.cloud.google.com/colab/docs/explain-cells"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/colab/docs/gemini-in-colab/overview",
+        "https://docs.cloud.google.com/colab/docs/explain-errors",
+        "https://docs.cloud.google.com/colab/docs/use-code-completion",
+        "https://docs.cloud.google.com/colab/docs/explain-cells"
+      ]
+    }
+  ]
+}

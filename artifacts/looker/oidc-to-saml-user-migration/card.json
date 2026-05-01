@@ -1,0 +1,130 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:42.371Z",
+  "source_step08_card": "data/step-08/current/products/looker/card.json",
+  "product_name": "Looker",
+  "product_slug": "looker",
+  "feature_name": "OIDC to SAML user migration",
+  "feature_slug": "oidc-to-saml-user-migration",
+  "summary": "Looker now supports merging users from OIDC into SAML during SAML authentication setup.",
+  "extended_definition": "Looker now supports merging users from OIDC into SAML during SAML authentication setup.",
+  "lifecycle": {
+    "latest_feature_date": "2023-09-13",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-saml",
+      "https://docs.cloud.google.com/looker/docs/admin-panel-users-users",
+      "https://docs.cloud.google.com/looker/docs/reference/looker-api/latest/methods/Auth/create_saml_test_config"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Admin settings - SAML authentication \\_|\\_ Looker \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-saml",
+        "source_id": "site-docs-reference",
+        "final_score": 150,
+        "relevance": "",
+        "evidence_snippets": [
+          "Merging users when using Looker (Google Cloud core) When you're using Looker (Google Cloud core) and SAML, merging works as described in the previous section.",
+          "You can merge users from the following systems: Looker Email/Password (not available for Looker (Google Cloud core)) Google LDAP (not available for Looker (Google Cloud core)) OIDC If you have more than one system in place, you can specify more than one system to merge by in this field.",
+          "To pair SAML attributes with corresponding Looker user attributes, follow these steps: Enter the name of the SAML attribute in the SAML Attribute field and the name of the Looker user attribute that you want to pair it with in the Looker User Attributes field."
+        ]
+      },
+      {
+        "title": "Admin settings - Users \\_|\\_ Looker \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/looker/docs/admin-panel-users-users",
+        "source_id": "site-docs-reference",
+        "final_score": 121,
+        "relevance": "",
+        "evidence_snippets": [
+          "To be eligible to migrate, the standard user account must meet all of the following criteria: The account isn't using an identity provider, such as Google, SAML, or OpenID Connect, as their method of authentication into Looker.",
+          "If you want the user to view certain user interface (UI) text in a specific language, Looker supports the UI translations that are shown in the following table.",
+          "If you want to undo a migration, you must delete the service account and add the user again as a standard user to the Looker instance."
+        ]
+      },
+      {
+        "title": "Create SAML Test Configuration \\_|\\_ Looker \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/looker/docs/reference/looker-api/latest/methods/Auth/create_saml_test_config",
+        "source_id": "site-api-reference",
+        "final_score": 113,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Set this only if you want Looker to validate the audience value returned by the IdP. allowed clock drift integer Count of seconds of clock drift to allow when validating timestamps of assertions. user attribute map email string Name of user record attributes used to indicate email address field user attribute map first name string Name of user record attributes used to indicate first name user attribute map last name string Name of user record attributes used to indicate last name new user migration types string Merge first-time saml login to existing user account by email addresses.",
+          "Set this only if you want Looker to validate the audience value returned by the IdP. allowed clock drift integer Count of seconds of clock drift to allow when validating timestamps of assertions. user attribute map email string Name of user record attributes used to indicate email address field user attribute map first name string Name of user record attributes used to indicate first name user attribute map last name string Name of user record attributes used to indicate last name new user migration types string Merge first-time saml login to existing user account by email addresses.",
+          "Used when 'groups finder type' is set to 'grouped attribute values' groups SamlGroupRead [] Expand SamlGroupRead definition... id lock string Unique Id looker group id lock string Unique Id of group in Looker looker group name lock string Name of group in Looker name lock string Name of group in Saml roles Role [] Expand Role definition... can lock object Operations the current user is able to perform on this object id lock string Unique Id name string Name of Role permission set lock PermissionSet (Read only) Permission set permission set id string (Write-Only) Id of permission set model set lock ModelSet (Read only) Model set model set id string (Write-Only) Id of model set internal lock boolean Is this a Looker internal role url lock string Link to get this item users url lock string Link to get list of users with this role url lock string Link to saml config groups with role ids SamlGroupWrite [] Expand SamlGroupWrite definition... id string Unique Id looker group id lock string Unique Id of group in Looker looker group name string Name of group in Looker name string Name of group in Saml role ids string[] url lock string Link to saml config auth requires role boolean Users will not be allowed to login at all unless a role for them is found in Saml if set to true user attributes SamlUserAttributeRead [] Expand SamlUserAttributeRead definition... name lock string Name of User Attribute in Saml required lock boolean Required to be in Saml assertion for login to be allowed to succeed user attributes UserAttribute [] Expand UserAttribute definition... can lock object Operations the current user is able to perform on this object id lock string Unique Id name string Name of user attribute label string Human-friendly label for user attribute type string Type of user attribute (\"string\", \"number\", \"datetime\", \"yesno\", \"zipcode\", \"advanced filter string\", \"advanced filter number\") default value string Default value for when no value is set on the user is system lock boolean Attribute is a system default is permanent lock boolean Attribute is permanent and cannot be deleted value is hidden boolean If true, users will not be able to view values of this attribute user can view boolean Non-admin users can see the values of their attributes and use them in filters user can edit boolean Users can change the value of this attribute for themselves hidden value domain whitelist string Destinations to which a hidden attribute may be sent."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-saml",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-users-users",
+        "https://docs.cloud.google.com/looker/docs/reference/looker-api/latest/methods/Auth/create_saml_test_config"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-saml",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-users-users",
+        "https://docs.cloud.google.com/looker/docs/reference/looker-api/latest/methods/Auth/create_saml_test_config"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-saml",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-users-users",
+        "https://docs.cloud.google.com/looker/docs/reference/looker-api/latest/methods/Auth/create_saml_test_config"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-saml",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-users-users",
+        "https://docs.cloud.google.com/looker/docs/reference/looker-api/latest/methods/Auth/create_saml_test_config"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-saml",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-users-users",
+        "https://docs.cloud.google.com/looker/docs/reference/looker-api/latest/methods/Auth/create_saml_test_config"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-saml",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-users-users",
+        "https://docs.cloud.google.com/looker/docs/reference/looker-api/latest/methods/Auth/create_saml_test_config"
+      ]
+    }
+  ]
+}

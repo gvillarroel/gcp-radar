@@ -1,0 +1,205 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:26.024Z",
+  "source_step08_card": "data/step-08/current/products/cloud-run-functions/card.json",
+  "product_name": "Cloud Run functions",
+  "product_slug": "cloud-run-functions",
+  "feature_name": "Custom constraints for function resources",
+  "feature_slug": "custom-constraints-for-function-resources",
+  "summary": "Cloud Run functions supports managing function resources with custom constraints enforced at the project level; Cloud Run functions supports managing function resources with custom constraints enforced at the project level.",
+  "extended_definition": "Cloud Run functions supports managing function resources with custom constraints enforced at the project level; Cloud Run functions supports managing function resources with custom constraints enforced at the project level.",
+  "lifecycle": {
+    "latest_feature_date": "2024-10-10",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 2,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "coverage_low",
+        "message": "The feature ended with coverage LOW.",
+        "suggested_steps": [
+          "step-06"
+        ]
+      },
+      {
+        "severity": "warn",
+        "rule": "thin_token_overlap",
+        "message": "Supporting pages only weakly overlap with informative feature tokens.",
+        "suggested_steps": [
+          "step-03",
+          "step-04",
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/functions/docs/reference/rest/v1/projects.locations.functions/generateDownloadUrl",
+      "https://docs.cloud.google.com/functions/docs/reference/rest/v1/projects.locations.functions/generateUploadUrl",
+      "https://docs.cloud.google.com/functions/docs/reference/rest/v1/projects.locations.functions/get"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Method: projects.locations.functions.generateDownloadUrl \\_|\\_ Cloud Run\\",
+        "url": "https://docs.cloud.google.com/functions/docs/reference/rest/v1/projects.locations.functions/generateDownloadUrl",
+        "source_id": "site-docs-root",
+        "final_score": 72,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For more information about the signed URL usage see: https://cloud.google.com/storage/docs/access-control/signed-urls HTTP request POST https://cloudfunctions.googleapis.com/v1/{name}:generateDownloadUrl Path parameters Parameters name string The name of function for which source code Google Cloud Storage signed URL should be generated.",
+          "Authorization requires the following IAM permission on the specified resource name : cloudfunctions.functions.sourceCodeGet Request body The request body contains data with the following structure: JSON representation { \"versionId\" : string } Fields versionId string The optional version of function.",
+          "Home Documentation Application hosting Cloud Run Cloud Run functions Reference Send feedback Method: projects.locations.functions.generateDownloadUrl Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"Method: projects.locations.functions.generateUploadUrl \\_|\\_ Cloud Run functions\\",
+        "url": "https://docs.cloud.google.com/functions/docs/reference/rest/v1/projects.locations.functions/generateUploadUrl",
+        "source_id": "site-docs-root",
+        "final_score": 72,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "When making a HTTP PUT request, these two headers need to be specified: content-type: application/zip x-goog-content-length-range: 0,104857600 And this header SHOULD NOT be specified: Authorization: Bearer YOUR TOKEN HTTP request POST https://cloudfunctions.googleapis.com/v1/{parent}/functions:generateUploadUrl Path parameters Parameters parent string The project and location in which the Google Cloud Storage signed URL should be generated, specified in the format projects/ /locations/ .",
+          "Authorization requires the following IAM permission on the specified resource parent : cloudfunctions.functions.sourceCodeSet Request body The request body contains data with the following structure: JSON representation { \"kmsKeyName\" : string } Fields kmsKeyName string Resource name of a KMS crypto key (managed by the user) used to encrypt/decrypt function source code objects in intermediate Cloud Storage buckets.",
+          "The Google Cloud Functions service account (service-{project number}@gcf-admin-robot.iam.gserviceaccount.com) must be granted the role 'Cloud KMS CryptoKey Encrypter/Decrypter (roles/cloudkms.cryptoKeyEncrypterDecrypter)' on the Key/KeyRing/Project/Organization (least access preferred)."
+        ]
+      },
+      {
+        "title": "\"Method: projects.locations.functions.get \\_|\\_ Cloud Run functions \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/functions/docs/reference/rest/v1/projects.locations.functions/get",
+        "source_id": "site-docs-root",
+        "final_score": 72,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Application hosting Cloud Run Cloud Run functions Reference Send feedback Method: projects.locations.functions.get Stay organized with collections Save and categorize content based on your preferences.",
+          "Authorization scopes Requires one of the following OAuth scopes: https://www.googleapis.com/auth/cloudfunctions https://www.googleapis.com/auth/cloud-platform For more information, see the Authentication Overview .",
+          "Authorization requires the following IAM permission on the specified resource name : cloudfunctions.functions.get Query parameters Parameters versionId string ( int64 format) Optional."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cloudfunctions.functions.get",
+      "cloudfunctions.functions.sourceCodeGet",
+      "cloudfunctions.functions.sourceCodeSet",
+      "cloudfunctions.googleapis.com",
+      "cloudkms.cryptoKeyEncrypterDecrypter",
+      "projects.locations.functions",
+      "projects.locations.functions.call",
+      "projects.locations.functions.create",
+      "projects.locations.functions.delete",
+      "projects.locations.functions.generateDownloadUrl",
+      "projects.locations.functions.generateUploadUrl",
+      "projects.locations.functions.get",
+      "robot.iam.gserviceaccount.com"
+    ],
+    "missing_inventory_roles": [
+      "roles/cloudkms.cryptoKeyEncrypterDecrypter"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/reference/rest/v1/projects.locations.functions/generateDownloadUrl",
+        "https://docs.cloud.google.com/functions/docs/reference/rest/v1/projects.locations.functions/generateUploadUrl",
+        "https://docs.cloud.google.com/functions/docs/reference/rest/v1/projects.locations.functions/get"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/reference/rest/v1/projects.locations.functions/generateDownloadUrl",
+        "https://docs.cloud.google.com/functions/docs/reference/rest/v1/projects.locations.functions/generateUploadUrl",
+        "https://docs.cloud.google.com/functions/docs/reference/rest/v1/projects.locations.functions/get"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/reference/rest/v1/projects.locations.functions/generateDownloadUrl",
+        "https://docs.cloud.google.com/functions/docs/reference/rest/v1/projects.locations.functions/generateUploadUrl",
+        "https://docs.cloud.google.com/functions/docs/reference/rest/v1/projects.locations.functions/get"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/reference/rest/v1/projects.locations.functions/generateDownloadUrl",
+        "https://docs.cloud.google.com/functions/docs/reference/rest/v1/projects.locations.functions/generateUploadUrl",
+        "https://docs.cloud.google.com/functions/docs/reference/rest/v1/projects.locations.functions/get"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/reference/rest/v1/projects.locations.functions/generateDownloadUrl",
+        "https://docs.cloud.google.com/functions/docs/reference/rest/v1/projects.locations.functions/generateUploadUrl",
+        "https://docs.cloud.google.com/functions/docs/reference/rest/v1/projects.locations.functions/get"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/reference/rest/v1/projects.locations.functions/generateDownloadUrl",
+        "https://docs.cloud.google.com/functions/docs/reference/rest/v1/projects.locations.functions/generateUploadUrl",
+        "https://docs.cloud.google.com/functions/docs/reference/rest/v1/projects.locations.functions/get"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/reference/rest/v1/projects.locations.functions/generateDownloadUrl",
+        "https://docs.cloud.google.com/functions/docs/reference/rest/v1/projects.locations.functions/generateUploadUrl",
+        "https://docs.cloud.google.com/functions/docs/reference/rest/v1/projects.locations.functions/get"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/reference/rest/v1/projects.locations.functions/generateDownloadUrl",
+        "https://docs.cloud.google.com/functions/docs/reference/rest/v1/projects.locations.functions/generateUploadUrl",
+        "https://docs.cloud.google.com/functions/docs/reference/rest/v1/projects.locations.functions/get"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/reference/rest/v1/projects.locations.functions/generateDownloadUrl",
+        "https://docs.cloud.google.com/functions/docs/reference/rest/v1/projects.locations.functions/generateUploadUrl",
+        "https://docs.cloud.google.com/functions/docs/reference/rest/v1/projects.locations.functions/get"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/reference/rest/v1/projects.locations.functions/generateDownloadUrl",
+        "https://docs.cloud.google.com/functions/docs/reference/rest/v1/projects.locations.functions/generateUploadUrl",
+        "https://docs.cloud.google.com/functions/docs/reference/rest/v1/projects.locations.functions/get"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/reference/rest/v1/projects.locations.functions/generateDownloadUrl",
+        "https://docs.cloud.google.com/functions/docs/reference/rest/v1/projects.locations.functions/generateUploadUrl",
+        "https://docs.cloud.google.com/functions/docs/reference/rest/v1/projects.locations.functions/get"
+      ]
+    }
+  ]
+}

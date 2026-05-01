@@ -1,0 +1,150 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:12.801Z",
+  "source_step08_card": "data/step-08/current/products/alloydb/card.json",
+  "product_name": "AlloyDB",
+  "product_slug": "alloydb",
+  "feature_name": "Authorized Networks without CIDR restrictions",
+  "feature_slug": "authorized-networks-without-cidr-restrictions",
+  "summary": "Authorized Networks without CIDR restrictions let AlloyDB Public IP configurations use unrestricted authorized network definitions governed by custom organization policies.",
+  "extended_definition": "Authorized Networks without CIDR restrictions let AlloyDB Public IP configurations use unrestricted authorized network definitions governed by custom organization policies.",
+  "lifecycle": {
+    "latest_feature_date": "2025-10-27",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/alloydb/docs/quickstart/integrate-kubernetes",
+      "https://docs.cloud.google.com/alloydb/docs/reference/mcp/tools_list/get_instance",
+      "https://docs.cloud.google.com/alloydb/docs/reference/mcp/tools_list/list_instances"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"MCP Tools Reference: alloydb \\_|\\_ AlloyDB for PostgreSQL \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/alloydb/docs/reference/mcp/tools_list/get_instance",
+        "source_id": "site-api-reference",
+        "final_score": 120,
+        "relevance": "",
+        "evidence_snippets": [
+          "InstanceNetworkConfig JSON representation { \"authorizedExternalNetworks\" : [ { object ( AuthorizedNetwork ) } ] , \"enablePublicIp\" : boolean , \"enableOutboundPublicIp\" : boolean , \"network\" : string , \"allocatedIpRangeOverride\" : string } Fields authorizedExternalNetworks[] object ( AuthorizedNetwork ) Optional.",
+          "When enabled, this allows authorized users to connect to the instance from the public internet using the executeSql API, even for private IP instances.",
+          "AuthorizedNetwork JSON representation { \"cidrRange\" : string } Fields cidrRange string CIDR range for one authorzied network of the instance."
+        ]
+      },
+      {
+        "title": "\"MCP Tools Reference: alloydb \\_|\\_ AlloyDB for PostgreSQL \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/alloydb/docs/reference/mcp/tools_list/list_instances",
+        "source_id": "site-api-reference",
+        "final_score": 120,
+        "relevance": "",
+        "evidence_snippets": [
+          "InstanceNetworkConfig JSON representation { \"authorizedExternalNetworks\" : [ { object ( AuthorizedNetwork ) } ] , \"enablePublicIp\" : boolean , \"enableOutboundPublicIp\" : boolean , \"network\" : string , \"allocatedIpRangeOverride\" : string } Fields authorizedExternalNetworks[] object ( AuthorizedNetwork ) Optional.",
+          "When enabled, this allows authorized users to connect to the instance from the public internet using the executeSql API, even for private IP instances.",
+          "AuthorizedNetwork JSON representation { \"cidrRange\" : string } Fields cidrRange string CIDR range for one authorzied network of the instance."
+        ]
+      },
+      {
+        "title": "\"Connect from Google Kubernetes Engine (GKE) to AlloyDB for PostgreSQL \\_\\",
+        "url": "https://docs.cloud.google.com/alloydb/docs/quickstart/integrate-kubernetes",
+        "source_id": "site-docs-reference",
+        "final_score": 71,
+        "relevance": "",
+        "evidence_snippets": [
+          "This can take several minutes. gcloud In the Cloud Shell, check if the unused IP addresses (IPv4) range is already assigned to service peering: gcloud services vpc-peerings list --network = default Skip the next step if your output looks similar to the following: network: projects/493573376485/global/networks/default peering: servicenetworking-googleapis-com reservedPeeringRanges: - default-ip-range service: services/servicenetworking.googleapis.com In this output, the value of reservedPeeringRanges is default-ip-range , which you can use as IP RANGE NAME to create a private connection in step 3. (Skip when using the default value of reservedPeeringRanges ) To allocate unused IP addresses in the VPC, use the following command: gcloud compute addresses create IP RANGE NAME \\ --global \\ --purpose = VPC PEERING \\ --prefix-length = 16 \\ --description = \"VPC private service access\" \\ --network = default Replace IP RANGE NAME with your name for available internal IP addresses within an AlloyDB subnet, such as alloydb-gke-psa-01 .",
+          "A new version of the Proxy is released monthly with bug fixes, security updates, and new features. image : gcr.io/alloydb-connectors/alloydb-auth-proxy:1.10.1 args : If you're connecting over public IP, enable this flag. - \"--public-ip\" If you're connecting with PSC, enable this flag: - \"--psc\" If you're using auto IAM authentication, enable this flag: - \"--auto-iam-authn\" Enable structured logging with Google's LogEntry format: - \"--structured-logs\" Listen on localhost:5432 by default. - \"--port=5432\" Specify your instance URI, e.g., \"projects/myproject/locations/us-central1/clusters/mycluster/instances/myinstance\" - \"<INSTANCE-URI>\" securityContext : The default AlloyDB Auth Proxy image runs as the \"nonroot\" user and group (uid: 65532) by default. runAsNonRoot : true You should use resource requests/limits as a best practice to prevent pods from consuming too many resources and affecting the execution of other pods.",
+          "Grant all permissions to the AlloyDB database user on the new database: GRANT ALL PRIVILEGES ON DATABASE \" DATABASE NAME \" to \" USERNAME \" ; Connect to the new database and grant permissions on the public schema: \\ c DATABASE NAME GRANT CREATE ON SCHEMA public TO \" USERNAME \" ; Take note of the database name, username, and password."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "e.g",
+      "gcr.io",
+      "servicenetworking.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/reference/mcp/tools_list/get_instance",
+        "https://docs.cloud.google.com/alloydb/docs/reference/mcp/tools_list/list_instances",
+        "https://docs.cloud.google.com/alloydb/docs/quickstart/integrate-kubernetes"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/reference/mcp/tools_list/get_instance",
+        "https://docs.cloud.google.com/alloydb/docs/reference/mcp/tools_list/list_instances",
+        "https://docs.cloud.google.com/alloydb/docs/quickstart/integrate-kubernetes"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/reference/mcp/tools_list/get_instance",
+        "https://docs.cloud.google.com/alloydb/docs/reference/mcp/tools_list/list_instances",
+        "https://docs.cloud.google.com/alloydb/docs/quickstart/integrate-kubernetes"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/reference/mcp/tools_list/get_instance",
+        "https://docs.cloud.google.com/alloydb/docs/reference/mcp/tools_list/list_instances",
+        "https://docs.cloud.google.com/alloydb/docs/quickstart/integrate-kubernetes"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/reference/mcp/tools_list/get_instance",
+        "https://docs.cloud.google.com/alloydb/docs/reference/mcp/tools_list/list_instances",
+        "https://docs.cloud.google.com/alloydb/docs/quickstart/integrate-kubernetes"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/reference/mcp/tools_list/get_instance",
+        "https://docs.cloud.google.com/alloydb/docs/reference/mcp/tools_list/list_instances",
+        "https://docs.cloud.google.com/alloydb/docs/quickstart/integrate-kubernetes"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/reference/mcp/tools_list/get_instance",
+        "https://docs.cloud.google.com/alloydb/docs/reference/mcp/tools_list/list_instances",
+        "https://docs.cloud.google.com/alloydb/docs/quickstart/integrate-kubernetes"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/reference/mcp/tools_list/get_instance",
+        "https://docs.cloud.google.com/alloydb/docs/reference/mcp/tools_list/list_instances",
+        "https://docs.cloud.google.com/alloydb/docs/quickstart/integrate-kubernetes"
+      ]
+    }
+  ]
+}

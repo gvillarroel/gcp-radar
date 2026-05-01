@@ -1,0 +1,102 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:18.771Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery",
+  "feature_name": "TYPEOF function",
+  "feature_slug": "typeof-function",
+  "summary": "The TYPEOF function returns the data type of an expression in BigQuery.",
+  "extended_definition": "The TYPEOF function returns the data type of an expression in BigQuery.",
+  "lifecycle": {
+    "latest_feature_date": "2025-03-17",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/conditional_expressions",
+      "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-types",
+      "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/functions-all"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Data types \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-types",
+        "source_id": "site-docs-reference",
+        "final_score": 150,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For example, this query returns the current DATE and the following DATE s at 1 WEEK intervals up to and including a later DATE : SELECT GENERATE DATE ARRAY ( '2017-11-21' , '2017-12-31' , INTERVAL 1 WEEK ) AS date array ; / --------------------------------------------------------------------------+ date array +--------------------------------------------------------------------------+ [2017-11-21, 2017-11-28, 2017-12-05, 2017-12-12, 2017-12-19, 2017-12-26] +-------------------------------------------------------------------------- / Boolean type Name Description BOOL BOOLEAN Boolean values are represented by the keywords TRUE and FALSE (case-insensitive).",
+          "FinGraph MATCH ( n : Person ) RETURN TYPEOF ( n ) AS t LIMIT 1 / --------------------------------------------------------+ t +--------------------------------------------------------+ GRAPH NODE(myproject.graph db.FinGraph)<id INT64, ...> +-------------------------------------------------------- / Graph path type Name Description GRAPH PATH A path in a property graph.",
+          "For example: SELECT [ a , b , c ] FROM ( SELECT 5 AS a , 37 AS b , 406 AS c ); SELECT [ a , b , c ] FROM ( SELECT CAST ( 5 AS INT64 ) AS a , CAST ( 37 AS FLOAT64 ) AS b , 406 AS c ); Notice that the second example contains three expressions: one that returns an INT64 , one that returns a FLOAT64 , and one that declares a literal."
+        ]
+      },
+      {
+        "title": "Conditional expressions \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/conditional_expressions",
+        "source_id": "site-docs-root",
+        "final_score": 111,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Examples SELECT COALESCE ( 'A' , 'B' , 'C' ) as result / --------+ result +--------+ A +-------- / SELECT COALESCE ( NULL , 'B' , 'C' ) as result / --------+ result +--------+ B +-------- / IF IF ( expr , true result , else result ) Description If expr evaluates to TRUE , returns true result , else returns the evaluation for else result . else result isn't evaluated if expr evaluates to TRUE . true result isn't evaluated if expr evaluates to FALSE or NULL . expr must be a boolean expression. true result and else result must be coercible to a common supertype .",
+          "Example WITH Numbers AS ( SELECT 90 as A , 2 as B UNION ALL SELECT 50 , 6 UNION ALL SELECT 20 , 10 ) SELECT A , B , CASE WHEN A > 60 THEN 'red' WHEN B = 6 THEN 'blue' ELSE 'green' END AS result FROM Numbers / ------------------+ A B result +------------------+ 90 2 red 50 6 blue 20 10 green +------------------ / COALESCE COALESCE ( expr [ , ... ] ) Description Returns the value of the first non- NULL expression, if any, otherwise NULL .",
+          "Examples SELECT IFNULL ( NULL , 0 ) as result / --------+ result +--------+ 0 +-------- / SELECT IFNULL ( 10 , 0 ) as result / --------+ result +--------+ 10 +-------- / NULLIF NULLIF ( expr , expr to match ) Description Returns NULL if expr = expr to match evaluates to TRUE , otherwise returns expr . expr and expr to match must be implicitly coercible to a common supertype , and must be comparable."
+        ]
+      },
+      {
+        "title": "Functions (alphabetical) \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/functions-all",
+        "source_id": "site-docs-reference",
+        "final_score": 90,
+        "relevance": "",
+        "evidence_snippets": [
+          "TYPEOF Gets the name of the data type for an expression.",
+          "CAST Convert the results of an expression to the given type.",
+          "Home Documentation Data analytics BigQuery Reference Send feedback Functions (alphabetical) Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "db.FinGraph",
+      "e.g",
+      "myproject.graph"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-types",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/conditional_expressions",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/functions-all"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-types",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/conditional_expressions",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/functions-all"
+      ]
+    }
+  ]
+}

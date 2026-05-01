@@ -1,0 +1,126 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:30.193Z",
+  "source_step08_card": "data/step-08/current/products/config-connector/card.json",
+  "product_name": "Config Connector",
+  "product_slug": "config-connector",
+  "feature_name": "Config Connector pod resource customization",
+  "feature_slug": "config-connector-pod-resource-customization",
+  "summary": "Config Connector supports customizing resource requests and limits for cnrm-webhook-manager, cnrm-controller-manager, cnrm-resource-stats-recorder, and cnrm-deletiondefender pods.",
+  "extended_definition": "Config Connector supports customizing resource requests and limits for cnrm-webhook-manager, cnrm-controller-manager, cnrm-resource-stats-recorder, and cnrm-deletiondefender pods.",
+  "lifecycle": {
+    "latest_feature_date": "2023-07-11",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 1,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "coverage_low",
+        "message": "The feature ended with coverage LOW.",
+        "suggested_steps": [
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/config-connector/docs/how-to/customizing-container-resources",
+      "https://docs.cloud.google.com/config-connector/docs/how-to/customizing-webhook-timeouts",
+      "https://docs.cloud.google.com/config-connector/docs/overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Config Connector overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/config-connector/docs/overview",
+        "source_id": "site-docs-reference",
+        "final_score": 36,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Customizing Config Connector's behavior Config Connector provides additional features beyond creating resources.",
+          "For Config Connector CRDs to function correctly, Config Connector deploys Pods to your nodes that have elevated RBAC permissions, such as the ability to create, delete, get, and list CustomResourceDefinitions (CRDs).",
+          "Home Documentation Access and resource management Config Connector Guides Send feedback Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"Configure container resources and replicas \\_|\\_ Config Connector \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/config-connector/docs/how-to/customizing-container-resources",
+        "source_id": "site-docs-reference",
+        "final_score": 30,
+        "relevance": "",
+        "evidence_snippets": [
+          "Create a file named configure-webhook-manager.yaml and copy the following YAML into it: apiVersion : customize.core.cnrm.cloud.google.com/v1beta1 kind : ControllerResource metadata : name : cnrm-webhook-manager spec : replicas : 3 containers : - name : webhook resources : limits : memory : 512Mi requests : memory : 256Mi Use kubectl apply to apply the modified configuration to your cluster: kubectl apply -f configure-webhook-manager.yaml Verify the successful configuration by running the following command. kubectl get controllerresource cnrm-webhook-manager -o jsonpath='{.status.healthy}' It should display status.healthy field set to true .",
+          "For example, to configure the memory request and limit of the webhook container of the cnrm-webhook-manager controller, create and apply the following YAML file: apiVersion : customize.core.cnrm.cloud.google.com/v1beta1 kind : ControllerResource metadata : name : cnrm-webhook-manager spec : containers : - name : webhook resources : limits : memory : 512Mi requests : memory : 256Mi Use NamespacedControllerResource for the namespaced controller manager Use the NamespacedControllerResource custom resource only to configure resources for the cnrm-controller-manager when Config Connector is running in namespaced mode.",
+          "The following YAML file shows an example configuration: apiVersion : customize.core.cnrm.cloud.google.com/v1beta1 kind : NamespacedControllerResource metadata : name : cnrm-controller-manager # name should not contain the namespace ID suffix namespace : NAMESPACE spec : containers : - name : manager resources : limits : cpu : 200m memory : 512Mi requests : cpu : 100m memory : 256Mi Replace NAMESPACE with the name of your namespace."
+        ]
+      },
+      {
+        "title": "Configure webhook timeout \\_|\\_ Config Connector \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/config-connector/docs/how-to/customizing-webhook-timeouts",
+        "source_id": "site-docs-reference",
+        "final_score": 28,
+        "relevance": "",
+        "evidence_snippets": [
+          "Configure timeout for validating webhooks You can configure the following validating webhooks: deny-immutable-field-updates.cnrm.cloud.google.com deny-unknown-fields.cnrm.cloud.google.com iam-validation.cnrm.cloud.google.com resource-validation.cnrm.cloud.google.com abandon-on-uninstall.cnrm.cloud.google.com For example, you can configure the timeout of validating webhooks deny-immutable-field-updates.cnrm.cloud.google.com and deny-unknown-fields.cnrm.cloud.google.com by creating and applying the following example YAML file.",
+          "Create a file named configure-validating-webhook-timeout.yaml and copy the following YAML into it: apiVersion : customize.core.cnrm.cloud.google.com/v1beta1 kind : ValidatingWebhookConfigurationCustomization metadata : name : validating-webhook spec : webhooks : - name : deny-immutable-field-updates timeoutSeconds : 12 - name : deny-unknown-fields timeoutSeconds : 15 Note: when specifying the name of webhook configuration and the names of webhooks in the YAML file, don't include the .cnrm.cloud.google.com suffix.",
+          "Verify that the new custom timeout has been applied to the target webhooks: kubectl get validatingwebhookconfigurations validating-webhook.cnrm.cloud.google.com -o jsonpath='{.webhooks[?(@.name==\"deny-immutable-field-updates.cnrm.cloud.google.com\")].timeoutSeconds}{\"\\n\"}' kubectl get validatingwebhookconfigurations validating-webhook.cnrm.cloud.google.com -o jsonpath='{.webhooks[?(@.name==\"deny-unknown-fields.cnrm.cloud.google.com\")].timeoutSeconds}{\"\\n\"}' Applying the customization could take a few minutes."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cnrm.cloud.google.com",
+      "customize.core.cnrm.cloud.google.com",
+      "fields.cnrm.cloud.google.com",
+      "manager.yaml",
+      "status.healthy",
+      "timeout.yaml",
+      "uninstall.cnrm.cloud.google.com",
+      "updates.cnrm.cloud.google.com",
+      "validation.cnrm.cloud.google.com",
+      "webhook.cnrm.cloud.google.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/how-to/customizing-container-resources",
+        "https://docs.cloud.google.com/config-connector/docs/overview",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/customizing-webhook-timeouts"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/how-to/customizing-container-resources",
+        "https://docs.cloud.google.com/config-connector/docs/overview",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/customizing-webhook-timeouts"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/how-to/customizing-container-resources",
+        "https://docs.cloud.google.com/config-connector/docs/overview",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/customizing-webhook-timeouts"
+      ]
+    }
+  ]
+}

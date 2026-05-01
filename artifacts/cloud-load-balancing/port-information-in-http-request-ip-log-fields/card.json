@@ -1,0 +1,108 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:24.125Z",
+  "source_step08_card": "data/step-08/current/products/cloud-load-balancing/card.json",
+  "product_name": "Cloud Load Balancing",
+  "product_slug": "cloud-load-balancing",
+  "feature_name": "Port information in HTTP request IP log fields",
+  "feature_slug": "port-information-in-http-request-ip-log-fields",
+  "summary": "HTTP request logs can include port numbers in the httpRequest.remoteIp and httpRequest.serverIp fields.",
+  "extended_definition": "HTTP request logs can include port numbers in the httpRequest.remoteIp and httpRequest.serverIp fields.",
+  "lifecycle": {
+    "latest_feature_date": "2020-10-20",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/load-balancing/docs/health-check-logging",
+      "https://docs.cloud.google.com/load-balancing/docs/https/setting-up-https",
+      "https://docs.cloud.google.com/load-balancing/docs/tutorials/http-https-over-same-domain"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Health check logging information \\_|\\_ Cloud Load Balancing \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/load-balancing/docs/health-check-logging",
+        "source_id": "site-docs-reference-required-3",
+        "final_score": 198,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Not supported for distributed Envoy health checks for hybrid NEGs and regional internet NEGs. probeRequest string For HTTP, HTTPS, and HTTP/2, this is the URL request path ( requestPath field in the resource config).",
+          "The API provides ways to interactively filter logs that have specific fields set and export matching logs to Cloud Logging, Cloud Storage, BigQuery, or Pub/Sub.",
+          "Not supported for distributed Envoy health checks for hybrid NEGs and regional internet NEGs. probeCompletionTimestamp google.protobuf.Timestamp Probe completion timestamp. connectLatency google.protobuf.Duration Time spent on setting up the connection for connection-oriented health check protocols TCP, SSL, HTTP, HTTPS, and HTTP/2."
+        ]
+      },
+      {
+        "title": "\"Deliver HTTP and HTTPS content over the same published domain \\_|\\_ Cloud\\",
+        "url": "https://docs.cloud.google.com/load-balancing/docs/tutorials/http-https-over-same-domain",
+        "source_id": "site-docs-reference-required-3",
+        "final_score": 197,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "When configuring the external Application Load Balancer, the frontend configuration includes four forwarding rules that use the reserved IP addresses: Name Protocol IP:Port ipv4-http HTTP 34.95.111.204:80 ipv4-https HTTPS 34.95.111.204:443 ipv6-http HTTP [2600:1901:0:b13e::]:80 ipv6-https HTTPS [2600:1901:0:b13e::]:443 For Cloud CDN cache misses, the load balancer distributes requests to the backend origins, based on settings defined in the load balancer's URL map.",
+          "The proxy is the portion of the load balancer that holds the SSL certificate for HTTPS Load Balancing, so you also load your certificate in this step. gcloud compute target-https-proxies create https-lb-proxy \\ --url-map=web-map --ssl-certificates=www-ssl-cert Create two global forwarding rules to route incoming requests to the proxy, one for each of the IP address(es) you created.",
+          "For an classic Application Load Balancer, use load-balancing-scheme=EXTERNAL . gcloud compute forwarding-rules create ipv4-http \\ --load-balancing-scheme= LOAD BALANCING SCHEME \\ --network-tier=PREMIUM \\ --address=ipv4-address \\ --global \\ --target-http-proxy=http-lb-proxy \\ --ports=80 gcloud compute forwarding-rules create ipv4-https \\ --load-balancing-scheme= LOAD BALANCING SCHEME \\ --network-tier=PREMIUM \\ --address=ipv4-address \\ --global \\ --target-https-proxy=https-lb-proxy \\ --ports=443 After creating the global forwarding rules, it can take several minutes for your configuration to propagate worldwide."
+        ]
+      },
+      {
+        "title": "\"Request routing to a multi-region classic Application Load Balancer \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/load-balancing/docs/https/setting-up-https",
+        "source_id": "site-docs-root",
+        "final_score": 186,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The proxy is the portion of the load balancer that holds the SSL certificate for HTTPS Load Balancing, so you also load your certificate in this step. gcloud compute target-https-proxies create https-lb-proxy \\ --url-map web-map --ssl-certificates www-ssl-cert Create two global forwarding rules to route incoming requests to the proxy, one for each of the IP addresses you created.",
+          "For an classic Application Load Balancer, use load-balancing-scheme=EXTERNAL . gcloud compute forwarding-rules create https-content-rule \\ --load-balancing-scheme= LOAD BALANCING SCHEME \\ --network-tier=PREMIUM \\ --address=lb-ipv4-1 \\ --global \\ --target-https-proxy=https-lb-proxy \\ --ports=443 gcloud compute forwarding-rules create https-content-ipv6-rule \\ --load-balancing-scheme= LOAD BALANCING SCHEME \\ --network-tier=PREMIUM \\ --address=lb-ipv6-1 \\ --global \\ --target-https-proxy=https-lb-proxy \\ --ports=443 After creating the global forwarding rule, it can take several minutes for your configuration to propagate worldwide.",
+          "Repeat this step for each instance group. gcloud gcloud compute instance-groups unmanaged set-named-ports ig-video-us \\ --named-ports http:80 \\ --zone us-central1-b gcloud compute instance-groups unmanaged set-named-ports ig-www-us \\ --named-ports http:80 \\ --zone us-central1-b gcloud compute instance-groups unmanaged set-named-ports ig-video-eu \\ --named-ports http:80 \\ --zone europe-west1-b gcloud compute instance-groups unmanaged set-named-ports ig-www-eu \\ --named-ports http:80 \\ --zone europe-west1-b Reserving external IP addresses Now that your instances are up and running, set up the services needed for load balancing."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "compute.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/health-check-logging",
+        "https://docs.cloud.google.com/load-balancing/docs/tutorials/http-https-over-same-domain",
+        "https://docs.cloud.google.com/load-balancing/docs/https/setting-up-https"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/health-check-logging",
+        "https://docs.cloud.google.com/load-balancing/docs/tutorials/http-https-over-same-domain",
+        "https://docs.cloud.google.com/load-balancing/docs/https/setting-up-https"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/health-check-logging",
+        "https://docs.cloud.google.com/load-balancing/docs/tutorials/http-https-over-same-domain",
+        "https://docs.cloud.google.com/load-balancing/docs/https/setting-up-https"
+      ]
+    }
+  ]
+}

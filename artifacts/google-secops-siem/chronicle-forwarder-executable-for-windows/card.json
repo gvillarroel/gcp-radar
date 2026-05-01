@@ -1,0 +1,174 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:41.049Z",
+  "source_step08_card": "data/step-08/current/products/google-secops-siem/card.json",
+  "product_name": "Google SecOps SIEM",
+  "product_slug": "google-secops-siem",
+  "feature_name": "Chronicle forwarder executable for Windows",
+  "feature_slug": "chronicle-forwarder-executable-for-windows",
+  "summary": "The Windows executable version of Chronicle forwarder is deprecated and replaced by the Docker-based installer; deprecated on 2024-03-31.",
+  "extended_definition": "The Windows executable version of Chronicle forwarder is deprecated and replaced by the Docker-based installer; deprecated on 2024-03-31.",
+  "lifecycle": {
+    "latest_feature_date": "2023-04-25",
+    "deprecation_date": "2024-03-31",
+    "status": "deprecation_noted"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/chronicle/docs/deprecations",
+      "https://docs.cloud.google.com/chronicle/docs/reference/detection-engine-api",
+      "https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/advanced/api-migration-guide"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Feature deprecations \\_|\\_ Google Security Operations \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/deprecations",
+        "source_id": "site-api-reference",
+        "final_score": 179,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Google Security Operations forwarder executable for Windows April 04, 2023 March 31, 2024 On or after March 31, 2024, existing Google Security Operations forwarder executable for Windows will be removed.",
+          "For information about Google Security Operations forwarder for Windows on Docker, see Google Security Operations forwarder for Windows on Docker .",
+          "Chronicle BigQuery udm events table July 01, 2023 August 01, 2023 On or after July 1, 2023, the existing udm events table in Chronicle-managed BigQuery projects will be fully replaced with a new table named events ."
+        ]
+      },
+      {
+        "title": "Detection Engine \\_|\\_ Google Security Operations \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/chronicle/docs/reference/detection-engine-api",
+        "source_id": "site-api-reference",
+        "final_score": 109,
+        "relevance": "",
+        "evidence_snippets": [
+          "Sample Response { \"curatedRuleDetections\": [ { \"type\": \"GCTI FINDING\", \"detection\": [ { \"ruleName\": \"Cobalt Strike Default Entrypoint\", \"summary\": \"Rule Detection\", \"description\": \"Identifies CobaltStrike rundll32 execution using the default entrypoint.\", \"severity\": \"LOW\", \"urlBackToProduct\": \"https://customername.backstory.chronicle.security/ruleDetections?ruleId=ur mal CobaltStrike StartW&selectedList=RuleDetectionsViewTimeline&ruleSource=ruleSet&selectedParentDetectionId=de 227a290c-17e9-6314-7f16-35f7923b554f&selectedTimestamp=2022-12-05T11:07:12.585Z\", \"ruleId\": \"ur mal CobaltStrike StartW\", \"alertState\": \"ALERTING\", \"ruleType\": \"SINGLE EVENT\", \"ruleLabels\": [ { \"key\": \"rule name\", \"value\": \"Cobalt Strike Default Entrypoint\" } ], \"ruleSet\": \"6e6eda02-51b9-e57e-9597-622f1c7f3ee9\", \"ruleSetDisplayName\": \"RAT\" } ], \"createdTime\": \"2022-12-05T12:13:23.154544Z\", \"lastUpdatedTime\": \"2022-12-05T12:13:23.154544Z\", \"id\": \"de 227a290c-17e9-6314-7f16-35f7923b554f\", \"timeWindow\": { \"startTime\": \"2022-12-05T11:07:12.585Z\", \"endTime\": \"2022-12-05T11:07:12.585Z\" }, \"collectionElements\": [ { \"references\": [ { \"event\": { \"metadata\": { \"eventTimestamp\": \"2022-12-05T11:07:12.585Z\", \"eventType\": \"PROCESS LAUNCH\", \"ingestedTimestamp\": \"2022-12-05T11:06:27.737408Z\", \"id\": \"AAAAA\" }, \"principal\": { \"hostname\": \"admin-1\", \"process\": { \"pid\": \"12345\", \"command line\": \"\\\"powershell.exe\\\" {wmic /node:127.0.0.1 process call create \\\\\\\"\\\"rundll32.exe $env:TEMP\\\\calc.dll StartW\\\\\\\"\\\"}\" } } \"src\": { \"file\": { full path: \"C:\\\\Users\\\\Administrator\\\\AppData\\\\Local\\\\Temp\\\\\" } } \"target\": { \"process\": { \"pid\": \"12345\", \"file\": { \"sha256\": \"abcde\", \"full path\": \"C:\\\\Windows\\\\System32\\\\wbem\\\\WMIC.exe\" } command line: \"\\\"C:\\\\Windows\\\\System32\\\\Wbem\\\\WMIC.exe\\\" /node:127.0.0.1 process call create \\\"rundll32.exe C:\\\\Users\\\\ADMIN-1\\\\AppData\\\\Local\\\\Temp\\\\calc.dll StartW\\\"\" } } } } ], \"label\": \"e\" } ], \"detectionTime\": \"2022-12-05T11:07:12.585Z\", \"tags\": [ \"TA0004\", \"T1548\" ] }, { \"type\": \"GCTI FINDING\", \"detection\": [ { \"ruleName\": \"Cobalt Strike Default Entrypoint\", \"summary\": \"Rule Detection\", \"description\": \"Identifies CobaltStrike rundll32 execution using the default entrypoint.\", \"severity\": \"LOW\", \"urlBackToProduct\": \"https://customername.backstory.chronicle.security/ruleDetections?ruleId=ur mal CobaltStrike StartW&selectedList=RuleDetectionsViewTimeline&ruleSource=ruleSet&selectedParentDetectionId=de c34ee707-ad5e-4e5e-4955-a3a8e13053ae&selectedTimestamp=2022-12-05T10:04:28.097Z\", \"ruleId\": \"ur mal CobaltStrike StartW\", \"alertState\": \"ALERTING\", \"ruleType\": \"SINGLE EVENT\", \"ruleLabels\": [ { \"key\": \"rule name\", \"value\": \"Cobalt Strike Default Entrypoint\" } ], \"ruleSet\": \"6e6eda02-51b9-e57e-9597-622f1c7f3ee9\", \"ruleSetDisplayName\": \"RAT\" } ], \"createdTime\": \"2022-12-05T11:12:24.406199Z\", \"lastUpdatedTime\": \"2022-12-05T11:12:24.406199Z\", \"id\": \"de c34ee707-ad5e-4e5e-4955-a3a8e13053ae\", \"timeWindow\": { \"startTime\": \"2022-12-05T10:04:28.097Z\", \"endTime\": \"2022-12-05T10:04:28.097Z\" }, \"collectionElements\": [ { \"references\": [ { \"event\": { \"metadata\": { \"eventTimestamp\": \"2022-12-05T10:04:28.097Z\", \"eventType\": \"PROCESS LAUNCH\", \"ingestedTimestamp\": \"2022-12-05T10:04:01Z\", \"id\": \"BBBBB\" }, \"principal\": { \"hostname\": \"admin-2\", \"process\": { \"pid\": \"67890\", \"command line\": \"\\\"powershell.exe\\\" {wmic /node:127.0.0.1 process call create \\\\\\\"\\\"rundll32.exe $env:TEMP\\\\calc.dll StartW\\\\\\\"\\\"}\" } } \"src\": { \"file\": { full path: \"C:\\\\Users\\\\Administrator\\\\AppData\\\\Local\\\\Temp\\\\\" } } \"target\": { \"process\": { \"pid\": \"67890\", \"file\": { \"sha256\": \"abcde\", \"full path\": \"C:\\\\Windows\\\\System32\\\\wbem\\\\WMIC.exe\" } command line: \"\\\"C:\\\\Windows\\\\System32\\\\Wbem\\\\WMIC.exe\\\" /node:127.0.0.1 process call create \\\"rundll32.exe C:\\\\Users\\\\ADMIN-2\\\\AppData\\\\Local\\\\Temp\\\\calc.dll StartW\\\"\" } } } } ], \"label\": \"e\" } ], \"detectionTime\": \"2022-12-05T10:04:28.097Z\", \"tags\": [ \"TA0004\", \"T1548\" ] } ], \"nextPageToken\": \"CgwIrdncnQYQ6OqRkwISCwiosvKXBhDQ-74JGidkZV8wNDZjZmY0YS1jM2ZkLTM5YWEtYmUyYS0wZTU2Zjk4OWE1YTE=\" } ListDetections Return the detections for the specified version of a rule, the latest version of a rule, all versions of a rule, or all versions of all rules.",
+          "Response Sample Heartbeat Response (can be ignored by clients) { \"heartbeat\": true } Sample Response (without detections list) { \"continuationTime\": \"2019-04-15T21:59:17.081331Z\" } Sample Response (with detections list including detections from both user-created rules and Google SecOps Rules) { \"continuationTime\": \"2019-05-29T05:00:04.123073Z\", \"detections\": [ { \"type\": \"RULE DETECTION\", \"detection\": [ { \"ruleName\": \"singleEventRule2\", \"urlBackToProduct\": \"https://customername.backstory.chronicle.security/ruleDetections? ruleId=ru 1f54ab4b-e523-48f7-ae25-271b5ea8337d&selectedList=RuleDetectionsViewTimeline& selectedParentDetectionId=de ce594791-09ed-9681-27fa-3b7c8fa6054c& selectedTimestamp=2020-12-03T16:50:47.647245Z\", \"ruleId\": \"ru 1f54ab4b-e523-48f7-ae25-271b5ea8337d\", \"ruleVersion\": \"ru 1f54ab4b-e523-48f7-ae25-271b5ea8337d@v 1605892822 687503000\", \"alertState\": \"ALERTING\", \"ruleType\": \"SINGLE EVENT\" } ], \"createdTime\": \"2020-12-03T19:19:21.325134Z\", \"id\": \"de ce594791-09ed-9681-27fa-3b7c8fa6054c\", \"timeWindow\": { \"startTime\": \"2020-12-03T16:50:47.647245Z\", \"endTime\": \"2020-12-03T16:50:47.647245Z\" }, \"collectionElements\": [ { \"references\": [ { \"event\": { \"metadata\": { \"eventTimestamp\": \"2020-12-03T16:50:47.647245Z\", \"collectedTimestamp\": \"2020-12-03T16:50:47.666064010Z\", \"eventType\": \"NETWORK DNS\", \"productName\": \"ProductName\", \"ingestedTimestamp\": \"2020-12-03T16:50:49.494542Z\" }, \"principal\": { \"ip\": [ \"127.0.0.1\" ] }, \"target\": { \"ip\": [ \"127.0.0.1\" ] }, \"securityResult\": [ { \"action\": [ \"UNKNOWN ACTION\" ] } ], \"network\": { \"applicationProtocol\": \"DNS\", \"dns\": { \"questions\": [ { \"name\": \"altostrat.com\", \"type\": 1, \"class\": 1 } ], \"id\": 12345, \"recursionDesired\": true } } } } ], \"label\": \"e\" } ], \"detectionTime\": \"2020-12-03T16:50:47.647245Z\" }, { \"type\": \"GCTI FINDING\", \"detection\": [ { \"ruleName\": \"Google Cloud Global SSH Keys\", \"urlBackToProduct\": \"https://customername.backstory.chronicle.security/ruleDetections ?ruleId=ur ttp GCP GlobalSSHKeys Added&selectedList=RuleDetectionsViewTimeline &ruleSource=ruleSet&selectedParentDetectionId=de 8e47ff9c-9bc4-df7c-1782-53ddf14c9b6c &selectedTimestamp=2020-12-03T16:50:47.647245Z\", \"ruleId\": \"ur ttp GCP GlobalSSHKeys Added\", \"alertState\": \"ALERTING\", \"ruleType\": \"SINGLE EVENT\", \"summary\": \"Rule Detection\", \"ruleSet\": \"11c505d4-b424-65e3-d918-1a81232cc76b\", \"ruleSetDisplayName\": \"Admin Action\", \"description\": \"Identifies instances of project-wide SSH keys being added where there were previously none.\", \"severity\": \"LOW\" } ], \"createdTime\": \"2020-12-03T19:19:21.325134Z\", \"id\": \"de ce594791-09ed-9681-27fa-3b7c8fa6054c\", \"timeWindow\": { \"startTime\": \"2020-12-03T16:50:47.647245Z\", \"endTime\": \"2020-12-03T16:50:47.647245Z\" }, \"collectionElements\": [ { \"references\": [ { \"event\": { \"metadata\": { \"eventTimestamp\": \"2020-12-03T16:50:47.647245Z\", \"collectedTimestamp\": \"2020-12-03T16:50:47.666064010Z\", \"eventType\": \"NETWORK DNS\", \"productName\": \"ProductName\", \"ingestedTimestamp\": \"2020-12-03T16:50:49.494542Z\" }, \"principal\": { \"ip\": [ \"127.0.0.1\" ] }, \"target\": { \"ip\": [ \"127.0.0.1\" ] }, \"securityResult\": [ { \"action\": [ \"UNKNOWN ACTION\" ] } ], \"network\": { \"applicationProtocol\": \"DNS\", \"dns\": { \"questions\": [ { \"name\": \"altostrat.com\", \"type\": 1, \"class\": 1 } ], \"id\": 12345, \"recursionDesired\": true } } } } ], \"label\": \"e\" } ], \"detectionTime\": \"2020-12-03T16:50:47.647245Z\", \"lastUpdatedTime\": \"2020-12-03T19:19:21.325134Z\", \"tags\": [\"TA0003\", \"TA0004\"] }, ... ] } Detections are returned in the same format defined for GetDetection .",
+          "Sample Response { \"detections\": [ { \"type\": \"RULE DETECTION\", \"detection\": [ { \"ruleName\": \"singleEventRule2\", \"description\": \"description of this rule\", \"urlBackToProduct\": \"https://customername.backstory.chronicle.security/ruleDetections? ruleId=ru 1f54ab4b-e523-48f7-ae25-271b5ea8337d&selectedList=RuleDetectionsViewTimeline& selectedParentDetectionId=de 69d1ff3c-3528-6171-fb48-28ee813ec3ec& selectedTimestamp=2020-12-03T16:59:55.124243Z\", \"ruleId\": \"ru 1f54ab4b-e523-48f7-ae25-271b5ea8337d\", \"ruleVersion\": \"ru 1f54ab4b-e523-48f7-ae25-271b5ea8337d@v 1605892822 687503000\", \"alertState\": \"NOT ALERTING\", \"ruleType\": \"SINGLE EVENT\" \"ruleLabels\": [ { \"key\": \"description\", \"value\": \"description of this rule\" } ], } ], \"createdTime\": \"2020-12-03T19:19:19.720174Z\", \"id\": \"de 69d1ff3c-3528-6171-fb48-28ee813ec3ec\", \"timeWindow\": { \"startTime\": \"2020-12-03T16:59:55.124243Z\", \"endTime\": \"2020-12-03T16:59:55.124243Z\" }, \"collectionElements\": [ { \"references\": [ { \"event\": { \"metadata\": { \"eventTimestamp\": \"2020-12-03T16:59:55.124243Z\", \"collectedTimestamp\": \"2020-12-03T16:59:55.126201345Z\", \"eventType\": \"NETWORK DNS\", \"productName\": \"ProductName\", \"ingestedTimestamp\": \"2020-12-03T16:59:59.011915Z\" }, \"principal\": { \"ip\": [ \"10.0.123.15\" ] }, \"target\": { \"ip\": [ \"10.0.10.10\" ] }, \"securityResult\": [ { \"action\": [ \"UNKNOWN ACTION\" ] } ], \"network\": { \"applicationProtocol\": \"DNS\", \"dns\": { \"questions\": [ { \"name\": \"altostrat.com\", \"type\": 1, \"class\": 1 } ], \"id\": 12345, \"recursionDesired\": true } } } } ], \"label\": \"e\" } ], \"detectionTime\": \"2020-12-03T16:59:55.124243Z\" }, { \"type\": \"RULE DETECTION\", \"detection\": [ { \"ruleName\": \"singleEventRule2\", \"description\": \"description of this rule\", \"urlBackToProduct\": \"https://customername.backstory.chronicle.security/ruleDetections? ruleId=ru 1f54ab4b-e523-48f7-ae25-271b5ea8337d&selectedList=RuleDetectionsViewTimeline& selectedParentDetectionId=de ec2bc52b-a522-aeaf-6a94-f7c7ce0eff15& selectedTimestamp=2020-12-03T16:59:48.916995Z\", \"ruleId\": \"ru 1f54ab4b-e523-48f7-ae25-271b5ea8337d\", \"ruleVersion\": \"ru 1f54ab4b-e523-48f7-ae25-271b5ea8337d@v 1605892822 687503000\", \"alertState\": \"NOT ALERTING\", \"ruleType\": \"SINGLE EVENT\" \"ruleLabels\": [ { \"key\": \"description\", \"value\": \"description of this rule\" } ], } ], \"createdTime\": \"2020-12-03T19:19:19.720174Z\", \"id\": \"de ec2bc52b-a522-aeaf-6a94-f7c7ce0eff15\", \"timeWindow\": { \"startTime\": \"2020-12-03T16:59:48.916995Z\", \"endTime\": \"2020-12-03T16:59:48.916995Z\" }, \"collectionElements\": [ { \"references\": [ { \"event\": { \"metadata\": { \"eventTimestamp\": \"2020-12-03T16:59:48.916995Z\", \"collectedTimestamp\": \"2020-12-03T16:59:48.918238257Z\", \"eventType\": \"NETWORK DNS\", \"productName\": \"ProductName\", \"ingestedTimestamp\": \"2020-12-03T16:59:59.011915Z\" }, \"principal\": { \"ip\": [ \"127.0.0.1\" ] }, \"target\": { \"ip\": [ \"127.0.0.1\" ] }, \"securityResult\": [ { \"action\": [ \"UNKNOWN ACTION\" ] } ], \"network\": { \"applicationProtocol\": \"DNS\", \"dns\": { \"questions\": [ { \"name\": \"altostrat.com\", \"type\": 1, \"class\": 1 } ], \"id\": 12346, \"recursionDesired\": true } } } } ], \"label\": \"e\" } ], \"detectionTime\": \"2020-12-03T16:59:48.916995Z\" } ], \"nextPageToken\": \"CgsIkdvj gUQ2M2IXBIMCISzpP4FELj3oLUDGidkZV9lYzJiYzUyYi1hNTIyLWFlYWYtNmE5NC1mN2M3Y2UwZWZmMTU=\" } ListErrors List the latest rule errors."
+        ]
+      },
+      {
+        "title": "\"Migrate SOAR endpoints to Chronicle API \\_|\\_ Google Security Operations\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/advanced/api-migration-guide",
+        "source_id": "site-docs-reference-required-1",
+        "final_score": 100,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Migrate SOAR endpoints to Chronicle API Supported in: Google secops SOAR This document outlines the steps and considerations for migrating from the deprecated SOAR API surface to the unified Chronicle API.",
+          "Regional addresses: africa-south1: https://chronicle.africa-south1.rep.googleapis.com asia-northeast1: https://chronicle.asia-northeast1.rep.googleapis.com asia-south1: https://chronicle.asia-south1.rep.googleapis.com asia-southeast1: https://chronicle.asia-southeast1.rep.googleapis.com asia-southeast2: https://chronicle.asia-southeast2.rep.googleapis.com australia-southeast1: https://chronicle.australia-southeast1.rep.googleapis.com europe-west12: https://chronicle.europe-west12.rep.googleapis.com europe-west2: https://chronicle.europe-west2.rep.googleapis.com europe-west3: https://chronicle.europe-west3.rep.googleapis.com europe-west6: https://chronicle.europe-west6.rep.googleapis.com europe-west9: https://chronicle.europe-west9.rep.googleapis.com me-central1: https://chronicle.me-central1.rep.googleapis.com me-central2: https://chronicle.me-central2.rep.googleapis.com me-west1: https://chronicle.me-west1.rep.googleapis.com northamerica-northeast2: https://chronicle.northamerica-northeast2.rep.googleapis.com southamerica-east1: https://chronicle.southamerica-east1.rep.googleapis.com us: https://chronicle.us.rep.googleapis.com eu: https://chronicle.eu.rep.googleapis.com For example, to get a list of all cases on a project in the US: GET https://chronicle.us.rep.googleapis.com/v1alpha/projects/my-project-name-or-id/locations/us/instances/408bfb7b-5746-4a50-885a-50a323023529/cases Update the authentication method The new API uses Google Cloud IAM for authentication.",
+          "Map the service account or workload identity to SOAR parameters If you are using a service account or workload identity federation to authenticate to the Chronicle API, you must authorize it within the platform to ensure it can successfully communicate with Google SecOps."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "altostrat.com",
+      "calc.dll",
+      "central1.rep.googleapis.com",
+      "central2.rep.googleapis.com",
+      "chronicle.africa",
+      "chronicle.asia",
+      "chronicle.australia",
+      "chronicle.eu.rep.googleapis.com",
+      "chronicle.europe",
+      "chronicle.me",
+      "chronicle.northamerica",
+      "chronicle.soarAnalyst",
+      "chronicle.soarEngineer",
+      "chronicle.soarViewer",
+      "chronicle.southamerica",
+      "chronicle.us.rep.googleapis.com",
+      "customername.backstory.chronicle.security",
+      "detection.alertState",
+      "detection.ruleId",
+      "detection.ruleVersion",
+      "detection.urlBackToProduct",
+      "east1.rep.googleapis.com",
+      "northeast1.rep.googleapis.com",
+      "northeast2.rep.googleapis.com",
+      "powershell.exe",
+      "rundll32.exe",
+      "south1.rep.googleapis.com",
+      "southeast1.rep.googleapis.com",
+      "southeast2.rep.googleapis.com",
+      "west1.rep.googleapis.com",
+      "west12.rep.googleapis.com",
+      "west2.rep.googleapis.com",
+      "west3.rep.googleapis.com",
+      "west6.rep.googleapis.com",
+      "west9.rep.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/deprecations",
+        "https://docs.cloud.google.com/chronicle/docs/reference/detection-engine-api",
+        "https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/advanced/api-migration-guide"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/deprecations",
+        "https://docs.cloud.google.com/chronicle/docs/reference/detection-engine-api",
+        "https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/advanced/api-migration-guide"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/deprecations",
+        "https://docs.cloud.google.com/chronicle/docs/reference/detection-engine-api",
+        "https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/advanced/api-migration-guide"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/deprecations",
+        "https://docs.cloud.google.com/chronicle/docs/reference/detection-engine-api",
+        "https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/advanced/api-migration-guide"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/deprecations",
+        "https://docs.cloud.google.com/chronicle/docs/reference/detection-engine-api",
+        "https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/advanced/api-migration-guide"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/deprecations",
+        "https://docs.cloud.google.com/chronicle/docs/reference/detection-engine-api",
+        "https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/advanced/api-migration-guide"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/deprecations",
+        "https://docs.cloud.google.com/chronicle/docs/reference/detection-engine-api",
+        "https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/advanced/api-migration-guide"
+      ]
+    }
+  ]
+}

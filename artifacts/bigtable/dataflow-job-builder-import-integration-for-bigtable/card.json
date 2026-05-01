@@ -1,0 +1,144 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:21.669Z",
+  "source_step08_card": "data/step-08/current/products/bigtable/card.json",
+  "product_name": "Bigtable",
+  "product_slug": "bigtable",
+  "feature_name": "Dataflow job builder import integration for Bigtable",
+  "feature_slug": "dataflow-job-builder-import-integration-for-bigtable",
+  "summary": "Bigtable data import now supports the Google Cloud console Dataflow job builder, including a Pub/Sub-to-Bigtable template and custom source jobs.",
+  "extended_definition": "Bigtable data import now supports the Google Cloud console Dataflow job builder, including a Pub/Sub-to-Bigtable template and custom source jobs.",
+  "lifecycle": {
+    "latest_feature_date": "2025-12-12",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigtable/docs/change-streams-use-dataflow",
+      "https://docs.cloud.google.com/bigtable/docs/create-instance-write-data-cbt-cli",
+      "https://docs.cloud.google.com/bigtable/docs/dynamodb-users"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Quickstart: Create an instance and write data with the cbt CLI \\_|\\_ Bigtable\\",
+        "url": "https://docs.cloud.google.com/bigtable/docs/create-instance-write-data-cbt-cli",
+        "source_id": "site-docs-root",
+        "final_score": 74,
+        "relevance": "WEAK",
+        "evidence_snippets": []
+      },
+      {
+        "title": "Migrate from DynamoDB to Bigtable \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigtable/docs/dynamodb-users",
+        "source_id": "site-docs-reference-2",
+        "final_score": 72,
+        "relevance": "",
+        "evidence_snippets": [
+          "While you can design the lexicographical row key in Bigtable to handle many scan patterns efficiently, Bigtable also supports asynchronous secondary indexes that you implement as continuous materialized views to provide efficient, eventually consistent lookups for alternative query patterns.",
+          "GetItem BatchGetItem , Query , Scan ReadRow ReadRows ( range , prefix , reverse scan ) Bigtable supports efficient scanning by row key prefix, regular expression pattern, or row key range forward or backward.",
+          "This page describes the migration tool, compares the two database systems, and describes the underlying architecture and interaction details that differ and that are important to understand before migrating."
+        ]
+      },
+      {
+        "title": "Stream changes with Dataflow \\_|\\_ Bigtable \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigtable/docs/change-streams-use-dataflow",
+        "source_id": "site-docs-root-2",
+        "final_score": 67,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Autoscaling The connector supports Dataflow autoscaling , which is enabled by default when using Runner v2 (required).",
+          "For a list of entry types that a data change record can contain, see What's in a data change record . static List<String> mutationEntriesToString ( KV<ByteString , ChangeStreamMutation > mutationPair ) { List<String> mutations = new ArrayList <> (); String rowKey = mutationPair . getKey (). toStringUtf8 (); ChangeStreamMutation mutation = mutationPair . getValue (); MutationType mutationType = mutation . getType (); for ( Entry entry : mutation . getEntries ()) { if ( entry instanceof SetCell ) { mutations . add ( setCellToString ( rowKey , mutationType , ( SetCell ) entry )); } else if ( entry instanceof DeleteCells ) { mutations . add ( deleteCellsToString ( rowKey , mutationType , ( DeleteCells ) entry )); } else if ( entry instanceof DeleteFamily ) { // Note: DeleteRow mutations are mapped into one DeleteFamily per-family mutations . add ( deleteFamilyToString ( rowKey , mutationType , ( DeleteFamily ) entry )); } else { throw new RuntimeException ( \"Entry type not supported.\" ); } } return mutations ; } In this sample a write entry is converted: private static String setCellToString ( String rowKey , MutationType mutationType , SetCell setCell ) { List<String> mutationParts = Arrays . asList ( rowKey , mutationType . name (), \"SetCell\" , setCell . getFamilyName (), setCell . getQualifier (). toStringUtf8 (), setCell . getValue (). toStringUtf8 ()); return String . join ( \",\" , mutationParts ); } In this sample a deletion of cells entry is converted: private static String deleteCellsToString ( String rowKey , MutationType mutationType , DeleteCells deleteCells ) { String timestampRange = deleteCells . getTimestampRange (). getStart () + \"-\" + deleteCells . getTimestampRange (). getEnd (); List<String> mutationParts = Arrays . asList ( rowKey , mutationType . name (), \"DeleteCells\" , deleteCells . getFamilyName (), deleteCells . getQualifier (). toStringUtf8 (), timestampRange ); return String . join ( \",\" , mutationParts ); } In this sample, a deletion of a column family entry is converted: private static String deleteFamilyToString ( String rowKey , MutationType mutationType , DeleteFamily deleteFamily ) { List<String> mutationParts = Arrays . asList ( rowKey , mutationType . name (), \"DeleteFamily\" , deleteFamily . getFamilyName ()); return String . join ( \",\" , mutationParts ); } Monitor The following resources in the Google Cloud console let you monitor your Google Cloud resources while you run a Dataflow pipeline to read a Bigtable change stream: Dataflow monitoring Bigtable system insights In particular, check the following metrics: On the Bigtable system insights page, check the following metrics : CPU utilization by change streams data in the metric cpu load by app profile by method by table .",
+          "To read the changes from Bigtable, you need this role: Bigtable Administrator ( roles/bigtable.admin ) on the Bigtable instance that contains the table you plan to stream changes from To run the Dataflow job, you need these roles: Dataflow Developer ( roles/dataflow.developer ) on the project containing your Cloud resources Dataflow Worker ( roles/dataflow.worker ) on the project containing your Cloud resources Storage Object Admin ( roles/storage.objectAdmin ) on the Cloud Storage buckets that you plan to use For more information about granting roles, see Manage access ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "bigtable.admin",
+      "dataflow.developer",
+      "dataflow.worker",
+      "storage.objectAdmin"
+    ],
+    "missing_inventory_roles": [
+      "roles/bigtable.admin",
+      "roles/dataflow.developer",
+      "roles/dataflow.worker",
+      "roles/storage.objectAdmin"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigtable/docs/dynamodb-users",
+        "https://docs.cloud.google.com/bigtable/docs/change-streams-use-dataflow",
+        "https://docs.cloud.google.com/bigtable/docs/create-instance-write-data-cbt-cli"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigtable/docs/dynamodb-users",
+        "https://docs.cloud.google.com/bigtable/docs/change-streams-use-dataflow",
+        "https://docs.cloud.google.com/bigtable/docs/create-instance-write-data-cbt-cli"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigtable/docs/dynamodb-users",
+        "https://docs.cloud.google.com/bigtable/docs/change-streams-use-dataflow",
+        "https://docs.cloud.google.com/bigtable/docs/create-instance-write-data-cbt-cli"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigtable/docs/dynamodb-users",
+        "https://docs.cloud.google.com/bigtable/docs/change-streams-use-dataflow",
+        "https://docs.cloud.google.com/bigtable/docs/create-instance-write-data-cbt-cli"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigtable/docs/dynamodb-users",
+        "https://docs.cloud.google.com/bigtable/docs/change-streams-use-dataflow",
+        "https://docs.cloud.google.com/bigtable/docs/create-instance-write-data-cbt-cli"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigtable/docs/dynamodb-users",
+        "https://docs.cloud.google.com/bigtable/docs/change-streams-use-dataflow",
+        "https://docs.cloud.google.com/bigtable/docs/create-instance-write-data-cbt-cli"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigtable/docs/dynamodb-users",
+        "https://docs.cloud.google.com/bigtable/docs/change-streams-use-dataflow",
+        "https://docs.cloud.google.com/bigtable/docs/create-instance-write-data-cbt-cli"
+      ]
+    }
+  ]
+}

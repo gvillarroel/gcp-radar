@@ -1,0 +1,159 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:18.771Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery",
+  "feature_name": "Cloud Spanner federated query JSON type mapping",
+  "feature_slug": "cloud-spanner-federated-query-json-type-mapping",
+  "summary": "Cloud Spanner federated query JSON type mapping enables the JSON data type in federated queries to Cloud Spanner.",
+  "extended_definition": "Cloud Spanner federated query JSON type mapping enables the JSON data type in federated queries to Cloud Spanner.",
+  "lifecycle": {
+    "latest_feature_date": "2023-04-27",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/alloydb-federated-queries",
+      "https://docs.cloud.google.com/bigquery/docs/continuous-queries",
+      "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Data definition language (DDL) statements in GoogleSQL \\_|\\_ BigQuery \\_\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "source_id": "site-docs-reference",
+        "final_score": 219,
+        "relevance": "",
+        "evidence_snippets": [
+          "Examples The following table function takes an INT64 parameter that is used to filter the results of a query: CREATE OR REPLACE TABLE FUNCTION mydataset . names by year ( y INT64 ) AS SELECT year , name , SUM ( number ) AS total FROM bigquery-public-data.usa names.usa 1910 current WHERE year = y GROUP BY year , name The following example specifies the return TABLE type in the RETURNS clause: CREATE OR REPLACE TABLE FUNCTION mydataset . names by year ( y INT64 ) RETURNS TABLE<name STRING , year INT64 , total INT64 > AS SELECT year , name , SUM ( number ) AS total FROM bigquery-public-data.usa names.usa 1910 current WHERE year = y GROUP BY year , name The following example computes total sales for items with the name item name from the orders table: CREATE TABLE FUNCTION mydataset . compute sales ( orders TABLE<item STRING , sales INT64 > , item name STRING ) AS ( SELECT SUM ( sales ) AS total sales , item FROM orders WHERE item = item name GROUP BY item ); CREATE PROCEDURE statement Creates a new procedure , which is a block of statements that can be called from other queries.",
+          "Syntax: '{ \"differential privacy policy\": { \"privacy unit column\": value, \"max epsilon per query\": value, \"epsilon budget\": value, \"delta per query\": value, \"delta budget\": value, \"max groups contributed\": value } }' Parameters: differential privacy policy : The differential privacy policy for the view. privacy unit column : The column that represents the privacy unit column for differentially private queries on the view. value is a JSON string. max epsilon per query : The maximum amount of epsilon that can be specified for a differentially private query on the view. value is a JSON number from 0.001 to 1e+15. epsilon budget : The amount of epsilon that can be used in totality for all differentially private queries on the view. value is JSON number from 0.001 to 1e+15. delta per query : The maximum amount of delta that can be specified for a differentially private query on the view. value is a JSON number from 1e-15 to 1. delta budget : The amount of delta that can be used in totality for all differentially private queries on the view.",
+          "For more information, see Set up authentication for client libraries . from google.cloud import bigquery project = 'my-project' dataset id = 'my dataset' table id = 'new view' client = bigquery.Client(project=project) sql = \"\"\" CREATE VIEW {} . {} . {} OPTIONS( expiration timestamp=TIMESTAMP ADD( CURRENT TIMESTAMP(), INTERVAL 48 HOUR), friendly name=\"new view\", description=\"a view that expires in 2 days\", labels=[(\"org unit\", \"development\")] ) AS SELECT name, state, year, number FROM bigquery-public-data.usa names.usa 1910 current WHERE state LIKE 'W%' \"\"\" . format ( project , dataset id , table id ) job = client . query ( sql ) # API request. job . result () # Waits for the query to finish. print ( 'Created new view \" {} . {} . {} \".' . format ( job . destination . project , job . destination . dataset id , job . destination . table id , ) ) On-demand query size calculation If you use on-demand billing, BigQuery charges for data definition language (DDL) queries based on the number of bytes processed by the query."
+        ]
+      },
+      {
+        "title": "AlloyDB federated queries \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/alloydb-federated-queries",
+        "source_id": "site-docs-reference-2",
+        "final_score": 204,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "SELECT FROM EXTERNAL QUERY ( \"region.connection id\" , \"select from information schema.columns where table name='x';\" ); Track BigQuery federated queries When you run a federated query against AlloyDB, BigQuery annotates the query with a comment similar to the following: / Federated query from BigQuery.",
+          "Project ID: PROJECT ID , BigQuery Job ID: JOB ID / YYYY-MM-DD hh:mm:ss.millis UTC [3210532]: [2-1] db= DATABASE , user= USER ACCOUNT STATEMENT: SELECT \"company id\", \"company type id\" FROM (SELECT FROM company name table) t; / Federated query from BigQuery.",
+          "Go to the Logs Explorer In the Query tab, enter the following query: resource.type=\"alloydb.googleapis.com/Instance\" textPayload= \"Federated query from BigQuery\" Click Run query ."
+        ]
+      },
+      {
+        "title": "Create continuous queries \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/continuous-queries",
+        "source_id": "site-docs-reference-5",
+        "final_score": 198,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "You can optionally control how long the query runs by setting the jobTimeoutMs field in the JobConfiguration resource . curl --request POST \\ \"https://bigquery.googleapis.com/bigquery/v2/projects/ PROJECT ID /jobs\" \\ --header \"Authorization: Bearer $( gcloud auth print-access-token ) \" \\ --header \"Content-Type: application/json; charset=utf-8\" \\ --data '{\"configuration\":{\"query\":{\"query\":\" QUERY \",\"useLegacySql\":false,\"continuous\":true,\"connectionProperties\":[{\"key\":\"service account\",\"value\":\" SERVICE ACCOUNT EMAIL \"}]}}}' \\ --compressed Replace the following: PROJECT ID : your project ID.",
+          "You can optionally control how long the query runs by setting the jobTimeoutMs field . curl --request POST \\ \"https://bigquery.googleapis.com/bigquery/v2/projects/ PROJECT ID /jobs\" \\ --header \"Authorization: Bearer $( gcloud auth print-access-token ) \" \\ --header \"Content-Type: application/json; charset=utf-8\" \\ --data '{\"configuration\":{\"query\":{\"query\":\" QUERY \",\"useLegacySql\":false,\"continuous\":true}}}' \\ --compressed Replace the following: PROJECT ID : your project ID.",
+          "Continuous queries let you analyze incoming data in BigQuery in real time, and then either export the results to Bigtable, Pub/Sub, or Spanner, or write the results to a BigQuery table."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "alloydb.googleapis.com",
+      "bigquery.Client",
+      "bigquery.googleapis.com",
+      "bigtable.googleapis.com",
+      "data.usa",
+      "myproject.real",
+      "names.usa",
+      "region.connection",
+      "resource.type",
+      "schema.columns",
+      "ss.millis",
+      "streaming.taxirides"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "https://docs.cloud.google.com/bigquery/docs/alloydb-federated-queries",
+        "https://docs.cloud.google.com/bigquery/docs/continuous-queries"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "https://docs.cloud.google.com/bigquery/docs/alloydb-federated-queries",
+        "https://docs.cloud.google.com/bigquery/docs/continuous-queries"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "https://docs.cloud.google.com/bigquery/docs/alloydb-federated-queries",
+        "https://docs.cloud.google.com/bigquery/docs/continuous-queries"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "https://docs.cloud.google.com/bigquery/docs/alloydb-federated-queries",
+        "https://docs.cloud.google.com/bigquery/docs/continuous-queries"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "https://docs.cloud.google.com/bigquery/docs/alloydb-federated-queries",
+        "https://docs.cloud.google.com/bigquery/docs/continuous-queries"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "https://docs.cloud.google.com/bigquery/docs/alloydb-federated-queries",
+        "https://docs.cloud.google.com/bigquery/docs/continuous-queries"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "https://docs.cloud.google.com/bigquery/docs/alloydb-federated-queries",
+        "https://docs.cloud.google.com/bigquery/docs/continuous-queries"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "https://docs.cloud.google.com/bigquery/docs/alloydb-federated-queries",
+        "https://docs.cloud.google.com/bigquery/docs/continuous-queries"
+      ]
+    }
+  ]
+}

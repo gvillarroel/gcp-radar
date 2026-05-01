@@ -1,0 +1,41 @@
+# Secret Manager locations
+
+Product: Secret Manager
+Feature slug: `secret-manager-locations`
+Coverage: `MEDIUM`
+IAM mapping: `unknown`
+
+## Technical Summary
+
+Secret Manager is available in the europe-central2 region; Secret Manager is available in all regions.
+
+## Lifecycle
+
+- Latest feature date: 2021-03-24
+- Deprecation date: none recorded
+- Status: feature_observed
+
+## IAM
+
+No defensible IAM mapping was found in the current evidence.
+
+## Security Capabilities
+
+- access
+- audit
+- auth
+- authorization
+- iam
+- key
+- logging
+- permission
+- policy
+- secret
+- token
+
+## Official Evidence
+
+- [https://docs.cloud.google.com/python/docs/reference/secretmanager/latest/google.cloud.secretmanager_v1.services.secret_manager_service.SecretManagerServiceAsyncClient](https://docs.cloud.google.com/python/docs/reference/secretmanager/latest/google.cloud.secretmanager_v1.services.secret_manager_service.SecretManagerServiceAsyncClient)
+- [https://docs.cloud.google.com/python/docs/reference/secretmanager/latest/google.cloud.secretmanager_v1.services.secret_manager_service.SecretManagerServiceClient](https://docs.cloud.google.com/python/docs/reference/secretmanager/latest/google.cloud.secretmanager_v1.services.secret_manager_service.SecretManagerServiceClient)
+- [https://docs.cloud.google.com/secret-manager/docs/creating-and-managing-expiring-secrets](https://docs.cloud.google.com/secret-manager/docs/creating-and-managing-expiring-secrets)
+- [https://docs.cloud.google.com/secret-manager/docs/locations](https://docs.cloud.google.com/secret-manager/docs/locations)

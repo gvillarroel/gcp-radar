@@ -1,0 +1,195 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:27.901Z",
+  "source_step08_card": "data/step-08/current/products/cloud-sql-for-sql-server/card.json",
+  "product_name": "Cloud SQL for SQL Server",
+  "product_slug": "cloud-sql-for-sql-server",
+  "feature_name": "Key Access Justifications",
+  "feature_slug": "key-access-justifications",
+  "summary": "Key Access Justifications for Cloud EKM lets users view the reason for each key access request and automatically approve or deny requests based on that justification.",
+  "extended_definition": "Key Access Justifications for Cloud EKM lets users view the reason for each key access request and automatically approve or deny requests based on that justification.",
+  "lifecycle": {
+    "latest_feature_date": "2022-01-31",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/sql/docs/postgres/roles-and-permissions",
+      "https://docs.cloud.google.com/sql/docs/sqlserver/create-manage-users",
+      "https://docs.cloud.google.com/sql/docs/sqlserver/data-residency-overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Data residency overview \\_|\\_ Cloud SQL for SQL Server \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/sql/docs/sqlserver/data-residency-overview",
+        "source_id": "site-docs-root",
+        "final_score": 191,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Each time one of your keys is requested to encrypt or decrypt data, Key Access Justifications provides a detailed justification, along with a mechanism for you to approve or deny key access using an automated policy that you set.",
+          "Access Approval lets you require Google employees to get your explicit approval before they access your data or configurations on Google Cloud (for exclusions, see Access Approval exclusions ).",
+          "Using Access Approval, Access Transparency, and Key Access Justifications with Cloud KMS and Cloud EKM, you can deny Google the ability to decrypt your data."
+        ]
+      },
+      {
+        "title": "\"Create and manage users \\_|\\_ Cloud SQL for SQL Server \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/sql/docs/sqlserver/create-manage-users",
+        "source_id": "site-docs-root",
+        "final_score": 115,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method GET -Headers $headers -Uri \"https://sqladmin.googleapis.com/sql/v1beta4/projects/ project-id /instances/ instance-id /users\" Select-Object -Expand Content You should receive a JSON response similar to the following: { \"kind\": \"sql#usersList\", \"items\": [ { \"kind\": \"sql#user\", \"etag\": \"--redacted--\", \"name\": \"sqlserver\", \"host\": \"\", \"instance\": \" instance-id \", \"project\": \" project-id \", \"sqlserverUserDetails\": { \"serverRoles\": [ \"CustomerDbRootRole\" ] } }, { \"kind\": \"sql#user\", \"etag\": \"--redacted--\", \"name\": \" user-id-1 \", \"host\": \"\", \"instance\": \" instance-id \", \"project\": \" project-id \", \"sqlserverUserDetails\": { \"serverRoles\": [ \"CustomerDbRootRole\" ] } }, { \"kind\": \"sql#user\", \"etag\": \"--redacted--\", \"name\": \" user-id-2 \", \"host\": \"\", \"instance\": \" instance-id \", \"project\": \" project-id \", \"sqlserverUserDetails\": { \"serverRoles\": [ \"CustomerDbRootRole\" ] } }, { ... }, { ... } ] } Note : The users.list API supports only response payloads that include up to 4 MB of text or roughly 12,000 users.",
+          "Execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method GET -Headers $headers -Uri \"https://sqladmin.googleapis.com/v1/projects/ project-id /instances/ instance-id /users\" Select-Object -Expand Content You should receive a JSON response similar to the following: { \"kind\": \"sql#usersList\", \"items\": [ { \"kind\": \"sql#user\", \"etag\": \"--redacted--\", \"name\": \"sqlserver\", \"host\": \"\", \"instance\": \" instance-id \", \"project\": \" project-id \", \"sqlserverUserDetails\": { \"serverRoles\": [ \"CustomerDbRootRole\" ] } }, { \"kind\": \"sql#user\", \"etag\": \"--redacted--\", \"name\": \" user-id-1 \", \"host\": \"\", \"instance\": \" instance-id \", \"project\": \" project-id \", \"sqlserverUserDetails\": { \"serverRoles\": [ \"CustomerDbRootRole\" ] } }, { \"kind\": \"sql#user\", \"etag\": \"--redacted--\", \"name\": \" user-id-2 \", \"host\": \"\", \"instance\": \" instance-id \", \"project\": \" project-id \", \"sqlserverUserDetails\": { \"serverRoles\": [ \"CustomerDbRootRole\" ] } }, { ... }, { ... } ] } Note : The users.list API supports only response payloads that include up to 4 MB of text or roughly 12,000 users.",
+          "Save the request body in a file named request.json , and execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method PUT -Headers $headers -ContentType: \"application/json; charset=utf-8\" -InFile request.json -Uri \"https://sqladmin.googleapis.com/v1/projects/ project-id /instances/ instance-id /users?name= user-id \" Select-Object -Expand Content You should receive a JSON response similar to the following: { \"kind\": \"sql#operation\", \"targetLink\": \"https://sqladmin.googleapis.com/v1/projects/ project-id /instances/ instance-id \", \"status\": \"DONE\", \"user\": \"user@example.com\", \"insertTime\": \"2020-02-07T22:38:41.217Z\", \"startTime\": \"2020-02-07T22:38:41.217Z\", \"endTime\": \"2020-02-07T22:38:44.801Z\", \"operationType\": \"UPDATE USER\", \"name\": \" operation-id \", \"targetId\": \" instance-id \", \"selfLink\": \"https://sqladmin.googleapis.com/v1/projects/ project-id /operations/ operation-id \", \"targetProject\": \" project-id \" } REST v1beta4 To update the password for the default user account, use a PUT request with the users:update method."
+        ]
+      },
+      {
+        "title": "\"Roles and permissions \\_|\\_ Cloud SQL for PostgreSQL \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/sql/docs/postgres/roles-and-permissions",
+        "source_id": "site-iam-reference",
+        "final_score": 114,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Cloud SQL roles and permissions for Knowledge Catalog integration To provide access to Cloud SQL metadata on Knowledge Catalog, you can grant a user the roles/cloudsql.schemaViewer role or add the cloudsql.schemas.view permission to a custom role.",
+          "Before you make a resource accessible to other users, be sure you know what roles you want each of those people to play.",
+          "IAM lets you control who has access to the resources in your Google Cloud project."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cloudsql.schemas.view",
+      "cloudsql.schemaViewer",
+      "example.com",
+      "logging.viewer",
+      "request.json",
+      "resourcemanager.folderIamAdmin",
+      "resourcemanager.organizationViewer",
+      "resourcemanager.projectIamAdmin",
+      "sqladmin.googleapis.com",
+      "users.list"
+    ],
+    "missing_inventory_roles": [
+      "roles/cloudsql.schemaViewer",
+      "roles/logging.viewer",
+      "roles/resourcemanager.folderIamAdmin",
+      "roles/resourcemanager.organizationViewer",
+      "roles/resourcemanager.projectIamAdmin"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/data-residency-overview",
+        "https://docs.cloud.google.com/sql/docs/postgres/roles-and-permissions",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/create-manage-users"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/data-residency-overview",
+        "https://docs.cloud.google.com/sql/docs/postgres/roles-and-permissions",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/create-manage-users"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/data-residency-overview",
+        "https://docs.cloud.google.com/sql/docs/postgres/roles-and-permissions",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/create-manage-users"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/data-residency-overview",
+        "https://docs.cloud.google.com/sql/docs/postgres/roles-and-permissions",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/create-manage-users"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/data-residency-overview",
+        "https://docs.cloud.google.com/sql/docs/postgres/roles-and-permissions",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/create-manage-users"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/data-residency-overview",
+        "https://docs.cloud.google.com/sql/docs/postgres/roles-and-permissions",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/create-manage-users"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/data-residency-overview",
+        "https://docs.cloud.google.com/sql/docs/postgres/roles-and-permissions",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/create-manage-users"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/data-residency-overview",
+        "https://docs.cloud.google.com/sql/docs/postgres/roles-and-permissions",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/create-manage-users"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/data-residency-overview",
+        "https://docs.cloud.google.com/sql/docs/postgres/roles-and-permissions",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/create-manage-users"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/data-residency-overview",
+        "https://docs.cloud.google.com/sql/docs/postgres/roles-and-permissions",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/create-manage-users"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/data-residency-overview",
+        "https://docs.cloud.google.com/sql/docs/postgres/roles-and-permissions",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/create-manage-users"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/data-residency-overview",
+        "https://docs.cloud.google.com/sql/docs/postgres/roles-and-permissions",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/create-manage-users"
+      ]
+    }
+  ]
+}

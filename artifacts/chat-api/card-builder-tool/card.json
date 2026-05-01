@@ -1,0 +1,111 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:22.475Z",
+  "source_step08_card": "data/step-08/current/products/chat-api/card.json",
+  "product_name": "Chat API",
+  "product_slug": "chat-api",
+  "feature_name": "Card Builder Tool",
+  "feature_slug": "card-builder-tool",
+  "summary": "The Card Builder Tool helps developers design and preview card messages for Google Chat apps.",
+  "extended_definition": "The Card Builder Tool helps developers design and preview card messages for Google Chat apps.",
+  "lifecycle": {
+    "latest_feature_date": "2023-12-13",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/workspace/chat/api/reference/rest/v1/cards",
+      "https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces.messages",
+      "https://developers.google.com/workspace/chat/api/reference/rpc/google.apps.card.v1"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Cards v2 \\_|\\_ Google Chat \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/workspace/chat/api/reference/rest/v1/cards",
+        "source_id": "site-api-reference",
+        "final_score": 237,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Design and preview cards with the Card Builder.",
+          "Open the Card Builder To learn how to build cards, see the following documentation: For Google Chat apps, see Design the components of a card or dialog .",
+          "Resources like the Card Builder and design guidelines are available to aid in card development for both Google Chat and Workspace Add-ons."
+        ]
+      },
+      {
+        "title": "Package google.apps.card.v1 \\_|\\_ Google Chat \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/workspace/chat/api/reference/rpc/google.apps.card.v1",
+        "source_id": "site-docs-reference",
+        "final_score": 189,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Design and preview cards with the Card Builder.",
+          "Open the Card Builder To learn how to build cards, see the following documentation: For Google Chat apps, see Design the components of a card or dialog .",
+          "Example: Card message for a Google Chat app To create the sample card message in Google Chat, use the following JSON: { \"cardsV2\": [ { \"cardId\": \"unique-card-id\", \"card\": { \"header\": { \"title\": \"Sasha\", \"subtitle\": \"Software Engineer\", \"imageUrl\": \"https://developers.google.com/workspace/chat/images/quickstart-app-avatar.png\", \"imageType\": \"CIRCLE\", \"imageAltText\": \"Avatar for Sasha\" }, \"sections\": [ { \"header\": \"Contact Info\", \"collapsible\": true, \"uncollapsibleWidgetsCount\": 1, \"widgets\": [ { \"decoratedText\": { \"startIcon\": { \"knownIcon\": \"EMAIL\" }, \"text\": \"sasha@example.com\" } }, { \"decoratedText\": { \"startIcon\": { \"knownIcon\": \"PERSON\" }, \"text\": \"<font color=\\\"#80e27e\\\">Online</font>\" } }, { \"decoratedText\": { \"startIcon\": { \"knownIcon\": \"PHONE\" }, \"text\": \"+1 (555) 555-1234\" } }, { \"buttonList\": { \"buttons\": [ { \"text\": \"Share\", \"onClick\": { \"openLink\": { \"url\": \"https://example.com/share\" } } }, { \"text\": \"Edit\", \"onClick\": { \"action\": { \"function\": \"goToView\", \"parameters\": [ { \"key\": \"viewType\", \"value\": \"EDIT\" } ] } } } ] } } ] } ] } } ] } Fields header CardHeader The header of the card."
+        ]
+      },
+      {
+        "title": "REST Resource: spaces.messages \\_|\\_ Google Chat \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces.messages",
+        "source_id": "site-docs-root-2",
+        "final_score": 170,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Design and preview cards with the Card Builder.",
+          "Design and preview cards with the Card Builder.",
+          "Methods create Creates a message in a Google Chat space. delete Deletes a message. get Returns details about a message. list Lists messages in a space that the caller is a member of, including messages from blocked members and spaces. patch Updates a message. replaceCards Developer Preview: Available as part of the Google Workspace Developer Preview Program , which grants early access to certain features."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "avatar.png",
+      "developers.google.com",
+      "example.com",
+      "spaces.messages"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://developers.google.com/workspace/chat/api/reference/rest/v1/cards",
+        "https://developers.google.com/workspace/chat/api/reference/rpc/google.apps.card.v1",
+        "https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces.messages"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://developers.google.com/workspace/chat/api/reference/rest/v1/cards",
+        "https://developers.google.com/workspace/chat/api/reference/rpc/google.apps.card.v1",
+        "https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces.messages"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://developers.google.com/workspace/chat/api/reference/rest/v1/cards",
+        "https://developers.google.com/workspace/chat/api/reference/rpc/google.apps.card.v1",
+        "https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces.messages"
+      ]
+    }
+  ]
+}

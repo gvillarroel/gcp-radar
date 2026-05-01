@@ -1,0 +1,98 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:22.342Z",
+  "source_step08_card": "data/step-08/current/products/capacity-planner/card.json",
+  "product_name": "Capacity Planner",
+  "product_slug": "capacity-planner",
+  "feature_name": "Capacity Planner Spot TPU usage data",
+  "feature_slug": "capacity-planner-spot-tpu-usage-data",
+  "summary": "Capacity Planner preview supports usage data for TPUs that are attached to Spot VMs.",
+  "extended_definition": "Capacity Planner supports viewing Spot and preemptible-spot usage data by enabling Spot mode (in the console via the Spot usage toggle or in the API by setting `isSpot=true`) on supported usage and forecast views. The product documentation indicates that Spot VM context includes attached resources, including TPUs, and that TPU usage/forecast/quota data is available on the TPU usage view (filtered by TPU type and location). Coverage is partial for the exact feature phrasing here because the cited pages do not explicitly label this as preview-only or provide a dedicated launch/feature-announcement date.",
+  "lifecycle": {
+    "latest_feature_date": "2025-10-03",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/capacity-planner/docs/view-data"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "View usage and forecast data \\_|\\_ Capacity Planner \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/capacity-planner/docs/view-data",
+        "source_id": "site-docs-root",
+        "final_score": 78,
+        "relevance": "",
+        "evidence_snippets": []
+      },
+      {
+        "title": "\"Export data to your local workstation \\_|\\_ Capacity Planner \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/capacity-planner/docs/export-data",
+        "source_id": "site-docs-root",
+        "final_score": 54,
+        "relevance": "WEAK",
+        "evidence_snippets": []
+      },
+      {
+        "title": "\"Support levels for permissions in custom roles \\_|\\_ Identity and Access\\",
+        "url": "https://docs.cloud.google.com/iam/docs/custom-roles-permissions-support",
+        "source_id": "site-iam-reference",
+        "final_score": 50,
+        "relevance": "",
+        "evidence_snippets": []
+      }
+    ],
+    "evidence_summary": "The Capacity Planner usage-and-forecast documentation provides Spot VM limitations, the Spot usage toggle/API flag, and TPU-specific usage/forecast/quota view details needed to define Spot TPU usage handling."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/capacity-planner/docs/view-data"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/capacity-planner/docs/view-data"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/capacity-planner/docs/view-data"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/capacity-planner/docs/view-data"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/capacity-planner/docs/view-data"
+      ]
+    }
+  ]
+}

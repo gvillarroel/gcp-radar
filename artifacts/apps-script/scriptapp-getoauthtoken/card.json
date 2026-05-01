@@ -1,0 +1,179 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:17.437Z",
+  "source_step08_card": "data/step-08/current/products/apps-script/card.json",
+  "product_name": "Apps Script",
+  "product_slug": "apps-script",
+  "feature_name": "ScriptApp.getOAuthToken()",
+  "feature_slug": "scriptapp-getoauthtoken",
+  "summary": "ScriptApp.getOAuthToken() returns the script's OAuth 2.0 access token.",
+  "extended_definition": "ScriptApp.getOAuthToken() returns the script's OAuth 2.0 access token.",
+  "lifecycle": {
+    "latest_feature_date": "2014-02-25",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/apps-script/guides/dialogs",
+      "https://developers.google.com/apps-script/guides/service-account",
+      "https://developers.google.com/apps-script/releases"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Authenticate as an Google Apps Script project using service accounts \\_\\",
+        "url": "https://developers.google.com/apps-script/guides/service-account",
+        "source_id": "site-docs-root",
+        "final_score": 182,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "If you're calling Google APIs using UrlFetchApp , you can get an access token for the script user by calling ScriptApp.getOAuthToken .",
+          "However, using service accounts provides several advantages over ScriptApp.getOAuthToken in some scenarios.",
+          "The authentication method ScriptApp.getOAuthToken can fail when you share the project with other users."
+        ]
+      },
+      {
+        "title": "\"Dialogs and Sidebars in Google Workspace Documents \\_|\\_ Apps Script \\_\\",
+        "url": "https://developers.google.com/apps-script/guides/dialogs",
+        "source_id": "site-docs-root",
+        "final_score": 152,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "In this case, the function includes an unused call to a DriveApp method to ensure that Apps Script requests access to all files in the user's Drive. @return {string} The user's OAuth 2.0 access token. / function getOAuthToken () { return ScriptApp . getOAuthToken (); } dialog.html picker/dialog.html View on GitHub <!DOCTYPE html> <html> <head> <link rel=\"stylesheet\" href=\"https://ssl.gstatic.com/docs/script/css/add-ons.css\" /> <style> #result { display: flex; flex-direction: column; gap: 0.25em; } pre { font-size: x-small; max-height: 25vh; overflow-y: scroll; background: #eeeeee; padding: 1em; border: 1px solid #cccccc; } </style> <script> // TODO: Replace the value for DEVELOPER KEY with the API key obtained // from the Google Developers Console. const DEVELOPER KEY = \"AIza...\"; // TODO: Replace the value for CLOUD PROJECT NUMBER with the project // number obtained from the Google Developers Console. const CLOUD PROJECT NUMBER = \"1234567890\"; let pickerApiLoaded = false; let oauthToken; / Loads the Google Picker API. / function onApiLoad() { gapi.load(\"picker\", { callback: function () { pickerApiLoaded = true; }, }); } / Gets the user's OAuth 2.0 access token from the server-side script so that it can be passed to Picker.",
+          "The Apps Script project manifest must specify the authorization scopes required by the Google Picker API so that ScriptApp.getOAuthToken returns the correct token for PickerBuilder.setOauthtoken .",
+          "Otherwise, your Picker code will need to declare its own OAuth scopes. / function getOAuthToken() { google.script.run .withSuccessHandler((token) => { oauthToken = token; createPicker(token); }) .withFailureHandler(showError) .getOAuthToken(); } / Creates a Picker that can access the user's spreadsheets."
+        ]
+      },
+      {
+        "title": "Google Apps Script release notes \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/apps-script/releases",
+        "source_id": "site-docs-root",
+        "final_score": 142,
+        "relevance": "",
+        "evidence_snippets": [
+          "Bookmark NamedRange RangeBuilder Document.addBookmark(position) Document.addNamedRange(name, range) Document.getBookmark(id) Document.getBookmarks() Document.getNamedRangeById(id) Document.getNamedRanges() Document.getNamedRanges(name) Document.newPosition(element, offset) Document.newRange() Document.setCursor(position) Document.setSelection(range) Position.insertBookmark() Added the following ScriptApp class and methods, which allow scripts to create state tokens that can be used in callback APIs (like OAuth flows), as well as to retrieve the script's own OAuth 2.0 access token.",
+          "StateTokenBuilder ScriptApp.getOAuthToken() `ScriptApp.newStateToken() Added the method showModalDialog(userInterface, title) to the Ui class, and replaced the method showDialog(userInterface) with showModelessDialog(userInterface, title) .",
+          "December 18, 2019 Feature The Spreadsheet service has been extended with the following class and new methods to support using color building and theme colors: Color ColorBuilder SpreadsheetTheme ThemeColor ThemeColorType SpreadsheetApp.newColor() Spreadsheet.getPredefinedSpreadsheetThemes() Spreadsheet.getSpreadsheetTheme() Spreadsheet.resetSpreadsheetTheme() Spreadsheet.setSpreadsheetTheme(theme) December 11, 2019 Feature The Data Studio service has been extended with the following class and new methods to support different response types and dynamic statuses: GetDataResponse GetSchemaResponse SetCredentialsResponse Checkbox.setIsDynamic(isDynamic) CommunityConnector.newGetDataResponse() CommunityConnector.newGetSchemaResponse() CommunityConnector.newSetCredentialsResponse() Config.setIsSteppedConfig(isSteppedConfig) SelectMultiple.setIsDynamic(isDynamic) SelectSingle.setIsDynamic(isDynamic) TextArea.setIsDynamic(isDynamic) TextInput.setIsDynamic(isDynamic) November 06, 2019 Feature The Spreadsheet service has been extended with the following class and new methods to support using slicers to filter ranges, charts, and pivot tables: Slicer Sheet.getSlicers() Sheet.insertSlicer(range, anchorRowPos, anchorColPos) Sheet.insertSlicer(range, anchorRowPos, anchorColPos, offsetX, offsetY) The Script service has been extended with the ScriptApp.getIdentityToken() method , which returns an identity token for the effective user."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "api.js",
+      "apis.google.com",
+      "appsscript.json",
+      "developers.google.com",
+      "dialog.html",
+      "document.createElement",
+      "document.createTextNode",
+      "document.getElementById",
+      "drive.file",
+      "gapi.load",
+      "ons.css",
+      "picker.responseobject",
+      "response.content",
+      "response.title",
+      "script.container.ui",
+      "ssl.gstatic.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/guides/service-account",
+        "https://developers.google.com/apps-script/guides/dialogs",
+        "https://developers.google.com/apps-script/releases"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/guides/service-account",
+        "https://developers.google.com/apps-script/guides/dialogs",
+        "https://developers.google.com/apps-script/releases"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/guides/service-account",
+        "https://developers.google.com/apps-script/guides/dialogs",
+        "https://developers.google.com/apps-script/releases"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/guides/service-account",
+        "https://developers.google.com/apps-script/guides/dialogs",
+        "https://developers.google.com/apps-script/releases"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/guides/service-account",
+        "https://developers.google.com/apps-script/guides/dialogs",
+        "https://developers.google.com/apps-script/releases"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/guides/service-account",
+        "https://developers.google.com/apps-script/guides/dialogs",
+        "https://developers.google.com/apps-script/releases"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/guides/service-account",
+        "https://developers.google.com/apps-script/guides/dialogs",
+        "https://developers.google.com/apps-script/releases"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/guides/service-account",
+        "https://developers.google.com/apps-script/guides/dialogs",
+        "https://developers.google.com/apps-script/releases"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/guides/service-account",
+        "https://developers.google.com/apps-script/guides/dialogs",
+        "https://developers.google.com/apps-script/releases"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/guides/service-account",
+        "https://developers.google.com/apps-script/guides/dialogs",
+        "https://developers.google.com/apps-script/releases"
+      ]
+    }
+  ]
+}

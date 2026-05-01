@@ -1,0 +1,135 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:26.812Z",
+  "source_step08_card": "data/step-08/current/products/cloud-sql-for-mysql/card.json",
+  "product_name": "Cloud SQL for MySQL",
+  "product_slug": "cloud-sql-for-mysql",
+  "feature_name": "Cloud SQL Node.js Language Connector",
+  "feature_slug": "cloud-sql-node-js-language-connector",
+  "summary": "The Cloud SQL Node.js Language Connector became available in public preview.",
+  "extended_definition": "The Cloud SQL Node.js Language Connector became available in public preview.",
+  "lifecycle": {
+    "latest_feature_date": "2023-08-03",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/sql/docs/mysql/connect-connectors",
+      "https://docs.cloud.google.com/sql/docs/mysql/connect-overview",
+      "https://docs.cloud.google.com/sql/docs/mysql/connect-to-instance-using-write-endpoint"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Connect using Cloud SQL Language Connectors \\_|\\_ Cloud SQL for MySQL \\_\\",
+        "url": "https://docs.cloud.google.com/sql/docs/mysql/connect-connectors",
+        "source_id": "site-docs-reference-3",
+        "final_score": 169,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "PRIVATE IP === 'true' ? 'PRIVATE' : 'PUBLIC' ; // connectWithConnector initializes a connection pool for a Cloud SQL instance // of MySQL using the Cloud SQL Node.js Connector. const connectWithConnector = async config = > { // Note: Saving credentials in environment variables is convenient, but not // secure - consider a more secure solution such as // Cloud Secret Manager (https://cloud.google.com/secret-manager) to help // keep secrets safe. const connector = new Connector (); const clientOpts = await connector . getOptions ({ instanceConnectionName : process . env .",
+          "Errorf ( \"sql.Open: %w\" , err ) } return dbPool , nil } Node.js For detailed instructions on using the library, see Usage . const mysql = require ( 'mysql2/promise' ); const { Connector } = require ( '@google-cloud/cloud-sql-connector' ); // In case the PRIVATE IP environment variable is defined then we set // the ipType=PRIVATE for the new connector instance, otherwise defaults // to public ip type. const getIpType = () = > process . env .",
+          "REST Before using any of the request data, make the following replacements: PROJECT ID : the ID or project number of the Google Cloud project that contains the instance INSTANCE NAME : the name of your Cloud SQL instance Note: By setting the value of the connectorEnforcement parameter to REQUIRED , all connections must use the Cloud SQL Language Connectors, including the Cloud SQL Auth Proxy and the Java, Python, Go, and Node.js connectors."
+        ]
+      },
+      {
+        "title": "\"Choose how to connect to Cloud SQL \\_|\\_ Cloud SQL for MySQL \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/sql/docs/mysql/connect-overview",
+        "source_id": "site-docs-root",
+        "final_score": 115,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Configuration options Cloud SQL Auth Proxy , or Cloud SQL Language Connectors, including Cloud SQL Java connector Cloud SQL Python connector Cloud SQL Go connector Cloud SQL Node.js connector The following Google Cloud services use an embedded Cloud SQL Auth Proxy when you connect to a Cloud SQL instance over public IP address: Cloud Run App Engine flexible environment App Engine standard environment To configure SSL/TLS certificates on the Cloud SQL instance and for your client, do the following: Choose a server CA mode for your instance .",
+          "Cloud SQL connector Direct connection Description Cloud SQL Auth Proxy, a client-side proxy, and Cloud SQL Language Connectors, client-side libraries, provide simplified and secure access to your Cloud SQL instances, especially when you connect to an instance using a public IP address.",
+          "Another more secure alternative for connecting to a Cloud SQL instance that uses public IP is to use a Cloud SQL connector (such as the Cloud SQL Auth Proxy or one of the Cloud SQL Language Connectors)."
+        ]
+      },
+      {
+        "title": "\"Connect to an instance using a write endpoint \\_|\\_ Cloud SQL for MySQL\\",
+        "url": "https://docs.cloud.google.com/sql/docs/mysql/connect-to-instance-using-write-endpoint",
+        "source_id": "site-docs-reference-3",
+        "final_score": 113,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Node.js import mysql from 'mysql2/promise' ; import { Connector } from '@google-cloud/cloud-sql-connector' ; const connector = new Connector (); const clientOpts = await connector . getOptions ({ domainName : ' WRITE ENDPOINT ' , ipType : 'PUBLIC' , }); const pool = await mysql . createPool ({ ... clientOpts , user : ' USERNAME ' , password : ' PASSWORD ' , database : ' DATABASE NAME ' , }); Make the following replacements: WRITE ENDPOINT : The DNS name or write endpoint.",
+          "Connect database clients to instances using the Cloud SQL Auth Proxy or Cloud SQL Language Connectors When you configure the Cloud SQL Auth Proxy or one of the Cloud SQL Language Connectors using a write endpoint DNS name, the Cloud SQL connector periodically check for a switchover or failover operation.",
+          "Update the instance network configuration If your instance was created before August 8, 2025, you might need to update the instance's network configuration for Cloud SQL Language Connectors or the Cloud SQL Auth Proxy to be able to use the write endpoint."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.zaxxer.hikari.HikariConfig",
+      "com.zaxxer.hikari.HikariDataSource",
+      "javax.sql.DataSource",
+      "sql.Open"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/connect-connectors",
+        "https://docs.cloud.google.com/sql/docs/mysql/connect-overview",
+        "https://docs.cloud.google.com/sql/docs/mysql/connect-to-instance-using-write-endpoint"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/connect-connectors",
+        "https://docs.cloud.google.com/sql/docs/mysql/connect-overview",
+        "https://docs.cloud.google.com/sql/docs/mysql/connect-to-instance-using-write-endpoint"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/connect-connectors",
+        "https://docs.cloud.google.com/sql/docs/mysql/connect-overview",
+        "https://docs.cloud.google.com/sql/docs/mysql/connect-to-instance-using-write-endpoint"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/connect-connectors",
+        "https://docs.cloud.google.com/sql/docs/mysql/connect-overview",
+        "https://docs.cloud.google.com/sql/docs/mysql/connect-to-instance-using-write-endpoint"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/connect-connectors",
+        "https://docs.cloud.google.com/sql/docs/mysql/connect-overview",
+        "https://docs.cloud.google.com/sql/docs/mysql/connect-to-instance-using-write-endpoint"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/connect-connectors",
+        "https://docs.cloud.google.com/sql/docs/mysql/connect-overview",
+        "https://docs.cloud.google.com/sql/docs/mysql/connect-to-instance-using-write-endpoint"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,249 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:28.744Z",
+  "source_step08_card": "data/step-08/current/products/cloud-trace/card.json",
+  "product_name": "Cloud Trace",
+  "product_slug": "cloud-trace",
+  "feature_name": "Trace Data Access audit logs",
+  "feature_slug": "trace-data-access-audit-logs",
+  "summary": "Cloud Trace provides Data Access audit logs.",
+  "extended_definition": "Cloud Trace provides Data Access audit logs.",
+  "lifecycle": {
+    "latest_feature_date": "2018-03-28",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/trace/docs/analytics-query-linked-dataset",
+      "https://docs.cloud.google.com/trace/docs/audit-logging",
+      "https://docs.cloud.google.com/trace/docs/finding-traces",
+      "https://docs.cloud.google.com/trace/docs/iam"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Trace audit logging \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/trace/docs/audit-logging",
+        "source_id": "site-docs-root-2",
+        "final_score": 179,
+        "relevance": "",
+        "evidence_snippets": [
+          "Permission type Methods ADMIN READ google.devtools.cloudtrace.v2beta1.TracingConfigService.GetTraceSink google.devtools.cloudtrace.v2beta1.TracingConfigService.ListTraceSinks ADMIN WRITE google.devtools.cloudtrace.v2beta1.TracingConfigService.CreateTraceSink google.devtools.cloudtrace.v2beta1.TracingConfigService.DeleteTraceSink google.devtools.cloudtrace.v2beta1.TracingConfigService.UpdateTraceSink DATA READ google.devtools.cloudtrace.v1.TraceService.GetTrace google.devtools.cloudtrace.v1.TraceService.ListTraces API interface audit logs For information about how and which permissions are evaluated for each method, see the Identity and Access Management documentation for Cloud Trace. google.devtools.cloudtrace.v1.TraceService The following audit logs are associated with methods belonging to google.devtools.cloudtrace.v1.TraceService .",
+          "For more information about Cloud Audit Logs, see the following: Types of audit logs Audit log entry structure Storing and routing audit logs Cloud Logging pricing summary Enable Data Access audit logs Service name Cloud Trace audit logs use the service name cloudtrace.googleapis.com .",
+          "The following methods don't produce audit logs: google.devtools.cloudtrace.v1.TraceService.PatchTraces google.devtools.cloudtrace.v2.TraceService.BatchWriteSpans google.devtools.cloudtrace.v2.TraceService.CreateSpan Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License ."
+        ]
+      },
+      {
+        "title": "Find and explore traces \\_|\\_ Cloud Trace \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/trace/docs/finding-traces",
+        "source_id": "site-docs-root",
+        "final_score": 162,
+        "relevance": "",
+        "evidence_snippets": [
+          "That view provides read access to all trace data that the project stores.",
+          "Explore a trace This section provides information about how you can explore a span in the context of its trace: Open and configure the Trace Explorer page.",
+          "Logs & Events : This tab lists events and log entries whose trace id and span id fields match the selected span are shown."
+        ]
+      },
+      {
+        "title": "Control access with IAM \\_|\\_ Cloud Trace \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/trace/docs/iam",
+        "source_id": "site-docs-reference",
+        "final_score": 160,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Lowest-level resources where you can grant this role: Project cloudtrace.traces.patch telemetry.traces.write Telemetry API roles The following table lists the predefined roles for the Telemetry (OTLP) API , and it lists the permissions for those roles: Role Permissions Telemetry Admin ( roles/ telemetry.admin ) Admin role for telemetry resourcemanager.projects.get resourcemanager.projects.list telemetry. telemetry. consumers. getIamPolicy telemetry. consumers. setIamPolicy telemetry.consumers.writeLogs telemetry. consumers. writeMetrics telemetry. consumers. writeTraces telemetry.logs.write telemetry.metrics.write telemetry.traces.write Telemetry Editor ( roles/ telemetry.editor ) Editor role for telemetry resourcemanager.projects.get resourcemanager.projects.list telemetry.logs.write telemetry.metrics.write telemetry.traces.write Consumer Admin Beta ( roles/ telemetry.consumerAdmin ) Grants permission management access to consumer resources. telemetry. consumers. getIamPolicy telemetry. consumers. setIamPolicy Cloud Telemetry Logs Writer Beta ( roles/ telemetry.logsWriter ) Access to write logs. telemetry.logs.write Cloud Telemetry Metrics Writer ( roles/ telemetry.metricsWriter ) Access to write metrics. telemetry.metrics.write Integrated Service Telemetry Logs Writer Beta ( roles/ telemetry.serviceLogsWriter ) Allows an onboarded service to write log data to a destination. telemetry.consumers.writeLogs Integrated Service Telemetry Metrics Writer Beta ( roles/ telemetry.serviceMetricsWriter ) Allows an onboarded service to write metrics data to a destination. telemetry. consumers. writeMetrics Integrated Service Telemetry Writer Beta ( roles/ telemetry.serviceTelemetryWriter ) Allows an onboarded service to write all telemetry data to a destination. telemetry.consumers.writeLogs telemetry. consumers. writeMetrics telemetry. consumers. writeTraces Integrated Service Telemetry Traces Writer Beta ( roles/ telemetry.serviceTracesWriter ) Allows an onboarded service to write trace data to a destination. telemetry. consumers. writeTraces Cloud Telemetry Traces Writer ( roles/ telemetry.tracesWriter ) Access to write trace spans. telemetry.traces.write Cloud Telemetry Writer ( roles/ telemetry.writer ) Full access to write all telemetry data. telemetry.logs.write telemetry.metrics.write telemetry.traces.write Create custom roles To create a custom role that includes Cloud Trace permissions, do the following: For a role granting permissions only for the Cloud Trace API, choose the permissions required by the API method.",
+          "Lowest-level resources where you can grant this role: Project cloudtrace. cloudtrace.insights.get cloudtrace.insights.list cloudtrace.stats.get cloudtrace.tasks.create cloudtrace.tasks.delete cloudtrace.tasks.get cloudtrace.tasks.list cloudtrace.traceScopes.create cloudtrace.traceScopes.delete cloudtrace.traceScopes.get cloudtrace.traceScopes.list cloudtrace.traceScopes.update cloudtrace.traces.get cloudtrace.traces.list cloudtrace.traces.patch observability.scopes.get observability.traceScopes. observability. traceScopes. create observability. traceScopes. delete observability.traceScopes.get observability.traceScopes.list observability. traceScopes. update resourcemanager.projects.get resourcemanager.projects.list telemetry.traces.write Cloud Trace User ( roles/ cloudtrace.user ) Provides full access to the Trace console and read access to traces.",
+          "Cloud Trace roles The following table lists the predefined roles for Cloud Trace, and it lists the permissions for those roles: Role Permissions Cloud Trace Admin ( roles/ cloudtrace.admin ) Provides full access to the Trace console and read-write access to traces."
+        ]
+      },
+      {
+        "title": "Analyze trace data with BigQuery \\_|\\_ Cloud Trace \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/trace/docs/analytics-query-linked-dataset",
+        "source_id": "site-docs-root-2",
+        "final_score": 128,
+        "relevance": "",
+        "evidence_snippets": [
+          "To get the permissions that you need to create a link on an observability dataset, ask your administrator to grant you the following IAM roles on your project: Observability Editor ( roles/observability.editor ) BigQuery User ( roles/bigquery.user ) Logs Viewer ( roles/logging.viewer ) For more information about granting roles, see Manage access to projects, folders, and organizations .",
+          "Logs Viewer ( roles/logging.viewer ) on your project BigQuery User ( roles/bigquery.user ) on your project BigQuery Job User ( roles/bigquery.jobUser ) on your project For more information about granting roles, see Manage access to projects, folders, and organizations .",
+          "Use BigQuery Studio To open BigQuery from the Observability Analytics page and then query your trace data, do the following: In the Google Cloud console, go to the manage search Log Analytics page: Go to Log Analytics If you use the search bar to find this page, then select the result whose subheading is Logging ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "explicit",
+    "explicit_roles": [
+      "roles/accessapproval.admin",
+      "roles/accessapproval.approver",
+      "roles/accessapproval.configEditor"
+    ],
+    "explicit_permissions": [
+      {
+        "permission": "resourcemanager.projects.get",
+        "group": "resourcemanager",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver",
+          "roles/accessapproval.configEditor"
+        ]
+      },
+      {
+        "permission": "resourcemanager.projects.list",
+        "group": "resourcemanager",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver",
+          "roles/accessapproval.configEditor"
+        ]
+      }
+    ],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "bigquery.jobUser",
+      "bigquery.user",
+      "cloudtrace.admin",
+      "cloudtrace.googleapis.com",
+      "cloudtrace.insights.get",
+      "cloudtrace.insights.list",
+      "cloudtrace.stats.get",
+      "cloudtrace.tasks.create",
+      "cloudtrace.tasks.delete",
+      "cloudtrace.tasks.get",
+      "cloudtrace.tasks.list",
+      "cloudtrace.traces.get",
+      "cloudtrace.traces.list",
+      "cloudtrace.traces.patch",
+      "cloudtrace.traceScopes.create",
+      "cloudtrace.traceScopes.delete",
+      "cloudtrace.traceScopes.get",
+      "cloudtrace.traceScopes.list",
+      "cloudtrace.traceScopes.update",
+      "cloudtrace.tracesinks.list",
+      "cloudtrace.user",
+      "logging.viewer",
+      "observability.editor",
+      "observability.scopes.get",
+      "observability.traceScopes",
+      "observability.traceScopes.get",
+      "observability.traceScopes.list",
+      "observability.viewAccessor",
+      "telemetry.admin",
+      "telemetry.consumerAdmin",
+      "telemetry.consumers.writeLogs",
+      "telemetry.editor",
+      "telemetry.logs.write",
+      "telemetry.logsWriter",
+      "telemetry.metrics.write",
+      "telemetry.metricsWriter",
+      "telemetry.serviceLogsWriter",
+      "telemetry.serviceMetricsWriter",
+      "telemetry.serviceTelemetryWriter",
+      "telemetry.serviceTracesWriter",
+      "telemetry.traces.write",
+      "telemetry.tracesWriter",
+      "telemetry.writer"
+    ],
+    "missing_inventory_roles": [
+      "roles/bigquery.jobUser",
+      "roles/bigquery.user",
+      "roles/logging.viewer",
+      "roles/observability.editor",
+      "roles/observability.viewAccessor"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/trace/docs/audit-logging",
+        "https://docs.cloud.google.com/trace/docs/finding-traces",
+        "https://docs.cloud.google.com/trace/docs/iam",
+        "https://docs.cloud.google.com/trace/docs/analytics-query-linked-dataset"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/trace/docs/audit-logging",
+        "https://docs.cloud.google.com/trace/docs/finding-traces",
+        "https://docs.cloud.google.com/trace/docs/iam",
+        "https://docs.cloud.google.com/trace/docs/analytics-query-linked-dataset"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/trace/docs/audit-logging",
+        "https://docs.cloud.google.com/trace/docs/finding-traces",
+        "https://docs.cloud.google.com/trace/docs/iam",
+        "https://docs.cloud.google.com/trace/docs/analytics-query-linked-dataset"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/trace/docs/audit-logging",
+        "https://docs.cloud.google.com/trace/docs/finding-traces",
+        "https://docs.cloud.google.com/trace/docs/iam",
+        "https://docs.cloud.google.com/trace/docs/analytics-query-linked-dataset"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/trace/docs/audit-logging",
+        "https://docs.cloud.google.com/trace/docs/finding-traces",
+        "https://docs.cloud.google.com/trace/docs/iam",
+        "https://docs.cloud.google.com/trace/docs/analytics-query-linked-dataset"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/trace/docs/audit-logging",
+        "https://docs.cloud.google.com/trace/docs/finding-traces",
+        "https://docs.cloud.google.com/trace/docs/iam",
+        "https://docs.cloud.google.com/trace/docs/analytics-query-linked-dataset"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/trace/docs/audit-logging",
+        "https://docs.cloud.google.com/trace/docs/finding-traces",
+        "https://docs.cloud.google.com/trace/docs/iam",
+        "https://docs.cloud.google.com/trace/docs/analytics-query-linked-dataset"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/trace/docs/audit-logging",
+        "https://docs.cloud.google.com/trace/docs/finding-traces",
+        "https://docs.cloud.google.com/trace/docs/iam",
+        "https://docs.cloud.google.com/trace/docs/analytics-query-linked-dataset"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/trace/docs/audit-logging",
+        "https://docs.cloud.google.com/trace/docs/finding-traces",
+        "https://docs.cloud.google.com/trace/docs/iam",
+        "https://docs.cloud.google.com/trace/docs/analytics-query-linked-dataset"
+      ]
+    }
+  ]
+}

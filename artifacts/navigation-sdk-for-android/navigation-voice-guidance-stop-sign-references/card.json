@@ -1,0 +1,142 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:44.316Z",
+  "source_step08_card": "data/step-08/current/products/navigation-sdk-for-android/card.json",
+  "product_name": "Navigation SDK for Android",
+  "product_slug": "navigation-sdk-for-android",
+  "feature_name": "Navigation voice guidance stop sign references",
+  "feature_slug": "navigation-voice-guidance-stop-sign-references",
+  "summary": "References stop signs in navigation voice guidance when describing upcoming maneuvers in the US, Japan, and Sweden.",
+  "extended_definition": "References stop signs in navigation voice guidance when describing upcoming maneuvers in the US, Japan, and Sweden.",
+  "lifecycle": {
+    "latest_feature_date": "2025-10-13",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/maps/documentation/navigation/android-sdk/controls",
+      "https://developers.google.com/maps/documentation/navigation/android-sdk/intro-google-nav",
+      "https://developers.google.com/maps/documentation/navigation/android-sdk/multi-destination",
+      "https://developers.google.com/maps/documentation/navigation/android-sdk/route"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Modify the navigation UI \\_|\\_ Navigation SDK for Android \\_|\\_ Google for\\",
+        "url": "https://developers.google.com/maps/documentation/navigation/android-sdk/controls",
+        "source_id": "site-docs-root",
+        "final_score": 194,
+        "relevance": "",
+        "evidence_snippets": [
+          "However, it does not affect the traffic indications on the route plotted by the navigator. private GoogleMap mMap ; // Get the map, and when the async call returns, setTrafficEnabled // (callback will be on the UI thread) mMap = mNavFragment . getMapAsync ( navMap - > navMap . setTrafficEnabled ( false )); Enable traffic lights and stop signs You can enable the display of traffic lights and stop signs in the map during active navigation, which provides additional context for routes and trip maneuvers.",
+          "By default, traffic lights and stop signs are disabled in the Navigation SDK.",
+          "DisplayOptions displayOptions = new DisplayOptions (). showTrafficLights ( true ). showStopSigns ( true ); Add custom markers Navigation SDK for Android now uses Google Maps APIs for markers."
+        ]
+      },
+      {
+        "title": "\"Navigate a multi-destination route \\_|\\_ Navigation SDK for Android \\_|\\_\\",
+        "url": "https://developers.google.com/maps/documentation/navigation/android-sdk/multi-destination",
+        "source_id": "site-docs-root",
+        "final_score": 176,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "ListenableResultFuture<Navigator.RouteStatus> pendingRoute = mNavigator.setDestinations(mWaypoints); // Define the action to perform when the SDK has determined the route. pendingRoute.setOnResultListener( new ListenableResultFuture.OnResultListener<Navigator.RouteStatus>() { @Override public void onResult(Navigator.RouteStatus code) { switch (code) { case OK: mJourneyInProgress = true; // Hide the toolbar to maximize the navigation UI. if (getActionBar() != null) { getActionBar().hide(); } // Register some listeners for navigation events. registerNavigationListeners(); // Display the time and distance to each waypoint. displayTimesAndDistances(); // Enable voice audio guidance (through the device speaker). mNavigator.setAudioGuidance( Navigator.AudioGuidance.VOICE ALERTS AND GUIDANCE); // Simulate vehicle progress along the route for demo/debug builds. if (BuildConfig.DEBUG) { mNavigator.getSimulator().simulateLocationsAlongExistingRoute( new SimulationOptions().speedMultiplier(5)); } // Start turn-by-turn guidance along the current route. mNavigator.startGuidance(); break; // Handle error conditions returned by the navigator. case NO ROUTE FOUND: displayMessage(\"Error starting navigation: No route found.\", DISPLAY BOTH); break; case NETWORK ERROR: displayMessage(\"Error starting navigation: Network error.\", DISPLAY BOTH); break; case ROUTE CANCELED: displayMessage(\"Error starting navigation: Route canceled.\", DISPLAY BOTH); break; default: displayMessage(\"Error starting navigation: \" + String.valueOf(code), DISPLAY BOTH); } } }); } Build and run your app Connect an Android device to your computer.",
+          "RouteStatus code ) { switch ( code ) { case OK : mJourneyInProgress = true ; // Hide the toolbar to maximize the navigation UI . if ( getActionBar () != null ) { getActionBar () . hide (); } // Register some listeners for navigation events . registerNavigationListeners (); // Display the time and distance to each waypoint . displayTimesAndDistances (); // Enable voice audio guidance ( through the device speaker ) . mNavigator . setAudioGuidance ( Navigator .",
+          "DEBUG ) { mNavigator . getSimulator () . simulateLocationsAlongExistingRoute ( new SimulationOptions () . speedMultiplier ( 5 )); } // Start turn - by - turn guidance along the current route . mNavigator . startGuidance (); break ; // Handle error conditions returned by the navigator . case NO ROUTE FOUND : displayMessage ( \"Error starting navigation: No route found.\" , DISPLAY BOTH ); break ; case NETWORK ERROR : displayMessage ( \"Error starting navigation: Network error.\" , DISPLAY BOTH ); break ; case ROUTE CANCELED : displayMessage ( \"Error starting navigation: Route canceled.\" , DISPLAY BOTH ); break ; default : displayMessage ( \"Error starting navigation: \" + String . valueOf ( code ), DISPLAY BOTH ); } } }); } / Creates a waypoint from a given place ID and title . @param placeId The ID of the place to be converted to a waypoint . @param title A descriptive title for the waypoint . / private void createWaypoint ( String placeId , String title ) { try { mWaypoints . add ( Waypoint . builder () . setPlaceIdString ( placeId ) . setTitle ( title ) . build ()); } catch ( Waypoint ."
+        ]
+      },
+      {
+        "title": "\"Navigate a single-destination route \\_|\\_ Navigation SDK for Android \\_\\",
+        "url": "https://developers.google.com/maps/documentation/navigation/android-sdk/route",
+        "source_id": "site-docs-reference",
+        "final_score": 172,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Set the last digit of the car's license plate to get // route restrictions for supported countries. // mNavigator.setLicensePlateRestrictionInfo(getLastDigit(), \"BZ\"); // Set the camera to follow the device location with 'TILTED' driving view. mNavFragment.getCamera().followMyLocation(Camera.Perspective.TILTED); // Set the travel mode (DRIVING, WALKING, CYCLING, TWO WHEELER, or TAXI). mRoutingOptions = new RoutingOptions(); mRoutingOptions.travelMode(RoutingOptions.TravelMode.DRIVING); // Navigate to a place, specified by Place ID. navigateToPlace(SYDNEY OPERA HOUSE, mRoutingOptions); } / Handles errors from the Navigation SDK. @param errorCode The error code returned by the navigator. / @Override public void onError(@NavigationApi.ErrorCode int errorCode) { switch (errorCode) { case NavigationApi.ErrorCode.NOT AUTHORIZED: displayMessage(\"Error loading Navigation SDK: Your API key is \" + \"invalid or not authorized to use the Navigation SDK.\"); break; case NavigationApi.ErrorCode.TERMS NOT ACCEPTED: displayMessage(\"Error loading Navigation SDK: User did not accept \" + \"the Navigation Terms of Use.\"); break; case NavigationApi.ErrorCode.NETWORK ERROR: displayMessage(\"Error loading Navigation SDK: Network error.\"); break; case NavigationApi.ErrorCode.LOCATION PERMISSION MISSING: displayMessage(\"Error loading Navigation SDK: Location permission \" + \"is missing.\"); break; default: displayMessage(\"Error loading Navigation SDK: \" + errorCode); } } }); Set a destination The Navigator class provides control over configuring, starting, and stopping a navigation journey.",
+          "DEBUG ) { mNavigator . getSimulator () . simulateLocationsAlongExistingRoute ( new SimulationOptions () . speedMultiplier ( 5 )); } // Start turn - by - turn guidance along the current route . mNavigator . startGuidance (); break ; // Handle error conditions returned by the navigator . case NO ROUTE FOUND : displayMessage ( \"Error starting navigation: No route found.\" ); break ; case NETWORK ERROR : displayMessage ( \"Error starting navigation: Network error.\" ); break ; case ROUTE CANCELED : displayMessage ( \"Error starting navigation: Route canceled.\" ); break ; default : displayMessage ( \"Error starting navigation: \" + String . valueOf ( code )); } } }); } / Handles the result of the request for location permissions . / @Override public void onRequestPermissionsResult ( int requestCode , @NonNull String [] permissions , @NonNull int [] grantResults ) { mLocationPermissionGranted = false ; switch ( requestCode ) { case PERMISSIONS REQUEST ACCESS FINE LOCATION : { // If request is canceled , the result arrays are empty . if ( grantResults . length > 0 && grantResults [ 0 ] == PackageManager .",
+          "RouteStatus code ) { switch ( code ) { case OK : // Hide the toolbar to maximize the navigation UI . if ( getActionBar () != null ) { getActionBar () . hide (); } // Enable voice audio guidance ( through the device speaker ) . mNavigator . setAudioGuidance ( Navigator ."
+        ]
+      },
+      {
+        "title": "\"The Google navigation experience \\_|\\_ Navigation SDK for Android \\_|\\_\\",
+        "url": "https://developers.google.com/maps/documentation/navigation/android-sdk/intro-google-nav",
+        "source_id": "site-docs-root",
+        "final_score": 171,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Modification Details Modified navigation guidance: show/hide headers, colors and fonts, directions, alternate routes, and trip progress Map UI controls Modify the navigation header Display directions list Hide alternate routes Display trip progress Adjust traffic information and speed limit information Turn off traffic layer Enable traffic lights and stop signs Display the speedometer Change the map experience UI and adjust the camera.",
+          "The Google navigation experience involves a three-step flow: starting navigation by defining the destination, active navigation with real-time guidance, and stopping navigation upon arrival.",
+          "Developers can customize aspects of the Google navigation experience like color schemes, camera views, and guidance information, but for full control, a custom navigation experience is recommended."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "developers.google.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://developers.google.com/maps/documentation/navigation/android-sdk/controls",
+        "https://developers.google.com/maps/documentation/navigation/android-sdk/multi-destination",
+        "https://developers.google.com/maps/documentation/navigation/android-sdk/route",
+        "https://developers.google.com/maps/documentation/navigation/android-sdk/intro-google-nav"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://developers.google.com/maps/documentation/navigation/android-sdk/controls",
+        "https://developers.google.com/maps/documentation/navigation/android-sdk/multi-destination",
+        "https://developers.google.com/maps/documentation/navigation/android-sdk/route",
+        "https://developers.google.com/maps/documentation/navigation/android-sdk/intro-google-nav"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://developers.google.com/maps/documentation/navigation/android-sdk/controls",
+        "https://developers.google.com/maps/documentation/navigation/android-sdk/multi-destination",
+        "https://developers.google.com/maps/documentation/navigation/android-sdk/route",
+        "https://developers.google.com/maps/documentation/navigation/android-sdk/intro-google-nav"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://developers.google.com/maps/documentation/navigation/android-sdk/controls",
+        "https://developers.google.com/maps/documentation/navigation/android-sdk/multi-destination",
+        "https://developers.google.com/maps/documentation/navigation/android-sdk/route",
+        "https://developers.google.com/maps/documentation/navigation/android-sdk/intro-google-nav"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://developers.google.com/maps/documentation/navigation/android-sdk/controls",
+        "https://developers.google.com/maps/documentation/navigation/android-sdk/multi-destination",
+        "https://developers.google.com/maps/documentation/navigation/android-sdk/route",
+        "https://developers.google.com/maps/documentation/navigation/android-sdk/intro-google-nav"
+      ]
+    }
+  ]
+}

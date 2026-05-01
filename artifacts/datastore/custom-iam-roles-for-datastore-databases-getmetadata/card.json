@@ -1,0 +1,261 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:33.658Z",
+  "source_step08_card": "data/step-08/current/products/datastore/card.json",
+  "product_name": "Datastore",
+  "product_slug": "datastore",
+  "feature_name": "Custom IAM roles for datastore.databases.getMetadata",
+  "feature_slug": "custom-iam-roles-for-datastore-databases-getmetadata",
+  "summary": "The datastore.databases.getMetadata permission can be used in custom IAM roles to support operations such as unlinking a database from App Engine.",
+  "extended_definition": "The datastore.databases.getMetadata permission can be used in custom IAM roles to support operations such as unlinking a database from App Engine.",
+  "lifecycle": {
+    "latest_feature_date": "2022-04-28",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/datastore/docs/access/iam",
+      "https://docs.cloud.google.com/datastore/docs/app-engine-requirement",
+      "https://docs.cloud.google.com/datastore/docs/cmek",
+      "https://docs.cloud.google.com/datastore/docs/export-import-entities"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Identity and Access Management (IAM) \\_|\\_ Datastore \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/datastore/docs/access/iam",
+        "source_id": "site-iam-reference",
+        "final_score": 279,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For Datastore Admin access, grant the appengine.appAdmin role to the principal. roles/datastore.user appengine.applications.get datastore.databases.get datastore.databases.getMetadata datastore.databases.list datastore.entities. datastore.schemas.list datastore.namespaces.get datastore.namespaces.list datastore.statistics.get datastore.statistics.list resourcemanager.projects.get resourcemanager.projects.list Read/write access to data in a Datastore mode database.",
+          "Intended for application developers and service accounts. roles/datastore.viewer appengine.applications.get datastore.databases.get datastore.databases.getMetadata datastore.databases.list datastore.entities.get datastore.entities.list datastore.schemas.get datastore.schemas.list datastore.namespaces.get datastore.namespaces.list datastore.statistics.get datastore.statistics.list resourcemanager.projects.get resourcemanager.projects.list datastore.insights.get Read access to all Datastore mode database resources. roles/datastore.importExportAdmin appengine.applications.get datastore.databases.export datastore.databases.getMetadata datastore.databases.import datastore.operations.cancel datastore.operations.get datastore.operations.list resourcemanager.projects.get resourcemanager.projects.list Full access to manage imports and exports. roles/datastore.bulkAdmin resourcemanager.projects.get resourcemanager.projects.list datastore.databases.getMetadata datastore.databases.bulkDelete datastore.operations.cancel datastore.operations.get datastore.operations.list Full access to manage bulk operations. roles/datastore.indexAdmin appengine.applications.get datastore.databases.getMetadata datastore.schemas. datastore.operations.get datastore.operations.list resourcemanager.projects.get resourcemanager.projects.list Full access to manage index definitions. roles/datastore.keyVisualizerViewer datastore.databases.getMetadata datastore.keyVisualizerScans.get datastore.keyVisualizerScans.list resourcemanager.projects.get resourcemanager.projects.list Full access to Key Visualizer scans. roles/datastore.backupSchedulesViewer datastore.backupSchedules.get datastore.backupSchedules.list Read access to backup schedules in a Datastore mode database. roles/datastore.backupSchedulesAdmin datastore.backupSchedules.get datastore.backupSchedules.list datastore.backupSchedules.create datastore.backupSchedules.update datastore.backupSchedules.delete datastore.databases.list datastore.databases.getMetadata Full access to backup schedules in a Datastore mode database. roles/datastore.backupsViewer datastore.backups.get datastore.backups.list Read access to backup information in a Datastore mode location. roles/datastore.backupsAdmin datastore.backups.get datastore.backups.list datastore.backups.delete Full access to backups in a Datastore mode location. roles/datastore.restoreAdmin datastore.backups.get datastore.backups.list datastore.backups.restoreDatabase datastore.databases.list datastore.databases.create datastore.databases.getMetadata datastore.operations.list datastore.operations.get Ability to restore a Datastore mode backup into a new database.",
+          "For example, the following condition assigns a principal the datastore.user role up until a specified date: { \"role\" : \"roles/datastore.user\" , \"members\" : [ \"user:travis@example.com\" ], \"condition\" : { \"title\" : \"Expires December 1 2023\" , \"description\" : \"Expires on December 1, 2023\" , \"expression\" : \"request.time < timestamp('2023-12-01T00:00:00.000Z')\" } } To learn how to define IAM Conditions for temporary access, see Configure temporary access ."
+        ]
+      },
+      {
+        "title": "App Engine Requirement \\_|\\_ Datastore \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/datastore/docs/app-engine-requirement",
+        "source_id": "site-iam-reference",
+        "final_score": 225,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "If you previously defined a custom role for Datastore, it might lack the datastore.databases.getMetadata permission.",
+          "When executed from the Google Cloud console or the gcloud CLI, the administrative operations below will require the following IAM permissions: Create database: datastore.databases.create View database metadata: datastore.databases.getMetadata Edit database metadata: datastore.databases.update If you have not enabled the Firestore API, you will see an error in the Datastore pages of the Google Cloud console that includes the following notice: The Firestore API is required to administer your database.",
+          "Ensure continued access by updating your custom roles with datastore.databases.getMetadata or by using a predefined role ."
+        ]
+      },
+      {
+        "title": "Exporting and Importing Entities \\_|\\_ Datastore \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/datastore/docs/export-import-entities",
+        "source_id": "site-docs-root",
+        "final_score": 216,
+        "relevance": "",
+        "evidence_snippets": [
+          "Export operations For export operations involving a bucket in another project, modify the permissions of the bucket to assign one of the following Identity and Access Management roles to the Datastore mode service agent of the project that contains your Datastore mode database: Storage Admin Owner (basic role) You can also create an IAM custom role with slightly different permissions than the ones contained in the roles listed earlier: storage.buckets.get storage.objects.create storage.objects.delete storage.objects.list Import operations For import operations involving a Cloud Storage bucket in another project, modify the permissions of the bucket to assign one of the following Cloud Storage roles to the Datastore mode service agent of the project that contains your Datastore mode database: Storage Admin Both Storage Object Viewer and Storage Legacy Bucket Reader You can also create an IAM custom role with the following permissions: storage.buckets.get storage.objects.get Starting managed export and import operations This section describes how to start a managed export or import operation.",
+          "Otherwise, the following IAM roles grant the necessary permissions: Datastore Owner Datastore Import Export Admin You can also assign these permissions with a custom role .",
+          "For example, to assign the Storage Admin role to the Firestore service agent, run the following: gsutil iam ch serviceAccount:service- PROJECT NUMBER @gcp-sa-firestore.iam.gserviceaccount.com:roles/storage.admin \\ gs:// [ BUCKET NAME ] Replace PROJECT NUMBER with your project number, which is used to name your Firestore service agent."
+        ]
+      },
+      {
+        "title": "\"Customer-managed encryption keys (CMEK) \\_|\\_ Datastore \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/datastore/docs/cmek",
+        "source_id": "site-iam-reference",
+        "final_score": 203,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For more information about CMEK in general, including when and why to enable it, see the following Cloud KMS documentation: Customer-managed encryption keys (CMEK) Best practices for using CMEKs For instructions on performing CMEK-related tasks with Datastore mode, see Use CMEK .",
+          "If you have specific compliance or regulatory requirements related to the keys that protect your data, you can use customer-managed encryption keys (CMEK) for Datastore mode.",
+          "CMEK and key availability When keys are unavailable or disabled, be aware of the following behaviors that can occur in CMEK-enabled databases: You can change Datastore mode point-in-time recovery (PITR) settings on a CMEK-enabled database even if the key is unavailable because PITR settings are database metadata, which isn't encrypted by CMEK."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "explicit",
+    "explicit_roles": [
+      "roles/accessapproval.admin",
+      "roles/accessapproval.approver",
+      "roles/accessapproval.configEditor"
+    ],
+    "explicit_permissions": [
+      {
+        "permission": "resourcemanager.projects.get",
+        "group": "resourcemanager",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver",
+          "roles/accessapproval.configEditor"
+        ]
+      },
+      {
+        "permission": "resourcemanager.projects.list",
+        "group": "resourcemanager",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver",
+          "roles/accessapproval.configEditor"
+        ]
+      }
+    ],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "appengine.appAdmin",
+      "appengine.applications.get",
+      "datastore.backups.delete",
+      "datastore.backups.get",
+      "datastore.backups.list",
+      "datastore.backups.restoreDatabase",
+      "datastore.backupsAdmin",
+      "datastore.backupSchedules.create",
+      "datastore.backupSchedules.delete",
+      "datastore.backupSchedules.get",
+      "datastore.backupSchedules.list",
+      "datastore.backupSchedules.update",
+      "datastore.backupSchedulesAdmin",
+      "datastore.backupSchedulesViewer",
+      "datastore.backupsViewer",
+      "datastore.bulkAdmin",
+      "datastore.databases.bulkDelete",
+      "datastore.databases.create",
+      "datastore.databases.export",
+      "datastore.databases.get",
+      "datastore.databases.getMetadata",
+      "datastore.databases.import",
+      "datastore.databases.list",
+      "datastore.databases.update",
+      "datastore.entities",
+      "datastore.entities.get",
+      "datastore.entities.list",
+      "datastore.importExportAdmin",
+      "datastore.indexAdmin",
+      "datastore.insights.get",
+      "datastore.keyVisualizerScans.get",
+      "datastore.keyVisualizerScans.list",
+      "datastore.keyVisualizerViewer",
+      "datastore.namespaces.get",
+      "datastore.namespaces.list",
+      "datastore.operations.cancel",
+      "datastore.operations.get",
+      "datastore.operations.list",
+      "datastore.restoreAdmin",
+      "datastore.schemas",
+      "datastore.schemas.get",
+      "datastore.schemas.list",
+      "datastore.statistics.get",
+      "datastore.statistics.list",
+      "datastore.statisticsViewer",
+      "datastore.user",
+      "datastore.viewer",
+      "example.com",
+      "firestore.iam.gserviceaccount.com",
+      "request.time",
+      "storage.admin",
+      "storage.buckets.get",
+      "storage.objects.create",
+      "storage.objects.delete",
+      "storage.objects.get",
+      "storage.objects.list"
+    ],
+    "missing_inventory_roles": [
+      "roles/datastore.backupsAdmin",
+      "roles/datastore.backupSchedulesAdmin",
+      "roles/datastore.backupSchedulesViewer",
+      "roles/datastore.backupsViewer",
+      "roles/datastore.bulkAdmin",
+      "roles/datastore.importExportAdmin",
+      "roles/datastore.indexAdmin",
+      "roles/datastore.keyVisualizerViewer",
+      "roles/datastore.restoreAdmin",
+      "roles/datastore.statisticsViewer",
+      "roles/datastore.user",
+      "roles/datastore.viewer",
+      "roles/storage.admin"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastore/docs/access/iam",
+        "https://docs.cloud.google.com/datastore/docs/app-engine-requirement",
+        "https://docs.cloud.google.com/datastore/docs/export-import-entities",
+        "https://docs.cloud.google.com/datastore/docs/cmek"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastore/docs/access/iam",
+        "https://docs.cloud.google.com/datastore/docs/app-engine-requirement",
+        "https://docs.cloud.google.com/datastore/docs/export-import-entities",
+        "https://docs.cloud.google.com/datastore/docs/cmek"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastore/docs/access/iam",
+        "https://docs.cloud.google.com/datastore/docs/app-engine-requirement",
+        "https://docs.cloud.google.com/datastore/docs/export-import-entities",
+        "https://docs.cloud.google.com/datastore/docs/cmek"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastore/docs/access/iam",
+        "https://docs.cloud.google.com/datastore/docs/app-engine-requirement",
+        "https://docs.cloud.google.com/datastore/docs/export-import-entities",
+        "https://docs.cloud.google.com/datastore/docs/cmek"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastore/docs/access/iam",
+        "https://docs.cloud.google.com/datastore/docs/app-engine-requirement",
+        "https://docs.cloud.google.com/datastore/docs/export-import-entities",
+        "https://docs.cloud.google.com/datastore/docs/cmek"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastore/docs/access/iam",
+        "https://docs.cloud.google.com/datastore/docs/app-engine-requirement",
+        "https://docs.cloud.google.com/datastore/docs/export-import-entities",
+        "https://docs.cloud.google.com/datastore/docs/cmek"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastore/docs/access/iam",
+        "https://docs.cloud.google.com/datastore/docs/app-engine-requirement",
+        "https://docs.cloud.google.com/datastore/docs/export-import-entities",
+        "https://docs.cloud.google.com/datastore/docs/cmek"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastore/docs/access/iam",
+        "https://docs.cloud.google.com/datastore/docs/app-engine-requirement",
+        "https://docs.cloud.google.com/datastore/docs/export-import-entities",
+        "https://docs.cloud.google.com/datastore/docs/cmek"
+      ]
+    }
+  ]
+}

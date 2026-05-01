@@ -1,0 +1,132 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:18.771Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery",
+  "feature_name": "Stored columns and pre-filtering for vector search",
+  "feature_slug": "stored-columns-and-pre-filtering-for-vector-search",
+  "summary": "BigQuery vector indexes can store columns and support pre-filtering in vector searches to improve query efficiency.",
+  "extended_definition": "BigQuery vector indexes can store columns and support pre-filtering in vector searches to improve query efficiency.",
+  "lifecycle": {
+    "latest_feature_date": "2024-09-16",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/information-schema-index-columns",
+      "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+      "https://docs.cloud.google.com/bigquery/docs/vector-search-intro"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Introduction to embeddings and vector search \\_|\\_ BigQuery \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/vector-search-intro",
+        "source_id": "site-docs-root",
+        "final_score": 183,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Some possible use cases are as follows: Retrieval-augmented generation (RAG) : Parse documents, perform vector search on content, and generate summarized answers to natural language questions using Gemini models, all within BigQuery.",
+          "When you use vector indexes with vector search, you can take advantage of foundational technologies like inverted file indexing (IVF) and the ScaNN algorithm .",
+          "For a notebook that illustrates this scenario, see Log Anomaly Detection & Investigation with Text Embeddings + BigQuery Vector Search ."
+        ]
+      },
+      {
+        "title": "\"Data definition language (DDL) statements in GoogleSQL \\_|\\_ BigQuery \\_\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "source_id": "site-docs-reference",
+        "final_score": 154,
+        "relevance": "",
+        "evidence_snippets": [
+          "Required permissions To get the permissions that you need to alter vector indexes, ask your administrator to grant you the BigQuery Data Editor ( roles/bigquery.dataEditor ) or BigQuery Data Owner ( roles/bigquery.dataOwner ) IAM role on your table.",
+          "BigQuery returns an error if any column name is not a STRING or does not contain a STRING field, or if you call CREATE SEARCH INDEX on ALL COLUMNS of a table which contains no STRING fields.",
+          "The table schema contains 2 columns: transaction id: An integer transaction date: A date The table option list specifies the: Partition expiration: Three days Description: A table partitioned by transaction date Creating a partitioned table from the result of a query The following example creates a partitioned table named days with rain in mydataset using a DATE column: CREATE TABLE mydataset . days with rain PARTITION BY date OPTIONS ( partition expiration days = 365 , description = \"weather stations with precipitation, partitioned by day\" ) AS SELECT DATE ( CAST ( year AS INT64 ), CAST ( mo AS INT64 ), CAST ( da AS INT64 )) AS date , ( SELECT ANY VALUE ( name ) FROM bigquery-public-data.noaa gsod.stations AS stations WHERE stations . usaf = stn ) AS station name , -- Stations can have multiple names prcp FROM bigquery-public-data.noaa gsod.gsod2017 AS weather WHERE prcp != 99.9 -- Filter unknown values AND prcp > 0 -- Filter stations/days with no precipitation If you haven't configured a default project, prepend a project ID to the dataset name in the example SQL, and enclose the name in backticks if project id contains special characters: project id.dataset.table ."
+        ]
+      },
+      {
+        "title": "SEARCH_INDEX_COLUMNS view \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/information-schema-index-columns",
+        "source_id": "site-docs-reference-3",
+        "final_score": 143,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "SEARCH INDEX COLUMNS The result is similar to the following: +------------+------------+-------------------+------------------+ table name index name index column name index field path +------------+------------+-------------------+------------------+ my table my index a a my table my index c c.e my table my index c c.f.g +------------+------------+-------------------+------------------+ The following query joins the INFORMATION SCHEMA.SEARCH INDEX COLUMNS view with the INFORMATION SCHEMA.SEARCH INDEXES and INFORMATION SCHEMA.COLUMNS views to include the search index status and the data type of each column: SELECT index columns view . index catalog AS project name , index columns view . index SCHEMA AS dataset name , indexes view .",
+          "SEARCH INDEX COLUMNS index columns view ON indexes view .",
+          "The INFORMATION SCHEMA.SEARCH INDEX COLUMNS view has the following schema: Column name Data type Value index catalog STRING The name of the project that contains the dataset. index schema STRING The name of the dataset that contains the index. table name STRING The name of the base table that the index is created on. index name STRING The name of the index. index column name STRING The name of the top-level indexed column. index field path STRING The full path of the expanded indexed field, starting with the column name."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "bigquery.dataEditor",
+      "bigquery.dataOwner",
+      "c.e",
+      "c.f.g",
+      "data.noaa",
+      "dataset.spark",
+      "gsod.gsod2017",
+      "gsod.stations",
+      "id.dataset.table",
+      "id.us.my",
+      "main.py",
+      "project.my",
+      "spark.executor.instances",
+      "spark.yarn.am.memory"
+    ],
+    "missing_inventory_roles": [
+      "roles/bigquery.dataEditor",
+      "roles/bigquery.dataOwner"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/vector-search-intro",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "https://docs.cloud.google.com/bigquery/docs/information-schema-index-columns"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/vector-search-intro",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "https://docs.cloud.google.com/bigquery/docs/information-schema-index-columns"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/vector-search-intro",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "https://docs.cloud.google.com/bigquery/docs/information-schema-index-columns"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/vector-search-intro",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "https://docs.cloud.google.com/bigquery/docs/information-schema-index-columns"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,84 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:43.708Z",
+  "source_step08_card": "data/step-08/current/products/migrate-to-containers/card.json",
+  "product_name": "Migrate to Containers",
+  "product_slug": "migrate-to-containers",
+  "feature_name": "unified VM source migration workflow",
+  "feature_slug": "unified-vm-source-migration-workflow",
+  "summary": "The product introduced a unified migration workflow across VMware, AWS EC2, Azure VMs, and Compute Engine VMs.",
+  "extended_definition": "The product introduced a unified migration workflow across VMware, AWS EC2, Azure VMs, and Compute Engine VMs.",
+  "lifecycle": {
+    "latest_feature_date": "2020-03-30",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/prepare-for-migration",
+      "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/tomcat/tomcat-customizing-a-migration-plan",
+      "https://docs.cloud.google.com/migrate/containers/docs/mcdc-vmware-quickstart"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Discover, collect, and assess VMware VMs for migration \\_|\\_ Migrate to\\",
+        "url": "https://docs.cloud.google.com/migrate/containers/docs/mcdc-vmware-quickstart",
+        "source_id": "site-docs-reference",
+        "final_score": 99,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Discover, collect, and assess VMware VMs for migration Learn how to download the Migration Center discovery client CLI and use it to remotely discover, collect, and assess virtual machine (VM) instances running on VMware for migration and containerization.",
+          "Download the latest version of the mcdc CLI and make it executable: curl -O \"https://mc-release.storage.googleapis.com/mcdc/ $( curl -s https://mc-release.storage.googleapis.com/mcdc/latest ) /mcdc\" chmod +x mcdc Perform VMware inventory discovery Run the inventory discovery: ./mcdc discover vsphere -u USERNAME --url https:// VSPHERE URL Replace the following: USERNAME : your vCenter username VSPHERE URL : the URL for your vCenter Server instance or the vSphere Client The output of the discover command looks like the following: [+] Found 13 VMs Collecting data...",
+          "Home Documentation Migration Migrate to Containers Guides Send feedback Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"Customize migration plan for Tomcat servers \\_|\\_ Migrate to Containers\\",
+        "url": "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/tomcat/tomcat-customizing-a-migration-plan",
+        "source_id": "site-docs-reference",
+        "final_score": 90,
+        "relevance": "",
+        "evidence_snippets": [
+          "Edit the memory limits directly in your migration plan using the following format: tomcatServers : - name : latest . . . images : - name : tomcat-latest . . . resources : memory : limit : 2048M requests : 1280M The recommended value for limit is 200% of Xmx , which is the maximum Java heap size.",
+          "The details of your migration plan are used to extract the workload container artifacts from the source.",
+          "To turn off the probes, remove the probes section from the YAML file. tomcatServers : - name : latest images : - name : tomcat-latest ports : - 8080 probes : livenessProbe : tcpSocket : port : 8080 readinessProbe : tcpSocket : port : 8080 You can change this migration plan to use an existing Tomcat HTTP endpoint. tomcatServers : - name : latest images : - name : tomcat-latest ports : - 8080 probes : livenessProbe : httpGet : path : /healthz port : 8080 httpHeaders : - name : Custom-Header value : Awesome initialDelaySeconds : 3 periodSeconds : 3 readinessProbe : httpGet : tcpSocket : port : 8080 There are four predefined ways to check a container using a probe."
+        ]
+      },
+      {
+        "title": "Set up for migration \\_|\\_ Migrate to Containers \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/prepare-for-migration",
+        "source_id": "site-docs-reference",
+        "final_score": 90,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Optional: Set up for offline migration If you want to perform migration on your local network without pulling resources from the internet, then you can complete the following steps to prepare your local machine for offline migrations.",
+          "Set up the Linux source machine Note: If you're going to migrate Windows IIS applications, you don't need to perform the steps to set up the Windows source machine for migration.",
+          "Unpack the offline Migrate to Containers CLI plugins bundle: ./m2c plugins unpack -i m2c-offline-bundle-linux.tar To add support for offline data migration, specify a container registry that is available in your local network: ./m2c plugins unpack -i m2c-offline-bundle-linux.tar --registry HOSTNAME Replace HOSTNAME with the container registry hostname."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "linux.tar",
+      "release.storage.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": []
+}

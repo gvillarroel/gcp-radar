@@ -1,0 +1,217 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:46.903Z",
+  "source_step08_card": "data/step-08/current/products/spanner/card.json",
+  "product_name": "Spanner",
+  "product_slug": "spanner",
+  "feature_name": "GoogleSQL THEN RETURN clause",
+  "feature_slug": "googlesql-then-return-clause",
+  "summary": "GoogleSQL added support for the THEN RETURN clause in query statements.",
+  "extended_definition": "GoogleSQL added support for the THEN RETURN clause in query statements.",
+  "lifecycle": {
+    "latest_feature_date": "2023-03-17",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/python/docs/reference/spanner/latest/changelog",
+      "https://docs.cloud.google.com/spanner/docs/create-query-database-console",
+      "https://docs.cloud.google.com/spanner/docs/information-schema"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Create and query a database in the Google Cloud console \\_|\\_ Spanner \\_\\",
+        "url": "https://docs.cloud.google.com/spanner/docs/create-query-database-console",
+        "source_id": "site-docs-reference",
+        "final_score": 188,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "INSERT INTO Singers ( SingerId , FirstName , LastName , SingerInfo , BirthDate ) VALUES ( < SingerId > , -- type: INT64 < FirstName > , -- type: STRING(1024) < LastName > , -- type: STRING(1024) < SingerInfo > , -- type: BYTES(MAX) < BirthDate > -- type: DATE ) THEN RETURN SingerId , FirstName , LastName , SingerInfo , BirthDate ; PostgreSQL -- Add new values in the VALUES clause in order of the column list. -- Each value must be type compatible with its associated column.",
+          "INSERT INTO Singers ( SingerId , BirthDate , FirstName , LastName , SingerInfo ) VALUES ( 1 , -- type: INT64 NULL , -- type: DATE 'Marc' , -- type: STRING(1024) 'Richards' , -- type: STRING(1024) NULL -- type: BYTES(MAX) ) THEN RETURN SingerId , FirstName , LastName , SingerInfo , BirthDate ; PostgreSQL -- Add new values in the VALUES clause in order of the column list. -- Each value must be type compatible with its associated column.",
+          "The Google Cloud console displays the Singers table's Spanner Studio page with a new query tab that contains the INSERT statement that you edit to insert a row in the Singers table and view the result of that insertion: GoogleSQL -- Add new values in the VALUES clause in order of the column list. -- Each value must be type compatible with its associated column."
+        ]
+      },
+      {
+        "title": "\"Information schema for GoogleSQL-dialect databases \\_|\\_ Spanner \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/spanner/docs/information-schema",
+        "source_id": "site-docs-reference",
+        "final_score": 152,
+        "relevance": "",
+        "evidence_snippets": [
+          "Returns empty if the default leader is not set: SELECT s . option name , s . option value FROM information schema . database options s WHERE s . option name = 'default leader' Return information about each index in the user's schema: SELECT t . table schema , t . table name , t . index name , t . parent table name FROM information schema . indexes AS t WHERE t . table catalog = '' AND t . table schema NOT IN ( 'information schema' , 'SPANNER SYS' ) AND t . index type != 'PRIMARY KEY' ORDER BY t . table catalog , t . table schema , t . table name , t . index name Returns all the columns that use options other than the default: SELECT t . table schema , t . table name , t . column name , t . option type , t . option value , t . option name FROM information schema . column options AS t WHERE t . table catalog = '' AND t . table schema NOT IN ( 'information schema' , 'SPANNER SYS' ) Returns the current optimizer related database options: SELECT s . option name , s . option value FROM information schema . database options s WHERE s . schema name = '' AND s . option name IN ( 'optimizer version' , 'optimizer statistics package' ) Returns all available statistics packages: SELECT FROM information schema . spanner statistics ; Return all sequences: SELECT FROM information schema . sequences ; Return all sequence options for the sequence named \"MySequence\" SELECT FROM information schema . sequence options WHERE name = \"MySequence\" ; Return the names of all property graphs and their definitions: SELECT property graph name , property graph metadata json FROM information schema . property graphs Return the names of all property graphs together with their labels and properties: SELECT property graph name , property graph metadata json . labels , property graph metadata json . propertyDeclarations FROM information schema . property graphs What's next Learn about available Introspection tools to help you investigate database issues.",
+          "Examples Return information about each table in the user's schema: SELECT t . table schema , t . table name , t . parent table name FROM information schema . tables AS t WHERE t . table catalog = '' AND t . table schema NOT IN ( 'information schema' , 'SPANNER SYS' ) AND t . table type = 'BASE TABLE' ORDER BY t . table catalog , t . table schema , t . table name Return the name of all tables in the INFORMATION SCHEMA: SELECT t . table name FROM information schema . tables AS t WHERE t . table schema = \"SPANNER SYS\" Return information about the columns in the user table MyTable in default schema: SELECT t . column name , t . spanner type , t . is nullable FROM information schema . columns AS t WHERE t . table catalog = '' AND t . table schema = '' AND t . table name = 'MyTable' ORDER BY t . table catalog , t . table schema , t . table name , t . ordinal position Return information on what the default leader region for the database is.",
+          "For example, the following query fetches the names of all user-defined tables in a database: SELECT table schema , table name FROM information schema . tables WHERE table schema NOT IN ( 'information schema' , 'SPANNER SYS' ) AND table type = 'BASE TABLE' Fine-grained access control users see filtered results for some INFORMATION SCHEMA tables depending on their database role."
+        ]
+      },
+      {
+        "title": "Changelog \\_|\\_ Python client libraries \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/python/docs/reference/spanner/latest/changelog",
+        "source_id": "site-python-reference",
+        "final_score": 145,
+        "relevance": "",
+        "evidence_snippets": [
+          "This update contains performance optimisations that will reduce the latency of read/write transactions that originate from a region other than the default leader region. ( 402b101 ) Bug Fixes Add async context manager return types ( #967 ) ( 7e2e712 ) Documentation Fix documentation structure ( #949 ) ( b73e47b ) 3.36.0 (2023-06-06) Features Add DdlStatementActionInfo and add actions to UpdateDatabaseDdlMetadata ( #948 ) ( 1ca6874 ) Testing for fgac-pg ( #902 ) ( ad1f527 ) 3.35.1 (2023-05-25) Bug Fixes Catch rst stream error for all transactions ( #934 ) ( d317d2e ) 3.35.0 (2023-05-16) Features Add support for updateDatabase in Cloud Spanner ( #914 ) ( 6c7ad29 ) 3.34.0 (2023-05-16) Features Add support for UpdateDatabase in Cloud Spanner ( #941 ) ( 38fb890 ) Bug Fixes Upgrade version of sqlparse ( #943 ) ( df57ce6 ) 3.33.0 (2023-04-27) Features Leader Aware Routing ( #899 ) ( f9fefad ) 3.32.0 (2023-04-25) Features Enable instance-level connection ( #931 ) ( d6963e2 ) 3.31.0 (2023-04-12) Features Add databoost enabled property for batch transactions ( #892 ) ( ffb3915 ) Bug Fixes Set databoost false ( #928 ) ( c9ed9d2 ) 3.30.0 (2023-03-28) Features Pass custom Client object to dbapi ( #911 ) ( 52b1a0a ) 3.29.0 (2023-03-23) Features Adding new fields for Serverless analytics ( #906 ) ( 2a5a636 ) Bug Fixes Correcting the proto field Id for field data boost enabled ( #915 ) ( 428aa1e ) Documentation Fix formatting of request arg in docstring ( #918 ) ( c022bf8 ) 3.28.0 (2023-02-28) Features Enable “rest” transport in Python for services supporting numeric enums ( #897 ) ( c21a0d5 ) 3.27.1 (2023-01-30) Bug Fixes Add context manager return types ( 830f325 ) Change fgac database role tags ( #888 ) ( ae92f0d ) Fix for database name in batch create request ( #883 ) ( 5e50beb ) Documentation Add documentation for enums ( 830f325 ) 3.27.0 (2023-01-10) Features Add support for python 3.11 ( #879 ) ( 4b8c2cf ) Add typing to proto.Message based class attributes ( 4683d10 ) Bug Fixes Add dict typing for client options ( 4683d10 ) deps: Require google-api-core >=1.34.0, >=2.11.0 ( 4683d10 ) Drop packaging dependency ( 4683d10 ) Drop usage of pkg resources ( 4683d10 ) Fix timeout default values ( 4683d10 ) Documentation samples: Snippetgen handling of repeated enum field ( 4683d10 ) samples: Snippetgen should call await on the operation coroutine before calling result ( 4683d10 ) 3.26.0 (2022-12-15) Features Inline Begin transction for RW transactions ( #840 ) ( c2456be ) Bug Fixes Fix for binding of pinging and bursty pool with database role ( #871 ) ( 89da17e ) 3.25.0 (2022-12-13) Features Fgac support and samples ( #867 ) ( 24fa244 ) 3.24.0 (2022-11-30) Features Add snippets for Spanner DML with returning clause ( #811 ) ( 62e55b5 ) Add support and tests for DML returning clauses ( #805 ) ( 81505cd ) 3.23.0 (2022-11-07) Features Adding support and samples for jsonb ( #851 ) ( 268924d ) Support request priorities ( #834 ) ( ef2159c ) Support requiest options in !autocommit mode ( #838 ) ( ab768e4 ) Update result set.proto to return undeclared parameters in ExecuteSql API ( #841 ) ( 0aa4cad ) Update transaction.proto to include different lock modes ( #845 ) ( c191296 ) Bug Fixes deps: Allow protobuf 3.19.5 ( #839 ) ( 06725fc ) Documentation Describe DB API and transactions retry mechanism ( #844 ) ( 30a0666 ), closes #791 3.22.1 (2022-10-04) Bug Fixes deps: Require protobuf >= 3.20.2 ( #830 ) ( 4d71563 ) Documentation samples: add samples for CMMR phase 2 ( 4282340 ) 3.22.0 (2022-09-26) Features Adding reason, domain, metadata & error details fields in Custom Exceptions for additional info ( #804 ) ( 2a74060 ) 3.21.0 (2022-09-16) Features Add custom instance config operations ( #810 ) ( f07333f ) 3.20.0 (2022-08-30) Features Adds TypeAnnotationCode PG JSONB ( #792 ) ( 6a661d4 ) Bug Fixes if JsonObject serialized to None then return null value instead of string value ( #771 ) ( 82170b5 ) 3.19.0 (2022-08-17) Features support JSON object consisting of an array. ( #782 ) ( 92a3169 ) 3.18.0 (2022-08-12) Features Add ListDatabaseRoles API to support role based access control ( #774 ) ( 3867882 ) Bug Fixes deps: allow protobuf < 5.0.0 ( eee5f31 ) deps: require proto-plus >= 1.22.0 ( eee5f31 ) target new spanner db admin service config ( 8c73cb3 ) 3.17.0 (2022-07-19) Features add audience parameter ( 60db146 ) add Session creator role ( 60db146 ) Adding two new fields for Instance create time and update time ( 60db146 ) Bug Fixes deps: require google-api-core>=1.32.0,>=2.8.0 ( #739 ) ( 60db146 ) Documentation clarify transaction semantics ( 60db146 ) 3.16.0 (2022-07-11) Features Automated Release Blessing ( #767 ) ( 19caf44 ) python typing ( #646 ) ( 169019f ) Bug Fixes @421 ( #769 ) ( 58640a1 ) add pause for the staleness test ( #762 ) ( bb7f1db ) require python 3.7+ ( #768 ) ( f2c273d ) 3.15.1 (2022-06-17) Bug Fixes don’t use a list for empty arguments ( #750 ) ( 5d8b055 ) 3.15.0 (2022-06-17) Features Add support for Postgresql dialect ( #741 ) ( d2551b0 ) 3.14.1 (2022-06-08) Bug Fixes deps: require protobuf <4.0.0dev ( #731 ) ( 8004ae5 ) Documentation fix changelog header to consistent size ( #732 ) ( 97b6d37 ) 3.14.0 (2022-04-20) Features add support for Cross region backup proto changes ( #691 ) ( 8ac62cb ) add support for spanner copy backup feature ( #600 ) ( 97faf6c ) AuditConfig for IAM v1 ( 7642eba ) Bug Fixes add NOT FOUND error check in exit method of SessionCheckout. ( #718 ) ( 265e207 ) deps: require google-api-core>=1.31.5, >=2.3.2 ( #685 ) ( 7a46a27 ) deps: require grpc-google-iam-v1 >=0.12.4 ( 7642eba ) deps: require proto-plus>=1.15.0 ( 7a46a27 ) Documentation add generated snippets ( #680 ) ( f21dac4 ) 3.13.0 (2022-02-04) Features add api key support ( 819be92 ) add database dialect ( #671 ) ( 819be92 ) Bug Fixes add support for row count in cursor. ( #675 ) ( d431339 ) resolve DuplicateCredentialArgs error when using credentials file ( #676 ) ( 39ff137 ) 3.12.1 (2022-01-06) Bug Fixes Django and SQLAlchemy APIs are failing to use rowcount ( #654 ) ( 698260e ) 3.12.0 (2021-11-25) Features add context manager support in client ( 5ae4be8 ) add context manager support in client ( #637 ) ( 5ae4be8 ) add support for python 3.10 ( #626 ) ( 17ca61b ), closes #623 db api: add an ability to set ReadOnly/ReadWrite connection mode ( #475 ) ( cd3b950 ) db api: make rowcount property NotImplemented ( #603 ) ( b5a567f ) db api: raise exception with message for executemany() ( #595 ) ( 95908f6 ) db api: support JSON data type ( #627 ) ( d760c2c ) db api: support stale reads ( #584 ) ( 8ca868c ) Bug Fixes db api: emit warning instead of an exception for rowcount property ( #628 ) ( 62ff9ae ) deps: drop packaging dependency ( 5ae4be8 ) deps: require google-api-core >= 1.28.0 ( 5ae4be8 ) improper types in pagers generation ( 5ae4be8 ) Performance Improvements dbapi: set headers correctly for dynamic routing ( #644 ) ( d769ff8 ) Documentation list oneofs in docstring ( 5ae4be8 ) 3.11.1 (2021-10-04) Bug Fixes add support for json data type ( #593 ) ( bc5ddc3 ) remove database version time param from test instance list backups ( #609 ) ( db63aee ) 3.11.0 (2021-09-29) Features adding support for spanner request options tags ( #276 ) ( e16f376 ) 3.10.0 (2021-09-17) Features set a separate user agent for the DB API ( #566 ) ( b5f977e ) Bug Fixes db api: move connection validation into a separate method ( #543 ) ( 237ae41 ) handle google.api core.exceptions.OutOfRange exception and throw InegrityError as expected by dbapi standards ( #571 ) ( dffcf13 ) 3.9.0 (2021-08-26) Features add support for JSON type ( #353 ) ( b1dd04d ) 3.8.0 (2021-08-15) Features use DML batches in executemany() method ( #412 ) ( cbb4ee3 ) Bug Fixes samples: batch update() results processing error ( #484 ) ( bdd5f8b ) 3.7.0 (2021-07-29) Features add always use jwt access ( #381 ) ( 0f1a5de ) add configurable leader placement support ( #399 ) ( 7f1b120 ) add sample for low cost instances ( #392 ) ( 3f4f93f ) Bug Fixes avoid bad version of opentelemetry-instrumentation ( #429 ) ( 1620c12 ) deps: pin ‘google-{api,cloud}-core’ to allow 2.x versions ( #415 ) ( b0455d0 ) disable always use jwt access ( c37bf21 ) disable always use jwt access ( #395 ) ( c37bf21 ) enable self signed jwt for grpc ( #427 ) ( 2487800 ) support merging for NUMERIC values ( #434 ) ( 06b4215 ), closes #433 Documentation fix docstring for session.py ( #387 ) ( 3132587 ) 3.6.0 (2021-06-23) Features add RPC priority support ( #324 ) ( 51533b8 ) add support for low-cost instances ( #313 ) ( 44aa7cc ) spanner: add processing units to Instance resource ( #364 ) ( 113505c ) update query stats samples ( #373 ) ( c1ee8c2 ) Bug Fixes db api: use sqlparse to split DDL statements ( #372 ) ( ed9e124 ) db api: classify batched DDL statements ( #360 ) ( b8b24e1 ) deps: add packaging requirement ( #368 ) ( 89c126c ) Documentation omit mention of Python 2.7 in ‘CONTRIBUTING.rst’ ( #1127 ) ( #374 ) ( b7b3c38 ), closes #1126 3.5.0 (2021-06-11) Features add decimal validation for numeric precision and scale supported by Spanner ( #340 ) ( aa36c5e ) add progress field to UpdateDatabaseDdlMetadata ( #361 ) ( 1c03dcc ) add query statistics package support ( #129 ) ( 6598dea ) Bug Fixes an Aborted exception isn’t properly retried ( #345 ) ( e69e6ab ) correctly classify select statements that begin with brackets ( #351 ) ( d526acc ) update to support the open-telemetry status code spec change ( #358 ) ( 0f894f1 ) 3.4.0 (2021-04-29) Features add samples for CMEK support ( #275 ) ( f8d9bd3 ) added support for numeric field for python decimal value ( #316 ) ( 070a171 ) dbapi: remove string conversion for numeric fields ( #317 ) ( 772aa3c ) Bug Fixes correctly set resume token when restarting streams ( #314 ) ( 0fcfc23 ) support INSERT from SELECT clause with args ( #306 ) ( 0dcda5e ) Performance Improvements use protobuf for metadata to reduce type conversions ( #325 ) ( 5110b9b ) 3.3.0 (2021-03-25) Features add encryption info to Database ( #284 ) ( 2fd0352 ) add support for CMEK ( #105 ) ( e990ff7 ) add support for custom timeout and retry parameters in execute update method in transactions ( #251 ) ( 8abaebd ) added retry and timeout params to partition read in database and snapshot class ( #278 ) ( 1a7c9d2 ) db api: support executing several DDLs separated by semicolon ( #277 ) ( 801ddc8 ) Bug Fixes avoid consuming pending null values when merging ( #286 ) ( c6cba9f ) db api: allow file path for credentials ( #221 ) ( 1de0284 ) db api: ensure DDL statements are being executed ( #290 ) ( baa02ee ) db api: revert Mutations API usage ( #285 ) ( e5d4901 ) Documentation fix docstring types and typos ( #259 ) ( 1b0ce1d ) fix snapshot usage ( #291 ) ( eee2181 ) 3.2.0 (2021-03-02) Features add Database.list tables method ( #219 ) ( 28bde8c ) add sample for commit stats ( #241 ) ( 1343656 ) add samples for PITR ( #222 ) ( da146b7 ) Bug Fixes remove print statement ( #245 ) ( 1c2a64f ) 3.1.0 (2021-02-23) Features add support for Point In Time Recovery (PITR) ( #148 ) ( a082e5d ) add support to log commit stats ( #205 ) ( 434967e ) Bug Fixes connection attribute of connection class and include related unit tests ( #228 ) ( 4afea77 ) db api: add dummy lastrowid attribute ( #227 ) ( 0375914 ) fix execute insert for homogeneous statement ( #233 ) ( 36b12a7 ) use datetime timezone info when generating timestamp strings ( #236 ) ( 539f145 ) Performance Improvements improve streaming performance ( #240 ) ( 3e35d4a ) 3.0.0 (2021-01-15) ⚠ BREAKING CHANGES convert operations pbs into Operation objects when listing operations (#186) Features add support for instance labels ( #193 ) ( ed462b5 ) add support for ssl credentials; add throttled field to UpdateDatabaseDdlMetadata ( #161 ) ( 2faf01b ) adding missing docstrings for functions & classes ( #188 ) ( 9788cf8 ) autocommit sample ( #172 ) ( 4ef793c ) Bug Fixes convert operations pbs into Operation objects when listing operations ( #186 ) ( ed7152a ) Convert PBs in system test cleanup ( #199 ) ( ede4343 ) dbapi: autocommit enabling fails if no transactions begun ( #177 ) ( e981adb ) dbapi: executemany() hiding all the results except the last ( #181 ) ( 020dc17 ) dbapi: Spanner protobuf changes causes KeyError’s ( #206 ) ( f1e21ed ) remove client side gRPC receive limits ( #192 ) ( 90effc4 ) Rename to fix “Mismatched region tag” check ( #201 ) ( c000ec4 ) Documentation homogenize region tags ( #194 ) ( 1501022 ) homogenize region tags pt 2 ( #202 ) ( 87789c9 ) update CHANGELOG breaking change comment ( #180 ) ( c7b3b9e ) 2.1.0 (2020-11-24) Features dbapi: add aborted transactions retry support ( #168 ) ( d59d502 ), closes #34 googleapis/python-spanner-django#544 remove adding a dummy WHERE clause into UPDATE and DELETE statements ( #169 ) ( 7f4d478 ) Bug Fixes Add sqlparse dependency ( #171 ) ( e801a2e ) Reverts Revert “test: unskip list backup operations sample test (#170)” (#174) ( 6053f4a ), closes #170 #174 2.0.0 (2020-11-11) ⚠ BREAKING CHANGES list instances, list databases, list instance configs, and list backups will now return protos rather than the handwritten wrapper (#147) Features DB-API driver + unit tests ( #160 ) ( 2493fa1 ) migrate to v2.0.0 ( #147 ) ( bf4b278 ) 1.19.1 (2020-10-13) Bug Fixes handle Unmergable errors when merging struct responses ( #152 ) ( d132409 ) Documentation update samples dep to ‘google-cloud-spanner==1.19.0’ ( #137 ) ( 0fba41a ) update samples from python-docs-samples ( #146 ) ( 7549383 ) 1.19.0 (2020-09-08) Features add support for NUMERIC type ( #86 ) ( a79786e ) Bug Fixes list instances() uses filter arg ( #143 ) ( 340028c ) Remove stray bigquery lines ( #138 ) ( cbfcc8b ) 1.18.0 (2020-08-25) Features add client options to base class ( #132 ) ( 6851bb8 ) add OpenTelemetry tracing to spanner calls ( #107 ) ( 4069c37 ) Bug Fixes resume iterator on EOS internal error ( #122 ) ( 45a1538 ) Documentation add install reference for cloud trace exporter (opentelemetry) ( #127 ) ( 23fcd4c ) add instructions for using a Cloud Spanner emulator ( #136 ) ( 808837b ) add samples from spanner/cloud-client ( #117 ) ( 8910771 ), closes #804 #815 #818 #887 #914 #922 #928 #962 #992 #1004 #1035 #1055 #1063 #1093 #1107 #1121 #1158 #1138 #1186 #1192 #1207 #1254 #1316 #1354 #1376 #1377 #1402 #1406 #1425 #1441 #1464 #1519 #1548 #1633 #1742 #1836 #1846 #1872 #1980 #2068 #2153 #2224 #2198 #2251 #2295 #2356 #2392 #2439 #2535 #2005 #2721 #3093 #3101 #2806 #3377 typo fix ( #109 ) ( 63b4324 ) 1.17.1 (2020-06-24) Documentation remove client-usage sections that no longer apply ( #95 ) ( 16a812f ) update batch-usage reflect the correct usage ( #93 ) ( 6ec64d8 ) update documentation for database-usage ( #96 ) ( 44e398c ) update documentation for snapshot usage ( #94 ) ( 613d9c8 ) 1.17.0 (2020-05-26) Features add support for using the emulator programatically ( #87 ) ( b22630b ) Bug Fixes update backup timeouts (via synth) ( #82 ) ( f5d74a0 ) 1.16.0 (2020-05-05) Features add support for retrying aborted partitioned DML statements ( #66 ) ( 8a3d700 ) Bug Fixes add keepalive changes to synth.py ( #55 ) ( 805bbb7 ) pass gRPC config options to gRPC channel creation ( #26 ) ( 6c9a1ba ) 1.15.1 (2020-04-08) Bug Fixes add keepalive to gRPC channel ( #49 ) ( dfbc656 ) increment seqno before execute calls to prevent InvalidArgument … ( #19 ) ( adeacee ) Pin Sphnix version to last working release ( #51 ) ( 430ca32 ) 1.15.0 (2020-03-17) Features Add emulator support ( #14 ) ( b315593 ) Export transaction. rolled back as transaction.rolled back ( #16 ) ( 974ee92 ) Add support for backups ( #35 ) ( 39288e7 ) Implement query options versioning support ( #30 ) ( 5147921 ) Bug Fixes Remove erroneous timeouts for batch create session calls ( #18 ) ( 997a034 ) 1.14.0 (2020-01-31) Features Add deprecation warnings; add field mask to get instance; add endpoint uris to Instance proto; update timeouts; make mutations optional for commits (via synth) ( 62edbe1 ) Add resource based routing implementation ( #10183 ) ( e072d5d ) Un-deprecate resource name helper functions, add 3.8 tests (via synth) ( #10062 ) ( dbb79b0 ) Bug Fixes Be permssive about merging an empty struct ( #10079 ) ( cfae63d ) Fix imports for doc samples ( #10283 ) ( 55a21d9 ) 1.13.0 11-11-2019 15:59 PST Implementation Changes Fix TransactionPingingPool to stop thowing ‘’NoneType’ object is not callable’ error. ( #9609 ) Return sessions from pool in LIFO order. ( #9454 ) Documentation Add Python 2 sunset banner to documentation. ( #9036 ) Update description of the timeout secs parameter. ( #9381 ) Internal / Testing Changes Harden test transaction batch update\\ systests against partial success + abort. ( #9579 ) 1.12.0 10-23-2019 19:09 PDT Implementation Changes Add batch create session calls to session pools. ( #9488 ) New Features Add client options to client constructor. ( #9151 ) Internal / Testing Changes Harden ‘test reload instance’ systest against eventual consistency failures. ( #9394 ) Harden ‘test transaction batch update w syntax error’ systest. ( #9395 ) Propagate errors from ‘Transaction.batch update’ in systest. ( #9393 ) 1.11.0 10-15-2019 06:55 PDT Implementation Changes Adjust gRPC timeouts (via synth). ( #9330 ) Make session count optional for SpannerClient.batch create sessions (via synth). ( #9280 ) Remove send / receive message size limit, update docstrings (via synth). ( #8968 ) New Features Add batch create sessions method to generated client (via synth). ( #9087 ) Dependencies Pin ‘google-cloud-core >= 1.0.3, < 2.0.0dev’. ( #9445 ) Documentation Remove references to old authentication credentials in docs. ( #9456 ) Fix intersphinx reference to requests. ( #9294 ) Fix run in transaction return value docs. ( #9264 ) Remove CI for gh-pages, use googleapis.dev for api core refs. ( #9085 ) Remove compatability badges from READMEs. ( #9035 ) Add DML insert and update examples to README. ( #8698 ) Update intersphinx mapping for requests. ( #8805 ) 1.10.0 07-24-2019 17:32 PDT Implementation Changes Add backoff for run in transaction when backend does not provide ‘RetryInfo’ in response. ( #8461 ) Adjust gRPC timeouts (via synth). ( #8445 ) Allow kwargs to be passed to create channel (via synth). ( #8403 ) New Features Add ‘options ’ argument to clients’ ‘get iam policy’; pin black version (via synth). ( #8659 ) Add ‘client options’ support, update list method docstrings (via synth). ( #8522 ) Dependencies Bump minimum version for google-api-core to 1.14.0. ( #8709 ) Update pin for ‘grpc-google-iam-v1’ to 0.12.3+. ( #8647 ) Documentation Link to googleapis.dev documentation in READMEs. ( #8705 ) Add compatibility check badges to READMEs. ( #8288 ) Internal / Testing Changes Fixes #8545 by removing typing information for kwargs to not conflict with type checkers ( #8546 ) Add docs job to publish to googleapis.dev. ( #8464 ) Declare encoding as utf-8 in pb2 files (via synth). ( #8363 ) Add disclaimer to auto-generated template files (via synth). ( #8327 ) Suppress checking ‘cov-fail-under’ in nox default session (via synth). ( #8251 ) Blacken noxfile.py, setup.py (via synth). ( #8131 ) Harden synth replacement against template adding whitespace. ( #8103 ) 1.9.0 05-16-2019 12:54 PDT Implementation Changes Add routing header to method metadata (via synth). ( #7750 ) Remove classifier for Python 3.4 for end-of-life. ( #7535 ) New Features Add client info support to client. ( #7878 ) Dependencies Pin google-cloud-core >= 1.0.0, < 2.0dev . ( #7993 ) Documentation Expand API reference for snapshot / transaction. ( #7618 ) Internal / Testing Changes Add nox session docs , remove retries for DEADLINE EXCEEDED (via synth). ( #7781 ) Added matching END tags to Spanner Tests ( #7529 ) 1.8.0 03-05-2019 12:57 PST Implementation Changes Protoc-generated serialization update. ( #7095 ) Fix typo in exported param type name. ( #7295 ) New Features Add Batch DML support. ( #7485 ) Documentation Copy lintified proto files, update docstrings (via synth). ( #7453 ) Fix Batch object creation instructions. ( #7341 ) Updated client library documentation URLs. ( #7307 ) Fix README to install spanner instead of datastore. ( #7301 ) Internal / Testing Changes Add clarifying comment to blacken nox target. ( #7403 ) Ensure that GRPC config file is included in MANIFEST.in after templating. ( #7046 ) Add protos as an artifact to library. ( #7205 ) Update copyright headers.",
+          "Blacken all gen’d libs ( #6792 ) Omit local deps ( #6701 ) Run black at end of synth.py ( #6698 ) Run Black on Generated libraries ( #6666 ) Add templates for flake8, coveragerc, noxfile, and black. ( #6642 ) Add tags to DML system tests ( #6580 ) 1.6.1 11-09-2018 14:49 PST Implementation Changes Fix client info bug, update docstrings. ( #6420 ) Documentation Update README service links in quickstart guides. ( #6322 ) Normalize use of support level badges ( #6159 ) Fix typo in spanner usage documentation ( #6209 ) Internal / Testing Changes Rationalize ‘all types’ round-trip systest ( #6379 ) Bump minimum ‘api core’ version for all GAPIC libs to 1.4.1. ( #6391 ) Add systest for returning empty array struct ( #4449 ) Add systests not needing tables ( #6308 ) Use new Nox ( #6175 ) 1.6.0 10-08-2018 08:25 PDT New Features Add support for DML/PDML. ( #6151 ) Implementation Changes Add ‘synth.py’ and regen GAPIC code. ( #6040 ) Documentation Remove invalid examples of database.transaction() . ( #6032 ) Redirect renamed usage.html / client.html -> index.html . ( #5996 ) Fix leakage of sections into sidebar menu. ( #5986 ) Prepare documentation for repo split. ( #5938 ) Internal / Testing Changes Remove extra grpc gcp system tests. ( #6049 ) 1.5.0 New Features Add support for session / pool labels ( #5734 ) Add support for gRPC connection management ( #5553 ) Dependencies Add grpcio-gcp dependency for Cloud Spanner ( #5904 ) Internal / Testing Changes Don’t hardcode endpoint URL in grpc gcp unit tests. ( #5893 ) Run grpc gcp unit tests only with Python 2.7 / 3.6. ( #5871 ) Nox: use inplace installs ( #5865 ) Benchmarks: print() is a function in Python 3 ( #5862 ) Retry test transaction read and insert then rollback when aborted. ( #5737 ) Skip the flaky test update database ddl systest. ( #5704 ) 1.4.0 Implementation Changes Ensure that initial resume token is bytes, not text. (#5450) Prevent process read batch from mutating params (#5416) Avoid overwriting ‘ module ’ of messages from shared modules. (#5364) New Features Add support for Python 3.7 (#5288) Add support for Spanner struct params. (#5463) Internal / Testing Changes Modify system tests to use prerelease versions of grpcio (#5304) 1.3.0 Interface additions Added spanner v1.COMMIT TIMESTAMP . (#5102) 1.2.0 New features Added batch query support (#4938) Implementation changes Removed custom timestamp class in favor of the one in google-api-core. (#4980) Dependencies Update minimum version for google-api-core to 1.1.0 (#5030) Documentation Update package metadata release status to ‘Stable’ (#5031) 1.1.0 Dependencies The minimum version for google-api-core has been updated to version 1.0.0.",
+          "Also adding interceptors support for testing ( #1056 ) ( 6640888 ) Implementation of run partition query ( #1080 ) ( f3b23b2 ) Bug Fixes Few fixes in DBAPI ( #1085 ) ( 1ed5a47 ) Small fix in description when metadata is not present in cursor’s result set ( #1088 ) ( 57643e6 ) spanner: Add SpannerAsyncClient import to spanner v1 package ( #1086 ) ( 2d98b54 ) Documentation Samples and tests for auto-generated createDatabase and createInstance APIs. ( #1065 ) ( 16c510e ) 3.41.0 (2024-01-10) Features Add BatchWrite API ( #1011 ) ( d0e4ffc ) Add PG.OID type cod annotation ( #1023 ) ( 2d59dd0 ) Add support for Directed Reads ( #1000 ) ( c4210b2 ) Add support for Python 3.12 ( #1040 ) ( b28dc9b ) Batch Write API implementation and samples ( #1027 ) ( aa36b07 ) Implementation for batch dml in dbapi ( #1055 ) ( 7a92315 ) Implementation for Begin and Rollback clientside statements ( #1041 ) ( 15623cd ) Implementation for partitioned query in dbapi ( #1067 ) ( 63daa8a ) Implementation of client side statements that return ( #1046 ) ( bb5fa1f ) Implementing client side statements in dbapi (starting with commit) ( #1037 ) ( eb41b0d ) Introduce compatibility with native namespace packages ( #1036 ) ( 5d80ab0 ) Return list of dictionaries for execute streaming sql ( #1003 ) ( b534a8a ) spanner: Add autoscaling config to the instance proto ( #1022 ) ( 4d490cf ) spanner: Add directed read option in spanner.proto ( #1030 ) ( 84d662b ) Bug Fixes Executing existing DDL statements on executemany statement execution ( #1032 ) ( 07fbc45 ) Fix for flaky test read timestamp client side autocommit test ( #1071 ) ( 0406ded ) Require google-cloud-core >= 1.4.4 ( #1015 ) ( a2f87b9 ) Require proto-plus 1.22.2 for python 3.11 ( #880 ) ( 7debe71 ) Use retry async instead of retry in async client ( #1044 ) ( 1253ae4 ) Documentation Minor formatting ( 498dba2 ) 3.40.1 (2023-08-17) Bug Fixes Fix to reload table when checking if table exists ( #1002 ) ( 53bda62 ) 3.40.0 (2023-08-04) Features Enable leader aware routing by default."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "client.html",
+      "connection.read",
+      "core.exceptions.OutOfRange",
+      "database.transaction",
+      "github.com",
+      "googleapis.dev",
+      "index.html",
+      "noxfile.py",
+      "proto.Message",
+      "requirements.in",
+      "session.py",
+      "set.proto",
+      "setup.cfg",
+      "setup.py",
+      "span.status",
+      "spanner.proto",
+      "synth.py",
+      "transaction.proto",
+      "transaction.rolled",
+      "usage.html",
+      "v1.COMMIT",
+      "v2.0.0"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/create-query-database-console",
+        "https://docs.cloud.google.com/spanner/docs/information-schema",
+        "https://docs.cloud.google.com/python/docs/reference/spanner/latest/changelog"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/create-query-database-console",
+        "https://docs.cloud.google.com/spanner/docs/information-schema",
+        "https://docs.cloud.google.com/python/docs/reference/spanner/latest/changelog"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/create-query-database-console",
+        "https://docs.cloud.google.com/spanner/docs/information-schema",
+        "https://docs.cloud.google.com/python/docs/reference/spanner/latest/changelog"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/create-query-database-console",
+        "https://docs.cloud.google.com/spanner/docs/information-schema",
+        "https://docs.cloud.google.com/python/docs/reference/spanner/latest/changelog"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/create-query-database-console",
+        "https://docs.cloud.google.com/spanner/docs/information-schema",
+        "https://docs.cloud.google.com/python/docs/reference/spanner/latest/changelog"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/create-query-database-console",
+        "https://docs.cloud.google.com/spanner/docs/information-schema",
+        "https://docs.cloud.google.com/python/docs/reference/spanner/latest/changelog"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/create-query-database-console",
+        "https://docs.cloud.google.com/spanner/docs/information-schema",
+        "https://docs.cloud.google.com/python/docs/reference/spanner/latest/changelog"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/create-query-database-console",
+        "https://docs.cloud.google.com/spanner/docs/information-schema",
+        "https://docs.cloud.google.com/python/docs/reference/spanner/latest/changelog"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/create-query-database-console",
+        "https://docs.cloud.google.com/spanner/docs/information-schema",
+        "https://docs.cloud.google.com/python/docs/reference/spanner/latest/changelog"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/create-query-database-console",
+        "https://docs.cloud.google.com/spanner/docs/information-schema",
+        "https://docs.cloud.google.com/python/docs/reference/spanner/latest/changelog"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/create-query-database-console",
+        "https://docs.cloud.google.com/spanner/docs/information-schema",
+        "https://docs.cloud.google.com/python/docs/reference/spanner/latest/changelog"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/create-query-database-console",
+        "https://docs.cloud.google.com/spanner/docs/information-schema",
+        "https://docs.cloud.google.com/python/docs/reference/spanner/latest/changelog"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/create-query-database-console",
+        "https://docs.cloud.google.com/spanner/docs/information-schema",
+        "https://docs.cloud.google.com/python/docs/reference/spanner/latest/changelog"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/create-query-database-console",
+        "https://docs.cloud.google.com/spanner/docs/information-schema",
+        "https://docs.cloud.google.com/python/docs/reference/spanner/latest/changelog"
+      ]
+    }
+  ]
+}

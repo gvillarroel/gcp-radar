@@ -1,0 +1,121 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:15.897Z",
+  "source_step08_card": "data/step-08/current/products/app-engine-standard-environment-java/card.json",
+  "product_name": "App Engine standard environment Java",
+  "product_slug": "app-engine-standard-environment-java",
+  "feature_name": "Maven configuration deployment goals",
+  "feature_slug": "maven-configuration-deployment-goals",
+  "summary": "The Maven plugin adds dedicated goals for deploying cron, dispatch, dos, index, and queue configuration files.",
+  "extended_definition": "The Maven plugin adds dedicated goals for deploying cron, dispatch, dos, index, and queue configuration files.",
+  "lifecycle": {
+    "latest_feature_date": "2017-05-02",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/appengine/docs/standard/java-gen2/config/appref-xml",
+      "https://docs.cloud.google.com/appengine/docs/standard/java-gen2/runtime",
+      "https://docs.cloud.google.com/appengine/docs/standard/java/runtime"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"appengine-web.xml reference \\_|\\_ App Engine standard environment \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/java-gen2/config/appref-xml",
+        "source_id": "site-docs-reference-4",
+        "final_score": 99,
+        "relevance": "",
+        "evidence_snippets": [
+          "For example: <staging> <delete-jsps>false</delete-jsps> </staging> Staging option defaults The defaults for staging options are different depending on whether you use Google Cloud SDK-based tooling, such as the gcloud CLI, or the Google Cloud SDK-based Maven , Gradle , or IntelliJ plugins.",
+          "Element Description <application> Not required if you deploy your app using Google Cloud SDK-based tooling, such as the gcloud app deploy command, IntelliJ plugins, Maven or Gradle plugins.",
+          "The staging element lets you specify a particular staging configuration if needed for deployment."
+        ]
+      },
+      {
+        "title": "\"Java runtime environment \\_|\\_ App Engine standard environment \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/java-gen2/runtime",
+        "source_id": "site-docs-reference",
+        "final_score": 99,
+        "relevance": "",
+        "evidence_snippets": [
+          "Before you begin Download the latest version of the Google Cloud CLI or update your gcloud CLI to the current version: gcloud components update To deploy using Maven, you will need to add the App Engine Maven Plugin to your pom.xml file: <plugin> <groupId>com.google.cloud.tools</groupId> <artifactId>appengine-maven-plugin</artifactId> <version>2.8.1</version> </plugin> Other options for deploying include using the gcloud app deploy command or the App Engine Gradle plugin .",
+          "When deploying your application, the App Engine plugin will only upload the files that changed, rather than the entire uber JAR package.",
+          "For example, an executable with the filename myexecutable could have the following app.yaml configuration file: runtime : 25 # or another supported runtime version. entrypoint : ./myexecutable Google Cloud client libraries can be used to compile applications as a GraalVM native image."
+        ]
+      },
+      {
+        "title": "\"Java runtime environment \\_|\\_ App Engine standard environment \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/java/runtime",
+        "source_id": "site-docs-reference-4",
+        "final_score": 99,
+        "relevance": "",
+        "evidence_snippets": [
+          "Before you begin Download the latest version of the Google Cloud CLI or update your gcloud CLI to the current version: gcloud components update To deploy using Maven, you will need to add the App Engine Maven Plugin to your pom.xml file: <plugin> <groupId>com.google.cloud.tools</groupId> <artifactId>appengine-maven-plugin</artifactId> <version>2.8.1</version> </plugin> Other options for deploying include using the gcloud app deploy command or the App Engine Gradle plugin .",
+          "When deploying your application, the App Engine plugin will only upload the files that changed, rather than the entire uber JAR package.",
+          "For example, an executable with the filename myexecutable could have the following app.yaml configuration file: runtime : 25 # or another supported runtime version. entrypoint : ./myexecutable Google Cloud client libraries can be used to compile applications as a GraalVM native image."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "app.yaml",
+      "appengine.google.com",
+      "class.path",
+      "com.google.cloud.tools",
+      "java.base",
+      "java.lang",
+      "java.logging",
+      "java.nio.charset",
+      "java.util.concurrent",
+      "java.util.logging",
+      "library.path",
+      "main.jar",
+      "pom.xml",
+      "web.xml"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/java-gen2/runtime",
+        "https://docs.cloud.google.com/appengine/docs/standard/java/runtime",
+        "https://docs.cloud.google.com/appengine/docs/standard/java-gen2/config/appref-xml"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/java-gen2/runtime",
+        "https://docs.cloud.google.com/appengine/docs/standard/java/runtime",
+        "https://docs.cloud.google.com/appengine/docs/standard/java-gen2/config/appref-xml"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/java-gen2/runtime",
+        "https://docs.cloud.google.com/appengine/docs/standard/java/runtime",
+        "https://docs.cloud.google.com/appengine/docs/standard/java-gen2/config/appref-xml"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,274 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:30.193Z",
+  "source_step08_card": "data/step-08/current/products/config-connector/card.json",
+  "product_name": "Config Connector",
+  "product_slug": "config-connector",
+  "feature_name": "SecretManagerSecret automatic replication",
+  "feature_slug": "secretmanagersecret-automatic-replication",
+  "summary": "Config Connector added the replication.auto field to SecretManagerSecret.",
+  "extended_definition": "Config Connector added the replication.auto field to SecretManagerSecret.",
+  "lifecycle": {
+    "latest_feature_date": "2023-09-29",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/run/runjob",
+      "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/run/runservice",
+      "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/secretmanager/secretmanagersecret"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "SecretManagerSecret | Config Connector | Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/secretmanager/secretmanagersecret",
+        "source_id": "feature-recovery-http",
+        "final_score": 393,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Should be in the format `projects/[kms_project_id]/locations/[region]/keyRings/[key_ring_id]/cryptoKeys/[key]`. replication.auto.customerManagedEncryption.kmsKeyRef.name Optional string The `name` of a `KMSCryptoKey` resource. replication.auto.customerManagedEncryption.kmsKeyRef.namespace Optional string The `namespace` of a `KMSCryptoKey` resource. replication.automatic Optional boolean The Secret will automatically be replicated without any restrictions. replication.userManaged Optional object The [Secret][google.cloud.secretmanager.v1.Secret] will only be replicated into the locations specified. replication.userManaged.replicas Required* list (object) Required.",
+          "The replication policy cannot be changed after the Secret has been created. replication.auto Optional object The [Secret][google.cloud.secretmanager.v1.Secret] will automatically be replicated without any restrictions. replication.auto.customerManagedEncryption Optional object Optional.",
+          "For secrets using the [Automatic][google.cloud.secretmanager.v1.Replication.Automatic] replication policy type, Cloud KMS CryptoKeys must reside in `global`."
+        ]
+      },
+      {
+        "title": "RunJob | Config Connector | Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/run/runjob",
+        "source_id": "feature-recovery-http",
+        "final_score": 83,
+        "relevance": "",
+        "evidence_snippets": [
+          "Sample YAML(s) Basic Job # Copyright 2023 Google LLC # # Licensed under the Apache License, Version 2.0 (the \"License\"); # you may not use this file except in compliance with the License. # You may obtain a copy of the License at # # http://www.apache.org/licenses/LICENSE-2.0 # # Unless required by applicable law or agreed to in writing, software # distributed under the License is distributed on an \"AS IS\" BASIS, # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. # See the License for the specific language governing permissions and # limitations under the License. apiVersion : run.cnrm.cloud.google.com/v1beta1 kind : RunJob metadata : name : runjob-sample spec : launchStage : \"GA\" location : \"us-central1\" projectRef : external : ${PROJECT_ID?} template : template : containers : - image : \"us-docker.pkg.dev/cloudrun/container/hello\" Job With IAMServiceAccount # Copyright 2023 Google LLC # # Licensed under the Apache License, Version 2.0 (the \"License\"); # you may not use this file except in compliance with the License. # You may obtain a copy of the License at # # http://www.apache.org/licenses/LICENSE-2.0 # # Unless required by applicable law or agreed to in writing, software # distributed under the License is distributed on an \"AS IS\" BASIS, # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. # See the License for the specific language governing permissions and # limitations under the License. apiVersion : run.cnrm.cloud.google.com/v1beta1 kind : RunJob metadata : name : runjob-sample-iamserviceaccount spec : launchStage : \"GA\" location : \"us-central1\" projectRef : external : ${PROJECT_ID?} template : template : containers : - image : \"us-docker.pkg.dev/cloudrun/container/hello\" serviceAccountRef : name : runjob-dep-iamserviceaccount --- apiVersion : iam.cnrm.cloud.google.com/v1beta1 kind : IAMServiceAccount metadata : name : runjob-dep-iamserviceaccount spec : displayName : runjob-dep-iamserviceaccount Job With KMSCryptoKey # Copyright 2023 Google LLC # # Licensed under the Apache License, Version 2.0 (the \"License\"); # you may not use this file except in compliance with the License. # You may obtain a copy of the License at # # http://www.apache.org/licenses/LICENSE-2.0 # # Unless required by applicable law or agreed to in writing, software # distributed under the License is distributed on an \"AS IS\" BASIS, # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. # See the License for the specific language governing permissions and # limitations under the License. apiVersion : run.cnrm.cloud.google.com/v1beta1 kind : RunJob metadata : name : runjob-sample-kmscryptokey spec : launchStage : \"GA\" location : \"us-central1\" projectRef : external : ${PROJECT_ID?} template : template : containers : - image : \"us-docker.pkg.dev/cloudrun/container/hello\" encryptionKeyRef : name : runjob-dep-kmscryptokey --- apiVersion : iam.cnrm.cloud.google.com/v1beta1 kind : IAMPolicyMember metadata : name : runjob-dep-kmscryptokey spec : member : serviceAccount:service-${PROJECT_NUMBER?}@serverless-robot-prod.iam.gserviceaccount.com role : roles/cloudkms.cryptoKeyEncrypterDecrypter # required by cloud run service agent to access KMS keys resourceRef : apiVersion : resourcemanager.cnrm.cloud.google.com/v1beta1 kind : Project external : projects/${PROJECT_ID?} --- apiVersion : kms.cnrm.cloud.google.com/v1beta1 kind : KMSCryptoKey metadata : name : runjob-dep-kmscryptokey spec : keyRingRef : name : runjob-dep-kmscryptokey purpose : ENCRYPT_DECRYPT --- apiVersion : kms.cnrm.cloud.google.com/v1beta1 kind : KMSKeyRing metadata : name : runjob-dep-kmscryptokey spec : location : us-central1 Job With SQL # Copyright 2023 Google LLC # # Licensed under the Apache License, Version 2.0 (the \"License\"); # you may not use this file except in compliance with the License. # You may obtain a copy of the License at # # http://www.apache.org/licenses/LICENSE-2.0 # # Unless required by applicable law or agreed to in writing, software # distributed under the License is distributed on an \"AS IS\" BASIS, # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. # See the License for the specific language governing permissions and # limitations under the License. apiVersion : run.cnrm.cloud.google.com/v1beta1 kind : RunJob metadata : name : runjob-sample-sql spec : launchStage : \"GA\" location : \"us-central1\" projectRef : external : ${PROJECT_ID?} template : template : containers : - image : \"us-docker.pkg.dev/cloudrun/container/hello\" volumeMounts : - name : \"cloudsql\" mountPath : \"/cloudsql\" volumes : - name : \"cloudsql\" cloudSqlInstance : instanceRefs : - name : runjob-dep-sql --- apiVersion : sql.cnrm.cloud.google.com/v1beta1 kind : SQLInstance metadata : name : runjob-dep-sql spec : region : us-central1 databaseVersion : MYSQL_5_7 settings : tier : db-n1-standard-1 Job With SecretManagerSecret # Copyright 2023 Google LLC # # Licensed under the Apache License, Version 2.0 (the \"License\"); # you may not use this file except in compliance with the License. # You may obtain a copy of the License at # # http://www.apache.org/licenses/LICENSE-2.0 # # Unless required by applicable law or agreed to in writing, software # distributed under the License is distributed on an \"AS IS\" BASIS, # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. # See the License for the specific language governing permissions and # limitations under the License. apiVersion : run.cnrm.cloud.google.com/v1beta1 kind : RunJob metadata : name : runjob-sample-secretmanagersecret spec : launchStage : \"GA\" location : \"us-central1\" projectRef : external : ${PROJECT_ID?} template : template : containers : - image : \"us-docker.pkg.dev/cloudrun/container/hello\" env : - name : \"FOO\" value : \"bar\" - name : \"SECRET_ENV_VAR\" valueSource : secretKeyRef : secretRef : name : runjob-dep-secretmanagersecret versionRef : name : runjob-dep-secretmanagersecret --- apiVersion : iam.cnrm.cloud.google.com/v1beta1 kind : IAMPolicyMember metadata : name : runjob-dep-secretmanagersecret spec : member : serviceAccount:${PROJECT_NUMBER?}-compute@developer.gserviceaccount.com role : roles/secretmanager.secretAccessor # required by default service account to access secrets resourceRef : apiVersion : resourcemanager.cnrm.cloud.google.com/v1beta1 kind : Project external : projects/${PROJECT_ID?} --- apiVersion : v1 kind : Secret metadata : name : runjob-dep-secretmanagersecret data : secretData : SSBhbHdheXMgbG92ZWQgc3BhcnJpbmcgd2l0aCBnaWFudCBjYW5keSBzd29yZHMsIGJ1dCBJIGhhZCBubyBpZGVhIHRoYXQgd2FzIG15IHN1cGVyIHNlY3JldCBpbmZvcm1hdGlvbiE= --- apiVersion : secretmanager.cnrm.cloud.google.com/v1beta1 kind : SecretManagerSecret metadata : annotations : cnrm.cloud.google.com/project-id : ${PROJECT_ID?} name : runjob-dep-secretmanagersecret spec : replication : automatic : true --- apiVersion : secretmanager.cnrm.cloud.google.com/v1beta1 kind : SecretManagerSecretVersion metadata : annotations : cnrm.cloud.google.com/project-id : ${PROJECT_ID?} name : runjob-dep-secretmanagersecret spec : enabled : true secretData : valueFrom : secretKeyRef : key : secretData name : runjob-dep-secretmanagersecret secretRef : name : runjob-dep-secretmanagersecret Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "RunJob | Config Connector | Google Cloud Documentation Skip to main content Technology areas close AI and ML Application development Application hosting Compute Data analytics and pipelines Databases Distributed, hybrid, and multicloud Industry solutions Migration Networking Observability and monitoring Security Storage Cross-product tools close Access and resources management Costs and usage management Infrastructure as code SDK, languages, frameworks, and tools / Console English Deutsch Español – América Latina Français Português – Brasil 中文 – 简体 日本語 한국어 Sign in Config Connector Start free Overview Guides API and reference Resources Technology areas More Overview Guides API and reference Resources Cross-product tools More Console Config Connector API resources overview AccessContextManager AccessContextManagerAccessLevel AccessContextManagerAccessPolicy AccessContextManagerServicePerimeter AccessContextManagerServicePerimeterResource AlloyDB AlloyDBBackup AlloyDBCluster AlloyDBInstance AlloyDBUser API Gateway APIGatewayAPI App Hub AppHubApplication Apigee ApigeeEndpointAttachment ApigeeEnvgroup ApigeeEnvgroupAttachment ApigeeEnvironment ApigeeInstance ApigeeInstanceAttachment ApigeeOrganization ArtifactRegistry ArtifactRegistryRepository Backup and DR BackupDRBackupPlan BackupDRBackupPlanAssociation BackupDRBackupVault BigQueryAnalyticsHub BigQueryAnalyticsHubDataExchange BigQueryAnalyticsHubListing BigQuery BigLake BigLakeTable BigQuery BigqueryConnectionConnection BigQueryDataset BigQueryJob BigQueryRoutine BigQueryTable BigQueryDataTransferConfig BigQuery Reservation BigQueryReservationAssignment BigQueryReservationReservation BillingBudgets BillingBudgetsBudget BinaryAuthorization BinaryAuthorizationAttestor BinaryAuthorizationPolicy Certificate Manager CertificateManagerCertificate CertificateManagerCertificateMap CertificateManagerCertificateMapEntry CertificateManagerDNSAuthorization Cloud Asset Inventory AssetFeed AssetSavedQuery Cloud Bigtable BigtableAppProfile BigtableGCPolicy BigtableInstance BigtableTable Cloud Build CloudBuildTrigger CloudBuildWorkerPool Cloud Composer ComposerEnvironment Cloud Deploy CloudDeployDeliveryPipeline Cloud Quotas APIQuotaAdjusterSettings APIQuotaPreference Cloud Functions CloudFunctionsFunction Cloud Identity CloudIdentityGroup CloudIdentityMembership Cloud Intrusion Detection System CloudIDSEndpoint Cloud Scheduler CloudSchedulerJob Config Controller ConfigControllerInstance Cloud DLP DLPDeidentifyTemplate DLPInspectTemplate DLPJobTrigger DLPStoredInfoType Cloud DNS DNSManagedZone DNSPolicy DNSRecordSet Cloud Key Management Service KMSAutokeyConfig KMSCryptoKey KMSImportJob KMSKeyHandle KMSKeyRing Eventarc EventarcTrigger Identity and Access Management (IAM) IAMAccessBoundaryPolicy IAMAuditConfig IAMCustomRole IAMPartialPolicy IAMPolicy IAMPolicyMember IAMServiceAccount IAMServiceAccountKey IAMWorkforcePool IAMWorkforcePoolProvider IAMWorkloadIdentityPool IAMWorkloadIdentityPoolProvider Identity-Aware Proxy (IAP) IAPBrand IAPIdentityAwareProxyClient IAPSettings Identity Platform IdentityPlatformConfig IdentityPlatformTenant IdentityPlatformTenantOAuthIDPConfig IdentityPlatformOAuthIDPConfig Cloud Logging LoggingLink LoggingLogBucket LoggingLogExclusion LoggingLogMetric LoggingLogSink LoggingLogView Cloud Memorystore for Memcached MemcacheInstance Cloud Monitoring MonitoringAlertPolicy MonitoringDashboard MonitoringGroup MonitoringMetricDescriptor MonitoringMonitoredProject MonitoringNotificationChannel MonitoringService MonitoringServiceLevelObjective MonitoringUptimeCheckConfig OS Config OSConfigGuestPolicy OSConfigOSPolicyAssignment Organization Policy OrgPolicyCustomConstraint Cloud Source Repositories SourceRepoRepository Speech-to-Text SpeechCustomClass SpeechPhraseSet SpeechRecognizer Cloud Spanner SpannerBackupSchedule SpannerDatabase SpannerInstance Cloud SQL SQLDatabase SQLInstance SQLSSLCert SQLUser Cloud Storage StorageBucket StorageAnywhereCache StorageBucketAccessControl StorageDefaultObjectAccessControl StorageNotification Compute Engine ComputeAddress ComputeBackendBucket ComputeBackendService ComputeDisk ComputeExternalVPNGateway ComputeFirewall ComputeFirewallPolicy ComputeFirewallPolicyAssociation ComputeFirewallPolicyRule ComputeForwardingRule ComputeHealthCheck ComputeHTTPHealthCheck ComputeHTTPSHealthCheck ComputeImage ComputeInstance ComputeInstanceGroup ComputeInstanceGroupManager ComputeInstanceTemplate ComputeInterconnectAttachment ComputeManagedSSLCertificate ComputeNetwork ComputeNetworkEndpointGroup ComputeNetworkFirewallPolicy ComputeNetworkFirewallPolicyAssociation ComputeNetworkPeering ComputeNodeGroup ComputeNodeTemplate ComputePacketMirroring ComputeProjectMetadata ComputeRegionNetworkEndpointGroup ComputeReservation ComputeResourcePolicy ComputeRoute ComputeRouter ComputeRouterInterface ComputeRouterNAT ComputeRouterPeer ComputeSecurityPolicy ComputeServiceAttachment ComputeSharedVPCHostProject ComputeSharedVPCServiceProject ComputeSnapshot ComputeSSLCertificate ComputeSSLPolicy ComputeSubnetwork ComputeTargetGRPCProxy ComputeTargetHTTPProxy ComputeTargetHTTPSProxy ComputeTargetInstance ComputeTargetPool ComputeTargetSSLProxy ComputeTargetTCPProxy ComputeTargetVPNGateway ComputeURLMap ComputeVPNGateway ComputeVPNTunnel Container Analysis ContainerAnalysisNote Container Attached ContainerAttachedCluster Data Catalog DataCatalogPolicyTag DataCatalogTaxonomy Dataflow DataflowJob DataflowFlexTemplateJob Dataform DataformRepository Data Fusion DataFusionInstance Dataproc DataprocAutoscalingPolicy DataprocCluster DataprocWorkflowTemplate Dataproc Metastore MetastoreBackup Filestore FilestoreBackup FilestoreInstance Firestore FirestoreDatabase FirestoreIndex Google Kubernetes Engine (GKE) ContainerCluster ContainerNodePool Distributed Cloud Edge EdgeContainerCluster EdgeContainerNodePool EdgeContainerVPNConnection EdgeNetworkNetwork EdgeNetworkSubnet Document AI DocumentAIProcessorVersion Essential Contacts EssentialContactsContact GKE Hub GKEHubFeature GKEHubFeatureMembership GKEHubMembership Managed Kafka ManagedKafkaCluster ManagedKafkaTopic Memorystore (Redis) RedisCluster RedisInstance Memorystore for Valkey MemorystoreInstance Network Connectivity NetworkConnectivityHub NetworkConnectivitySpoke Network Security NetworkSecurityAuthorizationPolicy NetworkSecurityClientTLSPolicy NetworkSecurityServerTLSPolicy Network Services NetworkServicesEndpointPolicy NetworkServicesGateway NetworkServicesGRPCRoute NetworkServicesHTTPRoute NetworkServicesMesh NetworkServicesTCPRoute NetworkServicesTLSRoute Notebooks NotebooksInstance Private CA PrivateCACAPool PrivateCACertificate PrivateCACertificateAuthority PrivateCACertificateTemplate Privileged Access Manager PrivilegedAccessManagerEntitlement Pub/Sub PubSubSchema PubSubSnapshot PubSubSubscription PubSubTopic Pub/Sub Lite PubSubLiteReservation reCAPTCHA Enterprise RecaptchaEnterpriseKey Resource Manager Folder Project ResourceManagerLien ResourceManagerPolicy Cloud Run RunJob RunService SecretManager SecretManagerSecret SecretManagerSecretVersion SecureSourceManager SecureSourceManagerInstance SecureSourceManagerRepository Service Directory ServiceDirectoryEndpoint ServiceDirectoryNamespace ServiceDirectoryService Service Networking ServiceNetworkingConnection Service Usage Service ServiceIdentity Storage Transfer Service StorageTransferJob Tags TagsLocationTagBinding TagsTagBinding TagsTagKey TagsTagValue Vertex AI VertexAIDataset VertexAIEndpoint VertexAIIndex VertexAIMetadataStore VMware Engine VMwareEngineExternalAddress VPC Access VPCAccessConnector Workstations WorkstationCluster WorkstationConfig Workstation Annotations AI and ML Application development Application hosting Compute Data analytics and pipelines Databases Distributed, hybrid, and multicloud Industry solutions Migration Networking Observability and monitoring Security Storage Access and resources management Costs and usage management Infrastructure as code SDK, languages, frameworks, and tools Home Documentation Access and resource management Config Connector API and reference Send feedback Stay organized with collections Save and categorize content based on your preferences.",
+          "Should be in the format \"projects/{{projectID}}/locations/{{location}}/secrets/{{secretID}}\". template.template.containers[].env[].valueSource.secretKeyRef.secretRef.name Optional string The name of a SecretManagerSecret resource. template.template.containers[].env[].valueSource.secretKeyRef.secretRef.namespace Optional string The namespace of a SecretManagerSecret resource. template.template.containers[].env[].valueSource.secretKeyRef.versionRef Optional object The Cloud Secret Manager secret version."
+        ]
+      },
+      {
+        "title": "RunService | Config Connector | Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/run/runservice",
+        "source_id": "feature-recovery-http",
+        "final_score": 83,
+        "relevance": "",
+        "evidence_snippets": [
+          "Sample YAML(s) Run Service Basic # Copyright 2021 Google LLC # # Licensed under the Apache License, Version 2.0 (the \"License\"); # you may not use this file except in compliance with the License. # You may obtain a copy of the License at # # http://www.apache.org/licenses/LICENSE-2.0 # # Unless required by applicable law or agreed to in writing, software # distributed under the License is distributed on an \"AS IS\" BASIS, # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. # See the License for the specific language governing permissions and # limitations under the License. apiVersion : run.cnrm.cloud.google.com/v1beta1 kind : RunService metadata : name : runservice-sample-basic spec : ingress : \"INGRESS_TRAFFIC_ALL\" launchStage : \"GA\" location : \"us-central1\" projectRef : # Replace ${PROJECT_ID?} with your project ID. external : projects/${PROJECT_ID?} template : containers : - env : - name : \"FOO\" value : \"bar\" image : \"gcr.io/cloudrun/hello\" scaling : maxInstanceCount : 2 traffic : - percent : 100 type : \"TRAFFIC_TARGET_ALLOCATION_TYPE_LATEST\" Run Service Encryptionkey # Copyright 2022 Google LLC # # Licensed under the Apache License, Version 2.0 (the \"License\"); # you may not use this file except in compliance with the License. # You may obtain a copy of the License at # # http://www.apache.org/licenses/LICENSE-2.0 # # Unless required by applicable law or agreed to in writing, software # distributed under the License is distributed on an \"AS IS\" BASIS, # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. # See the License for the specific language governing permissions and # limitations under the License. apiVersion : run.cnrm.cloud.google.com/v1beta1 kind : RunService metadata : name : runservice-sample-encryptionkey spec : ingress : \"INGRESS_TRAFFIC_ALL\" launchStage : \"GA\" location : \"us-central1\" projectRef : # Replace ${PROJECT_ID?} with your project ID. external : projects/${PROJECT_ID?} template : containers : - image : \"gcr.io/cloudrun/hello\" encryptionKeyRef : name : runservice-dep-encryptionkey --- # Replace ${PROJECT_ID?} and ${PROJECT_NUMBER?} below with your desired project # ID and project number. apiVersion : iam.cnrm.cloud.google.com/v1beta1 kind : IAMPolicyMember metadata : name : runservice-dep-encryptionkey spec : member : serviceAccount:service-${PROJECT_NUMBER?}@serverless-robot-prod.iam.gserviceaccount.com role : roles/cloudkms.cryptoKeyEncrypterDecrypter # required by cloud run service agent to access KMS keys resourceRef : apiVersion : resourcemanager.cnrm.cloud.google.com/v1beta1 kind : Project external : projects/${PROJECT_ID?} --- apiVersion : kms.cnrm.cloud.google.com/v1beta1 kind : KMSCryptoKey metadata : name : runservice-dep-encryptionkey spec : keyRingRef : name : runservice-dep-encryptionkey purpose : ENCRYPT_DECRYPT --- apiVersion : kms.cnrm.cloud.google.com/v1beta1 kind : KMSKeyRing metadata : name : runservice-dep-encryptionkey spec : location : us-central1 Run Service Multicontainer # Copyright 2021 Google LLC # # Licensed under the Apache License, Version 2.0 (the \"License\"); # you may not use this file except in compliance with the License. # You may obtain a copy of the License at # # http://www.apache.org/licenses/LICENSE-2.0 # # Unless required by applicable law or agreed to in writing, software # distributed under the License is distributed on an \"AS IS\" BASIS, # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. # See the License for the specific language governing permissions and # limitations under the License. apiVersion : run.cnrm.cloud.google.com/v1beta1 kind : RunService metadata : name : runservice-sample-multicontainer spec : ingress : \"INGRESS_TRAFFIC_ALL\" launchStage : \"BETA\" location : \"us-central1\" projectRef : # Replace ${PROJECT_ID?} with your project ID. external : projects/${PROJECT_ID?} template : containers : - name : \"hello-1\" image : \"gcr.io/cloudrun/hello\" ports : - containerPort : 8080 volumeMounts : - name : \"empty-dir-volume\" mountPath : \"/mnt\" - name : \"hello-2\" image : \"gcr.io/cloudrun/hello\" volumes : - name : \"empty-dir-volume\" emptyDir : medium : \"MEMORY\" sizeLimit : \"256Mi\" Run Service Probes # Copyright 2021 Google LLC # # Licensed under the Apache License, Version 2.0 (the \"License\"); # you may not use this file except in compliance with the License. # You may obtain a copy of the License at # # http://www.apache.org/licenses/LICENSE-2.0 # # Unless required by applicable law or agreed to in writing, software # distributed under the License is distributed on an \"AS IS\" BASIS, # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. # See the License for the specific language governing permissions and # limitations under the License. apiVersion : run.cnrm.cloud.google.com/v1beta1 kind : RunService metadata : name : runservice-sample-serviceprobes spec : ingress : \"INGRESS_TRAFFIC_ALL\" launchStage : \"GA\" location : \"us-central1\" projectRef : # Replace ${PROJECT_ID?} with your project ID. external : projects/${PROJECT_ID?} template : containers : - image : \"gcr.io/cloudrun/hello\" startupProbe : initialDelaySeconds : 0 timeoutSeconds : 1 periodSeconds : 3 failureThreshold : 1 tcpSocket : port : 8080 livenessProbe : httpGet : path : \"/\" Run Service SQL # Copyright 2022 Google LLC # # Licensed under the Apache License, Version 2.0 (the \"License\"); # you may not use this file except in compliance with the License. # You may obtain a copy of the License at # # http://www.apache.org/licenses/LICENSE-2.0 # # Unless required by applicable law or agreed to in writing, software # distributed under the License is distributed on an \"AS IS\" BASIS, # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. # See the License for the specific language governing permissions and # limitations under the License. apiVersion : run.cnrm.cloud.google.com/v1beta1 kind : RunService metadata : name : runservice-sample-sql spec : ingress : \"INGRESS_TRAFFIC_ALL\" launchStage : \"GA\" location : \"us-central1\" projectRef : # Replace ${PROJECT_ID?} with your project ID. external : projects/${PROJECT_ID?} template : volumes : - name : \"cloudsql\" cloudSqlInstance : instances : - name : runservice-dep-sql containers : - image : \"gcr.io/cloudrun/hello\" volumeMounts : - name : \"cloudsql\" mountPath : \"/cloudsql\" --- apiVersion : sql.cnrm.cloud.google.com/v1beta1 kind : SQLInstance metadata : name : runservice-dep-sql spec : region : us-central1 databaseVersion : MYSQL_5_7 settings : tier : db-n1-standard-1 Run Service Secret # Copyright 2022 Google LLC # # Licensed under the Apache License, Version 2.0 (the \"License\"); # you may not use this file except in compliance with the License. # You may obtain a copy of the License at # # http://www.apache.org/licenses/LICENSE-2.0 # # Unless required by applicable law or agreed to in writing, software # distributed under the License is distributed on an \"AS IS\" BASIS, # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. # See the License for the specific language governing permissions and # limitations under the License. apiVersion : run.cnrm.cloud.google.com/v1beta1 kind : RunService metadata : name : runservice-sample-secret spec : ingress : \"INGRESS_TRAFFIC_ALL\" launchStage : \"GA\" location : \"us-central1\" projectRef : # Replace ${PROJECT_ID?} with your project ID. external : projects/${PROJECT_ID?} template : containers : - image : \"gcr.io/cloudrun/hello\" volumeMounts : - name : \"a-volume\" mountPath : \"/secrets\" volumes : - name : \"a-volume\" secret : secretRef : name : runservice-dep-secret defaultMode : 292 # 0444 items : - versionRef : name : runservice-dep-secret path : \"my-secret\" mode : 256 # 0400 --- # Replace ${PROJECT_ID?} and ${PROJECT_NUMBER?} below with your desired project # ID and project number. apiVersion : iam.cnrm.cloud.google.com/v1beta1 kind : IAMPolicyMember metadata : name : runservice-dep-secret spec : member : serviceAccount:${PROJECT_NUMBER?}-compute@developer.gserviceaccount.com role : roles/secretmanager.secretAccessor # required by default service account to access secrets resourceRef : apiVersion : resourcemanager.cnrm.cloud.google.com/v1beta1 kind : Project external : projects/${PROJECT_ID?} --- apiVersion : v1 kind : Secret metadata : name : runservice-dep-secret data : secretData : SSBhbHdheXMgbG92ZWQgc3BhcnJpbmcgd2l0aCBnaWFudCBjYW5keSBzd29yZHMsIGJ1dCBJIGhhZCBubyBpZGVhIHRoYXQgd2FzIG15IHN1cGVyIHNlY3JldCBpbmZvcm1hdGlvbiE= --- apiVersion : secretmanager.cnrm.cloud.google.com/v1beta1 kind : SecretManagerSecret metadata : name : runservice-dep-secret spec : replication : automatic : true --- apiVersion : secretmanager.cnrm.cloud.google.com/v1beta1 kind : SecretManagerSecretVersion metadata : name : runservice-dep-secret spec : enabled : true secretData : valueFrom : secretKeyRef : key : secretData name : runservice-dep-secret secretRef : name : runservice-dep-secret Run Service Serviceaccount apiVersion : iam.cnrm.cloud.google.com/v1beta1 kind : IAMServiceAccount metadata : name : runservice-dep-serviceaccount --- apiVersion : run.cnrm.cloud.google.com/v1beta1 kind : RunService metadata : name : runservice-sample-serviceaccount spec : ingress : \"INGRESS_TRAFFIC_ALL\" launchStage : \"GA\" location : \"us-central1\" projectRef : # Replace ${PROJECT_ID?} with your project ID. external : projects/${PROJECT_ID?} template : containers : - image : \"gcr.io/cloudrun/hello\" serviceAccountRef : name : runservice-dep-serviceaccount Run Service VPCAccess # Copyright 2022 Google LLC # # Licensed under the Apache License, Version 2.0 (the \"License\"); # you may not use this file except in compliance with the License. # You may obtain a copy of the License at # # http://www.apache.org/licenses/LICENSE-2.0 # # Unless required by applicable law or agreed to in writing, software # distributed under the License is distributed on an \"AS IS\" BASIS, # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. # See the License for the specific language governing permissions and # limitations under the License. apiVersion : run.cnrm.cloud.google.com/v1beta1 kind : RunService metadata : name : runservice-sample-vpcaccess spec : ingress : \"INGRESS_TRAFFIC_ALL\" launchStage : \"GA\" location : \"us-central1\" projectRef : # Replace ${PROJECT_ID?} with your project ID. external : projects/${PROJECT_ID?} template : containers : - image : \"gcr.io/cloudrun/hello\" vpcAccess : connectorRef : name : runservice-dep-vpcaccess egress : \"ALL_TRAFFIC\" --- apiVersion : compute.cnrm.cloud.google.com/v1beta1 kind : ComputeNetwork metadata : name : runservice-dep-vpcaccess spec : autoCreateSubnetworks : false --- apiVersion : vpcaccess.cnrm.cloud.google.com/v1beta1 kind : VPCAccessConnector metadata : name : runservice-dep-vpcaccess spec : location : \"us-central1\" networkRef : name : runservice-dep-vpcaccess ipCidrRange : \"10.132.0.0/28\" projectRef : # Replace ${PROJECT_ID?} with your project ID external : ${PROJECT_ID?} Note: If you have any trouble with instantiating the resource, refer to Troubleshoot Config Connector .",
+          "RunService | Config Connector | Google Cloud Documentation Skip to main content Technology areas close AI and ML Application development Application hosting Compute Data analytics and pipelines Databases Distributed, hybrid, and multicloud Industry solutions Migration Networking Observability and monitoring Security Storage Cross-product tools close Access and resources management Costs and usage management Infrastructure as code SDK, languages, frameworks, and tools / Console English Deutsch Español – América Latina Français Português – Brasil 中文 – 简体 日本語 한국어 Sign in Config Connector Start free Overview Guides API and reference Resources Technology areas More Overview Guides API and reference Resources Cross-product tools More Console Config Connector API resources overview AccessContextManager AccessContextManagerAccessLevel AccessContextManagerAccessPolicy AccessContextManagerServicePerimeter AccessContextManagerServicePerimeterResource AlloyDB AlloyDBBackup AlloyDBCluster AlloyDBInstance AlloyDBUser API Gateway APIGatewayAPI App Hub AppHubApplication Apigee ApigeeEndpointAttachment ApigeeEnvgroup ApigeeEnvgroupAttachment ApigeeEnvironment ApigeeInstance ApigeeInstanceAttachment ApigeeOrganization ArtifactRegistry ArtifactRegistryRepository Backup and DR BackupDRBackupPlan BackupDRBackupPlanAssociation BackupDRBackupVault BigQueryAnalyticsHub BigQueryAnalyticsHubDataExchange BigQueryAnalyticsHubListing BigQuery BigLake BigLakeTable BigQuery BigqueryConnectionConnection BigQueryDataset BigQueryJob BigQueryRoutine BigQueryTable BigQueryDataTransferConfig BigQuery Reservation BigQueryReservationAssignment BigQueryReservationReservation BillingBudgets BillingBudgetsBudget BinaryAuthorization BinaryAuthorizationAttestor BinaryAuthorizationPolicy Certificate Manager CertificateManagerCertificate CertificateManagerCertificateMap CertificateManagerCertificateMapEntry CertificateManagerDNSAuthorization Cloud Asset Inventory AssetFeed AssetSavedQuery Cloud Bigtable BigtableAppProfile BigtableGCPolicy BigtableInstance BigtableTable Cloud Build CloudBuildTrigger CloudBuildWorkerPool Cloud Composer ComposerEnvironment Cloud Deploy CloudDeployDeliveryPipeline Cloud Quotas APIQuotaAdjusterSettings APIQuotaPreference Cloud Functions CloudFunctionsFunction Cloud Identity CloudIdentityGroup CloudIdentityMembership Cloud Intrusion Detection System CloudIDSEndpoint Cloud Scheduler CloudSchedulerJob Config Controller ConfigControllerInstance Cloud DLP DLPDeidentifyTemplate DLPInspectTemplate DLPJobTrigger DLPStoredInfoType Cloud DNS DNSManagedZone DNSPolicy DNSRecordSet Cloud Key Management Service KMSAutokeyConfig KMSCryptoKey KMSImportJob KMSKeyHandle KMSKeyRing Eventarc EventarcTrigger Identity and Access Management (IAM) IAMAccessBoundaryPolicy IAMAuditConfig IAMCustomRole IAMPartialPolicy IAMPolicy IAMPolicyMember IAMServiceAccount IAMServiceAccountKey IAMWorkforcePool IAMWorkforcePoolProvider IAMWorkloadIdentityPool IAMWorkloadIdentityPoolProvider Identity-Aware Proxy (IAP) IAPBrand IAPIdentityAwareProxyClient IAPSettings Identity Platform IdentityPlatformConfig IdentityPlatformTenant IdentityPlatformTenantOAuthIDPConfig IdentityPlatformOAuthIDPConfig Cloud Logging LoggingLink LoggingLogBucket LoggingLogExclusion LoggingLogMetric LoggingLogSink LoggingLogView Cloud Memorystore for Memcached MemcacheInstance Cloud Monitoring MonitoringAlertPolicy MonitoringDashboard MonitoringGroup MonitoringMetricDescriptor MonitoringMonitoredProject MonitoringNotificationChannel MonitoringService MonitoringServiceLevelObjective MonitoringUptimeCheckConfig OS Config OSConfigGuestPolicy OSConfigOSPolicyAssignment Organization Policy OrgPolicyCustomConstraint Cloud Source Repositories SourceRepoRepository Speech-to-Text SpeechCustomClass SpeechPhraseSet SpeechRecognizer Cloud Spanner SpannerBackupSchedule SpannerDatabase SpannerInstance Cloud SQL SQLDatabase SQLInstance SQLSSLCert SQLUser Cloud Storage StorageBucket StorageAnywhereCache StorageBucketAccessControl StorageDefaultObjectAccessControl StorageNotification Compute Engine ComputeAddress ComputeBackendBucket ComputeBackendService ComputeDisk ComputeExternalVPNGateway ComputeFirewall ComputeFirewallPolicy ComputeFirewallPolicyAssociation ComputeFirewallPolicyRule ComputeForwardingRule ComputeHealthCheck ComputeHTTPHealthCheck ComputeHTTPSHealthCheck ComputeImage ComputeInstance ComputeInstanceGroup ComputeInstanceGroupManager ComputeInstanceTemplate ComputeInterconnectAttachment ComputeManagedSSLCertificate ComputeNetwork ComputeNetworkEndpointGroup ComputeNetworkFirewallPolicy ComputeNetworkFirewallPolicyAssociation ComputeNetworkPeering ComputeNodeGroup ComputeNodeTemplate ComputePacketMirroring ComputeProjectMetadata ComputeRegionNetworkEndpointGroup ComputeReservation ComputeResourcePolicy ComputeRoute ComputeRouter ComputeRouterInterface ComputeRouterNAT ComputeRouterPeer ComputeSecurityPolicy ComputeServiceAttachment ComputeSharedVPCHostProject ComputeSharedVPCServiceProject ComputeSnapshot ComputeSSLCertificate ComputeSSLPolicy ComputeSubnetwork ComputeTargetGRPCProxy ComputeTargetHTTPProxy ComputeTargetHTTPSProxy ComputeTargetInstance ComputeTargetPool ComputeTargetSSLProxy ComputeTargetTCPProxy ComputeTargetVPNGateway ComputeURLMap ComputeVPNGateway ComputeVPNTunnel Container Analysis ContainerAnalysisNote Container Attached ContainerAttachedCluster Data Catalog DataCatalogPolicyTag DataCatalogTaxonomy Dataflow DataflowJob DataflowFlexTemplateJob Dataform DataformRepository Data Fusion DataFusionInstance Dataproc DataprocAutoscalingPolicy DataprocCluster DataprocWorkflowTemplate Dataproc Metastore MetastoreBackup Filestore FilestoreBackup FilestoreInstance Firestore FirestoreDatabase FirestoreIndex Google Kubernetes Engine (GKE) ContainerCluster ContainerNodePool Distributed Cloud Edge EdgeContainerCluster EdgeContainerNodePool EdgeContainerVPNConnection EdgeNetworkNetwork EdgeNetworkSubnet Document AI DocumentAIProcessorVersion Essential Contacts EssentialContactsContact GKE Hub GKEHubFeature GKEHubFeatureMembership GKEHubMembership Managed Kafka ManagedKafkaCluster ManagedKafkaTopic Memorystore (Redis) RedisCluster RedisInstance Memorystore for Valkey MemorystoreInstance Network Connectivity NetworkConnectivityHub NetworkConnectivitySpoke Network Security NetworkSecurityAuthorizationPolicy NetworkSecurityClientTLSPolicy NetworkSecurityServerTLSPolicy Network Services NetworkServicesEndpointPolicy NetworkServicesGateway NetworkServicesGRPCRoute NetworkServicesHTTPRoute NetworkServicesMesh NetworkServicesTCPRoute NetworkServicesTLSRoute Notebooks NotebooksInstance Private CA PrivateCACAPool PrivateCACertificate PrivateCACertificateAuthority PrivateCACertificateTemplate Privileged Access Manager PrivilegedAccessManagerEntitlement Pub/Sub PubSubSchema PubSubSnapshot PubSubSubscription PubSubTopic Pub/Sub Lite PubSubLiteReservation reCAPTCHA Enterprise RecaptchaEnterpriseKey Resource Manager Folder Project ResourceManagerLien ResourceManagerPolicy Cloud Run RunJob RunService SecretManager SecretManagerSecret SecretManagerSecretVersion SecureSourceManager SecureSourceManagerInstance SecureSourceManagerRepository Service Directory ServiceDirectoryEndpoint ServiceDirectoryNamespace ServiceDirectoryService Service Networking ServiceNetworkingConnection Service Usage Service ServiceIdentity Storage Transfer Service StorageTransferJob Tags TagsLocationTagBinding TagsTagBinding TagsTagKey TagsTagValue Vertex AI VertexAIDataset VertexAIEndpoint VertexAIIndex VertexAIMetadataStore VMware Engine VMwareEngineExternalAddress VPC Access VPCAccessConnector Workstations WorkstationCluster WorkstationConfig Workstation Annotations AI and ML Application development Application hosting Compute Data analytics and pipelines Databases Distributed, hybrid, and multicloud Industry solutions Migration Networking Observability and monitoring Security Storage Access and resources management Costs and usage management Infrastructure as code SDK, languages, frameworks, and tools Home Documentation Access and resource management Config Connector API and reference Send feedback Stay organized with collections Save and categorize content based on your preferences.",
+          "If this field is omitted, it will be automatically generated based on the Service name. template.scaling Optional object Scaling settings for this Revision. template.scaling.maxInstanceCount Optional integer Maximum number of serving instances that this resource should have. template.scaling.minInstanceCount Optional integer Minimum number of serving instances that this resource should have. template.serviceAccountRef Optional object Email address of the IAM service account associated with the revision of the service."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cloudkms.cryptoKeyEncrypterDecrypter",
+      "cnrm.cloud.google.com",
+      "compute.cnrm.cloud.google.com",
+      "developer.gserviceaccount.com",
+      "docker.pkg.dev",
+      "gcr.io",
+      "iam.cnrm.cloud.google.com",
+      "kms.cnrm.cloud.google.com",
+      "prod.iam.gserviceaccount.com",
+      "replication.auto",
+      "replication.auto.customerManagedEncryption",
+      "replication.auto.customerManagedEncryption.kmsKeyRef.name",
+      "replication.auto.customerManagedEncryption.kmsKeyRef.namespace",
+      "replication.automatic",
+      "replication.userManaged",
+      "replication.userManaged.replicas",
+      "resourcemanager.cnrm.cloud.google.com",
+      "run.cnrm.cloud.google.com",
+      "secretmanager.cnrm.cloud.google.com",
+      "secretmanager.secretAccessor",
+      "sql.cnrm.cloud.google.com",
+      "template.containers",
+      "template.scaling",
+      "template.scaling.maxInstanceCount",
+      "template.scaling.minInstanceCount",
+      "template.serviceAccountRef",
+      "template.template.containers",
+      "vpcaccess.cnrm.cloud.google.com"
+    ],
+    "missing_inventory_roles": [
+      "roles/cloudkms.cryptoKeyEncrypterDecrypter",
+      "roles/secretmanager.secretAccessor"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/secretmanager/secretmanagersecret",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/run/runservice",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/run/runjob"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/secretmanager/secretmanagersecret",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/run/runservice",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/run/runjob"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/secretmanager/secretmanagersecret",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/run/runservice",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/run/runjob"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/secretmanager/secretmanagersecret",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/run/runservice",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/run/runjob"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/secretmanager/secretmanagersecret",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/run/runservice",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/run/runjob"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/secretmanager/secretmanagersecret",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/run/runservice",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/run/runjob"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/secretmanager/secretmanagersecret",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/run/runservice",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/run/runjob"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/secretmanager/secretmanagersecret",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/run/runservice",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/run/runjob"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/secretmanager/secretmanagersecret",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/run/runservice",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/run/runjob"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/secretmanager/secretmanagersecret",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/run/runservice",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/run/runjob"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/secretmanager/secretmanagersecret",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/run/runservice",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/run/runjob"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/secretmanager/secretmanagersecret",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/run/runservice",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/run/runjob"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/secretmanager/secretmanagersecret",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/run/runservice",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/run/runjob"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/secretmanager/secretmanagersecret",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/run/runservice",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/run/runjob"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/secretmanager/secretmanagersecret",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/run/runservice",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/run/runjob"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/secretmanager/secretmanagersecret",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/run/runservice",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/run/runjob"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/secretmanager/secretmanagersecret",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/run/runservice",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/run/runjob"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/secretmanager/secretmanagersecret",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/run/runservice",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/run/runjob"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/secretmanager/secretmanagersecret",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/run/runservice",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/run/runjob"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/secretmanager/secretmanagersecret",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/run/runservice",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/run/runjob"
+      ]
+    }
+  ]
+}

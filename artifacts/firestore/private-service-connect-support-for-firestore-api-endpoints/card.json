@@ -1,0 +1,101 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:36.791Z",
+  "source_step08_card": "data/step-08/current/products/firestore/card.json",
+  "product_name": "Firestore",
+  "product_slug": "firestore",
+  "feature_name": "Private Service Connect support for Firestore API endpoints",
+  "feature_slug": "private-service-connect-support-for-firestore-api-endpoints",
+  "summary": "Firestore supports using Private Service Connect regional endpoints and backends to connect to its regional and multi-regional API endpoints.",
+  "extended_definition": "Firestore supports using Private Service Connect regional endpoints and backends to connect to its regional and multi-regional API endpoints.",
+  "lifecycle": {
+    "latest_feature_date": "2026-03-23",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 1,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "coverage_low",
+        "message": "The feature ended with coverage LOW.",
+        "suggested_steps": [
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/datastore/docs/apis",
+      "https://docs.cloud.google.com/firestore/docs/reference/mcp",
+      "https://docs.cloud.google.com/python/docs/reference/firestore/latest/google.cloud.firestore_admin_v1.services.firestore_admin.client.FirestoreAdminClient"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "APIs & Reference \\_|\\_ Datastore \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/datastore/docs/apis",
+        "source_id": "site-docs-root",
+        "final_score": 50,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Datastore mode client libraries Datastore mode Client Libraries Get started with Firestore in Datastore mode in your language of choice."
+        ]
+      },
+      {
+        "title": "\"MCP Reference: firestore.googleapis.com \\_|\\_ Firestore \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/firestore/docs/reference/mcp",
+        "source_id": "site-api-reference",
+        "final_score": 45,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Server Endpoints An MCP service endpoint is the network address and communication interface (usually a URL) of the MCP server that an AI application (the Host for the MCP client) uses to establish a secure, standardized connection.",
+          "Google MCP endpoints can be global or regional.",
+          "The firestore.googleapis.com MCP server has the following tools: MCP Tools get document Get a document from a Firestore database. add document Create a document from a Firestore database. update document Update a document from a Firestore database. delete document Delete a document from a Firestore database. list documents List documents from a Firestore database. list collections List all the collection IDs underneath a document. create database Create a Firestore database. get database Get a Firestore database. list databases List Firestore databases. update database Update a Firestore database. delete database Delete a Firestore database. create index Create a composite index. get index Get a Firestore index. list indexes List Firestore indexes. delete index Delete a Firestore index."
+        ]
+      },
+      {
+        "title": "\"Class FirestoreAdminClient (2.23.0) \\_|\\_ Python client libraries \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/firestore/latest/google.cloud.firestore_admin_v1.services.firestore_admin.client.FirestoreAdminClient",
+        "source_id": "site-python-reference",
+        "final_score": 43,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import firestore admin v1 def sample create backup schedule(): Create a client client = firestore admin v1.",
+          "It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import firestore admin v1 def sample delete backup schedule(): Create a client client = firestore admin v1.",
+          "It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import firestore admin v1 def sample update backup schedule(): Create a client client = firestore admin v1."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "firestore.googleapis.com",
+      "googleapis.dev",
+      "options.html"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/docs/reference/mcp",
+        "https://docs.cloud.google.com/python/docs/reference/firestore/latest/google.cloud.firestore_admin_v1.services.firestore_admin.client.FirestoreAdminClient",
+        "https://docs.cloud.google.com/datastore/docs/apis"
+      ]
+    }
+  ]
+}

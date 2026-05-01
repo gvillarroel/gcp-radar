@@ -1,0 +1,124 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:15.897Z",
+  "source_step08_card": "data/step-08/current/products/app-engine-standard-environment-java/card.json",
+  "product_name": "App Engine standard environment Java",
+  "product_slug": "app-engine-standard-environment-java",
+  "feature_name": "Remote API OAuth2 authentication",
+  "feature_slug": "remote-api-oauth2-authentication",
+  "summary": "Remote API access supports OAuth2 credentials through Application Default Credentials.",
+  "extended_definition": "Remote API access supports OAuth2 credentials through Application Default Credentials.",
+  "lifecycle": {
+    "latest_feature_date": "2015-08-27",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/appengine/docs/standard/access-control",
+      "https://docs.cloud.google.com/appengine/docs/standard/java11/access-control",
+      "https://docs.cloud.google.com/appengine/docs/standard/java11/config/appref"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Setting up access control \\_|\\_ App Engine standard environment \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/access-control",
+        "source_id": "site-docs-reference",
+        "final_score": 108,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "If you set the GOOGLE APPLICATION CREDENTIALS environment variable or pass credentials in your code, we recommend that you store your credentials in one of the following ways: Store your credentials in a secure location such as Firestore in Datastore mode (Datastore) and retrieve them at runtime.",
+          "Google Workspace domain-wide delegation of authority If you have a Google Workspace (formerly G Suite) domain, an administrator of the domain can authorize an application to access user data on behalf of users in the Google Workspace domain.",
+          "Fatal ( err ) } = kmsService } Java static void authImplicit () { // If you don't specify credentials when constructing the client, the client library will // look for credentials via the environment variable GOOGLE APPLICATION CREDENTIALS."
+        ]
+      },
+      {
+        "title": "\"Setting up access control \\_|\\_ App Engine standard environment \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/java11/access-control",
+        "source_id": "site-docs-reference-4",
+        "final_score": 108,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "If you set the GOOGLE APPLICATION CREDENTIALS environment variable or pass credentials in your code, we recommend that you store your credentials in one of the following ways: Store your credentials in a secure location such as Firestore in Datastore mode (Datastore) and retrieve them at runtime.",
+          "Google Workspace domain-wide delegation of authority If you have a Google Workspace (formerly G Suite) domain, an administrator of the domain can authorize an application to access user data on behalf of users in the Google Workspace domain.",
+          "Fatal ( err ) } = kmsService } Java static void authImplicit () { // If you don't specify credentials when constructing the client, the client library will // look for credentials via the environment variable GOOGLE APPLICATION CREDENTIALS."
+        ]
+      },
+      {
+        "title": "\"App Engine app.yaml reference \\_|\\_ App Engine standard environment \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/java11/config/appref",
+        "source_id": "site-docs-reference-4",
+        "final_score": 102,
+        "relevance": "",
+        "evidence_snippets": [
+          "This helps your application maintain steady performance through fluctuations in request load, but also raises the number of idle instances (and consequent running costs) during such periods of heavy load.",
+          "App Engine calculates the number of instances necessary to serve your current application traffic based on scaling settings such as target cpu utilization and target throughput utilization .",
+          "When a URL handler with a login setting other than optional matches a URL, the handler first checks whether the user has signed in to the application using its authentication option ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "app.yaml"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/access-control",
+        "https://docs.cloud.google.com/appengine/docs/standard/java11/access-control",
+        "https://docs.cloud.google.com/appengine/docs/standard/java11/config/appref"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/access-control",
+        "https://docs.cloud.google.com/appengine/docs/standard/java11/access-control",
+        "https://docs.cloud.google.com/appengine/docs/standard/java11/config/appref"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/access-control",
+        "https://docs.cloud.google.com/appengine/docs/standard/java11/access-control",
+        "https://docs.cloud.google.com/appengine/docs/standard/java11/config/appref"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/access-control",
+        "https://docs.cloud.google.com/appengine/docs/standard/java11/access-control",
+        "https://docs.cloud.google.com/appengine/docs/standard/java11/config/appref"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/access-control",
+        "https://docs.cloud.google.com/appengine/docs/standard/java11/access-control",
+        "https://docs.cloud.google.com/appengine/docs/standard/java11/config/appref"
+      ]
+    }
+  ]
+}

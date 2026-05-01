@@ -1,0 +1,92 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:46.193Z",
+  "source_step08_card": "data/step-08/current/products/sensitive-data-protection/card.json",
+  "product_name": "Sensitive Data Protection",
+  "product_slug": "sensitive-data-protection",
+  "feature_name": "Customer-owned BigQuery storage for inspection findings",
+  "feature_slug": "customer-owned-bigquery-storage-for-inspection-findings",
+  "summary": "Inspection findings are stored in the customer's own BigQuery instance.",
+  "extended_definition": "Inspection findings are stored in the customer's own BigQuery instance.",
+  "lifecycle": {
+    "latest_feature_date": "2017-12-14",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/sensitive-data-protection/docs/deidentify-storage",
+      "https://docs.cloud.google.com/sensitive-data-protection/docs/profile-azure-blob-storage",
+      "https://docs.cloud.google.com/sensitive-data-protection/docs/profile-project-cloud-storage"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Create de-identified copies of data stored in Cloud Storage using the API\\",
+        "url": "https://docs.cloud.google.com/sensitive-data-protection/docs/deidentify-storage",
+        "source_id": "site-docs-root-2",
+        "final_score": 164,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "DlpServiceClient (); // The project ID to run the API call under // const projectId = 'my-project'; // The Cloud Storage directory that needs to be inspected // const inputDirectory = 'your-google-cloud-storage-path'; // The ID of the dataset to inspect, e.g. 'my dataset' // const datasetId = 'my dataset'; // The ID of the table to inspect, e.g. 'my table' // const tableId = 'my table'; // The Cloud Storage directory that will be used to store the de-identified files // const outputDirectory = 'your-output-directory'; // The full resource name of the default de-identify template // const deidentifyTemplateId = 'your-deidentify-template-id'; // The full resource name of the de-identify template for structured files // const structuredDeidentifyTemplateId = 'your-structured-deidentify-template-id'; // The full resource name of the image redaction template for images // const imageRedactTemplateId = 'your-image-redact-template-id'; async function deidentifyCloudStorage () { // Specify storage configuration that uses file set. const storageConfig = { cloudStorageOptions : { fileSet : { url : inputDirectory , }, }, }; // Specify the type of info the inspection will look for. const infoTypes = [{ name : 'PERSON NAME' }, { name : 'EMAIL ADDRESS' }]; // Construct inspect configuration const inspectConfig = { infoTypes : infoTypes , includeQuote : true , }; // Types of files to include for de-identification. const fileTypesToTransform = [ { fileType : 'IMAGE' }, { fileType : 'CSV' }, { fileType : ' TEXT FILE ' }, ]; // Specify the big query table to store the transformation details. const transformationDetailsStorageConfig = { table : { projectId : projectId , tableId : tableId , datasetId : datasetId , }, }; // Specify the de-identify template used for the transformation. const transformationConfig = { deidentifyTemplate : deidentifyTemplateId , structuredDeidentifyTemplate : structuredDeidentifyTemplateId , imageRedactTemplate : imageRedactTemplateId , }; // Construct action to de-identify sensitive data. const action = { deidentify : { cloudStorageOutput : outputDirectory , transformationConfig : transformationConfig , transformationDetailsStorageConfig : transformationDetailsStorageConfig , fileTypes : fileTypesToTransform , }, }; // Construct the inspect job configuration. const inspectJobConfig = { inspectConfig : inspectConfig , storageConfig : storageConfig , actions : [ action ], }; // Construct the job creation request to be sent by the client. const createDlpJobRequest = { parent : projects/ ${ projectId } /locations/global , inspectJob : inspectJobConfig , }; // Send the job creation request and process the response. const [ response ] = await dlp . createDlpJob ( createDlpJobRequest ); const jobName = response . name ; // Waiting for a maximum of 15 minutes for the job to get complete. let job ; let numOfAttempts = 30 ; while ( numOfAttempts > 0 ) { // Fetch DLP Job status [ job ] = await dlp . getDlpJob ({ name : jobName }); // Check if the job has completed. if ( job . state === 'DONE' ) { break ; } if ( job . state === 'FAILED' ) { console . log ( 'Job Failed, Please check the configuration.' ); return ; } // Sleep for a short duration before checking the job status again. await new Promise ( resolve = > { setTimeout (() = > resolve (), 30000 ); }); numOfAttempts -= 1 ; } // Print out the results. const infoTypeStats = job . inspectDetails . result . infoTypeStats ; if ( infoTypeStats . length > 0 ) { infoTypeStats . forEach ( infoTypeStat = > { console . log ( Found ${ infoTypeStat . count } instance(s) of infoType ${ infoTypeStat . infoType . name } . ); }); } else { console . log ( 'No findings.' ); } } await deidentifyCloudStorage (); PHP To learn how to install and use the client library for Sensitive Data Protection, see Sensitive Data Protection client libraries .",
+          "DONE : print ( f \"Job did not complete within { timeout } minutes.\" ) return Print out the results. print ( f \"Job name: { job . name } \" ) result = job . inspect details . result print ( f \"Processed Bytes: { result . processed bytes } \" ) if result . info type stats : for stats in result . info type stats : print ( f \"Info type: { stats . info type . name } \" ) print ( f \"Count: { stats . count } \" ) else : print ( \"No findings.\" ) REST JSON input { \"inspect job\" : { \"storage config\" : { \"cloud storage options\" : { \"file set\" : { \"url\" : \" INPUT DIRECTORY \" } } }, \"inspect config\" : { \"info types\" : [ { \"name\" : \"PERSON NAME\" } ] }, \"actions\" : { \"deidentify\" : { \"cloud storage output\" : \" OUTPUT DIRECTORY \" , \"transformation config\" : { \"deidentify template\" : \" DEIDENTIFY TEMPLATE NAME \" , \"structured deidentify template\" : \" STRUCTURED DEIDENTIFY TEMPLATE NAME \" , \"image redact template\" : \" IMAGE REDACTION TEMPLATE NAME \" }, \"transformation details storage config\" : { \"table\" : { \"project id\" : \" TRANSFORMATION DETAILS PROJECT ID \" , \"dataset id\" : \" TRANSFORMATION DETAILS DATASET ID \" , \"table id\" : \" TRANSFORMATION DETAILS TABLE ID \" } }, \"fileTypesToTransform\" : [ \"IMAGE\" , \"CSV\" , \"TEXT FILE\" ] } } } } Replace the following: PROJECT ID : the ID of the project where you want to store the inspection job.",
+          "You can also control access at the following levels: Cloud Storage bucket BigQuery dataset BigQuery table API overview To create de-identified copies of content stored in Cloud Storage, you configure an inspection job that looks for sensitive data according to the criteria that you specify."
+        ]
+      },
+      {
+        "title": "\"Profile Cloud Storage data in a single project \\_|\\_ Sensitive Data Protection\\",
+        "url": "https://docs.cloud.google.com/sensitive-data-protection/docs/profile-project-cloud-storage",
+        "source_id": "site-docs-reference-3",
+        "final_score": 159,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Caution: If you don't include an inspection template that's stored in the global region, Sensitive Data Protection can't profile data in regions that don't have a dedicated inspection template.",
+          "To respect data residency, Sensitive Data Protection doesn't use an inspection template outside the region where that template is stored.",
+          "The Region field is automatically populated with the name of the region where your inspection template is stored."
+        ]
+      },
+      {
+        "title": "\"Profile Azure Blob Storage data \\_|\\_ Sensitive Data Protection \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/sensitive-data-protection/docs/profile-azure-blob-storage",
+        "source_id": "site-docs-reference-3",
+        "final_score": 157,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To respect data residency, Sensitive Data Protection doesn't use an inspection template outside the region where that template is stored.",
+          "The Region field is automatically populated with the name of the region where your inspection template is stored.",
+          "For each Blob Storage container, a file store data profile includes the following information: The types of files that you're storing in the container, categorized into file clusters The sensitivity level of the data in the container A summary about each detected file cluster, including the types of sensitive information found For a full list of insights and metadata in each file store data profile, see File store data profiles ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "e.g"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/deidentify-storage",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/profile-azure-blob-storage",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/profile-project-cloud-storage"
+      ]
+    }
+  ]
+}

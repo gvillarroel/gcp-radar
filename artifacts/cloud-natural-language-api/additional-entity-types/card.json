@@ -1,0 +1,117 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:25.520Z",
+  "source_step08_card": "data/step-08/current/products/cloud-natural-language-api/card.json",
+  "product_name": "Cloud Natural Language API",
+  "product_slug": "cloud-natural-language-api",
+  "feature_name": "Additional entity types",
+  "feature_slug": "additional-entity-types",
+  "summary": "AnalyzeEntities now identifies additional entity types including phone numbers, addresses, dates, prices, and numbers.",
+  "extended_definition": "AnalyzeEntities now identifies additional entity types including phone numbers, addresses, dates, prices, and numbers.",
+  "lifecycle": {
+    "latest_feature_date": "2019-04-04",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/natural-language/docs/analyzing-entities",
+      "https://docs.cloud.google.com/natural-language/docs/analyzing-entity-sentiment",
+      "https://docs.cloud.google.com/natural-language/docs/basics",
+      "https://docs.cloud.google.com/natural-language/docs/reference/rest/v1/Entity"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Entity \\_|\\_ Cloud Natural Language API \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/natural-language/docs/reference/rest/v1/Entity",
+        "source_id": "site-api-reference",
+        "final_score": 173,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Enums UNKNOWN Unknown PERSON Person LOCATION Location ORGANIZATION Organization EVENT Event WORK OF ART Artwork CONSUMER GOOD Consumer product OTHER Other types of entities PHONE NUMBER Phone number The metadata lists the phone number, formatted according to local convention, plus whichever additional elements appear in the text: number - the actual number, broken down into sections as per local convention national prefix - country code, if detected area code - region or area code, if detected extension - phone extension (to be dialed after connection), if detected ADDRESS Address The metadata identifies the street number and locality plus whichever additional elements appear in the text: street number - street number locality - city or town street name - street/route name, if detected postal code - postal code, if detected country - country, if detected< broad region - administrative area, such as the state, if detected narrow region - smaller administrative area, such as county, if detected sublocality - used in Asian addresses to demark a district within a city, if detected DATE Date The metadata identifies the components of the date: year - four digit year, if detected month - two digit month number, if detected day - two digit day number, if detected NUMBER Number The metadata is the number itself.",
+          "For most entity types, the metadata is a Wikipedia URL ( wikipedia url ) and Knowledge Graph MID ( mid ), if they are available.",
+          "For most entity types, the associated metadata is a Wikipedia URL ( wikipedia url ) and Knowledge Graph MID ( mid )."
+        ]
+      },
+      {
+        "title": "Analyzing Entities \\_|\\_ Cloud Natural Language API \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/natural-language/docs/analyzing-entities",
+        "source_id": "site-docs-root",
+        "final_score": 149,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For information about the types of entities Natural Language identifies, see the Entity documentation.",
+          "Some entity types may have additional metadata, e.g.",
+          "Some entity types may have additional metadata, e.g."
+        ]
+      },
+      {
+        "title": "Natural Language API Basics \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/natural-language/docs/basics",
+        "source_id": "site-docs-root",
+        "final_score": 141,
+        "relevance": "",
+        "evidence_snippets": [
+          "Lawrence”, tagged as a PERSON , for example. (See Entity Types for more information.) metadata contains source information about the entity's knowledge repository Additional repositories may be exposed in the future. mentions indicate offset positions within the text where an entity is mentioned.",
+          "Entity sentiment analysis inspects the given text for known entities (proper nouns and common nouns), returns information about those entities, and identifies the prevailing emotional opinion of the entity within the text, especially to determine a writer's attitude toward the entity as positive, negative, or neutral.",
+          "An analyzeEntities response to the entity request is shown below: { \"entities\" : [ { \"name\" : \"British\" , \"type\" : \"LOCATION\" , \"metadata\" : {}, \"mentions\" : [ { \"text\" : { \"content\" : \"British\" , \"beginOffset\" : 58 }, \"type\" : \"PROPER\" , \"probability\" : 0.941 } ] }, { \"name\" : \"Lawrence\" , \"type\" : \"PERSON\" , \"metadata\" : {}, \"mentions\" : [ { \"text\" : { \"content\" : \"Lawrence\" , \"beginOffset\" : 113 }, \"type\" : \"PROPER\" , \"probability\" : 0.914 } ] }, { \"name\" : \"Lawrence of Arabia\" , \"type\" : \"WORK OF ART\" , \"metadata\" : {}, \"mentions\" : [ { \"text\" : { \"content\" : \"Lawrence of Arabia\" , \"beginOffset\" : 0 }, \"type\" : \"PROPER\" , \"probability\" : 0.761 } ] }, { \"name\" : \"Lieutenant\" , \"type\" : \"PERSON\" , \"metadata\" : {}, \"mentions\" : [ { \"text\" : { \"content\" : \"Lieutenant\" , \"beginOffset\" : 66 }, \"type\" : \"COMMON\" , \"probability\" : 0.927 } ] }, { \"name\" : \"Peter O Toole\" , \"type\" : \"PERSON\" , \"metadata\" : {}, \"mentions\" : [ { \"text\" : { \"content\" : \"Peter O Toole\" , \"beginOffset\" : 93 }, \"type\" : \"PROPER\" , \"probability\" : 0.907 } ] }, { \"name\" : \"T."
+        ]
+      },
+      {
+        "title": "\"Analyzing Entity Sentiment \\_|\\_ Cloud Natural Language API \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/natural-language/docs/analyzing-entity-sentiment",
+        "source_id": "site-docs-root",
+        "final_score": 133,
+        "relevance": "",
+        "evidence_snippets": [
+          "Some entity types may have additional metadata, e.g.",
+          "Some entity types may have additional metadata, e.g.",
+          "LanguageServiceClient () gcs content uri = 'gs://cloud-samples-data/language/entity-sentiment.txt' Available types: PLAIN TEXT, HTML type = language v1 ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "e.g",
+      "file.txt",
+      "sentiment.txt"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/natural-language/docs/reference/rest/v1/Entity",
+        "https://docs.cloud.google.com/natural-language/docs/analyzing-entities",
+        "https://docs.cloud.google.com/natural-language/docs/basics",
+        "https://docs.cloud.google.com/natural-language/docs/analyzing-entity-sentiment"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/natural-language/docs/reference/rest/v1/Entity",
+        "https://docs.cloud.google.com/natural-language/docs/analyzing-entities",
+        "https://docs.cloud.google.com/natural-language/docs/basics",
+        "https://docs.cloud.google.com/natural-language/docs/analyzing-entity-sentiment"
+      ]
+    }
+  ]
+}

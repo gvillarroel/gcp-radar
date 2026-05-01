@@ -1,0 +1,140 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:35.157Z",
+  "source_step08_card": "data/step-08/current/products/document-ai/card.json",
+  "product_name": "Document AI",
+  "product_slug": "document-ai",
+  "feature_name": "Layout parser office file support",
+  "feature_slug": "layout-parser-office-file-support",
+  "summary": "Layout parser support for DOCX, PPTX, XLSX, and XLSM files makes structured document content easier to access and chunk; Layout parser support for DOCX, PPTX, XLSX, and XLSM files makes structured document content easier to access and chunk.",
+  "extended_definition": "Layout parser support for DOCX, PPTX, XLSX, and XLSM files makes structured document content easier to access and chunk; Layout parser support for DOCX, PPTX, XLSX, and XLSM files makes structured document content easier to access and chunk.",
+  "lifecycle": {
+    "latest_feature_date": "2025-11-04",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/document-ai/docs/file-types",
+      "https://docs.cloud.google.com/document-ai/docs/form-parser",
+      "https://docs.cloud.google.com/document-ai/docs/layout-parse-chunk",
+      "https://docs.cloud.google.com/document-ai/docs/layout-parse-quickstart"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Process documents with Gemini layout parser \\_|\\_ Document AI \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/document-ai/docs/layout-parse-chunk",
+        "source_id": "site-docs-root-2",
+        "final_score": 235,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Limitations The following limitations apply: Online processing: Input file size maximum of 20 MB for all file types Maximum of 15 pages per PDF file Batch processing: Maximum single file size of 1 GB for PDF files Maximum of 500 pages per PDF file Layout detection per file type Note: Support for the PDF, HTML, DOCX, PPTX, XLSX, and XLSM file types is GA and is subject to charges.",
+          "Support for the file types HTML, PDF, DOCX, PPTX, XLSX and XLSM is in General Availability and is subject to charges.",
+          "Process documents with Gemini layout parser The Document AI layout parser is an advanced text parsing and document understanding service that converts unstructured content from complex files into highly structured, precise and machine-readable information."
+        ]
+      },
+      {
+        "title": "Supported Files \\_|\\_ Document AI \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/document-ai/docs/file-types",
+        "source_id": "site-docs-reference",
+        "final_score": 169,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Name File Extension(s) MIME Type Portable Document Format (PDF) .pdf application/pdf Graphics Interchange Format (GIF) .gif image/gif Tag Image File Format (TIFF) .tiff , .tif image/tiff Joint Photographic Experts Group (JPEG) .jpg , .jpeg image/jpeg Portable Network Graphics (PNG) .png image/png Bitmap (BMP) .bmp image/bmp WebP .webp image/webp HyperText Markup Language (HTML) .html text/html Microsoft Word Office Open XML (OOXML) .docx application/vnd.openxmlformats-officedocument.wordprocessingml.document Microsoft PowerPoint OOXML .pptx application/vnd.openxmlformats-officedocument.presentationml.presentation Microsoft Excel OOXML .xlsx application/vnd.openxmlformats-officedocument.spreadsheetml.sheet Note that some of these image formats are \"lossy\" (for example, JPEG).",
+          "Reducing file sizes for lossy formats may result in a degradation of image quality and accuracy of results from Document AI.",
+          "For information about file size and page limits, refer to the Quotas and Limits page."
+        ]
+      },
+      {
+        "title": "Layout parser Quickstart \\_|\\_ Document AI \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/document-ai/docs/layout-parse-quickstart",
+        "source_id": "site-docs-root",
+        "final_score": 162,
+        "relevance": "",
+        "evidence_snippets": [
+          "HTTP method and URL: POST https:// LOCATION -documentai.googleapis.com/v1beta3/projects/ PROJECT ID /locations/ LOCATION /processors/ PROCESSOR ID /processorVersions/ pretrained-layout-parser-v1.5-2025-08-25 :process Request JSON body: { \"gcsDocument\": { \"gcsUri\": \" GCS FILE PATH \", \"mimeType\": \" MIME TYPE \" }, \"processOptions\": { \"layoutConfig\": { \"enableTableAnnotation\": \"true\", \"enableImageAnnotation\": \"true\", \"chunkingConfig\": { \"chunkSize\": \" CHUNK SIZE \", \"includeAncestorHeadings\": \" INCLUDE ANCESTOR HEADINGS \", } } } } To send your request, choose one of these options: curl Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI .",
+          "ProcessRequest ( name = name , gcs document = gcs document , process options = process options , ) Process the document result = client . process document ( request = request ) document = result . document print ( f \"Document processing complete. \\n \" ) print ( \"--- RAG-Ready Chunks (with context) ---\" ) for i , chunk in enumerate ( document . chunked document . chunks ): print ( f \" \\n --- Chunk {i} ---\" ) Print the chunk's content print ( f \"Text: {chunk.content}\" ) return result Batch process documents with layout parser Use the following procedure to parse and chunk multiple documents in a single request.",
+          "Save the request body in a file named request.json , and execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method POST -Headers $headers -ContentType: \"application/json; charset=utf-8\" -InFile request.json ` -Uri \"https:// LOCATION -documentai.googleapis.com/v1beta3/projects/ PROJECT ID /locations/ LOCATION /processors/ PROCESSOR ID /processorVersions/ pretrained-layout-parser-v1.5-2025-08-25 :process\" Select-Object -Expand Content You should receive a successful status code (2xx) and an empty response."
+        ]
+      },
+      {
+        "title": "Form Parser \\_|\\_ Document AI \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/document-ai/docs/form-parser",
+        "source_id": "site-docs-root-2",
+        "final_score": 142,
+        "relevance": "",
+        "evidence_snippets": [
+          "Form Parser can be considered over the other parsers when the use case involves: Dealing with structured forms: It excels at extracting KVPs from well-defined forms that look like conventional forms with labeled blanks to fill in, such as name: .",
+          "In this quickstart, you use the Google Cloud console to set up your Google Cloud project and authorization, create a Form Parser, and then make a request for Document AI to process a PDF form.",
+          "These include: email phone url date time address person organization quantity price id page number Text and layout: Use our latest OCR engine to extract text and layout information."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "chunk.content",
+      "documentai.googleapis.com",
+      "officedocument.presentationml.presentation",
+      "officedocument.spreadsheetml.sheet",
+      "officedocument.wordprocessingml.document",
+      "request.json",
+      "v1.5",
+      "vnd.openxmlformats"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/document-ai/docs/layout-parse-chunk",
+        "https://docs.cloud.google.com/document-ai/docs/file-types",
+        "https://docs.cloud.google.com/document-ai/docs/layout-parse-quickstart",
+        "https://docs.cloud.google.com/document-ai/docs/form-parser"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/document-ai/docs/layout-parse-chunk",
+        "https://docs.cloud.google.com/document-ai/docs/file-types",
+        "https://docs.cloud.google.com/document-ai/docs/layout-parse-quickstart",
+        "https://docs.cloud.google.com/document-ai/docs/form-parser"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/document-ai/docs/layout-parse-chunk",
+        "https://docs.cloud.google.com/document-ai/docs/file-types",
+        "https://docs.cloud.google.com/document-ai/docs/layout-parse-quickstart",
+        "https://docs.cloud.google.com/document-ai/docs/form-parser"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/document-ai/docs/layout-parse-chunk",
+        "https://docs.cloud.google.com/document-ai/docs/file-types",
+        "https://docs.cloud.google.com/document-ai/docs/layout-parse-quickstart",
+        "https://docs.cloud.google.com/document-ai/docs/form-parser"
+      ]
+    }
+  ]
+}

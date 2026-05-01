@@ -1,0 +1,96 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:45.094Z",
+  "source_step08_card": "data/step-08/current/products/places-sdk-for-android/card.json",
+  "product_name": "Places SDK for Android",
+  "product_slug": "places-sdk-for-android",
+  "feature_name": "Search Along Route",
+  "feature_slug": "search-along-route",
+  "summary": "Search Along Route lets you search for places along predefined routes and calculate routing summaries to those places.",
+  "extended_definition": "Search Along Route lets you search for places along predefined routes and calculate routing summaries to those places.",
+  "lifecycle": {
+    "latest_feature_date": "2024-11-12",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/maps/documentation/places/android-sdk/overview",
+      "https://developers.google.com/maps/documentation/places/android-sdk/routing-summary-sar",
+      "https://developers.google.com/maps/documentation/places/android-sdk/sar-overview",
+      "https://developers.google.com/maps/documentation/places/android-sdk/search-along-route"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Places SDK for Android \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/maps/documentation/places/android-sdk/search-along-route",
+        "source_id": "site-docs-root",
+        "final_score": 273,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "SearchAlongRouteParameters searchAlongRouteParameters = SearchAlongRouteParameters . builder () . setPolyline ( encodedPolyline ) . build (); // Use the builder to create a SearchByTextRequest object and pass the search along route and routing parameters. final SearchByTextRequest searchByTextRequest = SearchByTextRequest . builder ( \"Spicy Vegetarian Food\" , placeFields ) . setMaxResultCount ( 10 ) . setRoutingParameters ( routingParameters ) . setSearchAlongRouteParameters ( searchAlongRouteParameters ) . build (); // Call PlacesClient.searchByText() to perform the search. // Define a response handler to process the returned List of Place objects. placesClient . searchByText ( searchByTextRequest ) . addOnSuccessListener ( response - > { List<Place> places = response . getPlaces (); }); Note: Because search along route returns places with minimal detour times from origin to destination, in cases where the route origin and destination are the same or close to one another, search along route may not return any results.",
+          "SearchAlongRouteParameters searchAlongRouteParameters = SearchAlongRouteParameters . builder () . setPolyline ( encodedPolyline ) . build (); // Use the builder to create a SearchByTextRequest object and pass the search along route parameters. final SearchByTextRequest searchByTextRequest = SearchByTextRequest . builder ( \"Spicy Vegetarian Food\" , placeFields ) . setMaxResultCount ( 10 ) . setSearchAlongRouteParameters ( searchAlongRouteParameters ) . build (); // Call PlacesClient.searchByText() to perform the search. // Define a response handler to process the returned List of Place objects. placesClient . searchByText ( searchByTextRequest ) . addOnSuccessListener ( response - > { List<Place> places = response . getPlaces (); }); The SearchByTextResponse class represents the response from a search request.",
+          "For example, you might already be halfway along the route before you perform the search."
+        ]
+      },
+      {
+        "title": "Places SDK for Android \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/maps/documentation/places/android-sdk/sar-overview",
+        "source_id": "site-docs-root",
+        "final_score": 255,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For example, consider the route from the origin, referred to as a waypoint in the Routes API, to the destination as calculated by the Routes API: When you search along the route, the search is biased to return places near the route with minimal detour times from the origin to the destination.",
+          "Overview of search along route Search along route features are available in the following Places (New) APIs: Text Search (New) only: Search for places along a predefined trip route.",
+          "Text Search (New) lets you use this calculated route to perform a search along a route ."
+        ]
+      },
+      {
+        "title": "Places SDK for Android \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/maps/documentation/places/android-sdk/routing-summary-sar",
+        "source_id": "site-docs-root",
+        "final_score": 239,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "SearchAlongRouteParameters searchAlongRouteParameters = SearchAlongRouteParameters . builder () . setPolyline ( encodedPolyline ) . build (); // Use the builder to create a SearchByTextRequest object and pass the search along route parameters. final SearchByTextRequest searchByTextRequest = SearchByTextRequest . builder ( \"Spicy Vegetarian Food\" , placeFields ) . setMaxResultCount ( 5 ) . setRoutingParameters ( routingParameters ) . setSearchAlongRouteParameters ( searchAlongRouteParameters ) . setRoutingSummariesIncluded ( true ) . build (); // Call PlacesClient.searchByText() to perform the search. // Define a response handler to process the returned List of Place objects. placesClient . searchByText ( searchByTextRequest ) . addOnSuccessListener ( response - > { List<Place> places = response . getPlaces (); List<RoutingSummary> routingSummaries = result . getRoutingSummaries (); List<Leg> legs = routingSummaries . get ( 0 ). getLegs (); Duration duration = legs . get ( 0 ). getDuration (); }); The following image shows a map that contains the route polyline, the new origin (light-blue pin), and the places in the search results (green pins).",
+          "SearchAlongRouteParameters searchAlongRouteParameters = SearchAlongRouteParameters . builder () . setPolyline ( encodedPolyline ) . build (); // Use the builder to create a SearchByTextRequest object and pass the search along route parameters. final SearchByTextRequest searchByTextRequest = SearchByTextRequest . builder ( \"Spicy Vegetarian Food\" , placeFields ) . setMaxResultCount ( 10 ) . setSearchAlongRouteParameters ( searchAlongRouteParameters ) . setRoutingSummariesIncluded ( true ) . build (); // Call PlacesClient.searchByText() to perform the search. // Define a response handler to process the returned List of Place objects. placesClient . searchByText ( searchByTextRequest ) . addOnSuccessListener ( response - > { List<Place> places = response . getPlaces (); List<RoutingSummary> routingSummaries = response . getRoutingSummaries (); List<Leg> legs = routingSummaries . get ( 0 ). getLegs (); Duration duration = legs . get ( 0 ). getDuration (); }); The response contains objects that include lists of the requested places fields and routing summaries containing the duration and distance to travel to each place.",
+          "By default, Text Search (New) performs the search along the entire route: // Define the route polyline object using the route string."
+        ]
+      },
+      {
+        "title": "Overview \\_|\\_ Places SDK for Android \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/maps/documentation/places/android-sdk/overview",
+        "source_id": "site-docs-reference",
+        "final_score": 192,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Introduction The Places SDK for Android lets you build location-aware apps that respond contextually to the local businesses and other places near the user's device.",
+          "Before using the SDK, you need a project with a billing account and the Places API enabled, along with adhering to Google Maps Platform Terms of Service.",
+          "Home Products Google Maps Platform Documentation Android Places SDK for Android Guides Send feedback Overview Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "developers.google.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": []
+}

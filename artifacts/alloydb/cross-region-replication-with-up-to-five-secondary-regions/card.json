@@ -1,0 +1,134 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:12.801Z",
+  "source_step08_card": "data/step-08/current/products/alloydb/card.json",
+  "product_name": "AlloyDB",
+  "product_slug": "alloydb",
+  "feature_name": "Cross-region replication with up to five secondary regions",
+  "feature_slug": "cross-region-replication-with-up-to-five-secondary-regions",
+  "summary": "AlloyDB cross-region replication supports up to five secondary regions for stronger disaster recovery and geographically distributed workloads.",
+  "extended_definition": "AlloyDB cross-region replication supports up to five secondary regions for stronger disaster recovery and geographically distributed workloads.",
+  "lifecycle": {
+    "latest_feature_date": "2025-02-27",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/alloydb/docs/cluster-create",
+      "https://docs.cloud.google.com/alloydb/docs/overview",
+      "https://docs.cloud.google.com/alloydb/docs/reference/mcp/tools_list/get_cluster"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "AlloyDB overview \\_|\\_ AlloyDB for PostgreSQL \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/alloydb/docs/overview",
+        "source_id": "site-api-reference",
+        "final_score": 114,
+        "relevance": "",
+        "evidence_snippets": [
+          "As a further method of disaster recovery, you can achieve cross-region replication by creating secondary clusters in separate Google Cloud regions.",
+          "For more information, see About cross-region replication .",
+          "The following diagram illustrates the AlloyDB resource hierarchy, featuring a cluster scaled with a primary instance and multiple load-balanced read pool instances: Cluster: a top-level resource that acts as a logical container for your databases, logs, and other metadata within a region."
+        ]
+      },
+      {
+        "title": "\"Create a cluster and its primary instance \\_|\\_ AlloyDB for PostgreSQL \\_\\",
+        "url": "https://docs.cloud.google.com/alloydb/docs/cluster-create",
+        "source_id": "site-docs-reference-2",
+        "final_score": 94,
+        "relevance": "",
+        "evidence_snippets": [
+          "If you want to create secondary clusters that automatically track and replicate data changes made in their source clusters, see About cross-region replication .",
+          "You can use curl to execute the request, as shown in the following example: curl -X POST -H \"Authorization: Bearer $(gcloud auth print-access-token)\" -H \"Content-Type: application/json\" https://alloydb.googleapis.com/v1alpha/projects/ PROJECT ID /locations/ LOCATION ID /clusters/ CLUSTER ID /instances?instance id= INSTANCE ID -d @instance request.json Clone an active cluster To create a clone of an active cluster, containing a copy of all the source cluster's data and running in the same region, perform a point-in-time recovery on that cluster .",
+          "Private services access gcloud alloydb clusters create CLUSTER ID \\ --database-version = POSTGRES VERSION \\ --password = PASSWORD \\ --region = REGION ID \\ --project = PROJECT ID \\ --network = NETWORK Private Service Connect gcloud alloydb clusters create CLUSTER ID \\ --database-version = POSTGRES VERSION \\ --password = PASSWORD \\ --region = REGION ID \\ --project = PROJECT ID \\ --enable-private-service-connect Replace the following: CLUSTER ID : the ID of the cluster that you are creating."
+        ]
+      },
+      {
+        "title": "\"MCP Tools Reference: alloydb \\_|\\_ AlloyDB for PostgreSQL \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/alloydb/docs/reference/mcp/tools_list/get_cluster",
+        "source_id": "site-api-reference",
+        "final_score": 93,
+        "relevance": "",
+        "evidence_snippets": [
+          "Continuous backup properties for this cluster. secondaryConfig object ( SecondaryConfig ) Cross Region replication config specific to SECONDARY cluster. primaryConfig object ( PrimaryConfig ) Output only.",
+          "Cross Region replication config specific to PRIMARY cluster. satisfiesPzs boolean Output only.",
+          "SecondaryConfig JSON representation { \"primaryClusterName\" : string } Fields primaryClusterName string The name of the primary cluster name with the format: projects/{project}/locations/{region}/clusters/{cluster id} PrimaryConfig JSON representation { \"secondaryClusterNames\" : [ string ] } Fields secondaryClusterNames[] string Output only."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "alloydb.googleapis.com",
+      "projects.locations.clusters",
+      "request.json"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/overview",
+        "https://docs.cloud.google.com/alloydb/docs/cluster-create",
+        "https://docs.cloud.google.com/alloydb/docs/reference/mcp/tools_list/get_cluster"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/overview",
+        "https://docs.cloud.google.com/alloydb/docs/cluster-create",
+        "https://docs.cloud.google.com/alloydb/docs/reference/mcp/tools_list/get_cluster"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/overview",
+        "https://docs.cloud.google.com/alloydb/docs/cluster-create",
+        "https://docs.cloud.google.com/alloydb/docs/reference/mcp/tools_list/get_cluster"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/overview",
+        "https://docs.cloud.google.com/alloydb/docs/cluster-create",
+        "https://docs.cloud.google.com/alloydb/docs/reference/mcp/tools_list/get_cluster"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/overview",
+        "https://docs.cloud.google.com/alloydb/docs/cluster-create",
+        "https://docs.cloud.google.com/alloydb/docs/reference/mcp/tools_list/get_cluster"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/overview",
+        "https://docs.cloud.google.com/alloydb/docs/cluster-create",
+        "https://docs.cloud.google.com/alloydb/docs/reference/mcp/tools_list/get_cluster"
+      ]
+    }
+  ]
+}

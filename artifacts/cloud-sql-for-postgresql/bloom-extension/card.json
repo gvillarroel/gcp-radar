@@ -1,0 +1,158 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:27.301Z",
+  "source_step08_card": "data/step-08/current/products/cloud-sql-for-postgresql/card.json",
+  "product_name": "Cloud SQL for PostgreSQL",
+  "product_slug": "cloud-sql-for-postgresql",
+  "feature_name": "bloom extension",
+  "feature_slug": "bloom-extension",
+  "summary": "The bloom extension provides access methods for indexes based on Bloom filters.",
+  "extended_definition": "The bloom extension provides access methods for indexes based on Bloom filters.",
+  "lifecycle": {
+    "latest_feature_date": "2024-02-07",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/sql/docs/postgres/build-context-gemini-cli",
+      "https://docs.cloud.google.com/sql/docs/postgres/build-llm-powered-applications-using-llamaindex",
+      "https://docs.cloud.google.com/sql/docs/postgres/troubleshooting"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Troubleshoot \\_|\\_ Cloud SQL for PostgreSQL \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/sql/docs/postgres/troubleshooting",
+        "source_id": "site-docs-root",
+        "final_score": 113,
+        "relevance": "",
+        "evidence_snippets": [
+          "Execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method GET -Headers $headers ` -Uri \"https://compute.googleapis.com/compute/v1/projects/ PROJECT ID /regions/ REGION NAME /forwardingRules/ ENDPOINT NAME \" Select-Object -Expand Content You should receive a JSON response similar to the following: { \"kind\": \"compute#forwardingRule\", \"id\": \" ENDPOINT ID \", \"creationTimestamp\": \"2024-05-09T12:03:21.383-07:00\", \"name\": \" ENDPOINT NAME \", \"region\": \"https://www.googleapis.com/compute/v1/projects/ PROJECT ID /regions/ REGION NAME \", \"IPAddress\": \" IP ADDRESS \", \"target\": \"https://www.googleapis.com/compute/v1/projects/ PROJECT ID /regions/ REGION NAME /serviceAttachments/ SERVICE ATTACHMENT NAME \", \"selfLink\": \"https://www.googleapis.com/compute/v1/projects/ PROJECT ID /regions/ REGION NAME /forwardingRules/ ENDPOINT NAME \", \"network\": \"https://www.googleapis.com/compute/v1/projects/ PROJECT ID /global/networks/default\", \"serviceDirectoryRegistrations\": [ { \"namespace\": \"goog-psc-default\" } ], \"networkTier\": \"PREMIUM\", \"labelFingerprint\": \" LABEL FINGERPRINT ID \", \"fingerprint\": \" FINGERPRINT ID \", \"pscConnectionId\": \" CONNECTION ID \", \"pscConnectionStatus\": \"ACCEPTED\", \"allowPscGlobalAccess\": true } Verify that the status of the endpoint is ACCEPTED .",
+          "From a terminal, connect to your database: gcloud sql connect INSTANCE NAME Run this command to create the extension: CREATE EXTENSION pgaudit ; Exit the database, and from a terminal run the following command: gcloud sql instances patch INSTANCE NAME \\ --database-flags = cloudsql.enable pgaudit = on,pgaudit.log = all Manage instances Issue Troubleshooting You want to find out what queries are running now.",
+          "Execute the following command: curl -X GET \\ -H \"Authorization: Bearer $(gcloud auth print-access-token)\" \\ \"https://compute.googleapis.com/compute/v1/projects/ PROJECT ID /regions/ REGION NAME /forwardingRules/ ENDPOINT NAME \" PowerShell (Windows) Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login ."
+        ]
+      },
+      {
+        "title": "\"Build context sets using Gemini CLI \\_|\\_ Cloud SQL for PostgreSQL \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/sql/docs/postgres/build-context-gemini-cli",
+        "source_id": "site-iam-reference",
+        "final_score": 101,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To auto-generate bulk templates, perform the following steps: Run the /generate bulk templates command: /generate bulk templates Based on your database schema, the template-based SQL generation takes you through a series of questions related to verifying the database information and granting permissions to access the database schema.",
+          "Install the DB Context Enrichment MCP extension The DB Context Enrichment extension provides a guided, interactive workflow to generate structured NL2SQL context from your database schemas.",
+          "If you skip adding additional value indexes, the template-based SQL generation moves to the next step."
+        ]
+      },
+      {
+        "title": "\"Build LLM-powered applications using LlamaIndex \\_|\\_ Cloud SQL for PostgreSQL\\",
+        "url": "https://docs.cloud.google.com/sql/docs/postgres/build-llm-powered-applications-using-llamaindex",
+        "source_id": "site-iam-reference",
+        "final_score": 96,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The Document Reader interface provides methods to load data from a source as Documents .",
+          "Store documents and indexes The Cloud SQL for PostgreSQL notebook for Document Stores shows you how to use Cloud SQL for PostgreSQL to store documents and indexes using the PostgresDocumentStore and PostgresIndexStore classes.",
+          "You can process personal data for this feature as outlined in the Cloud Data Processing Addendum , subject to the obligations and restrictions described in the agreement under which you access Google Cloud."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cloudsql.enable",
+      "compute.googleapis.com",
+      "pgaudit.log"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/troubleshooting",
+        "https://docs.cloud.google.com/sql/docs/postgres/build-context-gemini-cli",
+        "https://docs.cloud.google.com/sql/docs/postgres/build-llm-powered-applications-using-llamaindex"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/troubleshooting",
+        "https://docs.cloud.google.com/sql/docs/postgres/build-context-gemini-cli",
+        "https://docs.cloud.google.com/sql/docs/postgres/build-llm-powered-applications-using-llamaindex"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/troubleshooting",
+        "https://docs.cloud.google.com/sql/docs/postgres/build-context-gemini-cli",
+        "https://docs.cloud.google.com/sql/docs/postgres/build-llm-powered-applications-using-llamaindex"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/troubleshooting",
+        "https://docs.cloud.google.com/sql/docs/postgres/build-context-gemini-cli",
+        "https://docs.cloud.google.com/sql/docs/postgres/build-llm-powered-applications-using-llamaindex"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/troubleshooting",
+        "https://docs.cloud.google.com/sql/docs/postgres/build-context-gemini-cli",
+        "https://docs.cloud.google.com/sql/docs/postgres/build-llm-powered-applications-using-llamaindex"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/troubleshooting",
+        "https://docs.cloud.google.com/sql/docs/postgres/build-context-gemini-cli",
+        "https://docs.cloud.google.com/sql/docs/postgres/build-llm-powered-applications-using-llamaindex"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/troubleshooting",
+        "https://docs.cloud.google.com/sql/docs/postgres/build-context-gemini-cli",
+        "https://docs.cloud.google.com/sql/docs/postgres/build-llm-powered-applications-using-llamaindex"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/troubleshooting",
+        "https://docs.cloud.google.com/sql/docs/postgres/build-context-gemini-cli",
+        "https://docs.cloud.google.com/sql/docs/postgres/build-llm-powered-applications-using-llamaindex"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/troubleshooting",
+        "https://docs.cloud.google.com/sql/docs/postgres/build-context-gemini-cli",
+        "https://docs.cloud.google.com/sql/docs/postgres/build-llm-powered-applications-using-llamaindex"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,143 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:42.149Z",
+  "source_step08_card": "data/step-08/current/products/integration-connectors/card.json",
+  "product_name": "Integration Connectors",
+  "product_slug": "integration-connectors",
+  "feature_name": "Integration Connectors rate limiting",
+  "feature_slug": "integration-connectors-rate-limiting",
+  "summary": "Integration Connectors supports rate limiting for connection traffic.",
+  "extended_definition": "Integration Connectors supports rate limiting for connection traffic.",
+  "lifecycle": {
+    "latest_feature_date": "2023-09-11",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudsqlformysql/configure",
+      "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudsqlforpostgresql/configure",
+      "https://docs.cloud.google.com/integration-connectors/docs/connectors/couchbase/configure",
+      "https://docs.cloud.google.com/integration-connectors/docs/connectors/db2/configure"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Cloud SQL for PostgreSQL \\_|\\_ Integration Connectors \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudsqlforpostgresql/configure",
+        "source_id": "site-docs-root-2",
+        "final_score": 241,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "By default, Integration Connectors allocates 2 nodes (for better availability) for a connection.",
+          "See also the Perform CRUD operations on a MySQL database tutorial that shows how to create a MySQL connection and use it in an integration to perform read and write operations.",
+          "Use the Cloud SQL for PostgreSQL connection in an integration After you create the connection, it becomes available in both Apigee Integration and Application Integration."
+        ]
+      },
+      {
+        "title": "Cloud SQL for MySQL \\_|\\_ Integration Connectors \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudsqlformysql/configure",
+        "source_id": "site-docs-root-2",
+        "final_score": 237,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "By default, Integration Connectors allocates 2 nodes (for better availability) for a connection.",
+          "Also, see the Perform CRUD operations on a MySQL database tutorial that shows how to create a MySQL connection, and use the connection in an integration to perform read and write operations.",
+          "To create a connection, do the following: In the Cloud console , go to the Integration Connectors > Connections page and then select or create a Google Cloud project."
+        ]
+      },
+      {
+        "title": "Couchbase \\_|\\_ Integration Connectors \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/integration-connectors/docs/connectors/couchbase/configure",
+        "source_id": "site-docs-root-2",
+        "final_score": 227,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "SSL - Certificate connection type Field Name Details Region us-central1 Connector Couchbase Connector Version 1 Connector Name Couchbase-basic-auth-conn Service Account NAME-compute@developer.gserviceaccount.com Verbosity Level 5 Connection node settings: Min/Max number of nodes 2/50 SSL Configuration Enable SSL True Trust Store Private Custom Trust Store A full PEM Certificate (-----BEGIN CERTIFICATE----- MIIChTCCAe4CAQAwDQYJKoZIhv......Qw== -----END CERTIFICATE-----) Secret version 1 Host Address xx.1HOST NAME.cloud.couchbase.com:18xxx Authentication User Password Username username Password password versions 1 vConnection Mode Cloud DNS Server 192.0.2.0 OAuth scheme Basic Analytics Couchbase connection type Field Name Details Region us-central1 Connector Couchbase Connector Version 1 Connector Name Couchbase-basic-auth-Analytics-conn Service Account NAME-compute@developer.gserviceaccount.com Analytics Port 18095 Couchbase Service Analytics Verbosity Level 5 Connection node settings: Min/Max number of nodes 2/50 Host Address xx.1HOST NAME.cloud.couchbase.com:18095 Authentication User Password Username username Password password versions 1 vConnection Mode Cloud DNS Server 192.0.2.0 OAuth scheme Basic Entities, operations, and actions All the Integration Connectors provide a layer of abstraction for the objects of the connected application.",
+          "By default, Integration Connectors allocates 2 nodes (for better availability) for a connection.",
+          "Only takes effect when connecting to Couchbase v7+ and GenerateSchemaFiles is set to OnCreate. use transactions STRING False Specifies whether to use N1QL transactions when executing queries. validate jsonparameters BOOLEAN False Allows the provider to validate that string parameters are valid JSON before sending the query to Couchbase. proxy enabled BOOLEAN False Select this checkbox to configure a proxy server for the connection. proxy auth scheme ENUM False The authentication type to use to authenticate to the ProxyServer proxy."
+        ]
+      },
+      {
+        "title": "IBM Db2 \\_|\\_ Integration Connectors \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/integration-connectors/docs/connectors/db2/configure",
+        "source_id": "site-docs-root-2",
+        "final_score": 227,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "By default, Integration Connectors allocates 2 nodes (for better availability) for a connection.",
+          "To create a connection, do the following: In the Cloud console , go to the Integration Connectors > Connections page and then select or create a Google Cloud project.",
+          "Entities, operations, and actions All the Integration Connectors provide a layer of abstraction for the objects of the connected application."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "developer.gserviceaccount.com",
+      "xx.1HOST"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudsqlforpostgresql/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudsqlformysql/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/couchbase/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/db2/configure"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudsqlforpostgresql/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudsqlformysql/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/couchbase/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/db2/configure"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudsqlforpostgresql/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudsqlformysql/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/couchbase/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/db2/configure"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudsqlforpostgresql/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudsqlformysql/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/couchbase/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/db2/configure"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudsqlforpostgresql/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudsqlformysql/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/couchbase/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/db2/configure"
+      ]
+    }
+  ]
+}

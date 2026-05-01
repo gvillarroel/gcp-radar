@@ -1,0 +1,116 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:18.771Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery",
+  "feature_name": "Data lineage tab",
+  "feature_slug": "data-lineage-tab",
+  "summary": "The Lineage tab in table properties shows how data moves and transforms through BigQuery.",
+  "extended_definition": "The Lineage tab in table properties shows how data moves and transforms through BigQuery.",
+  "lifecycle": {
+    "latest_feature_date": "2023-03-14",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/reference/bq-cli-reference",
+      "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+      "https://docs.cloud.google.com/bigquery/docs/tables"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Create and use tables \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/tables",
+        "source_id": "site-docs-root",
+        "final_score": 108,
+        "relevance": "",
+        "evidence_snippets": [
+          "View table properties print ( \"Got table ' {} . {} . {} '.\" . format ( table . project , table . dataset id , table . table id ) ) print ( \"Table schema: {} \" . format ( table . schema )) print ( \"Table description: {} \" . format ( table . description )) print ( \"Table has {} rows\" . format ( table . num rows )) Get table information using INFORMATION SCHEMA INFORMATION SCHEMA is a series of views that provide access to metadata about datasets, routines, tables, views, jobs, reservations, and streaming data.",
+          "For more information, see Set up authentication for client libraries . import ( \"context\" \"fmt\" \"io\" \"cloud.google.com/go/bigquery\" \"google.golang.org/api/iterator\" ) // queryWithDestination demonstrates saving the results of a query to a specific table by setting the destination // via the API properties. func queryWithDestination ( w io .",
+          "TABLE STORAGE ; The result is similar to the following: +---------------------+ total logical bytes +---------------------+ 971329178274633 +---------------------+ Example 2: The following example shows different storage bytes in GiB at the dataset(s) level for current project."
+        ]
+      },
+      {
+        "title": "bq command-line tool reference \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/reference/bq-cli-reference",
+        "source_id": "site-docs-reference",
+        "final_score": 100,
+        "relevance": "",
+        "evidence_snippets": [
+          "The following example shows a typical approach in Bash, which is to use double quotes to denote the string literals in the query, and then enclose the query itself in single quotes: 'SELECT FROM mydataset.mytable WHERE column1 = \"value\";' If you are copying the query from another location, you must also remove any comments in the query.",
+          "Specify 0 to remove the existing expiration. --description= DESCRIPTION Updates the description of a dataset, table, table snapshot, model, or view. --destination reservation id= RESERVATION ID When used with the --reservation assignment flag, moves an existing reservation assignment to the specified reservation.",
+          "For more information about using the bq update command, see the following: Updating dataset properties Managing tables Updating views Updating labels Working with transfers Updating table snapshot metadata bq version Use the bq version command to display the version number of your bq command-line tool."
+        ]
+      },
+      {
+        "title": "\"Data definition language (DDL) statements in GoogleSQL \\_|\\_ BigQuery \\_\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "source_id": "site-docs-reference",
+        "final_score": 98,
+        "relevance": "",
+        "evidence_snippets": [
+          "Examples The following example sets a new description on a table column called price : ALTER TABLE mydataset . mytable ALTER COLUMN price SET OPTIONS ( description = 'Price per unit' ); The following example sets a new description on a view column called total : ALTER VIEW mydataset . myview ALTER COLUMN total SET OPTIONS ( description = 'Total sales of the product' ); ALTER COLUMN DROP NOT NULL statement Removes a NOT NULL constraint from a column in a table in BigQuery.",
+          "Examples The following example removes the NOT NULL constraint from a column called mycolumn : ALTER TABLE mydataset . mytable ALTER COLUMN mycolumn DROP NOT NULL ALTER COLUMN SET DATA TYPE statement Changes the data type of a column in a table in BigQuery to a less restrictive data type.",
+          "Examples The following example sets the default value of the column mycolumn to the current time: ALTER TABLE mydataset . mytable ALTER COLUMN mycolumn SET DEFAULT CURRENT TIME (); ALTER COLUMN DROP DEFAULT statement Removes the default value assigned to a column."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "mydataset.mytable"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/tables",
+        "https://docs.cloud.google.com/bigquery/docs/reference/bq-cli-reference",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/tables",
+        "https://docs.cloud.google.com/bigquery/docs/reference/bq-cli-reference",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/tables",
+        "https://docs.cloud.google.com/bigquery/docs/reference/bq-cli-reference",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/tables",
+        "https://docs.cloud.google.com/bigquery/docs/reference/bq-cli-reference",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language"
+      ]
+    }
+  ]
+}

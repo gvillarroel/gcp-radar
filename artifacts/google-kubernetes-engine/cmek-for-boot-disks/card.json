@@ -1,0 +1,182 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:39.542Z",
+  "source_step08_card": "data/step-08/current/products/google-kubernetes-engine/card.json",
+  "product_name": "Google Kubernetes Engine",
+  "product_slug": "google-kubernetes-engine",
+  "feature_name": "CMEK for boot disks",
+  "feature_slug": "cmek-for-boot-disks",
+  "summary": "Customer-managed encryption keys can encrypt GKE Autopilot node boot disks.",
+  "extended_definition": "Customer-managed encryption keys can encrypt GKE Autopilot node boot disks.",
+  "lifecycle": {
+    "latest_feature_date": "2021-10-21",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-control-plane-authority",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/encrypt-etcd-control-plane-disks",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/run-your-own-cas-keys"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Encrypt etcd and control plane boot disks \\_|\\_ GKE security \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/encrypt-etcd-control-plane-disks",
+        "source_id": "site-iam-reference",
+        "final_score": 193,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Grant the Cloud KMS CryptoKey Encrypter/Decrypter Via Delegation ( roles/cloudkms.cryptoKeyEncrypterDecrypterViaDelegation ) role on the encryption key for boot disks and etcd disks to the GKE service agent in the cluster project: gcloud kms keys add-iam-policy-binding KCP DISK KEY NAME \\ --location = LOCATION \\ --keyring = KEYRING NAME \\ --member = \"serviceAccount:service- CLUSTER PROJECT NUMBER @container-engine-robot.iam.gserviceaccount.com\" \\ --role = roles/cloudkms.cryptoKeyEncrypterDecrypterViaDelegation \\ --project = KEY PROJECT ID Grant the Cloud KMS Key User role on the encryption keys for boot disks and etcd disks to the GKE service agent in the cluster project for the key rotation: gcloud kms keys add-iam-policy-binding KCP DISK KEY NAME \\ --location = LOCATION \\ --keyring = KEYRING NAME \\ --member = \"serviceAccount:service- CLUSTER PROJECT NUMBER @container-engine-robot.iam.gserviceaccount.com\" \\ --role = roles/container.cloudKmsKeyUser \\ --project = KEY PROJECT ID Grant the Cloud KMS CryptoKey Encrypter ( roles/cloudkms.cryptoKeyEncrypter ) role on the etcd internal backup encryption key to the GKE service agent in the cluster project: gcloud kms keys add-iam-policy-binding ETCD BACKUP KEY NAME \\ --location = LOCATION \\ --keyring = KEYRING NAME \\ --member = \"serviceAccount:service- CLUSTER PROJECT NUMBER @container-engine-robot.iam.gserviceaccount.com\" \\ --role = roles/cloudkms.cryptoKeyEncrypter \\ --project = KEY PROJECT ID Replace ETCD BACKUP KEY NAME with the name of the etcd operational backup encryption key.",
+          "In the output, check that the cluster creation parameters included a key path that corresponds to the key that you set up in Cloud KMS, like in the following example: lines omitted for clarity userManagedKeysConfig: { controlPlaneDiskEncryptionKey: \"projects/ KEY PROJECT ID /locations/ LOCATION /keyRings/ KEY RING NAME /cryptoKeys/ KCP DISK KEY NAME \" gkeopsEtcdBackupEncryptionKey: \"projects/ KEY PROJECT ID /locations/ LOCATION /keyRings/ KEY RING NAME /cryptoKeys/ ETCD BACKUP KEY NAME \" } Use the gcloud CLI to verify keys To use the gcloud CLI to verify the encryption key, do the following: For the disk encryption key, run the following command: gcloud container clusters describe CLUSTER NAME \\ --location = LOCATION \\ --format = \"value(userManagedKeysConfig.controlPlaneDiskEncryptionKey)\" For the etcd internal backup encryption key, run the following command: gcloud container clusters describe CLUSTER NAME \\ --location = LOCATION \\ --format = \"value(userManagedKeysConfig.gkeopsEtcdBackupEncryptionKey)\" Rotate etcd and control plane disk encryption keys Preview — customer-managed credential rotation This feature is subject to the \"Pre-GA Offerings Terms\" in the General Service Terms section of the Service Specific Terms .",
+          "The output is similar to the following: 1234567890 Grant the Cloud KMS CryptoKey Encrypter/Decrypter ( roles/cloudkms.cryptoKeyEncrypterDecrypter ) role on the encryption key for boot disks and etcd disks to the GKE service agent in the cluster project: gcloud kms keys add-iam-policy-binding KCP DISK KEY NAME \\ --location = LOCATION \\ --keyring = KEYRING NAME \\ --member = \"serviceAccount:service- CLUSTER PROJECT NUMBER @container-engine-robot.iam.gserviceaccount.com\" \\ --role = roles/cloudkms.cryptoKeyEncrypterDecrypter \\ --project = KEY PROJECT ID Replace the following: KCP DISK KEY NAME : the name of the disk encryption key."
+        ]
+      },
+      {
+        "title": "\"About GKE control plane authority \\_|\\_ GKE security \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-control-plane-authority",
+        "source_id": "site-iam-reference",
+        "final_score": 168,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "For details, see Use customer-managed encryption keys (CMEK) .",
+          "You can optionally use your own encryption keys that you manage using Cloud KMS to encrypt the following resources: Control plane boot disk : the Compute Engine disk that each control plane VM uses to boot. etcd disk : the Compute Engine disk that's attached to each control plane VM and stores data for etcd instances in the cluster. etcd internal operational backup : the internal Google Cloud backup of etcd that's used for operational purposes like disaster recovery.",
+          "However, to encrypt your control plane boot disks and etcd disks with your own keys, you must create the cluster in one of the following regions: asia-east1 asia-northeast1 asia-southeast1 europe-west1 europe-west4 us-central1 us-central2 us-east1 us-east4 us-east5 us-south1 us-west1 us-west3 us-west4 Note: Separately from GKE control plane authority, you can use Confidential mode for Hyperdisk Balanced for your node disks ."
+        ]
+      },
+      {
+        "title": "\"Run your own certificate authorities and keys in GKE \\_|\\_ Kubernetes Engine\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/run-your-own-cas-keys",
+        "source_id": "site-iam-reference",
+        "final_score": 165,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "To configure the CAs and keys as well as control plane boot disk encryption and etcd encryption, do the following: Perform all of the key configuration steps in Encrypt etcd and control plane boot disks .",
+          "To set up control plane disk encryption with your own keys in addition to configuring your own CAs, create your cluster in one of the following regions: asia-east1 asia-northeast1 asia-southeast1 europe-west1 europe-west4 us-central1 us-central2 us-east1 us-east4 us-east5 us-south1 us-west1 us-west3 us-west4 Note: Separately from GKE control plane authority, you can use Confidential mode for Hyperdisk Balanced for your node disks .",
+          "Note: Before you perform these steps, decide on whether you also want to encrypt your control plane boot disks and etcd disks with keys that you manage."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cloudkms.cryptoKeyEncrypter",
+      "cloudkms.cryptoKeyEncrypterDecrypter",
+      "cloudkms.cryptoKeyEncrypterDecrypterViaDelegation",
+      "container.cloudKmsKeyUser",
+      "container.googleapis.com",
+      "robot.iam.gserviceaccount.com"
+    ],
+    "missing_inventory_roles": [
+      "roles/cloudkms.cryptoKeyEncrypter",
+      "roles/cloudkms.cryptoKeyEncrypterDecrypter",
+      "roles/cloudkms.cryptoKeyEncrypterDecrypterViaDelegation",
+      "roles/container.cloudKmsKeyUser"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/encrypt-etcd-control-plane-disks",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-control-plane-authority",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/run-your-own-cas-keys"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/encrypt-etcd-control-plane-disks",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-control-plane-authority",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/run-your-own-cas-keys"
+      ]
+    },
+    {
+      "capability": "confidential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/encrypt-etcd-control-plane-disks",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-control-plane-authority",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/run-your-own-cas-keys"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/encrypt-etcd-control-plane-disks",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-control-plane-authority",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/run-your-own-cas-keys"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/encrypt-etcd-control-plane-disks",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-control-plane-authority",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/run-your-own-cas-keys"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/encrypt-etcd-control-plane-disks",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-control-plane-authority",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/run-your-own-cas-keys"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/encrypt-etcd-control-plane-disks",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-control-plane-authority",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/run-your-own-cas-keys"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/encrypt-etcd-control-plane-disks",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-control-plane-authority",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/run-your-own-cas-keys"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/encrypt-etcd-control-plane-disks",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-control-plane-authority",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/run-your-own-cas-keys"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/encrypt-etcd-control-plane-disks",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-control-plane-authority",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/run-your-own-cas-keys"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/encrypt-etcd-control-plane-disks",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-control-plane-authority",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/run-your-own-cas-keys"
+      ]
+    }
+  ]
+}

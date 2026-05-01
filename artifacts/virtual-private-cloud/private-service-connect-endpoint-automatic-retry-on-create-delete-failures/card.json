@@ -1,0 +1,178 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:49.581Z",
+  "source_step08_card": "data/step-08/current/products/virtual-private-cloud/card.json",
+  "product_name": "Virtual Private Cloud",
+  "product_slug": "virtual-private-cloud",
+  "feature_name": "Private Service Connect endpoint automatic retry on create/delete failures",
+  "feature_slug": "private-service-connect-endpoint-automatic-retry-on-create-delete-failures",
+  "summary": "Private Service Connect endpoint operations now automatically retry create or delete actions when they fail due to errors.",
+  "extended_definition": "Private Service Connect endpoint operations now automatically retry create or delete actions when they fail due to errors.",
+  "lifecycle": {
+    "latest_feature_date": "2025-06-27",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/how-to/running-connectivity-tests",
+      "https://docs.cloud.google.com/vpc/docs/about-private-service-connect-health",
+      "https://docs.cloud.google.com/vpc/docs/configure-private-service-connect-health-failover",
+      "https://docs.cloud.google.com/vpc/docs/configure-private-service-connect-producer"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Configure Private Service Connect health for automatic cross-region failover\\",
+        "url": "https://docs.cloud.google.com/vpc/docs/configure-private-service-connect-health-failover",
+        "source_id": "site-docs-root-2",
+        "final_score": 332,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To see the exact permissions that are required, expand the Required permissions section: Required permissions The following permissions are required to configure Private Service Connect health: compute.regionHealthAggregationPolicies.list compute.regionHealthAggregationPolicies.get compute.regionHealthAggregationPolicies.create compute.regionHealthAggregationPolicies.update compute.regionHealthAggregationPolicies.delete compute.regionHealthSources.list compute.regionHealthSources.get compute.regionHealthSources.create compute.regionHealthSources.update compute.regionHealthSources.delete compute.regionCompositeHealthChecks.list compute.regionCompositeHealthChecks.get compute.regionCompositeHealthChecks.create compute.regionCompositeHealthChecks.update compute.regionCompositeHealthChecks.delete You might also be able to get these permissions with custom roles or other predefined roles .",
+          "Configure Private Service Connect health for automatic cross-region failover Preview This feature is subject to the \"Pre-GA Offerings Terms\" in the General Service Terms section of the Service Specific Terms .",
+          "Configure Private Service Connect health to support automatic cross-region failover The following sections describe how to configure Private Service Connect health for automatic cross-region failover."
+        ]
+      },
+      {
+        "title": "\"Create and run Connectivity Tests \\_|\\_ Network Intelligence Center - Connectivity\\",
+        "url": "https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/how-to/running-connectivity-tests",
+        "source_id": "site-iam-reference",
+        "final_score": 308,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Python The following example code creates a test between a VM instance and a Private Service Connect endpoint.",
+          "These parameters are automatically selected based on your source and destination IP addresses. resource \"google network management connectivity test\" \"default\" { name = \"conn-test-addr\" source { ip address = google compute address.source addr.address project id = google compute address.source addr.project network = google compute network.default.id network type = \"GCP NETWORK\" } destination { ip address = google compute address.dest addr.address project id = google compute address.dest addr.project network = google compute network.default.id port = \"80\" } protocol = \"UDP\" } resource \"google compute network\" \"default\" { name = \"connectivity-vpc\" auto create subnetworks = false } resource \"google compute subnetwork\" \"default\" { name = \"connectivity-vpc-subnet\" ip cidr range = \"10.0.0.0/8\" region = \"us-central1\" network = google compute network.default.id } resource \"google compute firewall\" \"default\" { name = \"allow-incoming-all\" network = google compute network.default.name allow { protocol = \"all\" } source ranges = [\"0.0.0.0/0\"] } resource \"google compute address\" \"source addr\" { name = \"src-addr\" subnetwork = google compute subnetwork.default.id address type = \"INTERNAL\" address = \"10.0.0.42\" region = \"us-central1\" } resource \"google compute address\" \"dest addr\" { name = \"dest-addr\" subnetwork = google compute subnetwork.default.id address type = \"INTERNAL\" address = \"10.0.0.43\" region = \"us-central1\" } resource \"google compute instance\" \"source\" { name = \"source-vm1\" machine type = \"e2-medium\" zone = \"us-central1-a\" boot disk { initialize params { image = data.google compute image.default.id } } network interface { network = google compute network.default.id subnetwork = google compute subnetwork.default.id network ip = \"10.0.0.42\" access config { } } } resource \"google compute instance\" \"destination\" { name = \"dest-vm1\" machine type = \"e2-medium\" zone = \"us-central1-a\" boot disk { initialize params { image = data.google compute image.default.id } } network interface { network = google compute network.default.id subnetwork = google compute subnetwork.default.id network ip = \"10.0.0.43\" access config { } } } data \"google compute image\" \"default\" { family = \"debian-11\" project = \"debian-cloud\" } API This example tests the ability to ping from the source IP address to the destination IP address.",
+          "For more information, see create in the Google API Client Library for Python. test input = { \"source\": { \"instance\": \" SOURCE INSTANCE \", \"ipAddress\": \" SOURCE IP ADDRESS \", \"projectId\": \" SOURCE INSTANCE PROJECT ID \" }, \"destination\": { \" DESTINATION RESOURCE FIELD \": \" DESTINATION ENDPOINT \", \"port\": \" DESTINATION PORT \" }, \"protocol\": \" PROTOCOL \", } request = api.projects().locations().global ().connectivityTests().create( parent=\"projects/ PROJECT ID /locations/global\", testId=\" TEST ID \", body=test input) print(json.dumps(request.execute(), indent=4)) Replace the following: SOURCE INSTANCE : the URI for the source VM—for example, projects/myproject/zones/us-east1-b/instances/instance-1 ."
+        ]
+      },
+      {
+        "title": "\"Publish services by using Private Service Connect \\_|\\_ Virtual Private\\",
+        "url": "https://docs.cloud.google.com/vpc/docs/configure-private-service-connect-producer",
+        "source_id": "site-docs-root-2",
+        "final_score": 308,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "When you run terraform apply after upgrading to versions 4.76.0 through 4.81.x, Terraform might unintentionally delete and recreate the service attachments and close existing Private Service Connect connections.",
+          "Recreated service attachments don't automatically re-establish Private Service Connect connections.",
+          "To create an IPv4-only Private Service Connect subnet, do the following: POST https://compute.googleapis.com/compute/v1/projects/ PROJECT ID /regions/ REGION /subnetworks { \"ipCidrRange\": \" SUBNET RANGE \", \"name\": \" SUBNET NAME \", \"network\": \"projects/ PROJECT ID /global/networks/ NETWORK NAME \", \"purpose\": \"PRIVATE SERVICE CONNECT\" } To create a dual-stack Private Service Connect subnet, do the following: POST https://compute.googleapis.com/compute/v1/projects/ PROJECT ID /regions/ REGION /subnetworks { \"ipCidrRange\": \" SUBNET RANGE \", \"name\": \" SUBNET NAME \", \"network\": \"projects/ PROJECT ID /global/networks/ NETWORK NAME \", \"purpose\": \"PRIVATE SERVICE CONNECT\", \"stackType\": \"IPV4 IPV6\", \"ipv6AccessType\": \"INTERNAL\" } To create an IPv6-only Private Service Connect subnet, do the following: POST https://compute.googleapis.com/compute/v1/projects/ PROJECT ID /regions/ REGION /subnetworks { \"name\": \" SUBNET NAME \", \"network\": \"projects/ PROJECT ID /global/networks/ NETWORK NAME \", \"purpose\": \"PRIVATE SERVICE CONNECT\", \"stackType\": \"IPV6 ONLY\", \"ipv6AccessType\": \"INTERNAL\" } Replace the following: PROJECT ID : the project for the subnet."
+        ]
+      },
+      {
+        "title": "\"About Private Service Connect health for automatic cross-region failover\\",
+        "url": "https://docs.cloud.google.com/vpc/docs/about-private-service-connect-health",
+        "source_id": "site-docs-root-2",
+        "final_score": 288,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Published service instances must have one of the following backend types: Network endpoint group of type GCE VM IP PORT Network endpoint group of type GCE VM IP Managed or unmanaged instance group The published service instances must be accessed by Private Service Connect backends that are based on load balancers that supports Private Service Connect health .",
+          "Deployment requirements To use Private Service Connect health for automatic failover, both the service producer and the service consumer must configure their resources for a multi-region deployment, as described in this section.",
+          "Accessing a multi-region service with a supported global or cross-regional load balancer lets the service consumer take advantage of Private Service Connect health for automatic cross-region failover (click to enlarge)."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "addr.address",
+      "addr.project",
+      "address.dest",
+      "address.source",
+      "api.projects",
+      "compute.googleapis.com",
+      "compute.regionCompositeHealthChecks.create",
+      "compute.regionCompositeHealthChecks.delete",
+      "compute.regionCompositeHealthChecks.get",
+      "compute.regionCompositeHealthChecks.list",
+      "compute.regionCompositeHealthChecks.update",
+      "compute.regionHealthAggregationPolicies.create",
+      "compute.regionHealthAggregationPolicies.delete",
+      "compute.regionHealthAggregationPolicies.get",
+      "compute.regionHealthAggregationPolicies.list",
+      "compute.regionHealthAggregationPolicies.update",
+      "compute.regionHealthSources.create",
+      "compute.regionHealthSources.delete",
+      "compute.regionHealthSources.get",
+      "compute.regionHealthSources.list",
+      "compute.regionHealthSources.update",
+      "data.google",
+      "image.default.id",
+      "json.dumps",
+      "network.default.id",
+      "network.default.name",
+      "request.execute",
+      "subnetwork.default.id"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/configure-private-service-connect-health-failover",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/how-to/running-connectivity-tests",
+        "https://docs.cloud.google.com/vpc/docs/configure-private-service-connect-producer",
+        "https://docs.cloud.google.com/vpc/docs/about-private-service-connect-health"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/configure-private-service-connect-health-failover",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/how-to/running-connectivity-tests",
+        "https://docs.cloud.google.com/vpc/docs/configure-private-service-connect-producer",
+        "https://docs.cloud.google.com/vpc/docs/about-private-service-connect-health"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/configure-private-service-connect-health-failover",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/how-to/running-connectivity-tests",
+        "https://docs.cloud.google.com/vpc/docs/configure-private-service-connect-producer",
+        "https://docs.cloud.google.com/vpc/docs/about-private-service-connect-health"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/configure-private-service-connect-health-failover",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/how-to/running-connectivity-tests",
+        "https://docs.cloud.google.com/vpc/docs/configure-private-service-connect-producer",
+        "https://docs.cloud.google.com/vpc/docs/about-private-service-connect-health"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/configure-private-service-connect-health-failover",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/how-to/running-connectivity-tests",
+        "https://docs.cloud.google.com/vpc/docs/configure-private-service-connect-producer",
+        "https://docs.cloud.google.com/vpc/docs/about-private-service-connect-health"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/configure-private-service-connect-health-failover",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/how-to/running-connectivity-tests",
+        "https://docs.cloud.google.com/vpc/docs/configure-private-service-connect-producer",
+        "https://docs.cloud.google.com/vpc/docs/about-private-service-connect-health"
+      ]
+    }
+  ]
+}

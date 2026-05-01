@@ -1,0 +1,126 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:14.465Z",
+  "source_step08_card": "data/step-08/current/products/apigee-integrated-portal/card.json",
+  "product_name": "Apigee Integrated Portal",
+  "product_slug": "apigee-integrated-portal",
+  "feature_name": "AsyncAPI publishing in Integrated Portal",
+  "feature_slug": "asyncapi-publishing-in-integrated-portal",
+  "summary": "Adds support for publishing APIs from AsyncAPI documents so asynchronous API documentation can be rendered in the portal.",
+  "extended_definition": "Adds support for publishing APIs from AsyncAPI documents so asynchronous API documentation can be rendered in the portal.",
+  "lifecycle": {
+    "latest_feature_date": "2026-03-05",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/apigee/docs/api-platform/publish/portal/publish-apis",
+      "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/add-spike-arrest",
+      "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/view-with-trace"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Publishing your APIs \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-platform/publish/portal/publish-apis",
+        "source_id": "site-docs-reference",
+        "final_score": 128,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Publishing an AsyncAPI document renders documentation that allows developers to browse the documentation for asynchronous APIs to understand its channels and payloads.",
+          "Response payload: { \" status \":\" success \" , \" message \":\" Api documentation updated \" , \" requestId \":\"645138278\" , \" data \": { \" graphqlDocumentation \": { \" schema \": { \" displayName \": \" Hello World 2\" }, \" endpointUri \": \" https : // demo . google . com / graphql \" } } } AsyncAPI curl -X PATCH \"https://apigee.googleapis.com/v1/organizations/ ORG NAME /sites/ SITE ID /apidocs/ API DOC /documentation\" \\ -H \"Authorization: Bearer $(gcloud auth print-access-token)\" \\ -H \"Content-Type: application/json\" \\ -d '{\"asyncApiDocumentation\": { \"spec\":{ \"displayName\":\" DISPLAY NAME \", \"contents\":\" CONTENTS \"} } }' Replace the following: ORG NAME with the name of the organization.",
+          "Response payload: { \"status\": \"success\", \"message\": \"ApiDoc updated\", \"requestId\": \"197181831\", \"data\": { \"siteId\": \"my-org-myportal\", \"title\": \"Hello World 2\", \"description\": \"Simple hello world example.\", \"modified\": \"1698884328000\", \"anonAllowed\": true, \"imageUrl\": \"/files/book-tree.jpg\", \"id\": \"408567\", \"requireCallbackUrl\": true, \"categoryIds\": [ \"88fbfd1d-9300-49f7-bfc2-531ade4c63d4\", \"630c4cf9-109a-48b0-98cc-ef4c12ae4474\" ], \"published\": PUBLISHED TRUE OR FALSE , \"apiProductName\": \"Hello World 2\" } } Publish or unpublish an API Publishing is the process of making your APIs available to app developers for consumption."
+        ]
+      },
+      {
+        "title": "View message data with the Debug view \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/view-with-trace",
+        "source_id": "site-docs-reference",
+        "final_score": 74,
+        "relevance": "WEAK",
+        "evidence_snippets": []
+      },
+      {
+        "title": "Add the SpikeArrest policy to your API \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/add-spike-arrest",
+        "source_id": "site-docs-reference",
+        "final_score": 70,
+        "relevance": "WEAK",
+        "evidence_snippets": []
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "apigee.googleapis.com",
+      "organizations.sites.apidocs.updateDocumentation",
+      "tree.jpg"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/publish/portal/publish-apis",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/view-with-trace",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/add-spike-arrest"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/publish/portal/publish-apis",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/view-with-trace",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/add-spike-arrest"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/publish/portal/publish-apis",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/view-with-trace",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/add-spike-arrest"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/publish/portal/publish-apis",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/view-with-trace",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/add-spike-arrest"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/publish/portal/publish-apis",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/view-with-trace",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/add-spike-arrest"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/publish/portal/publish-apis",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/view-with-trace",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/add-spike-arrest"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,194 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:24.398Z",
+  "source_step08_card": "data/step-08/current/products/cloud-logging/card.json",
+  "product_name": "Cloud Logging",
+  "product_slug": "cloud-logging",
+  "feature_name": "Real-Time Log Streaming in Logs Explorer",
+  "feature_slug": "real-time-log-streaming-in-logs-explorer",
+  "summary": "Logs Explorer can stream log entries in real time as Cloud Logging ingests them.",
+  "extended_definition": "Logs Explorer can stream log entries in real time as Cloud Logging ingests them.",
+  "lifecycle": {
+    "latest_feature_date": "2020-12-07",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/logging/docs/agent/logging/configuration",
+      "https://docs.cloud.google.com/logging/docs/api/platform-logs",
+      "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Google Cloud platform logs \\_|\\_ Cloud Logging \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/logging/docs/api/platform-logs",
+        "source_id": "site-docs-reference",
+        "final_score": 161,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "CONSUMER PROJECT CONSUMER PROJECT NUMBER CONTAINER ID CONTAINER ID FULL CONTAINER LOG ORDINAL CONTAINER NAME CONTAINER TAG IMAGE NAME NODE ID DATABASE VERSION SYSLOG FACILITY SYSLOG IDENTIFIER SYSLOG TIMESTAMP BOOT ID CAP EFFECTIVE CMDLINE COMM EXE GID HOSTNAME MACHINE ID PID RUNTIME SCOPE SOURCE REALTIME TIMESTAMP STREAM ID SYSTEMD CGROUP SYSTEMD INVOCATION ID SYSTEMD SLICE SYSTEMD UNIT TRANSPORT UID MONOTONIC TIMESTAMP REALTIME TIMESTAMP CONTAINER LOG EPOCH SEQNUM SEQNUM ID CODE LINE CODE FILE JOB ID TID CODE FUNCTION SYSLOG RAW INVOCATION ID UNIT ERROR INFO WARNING NOTICE ALERT alloydb.googleapis.com%2Fpostgresinternal alloydb.googleapis.com/Instance The internal dogfish logs.",
+          "Describes the current status of the transfer run. run id DEFAULT INFO WARNING ERROR CbTestDuckService Logging API service name: cbtestduckservice.googleapis.com Log ID Monitored resource Payload Labels Severities cbtestduckservice.googleapis.com%2Factivity history cbtestduckservice.googleapis.com/Book Test payload for CB Test Duck Service N/A INFO DEBUG ERROR Certificate Manager Logging API service name: certificatemanager.googleapis.com Log ID Monitored resource Payload Labels Severities certificatemanager.googleapis.com%2Fcertificates expiry certificatemanager.googleapis.com/Project type.googleapis.com/google.cloud.certificatemanager.logging.v1.CertificatesExpiry N/A WARNING Chat Logging API service name: chat.googleapis.com Log ID Monitored resource Payload Labels Severities chat.googleapis.com%2Ferrors chat.googleapis.com/Project type.googleapis.com/google.chat.logging.v1.ChatAppLogEntry N/A ERROR Cloud Backup and DR Logging API service name: backupdr.googleapis.com Log ID Monitored resource Payload Labels Severities backupdr.googleapis.com%2Fbackup recovery appliance events backupdr.googleapis.com/BackupRecoveryAppliance type.googleapis.com/google.cloud.backupdr.logging.v1.Event N/A ERROR WARNING INFO backupdr.googleapis.com%2Fgcb backup recovery jobs backupdr.googleapis.com/ManagementConsole type.googleapis.com/google.cloud.backupdr.logging.v1.BackupRecoveryJobReportLog N/A INFO backupdr.googleapis.com%2Fgcb daily schedule compliance backupdr.googleapis.com/ManagementConsole type.googleapis.com/google.cloud.backupdr.logging.v1.DailyScheduleComplianceReportLog N/A INFO backupdr.googleapis.com%2Fgcb protected resource backupdr.googleapis.com/ManagementConsole type.googleapis.com/google.cloud.backupdr.logging.v1.ProtectedResourceReportLog N/A INFO backupdr.googleapis.com%2Fbdr backup restore jobs backupdr.googleapis.com/BackupDRProject type.googleapis.com/google.cloud.backupdr.logging.v1.BDRBackupRestoreJobLog N/A INFO ERROR backupdr.googleapis.com%2Fbdr backup plan jobs backupdr.googleapis.com/BackupPlan type.googleapis.com/google.cloud.backupdr.logging.v1.BDRBackupPlanJobLog N/A INFO ERROR backupdr.googleapis.com%2Fbdr protected resource backupdr.googleapis.com/BackupPlan type.googleapis.com/google.cloud.backupdr.logging.v1.BDRProtectedResourceLog N/A INFO backupdr.googleapis.com%2Fbdr backup vault details backupdr.googleapis.com/BackupVault type.googleapis.com/google.cloud.backupdr.logging.v1.BDRBackupVaultDetailsLog N/A INFO Cloud Database Migration Service Logging API service name: datamigration.googleapis.com Log ID Monitored resource Payload Labels Severities datamigration.googleapis.com%2Fmigration job event datamigration.googleapis.com/MigrationJob type.googleapis.com/google.cloud.clouddms.logging.v1.MigrationJobEventLog N/A INFO NOTICE ERROR datamigration.googleapis.com%2Fconnection profile event datamigration.googleapis.com/ConnectionProfile type.googleapis.com/google.cloud.clouddms.logging.v1.ConnectionProfileEventLog N/A INFO NOTICE ERROR datamigration.googleapis.com%2Fprivate connection event datamigration.googleapis.com/PrivateConnection type.googleapis.com/google.cloud.clouddms.logging.v1.PrivateConnectionEventLog N/A INFO NOTICE ERROR Cloud Datastream Logging API service name: datastream.googleapis.com Log ID Monitored resource Payload Labels Severities datastream.googleapis.com%2Fstream activity datastream.googleapis.com/Stream type.googleapis.com/google.cloud.datastream.logging.v1.StreamActivityLogEntry N/A ERROR INFO WARNING Cloud Deploy Logging API service name: clouddeploy.googleapis.com Log ID Monitored resource Payload Labels Severities clouddeploy.googleapis.com%2Frelease render clouddeploy.googleapis.com/DeliveryPipeline type.googleapis.com/google.cloud.deploy.v1.ReleaseRenderEvent N/A INFO clouddeploy.googleapis.com%2Frollout notification clouddeploy.googleapis.com/DeliveryPipeline type.googleapis.com/google.cloud.deploy.v1.RolloutNotificationEvent N/A ERROR clouddeploy.googleapis.com%2Frollout update clouddeploy.googleapis.com/DeliveryPipeline type.googleapis.com/google.cloud.deploy.v1.RolloutUpdateEvent N/A INFO clouddeploy.googleapis.com%2Fdeliverypipeline notification clouddeploy.googleapis.com/DeliveryPipeline type.googleapis.com/google.cloud.deploy.v1.DeliveryPipelineNotificationEvent N/A ERROR clouddeploy.googleapis.com%2Fdeploypolicy evaluation clouddeploy.googleapis.com/DeliveryPipeline type.googleapis.com/google.cloud.deploy.v1.DeployPolicyEvaluationEvent N/A INFO WARNING ERROR clouddeploy.googleapis.com%2Fdeploypolicy notification clouddeploy.googleapis.com/DeployPolicy type.googleapis.com/google.cloud.deploy.v1.DeployPolicyNotificationEvent N/A ERROR clouddeploy.googleapis.com%2Fcustomtargettype notification clouddeploy.googleapis.com/CustomTargetType type.googleapis.com/google.cloud.deploy.v1.CustomTargetTypeNotificationEvent N/A ERROR clouddeploy.googleapis.com%2Ftarget notification clouddeploy.googleapis.com/Target type.googleapis.com/google.cloud.deploy.v1.TargetNotificationEvent N/A ERROR clouddeploy.googleapis.com%2Frelease notification clouddeploy.googleapis.com/DeliveryPipeline type.googleapis.com/google.cloud.deploy.v1.ReleaseNotificationEvent N/A ERROR clouddeploy.googleapis.com%2Fjobrun notification clouddeploy.googleapis.com/DeliveryPipeline type.googleapis.com/google.cloud.deploy.v1.JobRunNotificationEvent N/A ERROR clouddeploy.googleapis.com%2Fautomation clouddeploy.googleapis.com/DeliveryPipeline type.googleapis.com/google.cloud.deploy.v1.AutomationEvent N/A ERROR NOTICE clouddeploy.googleapis.com%2Fautomationrun clouddeploy.googleapis.com/DeliveryPipeline type.googleapis.com/google.cloud.deploy.v1.AutomationRunEvent N/A ERROR NOTICE Cloud Functions Logging API service name: cloudfunctions.googleapis.com Log ID Monitored resource Payload Labels Severities cloudfunctions.googleapis.com%2Fcloud-functions cloud function Cloud Functions writes logs to this stream that indicate the start and end of execution, as well as the stdout and stderr from those executions. execution id instance id infrastructure runtime version DEFAULT DEBUG INFO NOTICE WARNING ERROR CRITICAL ALERT EMERGENCY Cloud IDS Logging API service name: ids.googleapis.com Log ID Monitored resource Payload Labels Severities ids.googleapis.com%2Fthreat ids.googleapis.com/Endpoint Threat logs from the Cloud IDS endpoint.",
+          "CONTAINER ID CONTAINER ID FULL CONTAINER NAME CONTAINER TAG CONTAINER PARTIAL ID CONTAINER PARTIAL LAST CONTAINER PARTIAL MESSAGE CONTAINER PARTIAL ORDINAL IMAGE NAME INSTANCE ID INSTANCE UID LOG BUCKET NUM SYSLOG IDENTIFIER BOOT ID CAP EFFECTIVE CMDLINE COMM EXE GID HOSTNAME MACHINE ID PID PROJECT NUMBER SOURCE REALTIME TIMESTAMP SYSTEMD CGROUP SYSTEMD INVOCATION ID SYSTEMD SLICE SYSTEMD UNIT TRANSPORT UID MONOTONIC TIMESTAMP REALTIME TIMESTAMP SYSLOG TIMESTAMP SOURCE ID RUNTIME SCOPE CONTAINER LOG ORDINAL CONTAINER LOG EPOCH SEQNUM ID SEQNUM DEFAULT DEBUG INFO NOTICE WARNING ERROR CRITICAL ALERT EMERGENCY cloudsql.googleapis.com%2Fsqlagent.out cloudsql database These logs are from sqlagent.out on the Cloud SQL instance."
+        ]
+      },
+      {
+        "title": "View and analyze logs \\_|\\_ Cloud Logging \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface",
+        "source_id": "site-docs-root",
+        "final_score": 157,
+        "relevance": "",
+        "evidence_snippets": [
+          "The Logs Explorer contains the following sections, which are detailed on this page: Primary toolbar Query pane Fields pane Timeline Query results pane Primary toolbar in the Logs Explorer Using the primary toolbar, you can do the following: menu book Query library : View saved, recent, and suggested queries.",
+          "The copied URL has the corresponding absolute time range represented by the time range of your query; for example, 7:49:37 PM - 8:49:37 PM . settings Preferences : Adjust the view of the Logs Explorer page, and customize the format of your query results.",
+          "Scroll or zoom to time In addition to the time controls previously listed, the timeline provides the Scroll to time and Zoom to time features to give you more in-depth control of the timeline and the data that you see in other panes in the Logs Explorer."
+        ]
+      },
+      {
+        "title": "Configure the Logging agent \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/logging/docs/agent/logging/configuration",
+        "source_id": "site-docs-root",
+        "final_score": 147,
+        "relevance": "",
+        "evidence_snippets": [
+          "To send logs via the fluentd in forward plugin, read the following instructions: Execute the following command on the VM with the Logging agent installed: echo '{\"code\": \"send-log-via-fluent-cat\", \"message\": \"This is a log from in forward plugin.\"}' /opt/google-fluentd/embedded/bin/fluent-cat log-via-in-forward-plugin Check the Logs Explorer to see the ingested log entry: { insertId: \"1kvvmhsg1ib4689\" jsonPayload: { code: \"send-log-via-fluent-cat\" message: \"This is a log from in forward plugin.\" } labels: { compute.googleapis.com/resource name: \"add-structured-log-resource\" } logName: \"projects/my-sample-project-12345/logs/log-via-in-forward-plugin\" receiveTimestamp: \"2018-03-21T02:11:27.981020900Z\" resource: { labels: { instance id: \"5351724540900470204\" project id: \"my-sample-project-12345\" zone: \"us-central1-c\" } type: \"gce instance\" } timestamp: \"2018-03-21T02:11:22.717692494Z\" } Streaming structured (JSON) log records from application code You can enable connectors in various languages to send structured logs from application code; for more information, review the fluentd documentation .",
+          "Restart the agent to apply the configuration changes: sudo service google-fluentd restart Generate a log record into the log file: echo 'This is a log from the log file at test-unstructured-log.log' >> /tmp/test-unstructured-log.log Check the Logs Explorer to see the ingested log entry: { insertId: \"eps2n7g1hq99qp\" labels: { compute.googleapis.com/resource name: \"add-unstructured-log-resource\" } logName: \"projects/my-sample-project-12345/logs/unstructured-log\" receiveTimestamp: \"2018-03-21T01:47:11.475065313Z\" resource: { labels: { instance id: \"3914079432219560274\" project id: \"my-sample-project-12345\" zone: \"us-central1-c\" } type: \"gce instance\" } textPayload: \"This is a log from the log file at test-unstructured-log.log\" timestamp: \"2018-03-21T01:47:05.051902169Z\" } Streaming structured (JSON) logs via log files Note: This section contains a Linux command example.",
+          "Restart the agent to apply the configuration changes: sudo service google-fluentd restart Generate a log record into the log file: echo '{\"code\": \"structured-log-code\", \"message\": \"This is a log from the log file at test-structured-log.log\"}' >> /tmp/test-structured-log.log Check the Logs Explorer to see the ingested log entry: { insertId: \"1m9mtk4g3mwilhp\" jsonPayload: { code: \"structured-log-code\" message: \"This is a log from the log file at test-structured-log.log\" } labels: { compute.googleapis.com/resource name: \"add-structured-log-resource\" } logName: \"projects/my-sample-project-12345/logs/structured-log\" receiveTimestamp: \"2018-03-21T01:53:41.118200931Z\" resource: { labels: { instance id: \"5351724540900470204\" project id: \"my-sample-project-12345\" zone: \"us-central1-c\" } type: \"gce instance\" } timestamp: \"2018-03-21T01:53:39.071920609Z\" } In the Logs Explorer, filter by your resource type and a logName of structured-log ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "alloydb.googleapis.com",
+      "analyticsdata.googleapis.com",
+      "backupdr.googleapis.com",
+      "binaryauthorization.googleapis.com",
+      "cbtestduckservice.googleapis.com",
+      "certificatemanager.googleapis.com",
+      "chat.googleapis.com",
+      "clouddeploy.googleapis.com",
+      "cloudfunctions.googleapis.com",
+      "cloudkms.googleapis.com",
+      "cloudsql.googleapis.com",
+      "compute.googleapis.com",
+      "datamigration.googleapis.com",
+      "datastream.googleapis.com",
+      "fleetengine.googleapis.com",
+      "gsuiteaddons.googleapis.com",
+      "identitytoolkit.googleapis.com",
+      "ids.googleapis.com",
+      "issuerswitch.googleapis.com",
+      "livestream.googleapis.com",
+      "log.log",
+      "logging.googleapis.com",
+      "maps.fleetengine.v1.UpdateVehicleAttributesLog",
+      "memorystore.googleapis.com",
+      "mobilitybilling.googleapis.com",
+      "networkanalyzer.googleapis.com",
+      "networking.googleapis.com",
+      "networkservices.googleapis.com",
+      "sqlagent.out",
+      "stream.googleapis.com",
+      "type.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/api/platform-logs",
+        "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface",
+        "https://docs.cloud.google.com/logging/docs/agent/logging/configuration"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/api/platform-logs",
+        "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface",
+        "https://docs.cloud.google.com/logging/docs/agent/logging/configuration"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/api/platform-logs",
+        "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface",
+        "https://docs.cloud.google.com/logging/docs/agent/logging/configuration"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/api/platform-logs",
+        "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface",
+        "https://docs.cloud.google.com/logging/docs/agent/logging/configuration"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/api/platform-logs",
+        "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface",
+        "https://docs.cloud.google.com/logging/docs/agent/logging/configuration"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/api/platform-logs",
+        "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface",
+        "https://docs.cloud.google.com/logging/docs/agent/logging/configuration"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/api/platform-logs",
+        "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface",
+        "https://docs.cloud.google.com/logging/docs/agent/logging/configuration"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/api/platform-logs",
+        "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface",
+        "https://docs.cloud.google.com/logging/docs/agent/logging/configuration"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/api/platform-logs",
+        "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface",
+        "https://docs.cloud.google.com/logging/docs/agent/logging/configuration"
+      ]
+    },
+    {
+      "capability": "threat",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/api/platform-logs",
+        "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface",
+        "https://docs.cloud.google.com/logging/docs/agent/logging/configuration"
+      ]
+    }
+  ]
+}

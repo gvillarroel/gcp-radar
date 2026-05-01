@@ -1,0 +1,103 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:24.398Z",
+  "source_step08_card": "data/step-08/current/products/cloud-logging/card.json",
+  "product_name": "Cloud Logging",
+  "product_slug": "cloud-logging",
+  "feature_name": "Windows Logging agent v1-9",
+  "feature_slug": "windows-logging-agent-v1-9",
+  "summary": "Windows Logging agent v1-9 stores agent service logs on disk and supports the config.d configuration extension directory.",
+  "extended_definition": "Windows Logging agent v1-9 stores agent service logs on disk and supports the config.d configuration extension directory.",
+  "lifecycle": {
+    "latest_feature_date": "2019-04-15",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/logging/docs/agent",
+      "https://docs.cloud.google.com/logging/docs/agent/logging/configuration",
+      "https://docs.cloud.google.com/logging/docs/agent/logging/installation"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Configure the Logging agent | Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/logging/docs/agent/logging/configuration",
+        "source_id": "feature-recovery-direct-http",
+        "final_score": 284,
+        "relevance": "",
+        "evidence_snippets": [
+          "C:\\Program Files (x86)\\Stackdriver\\LoggingAgent\\config.d is the third-party configuration directory for Windows.",
+          "C:\\Program Files (x86)\\Stackdriver\\LoggingAgent\\config.d is the third-party configuration directory for Windows.",
+          "When the agent is configured to ingest JSON content, the input must be formatted so that each JSON object is on a newline: {\"name\" : \"zeeshan\", \"age\" : 28} {\"name\" : \"reeba\", \"age\" : 15} To configure the Logging agent to ingest JSON formatted content, do the following: From the Linux command prompt, create a log file: touch /tmp/test-structured-log.log Create a new configuration file labeled test-structured-log.conf in the additional configuration directory /etc/google-fluentd/config.d : sudo tee /etc/google-fluentd/config.d/test-structured-log.conf <<EOF < source > @type tail <parse> # 'json' indicates the log is structured (JSON). @type json </parse> # The path of the log file. path /tmp/test-structured-log.log # The path of the position file that records where in the log file # we have processed already."
+        ]
+      },
+      {
+        "title": "\"Installing the Cloud Logging agent on individual VMs \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/logging/docs/agent/logging/installation",
+        "source_id": "site-docs-root",
+        "final_score": 154,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Back up any local changes to /etc/google-fluentd/config.d/ .",
+          "There will be no new feature development or support for new operating systems for the legacy Logging agent.",
+          "This sets the http proxy and https proxy environment variables so that the agent can send data using outbound HTTPS: setx http proxy http:// proxy-ip : proxy-port /m setx https proxy http:// proxy-ip : proxy-port /m setx no proxy 169.254.169.254 /m Determine the agent version To determine the version of the Logging agent on your system, run the following commands on your VM instance: DEBIAN / UBUNTU Run the following command on Debian or Ubuntu: dpkg-query --show --showformat ' ${ Package } ${ Version } ${ Architecture } ${ Status } \\n' google-fluentd google-fluentd-catch-all-config google-fluentd-catch-all-config-structured SLES / SUSE Run the following command on SUSE: rpm --query --queryformat '%{NAME} %{VERSION} %{RELEASE} %{ARCH}\\n' google-fluentd google-fluentd-catch-all-config google-fluentd-catch-all-config-structured WINDOWS Connect to your instance using RDP or a similar tool and login to Windows."
+        ]
+      },
+      {
+        "title": "\"Google Cloud Observability agents \\_|\\_ Cloud Logging \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/logging/docs/agent",
+        "source_id": "site-docs-root",
+        "final_score": 82,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Legacy Logging agent : Streams logs from common third-party applications and system software to Cloud Logging.",
+          "Ops Agent Read docs Legacy Logging agent Read docs Try it for yourself If you're new to Google Cloud, create an account to evaluate how Google Cloud Observability performs in real-world scenarios.",
+          "Note: There will be no new feature development or support for new operating systems for the legacy Logging agent."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "config.d",
+      "dl.google.com",
+      "log.conf",
+      "log.log"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/agent/logging/configuration",
+        "https://docs.cloud.google.com/logging/docs/agent/logging/installation",
+        "https://docs.cloud.google.com/logging/docs/agent"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/agent/logging/configuration",
+        "https://docs.cloud.google.com/logging/docs/agent/logging/installation",
+        "https://docs.cloud.google.com/logging/docs/agent"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,170 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:18.771Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery",
+  "feature_name": "Unauthenticated URLs for public Analytics Hub listings",
+  "feature_slug": "unauthenticated-urls-for-public-analytics-hub-listings",
+  "summary": "Analytics Hub can generate unauthenticated URLs for public listings.",
+  "extended_definition": "Analytics Hub can generate unauthenticated URLs for public listings.",
+  "lifecycle": {
+    "latest_feature_date": "2024-07-01",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/analytics-hub-manage-listings",
+      "https://docs.cloud.google.com/bigquery/docs/analytics-hub-view-subscribe-listings",
+      "https://docs.cloud.google.com/bigquery/docs/visualize-jupyter"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Manage listings \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/analytics-hub-manage-listings",
+        "source_id": "site-docs-reference-5",
+        "final_score": 146,
+        "relevance": "",
+        "evidence_snippets": [
+          "Click Copy public link to generate an unauthenticated listing URL.",
+          "Use the following format to add members: user:test-user@gmail.com group:admins@example.com serviceAccount:test123@example.domain.com domain:example.domain.com For example, to grant the roles/analyticshub.subscriber role to group:subscribers@example.com , add the following binding to the policy: { \"members\": [ \"group:subscribers@example.com\" ], \"role\":\"roles/analyticshub.subscriber\" } Write the updated policy by using the projects.locations.dataExchanges.listings.setIamPolicy method .",
+          "Enable the Analytics Hub API gcloud Run the gcloud services enable command: gcloud services enable analyticshub.googleapis.com Required roles To manage listings and subscriptions, you must have one of the following BigQuery sharing Identity and Access Management (IAM) roles: Analytics Hub Publisher role ( roles/analyticshub.publisher ), which lets you create, update, delete, and set IAM policies on your listings."
+        ]
+      },
+      {
+        "title": "\"Visualize geospatial analytics data using a Colab notebook \\_|\\_ BigQuery\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/visualize-jupyter",
+        "source_id": "site-docs-root",
+        "final_score": 117,
+        "relevance": "",
+        "evidence_snippets": [
+          "This code uses the %%bigquery magic function to run the query and return the results in a DataFrame: Query the neighborhood name and geometry from the San Francisco neighborhoods dataset. %% bigquery gdf sanfrancisco neighborhoods -- project { GCP PROJECT ID } -- use geodataframe geometry SELECT neighborhood , neighborhood geom AS geometry FROM bigquery - public - data . san francisco neighborhoods . boundaries Click play circle filled Run cell .",
+          "You use the public datasets to create the following visualizations: A scatter plot of all bike share stations from the Ford GoBike Share dataset Polygons in the San Francisco Neighborhoods dataset A choropleth map of the number of bike share stations by neighborhood A heatmap of incidents from the San Francisco Police Department Reports dataset Objectives Set up authentication with Google Cloud and, optionally, Google Maps.",
+          "You then import the h3 and pydeck libraries and the following Python geospatial libraries: geopandas to extend the data types used by pandas to allow spatial operations on geometric types. shapely for manipulation and analysis of individual planar geometric objects. branca to generate HTML and JavaScript colormaps. geemap.deck for visualization with pydeck and earthengine-api ."
+        ]
+      },
+      {
+        "title": "\"View and subscribe to listings and data exchanges \\_|\\_ BigQuery \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/analytics-hub-view-subscribe-listings",
+        "source_id": "site-docs-root-2",
+        "final_score": 113,
+        "relevance": "",
+        "evidence_snippets": [
+          "Discover listings To discover public and private listings, follow these steps: In the Google Cloud console, go to the Sharing (Analytics Hub) page.",
+          "Required roles To get the permissions that you need to use listings, ask your BigQuery sharing administrator to grant you the following Identity and Access Management (IAM) roles on the BigQuery sharing subscriber project: Discover listings : Analytics Hub Viewer ( roles/analyticshub.viewer ) Discover data exchanges : Analytics Hub Viewer ( roles/analyticshub.viewer ) Subscribe to listings : BigQuery User ( roles/bigquery.user ) To subscribe to listings, you must also ask the BigQuery sharing listing publisher to grant you the Analytics Hub Subscriber role ( roles/analyticshub.subscriber ) on their listing, exchange, or project, depending on the scope that's most appropriate for your use case.",
+          "POST https://analyticshub.googleapis.com/v1/projects/ PROJECT ID /location/ LOCATION /dataExchanges/ DATAEXCHANGE ID /listings/ LISTING ID :subscribe Replace the following: PROJECT ID : the project ID of the listing that you want to subscribe to."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "analyticshub.googleapis.com",
+      "analyticshub.publisher",
+      "analyticshub.subscriber",
+      "analyticshub.viewer",
+      "bigquery.user",
+      "example.com",
+      "example.domain.com",
+      "geemap.deck",
+      "gmail.com",
+      "projects.locations.dataExchanges.listings.setIamPolicy"
+    ],
+    "missing_inventory_roles": [
+      "roles/analyticshub.publisher",
+      "roles/analyticshub.subscriber",
+      "roles/analyticshub.viewer",
+      "roles/bigquery.user"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-manage-listings",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-view-subscribe-listings",
+        "https://docs.cloud.google.com/bigquery/docs/visualize-jupyter"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-manage-listings",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-view-subscribe-listings",
+        "https://docs.cloud.google.com/bigquery/docs/visualize-jupyter"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-manage-listings",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-view-subscribe-listings",
+        "https://docs.cloud.google.com/bigquery/docs/visualize-jupyter"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-manage-listings",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-view-subscribe-listings",
+        "https://docs.cloud.google.com/bigquery/docs/visualize-jupyter"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-manage-listings",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-view-subscribe-listings",
+        "https://docs.cloud.google.com/bigquery/docs/visualize-jupyter"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-manage-listings",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-view-subscribe-listings",
+        "https://docs.cloud.google.com/bigquery/docs/visualize-jupyter"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-manage-listings",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-view-subscribe-listings",
+        "https://docs.cloud.google.com/bigquery/docs/visualize-jupyter"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-manage-listings",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-view-subscribe-listings",
+        "https://docs.cloud.google.com/bigquery/docs/visualize-jupyter"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-manage-listings",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-view-subscribe-listings",
+        "https://docs.cloud.google.com/bigquery/docs/visualize-jupyter"
+      ]
+    }
+  ]
+}

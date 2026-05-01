@@ -1,0 +1,174 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:49.999Z",
+  "source_step08_card": "data/step-08/current/products/vpc-service-controls/card.json",
+  "product_name": "VPC Service Controls",
+  "product_slug": "vpc-service-controls",
+  "feature_name": "Third-party identities in ingress and egress rules",
+  "feature_slug": "third-party-identities-in-ingress-and-egress-rules",
+  "summary": "Lets service perimeter ingress and egress rules use third-party identities, including individual identities and groups, to allow access to protected resources.",
+  "extended_definition": "Lets service perimeter ingress and egress rules use third-party identities, including individual identities and groups, to allow access to protected resources.",
+  "lifecycle": {
+    "latest_feature_date": "2025-02-10",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/vpc-service-controls/docs/configure-identity-groups",
+      "https://docs.cloud.google.com/vpc-service-controls/docs/identity-groups-examples",
+      "https://docs.cloud.google.com/vpc-service-controls/docs/ingress-egress-rules",
+      "https://docs.cloud.google.com/vpc-service-controls/docs/supported-identities"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Configure identity groups and third-party identities in ingress and egress\\",
+        "url": "https://docs.cloud.google.com/vpc-service-controls/docs/configure-identity-groups",
+        "source_id": "site-docs-reference",
+        "final_score": 418,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "What's next Example of using identity groups and third-party identities in ingress and egress rules Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Home Documentation Networking VPC Service Controls Guides Send feedback Configure identity groups and third-party identities in ingress and egress rules Stay organized with collections Save and categorize content based on your preferences.",
+          "To configure identity groups in the ingress or egress rules, you can use the following supported identity groups in the identities attribute: Google group Third-party identities such as workforce pool users and workload identities ."
+        ]
+      },
+      {
+        "title": "\"Example of using identity groups and third-party identities in ingress and\\",
+        "url": "https://docs.cloud.google.com/vpc-service-controls/docs/identity-groups-examples",
+        "source_id": "site-docs-reference",
+        "final_score": 398,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The following ingress policy, ingress.yaml , allows Cloud Run access to specific human accounts, who are part of the allowed-users@example.com group, and specific service accounts, that are limited to the allowlisted IP address range: - ingressFrom: identities: - serviceAccount:my-sa@my-project.iam.gserviceaccount.com sources: - accessLevel: accessPolicies/222/accessLevels/CorpDatacenters ingressTo: operations: - serviceName: run.googleapis.com methodSelectors: - method: \" \" resources: - \" \" - ingressFrom: identities: - group:allowed-users@example.com sources: - accessLevel: \" \" ingressTo: operations: - serviceName: run.googleapis.com methodSelectors: - method: \" \" resources: - \" \" To apply the ingress rule, run the following command: gcloud access-context-manager perimeters update Example --set-ingress-policies=ingress.yaml What's next Configure identity groups and third-party identities in ingress and egress rules Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Home Documentation Networking VPC Service Controls Guides Send feedback Example of using identity groups and third-party identities in ingress and egress rules Stay organized with collections Save and categorize content based on your preferences.",
+          "This page shows how to use identity groups and third-party identities in ingress and egress rules ."
+        ]
+      },
+      {
+        "title": "\"Supported identities for ingress and egress rules \\_|\\_ VPC Service Controls\\",
+        "url": "https://docs.cloud.google.com/vpc-service-controls/docs/supported-identities",
+        "source_id": "site-docs-reference-2",
+        "final_score": 354,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "ORGANIZATION ID .workload.id.goog/ What's next Configure identity groups and third-party identities in ingress and egress rules Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Home Documentation Networking VPC Service Controls Guides Send feedback Supported identities for ingress and egress rules Stay organized with collections Save and categorize content based on your preferences.",
+          "To refine access further, you can specify supported identities in ingress and egress rules."
+        ]
+      },
+      {
+        "title": "Ingress and egress rules \\_|\\_ VPC Service Controls \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vpc-service-controls/docs/ingress-egress-rules",
+        "source_id": "site-docs-reference",
+        "final_score": 346,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "You can configure identity groups and third-party identities and IAM roles ( Preview ) in ingress and egress rules.",
+          "Ingress and egress rules allow you to grant access to Google Cloud resources in a perimeter based on the context of the API request: Constrain identity types or identities that can be used given a source network, IP address, or device.",
+          "For information about supported identities and their identifier formats, see Supported identities for ingress and egress rules . sources: - (Required) This attribute refers to a list of network origins."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "example.com",
+      "iam.googleapis.com",
+      "ingress.yaml",
+      "project.iam.gserviceaccount.com",
+      "run.googleapis.com",
+      "workload.id.goog"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc-service-controls/docs/configure-identity-groups",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/identity-groups-examples",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/supported-identities",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/ingress-egress-rules"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc-service-controls/docs/configure-identity-groups",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/identity-groups-examples",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/supported-identities",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/ingress-egress-rules"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc-service-controls/docs/configure-identity-groups",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/identity-groups-examples",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/supported-identities",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/ingress-egress-rules"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc-service-controls/docs/configure-identity-groups",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/identity-groups-examples",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/supported-identities",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/ingress-egress-rules"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc-service-controls/docs/configure-identity-groups",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/identity-groups-examples",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/supported-identities",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/ingress-egress-rules"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc-service-controls/docs/configure-identity-groups",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/identity-groups-examples",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/supported-identities",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/ingress-egress-rules"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc-service-controls/docs/configure-identity-groups",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/identity-groups-examples",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/supported-identities",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/ingress-egress-rules"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc-service-controls/docs/configure-identity-groups",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/identity-groups-examples",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/supported-identities",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/ingress-egress-rules"
+      ]
+    }
+  ]
+}

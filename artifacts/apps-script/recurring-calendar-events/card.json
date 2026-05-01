@@ -1,0 +1,126 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:17.437Z",
+  "source_step08_card": "data/step-08/current/products/apps-script/card.json",
+  "product_name": "Apps Script",
+  "product_slug": "apps-script",
+  "feature_name": "Recurring calendar events",
+  "feature_slug": "recurring-calendar-events",
+  "summary": "Apps Script supports creating, accessing, modifying, and deleting recurring calendar event series.",
+  "extended_definition": "Apps Script supports creating, accessing, modifying, and deleting recurring calendar event series.",
+  "lifecycle": {
+    "latest_feature_date": "2010-10-16",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 1,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "coverage_low",
+        "message": "The feature ended with coverage LOW.",
+        "suggested_steps": [
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/apps-script/guides/content",
+      "https://developers.google.com/apps-script/guides/triggers/events",
+      "https://developers.google.com/apps-script/releases"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Content Service \\_|\\_ Apps Script \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/apps-script/guides/content",
+        "source_id": "site-docs-root",
+        "final_score": 34,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The start and end parameters specify a time range in the standard Unix epoch. curl -L URL OF YOUR SCRIPT?start=1325437200&end=1325439000 The service returns JSON that reports if the calendar is open in that range. { \"available\" : true } Serve JSONP in web pages With a slight change, your JSON service can become JSONP to be called from JavaScript in a browser. function doGet ( request ) { var events = CalendarApp . getEvents ( new Date ( Number ( request . parameters . start ) 1000 ), new Date ( Number ( request . parameters . end ) 1000 )); var result = { available : events . length == 0 }; return ContentService . createTextOutput ( request . parameters . prefix + '(' + JSON . stringify ( result ) + ')' ) . setMimeType ( ContentService .",
+          "The following script implements a service that checks if a calendar slot is open at a specific time. function doGet ( request ) { var events = CalendarApp . getEvents ( new Date ( Number ( request . parameters . start ) 1000 ), new Date ( Number ( request . parameters . end ) 1000 )); var result = { available : events . length == 0 }; return ContentService . createTextOutput ( JSON . stringify ( result )) . setMimeType ( ContentService .",
+          "Page Summary outlined flag Apps Script's Content service allows scripts to act as \"services\" by responding to GET and POST requests with raw textual content of various MIME types instead of a user interface."
+        ]
+      },
+      {
+        "title": "Event Objects \\_|\\_ Apps Script \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/apps-script/guides/triggers/events",
+        "source_id": "site-docs-reference",
+        "final_score": 33,
+        "relevance": "",
+        "evidence_snippets": [
+          "When the Apps Script EventUpdated trigger fires indicating a calendar event change, perform an incremental sync for the affected calendar using the stored nextSyncToken .",
+          "Time-driven events Time-driven triggers (also called clock triggers) let scripts execute at a particular time or on a recurring interval.",
+          "To synchronize with Calendar in Apps Script, perform the following steps: Enable the Calendar advanced service for the script project."
+        ]
+      },
+      {
+        "title": "Google Apps Script release notes \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/apps-script/releases",
+        "source_id": "site-docs-root",
+        "final_score": 31,
+        "relevance": "",
+        "evidence_snippets": [
+          "December 07, 2023 Fixed To fix a bug that prevented events of eventType != 'default' from importing, we updated the code sample in Populate a team vacation calendar , the popular Apps Script + Calendar API solution.",
+          "The Card service has been extended with the following classes and methods that provide new widgets and event responses: CalendarEventActionResponse CalendarEventActionResponseBuilder DatePicker DateTimePicker DisplayStyle DriveItemsSelectedActionResponse DriveItemsSelectedActionResponseBuilder FixedFooter SwitchControlType TimePicker CardBuilder.setDisplayStyle(displayStyle) CardBuilder.setFixedFooter(fixedFooter) CardBuilder.setPeekCardHeader(peekCardHeader) CardService.newCalendarEventActionResponseBuilder() CardService.newDatePicker() CardService.newDateTimePicker() CardService.newDriveItemsSelectedActionResponseBuilder() CardService.newFixedFooter() CardService.newTimePicker() Switch.setControlType(controlType) The Conference Data service has been added to Apps Script.",
+          "For more information, see the following documentation: getEventType() for events getEventType() for event series EventType enum October 02, 2024 Announcement Apps Script has rescheduled the shutdown date of the Contacts service to January 31, 2025."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "developers.google.com",
+      "example.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/guides/triggers/events",
+        "https://developers.google.com/apps-script/guides/content"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/guides/triggers/events",
+        "https://developers.google.com/apps-script/guides/content"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/guides/triggers/events",
+        "https://developers.google.com/apps-script/guides/content"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/guides/triggers/events",
+        "https://developers.google.com/apps-script/guides/content"
+      ]
+    }
+  ]
+}

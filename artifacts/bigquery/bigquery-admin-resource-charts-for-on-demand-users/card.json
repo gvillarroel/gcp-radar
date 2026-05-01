@@ -1,0 +1,137 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:18.771Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery",
+  "feature_name": "BigQuery Admin Resource Charts for on-demand users",
+  "feature_slug": "bigquery-admin-resource-charts-for-on-demand-users",
+  "summary": "BigQuery Admin Resource Charts let administrators monitor key metrics and troubleshoot usage across an organization for on-demand workloads.",
+  "extended_definition": "BigQuery Admin Resource Charts let administrators monitor key metrics and troubleshoot usage across an organization for on-demand workloads.",
+  "lifecycle": {
+    "latest_feature_date": "2022-04-25",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/admin-intro",
+      "https://docs.cloud.google.com/bigquery/docs/admin-resource-charts",
+      "https://docs.cloud.google.com/bigquery/docs/analytics-hub-introduction"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Monitor health, resource utilization, and jobs \\_|\\_ BigQuery \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/admin-resource-charts",
+        "source_id": "site-docs-reference-2",
+        "final_score": 176,
+        "relevance": "",
+        "evidence_snippets": [
+          "To see the exact permissions that are required, expand the Required permissions section: Required permissions The following permissions are required to view all data in the operational health and resource utilization charts: To view all data in the operational health and resource utilization charts for an organization: bigquery.jobs.listExecutionMetadata or bigquery.jobs.listAll on the organization bigquery.reservationAssignments.list on the administration project used to create the reservations bigquery.capacityCommitments.list on the administration project used to create the reservations As an on-demand user, to view all data in the resource utilization charts for an organization: bigquery.jobs.listExecutionMetadata or bigquery.jobs.listAll on the organization To view operational health summary data for BigQuery table storage: bigquery.tables.get or bigquery.tables.list on the organization To view operational health and resource utilization charts at the reservation level: bigquery.reservations.list on the administration project used to create the reservations bigquery.reservationAssignments.list on the administration project used to create the reservations To view resource utilization charts at the project level: bigquery.jobs.listAll on the project You might also be able to get these permissions with custom roles or other predefined roles .",
+          "Required roles To get the permissions that you need to view all data in the operational health and resource utilization charts, ask your administrator to grant you the following IAM roles on your organization: BigQuery Resource Viewer ( roles/bigquery.resourceViewer ) BigQuery Metadata Viewer ( roles/bigquery.metadataViewer ) For more information about granting roles, see Manage access to projects, folders, and organizations .",
+          "BigQuery gathers the metrics by querying the following INFORMATION SCHEMA views : INFORMATION SCHEMA.JOBS INFORMATION SCHEMA.JOBS TIMELINE INFORMATION SCHEMA.RESERVATIONS INFORMATION SCHEMA.TABLE STORAGE For an example query that replicates the slot usage timeline chart found in administrative resource charts, see Match slot usage behavior from administrative resource charts ."
+        ]
+      },
+      {
+        "title": "Introduction to BigQuery administration \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/admin-intro",
+        "source_id": "site-docs-reference-2",
+        "final_score": 156,
+        "relevance": "",
+        "evidence_snippets": [
+          "BigQuery administrators typically do the following types of tasks: Manage resources, such as projects, datasets, and tables.",
+          "Administration charts and alerts You can use Cloud Monitoring to create custom charts based on the resources, metrics, and any aggregation that you specify.",
+          "Troubleshoot In addition to the features described in this document for monitoring and managing your organization's BigQuery system, the following resources are available for troubleshooting problems that might arise: BigQuery error messages BigQuery billing questions Troubleshoot quota errors If you need additional assistance, see Get support ."
+        ]
+      },
+      {
+        "title": "Introduction to BigQuery sharing \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/analytics-hub-introduction",
+        "source_id": "site-docs-reference-5",
+        "final_score": 139,
+        "relevance": "",
+        "evidence_snippets": [
+          "Users with the Analytics Hub Admin role are referred to as BigQuery sharing administrators .",
+          "Manage other BigQuery sharing administrators with the Analytics Hub Admin role.",
+          "BigQuery sharing supports the following Google Cloud resources: BigQuery datasets Pub/Sub topics Publisher workflow The following diagram describes how a publisher shares assets: The following sections describe the features in this workflow."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "analyticshub.admin",
+      "bigquery.capacityCommitments.list",
+      "bigquery.jobs.listAll",
+      "bigquery.jobs.listExecutionMetadata",
+      "bigquery.metadataViewer",
+      "bigquery.reservationAssignments.list",
+      "bigquery.reservations.list",
+      "bigquery.resourceViewer",
+      "bigquery.tables.get",
+      "bigquery.tables.list"
+    ],
+    "missing_inventory_roles": [
+      "roles/analyticshub.admin",
+      "roles/bigquery.metadataViewer",
+      "roles/bigquery.resourceViewer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/admin-resource-charts",
+        "https://docs.cloud.google.com/bigquery/docs/admin-intro",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-introduction"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/admin-resource-charts",
+        "https://docs.cloud.google.com/bigquery/docs/admin-intro",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-introduction"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/admin-resource-charts",
+        "https://docs.cloud.google.com/bigquery/docs/admin-intro",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-introduction"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/admin-resource-charts",
+        "https://docs.cloud.google.com/bigquery/docs/admin-intro",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-introduction"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/admin-resource-charts",
+        "https://docs.cloud.google.com/bigquery/docs/admin-intro",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-introduction"
+      ]
+    }
+  ]
+}

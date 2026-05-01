@@ -1,0 +1,123 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:18.295Z",
+  "source_step08_card": "data/step-08/current/products/backup-and-dr/card.json",
+  "product_name": "Backup and DR",
+  "product_slug": "backup-and-dr",
+  "feature_name": "Cloud Monitoring integration with Backup and DR",
+  "feature_slug": "cloud-monitoring-integration-with-backup-and-dr",
+  "summary": "Backup and DR Service integrated with Cloud Monitoring to view metrics and configure custom email alerts.",
+  "extended_definition": "Backup and DR Service integrated with Cloud Monitoring to view metrics and configure custom email alerts.",
+  "lifecycle": {
+    "latest_feature_date": "2024-02-28",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/backup-disaster-recovery/docs/configure-alerts",
+      "https://docs.cloud.google.com/compute/docs/autoscaler/understanding-autoscaler-decisions",
+      "https://docs.cloud.google.com/compute/docs/autoscaler/viewing-autoscaler-logs"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Understand autoscaler decisions \\_|\\_ Compute Engine \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/compute/docs/autoscaler/understanding-autoscaler-decisions",
+        "source_id": "site-docs-reference-2",
+        "final_score": 110,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "The Monitoring tab shows charts and logs as follows: The charts display the evolution of the following metrics: Group size Autoscaler utilization CPU utilization Disk I/O (bytes) Disk I/O (operations) Network bytes Network packets For additional contextual details about the metric displayed in a chart, hold the pointer over the help icon next to the title of that chart.",
+          "Average CPU utilization HTTP load balancing serving capacity Cloud Monitoring metrics collected from each instance in the MIG You can also manually resize a MIG to zero instances, even if the autoscaling policy includes metrics collected from each instance in the MIG.",
+          "The autoscaler does not scale in beyond the maximum allowed reduction measured from the observed peak size: For example, in the preceding diagram, scale-in controls are configured for a 20 VM maximum allowed reduction in a 30-minute trailing time window: When load goes down autoscaler removes 20 VMs, which is the maximum allowed reduction configured in scale-in controls."
+        ]
+      },
+      {
+        "title": "\"Configure log-based alerts for a backup/recovery appliance \\_|\\_ Backup\\",
+        "url": "https://docs.cloud.google.com/backup-disaster-recovery/docs/configure-alerts",
+        "source_id": "site-docs-reference",
+        "final_score": 90,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "You can click View incident in the email to see the incident in Cloud Monitoring .",
+          "If your alert policy includes or excludes specific event IDs then you need to modify the event ID as well: \"entries\" : [ { \"jsonPayload\" : { \"eventId\" : 10046 , \"errorMessage\" : \"this is a manually generated error message created for testing\" }, \"resource\" : { \"type\" : \"backupdr.googleapis.com/BackupRecoveryAppliance\" , }, \"severity\" : \"ERROR\" , \"logName\" : \"projects/ PROJECT ID /logs/backupdr.googleapis.com %2F backup recovery appliance events\" , } ] Copy the log entry you configured previously.",
+          "To write the log entry, follow these steps: Go to the logEntries.write reference page, or click the following button: Go to logEntries.write Configure the following log entry by changing the PROJECT ID variable to your project ID."
+        ]
+      },
+      {
+        "title": "View autoscaler logs \\_|\\_ Compute Engine \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/compute/docs/autoscaler/viewing-autoscaler-logs",
+        "source_id": "site-docs-reference-2",
+        "final_score": 88,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "For example: gcloud logging read \"resource.type=autoscaler\" --limit 10 \\ --format json To view the autoscaler logs of a specific MIG, specify the instance group manager name as follows: gcloud logging read \"resource.type=autoscaler AND \\ resource.labels.instance group manager name=example-igm \" \\ --limit 10 --format json To view the log entries related to autoscaler resize actions , specify the compute.autoscalers.resize method name: gcloud logging read \"resource.type=autoscaler AND \\ resource.labels.instance group manager name=example-igm AND \\ protoPayload.methodName=compute.autoscalers.resize\" \\ --limit 10 --format json To view the log entries related to autoscaler status changes , specify the compute.autoscalers.changeStatus method name: gcloud logging read \"resource.type=autoscaler AND \\ resource.labels.instance group manager name=example-igm AND \\ protoPayload.methodName=compute.autoscalers.changeStatus\" \\ --limit 10 --format json REST Make a request to the Logging V2 API .",
+          "If scalingLimit applies, then the autoscaler limits calculatedSize to scalingLimit.limitSize . autoscalingReason.scalingSignal.calculationDetails Details used to determine the calculatedSize . servingSize : The number of VMs in the MIG excluding the VMs that are still in their initialization period . signalTarget : The target value that the autoscaler maintains for CPU utilization (real-time), predicted CPU utilization, load balancing utilization, or a metric configured with utilization target. singleInstanceAssignment : If scaling is based on a metric value that represents the total amount of work to be done, then singleInstanceAssignment is the quantity of work that each VM can handle. signalValue : The value of the autoscaling signal.",
+          "In this example, you might notice the new status message indicating problems with your load balancing configuration. { insertId: \"ivho6kg4icqfio\" logName: \"projects/example-project/logs/cloudaudit.googleapis.com%2Fsystem event\" protoPayload: { metadata: { @type: \"type.googleapis.com/autoscaler.AutoscalerStatusChange\" newStatus : { details: \"The autoscaler is configured to scale based on a load balancing signal but the instance group has not received any utilization data from the load balancer or the utilization is constantly 0."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "autoscaler.AutoscalerStatusChange",
+      "backupdr.googleapis.com",
+      "cloudaudit.googleapis.com",
+      "compute.autoscalers.changeStatus",
+      "compute.autoscalers.resize",
+      "resource.labels.instance",
+      "resource.type",
+      "type.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/compute/docs/autoscaler/understanding-autoscaler-decisions",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/configure-alerts",
+        "https://docs.cloud.google.com/compute/docs/autoscaler/viewing-autoscaler-logs"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/compute/docs/autoscaler/understanding-autoscaler-decisions",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/configure-alerts",
+        "https://docs.cloud.google.com/compute/docs/autoscaler/viewing-autoscaler-logs"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/compute/docs/autoscaler/understanding-autoscaler-decisions",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/configure-alerts",
+        "https://docs.cloud.google.com/compute/docs/autoscaler/viewing-autoscaler-logs"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/compute/docs/autoscaler/understanding-autoscaler-decisions",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/configure-alerts",
+        "https://docs.cloud.google.com/compute/docs/autoscaler/viewing-autoscaler-logs"
+      ]
+    }
+  ]
+}

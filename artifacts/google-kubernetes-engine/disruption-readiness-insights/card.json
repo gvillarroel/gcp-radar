@@ -1,0 +1,133 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:39.542Z",
+  "source_step08_card": "data/step-08/current/products/google-kubernetes-engine/card.json",
+  "product_name": "Google Kubernetes Engine",
+  "product_slug": "google-kubernetes-engine",
+  "feature_name": "Disruption readiness insights",
+  "feature_slug": "disruption-readiness-insights",
+  "summary": "Provides insights and recommendations to help workloads stay ready for disruption, including guidance based on Pod Disruption Budgets.",
+  "extended_definition": "Provides insights and recommendations to help workloads stay ready for disruption, including guidance based on Pod Disruption Budgets.",
+  "lifecycle": {
+    "latest_feature_date": "2023-08-25",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/docs/best-practices/batch-platform-on-gke",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/resources/autopilot-partners",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/stateful-workloads/postgresql"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Deploy a highly-available PostgreSQL database on GKE \\_|\\_ Kubernetes Engine\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/stateful-workloads/postgresql",
+        "source_id": "site-docs-root-2",
+        "final_score": 141,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Choose blue-green upgrades if your workloads are less tolerant of disruptions, and a temporary cost increase due to higher resource usage is acceptable.",
+          "Use the Recommender service to check for deprecation insights and recommendations to avoid service interruptions.",
+          "To get a baseline result, test with multi-connections via multi jobs (threads) for 30 seconds. pgbench -h $HOST PGPOOL -U postgres postgres -c10 -j4 -T 30 -R 200 The output looks similar to the following: pgbench (14.5) starting vacuum...end. transaction type: <builtin: TPC-B (sort of)> scaling factor: 1 query mode: simple number of clients: 10 number of threads: 4 duration: 30 s number of transactions actually processed: 5980 latency average = 7.613 ms latency stddev = 2.898 ms rate limit schedule lag: avg 0.256 (max 36.613) ms initial connection time = 397.804 ms tps = 201.955497 (without initial connection time) To ensure availability during upgrades, you can generate some load against your database, and ensure that the PostgreSQL application provides a consistent response rate during the upgrade."
+        ]
+      },
+      {
+        "title": "\"Best practices for running batch workloads on GKE \\_|\\_ Google Kubernetes\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/best-practices/batch-platform-on-gke",
+        "source_id": "site-docs-reference-required-4",
+        "final_score": 132,
+        "relevance": "",
+        "evidence_snippets": [
+          "Autopilot Standard This page introduces the best practices for building and optimizing batch processing platforms with Google Kubernetes Engine (GKE), including best practices for: Architecture Job management Multi-tenancy Security Queueing Storage Performance Cost efficiency Monitoring GKE provides a powerful framework for orchestrating batch workloads such as data processing, training machine learning models , running scientific simulations , and other high performance computing workloads .",
+          "The following table lists the key recommendations when managing queueing and fair sharing among batch workloads: Recommendation Resources Use Kueue Kueue is a kubernetes-native Job queueing system for batch, high performance computing, machine learning, and similar applications in a Kubernetes cluster.",
+          "The following table lists the key recommendations when managing access and security Recommendation Resources Set Workload Identity Federation for GKE GKE allows workloads in your GKE cluster to impersonate Identity and Access Management (IAM) service accounts to access Google Cloud services."
+        ]
+      },
+      {
+        "title": "\"Autopilot partners \\_|\\_ Google Kubernetes Engine (GKE) \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/resources/autopilot-partners",
+        "source_id": "site-docs-reference-2",
+        "final_score": 130,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Kubecost Kubecost provides real-time cost visibility and insights for teams using GKE, including Autopilot, helping you monitor your Kubernetes costs.",
+          "Sysdig Secure DevOps Platform The Sysdig Secure Devops Platform helps you implement container security practices in your GKE Autopilot clusters, including monitoring and securing workloads using the Sysdig agent.",
+          "Datadog Datadog provides visibility into containerized apps running on GKE Autopilot by collecting metrics, logs, and traces, which helps to identify performance issues and provide context for troubleshooting."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "docker.pkg.dev",
+      "vacuum...end"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/stateful-workloads/postgresql",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/best-practices/batch-platform-on-gke",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/resources/autopilot-partners"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/stateful-workloads/postgresql",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/best-practices/batch-platform-on-gke",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/resources/autopilot-partners"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/stateful-workloads/postgresql",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/best-practices/batch-platform-on-gke",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/resources/autopilot-partners"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/stateful-workloads/postgresql",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/best-practices/batch-platform-on-gke",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/resources/autopilot-partners"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/stateful-workloads/postgresql",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/best-practices/batch-platform-on-gke",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/resources/autopilot-partners"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/stateful-workloads/postgresql",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/best-practices/batch-platform-on-gke",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/resources/autopilot-partners"
+      ]
+    }
+  ]
+}

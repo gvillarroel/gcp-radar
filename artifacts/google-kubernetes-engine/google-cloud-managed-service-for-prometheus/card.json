@@ -1,0 +1,90 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:39.542Z",
+  "source_step08_card": "data/step-08/current/products/google-kubernetes-engine/card.json",
+  "product_name": "Google Kubernetes Engine",
+  "product_slug": "google-kubernetes-engine",
+  "feature_name": "Google Cloud Managed Service for Prometheus",
+  "feature_slug": "google-cloud-managed-service-for-prometheus",
+  "summary": "A managed service collects and stores Prometheus metrics in Google Cloud.",
+  "extended_definition": "A managed service collects and stores Prometheus metrics in Google Cloud.",
+  "lifecycle": {
+    "latest_feature_date": "2021-11-16",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/ray-on-gke/how-to/collect-view-logs-metrics",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/cadvisor-kubelet-metrics",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/kube-state-metrics"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Collect and view logs and metrics for Ray clusters on Google Kubernetes\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/ray-on-gke/how-to/collect-view-logs-metrics",
+        "source_id": "site-docs-reference-required-4",
+        "final_score": 196,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "View Ray metrics Google Cloud Managed Service for Prometheus provides a pre-configured Ray on GKE Overview dashboard that offers a centralized view of key Ray metrics.",
+          "For Standard GKE clusters, you must enable Google Cloud Managed Service for Prometheus to enable metrics collection for Ray clusters.",
+          "GKE collects all system metrics exported by Ray in Prometheus format."
+        ]
+      },
+      {
+        "title": "\"Collect and view cAdvisor/Kubelet metrics \\_|\\_ Google Kubernetes Engine\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/cadvisor-kubelet-metrics",
+        "source_id": "site-docs-reference-2",
+        "final_score": 172,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Click Save Changes . gcloud Update your cluster to collect metrics: gcloud container clusters update CLUSTER NAME \\ --location = COMPUTE LOCATION \\ --enable-managed-prometheus \\ --monitoring = SYSTEM,CADVISOR,KUBELET Replace the following: CLUSTER NAME : the name of the existing cluster.",
+          "Warning: If you are already ingesting cAdvisor/Kubelet metrics into Google Cloud Managed Service for Prometheus, then you must stop ingesting those metrics before enabling managed cAdvisor/Kubelet metrics, otherwise you might end up with duplicate or incorrect metrics.",
+          "Autopilot Standard This page describes how to configure a Google Kubernetes Engine (GKE) cluster to send a curated set of cAdvisor/Kubelet metrics to Cloud Monitoring using Google Cloud Managed Service for Prometheus."
+        ]
+      },
+      {
+        "title": "\"Collect and view kube state metrics \\_|\\_ Google Kubernetes Engine (GKE)\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/kube-state-metrics",
+        "source_id": "site-docs-reference-2",
+        "final_score": 172,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Click Save Changes . gcloud Update your cluster to collect metrics: gcloud container clusters update CLUSTER NAME \\ --location = COMPUTE LOCATION \\ --enable-managed-prometheus \\ --monitoring = SYSTEM,DAEMONSET,DEPLOYMENT,HPA,POD,STATEFULSET,STORAGE Replace the following: CLUSTER NAME : the name of the existing cluster.",
+          "Autopilot Standard This page describes how to configure a Google Kubernetes Engine (GKE) cluster to send a curated set of kube state, including metrics for Pods and Deployments, Cloud Monitoring using Google Cloud Managed Service for Prometheus.",
+          "Because all kube state metrics are ingested by using Google Cloud Managed Service for Prometheus , kube state metrics can be queried by using Prometheus Query Language (PromQL) ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/ray-on-gke/how-to/collect-view-logs-metrics",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/cadvisor-kubelet-metrics",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/kube-state-metrics"
+      ]
+    }
+  ]
+}

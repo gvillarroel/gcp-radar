@@ -1,0 +1,167 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:42.149Z",
+  "source_step08_card": "data/step-08/current/products/integration-connectors/card.json",
+  "product_name": "Integration Connectors",
+  "product_slug": "integration-connectors",
+  "feature_name": "Apache Kafka connector PublishMessage action",
+  "feature_slug": "apache-kafka-connector-publishmessage-action",
+  "summary": "The Apache Kafka connector provides a PublishMessage action that can publish messages to a Kafka topic and validate them against the schema registry.",
+  "extended_definition": "The Apache Kafka connector provides a PublishMessage action that can publish messages to a Kafka topic and validate them against the schema registry.",
+  "lifecycle": {
+    "latest_feature_date": "2023-05-23",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/integration-connectors/docs/connectors/apachecassandra/configure",
+      "https://docs.cloud.google.com/integration-connectors/docs/connectors/apachecouchdb/configure",
+      "https://docs.cloud.google.com/integration-connectors/docs/connectors/apachekafka/configure",
+      "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudsqlforsqlserver/configure"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Apache Kafka \\_|\\_ Integration Connectors \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/integration-connectors/docs/connectors/apachekafka/configure",
+        "source_id": "site-docs-root-2",
+        "final_score": 281,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "A sample response of the PublishMessage action is as follows: {Success: true, PartitionWritten: 1, OffsetWritten: 22301, KeyWritten: \"dGVzdA==\", TimestampWritten: 1690806748} Configuration for Confluent Cloud Configuration for the Confluent Cloud differs slightly from the previously documented steps for Apache Kafka.",
+          "System limitations The Apache Kafka connector can process a maximum of 50 transactions per second, per node , and throttles any transactions beyond this limit.",
+          "Before you begin Before using the Apache Kafka connector, do the following tasks: In your Google Cloud project: Ensure that network connectivity is set up."
+        ]
+      },
+      {
+        "title": "Apache Cassandra \\_|\\_ Integration Connectors \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/integration-connectors/docs/connectors/apachecassandra/configure",
+        "source_id": "site-docs-root-2",
+        "final_score": 209,
+        "relevance": "",
+        "evidence_snippets": [
+          "Before you begin Before using the Apache Cassandra connector, do the following tasks: In your Google Cloud project: Ensure that network connectivity is set up.",
+          "System limitations The Apache Cassandra connector can process 65 transactions per second, per node , and throttles any transactions beyond this limit.",
+          "Action: An action is a first class function that is made available to the integration through the connector interface."
+        ]
+      },
+      {
+        "title": "Apache CouchDB \\_|\\_ Integration Connectors \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/integration-connectors/docs/connectors/apachecouchdb/configure",
+        "source_id": "site-docs-root-2",
+        "final_score": 209,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Secret Version 1 Destination Type(Server) Host address Host address https://198.51.100.0 Username USERNAME Password PASSWORD Secret version 1 JWT Authentication connection type Field name Details Location us-central1 Connector Apache CouchDB Connector version 1 Connection Name couchdb-vm-jwt-conn Enable Cloud Logging Yes Service Account SERVICE ACCOUNT NAME@PROJECT ID.iam.gserviceaccount.com List Views No Flexible Schema No Proxy No Minimum number of nodes 2 Maximum number of nodes 50 Destination Type(Server) Host address Host address http://203.0.113.0 JWT Subject admin JWT Algorithm HS256 JWT Key Type Symmetric JWT Key JWT KEY Secret version 1 Entities, operations, and actions All the Integration Connectors provide a layer of abstraction for the objects of the connected application.",
+          "System limitations The Apache CouchDB connector can process a maximum of 5 transactions per second, per node , and throttles any transactions beyond this limit.",
+          "Before you begin Before using the Apache CouchDB connector, do the following tasks: In your Google Cloud project: Ensure that network connectivity is set up."
+        ]
+      },
+      {
+        "title": "\"Cloud SQL for SQL Server \\_|\\_ Integration Connectors \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudsqlforsqlserver/configure",
+        "source_id": "site-docs-root-2",
+        "final_score": 173,
+        "relevance": "",
+        "evidence_snippets": [
+          "In the Task Input section of the Connectors task, click connectorInputPayload and then enter a value similar to the following in the Default Value field: { \"ID\": 3 } If the action is successful, the connector task's connectorOutputPayload response parameter will have a value similar to the following: [{ \"ID\": 3, \"Name\": \"Charlie\", \"City\": \"Paris\", \"SALARY\": 6500.0, \"Department\": \"IT\" }] Entity operation examples This section provides examples of entity operations available in this connector.",
+          "Supported data types The following are the supported data types for this connector: BIGINT BINARY BIT BOOLEAN CHAR DATE DECIMAL DOUBLE FLOAT INTEGER LONGN VARCHAR LONG VARCHAR NCHAR NUMERIC NVARCHAR REAL SMALL INT TIME TIMESTAMP TINY INT VARBINARY VARCHAR Actions This section provides actions available in this connector.",
+          "Grant the following IAM roles to the service account that you want to use for the connector: roles/secretmanager.viewer roles/secretmanager.secretAccessor roles/cloudsql.editor A service account is a special type of Google account intended to represent a non-human user that needs to authenticate and be authorized to access data in Google APIs."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cloudsql.editor",
+      "iam.gserviceaccount.com",
+      "secretmanager.secretAccessor",
+      "secretmanager.viewer"
+    ],
+    "missing_inventory_roles": [
+      "roles/cloudsql.editor",
+      "roles/secretmanager.secretAccessor",
+      "roles/secretmanager.viewer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/apachekafka/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/apachecassandra/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/apachecouchdb/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudsqlforsqlserver/configure"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/apachekafka/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/apachecassandra/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/apachecouchdb/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudsqlforsqlserver/configure"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/apachekafka/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/apachecassandra/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/apachecouchdb/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudsqlforsqlserver/configure"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/apachekafka/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/apachecassandra/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/apachecouchdb/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudsqlforsqlserver/configure"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/apachekafka/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/apachecassandra/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/apachecouchdb/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudsqlforsqlserver/configure"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/apachekafka/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/apachecassandra/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/apachecouchdb/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudsqlforsqlserver/configure"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/apachekafka/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/apachecassandra/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/apachecouchdb/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudsqlforsqlserver/configure"
+      ]
+    }
+  ]
+}

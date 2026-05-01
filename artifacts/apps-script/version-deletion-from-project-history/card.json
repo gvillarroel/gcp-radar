@@ -1,0 +1,88 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:17.437Z",
+  "source_step08_card": "data/step-08/current/products/apps-script/card.json",
+  "product_name": "Apps Script",
+  "product_slug": "apps-script",
+  "feature_name": "Version deletion from project history",
+  "feature_slug": "version-deletion-from-project-history",
+  "summary": "Version deletion from project history lets users remove undeployed script versions from the Apps Script IDE.",
+  "extended_definition": "Version deletion from project history lets users remove undeployed script versions from the Apps Script IDE.",
+  "lifecycle": {
+    "latest_feature_date": "2023-12-06",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/apps-script/api/reference/rest/v1/projects.versions/create",
+      "https://developers.google.com/apps-script/api/reference/rest/v1/projects.versions/list",
+      "https://developers.google.com/apps-script/releases"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Google Apps Script release notes \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/apps-script/releases",
+        "source_id": "site-docs-root",
+        "final_score": 153,
+        "relevance": "",
+        "evidence_snippets": [
+          "To learn more, refer to the following: Google Workspace Updates blog : View & compare script versions with Apps Script project history Developer documentation : Versions June 12, 2023 Feature Third-party smart chips and link previews are now generally available.",
+          "December 06, 2023 Feature ( Generally available ): You can now delete versions in your Apps Script project from the project history page in the Apps Script IDE.",
+          "If your script reaches the versions limit, or you want to clean up your script project, delete undeployed versions that you no longer need."
+        ]
+      },
+      {
+        "title": "Method: projects.versions.list \\_|\\_ Apps Script \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/apps-script/api/reference/rest/v1/projects.versions/list",
+        "source_id": "site-api-reference",
+        "final_score": 119,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Google Workspace Apps Script Reference Send feedback Method: projects.versions.list Stay organized with collections Save and categorize content based on your preferences.",
+          "Response body If successful, the response body contains data with the following structure: Response with the list of the versions for the specified script project.",
+          "HTTP request GET https://script.googleapis.com/v1/projects/{scriptId}/versions The URL uses gRPC Transcoding syntax."
+        ]
+      },
+      {
+        "title": "Method: projects.versions.create \\_|\\_ Apps Script \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/apps-script/api/reference/rest/v1/projects.versions/create",
+        "source_id": "site-api-reference",
+        "final_score": 112,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Google Workspace Apps Script Reference Send feedback Method: projects.versions.create Stay organized with collections Save and categorize content based on your preferences.",
+          "Page Summary outlined flag A new immutable version of a script project is created using a POST request to a specific URL.",
+          "HTTP request POST https://script.googleapis.com/v1/projects/{scriptId}/versions The URL uses gRPC Transcoding syntax."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "developers.google.com",
+      "projects.versions",
+      "projects.versions.create",
+      "projects.versions.get",
+      "projects.versions.list",
+      "script.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": []
+}

@@ -1,0 +1,180 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:41.527Z",
+  "source_step08_card": "data/step-08/current/products/google-workspace-add-ons/card.json",
+  "product_name": "Google Workspace add-ons",
+  "product_slug": "google-workspace-add-ons",
+  "feature_name": "Third-party smart chips",
+  "feature_slug": "third-party-smart-chips",
+  "summary": "Lets Google Workspace Add-ons build third-party smart chips; Lets Google Workspace Add-ons build third-party smart chips.",
+  "extended_definition": "Lets Google Workspace Add-ons build third-party smart chips; Lets Google Workspace Add-ons build third-party smart chips.",
+  "lifecycle": {
+    "latest_feature_date": "2023-06-12",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/workspace/add-ons/guides/create-insert-resource-smart-chip",
+      "https://developers.google.com/workspace/add-ons/guides/glossary",
+      "https://developers.google.com/workspace/add-ons/guides/preview-links-smart-chips",
+      "https://developers.google.com/workspace/add-ons/reference/rpc/google.apps.card.v1"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Preview links with smart chips \\_|\\_ Google Workspace add-ons \\_|\\_ Google\\",
+        "url": "https://developers.google.com/workspace/add-ons/guides/preview-links-smart-chips",
+        "source_id": "site-docs-root",
+        "final_score": 328,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Note: For Slides, labelText and localizedLabelText don't render, but you must include labelText for when Slides starts supporting third-party smart chips. localizedLabelText is optional. { \"oauthScopes\" : [ \"https://www.googleapis.com/auth/workspace.linkpreview\" ], \"addOns\" : { \"common\" : { \"name\" : \"Preview support cases\" , \"logoUrl\" : \"https://www.example.com/images/company-logo.png\" , \"layoutProperties\" : { \"primaryColor\" : \"#dd4b39\" } }, \"docs\" : { \"linkPreviewTriggers\" : [ { \"runFunction\" : \"caseLinkPreview\" , \"patterns\" : [ { \"hostPattern\" : \"example.com\" , \"pathPrefix\" : \"support/cases\" }, { \"hostPattern\" : \" .example.com\" , \"pathPrefix\" : \"cases\" }, { \"hostPattern\" : \"cases.example.com\" } ], \"labelText\" : \"Support case\" , \"logoUrl\" : \"https://www.example.com/images/support-icon.png\" , \"localizedLabelText\" : { \"es\" : \"Caso de soporte\" } } ] }, \"sheets\" : { \"linkPreviewTriggers\" : [ { \"runFunction\" : \"caseLinkPreview\" , \"patterns\" : [ { \"hostPattern\" : \"example.com\" , \"pathPrefix\" : \"support/cases\" }, { \"hostPattern\" : \" .example.com\" , \"pathPrefix\" : \"cases\" }, { \"hostPattern\" : \"cases.example.com\" } ], \"labelText\" : \"Support case\" , \"logoUrl\" : \"https://www.example.com/images/support-icon.png\" , \"localizedLabelText\" : { \"es\" : \"Caso de soporte\" } } ] }, \"slides\" : { \"linkPreviewTriggers\" : [ { \"runFunction\" : \"caseLinkPreview\" , \"patterns\" : [ { \"hostPattern\" : \"example.com\" , \"pathPrefix\" : \"support/cases\" }, { \"hostPattern\" : \" .example.com\" , \"pathPrefix\" : \"cases\" }, { \"hostPattern\" : \"cases.example.com\" } ], \"labelText\" : \"Support case\" , \"logoUrl\" : \"https://www.example.com/images/support-icon.png\" , \"localizedLabelText\" : { \"es\" : \"Caso de soporte\" } } ] } } } In the example, the Google Workspace add-on previews links for a company's support case service.",
+          "Page Summary outlined flag Google Workspace add-ons can enhance link interactions in Docs, Sheets, and Slides by replacing them with smart chips or linked titles that reveal detailed previews.",
+          "Home Google Workspace Add-ons Send feedback Preview links with smart chips Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"Create third-party resources from the @ menu \\_|\\_ Google Workspace add-ons\\",
+        "url": "https://developers.google.com/workspace/add-ons/guides/create-insert-resource-smart-chip",
+        "source_id": "site-docs-root",
+        "final_score": 302,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Manifest Apps Script apps-script/3p-resources/appsscript.json View on GitHub { \"timeZone\" : \"America/New York\" , \"exceptionLogging\" : \"STACKDRIVER\" , \"runtimeVersion\" : \"V8\" , \"oauthScopes\" : [ \"https://www.googleapis.com/auth/workspace.linkpreview\" , \"https://www.googleapis.com/auth/workspace.linkcreate\" ], \"addOns\" : { \"common\" : { \"name\" : \"Manage support cases\" , \"logoUrl\" : \"https://developers.google.com/workspace/add-ons/images/support-icon.png\" , \"layoutProperties\" : { \"primaryColor\" : \"#dd4b39\" } }, \"docs\" : { \"linkPreviewTriggers\" : [ { \"runFunction\" : \"caseLinkPreview\" , \"patterns\" : [ { \"hostPattern\" : \"example.com\" , \"pathPrefix\" : \"support/cases\" }, { \"hostPattern\" : \" .example.com\" , \"pathPrefix\" : \"cases\" }, { \"hostPattern\" : \"cases.example.com\" } ], \"labelText\" : \"Support case\" , \"localizedLabelText\" : { \"es\" : \"Caso de soporte\" }, \"logoUrl\" : \"https://developers.google.com/workspace/add-ons/images/support-icon.png\" } ], \"createActionTriggers\" : [ { \"id\" : \"createCase\" , \"labelText\" : \"Create support case\" , \"localizedLabelText\" : { \"es\" : \"Crear caso de soporte\" }, \"runFunction\" : \"createCaseInputCard\" , \"logoUrl\" : \"https://developers.google.com/workspace/add-ons/images/support-icon.png\" } ] } } } Node.js Note: To use the following deployment resource, replace $URL1 and $URL2 with the URLs of the functions for creating a third-party resource and creating a link preview. node/3p-resources/deployment.json View on GitHub { \"oauthScopes\" : [ \"https://www.googleapis.com/auth/workspace.linkpreview\" , \"https://www.googleapis.com/auth/workspace.linkcreate\" ], \"addOns\" : { \"common\" : { \"name\" : \"Manage support cases\" , \"logoUrl\" : \"https://developers.google.com/workspace/add-ons/images/support-icon.png\" , \"layoutProperties\" : { \"primaryColor\" : \"#dd4b39\" } }, \"docs\" : { \"linkPreviewTriggers\" : [ { \"runFunction\" : \"$URL1\" , \"patterns\" : [ { \"hostPattern\" : \"example.com\" , \"pathPrefix\" : \"support/cases\" }, { \"hostPattern\" : \" .example.com\" , \"pathPrefix\" : \"cases\" }, { \"hostPattern\" : \"cases.example.com\" } ], \"labelText\" : \"Support case\" , \"localizedLabelText\" : { \"es\" : \"Caso de soporte\" }, \"logoUrl\" : \"https://developers.google.com/workspace/add-ons/images/support-icon.png\" } ], \"createActionTriggers\" : [ { \"id\" : \"createCase\" , \"labelText\" : \"Create support case\" , \"localizedLabelText\" : { \"es\" : \"Crear caso de soporte\" }, \"runFunction\" : \"$URL2\" , \"logoUrl\" : \"https://developers.google.com/workspace/add-ons/images/support-icon.png\" } ] } } } Code Apps Script apps-script/3p-resources/3p-resources.gs View on GitHub / Copyright 2024 Google LLC Licensed under the Apache License, Version 2.0 (the \"License\"); you may not use this file except in compliance with the License.",
+          "This page explains how to build a Google Workspace add-on that lets Google Docs users create resources, such as a support case or project task, in a third-party service from within Google Docs.",
+          "Home Google Workspace Add-ons Send feedback Create third-party resources from the @ menu Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"Package google.apps.card.v1 \\_|\\_ Google Workspace add-ons \\_|\\_ Google\\",
+        "url": "https://developers.google.com/workspace/add-ons/reference/rpc/google.apps.card.v1",
+        "source_id": "site-api-reference",
+        "final_score": 264,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For example, the following JSON returns a unique title for the link preview and its smart chip, and a preview card with a header and text description: { \"action\": { \"linkPreview\": { \"title\": \"Smart chip title\", \"linkPreviewTitle\": \"Link preview title\", \"previewCard\": { \"header\": { \"title\": \"Preview card header\", }, \"sections\": [ { \"widgets\": [ { \"textParagraph\": { \"text\": \"Description of the link.\" } } ] } ] } } } } The example returns the following link preview: Fields previewCard Card A card that displays information about a link from a third-party service. title string The title that displays in the smart chip for the link preview.",
+          "For example, this is a JSON representation of a carousel that contains three text paragraph widgets. { \"carouselCards\": [ { \"widgets\": [ { \"textParagraph\": { \"text\": \"First text paragraph in carousel\", } } ] }, { \"widgets\": [ { \"textParagraph\": { \"text\": \"Second text paragraph in carousel\", } } ] }, { \"widgets\": [ { \"textParagraph\": { \"text\": \"Third text paragraph in carousel\", } } ] } ] } Available for Google Chat apps and unavailable for Google Workspace add-ons.",
+          "For more information, see Create third-party resources from the @ menu . modifyOperations[] ModifyCard For add-ons in Google Chat , updates a card based on a user interaction."
+        ]
+      },
+      {
+        "title": "Glossary \\_|\\_ Google Workspace add-ons \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/workspace/add-ons/guides/glossary",
+        "source_id": "site-docs-root",
+        "final_score": 240,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Key concepts include: Calendar conferencing add-ons (for third-party conferencing), cards (UI pages), card-based add-ons, conference data/solutions , context (host app state), contextual triggering , editor add-ons , event objects (data passed to the server), Gmail add-ons , homepages , manifest (project configuration), manifest triggers , sidebar , smart chip , trigger (event response), trigger function , widget (UI element), and widget handler functions .\\n\"]]",
+          "You can configure your add-on to use smart chips to preview links for a third-party or non-Google service.",
+          "Conference data The set of information Google Calendar needs in order to let users create and join third-party conferences enabled by a Google Workspace add-on or Calendar conferencing add-on."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "apps.extensions.markup",
+      "appsscript.json",
+      "cases.example.com",
+      "deployment.json",
+      "developers.google.com",
+      "example.com",
+      "icon.png",
+      "logo.png",
+      "projects.deployments",
+      "resources.gs",
+      "workspace.linkcreate",
+      "workspace.linkpreview"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://developers.google.com/workspace/add-ons/guides/preview-links-smart-chips",
+        "https://developers.google.com/workspace/add-ons/guides/create-insert-resource-smart-chip",
+        "https://developers.google.com/workspace/add-ons/reference/rpc/google.apps.card.v1",
+        "https://developers.google.com/workspace/add-ons/guides/glossary"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://developers.google.com/workspace/add-ons/guides/preview-links-smart-chips",
+        "https://developers.google.com/workspace/add-ons/guides/create-insert-resource-smart-chip",
+        "https://developers.google.com/workspace/add-ons/reference/rpc/google.apps.card.v1",
+        "https://developers.google.com/workspace/add-ons/guides/glossary"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://developers.google.com/workspace/add-ons/guides/preview-links-smart-chips",
+        "https://developers.google.com/workspace/add-ons/guides/create-insert-resource-smart-chip",
+        "https://developers.google.com/workspace/add-ons/reference/rpc/google.apps.card.v1",
+        "https://developers.google.com/workspace/add-ons/guides/glossary"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://developers.google.com/workspace/add-ons/guides/preview-links-smart-chips",
+        "https://developers.google.com/workspace/add-ons/guides/create-insert-resource-smart-chip",
+        "https://developers.google.com/workspace/add-ons/reference/rpc/google.apps.card.v1",
+        "https://developers.google.com/workspace/add-ons/guides/glossary"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://developers.google.com/workspace/add-ons/guides/preview-links-smart-chips",
+        "https://developers.google.com/workspace/add-ons/guides/create-insert-resource-smart-chip",
+        "https://developers.google.com/workspace/add-ons/reference/rpc/google.apps.card.v1",
+        "https://developers.google.com/workspace/add-ons/guides/glossary"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://developers.google.com/workspace/add-ons/guides/preview-links-smart-chips",
+        "https://developers.google.com/workspace/add-ons/guides/create-insert-resource-smart-chip",
+        "https://developers.google.com/workspace/add-ons/reference/rpc/google.apps.card.v1",
+        "https://developers.google.com/workspace/add-ons/guides/glossary"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://developers.google.com/workspace/add-ons/guides/preview-links-smart-chips",
+        "https://developers.google.com/workspace/add-ons/guides/create-insert-resource-smart-chip",
+        "https://developers.google.com/workspace/add-ons/reference/rpc/google.apps.card.v1",
+        "https://developers.google.com/workspace/add-ons/guides/glossary"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://developers.google.com/workspace/add-ons/guides/preview-links-smart-chips",
+        "https://developers.google.com/workspace/add-ons/guides/create-insert-resource-smart-chip",
+        "https://developers.google.com/workspace/add-ons/reference/rpc/google.apps.card.v1",
+        "https://developers.google.com/workspace/add-ons/guides/glossary"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,126 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:27.901Z",
+  "source_step08_card": "data/step-08/current/products/cloud-sql-for-sql-server/card.json",
+  "product_name": "Cloud SQL for SQL Server",
+  "product_slug": "cloud-sql-for-sql-server",
+  "feature_name": "BackupRun custom organization policies",
+  "feature_slug": "backuprun-custom-organization-policies",
+  "summary": "Cloud SQL supports custom organization policies for the BackupRun resource.",
+  "extended_definition": "Cloud SQL supports custom organization policies for the BackupRun resource.",
+  "lifecycle": {
+    "latest_feature_date": "2024-11-14",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/sql/docs/sqlserver/admin-api/rest/v1/backupRuns",
+      "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/manage-standard-backups",
+      "https://docs.cloud.google.com/sql/docs/sqlserver/quotas"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"REST Resource: backupRuns \\_|\\_ Cloud SQL for SQL Server \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/sql/docs/sqlserver/admin-api/rest/v1/backupRuns",
+        "source_id": "site-api-reference",
+        "final_score": 116,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Databases Cloud SQL SQL Server Reference Send feedback REST Resource: backupRuns Stay organized with collections Save and categorize content based on your preferences.",
+          "Resource: BackupRun JSON representation SqlBackupRunStatus SqlBackupRunType Methods Resource: BackupRun A BackupRun resource.",
+          "JSON representation { \"kind\" : string , \"status\" : enum ( SqlBackupRunStatus ) , \"enqueuedTime\" : string , \"id\" : string , \"startTime\" : string , \"endTime\" : string , \"error\" : { object ( OperationError ) } , \"type\" : enum ( SqlBackupRunType ) , \"description\" : string , \"windowStartTime\" : string , \"instance\" : string , \"selfLink\" : string , \"location\" : string , \"databaseVersion\" : enum ( SqlDatabaseVersion ) , \"diskEncryptionConfiguration\" : { object ( DiskEncryptionConfiguration ) } , \"diskEncryptionStatus\" : { object ( DiskEncryptionStatus ) } , \"backupKind\" : enum ( SqlBackupKind ) , \"timeZone\" : string , \"maxChargeableBytes\" : string } Fields kind string This is always sql#backupRun . status enum ( SqlBackupRunStatus ) The status of this run. enqueuedTime string ( Timestamp format) The time the run was enqueued in UTC timezone in RFC 3339 format, for example 2012-11-15T16:19:00.094Z ."
+        ]
+      },
+      {
+        "title": "\"Manage standard backups \\_|\\_ Cloud SQL for SQL Server \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/manage-standard-backups",
+        "source_id": "site-docs-reference-required-4",
+        "final_score": 114,
+        "relevance": "",
+        "evidence_snippets": [
+          "Execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method DELETE -Headers $headers -Uri \"https://sqladmin.googleapis.com/sql/v1beta4/projects/ project-id /instances/ instance-id /backupRuns/ backup-id \" Select-Object -Expand Content You should receive a JSON response similar to the following: Response { \"kind\": \"sql#operation\", \"targetLink\": \"https://sqladmin.googleapis.com/sql/v1beta4/projects/ project-id /instances/ instance-id \", \"status\": \"PENDING\", \"user\": \"user@example.com\", \"insertTime\": \"2020-01-21T22:43:37.981Z\", \"operationType\": \"DELETE BACKUP\", \"name\": \" operation-id \", \"targetId\": \" instance-id \", \"selfLink\": \"https://sqladmin.googleapis.com/sql/v1beta4/projects/ project-id /operations/ operation-id \", \"targetProject\": \" project-id \" } Set a custom location for backups Only use a custom backup location if required by regulation.",
+          "The number can't be less than the default (seven). gcloud sql instances patch INSTANCE NAME \\ --retained-backups-count = NUM TO RETAIN Terraform To specify the number of automated backups to retain for a database instance, use a Terraform resource . resource \"google sql database instance\" \"default\" { name = \"sqlserver-instance-backup-retention\" region = \"us-central1\" database version = \"SQLSERVER 2019 STANDARD\" root password = \"INSERT-PASSWORD-HERE\" settings { tier = \"db-custom-2-7680\" backup configuration { enabled = true backup retention settings { retained backups = 365 retention unit = \"COUNT\" } } } } REST v1beta4 Before using any of the request data, make the following replacements: unit : Optional: The retention unit can either be an integer or a string.",
+          "To create a backup in a custom location: gcloud sql backups create \\ --async \\ --instance = INSTANCE NAME \\ --location = BACKUP LOCATION REST v1 Before using any of the request data, make the following replacements: project-id : The project ID instance-id : The instance ID HTTP method and URL: POST https://sqladmin.googleapis.com/v1/projects/ project-id /instances/ instance-id /backupRuns To send your request, expand one of these options: curl (Linux, macOS, or Cloud Shell) Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI ."
+        ]
+      },
+      {
+        "title": "Quotas and limits \\_|\\_ Cloud SQL for SQL Server \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/sql/docs/sqlserver/quotas",
+        "source_id": "site-docs-root",
+        "final_score": 109,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "SqlBackupRunsService.Get SqlDatabasesService.Get SqlInstancesService.Get SqlOperationsService.Get SqlSslCertsService.Get SqlUsersService.Get 500 List sqladmin.googleapis.com/list The number of requests that are made per minute per user per region to use the APIs in this category.",
+          "SqlFlagsService.List SqlTiersService.List 180 Limits There are restrictions on some Cloud SQL resources that are not replenished periodically and not shown on the Quotas page in the Google Cloud console.",
+          "SqlBackupRunsService.Delete SqlBackupRunsService.Insert SqlDatabasesService.Delete SqlDatabasesService.Insert SqlDatabasesService.Patch SqlDatabasesService.Update SqlInstancesService."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "example.com",
+      "settings.backupConfiguration.location",
+      "sqladmin.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/manage-standard-backups",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/admin-api/rest/v1/backupRuns",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/quotas"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/manage-standard-backups",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/admin-api/rest/v1/backupRuns",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/quotas"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/manage-standard-backups",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/admin-api/rest/v1/backupRuns",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/quotas"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/manage-standard-backups",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/admin-api/rest/v1/backupRuns",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/quotas"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/manage-standard-backups",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/admin-api/rest/v1/backupRuns",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/quotas"
+      ]
+    }
+  ]
+}

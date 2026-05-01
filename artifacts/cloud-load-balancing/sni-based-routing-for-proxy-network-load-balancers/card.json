@@ -1,0 +1,122 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:24.125Z",
+  "source_step08_card": "data/step-08/current/products/cloud-load-balancing/card.json",
+  "product_name": "Cloud Load Balancing",
+  "product_slug": "cloud-load-balancing",
+  "feature_name": "SNI-based routing for proxy Network Load Balancers",
+  "feature_slug": "sni-based-routing-for-proxy-network-load-balancers",
+  "summary": "Proxy Network Load Balancers can route TLS traffic by SNI hostname using TLSRoute without terminating the TLS connection.",
+  "extended_definition": "Proxy Network Load Balancers can route TLS traffic by SNI hostname using TLSRoute without terminating the TLS connection.",
+  "lifecycle": {
+    "latest_feature_date": "2026-03-31",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/load-balancing/docs/network/udp-with-network-load-balancing",
+      "https://docs.cloud.google.com/load-balancing/docs/tcp",
+      "https://docs.cloud.google.com/load-balancing/docs/tcp/internal-proxy"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Internal proxy Network Load Balancer overview \\_|\\_ Cloud Load Balancing\\",
+        "url": "https://docs.cloud.google.com/load-balancing/docs/tcp/internal-proxy",
+        "source_id": "site-docs-root",
+        "final_score": 191,
+        "relevance": "",
+        "evidence_snippets": [
+          "SNI-based routing lets your TCP proxy Network Load Balancers route traffic to specific backend services based on the Server Name Indication (SNI) hostname provided during the TLS handshake.",
+          "The following table shows the forwarding rule requirements for internal proxy Network Load Balancers: Load balancer mode Forwarding rule, IP address, and proxy-only subnet --purpose Routing from the client to the load balancer's frontend Regional internal proxy Network Load Balancer Regional forwardingRules Regional IP address Load balancing scheme: INTERNAL MANAGED Proxy-only subnet --purpose : REGIONAL MANAGED PROXY IP address --purpose : SHARED LOADBALANCER VIP You can enable global access to allow clients from any region to access your load balancer.",
+          "The following table describes proxy-only subnet requirements for internal proxy Network Load Balancers: Load balancer mode Value of the proxy-only subnet --purpose flag Regional internal proxy Network Load Balancer REGIONAL MANAGED PROXY Regional and cross-region load balancers cannot share the same subnets All the regional Envoy-based load balancers in a region and VPC network share the same proxy-only subnet."
+        ]
+      },
+      {
+        "title": "\"External proxy Network Load Balancer overview \\_|\\_ Cloud Load Balancing\\",
+        "url": "https://docs.cloud.google.com/load-balancing/docs/tcp",
+        "source_id": "site-docs-root",
+        "final_score": 181,
+        "relevance": "",
+        "evidence_snippets": [
+          "For more information, see the following: Balancing modes Load balancing locality policy (regional backend service API documentation) SNI-based routing with TLS routes Note: SNI-based routing is supported only for regional external proxy Network Load Balancers.",
+          "SNI-based routing lets your TCP proxy Network Load Balancers route traffic to specific backend services based on the Server Name Indication (SNI) hostname provided during the TLS handshake.",
+          "The following limitations apply only to classic proxy Network Load Balancers and global external proxy Network Load Balancer that are deployed with an SSL target proxy: Classic proxy Network Load Balancers and global external proxy Network Load Balancers do not support client certificate-based authentication, also known as mutual TLS authentication."
+        ]
+      },
+      {
+        "title": "\"Use UDP with regional external passthrough Network Load Balancers \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/load-balancing/docs/network/udp-with-network-load-balancing",
+        "source_id": "site-docs-root",
+        "final_score": 177,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Networking Load Balancing Guides Send feedback Use UDP with regional external passthrough Network Load Balancers Stay organized with collections Save and categorize content based on your preferences.",
+          "Like TCP-based apps, UDP-based apps can also benefit from a load balancer, which is why regional external passthrough Network Load Balancers are used in UDP scenarios.",
+          "On each Linux virtual machine (VM) running on Compute Engine that is a backend of a Google Cloud regional external passthrough Network Load Balancer, an entry in the local routing table routes traffic that's destined for the load balancer's IP address to the network interface controller (NIC)."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/tcp/internal-proxy",
+        "https://docs.cloud.google.com/load-balancing/docs/tcp",
+        "https://docs.cloud.google.com/load-balancing/docs/network/udp-with-network-load-balancing"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/tcp/internal-proxy",
+        "https://docs.cloud.google.com/load-balancing/docs/tcp",
+        "https://docs.cloud.google.com/load-balancing/docs/network/udp-with-network-load-balancing"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/tcp/internal-proxy",
+        "https://docs.cloud.google.com/load-balancing/docs/tcp",
+        "https://docs.cloud.google.com/load-balancing/docs/network/udp-with-network-load-balancing"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/tcp/internal-proxy",
+        "https://docs.cloud.google.com/load-balancing/docs/tcp",
+        "https://docs.cloud.google.com/load-balancing/docs/network/udp-with-network-load-balancing"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/tcp/internal-proxy",
+        "https://docs.cloud.google.com/load-balancing/docs/tcp",
+        "https://docs.cloud.google.com/load-balancing/docs/network/udp-with-network-load-balancing"
+      ]
+    }
+  ]
+}

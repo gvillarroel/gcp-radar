@@ -1,0 +1,126 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:43.352Z",
+  "source_step08_card": "data/step-08/current/products/manufacturing-data-engine/card.json",
+  "product_name": "Manufacturing Data Engine",
+  "product_slug": "manufacturing-data-engine",
+  "feature_name": "Type-metadata bucket associations",
+  "feature_slug": "type-metadata-bucket-associations",
+  "summary": "Links types to metadata buckets and can require record contextualization with specific bucket metadata.",
+  "extended_definition": "Links types to metadata buckets and can require record contextualization with specific bucket metadata.",
+  "lifecycle": {
+    "latest_feature_date": "2023-08-03",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/manufacturing-data-engine/docs/guides/model/how-to-create-a-metadata-bucket",
+      "https://docs.cloud.google.com/manufacturing-data-engine/docs/guides/model/how-to-create-a-metadata-bucket-version",
+      "https://docs.cloud.google.com/manufacturing-data-engine/docs/guides/model/how-to-create-a-new-type-version",
+      "https://docs.cloud.google.com/manufacturing-data-engine/docs/guides/model/how-to-create-a-type"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Create a metadata bucket \\_|\\_ Manufacturing Data Engine \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/manufacturing-data-engine/docs/guides/model/how-to-create-a-metadata-bucket",
+        "source_id": "site-docs-reference",
+        "final_score": 217,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "REST Execute the following REST API request: POST /metadata/v1/buckets { \"name\" : \" BUCKET NAME \" , \"type\" : \" BUCKET TYPE \" , \"schema\" : \" BUCKET SCHEMA \" , \"provider\" : \"local\" , \"attributes\" : { \"instanceOverwriteMode\" : \" INSTANCE OVERWRITE MODE \" } } Replace the following: BUCKET NAME : The name of the bucket to be created.",
+          "Three different bucket types are supported: Tag : Buckets that qualify a given tag.",
+          "The following is a sample JSON Schema of a default metadata bucket provided by the default configuration package: { \"$id\" : \"https://gmde.cloud/tag.schema.json\" , \"$schema\" : \"https://json-schema.org/draft/2019-09/schema\" , \"title\" : \"Tag metadata bucket\" , \"type\" : \"object\" , \"properties\" : { \"datatype\" : { \"type\" : \"string\" }, \"description\" : { \"type\" : \"string\" }, \"registerId\" : { \"type\" : \"string\" }, \"edgeTagName\" : { \"type\" : \"string\" }, \"tagName\" : { \"description\" : \"Tag name\" , \"type\" : \"string\" }, \"deviceID\" : { \"type\" : \"string\" }, \"deviceName\" : { \"type\" : \"string\" }, \"deviceMetadata\" : { \"type\" : \"object\" } }, \"required\" : [ \"tagName\" ], \"additionalProperties\" : false } Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License ."
+        ]
+      },
+      {
+        "title": "\"Create a metadata bucket version \\_|\\_ Manufacturing Data Engine \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/manufacturing-data-engine/docs/guides/model/how-to-create-a-metadata-bucket-version",
+        "source_id": "site-docs-reference",
+        "final_score": 213,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "REST Execute the following REST API request: POST /metadata/v1/buckets/ BUCKET NAME /versions { \"schema\" : \" BUCKET SCHEMA \" , \"provider\" : \"local\" } Replace the following: BUCKET NAME : Name of the bucket to be created.",
+          "You must upgrade your types and parsers or create new types and parsers to use the new bucket version.",
+          "Console To create a new metadata bucket version click Create New Version from the METADATA section of the Cloud Management MC web interface: A configuration panel is displayed with a form to update the parameters of the new metadata bucket version : Only backward compatible changes are allowed for new versions."
+        ]
+      },
+      {
+        "title": "\"Create a type version \\_|\\_ Manufacturing Data Engine \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/manufacturing-data-engine/docs/guides/model/how-to-create-a-new-type-version",
+        "source_id": "site-docs-reference",
+        "final_score": 201,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "REST Execute the following REST API request: POST /configuration/v1/types/ TYPE NAME /versions { \"metadataBuckets\" : [ { \"bucketName\" : \" EXISTING BUCKET NAME \" , \"version\" : \" EXISTING BUCKET VERSION \" }, { \"bucketName\" : \" NEW BUCKET NAME \" , \"version\" : \" NEW BUCKET VERSION \" } ], \"storageSpecs\" : [ { \"sink\" : \"BIG QUERY\" , \"disabled\" : \"false\" , \"materializeCloudMetadata\" : \"true\" }, { \"sink\" : \"BIG TABLE\" , \"disabled\" : \"false\" , \"materializeCloudMetadata\" : \"false\" }, { \"sink\" : \"GCS\" , \"disabled\" : \"false\" , \"materializeCloudMetadata\" : \"false\" }, { \"sink\" : \"PUBSUB PROTO\" , \"disabled\" : \"false\" , \"materializeCloudMetadata\" : \"false\" }, { \"sink\" : \"PUBSUB JSON\" , \"disabled\" : \"false\" , \"materializeCloudMetadata\" : \"false\" } ] } Replace the following: TYPE NAME : Name of the type for which a new version is created.",
+          "It isn't possible to remove metadata buckets to create a new version of the type.",
+          "Create a new type version You can create a new type version that associates a new metadata bucket to an existing type that already has an existing metadata bucket association and applies typical storage specifications using the API or the Console."
+        ]
+      },
+      {
+        "title": "Create a type \\_|\\_ Manufacturing Data Engine \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/manufacturing-data-engine/docs/guides/model/how-to-create-a-type",
+        "source_id": "site-docs-reference",
+        "final_score": 201,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "REST Execute the following REST API request: POST /configuration/v1/types { \"archetype\" : \" ARCHETYPE NAME \" , \"name\" : \" TYPE NAME \" , \"metadataBuckets\" : [ { \"bucketName\" : \" BUCKET NAME \" , \"version\" : \" BUCKET VERSION \" } ], \"storageSpecs\" : [ { \"sink\" : \"BIG QUERY\" , \"disabled\" : \"false\" , \"materializeCloudMetadata\" : \"true\" }, { \"sink\" : \"BIG TABLE\" , \"disabled\" : \"false\" , \"materializeCloudMetadata\" : \"false\" }, { \"sink\" : \"GCS\" , \"disabled\" : \"false\" , \"materializeCloudMetadata\" : \"false\" }, { \"sink\" : \"PUBSUB PROTO\" , \"disabled\" : \"false\" , \"materializeCloudMetadata\" : \"false\" }, { \"sink\" : \"PUBSUB JSON\" , \"disabled\" : \"false\" , \"materializeCloudMetadata\" : \"false\" } ] } Replace the following: ARCHETYPE : Name of the archetype.",
+          "Before you begin Among other configuration settings, types lets you define the contextualization scope for records of that type - the metadata buckets that can or must be used to contextualize records.",
+          "Complete the definition of the new type by defining the metadata buckets that are associated with the type opening the Metadata buckets section: To add a metadata bucket to the type click ADD ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "gmde.cloud",
+      "schema.org",
+      "tag.schema.json"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/manufacturing-data-engine/docs/guides/model/how-to-create-a-metadata-bucket",
+        "https://docs.cloud.google.com/manufacturing-data-engine/docs/guides/model/how-to-create-a-metadata-bucket-version",
+        "https://docs.cloud.google.com/manufacturing-data-engine/docs/guides/model/how-to-create-a-new-type-version",
+        "https://docs.cloud.google.com/manufacturing-data-engine/docs/guides/model/how-to-create-a-type"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/manufacturing-data-engine/docs/guides/model/how-to-create-a-metadata-bucket",
+        "https://docs.cloud.google.com/manufacturing-data-engine/docs/guides/model/how-to-create-a-metadata-bucket-version",
+        "https://docs.cloud.google.com/manufacturing-data-engine/docs/guides/model/how-to-create-a-new-type-version",
+        "https://docs.cloud.google.com/manufacturing-data-engine/docs/guides/model/how-to-create-a-type"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/manufacturing-data-engine/docs/guides/model/how-to-create-a-metadata-bucket",
+        "https://docs.cloud.google.com/manufacturing-data-engine/docs/guides/model/how-to-create-a-metadata-bucket-version",
+        "https://docs.cloud.google.com/manufacturing-data-engine/docs/guides/model/how-to-create-a-new-type-version",
+        "https://docs.cloud.google.com/manufacturing-data-engine/docs/guides/model/how-to-create-a-type"
+      ]
+    }
+  ]
+}

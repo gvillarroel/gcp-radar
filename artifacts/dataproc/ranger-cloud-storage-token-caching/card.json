@@ -1,0 +1,161 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:33.243Z",
+  "source_step08_card": "data/step-08/current/products/dataproc/card.json",
+  "product_name": "Dataproc",
+  "product_slug": "dataproc",
+  "feature_name": "Ranger Cloud Storage token caching",
+  "feature_slug": "ranger-cloud-storage-token-caching",
+  "summary": "Dataproc on Compute Engine Ranger Cloud Storage integration supports caching tokens in a local cache.",
+  "extended_definition": "Dataproc on Compute Engine Ranger Cloud Storage integration supports caching tokens in a local cache.",
+  "lifecycle": {
+    "latest_feature_date": "2024-02-08",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dataproc/docs/guides/dataproc-images",
+      "https://docs.cloud.google.com/dataproc/docs/guides/dpgke/quickstarts/dataproc-gke-quickstart-create-cluster",
+      "https://docs.cloud.google.com/dataproc/docs/tutorials/gcs-connector-spark-tutorial"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Create a Managed Service for Apache Spark custom image \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/dataproc/docs/guides/dataproc-images",
+        "source_id": "site-docs-root",
+        "final_score": 117,
+        "relevance": "",
+        "evidence_snippets": [
+          "Enable the Dataproc API, Compute Engine API, and Cloud Storage APIs.",
+          "Enable the Dataproc API, Compute Engine API, and Cloud Storage APIs.",
+          "You can avoid this issue by including the following command in your customization script to clear cached credentials. rm -r /root/.gsutil /root/.config/gcloud --zone : the Compute Engine zone where generate custom image.py will create a temporary VM to use to create your custom image. --gcs-bucket : a URI, in the format gs:// BUCKET NAME , that points to your Cloud Storage bucket . generate custom image.py writes log files to this bucket."
+        ]
+      },
+      {
+        "title": "\"Run a Spark job on Google Kubernetes Engine \\_|\\_ Managed Service for Apache\\",
+        "url": "https://docs.cloud.google.com/dataproc/docs/guides/dpgke/quickstarts/dataproc-gke-quickstart-create-cluster",
+        "source_id": "site-docs-root",
+        "final_score": 106,
+        "relevance": "",
+        "evidence_snippets": [
+          "User roles To get the permissions that you need to create a Managed Service for Apache Spark cluster, ask your administrator to grant you the following IAM roles: Dataproc Editor ( roles/dataproc.editor ) on the project Service Account User ( roles/iam.serviceAccountUser ) on the Compute Engine default service account Service account role To ensure that the Compute Engine default service account has the necessary permissions to create a Managed Service for Apache Spark cluster, ask your administrator to grant the Dataproc Worker ( roles/dataproc.worker ) IAM role to the Compute Engine default service account on the project.",
+          "\"Managed Service for Apache Spark\" is the new name for the product formerly known as \"Dataproc on Compute Engine\" (cluster deployment) and \"Google Cloud Serverless for Apache Spark\" (serverless deployment).",
+          "Save the request body in a file named request.json , and execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method POST -Headers $headers -ContentType: \"application/json; charset=utf-8\" -InFile request.json ` -Uri \"https://dataproc.googleapis.com/v1/projects/ project-id /regions/ region /clusters\" Select-Object -Expand Content You should receive a JSON response similar to the following: { \"projectId\":\" PROJECT \", \"clusterName\":\" DP CLUSTER \", \"status\":{ \"state\":\"RUNNING\", \"stateStartTime\":\"2022-04-01T19:16:39.865716Z\" }, \"clusterUuid\":\"98060b77-...\", \"statusHistory\":[ { \"state\":\"CREATING\", \"stateStartTime\":\"2022-04-01T19:14:27.340544Z\" } ], \"labels\":{ \"goog-dataproc-cluster-name\":\" DP CLUSTER \", \"goog-dataproc-cluster-uuid\":\"98060b77-...\", \"goog-dataproc-location\":\" REGION \", \"goog-dataproc-environment\":\"prod\" }, \"virtualClusterConfig\":{ \"stagingBucket\":\" BUCKET \", \"kubernetesClusterConfig\":{ \"kubernetesNamespace\":\"dp-cluster\", \"gkeClusterConfig\":{ \"gkeClusterTarget\":\"projects/ PROJECT /locations/ REGION /clusters/ GKE CLUSTER \", \"nodePoolTarget\":[ { \"nodePool\":\"projects/ PROJECT /locations/ REGION /clusters/ GKE CLUSTER /nodePools/ NODE POOL \", \"roles\":[ \"DEFAULT\" ] } ] }, \"kubernetesSoftwareConfig\":{ \"componentVersion\":{ \"SPARK\":\"3.1-...\" }, \"properties\":{ \"dpgke:dpgke.unstable.outputOnly.endpoints.sparkHistoryServer\":\"https://...\", \"spark:spark.eventLog.dir\":\"gs:// BUCKET /.../spark-job-history\", \"spark:spark.eventLog.enabled\":\"true\" } } }, \"auxiliaryServicesConfig\":{ \"sparkHistoryServerConfig\":{ \"dataprocCluster\":\"projects/ PROJECT /regions/ REGION /clusters/ PHS CLUSTER \" } } } Submit a Spark job After your Managed Service for Apache Spark on GKE virtual cluster is running, submit a Spark job using the Google Cloud console, gcloud CLI , or the Managed Service for Apache Spark jobs.submit API (by using direct HTTP requests or the Cloud Client Libraries )."
+        ]
+      },
+      {
+        "title": "\"Use the Cloud Storage connector with Apache Spark \\_|\\_ Managed Service\\",
+        "url": "https://docs.cloud.google.com/dataproc/docs/tutorials/gcs-connector-spark-tutorial",
+        "source_id": "site-docs-root",
+        "final_score": 97,
+        "relevance": "",
+        "evidence_snippets": [
+          "Enable the Dataproc, Compute Engine, and Cloud Storage APIs.",
+          "Enable the Dataproc, Compute Engine, and Cloud Storage APIs.",
+          "Run the command, below, to create a single-node Managed Service for Apache Spark cluster in the specified Compute Engine zone . gcloud dataproc clusters create ${CLUSTER} \\ --project=${PROJECT} \\ --region=${REGION} \\ --single-node The above command installs the default cluster image version ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "dataproc.editor",
+      "dataproc.googleapis.com",
+      "dataproc.worker",
+      "dpgke.unstable.outputOnly.endpoints.sparkHistoryServer",
+      "iam.serviceAccountUser",
+      "image.py",
+      "jobs.submit",
+      "request.json",
+      "spark.eventLog.dir",
+      "spark.eventLog.enabled"
+    ],
+    "missing_inventory_roles": [
+      "roles/dataproc.editor",
+      "roles/dataproc.worker",
+      "roles/iam.serviceAccountUser"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/dataproc-images",
+        "https://docs.cloud.google.com/dataproc/docs/guides/dpgke/quickstarts/dataproc-gke-quickstart-create-cluster",
+        "https://docs.cloud.google.com/dataproc/docs/tutorials/gcs-connector-spark-tutorial"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/dataproc-images",
+        "https://docs.cloud.google.com/dataproc/docs/guides/dpgke/quickstarts/dataproc-gke-quickstart-create-cluster",
+        "https://docs.cloud.google.com/dataproc/docs/tutorials/gcs-connector-spark-tutorial"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/dataproc-images",
+        "https://docs.cloud.google.com/dataproc/docs/guides/dpgke/quickstarts/dataproc-gke-quickstart-create-cluster",
+        "https://docs.cloud.google.com/dataproc/docs/tutorials/gcs-connector-spark-tutorial"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/dataproc-images",
+        "https://docs.cloud.google.com/dataproc/docs/guides/dpgke/quickstarts/dataproc-gke-quickstart-create-cluster",
+        "https://docs.cloud.google.com/dataproc/docs/tutorials/gcs-connector-spark-tutorial"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/dataproc-images",
+        "https://docs.cloud.google.com/dataproc/docs/guides/dpgke/quickstarts/dataproc-gke-quickstart-create-cluster",
+        "https://docs.cloud.google.com/dataproc/docs/tutorials/gcs-connector-spark-tutorial"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/dataproc-images",
+        "https://docs.cloud.google.com/dataproc/docs/guides/dpgke/quickstarts/dataproc-gke-quickstart-create-cluster",
+        "https://docs.cloud.google.com/dataproc/docs/tutorials/gcs-connector-spark-tutorial"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/dataproc-images",
+        "https://docs.cloud.google.com/dataproc/docs/guides/dpgke/quickstarts/dataproc-gke-quickstart-create-cluster",
+        "https://docs.cloud.google.com/dataproc/docs/tutorials/gcs-connector-spark-tutorial"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/dataproc-images",
+        "https://docs.cloud.google.com/dataproc/docs/guides/dpgke/quickstarts/dataproc-gke-quickstart-create-cluster",
+        "https://docs.cloud.google.com/dataproc/docs/tutorials/gcs-connector-spark-tutorial"
+      ]
+    }
+  ]
+}

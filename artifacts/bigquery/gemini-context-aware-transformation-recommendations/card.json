@@ -1,0 +1,84 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:18.771Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery",
+  "feature_name": "Gemini context-aware transformation recommendations",
+  "feature_slug": "gemini-context-aware-transformation-recommendations",
+  "summary": "Gemini provides context-aware transformation recommendations to help cleanse data for analysis in BigQuery data preparation.",
+  "extended_definition": "Gemini provides context-aware transformation recommendations to help cleanse data for analysis in BigQuery data preparation.",
+  "lifecycle": {
+    "latest_feature_date": "2024-10-24",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/ai-introduction",
+      "https://docs.cloud.google.com/bigquery/docs/config-yaml-translation",
+      "https://docs.cloud.google.com/bigquery/docs/gemini-overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Gemini in BigQuery overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/gemini-overview",
+        "source_id": "site-docs-root",
+        "final_score": 143,
+        "relevance": "",
+        "evidence_snippets": [
+          "Data preparation in BigQuery gives you context aware, AI-generated transformation recommendations to cleanse data for analysis.",
+          "Gemini in BigQuery overview This document describes how Gemini in BigQuery, which is part of the Gemini for Google Cloud product suite, provides AI-powered assistance to help you work with your data.",
+          "AI assistance with Gemini in BigQuery Gemini in BigQuery provides AI assistance to help you do the following: Explore and understand your data with data insights ."
+        ]
+      },
+      {
+        "title": "Introduction to AI in BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/ai-introduction",
+        "source_id": "site-docs-reference-2",
+        "final_score": 100,
+        "relevance": "",
+        "evidence_snippets": [
+          "Generate context aware recommendations to clean, transform, and enrich your data.",
+          "Assistive AI features AI-powered assistance features in BigQuery, collectively referred to as Gemini in BigQuery , help you discover, prepare, query, and visualize your data.",
+          "Create Gemini-enhanced SQL translation rules to help you migrate queries written in a different dialect to GoogleSQL."
+        ]
+      },
+      {
+        "title": "\"Transform SQL translations using configuration YAML files \\_|\\_ BigQuery\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/config-yaml-translation",
+        "source_id": "site-docs-reference-5",
+        "final_score": 90,
+        "relevance": "",
+        "evidence_snippets": [
+          "This configuration converts numeric types to either NUMERIC or BIGNUMERIC depending on the input precision, instead of the default of INT64 . type : optimizer transformations : - name : REWRITE ZERO SCALE NUMERIC AS INTEGER enabled : false A SQL translation with this optimization might look like the following: snowflake-input.sql CREATE TABLE numbers ( i INTEGER , n NUMERIC ( 10 , 0 )); bq-output.sql CREATE TABLE numbers ( i BIGNUMERIC ( 38 ), n NUMERIC ( 29 )); Create a Gemini-based configuration YAML file Note: The Translation service can call Gemini model to generate suggestions to your translated SQL query based on your AI configuration YAML file.",
+          "It provides guidelines to create your own configuration YAML files, and provides examples for various translation transformations that are supported by this feature.",
+          "Remove the upper function in the default translation output query translation rules : - instruction : \"Remove upper() function\" examples : - input : \"upper(X)\" output : \"X\" Create multiple translation rules to customize the translation output translation rules : - instruction : \"Remove upper() function\" suggestion type : QUERY CUSTOMIZATION rewrite target : TARGET SQL examples : - input : \"upper(X)\" output : \"X\" - instruction : \"Insert a comment at the head that explains each statement in detail. suggestion type: QUERY CUSTOMIZATION rewrite target: TARGET SQL Remove SQL comments from the translation input query translation rules : - instruction : \"Remove all the sql comments in the input sql query.\" suggestion type : QUERY CUSTOMIZATION rewrite target : SOURCE SQL Generate translation explanations using default LLM prompt This example uses the default LLM prompts provided by the translation service to generate text explanations: translation rules : - suggestion type : \"TRANSLATION EXPLANATION\" Generates translation explanations using your own natural language prompts translation rules : - suggestion type : \"TRANSLATION EXPLANATION\" instruction : \"Explain the syntax differences between the source Teradata query and the translated GoogleSQL query.\" Multiple suggestion types in a single configuration YAML file translation rules : - suggestion type : \"TRANSLATION EXPLANATION\" instruction : \"Explain the syntax differences between the source Teradata query and the translated GoogleSQL query.\" - instruction : \"Remove upper() function\" suggestion type : QUERY CUSTOMIZATION rewrite target : TARGET SQL examples : - input : \"upper(X)\" output : \"X\" - instruction : \"Remove all the sql comments in the input sql query.\" suggestion type : QUERY CUSTOMIZATION rewrite target : SOURCE SQL Applying multiple YAML configurations When specifying a configuration YAML file in a batch or interactive SQL translation, you can select multiple configuration YAML files in a single translation job to reflect multiple transformations."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "input.sql",
+      "output.sql"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": []
+}

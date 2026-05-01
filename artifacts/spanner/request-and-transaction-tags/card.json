@@ -1,0 +1,83 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:46.903Z",
+  "source_step08_card": "data/step-08/current/products/spanner/card.json",
+  "product_name": "Spanner",
+  "product_slug": "spanner",
+  "feature_name": "Request and transaction tags",
+  "feature_slug": "request-and-transaction-tags",
+  "summary": "Spanner introduces request tags and transaction tags in application code to correlate introspection statistics with queries and troubleshooting data for latency, contention, and performance.",
+  "extended_definition": "Spanner introduces request tags and transaction tags in application code to correlate introspection statistics with queries and troubleshooting data for latency, contention, and performance.",
+  "lifecycle": {
+    "latest_feature_date": "2021-10-13",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/spanner/docs/jdbc-session-mgmt-commands",
+      "https://docs.cloud.google.com/spanner/docs/jdbc-session-mgmt-commands-pgcompat",
+      "https://docs.cloud.google.com/spanner/docs/use-ado-net"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"JDBC session management commands (GoogleSQL) \\_|\\_ Spanner \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/spanner/docs/jdbc-session-mgmt-commands",
+        "source_id": "site-docs-reference",
+        "final_score": 154,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "You can also use a statement hint to add a statement tag: @ { STATEMENT TAG = 'my-tag' } SELECT FROM Albums For more information, see Troubleshoot with request tags and transaction tags .",
+          "For more information, see Troubleshoot with request tags and transaction tags .",
+          "Tags The following statements manage request and transaction tags ."
+        ]
+      },
+      {
+        "title": "\"JDBC session management commands (PostgreSQL) \\_|\\_ Spanner \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/spanner/docs/jdbc-session-mgmt-commands-pgcompat",
+        "source_id": "site-docs-reference",
+        "final_score": 154,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "You can also use a statement hint to add a statement tag: / @STATEMENT TAG='my-tag' / SELECT FROM Albums For more information, see Troubleshoot with request tags and transaction tags .",
+          "For more information, see Troubleshoot with request tags and transaction tags .",
+          "Tags The following statements manage request and transaction tags ."
+        ]
+      },
+      {
+        "title": "Use the Spanner ADO.NET driver \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/spanner/docs/use-ado-net",
+        "source_id": "site-docs-reference",
+        "final_score": 128,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Tags: Use request and transaction tags to troubleshoot .",
+          "DataProvider Use the Spanner ADO.NET driver To create a ADO.NET connection to a Spanner database, create a SpannerConnectionStringBuilder with a fully qualified database name as the connection string: GoogleSQL /// <summary> /// Create an ADO.NET connection to a Spanner database. /// </summary> /// <param name=\"connectionString\"> /// A connection string in the format /// 'Data Source=projects/my-project/instances/my-instance/databases/my-database'. /// </param> public static async Task CreateConnection ( string connectionString ) { // Use a SpannerConnectionStringBuilder to construct a connection string. // The SpannerConnectionStringBuilder contains properties for the most // used connection string variables. var builder = new SpannerConnectionStringBuilder ( connectionString ) { // Sets the default isolation level that should be used for all // read/write transactions on this connection.",
+          "WriteLine ( $\"Greeting from Spanner: {reader.GetString(0)}\" ); } } PostgreSQL /// <summary> /// Create an ADO.NET connection to a Spanner PostgreSQL database. /// </summary> /// <param name=\"connectionString\"> /// A connection string in the format /// 'Data Source=projects/my-project/instances/my-instance/databases/my-database'. /// </param> public static async Task CreateConnection ( string connectionString ) { // Use a SpannerConnectionStringBuilder to construct a connection string. // The SpannerConnectionStringBuilder contains properties for the most // used connection string variables. var builder = new SpannerConnectionStringBuilder ( connectionString ) { // Sets the default isolation level that should be used for all // read/write transactions on this connection."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "reader.GetString"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": []
+}

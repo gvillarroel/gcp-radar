@@ -1,0 +1,140 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:39.542Z",
+  "source_step08_card": "data/step-08/current/products/google-kubernetes-engine/card.json",
+  "product_name": "Google Kubernetes Engine",
+  "product_slug": "google-kubernetes-engine",
+  "feature_name": "Autopilot NET_ADMIN capability",
+  "feature_slug": "autopilot-net-admin-capability",
+  "summary": "GKE Autopilot clusters can optionally enable the NET_ADMIN Linux capability for service meshes and other approved use cases.",
+  "extended_definition": "GKE Autopilot clusters can optionally enable the NET_ADMIN Linux capability for service meshes and other approved use cases.",
+  "lifecycle": {
+    "latest_feature_date": "2023-06-22",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/autopilot-security",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/autopilot-classes-standard-clusters",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "GKE Autopilot security measures \\_|\\_ GKE security \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/autopilot-security",
+        "source_id": "site-iam-reference",
+        "final_score": 152,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Autopilot drops the CAP NET ADMIN Linux capability for all containers.",
+          "Harden clusters and workloads If you have specialized isolation or hardening requirements beyond the pre-configured Autopilot measures, consider the following resources: Use case Resources Restrict public access to your cluster endpoint Configure the network isolation of your Autopilot clusters and disable the external endpoint of the cluster control plane.",
+          "Authenticate applications to Google Cloud APIs and services Autopilot clusters let you use Workload Identity Federation for GKE to securely authenticate your workloads to Google Cloud APIs by configuring Kubernetes service accounts to act as IAM service accounts."
+        ]
+      },
+      {
+        "title": "\"Security bulletins \\_|\\_ Google Kubernetes Engine (GKE) \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "source_id": "site-docs-reference-2",
+        "final_score": 144,
+        "relevance": "",
+        "evidence_snippets": [
+          "Autopilot clusters in the default configuration aren't impacted , but might be vulnerable if you explicitly set the seccomp Unconfined profile or allow the CAP NET ADMIN capability.",
+          "GKE Autopilot clusters in the default configuration are not impacted, but might be vulnerable if you explicitly set the seccomp Unconfined profile or allow CAP NET ADMIN Clusters using GKE Sandbox aren't impacted.",
+          "GKE Autopilot clusters in the default configuration are not impacted, but might be vulnerable if you explicitly set the seccomp Unconfined profile or allow CAP NET ADMIN Clusters using GKE Sandbox aren't impacted."
+        ]
+      },
+      {
+        "title": "\"Run workloads in Autopilot mode in Standard clusters \\_|\\_ Google Kubernetes\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/autopilot-classes-standard-clusters",
+        "source_id": "site-docs-reference-2",
+        "final_score": 131,
+        "relevance": "",
+        "evidence_snippets": [
+          "Autopilot Standard Cluster administrators and application operators can get the benefits of Google Kubernetes Engine (GKE) Autopilot, like pricing and pre-configured settings, in Standard mode clusters.",
+          "For more information about the implications of running an Autopilot workload in your Standard clusters, including differences that you might notice when you deploy those workloads, see About Autopilot mode workloads in GKE Standard .",
+          "Home Documentation Application hosting Google Kubernetes Engine (GKE) Guides Send feedback Run workloads in Autopilot mode in Standard clusters Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "container.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/autopilot-security",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/autopilot-classes-standard-clusters"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/autopilot-security",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/autopilot-classes-standard-clusters"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/autopilot-security",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/autopilot-classes-standard-clusters"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/autopilot-security",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/autopilot-classes-standard-clusters"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/autopilot-security",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/autopilot-classes-standard-clusters"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/autopilot-security",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/autopilot-classes-standard-clusters"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/autopilot-security",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/autopilot-classes-standard-clusters"
+      ]
+    }
+  ]
+}

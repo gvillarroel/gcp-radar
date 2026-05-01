@@ -1,0 +1,181 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:40.545Z",
+  "source_step08_card": "data/step-08/current/products/google-meet/card.json",
+  "product_name": "Google Meet",
+  "product_slug": "google-meet",
+  "feature_name": "Live Sharing meeting query API",
+  "feature_slug": "live-sharing-meeting-query-api",
+  "summary": "The SDK enables the queryMeeting() capability.",
+  "extended_definition": "The SDK enables the queryMeeting() capability.",
+  "lifecycle": {
+    "latest_feature_date": "2022-05-25",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/workspace/meet/api/guides/authenticate-authorize",
+      "https://developers.google.com/workspace/meet/api/guides/events-overview",
+      "https://developers.google.com/workspace/meet/api/guides/overview",
+      "https://developers.google.com/workspace/meet/api/guides/tutorial-events-python"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Authenticate and authorize Meet REST API requests \\_|\\_ Google Meet \\_|\\_\\",
+        "url": "https://developers.google.com/workspace/meet/api/guides/authenticate-authorize",
+        "source_id": "site-docs-root",
+        "final_score": 127,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The Meet REST API supports the following OAuth 2.0 scopes: Scope code Description Usage https://www.googleapis.com/auth/meetings.space.settings Edit and see the settings for all of your Google Meet calls.",
+          "Meet REST API scopes Authorization scopes are the permissions that you request users to authorize for your app to access the meeting content.",
+          "Sensitive https://www.googleapis.com/auth/meetings.space.readonly Allow apps to read metadata about any meeting space the user has access to."
+        ]
+      },
+      {
+        "title": "Google Meet REST API overview \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/workspace/meet/api/guides/overview",
+        "source_id": "site-docs-root",
+        "final_score": 127,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For more information, see: Respond to events from Google Meet Subscribe to events using the Google Workspace Events API Subscribe to Google Meet events Use cases Apps can integrate with the Meet REST API to perform the following tasks: Before a conference : Tailor the conference experience as needed by creating the meeting space.",
+          "Some examples of things you might want to use Meet REST API for include the following: Sales and account management Retrieve meeting and participant information for record purposes.",
+          "The Google Meet REST API lets you create and manage meetings for Google Meet and offers entry points to your users directly from your app."
+        ]
+      },
+      {
+        "title": "\"Observe meeting events with Python and the Google Meet REST API \\_|\\_ Google\\",
+        "url": "https://developers.google.com/workspace/meet/api/guides/tutorial-events-python",
+        "source_id": "site-docs-root",
+        "final_score": 124,
+        "relevance": "",
+        "evidence_snippets": [
+          "In your working directory, create the file main.py and add the following contents: import os import json from google.auth.transport import requests from google.oauth2.credentials import Credentials from google auth oauthlib.flow import InstalledAppFlow def authorize () - > Credentials : \"\"\"Ensure valid credentials for calling the Meet REST API.\"\"\" CLIENT SECRET FILE = \"./client secret.json\" credentials = None if os . path . exists ( 'token.json' ): credentials = Credentials . from authorized user file ( 'token.json' ) if credentials is None : flow = InstalledAppFlow . from client secrets file ( CLIENT SECRET FILE , scopes = [ 'https://www.googleapis.com/auth/meetings.space.created' , ]) flow . run local server ( port = 0 ) credentials = flow . credentials if credentials and credentials . expired : credentials . refresh ( requests .",
+          "Enable the Google Meet REST API, the Google Workspace Events API, and Google Cloud Pub/Sub with the gcloud services enable command: gcloud services enable meet.googleapis.com workspaceevents.googleapis.com pubsub.googleapis.com Install the Meet REST API client library Follow these steps to install the Meet REST API client library: Run the command: pip install google-apps-meet Edit the main.py file to import the client: from google.apps import meet v2 as meet Create a space Now that the Meet REST API is available, define a function to create a meeting space that can be subscribed to.",
+          "SpacesServiceClient ( credentials = USER CREDENTIALS ) return client . get space ( name = \"spaces/\" + meeting code ) Make sure to add \"https://www.googleapis.com/auth/meetings.space.readonly\" in the authorize method in the credential samples above."
+        ]
+      },
+      {
+        "title": "Respond to events from Google Meet \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/workspace/meet/api/guides/events-overview",
+        "source_id": "site-docs-root",
+        "final_score": 118,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Query for recent events Instead of receiving events as they occur, a Meet app can also call the Meet REST API to list recent meeting space events that are related to participant activity.",
+          "A Meet app receives recent participant events by querying for meeting space events using the Meet REST API.",
+          "The following example shows how an activity in Meet affects a related Meet REST API resource, and the type of event that your Meet app receives: Activity Meet REST API resource Event type A user joins a meeting space."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "developers.google.com",
+      "drive.meet.readonly",
+      "main.py",
+      "meet.googleapis.com",
+      "meetings.space.created",
+      "meetings.space.readonly",
+      "meetings.space.settings",
+      "oauthlib.flow",
+      "pubsub.googleapis.com",
+      "secret.json",
+      "subscriptions.create",
+      "token.json",
+      "workspaceevents.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://developers.google.com/workspace/meet/api/guides/authenticate-authorize",
+        "https://developers.google.com/workspace/meet/api/guides/overview",
+        "https://developers.google.com/workspace/meet/api/guides/tutorial-events-python",
+        "https://developers.google.com/workspace/meet/api/guides/events-overview"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://developers.google.com/workspace/meet/api/guides/authenticate-authorize",
+        "https://developers.google.com/workspace/meet/api/guides/overview",
+        "https://developers.google.com/workspace/meet/api/guides/tutorial-events-python",
+        "https://developers.google.com/workspace/meet/api/guides/events-overview"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://developers.google.com/workspace/meet/api/guides/authenticate-authorize",
+        "https://developers.google.com/workspace/meet/api/guides/overview",
+        "https://developers.google.com/workspace/meet/api/guides/tutorial-events-python",
+        "https://developers.google.com/workspace/meet/api/guides/events-overview"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://developers.google.com/workspace/meet/api/guides/authenticate-authorize",
+        "https://developers.google.com/workspace/meet/api/guides/overview",
+        "https://developers.google.com/workspace/meet/api/guides/tutorial-events-python",
+        "https://developers.google.com/workspace/meet/api/guides/events-overview"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://developers.google.com/workspace/meet/api/guides/authenticate-authorize",
+        "https://developers.google.com/workspace/meet/api/guides/overview",
+        "https://developers.google.com/workspace/meet/api/guides/tutorial-events-python",
+        "https://developers.google.com/workspace/meet/api/guides/events-overview"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://developers.google.com/workspace/meet/api/guides/authenticate-authorize",
+        "https://developers.google.com/workspace/meet/api/guides/overview",
+        "https://developers.google.com/workspace/meet/api/guides/tutorial-events-python",
+        "https://developers.google.com/workspace/meet/api/guides/events-overview"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://developers.google.com/workspace/meet/api/guides/authenticate-authorize",
+        "https://developers.google.com/workspace/meet/api/guides/overview",
+        "https://developers.google.com/workspace/meet/api/guides/tutorial-events-python",
+        "https://developers.google.com/workspace/meet/api/guides/events-overview"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://developers.google.com/workspace/meet/api/guides/authenticate-authorize",
+        "https://developers.google.com/workspace/meet/api/guides/overview",
+        "https://developers.google.com/workspace/meet/api/guides/tutorial-events-python",
+        "https://developers.google.com/workspace/meet/api/guides/events-overview"
+      ]
+    }
+  ]
+}

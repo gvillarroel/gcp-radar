@@ -1,0 +1,289 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:44.769Z",
+  "source_step08_card": "data/step-08/current/products/network-connectivity-center/card.json",
+  "product_name": "Network Connectivity Center",
+  "product_slug": "network-connectivity-center",
+  "feature_name": "Custom organization policy constraints for Network Connectivity Center resources",
+  "feature_slug": "custom-organization-policy-constraints-for-network-connectivity-center-resources",
+  "summary": "Custom constraints can restrict Network Connectivity Center hubs, spokes, and groups.",
+  "extended_definition": "Custom constraints can restrict Network Connectivity Center hubs, spokes, and groups.",
+  "lifecycle": {
+    "latest_feature_date": "2025-05-08",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/access-control",
+      "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/audit-logging",
+      "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/connectivity-topologies",
+      "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/data-transfer-topology"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Preset connectivity topologies \\_|\\_ Network Connectivity Center \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/connectivity-topologies",
+        "source_id": "site-iam-reference",
+        "final_score": 260,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The following table shows the spoke groups that are supported according to the spoke type: Spoke Can be in the center spoke group Can be in the edge spoke group VPC spoke Producer VPC spoke Hybrid spoke with site-to-site data transfer disabled Hybrid spoke with site-to-site data transfer enabled The gcloud network-connectivity hubs groups list --hub command returns the center and edge groups when using star topology.",
+          "Home Documentation Networking Network Connectivity Network Connectivity Center Guides Send feedback Preset connectivity topologies Stay organized with collections Save and categorize content based on your preferences.",
+          "When you create a Network Connectivity Center (NCC) hub, you can choose one of the following preset topologies ."
+        ]
+      },
+      {
+        "title": "\"Sample topology for data transfer \\_|\\_ Network Connectivity Center \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/data-transfer-topology",
+        "source_id": "site-iam-reference",
+        "final_score": 252,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Networking Network Connectivity Network Connectivity Center Guides Send feedback Sample topology for data transfer Stay organized with collections Save and categorize content based on your preferences.",
+          "This configuration provides end-to-end dynamic route exchange and data plane connectivity between Customer network A and Customer network B .",
+          "Both router appliance instances are attached as spokes to the Network Connectivity Center (NCC) hub."
+        ]
+      },
+      {
+        "title": "Network Connectivity Center audit logging \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/audit-logging",
+        "source_id": "site-iam-reference",
+        "final_score": 248,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Permission type Methods ADMIN READ google.cloud.networkconnectivity.v1.CrossNetworkAutomationService.GetServiceClass google.cloud.networkconnectivity.v1.CrossNetworkAutomationService.GetServiceConnectionMap google.cloud.networkconnectivity.v1.CrossNetworkAutomationService.GetServiceConnectionPolicy google.cloud.networkconnectivity.v1.CrossNetworkAutomationService.GetServiceConnectionToken google.cloud.networkconnectivity.v1.CrossNetworkAutomationService.ListServiceClasses google.cloud.networkconnectivity.v1.CrossNetworkAutomationService.ListServiceConnectionMaps google.cloud.networkconnectivity.v1.CrossNetworkAutomationService.ListServiceConnectionPolicies google.cloud.networkconnectivity.v1.CrossNetworkAutomationService.ListServiceConnectionTokens google.cloud.networkconnectivity.v1.DataTransferService.GetDestination google.cloud.networkconnectivity.v1.DataTransferService.GetMulticloudDataTransferConfig google.cloud.networkconnectivity.v1.DataTransferService.GetMulticloudDataTransferSupportedService google.cloud.networkconnectivity.v1.DataTransferService.ListDestinations google.cloud.networkconnectivity.v1.DataTransferService.ListMulticloudDataTransferConfigs google.cloud.networkconnectivity.v1.DataTransferService.ListMulticloudDataTransferSupportedServices google.cloud.networkconnectivity.v1.HubService.GetGroup google.cloud.networkconnectivity.v1.HubService.GetHub google.cloud.networkconnectivity.v1.HubService.GetRoute google.cloud.networkconnectivity.v1.HubService.GetRouteTable google.cloud.networkconnectivity.v1.HubService.GetSpoke google.cloud.networkconnectivity.v1.HubService.ListGroups google.cloud.networkconnectivity.v1.HubService.ListHubSpokes google.cloud.networkconnectivity.v1.HubService.ListHubs google.cloud.networkconnectivity.v1.HubService.ListRouteTables google.cloud.networkconnectivity.v1.HubService.ListRoutes google.cloud.networkconnectivity.v1.HubService.ListSpokes google.cloud.networkconnectivity.v1.HubService.QueryHubStatus google.cloud.networkconnectivity.v1.InternalRangeService.GetInternalRange google.cloud.networkconnectivity.v1.InternalRangeService.ListInternalRanges google.cloud.networkconnectivity.v1.PolicyBasedRoutingService.GetPolicyBasedRoute google.cloud.networkconnectivity.v1.PolicyBasedRoutingService.ListPolicyBasedRoutes google.cloud.networkconnectivity.v1.RegionalEndpointService.GetRegionalEndpoint google.cloud.networkconnectivity.v1.RegionalEndpointService.ListRegionalEndpoints google.cloud.networkconnectivity.v1alpha1.HubService.GetHub google.cloud.networkconnectivity.v1alpha1.HubService.GetSpoke google.cloud.networkconnectivity.v1alpha1.HubService.ListHubs google.cloud.networkconnectivity.v1alpha1.HubService.ListSpokes google.cloud.networkconnectivity.v1alpha1.InternalRangeService.GetInternalRange google.cloud.networkconnectivity.v1alpha1.InternalRangeService.ListInternalRanges google.cloud.networkconnectivity.v1beta.DataTransferService.GetDestination google.cloud.networkconnectivity.v1beta.DataTransferService.GetMulticloudDataTransferConfig google.cloud.networkconnectivity.v1beta.DataTransferService.GetMulticloudDataTransferSupportedService google.cloud.networkconnectivity.v1beta.DataTransferService.ListDestinations google.cloud.networkconnectivity.v1beta.DataTransferService.ListMulticloudDataTransferConfigs google.cloud.networkconnectivity.v1beta.DataTransferService.ListMulticloudDataTransferSupportedServices google.cloud.networkconnectivity.v1beta.HubService.GetGatewayAdvertisedRoute google.cloud.networkconnectivity.v1beta.HubService.GetGroup google.cloud.networkconnectivity.v1beta.HubService.GetHub google.cloud.networkconnectivity.v1beta.HubService.GetRoute google.cloud.networkconnectivity.v1beta.HubService.GetRouteTable google.cloud.networkconnectivity.v1beta.HubService.GetSpoke google.cloud.networkconnectivity.v1beta.HubService.ListGatewayAdvertisedRoutes google.cloud.networkconnectivity.v1beta.HubService.ListGroups google.cloud.networkconnectivity.v1beta.HubService.ListHubSpokes google.cloud.networkconnectivity.v1beta.HubService.ListHubs google.cloud.networkconnectivity.v1beta.HubService.ListRouteTables google.cloud.networkconnectivity.v1beta.HubService.ListRoutes google.cloud.networkconnectivity.v1beta.HubService.ListSpokes google.cloud.networkconnectivity.v1beta.HubService.QueryHubStatus google.cloud.networkconnectivity.v1beta.PolicyBasedRoutingService.GetPolicyBasedRoute google.cloud.networkconnectivity.v1beta.PolicyBasedRoutingService.ListPolicyBasedRoutes google.cloud.networkconnectivity.v1beta.RegionalEndpointService.GetRegionalEndpoint google.cloud.networkconnectivity.v1beta.RegionalEndpointService.ListRegionalEndpoints google.cloud.networkconnectivity.v1beta.TransportManager.GetRemoteTransportProfile google.cloud.networkconnectivity.v1beta.TransportManager.GetTransport google.cloud.networkconnectivity.v1beta.TransportManager.ListRemoteTransportProfiles google.cloud.networkconnectivity.v1beta.TransportManager.ListTransports GetIamPolicy google.longrunning.Operations.GetOperation google.longrunning.Operations.ListOperations ADMIN WRITE google.cloud.networkconnectivity.v1.CrossNetworkAutomationService.CheckConsumerConfig google.cloud.networkconnectivity.v1.CrossNetworkAutomationService.CreateServiceConnectionMap (LRO) google.cloud.networkconnectivity.v1.CrossNetworkAutomationService.CreateServiceConnectionPolicy (LRO) google.cloud.networkconnectivity.v1.CrossNetworkAutomationService.DeleteServiceClass (LRO) google.cloud.networkconnectivity.v1.CrossNetworkAutomationService.DeleteServiceConnectionMap (LRO) google.cloud.networkconnectivity.v1.CrossNetworkAutomationService.DeleteServiceConnectionPolicy (LRO) google.cloud.networkconnectivity.v1.CrossNetworkAutomationService.DeleteServiceConnectionToken google.cloud.networkconnectivity.v1.CrossNetworkAutomationService.UpdateServiceClass google.cloud.networkconnectivity.v1.CrossNetworkAutomationService.UpdateServiceConnectionMap (LRO) google.cloud.networkconnectivity.v1.CrossNetworkAutomationService.UpdateServiceConnectionPolicy (LRO) google.cloud.networkconnectivity.v1.DataTransferService.CreateDestination (LRO) google.cloud.networkconnectivity.v1.DataTransferService.CreateMulticloudDataTransferConfig (LRO) google.cloud.networkconnectivity.v1.DataTransferService.DeleteDestination (LRO) google.cloud.networkconnectivity.v1.DataTransferService.DeleteMulticloudDataTransferConfig (LRO) google.cloud.networkconnectivity.v1.DataTransferService.UpdateDestination (LRO) google.cloud.networkconnectivity.v1.DataTransferService.UpdateMulticloudDataTransferConfig (LRO) google.cloud.networkconnectivity.v1.HubService.AcceptHubSpoke (LRO) google.cloud.networkconnectivity.v1.HubService.AcceptSpokeUpdate (LRO) google.cloud.networkconnectivity.v1.HubService.CreateHub (LRO) google.cloud.networkconnectivity.v1.HubService.CreateSpoke (LRO) google.cloud.networkconnectivity.v1.HubService.DeleteHub (LRO) google.cloud.networkconnectivity.v1.HubService.DeleteSpoke (LRO) google.cloud.networkconnectivity.v1.HubService.RejectHubSpoke (LRO) google.cloud.networkconnectivity.v1.HubService.RejectSpokeUpdate (LRO) google.cloud.networkconnectivity.v1.HubService.UpdateGroup (LRO) google.cloud.networkconnectivity.v1.HubService.UpdateHub (LRO) google.cloud.networkconnectivity.v1.HubService.UpdateSpoke (LRO) google.cloud.networkconnectivity.v1.InternalRangeService.CreateInternalRange (LRO) google.cloud.networkconnectivity.v1.InternalRangeService.DeleteInternalRange (LRO) google.cloud.networkconnectivity.v1.InternalRangeService.UpdateInternalRange (LRO) google.cloud.networkconnectivity.v1.PolicyBasedRoutingService.CreatePolicyBasedRoute (LRO) google.cloud.networkconnectivity.v1.PolicyBasedRoutingService.DeletePolicyBasedRoute (LRO) google.cloud.networkconnectivity.v1.RegionalEndpointService.CreateRegionalEndpoint (LRO) google.cloud.networkconnectivity.v1.RegionalEndpointService.DeleteRegionalEndpoint (LRO) google.cloud.networkconnectivity.v1alpha1.HubService.CreateHub (LRO) google.cloud.networkconnectivity.v1alpha1.HubService.CreateSpoke (LRO) google.cloud.networkconnectivity.v1alpha1.HubService.DeleteHub (LRO) google.cloud.networkconnectivity.v1alpha1.HubService.DeleteSpoke (LRO) google.cloud.networkconnectivity.v1alpha1.HubService.UpdateHub (LRO) google.cloud.networkconnectivity.v1alpha1.HubService.UpdateSpoke google.cloud.networkconnectivity.v1alpha1.InternalRangeService.CreateInternalRange (LRO) google.cloud.networkconnectivity.v1alpha1.InternalRangeService.DeleteInternalRange (LRO) google.cloud.networkconnectivity.v1alpha1.InternalRangeService.UpdateInternalRange (LRO) google.cloud.networkconnectivity.v1beta.DataTransferService.CreateDestination (LRO) google.cloud.networkconnectivity.v1beta.DataTransferService.CreateMulticloudDataTransferConfig (LRO) google.cloud.networkconnectivity.v1beta.DataTransferService.DeleteDestination (LRO) google.cloud.networkconnectivity.v1beta.DataTransferService.DeleteMulticloudDataTransferConfig (LRO) google.cloud.networkconnectivity.v1beta.DataTransferService.UpdateDestination (LRO) google.cloud.networkconnectivity.v1beta.DataTransferService.UpdateMulticloudDataTransferConfig (LRO) google.cloud.networkconnectivity.v1beta.HubService.AcceptHubSpoke (LRO) google.cloud.networkconnectivity.v1beta.HubService.CreateGatewayAdvertisedRoute (LRO) google.cloud.networkconnectivity.v1beta.HubService.CreateHub (LRO) google.cloud.networkconnectivity.v1beta.HubService.CreateSpoke (LRO) google.cloud.networkconnectivity.v1beta.HubService.DeleteGatewayAdvertisedRoute (LRO) google.cloud.networkconnectivity.v1beta.HubService.DeleteHub (LRO) google.cloud.networkconnectivity.v1beta.HubService.DeleteSpoke (LRO) google.cloud.networkconnectivity.v1beta.HubService.RejectHubSpoke (LRO) google.cloud.networkconnectivity.v1beta.HubService.UpdateGatewayAdvertisedRoute google.cloud.networkconnectivity.v1beta.HubService.UpdateGroup (LRO) google.cloud.networkconnectivity.v1beta.HubService.UpdateHub (LRO) google.cloud.networkconnectivity.v1beta.HubService.UpdateSpoke (LRO) google.cloud.networkconnectivity.v1beta.PolicyBasedRoutingService.CreatePolicyBasedRoute (LRO) google.cloud.networkconnectivity.v1beta.PolicyBasedRoutingService.DeletePolicyBasedRoute (LRO) google.cloud.networkconnectivity.v1beta.RegionalEndpointService.CreateRegionalEndpoint (LRO) google.cloud.networkconnectivity.v1beta.RegionalEndpointService.DeleteRegionalEndpoint (LRO) google.cloud.networkconnectivity.v1beta.TransportManager.CreateTransport (LRO) google.cloud.networkconnectivity.v1beta.TransportManager.DeleteTransport (LRO) google.cloud.networkconnectivity.v1beta.TransportManager.UpdateTransport (LRO) SetIamPolicy google.longrunning.Operations.CancelOperation google.longrunning.Operations.DeleteOperation API interface audit logs For information about how and which permissions are evaluated for each method, see the Identity and Access Management documentation for Network Connectivity Center. google.cloud.networkconnectivity.v1.CrossNetworkAutomationService The following audit logs are associated with methods belonging to google.cloud.networkconnectivity.v1.CrossNetworkAutomationService .",
+          "Filter for this method : protoPayload.methodName=\"google.cloud.networkconnectivity.v1.CrossNetworkAutomationService.CheckConsumerConfig\" CreateServiceConnectionMap Method : google.cloud.networkconnectivity.v1.CrossNetworkAutomationService.CreateServiceConnectionMap Audit log type : Admin activity Permissions : networkconnectivity.serviceClasses.use - ADMIN WRITE networkconnectivity.serviceConnectionMaps.create - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName=\"google.cloud.networkconnectivity.v1.CrossNetworkAutomationService.CreateServiceConnectionMap\" CreateServiceConnectionPolicy Method : google.cloud.networkconnectivity.v1.CrossNetworkAutomationService.CreateServiceConnectionPolicy Audit log type : Admin activity Permissions : networkconnectivity.serviceConnectionPolicies.create - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName=\"google.cloud.networkconnectivity.v1.CrossNetworkAutomationService.CreateServiceConnectionPolicy\" DeleteServiceClass Method : google.cloud.networkconnectivity.v1.CrossNetworkAutomationService.DeleteServiceClass Audit log type : Admin activity Permissions : networkconnectivity.serviceClasses.delete - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName=\"google.cloud.networkconnectivity.v1.CrossNetworkAutomationService.DeleteServiceClass\" DeleteServiceConnectionMap Method : google.cloud.networkconnectivity.v1.CrossNetworkAutomationService.DeleteServiceConnectionMap Audit log type : Admin activity Permissions : networkconnectivity.serviceConnectionMaps.delete - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName=\"google.cloud.networkconnectivity.v1.CrossNetworkAutomationService.DeleteServiceConnectionMap\" DeleteServiceConnectionPolicy Method : google.cloud.networkconnectivity.v1.CrossNetworkAutomationService.DeleteServiceConnectionPolicy Audit log type : Admin activity Permissions : networkconnectivity.serviceConnectionPolicies.delete - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName=\"google.cloud.networkconnectivity.v1.CrossNetworkAutomationService.DeleteServiceConnectionPolicy\" DeleteServiceConnectionToken Method : google.cloud.networkconnectivity.v1.CrossNetworkAutomationService.DeleteServiceConnectionToken Audit log type : Admin activity Permissions : networkconnectivity.serviceConnectionTokens.delete - ADMIN WRITE Method is a long-running or streaming operation : No.",
+          "Filter for this method : protoPayload.methodName=\"google.cloud.networkconnectivity.v1beta.HubService.UpdateGatewayAdvertisedRoute\" UpdateGroup Method : google.cloud.networkconnectivity.v1beta.HubService.UpdateGroup Audit log type : Admin activity Permissions : networkconnectivity.groups.update - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName=\"google.cloud.networkconnectivity.v1beta.HubService.UpdateGroup\" UpdateHub Method : google.cloud.networkconnectivity.v1beta.HubService.UpdateHub Audit log type : Admin activity Permissions : networkconnectivity.hubs.update - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName=\"google.cloud.networkconnectivity.v1beta.HubService.UpdateHub\" UpdateSpoke Method : google.cloud.networkconnectivity.v1beta.HubService.UpdateSpoke Audit log type : Admin activity Permissions : networkconnectivity.spokes.update - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName=\"google.cloud.networkconnectivity.v1beta.HubService.UpdateSpoke\" google.cloud.networkconnectivity.v1beta.PolicyBasedRoutingService The following audit logs are associated with methods belonging to google.cloud.networkconnectivity.v1beta.PolicyBasedRoutingService ."
+        ]
+      },
+      {
+        "title": "\"Roles and permissions \\_|\\_ Network Connectivity Center \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/access-control",
+        "source_id": "site-iam-reference",
+        "final_score": 245,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Role Permissions Networkconnectivity Editor ( roles/ networkconnectivity.editor ) Editor role for networkconnectivity networkconnectivity. gatewayAdvertisedRoutes. networkconnectivity. gatewayAdvertisedRoutes. create networkconnectivity. gatewayAdvertisedRoutes. delete networkconnectivity. gatewayAdvertisedRoutes. get networkconnectivity. gatewayAdvertisedRoutes. list networkconnectivity. gatewayAdvertisedRoutes. update networkconnectivity. groups. acceptSpoke networkconnectivity. groups. acceptSpokeUpdate networkconnectivity.groups.get networkconnectivity. groups. getIamPolicy networkconnectivity. groups. list networkconnectivity. groups. rejectSpoke networkconnectivity. groups. rejectSpokeUpdate networkconnectivity.groups.use networkconnectivity. hubRouteTables. get networkconnectivity. hubRouteTables. getIamPolicy networkconnectivity. hubRouteTables. list networkconnectivity. hubRoutes. get networkconnectivity. hubRoutes. getIamPolicy networkconnectivity. hubRoutes. list networkconnectivity. hubs. create networkconnectivity. hubs. delete networkconnectivity.hubs.get networkconnectivity. hubs. getIamPolicy networkconnectivity.hubs.list networkconnectivity. hubs. listSpokes networkconnectivity. hubs. queryStatus networkconnectivity. hubs. update networkconnectivity. internalRanges. create networkconnectivity. internalRanges. delete networkconnectivity. internalRanges. get networkconnectivity. internalRanges. getIamPolicy networkconnectivity. internalRanges. list networkconnectivity. internalRanges. update networkconnectivity. locations. networkconnectivity. locations. get networkconnectivity. locations. list networkconnectivity. multicloudDataTransferConfigs. networkconnectivity. multicloudDataTransferConfigs. create networkconnectivity. multicloudDataTransferConfigs. delete networkconnectivity. multicloudDataTransferConfigs. get networkconnectivity. multicloudDataTransferConfigs. list networkconnectivity. multicloudDataTransferConfigs. update networkconnectivity. multicloudDataTransferDestinations. networkconnectivity. multicloudDataTransferDestinations. create networkconnectivity. multicloudDataTransferDestinations. delete networkconnectivity. multicloudDataTransferDestinations. get networkconnectivity. multicloudDataTransferDestinations. list networkconnectivity. multicloudDataTransferDestinations. update networkconnectivity. multicloudDataTransferSupportedServices. networkconnectivity. multicloudDataTransferSupportedServices. get networkconnectivity. multicloudDataTransferSupportedServices. list networkconnectivity. operations. networkconnectivity. operations. cancel networkconnectivity. operations. delete networkconnectivity. operations. get networkconnectivity. operations. list networkconnectivity. policyBasedRoutes. create networkconnectivity. policyBasedRoutes. delete networkconnectivity. policyBasedRoutes. get networkconnectivity. policyBasedRoutes. getIamPolicy networkconnectivity. policyBasedRoutes. list networkconnectivity. regionalEndpoints. networkconnectivity. regionalEndpoints. create networkconnectivity. regionalEndpoints. delete networkconnectivity. regionalEndpoints. get networkconnectivity. regionalEndpoints. list networkconnectivity. remoteTransportProfiles. networkconnectivity. remoteTransportProfiles. get networkconnectivity. remoteTransportProfiles. list networkconnectivity. serviceClasses. networkconnectivity. serviceClasses. create networkconnectivity. serviceClasses. delete networkconnectivity. serviceClasses. get networkconnectivity. serviceClasses. list networkconnectivity. serviceClasses. update networkconnectivity. serviceClasses. use networkconnectivity. serviceConnectionMaps. networkconnectivity. serviceConnectionMaps. create networkconnectivity. serviceConnectionMaps. delete networkconnectivity. serviceConnectionMaps. get networkconnectivity. serviceConnectionMaps. list networkconnectivity. serviceConnectionMaps. update networkconnectivity. serviceConnectionPolicies. networkconnectivity. serviceConnectionPolicies. create networkconnectivity. serviceConnectionPolicies. delete networkconnectivity. serviceConnectionPolicies. get networkconnectivity. serviceConnectionPolicies. list networkconnectivity. serviceConnectionPolicies. update networkconnectivity. spokes. create networkconnectivity. spokes. delete networkconnectivity.spokes.get networkconnectivity. spokes. getIamPolicy networkconnectivity. spokes. list networkconnectivity. spokes. update networkconnectivity. transports. networkconnectivity. transports. create networkconnectivity. transports. delete networkconnectivity. transports. get networkconnectivity. transports. list networkconnectivity. transports. update resourcemanager.projects.get resourcemanager.projects.list Service Automation Consumer Network Admin ( roles/ networkconnectivity.consumerNetworkAdmin ) Service Automation Consumer Network Admin is responsible for setting up ServiceConnectionPolicies. networkconnectivity. serviceConnectionPolicies. networkconnectivity. serviceConnectionPolicies. create networkconnectivity. serviceConnectionPolicies. delete networkconnectivity. serviceConnectionPolicies. get networkconnectivity. serviceConnectionPolicies. list networkconnectivity. serviceConnectionPolicies. update resourcemanager.projects.get resourcemanager.projects.list Group Admin ( roles/ networkconnectivity.groupAdmin ) Enables full access to group resources and read-only access to hub and spoke resources networkconnectivity. gatewayAdvertisedRoutes. get networkconnectivity. gatewayAdvertisedRoutes. list networkconnectivity.groups. networkconnectivity. groups. acceptSpoke networkconnectivity. groups. acceptSpokeUpdate networkconnectivity.groups.get networkconnectivity. groups. getIamPolicy networkconnectivity. groups. list networkconnectivity. groups. rejectSpoke networkconnectivity. groups. rejectSpokeUpdate networkconnectivity. groups. setIamPolicy networkconnectivity.groups.use networkconnectivity. hubRouteTables. get networkconnectivity. hubRouteTables. getIamPolicy networkconnectivity. hubRouteTables. list networkconnectivity. hubRoutes. get networkconnectivity. hubRoutes. getIamPolicy networkconnectivity. hubRoutes. list networkconnectivity.hubs.get networkconnectivity. hubs. getIamPolicy networkconnectivity.hubs.list networkconnectivity. locations. networkconnectivity. locations. get networkconnectivity. locations. list networkconnectivity. operations. get networkconnectivity. operations. list networkconnectivity.spokes.get networkconnectivity. spokes. getIamPolicy networkconnectivity. spokes. list resourcemanager.projects.get resourcemanager.projects.list Group User ( roles/ networkconnectivity.groupUser ) Enables use access on group resources networkconnectivity.groups.use Hub & Spoke Admin ( roles/ networkconnectivity.hubAdmin ) Enables full access to hub and spoke resources.",
+          "Lowest-level resources where you can grant this role: Project networkconnectivity. gatewayAdvertisedRoutes. get networkconnectivity. gatewayAdvertisedRoutes. list networkconnectivity.groups.get networkconnectivity. groups. getIamPolicy networkconnectivity. groups. list networkconnectivity. hubRouteTables. get networkconnectivity. hubRouteTables. getIamPolicy networkconnectivity. hubRouteTables. list networkconnectivity. hubRoutes. get networkconnectivity. hubRoutes. getIamPolicy networkconnectivity. hubRoutes. list networkconnectivity.hubs.get networkconnectivity. hubs. getIamPolicy networkconnectivity.hubs.list networkconnectivity. hubs. listSpokes networkconnectivity. hubs. queryStatus networkconnectivity. locations. networkconnectivity. locations. get networkconnectivity. locations. list networkconnectivity.spokes.get networkconnectivity. spokes. getIamPolicy networkconnectivity. spokes. list resourcemanager.projects.get resourcemanager.projects.list Multicloud Data Transfer Config Admin ( roles/ networkconnectivity.multicloudDataTransferConfigAdmin ) Full access to all Multicloud Data Transfer Config resources. networkconnectivity. multicloudDataTransferConfigs. networkconnectivity. multicloudDataTransferConfigs. create networkconnectivity. multicloudDataTransferConfigs. delete networkconnectivity. multicloudDataTransferConfigs. get networkconnectivity. multicloudDataTransferConfigs. list networkconnectivity. multicloudDataTransferConfigs. update networkconnectivity. multicloudDataTransferDestinations. networkconnectivity. multicloudDataTransferDestinations. create networkconnectivity. multicloudDataTransferDestinations. delete networkconnectivity. multicloudDataTransferDestinations. get networkconnectivity. multicloudDataTransferDestinations. list networkconnectivity. multicloudDataTransferDestinations. update networkconnectivity. multicloudDataTransferSupportedServices. networkconnectivity. multicloudDataTransferSupportedServices. get networkconnectivity. multicloudDataTransferSupportedServices. list networkconnectivity. operations. get networkconnectivity. operations. list resourcemanager.projects.get resourcemanager.projects.list Multicloud Data Transfer Config Viewer ( roles/ networkconnectivity.multicloudDataTransferConfigViewer ) Read-only access to all Multicloud Data Transfer Config resources. networkconnectivity. multicloudDataTransferConfigs. get networkconnectivity. multicloudDataTransferConfigs. list networkconnectivity. multicloudDataTransferDestinations. get networkconnectivity. multicloudDataTransferDestinations. list networkconnectivity. multicloudDataTransferSupportedServices. networkconnectivity. multicloudDataTransferSupportedServices. get networkconnectivity. multicloudDataTransferSupportedServices. list networkconnectivity. operations. get networkconnectivity. operations. list resourcemanager.projects.get resourcemanager.projects.list Destination Admin ( roles/ networkconnectivity.multicloudDataTransferDestinationAdmin ) Access to all Destination resources. networkconnectivity. multicloudDataTransferDestinations. networkconnectivity. multicloudDataTransferDestinations. create networkconnectivity. multicloudDataTransferDestinations. delete networkconnectivity. multicloudDataTransferDestinations. get networkconnectivity. multicloudDataTransferDestinations. list networkconnectivity. multicloudDataTransferDestinations. update networkconnectivity. multicloudDataTransferSupportedServices. networkconnectivity. multicloudDataTransferSupportedServices. get networkconnectivity. multicloudDataTransferSupportedServices. list networkconnectivity. operations. get networkconnectivity. operations. list resourcemanager.projects.get resourcemanager.projects.list Destination Viewer ( roles/ networkconnectivity.multicloudDataTransferDestinationViewer ) Read-only access to all Destination resources. networkconnectivity. multicloudDataTransferDestinations. get networkconnectivity. multicloudDataTransferDestinations. list networkconnectivity. multicloudDataTransferSupportedServices. networkconnectivity. multicloudDataTransferSupportedServices. get networkconnectivity. multicloudDataTransferSupportedServices. list networkconnectivity. operations. get networkconnectivity. operations. list resourcemanager.projects.get resourcemanager.projects.list Regional Endpoint Admin ( roles/ networkconnectivity.regionalEndpointAdmin ) Full access to all Regional Endpoint resources. networkconnectivity. regionalEndpoints. networkconnectivity. regionalEndpoints. create networkconnectivity. regionalEndpoints. delete networkconnectivity. regionalEndpoints. get networkconnectivity. regionalEndpoints. list resourcemanager.projects.get resourcemanager.projects.list Regional Endpoint Viewer ( roles/ networkconnectivity.regionalEndpointViewer ) Read-only access to all Regional Endpoint resources. networkconnectivity. regionalEndpoints. get networkconnectivity. regionalEndpoints. list resourcemanager.projects.get resourcemanager.projects.list Service Class User ( roles/ networkconnectivity.serviceClassUser ) Service Class User uses a ServiceClass networkconnectivity. serviceClasses. get networkconnectivity. serviceClasses. list networkconnectivity. serviceClasses. use resourcemanager.projects.get resourcemanager.projects.list Service Automation Service Producer Admin ( roles/ networkconnectivity.serviceProducerAdmin ) Service Automation Producer Admin uses information from a consumer request to manage ServiceClasses and ServiceConnectionMaps networkconnectivity. operations. get networkconnectivity. operations. list networkconnectivity. serviceClasses. networkconnectivity. serviceClasses. create networkconnectivity. serviceClasses. delete networkconnectivity. serviceClasses. get networkconnectivity. serviceClasses. list networkconnectivity. serviceClasses. update networkconnectivity. serviceClasses. use networkconnectivity. serviceConnectionMaps. networkconnectivity. serviceConnectionMaps. create networkconnectivity. serviceConnectionMaps. delete networkconnectivity. serviceConnectionMaps. get networkconnectivity. serviceConnectionMaps. list networkconnectivity. serviceConnectionMaps. update resourcemanager.projects.get resourcemanager.projects.list Spoke Admin ( roles/ networkconnectivity.spokeAdmin ) Enables full access to spoke resources and read-only access to hub resources.",
+          "Warning: Do not grant service agent roles to any principals except service agents . compute.addresses.create compute. addresses. createInternal compute.addresses.delete compute. addresses. deleteInternal compute.addresses.get compute.addresses.setLabels compute.addresses.use compute.forwardingRules.create compute.forwardingRules.delete compute.forwardingRules.get compute. forwardingRules. pscCreate compute. forwardingRules. pscDelete compute. forwardingRules. pscSetLabels compute. forwardingRules. pscUpdate compute. forwardingRules. setLabels compute.instances.get compute. interconnectAttachments. get compute.networks.get compute.networks.updatePolicy compute.networks.use compute.projects.get compute.regionOperations.get compute.routers.get compute.subnetworks.create compute.subnetworks.delete compute.subnetworks.get compute. subnetworks. getIamPolicy compute.subnetworks.list compute. subnetworks. setIamPolicy compute.subnetworks.use compute.vpnTunnels.get dns.changes.create dns.managedZoneOperations. dns.managedZoneOperations.get dns.managedZoneOperations.list dns.managedZones.create dns.managedZones.delete dns.managedZones.get dns.managedZones.list dns.managedZones.update dns. networks. bindPrivateDNSZone dns.resourceRecordSets. dns.resourceRecordSets.create dns.resourceRecordSets.delete dns.resourceRecordSets.get dns.resourceRecordSets.list dns.resourceRecordSets.update networkconnectivity.groups.use networkconnectivity. hubRouteTables. get networkconnectivity. hubRouteTables. list networkconnectivity. hubRoutes. get networkconnectivity. hubRoutes. list networkconnectivity. internalRanges. create networkconnectivity. internalRanges. delete networkconnectivity. internalRanges. get networkconnectivity. internalRanges. list networkconnectivity. operations. get servicedirectory. namespaces. associatePrivateZone servicedirectory. namespaces. create servicedirectory. namespaces. delete servicedirectory. services. create servicedirectory. services. delete Note: To create spokes, you also need permission to read your spoke's resource type, as described in Permission to create a spoke ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "explicit",
+    "explicit_roles": [
+      "roles/accessapproval.admin",
+      "roles/accessapproval.approver",
+      "roles/accessapproval.configEditor"
+    ],
+    "explicit_permissions": [
+      {
+        "permission": "resourcemanager.projects.get",
+        "group": "resourcemanager",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver",
+          "roles/accessapproval.configEditor"
+        ]
+      },
+      {
+        "permission": "resourcemanager.projects.list",
+        "group": "resourcemanager",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver",
+          "roles/accessapproval.configEditor"
+        ]
+      }
+    ],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "compute.addresses.create",
+      "compute.addresses.delete",
+      "compute.addresses.get",
+      "compute.addresses.setLabels",
+      "compute.addresses.use",
+      "compute.forwardingRules.create",
+      "compute.forwardingRules.delete",
+      "compute.forwardingRules.get",
+      "compute.instances.get",
+      "compute.networks.get",
+      "compute.networks.updatePolicy",
+      "compute.networks.use",
+      "compute.projects.get",
+      "compute.regionOperations.get",
+      "compute.routers.get",
+      "compute.subnetworks.create",
+      "compute.subnetworks.delete",
+      "compute.subnetworks.get",
+      "compute.subnetworks.list",
+      "compute.subnetworks.use",
+      "compute.vpnTunnels.get",
+      "dns.changes.create",
+      "dns.managedZoneOperations",
+      "dns.managedZoneOperations.get",
+      "dns.managedZoneOperations.list",
+      "dns.managedZones.create",
+      "dns.managedZones.delete",
+      "dns.managedZones.get",
+      "dns.managedZones.list",
+      "dns.managedZones.update",
+      "dns.resourceRecordSets",
+      "dns.resourceRecordSets.create",
+      "dns.resourceRecordSets.delete",
+      "dns.resourceRecordSets.get",
+      "dns.resourceRecordSets.list",
+      "dns.resourceRecordSets.update",
+      "networkconnectivity.consumerNetworkAdmin",
+      "networkconnectivity.editor",
+      "networkconnectivity.groupAdmin",
+      "networkconnectivity.groups",
+      "networkconnectivity.groups.get",
+      "networkconnectivity.groups.update",
+      "networkconnectivity.groups.use",
+      "networkconnectivity.groupUser",
+      "networkconnectivity.hubAdmin",
+      "networkconnectivity.hubs.get",
+      "networkconnectivity.hubs.list",
+      "networkconnectivity.hubs.update",
+      "networkconnectivity.multicloudDataTransferConfigAdmin",
+      "networkconnectivity.multicloudDataTransferConfigViewer",
+      "networkconnectivity.multicloudDataTransferDestinationAdmin",
+      "networkconnectivity.multicloudDataTransferDestinationViewer",
+      "networkconnectivity.regionalEndpointAdmin",
+      "networkconnectivity.regionalEndpointViewer",
+      "networkconnectivity.serviceClasses.delete",
+      "networkconnectivity.serviceClasses.use",
+      "networkconnectivity.serviceClassUser",
+      "networkconnectivity.serviceConnectionMaps.create",
+      "networkconnectivity.serviceConnectionMaps.delete",
+      "networkconnectivity.serviceConnectionMaps.update",
+      "networkconnectivity.serviceConnectionPolicies.create",
+      "networkconnectivity.serviceConnectionPolicies.delete",
+      "networkconnectivity.serviceConnectionPolicies.update",
+      "networkconnectivity.serviceConnectionTokens.delete",
+      "networkconnectivity.serviceProducerAdmin",
+      "networkconnectivity.spokeAdmin",
+      "networkconnectivity.spokes",
+      "networkconnectivity.spokes.get",
+      "networkconnectivity.spokes.update",
+      "networkconnectivity.transportAdmin",
+      "networkconnectivity.transportViewer"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/connectivity-topologies",
+        "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/data-transfer-topology",
+        "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/audit-logging",
+        "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/access-control"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/connectivity-topologies",
+        "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/data-transfer-topology",
+        "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/audit-logging",
+        "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/access-control"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/connectivity-topologies",
+        "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/data-transfer-topology",
+        "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/audit-logging",
+        "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/access-control"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/connectivity-topologies",
+        "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/data-transfer-topology",
+        "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/audit-logging",
+        "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/access-control"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/connectivity-topologies",
+        "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/data-transfer-topology",
+        "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/audit-logging",
+        "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/access-control"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/connectivity-topologies",
+        "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/data-transfer-topology",
+        "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/audit-logging",
+        "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/access-control"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/connectivity-topologies",
+        "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/data-transfer-topology",
+        "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/audit-logging",
+        "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/access-control"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/connectivity-topologies",
+        "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/data-transfer-topology",
+        "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/audit-logging",
+        "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/access-control"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/connectivity-topologies",
+        "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/data-transfer-topology",
+        "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/audit-logging",
+        "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/access-control"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/connectivity-topologies",
+        "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/data-transfer-topology",
+        "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/audit-logging",
+        "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/access-control"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/connectivity-topologies",
+        "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/data-transfer-topology",
+        "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/audit-logging",
+        "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/access-control"
+      ]
+    }
+  ]
+}

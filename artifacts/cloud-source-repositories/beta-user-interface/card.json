@@ -1,0 +1,194 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:26.790Z",
+  "source_step08_card": "data/step-08/current/products/cloud-source-repositories/card.json",
+  "product_name": "Cloud Source Repositories",
+  "product_slug": "cloud-source-repositories",
+  "feature_name": "Beta user interface",
+  "feature_slug": "beta-user-interface",
+  "summary": "Cloud Source Repositories provides a beta user interface for managing repositories and related tasks.",
+  "extended_definition": "Cloud Source Repositories provides a beta user interface for managing repositories and related tasks.",
+  "lifecycle": {
+    "latest_feature_date": "2018-07-23",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/source-repositories/docs/audit-logging",
+      "https://docs.cloud.google.com/source-repositories/docs/browsing-repositories",
+      "https://docs.cloud.google.com/source-repositories/docs/csr-ssm-migration-guide",
+      "https://docs.cloud.google.com/source-repositories/docs/csr-ssm-permission-mapping"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Cloud Source Repositories audit logging information \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/source-repositories/docs/audit-logging",
+        "source_id": "site-iam-reference",
+        "final_score": 204,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Audited operations The following table summarizes which API operations correspond to each audit log type in Cloud Source Repositories: Note: Cloud Source Repositories audit logging does not capture events from users searching and browsing within repositories in the user interface.",
+          "Home Documentation Application development Cloud Source Repositories Guides Send feedback Cloud Source Repositories audit logging information Stay organized with collections Save and categorize content based on your preferences.",
+          "Available audit logs The following types of audit logs are available for Cloud Source Repositories: Admin Activity audit logs Includes \"admin write\" operations that write metadata or configuration information."
+        ]
+      },
+      {
+        "title": "\"Migrate to Secure Source Manager \\_|\\_ Cloud Source Repositories \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/source-repositories/docs/csr-ssm-migration-guide",
+        "source_id": "site-iam-reference",
+        "final_score": 177,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Prerequisites Before you begin the migration, make sure you meet the following prerequisites: Permissions : The user or service accounts must have the following permissions to perform the migration: source.repos.get , which is available in the roles/source.reader role, on the source CSR repository securesourcemanager.instances.access , which is available in the roles/securesourcemanager.instanceAccessor role, and securesourcemanager.repositories.fetch , which is available in the roles/securesourcemanager.repoWriter role, on the target SSM instance and repository.",
+          "Determine access principal and method for CSR, SSM repositories You can connect to CSR using HTTP or SSH transports when you authenticate as a user principal, or through HTTP when you authenticate as a service account.",
+          "This guide describes how to migrate a Git repository, including all its information, from Google's Cloud Source Repositories (CSR) to Secure Source Manager (SSM)."
+        ]
+      },
+      {
+        "title": "\"Translate Cloud Source Repositories roles and permissions to Secure Source\\",
+        "url": "https://docs.cloud.google.com/source-repositories/docs/csr-ssm-permission-mapping",
+        "source_id": "site-iam-reference",
+        "final_score": 177,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Required for repository-level roles to be effective. roles/securesourcemanager.instanceManager Manage instance-level configurations. roles/securesourcemanager.instanceOwner Full control over instance configurations. roles/securesourcemanager.instanceRepoCreator Create repositories on an instance. roles/securesourcemanager.sshKeyUser Manage SSH keys for authentication to an instance.",
+          "SSM has 11 roles for user principals, a significant increase compared to Cloud Source Repositories.",
+          "Role Permissions roles/securesourcemanager.repoAdmin Full control over a repository, including repository settings and user access. roles/securesourcemanager.repoPullRequestApprover Approve pull requests in a repository. roles/securesourcemanager.repoReader Read repository content and view pull requests and issues. roles/securesourcemanager.repoWriter Read and write repository content, and manage pull requests and issues. roles/securesourcemanager.repoCreator Create new repositories within a project."
+        ]
+      },
+      {
+        "title": "\"Browsing repositories \\_|\\_ Cloud Source Repositories \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/source-repositories/docs/browsing-repositories",
+        "source_id": "site-iam-reference",
+        "final_score": 175,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "View all repositories If you don't see the repository you want to open in the My source, you can search for it by viewing all repositories.",
+          "Home Documentation Application development Cloud Source Repositories Guides Send feedback Browsing repositories Stay organized with collections Save and categorize content based on your preferences.",
+          "For alternative source hosting options, Secure Source Manager is a regionally deployed, single tenant, managed source code repository hosted on Google Cloud."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "securesourcemanager.instanceAccessor",
+      "securesourcemanager.instanceManager",
+      "securesourcemanager.instanceOwner",
+      "securesourcemanager.instanceRepoCreator",
+      "securesourcemanager.instances.access",
+      "securesourcemanager.repoAdmin",
+      "securesourcemanager.repoCreator",
+      "securesourcemanager.repoPullRequestApprover",
+      "securesourcemanager.repoReader",
+      "securesourcemanager.repositories.fetch",
+      "securesourcemanager.repoWriter",
+      "securesourcemanager.sshKeyUser",
+      "source.reader",
+      "source.repos.get"
+    ],
+    "missing_inventory_roles": [
+      "roles/securesourcemanager.instanceAccessor",
+      "roles/securesourcemanager.instanceManager",
+      "roles/securesourcemanager.instanceOwner",
+      "roles/securesourcemanager.instanceRepoCreator",
+      "roles/securesourcemanager.repoAdmin",
+      "roles/securesourcemanager.repoCreator",
+      "roles/securesourcemanager.repoPullRequestApprover",
+      "roles/securesourcemanager.repoReader",
+      "roles/securesourcemanager.repoWriter",
+      "roles/securesourcemanager.sshKeyUser",
+      "roles/source.reader"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/source-repositories/docs/audit-logging",
+        "https://docs.cloud.google.com/source-repositories/docs/csr-ssm-migration-guide",
+        "https://docs.cloud.google.com/source-repositories/docs/csr-ssm-permission-mapping",
+        "https://docs.cloud.google.com/source-repositories/docs/browsing-repositories"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/source-repositories/docs/audit-logging",
+        "https://docs.cloud.google.com/source-repositories/docs/csr-ssm-migration-guide",
+        "https://docs.cloud.google.com/source-repositories/docs/csr-ssm-permission-mapping",
+        "https://docs.cloud.google.com/source-repositories/docs/browsing-repositories"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/source-repositories/docs/audit-logging",
+        "https://docs.cloud.google.com/source-repositories/docs/csr-ssm-migration-guide",
+        "https://docs.cloud.google.com/source-repositories/docs/csr-ssm-permission-mapping",
+        "https://docs.cloud.google.com/source-repositories/docs/browsing-repositories"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/source-repositories/docs/audit-logging",
+        "https://docs.cloud.google.com/source-repositories/docs/csr-ssm-migration-guide",
+        "https://docs.cloud.google.com/source-repositories/docs/csr-ssm-permission-mapping",
+        "https://docs.cloud.google.com/source-repositories/docs/browsing-repositories"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/source-repositories/docs/audit-logging",
+        "https://docs.cloud.google.com/source-repositories/docs/csr-ssm-migration-guide",
+        "https://docs.cloud.google.com/source-repositories/docs/csr-ssm-permission-mapping",
+        "https://docs.cloud.google.com/source-repositories/docs/browsing-repositories"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/source-repositories/docs/audit-logging",
+        "https://docs.cloud.google.com/source-repositories/docs/csr-ssm-migration-guide",
+        "https://docs.cloud.google.com/source-repositories/docs/csr-ssm-permission-mapping",
+        "https://docs.cloud.google.com/source-repositories/docs/browsing-repositories"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/source-repositories/docs/audit-logging",
+        "https://docs.cloud.google.com/source-repositories/docs/csr-ssm-migration-guide",
+        "https://docs.cloud.google.com/source-repositories/docs/csr-ssm-permission-mapping",
+        "https://docs.cloud.google.com/source-repositories/docs/browsing-repositories"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/source-repositories/docs/audit-logging",
+        "https://docs.cloud.google.com/source-repositories/docs/csr-ssm-migration-guide",
+        "https://docs.cloud.google.com/source-repositories/docs/csr-ssm-permission-mapping",
+        "https://docs.cloud.google.com/source-repositories/docs/browsing-repositories"
+      ]
+    }
+  ]
+}

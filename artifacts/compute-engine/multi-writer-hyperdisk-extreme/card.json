@@ -1,0 +1,92 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:29.281Z",
+  "source_step08_card": "data/step-08/current/products/compute-engine/card.json",
+  "product_name": "Compute Engine",
+  "product_slug": "compute-engine",
+  "feature_name": "Multi-writer Hyperdisk Extreme",
+  "feature_slug": "multi-writer-hyperdisk-extreme",
+  "summary": "Hyperdisk Extreme disks can be shared with simultaneous read-write access by up to 16 instances.",
+  "extended_definition": "Hyperdisk Extreme disks can be shared with simultaneous read-write access by up to 16 instances.",
+  "lifecycle": {
+    "latest_feature_date": "2025-07-22",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/compute/docs/disks/hyperdisks",
+      "https://docs.cloud.google.com/compute/docs/disks/hyperdisks",
+      "https://docs.cloud.google.com/compute/docs/disks/persistent-disks"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Google Cloud Hyperdisk overview \\_|\\_ Compute Engine \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/compute/docs/disks/hyperdisks",
+        "source_id": "site-docs-root",
+        "final_score": 208,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Workload type Recommended Hyperdisk type Unique features Max IOPS and throughput per volume Most enterprise applications Boot disks Virtual desktops Postgres, MySQL Hyperdisk Balanced Designed to be the best fit for the majority of workloads Best combination of price and performance Supports simultaneous read-write access to the same volume from up to 8 instances IOPS : 160,000 Throughput : 2,400 MiB/s Highly-available, mission-critical applications that require a recovery point objective of 0 Hyperdisk Balanced High Availability Offers data replication in two zones within the same region for quick failover Supports simultaneous read-write access to the same volume from up to 8 instances IOPS : 100,000 Throughput : 2,400 MiB/s SAP HANA High-end SQL Server, Oracle, and in-memory RDBMS Hyperdisk Extreme Offers the highest IOPS IOPS : 350,000 Throughput : 5,000 MiB/s 1 High-performance computing (HPC) Machine learning, AI inference or training Accelerator-optimized workloads Hyperdisk ML Supports attaching a single volume in read-only mode to up to 2,500 instances.",
+          "Hyperdisk type Supported regions Hyperdisk Balanced Available in all zones and regions Hyperdisk Balanced High Availability Available in all zones and regions except for AI zones Hyperdisk Extreme Available in all zones and regions Hyperdisk ML Available in all zones and regions Hyperdisk Throughput Available in all zones and regions Share Hyperdisk volumes between instances You can share a Hyperdisk volume between multiple instances by simultaneously attaching the same volume to multiple instances.",
+          "Offers the highest read-only throughput IOPS : 33,554,432 2 Throughput : 2,097,152 MiB/s Scale out analytics workloads like Hadoop, Spark, and Kafka Cold disks Hyperdisk Throughput High throughput for bandwidth and capacity-intensive applications that don't need high IOPS Cost-effective data disks for cost-sensitive applications IOPS : 9,600 2 Throughput : 2,400 MiB/s 1 You can't specify a throughput level for Hyperdisk Extreme volumes."
+        ]
+      },
+      {
+        "title": "\"Google Cloud Hyperdisk overview \\_|\\_ Compute Engine \\_|\\_ Google Cloud\\",
+        "url": "https://developers.google.com/compute/docs/disks/hyperdisks",
+        "source_id": "site-docs-root-3",
+        "final_score": 208,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Workload type Recommended Hyperdisk type Unique features Max IOPS and throughput per volume Most enterprise applications Boot disks Virtual desktops Postgres, MySQL Hyperdisk Balanced Designed to be the best fit for the majority of workloads Best combination of price and performance Supports simultaneous read-write access to the same volume from up to 8 instances IOPS : 160,000 Throughput : 2,400 MiB/s Highly-available, mission-critical applications that require a recovery point objective of 0 Hyperdisk Balanced High Availability Offers data replication in two zones within the same region for quick failover Supports simultaneous read-write access to the same volume from up to 8 instances IOPS : 100,000 Throughput : 2,400 MiB/s SAP HANA High-end SQL Server, Oracle, and in-memory RDBMS Hyperdisk Extreme Offers the highest IOPS IOPS : 350,000 Throughput : 5,000 MiB/s 1 High-performance computing (HPC) Machine learning, AI inference or training Accelerator-optimized workloads Hyperdisk ML Supports attaching a single volume in read-only mode to up to 2,500 instances.",
+          "Hyperdisk type Supported regions Hyperdisk Balanced Available in all zones and regions Hyperdisk Balanced High Availability Available in all zones and regions except for AI zones Hyperdisk Extreme Available in all zones and regions Hyperdisk ML Available in all zones and regions Hyperdisk Throughput Available in all zones and regions Share Hyperdisk volumes between instances You can share a Hyperdisk volume between multiple instances by simultaneously attaching the same volume to multiple instances.",
+          "Offers the highest read-only throughput IOPS : 33,554,432 2 Throughput : 2,097,152 MiB/s Scale out analytics workloads like Hadoop, Spark, and Kafka Cold disks Hyperdisk Throughput High throughput for bandwidth and capacity-intensive applications that don't need high IOPS Cost-effective data disks for cost-sensitive applications IOPS : 9,600 2 Throughput : 2,400 MiB/s 1 You can't specify a throughput level for Hyperdisk Extreme volumes."
+        ]
+      },
+      {
+        "title": "Persistent Disk \\_|\\_ Compute Engine \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/compute/docs/disks/persistent-disks",
+        "source_id": "site-docs-root",
+        "final_score": 190,
+        "relevance": "",
+        "evidence_snippets": [
+          "Multi-writer mode Caution: Google recommends using Hyperdisk Balanced or Hyperdisk Balanced High Availability ( Preview ) volumes in multi-writer mode instead of SSD Persistent Disk volumes.",
+          "Persistent Disk in multi-writer mode provides a shared block storage capability and presents an infrastructural foundation for building highly available shared file systems and databases.",
+          "You can attach an SSD Persistent Disk in multi-writer mode to up to two N2 VMs simultaneously so that both VMs can read and write to the disk."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "developers.google.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://developers.google.com/compute/docs/disks/hyperdisks",
+        "https://docs.cloud.google.com/compute/docs/disks/hyperdisks",
+        "https://docs.cloud.google.com/compute/docs/disks/persistent-disks"
+      ]
+    }
+  ]
+}

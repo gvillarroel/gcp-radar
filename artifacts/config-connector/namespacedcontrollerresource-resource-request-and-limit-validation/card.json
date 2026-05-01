@@ -1,0 +1,155 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:30.193Z",
+  "source_step08_card": "data/step-08/current/products/config-connector/card.json",
+  "product_name": "Config Connector",
+  "product_slug": "config-connector",
+  "feature_name": "NamespacedControllerResource resource request and limit validation",
+  "feature_slug": "namespacedcontrollerresource-resource-request-and-limit-validation",
+  "summary": "Config Connector added value validation for resource requests and limits in customizable NamespacedControllerResource CRDs.",
+  "extended_definition": "Config Connector added value validation for resource requests and limits in customizable NamespacedControllerResource CRDs.",
+  "lifecycle": {
+    "latest_feature_date": "2023-09-29",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/config-connector/docs/how-to/customize-controller-manager-rate-limit",
+      "https://docs.cloud.google.com/config-connector/docs/how-to/customizing-container-resources",
+      "https://docs.cloud.google.com/config-connector/docs/troubleshooting"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Configure container resources and replicas \\_|\\_ Config Connector \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/config-connector/docs/how-to/customizing-container-resources",
+        "source_id": "site-docs-reference",
+        "final_score": 145,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For example, to configure the memory request and limit of the webhook container of the cnrm-webhook-manager controller, create and apply the following YAML file: apiVersion : customize.core.cnrm.cloud.google.com/v1beta1 kind : ControllerResource metadata : name : cnrm-webhook-manager spec : containers : - name : webhook resources : limits : memory : 512Mi requests : memory : 256Mi Use NamespacedControllerResource for the namespaced controller manager Use the NamespacedControllerResource custom resource only to configure resources for the cnrm-controller-manager when Config Connector is running in namespaced mode.",
+          "The following YAML file shows an example configuration: apiVersion : customize.core.cnrm.cloud.google.com/v1beta1 kind : NamespacedControllerResource metadata : name : cnrm-controller-manager # name should not contain the namespace ID suffix namespace : NAMESPACE spec : containers : - name : manager resources : limits : cpu : 200m memory : 512Mi requests : cpu : 100m memory : 256Mi Replace NAMESPACE with the name of your namespace.",
+          "You can configure the following controllers: cnrm-webhook-manager cnrm-controller-manager cnrm-deletiondefender cnrm-resource-stats-recorder cnrm-unmanaged-detector (Config Connector version 1.108 and later) There are two types of custom resources used for configuration: ControllerResource and NamespacedControllerResource ."
+        ]
+      },
+      {
+        "title": "\"Configure the controller manager rate limit \\_|\\_ Config Connector \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/config-connector/docs/how-to/customize-controller-manager-rate-limit",
+        "source_id": "site-docs-reference",
+        "final_score": 124,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Verify that the --qps and --burst flags are added to the cnrm-controller-manager controller's manager container by running the following command: kubectl describe statefulsets -n cnrm-system -l \"cnrm.cloud.google.com/scoped-namespace= NAMESPACE \" The output should contain the following: Containers : manager : Image : gcr.io/gke-release/cnrm/controller:fd4c42c Port : 23232/TCP Host Port : 0/TCP Command : /configconnector/manager Args : --qps=80 --burst=40 --scoped-namespace=config-control --prometheus-scrape-endpoint=:8888 Configure the rate limit in cluster mode Starting in version 1.125, if Config Connector is configured to run in cluster mode, you can configure the rate limit of the cnrm-controller-manager controller's Kubernetes client using the ControllerReconciler custom resource.",
+          "Configure the rate limit for namespaced controller manager If Config Connector is configured to run in namespaced mode , you can use the NamespacedControllerReconciler custom resource to configure the rate limit of the cnrm-controller-manager controller's Kubernetes client in your designated namespace.",
+          "The rate limit controls how many requests Config Connector makes to the Kubernetes API server."
+        ]
+      },
+      {
+        "title": "Troubleshoot Config Connector \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/config-connector/docs/troubleshooting",
+        "source_id": "site-docs-reference",
+        "final_score": 99,
+        "relevance": "",
+        "evidence_snippets": [
+          "Resolution To address this issue, you can use the ControllerResource custom resource to increase the memory request and the memory limit for the Pod.",
+          "Type of issue Common issues Reconciliation Resource keeps updating every 5-15 mins Resource has no status KNV2005: syncer excessively updating resource Resource deleted by Config Connector Controller Pod OOMKilled Deletion Deletions of namespaces stuck at Terminating Deletions of resources stuck at DeleteFailed after project was deleted Permissions Compute Engine Metadata not defined Error 403: Request had insufficient authentication scopes 403 Forbidden: The caller does not have permission Error 403: Caller is missing IAM permission Update error with IAMPolicy, IAMPartialPolicy and IAMPolicyMember Installation and upgrades Version not supported in Config Connector add-on installations failed calling webhook PodSecurityPolicy prevents upgrades Configuration Cannot make changes to immutable fields No matches for kind \"Foo\" Labels are not propagated to the Google Cloud resource Error due to special characters in resource name Unable to remove fields from resource spec Reconciliation The following section lists common issues related to reconciliation of resources by Config Connector.",
+          "Update error with IAMPolicy, IAMPartialPolicy and IAMPolicyMember Symptom You see an UpdateFailed status with an error message indicating a 400 error because the service account does not exist: Update call failed: error setting policy member: error applying changes: summary: Request Create IAM Members roles/[MYROLE] serviceAccount:[NAME]@[PROJECT ID].iam.gserviceaccount.com for project \\\"projects/[PROJECT ID]\\\"` returned error: Error applying IAM policy for project \\\"projects/[PROJECT ID]\\\": Error setting IAM policy for project \\\"projects/[PROJECT ID]\\\": googleapi: Error 400: Service account [NAME]@[PROJECT ID].iam.gserviceaccount.com does not exist., badRequest Cause If you delete an IAMServiceAccount Config Connector resource before cleaning up IAMPolicy , IAMPartialPolicy , and IAMPolicyMember resources that depend on that service account, Config Connector cannot locate the service account referenced in those IAM resources during reconciliation."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "bigquery.cnrm.cloud.google.com",
+      "cnrm.cloud.google.com",
+      "com.google.cloud.cnrm.bigquery.v1beta1.bigquerydatasets.delete",
+      "customize.core.cnrm.cloud.google.com",
+      "gcr.io",
+      "iam.gserviceaccount.com",
+      "manager.yaml",
+      "status.healthy"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/how-to/customizing-container-resources",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/customize-controller-manager-rate-limit",
+        "https://docs.cloud.google.com/config-connector/docs/troubleshooting"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/how-to/customizing-container-resources",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/customize-controller-manager-rate-limit",
+        "https://docs.cloud.google.com/config-connector/docs/troubleshooting"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/how-to/customizing-container-resources",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/customize-controller-manager-rate-limit",
+        "https://docs.cloud.google.com/config-connector/docs/troubleshooting"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/how-to/customizing-container-resources",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/customize-controller-manager-rate-limit",
+        "https://docs.cloud.google.com/config-connector/docs/troubleshooting"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/how-to/customizing-container-resources",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/customize-controller-manager-rate-limit",
+        "https://docs.cloud.google.com/config-connector/docs/troubleshooting"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/how-to/customizing-container-resources",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/customize-controller-manager-rate-limit",
+        "https://docs.cloud.google.com/config-connector/docs/troubleshooting"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/how-to/customizing-container-resources",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/customize-controller-manager-rate-limit",
+        "https://docs.cloud.google.com/config-connector/docs/troubleshooting"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/how-to/customizing-container-resources",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/customize-controller-manager-rate-limit",
+        "https://docs.cloud.google.com/config-connector/docs/troubleshooting"
+      ]
+    }
+  ]
+}

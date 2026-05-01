@@ -1,0 +1,112 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:37.235Z",
+  "source_step08_card": "data/step-08/current/products/gemini/card.json",
+  "product_name": "Gemini",
+  "product_slug": "gemini",
+  "feature_name": "Automatic scrolling for chat responses",
+  "feature_slug": "automatic-scrolling-for-chat-responses",
+  "summary": "Chat responses automatically scroll to improve readability and speed of review.",
+  "extended_definition": "Chat responses automatically scroll to improve readability and speed of review.",
+  "lifecycle": {
+    "latest_feature_date": "2025-06-05",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/gemini/docs/codeassist/chat-gemini",
+      "https://docs.cloud.google.com/gemini/docs/codeassist/use-agentic-chat-pair-programmer",
+      "https://docs.cloud.google.com/python/docs/reference/google-cloud-geminidataanalytics/latest/google.cloud.geminidataanalytics_v1alpha.services.data_chat_service.DataChatServiceAsyncClient",
+      "https://docs.cloud.google.com/python/docs/reference/google-cloud-geminidataanalytics/latest/google.cloud.geminidataanalytics_v1alpha.services.data_chat_service.DataChatServiceClient"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Chat with Gemini Code Assist Standard and Enterprise \\_|\\_ Gemini for Google\\",
+        "url": "https://docs.cloud.google.com/gemini/docs/codeassist/chat-gemini",
+        "source_id": "site-docs-root",
+        "final_score": 241,
+        "relevance": "",
+        "evidence_snippets": [
+          "Manage your chat You can manage your Gemini Code Assist chat settings by doing the following: Configure automatic scrolling VS Code By default, Gemini Code Assist automatically scrolls through your chat.",
+          "If you previously disabled automatic outline generation , click the Generate outline button to generate an outline for the current file in focus. (Optional): Click on a node in the outline to automatically scroll to that portion of the code file. (Optional): Click the Eye icon in the outline pane to display the outline in-line in the code file itself.",
+          "Select one of the following options: Expanded : Automatically expands all code blocks in Gemini Code Assist chat responses."
+        ]
+      },
+      {
+        "title": "\"Class DataChatServiceAsyncClient (0.12.0) \\_|\\_ Python client libraries\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/google-cloud-geminidataanalytics/latest/google.cloud.geminidataanalytics_v1alpha.services.data_chat_service.DataChatServiceAsyncClient",
+        "source_id": "site-python-reference",
+        "final_score": 192,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "If set to None, a transport is chosen automatically. client options Optional[Union[google.api core.client options.ClientOptions, dict]] Custom options for the client.",
+          "It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import geminidataanalytics v1alpha async def sample chat(): Create a client client = geminidataanalytics v1alpha.",
+          "Returns Type Description google.cloud.geminidataanalytics v1alpha.services.data chat service.pagers.ListConversationsAsyncPager Message for response to listing conversations."
+        ]
+      },
+      {
+        "title": "\"Class DataChatServiceClient (0.12.0) \\_|\\_ Python client libraries \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/google-cloud-geminidataanalytics/latest/google.cloud.geminidataanalytics_v1alpha.services.data_chat_service.DataChatServiceClient",
+        "source_id": "site-python-reference",
+        "final_score": 192,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "If set to None, a transport is chosen automatically. client options Optional[Union[google.api core.client options.ClientOptions, dict]] Custom options for the client.",
+          "It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import geminidataanalytics v1alpha def sample chat(): Create a client client = geminidataanalytics v1alpha.",
+          "Returns Type Description google.cloud.geminidataanalytics v1alpha.services.data chat service.pagers.ListConversationsPager Message for response to listing conversations."
+        ]
+      },
+      {
+        "title": "\"Use the Gemini Code Assist agent mode \\_|\\_ Gemini for Google Cloud \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/gemini/docs/codeassist/use-agentic-chat-pair-programmer",
+        "source_id": "site-docs-root-2",
+        "final_score": 176,
+        "relevance": "",
+        "evidence_snippets": [
+          "IntelliJ To automatically approve changes, in the Gemini chat agent tab, select settings Agent options and then click the checkbox next to Auto-approve changes .",
+          "Agent mode automatically approves all requests, and won't ask for permission before taking actions when you send it a prompt.",
+          "After you make an MCP server available, Gemini Code Assist automatically decides when and how to use the server tools contained within that MCP server."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "core.client",
+      "googleapis.dev",
+      "options.ClientOptions",
+      "options.html",
+      "service.pagers.ListConversationsAsyncPager",
+      "service.pagers.ListConversationsPager",
+      "v1alpha.services.data"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/docs/codeassist/chat-gemini",
+        "https://docs.cloud.google.com/python/docs/reference/google-cloud-geminidataanalytics/latest/google.cloud.geminidataanalytics_v1alpha.services.data_chat_service.DataChatServiceAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/google-cloud-geminidataanalytics/latest/google.cloud.geminidataanalytics_v1alpha.services.data_chat_service.DataChatServiceClient",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/use-agentic-chat-pair-programmer"
+      ]
+    }
+  ]
+}

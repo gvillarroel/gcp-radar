@@ -1,0 +1,196 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:23.852Z",
+  "source_step08_card": "data/step-08/current/products/cloud-key-management-service/card.json",
+  "product_name": "Cloud Key Management Service",
+  "product_slug": "cloud-key-management-service",
+  "feature_name": "Cloud KMS key version destruction organization policy constraints",
+  "feature_slug": "cloud-kms-key-version-destruction-organization-policy-constraints",
+  "summary": "Cloud KMS provides organization policy constraints to control key version destruction.",
+  "extended_definition": "Cloud KMS provides organization policy constraints to control key version destruction.",
+  "lifecycle": {
+    "latest_feature_date": "2024-05-16",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kms/docs/cmek",
+      "https://docs.cloud.google.com/kms/docs/cmek-best-practices",
+      "https://docs.cloud.google.com/kms/docs/control-key-destruction",
+      "https://docs.cloud.google.com/kms/docs/reference/rest"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Control key version destruction \\_|\\_ Cloud Key Management Service \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/kms/docs/control-key-destruction",
+        "source_id": "site-iam-reference",
+        "final_score": 298,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Google Cloud offers two organization policy constraints to set key version destruction policy across an organization: constraints/cloudkms.minimumDestroyScheduledDuration is used to set a minimum length for the scheduled for destruction duration for new keys within the organization. constraints/cloudkms.disableBeforeDestroy is used to require that a key version has been disabled before it can be scheduled for destruction.",
+          "This command returns the organization policy as it is evaluated at this point in the resource hierarchy with inheritance included. gcloud org-policies describe \\ constraints/cloudkms.minimumDestroyScheduledDuration --effective \\ --organization = ORGANIZATION ID The output is similar to the following: name : organizations/ ORGANIZATION ID /policies/cloudkms.minimumDestroyScheduledDuration spec : rules : - values : allowedValues : - 30d - 15d - 90d - 60d - 7d - 120d Because this organization policy was set at the organization level, it is inherited by all child resources that allow inheritance.",
+          "This command returns the organization policy as it is evaluated at this point in the resource hierarchy with inheritance included. gcloud org-policies describe \\ constraints/cloudkms.disableBeforeDestroy --effective \\ --organization = ORGANIZATION ID The output is similar to the following: name : organizations/ ORGANIZATION ID /policies/cloudkms.minimumDestroyScheduledDuration spec : rules : - enforce : true Because this organization policy was set at the organization level, it is inherited by all child resources that allow inheritance."
+        ]
+      },
+      {
+        "title": "\"Best practices for using CMEKs \\_|\\_ Cloud Key Management Service \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/kms/docs/cmek-best-practices",
+        "source_id": "site-iam-reference",
+        "final_score": 252,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To ensure that all keys created adhere to a minimum scheduled for destruction duration, we recommend that you configure the organization policy constraint constraints/cloudkms.minimumDestroyScheduledDuration with a minimum of 30 days, or your preferred duration.",
+          "Enforce allowed protection levels for CMEKs We recommend that you enforce your requirements for key protection levels consistently across your environment using organization policy constraints.",
+          "Use constraints/cloudkms.allowedProtectionLevels to enforce that new keys, key versions, and import jobs must use the protection levels that you allow."
+        ]
+      },
+      {
+        "title": "\"Customer-managed encryption keys (CMEK) \\_|\\_ Cloud Key Management Service\\",
+        "url": "https://docs.cloud.google.com/kms/docs/cmek",
+        "source_id": "site-iam-reference",
+        "final_score": 232,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "These constraints provide controls to Organization Administrators to require CMEK usage and to specify limitations and controls on the Cloud KMS keys used for CMEK protection, including the following: Limits on which Cloud KMS keys are used for CMEK protection Limits on the allowed protection levels of keys Limits on the location of CMEKs Controls for key version destruction What's next See the list of services with CMEK integrations .",
+          "For more information about key usage tracking, see View key usage CMEK organization policies Google Cloud offers organization policy constraints to help ensure consistent CMEK usage across an organization resource.",
+          "This document provides an overview of using Cloud Key Management Service (Cloud KMS) for customer-managed encryption keys (CMEK)."
+        ]
+      },
+      {
+        "title": "Cloud Key Management Service (KMS) API \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/kms/docs/reference/rest",
+        "source_id": "site-api-reference",
+        "final_score": 213,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "REST Resource: v1.projects Methods getAutokeyConfig GET /v1/{name=projects/ /autokeyConfig} Returns the AutokeyConfig for a folder or project. getKajPolicyConfig GET /v1/{name=projects/ /kajPolicyConfig} Gets the KeyAccessJustificationsPolicyConfig for a given organization, folder, or project. showEffectiveAutokeyConfig GET /v1/{parent=projects/ }:showEffectiveAutokeyConfig Returns the effective Cloud KMS Autokey configuration for a given project. showEffectiveKeyAccessJustificationsEnrollmentConfig GET /v1/{project=projects/ }:showEffectiveKeyAccessJustificationsEnrollmentConfig Returns the KeyAccessJustificationsEnrollmentConfig of the resource closest to the given project in hierarchy. showEffectiveKeyAccessJustificationsPolicyConfig GET /v1/{project=projects/ }:showEffectiveKeyAccessJustificationsPolicyConfig Returns the KeyAccessJustificationsPolicyConfig of the resource closest to the given project in hierarchy. updateAutokeyConfig PATCH /v1/{autokeyConfig.name=projects/ /autokeyConfig} Updates the AutokeyConfig for a folder or a project. updateKajPolicyConfig PATCH /v1/{keyAccessJustificationsPolicyConfig.name=projects/ /kajPolicyConfig} Updates the KeyAccessJustificationsPolicyConfig for a given organization, folder, or project.",
+          "Select a location to see its regional service endpoint for this service. global europe-west3 europe-west8 europe-west9 me-central2 us-east1 us-east4 us-west2 us-west1 us-east7 us-central1 us-west3 us-central2 us-west4 us-west8 us-east5 us-south1 us in ca https://cloudkms.googleapis.com REST Resource: v1.folders Methods getAutokeyConfig GET /v1/{name=folders/ /autokeyConfig} Returns the AutokeyConfig for a folder or project. getKajPolicyConfig GET /v1/{name=folders/ /kajPolicyConfig} Gets the KeyAccessJustificationsPolicyConfig for a given organization, folder, or project. updateAutokeyConfig PATCH /v1/{autokeyConfig.name=folders/ /autokeyConfig} Updates the AutokeyConfig for a folder or a project. updateKajPolicyConfig PATCH /v1/{keyAccessJustificationsPolicyConfig.name=folders/ /kajPolicyConfig} Updates the KeyAccessJustificationsPolicyConfig for a given organization, folder, or project.",
+          "REST Resource: v1.folders REST Resource: v1.organizations REST Resource: v1.projects REST Resource: v1.projects.locations REST Resource: v1.projects.locations.ekmConfig REST Resource: v1.projects.locations.ekmConnections REST Resource: v1.projects.locations.keyHandles REST Resource: v1.projects.locations.keyRings REST Resource: v1.projects.locations.keyRings.cryptoKeys REST Resource: v1.projects.locations.keyRings.cryptoKeys.cryptoKeyVersions REST Resource: v1.projects.locations.keyRings.importJobs REST Resource: v1.projects.locations.operations REST Resource: v1.projects.locations.retiredResources REST Resource: v1.projects.locations.singleTenantHsmInstances REST Resource: v1.projects.locations.singleTenantHsmInstances.proposals Service: cloudkms.googleapis.com To call this service, we recommend that you use the Google-provided client libraries ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cloudkms.allowedProtectionLevels",
+      "cloudkms.disableBeforeDestroy",
+      "cloudkms.googleapis.com",
+      "cloudkms.minimumDestroyScheduledDuration",
+      "v1.folders",
+      "v1.organizations",
+      "v1.projects",
+      "v1.projects.locations",
+      "v1.projects.locations.ekmConfig",
+      "v1.projects.locations.ekmConnections",
+      "v1.projects.locations.keyHandles",
+      "v1.projects.locations.keyRings",
+      "v1.projects.locations.keyRings.cryptoKeys",
+      "v1.projects.locations.keyRings.cryptoKeys.cryptoKeyVersions",
+      "v1.projects.locations.keyRings.importJobs",
+      "v1.projects.locations.operations",
+      "v1.projects.locations.retiredResources",
+      "v1.projects.locations.singleTenantHsmInstances",
+      "v1.projects.locations.singleTenantHsmInstances.proposals"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/control-key-destruction",
+        "https://docs.cloud.google.com/kms/docs/cmek-best-practices",
+        "https://docs.cloud.google.com/kms/docs/cmek",
+        "https://docs.cloud.google.com/kms/docs/reference/rest"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/control-key-destruction",
+        "https://docs.cloud.google.com/kms/docs/cmek-best-practices",
+        "https://docs.cloud.google.com/kms/docs/cmek",
+        "https://docs.cloud.google.com/kms/docs/reference/rest"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/control-key-destruction",
+        "https://docs.cloud.google.com/kms/docs/cmek-best-practices",
+        "https://docs.cloud.google.com/kms/docs/cmek",
+        "https://docs.cloud.google.com/kms/docs/reference/rest"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/control-key-destruction",
+        "https://docs.cloud.google.com/kms/docs/cmek-best-practices",
+        "https://docs.cloud.google.com/kms/docs/cmek",
+        "https://docs.cloud.google.com/kms/docs/reference/rest"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/control-key-destruction",
+        "https://docs.cloud.google.com/kms/docs/cmek-best-practices",
+        "https://docs.cloud.google.com/kms/docs/cmek",
+        "https://docs.cloud.google.com/kms/docs/reference/rest"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/control-key-destruction",
+        "https://docs.cloud.google.com/kms/docs/cmek-best-practices",
+        "https://docs.cloud.google.com/kms/docs/cmek",
+        "https://docs.cloud.google.com/kms/docs/reference/rest"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/control-key-destruction",
+        "https://docs.cloud.google.com/kms/docs/cmek-best-practices",
+        "https://docs.cloud.google.com/kms/docs/cmek",
+        "https://docs.cloud.google.com/kms/docs/reference/rest"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/control-key-destruction",
+        "https://docs.cloud.google.com/kms/docs/cmek-best-practices",
+        "https://docs.cloud.google.com/kms/docs/cmek",
+        "https://docs.cloud.google.com/kms/docs/reference/rest"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/control-key-destruction",
+        "https://docs.cloud.google.com/kms/docs/cmek-best-practices",
+        "https://docs.cloud.google.com/kms/docs/cmek",
+        "https://docs.cloud.google.com/kms/docs/reference/rest"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,121 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:39.542Z",
+  "source_step08_card": "data/step-08/current/products/google-kubernetes-engine/card.json",
+  "product_name": "Google Kubernetes Engine",
+  "product_slug": "google-kubernetes-engine",
+  "feature_name": "Automatic NVIDIA GPU driver installation",
+  "feature_slug": "automatic-nvidia-gpu-driver-installation",
+  "summary": "GKE can automatically install the default NVIDIA GPU driver version for GPU node pools when no driver version is specified; GKE can automatically install NVIDIA GPU drivers on nodes without a DaemonSet starting in version 1.27.2-gke.1200.",
+  "extended_definition": "GKE can automatically install the default NVIDIA GPU driver version for GPU node pools when no driver version is specified; GKE can automatically install NVIDIA GPU drivers on nodes without a DaemonSet starting in version 1.27.2-gke.1200.",
+  "lifecycle": {
+    "latest_feature_date": "2024-09-11",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/gpus",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/machine-learning/inference/inference-quickstart",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Run GPUs in GKE Standard node pools \\_|\\_ GKE AI/ML \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/gpus",
+        "source_id": "site-docs-root",
+        "final_score": 147,
+        "relevance": "",
+        "evidence_snippets": [
+          "GKE supports automatic installation of NVIDIA drivers in the following scenarios: For GKE clusters with control plane version 1.32.2-gke.1297000 and later, GKE automatically installs the default NVIDIA driver version for all GPU nodes, including those created with node auto-provisioning.",
+          "To grant the required scopes, modify the default scopes for node auto-provisioning to add logging.write , monitoring , devstorage.read only , and compute , such as in the following example. gcloud container clusters update CLUSTER NAME --enable-autoprovisioning \\ --min-cpu = 1 --max-cpu = 10 --min-memory = 1 --max-memory = 32 \\ --autoprovisioning-scopes = https://www.googleapis.com/auth/logging.write,https://www.googleapis.com/auth/monitoring,https://www.googleapis.com/auth/devstorage.read only,https://www.googleapis.com/auth/compute For clusters running GKE version 1.32.2-gke.1297000 and later, GKE automatically installs the default NVIDIA driver version for all GPU nodes, including those created with node auto-provisioning.",
+          "GKE automatically installs the default drivers on those nodes. gcloud container node-pools create p100 \\ --accelerator type = nvidia-tesla-p100,count = 2 ,gpu-driver-version = default \\ --cluster p100-cluster \\ --location us-central1 \\ --node-locations us-central1-c \\ --min-nodes 0 --max-nodes 5 --enable-autoscaling You can also update an existing node pool."
+        ]
+      },
+      {
+        "title": "\"Analyze model serving performance and costs with GKE Inference Quickstart\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/machine-learning/inference/inference-quickstart",
+        "source_id": "site-docs-reference-2",
+        "final_score": 133,
+        "relevance": "",
+        "evidence_snippets": [
+          "This automatically utilizes the high-performance Run:ai Model Streamer for supported vLLM versions, or the Cloud Storage FUSE CSI driver for other configurations.",
+          "The model automatically uses the high-performance Run:ai Model Streamer for supported vLLM versions, falling back to the Cloud Storage FUSE CSI driver for others.",
+          "For example: gcloud container ai profiles manifests create \\ --accelerator-type = nvidia-h100-80gb \\ --model = openai/gpt-oss-120b \\ --model-server = vllm \\ --serving-stack = llm-d \\ --use-case 'Multi Agent Large Document Summarization' Check the manifests create output for additional cluster creation and dependency installation instructions to correctly set up your environment for llm-d."
+        ]
+      },
+      {
+        "title": "\"MCP Tools Reference: container.googleapis.com \\_|\\_ Google Kubernetes Engine\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster",
+        "source_id": "site-api-reference",
+        "final_score": 129,
+        "relevance": "",
+        "evidence_snippets": [
+          "By default, GKE enables multi-NIC support, which allows the Lustre CSI driver to automatically detect and configure all suitable network interfaces on a node to maximize I/O performance for demanding workloads.",
+          "MetadataEntry JSON representation { \"key\" : string , \"value\" : string } Fields key string value string LabelsEntry JSON representation { \"key\" : string , \"value\" : string } Fields key string value string AcceleratorConfig JSON representation { \"acceleratorCount\" : string , \"acceleratorType\" : string , \"gpuPartitionSize\" : string , // Union field gpu sharing config can be only one of the following: \"gpuSharingConfig\" : { object ( GPUSharingConfig ) } // End of list of possible types for union field gpu sharing config . // Union field gpu driver installation config can be only one of the // following: \"gpuDriverInstallationConfig\" : { object ( GPUDriverInstallationConfig ) } // End of list of possible types for union field // gpu driver installation config . } Fields acceleratorCount string ( int64 format) The number of the accelerator cards exposed to an instance. acceleratorType string The accelerator type resource name.",
+          "GPUDriverInstallationConfig JSON representation { // Union field gpu driver version can be only one of the following: \"gpuDriverVersion\" : enum ( GPUDriverVersion ) // End of list of possible types for union field gpu driver version . } Fields Union field gpu driver version . gpu driver version can be only one of the following: gpuDriverVersion enum ( GPUDriverVersion ) Mode for how the GPU driver is installed."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "container.googleapis.com",
+      "devstorage.read",
+      "gke.1156000",
+      "gke.1200",
+      "gke.1297000",
+      "logging.write"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/gpus",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/machine-learning/inference/inference-quickstart",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/gpus",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/machine-learning/inference/inference-quickstart",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/gpus",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/machine-learning/inference/inference-quickstart",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/gpus",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/machine-learning/inference/inference-quickstart",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster"
+      ]
+    }
+  ]
+}

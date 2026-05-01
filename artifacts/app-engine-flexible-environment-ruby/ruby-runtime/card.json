@@ -1,0 +1,83 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:15.571Z",
+  "source_step08_card": "data/step-08/current/products/app-engine-flexible-environment-ruby/card.json",
+  "product_name": "App Engine flexible environment Ruby",
+  "product_slug": "app-engine-flexible-environment-ruby",
+  "feature_name": "Ruby runtime",
+  "feature_slug": "ruby-runtime",
+  "summary": "The Ruby runtime is available for App Engine flexible environment applications.",
+  "extended_definition": "The Ruby runtime is available for App Engine flexible environment applications.",
+  "lifecycle": {
+    "latest_feature_date": "2016-05-02",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/appengine/docs/flexible/dotnet/runtime",
+      "https://docs.cloud.google.com/appengine/docs/flexible/ruby",
+      "https://docs.cloud.google.com/appengine/docs/flexible/ruby/runtime"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"The Ruby runtime \\_|\\_ App Engine flexible environment \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/flexible/ruby/runtime",
+        "source_id": "site-docs-reference-2",
+        "final_score": 135,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Home Documentation Application hosting App Engine Flexible environment Guides Send feedback The Ruby runtime Stay organized with collections Save and categorize content based on your preferences.",
+          "The Ruby runtime is the software stack responsible for installing your application code and dependencies, and then running that application in the flexible environment.",
+          "The runtime will install all dependencies before your entrypoint is called. source \"https://rubygems.org\" gem \"rack\" gem \"puma\" An example entrypoint using puma for a Rails application: entrypoint : bundle exec rails server Puma - p $PORT An example entrypoint using puma for any Rack application: entrypoint : bundle exec rackup - s Puma - p $PORT For applications that can handle requests without a Rack server, you can just execute a ruby script: entrypoint : bundle exec ruby app . rb Note: The entrypoint command will be executed by bash's exec function ."
+        ]
+      },
+      {
+        "title": "\"The Ruby runtime \\_|\\_ App Engine flexible environment \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/flexible/ruby",
+        "source_id": "site-docs-reference-2",
+        "final_score": 125,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Home Documentation Application hosting App Engine Flexible environment Guides Send feedback The Ruby runtime Stay organized with collections Save and categorize content based on your preferences.",
+          "The Ruby runtime is the software stack responsible for installing your application code and dependencies, and then running that application in the flexible environment.",
+          "The runtime will install all dependencies before your entrypoint is called. source \"https://rubygems.org\" gem \"rack\" gem \"puma\" An example entrypoint using puma for a Rails application: entrypoint : bundle exec rails server Puma - p $PORT An example entrypoint using puma for any Rack application: entrypoint : bundle exec rackup - s Puma - p $PORT For applications that can handle requests without a Rack server, you can just execute a ruby script: entrypoint : bundle exec ruby app . rb Note: The entrypoint command will be executed by bash's exec function ."
+        ]
+      },
+      {
+        "title": "\"The .NET runtime \\_|\\_ App Engine flexible environment \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/flexible/dotnet/runtime",
+        "source_id": "site-docs-reference",
+        "final_score": 89,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Home Documentation Application hosting App Engine Flexible environment Guides Send feedback The .NET runtime Stay organized with collections Save and categorize content based on your preferences.",
+          "The .NET runtime is the software stack responsible for installing your application code and dependencies, and then running that application in the flexible environment. .NET versions .NET 10 is built using buildpacks .",
+          "By default, App Engine uses the latest available LTS .NET version if the runtime version setting is not specified."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "rubygems.org"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": []
+}

@@ -1,0 +1,102 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:17.437Z",
+  "source_step08_card": "data/step-08/current/products/apps-script/card.json",
+  "product_name": "Apps Script",
+  "product_slug": "apps-script",
+  "feature_name": "Script installation source API",
+  "feature_slug": "script-installation-source-api",
+  "summary": "The Script service can identify a script's installation source and project key.",
+  "extended_definition": "The Script service can identify a script's installation source and project key.",
+  "lifecycle": {
+    "latest_feature_date": "2015-05-20",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/apps-script/api/reference/rest/v1/projects",
+      "https://developers.google.com/apps-script/api/reference/rest/v1/projects.deployments",
+      "https://developers.google.com/apps-script/api/reference/rest/v1/projects.versions"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "REST Resource: projects \\_|\\_ Apps Script \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/apps-script/api/reference/rest/v1/projects",
+        "source_id": "site-api-reference",
+        "final_score": 103,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Methods create Creates a new, empty script project with no script files and a base manifest file. get Gets a script project's metadata. getContent Gets the content of the script project, including the code source and metadata for each script file. getMetrics Get metrics data for scripts, such as number of executions and active users. updateContent Updates the content of the specified script project.",
+          "Page Summary outlined flag The Project resource represents a script project and includes fields like scriptId , title , parentId , createTime , updateTime , creator , and lastModifyUser .",
+          "Home Google Workspace Apps Script Reference Send feedback REST Resource: projects Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "REST Resource: projects.deployments \\_|\\_ Apps Script \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/apps-script/api/reference/rest/v1/projects.deployments",
+        "source_id": "site-api-reference",
+        "final_score": 102,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Google Workspace Apps Script Reference Send feedback REST Resource: projects.deployments Stay organized with collections Save and categorize content based on your preferences.",
+          "Resource: Deployment JSON representation DeploymentConfig JSON representation EntryPoint JSON representation EntryPointType WebAppEntryPoint JSON representation WebAppConfig JSON representation Access ExecuteAs ExecutionApiEntryPoint JSON representation ExecutionApiConfig JSON representation AddOnEntryPoint JSON representation AddOnType Methods Resource: Deployment Representation of a single script deployment.",
+          "JSON representation { \"scriptId\" : string , \"versionNumber\" : integer , \"manifestFileName\" : string , \"description\" : string } Fields scriptId string The script project's Drive ID. versionNumber integer The version number on which this deployment is based. manifestFileName string The manifest file name for this deployment. description string The description for this deployment."
+        ]
+      },
+      {
+        "title": "REST Resource: projects.versions \\_|\\_ Apps Script \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/apps-script/api/reference/rest/v1/projects.versions",
+        "source_id": "site-api-reference",
+        "final_score": 95,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Google Workspace Apps Script Reference Send feedback REST Resource: projects.versions Stay organized with collections Save and categorize content based on your preferences.",
+          "Resource: Version JSON representation Methods Resource: Version A resource representing a script project version.",
+          "JSON representation { \"scriptId\" : string , \"versionNumber\" : integer , \"description\" : string , \"createTime\" : string } Fields scriptId string The script project's Drive ID. versionNumber integer The incremental ID that is created by Apps Script when a version is created."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "developers.google.com",
+      "projects.deployments",
+      "projects.versions"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/api/reference/rest/v1/projects",
+        "https://developers.google.com/apps-script/api/reference/rest/v1/projects.deployments",
+        "https://developers.google.com/apps-script/api/reference/rest/v1/projects.versions"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/api/reference/rest/v1/projects",
+        "https://developers.google.com/apps-script/api/reference/rest/v1/projects.deployments",
+        "https://developers.google.com/apps-script/api/reference/rest/v1/projects.versions"
+      ]
+    }
+  ]
+}

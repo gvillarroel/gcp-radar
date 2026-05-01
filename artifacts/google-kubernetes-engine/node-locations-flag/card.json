@@ -1,0 +1,181 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:39.542Z",
+  "source_step08_card": "data/step-08/current/products/google-kubernetes-engine/card.json",
+  "product_name": "Google Kubernetes Engine",
+  "product_slug": "google-kubernetes-engine",
+  "feature_name": "node-locations flag",
+  "feature_slug": "node-locations-flag",
+  "summary": "The node-locations flag lets you place node pools in zones independently of the cluster zone.",
+  "extended_definition": "The node-locations flag lets you place node pools in zones independently of the cluster zone.",
+  "lifecycle": {
+    "latest_feature_date": "2020-02-18",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/confidential-gke-nodes",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/gpus",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Run GPUs in GKE Standard node pools \\_|\\_ GKE AI/ML \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/gpus",
+        "source_id": "site-docs-root",
+        "final_score": 231,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Test new GKE versions for compatibility in a staging environment before automatic upgrades change the version on your production GPU nodes, or disable automatic upgrades in those node pools. gcloud To create a node pool with GPUs in a cluster, run the following command: gcloud container node-pools create POOL NAME \\ --accelerator type = GPU TYPE ,count = AMOUNT ,gpu-driver-version = DRIVER VERSION \\ --machine-type MACHINE TYPE \\ --cluster CLUSTER NAME \\ --location CONTROL PLANE LOCATION \\ --node-locations COMPUTE ZONE1 [ , COMPUTE ZONE2 ] \\ [ --sandbox = type = gvisor ] [ --enable-autoscaling \\ --min-nodes MIN NODES \\ --max-nodes MAX NODES ] \\ [ --scopes = SCOPES ] \\ [ --service-account = SERVICE ACCOUNT ] \\ [ --reservation-affinity = specific --reservation = RESERVATION NAME ] Replace the following: POOL NAME : the name you choose for the node pool.",
+          "We recommend that you always use the --node-locations flag when creating the node pool to specify the zone or zones that contain the requested GPUs.",
+          "Best practice : You can also create a new cluster with GPUs and specify zones using the --node-locations flag."
+        ]
+      },
+      {
+        "title": "\"Encrypt workload data in-use with Confidential GKE Nodes \\_|\\_ GKE security\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/confidential-gke-nodes",
+        "source_id": "site-iam-reference",
+        "final_score": 197,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Create a new node pool To create a new node pool with Confidential GKE Nodes enabled, select one of the following options: gcloud Run the following command: gcloud container node-pools create NODE POOL NAME \\ --location = LOCATION \\ --cluster = CLUSTER NAME \\ --machine-type = MACHINE TYPE \\ --node-locations = ZONE1,ZONE2,... \\ --confidential-node-type = CONFIDENTIAL COMPUTE TECHNOLOGY Note: You can enable confidential mode on boot disk storage by passing the --enable-confidential-storage flag and --boot-disk-kms-key= KMS KEY .",
+          "For more information about the supported fields and values for ComputeClasses, see the ComputeClass CustomResourceDefinition . apiVersion : cloud.google.com/v1 kind : ComputeClass metadata : name : COMPUTE CLASS spec : nodePoolConfig : confidentialNodeType : CONFIDENTIAL COMPUTE TECHNOLOGY nodePoolAutoCreation : enabled : true activeMigration : optimizeRulePriority : true priorityDefaults : location : zones : [ ' ZONE1 ' , ' ZONE2 ' ] priorities : - machineFamily : MACHINE SERIES - machineType : MACHINE TYPE whenUnsatisfiable : DoNotScaleUp Replace the following: COMPUTE CLASS : a name for your new compute class.",
+          "To create a Standard mode cluster that uses Confidential GKE Nodes, select one of the following options: gcloud When creating a new cluster, specify the --confidential-node-type option in the gcloud CLI: gcloud container clusters create CLUSTER NAME \\ --location = LOCATION \\ --machine-type = MACHINE TYPE \\ --node-locations = ZONE1,ZONE2,... \\ --confidential-node-type = CONFIDENTIAL COMPUTE TECHNOLOGY Replace the following: CLUSTER NAME : the name of your cluster."
+        ]
+      },
+      {
+        "title": "\"Security bulletins \\_|\\_ Google Kubernetes Engine (GKE) \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "source_id": "site-docs-reference-2",
+        "final_score": 179,
+        "relevance": "",
+        "evidence_snippets": [
+          "For security purposes, even if you have node auto-upgrades enabled, we recommend that you manually upgrade your node pools to one of the following GKE versions: Container-Optimized OS: 1.21.14-gke.7100 and later Ubuntu: 1.21.14-gke.9400 and later 1.22.15-gke.2400 and later 1.23.13-gke.800 and later 1.24.7-gke.800 and later 1.25.3-gke.700 and later A recent feature of release channels lets you apply a patch without having to unsubscribe from a channel.",
+          "For security purposes, even if you have node auto-upgrades enabled, we recommend that you manually upgrade your node pools to one of the following GKE versions: 1.22.15-gke.2300 and later 1.23.13-gke.700 and later 1.24.7-gke.700 and later A recent feature of release channels lets you apply a patch without having to unsubscribe from a channel.",
+          "Convert public node pools to private 2024-07-02 Update: For Autopilot clusters originally created as public clusters, you can place your workloads on private nodes by using nodeSelectors ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cluster.ml",
+      "cluster.name",
+      "container.googleapis.com",
+      "devstorage.read",
+      "gke.1001",
+      "gke.2001",
+      "gke.2101",
+      "gke.2300",
+      "gke.2400",
+      "gke.3001",
+      "gke.301",
+      "gke.4501",
+      "gke.700",
+      "gke.701",
+      "gke.7100",
+      "gke.800",
+      "gke.9400",
+      "logging.write",
+      "service.management.readonly",
+      "trace.append",
+      "var.cluster",
+      "var.gpu",
+      "var.machine",
+      "var.project",
+      "var.region",
+      "var.zones"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/gpus",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/confidential-gke-nodes",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/gpus",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/confidential-gke-nodes",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins"
+      ]
+    },
+    {
+      "capability": "confidential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/gpus",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/confidential-gke-nodes",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/gpus",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/confidential-gke-nodes",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/gpus",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/confidential-gke-nodes",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/gpus",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/confidential-gke-nodes",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/gpus",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/confidential-gke-nodes",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/gpus",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/confidential-gke-nodes",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/gpus",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/confidential-gke-nodes",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins"
+      ]
+    }
+  ]
+}

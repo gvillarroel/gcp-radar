@@ -1,0 +1,104 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:36.223Z",
+  "source_step08_card": "data/step-08/current/products/earth-engine-server/card.json",
+  "product_name": "Earth Engine Server",
+  "product_slug": "earth-engine-server",
+  "feature_name": "Collection.size()",
+  "feature_slug": "collection-size",
+  "summary": "Returns the number of elements in a collection.",
+  "extended_definition": "Returns the number of elements in a collection.",
+  "lifecycle": {
+    "latest_feature_date": "2015-09-24",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/earth-engine/guides/arrays_intro",
+      "https://developers.google.com/earth-engine/guides/charts_feature",
+      "https://developers.google.com/earth-engine/guides/debugging"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Debugging guide \\_|\\_ Google Earth Engine \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/earth-engine/guides/debugging",
+        "source_id": "site-docs-root",
+        "final_score": 96,
+        "relevance": "",
+        "evidence_snippets": [
+          "Common manifestations of this problem result from: Doing something to an object returned by first() (the type of the elements in a collection is unknown).",
+          "In this case, it's useful to isolate problematic elements in the collection and test the mapped function on an individual element.",
+          "Point ([ 106.91 , 47.91 ])) . map ( lambda image : image . addBands ( image . normalizedDifference ([ 'B5' , 'B4' ]))) . aside ( m . add layer , { 'bands' : [ 'B4' , 'B3' , 'B2' ], 'max' : 0.3 }, 'collection' ) . qualityMosaic ( 'nd' ) ) m . add layer ( composite , { 'bands' : [ 'B4' , 'B3' , 'B2' ], 'max' : 0.3 }, 'composite' ) m Running a function on first() Printing and visualizing are useful for debugging when available, but when you're debugging a function mapped over a collection, then you can't print in the function, as described in the mapped functions section ."
+        ]
+      },
+      {
+        "title": "\"Feature and FeatureCollection Charts \\_|\\_ Google Earth Engine \\_|\\_ Google\\",
+        "url": "https://developers.google.com/earth-engine/guides/charts_feature",
+        "source_id": "site-docs-root",
+        "final_score": 94,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Chart . feature . groups ({ features : ecoregions , xProperty : 'label' , yProperty : '01 tmean' , seriesProperty : 'warm' }) . setSeriesNames ([ 'Warm' , 'Cold' ]) . setChartType ( 'ColumnChart' ) . setOptions ({ title : 'Average January Temperature by Ecoregion' , hAxis : { title : 'Ecoregion' , titleTextStyle : { italic : false , bold : true }}, vAxis : { title : 'Jan temp (°C)' , titleTextStyle : { italic : false , bold : true } }, bar : { groupWidth : '80%' }, colors : [ 'cf513e' , '1d6b99' ], isStacked : true }); print ( chart ); ui.Chart.feature.histogram The x-axis is defined by value bins for the range of values of a selected property; the y-axis is the number of elements in the given bin.",
+          "Chart . feature . byFeature ({ features : ecoregions , xProperty : 'label' , yProperties : [ '06 ppt' , '06 tmean' ] }) . setSeriesNames ([ 'Precipitation' , 'Temperature' ]) . setChartType ( 'ColumnChart' ) . setOptions ({ title : 'Average June Temperature and Precipitation by Ecoregion' , series : { 0 : { targetAxisIndex : 1 , type : 'bar' , color : '1d6b99' }, 1 : { targetAxisIndex : 0 , type : 'line' , lineWidth : 0 , pointSize : 10 , color : 'e37d05' } }, hAxis : { title : 'Ecoregion' , titleTextStyle : { italic : false , bold : true }}, vAxes : { 0 : { title : 'Temperature (°C)' , baseline : 0 , titleTextStyle : { italic : false , bold : true , color : 'e37d05' } }, 1 : { title : 'Precipitation (mm)' , titleTextStyle : { italic : false , bold : true , color : '1d6b99' } }, }, bar : { groupWidth : '40%' }, }); print ( chart ); ui.Chart.feature.byProperty Example setup The ui.Chart.feature.byProperty function accepts a dictionary that allows you to control the label and order of property names along the x-axis by assigning numerical values to them.",
+          "FeatureCollection ( 'projects/google/charts feature example' ); // Define a dictionary that associates property names with values and labels. var precipInfo = { '01 ppt' : { v : 1 , f : 'Jan' }, '02 ppt' : { v : 2 , f : 'Feb' }, '03 ppt' : { v : 3 , f : 'Mar' }, '04 ppt' : { v : 4 , f : 'Apr' }, '05 ppt' : { v : 5 , f : 'May' }, '06 ppt' : { v : 6 , f : 'Jun' }, '07 ppt' : { v : 7 , f : 'Jul' }, '08 ppt' : { v : 8 , f : 'Aug' }, '09 ppt' : { v : 9 , f : 'Sep' }, '10 ppt' : { v : 10 , f : 'Oct' }, '11 ppt' : { v : 11 , f : 'Nov' }, '12 ppt' : { v : 12 , f : 'Dec' } }; // Organize property information into objects for defining x properties and // their tick labels. var xPropValDict = {}; // Dictionary to codify x-axis property names as values. var xPropLabels = []; // Holds dictionaries that label codified x-axis values. for ( var key in precipInfo ) { xPropValDict [ key ] = precipInfo [ key ]. v ; xPropLabels . push ( precipInfo [ key ]); } // Define the chart and print it to the console. var chart = ui ."
+        ]
+      },
+      {
+        "title": "Array Overview \\_|\\_ Google Earth Engine \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/earth-engine/guides/arrays_intro",
+        "source_id": "site-docs-root",
+        "final_score": 82,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "An array's dimension is the number of axes, its shape is determined by axis lengths, and its size is the product of axis lengths, with all elements having the same type and no sparse or ragged arrays supported.",
+          "The array size, or number of total elements in the array, equals the product of the axis lengths.",
+          "Array dimension, shape and size The dimension of an array refers to the number of axes along which the underlying data varies."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "developers.google.com",
+      "ee.Algorithms.Collection",
+      "geemap.core",
+      "ui.Chart.feature.byProperty",
+      "ui.Chart.feature.histogram"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://developers.google.com/earth-engine/guides/charts_feature",
+        "https://developers.google.com/earth-engine/guides/debugging",
+        "https://developers.google.com/earth-engine/guides/arrays_intro"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://developers.google.com/earth-engine/guides/charts_feature",
+        "https://developers.google.com/earth-engine/guides/debugging",
+        "https://developers.google.com/earth-engine/guides/arrays_intro"
+      ]
+    }
+  ]
+}

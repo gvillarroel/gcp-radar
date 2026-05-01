@@ -1,0 +1,98 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:23.577Z",
+  "source_step08_card": "data/step-08/current/products/cloud-healthcare-api/card.json",
+  "product_name": "Cloud Healthcare API",
+  "product_slug": "cloud-healthcare-api",
+  "feature_name": "Expanded DICOM/FHIR de-identification configuration",
+  "feature_slug": "expanded-dicom-fhir-de-identification-configuration",
+  "summary": "Cloud Healthcare API introduced additional de-identification configuration options for DICOM and FHIR data, including more control over resource handling.",
+  "extended_definition": "Cloud Healthcare API introduced additional de-identification configuration options for DICOM and FHIR data, including more control over resource handling.",
+  "lifecycle": {
+    "latest_feature_date": "2019-04-04",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/healthcare-api/docs/concepts/de-identification",
+      "https://docs.cloud.google.com/healthcare-api/docs/deid-showcase",
+      "https://docs.cloud.google.com/healthcare-api/docs/introduction"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Data de-identification \\_|\\_ Cloud Healthcare API \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/healthcare-api/docs/concepts/de-identification",
+        "source_id": "site-docs-root-2",
+        "final_score": 125,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The Cloud Healthcare API detects sensitive data in DICOM instances and FHIR resources , such as protected health information (PHI), and then uses a de-identification transformation to mask, delete, or otherwise obscure the data.",
+          "De-identification location When the Cloud Healthcare API de-identifies data, the data might be processed in a location that is different from where the source and destination FHIR or DICOM store resides.",
+          "After de-identification finishes, the data is stored in the same Google Cloud location as the source FHIR store or DICOM store."
+        ]
+      },
+      {
+        "title": "Overview of the Cloud Healthcare API \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/healthcare-api/docs/introduction",
+        "source_id": "site-api-reference",
+        "final_score": 106,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Data de-identification The Cloud Healthcare API supports de-identifying data at the dataset, FHIR store, and DICOM store level.",
+          "The API supports the following applications: Healthcare machine learning applications Data-level integration of healthcare systems Secure storage and retrieval of healthcare and life science data, including electronic protected health information (ePHI) and other forms of PII For many applications, the Cloud Healthcare API can provide a cloud-based alternative to on-premises stacks implementing the following standards: Digital Imaging and Communications in Medicine (DICOM) Fast Healthcare Interoperability Resources (FHIR) DSTU2, STU3, and R4 standards Health Level Seven Version 2.x (HL7v2) The Cloud Healthcare API simplifies data integration with existing systems and allows developers to focus on differentiating features, such as UX and intelligence.",
+          "Data model The API consists of three modalities that implement individual industry-wide standards: Medical imaging data in the Digital Imaging and Communications in Medicine (DICOM) format Clinical event messages in the Health Level Seven Version 2.x (HL7v2) format Clinical resources in the Fast Healthcare Interoperability Resources (FHIR) format Each modality has different structural and processing characteristics, but they are all backed by a standards-compliant data store that provides read, write, search, and other operations on the data."
+        ]
+      },
+      {
+        "title": "\"Try FHIR and DICOM de-identification \\_|\\_ Cloud Healthcare API \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/healthcare-api/docs/deid-showcase",
+        "source_id": "site-docs-root-2",
+        "final_score": 103,
+        "relevance": "",
+        "evidence_snippets": [
+          "Home Documentation Industry solutions Cloud Healthcare API Guides Send feedback Try FHIR and DICOM de-identification Stay organized with collections Save and categorize content based on your preferences.",
+          "Use the following application to de-identify FHIR data or DICOM images and metadata.",
+          "The application is only for demonstration purposes and does not call the de-identification API."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/healthcare-api/docs/concepts/de-identification",
+        "https://docs.cloud.google.com/healthcare-api/docs/introduction",
+        "https://docs.cloud.google.com/healthcare-api/docs/deid-showcase"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/healthcare-api/docs/concepts/de-identification",
+        "https://docs.cloud.google.com/healthcare-api/docs/introduction",
+        "https://docs.cloud.google.com/healthcare-api/docs/deid-showcase"
+      ]
+    }
+  ]
+}

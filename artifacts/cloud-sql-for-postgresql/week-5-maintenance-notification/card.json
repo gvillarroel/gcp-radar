@@ -1,0 +1,124 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:27.301Z",
+  "source_step08_card": "data/step-08/current/products/cloud-sql-for-postgresql/card.json",
+  "product_name": "Cloud SQL for PostgreSQL",
+  "product_slug": "cloud-sql-for-postgresql",
+  "feature_name": "Week 5 maintenance notification",
+  "feature_slug": "week-5-maintenance-notification",
+  "summary": "Week 5 maintenance notification lets you receive notice five weeks before a scheduled maintenance update.",
+  "extended_definition": "Week 5 maintenance notification lets you receive notice five weeks before a scheduled maintenance update.",
+  "lifecycle": {
+    "latest_feature_date": "2024-06-10",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/sql/docs/mysql/admin-api/rest/v1beta4/instances",
+      "https://docs.cloud.google.com/sql/docs/postgres/admin-api/rest/v1/instances",
+      "https://docs.cloud.google.com/sql/docs/postgres/troubleshooting"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Troubleshoot \\_|\\_ Cloud SQL for PostgreSQL \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/sql/docs/postgres/troubleshooting",
+        "source_id": "site-docs-root",
+        "final_score": 84,
+        "relevance": "",
+        "evidence_snippets": [
+          "An automated backup failed and you didn't receive an email notification.",
+          "Execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method GET -Headers $headers ` -Uri \"https://compute.googleapis.com/compute/v1/projects/ PROJECT ID /regions/ REGION NAME /forwardingRules/ ENDPOINT NAME \" Select-Object -Expand Content You should receive a JSON response similar to the following: { \"kind\": \"compute#forwardingRule\", \"id\": \" ENDPOINT ID \", \"creationTimestamp\": \"2024-05-09T12:03:21.383-07:00\", \"name\": \" ENDPOINT NAME \", \"region\": \"https://www.googleapis.com/compute/v1/projects/ PROJECT ID /regions/ REGION NAME \", \"IPAddress\": \" IP ADDRESS \", \"target\": \"https://www.googleapis.com/compute/v1/projects/ PROJECT ID /regions/ REGION NAME /serviceAttachments/ SERVICE ATTACHMENT NAME \", \"selfLink\": \"https://www.googleapis.com/compute/v1/projects/ PROJECT ID /regions/ REGION NAME /forwardingRules/ ENDPOINT NAME \", \"network\": \"https://www.googleapis.com/compute/v1/projects/ PROJECT ID /global/networks/default\", \"serviceDirectoryRegistrations\": [ { \"namespace\": \"goog-psc-default\" } ], \"networkTier\": \"PREMIUM\", \"labelFingerprint\": \" LABEL FINGERPRINT ID \", \"fingerprint\": \" FINGERPRINT ID \", \"pscConnectionId\": \" CONNECTION ID \", \"pscConnectionStatus\": \"ACCEPTED\", \"allowPscGlobalAccess\": true } Verify that the status of the endpoint is ACCEPTED .",
+          "To resolve this issue, retry creating the instance in another zone or retry creating the instance in the same zone that received the error at a different time of day."
+        ]
+      },
+      {
+        "title": "\"REST Resource: instances \\_|\\_ Cloud SQL for PostgreSQL \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/sql/docs/postgres/admin-api/rest/v1/instances",
+        "source_id": "site-api-reference",
+        "final_score": 81,
+        "relevance": "",
+        "evidence_snippets": [
+          "Also referred to as Week 1 (Console) and preview (gcloud CLI). stable For an instance with a scheduled maintenance window, this maintenance timing indicates that the maintenance update is scheduled 15 to 21 days after the notification is sent out.",
+          "Also referred to as Week 2 (Console) and production (gcloud CLI). week5 For instance with a scheduled maintenance window, this maintenance timing indicates that the maintenance update is scheduled 35 to 42 days after the notification is sent out.",
+          "SqlUpdateTrack Enums SQL UPDATE TRACK UNSPECIFIED This is an unknown maintenance timing preference. canary For an instance with a scheduled maintenance window, this maintenance timing indicates that the maintenance update is scheduled 7 to 14 days after the notification is sent out."
+        ]
+      },
+      {
+        "title": "REST Resource: instances \\_|\\_ Cloud SQL for MySQL \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/sql/docs/mysql/admin-api/rest/v1beta4/instances",
+        "source_id": "site-iam-reference",
+        "final_score": 81,
+        "relevance": "",
+        "evidence_snippets": [
+          "Also referred to as Week 1 (Console) and preview (gcloud CLI). stable For an instance with a scheduled maintenance window, this maintenance timing indicates that the maintenance update is scheduled 15 to 21 days after the notification is sent out.",
+          "Also referred to as Week 2 (Console) and production (gcloud CLI). week5 For instance with a scheduled maintenance window, this maintenance timing indicates that the maintenance update is scheduled 35 to 42 days after the notification is sent out.",
+          "SqlUpdateTrack Enums SQL UPDATE TRACK UNSPECIFIED This is an unknown maintenance timing preference. canary For an instance with a scheduled maintenance window, this maintenance timing indicates that the maintenance update is scheduled 7 to 14 days after the notification is sent out."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "compute.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-api/rest/v1beta4/instances",
+        "https://docs.cloud.google.com/sql/docs/postgres/admin-api/rest/v1/instances",
+        "https://docs.cloud.google.com/sql/docs/postgres/troubleshooting"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-api/rest/v1beta4/instances",
+        "https://docs.cloud.google.com/sql/docs/postgres/admin-api/rest/v1/instances",
+        "https://docs.cloud.google.com/sql/docs/postgres/troubleshooting"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-api/rest/v1beta4/instances",
+        "https://docs.cloud.google.com/sql/docs/postgres/admin-api/rest/v1/instances",
+        "https://docs.cloud.google.com/sql/docs/postgres/troubleshooting"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-api/rest/v1beta4/instances",
+        "https://docs.cloud.google.com/sql/docs/postgres/admin-api/rest/v1/instances",
+        "https://docs.cloud.google.com/sql/docs/postgres/troubleshooting"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-api/rest/v1beta4/instances",
+        "https://docs.cloud.google.com/sql/docs/postgres/admin-api/rest/v1/instances",
+        "https://docs.cloud.google.com/sql/docs/postgres/troubleshooting"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,144 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:18.499Z",
+  "source_step08_card": "data/step-08/current/products/bare-metal-solution/card.json",
+  "product_name": "Bare Metal Solution",
+  "product_slug": "bare-metal-solution",
+  "feature_name": "Restart running Bare Metal Solution servers",
+  "feature_slug": "restart-running-bare-metal-solution-servers",
+  "summary": "Enables restarting a Bare Metal Solution server that is currently running.",
+  "extended_definition": "Enables restarting a Bare Metal Solution server that is currently running.",
+  "lifecycle": {
+    "latest_feature_date": "2022-03-28",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bare-metal/docs/bms-maintenance",
+      "https://docs.cloud.google.com/bare-metal/docs/solutions/oracle/bms-oracle-backup-and-dr",
+      "https://docs.cloud.google.com/sap/docs/netweaver-operations-guide"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Maintain the Bare Metal Solution environment \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bare-metal/docs/bms-maintenance",
+        "source_id": "site-docs-reference",
+        "final_score": 115,
+        "relevance": "",
+        "evidence_snippets": [
+          "To turn the power off for your server, enter your project ID, region, and server name and issue the following curl command. curl -X POST \\ -H \"Authorization: Bearer $(gcloud auth print-access-token)\" \\ -H \"X-Goog-User-Project: PROJECT ID \" \\ -H \"Content-Type: application/json\" \\ \"https://baremetalsolution.googleapis.com/v2/projects/ PROJECT ID /locations/ REGION /instances/ SERVER NAME :stop\" Because starting, stopping, and restarting a server takes a while to complete, you can check the status by following the steps in View the status of a long-running operation .",
+          "For example, \"state\" : \"RUNNING\" Manage resources in your Bare Metal Solution environment Bare Metal Solution management APIs, gcloud commands, and the Google Cloud console enable you to view the status of the resources in your Bare Metal Solution environment, such as servers, networking, and storage.",
+          "Maintain the Bare Metal Solution environment After your Bare Metal Solution environment is up and running, use the information included in this guide to maintain your Bare Metal Solution servers, storage, and networking."
+        ]
+      },
+      {
+        "title": "\"SAP NetWeaver Operations Guide \\_|\\_ SAP on Google Cloud \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/sap/docs/netweaver-operations-guide",
+        "source_id": "site-docs-reference-2",
+        "final_score": 101,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Database operations This section provides resources for managing the following database servers on Google Cloud: SAP HANA SAP ASE IBM Db2 for Linux, UNIX and Windows (IBM Db2) Microsoft SQL Server SAP HANA operations For more information about running SAP HANA on Google Cloud, see the SAP HANA on Google Cloud Operations Guide .",
+          "For VM instances in your SAP NetWeaver implementation, it is important that you do not disable the following features: Live migrate , which enables Compute Engine to keep your instance running when responding to an infrastructure maintenance event.",
+          "Google Cloud is certified for running SAP NetWeaver application servers ABAP and Java, and SAP products based on these application server stacks."
+        ]
+      },
+      {
+        "title": "\"Solution Guide: Google Cloud Backup and DR for Oracle on Bare Metal Solution\\",
+        "url": "https://docs.cloud.google.com/bare-metal/docs/solutions/oracle/bms-oracle-backup-and-dr",
+        "source_id": "site-docs-root-2",
+        "final_score": 99,
+        "relevance": "",
+        "evidence_snippets": [
+          "Please use b010502a8f383cae5a076d4ac9e868777657cebd0000000063abee83 (valid for 2 hrs) to register this host. -- A new secret key can be generated later by running: '/opt/act/bin/udsagent secret --reset --restart If you use the iptables command, open the ports for the backup agent firewall (TCP 5106) and Oracle services (TCP 1521): sudo iptables -A INPUT -p tcp --dport 5106 -j ACCEPT sudo iptables -A INPUT -p tcp --dport 1521 -j ACCEPT sudo firewall-cmd --permanent --add-port=5106/tcp sudo firewall-cmd --permanent --add-port=1521/tcp sudo firewall-cmd --reload Add hosts to Backup and DR In the Backup and DR management console, go to Manage > Hosts . https://bmc- PROJECT NUMBER - GENERATED ID -dot- REGION .backupdr.googleusercontent.com/#hosts Click +Add Host .",
+          "The following output example shows that the Backup and DR agent service is running correctly: [root@test2 ]# service udsagent status Redirecting to /bin/systemctl status udsagent.service udsagent.service - Google Cloud Backup and DR service Loaded: loaded (/usr/lib/systemd/system/udsagent.service; enabled; vendor preset: disabled) Active: active (running) since Wed 2022-12-28 05:05:45 UTC; 2 days ago Process: 46753 ExecStop=/act/initscripts/udsagent.init stop (code=exited, status=0/SUCCESS) Process: 46770 ExecStart=/act/initscripts/udsagent.init start (code=exited, status=0/SUCCESS) Main PID: 46789 (udsagent) Tasks: 8 (limit: 48851) Memory: 74.0M CGroup: /system.slice/udsagent.service ├─46789 /opt/act/bin/udsagent start └─60570 /opt/act/bin/udsagent start Dec 30 05:11:30 test2 su[150713]: pam unix(su:session): session closed for user oracle Dec 30 05:11:30 test2 su[150778]: (to oracle) root on none Log messages from your backups can help you diagnose issues.",
+          "If you use an NFS or dNFS-based backup disk, then egress from the Linux host (Agent) in Bare Metal Solution to the backup/recovery appliance in the Compute Engine VPC on the following ports: TCP/UDP-111 (rpcbind) TCP/UDP-756 (status) TCP/UDP-2049 (nfs) TCP/UDP-4001 (mountd) TCP/UDP-4045 (nlockmgr) Configure Google Cloud DNS to resolve Bare Metal Solution hostnames and domains, to ensure name resolution is consistent across Bare Metal Solution servers, VMs, and Compute Engine-based resources such as the Backup and DR Service."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "backupdr.googleusercontent.com",
+      "baremetalsolution.googleapis.com",
+      "system.slice",
+      "udsagent.init",
+      "udsagent.service"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bare-metal/docs/bms-maintenance",
+        "https://docs.cloud.google.com/sap/docs/netweaver-operations-guide",
+        "https://docs.cloud.google.com/bare-metal/docs/solutions/oracle/bms-oracle-backup-and-dr"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bare-metal/docs/bms-maintenance",
+        "https://docs.cloud.google.com/sap/docs/netweaver-operations-guide",
+        "https://docs.cloud.google.com/bare-metal/docs/solutions/oracle/bms-oracle-backup-and-dr"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bare-metal/docs/bms-maintenance",
+        "https://docs.cloud.google.com/sap/docs/netweaver-operations-guide",
+        "https://docs.cloud.google.com/bare-metal/docs/solutions/oracle/bms-oracle-backup-and-dr"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bare-metal/docs/bms-maintenance",
+        "https://docs.cloud.google.com/sap/docs/netweaver-operations-guide",
+        "https://docs.cloud.google.com/bare-metal/docs/solutions/oracle/bms-oracle-backup-and-dr"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bare-metal/docs/bms-maintenance",
+        "https://docs.cloud.google.com/sap/docs/netweaver-operations-guide",
+        "https://docs.cloud.google.com/bare-metal/docs/solutions/oracle/bms-oracle-backup-and-dr"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bare-metal/docs/bms-maintenance",
+        "https://docs.cloud.google.com/sap/docs/netweaver-operations-guide",
+        "https://docs.cloud.google.com/bare-metal/docs/solutions/oracle/bms-oracle-backup-and-dr"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bare-metal/docs/bms-maintenance",
+        "https://docs.cloud.google.com/sap/docs/netweaver-operations-guide",
+        "https://docs.cloud.google.com/bare-metal/docs/solutions/oracle/bms-oracle-backup-and-dr"
+      ]
+    }
+  ]
+}

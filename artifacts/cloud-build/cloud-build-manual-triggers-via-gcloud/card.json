@@ -1,0 +1,129 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:22.874Z",
+  "source_step08_card": "data/step-08/current/products/cloud-build/card.json",
+  "product_name": "Cloud Build",
+  "product_slug": "cloud-build",
+  "feature_name": "Cloud Build manual triggers via gcloud",
+  "feature_slug": "cloud-build-manual-triggers-via-gcloud",
+  "summary": "Cloud Build now supports manually triggering builds from the gcloud CLI.",
+  "extended_definition": "Cloud Build now supports manually triggering builds from the gcloud CLI.",
+  "lifecycle": {
+    "latest_feature_date": "2022-09-13",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/build/docs/automate-builds-pubsub-events",
+      "https://docs.cloud.google.com/build/docs/automate-builds-webhook-events",
+      "https://docs.cloud.google.com/build/docs/automating-builds/create-manage-triggers"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Create and manage build triggers \\_|\\_ Cloud Build \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/build/docs/automating-builds/create-manage-triggers",
+        "source_id": "site-docs-root-2",
+        "final_score": 137,
+        "relevance": "",
+        "evidence_snippets": [
+          "You can directly create triggers for your repositories in Cloud Source Repositories without manually connecting to them.",
+          "Test a build trigger To manually test a build trigger: Open the Triggers page in the Google Cloud console.",
+          "To create a trigger if your source code is in GitHub : gcloud builds triggers create github \\ -- name = TRIGGER NAME \\ -- region = REGION \\ -- repo - name = REPO NAME \\ -- repo - owner = REPO OWNER \\ -- branch - pattern = BRANCH PATTERN \\ # or -- tag - pattern = TAG PATTERN -- build - config = BUILD CONFIG FILE \\ -- service - account = SERVICE ACCOUNT \\ -- require - approval -- include - logs - with - status Where: REGION is the region for your trigger."
+        ]
+      },
+      {
+        "title": "\"Automate builds in response to webhook events \\_|\\_ Cloud Build \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/build/docs/automate-builds-webhook-events",
+        "source_id": "site-docs-root-2",
+        "final_score": 109,
+        "relevance": "",
+        "evidence_snippets": [
+          "Click Create to create your build trigger. gcloud To create a webhook trigger: gcloud builds triggers create webhook \\ -- name = TRIGGER NAME \\ -- repo = PATH TO REPO \\ -- repo - type = REPO TYPE \\ -- secret = PATH TO SECRET \\ -- substitutions = SUB ONE = '$ ( body . message . test ) ' , SUB TWO = '$ ( body . message . output ) ' \\ -- subscription - filter = ' SUB ONE == \"prod\" ' \\ -- inline - config = PATH TO INLINE BUILD CONFIG \\ -- tag = TAG NAME -- build - config = PATH TO BUILD CONFIG \\ -- branch = BRANCH NAME Where: + TRIGGER NAME is the name of your trigger. + PATH TO REPO is the path to the repository to invoke a build on.",
+          "If you don't see this role automatically granted to the necessary service account, complete the following steps to manually add the role so that your service account has access to your secret: Open the IAM page in the Google Cloud console: Open the IAM page Optional: To see Google-provided accounts, select the Include Google-provided role grants checkbox.",
+          "If you use an existing secret, you may need to manually grant the Secret Manager Secret Accessor role to your Cloud Build service account, service-${PROJECT NUMBER}@gcp-sa-cloudbuild.iam.gserviceaccount.com ."
+        ]
+      },
+      {
+        "title": "\"Automate builds in response to Pub/Sub events \\_|\\_ Cloud Build \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/build/docs/automate-builds-pubsub-events",
+        "source_id": "site-docs-root-2",
+        "final_score": 105,
+        "relevance": "",
+        "evidence_snippets": [
+          "What's next Learn how to start builds manually using gcloud commands or the Cloud Build API.",
+          "In the example below, the trigger is configured to respond to builds with a Cloud Storage event associated with a new binary pushed to an existing storage bucket: gcloud builds triggers create pubsub \\ -- name = TRIGGER NAME \\ -- topic = projects / PROJECT ID / topics / TOPIC NAME \\ -- build - config = BUILD CONFIG \\ # or -- inline - config = INLINE BUILD CONFIG -- substitutions = \\ ' EVENT TYPE = \"$(body.message.attributes.eventType)\" , ' \\ ' BUCKET ID = \"$(body.message.attributes.bucketId)\" , ' \\ ' OBJECT ID = \"$(body.message.attributes.objectId)\" ' \\ -- subscription - filter = ' EVENT TYPE == \"OBJECT FINALIZE\" && OBJECT ID . matches ( \"<object-id>\" ) && BUCKET ID . matches ( \"<bucket-id>\" ) ' \\ -- repo = REPO NAME \\ -- repo - type = REPO TYPE \\ -- tag = TAG NAME # or -- branch = BRANCH NAME Where: TRIGGER NAME is the name of your trigger.",
+          "In the example below, the trigger is configured to respond to builds with a tag matching prod and an action matching INSERT based on the specified payload as defined by the substitution variable, IMAGE TAG . gcloud builds triggers create pubsub \\ -- name = TRIGGER NAME \\ -- topic = projects / PROJECT ID / topics / TOPIC NAME \\ -- build - config = BUILD CONFIG \\ # or -- inline - config = INLINE BUILD CONFIG -- substitutions = \\ ' IMAGE TAG = \"$(body.message.data.tag)\" , ' \\ ' ACTION = \"$(body.message.data.action)\" ' \\ -- subscription - filter = ' IMAGE TAG != \"\" && ACTION == \"INSERT\" ' \\ -- repo = REPO NAME \\ -- repo - type = REPO TYPE \\ -- tag = TAG NAME # or -- branch = BRANCH NAME Where: TRIGGER NAME is the name of your trigger."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "body.message.attributes.bucketId",
+      "body.message.attributes.eventType",
+      "body.message.attributes.objectId",
+      "body.message.data.action",
+      "body.message.data.tag",
+      "cloudbuild.iam.gserviceaccount.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/build/docs/automating-builds/create-manage-triggers",
+        "https://docs.cloud.google.com/build/docs/automate-builds-webhook-events",
+        "https://docs.cloud.google.com/build/docs/automate-builds-pubsub-events"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/build/docs/automating-builds/create-manage-triggers",
+        "https://docs.cloud.google.com/build/docs/automate-builds-webhook-events",
+        "https://docs.cloud.google.com/build/docs/automate-builds-pubsub-events"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/build/docs/automating-builds/create-manage-triggers",
+        "https://docs.cloud.google.com/build/docs/automate-builds-webhook-events",
+        "https://docs.cloud.google.com/build/docs/automate-builds-pubsub-events"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/build/docs/automating-builds/create-manage-triggers",
+        "https://docs.cloud.google.com/build/docs/automate-builds-webhook-events",
+        "https://docs.cloud.google.com/build/docs/automate-builds-pubsub-events"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/build/docs/automating-builds/create-manage-triggers",
+        "https://docs.cloud.google.com/build/docs/automate-builds-webhook-events",
+        "https://docs.cloud.google.com/build/docs/automate-builds-pubsub-events"
+      ]
+    }
+  ]
+}

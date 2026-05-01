@@ -1,0 +1,170 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:18.637Z",
+  "source_step08_card": "data/step-08/current/products/batch/card.json",
+  "product_name": "Batch",
+  "product_slug": "batch",
+  "feature_name": "Batch regional availability: asia-southeast1",
+  "feature_slug": "batch-regional-availability-asia-southeast1",
+  "summary": "Batch became available in the asia-southeast1 region.",
+  "extended_definition": "Batch became available in the asia-southeast1 region.",
+  "lifecycle": {
+    "latest_feature_date": "2022-09-07",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/batch/docs/create-run-job",
+      "https://docs.cloud.google.com/batch/docs/locations",
+      "https://docs.cloud.google.com/iam/docs/conditions-resource-attributes"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Batch locations \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/batch/docs/locations",
+        "source_id": "site-docs-root",
+        "final_score": 94,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Region description Region name Details Taiwan asia-east1 Hong Kong asia-east2 Tokyo asia-northeast1 Osaka asia-northeast2 Seoul asia-northeast3 Mumbai asia-south1 Delhi asia-south2 Singapore asia-southeast1 Jakarta asia-southeast2 Sydney australia-southeast1 Melbourne australia-southeast2 Recommended zones to obtain GPUs from Dynamic Workload Scheduler When you create and run a job that uses GPUs and use calendar-mode reservations ( Preview ) or Flex-start VMs ( Preview ), which both use Dynamic Workload Scheduler, we recommend that you use the following zones.",
+          "Region description Region name Details Warsaw europe-central2 Finland europe-north1 Low CO 2 Madrid europe-southwest1 Low CO 2 Belgium europe-west1 Low CO 2 London europe-west2 Low CO 2 Frankfurt europe-west3 Netherlands europe-west4 Low CO 2 Zürich europe-west6 Low CO 2 Milan europe-west8 Paris europe-west9 Low CO 2 Berlin europe-west10 Turin europe-west12 Doha me-central1 Dammam me-central2 Tel Aviv me-west1 The following table lists the regions in Asia Pacific where Batch is available.",
+          "A4 A3 Ultra A3 Mega A3 High GPU machine series Recommended zones for Dynamic Workload Scheduler capacity Details A4 asia-southeast1-b (Singapore) us-central1-b (Iowa) Low CO 2 us-south1-b (Dallas) Low CO 2 A3 Ultra asia-south1-b (Mumbai) asia-south2-c (Delhi) europe-west1-b (Belgium) Low CO 2 europe-west4-a (Netherlands) Low CO 2 us-central1-b (Iowa) Low CO 2 us-east4-b (Northern Virginia) us-south1-b (Dallas) Low CO 2 A3 Mega europe-west1-c (Belgium) Low CO 2 europe-west4-b (Netherlands) Low CO 2 europe-west4-c (Netherlands) Low CO 2 us-central1-a (Iowa) Low CO 2 us-central1-b (Iowa) Low CO 2 us-central1-c (Iowa) Low CO 2 us-east4-b (Northern Virginia) A3 High asia-east1-c (Taiwan) europe-west1-b (Belgium) Low CO 2 us-central1-a (Iowa) Low CO 2 us-central1-b (Iowa) Low CO 2 Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License ."
+        ]
+      },
+      {
+        "title": "Job creation and execution overview \\_|\\_ Batch \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/batch/docs/create-run-job",
+        "source_id": "site-docs-root",
+        "final_score": 77,
+        "relevance": "",
+        "evidence_snippets": [
+          "Job resources Each Batch job runs on a regional managed instance group (MIG), which is a group of one or more matching Compute Engine virtual machine (VM) instances that are each located in one of the included zones.",
+          "Task scheduling When a job runs, its tasks are scheduled according to the scheduling policy ( schedulingPolicy ) field , which lets you specify one of the following options: As soon as possible ( AS SOON AS POSSIBLE ) (default): tasks run as soon as resources are available and can run in parallel.",
+          "After you understand the fundamentals for job creation, consider creating a job that uses one or more of the following additional configuration options: Important: Some options for job creation are not available in the Google Cloud console."
+        ]
+      },
+      {
+        "title": "\"Resource attributes for IAM Conditions \\_|\\_ Identity and Access Management\\",
+        "url": "https://docs.cloud.google.com/iam/docs/conditions-resource-attributes",
+        "source_id": "site-iam-reference",
+        "final_score": 61,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Resource reference Resource name format template Apigee API product attributes organizations/ organization-name /apiproducts/ product-id /attributes/ attribute-id Apigee API products organizations/ organization-name /apiproducts/ product-id Apigee API proxies organizations/ organization-name /apis/ proxy-id Apigee API proxy key-value map entries organizations/ organization-name /api/ proxy-id /keyvaluemaps/ keyvaluemap-id /entries/ entry-id Apigee API proxy key-value maps organizations/ organization-name /apis/ proxy-id /keyvaluemaps/ key-value-map-id Apigee API proxy revisions organizations/ organization-name /apis/ proxy-id /revisions/ revision-id Apigee caches organizations/ organization-name /environments/ environment-id /caches/ cache-id Apigee developer app attributes organizations/ organization-name /developers/ developer-id /apps/ app-id /attributes/ attribute-id Apigee developer apps organizations/ organization-name /developers/ developer-id /apps/ app-id Apigee developer attributes organizations/ organization-name /developers/ developer-id /attributes/ attribute-id Apigee developers organizations/ organization-name /developers/ developer-id Apigee environment key-value map entries organizations/ organization-name /environments/ environment-id /keyvaluemaps/ keyvaluemap-id /entries/ entry-id Apigee environment key-value maps organizations/ organization-name /environments/ environment /keyvaluemaps/ key-value-map-id Apigee exports organizations/ organization-name /environments/ environment-id /analytics/exports/ export-id Apigee flow hooks organizations/ organization-name /environments/ environment-id /flowhooks/ flowhook-id Apigee keystore aliases organizations/ organization-name /environments/ environment-id /keystores/ keystore-id /aliases/ alias-id Apigee keystores organizations/ organization-name /environments/ environment-id /keystores/ keystore-id Apigee queries organizations/ organization-name /environments/ environment-id /queries/ query-id Apigee rate plans organizations/ organization-name /apiproducts/ product-id /rateplans/ rate-plan-id Apigee references organizations/ organization-name /environments/ environment-id /references/ reference-id Apigee shared flow revisions organizations/ organization-name /sharedflows/ shared-flow-id /revisions/ revision-id Apigee shared flows organizations/ organization-name /sharedflows/ shared-flow-id Apigee target servers organizations/ organization-name /environments/ environment-id /targetservers/ targetserver-id Apigee trace (debug) sessions organizations/ organization-name /environments/ environment-id /apis/ proxy-id /revisions/ revision-id /debugsessions/ session-id Apigee API Hub apis projects/ project-id /locations/ location-id /apis/ api-id Apigee API Hub deployments projects/ project-id /locations/ location-id /deployments/ deployment-id Apigee API Hub versions projects/ project-id /locations/ location-id /apis/ api-id /versions/ version-id Apigee API Hub specs projects/ project-id /locations/ location-id /apis/ api-id /versions/ version-id /specs/ spec-id Apigee API Hub operations projects/ project-id /locations/ location-id /apis/ api-id /versions/ version-id /operations/ operation-id Apigee API Hub definitions projects/ project-id /locations/ location-id /apis/ api-id /versions/ version-id /definitions/ definition-id Backup and DR Service backupVaults science projects/ project-id /locations/ location-id /backupVaults/ backup-vault-id BigQuery datasets projects/ project-id /datasets/ dataset-id BigQuery models projects/ project-id /datasets/ dataset-id /models/ model-id BigQuery routines projects/ project-id /datasets/ dataset-id /routines/ routine-id BigQuery tables projects/ project-id /datasets/ dataset-id /tables/ table-id BigQuery Reservation API assignments projects/ project-id /locations/ location-id /reservations/ reservation-id /assignments/ assignment-id BigQuery Reservation API BI reservations projects/ project-id /locations/ location-id /biReservation BigQuery Reservation API capacity commitments projects/ project-id /locations/ location-id /capacityCommitments/ capacity-commitment-id BigQuery Reservation API locations projects/ project-id /locations/ location-id BigQuery Reservation API reservations projects/ project-id /locations/ location-id /reservations/ reservation-id Binary Authorization attestors projects/ project-number /attestors/ attestor-id Binary Authorization continuous validation configs projects/ project-number /continuousValidationConfig Binary Authorization policies projects/ project-number /policy Customer Experience Agent Studio apps projects/ project-id /locations/ location-id /apps/ app-id Customer Experience Agent Studio operations projects/ project-id /locations/ location-id /operations/ operation-id Bigtable appProfiles projects/ project-id /instances/ instance-id /appProfiles/ appProfile-id Bigtable backups projects/ project-id /instances/ instance-id /clusters/ cluster-id /backups/ backup-id Bigtable clusters projects/ project-id /instances/ instance-id /clusters/ cluster-id Bigtable instances projects/ project-id /instances/ instance-id Bigtable tables projects/ project-id /instances/ instance-id /tables/ table-id Cloud Deploy automation runs projects/ project-id /locations/ location-id /deliveryPipelines/ delivery-pipeline-id /automationRuns/ automation-run-id Cloud Deploy automations projects/ project-id /locations/ location-id /deliveryPipelines/ delivery-pipeline-id /automations/ automation-id Cloud Deploy custom target types projects/ project-id /locations/ location-id /customTargetTypes/ custom-target-type-id Cloud Deploy delivery pipelines projects/ project-id /locations/ location-id /deliveryPipelines/ delivery-pipeline-id Cloud Deploy job runs projects/ project-id /locations/ location-id /deliveryPipelines/ delivery-pipeline-id /releases/ release-id /rollouts/ rollout-id /jobRuns/ job-run-id Cloud Deploy releases projects/ project-id /locations/ location-id /deliveryPipelines/ delivery-pipeline-id /releases/ release-id Cloud Deploy rollouts projects/ project-id /locations/ location-id /deliveryPipelines/ delivery-pipeline-id /releases/ release-id /rollouts/ rollout-id Cloud Deploy targets projects/ project-id /locations/ location-id /targets/ target-id Firestore databases projects/ project-id /databases/ database-id Cloud NGFW address groups projects/ project-number /locations/ location /addressGroups/ address-group-name organizations/ organization-id /locations/ location /addressGroups/ address-group-name Network Security Integration intercept deployment groups projects/ project-number /locations/ location /interceptDeploymentGroups/ intercept-deployment-group-id Network Security Integration intercept deployments projects/ project-number /locations/ location /interceptDeployments/ intercept-deployment-id Network Security Integration intercept endpoint group associations projects/ project-number /locations/ location /interceptEndpointGroupAssociations/ intercept-endpoint-group-association-id Network Security Integration intercept endpoint groups projects/ project-number /locations/ location /interceptEndpoints/ intercept-endpoint-group-id Network Security Integration mirroring deployment groups projects/ project-number /locations/ location /mirroringDeploymentGroups/ mirroring-deployment-group-id Network Security Integration mirroring deployments projects/ project-number /locations/ location /mirroringDeployments/ mirroring-deployment-id Network Security Integration mirroring endpoint group associations projects/ project-number /locations/ location /mirroringEndpointGroupAssociations/ mirroring-endpoint-group-association-id Network Security Integration mirroring endpoint groups projects/ project-number /locations/ location /mirroringEndpoints/ mirroring-endpoint-group-id Cloud Key Management Service crypto keys projects/ project-id /locations/ location-id /keyRings/ keyring-id /cryptoKeys/ cryptokey-id Cloud Key Management Service crypto key versions projects/ project-id /locations/ location-id /keyRings/ keyring-id /cryptoKeys/ cryptokey-id /cryptoKeyVersions/ cryptokeyversion-id Cloud Key Management Service key rings projects/ project-id /locations/ location-id /keyRings/ keyring-id Cloud Logging log buckets projects/ project-id /locations/ location-id /buckets/ bucket-id Cloud Logging log views projects/ project-id /locations/ location-id /buckets/ bucket-id /views/ view-id Spanner backups projects/ project-id /instances/ instance-id /backups/ backup-id Spanner databases projects/ project-id /instances/ instance-id /databases/ database-id Spanner instances projects/ project-id /instances/ instance-id Cloud SQL backup runs projects/ project-id /instances/ instance-id /backupRuns/ backup-id Cloud SQL instances projects/ project-id /instances/ instance-id Cloud Storage buckets 1 projects/ /buckets/ bucket-name Cloud Storage managed folders 1, 2 projects/ /buckets/ bucket-name /managedFolders/ managed-folder-name Cloud Storage objects 1, 3 projects/ /buckets/ bucket-name /objects/ object-name Compute Engine global backend services projects/ project-id /global/backendServices/ backend-service-id Compute Engine regional backend services projects/ project-id /regions/ region-id /backendServices/ backend-service-id Compute Engine firewalls projects/ project-id /global/firewalls/ firewall-id Compute Engine global forwarding rules projects/ project-id /global/forwardingRules/ forwarding-rule-id Compute Engine regional forwarding rules projects/ project-id /regions/ region-id /forwardingRules/ forwarding-rule-id Compute Engine images projects/ project-id /global/images/ image-id Compute Engine instance templates projects/ project-id /global/instanceTemplates/ instance-template-id Compute Engine instances projects/ project-id /zones/ zone-id /instances/ instance-id Compute Engine regional persistent disks projects/ project-id /regions/ region-id /disks/ disk-id Compute Engine zonal persistent disks projects/ project-id /zones/ zone-id /disks/ disk-id Compute Engine snapshots projects/ project-id /global/snapshots/ snapshot-id Compute Engine global target HTTP proxies projects/ project-id /global/targetHttpProxies/ target-http-proxy-id Compute Engine regional target HTTP proxies projects/ project-id /regions/ region-id /targetHttpProxies/ target-http-proxy-id Compute Engine global target HTTPS proxies projects/ project-id /global/targetHttpsProxies/ target-https-proxy-id Compute Engine regional target HTTPS proxies projects/ project-id /regions/ region-id /targetHttpsProxies/ target-https-proxy-id Compute Engine target SSL proxies projects/ project-id /global/targetSslProxies/ target-ssl-proxy-id Compute Engine target TCP proxies projects/ project-id /global/targetTcpProxies/ target-tcp-proxy-id Google Kubernetes Engine zonal clusters projects/ project-id /zones/ zone /clusters/ cluster-id Google Kubernetes Engine regional clusters projects/ project-id /locations/ location /clusters/ cluster-id Dataform compilation results projects/ project-id /locations/ location /repositories/ repository /compilationResults/ compilation-result Dataform locations projects/ project-id /locations/ location Dataform release configs projects/ project-id /locations/ location /repositories/ repository /releaseConfigs/ release-config Dataform repositories projects/ project-id /locations/ location /repositories/ repository Dataform workflow configs projects/ project-id /locations/ location /repositories/ repository /workflowConfigs/ workflow-config Dataform workflow invocations projects/ project-id /locations/ location /repositories/ repository /workflowInvocations/ workflow-invocation Dataform workspaces projects/ project-id /locations/ location /repositories/ repository /workspaces/ workspace Integration Connectors connections projects/ project-id /locations/ location /connections/ connection-name Integration Connectors connection schema metadata projects/ project-id /locations/ location /connections/ connection-name /connectionSchemaMetadata Integration Connectors endpoint attachments projects/ project-id /locations/ location /endpointAttachments/ endpoint-attachment-name Integration Connectors event subscriptions projects/ project-id /locations/ location /eventSubscriptions/ event-subscription-name Integration Connectors managed zones projects/ project-id /locations/global/managedZones/ managed-zone-name Google Cloud Managed Service for Apache Kafka clusters projects/ project-number /locations/ location /clusters/ cluster-name Google Cloud Managed Service for Apache Kafka consumer groups projects/ project-number /locations/ location /clusters/ cluster-name /consumerGroups/ consumer-group Google Cloud Managed Service for Apache Kafka operations projects/ project-number /locations/ location /operations/ operation Google Cloud Managed Service for Apache Kafka topics projects/ project-number /locations/ location /clusters/ cluster-name /topics/ topic-name Parameter Manager parameters projects/ project-number /locations/ location /parameters/ parameter-id Parameter Manager parameter versions projects/ project-number /locations/ location /parameters/ parameter-id /versions/ version-id Pub/Sub Lite locations projects/ project-number /locations/ location Pub/Sub Lite subscriptions projects/ project-number /locations/ location /subscriptions/ subscription-id Pub/Sub Lite topics projects/ project-number /locations/ location /topics/ topic-id Resource Manager organizations 4 organizations/ organization-name Secret Manager secrets projects/ project-number /secrets/ secret-id Secret Manager secret versions 5 projects/ project-number /secrets/ secret-id /versions/ secret-version 1 For Cloud Storage, resource names contain an underscore ( ) rather than a project ID.",
+          "To learn how to list the tag keys and values that are available to you, see Listing tag keys and Listing tag values .",
+          "Resource attributes are available for the Google Cloud services and resource types that are listed on this page."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/batch/docs/locations",
+        "https://docs.cloud.google.com/batch/docs/create-run-job",
+        "https://docs.cloud.google.com/iam/docs/conditions-resource-attributes"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/batch/docs/locations",
+        "https://docs.cloud.google.com/batch/docs/create-run-job",
+        "https://docs.cloud.google.com/iam/docs/conditions-resource-attributes"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/batch/docs/locations",
+        "https://docs.cloud.google.com/batch/docs/create-run-job",
+        "https://docs.cloud.google.com/iam/docs/conditions-resource-attributes"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/batch/docs/locations",
+        "https://docs.cloud.google.com/batch/docs/create-run-job",
+        "https://docs.cloud.google.com/iam/docs/conditions-resource-attributes"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/batch/docs/locations",
+        "https://docs.cloud.google.com/batch/docs/create-run-job",
+        "https://docs.cloud.google.com/iam/docs/conditions-resource-attributes"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/batch/docs/locations",
+        "https://docs.cloud.google.com/batch/docs/create-run-job",
+        "https://docs.cloud.google.com/iam/docs/conditions-resource-attributes"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/batch/docs/locations",
+        "https://docs.cloud.google.com/batch/docs/create-run-job",
+        "https://docs.cloud.google.com/iam/docs/conditions-resource-attributes"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/batch/docs/locations",
+        "https://docs.cloud.google.com/batch/docs/create-run-job",
+        "https://docs.cloud.google.com/iam/docs/conditions-resource-attributes"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/batch/docs/locations",
+        "https://docs.cloud.google.com/batch/docs/create-run-job",
+        "https://docs.cloud.google.com/iam/docs/conditions-resource-attributes"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/batch/docs/locations",
+        "https://docs.cloud.google.com/batch/docs/create-run-job",
+        "https://docs.cloud.google.com/iam/docs/conditions-resource-attributes"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/batch/docs/locations",
+        "https://docs.cloud.google.com/batch/docs/create-run-job",
+        "https://docs.cloud.google.com/iam/docs/conditions-resource-attributes"
+      ]
+    }
+  ]
+}

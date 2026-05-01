@@ -1,0 +1,171 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:49.125Z",
+  "source_step08_card": "data/step-08/current/products/vertex-ai-workbench/card.json",
+  "product_name": "Vertex AI Workbench",
+  "product_slug": "vertex-ai-workbench",
+  "feature_name": "Vertex AI Workbench JupyterLab UI version display",
+  "feature_slug": "vertex-ai-workbench-jupyterlab-ui-version-display",
+  "summary": "The Vertex AI Workbench user-managed notebooks service corrected the version shown in the JupyterLab user interface.",
+  "extended_definition": "The Vertex AI Workbench user-managed notebooks service corrected the version shown in the JupyterLab user interface.",
+  "lifecycle": {
+    "latest_feature_date": "2023-04-13",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/vertex-ai/docs/pipelines/continuous-training-tutorial",
+      "https://docs.cloud.google.com/vertex-ai/docs/workbench/instances/manage-access",
+      "https://docs.cloud.google.com/vertex-ai/docs/workbench/user-managed/iam"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Vertex AI Workbench user-managed notebooks access control \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/workbench/user-managed/iam",
+        "source_id": "site-docs-reference-2",
+        "final_score": 102,
+        "relevance": "",
+        "evidence_snippets": [
+          "Vertex AI Workbench uses IAM to manage access to user-managed notebooks instances and an access mode to manage access to each instance's JupyterLab interface.",
+          "For example, you can grant users roles/notebooks.viewer permissions at the project level so that they can view all Vertex AI Workbench resources in the project, and then you can grant each user roles/notebooks.admin permissions on a specific user-managed notebooks instance so that they have all of the admin abilities to administer that instance.",
+          "This page describes how to use Identity and Access Management (IAM) and an access mode to manage access to Vertex AI Workbench user-managed notebooks resources."
+        ]
+      },
+      {
+        "title": "\"Build a pipeline for continuous model training \\_|\\_ Vertex AI \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/pipelines/continuous-training-tutorial",
+        "source_id": "site-docs-root",
+        "final_score": 98,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Else (): Upload the model model upload op = ModelUploadOp ( project = project , location = location , display name = model display name , unmanaged container model = import unmanaged model task . outputs [ \"artifact\" ], ) Get the model (or model version) model resource = OneOf ( model version upload op . outputs [ \"model\" ], model upload op . outputs [ \"model\" ]) Batch prediction batch predict task = ModelBatchPredictOp ( project = project , job display name = batch prediction job display name , model = model resource , location = location , instances format = batch predictions input format , predictions format = batch predictions output format , gcs source uris = test data gcs uri , gcs destination output uri prefix = batch predictions gcs prefix , machine type = 'n1-standard-2' ) Evaluation task evaluation task = ModelEvaluationRegressionOp ( project = project , target field name = target field name , location = location , model= model resource, predictions format = batch predictions output format , predictions gcs source = batch predict task . outputs [ \"gcs output directory\" ], ground truth format = ground truth format , ground truth gcs source = ground truth gcs source ) return Your pipeline consists of a graph of tasks that make use the following Google Cloud Pipeline Components : CustomTrainingJobOp : Runs custom training jobs in Vertex AI.",
+          "DATASET NAME = \"mlops\" TABLE NAME = \"chicago\" worker pool specs = [{ \"machine spec\" : { \"machine type\" : \"e2-highmem-2\" }, \"replica count\" : 1 , \"python package spec\" :{ \"executor image uri\" : \"us-docker.pkg.dev/vertex-ai/training/sklearn-cpu.1-0:latest\" , \"package uris\" : [ f \" { BUCKET URI } /trainer-0.1.tar.gz\" ], \"python module\" : \"trainer.task\" , \"args\" :[ \"--project-id\" , PROJECT ID , \"--training-dir\" , f \"/gcs/ { BUCKET NAME } \" , \"--bq-source\" , f \" { PROJECT ID } . { DATASET NAME } . { TABLE NAME } \" ] }, }] parameters = { \"project\" : PROJECT ID , \"location\" : REGION , \"training job display name\" : \"taxifare-prediction-training-job\" , \"worker pool specs\" : worker pool specs , \"base output dir\" : BUCKET URI , \"prediction container uri\" : \"us-docker.pkg.dev/vertex-ai/prediction/sklearn-cpu.1-0:latest\" , \"model display name\" : \"taxifare-prediction-model\" , \"batch prediction job display name\" : \"taxifare-prediction-batch-job\" , \"target field name\" : \"fare\" , \"test data gcs uri\" : [ f \" { BUCKET URI } /test no target.csv\" ], \"ground truth gcs source\" : [ f \" { BUCKET URI } /test.csv\" ], \"batch predictions gcs prefix\" : f \" { BUCKET URI } /batch predict output\" , \"existing model\" : False } Note: To optionally upload your model as a new model version instead of a new model in Vertex AI Model Registry, set existing model to True .",
+          "VertexModel , metadata = { \"resourceName\" : parent model resource name }, ) . after ( import unmanaged model task ) Upload the model as a version model version upload op = ModelUploadOp ( project = project , location = location , display name = model display name , parent model = import registry model task . outputs [ \"artifact\" ], unmanaged container model = import unmanaged model task . outputs [ \"artifact\" ], ) with dsl ."
+        ]
+      },
+      {
+        "title": "Manage access to a Vertex AI Workbench instance \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/workbench/instances/manage-access",
+        "source_id": "site-docs-reference-2",
+        "final_score": 90,
+        "relevance": "",
+        "evidence_snippets": [
+          "Before using any of the command data below, make the following replacements: INSTANCE NAME : the name of your instance PROJECT ID : your Google Cloud project ID LOCATION : the zone where your instance is located Save the following content in a file called request.json : { \"policy\" : { \"bindings\" : [ { \"role\" : \"roles/notebooks.viewer\" , \"members\" : [ \"user:email@example.com\" ] }, { \"role\" : \"roles/notebooks.admin\" , \"members\" : [ \"user:eve@example.com\" ] } ], \"etag\" : \"BwWWja0YfJA=\" , \"version\" : 3 } } Execute the following command: Linux, macOS, or Cloud Shell Note: Ensure you have initialized the Google Cloud CLI with authentication and a project by running either gcloud init ; or gcloud auth login and gcloud config set project . gcloud workbench instances set-iam-policy INSTANCE NAME \\ --project = PROJECT ID \\ --location = LOCATION \\ request.json --format = json Windows (PowerShell) Note: Ensure you have initialized the Google Cloud CLI with authentication and a project by running either gcloud init ; or gcloud auth login and gcloud config set project . gcloud workbench instances set-iam-policy INSTANCE NAME --project = PROJECT ID --location = LOCATION request.json --format = json Windows (cmd.exe) Note: Ensure you have initialized the Google Cloud CLI with authentication and a project by running either gcloud init ; or gcloud auth login and gcloud config set project . gcloud workbench instances set-iam-policy INSTANCE NAME ^ --project = PROJECT ID ^ --location = LOCATION ^ request.json --format = json Grant access to the JupyterLab interface Granting a principal access to a Vertex AI Workbench instance doesn't grant the ability to use the instance's JupyterLab interface.",
+          "Grant access to Vertex AI Workbench instances To grant users permission to access a specific Vertex AI Workbench instance, set an IAM policy on the instance. gcloud To grant a role to a principal on a Vertex AI Workbench instance, use the get-iam-policy command to retrieve the current policy, edit the current policy's access, and then use the set-iam-policy command to update the policy on the instance.",
+          "Grant access to the JupyterLab interface Granting a principal access to a Vertex AI Workbench instance doesn't grant the ability to use the instance's JupyterLab interface."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "aiplatform.googleapis.com",
+      "cmd.exe",
+      "cpu.1",
+      "docker.pkg.dev",
+      "example.com",
+      "kfp.pkg.dev",
+      "notebooks.admin",
+      "notebooks.viewer",
+      "request.json",
+      "tar.gz",
+      "target.csv",
+      "test.csv",
+      "trainer.task"
+    ],
+    "missing_inventory_roles": [
+      "roles/notebooks.admin",
+      "roles/notebooks.viewer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/user-managed/iam",
+        "https://docs.cloud.google.com/vertex-ai/docs/pipelines/continuous-training-tutorial",
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/instances/manage-access"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/user-managed/iam",
+        "https://docs.cloud.google.com/vertex-ai/docs/pipelines/continuous-training-tutorial",
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/instances/manage-access"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/user-managed/iam",
+        "https://docs.cloud.google.com/vertex-ai/docs/pipelines/continuous-training-tutorial",
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/instances/manage-access"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/user-managed/iam",
+        "https://docs.cloud.google.com/vertex-ai/docs/pipelines/continuous-training-tutorial",
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/instances/manage-access"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/user-managed/iam",
+        "https://docs.cloud.google.com/vertex-ai/docs/pipelines/continuous-training-tutorial",
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/instances/manage-access"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/user-managed/iam",
+        "https://docs.cloud.google.com/vertex-ai/docs/pipelines/continuous-training-tutorial",
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/instances/manage-access"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/user-managed/iam",
+        "https://docs.cloud.google.com/vertex-ai/docs/pipelines/continuous-training-tutorial",
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/instances/manage-access"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/user-managed/iam",
+        "https://docs.cloud.google.com/vertex-ai/docs/pipelines/continuous-training-tutorial",
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/instances/manage-access"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/user-managed/iam",
+        "https://docs.cloud.google.com/vertex-ai/docs/pipelines/continuous-training-tutorial",
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/instances/manage-access"
+      ]
+    }
+  ]
+}

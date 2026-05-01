@@ -1,0 +1,120 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:17.437Z",
+  "source_step08_card": "data/step-08/current/products/apps-script/card.json",
+  "product_name": "Apps Script",
+  "product_slug": "apps-script",
+  "feature_name": "Calendar.getEventSeriesById",
+  "feature_slug": "calendar-geteventseriesbyid",
+  "summary": "Calendar now supports retrieving an event series by its ID.",
+  "extended_definition": "Calendar now supports retrieving an event series by its ID.",
+  "lifecycle": {
+    "latest_feature_date": "2012-02-06",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/apps-script/reference/add-ons-response-service/calendar-event-action-response-builder",
+      "https://developers.google.com/apps-script/reference/calendar/calendar",
+      "https://developers.google.com/apps-script/reference/calendar/calendar-app"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Class Calendar | Apps Script | Google for Developers",
+        "url": "https://developers.google.com/apps-script/reference/calendar/calendar",
+        "source_id": "feature-recovery-http",
+        "final_score": 150,
+        "relevance": "",
+        "evidence_snippets": [
+          "Si se llama a CalendarApp.getEventSeriesById(iCalId) directamente, solo se devuelve una serie de eventos que existe en el calendario predeterminado. // Opens the calendar by its ID. // TODO(developer): Replace the ID with your own. const calendar = CalendarApp . getCalendarById ( '222larabrown@gmail.com' ); // Creates an event series for a daily team meeting from 1 PM to 2 PM. // The series adds the daily event from January 1, 2023 through December 31, // 2023. const eventSeries = calendar . createEventSeries ( 'Team meeting' , new Date ( 'Jan 1, 2023 13:00:00' ), new Date ( 'Jan 1, 2023 14:00:00' ), CalendarApp . newRecurrence (). addDailyRule (). until ( new Date ( 'Jan 1, 2024' )), ); // Gets the ID of the event series. const iCalId = eventSeries . getId (); // Gets the event series by its ID and logs the series title to the console. // For the default calendar, you can use CalendarApp.getEventSeriesById(iCalId) // instead. console . log ( calendar . getEventSeriesById ( iCalId ). getTitle ()); Parámetros Nombre Tipo Descripción iCalId String ID de la serie de eventos.",
+          "Autorización Las secuencias de comandos que usan este método requieren autorización con uno o más de los siguientes alcances o alcances adecuados de la API de REST relacionada : https://www.googleapis.com/auth/calendar https://www.googleapis.com/auth/calendar.readonly https://www.google.com/calendar/feeds getEventSeriesById(iCalId) Obtiene la serie de eventos con el ID determinado.",
+          "Class Calendar | Apps Script | Google for Developers Ir al contenido principal Workspace Página principal Apps Script Todos los productos Apps de Google Workspace Consola del administrador Cloud Search Gmail Google Calendar Google Chat Google Classroom Google Docs Google Drive Google Forms Google Keep Google Meet Google Sheets Google Sites Google Slides Tareas de Google Google Vault Extiende, automatiza y comparte Complementos Apps Script Apps de chat Apps de Drive Marketplace Recursos Herramientas Consola del administrador Panel de Apps Script consola de Google Cloud Explorador de API Creador de tarjetas Capacitación y asistencia Cómo comenzar Codelabs Asistencia para desarrolladores Actualizaciones Notas de la versión Versiones preliminares para desarrolladores YouTube Boletín informativo X (Twitter) Blog / English Deutsch Español Español – América Latina Français Indonesia Italiano Polski Português – Brasil Tiếng Việt Türkçe Русский עברית العربيّة فارسی हिंदी বাংলা ภาษาไทย 中文 – 简体 中文 – 繁體 日本語 한국어 Acceder Apps Script Descripción general Guías Referencia Ejemplos Asistencia Workspace Página principal Apps Script Descripción general Guías Referencia Ejemplos Asistencia Todos los productos Más Recursos Más Descripción general Servicios de Google Workspace Consola del administrador Servicios avanzados API de Directory API del administrador de licencias empresariales API de Groups Migration API de Groups Settings API de distribuidor API de Reports Calendar Descripción general App de Calendario Clases Calendar Evento de calendario CalendarEventSeries Invitado al evento Recurrencia del evento Regla de recurrencia Enums Color Color de evento EventTransparency EventType Estado de invitado Visibilidad Servicios avanzados API de Calendar Chat Servicios avanzados Chat API Documentos Descripción general App de documentos Clases Cuerpo Marcar como favorito Elemento contenedor Fecha Documento DocumentTab Ecuación Función de ecuación EcuaciónFunctionArgumentSeparator Símbolo de ecuación Sección Footer Nota a pie de página Sección de pie de página Sección del encabezado Regla de horizontal Dibujo intercalado InlineImage ListItem Rango con nombre Salto de página Párrafo Person Posición Imagen posicionada Rango RangeBuilder Elemento de rango Vínculo enriquecido Pestaña Tabla TableCell Tabla de contenidos Fila de la tabla Texto Elemento no admitido Interfaces Elemento Enums Atributo ElementType Familia de fuentes Tipo de glifo Alineación horizontal Encabezado de párrafo Diseño de posición TabType Alineación de texto Alineación vertical Servicios avanzados API de Docs Drive Descripción general DriveApp Clases Archivo FileIterator Carpeta Iterador de carpetas Usuario Enums Acceso Permiso Servicios avanzados API de Drive Drive Activity API Drive Labels API Formularios Descripción general App de formulario Clases Casilla de verificación Casilla de verificación Casilla de verificación de cuadrícula de validación Casilla de verificación Validación de casilla de verificación Cuadro de validación Opciones Elemento de fecha Fecha y hora del elemento Duración del elemento Formulario Respuesta de formulario Cuadrícula Validación de cuadrícula GridValidationBuilder Elemento de imagen Respuesta a elementos ListItem Elemento de opción múltiple Elemento de salto de página Elemento de texto de párrafo Validación de texto de párrafo ParagraphTextValidationBuilder Comentarios de cuestionario TestFeedbackBuilder RatingItem Elemento de escala Elemento de encabezado de sección Elemento de texto ValidaciónDeTexto TextValidationBuilder Elemento de tiempo Elemento de video Interfaces Elemento Enums Alineación Tipo de destino Tipo de comentario Tipo de elemento Tipo de navegación de página RatingIconType Gmail Descripción general Aplicación Gmail Clases Archivo adjunto de Gmail Borrador de Gmail Etiqueta de Gmail Mensaje de Gmail Conversación de Gmail Servicios avanzados API de Gmail Hojas de cálculo Descripción general SpreadsheetApp Clases Bandas Condición booleana Imagen celular CellImageBuilder."
+        ]
+      },
+      {
+        "title": "Class CalendarApp | Apps Script | Google for Developers",
+        "url": "https://developers.google.com/apps-script/reference/calendar/calendar-app",
+        "source_id": "feature-recovery-http",
+        "final_score": 150,
+        "relevance": "",
+        "evidence_snippets": [
+          "Bezpośrednie wywołanie getEventSeriesById(iCalId) zwraca tylko serię wydarzeń, która istnieje w kalendarzu domyślnym. // Opens the calendar by its ID. // TODO(developer): Replace the ID with your own. const calendar = CalendarApp . getCalendarById ( '222larabrown@gmail.com' ); // Creates an event series for a daily team meeting from 1 PM to 2 PM. // The series adds the daily event from January 1, 2023 through December 31, // 2023. const eventSeries = calendar . createEventSeries ( 'Team meeting' , new Date ( 'Jan 1, 2023 13:00:00' ), new Date ( 'Jan 1, 2023 14:00:00' ), CalendarApp . newRecurrence (). addDailyRule (). until ( new Date ( 'Jan 1, 2024' )), ); // Gets the ID of the event series. const iCalId = eventSeries . getId (); // Gets the event series by its ID and logs the series title to the console. // For the default calendar, you can use CalendarApp.getEventSeriesById(iCalId) // instead. console . log ( calendar . getEventSeriesById ( iCalId ). getTitle ()); Parametry Nazwa Typ Opis iCalId String Identyfikator serii wydarzeń.",
+          "Autoryzacja Skrypty, które używają tej metody, wymagają autoryzacji za pomocą co najmniej jednego z tych zakresów lub odpowiednich zakresów z powiązanego interfejsu API REST : https://www.googleapis.com/auth/calendar https://www.googleapis.com/auth/calendar.readonly https://www.google.com/calendar/feeds getEventSeriesById(iCalId) Pobiera serię wydarzeń o podanym identyfikatorze.",
+          "Metody Metoda Zwracany typ Krótki opis create All Day Event(title, date) Calendar Event Tworzy nowe wydarzenie całodniowe. create All Day Event(title, startDate, endDate) Calendar Event Tworzy nowe wydarzenie całodniowe, które może trwać kilka dni. create All Day Event(title, startDate, endDate, options) Calendar Event Tworzy nowe wydarzenie całodniowe, które może trwać kilka dni. create All Day Event(title, date, options) Calendar Event Tworzy nowe wydarzenie całodniowe. create All Day Event Series(title, startDate, recurrence) Calendar Event Series Tworzy nową serię wydarzeń całodniowych. create All Day Event Series(title, startDate, recurrence, options) Calendar Event Series Tworzy nową serię wydarzeń całodniowych. create Calendar(name) Calendar Tworzy nowy kalendarz należący do użytkownika. create Calendar(name, options) Calendar Tworzy nowy kalendarz należący do użytkownika. create Event(title, startTime, endTime) Calendar Event Utworzy nowe wydarzenie. create Event(title, startTime, endTime, options) Calendar Event Utworzy nowe wydarzenie. create Event From Description(description) Calendar Event Tworzy wydarzenie na podstawie opisu swobodnego. create Event Series(title, startTime, endTime, recurrence) Calendar Event Series Tworzy nową serię wydarzeń. create Event Series(title, startTime, endTime, recurrence, options) Calendar Event Series Tworzy nową serię wydarzeń. get All Calendars() Calendar[] Pobiera wszystkie kalendarze, które należą do użytkownika lub które subskrybuje. get All Owned Calendars() Calendar[] Pobiera wszystkie kalendarze należące do użytkownika. get Calendar By Id(id) Calendar |null Pobiera kalendarz o podanym identyfikatorze. get Calendars By Name(name) Calendar[] Pobiera wszystkie kalendarze o podanej nazwie, które należą do użytkownika lub które subskrybuje. get Color() String Pobiera kolor kalendarza. get Default Calendar() Calendar Pobiera domyślny kalendarz użytkownika. get Description() String Pobiera opis kalendarza. get Event By Id(iCalId) Calendar Event Pobiera wydarzenie o podanym identyfikatorze. get Event Series By Id(iCalId) Calendar Event Series Pobiera serię wydarzeń o podanym identyfikatorze. get Events(startTime, endTime) Calendar Event[] Pobiera wszystkie zdarzenia, które wystąpiły w danym przedziale czasu. get Events(startTime, endTime, options) Calendar Event[] Pobiera wszystkie zdarzenia, które występują w danym przedziale czasu i spełniają określone kryteria. get Events For Day(date) Calendar Event[] Pobiera wszystkie zdarzenia, które mają miejsce w danym dniu. get Events For Day(date, options) Calendar Event[] Pobiera wszystkie wydarzenia, które mają miejsce w danym dniu i spełniają określone kryteria. get Id() String Pobiera identyfikator kalendarza. get Name() String Pobiera nazwę kalendarza. get Owned Calendar By Id(id) Calendar |null Pobiera kalendarz o podanym identyfikatorze, jeśli należy on do użytkownika. get Owned Calendars By Name(name) Calendar[] Pobiera wszystkie kalendarze o podanej nazwie, które należą do użytkownika. get Time Zone() String Pobiera strefę czasową kalendarza. is Hidden() Boolean Określa, czy kalendarz jest ukryty w interfejsie. is My Primary Calendar() Boolean Określa, czy kalendarz jest kalendarzem głównym użytkownika. is Owned By Me() Boolean Określa, czy kalendarz należy do Ciebie. is Selected() Boolean Określa, czy wydarzenia z kalendarza są wyświetlane w interfejsie. new Recurrence() Event Recurrence Tworzy nowy obiekt powtarzania, który może być używany do tworzenia reguł powtarzania zdarzeń. set Color(color) Calendar Ustawia kolor kalendarza. set Description(description) Calendar Ustawia opis kalendarza. set Hidden(hidden) Calendar Określa, czy kalendarz jest widoczny w interfejsie. set Name(name) Calendar Ustawia nazwę kalendarza. set Selected(selected) Calendar Określa, czy wydarzenia z kalendarza są wyświetlane w interfejsie. set Time Zone(timeZone) Calendar Ustawia strefę czasową kalendarza. subscribe To Calendar(id) Calendar Subskrybuje kalendarz o podanym identyfikatorze, jeśli użytkownik ma uprawnienia do subskrypcji. subscribe To Calendar(id, options) Calendar Subskrybuje kalendarz o podanym identyfikatorze, jeśli użytkownik ma uprawnienia do subskrypcji."
+        ]
+      },
+      {
+        "title": "\"Class CalendarEventActionResponseBuilder \\_|\\_ Apps Script \\_|\\_ Google\\",
+        "url": "https://developers.google.com/apps-script/reference/add-ons-response-service/calendar-event-action-response-builder",
+        "source_id": "site-docs-reference-3",
+        "final_score": 107,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Methods Method Return type Brief description add Attachments(attachments) Calendar Event Action Response Builder Specifies that the response should add the attachments to the Calendar event when the associated UI action is taken. add Attendees(emails) Calendar Event Action Response Builder Specifies that the response should add the indicated attendees to the Calendar event when the associated UI action is taken. build() Calendar Event Action Response Builds the current Calendar event action response and validates it. set Conference Data(conferenceData) Calendar Event Action Response Builder Specifies that the response should set the indicated conference data to the Calendar event when the associated UI action is taken.",
+          "Throws Error — If the constructed Calendar event action response isn't valid. setConferenceData(conferenceData) Specifies that the response should set the indicated conference data to the Calendar event when the associated UI action is taken.",
+          "Return CalendarEventActionResponseBuilder — This object, for chaining. addAttendees(emails) Specifies that the response should add the indicated attendees to the Calendar event when the associated UI action is taken."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "calendar.readonly",
+      "developers.google.com",
+      "en.usa",
+      "gmail.com",
+      "group.v.calendar.google.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/reference/calendar/calendar-app",
+        "https://developers.google.com/apps-script/reference/calendar/calendar",
+        "https://developers.google.com/apps-script/reference/add-ons-response-service/calendar-event-action-response-builder"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/reference/calendar/calendar-app",
+        "https://developers.google.com/apps-script/reference/calendar/calendar",
+        "https://developers.google.com/apps-script/reference/add-ons-response-service/calendar-event-action-response-builder"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/reference/calendar/calendar-app",
+        "https://developers.google.com/apps-script/reference/calendar/calendar",
+        "https://developers.google.com/apps-script/reference/add-ons-response-service/calendar-event-action-response-builder"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/reference/calendar/calendar-app",
+        "https://developers.google.com/apps-script/reference/calendar/calendar",
+        "https://developers.google.com/apps-script/reference/add-ons-response-service/calendar-event-action-response-builder"
+      ]
+    }
+  ]
+}

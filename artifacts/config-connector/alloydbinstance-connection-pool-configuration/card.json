@@ -1,0 +1,229 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:30.193Z",
+  "source_step08_card": "data/step-08/current/products/config-connector/card.json",
+  "product_name": "Config Connector",
+  "product_slug": "config-connector",
+  "feature_name": "AlloyDBInstance connection pool configuration",
+  "feature_slug": "alloydbinstance-connection-pool-configuration",
+  "summary": "Config Connector added AlloyDBInstance fields for configuring and reporting connection pool settings.",
+  "extended_definition": "Config Connector added AlloyDBInstance fields for configuring and reporting connection pool settings.",
+  "lifecycle": {
+    "latest_feature_date": "2026-01-23",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields",
+      "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/alloydb/alloydbinstance"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "AlloyDBInstance \\_|\\_ Config Connector \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/alloydb/alloydbinstance",
+        "source_id": "site-docs-root",
+        "final_score": 252,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Property Value Google Cloud Service Name AlloyDB for PostgreSQL Google Cloud Service Documentation /alloydb/docs/ Google Cloud REST Resource Name v1.projects.locations.clusters.instances Google Cloud REST Resource Documentation /alloydb/docs/reference/rest/v1/projects.locations.clusters.instances Config Connector Resource Short Names gcpalloydbinstance gcpalloydbinstances alloydbinstance Config Connector Service Name alloydb.googleapis.com Config Connector Resource Fully Qualified Name alloydbinstances.alloydb.cnrm.cloud.google.com Can Be Referenced by IAMPolicy/IAMPolicyMember No Config Connector Default Average Reconcile Interval In Seconds 600 Custom Resource Definition Properties Spec Schema annotations : string : string availabilityType : string clusterRef : external : string name : string namespace : string connectionPoolConfig : enabled : boolean flags : string : string databaseFlags : string : string displayName : string gceZone : string instanceType : string instanceTypeRef : external : string name : string namespace : string machineConfig : cpuCount : integer machineType : string networkConfig : authorizedExternalNetworks : - cidrRange : string enableOutboundPublicIp : boolean enablePublicIp : boolean observabilityConfig : assistiveExperiencesEnabled : boolean enabled : boolean maxQueryStringLength : integer preserveComments : boolean queryPlansPerMinute : integer recordApplicationTags : boolean trackActiveQueries : boolean trackClientAddress : boolean trackWaitEvents : boolean queryInsightsConfig : queryPlansPerMinute : integer queryStringLength : integer recordApplicationTags : boolean recordClientAddress : boolean readPoolConfig : nodeCount : integer resourceID : string Fields annotations Optional map (key: string, value: string) Annotations to allow client tools to store small amount of arbitrary data.",
+          "Possible values: [\"AVAILABILITY TYPE UNSPECIFIED\", \"ZONAL\", \"REGIONAL\"]. clusterRef Required object The AlloyDBInstance cluster that this resource belongs to. clusterRef.external Optional string If provided must be in the format projects/[projectId]/locations/[location]/clusters/[clusterId]. clusterRef.name Optional string The metadata.name field of a AlloyDBCluster resource. clusterRef.namespace Optional string The metadata.namespace field of a AlloyDBCluster resource. connectionPoolConfig Optional object Configuration for Managed Connection Pool. connectionPoolConfig.enabled Optional boolean Optional.",
+          "See the License for the specific language governing permissions and limitations under the License. apiVersion : alloydb.cnrm.cloud.google.com/v1beta1 kind : AlloyDBInstance metadata : name : alloydbinstance-dep-read spec : clusterRef : name : alloydbinstance-dep-read instanceTypeRef : name : alloydbinstance-dep-read --- apiVersion : alloydb.cnrm.cloud.google.com/v1beta1 kind : AlloyDBInstance metadata : name : alloydbinstance-sample-read spec : clusterRef : name : alloydbinstance-dep-read instanceTypeRef : external : READ POOL databaseFlags : google columnar engine.enabled : \"on\" machineConfig : cpuCount : 2 readPoolConfig : nodeCount : 3 --- apiVersion : alloydb.cnrm.cloud.google.com/v1beta1 kind : AlloyDBCluster metadata : name : alloydbinstance-dep-read spec : location : asia-east2 networkConfig : networkRef : name : alloydbinstance-dep-read projectRef : external : ${PROJECT ID?} --- apiVersion : compute.cnrm.cloud.google.com/v1beta1 kind : ComputeAddress metadata : name : alloydbinstance-dep-read spec : location : global addressType : INTERNAL networkRef : name : alloydbinstance-dep-read prefixLength : 16 purpose : VPC PEERING --- apiVersion : compute.cnrm.cloud.google.com/v1beta1 kind : ComputeNetwork metadata : name : alloydbinstance-dep-read --- apiVersion : servicenetworking.cnrm.cloud.google.com/v1beta1 kind : ServiceNetworkingConnection metadata : name : alloydbinstance-dep-read spec : networkRef : name : alloydbinstance-dep-read reservedPeeringRanges : - name : alloydbinstance-dep-read service : servicenetworking.googleapis.com Secondary Instance Copyright 2024 Google LLC Licensed under the Apache License, Version 2.0 (the \"License\"); you may not use this file except in compliance with the License."
+        ]
+      },
+      {
+        "title": "AlloyDBInstance | Config Connector | Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/alloydb/alloydbinstance",
+        "source_id": "feature-recovery-http",
+        "final_score": 252,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Property Value Google Cloud Service Name AlloyDB for PostgreSQL Google Cloud Service Documentation /alloydb/docs/ Google Cloud REST Resource Name v1.projects.locations.clusters.instances Google Cloud REST Resource Documentation /alloydb/docs/reference/rest/v1/projects.locations.clusters.instances Config Connector Resource Short Names gcpalloydbinstance gcpalloydbinstances alloydbinstance Config Connector Service Name alloydb.googleapis.com Config Connector Resource Fully Qualified Name alloydbinstances.alloydb.cnrm.cloud.google.com Can Be Referenced by IAMPolicy/IAMPolicyMember No Config Connector Default Average Reconcile Interval In Seconds 600 Custom Resource Definition Properties Spec Schema annotations : string : string availabilityType : string clusterRef : external : string name : string namespace : string connectionPoolConfig : enabled : boolean flags : string : string databaseFlags : string : string displayName : string gceZone : string instanceType : string instanceTypeRef : external : string name : string namespace : string machineConfig : cpuCount : integer machineType : string networkConfig : authorizedExternalNetworks : - cidrRange : string enableOutboundPublicIp : boolean enablePublicIp : boolean observabilityConfig : assistiveExperiencesEnabled : boolean enabled : boolean maxQueryStringLength : integer preserveComments : boolean queryPlansPerMinute : integer recordApplicationTags : boolean trackActiveQueries : boolean trackClientAddress : boolean trackWaitEvents : boolean queryInsightsConfig : queryPlansPerMinute : integer queryStringLength : integer recordApplicationTags : boolean recordClientAddress : boolean readPoolConfig : nodeCount : integer resourceID : string Fields annotations Optional map (key: string, value: string) Annotations to allow client tools to store small amount of arbitrary data.",
+          "Possible values: [\"AVAILABILITY_TYPE_UNSPECIFIED\", \"ZONAL\", \"REGIONAL\"]. clusterRef Required object The AlloyDBInstance cluster that this resource belongs to. clusterRef.external Optional string If provided must be in the format `projects/[projectId]/locations/[location]/clusters/[clusterId]`. clusterRef.name Optional string The `metadata.name` field of a `AlloyDBCluster` resource. clusterRef.namespace Optional string The `metadata.namespace` field of a `AlloyDBCluster` resource. connectionPoolConfig Optional object Configuration for Managed Connection Pool. connectionPoolConfig.enabled Optional boolean Optional.",
+          "Sample YAML(s) Primary Instance # Copyright 2023 Google LLC # # Licensed under the Apache License, Version 2.0 (the \"License\"); # you may not use this file except in compliance with the License. # You may obtain a copy of the License at # # http://www.apache.org/licenses/LICENSE-2.0 # # Unless required by applicable law or agreed to in writing, software # distributed under the License is distributed on an \"AS IS\" BASIS, # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. # See the License for the specific language governing permissions and # limitations under the License. apiVersion : alloydb.cnrm.cloud.google.com/v1beta1 kind : AlloyDBInstance metadata : name : alloydbinstance-sample-primary spec : clusterRef : name : alloydbinstance-dep-primary instanceTypeRef : name : alloydbinstance-dep-primary databaseFlags : enable_google_adaptive_autovacuum : \"off\" password.enforce_complexity : \"on\" machineConfig : cpuCount : 2 networkConfig : enablePublicIp : true enableOutboundPublicIp : true authorizedExternalNetworks : - cidrRange : 8.8.8.8/30 - cidrRange : 8.8.4.4/30 --- apiVersion : alloydb.cnrm.cloud.google.com/v1beta1 kind : AlloyDBCluster metadata : name : alloydbinstance-dep-primary spec : location : asia-east1 networkConfig : networkRef : name : alloydbinstance-dep-primary projectRef : external : ${PROJECT_ID?} --- apiVersion : compute.cnrm.cloud.google.com/v1beta1 kind : ComputeAddress metadata : name : alloydbinstance-dep-primary spec : location : global addressType : INTERNAL networkRef : name : alloydbinstance-dep-primary prefixLength : 16 purpose : VPC_PEERING --- apiVersion : compute.cnrm.cloud.google.com/v1beta1 kind : ComputeNetwork metadata : name : alloydbinstance-dep-primary --- apiVersion : servicenetworking.cnrm.cloud.google.com/v1beta1 kind : ServiceNetworkingConnection metadata : name : alloydbinstance-dep-primary spec : networkRef : name : alloydbinstance-dep-primary reservedPeeringRanges : - external : alloydbinstance-dep-primary service : servicenetworking.googleapis.com Read Instance # Copyright 2023 Google LLC # # Licensed under the Apache License, Version 2.0 (the \"License\"); # you may not use this file except in compliance with the License. # You may obtain a copy of the License at # # http://www.apache.org/licenses/LICENSE-2.0 # # Unless required by applicable law or agreed to in writing, software # distributed under the License is distributed on an \"AS IS\" BASIS, # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. # See the License for the specific language governing permissions and # limitations under the License. apiVersion : alloydb.cnrm.cloud.google.com/v1beta1 kind : AlloyDBInstance metadata : name : alloydbinstance-dep-read spec : clusterRef : name : alloydbinstance-dep-read instanceTypeRef : name : alloydbinstance-dep-read --- apiVersion : alloydb.cnrm.cloud.google.com/v1beta1 kind : AlloyDBInstance metadata : name : alloydbinstance-sample-read spec : clusterRef : name : alloydbinstance-dep-read instanceTypeRef : external : READ_POOL databaseFlags : google_columnar_engine.enabled : \"on\" machineConfig : cpuCount : 2 readPoolConfig : nodeCount : 3 --- apiVersion : alloydb.cnrm.cloud.google.com/v1beta1 kind : AlloyDBCluster metadata : name : alloydbinstance-dep-read spec : location : asia-east2 networkConfig : networkRef : name : alloydbinstance-dep-read projectRef : external : ${PROJECT_ID?} --- apiVersion : compute.cnrm.cloud.google.com/v1beta1 kind : ComputeAddress metadata : name : alloydbinstance-dep-read spec : location : global addressType : INTERNAL networkRef : name : alloydbinstance-dep-read prefixLength : 16 purpose : VPC_PEERING --- apiVersion : compute.cnrm.cloud.google.com/v1beta1 kind : ComputeNetwork metadata : name : alloydbinstance-dep-read --- apiVersion : servicenetworking.cnrm.cloud.google.com/v1beta1 kind : ServiceNetworkingConnection metadata : name : alloydbinstance-dep-read spec : networkRef : name : alloydbinstance-dep-read reservedPeeringRanges : - name : alloydbinstance-dep-read service : servicenetworking.googleapis.com Secondary Instance # Copyright 2024 Google LLC # # Licensed under the Apache License, Version 2.0 (the \"License\"); # you may not use this file except in compliance with the License. # You may obtain a copy of the License at # # http://www.apache.org/licenses/LICENSE-2.0 # # Unless required by applicable law or agreed to in writing, software # distributed under the License is distributed on an \"AS IS\" BASIS, # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. # See the License for the specific language governing permissions and # limitations under the License. apiVersion : alloydb.cnrm.cloud.google.com/v1beta1 kind : AlloyDBInstance metadata : name : alloydbinstance-dep-secondary spec : clusterRef : name : alloydbinstance-dep1-secondary instanceTypeRef : name : alloydbinstance-dep1-secondary --- apiVersion : alloydb.cnrm.cloud.google.com/v1beta1 kind : AlloyDBInstance metadata : name : alloydbinstance-sample-secondary spec : clusterRef : name : alloydbinstance-dep2-secondary instanceTypeRef : name : alloydbinstance-dep2-secondary --- apiVersion : alloydb.cnrm.cloud.google.com/v1beta1 kind : AlloyDBCluster metadata : name : alloydbinstance-dep1-secondary spec : location : asia-northeast1 networkConfig : networkRef : name : alloydbinstance-dep-secondary projectRef : external : ${PROJECT_ID?} initialUser : user : \"postgres\" password : value : \"postgres\" --- apiVersion : alloydb.cnrm.cloud.google.com/v1beta1 kind : AlloyDBCluster metadata : name : alloydbinstance-dep2-secondary spec : location : asia-northeast2 networkConfig : networkRef : name : alloydbinstance-dep-secondary projectRef : external : ${PROJECT_ID?} clusterType : \"SECONDARY\" secondaryConfig : primaryClusterNameRef : name : alloydbinstance-dep1-secondary deletionPolicy : \"FORCE\" --- apiVersion : compute.cnrm.cloud.google.com/v1beta1 kind : ComputeAddress metadata : name : alloydbinstance-dep-secondary spec : location : global addressType : INTERNAL networkRef : name : alloydbinstance-dep-secondary prefixLength : 16 purpose : VPC_PEERING --- apiVersion : compute.cnrm.cloud.google.com/v1beta1 kind : ComputeNetwork metadata : name : alloydbinstance-dep-secondary --- apiVersion : servicenetworking.cnrm.cloud.google.com/v1beta1 kind : ServiceNetworkingConnection metadata : name : alloydbinstance-dep-secondary spec : networkRef : name : alloydbinstance-dep-secondary reservedPeeringRanges : - name : alloydbinstance-dep-secondary service : servicenetworking.googleapis.com Zonal Instance # Copyright 2023 Google LLC # # Licensed under the Apache License, Version 2.0 (the \"License\"); # you may not use this file except in compliance with the License. # You may obtain a copy of the License at # # http://www.apache.org/licenses/LICENSE-2.0 # # Unless required by applicable law or agreed to in writing, software # distributed under the License is distributed on an \"AS IS\" BASIS, # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. # See the License for the specific language governing permissions and # limitations under the License. apiVersion : alloydb.cnrm.cloud.google.com/v1beta1 kind : AlloyDBInstance metadata : name : alloydbinstance-sample-zonal spec : clusterRef : name : alloydbinstance-dep-zonal availabilityType : ZONAL instanceTypeRef : name : alloydbinstance-dep-zonal machineConfig : cpuCount : 2 --- apiVersion : alloydb.cnrm.cloud.google.com/v1beta1 kind : AlloyDBCluster metadata : name : alloydbinstance-dep-zonal spec : location : asia-northeast3 networkConfig : networkRef : name : alloydbinstance-dep-zonal projectRef : external : ${PROJECT_ID?} --- apiVersion : compute.cnrm.cloud.google.com/v1beta1 kind : ComputeAddress metadata : name : alloydbinstance-dep-zonal spec : location : global addressType : INTERNAL networkRef : name : alloydbinstance-dep-zonal prefixLength : 16 purpose : VPC_PEERING --- apiVersion : compute.cnrm.cloud.google.com/v1beta1 kind : ComputeNetwork metadata : name : alloydbinstance-dep-zonal --- apiVersion : servicenetworking.cnrm.cloud.google.com/v1beta1 kind : ServiceNetworkingConnection metadata : name : alloydbinstance-dep-zonal spec : networkRef : name : alloydbinstance-dep-zonal reservedPeeringRanges : - external : alloydbinstance-dep-zonal service : servicenetworking.googleapis.com Note: If you have any trouble with instantiating the resource, refer to Troubleshoot Config Connector ."
+        ]
+      },
+      {
+        "title": "Ignore unspecified fields \\_|\\_ Config Connector \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields",
+        "source_id": "site-docs-reference",
+        "final_score": 135,
+        "relevance": "",
+        "evidence_snippets": [
+          "Kinds with Merge support The following are all the Config Connector kinds that support Merge populating behavior: AccessContextManagerAccessLevel AccessContextManagerAccessPolicy AccessContextManagerServicePerimeter AlloyDBBackup AlloyDBCluster AlloyDBUser ApigeeEnvironment ApigeeOrganization ArtifactRegistryRepository BigQueryDataset BigQueryJob BigQueryTable BigtableAppProfile BigtableGCPolicy BigtableInstance BigtableTable BillingBudgetsBudget BinaryAuthorizationAttestor BinaryAuthorizationPolicy CertificateManagerCertificate CertificateManagerCertificateMap CertificateManagerCertificateMapEntry CloudBuildTrigger CloudFunctionsFunction CloudIdentityGroup CloudIdentityMembership CloudSchedulerJob ComputeAddress ComputeBackendBucket ComputeBackendService ComputeDisk ComputeExternalVPNGateway ComputeFirewall ComputeFirewallPolicy ComputeFirewallPolicyAssociation ComputeForwardingRule ComputeHTTPHealthCheck ComputeHTTPSHealthCheck ComputeHealthCheck ComputeImage ComputeInstance ComputeInstanceGroup ComputeInstanceGroupManager ComputeInstanceTemplate ComputeInterconnectAttachment ComputeNetwork ComputeNetworkEndpointGroup ComputeNetworkFirewallPolicy ComputeNetworkPeering ComputeNodeGroup ComputeNodeTemplate ComputePacketMirroring ComputeProjectMetadata ComputeRegionNetworkEndpointGroup ComputeReservation ComputeResourcePolicy ComputeRoute ComputeRouter ComputeRouterInterface ComputeRouterNAT ComputeRouterPeer ComputeSSLCertificate ComputeSSLPolicy ComputeSecurityPolicy ComputeServiceAttachment ComputeSharedVPCHostProject ComputeSharedVPCServiceProject ComputeSnapshot ComputeSubnetwork ComputeTargetGRPCProxy ComputeTargetHTTPProxy ComputeTargetHTTPSProxy ComputeTargetInstance ComputeTargetPool ComputeTargetSSLProxy ComputeTargetTCPProxy ComputeTargetVPNGateway ComputeURLMap ComputeVPNGateway ComputeVPNTunnel ConfigControllerInstance ContainerAnalysisNote ContainerAttachedCluster ContainerCluster ContainerNodePool DLPDeidentifyTemplate DLPInspectTemplate DLPJobTrigger DLPStoredInfoType DNSManagedZone DNSPolicy DNSRecordSet DataFusionInstance DataflowFlexTemplateJob DataflowJob DataprocAutoscalingPolicy DataprocCluster DataprocWorkflowTemplate EdgeContainerCluster EdgeContainerNodePool EdgeContainerVpnConnection EdgeNetworkNetwork EdgeNetworkSubnet EventarcTrigger FilestoreBackup FilestoreInstance FirestoreIndex Folder GKEHubFeature GKEHubMembership IAMAccessBoundaryPolicy IAMAuditConfig IAMCustomRole IAMPartialPolicy IAMPolicy IAMPolicyMember IAMServiceAccount IAMServiceAccountKey IAMWorkforcePool IAMWorkforcePoolProvider IAMWorkloadIdentityPool IAMWorkloadIdentityPoolProvider IAPBrand IAPIdentityAwareProxyClient IdentityPlatformConfig IdentityPlatformOAuthIDPConfig IdentityPlatformTenant IdentityPlatformTenantOAuthIDPConfig KMSCryptoKey KMSKeyRing LoggingLogBucket LoggingLogExclusion LoggingLogSink LoggingLogView MemcacheInstance MonitoringAlertPolicy MonitoringGroup MonitoringMetricDescriptor MonitoringMonitoredProject MonitoringNotificationChannel MonitoringService MonitoringServiceLevelObjective MonitoringUptimeCheckConfig NetworkConnectivityHub NetworkConnectivitySpoke NetworkSecurityAuthorizationPolicy NetworkSecurityClientTLSPolicy NetworkSecurityServerTLSPolicy NetworkServicesEndpointPolicy NetworkServicesGRPCRoute NetworkServicesGateway NetworkServicesHTTPRoute NetworkServicesMesh NetworkServicesTCPRoute NetworkServicesTLSRoute OSConfigGuestPolicy OSConfigOSPolicyAssignment PrivateCACAPool PrivateCACertificate PrivateCACertificateAuthority PrivateCACertificateTemplate Project PubSubLiteReservation PubSubSchema PubSubSubscription PubSubTopic RecaptchaEnterpriseKey RedisInstance ResourceManagerLien ResourceManagerPolicy RunJob RunService SQLDatabase SQLSSLCert SQLUser SecretManagerSecret SecretManagerSecretVersion Service ServiceDirectoryEndpoint ServiceDirectoryNamespace ServiceDirectoryService ServiceIdentity ServiceNetworkingConnection SourceRepoRepository SpannerDatabase SpannerInstance StorageBucket StorageBucketAccessControl StorageDefaultObjectAccessControl StorageNotification StorageTransferJob VPCAccessConnector The following kinds don't support the Merge populating behavior starting from the corresponding version: Kind Name Version LoggingLogMetric 1.118.1 Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Note that the only populating behavior CRDs added in version 1.114.0 and later follow is Absent regardless of the cnrm.cloud.google.com/state-into-spec annotation or the stateIntoSpec fields in the ConfigConnector CR or ConfigConnectorContext CR.",
+          "Both config management tools and Config Connector treat list fields as atomic, thus the added spec.bars[0].br2 is treated as a drift by config management tools and will be removed to correct the drift ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "alloydb.cnrm.cloud.google.com",
+      "alloydb.googleapis.com",
+      "alloydbinstances.alloydb.cnrm.cloud.google.com",
+      "cnrm.cloud.google.com",
+      "compute.cnrm.cloud.google.com",
+      "engine.enabled",
+      "metadata.name",
+      "metadata.namespace",
+      "password.enforce_complexity",
+      "projects.locations.clusters.instances",
+      "servicenetworking.cnrm.cloud.google.com",
+      "servicenetworking.googleapis.com",
+      "spec.bars",
+      "v1.projects.locations.clusters.instances"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/alloydb/alloydbinstance",
+        "https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/alloydb/alloydbinstance",
+        "https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/alloydb/alloydbinstance",
+        "https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/alloydb/alloydbinstance",
+        "https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/alloydb/alloydbinstance",
+        "https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/alloydb/alloydbinstance",
+        "https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/alloydb/alloydbinstance",
+        "https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/alloydb/alloydbinstance",
+        "https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/alloydb/alloydbinstance",
+        "https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/alloydb/alloydbinstance",
+        "https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/alloydb/alloydbinstance",
+        "https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/alloydb/alloydbinstance",
+        "https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/alloydb/alloydbinstance",
+        "https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/alloydb/alloydbinstance",
+        "https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/alloydb/alloydbinstance",
+        "https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/alloydb/alloydbinstance",
+        "https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/alloydb/alloydbinstance",
+        "https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/alloydb/alloydbinstance",
+        "https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/alloydb/alloydbinstance",
+        "https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,86 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:39.542Z",
+  "source_step08_card": "data/step-08/current/products/google-kubernetes-engine/card.json",
+  "product_name": "Google Kubernetes Engine",
+  "product_slug": "google-kubernetes-engine",
+  "feature_name": "GKE Managed DCGM Metrics Package",
+  "feature_slug": "gke-managed-dcgm-metrics-package",
+  "summary": "This package exports curated DCGM GPU metrics from GKE-managed NVIDIA drivers to Cloud Monitoring and Managed Service for Prometheus.",
+  "extended_definition": "This package exports curated DCGM GPU metrics from GKE-managed NVIDIA drivers to Cloud Monitoring and Managed Service for Prometheus.",
+  "lifecycle": {
+    "latest_feature_date": "2024-07-03",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/cadvisor-kubelet-metrics",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/control-plane-metrics",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/kube-state-metrics"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Collect and view kube state metrics \\_|\\_ Google Kubernetes Engine (GKE)\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/kube-state-metrics",
+        "source_id": "site-docs-reference-2",
+        "final_score": 132,
+        "relevance": "",
+        "evidence_snippets": [
+          "Autopilot Standard This page describes how to configure a Google Kubernetes Engine (GKE) cluster to send a curated set of kube state, including metrics for Pods and Deployments, Cloud Monitoring using Google Cloud Managed Service for Prometheus.",
+          "Warning: If you are running a self-deployed kube state metrics package, you must stop collecting it before enabling managed kube state metrics, otherwise you might end up with duplicate or incorrect metrics.",
+          "Click Save Changes . gcloud Update your cluster to collect metrics: gcloud container clusters update CLUSTER NAME \\ --location = COMPUTE LOCATION \\ --enable-managed-prometheus \\ --monitoring = SYSTEM,DAEMONSET,DEPLOYMENT,HPA,POD,STATEFULSET,STORAGE Replace the following: CLUSTER NAME : the name of the existing cluster."
+        ]
+      },
+      {
+        "title": "\"Collect and view cAdvisor/Kubelet metrics \\_|\\_ Google Kubernetes Engine\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/cadvisor-kubelet-metrics",
+        "source_id": "site-docs-reference-2",
+        "final_score": 112,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Autopilot Standard This page describes how to configure a Google Kubernetes Engine (GKE) cluster to send a curated set of cAdvisor/Kubelet metrics to Cloud Monitoring using Google Cloud Managed Service for Prometheus.",
+          "Requirements To collect cAdvisor/Kubelet metrics, your GKE cluster must meet the following requirements: The cluster must be running GKE version 1.29.3-gke.1093000 or later. cAdvisor/Kubelet packages are enabled by default when you create a cluster running version 1.29.3-gke.1093000 or later.",
+          "Click Save Changes . gcloud Update your cluster to collect metrics: gcloud container clusters update CLUSTER NAME \\ --location = COMPUTE LOCATION \\ --enable-managed-prometheus \\ --monitoring = SYSTEM,CADVISOR,KUBELET Replace the following: CLUSTER NAME : the name of the existing cluster."
+        ]
+      },
+      {
+        "title": "\"Collect and view control plane metrics \\_|\\_ Google Kubernetes Engine (GKE)\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/control-plane-metrics",
+        "source_id": "site-docs-reference-2",
+        "final_score": 112,
+        "relevance": "",
+        "evidence_snippets": [
+          "Autopilot Standard This page describes how to configure a Google Kubernetes Engine (GKE) cluster to send metrics emitted by the Kubernetes API server, Scheduler, and Controller Manager to Cloud Monitoring using Google Cloud Managed Service for Prometheus.",
+          "Because all Kubernetes control plane metrics are ingested by using Google Cloud Managed Service for Prometheus , Kubernetes control plane metrics can be queried by using Prometheus Query Language (PromQL) .",
+          "When you use the Observability tab, you can preview the available charts and metrics before you enable the metric package."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "gke.1093000",
+      "gke.1357001",
+      "gke.1767000",
+      "gke.1868000"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": []
+}

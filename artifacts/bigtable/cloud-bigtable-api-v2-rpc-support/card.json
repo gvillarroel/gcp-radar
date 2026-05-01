@@ -1,0 +1,112 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:21.669Z",
+  "source_step08_card": "data/step-08/current/products/bigtable/card.json",
+  "product_name": "Bigtable",
+  "product_slug": "bigtable",
+  "feature_name": "Cloud Bigtable API v2 RPC support",
+  "feature_slug": "cloud-bigtable-api-v2-rpc-support",
+  "summary": "Cloud Bigtable now offers version 2 of its RPC API, enabling custom gRPC clients for both the Data API and Admin API.",
+  "extended_definition": "Cloud Bigtable now offers version 2 of its RPC API, enabling custom gRPC clients for both the Data API and Admin API.",
+  "lifecycle": {
+    "latest_feature_date": "2016-06-29",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigtable/docs/cloud-bigtable-for-cassandra-users",
+      "https://docs.cloud.google.com/bigtable/docs/cmek",
+      "https://docs.cloud.google.com/bigtable/docs/reference/admin/mcp/tools_list/delete_instance"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Bigtable for Cassandra users \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigtable/docs/cloud-bigtable-for-cassandra-users",
+        "source_id": "site-docs-root",
+        "final_score": 72,
+        "relevance": "",
+        "evidence_snippets": [
+          "When comparing the two databases, you should understand how each database physically stores data differently in the following aspects: The data distribution strategy The number of cell versions available The storage disk type The data durability and replication mechanism Data distribution In Cassandra, a consistent hash of the primary key's partition columns is the recommended method of determining data distribution across the various SSTables served by cluster nodes.",
+          "Multiple timestamped versions can be stored and retrieved for each cell. counter : an incrementable field type optimized for integer sum operations. counters : cells that use specialized data types for integer sum operations.",
+          "Cell versions can be pruned using a garbage collection policy that can be different for each table's column family, or can be filtered from a query result set through the API."
+        ]
+      },
+      {
+        "title": "\"Customer-managed encryption keys (CMEK) \\_|\\_ Bigtable \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/bigtable/docs/cmek",
+        "source_id": "site-docs-reference-2",
+        "final_score": 71,
+        "relevance": "",
+        "evidence_snippets": [
+          "Enabling CMEK At a high level, to use CMEK with Bigtable, you follow these steps: Create and configure a CMEK key in each region where your instance's clusters are going to be.",
+          "If you want to control your encryption keys, then you can use customer-managed encryption keys (CMEKs) in Cloud KMS with CMEK-integrated services including Bigtable.",
+          "For up to five minutes after a table is created in a CMEK-protected instance, the key version and key status might be reported as unknown."
+        ]
+      },
+      {
+        "title": "\"MCP Tools Reference: bigtableadmin.googleapis.com \\_|\\_ Bigtable \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/bigtable/docs/reference/admin/mcp/tools_list/delete_instance",
+        "source_id": "site-docs-reference",
+        "final_score": 68,
+        "relevance": "",
+        "evidence_snippets": []
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "bigtableadmin.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigtable/docs/cmek",
+        "https://docs.cloud.google.com/bigtable/docs/cloud-bigtable-for-cassandra-users",
+        "https://docs.cloud.google.com/bigtable/docs/reference/admin/mcp/tools_list/delete_instance"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigtable/docs/cmek",
+        "https://docs.cloud.google.com/bigtable/docs/cloud-bigtable-for-cassandra-users",
+        "https://docs.cloud.google.com/bigtable/docs/reference/admin/mcp/tools_list/delete_instance"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigtable/docs/cmek",
+        "https://docs.cloud.google.com/bigtable/docs/cloud-bigtable-for-cassandra-users",
+        "https://docs.cloud.google.com/bigtable/docs/reference/admin/mcp/tools_list/delete_instance"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigtable/docs/cmek",
+        "https://docs.cloud.google.com/bigtable/docs/cloud-bigtable-for-cassandra-users",
+        "https://docs.cloud.google.com/bigtable/docs/reference/admin/mcp/tools_list/delete_instance"
+      ]
+    }
+  ]
+}

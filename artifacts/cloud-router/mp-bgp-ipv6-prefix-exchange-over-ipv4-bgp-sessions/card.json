@@ -1,0 +1,104 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:25.787Z",
+  "source_step08_card": "data/step-08/current/products/cloud-router/card.json",
+  "product_name": "Cloud Router",
+  "product_slug": "cloud-router",
+  "feature_name": "MP-BGP IPv6 prefix exchange over IPv4 BGP sessions",
+  "feature_slug": "mp-bgp-ipv6-prefix-exchange-over-ipv4-bgp-sessions",
+  "summary": "MP-BGP IPv6 prefix exchange over IPv4 BGP sessions lets Cloud Router advertise and exchange IPv6 prefixes across IPv4 BGP sessions.",
+  "extended_definition": "MP-BGP IPv6 prefix exchange over IPv4 BGP sessions lets Cloud Router advertise and exchange IPv6 prefixes across IPv4 BGP sessions.",
+  "lifecycle": {
+    "latest_feature_date": "2022-12-14",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/overview",
+      "https://docs.cloud.google.com/network-connectivity/docs/router/concepts/overview",
+      "https://docs.cloud.google.com/network-connectivity/docs/router/how-to/configuring-bgp",
+      "https://docs.cloud.google.com/network-connectivity/docs/router/support/troubleshoot-bgp-sessions"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Cloud Router overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/network-connectivity/docs/router/concepts/overview",
+        "source_id": "site-docs-reference",
+        "final_score": 250,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "You can create the following types of BGP sessions: IPv4 BGP sessions that exchange only IPv4 prefixes IPv6 BGP sessions that exchange only IPv6 prefixes IPv4 BGP sessions using MP-BGP that exchange both IPv4 and IPv6 prefixes IPv6 BGP sessions using MP-BGP that exchange both IPv4 and IPv6 prefixes IPv6 BGP peering and IPv6 route exchange aren't supported for the following resources: Classic VPN tunnels Router appliance (part of Network Connectivity Center) Cross-Cloud Interconnect VLAN attachments You can configure an IPv4 BGP session and an IPv6 BGP session simultaneously for an HA VPN tunnel or a Dedicated Interconnect VLAN attachment.",
+          "IP protocols support Cloud Router supports IPv6 route exchange through either of the following: BGP over IPv6 BGP over IPv4 using multiprotocol BGP (MP-BGP) For information about advertising IPv6 prefixes, see Advertising subnet IPv6 address ranges .",
+          "Configure multiprotocol BGP for IPv4 or IPv6 BGP sessions Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License ."
+        ]
+      },
+      {
+        "title": "Establish BGP sessions \\_|\\_ Cloud Router \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/network-connectivity/docs/router/how-to/configuring-bgp",
+        "source_id": "site-docs-root",
+        "final_score": 248,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "However, with MP-BGP over IPv6 BGP sessions, you exchange IPv4 routes over an IPv6 BGP session.",
+          "However, you can configure the IPv4 BGP session to exchange IPv6 routes by using multiprotocol BGP (MP-BGP) .",
+          "Similar to IPv4 BGP sessions, you can also configure an IPv6 BGP session with multiprotocol BGP (MP-BGP)."
+        ]
+      },
+      {
+        "title": "NCC overview \\_|\\_ Network Connectivity Center \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/overview",
+        "source_id": "site-iam-reference",
+        "final_score": 248,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "VPC spokes and VPC Network Peering NCC VPC spokes support exchanging the following: Valid IPv4 subnet ranges IPv6 subnet ranges IPv4 dynamic routes VPC spokes don't support exchanging the following: Peering subnet routes Local routes with privately used public IPv4 addresses Local subnet routes with IPv6 addresses VPC spokes don't exchange static routes; however, VPC spokes can import NCC IPv4 dynamic routes from hybrid spokes that are on the same NCC hub.",
+          "Route exchange with VPC connectivity NCC VPC spokes support exchanging the following subnet ranges: IPv4 subnet ranges IPv6 subnet ranges IPv4 dynamic routes—that is, routes learned by hybrid spokes through BGP—can also be exchanged with VPC spokes or other hybrid spokes.",
+          "Route advertisement changes when using site-to-site data transfer When you add an Cloud Interconnect VLAN attachment or Cloud VPN tunnel to a hybrid spoke, NCC updates the corresponding BGP session for the VLAN attachment or Cloud VPN tunnel so that it re-advertises the prefixes learned by BGP sessions of the other Cloud Interconnect VLAN attachments or Cloud VPN tunnels connected to any of the hub's hybrid spokes that have the site-to-site data transfer option enabled."
+        ]
+      },
+      {
+        "title": "Troubleshoot BGP sessions \\_|\\_ Cloud Router \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/network-connectivity/docs/router/support/troubleshoot-bgp-sessions",
+        "source_id": "site-docs-root",
+        "final_score": 234,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "IPv4 and IPv6 addresses for BGP sessions Support for IPv6 BGP sessions is in Preview .",
+          "Run the following command: gcloud compute routers describe ROUTER-NAME In the command output, check the following values: bgpPeers.peerIpAddress is an IPv6 address assigned to the external interface on your on-premises router.",
+          "BGP session closes If your on-premises router advertises more than 5,000 prefixes, then the Cloud Router closes the BGP session and does not attempt to re-establish it until the BGP peering is reset manually."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-connectivity/docs/router/concepts/overview",
+        "https://docs.cloud.google.com/network-connectivity/docs/router/how-to/configuring-bgp",
+        "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/overview",
+        "https://docs.cloud.google.com/network-connectivity/docs/router/support/troubleshoot-bgp-sessions"
+      ]
+    }
+  ]
+}

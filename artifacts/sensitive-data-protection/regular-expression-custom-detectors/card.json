@@ -1,0 +1,98 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:46.193Z",
+  "source_step08_card": "data/step-08/current/products/sensitive-data-protection/card.json",
+  "product_name": "Sensitive Data Protection",
+  "product_slug": "sensitive-data-protection",
+  "feature_name": "Regular expression custom detectors",
+  "feature_slug": "regular-expression-custom-detectors",
+  "summary": "Custom detectors can be defined using regular expressions.",
+  "extended_definition": "Custom detectors can be defined using regular expressions.",
+  "lifecycle": {
+    "latest_feature_date": "2018-02-16",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/sensitive-data-protection/docs/concepts-de-identification",
+      "https://docs.cloud.google.com/sensitive-data-protection/docs/concepts-infotypes",
+      "https://docs.cloud.google.com/sensitive-data-protection/docs/creating-custom-infotypes"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"InfoTypes and infoType detectors \\_|\\_ Sensitive Data Protection \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/sensitive-data-protection/docs/concepts-infotypes",
+        "source_id": "site-api-reference-required-2",
+        "final_score": 192,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Custom infoType detectors There are three kinds of custom infoType detectors: Small custom dictionary detectors Large custom dictionary detectors Regular expressions (regex) To refine scan results, you can create inspection rules .",
+          "Regular expressions A regular expression (regex) custom infoType detector allows you to create your own infoType detectors that enable Sensitive Data Protection to detect matches based on a regex pattern.",
+          "Custom dictionary detectors are useful when you want to scan for a list of words or phrases that are not easily matched by a regular expression or a built-in detector."
+        ]
+      },
+      {
+        "title": "\"Custom infoType detectors \\_|\\_ Sensitive Data Protection \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/sensitive-data-protection/docs/creating-custom-infotypes",
+        "source_id": "site-api-reference-required-2",
+        "final_score": 188,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Although you can create regular dictionary detectors or regular expression detectors by defining this field, it's simpler to create those by defining the dictionary field or regex field respectively. \"metadata key value expression\" : A MetadataKeyValueExpression object that defines regular expressions for the key and value to search for in content metadata.",
+          "One of the following fields, depending on the kind of custom infoType detector you're creating: \"dictionary\" : A Dictionary object, which contains a list of words or phrases to search for. \"regex\" : A Regex object, which contains a single pattern defining the regular expression. \"surrogateType\" : A SurrogateType object, if present, indicates that the custom infoType detector is a surrogate.",
+          "API overview The CustomInfoType object allows you to create a custom infoType detector for new content or to fine-tune the results returned by pre-defined infoType detectors."
+        ]
+      },
+      {
+        "title": "De-identification \\_|\\_ Sensitive Data Protection \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/sensitive-data-protection/docs/concepts-de-identification",
+        "source_id": "site-docs-reference-required-4",
+        "final_score": 174,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Custom infoType detectors There are three kinds of custom infoType detectors: Regular custom dictionary detectors Stored custom dictionary detectors Regular expressions (regex) To refine scan results, you can create inspection rules .",
+          "Regular expressions A regular expression (regex) custom infoType detector allows you to create your own infoType detectors that enable Sensitive Data Protection to detect matches based on a regex pattern.",
+          "Stored custom dictionary detectors, by their nature as very large custom detectors, are created differently from both regular expression custom detectors and regular custom dictionary detectors."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/concepts-infotypes",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/concepts-de-identification",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/creating-custom-infotypes"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/concepts-infotypes",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/concepts-de-identification",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/creating-custom-infotypes"
+      ]
+    }
+  ]
+}

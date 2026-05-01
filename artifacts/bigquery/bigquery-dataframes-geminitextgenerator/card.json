@@ -1,0 +1,130 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:18.771Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery",
+  "feature_name": "BigQuery DataFrames GeminiTextGenerator",
+  "feature_slug": "bigquery-dataframes-geminitextgenerator",
+  "summary": "BigQuery DataFrames provides the GeminiTextGenerator class for estimator-like Gemini text generation models.",
+  "extended_definition": "BigQuery DataFrames provides the GeminiTextGenerator class for estimator-like Gemini text generation models.",
+  "lifecycle": {
+    "latest_feature_date": "2024-02-15",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/boosted-tree-classifier-tutorial",
+      "https://docs.cloud.google.com/bigquery/docs/colab-data-science-agent",
+      "https://docs.cloud.google.com/bigquery/docs/multimodal-data-sql-tutorial"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Perform classification with a boosted trees model \\_|\\_ BigQuery \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/boosted-tree-classifier-tutorial",
+        "source_id": "site-docs-reference",
+        "final_score": 97,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "XGBClassifier ( n estimators = 1 , booster = \"gbtree\" , tree method = \"hist\" , max iterations = 1 , # For a more accurate model, try 50 iterations. subsample = 0.85 , ) tree model . fit ( X , y ) tree model . to gbq ( your model id , # For example: \"your-project.bqml tutorial.tree model\" replace = True , ) Evaluate the model SQL Follow these steps to evaluate the model: In the Google Cloud console, go to the BigQuery page.",
+          "PREDICT ( MODEL bqml tutorial.tree model , ( SELECT FROM bqml tutorial.input data WHERE dataframe = 'prediction' ) ); The first few columns of the results should look similar to the following: +---------------------------+--------------------------------------+-------------------------------------+ predicted income bracket predicted income bracket probs.label predicted income bracket probs.prob +---------------------------+--------------------------------------+-------------------------------------+ <=50K >50K 0.05183430016040802 +---------------------------+--------------------------------------+-------------------------------------+ <50K 0.94816571474075317 +---------------------------+--------------------------------------+-------------------------------------+ <=50K >50K 0.00365859130397439 +---------------------------+--------------------------------------+-------------------------------------+ <50K 0.99634140729904175 +---------------------------+--------------------------------------+-------------------------------------+ <=50K >50K 0.037775970995426178 +---------------------------+--------------------------------------+-------------------------------------+ <50K 0.96222406625747681 +---------------------------+--------------------------------------+-------------------------------------+ BigQuery DataFrames Before trying this sample, follow the BigQuery DataFrames setup instructions in the BigQuery quickstart using BigQuery DataFrames .",
+          "EVALUATE ( MODEL bqml tutorial.tree model , ( SELECT FROM bqml tutorial.input data WHERE dataframe = 'evaluation' ) ); The results should look similar to the following: +---------------------+---------------------+---------------------+-------------------+---------------------+---------------------+ precision recall accuracy f1 score log loss roc auc +---------------------+---------------------+---------------------+-------------------+-------------------------------------------+ 0.67192429022082023 0.57880434782608692 0.83942963422194672 0.621897810218978 0.34405456040833338 0.88733566433566435 +---------------------+---------------------+ --------------------+-------------------+---------------------+---------------------+ BigQuery DataFrames Before trying this sample, follow the BigQuery DataFrames setup instructions in the BigQuery quickstart using BigQuery DataFrames ."
+        ]
+      },
+      {
+        "title": "\"Use the Colab Enterprise Data Science Agent with BigQuery \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/colab-data-science-agent",
+        "source_id": "site-docs-reference-5",
+        "final_score": 95,
+        "relevance": "",
+        "evidence_snippets": [
+          "Create and evaluate a classification model on project id : dataset . table using BigQuery DataFrames.",
+          "Model training : Train a model by using the training data in a pandas DataFrame ( X train , y train ), BigQuery DataFrames , a PySpark DataFrame , or by using the BigQuery ML CREATE MODEL statement with BigQuery tables.",
+          "Data wrangling : Convert categorical features into numerical representations using techniques like one-hot encoding or label encoding or by using BigQuery ML feature transformation tools ."
+        ]
+      },
+      {
+        "title": "\"Analyze multimodal data with SQL and BigQuery DataFrames \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/multimodal-data-sql-tutorial",
+        "source_id": "site-docs-reference-2",
+        "final_score": 79,
+        "relevance": "",
+        "evidence_snippets": [
+          "For more information, see Set up ADC for a local development environment . df prompt = bbq . obj . get access url ( df products mm [ \"image\" ], \"R\" ) . to frame () df prompt [ \"prompt0\" ] = \"For the image of a pet product, concisely generate the following metadata: 1) animal type and 2) 5 SEO search keywords, and 3) product subcategory.\" df products mm [ \"prompt\" ] = bbq . struct ( df prompt [[ \"prompt0\" , \"image\" ]]) df products mm = df products mm . drop ( columns = [ \"animal type\" , \"search keywords\" , \"subcategory\" ] ) df products mm = bbq . ai . generate table ( gemini model , df products mm , output schema = \"animal type STRING, search keywords ARRAY<STRING>, subcategory STRING\" , ) Run the following to view the generated data: SQL SELECT product name , image description , animal type , search keywords , subcategory , FROM cymbal pets . products mm ; BigQuery DataFrames Before trying this sample, follow the BigQuery DataFrames setup instructions in the BigQuery quickstart using BigQuery DataFrames .",
+          "For more information, see Set up ADC for a local development environment . bbq . create external table ( \"cymbal pets.product manuals\" , replace = True , connection name = \"us.cymbal conn\" , options = { \"object metadata\" : \"SIMPLE\" , \"uris\" : [ \"gs://cloud-samples-data/bigquery/tutorials/cymbal-pets/documents/ .pdf\" ], }, ) Create a text generation model Create a BigQuery ML remote model that represents a Vertex AI Gemini model: Run the following to create the remote model: SQL CREATE OR REPLACE MODEL cymbal pets.gemini REMOTE WITH CONNECTION us.cymbal conn OPTIONS ( ENDPOINT = 'gemini-2.0-flash' ); BigQuery DataFrames Before trying this sample, follow the BigQuery DataFrames setup instructions in the BigQuery quickstart using BigQuery DataFrames .",
+          "For more information, see Set up ADC for a local development environment . gemini model = bbq . ml . create model ( \"cymbal pets.gemini\" , replace = True , connection name = \"us.cymbal conn\" , options = { \"endpoint\" : \"gemini-2.5-flash\" }, ) Create an embedding generation model Create a BigQuery ML remote model that represents a Vertex AI multimodal embedding model: Run the following to create the remote model: SQL CREATE OR REPLACE MODEL cymbal pets.embedding model REMOTE WITH CONNECTION us.cymbal conn OPTIONS ( ENDPOINT = 'multimodalembedding@001' ); BigQuery DataFrames Before trying this sample, follow the BigQuery DataFrames setup instructions in the BigQuery quickstart using BigQuery DataFrames ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "chunks.authorizer",
+      "chunks.details",
+      "chunks.uri",
+      "chunks.version",
+      "data.ml",
+      "datasets.census",
+      "manual.authorizer",
+      "manual.details",
+      "manual.pdf",
+      "manual.uri",
+      "manual.version",
+      "myproject.region.myconnection",
+      "page1.pdf",
+      "page2.pdf",
+      "pets.embedding",
+      "pets.gemini",
+      "pets.product",
+      "probs.label",
+      "probs.prob",
+      "project.bqml",
+      "tutorial.input",
+      "tutorial.tree",
+      "us.cymbal"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/boosted-tree-classifier-tutorial",
+        "https://docs.cloud.google.com/bigquery/docs/colab-data-science-agent",
+        "https://docs.cloud.google.com/bigquery/docs/multimodal-data-sql-tutorial"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/boosted-tree-classifier-tutorial",
+        "https://docs.cloud.google.com/bigquery/docs/colab-data-science-agent",
+        "https://docs.cloud.google.com/bigquery/docs/multimodal-data-sql-tutorial"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/boosted-tree-classifier-tutorial",
+        "https://docs.cloud.google.com/bigquery/docs/colab-data-science-agent",
+        "https://docs.cloud.google.com/bigquery/docs/multimodal-data-sql-tutorial"
+      ]
+    }
+  ]
+}

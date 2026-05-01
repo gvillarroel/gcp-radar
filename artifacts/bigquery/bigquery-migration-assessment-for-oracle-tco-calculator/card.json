@@ -1,0 +1,92 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:18.771Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery",
+  "feature_name": "BigQuery migration assessment for Oracle TCO calculator",
+  "feature_slug": "bigquery-migration-assessment-for-oracle-tco-calculator",
+  "summary": "The BigQuery migration assessment for Oracle includes a total cost of ownership calculator for migration cost estimates.",
+  "extended_definition": "The BigQuery migration assessment for Oracle includes a total cost of ownership calculator for migration cost estimates.",
+  "lifecycle": {
+    "latest_feature_date": "2025-01-16",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/hadoop-metadata",
+      "https://docs.cloud.google.com/bigquery/docs/migration-intro",
+      "https://docs.cloud.google.com/bigquery/docs/migration/snowflake-tutorials"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Introduction to BigQuery Migration Service \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/migration-intro",
+        "source_id": "site-docs-root",
+        "final_score": 114,
+        "relevance": "",
+        "evidence_snippets": [
+          "The BigQuery Migration Service includes the following features: BigQuery migration assessment : Assess and plan your data warehouse migration by running a BigQuery migration assessment .",
+          "It includes features that help you with each phase of migration, including assessment and planning, SQL translation for a variety of SQL dialects , data transfer, and data validation.",
+          "For more information on BigQuery migration assessment, see BigQuery migration assessment ."
+        ]
+      },
+      {
+        "title": "\"Extracting metadata from Apache Hive for migration \\_|\\_ BigQuery \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/hadoop-metadata",
+        "source_id": "site-api-reference",
+        "final_score": 90,
+        "relevance": "",
+        "evidence_snippets": [
+          "Cloudera Run the following command to extract metadata from Cloudera using the dwh-migration-dumper tool. dwh-migration-dumper \\ --connector cloudera-manager \\ --url CLOUDERA-URL \\ --user CLOUDERA-USER \\ --password CLOUDERA-PASSWORD \\ --output gs:// MIGRATION-BUCKET /cloudera-dumper-output.zip \\ --yarn-application-types APPLICATION-TYPES \\ --pagination-page-size PAGE-SIZE \\ --assessment \\ Replace the following: CLOUDERA-URL : the URL for Cloudera Manager CLOUDERA-USER : the username of the Cloudera user CLOUDERA-PASSWORD : the password of the Cloudera user MIGRATION-BUCKET : the Cloud Storage bucket that you are using to store the migration files.",
+          "Apache Ranger Run the following command to extract metadata from Apache Ranger using the dwh-migration-dumper tool. dwh-migration-dumper \\ --connector ranger \\ --host RANGER-HOST \\ --port 6080 \\ --user RANGER-USER \\ --password RANGER-PASSWORD \\ --ranger-scheme RANGER-SCHEME \\ --output gs:// MIGRATION-BUCKET /ranger-dumper-output.zip \\ --assessment \\ Replace the following: RANGER-HOST : the hostname of the Apache Ranger instance RANGER-USER : the username of the Apache Ranger user RANGER-PASSWORD : the password of the Apache Ranger user RANGER-SCHEME : specify if Apache Ranger is using http or https .",
+          "HDFS Run the following command to extract metadata from HDFS using the dwh-migration-dumper tool. dwh-migration-dumper \\ --connector hdfs \\ --host HDFS-HOST \\ --port HDFS-PORT \\ --output gs:// MIGRATION-BUCKET /hdfs-dumper-output.zip \\ --assessment \\ Replace the following: HDFS-HOST : the HDFS NameNode hostname HDFS-PORT : the HDFS NameNode port number."
+        ]
+      },
+      {
+        "title": "Snowflake to BigQuery migration tutorials \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/migration/snowflake-tutorials",
+        "source_id": "site-api-reference",
+        "final_score": 81,
+        "relevance": "",
+        "evidence_snippets": [
+          "For a detailed, step-by step process that includes code samples, see the Google Cloud professional services Snowflake to BigQuery tool Prepare for the export You can prepare your Snowflake data for an export by extracting your Snowflake data into a Cloud Storage or an Amazon Simple Storage Service (Amazon S3) bucket with the following steps: Cloud Storage This tutorial prepares the file in PARQUET format.",
+          "Snowflake to BigQuery migration tutorials This document provides end-to-end examples and tutorials for the different ways you can set up a Snowflake to BigQuery migration pipeline.",
+          "Snowflake migration pipeline examples You can migrate your data from Snowflake to BigQuery using three different processes: ELT, ETL, or using partner tools."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "output.zip"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/migration-intro",
+        "https://docs.cloud.google.com/bigquery/docs/hadoop-metadata",
+        "https://docs.cloud.google.com/bigquery/docs/migration/snowflake-tutorials"
+      ]
+    }
+  ]
+}

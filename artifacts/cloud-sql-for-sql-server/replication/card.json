@@ -1,0 +1,164 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:27.901Z",
+  "source_step08_card": "data/step-08/current/products/cloud-sql-for-sql-server/card.json",
+  "product_name": "Cloud SQL for SQL Server",
+  "product_slug": "cloud-sql-for-sql-server",
+  "feature_name": "replication",
+  "feature_slug": "replication",
+  "summary": "Cloud SQL for SQL Server supports replication to scale read usage and maintain data copies.",
+  "extended_definition": "Cloud SQL for SQL Server supports replication to scale read usage and maintain data copies.",
+  "lifecycle": {
+    "latest_feature_date": "2021-06-21",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 2,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "coverage_low",
+        "message": "The feature ended with coverage LOW.",
+        "suggested_steps": [
+          "step-06"
+        ]
+      },
+      {
+        "severity": "warn",
+        "rule": "thin_token_overlap",
+        "message": "Supporting pages only weakly overlap with informative feature tokens.",
+        "suggested_steps": [
+          "step-03",
+          "step-04",
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/sql/docs/sqlserver/ad-diagnosis-tool",
+      "https://docs.cloud.google.com/sql/docs/sqlserver/admin-api/rest/v1/SqlDatabaseVersion",
+      "https://docs.cloud.google.com/sql/docs/sqlserver/import-export/import-export-sql"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "SqlDatabaseVersion \\_|\\_ Cloud SQL for SQL Server \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/sql/docs/sqlserver/admin-api/rest/v1/SqlDatabaseVersion",
+        "source_id": "site-api-reference",
+        "final_score": 42,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Databases Cloud SQL SQL Server Reference Send feedback SqlDatabaseVersion Stay organized with collections Save and categorize content based on your preferences.",
+          "SQLSERVER 2017 ENTERPRISE The database version is SQL Server 2017 Enterprise.",
+          "SQLSERVER 2019 ENTERPRISE The database version is SQL Server 2019 Enterprise."
+        ]
+      },
+      {
+        "title": "\"Export and import using SQL dump files \\_|\\_ Cloud SQL for SQL Server \\_\\",
+        "url": "https://docs.cloud.google.com/sql/docs/sqlserver/import-export/import-export-sql",
+        "source_id": "site-docs-root",
+        "final_score": 34,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Import data to Cloud SQL for SQL Server Required roles and permissions for importing to Cloud SQL for SQL Server To import data from Cloud Storage into Cloud SQL, the user initiating the import must have one of the following roles: The Cloud SQL Admin role A custom role , including the following permissions: cloudsql.instances.get cloudsql.instances.import Additionally, the service account for the Cloud SQL instance must have one of the following roles: The storage.objectAdmin IAM role A custom role, including the following permissions: storage.objects.get storage.objects.list (for striped import only) For help with IAM roles, see Identity and Access Management .",
+          "Home Documentation Databases Cloud SQL SQL Server Guides Send feedback Export and import using SQL dump files Stay organized with collections Save and categorize content based on your preferences.",
+          "Note: You cannot import a database that was exported from a higher version of SQL Server or import from a higher compatibility level into a lower one."
+        ]
+      },
+      {
+        "title": "\"Active Directory Diagnosis tool for Cloud SQL \\_|\\_ Cloud SQL for SQL Server\\",
+        "url": "https://docs.cloud.google.com/sql/docs/sqlserver/ad-diagnosis-tool",
+        "source_id": "site-docs-reference-required-4",
+        "final_score": 29,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Databases Cloud SQL SQL Server Guides Send feedback Active Directory Diagnosis tool for Cloud SQL Stay organized with collections Save and categorize content based on your preferences.",
+          "The Active Directory (AD) Diagnosis tool is a utility PowerShell script that helps you to troubleshoot AD setup issues with your on-premises domain and Cloud SQL for SQL Server instances in Google Cloud.",
+          "On-premises domain name, such as my-onprem-domain.com Managed AD domain name, such as my-ad-domain.com List of SQL Server Active Directory FQDNs and private IP addresses."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cloudsql.instances.get",
+      "cloudsql.instances.import",
+      "domain.com",
+      "storage.objectAdmin",
+      "storage.objects.get",
+      "storage.objects.list"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/admin-api/rest/v1/SqlDatabaseVersion",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/import-export/import-export-sql",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/ad-diagnosis-tool"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/admin-api/rest/v1/SqlDatabaseVersion",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/import-export/import-export-sql",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/ad-diagnosis-tool"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/admin-api/rest/v1/SqlDatabaseVersion",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/import-export/import-export-sql",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/ad-diagnosis-tool"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/admin-api/rest/v1/SqlDatabaseVersion",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/import-export/import-export-sql",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/ad-diagnosis-tool"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/admin-api/rest/v1/SqlDatabaseVersion",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/import-export/import-export-sql",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/ad-diagnosis-tool"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/admin-api/rest/v1/SqlDatabaseVersion",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/import-export/import-export-sql",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/ad-diagnosis-tool"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/admin-api/rest/v1/SqlDatabaseVersion",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/import-export/import-export-sql",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/ad-diagnosis-tool"
+      ]
+    }
+  ]
+}

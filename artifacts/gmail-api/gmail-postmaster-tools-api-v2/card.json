@@ -1,0 +1,123 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:38.402Z",
+  "source_step08_card": "data/step-08/current/products/gmail-api/card.json",
+  "product_name": "Gmail API",
+  "product_slug": "gmail-api",
+  "feature_name": "Gmail Postmaster Tools API v2",
+  "feature_slug": "gmail-postmaster-tools-api-v2",
+  "summary": "Provides access to the full Postmaster Tools dataset, including compliance status data, with flexible querying and batch operations.",
+  "extended_definition": "Provides access to the full Postmaster Tools dataset, including compliance status data, with flexible querying and batch operations.",
+  "lifecycle": {
+    "latest_feature_date": "2026-02-03",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/workspace/gmail/api/guides/alias_and_signature_settings",
+      "https://developers.google.com/workspace/gmail/api/guides/smime_certs",
+      "https://developers.google.com/workspace/gmail/markup/actions/limited-use-access-tokens"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Manage aliases and signatures with the Gmail API \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/workspace/gmail/api/guides/alias_and_signature_settings",
+        "source_id": "site-docs-root",
+        "final_score": 54,
+        "relevance": "WEAK",
+        "evidence_snippets": []
+      },
+      {
+        "title": "Limited Use Access Tokens \\_|\\_ Gmail \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/workspace/gmail/markup/actions/limited-use-access-tokens",
+        "source_id": "site-docs-reference-required-10",
+        "final_score": 48,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "For instance, if your application handles approval requests at http://www.example.com/approve?requestId=123 , you should consider including an additional accessToken parameter to it and listen to requests sent to http://www.example.com/approve?requestId=123&accessToken=xyz .",
+          "The combination requestId=123 and accessToken=xyz is the one that you have to generate in advance, making sure that the accessToken cannot be deduced from the requestId .",
+          "Limited-Use Access Tokens provide protection from request spoofing and replay attacks , ensuring that the action is performed by the user the message was sent to."
+        ]
+      },
+      {
+        "title": "Manage S/MIME certificates with the Gmail API \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/workspace/gmail/api/guides/smime_certs",
+        "source_id": "site-docs-root",
+        "final_score": 36,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "The Gmail API provides programmatic access to manage S/MIME email certificates for users in a Google Workspace domain.",
+          "Authorize API access To authorize access to the Gmail API, use one of the following methods: Use a service account with domain-wide delegation of authority .",
+          "Configure S/MIME keys The settings.sendAs.smimeInfo resource provides several methods to manage S/MIME certificates."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "developers.google.com",
+      "settings.sendAs.smimeInfo",
+      "users.messages",
+      "users.messages.batchModify"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://developers.google.com/workspace/gmail/api/guides/alias_and_signature_settings",
+        "https://developers.google.com/workspace/gmail/markup/actions/limited-use-access-tokens",
+        "https://developers.google.com/workspace/gmail/api/guides/smime_certs"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://developers.google.com/workspace/gmail/api/guides/alias_and_signature_settings",
+        "https://developers.google.com/workspace/gmail/markup/actions/limited-use-access-tokens",
+        "https://developers.google.com/workspace/gmail/api/guides/smime_certs"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://developers.google.com/workspace/gmail/api/guides/alias_and_signature_settings",
+        "https://developers.google.com/workspace/gmail/markup/actions/limited-use-access-tokens",
+        "https://developers.google.com/workspace/gmail/api/guides/smime_certs"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://developers.google.com/workspace/gmail/api/guides/alias_and_signature_settings",
+        "https://developers.google.com/workspace/gmail/markup/actions/limited-use-access-tokens",
+        "https://developers.google.com/workspace/gmail/api/guides/smime_certs"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://developers.google.com/workspace/gmail/api/guides/alias_and_signature_settings",
+        "https://developers.google.com/workspace/gmail/markup/actions/limited-use-access-tokens",
+        "https://developers.google.com/workspace/gmail/api/guides/smime_certs"
+      ]
+    }
+  ]
+}

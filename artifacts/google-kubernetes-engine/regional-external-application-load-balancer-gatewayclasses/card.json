@@ -1,0 +1,154 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:39.542Z",
+  "source_step08_card": "data/step-08/current/products/google-kubernetes-engine/card.json",
+  "product_name": "Google Kubernetes Engine",
+  "product_slug": "google-kubernetes-engine",
+  "feature_name": "Regional external Application Load Balancer GatewayClasses",
+  "feature_slug": "regional-external-application-load-balancer-gatewayclasses",
+  "summary": "GKE Gateway controller 2023-R2 adds GatewayClasses for the regional external Application Load Balancer.",
+  "extended_definition": "GKE Gateway controller 2023-R2 adds GatewayClasses for the regional external Application Load Balancer.",
+  "lifecycle": {
+    "latest_feature_date": "2023-07-10",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/http-balancer",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/integrate-model-armor-guardrails",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/simulate-zone-failure"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Set up an external Application Load Balancer with Ingress \\_|\\_ GKE networking\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/http-balancer",
+        "source_id": "site-docs-root",
+        "final_score": 186,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Visiting your application Find out the external IP address of the load balancer serving your application by running: kubectl get ingress basic-ingress Output: NAME HOSTS ADDRESS PORTS AGE basic-ingress 203.0.113.12 80 2m Note: It might take a few minutes for GKE to allocate an external IP address and set up forwarding rules before the load balancer is ready to serve your application.",
+          "For more information about path limitations and pattern matching, see the URL Maps documentation . (Optional) Monitoring the availability and latency of your service Google Cloud Uptime checks perform blackbox monitoring of applications from the viewpoint of the user, determining latency and availability from multiple external IPs to the IP address of the load balancer.",
+          "Note: Unused static external IP address are billed according to the regular IP address billing . (Optional) Serving multiple applications on a load balancer You can run multiple services on a single load balancer and public IP by configuring routing rules on the Ingress."
+        ]
+      },
+      {
+        "title": "\"Secure a serving workload on GKE with Model Armor \\_|\\_ GKE AI/ML \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/integrate-model-armor-guardrails",
+        "source_id": "site-docs-reference-required-4",
+        "final_score": 163,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "GKE Gateway Implements the Kubernetes Gateway API to manage external access to services within the cluster, integrating with Google Cloud load balancers.",
+          "Configure the Gateway : deploy a GKE Gateway to provision a regional load balancer and establish routing for your inference endpoints.",
+          "This Gateway provisions a Google Cloud External Load Balancer."
+        ]
+      },
+      {
+        "title": "\"Simulate a zone failure in GKE regional clusters \\_|\\_ Google Kubernetes\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/simulate-zone-failure",
+        "source_id": "site-docs-root-2",
+        "final_score": 151,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "In this document, you use the sample Cymbal Bank application : In your shell, clone the following GitHub repository and change into the directory: git clone https://github.com/GoogleCloudPlatform/bank-of-anthos.git cd bank-of-anthos/ Deploy the Cymbal Bank sample application to the GKE cluster you created in the previous section: kubectl apply -f ./extras/jwt/jwt-secret.yaml kubectl apply -f ./kubernetes-manifests Wait for the Pods to be ready: kubectl get pods After a few minutes, you should see the Pods in a Running state: NAME READY STATUS RESTARTS AGE accounts-db-0 1 /1 Running 0 16s balancereader-7dc7d9ff57-sstm5 0 /1 Running 0 15s contacts-7ddc76d94-rr28x 0 /1 Running 0 14s frontend-747b84bff4-2mtlv 0 /1 Running 0 13s ledger-db-0 1 /1 Running 0 13s ledgerwriter-f6cc7889d-9qjfg 0 /1 Running 0 13s loadgenerator-57d4cb57cc-zqvqb 1 /1 Running 0 13s transactionhistory-5dd7c7fd77-lwkv8 0 /1 Running 0 12s userservice-cd5ddb4bb-wwhml 0 /1 Running 0 12s When the Pods are all in a Running state, get the frontend Service external IP address: kubectl get service frontend awk '{print $4}' In a web browser window, open the IP address shown in the output of the kubectl get service command to access your instance of Cymbal Bank.",
+          "You want to specify a zone where the frontend Pods run: kubectl get pods -o wide The output should look like the following example: NAME READY STATUS RESTARTS AGE IP NODE accounts-db-0 1/1 Running 0 4m7s 10.96.4.4 regional-cluster-1-default-pool-node2 balancereader-7dc7d9ff57-lv4z7 1/1 Running 0 4m7s 10.96.1.5 regional-cluster-1-default-pool-node1 contacts-7ddc76d94-wxvg5 1/1 Running 0 4m7s 10.96.6.11 regional-cluster-1-default-pool-node3 frontend-747b84bff4-gvktl 1/1 Running 0 4m7s 10.96.1.4 regional-cluster-1-default-pool-node1 ledger-db-0 1/1 Running 0 4m7s 10.96.4.5 regional-cluster-1-default-pool-node2 ledger-db-1 1/1 Running 0 3m50s 10.96.0.13 regional-cluster-1-default-pool-node5 ledgerwriter-f6cc7889d-4hqbm 1/1 Running 0 4m6s 10.96.0.12 regional-cluster-1-default-pool-node5 loadgenerator-57d4cb57cc-fmq52 1/1 Running 0 4m6s 10.96.4.6 regional-cluster-1-default-pool-node2 transactionhistory-5dd7c7fd77-72zpx 1/1 Running 0 4m6s 10.96.6.12 regional-cluster-1-default-pool-node3 userservice-cd5ddb4bb-b7862 1/1 Running 0 4m6s 10.96.1.6 regional-cluster-1-default-pool-node1 Associate the Pods listed in the previous output with the node's zone: kubectl get node -o = custom-columns = 'NAME:.metadata.name,ZONE:.metadata.labels.topology\\.kubernetes\\.io/zone,INT IP:.status.addresses[0].address' The output should look like the following example: NAME ZONE INT IP regional-cluster-1-default-pool-node1 asia-southeast1-b 10.148.0.41 regional-cluster-1-default-pool-node2 asia-southeast1-b 10.148.0.42 regional-cluster-1-default-pool-node3 asia-southeast1-a 10.148.0.37 regional-cluster-1-default-pool-node4 asia-southeast1-a 10.148.0.38 regional-cluster-1-default-pool-node5 asia-southeast1-c 10.148.0.40 regional-cluster-1-default-pool-node6 asia-southeast1-c 10.148.0.39 In the previous example output, the frontend Pods are located in regional-cluster-1-default-pool-node1 in zone asia-southeast1-b .",
+          "To update the node pool to only run in certain zones and simulate failure, complete the following steps: Check the availability of regional cluster and Services: kubectl get po -o wide \\ kubectl get node -o = custom-columns = 'NAME:.metadata.name,ZONE:.metadata.labels.topology\\.kubernetes\\.io/zone,INT IP:.status.addresses[0].address' The result is similar to the following example output: NAME READY STATUS RESTARTS AGE IP NODE accounts-db-0 1/1 Running 0 6m30s 10.28.1.5 regional-cluster-1-default-pool-node3 balancereader-7dc7d9ff57-shwg5 1/1 Running 0 6m30s 10.28.5.6 regional-cluster-1-default-pool-node1 contacts-7ddc76d94-qv4x5 1/1 Running 0 6m29s 10.28.4.6 regional-cluster-1-default-pool-node2 frontend-747b84bff4-xvjxq 1/1 Running 0 6m29s 10.28.3.6 regional-cluster-1-default-pool-node6 ledger-db-0 1/1 Running 0 6m29s 10.28.5.7 regional-cluster-1-default-pool-node1 ledgerwriter-f6cc7889d-mttmb 1/1 Running 0 6m29s 10.28.1.6 regional-cluster-1-default-pool-node3 loadgenerator-57d4cb57cc-7fvrc 1/1 Running 0 6m29s 10.28.4.7 regional-cluster-1-default-pool-node2 transactionhistory-5dd7c7fd77-cmc2w 1/1 Running 0 6m29s 10.28.3.7 regional-cluster-1-default-pool-node6 userservice-cd5ddb4bb-zfr2g 1/1 Running 0 6m28s 10.28.5.8 regional-cluster-1-default-pool-node1 NAME ZONE INT IP regional-cluster-1-default-pool-node5 asia-southeast1-c 10.148.0.6 regional-cluster-1-default-pool-node6 asia-southeast1-c 10.148.0.7 regional-cluster-1-default-pool-node2 asia-southeast1-a 10.148.0.8 regional-cluster-1-default-pool-node1 asia-southeast1-a 10.148.0.9 regional-cluster-1-default-pool-node3 asia-southeast1-b 10.148.0.5 regional-cluster-1-default-pool-node4 asia-southeast1-b 10.148.0.4 In this example, all the Cymbal Bank workloads are deployed in all zones."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "anthos.git",
+      "chat.completion",
+      "github.com",
+      "metadata.labels.topology",
+      "metadata.name",
+      "secret.yaml",
+      "status.addresses"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/http-balancer",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/integrate-model-armor-guardrails",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/simulate-zone-failure"
+      ]
+    },
+    {
+      "capability": "armor",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/http-balancer",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/integrate-model-armor-guardrails",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/simulate-zone-failure"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/http-balancer",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/integrate-model-armor-guardrails",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/simulate-zone-failure"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/http-balancer",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/integrate-model-armor-guardrails",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/simulate-zone-failure"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/http-balancer",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/integrate-model-armor-guardrails",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/simulate-zone-failure"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/http-balancer",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/integrate-model-armor-guardrails",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/simulate-zone-failure"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/http-balancer",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/integrate-model-armor-guardrails",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/simulate-zone-failure"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/http-balancer",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/integrate-model-armor-guardrails",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/simulate-zone-failure"
+      ]
+    }
+  ]
+}

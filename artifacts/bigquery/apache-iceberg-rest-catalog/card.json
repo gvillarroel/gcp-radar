@@ -1,0 +1,129 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:18.771Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery",
+  "feature_name": "Apache Iceberg REST catalog",
+  "feature_slug": "apache-iceberg-rest-catalog",
+  "summary": "The Apache Iceberg REST catalog in BigLake metastore provides an Iceberg-compatible catalog service.",
+  "extended_definition": "The Apache Iceberg REST catalog in BigLake metastore provides an Iceberg-compatible catalog service.",
+  "lifecycle": {
+    "latest_feature_date": "2025-10-30",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/about-blms",
+      "https://docs.cloud.google.com/bigquery/docs/about-bqms",
+      "https://docs.cloud.google.com/bigquery/docs/blms-rest-catalog"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Use the BigLake metastore Iceberg REST catalog \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/blms-rest-catalog",
+        "source_id": "site-docs-reference-5",
+        "final_score": 304,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The following is an example of how to configure Apache Spark to use the BigLake metastore Iceberg REST catalog. import pyspark from pyspark.context import SparkContext from pyspark.sql import SparkSession catalog name = \" CATALOG NAME \" spark = SparkSession . builder . appName ( \" APP NAME \" ) \\ . config ( f 'spark.sql.catalog. { catalog name } ' , 'org.apache.iceberg.spark.SparkCatalog' ) \\ . config ( f 'spark.sql.catalog. { catalog name } .type' , 'rest' ) \\ . config ( f 'spark.sql.catalog. { catalog name } .uri' , 'https://biglake.googleapis.com/iceberg/v1/restcatalog' ) \\ . config ( f 'spark.sql.catalog. { catalog name } .warehouse' , ' WAREHOUSE PATH ' ) \\ . config ( f 'spark.sql.catalog. { catalog name } .header.x-goog-user-project' , ' PROJECT ID ' ) \\ . config ( f 'spark.sql.catalog. { catalog name } .rest.auth.type' , 'org.apache.iceberg.gcp.auth.GoogleAuthManager' ) \\ . config ( f 'spark.sql.catalog. { catalog name } .io-impl' , 'org.apache.iceberg.gcp.gcs.GCSFileIO' ) \\ . config ( f 'spark.sql.catalog. { catalog name } .rest-metrics-reporting-enabled' , 'false' ) \\ . config ( 'spark.sql.extensions' , 'org.apache.iceberg.spark.extensions.IcebergSparkSessionExtensions' ) \\ . config ( 'spark.sql.defaultCatalog' , ' CATALOG NAME ' ) \\ . getOrCreate () Replace the following: CATALOG NAME : the name of your Iceberg REST catalog.",
+          "The following are the general steps to follow when using the Apache Iceberg REST catalog in BigLake metastore: Based on the Iceberg REST catalog overview , choose your catalog warehouse location (either Cloud Storage or BigQuery).",
+          "The Apache Iceberg REST catalog in BigLake metastore is the recommended way to use BigLake metastore for new workflows."
+        ]
+      },
+      {
+        "title": "About BigLake metastore \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/about-blms",
+        "source_id": "site-docs-reference-5",
+        "final_score": 230,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The following table provides links to documentation for each engine: Engine Documentation Apache Spark Quickstart: Use with Spark Apache Flink Use with Apache Flink Trino Use with Trino Configuration options BigLake metastore can be configured in one of two ways: with the Iceberg REST catalog or the custom Iceberg catalog for BigQuery .",
+          "BigLake metastore supports the Iceberg REST catalog, while BigLake metastore (classic) does not.",
+          "Supported engines BigLake metastore is compatible with several query engines including (but not limited to) Apache Spark, Apache Flink, and Trino."
+        ]
+      },
+      {
+        "title": "About BigLake metastore \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/about-bqms",
+        "source_id": "site-docs-reference-5",
+        "final_score": 230,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The following table provides links to documentation for each engine: Engine Documentation Apache Spark Quickstart: Use with Spark Apache Flink Use with Apache Flink Trino Use with Trino Configuration options BigLake metastore can be configured in one of two ways: with the Iceberg REST catalog or the custom Iceberg catalog for BigQuery .",
+          "BigLake metastore supports the Iceberg REST catalog, while BigLake metastore (classic) does not.",
+          "Supported engines BigLake metastore is compatible with several query engines including (but not limited to) Apache Spark, Apache Flink, and Trino."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "biglake.googleapis.com",
+      "header.x",
+      "header.X",
+      "oauth2.googleapis.com",
+      "org.apache.iceberg.gcp.auth.GoogleAuthManager",
+      "org.apache.iceberg.gcp.gcs.GCSFileIO",
+      "org.apache.iceberg.spark.extensions.IcebergSparkSessionExtensions",
+      "org.apache.iceberg.spark.SparkCatalog",
+      "pyspark.context",
+      "pyspark.sql",
+      "rest.auth.type",
+      "spark.sql.catalog",
+      "spark.sql.defaultCatalog",
+      "spark.sql.extensions"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/blms-rest-catalog",
+        "https://docs.cloud.google.com/bigquery/docs/about-blms",
+        "https://docs.cloud.google.com/bigquery/docs/about-bqms"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/blms-rest-catalog",
+        "https://docs.cloud.google.com/bigquery/docs/about-blms",
+        "https://docs.cloud.google.com/bigquery/docs/about-bqms"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/blms-rest-catalog",
+        "https://docs.cloud.google.com/bigquery/docs/about-blms",
+        "https://docs.cloud.google.com/bigquery/docs/about-bqms"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/blms-rest-catalog",
+        "https://docs.cloud.google.com/bigquery/docs/about-blms",
+        "https://docs.cloud.google.com/bigquery/docs/about-bqms"
+      ]
+    }
+  ]
+}

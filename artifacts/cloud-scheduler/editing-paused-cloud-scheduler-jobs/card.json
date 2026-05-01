@@ -1,0 +1,129 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:26.251Z",
+  "source_step08_card": "data/step-08/current/products/cloud-scheduler/card.json",
+  "product_name": "Cloud Scheduler",
+  "product_slug": "cloud-scheduler",
+  "feature_name": "Editing paused Cloud Scheduler jobs",
+  "feature_slug": "editing-paused-cloud-scheduler-jobs",
+  "summary": "Paused Cloud Scheduler jobs can be edited without resuming them first.",
+  "extended_definition": "Paused Cloud Scheduler jobs can be edited without resuming them first.",
+  "lifecycle": {
+    "latest_feature_date": "2022-06-09",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/java/docs/reference/google-cloud-scheduler/latest/com.google.cloud.scheduler.v1.CloudSchedulerClient",
+      "https://docs.cloud.google.com/python/docs/reference/cloudscheduler/latest/google.cloud.scheduler_v1.services.cloud_scheduler.CloudSchedulerAsyncClient",
+      "https://docs.cloud.google.com/python/docs/reference/cloudscheduler/latest/google.cloud.scheduler_v1.services.cloud_scheduler.CloudSchedulerClient",
+      "https://docs.cloud.google.com/scheduler/docs/creating"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Class CloudSchedulerAsyncClient (2.19.0) \\_|\\_ Python client libraries \\_\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/cloudscheduler/latest/google.cloud.scheduler_v1.services.cloud_scheduler.CloudSchedulerAsyncClient",
+        "source_id": "site-python-reference",
+        "final_score": 206,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import scheduler v1 async def sample list jobs(): Create a client client = scheduler v1 .",
+          "ListJobsRequest ( parent=\"parent value\", ) Make the request page result = client. list jobs (request=request) Handle the response async for response in page result: print(response) Parameters Name Description request Optional[Union[ google.cloud.scheduler v1.types.ListJobsRequest , dict]] The request object.",
+          "If the GOOGLE API USE CLIENT CERTIFICATE environment variable is \"true\", then the client cert source property can be used to provide a client certificate for mTLS transport."
+        ]
+      },
+      {
+        "title": "\"Class CloudSchedulerClient (2.19.0) \\_|\\_ Python client libraries \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/cloudscheduler/latest/google.cloud.scheduler_v1.services.cloud_scheduler.CloudSchedulerClient",
+        "source_id": "site-python-reference",
+        "final_score": 206,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import scheduler v1 def sample list jobs(): Create a client client = scheduler v1 .",
+          "ListJobsRequest ( parent=\"parent value\", ) Make the request page result = client. list jobs (request=request) Handle the response for response in page result: print(response) Parameters Name Description request Union[ google.cloud.scheduler v1.types.ListJobsRequest , dict] The request object.",
+          "If the GOOGLE API USE CLIENT CERTIFICATE environment variable is \"true\", then the client cert source property can be used to provide a client certificate for mTLS transport."
+        ]
+      },
+      {
+        "title": "Manage cron jobs \\_|\\_ Cloud Scheduler \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/scheduler/docs/creating",
+        "source_id": "site-docs-root",
+        "final_score": 199,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "App Engine endpoints can be secured with login: admin on the handlers element in the app.yaml file. gcloud scheduler jobs create app-engine \\ --JOB = JOB \\ --location = LOCATION \\ --schedule = SCHEDULE Replace the following: JOB : a job name that must be unique in the project.",
+          "App Engine endpoints can be secured with login: admin on the handlers element in the app.yaml file. gcloud scheduler jobs update app-engine JOB \\ --location = LOCATION \\ --schedule = SCHEDULE Replace the following: JOB : a job name that must be unique in the project.",
+          "Choose a target type Cloud Scheduler can invoke the following types of targets: HTTP endpoints Pub/Sub topics App Engine services Invoke target services that are restricted to internal ingress Cloud Scheduler can invoke the following services internally: Cloud Run functions Cloud Run (on the run.app URL, not on custom domains) To invoke these targets internally, the target must be in the same Google Cloud project or VPC Service Controls perimeter as your Cloud Scheduler job."
+        ]
+      },
+      {
+        "title": "\"Class CloudSchedulerClient (2.88.0) \\_|\\_ Java client libraries \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-scheduler/latest/com.google.cloud.scheduler.v1.CloudSchedulerClient",
+        "source_id": "site-java-reference",
+        "final_score": 196,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Sample code: // This snippet has been automatically generated and should be regarded as a code template only. // It will require modifications to work: // - It may require correct/in-range values for request initialization. // - It may require specifying regional endpoints when creating the service client as shown in // https://cloud.google.com/java/docs/setup#configure endpoints for the client library try ( CloudSchedulerClient cloudSchedulerClient = CloudSchedulerClient . create ()) { ListJobsRequest request = ListJobsRequest . newBuilder () . setParent ( LocationName . of ( \"[PROJECT]\" , \"[LOCATION]\" ). toString ()) . setPageSize ( 883849137 ) . setPageToken ( \"pageToken873572522\" ) . build (); ApiFuture<Job> future = cloudSchedulerClient . listJobsPagedCallable (). futureCall ( request ); // Do something. for ( Job element : future . get (). iterateAll ()) { // doThingsWith(element); } } Returns Type Description UnaryCallable < ListJobsRequest , ListJobsPagedResponse > listLocations(ListLocationsRequest request) public final CloudSchedulerClient .",
+          "Sample code: // This snippet has been automatically generated and should be regarded as a code template only. // It will require modifications to work: // - It may require correct/in-range values for request initialization. // - It may require specifying regional endpoints when creating the service client as shown in // https://cloud.google.com/java/docs/setup#configure endpoints for the client library try ( CloudSchedulerClient cloudSchedulerClient = CloudSchedulerClient . create ()) { ListJobsRequest request = ListJobsRequest . newBuilder () . setParent ( LocationName . of ( \"[PROJECT]\" , \"[LOCATION]\" ). toString ()) . setPageSize ( 883849137 ) . setPageToken ( \"pageToken873572522\" ) . build (); while ( true ) { ListJobsResponse response = cloudSchedulerClient . listJobsCallable (). call ( request ); for ( Job element : response . getJobsList ()) { // doThingsWith(element); } String nextPageToken = response . getNextPageToken (); if ( !",
+          "Sample code: // This snippet has been automatically generated and should be regarded as a code template only. // It will require modifications to work: // - It may require correct/in-range values for request initialization. // - It may require specifying regional endpoints when creating the service client as shown in // https://cloud.google.com/java/docs/setup#configure endpoints for the client library try ( CloudSchedulerClient cloudSchedulerClient = CloudSchedulerClient . create ()) { ListJobsRequest request = ListJobsRequest . newBuilder () . setParent ( LocationName . of ( \"[PROJECT]\" , \"[LOCATION]\" ). toString ()) . setPageSize ( 883849137 ) . setPageToken ( \"pageToken873572522\" ) . build (); for ( Job element : cloudSchedulerClient . listJobs ( request ). iterateAll ()) { // doThingsWith(element); } } Parameter Name Description request ListJobsRequest The request object containing all of the parameters for the API call."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "app.yaml",
+      "com.google.cloud.scheduler.v1.CloudSchedulerClient",
+      "com.google.cloud.scheduler.v1.CloudSchedulerGrpc.AsyncService",
+      "com.google.cloud.scheduler.v1.CloudSchedulerGrpc.CloudSchedulerBlockingStub",
+      "com.google.cloud.scheduler.v1.CloudSchedulerGrpc.CloudSchedulerBlockingV2Stub",
+      "com.google.cloud.scheduler.v1.CloudSchedulerGrpc.CloudSchedulerFutureStub",
+      "googleapis.dev",
+      "options.html",
+      "projects.locations.jobs",
+      "projects.locations.jobs.pause",
+      "run.app",
+      "scheduler.pagers.ListJobsAsyncPager",
+      "v1.services.cloud",
+      "v1.types.Job",
+      "v1.types.ListJobsRequest"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/cloudscheduler/latest/google.cloud.scheduler_v1.services.cloud_scheduler.CloudSchedulerAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/cloudscheduler/latest/google.cloud.scheduler_v1.services.cloud_scheduler.CloudSchedulerClient",
+        "https://docs.cloud.google.com/scheduler/docs/creating",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-scheduler/latest/com.google.cloud.scheduler.v1.CloudSchedulerClient"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/cloudscheduler/latest/google.cloud.scheduler_v1.services.cloud_scheduler.CloudSchedulerAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/cloudscheduler/latest/google.cloud.scheduler_v1.services.cloud_scheduler.CloudSchedulerClient",
+        "https://docs.cloud.google.com/scheduler/docs/creating",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-scheduler/latest/com.google.cloud.scheduler.v1.CloudSchedulerClient"
+      ]
+    }
+  ]
+}

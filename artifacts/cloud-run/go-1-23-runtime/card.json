@@ -1,0 +1,102 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:25.811Z",
+  "source_step08_card": "data/step-08/current/products/cloud-run/card.json",
+  "product_name": "Cloud Run",
+  "product_slug": "cloud-run",
+  "feature_name": "Go 1.23 runtime",
+  "feature_slug": "go-1-23-runtime",
+  "summary": "Cloud Run supports the Go 1.23 runtime for deployed workloads; Cloud Run supports the Go 1.23 runtime for deployed workloads.",
+  "extended_definition": "Cloud Run supports the Go 1.23 runtime for deployed workloads; Cloud Run supports the Go 1.23 runtime for deployed workloads.",
+  "lifecycle": {
+    "latest_feature_date": "2025-03-03",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 1,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "coverage_low",
+        "message": "The feature ended with coverage LOW.",
+        "suggested_steps": [
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/python/docs/reference/run/latest",
+      "https://docs.cloud.google.com/run/docs/reference/authenticate-to-cloud-run-api",
+      "https://docs.cloud.google.com/run/docs/tutorials/autoscale-workerpools-pubsub"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Authenticate to Cloud Run Admin API \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/run/docs/reference/authenticate-to-cloud-run-api",
+        "source_id": "site-docs-reference",
+        "final_score": 42,
+        "relevance": "MODERATE",
+        "evidence_snippets": []
+      },
+      {
+        "title": "\"Python Client for Cloud Run \\_|\\_ Python client libraries \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/run/latest",
+        "source_id": "site-python-reference",
+        "final_score": 34,
+        "relevance": "MODERATE",
+        "evidence_snippets": []
+      },
+      {
+        "title": "\"Autoscale worker pools based on the Pub/Sub queue volume \\_|\\_ Cloud Run\\",
+        "url": "https://docs.cloud.google.com/run/docs/tutorials/autoscale-workerpools-pubsub",
+        "source_id": "site-docs-root-2",
+        "final_score": 29,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Deploy the service to scale your workloads To deploy the service to scale your worker pool, run the following command with a prebuilt container image: CREMA CONFIG PARAM VERSION = projects/ $PROJECT ID /locations/ $PARAMETER REGION /parameters/ $PARAMETER ID /versions/ $PARAMETER VERSION IMAGE = us-central1-docker.pkg.dev/cloud-run-oss-images/crema-v1/autoscaler:1.0 gcloud beta run deploy $CREMA SERVICE NAME \\ --image = ${ IMAGE } \\ --region = ${ REGION } \\ --service-account = \" ${ CREMA SA NAME } \" \\ --no-allow-unauthenticated \\ --no-cpu-throttling \\ --base-image = us-central1-docker.pkg.dev/serverless-runtimes/google-24/runtimes/java25 \\ --labels = created-by = crema \\ --set-env-vars = \"CREMA CONFIG= ${ CREMA CONFIG PARAM VERSION } ,OUTPUT SCALER METRICS=True\" Test your autoscaling service Test your CREMA service by creating a script that generates 100 messages and pushes them to the Pub/Sub queue: In your root directory, create a file named load-pubsub.sh , and add the following code: #!/bin/bash TOPIC ID = ${ TOPIC ID } PROJECT ID = ${ PROJECT ID } NUM MESSAGES = 100 echo \"Publishing $NUM MESSAGES messages to topic $TOPIC ID ...\" for i in $( seq 1 $NUM MESSAGES ) ; do gcloud pubsub topics publish $TOPIC ID --message = \"job- $i \" --project = $PROJECT ID & if (( $i % 10 == 0 )) ; then wait echo \"Published $i messages...\" fi done wait echo \"Done.",
+          "Clean up To avoid additional charges to your Google Cloud account, delete all the resources you deployed with this tutorial.",
+          "Delete tutorial resources Delete the Cloud Run service you deployed in this tutorial."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "docker.pkg.dev",
+      "pubsub.sh"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/tutorials/autoscale-workerpools-pubsub",
+        "https://docs.cloud.google.com/run/docs/reference/authenticate-to-cloud-run-api",
+        "https://docs.cloud.google.com/python/docs/reference/run/latest"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/tutorials/autoscale-workerpools-pubsub",
+        "https://docs.cloud.google.com/run/docs/reference/authenticate-to-cloud-run-api",
+        "https://docs.cloud.google.com/python/docs/reference/run/latest"
+      ]
+    }
+  ]
+}

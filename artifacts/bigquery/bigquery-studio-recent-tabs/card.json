@@ -1,0 +1,152 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:18.771Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery",
+  "feature_name": "BigQuery Studio recent tabs",
+  "feature_slug": "bigquery-studio-recent-tabs",
+  "summary": "BigQuery Studio includes a Recent tabs view in the details pane to help users rediscover previously opened resources.",
+  "extended_definition": "BigQuery Studio includes a Recent tabs view in the details pane to help users rediscover previously opened resources.",
+  "lifecycle": {
+    "latest_feature_date": "2025-10-16",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/analytics-hub-view-subscribe-listings",
+      "https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners",
+      "https://docs.cloud.google.com/bigquery/docs/bigquery-web-ui"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Explore BigQuery in the Google Cloud console \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/bigquery-web-ui",
+        "source_id": "site-docs-reference-5",
+        "final_score": 173,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The Studio page has the following components: Explorer tab of the left pane : use the Explorer tab to work with tables, views, routines, and other BigQuery resources, and view your job history .",
+          "Work with tabs in Studio Whenever you select a resource or click add box SQL query in the details pane, a new tab opens.",
+          "If you accidentally replace the current page, you can locate it by clicking tab recent Recent tabs in the details pane."
+        ]
+      },
+      {
+        "title": "Google Cloud Ready - BigQuery Partners \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners",
+        "source_id": "site-docs-reference-5",
+        "final_score": 116,
+        "relevance": "",
+        "evidence_snippets": [
+          "Partner references Google BigQuery Integration View data in BigQuery Product & Behavioral Analytics on Google BigQuery Optimizely's partnership with Google Cloud Partner Advantage page Direct link Numberstation Solution Numbersstation.ai Category BI, ML, & Advanced Analytics Description Numbers Station leverages a multi-agent architecture built with specialized agents to reason through complex questions, building end-to-end analytics solutions and democratizing data by delivering insights where and when you need them.",
+          "The solution involves the following steps: Get the data Connect Analyze Automate Partner references Move your marketing data into BigQuery The easiest way to move data from your Google BigQuery warehouse Supermetrics for BigQuery: Overview Supermetrics for BigQuery (video tutorial) Partner Advantage page Direct link Tableau Solution Tableau Prep Builder Category ETL & Data Integration Description Tableau Prep Builder is a tool in the Tableau product suite designed to make preparing your data easy and intuitive.",
+          "Partner references ZappySys: Google BigQuery Connectors BigQuery API Connector details Data Governance, Security, & MDM Alation Solution Alation Data Catalog Category Data Governance, Security, & MDM Description The Alation platform combines machine learning and crowdsourcing to automate and accelerate data stewardship, data classification, business glossary, and data quality documentation."
+        ]
+      },
+      {
+        "title": "\"View and subscribe to listings and data exchanges \\_|\\_ BigQuery \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/analytics-hub-view-subscribe-listings",
+        "source_id": "site-docs-root-2",
+        "final_score": 106,
+        "relevance": "",
+        "evidence_snippets": [
+          "Required roles To get the permissions that you need to use listings, ask your BigQuery sharing administrator to grant you the following Identity and Access Management (IAM) roles on the BigQuery sharing subscriber project: Discover listings : Analytics Hub Viewer ( roles/analyticshub.viewer ) Discover data exchanges : Analytics Hub Viewer ( roles/analyticshub.viewer ) Subscribe to listings : BigQuery User ( roles/bigquery.user ) To subscribe to listings, you must also ask the BigQuery sharing listing publisher to grant you the Analytics Hub Subscriber role ( roles/analyticshub.subscriber ) on their listing, exchange, or project, depending on the scope that's most appropriate for your use case.",
+          "View linked datasets : BigQuery Data Viewer ( roles/bigquery.dataViewer ) Query linked datasets : BigQuery Data Viewer ( roles/bigquery.dataViewer ) Update linked datasets : BigQuery Data Owner ( roles/bigquery.dataOwner ) View table metadata : BigQuery Data Viewer ( roles/bigquery.dataViewer ) Delete linked datasets : BigQuery Admin ( roles/bigquery.admin ) For more information about granting roles, see Manage access to projects, folders, and organizations .",
+          "Go to BigQuery In the Explorer pane, click explore Explorer : In the Explorer pane, expand your project name, click Datasets , and then click the name of the linked dataset to open it."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "analyticshub.subscriber",
+      "analyticshub.viewer",
+      "bigquery.admin",
+      "bigquery.dataOwner",
+      "bigquery.dataViewer",
+      "bigquery.user"
+    ],
+    "missing_inventory_roles": [
+      "roles/analyticshub.subscriber",
+      "roles/analyticshub.viewer",
+      "roles/bigquery.admin",
+      "roles/bigquery.dataOwner",
+      "roles/bigquery.dataViewer",
+      "roles/bigquery.user"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/bigquery-web-ui",
+        "https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-view-subscribe-listings"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/bigquery-web-ui",
+        "https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-view-subscribe-listings"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/bigquery-web-ui",
+        "https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-view-subscribe-listings"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/bigquery-web-ui",
+        "https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-view-subscribe-listings"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/bigquery-web-ui",
+        "https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-view-subscribe-listings"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/bigquery-web-ui",
+        "https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-view-subscribe-listings"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/bigquery-web-ui",
+        "https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-view-subscribe-listings"
+      ]
+    }
+  ]
+}

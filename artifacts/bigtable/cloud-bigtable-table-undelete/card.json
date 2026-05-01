@@ -1,0 +1,123 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:21.669Z",
+  "source_step08_card": "data/step-08/current/products/bigtable/card.json",
+  "product_name": "Bigtable",
+  "product_slug": "bigtable",
+  "feature_name": "Cloud Bigtable table undelete",
+  "feature_slug": "cloud-bigtable-table-undelete",
+  "summary": "Cloud Bigtable now allows undeleting a table for up to seven days using the gcloud CLI.",
+  "extended_definition": "Cloud Bigtable now allows undeleting a table for up to seven days using the gcloud CLI.",
+  "lifecycle": {
+    "latest_feature_date": "2022-06-28",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigtable/docs/managing-tables",
+      "https://docs.cloud.google.com/python/docs/reference/bigtable/latest/google.cloud.bigtable_admin_v2.overlay.services.bigtable_table_admin.BigtableTableAdminAsyncClient",
+      "https://docs.cloud.google.com/python/docs/reference/bigtable/latest/google.cloud.bigtable_admin_v2.overlay.services.bigtable_table_admin.BigtableTableAdminClient"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Class BigtableTableAdminAsyncClient (2.35.0) \\_|\\_ Python client libraries\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/bigtable/latest/google.cloud.bigtable_admin_v2.overlay.services.bigtable_table_admin.BigtableTableAdminAsyncClient",
+        "source_id": "site-python-reference",
+        "final_score": 158,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import bigtable admin v2 async def sample undelete table(): Create a client client = bigtable admin v2.",
+          "UndeleteTableRequest ( name=\"name value\", ) Make the request operation = client. undelete table (request=request) print(\"Waiting for operation to complete...\") response = (await operation).result() Handle the response print(response) Parameters Name Description request Optional[Union[ google.cloud.bigtable admin v2.types.UndeleteTableRequest , dict]] The request object.",
+          "Returns Type Description google.iam.v1.iam policy pb2.TestIamPermissionsResponse Response message for TestIamPermissions method. undelete table undelete table ( request : typing ."
+        ]
+      },
+      {
+        "title": "\"Class BigtableTableAdminClient (2.35.0) \\_|\\_ Python client libraries \\_\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/bigtable/latest/google.cloud.bigtable_admin_v2.overlay.services.bigtable_table_admin.BigtableTableAdminClient",
+        "source_id": "site-python-reference",
+        "final_score": 158,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import bigtable admin v2 def sample undelete table(): Create a client client = bigtable admin v2.",
+          "UndeleteTableRequest ( name=\"name value\", ) Make the request operation = client. undelete table (request=request) print(\"Waiting for operation to complete...\") response = operation.result() Handle the response print(response) Parameters Name Description request Union[ google.cloud.bigtable admin v2.types.UndeleteTableRequest , dict] The request object.",
+          "Returns Type Description google.iam.v1.iam policy pb2.TestIamPermissionsResponse Response message for TestIamPermissions method. undelete table undelete table ( request : typing ."
+        ]
+      },
+      {
+        "title": "Create and manage tables \\_|\\_ Bigtable \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigtable/docs/managing-tables",
+        "source_id": "site-docs-root",
+        "final_score": 124,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "To confirm that you acknowledge that this action will delete the table from all clusters in the instance and that you have only seven days to undelete the table, type the table ID in the Delete table box.",
+          "The following limitations apply: The ability to undelete a table is available for approximately seven days from the time of table deletion.",
+          "Examples: 48h or 6d To let Bigtable create a daily backup of your table and retain each backup for the default retention period of seven days, use the --enable-automated-backup flag when you create your table. gcloud bigtable instances tables create TABLE ID \\ --instance = INSTANCE ID \\ --project = PROJECT ID \\ --column-families = COLUMN-FAMILIES \\ --enable-automated-backup To configure a different retention period, use the --automated-backup-retention-period flag instead of the --enable-automated-backup flag and provide a value up to 90 days, expressed as a number with a unit of m , h , or d (minutes, hours, or days), such as 15d for 15 days."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.cloud.bigtable.admin.v2.BigtableTableAdminClient",
+      "com.google.cloud.bigtable.admin.v2.BigtableTableAdminSettings",
+      "com.google.cloud.bigtable.admin.v2.BigtableTableAdminSettings.Builder",
+      "googleapis.dev",
+      "operation.result",
+      "options.html",
+      "pb2.TestIamPermissionsResponse",
+      "v2.types.UndeleteTableRequest"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/bigtable/latest/google.cloud.bigtable_admin_v2.overlay.services.bigtable_table_admin.BigtableTableAdminAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/bigtable/latest/google.cloud.bigtable_admin_v2.overlay.services.bigtable_table_admin.BigtableTableAdminClient",
+        "https://docs.cloud.google.com/bigtable/docs/managing-tables"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/bigtable/latest/google.cloud.bigtable_admin_v2.overlay.services.bigtable_table_admin.BigtableTableAdminAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/bigtable/latest/google.cloud.bigtable_admin_v2.overlay.services.bigtable_table_admin.BigtableTableAdminClient",
+        "https://docs.cloud.google.com/bigtable/docs/managing-tables"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/bigtable/latest/google.cloud.bigtable_admin_v2.overlay.services.bigtable_table_admin.BigtableTableAdminAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/bigtable/latest/google.cloud.bigtable_admin_v2.overlay.services.bigtable_table_admin.BigtableTableAdminClient",
+        "https://docs.cloud.google.com/bigtable/docs/managing-tables"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/bigtable/latest/google.cloud.bigtable_admin_v2.overlay.services.bigtable_table_admin.BigtableTableAdminAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/bigtable/latest/google.cloud.bigtable_admin_v2.overlay.services.bigtable_table_admin.BigtableTableAdminClient",
+        "https://docs.cloud.google.com/bigtable/docs/managing-tables"
+      ]
+    }
+  ]
+}

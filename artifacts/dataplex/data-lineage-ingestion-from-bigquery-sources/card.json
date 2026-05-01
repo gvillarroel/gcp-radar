@@ -1,0 +1,186 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:33.146Z",
+  "source_step08_card": "data/step-08/current/products/dataplex/card.json",
+  "product_name": "Dataplex",
+  "product_slug": "dataplex",
+  "feature_name": "Data lineage ingestion from BigQuery sources",
+  "feature_slug": "data-lineage-ingestion-from-bigquery-sources",
+  "summary": "Dataplex can ingest data lineage information from BigQuery sources.",
+  "extended_definition": "Dataplex can ingest data lineage information from BigQuery sources.",
+  "lifecycle": {
+    "latest_feature_date": "2026-03-30",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dataplex/docs/about-data-lineage",
+      "https://docs.cloud.google.com/dataplex/docs/catalog-overview",
+      "https://docs.cloud.google.com/dataplex/docs/ingest-custom-sources",
+      "https://docs.cloud.google.com/dataplex/docs/use-lineage"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "About data lineage \\_|\\_ Knowledge Catalog \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataplex/docs/about-data-lineage",
+        "source_id": "site-docs-root",
+        "final_score": 254,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Data lineage workflow The data lineage workflow includes the following steps: Data sources and ingestion : lineage information from your data sources initiates the entire process.",
+          "Lineage sources You can populate lineage information in Knowledge Catalog in the following ways: Automatically from integrated Google Cloud services Manually, by using the Data Lineage API for custom sources By importing events from OpenLineage BigQuery When you enable data lineage in your BigQuery project, Knowledge Catalog automatically records lineage information for the following: Note: Data lineage is automatically recorded only for BigQuery tables and views.",
+          "OpenLineage If you already use OpenLineage to collect lineage information from other data sources, you can import OpenLineage events into Knowledge Catalog and view these events in the Google Cloud console."
+        ]
+      },
+      {
+        "title": "\"Use data lineage with Google Cloud systems \\_|\\_ Knowledge Catalog \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/dataplex/docs/use-lineage",
+        "source_id": "site-docs-root",
+        "final_score": 250,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For more information, see Get current configuration . curl -H \"Authorization: Bearer $( gcloud auth print-access-token ) \" \\ -H \"Content-Type: application/json\" \\ -H \"X-Goog-User-Project: CLIENT PROJECT ID \" \\ -X PATCH \\ \"https://datalineage.googleapis.com/v1/projects/ PROJECT ID /locations/global/config\" \\ --data-binary @- { \"ingestion\": { \"rules\": [{ \"integrationSelector\": { \"integration\": \"DATAPROC\" }, \"lineageEnablement\": { \"enabled\": false } }] }, \"etag\": \" ETAG \" } EOF Replace the following: CLIENT PROJECT ID : The ID of your client project used for billing or quotas.",
+          "For more information, see Get current configuration . curl -H \"Authorization: Bearer $( gcloud auth print-access-token ) \" \\ -H \"Content-Type: application/json\" \\ -H \"X-Goog-User-Project: CLIENT PROJECT ID \" \\ -X PATCH \\ \"https://datalineage.googleapis.com/v1/projects/ PROJECT ID /locations/global/config\" \\ --data-binary @- { \"ingestion\": { \"rules\": [{ \"integrationSelector\": { \"integration\": \"DATAPROC\" }, \"lineageEnablement\": { \"enabled\": true } }] }, \"etag\": \" ETAG \" } EOF Replace the following: CLIENT PROJECT ID : The ID of your client project used for billing or quotas.",
+          "For more information about controlling lineage ingestion including how the configuration is applied hierarchically, see Control lineage ingestion ."
+        ]
+      },
+      {
+        "title": "About metadata management in Knowledge Catalog \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataplex/docs/catalog-overview",
+        "source_id": "site-docs-root",
+        "final_score": 226,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Supported sources Automatic discovery of Cloud Storage data Metadata from the following Google Cloud sources is automatically ingested into Knowledge Catalog: BigQuery sharing (formerly Analytics Hub) exchanges and listings BigQuery datasets, tables, views, models, routines, connections, and linked datasets Bigtable instances, clusters, and tables (including column family details) Dataform repositories and code assets Dataproc Metastore services, databases, and tables Looker (Google Cloud core) instances, dashboards, dashboard elements, Looks, LookML projects, models, Explores, and views ( Preview ) Pub/Sub topics Spanner instances, databases, tables, and views Vertex AI models, datasets, feature groups, feature views, and online store instances If Knowledge Catalog integration is enabled, then metadata from the following Google Cloud sources is automatically ingested into Knowledge Catalog: AlloyDB for PostgreSQL clusters, instances, databases, schemas, tables, views—see Enable the AlloyDB for PostgreSQL integration ( Preview ) Cloud SQL instances, databases, schemas, tables, views—see Enable the Cloud SQL integration To import metadata from a third-party source into Knowledge Catalog, you can use a managed connectivity pipeline.",
+          "Search is performed over the following: All Google Cloud sources described in Entries and entry groups Custom entries that are created in Data Catalog Tags that are created in Data Catalog Data lineage Data lineage retrieves entry details for asset nodes by using the Dataplex API.",
+          "You can enforce minimal metadata standards by defining the required metadata content for custom entries User-configurable metamodel for custom entries, which helps to make custom ingestion more robust and improves custom metadata consistency and comprehensiveness."
+        ]
+      },
+      {
+        "title": "\"Manage entries and ingest custom sources \\_|\\_ Knowledge Catalog \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/dataplex/docs/ingest-custom-sources",
+        "source_id": "site-docs-root",
+        "final_score": 222,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Required roles To get the permissions that you need to create and manage entries, ask your administrator to grant you the following IAM roles on the resource: Full set of permissions on entries, entry groups, and entry types: Dataplex Catalog Admin ( roles/dataplex.catalogAdmin ) Create and manage metadata resources in Knowledge Catalog, including entries, entry groups, and entry types: Dataplex Catalog Editor ( roles/dataplex.catalogEditor ) Full access to entry-related operations: Dataplex Entry and EntryLink Owner ( roles/dataplex.entryOwner ) View entries, entry groups, and entry types, and IAM policies associated with them: Dataplex Catalog Viewer ( roles/dataplex.catalogViewer ) Use aspect types to create aspects of those types, when creating custom entries: Dataplex Aspect Type User ( roles/dataplex.aspectTypeUser ) Create and manage entry groups: Dataplex Entry Group Owner ( roles/dataplex.entryGroupOwner ) Create and manage entry types: Dataplex Entry Type Owner ( roles/dataplex.entryTypeOwner ) Use entry types to create and modify entries of those types: Dataplex Entry Type User ( roles/dataplex.entryTypeUser ) For more information about granting roles, see Manage access to projects, folders, and organizations .",
+          "The Show from all projects toggle is on by default, and the list includes Knowledge Catalog resources from your selected organization and Data Catalog resources from all the organizations that you can access.",
+          "This document explains how to bring information about your unique, custom data sources into Knowledge Catalog (formerly Dataplex Universal Catalog)."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "datalineage.googleapis.com",
+      "dataplex.aspectTypeUser",
+      "dataplex.catalogAdmin",
+      "dataplex.catalogEditor",
+      "dataplex.catalogViewer",
+      "dataplex.entryGroupOwner",
+      "dataplex.entryOwner",
+      "dataplex.entryTypeOwner",
+      "dataplex.entryTypeUser"
+    ],
+    "missing_inventory_roles": [
+      "roles/dataplex.aspectTypeUser",
+      "roles/dataplex.catalogAdmin",
+      "roles/dataplex.catalogEditor",
+      "roles/dataplex.catalogViewer",
+      "roles/dataplex.entryGroupOwner",
+      "roles/dataplex.entryOwner",
+      "roles/dataplex.entryTypeOwner",
+      "roles/dataplex.entryTypeUser"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataplex/docs/about-data-lineage",
+        "https://docs.cloud.google.com/dataplex/docs/use-lineage",
+        "https://docs.cloud.google.com/dataplex/docs/catalog-overview",
+        "https://docs.cloud.google.com/dataplex/docs/ingest-custom-sources"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataplex/docs/about-data-lineage",
+        "https://docs.cloud.google.com/dataplex/docs/use-lineage",
+        "https://docs.cloud.google.com/dataplex/docs/catalog-overview",
+        "https://docs.cloud.google.com/dataplex/docs/ingest-custom-sources"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataplex/docs/about-data-lineage",
+        "https://docs.cloud.google.com/dataplex/docs/use-lineage",
+        "https://docs.cloud.google.com/dataplex/docs/catalog-overview",
+        "https://docs.cloud.google.com/dataplex/docs/ingest-custom-sources"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataplex/docs/about-data-lineage",
+        "https://docs.cloud.google.com/dataplex/docs/use-lineage",
+        "https://docs.cloud.google.com/dataplex/docs/catalog-overview",
+        "https://docs.cloud.google.com/dataplex/docs/ingest-custom-sources"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataplex/docs/about-data-lineage",
+        "https://docs.cloud.google.com/dataplex/docs/use-lineage",
+        "https://docs.cloud.google.com/dataplex/docs/catalog-overview",
+        "https://docs.cloud.google.com/dataplex/docs/ingest-custom-sources"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataplex/docs/about-data-lineage",
+        "https://docs.cloud.google.com/dataplex/docs/use-lineage",
+        "https://docs.cloud.google.com/dataplex/docs/catalog-overview",
+        "https://docs.cloud.google.com/dataplex/docs/ingest-custom-sources"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataplex/docs/about-data-lineage",
+        "https://docs.cloud.google.com/dataplex/docs/use-lineage",
+        "https://docs.cloud.google.com/dataplex/docs/catalog-overview",
+        "https://docs.cloud.google.com/dataplex/docs/ingest-custom-sources"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataplex/docs/about-data-lineage",
+        "https://docs.cloud.google.com/dataplex/docs/use-lineage",
+        "https://docs.cloud.google.com/dataplex/docs/catalog-overview",
+        "https://docs.cloud.google.com/dataplex/docs/ingest-custom-sources"
+      ]
+    }
+  ]
+}

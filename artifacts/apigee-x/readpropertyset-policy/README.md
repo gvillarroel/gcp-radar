@@ -1,0 +1,34 @@
+# ReadPropertySet policy
+
+Product: Apigee X
+Feature slug: `readpropertyset-policy`
+Coverage: `MEDIUM`
+IAM mapping: `unknown`
+
+## Technical Summary
+
+The ReadPropertySet policy reads property sets and populates flow variables with the results; The ReadPropertySet policy reads property sets and populates flow variables with the results.
+
+## Lifecycle
+
+- Latest feature date: 2023-09-29
+- Deprecation date: none recorded
+- Status: feature_observed
+
+## IAM
+
+No defensible IAM mapping was found in the current evidence.
+
+## Security Capabilities
+
+- access
+- auth
+- policy
+- secret
+- token
+
+## Official Evidence
+
+- [https://docs.cloud.google.com/apigee/docs/api-platform/reference/policies/assign-message-policy](https://docs.cloud.google.com/apigee/docs/api-platform/reference/policies/assign-message-policy)
+- [https://docs.cloud.google.com/apigee/docs/api-platform/reference/policies/extract-variables-policy](https://docs.cloud.google.com/apigee/docs/api-platform/reference/policies/extract-variables-policy)
+- [https://docs.cloud.google.com/apigee/docs/api-platform/reference/variables-reference](https://docs.cloud.google.com/apigee/docs/api-platform/reference/variables-reference)

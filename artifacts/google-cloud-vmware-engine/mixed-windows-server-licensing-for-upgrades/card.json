@@ -1,0 +1,138 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:39.256Z",
+  "source_step08_card": "data/step-08/current/products/google-cloud-vmware-engine/card.json",
+  "product_name": "Google Cloud VMware Engine",
+  "product_slug": "google-cloud-vmware-engine",
+  "feature_name": "Mixed Windows Server licensing for upgrades",
+  "feature_slug": "mixed-windows-server-licensing-for-upgrades",
+  "summary": "Allows a combination of Windows Server BYOL and Google-provided on-demand licensing when upgrading to Windows Server 2022 or later images.",
+  "extended_definition": "Allows a combination of Windows Server BYOL and Google-provided on-demand licensing when upgrading to Windows Server 2022 or later images.",
+  "lifecycle": {
+    "latest_feature_date": "2025-07-07",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/backup-disaster-recovery/docs/create-plan/policy-settings",
+      "https://docs.cloud.google.com/vmware-engine/docs/concepts-private-cloud",
+      "https://docs.cloud.google.com/vmware-engine/docs/product-restrictions"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"VMware Engine product restrictions \\_|\\_ Google Cloud VMware Engine \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/vmware-engine/docs/product-restrictions",
+        "source_id": "site-docs-root",
+        "final_score": 77,
+        "relevance": "",
+        "evidence_snippets": [
+          "You can use a combination of BYOL and on-demand Windows Server licenses from Google Cloud on a VMware Engine private cloud.",
+          "Specifically, Google provides licenses only for vCPUs running Windows Server 2022 and newer versions, and you are responsible for licenses (BYOL) for all other versions of Windows Server running in that private cloud.",
+          "Microsoft products : The following restrictions apply when you use Microsoft products: Windows Server images provided by Google may only be used to run customer workload VMs on VMware Engine only."
+        ]
+      },
+      {
+        "title": "\"Configure advanced policy settings \\_|\\_ Backup and DR \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/backup-disaster-recovery/docs/create-plan/policy-settings",
+        "source_id": "site-docs-reference-2",
+        "final_score": 75,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "In the event of an ESX host failure, this option manages failover copies of VMware VMs. (Oracle, local file systems, SMB, NFS, SQL Server): Map staging disk to ESX host for VM only Map staging disk to all ESX hosts in the cluster Map staging disk to two ESX hosts in the cluster Backup SQL Server User Logins Captures the SQL Server database login credentials.",
+          "Estimated Change Rate When Enable Database Log Backup is set to Yes , this setting defines the daily change (in percent), which allows the appliance to better calculate the size of the staging disk needed to hold logs.",
+          "Map Staging Disk to All ESX Hosts in a Cluster (For VMware VMs only) If your ESX servers are in an appliance, you can use this setting to ensure that the VMs are managed in case of failover during backup."
+        ]
+      },
+      {
+        "title": "\"About VMware Engine private clouds \\_|\\_ Google Cloud VMware Engine \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/vmware-engine/docs/concepts-private-cloud",
+        "source_id": "site-docs-reference",
+        "final_score": 67,
+        "relevance": "",
+        "evidence_snippets": [
+          "The following table describes vSphere cluster limits in private clouds that meet SLA requirements: Resource Limit Minimum number of nodes to create a private cloud (first cluster) 3 Minimum number of nodes to create a cluster 3 Maximum number of nodes per cluster 32 Maximum number of nodes per private cloud 96 Maximum number of clusters per private cloud 32 Private cloud and cluster limitations The following limitations apply to private clouds and clusters: You can create private clouds with mixed node types, combining ve1 and ve2 nodes in a single private cloud.",
+          "The following are common use cases for a single-node private cloud: Proof of concept: evaluating VMware Engine and its capabilities Disaster recovery testing: deploying your application from recent backups to periodically validate disaster recovery preparedness Application upgrade testing: test and validate application component upgrades before upgrading your application in production VMware Engine permits single-node private clouds without a time limit.",
+          "About VMware Engine private clouds A Google Cloud VMware Engine private cloud is an isolated VMware stack that consists of the following VMware components: ESXi hosts vCenter Server vSAN NSX HCX Private clouds help you address a variety of common needs for network infrastructure: Growth."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vmware-engine/docs/product-restrictions",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/create-plan/policy-settings",
+        "https://docs.cloud.google.com/vmware-engine/docs/concepts-private-cloud"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vmware-engine/docs/product-restrictions",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/create-plan/policy-settings",
+        "https://docs.cloud.google.com/vmware-engine/docs/concepts-private-cloud"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vmware-engine/docs/product-restrictions",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/create-plan/policy-settings",
+        "https://docs.cloud.google.com/vmware-engine/docs/concepts-private-cloud"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vmware-engine/docs/product-restrictions",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/create-plan/policy-settings",
+        "https://docs.cloud.google.com/vmware-engine/docs/concepts-private-cloud"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vmware-engine/docs/product-restrictions",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/create-plan/policy-settings",
+        "https://docs.cloud.google.com/vmware-engine/docs/concepts-private-cloud"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vmware-engine/docs/product-restrictions",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/create-plan/policy-settings",
+        "https://docs.cloud.google.com/vmware-engine/docs/concepts-private-cloud"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vmware-engine/docs/product-restrictions",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/create-plan/policy-settings",
+        "https://docs.cloud.google.com/vmware-engine/docs/concepts-private-cloud"
+      ]
+    }
+  ]
+}

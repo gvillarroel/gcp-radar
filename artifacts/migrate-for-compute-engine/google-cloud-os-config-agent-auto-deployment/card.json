@@ -1,0 +1,122 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:43.680Z",
+  "source_step08_card": "data/step-08/current/products/migrate-for-compute-engine/card.json",
+  "product_name": "Migrate for Compute Engine",
+  "product_slug": "migrate-for-compute-engine",
+  "feature_name": "Google Cloud OS Config agent auto-deployment",
+  "feature_slug": "google-cloud-os-config-agent-auto-deployment",
+  "summary": "Automatically deploys the Google Cloud OS Config agent to migrating virtual machines.",
+  "extended_definition": "Automatically deploys the Google Cloud OS Config agent to migrating virtual machines.",
+  "lifecycle": {
+    "latest_feature_date": "2020-08-12",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/discover/lifecycle",
+      "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/discover/migrating-vms-migrate-for-compute-engine-best-practices",
+      "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/discover/migrating-vms-migrate-for-compute-engine-getting-started",
+      "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/discover/supported-os-versions"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Supported operating systems \\_|\\_ Migrate to Virtual Machines \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/discover/supported-os-versions",
+        "source_id": "site-docs-reference",
+        "final_score": 158,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Note that even for Oracle Linux images that support the IDPF driver, the import virtual disk images process doesn't automatically set the corresponding IDPF value in the guestOsFeatures attribute of the image resource.",
+          "These agents and services are installed automatically during the migration.",
+          "If you see any issues with the application, update your OS configuration with specific emphasis on the following: The OS configuration supporting alias IP ranges ."
+        ]
+      },
+      {
+        "title": "Migrate to Virtual Machines best practices \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/discover/migrating-vms-migrate-for-compute-engine-best-practices",
+        "source_id": "site-docs-reference",
+        "final_score": 138,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For example, after analyzing the migration plan, you might determine values for the following: The expected migration duration The expected number of VMs to migrate for each time unit The total migration cost The migration cost per VM The available network throughput The compatibility of the tools you're using for backup and disaster recovery with the target environment Consider all deployment environments for your applications when you analyze the migration plan.",
+          "Ensure that the guest OS is correctly configured in VMWare Before migrating your VMs, ensure that VMWare vCenter is not reporting any warnings related to the guest operating system (OS) .",
+          "If you see a warning, fix the guest OS configuration by changing the configured guest OS ."
+        ]
+      },
+      {
+        "title": "\"VM migration process \\_|\\_ Migrate to Virtual Machines \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/discover/lifecycle",
+        "source_id": "site-docs-reference",
+        "final_score": 130,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For example, Migrate to Virtual Machines adapts network configurations, deploys the Compute Engine agent, and enables the serial console on the migrated VM.",
+          "OS adaptations To function properly on Google Cloud, migrated VMs might need changes to their configuration.",
+          "The cut-over results determine your next actions: Cut-over failed : For some reason, cutover to the new VM instance on Compute Engine failed, possibly due to a network issue or other issue."
+        ]
+      },
+      {
+        "title": "Migration journey with Migrate to Virtual Machines \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/discover/migrating-vms-migrate-for-compute-engine-getting-started",
+        "source_id": "site-docs-reference",
+        "final_score": 109,
+        "relevance": "",
+        "evidence_snippets": [
+          "Migrate to Virtual Machines automatically applies OS adaptations to the VMs that you migrate.",
+          "Migrate to Virtual Machines automatically advances each VM to migrate through those phases.",
+          "These source environments can include the following: A VMware vSphere environment A Microsoft Azure VM environment An Amazon Elastic Compute Cloud (Amazon EC2) environment Migrate to Virtual Machines lets you streamline your VM migration to Google Cloud."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/discover/supported-os-versions",
+        "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/discover/migrating-vms-migrate-for-compute-engine-best-practices",
+        "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/discover/lifecycle",
+        "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/discover/migrating-vms-migrate-for-compute-engine-getting-started"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/discover/supported-os-versions",
+        "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/discover/migrating-vms-migrate-for-compute-engine-best-practices",
+        "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/discover/lifecycle",
+        "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/discover/migrating-vms-migrate-for-compute-engine-getting-started"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/discover/supported-os-versions",
+        "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/discover/migrating-vms-migrate-for-compute-engine-best-practices",
+        "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/discover/lifecycle",
+        "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/discover/migrating-vms-migrate-for-compute-engine-getting-started"
+      ]
+    }
+  ]
+}

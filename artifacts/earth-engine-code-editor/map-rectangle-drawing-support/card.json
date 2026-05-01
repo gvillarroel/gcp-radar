@@ -1,0 +1,89 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:35.934Z",
+  "source_step08_card": "data/step-08/current/products/earth-engine-code-editor/card.json",
+  "product_name": "Earth Engine Code Editor",
+  "product_slug": "earth-engine-code-editor",
+  "feature_name": "Map rectangle drawing support",
+  "feature_slug": "map-rectangle-drawing-support",
+  "summary": "The map drawing tools can now draw rectangles in addition to points, lines, and polygons.",
+  "extended_definition": "The map drawing tools can now draw rectangles in addition to points, lines, and polygons.",
+  "lifecycle": {
+    "latest_feature_date": "2019-04-03",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/earth-engine/guides/auth",
+      "https://developers.google.com/earth-engine/guides/classification",
+      "https://developers.google.com/earth-engine/guides/playground"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Earth Engine Code Editor \\_|\\_ Google Earth Engine \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/earth-engine/guides/playground",
+        "source_id": "site-docs-root",
+        "final_score": 117,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For drawing points, use the placemark icon , for drawing lines, use the line icon , for drawing polygons, use the polygon icon , for drawing rectangles use the rectangle icon . (Note that rectangles are planar geometries, so they cannot be placed on a layer with geodesic geometries like lines and polygons.) Using any of the drawing tools will automatically create a new geometry layer and add an import for that layer to the Imports section.",
+          "The Code Editor has the following elements (illustrated in Figure 1): JavaScript code editor Map display for visualizing geospatial datasets API reference documentation (Docs tab) Git -based Script Manager (Scripts tab) Console output (Console tab) Task Manager (Tasks tab) to handle long-running queries Interactive map query (Inspector tab) Search of the data archive or saved scripts Geometry drawing tools Figure 1.",
+          "The Code Editor includes essential elements such as a JavaScript editor, map display, API reference, Script Manager, Console output, Task Manager, interactive map query, search tool, and geometry drawing tools."
+        ]
+      },
+      {
+        "title": "Supervised Classification \\_|\\_ Google Earth Engine \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/earth-engine/guides/classification",
+        "source_id": "site-docs-root-2",
+        "final_score": 63,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To collect training data interactively in Earth Engine, you can use the geometry drawing tools (see the geometry tools section of the Code Editor page ).",
+          "Rectangle ( - 62.6788 , - 9.044 , - 62.6459 , - 8.9986 ); // Make a FeatureCollection from the hand-made geometries. var polygons = ee .",
+          "Rectangle ( - 62.6788 , - 9.044 , - 62.6459 , - 8.9986 ) Make a FeatureCollection from the hand-made geometries. polygons = ee ."
+        ]
+      },
+      {
+        "title": "\"Authentication and Initialization \\_|\\_ Google Earth Engine \\_|\\_ Google\\",
+        "url": "https://developers.google.com/earth-engine/guides/auth",
+        "source_id": "site-docs-root-2",
+        "final_score": 52,
+        "relevance": "MODERATE",
+        "evidence_snippets": []
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "developers.google.com",
+      "ee.Algorithms.GeometryConstructors.MultiLineString"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://developers.google.com/earth-engine/guides/playground",
+        "https://developers.google.com/earth-engine/guides/classification",
+        "https://developers.google.com/earth-engine/guides/auth"
+      ]
+    }
+  ]
+}

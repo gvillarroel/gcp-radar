@@ -1,0 +1,134 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:27.901Z",
+  "source_step08_card": "data/step-08/current/products/cloud-sql-for-sql-server/card.json",
+  "product_name": "Cloud SQL for SQL Server",
+  "product_slug": "cloud-sql-for-sql-server",
+  "feature_name": "Final backup settings",
+  "feature_slug": "final-backup-settings",
+  "summary": "Final backup settings let you take a backup at instance deletion, define its retention period, and enforce settings with organization policy.",
+  "extended_definition": "Final backup settings let you take a backup at instance deletion, define its retention period, and enforce settings with organization policy.",
+  "lifecycle": {
+    "latest_feature_date": "2025-09-03",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/backup-options",
+      "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/manage-backups-deleted-instance",
+      "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/manage-standard-backups"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Manage backups for deleted instances \\_|\\_ Cloud SQL for SQL Server \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/manage-backups-deleted-instance",
+        "source_id": "site-docs-reference-required-4",
+        "final_score": 227,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method GET -Headers $headers -Uri \"https://sqladmin.googleapis.com/sql/v1beta4/projects/ PROJECT ID /backups/ BACKUP ID \" Select-Object -Expand Content You should receive a JSON response similar to the following: Response { \"name\": \"projects/ PROJECT ID /backups/ BACKUP ID \", \"kind\": \"sql#backup\", \"status\": \"SUCCESSFUL\", \"backupInterval\": { \"startTime\": \"2020-01-21T11:25:33.858Z\", \"endTime\": \"2020-01-21T11:26:18.663Z\", } \"type\": \"FINAL\", \"instance\": \" INSTANCE ID \", \"selfLink\": \"https://sqladmin.googleapis.com/sql/v1beta4/projects/ PROJECT ID /backups/ BACKUP ID \", \"location\": \"us\" \"description\": \"final backup\", \"backupKind\": \"SNAPSHOT\", \"dataDiskSizeGB\": \"10\", \"expiryTime\": \"2020-01-30T11:26:18.663Z\", \"backup run\": \"projects/ PROJECT ID /instances/ INSTANCE ID /backupRuns/ BACKUP RUN ID \", \"satisfies pzs\": false, \"satisfies pzi\": false } Update a retained or final backup after instance deletion After you delete an instance, you can update the settings for any retained or final backups associated with that instance that are stored at the project level.",
+          "Update a final backup You can update the retention settings and the description of a final backup taken before an instance is deleted.",
+          "You can update the description and the retention settings of a final backup taken prior to deleting your instance."
+        ]
+      },
+      {
+        "title": "\"Choose your backup option \\_|\\_ Cloud SQL for SQL Server \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/backup-options",
+        "source_id": "site-docs-reference-required-4",
+        "final_score": 211,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "If you elect to take a final backup of your instance prior to deletion, then you can set the backup retention for the final backup for up to 10 years as well.",
+          "You can retain backups after instance deletion, or take a final backup of your instance prior to deletion.",
+          "You can also select to retain all backups and take a final backup of your data at instance deletion."
+        ]
+      },
+      {
+        "title": "\"Manage standard backups \\_|\\_ Cloud SQL for SQL Server \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/manage-standard-backups",
+        "source_id": "site-docs-reference-required-4",
+        "final_score": 211,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To preserve your data, you can either take a final backup of your instance at time of deletion, enable retained backups for your instance before you delete it, or export your data to Cloud Storage before you delete it.",
+          "If you don't enable final backup for your instance prior to deletion, you can also take a final backup when you delete your instance .",
+          "Save the request body in a file named request.json , and execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method PATCH -Headers $headers -ContentType: \"application/json; charset=utf-8\" -InFile request.json -Uri \"https://sqladmin.googleapis.com/sql/v1/projects/ PROJECT ID /instances/ INSTANCE ID \" Select-Object -Expand Content You should receive a JSON response similar to the following: { \"kind\": \"sql#operation\", \"targetLink\": \"https://sqladmin.googleapis.com/sql/v1/projects/ PROJECT ID /instances/ INSTANCE ID \", \"status\": \"PENDING\", \"user\": \"user@example.com\", \"insertTime\": \"2020-01-16T02:32:12.281Z\", \"operationType\": \"UPDATE\", \"name\": \" OPERATION ID \", \"targetId\": \" INSTANCE ID \", \"selfLink\": \"https://sqladmin.googleapis.com/sql/v1/projects/ PROJECT ID /operations/ OPERATION ID \", \"targetProject\": \" PROJECT ID \" } REST v1beta To update the final backup retention days setting, do the following: Before using any of the request data, make the following replacements: PROJECT ID : the project ID INSTANCE ID : the instance ID RETENTION DAYS : the number of days to retain final backups HTTP method and URL: PATCH https://sqladmin.googleapis.com/sql/v1beta4/projects/ PROJECT ID /instances/ INSTANCE ID Request JSON body: { \"settings\": { \"FinalBackupConfig\": { \"retentionDays: RETENTION DAYS } } } To send your request, expand one of these options: curl (Linux, macOS, or Cloud Shell) Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "example.com",
+      "request.json",
+      "sqladmin.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/manage-backups-deleted-instance",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/backup-options",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/manage-standard-backups"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/manage-backups-deleted-instance",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/backup-options",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/manage-standard-backups"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/manage-backups-deleted-instance",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/backup-options",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/manage-standard-backups"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/manage-backups-deleted-instance",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/backup-options",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/manage-standard-backups"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/manage-backups-deleted-instance",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/backup-options",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/manage-standard-backups"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/manage-backups-deleted-instance",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/backup-options",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/manage-standard-backups"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,163 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:33.605Z",
+  "source_step08_card": "data/step-08/current/products/dataproc-metastore/card.json",
+  "product_name": "Dataproc Metastore",
+  "product_slug": "dataproc-metastore",
+  "feature_name": "Managed migration",
+  "feature_slug": "managed-migration",
+  "summary": "Managed migration automates migration from a self-managed Hive Metastore to a Dataproc Metastore service with minimal downtime.",
+  "extended_definition": "Managed migration automates migration from a self-managed Hive Metastore to a Dataproc Metastore service with minimal downtime.",
+  "lifecycle": {
+    "latest_feature_date": "2024-04-01",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dataproc-metastore/docs/about-managed-migration",
+      "https://docs.cloud.google.com/dataproc-metastore/docs/migrate-mysql-metastore",
+      "https://docs.cloud.google.com/dataproc-metastore/docs/reference/rest",
+      "https://docs.cloud.google.com/dataproc-metastore/docs/reference/rpc"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "About managed migration \\_|\\_ Dataproc Metastore \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataproc-metastore/docs/about-managed-migration",
+        "source_id": "site-iam-reference",
+        "final_score": 306,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Managed migration is an automated feature that helps you migrate data from a self-managed Hive Metastore to a Dataproc Metastore service, without any sizable downtime (otherwise known as a flag day ).",
+          "Home Documentation Data analytics Dataproc Metastore Guides Send feedback About managed migration Stay organized with collections Save and categorize content based on your preferences.",
+          "When a complete migration process is called, the following occurs: Dataproc Metastore transitions into a read-only mode until the complete migration process finishes."
+        ]
+      },
+      {
+        "title": "\"Quickstart: Migrate a self-managed MySQL metastore to Dataproc Metastore\\",
+        "url": "https://docs.cloud.google.com/dataproc-metastore/docs/migrate-mysql-metastore",
+        "source_id": "site-docs-root",
+        "final_score": 284,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Migrate a self-managed MySQL metastore to Dataproc Metastore This page shows you how to migrate your external self-managed MySQL metastore to Dataproc Metastore by creating a MySQL dump file and importing the metadata into an existing Dataproc Metastore service.",
+          "Create and attach a Managed Service for Apache Spark cluster After you import your metadata into your Dataproc Metastore example-service service, create and attach a Managed Service for Apache Spark cluster that uses the service as its Hive metastore.",
+          "Prepare for migration You must now prepare the metadata stored in your Hive metastore database for import by making a MySQL dump file and placing it into a Cloud Storage bucket."
+        ]
+      },
+      {
+        "title": "Dataproc Metastore API \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataproc-metastore/docs/reference/rest",
+        "source_id": "site-api-reference",
+        "final_score": 228,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "REST Resource: v1alpha.projects.locations.services Methods alterLocation POST /v1alpha/{service}:alterLocation Alter metadata resource location. alterTableProperties POST /v1alpha/{service}:alterTableProperties Alter metadata table properties. cancelMigration POST /v1alpha/{service}:cancelMigration Cancels the ongoing Managed Migration process. completeMigration POST /v1alpha/{service}:completeMigration Completes the managed migration process. create POST /v1alpha/{parent}/services Creates a metastore service in a project and location. delete DELETE /v1alpha/{name} Deletes a single service. exportMetadata POST /v1alpha/{service}:exportMetadata Exports metadata from a service. get GET /v1alpha/{name} Gets the details of a single service. getIamPolicy GET /v1alpha/{resource}:getIamPolicy Gets the access control policy for a resource. list GET /v1alpha/{parent}/services Lists services in a project and location. moveTableToDatabase POST /v1alpha/{service}:moveTableToDatabase Move a table to another database. patch PATCH /v1alpha/{service.name} Updates the parameters of a single service. queryMetadata POST /v1alpha/{service}:queryMetadata Query Dataproc Metastore metadata. removeIamPolicy POST /v1alpha/{resource}:removeIamPolicy Removes the attached IAM policies for a resource restore POST /v1alpha/{service}:restore Restores a service from a backup. setIamPolicy POST /v1alpha/{resource}:setIamPolicy Sets the access control policy on the specified resource. startMigration POST /v1alpha/{service}:startMigration Starts the Managed Migration process. testIamPermissions POST /v1alpha/{resource}:testIamPermissions Returns permissions that a caller has on the specified resource.",
+          "REST Resource: v1beta.projects.locations.services Methods alterLocation POST /v1beta/{service}:alterLocation Alter metadata resource location. alterTableProperties POST /v1beta/{service}:alterTableProperties Alter metadata table properties. cancelMigration POST /v1beta/{service}:cancelMigration Cancels the ongoing Managed Migration process. completeMigration POST /v1beta/{service}:completeMigration Completes the managed migration process. create POST /v1beta/{parent}/services Creates a metastore service in a project and location. delete DELETE /v1beta/{name} Deletes a single service. exportMetadata POST /v1beta/{service}:exportMetadata Exports metadata from a service. get GET /v1beta/{name} Gets the details of a single service. getIamPolicy GET /v1beta/{resource}:getIamPolicy Gets the access control policy for a resource. list GET /v1beta/{parent}/services Lists services in a project and location. moveTableToDatabase POST /v1beta/{service}:moveTableToDatabase Move a table to another database. patch PATCH /v1beta/{service.name} Updates the parameters of a single service. queryMetadata POST /v1beta/{service}:queryMetadata Query Dataproc Metastore metadata. removeIamPolicy POST /v1beta/{resource}:removeIamPolicy Removes the attached IAM policies for a resource restore POST /v1beta/{service}:restore Restores a service from a backup. setIamPolicy POST /v1beta/{resource}:setIamPolicy Sets the access control policy on the specified resource. startMigration POST /v1beta/{service}:startMigration Starts the Managed Migration process. testIamPermissions POST /v1beta/{resource}:testIamPermissions Returns permissions that a caller has on the specified resource.",
+          "REST Resource: v1.projects.locations.services Methods alterLocation POST /v1/{service}:alterLocation Alter metadata resource location. alterTableProperties POST /v1/{service}:alterTableProperties Alter metadata table properties. cancelMigration POST /v1/{service}:cancelMigration Cancels the ongoing Managed Migration process. completeMigration POST /v1/{service}:completeMigration Completes the managed migration process. create POST /v1/{parent}/services Creates a metastore service in a project and location. delete DELETE /v1/{name} Deletes a single service. exportMetadata POST /v1/{service}:exportMetadata Exports metadata from a service. get GET /v1/{name} Gets the details of a single service. getIamPolicy GET /v1/{resource}:getIamPolicy Gets the access control policy for a resource. list GET /v1/{parent}/services Lists services in a project and location. moveTableToDatabase POST /v1/{service}:moveTableToDatabase Move a table to another database. patch PATCH /v1/{service.name} Updates the parameters of a single service. queryMetadata POST /v1/{service}:queryMetadata Query Dataproc Metastore metadata. restore POST /v1/{service}:restore Restores a service from a backup. setIamPolicy POST /v1/{resource}:setIamPolicy Sets the access control policy on the specified resource. startMigration POST /v1/{service}:startMigration Starts the Managed Migration process. testIamPermissions POST /v1/{resource}:testIamPermissions Returns permissions that a caller has on the specified resource."
+        ]
+      },
+      {
+        "title": "Dataproc Metastore API \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataproc-metastore/docs/reference/rpc",
+        "source_id": "site-docs-root",
+        "final_score": 228,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Service: metastore.googleapis.com The Service name metastore.googleapis.com is needed to create RPC client stubs. google.cloud.location.Locations Methods GetLocation Gets information about a location.",
+          "UpdateService Updates the parameters of a single service. google.cloud.metastore.v1alpha.DataprocMetastoreFederation Methods CreateFederation Creates a metastore federation in a project and location.",
+          "UpdateService Updates the parameters of a single service. google.cloud.metastore.v1beta.DataprocMetastoreFederation Methods CreateFederation Creates a metastore federation in a project and location."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.cloud.metastore.v1",
+      "com.google.cloud.metastore.v1.BackendMetastore.MetastoreType",
+      "metastore.googleapis.com",
+      "service.name",
+      "v1.projects.locations",
+      "v1.projects.locations.federations",
+      "v1.projects.locations.operations",
+      "v1.projects.locations.services",
+      "v1.projects.locations.services.backups",
+      "v1.projects.locations.services.databases",
+      "v1.projects.locations.services.databases.tables",
+      "v1.projects.locations.services.metadataImports",
+      "v1.projects.locations.services.migrationExecutions",
+      "v1alpha.projects.locations",
+      "v1alpha.projects.locations.federations",
+      "v1alpha.projects.locations.operations",
+      "v1alpha.projects.locations.services",
+      "v1alpha.projects.locations.services.backups",
+      "v1alpha.projects.locations.services.databases",
+      "v1alpha.projects.locations.services.databases.tables",
+      "v1alpha.projects.locations.services.metadataImports",
+      "v1alpha.projects.locations.services.migrationExecutions",
+      "v1beta.projects.locations",
+      "v1beta.projects.locations.federations",
+      "v1beta.projects.locations.operations",
+      "v1beta.projects.locations.services",
+      "v1beta.projects.locations.services.backups",
+      "v1beta.projects.locations.services.databases",
+      "v1beta.projects.locations.services.databases.tables",
+      "v1beta.projects.locations.services.metadataImports",
+      "v1beta.projects.locations.services.migrationExecutions"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc-metastore/docs/about-managed-migration",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/migrate-mysql-metastore",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/reference/rest",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/reference/rpc"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc-metastore/docs/about-managed-migration",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/migrate-mysql-metastore",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/reference/rest",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/reference/rpc"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc-metastore/docs/about-managed-migration",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/migrate-mysql-metastore",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/reference/rest",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/reference/rpc"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc-metastore/docs/about-managed-migration",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/migrate-mysql-metastore",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/reference/rest",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/reference/rpc"
+      ]
+    }
+  ]
+}

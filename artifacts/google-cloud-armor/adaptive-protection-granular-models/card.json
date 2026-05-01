@@ -1,0 +1,167 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:38.522Z",
+  "source_step08_card": "data/step-08/current/products/google-cloud-armor/card.json",
+  "product_name": "Google Cloud Armor",
+  "product_slug": "google-cloud-armor",
+  "feature_name": "Adaptive Protection granular models",
+  "feature_slug": "adaptive-protection-granular-models",
+  "summary": "Cloud Armor Adaptive Protection granular models are generally available.",
+  "extended_definition": "Cloud Armor Adaptive Protection granular models are generally available.",
+  "lifecycle": {
+    "latest_feature_date": "2024-07-17",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/armor/docs/adaptive-protection-auto-deploy",
+      "https://docs.cloud.google.com/armor/docs/adaptive-protection-overview",
+      "https://docs.cloud.google.com/armor/docs/adaptive-protection-use-cases",
+      "https://docs.cloud.google.com/armor/docs/configure-adaptive-protection"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Google Cloud Armor Adaptive Protection overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/armor/docs/adaptive-protection-overview",
+        "source_id": "site-docs-root",
+        "final_score": 270,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "In the following scenarios, requests are not counted in Adaptive Protection: Requests directly served from Cloud CDN Requests rejected by a Cloud Armor security policy Granular models By default, Adaptive Protection detects an attack and suggests mitigations based on the typical traffic directed to each backend service.",
+          "Availability of Adaptive Protection Full Adaptive Protection alerts are available only if you subscribe to Google Cloud Armor Enterprise.",
+          "For more information about configuring granular models, see Configure Google Cloud Armor Adaptive Protection ."
+        ]
+      },
+      {
+        "title": "Configure Google Cloud Armor Adaptive Protection \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/armor/docs/configure-adaptive-protection",
+        "source_id": "site-iam-reference",
+        "final_score": 232,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Use the following command to configure Adaptive Protection with customized detection thresholds: gcloud compute security-policies add-layer7-ddos-defense-threshold-config POLICY NAME \\ --threshold-config-name=my-customized-thresholds \\ --detection-load-threshold=0.9 \\ --detection-relative-to-baseline-qps=1.5 What's next Google Cloud Armor Adaptive Protection overview Google Cloud Armor Adaptive Protection use cases Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Click Update . gcloud To activate Adaptive Protection for a security policy: gcloud compute security-policies update MY-SECURITY-POLICY \\ --enable-layer7-ddos-defense To deactivate Adaptive Protection for a security policy: gcloud compute security-policies update MY-SECURITY-POLICY \\ --no-enable-layer7-ddos-defense Configure granular models The granular models feature lets you configure specific hosts or paths as the granular units that Adaptive Protection analyzes.",
+          "For more information about granular models, see the Adaptive Protection overview ."
+        ]
+      },
+      {
+        "title": "Google Cloud Armor Adaptive Protection use cases \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/armor/docs/adaptive-protection-use-cases",
+        "source_id": "site-iam-reference",
+        "final_score": 223,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Customizing the model and reporting event errors The Adaptive Protection attack detection models are trained on a data set, artificially produced to exhibit the characteristics of both the good and the malicious traffic.",
+          "Adaptive Protection identifies and mitigates an L7 DDoS attack, allowing legitimate users to access the application. (click to enlarge) Notifications of potential attacks and the identified signature of the suspect traffic are sent to Logging, where the log message can trigger a custom Alerting Policy, be analyzed and stored, or be sent to a downstream security information and event management (SIEM) or log management solution.",
+          "Home Documentation Networking Google Cloud Armor Guides Send feedback Google Cloud Armor Adaptive Protection use cases Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"Automatically deploy Adaptive Protection suggested rules \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/armor/docs/adaptive-protection-auto-deploy",
+        "source_id": "site-iam-reference",
+        "final_score": 203,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Limitations Adaptive Protection is only available for backend security policies attached to backend services that are exposed through an external Application Load Balancer.",
+          "Cloud Armor applies the blocking action to the attacking request: gcloud compute security-policies rules create 1000 \\ --security-policy POLICY NAME \\ --expression \"evaluateAdaptiveProtectionAutoDeploy()\" \\ --action deny-403 Redirect malicious traffic to a reCAPTCHA challenge This example rule redirects traffic that Adaptive Protection identifies as malicious to a reCAPTCHA challenge: gcloud compute security-policies rules create 1000 \\ --security-policy POLICY NAME \\ --expression \"evaluateAdaptiveProtectionAutoDeploy()\" \\ --action redirect \\ --redirect-type google-recaptcha Rate limit malicious traffic This example applies Cloud Armor rate limiting to traffic that Adaptive Protection identifies as malicious: gcloud compute security-policies rules create 1000 \\ --security-policy POLICY NAME \\ --expression \"evaluateAdaptiveProtectionAutoDeploy()\" \\ --action throttle \\ --rate-limit-threshold-count 500 \\ --rate-limit-threshold-interval-sec 120 \\ --conform-action allow \\ --exceed-action deny-404 \\ --enforce-on-key ip Configure Adaptive Protection auto-deploy parameters You can configure the thresholds for automatic deployment of rules by tuning the following parameters.",
+          "Home Documentation Networking Google Cloud Armor Guides Send feedback Automatically deploy Adaptive Protection suggested rules Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/armor/docs/adaptive-protection-overview",
+        "https://docs.cloud.google.com/armor/docs/configure-adaptive-protection",
+        "https://docs.cloud.google.com/armor/docs/adaptive-protection-use-cases",
+        "https://docs.cloud.google.com/armor/docs/adaptive-protection-auto-deploy"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/armor/docs/adaptive-protection-overview",
+        "https://docs.cloud.google.com/armor/docs/configure-adaptive-protection",
+        "https://docs.cloud.google.com/armor/docs/adaptive-protection-use-cases",
+        "https://docs.cloud.google.com/armor/docs/adaptive-protection-auto-deploy"
+      ]
+    },
+    {
+      "capability": "armor",
+      "evidence_links": [
+        "https://docs.cloud.google.com/armor/docs/adaptive-protection-overview",
+        "https://docs.cloud.google.com/armor/docs/configure-adaptive-protection",
+        "https://docs.cloud.google.com/armor/docs/adaptive-protection-use-cases",
+        "https://docs.cloud.google.com/armor/docs/adaptive-protection-auto-deploy"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/armor/docs/adaptive-protection-overview",
+        "https://docs.cloud.google.com/armor/docs/configure-adaptive-protection",
+        "https://docs.cloud.google.com/armor/docs/adaptive-protection-use-cases",
+        "https://docs.cloud.google.com/armor/docs/adaptive-protection-auto-deploy"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/armor/docs/adaptive-protection-overview",
+        "https://docs.cloud.google.com/armor/docs/configure-adaptive-protection",
+        "https://docs.cloud.google.com/armor/docs/adaptive-protection-use-cases",
+        "https://docs.cloud.google.com/armor/docs/adaptive-protection-auto-deploy"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/armor/docs/adaptive-protection-overview",
+        "https://docs.cloud.google.com/armor/docs/configure-adaptive-protection",
+        "https://docs.cloud.google.com/armor/docs/adaptive-protection-use-cases",
+        "https://docs.cloud.google.com/armor/docs/adaptive-protection-auto-deploy"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/armor/docs/adaptive-protection-overview",
+        "https://docs.cloud.google.com/armor/docs/configure-adaptive-protection",
+        "https://docs.cloud.google.com/armor/docs/adaptive-protection-use-cases",
+        "https://docs.cloud.google.com/armor/docs/adaptive-protection-auto-deploy"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/armor/docs/adaptive-protection-overview",
+        "https://docs.cloud.google.com/armor/docs/configure-adaptive-protection",
+        "https://docs.cloud.google.com/armor/docs/adaptive-protection-use-cases",
+        "https://docs.cloud.google.com/armor/docs/adaptive-protection-auto-deploy"
+      ]
+    }
+  ]
+}

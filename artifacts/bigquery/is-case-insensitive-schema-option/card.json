@@ -1,0 +1,87 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:18.771Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery",
+  "feature_name": "is_case_insensitive schema option",
+  "feature_slug": "is-case-insensitive-schema-option",
+  "summary": "The is_case_insensitive schema option makes a dataset and its table names case-insensitive.",
+  "extended_definition": "The is_case_insensitive schema option makes a dataset and its table names case-insensitive.",
+  "lifecycle": {
+    "latest_feature_date": "2022-09-14",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/information-schema-datasets-schemata-options",
+      "https://docs.cloud.google.com/bigquery/docs/reference/legacy-sql",
+      "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "SCHEMATA_OPTIONS view \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/information-schema-datasets-schemata-options",
+        "source_id": "site-docs-reference-3",
+        "final_score": 217,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "SCHEMATA OPTIONS WHERE option name = 'default table expiration days' ; Note: INFORMATION SCHEMA view names are case-sensitive.",
+          "The result is similar to the following: +----------------+---------------+-------------------------------+-------------+---------------------+ catalog name schema name option name option type option value +----------------+---------------+-------------------------------+-------------+---------------------+ myproject mydataset3 default table expiration days FLOAT64 0.08333333333333333 myproject mydataset2 default table expiration days FLOAT64 90.0 myproject mydataset1 default table expiration days FLOAT64 30.0 +----------------+---------------+-------------------------------+-------------+---------------------+ Note: 0.08333333333333333 is the floating point representation of 2 hours.",
+          "SCHEMATA OPTIONS ; Examples Retrieve the default table expiration time for all datasets in your project To run the query against a project other than your default project, add the project ID to the dataset in the following format: PROJECT ID .INFORMATION SCHEMA.SCHEMATA OPTIONS for example, myproject.INFORMATION SCHEMA.SCHEMATA OPTIONS ."
+        ]
+      },
+      {
+        "title": "\"Legacy SQL Syntax, Functions and Operators \\_|\\_ BigQuery \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/reference/legacy-sql",
+        "source_id": "site-docs-reference",
+        "final_score": 188,
+        "relevance": "",
+        "evidence_snippets": [
+          "If the state does not appear as an option in one of the WHEN statements, the state value will default to \"None.\" Example: legacySQL SELECT CASE WHEN state IN ( 'WA' , 'OR' , 'CA' , 'AK' , 'HI' , 'ID' , 'MT' , 'WY' , 'NV' , 'UT' , 'CO' , 'AZ' , 'NM' ) THEN 'West' WHEN state IN ( 'OK' , 'TX' , 'AR' , 'LA' , 'TN' , 'MS' , 'AL' , 'KY' , 'GA' , 'FL' , 'SC' , 'NC' , 'VA' , 'WV' , 'MD' , 'DC' , 'DE' ) THEN 'South' WHEN state IN ( 'ND' , 'SD' , 'NE' , 'KS' , 'MN' , 'IA' , 'MO' , 'WI' , 'IL' , 'IN' , 'MI' , 'OH' ) THEN 'Midwest' WHEN state IN ( 'NY' , 'PA' , 'NJ' , 'CT' , 'RI' , 'MA' , 'VT' , 'NH' , 'ME' ) THEN 'Northeast' ELSE 'None' END as region , average mother age , average father age , state , year FROM ( SELECT year , state , SUM ( mother age ) / COUNT ( mother age ) as average mother age , SUM ( father age ) / COUNT ( father age ) as average father age FROM [ bigquery - public - data : samples . natality ] WHERE father age < 99 GROUP BY year , state ) ORDER BY year LIMIT 5 ; Returns: +--------+--------------------+--------------------+-------+------+ region average mother age average father age state year +--------+--------------------+--------------------+-------+------+ South 24.342600163532296 27.683769419460344 AR 1969 West 25.185041908446163 28.268214055448098 AK 1969 West 24.780776677578217 27.831181063905248 CA 1969 West 25.005834769924412 27.942978384829598 AZ 1969 South 24.541730952905738 27.686430093306885 AL 1969 +--------+--------------------+--------------------+-------+------+ Simulating a Pivot Table Use conditional statements to organize the results of a subselect query into rows and columns.",
+          "Referencing tables When referencing a table, both datasetId and tableId must be specified; project name is optional.",
+          "TABLE QUERY( dataset , expr ) Queries tables whose names match the supplied expr ."
+        ]
+      },
+      {
+        "title": "\"Data definition language (DDL) statements in GoogleSQL \\_|\\_ BigQuery \\_\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "source_id": "site-docs-reference",
+        "final_score": 186,
+        "relevance": "",
+        "evidence_snippets": [
+          "CREATE SCHEMA mydataset OPTIONS ( location = \"us\" , default table expiration days = 3.75 , labels =[ ( \"label1\" , \"value1\" ),( \"label2\" , \"value2\" ) ] ) Creating a case-insensitive dataset The following example creates a case-insensitive dataset.",
+          "ALTER SCHEMA mydataset SET OPTIONS ( default table expiration days = 3.75 ) Turning on case insensitivity for a dataset The following example turns on case insensitivity for the name of a dataset and the table names within that dataset.",
+          "The table schema contains 2 columns: transaction id: An integer transaction date: A date The table option list specifies the: Partition expiration: Three days Description: A table partitioned by transaction date Creating a partitioned table from the result of a query The following example creates a partitioned table named days with rain in mydataset using a DATE column: CREATE TABLE mydataset . days with rain PARTITION BY date OPTIONS ( partition expiration days = 365 , description = \"weather stations with precipitation, partitioned by day\" ) AS SELECT DATE ( CAST ( year AS INT64 ), CAST ( mo AS INT64 ), CAST ( da AS INT64 )) AS date , ( SELECT ANY VALUE ( name ) FROM bigquery-public-data.noaa gsod.stations AS stations WHERE stations . usaf = stn ) AS station name , -- Stations can have multiple names prcp FROM bigquery-public-data.noaa gsod.gsod2017 AS weather WHERE prcp != 99.9 -- Filter unknown values AND prcp > 0 -- Filter stations/days with no precipitation If you haven't configured a default project, prepend a project ID to the dataset name in the example SQL, and enclose the name in backticks if project id contains special characters: project id.dataset.table ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "data.noaa",
+      "gsod.gsod2017",
+      "gsod.stations",
+      "id.dataset.table",
+      "myproject.INFORMATION"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": []
+}

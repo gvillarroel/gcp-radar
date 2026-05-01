@@ -1,0 +1,118 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:32.732Z",
+  "source_step08_card": "data/step-08/current/products/dataflow/card.json",
+  "product_name": "Dataflow",
+  "product_slug": "dataflow",
+  "feature_name": "Stackdriver error reports in Dataflow monitoring interface",
+  "feature_slug": "stackdriver-error-reports-in-dataflow-monitoring-interface",
+  "summary": "Dataflow provides direct access to Stackdriver error reports from the monitoring interface.",
+  "extended_definition": "Dataflow provides direct access to Stackdriver error reports from the monitoring interface.",
+  "lifecycle": {
+    "latest_feature_date": "2017-07-20",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dataflow/docs/guides/common-errors",
+      "https://docs.cloud.google.com/dataflow/docs/guides/logging",
+      "https://docs.cloud.google.com/dataflow/docs/guides/monitoring-overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Troubleshoot Dataflow errors \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataflow/docs/guides/common-errors",
+        "source_id": "site-docs-reference-2",
+        "final_score": 156,
+        "relevance": "",
+        "evidence_snippets": [
+          "Request payload size exceeds the limit: 20971520 bytes When you run a pipeline, the job might fail with the following error: com.google.api.client.googleapis.json.GoogleJsonResponseException: 400 Bad Request POST https://dataflow.googleapis.com/v1b3/projects/PROJECT ID/locations/REGION/jobs/JOB ID/workItems:reportStatus { \"code\": 400, \"errors\": [ { \"domain\": \"global\", \"message\": \"Request payload size exceeds the limit: 20971520 bytes.\", \"reason\": \"badRequest\" } ], \"message\": \"Request payload size exceeds the limit: 20971520 bytes.\", \"status\": \"INVALID ARGUMENT\" } This error can occur when a job using the Dataflow runner has a very large job graph.",
+          "A fatal error has been detected by the Java Runtime Environment The following error occurs during worker startup: A fatal error has been detected by the Java Runtime Environment This error occurs if the pipeline is using Java Native Interface (JNI) to run non-Java code and that code or the JNI bindings contain an error. googclient deliveryattempt attribute key error Your Dataflow job fails with one of the following errors: The request contains an attribute key that is not valid (key=googclient deliveryattempt).",
+          "Bad request When you run a Dataflow job, Cloud Monitoring logs display a series of warnings similar to the following: Unable to update setup work item STEP ID error: generic::invalid argument: Http(400) Bad Request Update range task returned 'invalid argument'."
+        ]
+      },
+      {
+        "title": "Use the Dataflow job monitoring interface \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataflow/docs/guides/monitoring-overview",
+        "source_id": "site-docs-reference-2",
+        "final_score": 137,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Monitoring interface components The monitoring interface contains the following visualizers and charts: Project monitoring dashboard A dashboard that monitors your Dataflow jobs at the project level.",
+          "Home Documentation Data analytics Cloud Dataflow Guides Send feedback Use the Dataflow job monitoring interface Stay organized with collections Save and categorize content based on your preferences.",
+          "When you run your pipeline by using Dataflow, you can view that job and any others by using the Dataflow monitoring interface."
+        ]
+      },
+      {
+        "title": "Work with pipeline logs \\_|\\_ Cloud Dataflow \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataflow/docs/guides/logging",
+        "source_id": "site-docs-root-2",
+        "final_score": 135,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "After the job starts, a link to the Google Cloud console page is output to the console, followed by the pipeline job ID: INFO: To access the Dataflow monitoring console, please navigate to https://console.developers.google.com/dataflow/job/2017-04-13 13 58 10-6217777367720337669 Submitted job: 2017-04-13 13 58 10-6217777367720337669 The console URL leads to the Dataflow monitoring interface with a summary page for the submitted job.",
+          "Monitor and view pipeline logs When you run your pipeline on the Dataflow service , you can use the Dataflow monitoring interface to view logs emitted by your pipeline.",
+          "For troubleshooting and monitoring purposes, the Dataflow monitoring interface has additional information on these BigQuery jobs available in the Logs panel."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.api.client.googleapis.json.GoogleJsonResponseException",
+      "console.developers.google.com",
+      "dataflow.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataflow/docs/guides/common-errors",
+        "https://docs.cloud.google.com/dataflow/docs/guides/monitoring-overview",
+        "https://docs.cloud.google.com/dataflow/docs/guides/logging"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataflow/docs/guides/common-errors",
+        "https://docs.cloud.google.com/dataflow/docs/guides/monitoring-overview",
+        "https://docs.cloud.google.com/dataflow/docs/guides/logging"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataflow/docs/guides/common-errors",
+        "https://docs.cloud.google.com/dataflow/docs/guides/monitoring-overview",
+        "https://docs.cloud.google.com/dataflow/docs/guides/logging"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataflow/docs/guides/common-errors",
+        "https://docs.cloud.google.com/dataflow/docs/guides/monitoring-overview",
+        "https://docs.cloud.google.com/dataflow/docs/guides/logging"
+      ]
+    }
+  ]
+}

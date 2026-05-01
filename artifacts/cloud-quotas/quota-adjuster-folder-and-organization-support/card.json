@@ -1,0 +1,178 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:25.749Z",
+  "source_step08_card": "data/step-08/current/products/cloud-quotas/card.json",
+  "product_name": "Cloud Quotas",
+  "product_slug": "cloud-quotas",
+  "feature_name": "Quota adjuster folder and organization support",
+  "feature_slug": "quota-adjuster-folder-and-organization-support",
+  "summary": "Quota adjuster supports folder-level and organization-level configuration through the Cloud Quotas API, gcloud CLI, Terraform, and client libraries.",
+  "extended_definition": "Quota adjuster supports folder-level and organization-level configuration through the Cloud Quotas API, gcloud CLI, Terraform, and client libraries.",
+  "lifecycle": {
+    "latest_feature_date": "2026-01-30",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/docs/quotas/api-overview",
+      "https://docs.cloud.google.com/docs/quotas/gcloud-cli-examples",
+      "https://docs.cloud.google.com/docs/quotas/quota-adjuster",
+      "https://docs.cloud.google.com/docs/quotas/view-manage"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Use the quota adjuster \\_|\\_ Cloud Quotas \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/docs/quotas/quota-adjuster",
+        "source_id": "site-docs-reference",
+        "final_score": 262,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To access quota adjuster settings at the folder or organization level, use the Cloud Quotas API ( Preview ) or the Google Cloud CLI Cloud Quotas commands (available at the beta release level ).",
+          "Limitations The quota adjuster has the following limitations: Quota adjuster settings at the folder and organization level aren't available in the Google Cloud console.",
+          "For this reason, the option to enable the quota adjuster is only available for projects, folders, and organizations with enough historical activity to support accurate predictions."
+        ]
+      },
+      {
+        "title": "Cloud Quotas API overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/docs/quotas/api-overview",
+        "source_id": "site-docs-reference",
+        "final_score": 238,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "You can request quota decrease adjustments for project-, organization-, and folder-level quotas.",
+          "To see if a Google Cloud product supports organization-level quota increase adjustments, refer to the documentation for that product.",
+          "To see the exact permissions that are required, expand the Required permissions section: Required permissions The following permissions are required to access the cloudquotas quotaPreferences , cloudquotas quotaInfos , and cloudquotas quotaAdjusterSettings resources: cloudquotas.quotas.update cloudquotas.quotas.get monitoring.timeSeries.list resourcemanager.projects.get resourcemanager.projects.list You might also be able to get these permissions with custom roles or other predefined roles ."
+        ]
+      },
+      {
+        "title": "View and manage quotas \\_|\\_ Cloud Quotas \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/docs/quotas/view-manage",
+        "source_id": "site-docs-root",
+        "final_score": 226,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Optional: To inspect the aggregate quota usage at the folder and organization levels, select the organization or folder from the resource selector.",
+          "You can request quota decrease adjustments for project-, organization-, and folder-level quotas.",
+          "Required roles To get the permissions that you need to request quota adjustments, ask your administrator to grant you the following IAM roles on the project, folder, or organization: To view quotas: Quota Viewer ( roles/servicemanagement.quotaViewer ) To request quota adjustments: Quota Administrator ( roles/servicemanagement.quotaAdmin ) For more information about granting roles, see Manage access to projects, folders, and organizations ."
+        ]
+      },
+      {
+        "title": "\"Manage quotas using the gcloud beta CLI \\_|\\_ Cloud Quotas \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/docs/quotas/gcloud-cli-examples",
+        "source_id": "site-docs-reference",
+        "final_score": 218,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "You can request quota decrease adjustments for project-, organization-, and folder-level quotas.",
+          "The output would contain data specific to your configuration and look similar to the following example output: createTime : ' CREATE TIME ' dimensions : gpu family : NVIDIA H100 region : us-east4 etag : ETAG VALUE name : projects/12345/locations/global/quotaPreferences/ PREFERENCE ID quotaConfig : grantedValue : '0' preferredValue : '128' traceId : TRACE ID quotaId : GPUS-PER-GPU-FAMILY-per-project-region reconciling : true service : compute.googleapis.com updateTime : ' UPDATE TIME ' Enable quota adjuster through a client project A client project refers to the project used by an application or user to access and interact with Google Cloud resources, while a resource project is the underlying project where those resources are stored and managed.",
+          "QuotaInfo is a read-only resource that provides metadata and quota value information about a particular quota for a given project, folder or organization."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "explicit",
+    "explicit_roles": [
+      "roles/accessapproval.admin",
+      "roles/accessapproval.approver",
+      "roles/accessapproval.configEditor"
+    ],
+    "explicit_permissions": [
+      {
+        "permission": "resourcemanager.projects.get",
+        "group": "resourcemanager",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver",
+          "roles/accessapproval.configEditor"
+        ]
+      },
+      {
+        "permission": "resourcemanager.projects.list",
+        "group": "resourcemanager",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver",
+          "roles/accessapproval.configEditor"
+        ]
+      }
+    ],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cloudquotas.admin",
+      "cloudquotas.googleapis.com",
+      "cloudquotas.quotas.get",
+      "cloudquotas.quotas.update",
+      "compute.googleapis.com",
+      "folders.locations.quotaPreferences",
+      "folders.locations.services.quotaInfos",
+      "monitoring.timeSeries.list",
+      "organizations.locations.quotaPreferences",
+      "servicemanagement.quotaAdmin",
+      "servicemanagement.quotaViewer"
+    ],
+    "missing_inventory_roles": [
+      "roles/servicemanagement.quotaAdmin",
+      "roles/servicemanagement.quotaViewer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/docs/quotas/quota-adjuster",
+        "https://docs.cloud.google.com/docs/quotas/api-overview",
+        "https://docs.cloud.google.com/docs/quotas/view-manage",
+        "https://docs.cloud.google.com/docs/quotas/gcloud-cli-examples"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/docs/quotas/quota-adjuster",
+        "https://docs.cloud.google.com/docs/quotas/api-overview",
+        "https://docs.cloud.google.com/docs/quotas/view-manage",
+        "https://docs.cloud.google.com/docs/quotas/gcloud-cli-examples"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/docs/quotas/quota-adjuster",
+        "https://docs.cloud.google.com/docs/quotas/api-overview",
+        "https://docs.cloud.google.com/docs/quotas/view-manage",
+        "https://docs.cloud.google.com/docs/quotas/gcloud-cli-examples"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/docs/quotas/quota-adjuster",
+        "https://docs.cloud.google.com/docs/quotas/api-overview",
+        "https://docs.cloud.google.com/docs/quotas/view-manage",
+        "https://docs.cloud.google.com/docs/quotas/gcloud-cli-examples"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/docs/quotas/quota-adjuster",
+        "https://docs.cloud.google.com/docs/quotas/api-overview",
+        "https://docs.cloud.google.com/docs/quotas/view-manage",
+        "https://docs.cloud.google.com/docs/quotas/gcloud-cli-examples"
+      ]
+    }
+  ]
+}

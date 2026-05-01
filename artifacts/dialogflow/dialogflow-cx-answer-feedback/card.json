@@ -1,0 +1,105 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:34.519Z",
+  "source_step08_card": "data/step-08/current/products/dialogflow/card.json",
+  "product_name": "Dialogflow",
+  "product_slug": "dialogflow",
+  "feature_name": "Dialogflow CX answer feedback",
+  "feature_slug": "dialogflow-cx-answer-feedback",
+  "summary": "Dialogflow CX answer feedback collects user feedback on answers and includes related configuration options; Dialogflow CX answer feedback collects user feedback on answers.",
+  "extended_definition": "Dialogflow CX answer feedback collects user feedback on answers and includes related configuration options; Dialogflow CX answer feedback collects user feedback on answers.",
+  "lifecycle": {
+    "latest_feature_date": "2023-11-29",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dialogflow/cx/docs/concept/answer-feedback",
+      "https://docs.cloud.google.com/python/docs/reference/dialogflow/latest/google.cloud.dialogflow_v2.services.answer_records.AnswerRecordsAsyncClient",
+      "https://docs.cloud.google.com/python/docs/reference/dialogflow/latest/google.cloud.dialogflow_v2.services.answer_records.AnswerRecordsClient"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Answer feedback \\_|\\_ Dialogflow CX \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dialogflow/cx/docs/concept/answer-feedback",
+        "source_id": "site-docs-root",
+        "final_score": 152,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To help track agent performance, Dialogflow provides tools for collecting and analyzing end-user feedback on agent answers during a conversation.",
+          "Enable feedback Before collecting answer feedback, you must enable the following settings in the general agent settings : Enable interaction logging Enable Answer Feedback Collect feedback with Dialogflow CX Messenger If you use Dialogflow CX Messenger , you can enable answer feedback collection for the chat dialog by setting the following HTML attribute : allow-feedback=\"all\" .",
+          "Collect feedback with custom user interfaces If you have developed a custom user interface, you can add feedback collection to your interface and call the Sessions.submitAnswerFeedback method."
+        ]
+      },
+      {
+        "title": "\"Class AnswerRecordsAsyncClient (2.47.0) \\_|\\_ Python client libraries \\_\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/dialogflow/latest/google.cloud.dialogflow_v2.services.answer_records.AnswerRecordsAsyncClient",
+        "source_id": "site-python-reference",
+        "final_score": 132,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Currently, answer record includes: - human agent assistant article suggestion - human agent assistant faq article It doesn't include: - DetectIntent intent matching - DetectIntent knowledge Answer records are not related to the conversation history in the Dialogflow Console.",
+          "Returns Type Description google.cloud.dialogflow v2.types.AnswerRecord Answer records are records to manage answer history and feedbacks for Dialogflow.",
+          "It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import dialogflow v2 async def sample update answer record(): Create a client client = dialogflow v2."
+        ]
+      },
+      {
+        "title": "\"Class AnswerRecordsClient (2.47.0) \\_|\\_ Python client libraries \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/dialogflow/latest/google.cloud.dialogflow_v2.services.answer_records.AnswerRecordsClient",
+        "source_id": "site-python-reference",
+        "final_score": 132,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Currently, answer record includes: - human agent assistant article suggestion - human agent assistant faq article It doesn't include: - DetectIntent intent matching - DetectIntent knowledge Answer records are not related to the conversation history in the Dialogflow Console.",
+          "Returns Type Description google.cloud.dialogflow v2.types.AnswerRecord Answer records are records to manage answer history and feedbacks for Dialogflow.",
+          "It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import dialogflow v2 def sample update answer record(): Create a client client = dialogflow v2."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.cloud.dialogflow.v2.AgentAssistantFeedback.AnswerRelevance",
+      "com.google.cloud.dialogflow.v2.AgentAssistantFeedback.KnowledgeAssistFeedback",
+      "com.google.cloud.dialogflow.v2.AgentAssistantFeedback.KnowledgeAssistFeedback.Builder",
+      "googleapis.dev",
+      "options.html",
+      "v2.types.AnswerRecord"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dialogflow/cx/docs/concept/answer-feedback",
+        "https://docs.cloud.google.com/python/docs/reference/dialogflow/latest/google.cloud.dialogflow_v2.services.answer_records.AnswerRecordsAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/dialogflow/latest/google.cloud.dialogflow_v2.services.answer_records.AnswerRecordsClient"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dialogflow/cx/docs/concept/answer-feedback",
+        "https://docs.cloud.google.com/python/docs/reference/dialogflow/latest/google.cloud.dialogflow_v2.services.answer_records.AnswerRecordsAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/dialogflow/latest/google.cloud.dialogflow_v2.services.answer_records.AnswerRecordsClient"
+      ]
+    }
+  ]
+}

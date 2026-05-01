@@ -1,0 +1,115 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:16.164Z",
+  "source_step08_card": "data/step-08/current/products/app-engine-standard-environment-node-js/card.json",
+  "product_name": "App Engine standard environment Node.js",
+  "product_slug": "app-engine-standard-environment-node-js",
+  "feature_name": "pnpm package manager support",
+  "feature_slug": "pnpm-package-manager-support",
+  "summary": "Pnpm package manager support lets Node.js runtimes configure application dependencies with pnpm.",
+  "extended_definition": "Pnpm package manager support lets Node.js runtimes configure application dependencies with pnpm.",
+  "lifecycle": {
+    "latest_feature_date": "2023-06-01",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/appengine/docs/standard/configure-service-accounts",
+      "https://docs.cloud.google.com/appengine/docs/standard/nodejs/runtime",
+      "https://docs.cloud.google.com/appengine/docs/standard/nodejs/specifying-dependencies"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Specifying dependencies \\_|\\_ App Engine standard environment \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/nodejs/specifying-dependencies",
+        "source_id": "site-docs-reference-3",
+        "final_score": 107,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To install the Node.js client library for Cloud Storage: Install the Cloud Client Libraries locally by using a package manager: To use npm , run: npm install @google-cloud/storage To use yarn , run: yarn add @google-cloud/storage To use pnpm , run: pnpm add @google-cloud/storage Set up authentication.",
+          "You can use any Node.js web framework including the following: Express.js Hapi.js Loopback.js Koa.js Kraken.js Restify.js Sails.js To use a particular web framework, such as Express.js , add the framework to your package.json file: Using npm : npm install express Using yarn : yarn add express Using pnpm : pnpm add express For example, the resulting package.json file might look as follows: { \"dependencies\" : { \"lodash\" : \"^4.0.1\" , \"express\" : \"^4.16.2\" } } Installing the Cloud Client Libraries The Cloud Client Libraries for Node.js is the idiomatic way for Node.js developers to integrate with Google Cloud services, such as Firestore in Datastore mode (Datastore) and Cloud Storage .",
+          "By default, the npm install command is used, however Yarn and Pnpm package managers are also supported: Yarn: If a yarn.lock file exists, the yarn install --production command is used instead."
+        ]
+      },
+      {
+        "title": "\"Node.js Runtime Environment \\_|\\_ App Engine standard environment \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/nodejs/runtime",
+        "source_id": "site-docs-root",
+        "final_score": 81,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The runtime also supports Yarn ( yarn.lock ) and Pnpm ( pnpm-lock.yaml ) package managers.",
+          "Because minor and patch versions are automatically updated, if present, the engines.node property in your package.json file can only specify the major version and be compatible with the Node.js version specified in your app.yaml file.",
+          "To support Node.js packages that require native extensions, the runtime includes system packages enabling you to use tools such as ImageMagick , FFmpeg , and Chrome headless ."
+        ]
+      },
+      {
+        "title": "\"Configure App Engine service accounts \\_|\\_ App Engine standard environment\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/configure-service-accounts",
+        "source_id": "site-docs-reference",
+        "final_score": 74,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Your version-specific service account must be in the same project where you deploy your application. appengine-web.xml If you use the Java runtimes and include the App Engine legacy bundled services, specify your service account by adding the <service-account> element in your appengine-web.xml file: <service-account> SERVICE ACCOUNT NAME @ PROJECT ID .iam.gserviceaccount.com</service-account> Replace: SERVICE ACCOUNT NAME with the name of the service account that you created.",
+          "There are two types of service accounts in App Engine and any service account in your Cloud project can be assigned to act as either the app-level default or per-version service account: App-level default service account - This service account is used for all of your deployed services when you don't configure a \"per-version service account\".",
+          "Home Documentation Application hosting App Engine Standard environment Guides Send feedback Configure App Engine service accounts Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "app.yaml",
+      "engines.node",
+      "iam.gserviceaccount.com",
+      "lock.yaml",
+      "package.json",
+      "web.xml",
+      "x.x",
+      "yarn.lock"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/nodejs/specifying-dependencies",
+        "https://docs.cloud.google.com/appengine/docs/standard/nodejs/runtime",
+        "https://docs.cloud.google.com/appengine/docs/standard/configure-service-accounts"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/nodejs/specifying-dependencies",
+        "https://docs.cloud.google.com/appengine/docs/standard/nodejs/runtime",
+        "https://docs.cloud.google.com/appengine/docs/standard/configure-service-accounts"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/nodejs/specifying-dependencies",
+        "https://docs.cloud.google.com/appengine/docs/standard/nodejs/runtime",
+        "https://docs.cloud.google.com/appengine/docs/standard/configure-service-accounts"
+      ]
+    }
+  ]
+}

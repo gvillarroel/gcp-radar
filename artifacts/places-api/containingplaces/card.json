@@ -1,0 +1,165 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:45.015Z",
+  "source_step08_card": "data/step-08/current/products/places-api/card.json",
+  "product_name": "Places API",
+  "product_slug": "places-api",
+  "feature_name": "containingPlaces",
+  "feature_slug": "containingplaces",
+  "summary": "A field that returns the list of places containing the current place.",
+  "extended_definition": "A field that returns the list of places containing the current place.",
+  "lifecycle": {
+    "latest_feature_date": "2024-11-07",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/maps/documentation/places/web-service/nearby-search",
+      "https://developers.google.com/maps/documentation/places/web-service/place-details",
+      "https://developers.google.com/maps/documentation/places/web-service/reference/rest/v1/places",
+      "https://developers.google.com/maps/documentation/places/web-service/text-search"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "REST Resource: places \\_|\\_ Places API \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/maps/documentation/places/web-service/reference/rest/v1/places",
+        "source_id": "site-api-reference",
+        "final_score": 205,
+        "relevance": "",
+        "evidence_snippets": [
+          "This information is updated regularly. evChargeOptions object ( EVChargeOptions ) Information of ev charging options. generativeSummary object ( GenerativeSummary ) AI-generated summary of the place. containingPlaces[] object ( ContainingPlace ) List of places in which the current place is located. addressDescriptor object ( AddressDescriptor ) The address descriptor of the place.",
+          "JSON representation { \"content\" : { object ( LocalizedText ) } , \"referencedPlaces\" : [ string ] } Fields content object ( LocalizedText ) Content related to the topic. referencedPlaces[] string The list of resource names of the referenced places.",
+          "Note that for places that are part of a chain (e.g. an IKEA store), this will usually be the website for the individual store, not the overall chain. reviews[] object ( Review ) List of reviews about this place, sorted by relevance."
+        ]
+      },
+      {
+        "title": "Nearby Search (New) \\_|\\_ Places API \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/maps/documentation/places/web-service/nearby-search",
+        "source_id": "site-docs-root",
+        "final_score": 201,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "In this example, you include addressDescriptors in the field mask: curl -X POST -d '{ \"maxResultCount\": 5, \"locationRestriction\": { \"circle\": { \"center\": { \"latitude\": 37.321328, \"longitude\": -121.946275 },\"radius\": 1000 } }, \"includedTypes\": [\"restaurant\", \"cafe\"], \"excludedTypes\": [], \"rankPreference\":\"POPULARITY\" }' \\ -H 'Content-Type: application/json' \\ -H \"X-Goog-Api-Key: API KEY \" \\ -H \"X-Goog-FieldMask: places.displayName, places.addressDescriptor \" \\ https://places.googleapis.com/v1/places:searchNearby The response includes the place specified in the request, a list of nearby landmarks and their distance from the place, and a list of areas and their containment relationship to the place: { \"places\" : [ { \"displayName\" : { \"text\" : \"Westfield Valley Fair\" , \"languageCode\" : \"en\" }, \"addressDescriptor\" : { \"landmarks\" : [ { \"name\" : \"places/ChIJ62 oCR7Lj4AR MGWkSPotD4\" , \"placeId\" : \"ChIJ62 oCR7Lj4AR MGWkSPotD4\" , \"displayName\" : { \"text\" : \"Nordstrom\" , \"languageCode\" : \"en\" }, \"types\" : [ \"clothing store\" , \"department store\" , \"establishment\" , \"point of interest\" , \"shoe store\" , \"store\" ], \"straightLineDistanceMeters\" : 114.76984 , \"travelDistanceMeters\" : 114.261856 }, { \"name\" : \"places/ChIJgexMlR Lj4ARiKCKuhNnjn0\" , \"placeId\" : \"ChIJgexMlR Lj4ARiKCKuhNnjn0\" , \"displayName\" : { \"text\" : \"Valley Fair Mall Eyexam of CA\" , \"languageCode\" : \"en\" }, \"types\" : [ \"establishment\" , \"health\" , \"point of interest\" ], \"straightLineDistanceMeters\" : 131.62566 , \"travelDistanceMeters\" : 237.33253 }, { \"name\" : \"places/ChIJWWIlNx7Lj4ARpe1E0ob- GI\" , \"placeId\" : \"ChIJWWIlNx7Lj4ARpe1E0ob- GI\" , \"displayName\" : { \"text\" : \"Din Tai Fung\" , \"languageCode\" : \"en\" }, \"types\" : [ \"establishment\" , \"food\" , \"point of interest\" , \"restaurant\" ], \"straightLineDistanceMeters\" : 110.0775 , \"travelDistanceMeters\" : 171.41951 }, { \"name\" : \"places/ChIJwyfPQx7Lj4AR7bYI2A2Yc54\" , \"placeId\" : \"ChIJwyfPQx7Lj4AR7bYI2A2Yc54\" , \"displayName\" : { \"text\" : \"Abercrombie & Fitch\" , \"languageCode\" : \"en\" }, \"types\" : [ \"clothing store\" , \"establishment\" , \"point of interest\" , \"shoe store\" , \"store\" ], \"spatialRelationship\" : \"DOWN THE ROAD\" , \"straightLineDistanceMeters\" : 53.620117 , \"travelDistanceMeters\" : 2.4578214 }, { \"name\" : \"places/ChIJpycNQx7Lj4ARjhXw3PrM kU\" , \"placeId\" : \"ChIJpycNQx7Lj4ARjhXw3PrM kU\" , \"displayName\" : { \"text\" : \"Hollister Co.\" , \"languageCode\" : \"en\" }, \"types\" : [ \"clothing store\" , \"establishment\" , \"point of interest\" , \"shoe store\" , \"store\" ], \"spatialRelationship\" : \"DOWN THE ROAD\" , \"straightLineDistanceMeters\" : 56.53726 , \"travelDistanceMeters\" : 15.418246 } ], \"areas\" : [ { \"name\" : \"places/ChIJb3F-EB7Lj4ARnHApQ Hu1gI\" , \"placeId\" : \"ChIJb3F-EB7Lj4ARnHApQ Hu1gI\" , \"displayName\" : { \"text\" : \"Westfield Valley Fair\" , \"languageCode\" : \"en\" }, \"containment\" : \"WITHIN\" }, { \"name\" : \"places/ChIJXYuykB Lj4AR1Ot8nU5q26Q\" , \"placeId\" : \"ChIJXYuykB Lj4AR1Ot8nU5q26Q\" , \"displayName\" : { \"text\" : \"Valley Fair\" , \"languageCode\" : \"en\" }, \"containment\" : \"WITHIN\" }, { \"name\" : \"places/ChIJtYoUX2DLj4ARKoKOb1G0CpM\" , \"placeId\" : \"ChIJtYoUX2DLj4ARKoKOb1G0CpM\" , \"displayName\" : { \"text\" : \"Central San Jose\" , \"languageCode\" : \"en\" }, \"containment\" : \"OUTSKIRTS\" } ] } }, /.../ } Find businesses opening in the future The following example shows a Nearby Search (New) request for businesses opening in the future in New Meadows, Idaho: curl -X POST \\ -H \"Content-Type: application/json\" \\ -H \"X-Goog-Api-Key: API KEY \" \\ -H \"X-Goog-FieldMask: places.id,places.displayName, places.businessStatus,places.openingDate \" \\ -d '{ \"includeFutureOpeningBusinesses\": true , \"maxResultCount\": 20, \"locationRestriction\": { \"circle\": { \"center\": {\"latitude\": 44.9755100, \"longitude\": -116.2842180}, \"radius\": 20 } }, \"rankPreference\": \"DISTANCE\" }' \\ \"https://places.googleapis.com/v1/places:searchNearby\" The response includes businesses that will open in the future, along with their business status and anticipated opening date: { \"places\" : [ { \"id\" : \"ChIJp1-VoKWJplQRMz8g-7Wa3Do\" , \"businessStatus\" : \"FUTURE OPENING\" , \"displayName\" : { \"text\" : \"Roberts Greenhouse and Tree Farm\" , \"languageCode\" : \"en\" }, \"openingDate\" : { \"year\" : 2026 , \"month\" : 4 , \"day\" : 15 } } ] } Try it!",
+          "For example, add places.formattedAddress,places.types,places.websiteUri to include the restaurant address, type, and Web address in the response: curl -X POST -d '{ \"includedTypes\": [\"restaurant\"], \"maxResultCount\": 10, \"locationRestriction\": { \"circle\": { \"center\": { \"latitude\": 37.7937, \"longitude\": -122.3965}, \"radius\": 500.0 } } }' \\ -H 'Content-Type: application/json' -H \"X-Goog-Api-Key: API KEY \" \\ -H \"X-Goog-FieldMask: places.displayName,places.formattedAddress,places.types,places.websiteUri\" \\ https://places.googleapis.com/v1/places:searchNearby The response is now in the form: { \"places\" : [ { \"types\" : [ \"seafood restaurant\" , \"restaurant\" , \"food\" , \"point of interest\" , \"establishment\" ], \"formattedAddress\" : \"PIER 1 1/2 The Embarcadero N, San Francisco, CA 94105, USA\" , \"websiteUri\" : \"http://lamarsf.com/\" , \"displayName\" : { \"text\" : \"La Mar Cocina Peruana\" , \"languageCode\" : \"en\" } }, { \"types\" : [ \"greek restaurant\" , \"meal takeaway\" , \"restaurant\" , \"food\" , \"point of interest\" , \"establishment\" ], \"formattedAddress\" : \"200 Jackson St, San Francisco, CA 94111, USA\" , \"websiteUri\" : \"https://kokkari.com/\" , \"displayName\" : { \"text\" : \"Kokkari Estiatorio\" , \"languageCode\" : \"en\" } }, ... } Find places of multiple types The following example shows a Nearby Search (New) request for the display names of all convenience stores and liquor stores within a 1000-meter radius of the specified circle : curl -X POST -d '{ \"includedTypes\": [\"liquor store\", \"convenience store\"], \"maxResultCount\": 10, \"locationRestriction\": { \"circle\": { \"center\": { \"latitude\": 37.7937, \"longitude\": -122.3965 }, \"radius\": 1000.0 } } }' \\ -H 'Content-Type: application/json' -H \"X-Goog-Api-Key: API KEY \" \\ -H \"X-Goog-FieldMask: places.displayName,places.primaryType,places.types\" \\ https://places.googleapis.com/v1/places:searchNearby This example adds places.primaryType and places.types to the field mask so that the response includes type information about each place, making it easier to select the appropriate place from the results.",
+          "Specify one or more of the following fields: The following fields trigger the Nearby Search Pro SKU : places.accessibilityOptions places.addressComponents places.addressDescriptor places.adrFormatAddress places.attributions places.businessStatus places.containingPlaces places.displayName places.formattedAddress places.googleMapsLinks places.googleMapsUri places.iconBackgroundColor places.iconMaskBaseUri places.id places.location places.name places.movedPlace places.movedPlaceId places.openingDate places.photos places.plusCode places.postalAddress places.primaryType places.primaryTypeDisplayName places.pureServiceAreaBusiness places.shortFormattedAddress places.subDestinations places.timeZone places.types places.utcOffsetMinutes places.viewport Address descriptors are generally available for customers in India and are experimental elsewhere."
+        ]
+      },
+      {
+        "title": "Place Details (New) \\_|\\_ Places API \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/maps/documentation/places/web-service/place-details",
+        "source_id": "site-docs-root",
+        "final_score": 201,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The following fields trigger the Place Details Pro SKU : accessibilityOptions businessStatus containingPlaces displayName googleMapsLinks googleMapsUri iconBackgroundColor iconMaskBaseUri openingDate primaryType primaryTypeDisplayName pureServiceAreaBusiness subDestinations timeZone utcOffsetMinutes The following fields trigger the Place Details Enterprise SKU : currentOpeningHours currentSecondaryOpeningHours internationalPhoneNumber nationalPhoneNumber priceLevel priceRange rating regularOpeningHours regularSecondaryOpeningHours userRatingCount websiteUri The following fields trigger the Place Details Enterprise + Atmosphere SKU : allowsDogs curbsidePickup delivery dineIn editorialSummary evChargeAmenitySummary evChargeOptions fuelOptions generativeSummary goodForChildren goodForGroups goodForWatchingSports liveMusic menuForChildren neighborhoodSummary parkingOptions paymentOptions outdoorSeating reservable restroom reviews reviewSummary routingSummaries servesBeer servesBreakfast servesBrunch servesCocktails servesCoffee servesDessert servesDinner servesLunch servesVegetarianFood servesWine takeout Text Search and Nearby Search only placeId A textual identifier that uniquely identifies a place, returned from a Text Search (New) or Nearby Search (New) .",
+          "For places that have moved to a new location , Place Details (New) returns CLOSED PERMANENTLY in the businessStatus field and returns the new location in the movedPlace and movedPlaceId fields of the response body.",
+          "In this example, you include addressDescriptors in the field mask: curl -X GET https://places.googleapis.com/v1/places/ChIJ8WvuSB7Lj4ARFyHppkxDRQ4 \\ -H 'Content-Type: application/json' -H \"X-Goog-Api-Key: API KEY \" \\ -H \"X-Goog-FieldMask: name,displayName, addressDescriptor \" The response includes the place specified in the request, a list of nearby landmarks and their distance from the place, and a list of areas and their containment relationship to the place: { \"name\" : \"places/ChIJ8WvuSB7Lj4ARFyHppkxDRQ4\" , \"displayName\" : { \"text\" : \"Macy's\" , \"languageCode\" : \"en\" }, \"addressDescriptor\" : { \"landmarks\" : [ { \"name\" : \"places/ChIJVVVVUB7Lj4ARXyb4HFVDV8s\" , \"placeId\" : \"ChIJVVVVUB7Lj4ARXyb4HFVDV8s\" , \"displayName\" : { \"text\" : \"Westfield Valley Fair\" , \"languageCode\" : \"en\" }, \"types\" : [ \"clothing store\" , \"department store\" , \"establishment\" , \"food\" , \"movie theater\" , \"point of interest\" , \"restaurant\" , \"shoe store\" , \"shopping mall\" , \"store\" ], \"spatialRelationship\" : \"WITHIN\" , \"straightLineDistanceMeters\" : 220.29175 }, { \"name\" : \"places/ChIJ62 oCR7Lj4AR MGWkSPotD4\" , \"placeId\" : \"ChIJ62 oCR7Lj4AR MGWkSPotD4\" , \"displayName\" : { \"text\" : \"Nordstrom\" , \"languageCode\" : \"en\" }, \"types\" : [ \"clothing store\" , \"department store\" , \"establishment\" , \"point of interest\" , \"shoe store\" , \"store\" ], \"straightLineDistanceMeters\" : 329.45178 }, { \"name\" : \"places/ChIJmx1c5x7Lj4ARJXJy CU JbE\" , \"placeId\" : \"ChIJmx1c5x7Lj4ARJXJy CU JbE\" , \"displayName\" : { \"text\" : \"Monroe Parking Garage\" , \"languageCode\" : \"en\" }, \"types\" : [ \"establishment\" , \"parking\" , \"point of interest\" ], \"straightLineDistanceMeters\" : 227.05153 }, { \"name\" : \"places/ChIJxcwBziHLj4ARUQLAvtzkRCM\" , \"placeId\" : \"ChIJxcwBziHLj4ARUQLAvtzkRCM\" , \"displayName\" : { \"text\" : \"Studios Inn by Daiwa Living California Inc.\" , \"languageCode\" : \"en\" }, \"types\" : [ \"establishment\" , \"lodging\" , \"point of interest\" , \"real estate agency\" ], \"straightLineDistanceMeters\" : 299.9955 }, { \"name\" : \"places/ChIJWWIlNx7Lj4ARpe1E0ob- GI\" , \"placeId\" : \"ChIJWWIlNx7Lj4ARpe1E0ob- GI\" , \"displayName\" : { \"text\" : \"Din Tai Fung\" , \"languageCode\" : \"en\" }, \"types\" : [ \"establishment\" , \"food\" , \"point of interest\" , \"restaurant\" ], \"straightLineDistanceMeters\" : 157.70943 } ], \"areas\" : [ { \"name\" : \"places/ChIJb3F-EB7Lj4ARnHApQ Hu1gI\" , \"placeId\" : \"ChIJb3F-EB7Lj4ARnHApQ Hu1gI\" , \"displayName\" : { \"text\" : \"Westfield Valley Fair\" , \"languageCode\" : \"en\" }, \"containment\" : \"WITHIN\" }, { \"name\" : \"places/ChIJXYuykB Lj4AR1Ot8nU5q26Q\" , \"placeId\" : \"ChIJXYuykB Lj4AR1Ot8nU5q26Q\" , \"displayName\" : { \"text\" : \"Valley Fair\" , \"languageCode\" : \"en\" }, \"containment\" : \"WITHIN\" }, { \"name\" : \"places/ChIJtYoUX2DLj4ARKoKOb1G0CpM\" , \"placeId\" : \"ChIJtYoUX2DLj4ARKoKOb1G0CpM\" , \"displayName\" : { \"text\" : \"Central San Jose\" , \"languageCode\" : \"en\" }, \"containment\" : \"WITHIN\" } ] } } Get place details for a moved place If a place referenced in your app has relocated, you can use the movedPlace and movedPlaceId fields to get the details of the new place."
+        ]
+      },
+      {
+        "title": "Text Search (New) \\_|\\_ Places API \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/maps/documentation/places/web-service/text-search",
+        "source_id": "site-docs-root",
+        "final_score": 201,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "In this example, you include addressDescriptors in the field mask: curl -X POST -d '{ \"textQuery\": \"clothes\", \"maxResultCount\": 5, \"locationBias\": { \"circle\": { \"center\": { \"latitude\": 37.321328, \"longitude\": -121.946275 } } }, \"rankPreference\":\"RANK PREFERENCE UNSPECIFIED\" }' \\ -H 'Content-Type: application/json' \\ -H \"X-Goog-Api-Key: API KEY \" \\ -H \"X-Goog-FieldMask: places.displayName, places.addressDescriptor \" \\ https://places.googleapis.com/v1/places:searchText The response includes the place specified in the request, a list of nearby landmarks and their distance from the place, and a list of areas and their containment relationship to the place: { \"places\" : [ { \"displayName\" : { \"text\" : \"Urban Outfitters\" , \"languageCode\" : \"en\" }, \"addressDescriptor\" : { \"landmarks\" : [ { \"name\" : \"places/ChIJVVVVUB7Lj4ARXyb4HFVDV8s\" , \"placeId\" : \"ChIJVVVVUB7Lj4ARXyb4HFVDV8s\" , \"displayName\" : { \"text\" : \"Westfield Valley Fair\" , \"languageCode\" : \"en\" }, \"types\" : [ \"clothing store\" , \"department store\" , \"establishment\" , \"food\" , \"movie theater\" , \"point of interest\" , \"restaurant\" , \"shoe store\" , \"shopping mall\" , \"store\" ], \"spatialRelationship\" : \"WITHIN\" , \"straightLineDistanceMeters\" : 133.72855 }, { \"name\" : \"places/ChIJ62 oCR7Lj4AR MGWkSPotD4\" , \"placeId\" : \"ChIJ62 oCR7Lj4AR MGWkSPotD4\" , \"displayName\" : { \"text\" : \"Nordstrom\" , \"languageCode\" : \"en\" }, \"types\" : [ \"clothing store\" , \"department store\" , \"establishment\" , \"point of interest\" , \"shoe store\" , \"store\" ], \"straightLineDistanceMeters\" : 250.99161 }, { \"name\" : \"places/ChIJ8WvuSB7Lj4ARFyHppkxDRQ4\" , \"placeId\" : \"ChIJ8WvuSB7Lj4ARFyHppkxDRQ4\" , \"displayName\" : { \"text\" : \"Macy's\" , \"languageCode\" : \"en\" }, \"types\" : [ \"clothing store\" , \"department store\" , \"establishment\" , \"point of interest\" , \"store\" ], \"straightLineDistanceMeters\" : 116.24196 }, { \"name\" : \"places/ChIJ9d3plB Lj4ARzyaU5bn80WY\" , \"placeId\" : \"ChIJ9d3plB Lj4ARzyaU5bn80WY\" , \"displayName\" : { \"text\" : \"Bank of America Financial Center\" , \"languageCode\" : \"en\" }, \"types\" : [ \"bank\" , \"establishment\" , \"finance\" , \"point of interest\" ], \"straightLineDistanceMeters\" : 121.61515 }, { \"name\" : \"places/ChIJaXCjxvXLj4ARCPmQpvJ52Lw\" , \"placeId\" : \"ChIJaXCjxvXLj4ARCPmQpvJ52Lw\" , \"displayName\" : { \"text\" : \"Bloomingdale's\" , \"languageCode\" : \"en\" }, \"types\" : [ \"clothing store\" , \"department store\" , \"establishment\" , \"furniture store\" , \"home goods store\" , \"point of interest\" , \"shoe store\" , \"store\" ], \"straightLineDistanceMeters\" : 81.32396 } ], \"areas\" : [ { \"name\" : \"places/ChIJb3F-EB7Lj4ARnHApQ Hu1gI\" , \"placeId\" : \"ChIJb3F-EB7Lj4ARnHApQ Hu1gI\" , \"displayName\" : { \"text\" : \"Westfield Valley Fair\" , \"languageCode\" : \"en\" }, \"containment\" : \"WITHIN\" }, { \"name\" : \"places/ChIJXYuykB Lj4AR1Ot8nU5q26Q\" , \"placeId\" : \"ChIJXYuykB Lj4AR1Ot8nU5q26Q\" , \"displayName\" : { \"text\" : \"Valley Fair\" , \"languageCode\" : \"en\" }, \"containment\" : \"WITHIN\" }, { \"name\" : \"places/ChIJtYoUX2DLj4ARKoKOb1G0CpM\" , \"placeId\" : \"ChIJtYoUX2DLj4ARKoKOb1G0CpM\" , \"displayName\" : { \"text\" : \"Central San Jose\" , \"languageCode\" : \"en\" }, \"containment\" : \"WITHIN\" } ] } }, /.../ ] } Find businesses opening in the future The following example shows a Text Search (New) request for businesses opening in the future in New Meadows, Idaho: curl -X POST \\ -H \"Content-Type: application/json\" \\ -H \"X-Goog-Api-Key: API KEY \" \\ -H \"X-Goog-FieldMask: places.id,places.displayName, places.businessStatus,places.openingDate \" \\ -d '{ \"textQuery\": \"Roberts Greenhouse and Tree Farm\", \"includeFutureOpeningBusinesses\": true , \"maxResultCount\": 20, \"locationBias\": { \"circle\": { \"center\": {\"latitude\": 44.9755100, \"longitude\": -116.2842180}, \"radius\": 20 } } }' \\ \"https://places.googleapis.com/v1/places:searchText\" The response includes businesses that will open in the future, along with their business status and anticipated opening date: { \"places\" : [ { \"id\" : \"ChIJp1-VoKWJplQRMz8g-7Wa3Do\" , \"businessStatus\" : \"FUTURE OPENING\" , \"displayName\" : { \"text\" : \"Roberts Greenhouse and Tree Farm\" , \"languageCode\" : \"en\" }, \"openingDate\" : { \"year\" : 2026 , \"month\" : 4 , \"day\" : 15 } } ] } Try it!",
+          "This request only returns the first 10 results for places that are open. curl -X POST -d '{ \"textQuery\" : \"vegetarian food\", \"pageSize\" : \"10\", \"locationRestriction\": { \"rectangle\": { \"low\": { \"latitude\": 40.477398, \"longitude\": -74.259087 }, \"high\": { \"latitude\": 40.91618, \"longitude\": -73.70018 } } } }' \\ -H 'Content-Type: application/json' \\ -H 'X-Goog-Api-Key: API KEY ' \\ -H 'X-Goog-FieldMask: places.id,places.formattedAddress' \\ 'https://places.googleapis.com/v1/places:searchText' Bias to an area using locationBias The following example shows a Text Search (New) request for \"vegetarian food\" biased to a location within 500 meters of a point in downtown San Francisco.",
+          "Only four results are returned. curl -X POST -d '{ \"textQuery\": \"EV Charging Station Mountain View\", \"pageSize\": 4, \"evOptions\": { \"minimumChargingRateKw\": 10, \"connectorTypes\": [\"EV CONNECTOR TYPE J1772\",\"EV CONNECTOR TYPE TESLA\"] } }' \\ -H 'Content-Type: application/json' -H 'X-Goog-Api-Key: API KEY ' \\ -H \"X-Goog-FieldMask: places.displayName,places.evChargeOptions\" \\ 'https://places.googleapis.com/v1/places:searchText' The request returns the following response: { \"places\" : [ { \"displayName\" : { \"text\" : \"EVgo Charging Station\" , \"languageCode\" : \"en\" }, \"evChargeOptions\" : { \"connectorCount\" : 16 , \"connectorAggregation\" : [ { \"type\" : \"EV CONNECTOR TYPE CHADEMO\" , \"maxChargeRateKw\" : 100 , \"count\" : 8 , \"availableCount\" : 5 , \"outOfServiceCount\" : 0 , \"availabilityLastUpdateTime\" : \"2024-01-10T19:10:00Z\" }, { \"type\" : \"EV CONNECTOR TYPE CCS COMBO 1\" , \"maxChargeRateKw\" : 100 , \"count\" : 2 , \"availableCount\" : 2 , \"outOfServiceCount\" : 0 , \"availabilityLastUpdateTime\" : \"2024-01-10T19:10:00Z\" }, { \"type\" : \"EV CONNECTOR TYPE CCS COMBO 1\" , \"maxChargeRateKw\" : 350 , \"count\" : 6 , \"availableCount\" : 3 , \"outOfServiceCount\" : 0 , \"availabilityLastUpdateTime\" : \"2024-01-10T19:10:00Z\" } ] } }, { \"displayName\" : { \"text\" : \"EVgo Charging Station\" , \"languageCode\" : \"en\" }, \"evChargeOptions\" : { \"connectorCount\" : 6 , \"connectorAggregation\" : [ { \"type\" : \"EV CONNECTOR TYPE CCS COMBO 1\" , \"maxChargeRateKw\" : 100 , \"count\" : 4 , \"availableCount\" : 3 , \"outOfServiceCount\" : 0 , \"availabilityLastUpdateTime\" : \"2024-01-10T19:10:00Z\" }, { \"type\" : \"EV CONNECTOR TYPE CCS COMBO 1\" , \"maxChargeRateKw\" : 350 , \"count\" : 2 , \"availableCount\" : 0 , \"outOfServiceCount\" : 2 , \"availabilityLastUpdateTime\" : \"2024-01-10T19:10:00Z\" } ] } }, { \"displayName\" : { \"text\" : \"EVgo Charging Station\" , \"languageCode\" : \"en\" }, \"evChargeOptions\" : { \"connectorCount\" : 5 , \"connectorAggregation\" : [ { \"type\" : \"EV CONNECTOR TYPE J1772\" , \"maxChargeRateKw\" : 3.5999999046325684 , \"count\" : 1 , \"availableCount\" : 0 , \"outOfServiceCount\" : 1 , \"availabilityLastUpdateTime\" : \"2024-01-10T19:10:00Z\" }, { \"type\" : \"EV CONNECTOR TYPE CHADEMO\" , \"maxChargeRateKw\" : 50 , \"count\" : 2 , \"availableCount\" : 0 , \"outOfServiceCount\" : 0 , \"availabilityLastUpdateTime\" : \"2024-01-10T19:10:00Z\" }, { \"type\" : \"EV CONNECTOR TYPE CCS COMBO 1\" , \"maxChargeRateKw\" : 50 , \"count\" : 2 , \"availableCount\" : 0 , \"outOfServiceCount\" : 0 , \"availabilityLastUpdateTime\" : \"2024-01-10T19:10:00Z\" } ] } }, { \"displayName\" : { \"text\" : \"Electric Vehicle Charging Station\" , \"languageCode\" : \"en\" }, \"evChargeOptions\" : { \"connectorCount\" : 10 , \"connectorAggregation\" : [ { \"type\" : \"EV CONNECTOR TYPE OTHER\" , \"maxChargeRateKw\" : 210 , \"count\" : 10 } ] } } ] } Search for service area businesses Use the includePureServiceAreaBusinesses parameter to search for businesses without a physical service address (for example, a mobile cleaning service or a food truck)."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "developers.google.com",
+      "e.g",
+      "kokkari.com",
+      "lamarsf.com",
+      "places.accessibilityOptions",
+      "places.addressComponents",
+      "places.addressDescriptor",
+      "places.adrFormatAddress",
+      "places.attributions",
+      "places.autocomplete",
+      "places.businessStatus",
+      "places.containingPlaces",
+      "places.displayName",
+      "places.evChargeOptions",
+      "places.formattedAddress",
+      "places.googleapis.com",
+      "places.googleMapsLinks",
+      "places.googleMapsUri",
+      "places.iconBackgroundColor",
+      "places.iconMaskBaseUri",
+      "places.id",
+      "places.location",
+      "places.movedPlace",
+      "places.movedPlaceId",
+      "places.name",
+      "places.openingDate",
+      "places.photos",
+      "places.plusCode",
+      "places.postalAddress",
+      "places.primaryType",
+      "places.primaryTypeDisplayName",
+      "places.pureServiceAreaBusiness",
+      "places.searchNearby",
+      "places.searchText",
+      "places.searchUri",
+      "places.shortFormattedAddress",
+      "places.subDestinations",
+      "places.timeZone",
+      "places.types",
+      "places.utcOffsetMinutes",
+      "places.viewport",
+      "places.websiteUri"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://developers.google.com/maps/documentation/places/web-service/reference/rest/v1/places",
+        "https://developers.google.com/maps/documentation/places/web-service/nearby-search",
+        "https://developers.google.com/maps/documentation/places/web-service/place-details",
+        "https://developers.google.com/maps/documentation/places/web-service/text-search"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://developers.google.com/maps/documentation/places/web-service/reference/rest/v1/places",
+        "https://developers.google.com/maps/documentation/places/web-service/nearby-search",
+        "https://developers.google.com/maps/documentation/places/web-service/place-details",
+        "https://developers.google.com/maps/documentation/places/web-service/text-search"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://developers.google.com/maps/documentation/places/web-service/reference/rest/v1/places",
+        "https://developers.google.com/maps/documentation/places/web-service/nearby-search",
+        "https://developers.google.com/maps/documentation/places/web-service/place-details",
+        "https://developers.google.com/maps/documentation/places/web-service/text-search"
+      ]
+    }
+  ]
+}

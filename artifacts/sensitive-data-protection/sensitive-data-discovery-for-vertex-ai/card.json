@@ -1,0 +1,212 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:46.193Z",
+  "source_step08_card": "data/step-08/current/products/sensitive-data-protection/card.json",
+  "product_name": "Sensitive Data Protection",
+  "product_slug": "sensitive-data-protection",
+  "feature_name": "Sensitive data discovery for Vertex AI",
+  "feature_slug": "sensitive-data-discovery-for-vertex-ai",
+  "summary": "Sensitive Data Protection can profile Vertex AI training data at the organization, folder, or project level.",
+  "extended_definition": "Sensitive Data Protection can profile Vertex AI training data at the organization, folder, or project level.",
+  "lifecycle": {
+    "latest_feature_date": "2025-02-14",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/sensitive-data-protection/docs/data-profiles",
+      "https://docs.cloud.google.com/sensitive-data-protection/docs/deidentify-sensitive-data",
+      "https://docs.cloud.google.com/sensitive-data-protection/docs/discovery-for-vertex-ai"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Sensitive data discovery for Vertex AI \\_|\\_ Sensitive Data Protection \\_\\",
+        "url": "https://docs.cloud.google.com/sensitive-data-protection/docs/discovery-for-vertex-ai",
+        "source_id": "site-docs-reference-3",
+        "final_score": 235,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "How it works When you profile a Vertex AI dataset, Sensitive Data Protection generates a file store data profile or table data profile , depending on where the training data is stored: a Cloud Storage bucket or a BigQuery table.",
+          "Discovery generates data profiles that provide insights like the information types ( infoTypes ) detected and the sensitivity level of the data that you use for training and tuning models.",
+          "Supported data source This feature can profile the following types of data referenced in your Vertex AI datasets and tuning jobs: Training and tuning data in Cloud Storage buckets."
+        ]
+      },
+      {
+        "title": "\"Overview of sensitive data discovery \\_|\\_ Sensitive Data Protection \\_\\",
+        "url": "https://docs.cloud.google.com/sensitive-data-protection/docs/data-profiles",
+        "source_id": "site-docs-reference-3",
+        "final_score": 179,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Discovery for Vertex AI When you profile a Vertex AI resource, Sensitive Data Protection generates a file store data profile or a table data profile, depending on where your training data is stored: Cloud Storage or BigQuery.",
+          "It includes the following settings: Scope (organization, folder, or project) of the discovery operation Type of resource to profile Inspection templates to use Scan frequency Specific subsets of data that should be included in or excluded from discovery Actions that you want Sensitive Data Protection to take after discovery—for example, which Google Cloud services to publish the profiles to Service agent to use for discovery operations For information about how to create an organization-level or project-level discovery scan configuration, see the following pages: Discovery type Create an organization-level scan configuration Create a project-level scan configuration 1 Discovery for BigQuery data Profile BigQuery data in an organization or folder Profile BigQuery data in a single project Discovery for Cloud SQL data Profile Cloud SQL data in an organization or folder Profile Cloud SQL data in a single project Discovery for Cloud Storage data Profile Cloud Storage data in an organization or folder Profile Cloud Storage data in a single project Discovery for Vertex AI data Profile Vertex AI data in an organization or folder Profile Vertex AI data in a single project Discovery for Amazon S3 data Discovery for Amazon S3 data Not applicable Discovery for Azure Blob Storage data Discovery for Azure Blob Storage data Not applicable Secrets discovery (no profiles generated) Configure secrets discovery at the organization level Configure secrets discovery at the project level 1 Not suitable for customers who have an organization-level discovery subscription, such as one provided through Security Command Center Scan configuration scopes You can create a scan configuration at the following levels: Organization Folder Project Single data resource At the organization and folder levels, if two or more active scan configurations have the same project in their scope, Sensitive Data Protection determines which scan configuration can generate profiles for that project.",
+          "For more information, see the following: Sensitive data discovery for Vertex AI Profile Vertex AI data in a single project Profile Vertex AI data in an organization or folder For more information about Vertex AI, see the Vertex AI documentation ."
+        ]
+      },
+      {
+        "title": "De-identifying sensitive data | Sensitive Data Protection | Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/sensitive-data-protection/docs/deidentify-sensitive-data",
+        "source_id": "feature-recovery-direct-http",
+        "final_score": 147,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "De-identifying sensitive data | Sensitive Data Protection | Google Cloud Documentation Skip to main content Technology areas close AI and ML Application development Application hosting Compute Data analytics and pipelines Databases Distributed, hybrid, and multicloud Industry solutions Migration Networking Observability and monitoring Security Storage Cross-product tools close Access and resources management Costs and usage management Infrastructure as code SDK, languages, frameworks, and tools / Console English Deutsch Español Español – América Latina Français Indonesia Italiano Português Português – Brasil 中文 – 简体 中文 – 繁體 日本語 한국어 Sign in Sensitive Data Protection Start free Overview Guides Reference Samples Resources Technology areas More Overview Guides Reference Samples Resources Cross-product tools More Console Discover Product overview Plan your data risk management strategy Evaluate your data risk management needs Learn about your data through discovery and inspection Recommended strategies for mitigating data risk Release notes Pricing Locations Global and regional endpoints for Sensitive Data Protection Sensitive Data Protection locations Specify a processing location Service method types Supported file types and scanning modes Get started Quickstarts Inspect text using the command-line tool Inspect text using a JSON request Schedule an inspection scan Create an inspection template De-identify and re-identify sensitive text Google Cloud Skills Boost labs Detect sensitive data Discover and profile data resources Overview of sensitive data discovery Common discovery enablement scenarios Allow discovery within service perimeters Profile your data Profile a single data resource Profile BigQuery data Estimate BigQuery data profiling cost Estimate the cost of profiling BigQuery data in a project Estimate the cost of profiling BigQuery data in an organization or folder Profile BigQuery data in a project Profile BigQuery data in an organization or folder Profile Cloud SQL data Profile Cloud SQL data in a project Profile Cloud SQL data in an organization or folder Manage connections Profile Cloud Storage data Profile Cloud Storage data in a project Profile Cloud Storage data in an organization or folder Profile Vertex AI data Sensitive data discovery for Vertex AI data Profile Vertex AI data in a project Profile Vertex AI data in an organization or folder Profile Amazon S3 data Sensitive data discovery for Amazon S3 data Profile Amazon S3 data Profile Azure Blob Storage data Report secrets in environment variables to Security Command Center Grant data profiling access to a service agent Manage data profiles Control IAM access to resources based on data sensitivity Send discovery insights to other services Enable discovery actions Send data profiles to Security Command Center Receive and parse Pub/Sub messages about data profiles Tag tables in Data Catalog based on insights from data profiles Add Knowledge Catalog aspects based on insights from data profiles Analyze and visualize data profiles Visualize data profiles in the discovery dashboard Analyze data profiles Remediate findings from the data profiler Manage scan configurations Troubleshoot issues with the data profiler Metrics reference Data risk and sensitivity levels Inspect for sensitive data Inspect data stored in Google Cloud Inspect data from any source Inspect unstructured text synchronously Inspect structured text synchronously Inspect an image synchronously Asynchronous inspection overview Inspect data from any source asynchronously Quote the sensitive data in the results Work with inspection results Actions Send inspection results to Knowledge Catalog as aspects Send inspection results to Data Catalog Send inspection results to Security Command Center Analyze and report on inspection findings Query inspection findings in BigQuery Parse findings stored as Protobuf text Jobs and job triggers Overview of jobs and job triggers Create and manage jobs and job triggers Web-based inspection demonstration app Configure detection Templates Overview of templates Create inspection templates InfoTypes and infoType detectors Overview of infoTypes and infoType detectors Built-in infoType detectors List built-in infoType detectors InfoType detector reference Custom infoType detectors Overview of custom infoType detectors Create a regular custom dictionary detector Create a large custom dictionary detector Create a custom regex detector Create a custom metadata label detector Custom infoType examples Manage infoTypes through the Google Cloud console Modify infoType detectors to refine scan results Match likelihood Likelihood overview Customize match likelihood Mask and de-identify data Overview Transformation methods Transformation reference Text classification and redaction Date shifting Generalization and bucketing Pseudonymization De-identify sensitive data De-identify data stored in Google Cloud Overview Through the Cloud console Through the DLP API Transformation details reference De-identify data from any source De-identify text or tabular content Examples of text redaction Examples of tabular data de-identification Image inspection and redaction Redact sensitive data from images Create a de-identification template Create a wrapped key De-identify BigQuery data at query time De-identification and re-identification of PII in large-scale datasets Redact sensitive data from PDF files Analyze re-identification risk Overview of re-identification risk analysis Re-identification risk analysis techniques Compute k-anonymity for a dataset Compute l-diversity for a dataset Compute k-map for a dataset Compute δ-presence for a dataset Compute numerical and categorical statistics Visualize re-identification risk using Looker Studio Connect to other services Use Sensitive Data Protection with BigQuery Use Sensitive Data Protection with Cloud Storage Use Sensitive Data Protection with Cloud Storage Automate the classification of data uploaded to Cloud Storage Send inspection results to Data Catalog Send inspection results to Security Command Center Monitor your usage with Cloud Monitoring Use Sensitive Data Protection with AWS S3 Use Sensitive Data Protection with JDBC Databases Use Sensitive Data Protection with Apigee Use Sensitive Data Protection with Data Fusion Build a secure anomaly detection solution using Dataflow, BigQuery ML, and Sensitive Data Protection Troubleshoot Troubleshoot issues with the data profiler Control access Authentication IAM roles IAM permissions Control access with VPC Service Controls Monitor Audit logging Monitor your usage with Cloud Monitoring Develop All Sensitive Data Protection code samples AI and ML Application development Application hosting Compute Data analytics and pipelines Databases Distributed, hybrid, and multicloud Industry solutions Migration Networking Observability and monitoring Security Storage Access and resources management Costs and usage management Infrastructure as code SDK, languages, frameworks, and tools Cloud Data Loss Prevention (Cloud DLP) is now a part of Sensitive Data Protection.",
+          "Need to tell us more? [[[\"Easy to understand\",\"easyToUnderstand\",\"thumb-up\"],[\"Solved my problem\",\"solvedMyProblem\",\"thumb-up\"],[\"Other\",\"otherUp\",\"thumb-up\"]],[[\"Hard to understand\",\"hardToUnderstand\",\"thumb-down\"],[\"Incorrect information or sample code\",\"incorrectInformationOrSampleCode\",\"thumb-down\"],[\"Missing the information/samples I need\",\"missingTheInformationSamplesINeed\",\"thumb-down\"],[\"Other\",\"otherDown\",\"thumb-down\"]],[\"Last updated 2026-04-10 UTC.\"],[],[]] Products and pricing See all products Google Cloud pricing Google Cloud Marketplace Contact sales Support Community forums Support Release Notes System status Resources GitHub Getting Started with Google Cloud Code samples Cloud Architecture Center Training and Certification Engage Blog Events X (Twitter) Google Cloud on YouTube Google Cloud Tech on YouTube About Google Privacy Site terms Google Cloud terms Manage cookies Our third decade of climate action: join us Sign up for the Google Cloud newsletter Subscribe English Deutsch Español Español – América Latina Français Indonesia Italiano Português Português – Brasil 中文 – 简体 中文 – 繁體 日本語 한국어"
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "dlp.admin",
+      "dlp.columnDataProfiles.list",
+      "dlp.dataProfilesReader",
+      "dlp.fileStoreProfiles.list",
+      "dlp.inspectTemplates.create",
+      "dlp.jobs.create",
+      "dlp.jobs.list",
+      "dlp.jobTriggers.create",
+      "dlp.jobTriggers.list",
+      "dlp.projectDataProfiles.list",
+      "dlp.reader",
+      "dlp.tableDataProfiles.list",
+      "iam.securityAdmin",
+      "resourcemanager.organizationAdmin",
+      "resourcemanager.organizations.get",
+      "resourcemanager.organizations.getIamPolicy",
+      "resourcemanager.organizations.setIamPolicy",
+      "resourcemanager.projectCreator",
+      "resourcemanager.projects.create"
+    ],
+    "missing_inventory_roles": [
+      "roles/dlp.admin",
+      "roles/dlp.dataProfilesReader",
+      "roles/dlp.reader",
+      "roles/iam.securityAdmin",
+      "roles/resourcemanager.organizationAdmin",
+      "roles/resourcemanager.projectCreator"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/discovery-for-vertex-ai",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/data-profiles",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/deidentify-sensitive-data"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/discovery-for-vertex-ai",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/data-profiles",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/deidentify-sensitive-data"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/discovery-for-vertex-ai",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/data-profiles",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/deidentify-sensitive-data"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/discovery-for-vertex-ai",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/data-profiles",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/deidentify-sensitive-data"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/discovery-for-vertex-ai",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/data-profiles",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/deidentify-sensitive-data"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/discovery-for-vertex-ai",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/data-profiles",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/deidentify-sensitive-data"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/discovery-for-vertex-ai",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/data-profiles",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/deidentify-sensitive-data"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/discovery-for-vertex-ai",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/data-profiles",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/deidentify-sensitive-data"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/discovery-for-vertex-ai",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/data-profiles",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/deidentify-sensitive-data"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/discovery-for-vertex-ai",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/data-profiles",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/deidentify-sensitive-data"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/discovery-for-vertex-ai",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/data-profiles",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/deidentify-sensitive-data"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/discovery-for-vertex-ai",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/data-profiles",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/deidentify-sensitive-data"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/discovery-for-vertex-ai",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/data-profiles",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/deidentify-sensitive-data"
+      ]
+    }
+  ]
+}

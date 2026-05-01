@@ -1,0 +1,102 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:47.727Z",
+  "source_step08_card": "data/step-08/current/products/storage-transfer-service/card.json",
+  "product_name": "Storage Transfer Service",
+  "product_slug": "storage-transfer-service",
+  "feature_name": "Cloud Logging for Storage Transfer Service POSIX file system transfer support",
+  "feature_slug": "cloud-logging-for-storage-transfer-service-posix-file-system-transfer-support",
+  "summary": "Cloud Logging for Storage Transfer Service now supports logging for transfers involving POSIX file systems.",
+  "extended_definition": "Cloud Logging for Storage Transfer Service now supports logging for transfers involving POSIX file systems.",
+  "lifecycle": {
+    "latest_feature_date": "2024-05-17",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/storage-transfer/docs/create-transfers/agent-based/file-system-to-cloud-storage",
+      "https://docs.cloud.google.com/storage-transfer/docs/file-to-file",
+      "https://docs.cloud.google.com/storage-transfer/docs/manifest"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Transfer from a file system to Cloud Storage \\_|\\_ Storage Transfer Service\\",
+        "url": "https://docs.cloud.google.com/storage-transfer/docs/create-transfers/agent-based/file-system-to-cloud-storage",
+        "source_id": "site-docs-root",
+        "final_score": 189,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Defaults to the default agent // const sourceAgentPoolName = 'projects/my-project/agentPools/transfer service default' // The root directory path on the source filesystem // const rootDirectory = '/directory/to/transfer/source' // The ID of the GCS bucket to transfer data to // const gcsSinkBucket = 'my-sink-bucket' // Creates a client const client = new StorageTransferServiceClient (); / Creates a request to transfer from the local file system to the sink bucket / async function transferDirectory () { const createRequest = { transferJob : { projectId , transferSpec : { sourceAgentPoolName , posixDataSource : { rootDirectory , }, gcsDataSink : { bucketName : gcsSinkBucket }, }, status : ' ENABLED ' , }, }; // Runs the request and creates the job const [ transferJob ] = await client . createTransferJob ( createRequest ); const runRequest = { jobName : transferJob . name , projectId : projectId , }; await client . runTransferJob ( runRequest ); console . log ( Created and ran a transfer job from ' ${ rootDirectory } ' to ' ${ gcsSinkBucket } ' with name ${ transferJob . name } ); } transferDirectory (); Python from google.cloud import storage transfer def transfer from posix to gcs ( project id : str , description : str , source agent pool name : str , root directory : str , sink bucket : str , ): \"\"\"Create a transfer from a POSIX file system to a GCS bucket.\"\"\" client = storage transfer .",
+          "To move files from a POSIX file system to a Cloud Storage bucket, use transferJobs.create with a posixDataSource : POST h tt ps : //storagetransfer.googleapis.com/v1/transferJobs { \"name\" : \"transferJobs/sample transfer\" , \"description\" : \"My First Transfer\" , \"status\" : \"ENABLED\" , \"projectId\" : \"my transfer project id\" , \"schedule\" : { \"scheduleStartDate\" : { \"year\" : 2022 , \"month\" : 5 , \"day\" : 2 }, \"startTimeOfDay\" : { \"hours\" : 22 , \"minutes\" : 30 , \"seconds\" : 0 , \"nanos\" : 0 } \"scheduleEndDate\" : { \"year\" : 2022 , \"month\" : 12 , \"day\" : 31 }, \"repeatInterval\" : { \"259200s\" }, }, \"transferSpec\" : { \"posixDataSource\" : { \"rootDirectory\" : \"/bar/\" , }, \"sourceAgentPoolName\" : \"my example pool\" , \"gcsDataSink\" : { \"bucketName\" : \"destination bucket\" \"path\" : \"foo/bar/\" }, } } The schedule field is optional; if it's not included, the transfer job must be started with a transferJobs.run request.",
+          "To move files from a POSIX file system to a Cloud Storage bucket: Go import ( \"context\" \"fmt\" \"io\" storagetransfer \"cloud.google.com/go/storagetransfer/apiv1\" \"cloud.google.com/go/storagetransfer/apiv1/storagetransferpb\" ) func transferFromPosix ( w io ."
+        ]
+      },
+      {
+        "title": "\"Transfer data between file systems \\_|\\_ Storage Transfer Service \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/storage-transfer/docs/file-to-file",
+        "source_id": "site-docs-root",
+        "final_score": 156,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Defaults to the default agent // const sinkAgentPoolName = 'projects/my-project/agentPools/transfer service default' // The root directory path on the source filesystem // const rootDirectory = '/directory/to/transfer/source' // The root directory path on the sink filesystem // const destinationDirectory = '/directory/to/transfer/sink' // The ID of the GCS bucket for intermediate storage // const bucketName = 'my-intermediate-bucket' // Creates a client const client = new StorageTransferServiceClient (); / Creates a request to transfer from the local file system to the sink bucket / async function transferDirectory () { const createRequest = { transferJob : { projectId , transferSpec : { sourceAgentPoolName , sinkAgentPoolName , posixDataSource : { rootDirectory , }, posixDataSink : { rootDirectory : destinationDirectory , }, gcsIntermediateDataLocation : { bucketName , }, }, status : ' ENABLED ' , }, }; // Runs the request and creates the job const [ transferJob ] = await client . createTransferJob ( createRequest ); const runRequest = { jobName : transferJob . name , projectId : projectId , }; await client . runTransferJob ( runRequest ); console . log ( Created and ran a transfer job from ' ${ rootDirectory } ' to ' ${ destinationDirectory } ' with name ${ transferJob . name } ); } transferDirectory (); Python from google.cloud import storage transfer def transfer between posix ( project id : str , description : str , source agent pool name : str , sink agent pool name : str , root directory : str , destination directory : str , intermediate bucket : str , ): \"\"\"Creates a transfer between POSIX file systems.\"\"\" client = storage transfer .",
+          "If not provided, defaults to the default // agent String sinkAgentPoolName = \"projects/my-project-id/agentPools/transfer service default\" ; // The root directory path on the source filesystem String rootDirectory = \"/directory/to/transfer/source\" ; // The root directory path on the sink filesystem String destinationDirectory = \"/directory/to/transfer/sink\" ; // The ID of the GCS bucket for intermediate storage String bucketName = \"my-intermediate-bucket\" ; transferBetweenPosix ( projectId , sourceAgentPoolName , sinkAgentPoolName , rootDirectory , destinationDirectory , bucketName ); } public static void transferBetweenPosix ( String projectId , String sourceAgentPoolName , String sinkAgentPoolName , String rootDirectory , String destinationDirectory , String bucketName ) throws IOException { TransferJob transferJob = TransferJob . newBuilder () . setProjectId ( projectId ) . setTransferSpec ( TransferSpec . newBuilder () . setSinkAgentPoolName ( sinkAgentPoolName ) . setSourceAgentPoolName ( sourceAgentPoolName ) . setPosixDataSource ( PosixFilesystem . newBuilder (). setRootDirectory ( rootDirectory ). build ()) . setPosixDataSink ( PosixFilesystem . newBuilder (). setRootDirectory ( destinationDirectory ). build ()) . setGcsIntermediateDataLocation ( GcsData . newBuilder (). setBucketName ( bucketName ). build ()) . build ()) . setStatus ( TransferJob .",
+          "PosixFilesystem { RootDirectory : rootDirectory }, }, DataSink : & storagetransferpb ."
+        ]
+      },
+      {
+        "title": "\"Transfer specific files or objects using a manifest \\_|\\_ Storage Transfer\\",
+        "url": "https://docs.cloud.google.com/storage-transfer/docs/manifest",
+        "source_id": "site-docs-root",
+        "final_score": 128,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Must be a gs: URL // const manifestLocation = 'gs://my-bucket/sample manifest.csv' // Creates a client const client = new StorageTransferServiceClient (); / Creates a request to transfer from the local file system to the sink bucket / async function transferViaManifest () { const createRequest = { transferJob : { projectId , transferSpec : { sourceAgentPoolName , posixDataSource : { rootDirectory , }, gcsDataSink : { bucketName : gcsSinkBucket }, transferManifest : { location : manifestLocation , }, }, status : ' ENABLED ' , }, }; // Runs the request and creates the job const [ transferJob ] = await client . createTransferJob ( createRequest ); const runRequest = { jobName : transferJob . name , projectId : projectId , }; await client . runTransferJob ( runRequest ); console . log ( Created and ran a transfer job from ' ${ rootDirectory } ' to ' ${ gcsSinkBucket } ' using manifest \\ ${ manifestLocation } \\ with name ${ transferJob . name } ); } transferViaManifest (); Python from google.cloud import storage transfer def create transfer with manifest ( project id : str , description : str , source agent pool name : str , root directory : str , sink bucket : str , manifest location : str , ): \"\"\"Create a transfer from a POSIX file system to a GCS bucket using a manifest file.\"\"\" client = storage transfer .",
+          "CreateTransferJobRequest . newBuilder () . setTransferJob ( transferJob ) . build ()); System . out . println ( \"Created and ran a transfer job from \" + rootDirectory + \" to \" + gcsSinkBucket + \" using \" + \"manifest file \" + manifestLocation + \" with name \" + response . getName ()); } } } Node.js // Imports the Google Cloud client library const { StorageTransferServiceClient , } = require ( ' @google-cloud/storage-transfer ' ); / TODO(developer): Uncomment the following lines before running the sample. / // Your project id // const projectId = 'my-project' // The agent pool associated with the POSIX data source.",
+          "For example: POST https://storagetransfer.googleapis.com/v1/transferJobs ... \"transferSpec\": { \"posixDataSource\": { \"rootDirectory\": \"/home/\", }, \"gcsDataSink\": { \"bucketName\": \"GCS NEARLINE SINK NAME\", \"path\": \"GCS SINK PATH\", }, \"transferManifest\": { \"location\": \"gs://my bucket/sample manifest.csv\" } } The manifest file can be stored in a Cloud Storage bucket, or on the source or destination file system."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.storagetransfer.v1.proto",
+      "manifest.csv",
+      "storagetransfer.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/create-transfers/agent-based/file-system-to-cloud-storage",
+        "https://docs.cloud.google.com/storage-transfer/docs/file-to-file",
+        "https://docs.cloud.google.com/storage-transfer/docs/manifest"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/create-transfers/agent-based/file-system-to-cloud-storage",
+        "https://docs.cloud.google.com/storage-transfer/docs/file-to-file",
+        "https://docs.cloud.google.com/storage-transfer/docs/manifest"
+      ]
+    }
+  ]
+}

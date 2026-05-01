@@ -1,0 +1,130 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:42.371Z",
+  "source_step08_card": "data/step-08/current/products/looker/card.json",
+  "product_name": "Looker",
+  "product_slug": "looker",
+  "feature_name": "Looker IDE panel resizing",
+  "feature_slug": "looker-ide-panel-resizing",
+  "summary": "Users can resize Looker IDE feature and side panels, and side panel sizes persist across logins and refreshes.",
+  "extended_definition": "Users can resize Looker IDE feature and side panels, and side panel sizes persist across logins and refreshes.",
+  "lifecycle": {
+    "latest_feature_date": "2024-09-11",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/looker/docs/admin-panel-general-labs",
+      "https://docs.cloud.google.com/looker/docs/admin-panel-general-preview-features",
+      "https://docs.cloud.google.com/looker/docs/admin-panel-users-users"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Admin settings - Preview Features \\_|\\_ Looker \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/looker/docs/admin-panel-general-preview-features",
+        "source_id": "site-docs-reference",
+        "final_score": 130,
+        "relevance": "",
+        "evidence_snippets": [
+          "The Enhanced Content Cleanup preview feature provides the following capabilities: Lets admins and users access a new Unused content folder to quickly identify and manage the unused content on a Looker instance.",
+          "When enabled, the New Looker Explore and Merge Query Experience feature lets individual users have the option to try the redesigned Looker Explore and Merge Query interfaces.",
+          "If the preview feature is disabled, any dashboard tiles that were resized during its enablement will revert to Looker's original sizing constraints."
+        ]
+      },
+      {
+        "title": "Admin settings - Preview Features \\_|\\_ Looker \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/looker/docs/admin-panel-general-labs",
+        "source_id": "site-docs-reference",
+        "final_score": 120,
+        "relevance": "",
+        "evidence_snippets": [
+          "The Enhanced Content Cleanup preview feature provides the following capabilities: Lets admins and users access a new Unused content folder to quickly identify and manage the unused content on a Looker instance.",
+          "When enabled, the New Looker Explore and Merge Query Experience feature lets individual users have the option to try the redesigned Looker Explore and Merge Query interfaces.",
+          "If the preview feature is disabled, any dashboard tiles that were resized during its enablement will revert to Looker's original sizing constraints."
+        ]
+      },
+      {
+        "title": "Admin settings - Users \\_|\\_ Looker \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/looker/docs/admin-panel-users-users",
+        "source_id": "site-docs-reference",
+        "final_score": 120,
+        "relevance": "",
+        "evidence_snippets": [
+          "Language Locale Code and Strings Filename English en Czech cs CZ German de DE Spanish (Spain) es ES Finnish fi FI French (Canada) fr CA French (France) fr FR Hindi hi IN Italian it IT Japanese ja JP Korean ko KR Lithuanian lt LT Norwegian (Bokmål) nb NO Dutch nl NL Polish pl PL Brazilian Portuguese pt BR Portuguese pt PT Russian ru RU Swedish sv SE Thai th TH Turkish tr TR Ukrainian uk UA Simplified Chinese zh CN Traditional Chinese zh TW For users with no Locale set, Looker uses the locale chosen on the Localization page of the Admin panel as the default locale; and, if no locale is set there, Looker defaults to en .",
+          "The Users page in the Users section of the Admin panel lists all user accounts on your Looker instance.",
+          "Differences between disabling and deleting an account are described in the following table: Description Disabled Deleted The user can sign in to the Looker instance No No The user's personal folder Still exists Deleted Looks and dashboards in the user's personal folder Still exist Moved to the Trash folder Looks and dashboards the user saved to a Shared folder Still exist in the Shared folder Still exist in the Shared folder Schedules created by the user Schedules are disabled Schedules are deleted Schedules based on the user's content, but created by another user Schedules continue to run User's content is deleted; schedules based on that content are deleted Schedules that list the user as a recipient and are created by another user with the ability to deliver content to external email accounts Schedules will continue to run and deliver normally (user will be treated as an external user) Schedules continue to run and deliver normally (user will be treated as an external user) Schedules that have Run schedule as recipient enabled and list the user as a recipient Schedules will continue to run but will fail to deliver to the disabled user upon next run Schedules continue to run but will fail to deliver to all users with error run as recipient was specified on ScheduledPlan but recipient is not a Looker user Boards created by the user Still exist Still exist Alerts created by the user Remain active, but are not visible or editable from the dashboard on which the alert is set unless self-assigned by an admin."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/admin-panel-general-preview-features",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-general-labs",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-users-users"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/admin-panel-general-preview-features",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-general-labs",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-users-users"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/admin-panel-general-preview-features",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-general-labs",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-users-users"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/admin-panel-general-preview-features",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-general-labs",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-users-users"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/admin-panel-general-preview-features",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-general-labs",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-users-users"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/admin-panel-general-preview-features",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-general-labs",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-users-users"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,153 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:26.812Z",
+  "source_step08_card": "data/step-08/current/products/cloud-sql-for-mysql/card.json",
+  "product_name": "Cloud SQL for MySQL",
+  "product_slug": "cloud-sql-for-mysql",
+  "feature_name": "IPv6 endpoint for Private Service Connect",
+  "feature_slug": "ipv6-endpoint-for-private-service-connect",
+  "summary": "This feature adds IPv6 endpoints for Private Service Connect connections to Cloud SQL instances.",
+  "extended_definition": "This feature adds IPv6 endpoints for Private Service Connect connections to Cloud SQL instances.",
+  "lifecycle": {
+    "latest_feature_date": "2025-08-15",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/sql/docs/mysql/about-private-service-connect",
+      "https://docs.cloud.google.com/sql/docs/mysql/configure-private-service-connect",
+      "https://docs.cloud.google.com/sql/docs/mysql/configure-private-services-access-and-private-service-connect"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Connect to an instance using Private Service Connect \\_|\\_ Cloud SQL for\\",
+        "url": "https://docs.cloud.google.com/sql/docs/mysql/configure-private-service-connect",
+        "source_id": "site-docs-reference-3",
+        "final_score": 245,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Optionally, you can create Private Service Connect endpoints manually . gcloud To create an instance with Private Service Connect enabled for the instance, use the gcloud sql instances create command: gcloud sql instances create INSTANCE NAME \\ --project = PROJECT ID \\ --region = REGION NAME \\ --enable-private-service-connect \\ --allowed-psc-projects = ALLOWED PROJECTS \\ --availability-type = AVAILABILITY TYPE \\ --no-assign-ip \\ --tier = MACHINE TYPE \\ --database-version = DATABASE VERSION \\ --psc-auto-connections = network = CONSUMER NETWORK ,project = CONSUMER PROJECT \\ --enable-bin-log Make the following replacements: INSTANCE NAME : the name of the instance.",
+          "You can create Private Service Connect endpoints from any VPC networks in these projects to the service attachment of the instance. pscAutoConnections : the allowed VPC network, the status of the service connection policy, and the status of the IP address that's the endpoint for the instance. pscEnabled : whether an instance has Private Service Connect enabled for it.",
+          "Use the following sample to create an IPv4 Private Service Connect endpoint. resource \"google compute address\" \"default\" { name = \"psc-compute-address-${google sql database instance.default.name}\" region = \"us-central1\" address type = \"INTERNAL\" subnetwork = \"default\" # Replace value with the name of the subnet here. address = \"10.128.0.43\" # Replace value with the IP address to reserve. } data \"google sql database instance\" \"default\" { name = resource.google sql database instance.default.name } resource \"google compute forwarding rule\" \"default\" { name = \"psc-forwarding-rule-${google sql database instance.default.name}\" region = \"us-central1\" network = \"default\" ip address = google compute address.default.self link load balancing scheme = \"\" target = data.google sql database instance.default.psc service attachment link allow psc global access = true } Use the following sample to create an IPv6 Private Service Connect endpoint. resource \"google compute network\" \"ipv6 default\" { name = \"net-ipv6\" auto create subnetworks = false enable ula internal ipv6 = true } resource \"google compute subnetwork\" \"ipv6 default\" { name = \"subnet-internal-ipv6\" ip cidr range = \"10.0.0.0/16\" region = \"us-central1\" stack type = \"IPV4 IPV6\" ipv6 access type = \"INTERNAL\" network = google compute network.ipv6 default.id } resource \"google compute address\" \"ipv6 default\" { name = \"psc-compute-ipv6-address-${google sql database instance.default.name}\" region = \"us-central1\" address type = \"INTERNAL\" subnetwork = google compute subnetwork.ipv6 default.name ip version = \"IPV6\" } resource \"google compute forwarding rule\" \"ipv6 ilb example\" { name = \"ipv6-psc-forwarding-rule-${google sql database instance.default.name}\" region = \"us-central1\" load balancing scheme = \"\" target = data.google sql database instance.default.psc service attachment link network = google compute network.ipv6 default.name subnetwork = google compute subnetwork.ipv6 default.name ip address = google compute address.ipv6 default.id allow psc global access = true } To apply your Terraform configuration in a Google Cloud project, complete the steps in the following sections."
+        ]
+      },
+      {
+        "title": "\"Configure both private services access and Private Service Connect \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/sql/docs/mysql/configure-private-services-access-and-private-service-connect",
+        "source_id": "site-docs-reference-3",
+        "final_score": 242,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For more information, see Create a Private Service Connect endpoint . gcloud To create an instance that supports both private services access and Private Service Connect, use the gcloud sql instances create command: gcloud sql instances create INSTANCE NAME \\ --project = PROJECT ID \\ --region = REGION NAME \\ --enable-private-service-connect \\ --allowed-psc-projects = ALLOWED PROJECTS \\ --availability-type = AVAILABILITY TYPE \\ --no-assign-ip \\ --allocated-ip-range-name = RANGE NAME \\ --enable-google-private-path \\ --tier = MACHINE TYPE \\ --database-version = DATABASE VERSION \\ --network = VPC PSA NETWORK PATH \\ --enable-bin-log \\ --psc-auto-connections = network = VPC PSC NETWORK PATH ,project = SERVICE PROJECT Make the following replacements: INSTANCE NAME : the name of the instance.",
+          "Note: If you want Cloud SQL to create the Private Service Connect endpoint automatically , then you must use the pscAutoConnections section of code.",
+          "Note: If you want Cloud SQL to create the Private Service Connect endpoint automatically , then you must use the pscAutoConnections section of code."
+        ]
+      },
+      {
+        "title": "\"Private Service Connect overview \\_|\\_ Cloud SQL for MySQL \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/sql/docs/mysql/about-private-service-connect",
+        "source_id": "site-docs-reference-3",
+        "final_score": 225,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The connection propagation feature in NCC benefits the following use case for Private Service Connect deployments: You can use a common services VPC network to create multiple Private Service Connect endpoints.",
+          "You can use Private Service Connect for the following purposes: Connect to a Cloud SQL instance from multiple VPC networks that belong to different groups, teams, projects, or organizations Connect to either a primary instance or any of its read replicas Private Service Connect endpoint You can use Private Service Connect endpoints to access Cloud SQL instances privately from your consumer VPC networks.",
+          "DNS names and records For instances with Private Service Connect enabled, we recommend that you use the DNS name because different networks can connect to the same instance and Private Service Connect endpoints in each network might have different IP addresses."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "address.default.self",
+      "address.ipv6",
+      "data.google",
+      "default.id",
+      "default.name",
+      "example.com",
+      "instance.default.name",
+      "instance.default.psc",
+      "network.ipv6",
+      "request.json",
+      "resource.google",
+      "settings.ipConfiguration.pscConfig.pscAutoConnections",
+      "sqladmin.googleapis.com",
+      "subnetwork.ipv6"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/configure-private-service-connect",
+        "https://docs.cloud.google.com/sql/docs/mysql/configure-private-services-access-and-private-service-connect",
+        "https://docs.cloud.google.com/sql/docs/mysql/about-private-service-connect"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/configure-private-service-connect",
+        "https://docs.cloud.google.com/sql/docs/mysql/configure-private-services-access-and-private-service-connect",
+        "https://docs.cloud.google.com/sql/docs/mysql/about-private-service-connect"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/configure-private-service-connect",
+        "https://docs.cloud.google.com/sql/docs/mysql/configure-private-services-access-and-private-service-connect",
+        "https://docs.cloud.google.com/sql/docs/mysql/about-private-service-connect"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/configure-private-service-connect",
+        "https://docs.cloud.google.com/sql/docs/mysql/configure-private-services-access-and-private-service-connect",
+        "https://docs.cloud.google.com/sql/docs/mysql/about-private-service-connect"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/configure-private-service-connect",
+        "https://docs.cloud.google.com/sql/docs/mysql/configure-private-services-access-and-private-service-connect",
+        "https://docs.cloud.google.com/sql/docs/mysql/about-private-service-connect"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/configure-private-service-connect",
+        "https://docs.cloud.google.com/sql/docs/mysql/configure-private-services-access-and-private-service-connect",
+        "https://docs.cloud.google.com/sql/docs/mysql/about-private-service-connect"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/configure-private-service-connect",
+        "https://docs.cloud.google.com/sql/docs/mysql/configure-private-services-access-and-private-service-connect",
+        "https://docs.cloud.google.com/sql/docs/mysql/about-private-service-connect"
+      ]
+    }
+  ]
+}

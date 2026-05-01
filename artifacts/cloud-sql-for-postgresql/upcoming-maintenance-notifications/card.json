@@ -1,0 +1,175 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:27.301Z",
+  "source_step08_card": "data/step-08/current/products/cloud-sql-for-postgresql/card.json",
+  "product_name": "Cloud SQL for PostgreSQL",
+  "product_slug": "cloud-sql-for-postgresql",
+  "feature_name": "Upcoming maintenance notifications",
+  "feature_slug": "upcoming-maintenance-notifications",
+  "summary": "Cloud SQL provides notifications for upcoming maintenance events on instances.",
+  "extended_definition": "Cloud SQL provides notifications for upcoming maintenance events on instances.",
+  "lifecycle": {
+    "latest_feature_date": "2019-12-10",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/sql/docs/mysql/admin-api/rest/v1beta4/instances",
+      "https://docs.cloud.google.com/sql/docs/postgres/admin-api/rest/v1/instances",
+      "https://docs.cloud.google.com/sql/docs/postgres/create-instance"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"REST Resource: instances \\_|\\_ Cloud SQL for PostgreSQL \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/sql/docs/postgres/admin-api/rest/v1/instances",
+        "source_id": "site-api-reference",
+        "final_score": 114,
+        "relevance": "",
+        "evidence_snippets": [
+          "You must set root passwords before you can connect to PostgreSQL instances. scheduledMaintenance object ( SqlScheduledMaintenance ) The start time of any upcoming scheduled maintenance for this instance. satisfiesPzs boolean This status indicates whether the instance satisfies PZS.",
+          "JSON representation { \"kind\" : string , \"state\" : enum ( SqlInstanceState ) , \"databaseVersion\" : enum ( SqlDatabaseVersion ) , \"settings\" : { object ( Settings ) } , \"etag\" : string , \"failoverReplica\" : { \"name\" : string , \"available\" : boolean } , \"masterInstanceName\" : string , \"replicaNames\" : [ string ] , \"maxDiskSize\" : string , \"currentDiskSize\" : string , \"ipAddresses\" : [ { object ( IpMapping ) } ] , \"serverCaCert\" : { object ( SslCert ) } , \"instanceType\" : enum ( SqlInstanceType ) , \"project\" : string , \"ipv6Address\" : string , \"serviceAccountEmailAddress\" : string , \"onPremisesConfiguration\" : { object ( OnPremisesConfiguration ) } , \"replicaConfiguration\" : { object ( ReplicaConfiguration ) } , \"backendType\" : enum ( SqlBackendType ) , \"selfLink\" : string , \"suspensionReason\" : [ enum ( SqlSuspensionReason ) ] , \"connectionName\" : string , \"name\" : string , \"region\" : string , \"gceZone\" : string , \"secondaryGceZone\" : string , \"diskEncryptionConfiguration\" : { object ( DiskEncryptionConfiguration ) } , \"diskEncryptionStatus\" : { object ( DiskEncryptionStatus ) } , \"rootPassword\" : string , \"scheduledMaintenance\" : { object ( SqlScheduledMaintenance ) } , \"satisfiesPzs\" : boolean , \"databaseInstalledVersion\" : string , \"createTime\" : string , \"availableMaintenanceVersions\" : [ string ] , \"maintenanceVersion\" : string , \"upgradableDatabaseVersions\" : [ { object ( AvailableDatabaseVersion ) } ] , \"replicationCluster\" : { object ( ReplicationCluster ) } , \"satisfiesPzi\" : boolean , \"tags\" : { string : string , ... } , \"nodes\" : [ { object ( PoolNodeConfig ) } ] , \"dnsNames\" : [ { object ( DnsNameMapping ) } ] , \"outOfDiskReport\" : { object ( SqlOutOfDiskReport ) } , \"sqlNetworkArchitecture\" : enum ( SqlNetworkArchitecture ) , \"pscServiceAttachmentLink\" : string , \"dnsName\" : string , \"primaryDnsName\" : string , \"writeEndpoint\" : string , \"geminiConfig\" : { object ( GeminiInstanceConfig ) } , \"switchTransactionLogsToCloudStorageEnabled\" : boolean , \"includeReplicasForMajorVersionUpgrade\" : boolean , \"nodeCount\" : integer } Fields kind string This is always sql#instance . state enum ( SqlInstanceState ) The current serving state of the Cloud SQL instance. databaseVersion enum ( SqlDatabaseVersion ) The database engine type and version.",
+          "Resource: DatabaseInstance JSON representation SqlInstanceState Settings JSON representation SqlAvailabilityType SqlPricingPlan SqlReplicationType SqlActivationPolicy IpConfiguration JSON representation AclEntry JSON representation SslMode PscConfig JSON representation PscAutoConnectionConfig JSON representation CaMode ServerCertificateRotationMode LocationPreference JSON representation DatabaseFlags JSON representation SqlDataDiskType MaintenanceWindow JSON representation SqlUpdateTrack BackupConfiguration JSON representation BackupRetentionSettings JSON representation RetentionUnit TransactionalLogStorageState BackupTier SqlActiveDirectoryConfig JSON representation ActiveDirectoryMode DenyMaintenancePeriod JSON representation InsightsConfig JSON representation PasswordValidationPolicy JSON representation Complexity SqlServerAuditConfig JSON representation Edition ConnectorEnforcement AdvancedMachineFeatures JSON representation DataCacheConfig JSON representation ConnectionPoolConfig JSON representation ConnectionPoolFlags JSON representation FinalBackupConfig JSON representation ReadPoolAutoScaleConfig JSON representation TargetMetric JSON representation DataApiAccess IpMapping JSON representation SqlIpAddressType SqlInstanceType OnPremisesConfiguration JSON representation InstanceReference JSON representation SelectedObjects JSON representation SslOption ReplicaConfiguration JSON representation MySqlReplicaConfiguration JSON representation SqlBackendType SqlSuspensionReason SqlScheduledMaintenance JSON representation SqlOutOfDiskReport JSON representation SqlOutOfDiskState AvailableDatabaseVersion JSON representation SqlNetworkArchitecture ReplicationCluster JSON representation GeminiInstanceConfig JSON representation PoolNodeConfig JSON representation DnsNameMapping JSON representation ConnectionType DnsScope RecordManager Methods Resource: DatabaseInstance A Cloud SQL instance resource."
+        ]
+      },
+      {
+        "title": "REST Resource: instances \\_|\\_ Cloud SQL for MySQL \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/sql/docs/mysql/admin-api/rest/v1beta4/instances",
+        "source_id": "site-iam-reference",
+        "final_score": 114,
+        "relevance": "",
+        "evidence_snippets": [
+          "You must set root passwords before you can connect to PostgreSQL instances. scheduledMaintenance object ( SqlScheduledMaintenance ) The start time of any upcoming scheduled maintenance for this instance. satisfiesPzs boolean This status indicates whether the instance satisfies PZS.",
+          "JSON representation { \"kind\" : string , \"state\" : enum ( SqlInstanceState ) , \"databaseVersion\" : enum ( SqlDatabaseVersion ) , \"settings\" : { object ( Settings ) } , \"etag\" : string , \"failoverReplica\" : { \"name\" : string , \"available\" : boolean } , \"masterInstanceName\" : string , \"replicaNames\" : [ string ] , \"maxDiskSize\" : string , \"currentDiskSize\" : string , \"ipAddresses\" : [ { object ( IpMapping ) } ] , \"serverCaCert\" : { object ( SslCert ) } , \"instanceType\" : enum ( SqlInstanceType ) , \"project\" : string , \"ipv6Address\" : string , \"serviceAccountEmailAddress\" : string , \"onPremisesConfiguration\" : { object ( OnPremisesConfiguration ) } , \"replicaConfiguration\" : { object ( ReplicaConfiguration ) } , \"backendType\" : enum ( SqlBackendType ) , \"selfLink\" : string , \"suspensionReason\" : [ enum ( SqlSuspensionReason ) ] , \"connectionName\" : string , \"name\" : string , \"region\" : string , \"gceZone\" : string , \"secondaryGceZone\" : string , \"diskEncryptionConfiguration\" : { object ( DiskEncryptionConfiguration ) } , \"diskEncryptionStatus\" : { object ( DiskEncryptionStatus ) } , \"rootPassword\" : string , \"scheduledMaintenance\" : { object ( SqlScheduledMaintenance ) } , \"satisfiesPzs\" : boolean , \"databaseInstalledVersion\" : string , \"createTime\" : string , \"availableMaintenanceVersions\" : [ string ] , \"maintenanceVersion\" : string , \"upgradableDatabaseVersions\" : [ { object ( AvailableDatabaseVersion ) } ] , \"satisfiesPzi\" : boolean , \"tags\" : { string : string , ... } , \"nodes\" : [ { object ( PoolNodeConfig ) } ] , \"dnsNames\" : [ { object ( DnsNameMapping ) } ] , \"outOfDiskReport\" : { object ( SqlOutOfDiskReport ) } , \"sqlNetworkArchitecture\" : enum ( SqlNetworkArchitecture ) , \"pscServiceAttachmentLink\" : string , \"dnsName\" : string , \"primaryDnsName\" : string , \"writeEndpoint\" : string , \"replicationCluster\" : { object ( ReplicationCluster ) } , \"geminiConfig\" : { object ( GeminiInstanceConfig ) } , \"switchTransactionLogsToCloudStorageEnabled\" : boolean , \"includeReplicasForMajorVersionUpgrade\" : boolean , \"nodeCount\" : integer } Fields kind string This is always sql#instance . state enum ( SqlInstanceState ) The current serving state of the Cloud SQL instance. databaseVersion enum ( SqlDatabaseVersion ) The database engine type and version.",
+          "Resource: DatabaseInstance JSON representation SqlInstanceState Settings JSON representation SqlAvailabilityType SqlPricingPlan SqlReplicationType SqlActivationPolicy IpConfiguration JSON representation AclEntry JSON representation SslMode PscConfig JSON representation PscAutoConnectionConfig JSON representation CaMode ServerCertificateRotationMode LocationPreference JSON representation DatabaseFlags JSON representation SqlDataDiskType MaintenanceWindow JSON representation SqlUpdateTrack BackupConfiguration JSON representation BackupRetentionSettings JSON representation RetentionUnit TransactionalLogStorageState BackupTier SqlActiveDirectoryConfig JSON representation ActiveDirectoryMode DenyMaintenancePeriod JSON representation InsightsConfig JSON representation PasswordValidationPolicy JSON representation Complexity SqlServerAuditConfig JSON representation Edition ConnectorEnforcement AdvancedMachineFeatures JSON representation DataCacheConfig JSON representation ConnectionPoolConfig JSON representation ConnectionPoolFlags JSON representation FinalBackupConfig JSON representation ReadPoolAutoScaleConfig JSON representation TargetMetric JSON representation DataApiAccess IpMapping JSON representation SqlIpAddressType SqlInstanceType OnPremisesConfiguration JSON representation InstanceReference JSON representation SelectedObjects JSON representation SslOption ReplicaConfiguration JSON representation MySqlReplicaConfiguration JSON representation SqlBackendType SqlSuspensionReason SqlScheduledMaintenance JSON representation SqlOutOfDiskReport JSON representation SqlOutOfDiskState AvailableDatabaseVersion JSON representation SqlNetworkArchitecture ReplicationCluster JSON representation GeminiInstanceConfig JSON representation PoolNodeConfig JSON representation DnsNameMapping JSON representation ConnectionType DnsScope RecordManager Methods Resource: DatabaseInstance A Cloud SQL instance resource."
+        ]
+      },
+      {
+        "title": "Create instances \\_|\\_ Cloud SQL for PostgreSQL \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/sql/docs/postgres/create-instance",
+        "source_id": "site-docs-root",
+        "final_score": 105,
+        "relevance": "",
+        "evidence_snippets": [
+          "Maintenance timing --maintenance-release-channel Your preferred timing for instance updates, relative to other instances in the same project.",
+          "Execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method GET -Headers $headers -Uri \"https://sqladmin.googleapis.com/sql/v1beta4/projects/ project-id /instances/ instance-id \" Select-Object -Expand Content You should receive a JSON response similar to the following: { \"kind\": \"sql#instance\", \"state\": \"RUNNABLE\", \"databaseVersion\": \"MYSQL 8 0 18\", \"settings\": { \"authorizedGaeApplications\": [], \"tier\": \"db-f1-micro\", \"kind\": \"sql#settings\", \"pricingPlan\": \"PER USE\", \"replicationType\": \"SYNCHRONOUS\", \"activationPolicy\": \"ALWAYS\", \"ipConfiguration\": { \"authorizedNetworks\": [], \"ipv4Enabled\": true }, \"locationPreference\": { \"zone\": \"us-west1-a\", \"kind\": \"sql#locationPreference\" }, \"dataDiskType\": \"PD SSD\", \"backupConfiguration\": { \"startTime\": \"18:00\", \"kind\": \"sql#backupConfiguration\", \"enabled\": true, \"binaryLogEnabled\": true }, \"settingsVersion\": \"1\", \"storageAutoResizeLimit\": \"0\", \"storageAutoResize\": true, \"dataDiskSizeGb\": \"10\" }, \"etag\": \"--redacted--\", \"ipAddresses\": [ { \"type\": \"PRIMARY\", \"ipAddress\": \" 10.0.0.1 \" } ], \"serverCaCert\": { ... }, \"instanceType\": \"CLOUD SQL INSTANCE\", \"project\": \" project-id \", \"serviceAccountEmailAddress\": \"redacted@gcp-sa-cloud-sql.iam.gserviceaccount.com\", \"backendType\": \"SECOND GEN\", \"selfLink\": \"https://sqladmin.googleapis.com/sql/v1beta4/projects/ project-id /instances/ instance-id \", \"connectionName\": \" project-id:region:instance-id \", \"name\": \" instance-id \", \"region\": \"us-west1\", \"gceZone\": \"us-west1-a\" } Look for the ipAddress field in the response.",
+          "Execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method GET -Headers $headers -Uri \"https://sqladmin.googleapis.com/v1/projects/ project-id /instances/ instance-id \" Select-Object -Expand Content You should receive a JSON response similar to the following: { \"kind\": \"sql#instance\", \"state\": \"RUNNABLE\", \"databaseVersion\": \"MYSQL 8 0 18\", \"settings\": { \"authorizedGaeApplications\": [], \"tier\": \"db-f1-micro\", \"kind\": \"sql#settings\", \"pricingPlan\": \"PER USE\", \"replicationType\": \"SYNCHRONOUS\", \"activationPolicy\": \"ALWAYS\", \"ipConfiguration\": { \"authorizedNetworks\": [], \"ipv4Enabled\": true }, \"locationPreference\": { \"zone\": \"us-west1-a\", \"kind\": \"sql#locationPreference\" }, \"dataDiskType\": \"PD SSD\", \"backupConfiguration\": { \"startTime\": \"18:00\", \"kind\": \"sql#backupConfiguration\", \"enabled\": true, \"binaryLogEnabled\": true }, \"settingsVersion\": \"1\", \"storageAutoResizeLimit\": \"0\", \"storageAutoResize\": true, \"dataDiskSizeGb\": \"10\" }, \"etag\": \"--redacted--\", \"ipAddresses\": [ { \"type\": \"PRIMARY\", \"ipAddress\": \" 10.0.0.1 \" } ], \"serverCaCert\": { ... }, \"instanceType\": \"CLOUD SQL INSTANCE\", \"project\": \" project-id \", \"serviceAccountEmailAddress\": \"redacted@gcp-sa-cloud-sql.iam.gserviceaccount.com\", \"backendType\": \"SECOND GEN\", \"selfLink\": \"https://sqladmin.googleapis.com/v1/projects/ project-id /instances/ instance-id \", \"connectionName\": \" project-id:region:instance-id \", \"name\": \" instance-id \", \"region\": \"us-west1\", \"gceZone\": \"us-west1-a\" } Look for the ipAddress field in the response."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cloudsql.enable",
+      "instances.list",
+      "sql.iam.gserviceaccount.com",
+      "sqladmin.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-api/rest/v1beta4/instances",
+        "https://docs.cloud.google.com/sql/docs/postgres/admin-api/rest/v1/instances",
+        "https://docs.cloud.google.com/sql/docs/postgres/create-instance"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-api/rest/v1beta4/instances",
+        "https://docs.cloud.google.com/sql/docs/postgres/admin-api/rest/v1/instances",
+        "https://docs.cloud.google.com/sql/docs/postgres/create-instance"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-api/rest/v1beta4/instances",
+        "https://docs.cloud.google.com/sql/docs/postgres/admin-api/rest/v1/instances",
+        "https://docs.cloud.google.com/sql/docs/postgres/create-instance"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-api/rest/v1beta4/instances",
+        "https://docs.cloud.google.com/sql/docs/postgres/admin-api/rest/v1/instances",
+        "https://docs.cloud.google.com/sql/docs/postgres/create-instance"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-api/rest/v1beta4/instances",
+        "https://docs.cloud.google.com/sql/docs/postgres/admin-api/rest/v1/instances",
+        "https://docs.cloud.google.com/sql/docs/postgres/create-instance"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-api/rest/v1beta4/instances",
+        "https://docs.cloud.google.com/sql/docs/postgres/admin-api/rest/v1/instances",
+        "https://docs.cloud.google.com/sql/docs/postgres/create-instance"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-api/rest/v1beta4/instances",
+        "https://docs.cloud.google.com/sql/docs/postgres/admin-api/rest/v1/instances",
+        "https://docs.cloud.google.com/sql/docs/postgres/create-instance"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-api/rest/v1beta4/instances",
+        "https://docs.cloud.google.com/sql/docs/postgres/admin-api/rest/v1/instances",
+        "https://docs.cloud.google.com/sql/docs/postgres/create-instance"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-api/rest/v1beta4/instances",
+        "https://docs.cloud.google.com/sql/docs/postgres/admin-api/rest/v1/instances",
+        "https://docs.cloud.google.com/sql/docs/postgres/create-instance"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-api/rest/v1beta4/instances",
+        "https://docs.cloud.google.com/sql/docs/postgres/admin-api/rest/v1/instances",
+        "https://docs.cloud.google.com/sql/docs/postgres/create-instance"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-api/rest/v1beta4/instances",
+        "https://docs.cloud.google.com/sql/docs/postgres/admin-api/rest/v1/instances",
+        "https://docs.cloud.google.com/sql/docs/postgres/create-instance"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,280 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:49.581Z",
+  "source_step08_card": "data/step-08/current/products/virtual-private-cloud/card.json",
+  "product_name": "Virtual Private Cloud",
+  "product_slug": "virtual-private-cloud",
+  "feature_name": "Private Service Connect monitoring metrics and NAT IP address capacity metric availability",
+  "feature_slug": "private-service-connect-monitoring-metrics-and-nat-ip-address-capacity-metric-availability",
+  "summary": "Private Service Connect now provides GA monitoring metrics for producers and consumers for service connections, including a producer-only NAT IP address capacity metric.",
+  "extended_definition": "Private Service Connect now provides GA monitoring metrics for producers and consumers for service connections, including a producer-only NAT IP address capacity metric.",
+  "lifecycle": {
+    "latest_feature_date": "2025-02-27",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/concepts/access-control",
+      "https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/how-to/running-connectivity-tests",
+      "https://docs.cloud.google.com/vpc/docs/configure-private-service-connect-producer",
+      "https://docs.cloud.google.com/vpc/docs/quota"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Quotas and limits \\_|\\_ Virtual Private Cloud \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vpc/docs/quota",
+        "source_id": "site-docs-root",
+        "final_score": 258,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Quota name: SUBNET RANGES PER NETWORK Available metrics: compute.googleapis.com/quota/subnet ranges per vpc network/limit compute.googleapis.com/quota/subnet ranges per vpc network/usage compute.googleapis.com/quota/subnet ranges per vpc network/exceeded Subnetwork ranges per peering group From the perspective of a VPC network, the total number of subnet IP address ranges used by subnets local to the VPC network and in its directly connected peers.",
+          "Static global internal IPv4 addresses The number of static global internal IPv4 address ranges that you can reserve in your project, such as allocated IPv4 address ranges for private services access and IPv4 addresses reserved for Private Service Connect endpoints that are used to access global Google APIs.",
+          "Quota name: PSC PROPAGATED CONNECTIONS PER VPC NETWORK Available metrics: compute.googleapis.com/quota/psc propagated connections per vpc network/limit compute.googleapis.com/quota/psc propagated connections per vpc network/usage compute.googleapis.com/quota/psc propagated connections per vpc network/exceeded PSC ILB consumer forwarding rules per producer VPC network The maximum number of Private Service Connect endpoints and propagated connections that can access a service producer VPC network."
+        ]
+      },
+      {
+        "title": "\"Publish services by using Private Service Connect \\_|\\_ Virtual Private\\",
+        "url": "https://docs.cloud.google.com/vpc/docs/configure-private-service-connect-producer",
+        "source_id": "site-docs-root-2",
+        "final_score": 248,
+        "relevance": "",
+        "evidence_snippets": [
+          "When you configure ingress firewall rules for backend services, the source of traffic depends on the type of load balancer that your service uses: Category Source of traffic to backends Passthrough load balancers: Internal passthrough Network Load Balancer Internal protocol forwarding Port mapping service The IP address ranges of the Private Service Connect (NAT) subnets associated with the service Proxy load balancers: Cross-region internal Application Load Balancer Regional internal Application Load Balancer Regional internal proxy Network Load Balancer Secure Web Proxy The IP address ranges of the associated proxy-only subnets Services with health checks The probe IP address ranges of your load balancer type Publish a service To publish a service, you create a service attachment.",
+          "Publish services by using Private Service Connect As a service producer, you can use Private Service Connect to publish services using internal IP addresses in your VPC network.",
+          "To publish a service and explicitly approve consumers based on VPC network, send the following request: POST https://compute.googleapis.com/compute/v1/projects/ PROJECT ID /regions/ ATTACHMENT REGION /serviceAttachments { \"name\": \" ATTACHMENT NAME \", \"region\": \" ATTACHMENT REGION \", \"connectionPreference\": \"ACCEPT MANUAL\", \"targetService\": \" TARGET SERVICE \", \"enableProxyProtocol\": false, \"natSubnets\": [ \" PSC SUBNET 1 URI \", \" PSC SUBNET 2 URI \" ], \"consumerRejectLists\": [ \"projects/ REJECTED PROJECT ID 1 /global/networks/ REJECTED NETWORK 1 \", \"projects/ REJECTED PROJECT ID 2 /global/networks/ REJECTED NETWORK 2 \" ], \"consumerAcceptLists\": [ { \"networkUrl\": \"projects/ ACCEPTED PROJECT ID 1 /global/networks/ ACCEPTED NETWORK 1 \", \"connectionLimit\": \" LIMIT 1 \" }, { \"networkUrl\": \"projects/ ACCEPTED PROJECT ID 2 /global/networks/ ACCEPTED NETWORK 2 \", \"connectionLimit\": \" LIMIT 2 \" } ], \"propagatedConnectionLimit\": PROPAGATED CONNECTION LIMIT , \"domainNames\": [ \" DOMAIN NAME \" ] } Replace the following: REJECTED PROJECT ID 1 and REJECTED PROJECT ID 2 : the IDs of the parent projects of the networks that you want to reject. consumerRejectLists is optional and can contain one or more networks."
+        ]
+      },
+      {
+        "title": "\"Create and run Connectivity Tests \\_|\\_ Network Intelligence Center - Connectivity\\",
+        "url": "https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/how-to/running-connectivity-tests",
+        "source_id": "site-iam-reference",
+        "final_score": 240,
+        "relevance": "",
+        "evidence_snippets": [
+          "These parameters are automatically selected based on your source and destination IP addresses. resource \"google network management connectivity test\" \"default\" { name = \"conn-test-addr\" source { ip address = google compute address.source addr.address project id = google compute address.source addr.project network = google compute network.default.id network type = \"GCP NETWORK\" } destination { ip address = google compute address.dest addr.address project id = google compute address.dest addr.project network = google compute network.default.id port = \"80\" } protocol = \"UDP\" } resource \"google compute network\" \"default\" { name = \"connectivity-vpc\" auto create subnetworks = false } resource \"google compute subnetwork\" \"default\" { name = \"connectivity-vpc-subnet\" ip cidr range = \"10.0.0.0/8\" region = \"us-central1\" network = google compute network.default.id } resource \"google compute firewall\" \"default\" { name = \"allow-incoming-all\" network = google compute network.default.name allow { protocol = \"all\" } source ranges = [\"0.0.0.0/0\"] } resource \"google compute address\" \"source addr\" { name = \"src-addr\" subnetwork = google compute subnetwork.default.id address type = \"INTERNAL\" address = \"10.0.0.42\" region = \"us-central1\" } resource \"google compute address\" \"dest addr\" { name = \"dest-addr\" subnetwork = google compute subnetwork.default.id address type = \"INTERNAL\" address = \"10.0.0.43\" region = \"us-central1\" } resource \"google compute instance\" \"source\" { name = \"source-vm1\" machine type = \"e2-medium\" zone = \"us-central1-a\" boot disk { initialize params { image = data.google compute image.default.id } } network interface { network = google compute network.default.id subnetwork = google compute subnetwork.default.id network ip = \"10.0.0.42\" access config { } } } resource \"google compute instance\" \"destination\" { name = \"dest-vm1\" machine type = \"e2-medium\" zone = \"us-central1-a\" boot disk { initialize params { image = data.google compute image.default.id } } network interface { network = google compute network.default.id subnetwork = google compute subnetwork.default.id network ip = \"10.0.0.43\" access config { } } } data \"google compute image\" \"default\" { family = \"debian-11\" project = \"debian-cloud\" } API This example tests the ability to ping from the source IP address to the destination IP address.",
+          "Continue to View test results . gcloud Replace variables for the command options with values from your VPC network. gcloud network-management connectivity-tests create NAME \\ --source-ip-address= SOURCE IP ADDRESS \\ --source-network= SOURCE NETWORK \\ --source-network-type=GCP NETWORK \\ --destination-ip-address= DESTINATION IP ADDRESS \\ --destination-port= DESTINATION PORT \\ --protocol= PROTOCOL Replace the following: NAME : the name of the Connectivity Test.",
+          "Continue to View test results . gcloud Replace the variables for the command options according to the following guidance: gcloud network-management connectivity-tests create NAME \\ --source-instance= SOURCE INSTANCE \\ --source-ip-address= SOURCE IP ADDRESS \\ DESTINATION RESOURCE FLAG = DESTINATION ENDPOINT \\ --destination-port= DESTINATION PORT \\ --protocol= PROTOCOL Replace the following: NAME : the name of the Connectivity Test."
+        ]
+      },
+      {
+        "title": "\"Roles and permissions \\_|\\_ Network Intelligence Center - Connectivity Tests\\",
+        "url": "https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/concepts/access-control",
+        "source_id": "site-iam-reference",
+        "final_score": 236,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Warning: Do not grant service agent roles to any principals except service agents . cloudsql.instances.get cloudsql.instances.list compute.addresses.get compute.addresses.list compute.backendServices.get compute.backendServices.list compute. externalVpnGateways. get compute. externalVpnGateways. list compute.firewalls.get compute.firewalls.list compute.forwardingRules.get compute.forwardingRules.list compute.globalAddresses.get compute.globalAddresses.list compute. globalForwardingRules. get compute. globalForwardingRules. list compute. globalNetworkEndpointGroups. get compute. globalNetworkEndpointGroups. list compute.healthChecks.get compute.healthChecks.list compute.httpHealthChecks.get compute.httpHealthChecks.list compute.httpsHealthChecks.get compute.httpsHealthChecks.list compute.instanceGroups.get compute.instanceGroups.list compute.instances.get compute.instances.list compute. networkEndpointGroups. get compute. networkEndpointGroups. list compute.networks.get compute. networks. getEffectiveFirewalls compute.networks.list compute. networks. listPeeringRoutes compute.packetMirrorings.get compute.packetMirrorings.list compute. regionBackendServices. get compute. regionBackendServices. list compute.regionHealthChecks.get compute. regionHealthChecks. list compute. regionNetworkEndpointGroups. get compute. regionNetworkEndpointGroups. list compute. regionTargetHttpProxies. get compute. regionTargetHttpProxies. list compute. regionTargetHttpsProxies. get compute. regionTargetHttpsProxies. list compute. regionTargetTcpProxies. get compute. regionTargetTcpProxies. list compute.regionUrlMaps.get compute.regionUrlMaps.list compute.routers.get compute.routers.list compute.routes.get compute.routes.list compute.subnetworks.get compute.subnetworks.list compute.targetGrpcProxies.get compute.targetGrpcProxies.list compute.targetHttpProxies.get compute.targetHttpProxies.list compute.targetHttpsProxies.get compute. targetHttpsProxies. list compute.targetInstances.get compute.targetInstances.list compute.targetPools.get compute.targetPools.list compute.targetSslProxies.get compute.targetSslProxies.list compute.targetTcpProxies.get compute.targetTcpProxies.list compute.targetVpnGateways.get compute.targetVpnGateways.list compute.urlMaps.get compute.urlMaps.list compute.vpnGateways.get compute.vpnGateways.list compute.vpnTunnels.get compute.vpnTunnels.list container.clusters.get container.clusters.list container.nodes.get container.nodes.list Custom roles You can create custom roles by selecting a list of permissions from the permissions table for Connectivity Tests.",
+          "Public IP addresses of Google Cloud resources If you specify a public IP address that is assigned to a resource in one of your projects as a test source or destination but don't have permissions to the project where the resource with this address is defined, this IP address is considered to be an internet IP address.",
+          "Lowest-level resources where you can grant this role: Project networkmanagement. connectivitytests. get networkmanagement. connectivitytests. getIamPolicy networkmanagement. connectivitytests. list networkmanagement.locations. networkmanagement. locations. get networkmanagement. locations. list networkmanagement. monitoringpoints. get networkmanagement. monitoringpoints. list networkmanagement. networkpaths. networkmanagement. networkpaths. get networkmanagement. networkpaths. list networkmanagement. operations. get networkmanagement. operations. list networkmanagement. providers. get networkmanagement. providers. list networkmanagement. topologygraphs. read networkmanagement. vpcflowlogsconfigs. get networkmanagement. vpcflowlogsconfigs. list networkmanagement.webpaths. networkmanagement.webpaths.get networkmanagement. webpaths. list resourcemanager. organizations. get resourcemanager.projects.get resourcemanager.projects.list Cloud Network Insights Admin Beta ( roles/ networkmanagement.CloudNetworkInsightsAdmin ) Full access to Cloud Network Insights resources. networkmanagement.locations. networkmanagement. locations. get networkmanagement. locations. list networkmanagement. monitoringpoints. networkmanagement. monitoringpoints. downloadConfig networkmanagement. monitoringpoints. get networkmanagement. monitoringpoints. list networkmanagement. networkpaths. networkmanagement. networkpaths. get networkmanagement. networkpaths. list networkmanagement. operations. get networkmanagement. operations. list networkmanagement.providers. networkmanagement. providers. create networkmanagement. providers. delete networkmanagement. providers. generateProviderAccessToken networkmanagement. providers. get networkmanagement. providers. list networkmanagement.webpaths. networkmanagement.webpaths.get networkmanagement. webpaths. list resourcemanager. organizations. get resourcemanager.projects.get resourcemanager.projects.list Cloud Network Insights Editor Beta ( roles/ networkmanagement.CloudNetworkInsightsEditor ) Editor access to Cloud Network Insights resources. networkmanagement.locations. networkmanagement. locations. get networkmanagement. locations. list networkmanagement. monitoringpoints. networkmanagement. monitoringpoints. downloadConfig networkmanagement. monitoringpoints. get networkmanagement. monitoringpoints. list networkmanagement. networkpaths. networkmanagement. networkpaths. get networkmanagement. networkpaths. list networkmanagement. operations. get networkmanagement. operations. list networkmanagement.providers. networkmanagement. providers. create networkmanagement. providers. delete networkmanagement. providers. generateProviderAccessToken networkmanagement. providers. get networkmanagement. providers. list networkmanagement.webpaths. networkmanagement.webpaths.get networkmanagement. webpaths. list resourcemanager. organizations. get resourcemanager.projects.get resourcemanager.projects.list Cloud Network Insights Viewer Beta ( roles/ networkmanagement.CloudNetworkInsightsViewer ) Read-only access to Cloud Network Insights resources. networkmanagement. monitoringpoints. get networkmanagement. monitoringpoints. list networkmanagement. networkpaths. networkmanagement. networkpaths. get networkmanagement. networkpaths. list networkmanagement. providers. generateProviderAccessToken networkmanagement. providers. get networkmanagement. providers. list networkmanagement.webpaths. networkmanagement.webpaths.get networkmanagement. webpaths. list resourcemanager. organizations. get resourcemanager.projects.get resourcemanager.projects.list Service agent roles Service agent roles should only be granted to service agents ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "explicit",
+    "explicit_roles": [
+      "roles/accessapproval.admin",
+      "roles/accessapproval.approver",
+      "roles/accessapproval.configEditor"
+    ],
+    "explicit_permissions": [
+      {
+        "permission": "resourcemanager.projects.get",
+        "group": "resourcemanager",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver",
+          "roles/accessapproval.configEditor"
+        ]
+      },
+      {
+        "permission": "resourcemanager.projects.list",
+        "group": "resourcemanager",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver",
+          "roles/accessapproval.configEditor"
+        ]
+      }
+    ],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "addr.address",
+      "addr.project",
+      "address.dest",
+      "address.source",
+      "cloudsql.instances.get",
+      "cloudsql.instances.list",
+      "compute.addresses.get",
+      "compute.addresses.list",
+      "compute.backendServices.get",
+      "compute.backendServices.list",
+      "compute.firewalls.get",
+      "compute.firewalls.list",
+      "compute.forwardingRules.get",
+      "compute.forwardingRules.list",
+      "compute.globalAddresses.get",
+      "compute.globalAddresses.list",
+      "compute.googleapis.com",
+      "compute.healthChecks.get",
+      "compute.healthChecks.list",
+      "compute.httpHealthChecks.get",
+      "compute.httpHealthChecks.list",
+      "compute.httpsHealthChecks.get",
+      "compute.httpsHealthChecks.list",
+      "compute.instanceGroups.get",
+      "compute.instanceGroups.list",
+      "compute.instances.get",
+      "compute.instances.list",
+      "compute.networks.get",
+      "compute.networks.list",
+      "compute.packetMirrorings.get",
+      "compute.packetMirrorings.list",
+      "compute.regionHealthChecks.get",
+      "compute.regionUrlMaps.get",
+      "compute.regionUrlMaps.list",
+      "compute.routers.get",
+      "compute.routers.list",
+      "compute.routes.get",
+      "compute.routes.list",
+      "compute.subnetworks.get",
+      "compute.subnetworks.list",
+      "compute.targetGrpcProxies.get",
+      "compute.targetGrpcProxies.list",
+      "compute.targetHttpProxies.get",
+      "compute.targetHttpProxies.list",
+      "compute.targetHttpsProxies.get",
+      "compute.targetInstances.get",
+      "compute.targetInstances.list",
+      "compute.targetPools.get",
+      "compute.targetPools.list",
+      "compute.targetSslProxies.get",
+      "compute.targetSslProxies.list",
+      "compute.targetTcpProxies.get",
+      "compute.targetTcpProxies.list",
+      "compute.targetVpnGateways.get",
+      "compute.targetVpnGateways.list",
+      "compute.urlMaps.get",
+      "compute.urlMaps.list",
+      "compute.vpnGateways.get",
+      "compute.vpnGateways.list",
+      "compute.vpnTunnels.get",
+      "compute.vpnTunnels.list",
+      "container.clusters.get",
+      "container.clusters.list",
+      "container.nodes.get",
+      "container.nodes.list",
+      "data.google",
+      "image.default.id",
+      "network.default.id",
+      "network.default.name",
+      "networkmanagement.CloudNetworkInsightsAdmin",
+      "networkmanagement.CloudNetworkInsightsEditor",
+      "networkmanagement.CloudNetworkInsightsViewer",
+      "networkmanagement.editor",
+      "networkmanagement.locations",
+      "networkmanagement.operations",
+      "networkmanagement.providers",
+      "networkmanagement.viewer",
+      "networkmanagement.webpaths",
+      "networkmanagement.webpaths.get",
+      "subnetwork.default.id"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/quota",
+        "https://docs.cloud.google.com/vpc/docs/configure-private-service-connect-producer",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/how-to/running-connectivity-tests",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/concepts/access-control"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/quota",
+        "https://docs.cloud.google.com/vpc/docs/configure-private-service-connect-producer",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/how-to/running-connectivity-tests",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/concepts/access-control"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/quota",
+        "https://docs.cloud.google.com/vpc/docs/configure-private-service-connect-producer",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/how-to/running-connectivity-tests",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/concepts/access-control"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/quota",
+        "https://docs.cloud.google.com/vpc/docs/configure-private-service-connect-producer",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/how-to/running-connectivity-tests",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/concepts/access-control"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/quota",
+        "https://docs.cloud.google.com/vpc/docs/configure-private-service-connect-producer",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/how-to/running-connectivity-tests",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/concepts/access-control"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/quota",
+        "https://docs.cloud.google.com/vpc/docs/configure-private-service-connect-producer",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/how-to/running-connectivity-tests",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/concepts/access-control"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/quota",
+        "https://docs.cloud.google.com/vpc/docs/configure-private-service-connect-producer",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/how-to/running-connectivity-tests",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/concepts/access-control"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/quota",
+        "https://docs.cloud.google.com/vpc/docs/configure-private-service-connect-producer",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/how-to/running-connectivity-tests",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/concepts/access-control"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/quota",
+        "https://docs.cloud.google.com/vpc/docs/configure-private-service-connect-producer",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/how-to/running-connectivity-tests",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/concepts/access-control"
+      ]
+    }
+  ]
+}

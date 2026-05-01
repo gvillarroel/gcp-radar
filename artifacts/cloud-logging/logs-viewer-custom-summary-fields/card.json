@@ -1,0 +1,272 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:24.398Z",
+  "source_step08_card": "data/step-08/current/products/cloud-logging/card.json",
+  "product_name": "Cloud Logging",
+  "product_slug": "cloud-logging",
+  "feature_name": "Logs Viewer custom summary fields",
+  "feature_slug": "logs-viewer-custom-summary-fields",
+  "summary": "Logs Viewer lets users specify custom fields in log-entry summary lines.",
+  "extended_definition": "Logs Viewer lets users specify custom fields in log-entry summary lines.",
+  "lifecycle": {
+    "latest_feature_date": "2018-05-08",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/logging/docs/access-control",
+      "https://docs.cloud.google.com/logging/docs/view/building-queries",
+      "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "View and analyze logs \\_|\\_ Cloud Logging \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface",
+        "source_id": "site-docs-root",
+        "final_score": 245,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Set preferences for viewing log data To customize how your logs data is presented in the query results, click the settings Preferences button, and select View , Format , or Manage summary fields : To show or hide the Timeline and Fields panes, to hide summary chips in your query results, or to change the sorting order of your logs, select View .",
+          "The Logs Explorer offers default summary fields and custom summary fields.",
+          "To select which parts of the timestamp to display, click the settings Preferences menu, select Format , and then select one of the following options: Date, time, and timezone Date and time (default) Time only Find patterns in your logs by using summary fields Suppose you're looking through the log entries in your query results and want to quickly skim the results by a certain LogEntry field."
+        ]
+      },
+      {
+        "title": "\"Build and save queries by using the Logging query language \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/logging/docs/view/building-queries",
+        "source_id": "site-docs-root",
+        "final_score": 183,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Include custom summary fields (Optional): Enable Include summary fields and enter the summary fields that you want to display.",
+          "The following example illustrates a sample request body, which contains an instance of SavedQuery : { \"parent\": \"projects/my-project/locations/global\" \"savedQueryId\": \"compute-query\" { \"displayName\": \"compute-admin-activity-query\", \"description\": \"Queries for Compute Engine Admin Activity logs.\", \"loggingQuery\": { \"filter\": resource.type=\"gce instance\" AND log id(\"cloudaudit.googleapis.com/activity\"), }, \"visibility\": \"PRIVATE\" } } To share the query with other members of the Google Cloud project, specify a value of SHARED in the visibility field.",
+          "Do one of the following: To get the permissions that you need to write and run queries, to run and save private queries, and to run shared queries, ask your administrator to grant you the Logs Viewer ( roles/logging.viewer ) IAM role on your project."
+        ]
+      },
+      {
+        "title": "Access control with IAM \\_|\\_ Cloud Logging \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/logging/docs/access-control",
+        "source_id": "site-docs-root",
+        "final_score": 179,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Roles required to create and use log-based metrics Following is a summary of the common roles and permissions that a principal needs to access log-based metrics: The Logs Configuration Writer ( roles/logging.configWriter ) role lets principals list, create, get, update, and delete log-based metrics.",
+          "Lowest-level resources where you can grant this role: Project logging.fields.access Log Link Accessor ( roles/ logging.linkViewer ) Ability to see links for a bucket. logging.links.get logging.links.list Logs Writer ( roles/ logging.logWriter ) Provides the permissions to write log entries.",
+          "Grant access to log buckets The Logs Viewer role ( roles/logging.viewer ) lets a principal access all log data stored in the Required and Default log buckets, except for data access logs."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "explicit",
+    "explicit_roles": [
+      "roles/accessapproval.admin",
+      "roles/accessapproval.approver",
+      "roles/accessapproval.configEditor"
+    ],
+    "explicit_permissions": [
+      {
+        "permission": "resourcemanager.projects.get",
+        "group": "resourcemanager",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver",
+          "roles/accessapproval.configEditor"
+        ]
+      },
+      {
+        "permission": "resourcemanager.projects.list",
+        "group": "resourcemanager",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver",
+          "roles/accessapproval.configEditor"
+        ]
+      }
+    ],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cloudaudit.googleapis.com",
+      "logging.buckets.copyLogEntries",
+      "logging.buckets.create",
+      "logging.buckets.delete",
+      "logging.buckets.get",
+      "logging.buckets.list",
+      "logging.buckets.undelete",
+      "logging.buckets.update",
+      "logging.bucketWriter",
+      "logging.configWriter",
+      "logging.exclusions",
+      "logging.exclusions.create",
+      "logging.exclusions.delete",
+      "logging.exclusions.get",
+      "logging.exclusions.list",
+      "logging.exclusions.update",
+      "logging.fields.access",
+      "logging.links",
+      "logging.links.create",
+      "logging.links.delete",
+      "logging.links.get",
+      "logging.links.list",
+      "logging.linkViewer",
+      "logging.locations",
+      "logging.locations.get",
+      "logging.locations.list",
+      "logging.logEntries",
+      "logging.logEntries.create",
+      "logging.logEntries.download",
+      "logging.logEntries.list",
+      "logging.logEntries.route",
+      "logging.logMetrics",
+      "logging.logMetrics.create",
+      "logging.logMetrics.delete",
+      "logging.logMetrics.get",
+      "logging.logMetrics.list",
+      "logging.logMetrics.update",
+      "logging.logs",
+      "logging.logs.delete",
+      "logging.logs.list",
+      "logging.logScopes",
+      "logging.logScopes.create",
+      "logging.logScopes.delete",
+      "logging.logScopes.get",
+      "logging.logScopes.list",
+      "logging.logScopes.update",
+      "logging.logServiceIndexes.list",
+      "logging.logServices.list",
+      "logging.logWriter",
+      "logging.notificationRules",
+      "logging.notificationRules.get",
+      "logging.notificationRules.list",
+      "logging.operations",
+      "logging.operations.cancel",
+      "logging.operations.get",
+      "logging.operations.list",
+      "logging.privateLogEntries.list",
+      "logging.queries",
+      "logging.queries.deleteShared",
+      "logging.queries.getShared",
+      "logging.queries.listShared",
+      "logging.queries.share",
+      "logging.queries.updateShared",
+      "logging.queries.usePrivate",
+      "logging.settings",
+      "logging.settings.get",
+      "logging.settings.update",
+      "logging.sinks",
+      "logging.sinks.create",
+      "logging.sinks.delete",
+      "logging.sinks.get",
+      "logging.sinks.list",
+      "logging.sinks.update",
+      "logging.sqlAlerts",
+      "logging.sqlAlerts.create",
+      "logging.sqlAlerts.update",
+      "logging.usage.get",
+      "logging.viewer",
+      "logging.views",
+      "logging.views.access",
+      "logging.views.create",
+      "logging.views.delete",
+      "logging.views.get",
+      "logging.views.getIamPolicy",
+      "logging.views.list",
+      "logging.views.listLogs",
+      "logging.views.listResourceKeys",
+      "logging.views.setIamPolicy",
+      "logging.views.update",
+      "observability.scopes.get",
+      "resource.type"
+    ],
+    "missing_inventory_roles": [
+      "roles/logging.configWriter",
+      "roles/logging.viewer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface",
+        "https://docs.cloud.google.com/logging/docs/view/building-queries",
+        "https://docs.cloud.google.com/logging/docs/access-control"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface",
+        "https://docs.cloud.google.com/logging/docs/view/building-queries",
+        "https://docs.cloud.google.com/logging/docs/access-control"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface",
+        "https://docs.cloud.google.com/logging/docs/view/building-queries",
+        "https://docs.cloud.google.com/logging/docs/access-control"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface",
+        "https://docs.cloud.google.com/logging/docs/view/building-queries",
+        "https://docs.cloud.google.com/logging/docs/access-control"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface",
+        "https://docs.cloud.google.com/logging/docs/view/building-queries",
+        "https://docs.cloud.google.com/logging/docs/access-control"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface",
+        "https://docs.cloud.google.com/logging/docs/view/building-queries",
+        "https://docs.cloud.google.com/logging/docs/access-control"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface",
+        "https://docs.cloud.google.com/logging/docs/view/building-queries",
+        "https://docs.cloud.google.com/logging/docs/access-control"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface",
+        "https://docs.cloud.google.com/logging/docs/view/building-queries",
+        "https://docs.cloud.google.com/logging/docs/access-control"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface",
+        "https://docs.cloud.google.com/logging/docs/view/building-queries",
+        "https://docs.cloud.google.com/logging/docs/access-control"
+      ]
+    }
+  ]
+}

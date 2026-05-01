@@ -1,0 +1,166 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:18.229Z",
+  "source_step08_card": "data/step-08/current/products/assured-open-source-software/card.json",
+  "product_name": "Assured Open Source Software",
+  "product_slug": "assured-open-source-software",
+  "feature_name": "Assured OSS artifact checksum signature verification",
+  "feature_slug": "assured-oss-artifact-checksum-signature-verification",
+  "summary": "Assured OSS now allows artifact signature verification using checksums.",
+  "extended_definition": "Assured OSS now allows artifact signature verification using checksums.",
+  "lifecycle": {
+    "latest_feature_date": "2025-06-30",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/assured-open-source-software/docs/package-signature-overview",
+      "https://docs.cloud.google.com/assured-open-source-software/docs/verify-build-provenance",
+      "https://docs.cloud.google.com/assured-open-source-software/docs/verify-packages"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Overview of Assured OSS artifact signature \\_|\\_ Assured Open Source Software\\",
+        "url": "https://docs.cloud.google.com/assured-open-source-software/docs/package-signature-overview",
+        "source_id": "site-docs-reference",
+        "final_score": 138,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Grant the required permissions to execute the script using the following command: chmod +x signatureverification.sh Execute the script using the following command if you haven't downloaded the signature.zip file: ./signatureverification.sh --data file path PATH TO DATA FILE \\ --signature url SIGNATURE ZIP URL \\ --root cert url ROOT CERT URL Replace the following: PATH TO DATA FILE : the path to the data file in your local directory that you want to verify SIGNATURE ZIP URL : the URL of the signature zip file ROOT CERT URL : the public root certificate URL Sample output The following output indicates that the verification script has run successfully.",
+          "The command returns the following output: Verified OK Verify the certificate To verify the certificate, run the following command: openssl verify -verbose -CAfile ca.crt -untrusted certChain.pem cert.pem The ca.cert is the root certificate that can be download using this command: curl -o PATH TO LOCAL STORE https://privateca-content-6333d504-0000-2df7-afd6-30fd38154590.storage.googleapis.com/a2c725a592f1d586f1f8/ca.crt The following output is returned upon success: cert.pem: OK Verify signatures using a script To use a verification script to verify signatures, follow these steps: Download the verification script.",
+          "Signature verification successful Certificate verification successful What's next Verify signatures Verify the build provenance Learn about protecting your software supply chain Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License ."
+        ]
+      },
+      {
+        "title": "\"Verify signatures in the Assured OSS free tier \\_|\\_ Assured Open Source\\",
+        "url": "https://docs.cloud.google.com/assured-open-source-software/docs/verify-packages",
+        "source_id": "site-docs-reference",
+        "final_score": 123,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "As shown in the following example, you can get the signature zip URL from the externalRefs : referenceLocator field. \"packages\": [ { \"SPDXID\": \"SPDXRef-Package-logback-core-1.2.11.jar\", \"checksums\": [ { \"algorithm\": \"SHA256\", \"checksumValue\": \"c847e0e310acda8bc1347c9d9cc051e91210b9f943e131fceb5034c2f0c9a5d8\" } ], \"downloadLocation\": \"https://us-maven.pkg.dev/cloud-aoss/cloud-aoss-java/ch/qos/logback/logback-core/1.2.11/logback-core-1.2.11.jar\", \"externalRefs\": [ { \"referenceCategory\": \"SECURITY\", \"referenceLocator\": \"cpe:2.3:a: :JAVA\\\\:\\\\:ch\\\\.qos\\\\.logback\\\\:logback\\\\-core:1\\\\.2\\\\.11: : : : : : : \", \"referenceType\": \"cpe23Type\" }, { \"referenceCategory\": \"OTHER\", \"referenceLocator\": \" gs://cloud-aoss/java/ch.qos.logback:logback-core/1.2.11/logback-core-1.2.11 binary 2022-10-12T14:19:11Z.zip\" , \"referenceType\": \"digestURL\" } ], You can use the local signature zip for manual verification or the Cloud Storage URL directly for using the verification script.",
+          "As shown in the following example, you can find the signature zip URL in the description: digestUrl field. package { distribution { cpe uri: \"cpe:2.3:a:JAVA::com.fasterxml.jackson.core:jackson-databind:2.13.3: : : : : : : \" maintainer: \"<nil>\" url: \"https://us-maven.pkg.dev/cloud-aoss/cloud-aoss-java/com/fasterxml/jackson/core/jackson-databind/2.13.3/jackson-databind-2.13.3.jar\" description: \"{\\n \\\"artifactMetadataList\\\": [\\n {\\n \\\"digestUrl\\\": \\ \"gs://cloud-aoss/java/com.fasterxml.jackson.core:jackson-databind/2.13.3/jackson-databind-2.13.3 binary 2022-10-12T06:54:05Z.zip \\\"\\n }\\n ]\\n}\" } distribution { cpe uri: \"cpe:2.3:a:JAVA::com.fasterxml.jackson.core:jackson-databind:2.13.3: : : : : : : \" url: \"https://us-maven.pkg.dev/cloud-aoss/cloud-aoss-java/com/fasterxml/jackson/core/jackson-databind/2.13.3/jackson-databind-2.13.3-sources.jar\" description: \"{\\n \\\"digestUrl\\\": \\\"gs://cloud-aoss/java/com.fasterxml.jackson.core:jackson-databind/2.13.3/jackson-databind-2.13.3-sources source 2022-10-12T06:54:05Z.zip\\\"\\n}\" } } Sample example from Cloud Storage metadata ( buildInfo.json file ).",
+          "To download the certificate, run the following command: curl -o PATH TO LOCAL STORE /ca.crt \"https://privateca-content-6333d504-0000-2df7-afd6-30fd38154590.storage.googleapis.com/a2c725a592f1d586f1f8/ca.crt\" Replace PATH TO LOCAL STORE with the local path where you want to download the certificate Download the verification script if you have not already done so. gcloud storage cp \"gs://cloud-aoss/utils/signature-verification/v1.0/signatureverification.sh\" . --recursive chmod +x signatureverification.sh Run the verification script and verify. ./signatureverification.sh --data file path PATH TO DATA FILE --signature url \"gs://cloud-aoss/utils/python-requirements-txt/v1.0/generator-sig.zip\" --root cert url ROOT CERT URL Replace the following: PATH TO DATA FILE with the local path of the generator.sh script we want to verify as obtained in Step 2."
+        ]
+      },
+      {
+        "title": "\"Verify the build provenance \\_|\\_ Assured Open Source Software \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/assured-open-source-software/docs/verify-build-provenance",
+        "source_id": "site-docs-reference",
+        "final_score": 84,
+        "relevance": "",
+        "evidence_snippets": [
+          "The following output is returned after the command runs successfully: Verified OK To also verify the artifact hash associated with the provenance, use the following command: cosign verify-blob-attestation --insecure-ignore-tlog --key KEY REF --signature signature.sig --type slsaprovenance --check-claims=true ARTIFACT PATH Replace the following: KEY REF : The path to the public key you downloaded in the previous step. signature.sig : The file containing the signature retrieved in the previous step.",
+          "Export $(go env GOPATH)/bin , and run the aoss-verifier verify-package command with the --verify build provenance flag. aoss-verifier verify-package \\ --language LANGUAGE \\ --package id PACKAGE ID \\ --version VERSION \\ --artifact path ARTIFACT PATH \\ --verify build provenance \\ [ --disable certificate verification ] \\ [ --temp downloads path TEMP DOWNLOADS DIR PATH ] \\ [ --disable deletes ] Replace the following: LANGUAGE : The package language.",
+          "Sample metadata snippet: { 'BuildOccurre n ce' : na me : \"projects/cloud-aoss/occurrences/06c514bb-1069-4cde-8d68-b1306f19535a\" resource uri : \"jackson-databind-2.13.3.jar@sha256:4c01a14673bc1cd4a2df337a3b4e695af0a6ed8ac6be19c9e4077377fb8adf92\" n o te na me : \"projects/cloud-aoss/notes/tekton-cloudbuild-intoto\" ki n d : BUILD crea te t ime { seco n ds : 1665556616 nan os : 891004000 } …… …… } e n velope { payload : \"{\\\" type\\\":\\\"https://in-toto.io/Statement/v0.1\\\", …..\" payload t ype : \"application/vnd.in-toto+json\" sig natures { sig : \"{\\\"payloadType\\\":\\\"application/vnd.in-toto+json\\\",.....\" keyid : \"gcpkms://projects/cloud-aoss/locations/global/keyRings/cloud-aoss-ring/cryptoKeys/tekton-chains\" } } , … Retrieve the build provenance signature."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "ca.cert",
+      "ca.crt",
+      "cert.pem",
+      "ch.qos.logback",
+      "com.fasterxml.jackson.core",
+      "generator.sh",
+      "maven.pkg.dev",
+      "metadata.py",
+      "sig.zip",
+      "signature.sig",
+      "signature.zip",
+      "signatureverification.sh",
+      "sources.jar",
+      "storage.googleapis.com",
+      "toto.io",
+      "v0.1",
+      "v1.0",
+      "v1.1",
+      "vnd.in"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/assured-open-source-software/docs/package-signature-overview",
+        "https://docs.cloud.google.com/assured-open-source-software/docs/verify-packages",
+        "https://docs.cloud.google.com/assured-open-source-software/docs/verify-build-provenance"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/assured-open-source-software/docs/package-signature-overview",
+        "https://docs.cloud.google.com/assured-open-source-software/docs/verify-packages",
+        "https://docs.cloud.google.com/assured-open-source-software/docs/verify-build-provenance"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/assured-open-source-software/docs/package-signature-overview",
+        "https://docs.cloud.google.com/assured-open-source-software/docs/verify-packages",
+        "https://docs.cloud.google.com/assured-open-source-software/docs/verify-build-provenance"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/assured-open-source-software/docs/package-signature-overview",
+        "https://docs.cloud.google.com/assured-open-source-software/docs/verify-packages",
+        "https://docs.cloud.google.com/assured-open-source-software/docs/verify-build-provenance"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/assured-open-source-software/docs/package-signature-overview",
+        "https://docs.cloud.google.com/assured-open-source-software/docs/verify-packages",
+        "https://docs.cloud.google.com/assured-open-source-software/docs/verify-build-provenance"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/assured-open-source-software/docs/package-signature-overview",
+        "https://docs.cloud.google.com/assured-open-source-software/docs/verify-packages",
+        "https://docs.cloud.google.com/assured-open-source-software/docs/verify-build-provenance"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/assured-open-source-software/docs/package-signature-overview",
+        "https://docs.cloud.google.com/assured-open-source-software/docs/verify-packages",
+        "https://docs.cloud.google.com/assured-open-source-software/docs/verify-build-provenance"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/assured-open-source-software/docs/package-signature-overview",
+        "https://docs.cloud.google.com/assured-open-source-software/docs/verify-packages",
+        "https://docs.cloud.google.com/assured-open-source-software/docs/verify-build-provenance"
+      ]
+    }
+  ]
+}

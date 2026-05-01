@@ -1,0 +1,171 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:28.180Z",
+  "source_step08_card": "data/step-08/current/products/cloud-storage/card.json",
+  "product_name": "Cloud Storage",
+  "product_slug": "cloud-storage",
+  "feature_name": "Public access prevention",
+  "feature_slug": "public-access-prevention",
+  "summary": "Public access prevention blocks Cloud Storage data from being accidentally exposed to the public.",
+  "extended_definition": "Public access prevention blocks Cloud Storage data from being accidentally exposed to the public.",
+  "lifecycle": {
+    "latest_feature_date": "2021-07-01",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/java/docs/reference/google-cloud-storage/latest/com.google.cloud.storage",
+      "https://docs.cloud.google.com/storage/docs/access-control",
+      "https://docs.cloud.google.com/storage/docs/access-control/making-data-public",
+      "https://docs.cloud.google.com/storage/docs/troubleshooting"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Overview of access control \\_|\\_ Cloud Storage \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/storage/docs/access-control",
+        "source_id": "site-iam-reference",
+        "final_score": 229,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To prevent resources from becoming inaccessible, you can do any of the following: Grant the Storage Admin IAM role for your project to a group instead of an individual.",
+          "When you enable public access prevention, users who gain access through allUsers and allAuthenticatedUsers are disallowed access to data.",
+          "Public access prevention Use public access prevention to restrict public access to your buckets and objects."
+        ]
+      },
+      {
+        "title": "Make data public \\_|\\_ Cloud Storage \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/storage/docs/access-control/making-data-public",
+        "source_id": "site-iam-reference",
+        "final_score": 221,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To remove public access from all objects in a bucket: Storage Admin ( roles/storage.admin ) These roles contain the permissions required to make objects public.",
+          "For more information, see Set up authentication for client libraries . use Google\\Cloud\\Storage\\StorageClient; / Update the specified bucket's IAM configuration to make it publicly accessible. @param string $bucketName The name of your Cloud Storage bucket. (e.g. 'my-bucket') / function set bucket public iam(string $bucketName): void { $storage = new StorageClient(); $bucket = $storage->bucket($bucketName); $policy = $bucket->iam()->policy(['requestedPolicyVersion' => 3]); $policy['version'] = 3; $role = 'roles/storage.objectViewer'; $members = ['allUsers']; $policy['bindings'][] = [ 'role' => $role, 'members' => $members ]; $bucket->iam()->setPolicy($policy); printf('Bucket %s is now public', $bucketName); } Python For more information, see the Cloud Storage Python API reference documentation .",
+          "The following is an example ACL file the would grant allUsers access to an object: <AccessControlList> <Entries> <Entry> <Scope type=\"AllUsers\"/> <Permission>READ</Permission> </Entry> </Entries> </AccessControlList> Remove public access for all objects within a bucket To remove public access for all objects within a bucket, remove the IAM policy that grants allUsers the Storage Object Viewer ( roles/storage.objectViewer ) role: Console In the Google Cloud console, go to the Cloud Storage Buckets page."
+        ]
+      },
+      {
+        "title": "\"Package com.google.cloud.storage (2.64.0) \\_|\\_ Java client libraries \\_\\",
+        "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-storage/latest/com.google.cloud.storage",
+        "source_id": "site-java-reference",
+        "final_score": 213,
+        "relevance": "",
+        "evidence_snippets": [
+          "See Also: public-access-prevention , uniform bucket-level access com. google. cloud. storage.",
+          "See Also: public-access-prevention com. google. cloud. storage.",
+          "Zero Copy Support Public components which exist to support zero-copy data access Interfaces Interface Description com. google. cloud. storage."
+        ]
+      },
+      {
+        "title": "Troubleshooting \\_|\\_ Cloud Storage \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/storage/docs/troubleshooting",
+        "source_id": "site-docs-root",
+        "final_score": 207,
+        "relevance": "",
+        "evidence_snippets": [
+          "If you have the storage.buckets.setIamPolicy permission or the storage.objects.setIamPolicy permission and you still get an error, your bucket might be subject to public access prevention , which doesn't allow access to allUsers or allAuthenticatedUsers .",
+          "Client ( extra headers = { \"x-custom-header\" : \"value\" } ) Ruby require \"google/cloud/storage\" storage = Google :: Cloud :: Storage . new storage . add custom headers { 'X-Custom-Header' = > 'value' } Accessing buckets with a CORS configuration If you have set a CORS configuration on your bucket and notice that incoming requests from client browsers are failing, try the following troubleshooting steps: Review the CORS configuration on the target bucket.",
+          "Public access prevention might be set on the bucket directly, or it might be enforced through an organization policy that is set at a higher level."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.cloud.storage",
+      "e.g",
+      "java.io.IOException",
+      "java.nio.ByteBuffer",
+      "java.nio.charset.StandardCharsets.UTF",
+      "storage.admin",
+      "storage.buckets.setIamPolicy",
+      "storage.objects.setIamPolicy",
+      "storage.objectViewer"
+    ],
+    "missing_inventory_roles": [
+      "roles/storage.admin",
+      "roles/storage.objectViewer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/access-control",
+        "https://docs.cloud.google.com/storage/docs/access-control/making-data-public",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-storage/latest/com.google.cloud.storage",
+        "https://docs.cloud.google.com/storage/docs/troubleshooting"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/access-control",
+        "https://docs.cloud.google.com/storage/docs/access-control/making-data-public",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-storage/latest/com.google.cloud.storage",
+        "https://docs.cloud.google.com/storage/docs/troubleshooting"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/access-control",
+        "https://docs.cloud.google.com/storage/docs/access-control/making-data-public",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-storage/latest/com.google.cloud.storage",
+        "https://docs.cloud.google.com/storage/docs/troubleshooting"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/access-control",
+        "https://docs.cloud.google.com/storage/docs/access-control/making-data-public",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-storage/latest/com.google.cloud.storage",
+        "https://docs.cloud.google.com/storage/docs/troubleshooting"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/access-control",
+        "https://docs.cloud.google.com/storage/docs/access-control/making-data-public",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-storage/latest/com.google.cloud.storage",
+        "https://docs.cloud.google.com/storage/docs/troubleshooting"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/access-control",
+        "https://docs.cloud.google.com/storage/docs/access-control/making-data-public",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-storage/latest/com.google.cloud.storage",
+        "https://docs.cloud.google.com/storage/docs/troubleshooting"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/access-control",
+        "https://docs.cloud.google.com/storage/docs/access-control/making-data-public",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-storage/latest/com.google.cloud.storage",
+        "https://docs.cloud.google.com/storage/docs/troubleshooting"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,100 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:46.903Z",
+  "source_step08_card": "data/step-08/current/products/spanner/card.json",
+  "product_name": "Spanner",
+  "product_slug": "spanner",
+  "feature_name": "Spanner Gemini CLI extension",
+  "feature_slug": "spanner-gemini-cli-extension",
+  "summary": "Spanner now includes a dedicated Gemini CLI extension that allows users to execute SQL statements and query a Spanner instance using natural language controls.",
+  "extended_definition": "Spanner now includes a dedicated Gemini CLI extension that allows users to execute SQL statements and query a Spanner instance using natural language controls.",
+  "lifecycle": {
+    "latest_feature_date": "2025-09-23",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/spanner/docs/build-context-gemini-cli",
+      "https://docs.cloud.google.com/spanner/docs/create-query-database-console",
+      "https://docs.cloud.google.com/spanner/docs/jdbc-session-mgmt-commands"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Build context sets using Gemini CLI \\_|\\_ Spanner \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/spanner/docs/build-context-gemini-cli",
+        "source_id": "site-docs-root",
+        "final_score": 105,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "To update the DB Context Enrichment extension, run the following command: gemini extensions update mcp-db-context-enrichment To update the DB Context Enrichment extension or to replace the GEMINI API KEY , run the following command: gemini extensions config mcp-db-context-enrichment GEMINI API KEY Replace GEMINI API KEY with your Gemini API key.",
+          "To install the DB Context Enrichment extension, follow these steps: Install the DB Context Enrichment Gemini CLI extension: gemini extensions install https://github.com/GoogleCloudPlatform/db-context-enrichment Note: The extension requires a Gemini API key at installation to authenticate with the Gemini API and enable context generation.",
+          "To prepare the environment, perform the following steps: Install Gemini CLI Install the DB Context Enrichment extension Setup database connection Install Gemini CLI To install Gemini CLI, see Get Started with Gemini CLI ."
+        ]
+      },
+      {
+        "title": "\"Create and query a database in the Google Cloud console \\_|\\_ Spanner \\_\\",
+        "url": "https://docs.cloud.google.com/spanner/docs/create-query-database-console",
+        "source_id": "site-docs-reference",
+        "final_score": 68,
+        "relevance": "",
+        "evidence_snippets": []
+      },
+      {
+        "title": "\"JDBC session management commands (GoogleSQL) \\_|\\_ Spanner \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/spanner/docs/jdbc-session-mgmt-commands",
+        "source_id": "site-docs-reference",
+        "final_score": 68,
+        "relevance": "",
+        "evidence_snippets": []
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "github.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/build-context-gemini-cli",
+        "https://docs.cloud.google.com/spanner/docs/create-query-database-console",
+        "https://docs.cloud.google.com/spanner/docs/jdbc-session-mgmt-commands"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/build-context-gemini-cli",
+        "https://docs.cloud.google.com/spanner/docs/create-query-database-console",
+        "https://docs.cloud.google.com/spanner/docs/jdbc-session-mgmt-commands"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/build-context-gemini-cli",
+        "https://docs.cloud.google.com/spanner/docs/create-query-database-console",
+        "https://docs.cloud.google.com/spanner/docs/jdbc-session-mgmt-commands"
+      ]
+    }
+  ]
+}

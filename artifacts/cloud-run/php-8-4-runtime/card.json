@@ -1,0 +1,115 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:25.811Z",
+  "source_step08_card": "data/step-08/current/products/cloud-run/card.json",
+  "product_name": "Cloud Run",
+  "product_slug": "cloud-run",
+  "feature_name": "PHP 8.4 runtime",
+  "feature_slug": "php-8-4-runtime",
+  "summary": "Cloud Run supports the PHP 8.4 runtime for deployed workloads; Cloud Run supports the PHP 8.4 runtime for deployed workloads.",
+  "extended_definition": "Cloud Run supports the PHP 8.4 runtime for deployed workloads; Cloud Run supports the PHP 8.4 runtime for deployed workloads.",
+  "lifecycle": {
+    "latest_feature_date": "2025-06-17",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 1,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "coverage_low",
+        "message": "The feature ended with coverage LOW.",
+        "suggested_steps": [
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/python/docs/reference/run/latest",
+      "https://docs.cloud.google.com/run/docs/quickstarts/build-and-deploy/deploy-php-service",
+      "https://docs.cloud.google.com/run/docs/reference/authenticate-to-cloud-run-api"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Authenticate to Cloud Run Admin API \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/run/docs/reference/authenticate-to-cloud-run-api",
+        "source_id": "site-docs-reference",
+        "final_score": 34,
+        "relevance": "",
+        "evidence_snippets": []
+      },
+      {
+        "title": "\"Quickstart: Build and deploy a PHP web app to Google Cloud with Cloud Run\\",
+        "url": "https://docs.cloud.google.com/run/docs/quickstarts/build-and-deploy/deploy-php-service",
+        "source_id": "site-docs-reference-2",
+        "final_score": 31,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The .dockerignore file excludes files from the container build process. https://docs.docker.com/engine/reference/builder/#dockerignore-file Exclude locally vendored dependencies. vendor/ Exclude \"build-time\" ignore files. .dockerignore .gcloudignore Exclude git history and configuration. .gitignore Your app is finished and ready to be deployed.",
+          "If you are under a domain restriction organization policy restricting unauthenticated invocations for your project, you will need to access your deployed service as described under Testing private services .",
+          "OK Clean up To avoid additional charges to your Google Cloud account, delete all the resources you deployed with this quickstart."
+        ]
+      },
+      {
+        "title": "\"Python Client for Cloud Run \\_|\\_ Python client libraries \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/run/latest",
+        "source_id": "site-python-reference",
+        "final_score": 26,
+        "relevance": "",
+        "evidence_snippets": []
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/quickstarts/build-and-deploy/deploy-php-service",
+        "https://docs.cloud.google.com/run/docs/reference/authenticate-to-cloud-run-api",
+        "https://docs.cloud.google.com/python/docs/reference/run/latest"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/quickstarts/build-and-deploy/deploy-php-service",
+        "https://docs.cloud.google.com/run/docs/reference/authenticate-to-cloud-run-api",
+        "https://docs.cloud.google.com/python/docs/reference/run/latest"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/quickstarts/build-and-deploy/deploy-php-service",
+        "https://docs.cloud.google.com/run/docs/reference/authenticate-to-cloud-run-api",
+        "https://docs.cloud.google.com/python/docs/reference/run/latest"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/quickstarts/build-and-deploy/deploy-php-service",
+        "https://docs.cloud.google.com/run/docs/reference/authenticate-to-cloud-run-api",
+        "https://docs.cloud.google.com/python/docs/reference/run/latest"
+      ]
+    }
+  ]
+}

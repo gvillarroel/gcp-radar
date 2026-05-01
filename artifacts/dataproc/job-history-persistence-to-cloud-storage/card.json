@@ -1,0 +1,88 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:33.243Z",
+  "source_step08_card": "data/step-08/current/products/dataproc/card.json",
+  "product_name": "Dataproc",
+  "product_slug": "dataproc",
+  "feature_name": "Job history persistence to Cloud Storage",
+  "feature_slug": "job-history-persistence-to-cloud-storage",
+  "summary": "Dataproc supports persisting MapReduce and Spark history files to the Dataproc temp bucket through a cluster property.",
+  "extended_definition": "Dataproc supports persisting MapReduce and Spark history files to the Dataproc temp bucket through a cluster property.",
+  "lifecycle": {
+    "latest_feature_date": "2020-03-17",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 1,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "coverage_low",
+        "message": "The feature ended with coverage LOW.",
+        "suggested_steps": [
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dataproc/docs/quickstarts/submit-sparks-job-template",
+      "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/PySparkJob",
+      "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/SparkJob"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Quickstart: Submit a Spark job by using a template \\_|\\_ Managed Service\\",
+        "url": "https://docs.cloud.google.com/dataproc/docs/quickstarts/submit-sparks-job-template",
+        "source_id": "site-docs-root",
+        "final_score": 86,
+        "relevance": "",
+        "evidence_snippets": [
+          "\"Managed Service for Apache Spark\" is the new name for the product formerly known as \"Dataproc on Compute Engine\" (cluster deployment) and \"Google Cloud Serverless for Apache Spark\" (serverless deployment)."
+        ]
+      },
+      {
+        "title": "PySparkJob \\_|\\_ Managed Service for Apache Spark \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/PySparkJob",
+        "source_id": "site-docs-reference",
+        "final_score": 80,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "\"Managed Service for Apache Spark\" is the new name for the product formerly known as \"Dataproc on Compute Engine\" (cluster deployment) and \"Google Cloud Serverless for Apache Spark\" (serverless deployment).",
+          "JSON representation A Dataproc job for running Apache PySpark applications on YARN.",
+          "Properties that conflict with values set by the Dataproc API might be overwritten."
+        ]
+      },
+      {
+        "title": "SparkJob \\_|\\_ Managed Service for Apache Spark \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/SparkJob",
+        "source_id": "site-docs-reference",
+        "final_score": 80,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "\"Managed Service for Apache Spark\" is the new name for the product formerly known as \"Dataproc on Compute Engine\" (cluster deployment) and \"Google Cloud Serverless for Apache Spark\" (serverless deployment).",
+          "Properties that conflict with values set by the Dataproc API might be overwritten.",
+          "JSON representation A Dataproc job for running Apache Spark applications on YARN."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": []
+}

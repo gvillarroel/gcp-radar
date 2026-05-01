@@ -1,0 +1,113 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:42.121Z",
+  "source_step08_card": "data/step-08/current/products/infrastructure-manager/card.json",
+  "product_name": "Infrastructure Manager",
+  "product_slug": "infrastructure-manager",
+  "feature_name": "Deployment previews",
+  "feature_slug": "deployment-previews",
+  "summary": "Preview deployments to view resource drift before applying changes; Preview Infrastructure Manager deployments before creating them.",
+  "extended_definition": "Preview deployments to view resource drift before applying changes; Preview Infrastructure Manager deployments before creating them.",
+  "lifecycle": {
+    "latest_feature_date": "2025-07-07",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/infrastructure-manager/docs/deployments-revisions",
+      "https://docs.cloud.google.com/infrastructure-manager/docs/export-view-preview-results",
+      "https://docs.cloud.google.com/infrastructure-manager/docs/preview-deployment",
+      "https://docs.cloud.google.com/infrastructure-manager/docs/preview-deployment-deletion"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Deployments, revisions, and previews overview \\_|\\_ Infrastructure Manager\\",
+        "url": "https://docs.cloud.google.com/infrastructure-manager/docs/deployments-revisions",
+        "source_id": "site-iam-reference",
+        "final_score": 294,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For example, a revision name could be: projects/my-project/locations/us-central1/deployments/my-deployment/revisions/r-1 Previews A preview describes the actions to actuate a specific Terraform configuration.",
+          "For a preview of a new deployment, the metadata is organized with a new-previews prefix, for example: gs:// PROJECT NUMBER - LOCATION -blueprint-config/new-previews/preview-name You can also preview an update to an existing deployment.",
+          "Home Documentation Infrastructure as code Infrastructure Manager Guides Send feedback Deployments, revisions, and previews overview Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"Export and view preview results \\_|\\_ Infrastructure Manager \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/infrastructure-manager/docs/export-view-preview-results",
+        "source_id": "site-iam-reference",
+        "final_score": 272,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "View details of a drift To view details of a resource drift from a preview deployment: gcloud infra-manager resource-drifts describe projects/ PROJECT ID /locations/ LOCATION /previews/ PREVIEW ID /resourceDrifts/ RESOURCE DRIFT ID Replace: PROJECT ID : The identifier of the Google Cloud project where your preview deployment is located.",
+          "View resource drift To view a list of resource drifts of a preview deployment: gcloud infra-manager resource-drifts list --preview=projects/ PROJECT ID /locations/ LOCATION /previews/ PREVIEW ID Replace: PROJECT ID : The identifier of the Google Cloud project where your preview deployment is located.",
+          "Viewing resource drift for your deployments is useful to verify that changes to your configurations are intended, and to summarize how your deployment will change when your deployment is updated with a particular preview."
+        ]
+      },
+      {
+        "title": "Preview a deployment \\_|\\_ Infrastructure Manager \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/infrastructure-manager/docs/preview-deployment",
+        "source_id": "site-iam-reference",
+        "final_score": 254,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To preview the deployment: gcloud infra - manager previews create projects / PROJECT ID / locations / LOCATION / previews / PREVIEW ID \\ -- service - account projects / SERVICE ACCOUNT PROJECT ID / serviceAccounts / SERVICE ACCOUNT \\ -- git - source - repo = \" GIT REPO \" \\ -- git - source - directory = \" DIRECTORY \" \\ -- git - source - ref = \" REF \" \\ -- input - values = INPUT 1 NAME = VALUE , INPUT 2 NAME = VALUE \\ -- tf - version - constraint = TERRAFORM VERSION \\ -- annotations = \" ANNOTATION KEY = ANNOTATION VALUE \" -- provider - source = SERVICE MAINTAINED Replace: PROJECT ID is the project ID where Infrastructure Manager runs.",
+          "Before you create a new deployment or update a deployment, you can preview the deployment to verify the resources that are planned to be provisioned.",
+          "Preview using a Terraform configuration stored in a Git repository When you update a deployment, some of the existing resources might not change."
+        ]
+      },
+      {
+        "title": "\"Preview a deletion of a deployment \\_|\\_ Infrastructure Manager \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/infrastructure-manager/docs/preview-deployment-deletion",
+        "source_id": "site-iam-reference",
+        "final_score": 238,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To preview the deletion of a deployment: gcloud infra-manager previews create --preview-mode DELETE --deployment=projects/ PROJECT ID /locations/ LOCATION /previews/ DEPLOYMENT ID \\ --service-account projects/ SERVICE ACCOUNT PROJECT ID /serviceAccounts/ SERVICE ACCOUNT \\ Replace: PROJECT ID is the project ID where Infrastructure Manager runs.",
+          "Before you delete a deployment, you can use a preview to verify the resources that are planned to be deleted.",
+          "Now that you have created a preview, you can export and view the results to review the plan for the deployment."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/infrastructure-manager/docs/deployments-revisions",
+        "https://docs.cloud.google.com/infrastructure-manager/docs/export-view-preview-results",
+        "https://docs.cloud.google.com/infrastructure-manager/docs/preview-deployment",
+        "https://docs.cloud.google.com/infrastructure-manager/docs/preview-deployment-deletion"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/infrastructure-manager/docs/deployments-revisions",
+        "https://docs.cloud.google.com/infrastructure-manager/docs/export-view-preview-results",
+        "https://docs.cloud.google.com/infrastructure-manager/docs/preview-deployment",
+        "https://docs.cloud.google.com/infrastructure-manager/docs/preview-deployment-deletion"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,210 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:26.024Z",
+  "source_step08_card": "data/step-08/current/products/cloud-run-functions/card.json",
+  "product_name": "Cloud Run functions",
+  "product_slug": "cloud-run-functions",
+  "feature_name": "Regional availability: us-west3",
+  "feature_slug": "regional-availability-us-west3",
+  "summary": "Cloud Run functions is available in the us-west3 region.",
+  "extended_definition": "Cloud Run functions is available in the us-west3 region.",
+  "lifecycle": {
+    "latest_feature_date": "2020-06-12",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/functions/docs/building",
+      "https://docs.cloud.google.com/functions/docs/reference/rest/v1/projects.locations.functions",
+      "https://docs.cloud.google.com/functions/docs/troubleshooting"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"REST Resource: projects.locations.functions \\_|\\_ Cloud Run functions \\_\\",
+        "url": "https://docs.cloud.google.com/functions/docs/reference/rest/v1/projects.locations.functions",
+        "source_id": "site-docs-root",
+        "final_score": 69,
+        "relevance": "",
+        "evidence_snippets": [
+          "JSON representation { \"name\" : string , \"description\" : string , \"status\" : enum ( CloudFunctionStatus ) , \"entryPoint\" : string , \"runtime\" : string , \"timeout\" : string , \"availableMemoryMb\" : integer , \"serviceAccountEmail\" : string , \"updateTime\" : string , \"versionId\" : string , \"labels\" : { string : string , ... } , \"environmentVariables\" : { string : string , ... } , \"buildEnvironmentVariables\" : { string : string , ... } , \"network\" : string , \"maxInstances\" : integer , \"minInstances\" : integer , \"vpcConnector\" : string , \"vpcConnectorEgressSettings\" : enum ( VpcConnectorEgressSettings ) , \"ingressSettings\" : enum ( IngressSettings ) , \"kmsKeyName\" : string , \"buildWorkerPool\" : string , \"buildId\" : string , \"buildName\" : string , \"secretEnvironmentVariables\" : [ { object ( SecretEnvVar ) } ] , \"secretVolumes\" : [ { object ( SecretVolume ) } ] , \"sourceToken\" : string , \"dockerRepository\" : string , \"dockerRegistry\" : enum ( DockerRegistry ) , \"buildServiceAccount\" : string , \"satisfiesPzs\" : boolean , \"satisfiesPzi\" : boolean , // Union field source code can be only one of the following: \"sourceArchiveUrl\" : string , \"sourceRepository\" : { object ( SourceRepository ) } , \"sourceUploadUrl\" : string // End of list of possible types for union field source code . // Union field trigger can be only one of the following: \"httpsTrigger\" : { object ( HttpsTrigger ) } , \"eventTrigger\" : { object ( EventTrigger ) } // End of list of possible types for union field trigger . // Union field runtime update policy can be only one of the following: \"automaticUpdatePolicy\" : { object ( AutomaticUpdatePolicy ) } , \"onDeployUpdatePolicy\" : { object ( OnDeployUpdatePolicy ) } // End of list of possible types for union field runtime update policy . } Fields name string A user-defined name of the function.",
+          "CONTAINER REGISTRY Docker images will be stored in multi-regional Container Registry repositories named gcf .",
+          "ARTIFACT REGISTRY Docker images will be stored in regional Artifact Registry repositories."
+        ]
+      },
+      {
+        "title": "Build process overview \\_|\\_ Cloud Run functions \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/functions/docs/building",
+        "source_id": "site-iam-reference",
+        "final_score": 46,
+        "relevance": "",
+        "evidence_snippets": [
+          "You can optionally use a private pool , which you specify using the --build-worker-pool flag. gcloud functions deploy FUNCTION NAME \\ -- gen2 \\ -- region = REGION \\ -- project = PROJECT ID \\ -- runtime = RUNTIME \\ -- entry - point = CODE ENTRYPOINT \\ -- build - service - account = projects / PROJECT ID / serviceAccounts / SA EMAIL \\ -- memory = 256 Mi \\ -- trigger - http \\ -- source = .",
+          "You can use gcloud CLI or the Google Cloud console to reach the logs, which are available through Cloud Logging . gcloud Deploy your function using the gcloud functions deploy command .",
+          "This upload bucket is named gcf-v2-uploads- PROJECT NUMBER - REGION .cloudfunctions.appspot.com ."
+        ]
+      },
+      {
+        "title": "Troubleshoot Cloud Run functions \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/functions/docs/troubleshooting",
+        "source_id": "site-iam-reference",
+        "final_score": 44,
+        "relevance": "",
+        "evidence_snippets": [
+          "The error message The request was aborted because there was no available instance severity=WARNING ( Response code: 429 ) Cloud Run functions cannot scale due to the max-instances limit you set during configuration. severity=ERROR ( Response code: 500 ) Cloud Run functions intrinsically cannot manage the rate of traffic.",
+          "For example, you can get an identity token using gcloud as follows: curl -H \"Authorization: Bearer $( gcloud auth print-identity-token ) \" https:// REGION - PROJECT ID .cloudfunctions.net/ FUNCTION NAME Redeploy your function to allow unauthenticated invocations if this is supported by your organization.",
+          "In the Google Cloud console, the restricted region won't be available from the region drop-down while deploying a function."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cloudbuild.workerPoolUser",
+      "cloudfunctions.appspot.com",
+      "cloudfunctions.net",
+      "projects.locations.functions",
+      "robot.iam.gserviceaccount.com"
+    ],
+    "missing_inventory_roles": [
+      "roles/cloudbuild.workerPoolUser"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/reference/rest/v1/projects.locations.functions",
+        "https://docs.cloud.google.com/functions/docs/building",
+        "https://docs.cloud.google.com/functions/docs/troubleshooting"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/reference/rest/v1/projects.locations.functions",
+        "https://docs.cloud.google.com/functions/docs/building",
+        "https://docs.cloud.google.com/functions/docs/troubleshooting"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/reference/rest/v1/projects.locations.functions",
+        "https://docs.cloud.google.com/functions/docs/building",
+        "https://docs.cloud.google.com/functions/docs/troubleshooting"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/reference/rest/v1/projects.locations.functions",
+        "https://docs.cloud.google.com/functions/docs/building",
+        "https://docs.cloud.google.com/functions/docs/troubleshooting"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/reference/rest/v1/projects.locations.functions",
+        "https://docs.cloud.google.com/functions/docs/building",
+        "https://docs.cloud.google.com/functions/docs/troubleshooting"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/reference/rest/v1/projects.locations.functions",
+        "https://docs.cloud.google.com/functions/docs/building",
+        "https://docs.cloud.google.com/functions/docs/troubleshooting"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/reference/rest/v1/projects.locations.functions",
+        "https://docs.cloud.google.com/functions/docs/building",
+        "https://docs.cloud.google.com/functions/docs/troubleshooting"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/reference/rest/v1/projects.locations.functions",
+        "https://docs.cloud.google.com/functions/docs/building",
+        "https://docs.cloud.google.com/functions/docs/troubleshooting"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/reference/rest/v1/projects.locations.functions",
+        "https://docs.cloud.google.com/functions/docs/building",
+        "https://docs.cloud.google.com/functions/docs/troubleshooting"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/reference/rest/v1/projects.locations.functions",
+        "https://docs.cloud.google.com/functions/docs/building",
+        "https://docs.cloud.google.com/functions/docs/troubleshooting"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/reference/rest/v1/projects.locations.functions",
+        "https://docs.cloud.google.com/functions/docs/building",
+        "https://docs.cloud.google.com/functions/docs/troubleshooting"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/reference/rest/v1/projects.locations.functions",
+        "https://docs.cloud.google.com/functions/docs/building",
+        "https://docs.cloud.google.com/functions/docs/troubleshooting"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/reference/rest/v1/projects.locations.functions",
+        "https://docs.cloud.google.com/functions/docs/building",
+        "https://docs.cloud.google.com/functions/docs/troubleshooting"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/reference/rest/v1/projects.locations.functions",
+        "https://docs.cloud.google.com/functions/docs/building",
+        "https://docs.cloud.google.com/functions/docs/troubleshooting"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/reference/rest/v1/projects.locations.functions",
+        "https://docs.cloud.google.com/functions/docs/building",
+        "https://docs.cloud.google.com/functions/docs/troubleshooting"
+      ]
+    }
+  ]
+}

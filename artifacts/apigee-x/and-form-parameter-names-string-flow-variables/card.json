@@ -1,0 +1,159 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:14.688Z",
+  "source_step08_card": "data/step-08/current/products/apigee-x/card.json",
+  "product_name": "Apigee X",
+  "product_slug": "apigee-x",
+  "feature_name": "and form parameter names string flow variables",
+  "feature_slug": "and-form-parameter-names-string-flow-variables",
+  "summary": "New flow variables return header, query parameter, and form parameter names as comma-separated strings for proxy logic.",
+  "extended_definition": "New flow variables return header, query parameter, and form parameter names as comma-separated strings for proxy logic.",
+  "lifecycle": {
+    "latest_feature_date": "2024-08-01",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/apigee/docs/api-platform/reference/policies/assign-message-policy",
+      "https://docs.cloud.google.com/apigee/docs/api-platform/reference/policies/extract-variables-policy",
+      "https://docs.cloud.google.com/apigee/docs/api-platform/reference/variables-reference"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Flow variables reference \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-platform/reference/variables-reference",
+        "source_id": "site-docs-reference-required-3",
+        "final_score": 265,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "PostClientFlow client.sent.start.time String Read only The time, expressed in string form, when the ProxyEndpoint started returning the response to the originating client app.",
+          "Proxy request request.formparams.names.string String Read only A comma-separated list of all form parameter names associated with the request.",
+          "Proxy request message.formparams.names.string String Read only A comma-separated list of names of all the form parameters in the message."
+        ]
+      },
+      {
+        "title": "ExtractVariables policy \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-platform/reference/policies/extract-variables-policy",
+        "source_id": "site-api-reference",
+        "final_score": 247,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "One option is to set <IgnoreUnresolvedVariables> to true in a policy that references the variable to configure the policy to treat any unresolvable variable as an empty string (null): <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables> Element reference The element reference describes the elements and attributes of the ExtractVariables policy. < ExtractVariables async = \"false\" continueOnError = \"false\" enabled = \"true\" name = \"Extract-Variables-1\" > < DisplayName > 1 < / DisplayName > < Source clearPayload = \"true false\" > request < / Source > < VariablePrefix>myprefix < / VariablePrefix > < IgnoreUnresolvedVariables>true false < / IgnoreUnresolvedVariables > < URIPath > < Pattern ignoreCase = \"false\" > / accounts / { id } < / Pattern > < / URIPath > < QueryParam name = \"code\" > < Pattern ignoreCase = \"true\" > DBN { dbncode } < / Pattern > < / QueryParam > < Header name = \"Authorization\" > < Pattern ignoreCase = \"false\" > Bearer { oauthtoken } < / Pattern > < / Header > < FormParam name = \"greeting\" > < Pattern>hello { user } < / Pattern > < / FormParam > < Variable name = \"request.content\" > < Pattern>hello { user } < / Pattern > < / Variable > < JSONPayload > < Variable name = \"name\" > < JSONPath > { example } < / JSONPath > < / Variable > < / JSONPayload > < XMLPayload stopPayloadProcessing = \"false\" > < Namespaces / > < Variable name = \"name\" type = \"boolean\" > < XPath > / test / example < / XPath > < / Variable > < / XMLPayload > < / ExtractVariables > <ExtractVariables> attributes <ExtractVariables async=\"false\" continueOnError=\"false\" enabled=\"true\" name=\"Extract-Variables-1\"> The following table describes attributes that are common to all policy parent elements: Attribute Description Default Presence name The internal name of the policy.",
+          "For example, the following AssignMessage policy copies it to a header named latitude in the response: < AssignMessage async = \"false\" continueOnError = \"false\" enabled = \"true\" name = \"GetURIPath\" > < DisplayName>GetJSONVar < / DisplayName > < Add > < Headers > < Header name = \"latitude\" > { geocoderesponse . latitude } < / Header > < / Headers > < / Add > < IgnoreUnresolvedVariables>true < / IgnoreUnresolvedVariables > < AssignTo createNew = \"false\" transport = \"http\" type = \"response\" / > < / AssignMessage > XML < ExtractVariables name = \"ExtractVariables-4\" > < Source>response < / Source > < XMLPayload > < Namespaces > < Namespace prefix = \"dir\" > urn : 43 BFF88D - D204 - 4427 - B6BA - 140 AF393142F < / Namespace > < / Namespaces > < Variable name = \"travelmode\" type = \"string\" > < XPath > / dir : Directions / dir : route / dir : leg / dir : step / @ mode < / XPath > < / Variable > < Variable name = \"duration\" type = \"string\" > < XPath > / dir : Directions / dir : route / dir : leg / dir : step / dir : duration / dir : value < / XPath > < / Variable > < Variable name = \"timeunit\" type = \"string\" > < XPath > / dir : Directions / dir : route / dir : leg / dir : step / dir : duration / dir : text < / XPath > < / Variable > < / XMLPayload > < VariablePrefix>directionsresponse < / VariablePrefix > < / ExtractVariables > Consider the following XML response payload: <Directions xmlns=\"urn:43BFF88D-D204-4427-B6BA-140AF393142F\"> <status>OK</status> <route> <summary>I-40 W</summary> <leg> <step mode=\"DRIVING\"> <start location> <lat>41.8507300</lat> <lng>-87.6512600</lng> </start location> <end location> <lat>41.8525800</lat> <lng>-87.6514100</lng> </end location> <duration> <value>19</value> <text>minutes</text> </duration> </step> </leg> </route> </Directions> When Apigee applies the ExtractVariables policy code above to this XML message, it sets three variables: directionsresponse.travelmode : Gets the value DRIVING directionsresponse.duration : Gets the value 19 directionsresponse.timeunit : Gets the value minutes All variables use the same variable prefix of directionsresponse .",
+          "The error generally happens if you try to assign values to multiple variables whose names start with the same words in a nested dot-separated format. build steps.extractvariables.SourceMessageNotAvailable 500 This error occurs if the message variable specified in the Source element of the policy is either: Out of scope (not available in the specific flow where the policy is being executed) or Can't be resolved (is not defined) build steps.extractvariables.UnableToCast 500 This error occurs if the policy was unable to cast the extracted value to a variable."
+        ]
+      },
+      {
+        "title": "AssignMessage policy \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-platform/reference/policies/assign-message-policy",
+        "source_id": "site-api-reference",
+        "final_score": 221,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Required Type Complex object Parent Element N/A Child Elements <Add> <AssignTo> <AssignVariable> <Copy> <DisplayName> <IgnoreUnresolvedVariables> <Remove> <Set> The <AssignMessage> element uses the following syntax: Syntax The <AssignMessage> element uses the following syntax: < AssignMessage continueOnError = \"[false true]\" enabled = \"[true false]\" name = \" POLICY NAME \" > < !-- All AssignMessage child elements are optional -- > < Add > < FormParams > < FormParam name = \" FORMPARAM NAME \" > FORMPARAM VALUE < / FormParam > ... < / FormParams > < Headers > < Header name = \" HEADER NAME \" > HEADER VALUE < / Header > ... < / Headers > < QueryParams > < QueryParam name = \" QUERYPARAM NAME \" > QUERYPARAM VALUE < / QueryParam > ... < / QueryParams > < / Add > < AssignTo createNew = \"[true false]\" transport = \"http\" type = \"[request response]\" > DESTINATION VARIABLE NAME < / AssignTo > < AssignVariable > < Name> VARIABLE NAME < / Name > < PropertySetRef> SOURCE VARIABLE < / PropertySetRef > < Ref> SOURCE VARIABLE < / Ref > < ResourceURL> RESOURCE URL OR TEMPLATE < / ResourceURL > < Template> MESSAGE TEMPLATE < / Template > or < Template ref = ' TEMPLATE VARIABLE ' >< / Template > < Value> VARIABLE VALUE < / Value > < / AssignVariable > < Copy source = \" VARIABLE NAME \" > < !-- Can also be an empty array ( < FormParams / > ) --> < FormParams > < FormParam name = \" FORMPARAM NAME \" > FORMPARAM VALUE < / FormParam > ... < / FormParams > < !-- Copy all headers -- > < Headers / > < !-- or , copy specific headers by name -- > < Headers > < Header name = \" HEADER NAME \" / > < !-- or -- > < Header name = \" HEADER NAME \" > [ false true ] < / Header > ... < / Headers > < Path > [ false true ] < / Path > < Payload > [ false true ] < / Payload > < !-- Can also be an empty array ( < QueryParams / > ) --> < QueryParams > < QueryParam name = \" QUERYPARAM NAME \" > QUERYPARAM VALUE < / QueryParam > ... < / QueryParams > < StatusCode > [ false true ] < / StatusCode > < Verb > [ false true ] < / Verb > < Version > [ false true ] < / Version > < / Copy > < DisplayName> POLICY DISPLAY NAME < / DisplayName > < IgnoreUnresolvedVariables > [ true false ] < / IgnoreUnresolvedVariables > < !-- Can also be empty to remove everything from the message ( < Remove / > ) -- > < Remove > < !-- Remove all form parameters -- > < FormParams / > < !-- or , remove specific form parameters by name -- > < FormParams > < FormParam name = \" FORMPARAM NAME \" / > < !-- or -- > < FormParam name = \" FORMPARAM NAME \" > [ false true ] < / FormParam > ... < / FormParams > < !-- Remove all headers -- > < Headers / > < !-- or , remove specific headers by name -- > < Headers > < Header name = \" HEADER NAME \" / > < !-- or -- > < Header name = \" HEADER NAME \" > [ false true ] < / Header > ... < / Headers > < Payload > [ false true ] < / Payload > < !-- Remove all query parameters -- > < QueryParams / > < !-- or , remove specific query parameters by name -- > < QueryParams > < QueryParam name = \" QUERYPARAM NAME \" / > < !-- or -- > < QueryParam name = \" QUERYPARAM NAME \" > [ false true ] < / QueryParam > ... < / QueryParams > < / Remove > < Set > < Authentication > < HeaderName> HEADER NAME < / HeaderName > < !-- Use either GoogleAccessToken or GoogleIDToken -- > < GoogleAccessToken > < Scopes > < Scope> SCOPE < / Scope > ... < / Scopes > < / GoogleAccessToken > ----- or ----- < GoogleIDToken > < Audience ref = ' FLOW VARIABLE NAME > TARGET URL </Scope> < / GoogleAccessToken > < / Authentication > < FormParams > < FormParam name = \" FORMPARAM NAME \" > FORMPARAM VALUE < / FormParam > ... < / FormParams > < Headers > < Header name = \" HEADER NAME \" > HEADER VALUE < / Header > ... < / Headers > < Path> PATH < / Path > < Payload contentType = \" CONTENT TYPE \" variablePrefix = \" PREFIX \" variableSuffix = \" SUFFIX \" > NEW PAYLOAD < / Payload > < QueryParams > < QueryParam name = \" QUERYPARAM NAME \" > QUERYPARAM VALUE < / QueryParam > ... < / QueryParams > < StatusCode> HTTP STATUS CODE or { variable } < / StatusCode > < Verb > [ GET POST PUT PATCH DELETE { variable }] < / Verb > < Version > [ 1.0 1.1 { variable }] < / Verb > < / Set > < / AssignMessage > Default Policy The following example shows the default settings when you add an AssignMessage policy to your flow in the Apigee UI.",
+          "Optional Type Complex type Parent Element <AssignMessage> Child Elements <FormParams> <Headers> <QueryParams> The <Add> element uses the following syntax: Syntax <AssignMessage continueOnError=\"[false true]\" enabled=\"[true false]\" name=\" POLICY NAME \" > <Add> <FormParams> <FormParam name=\" FORMPARAM NAME \"> FORMPARAM VALUE </FormParam> ... </FormParams> <Headers> <Header name=\" HEADER NAME \"> HEADER VALUE </Header> ... </Headers> <QueryParams> <QueryParam name=\" QUERYPARAM NAME \"> QUERYPARAM VALUE </QueryParam> ... </QueryParams> </Add> </AssignMessage> Example 1 The following example modifies the request message by getting the values of three query string parameters from the initial request and setting them as form parameters on the target endpoint request, and then finally removing all of the original query string parameters: <AssignMessage name=\"AM-add-formparams-3\"> <Add> <FormParams> <FormParam name=\"username\">{request.queryparam.name}</FormParam> <FormParam name=\"zip code\">{request.queryparam.zipCode}</FormParam> <FormParam name=\"default language\">{request.queryparam.lang}</FormParam> </FormParams> </Add> <Remove> <QueryParams/> </Remove> <AssignTo>request</AssignTo> </AssignMessage> Example 2 The following example uses the <Headers> element to add a partner-id header to the request that will be sent to the target endpoint: <AssignMessage name=\"AM-add-headers-1\"> <Add> <Headers> <Header name=\"partner-id\">{verifyapikey.VAK-1.developer.app.partner-id}</Header> </Headers> </Add> <AssignTo>request</AssignTo> </AssignMessage> Example 3 The following example uses the <QueryParams> element to add a single query parameter with a static value to the request: <AssignMessage name=\"AM-add-queryparams-1\"> <Add> <QueryParams> <QueryParam name=\"myParam\">42</QueryParam> </QueryParams> </Add> <AssignTo>request</AssignTo> </AssignMessage> This example uses <Add> in the request preflow.",
+          "Assuming the Service Callout's response variable is the default calloutResponse , the following policy gets the second Set-Cookie header value. < AssignMessage name = \"AM-Payload-from-SC-header\" > < Set > < Payload contentType = \"application/json\" > { \"Cookies from Service Callout\" : \" {calloutResponse.header.Set-Cookie.2}\" } < / Payload > < / Set > < IgnoreUnresolvedVariables>true < / IgnoreUnresolvedVariables > < AssignTo>response < / AssignTo > < / AssignMessage > To list all header values, use the following variable instead: {calloutResponse.header.Set-Cookie. values } 8: Store and remove form params, headers, query params If you want to use <Remove> to delete your headers, query parameters, or form parameters, but retain access to their values later in the policy flow, you can store their values using <AssignVariable> . < AssignMessage async = \"false\" continueOnError = \"false\" enabled = \"true\" name = \"AM-StoreAndRemove\" > < DisplayName>AM - StoreAndRemove < / DisplayName > < AssignVariable > < Name>var grant type < / Name > < Ref>request . formparam . grant type < / Ref > < / AssignVariable > < Remove > < Headers / > < FormParams / > < Payload / > < / Remove > < Set > < Headers > < Header name = \"Content-Type\" > application / x - www - form - urlencoded < / Header > < Header name = \"Accept\" > application / json < / Header > < Header name = \"Grant-Type\" > { var grant type } < / Header > < / Headers > < / Set > < IgnoreUnresolvedVariables>false < / IgnoreUnresolvedVariables > < AssignTo createNew = \"false\" transport = \"http\" type = \"request\" / > < / AssignMessage > Note : Form parameters, headers, and query parameters stripped using <Remove> in the Assign Message policy cannot be accessed after completion of the policy flow unless their values are stored in variables as described in this example."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "class.allowed.count",
+      "class.available.count",
+      "class.exceed.count",
+      "class.total.exceed.count",
+      "class.used.count",
+      "client.sent.start.time",
+      "developer.app.partner",
+      "directionsresponse.duration",
+      "directionsresponse.timeunit",
+      "directionsresponse.travelmode",
+      "header.Set",
+      "message.formparams.names.string",
+      "request.content",
+      "request.formparams.names.string",
+      "request.queryparam.lang",
+      "request.queryparam.name",
+      "request.queryparam.zipCode",
+      "steps.extractvariables.SourceMessageNotAvailable",
+      "steps.extractvariables.UnableToCast",
+      "verifyapikey.VAK"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/variables-reference",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/policies/extract-variables-policy",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/policies/assign-message-policy"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/variables-reference",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/policies/extract-variables-policy",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/policies/assign-message-policy"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/variables-reference",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/policies/extract-variables-policy",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/policies/assign-message-policy"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/variables-reference",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/policies/extract-variables-policy",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/policies/assign-message-policy"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/variables-reference",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/policies/extract-variables-policy",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/policies/assign-message-policy"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/variables-reference",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/policies/extract-variables-policy",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/policies/assign-message-policy"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/variables-reference",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/policies/extract-variables-policy",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/policies/assign-message-policy"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,114 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:24.125Z",
+  "source_step08_card": "data/step-08/current/products/cloud-load-balancing/card.json",
+  "product_name": "Cloud Load Balancing",
+  "product_slug": "cloud-load-balancing",
+  "feature_name": "IPv6 termination",
+  "feature_slug": "ipv6-termination",
+  "summary": "HTTP(S), SSL Proxy, and TCP Proxy Load Balancing support IPv6 termination for client connections; HTTP(S), SSL Proxy, and TCP Proxy Load Balancing support IPv6 termination for client connections.",
+  "extended_definition": "HTTP(S), SSL Proxy, and TCP Proxy Load Balancing support IPv6 termination for client connections; HTTP(S), SSL Proxy, and TCP Proxy Load Balancing support IPv6 termination for client connections.",
+  "lifecycle": {
+    "latest_feature_date": "2017-09-19",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/load-balancing/docs/features",
+      "https://docs.cloud.google.com/load-balancing/docs/forwarding-rule-concepts",
+      "https://docs.cloud.google.com/load-balancing/docs/tutorials/http-https-over-same-domain"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Deliver HTTP and HTTPS content over the same published domain \\_|\\_ Cloud\\",
+        "url": "https://docs.cloud.google.com/load-balancing/docs/tutorials/http-https-over-same-domain",
+        "source_id": "site-docs-reference-required-3",
+        "final_score": 149,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For an classic Application Load Balancer, use load-balancing-scheme=EXTERNAL . gcloud compute forwarding-rules create ipv4-http \\ --load-balancing-scheme= LOAD BALANCING SCHEME \\ --network-tier=PREMIUM \\ --address=ipv4-address \\ --global \\ --target-http-proxy=http-lb-proxy \\ --ports=80 gcloud compute forwarding-rules create ipv4-https \\ --load-balancing-scheme= LOAD BALANCING SCHEME \\ --network-tier=PREMIUM \\ --address=ipv4-address \\ --global \\ --target-https-proxy=https-lb-proxy \\ --ports=443 After creating the global forwarding rules, it can take several minutes for your configuration to propagate worldwide.",
+          "The proxy is the portion of the load balancer that holds the SSL certificate for HTTPS Load Balancing, so you also load your certificate in this step. gcloud compute target-https-proxies create https-lb-proxy \\ --url-map=web-map --ssl-certificates=www-ssl-cert Create two global forwarding rules to route incoming requests to the proxy, one for each of the IP address(es) you created.",
+          "When configuring the external Application Load Balancer, the frontend configuration includes four forwarding rules that use the reserved IP addresses: Name Protocol IP:Port ipv4-http HTTP 34.95.111.204:80 ipv4-https HTTPS 34.95.111.204:443 ipv6-http HTTP [2600:1901:0:b13e::]:80 ipv6-https HTTPS [2600:1901:0:b13e::]:443 For Cloud CDN cache misses, the load balancer distributes requests to the backend origins, based on settings defined in the load balancer's URL map."
+        ]
+      },
+      {
+        "title": "\"Forwarding rules overview \\_|\\_ Cloud Load Balancing \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/load-balancing/docs/forwarding-rule-concepts",
+        "source_id": "site-docs-reference-required-3",
+        "final_score": 136,
+        "relevance": "",
+        "evidence_snippets": [
+          "Product Load balancing scheme Target Port requirements Global external Application Load Balancer Regional external Application Load Balancer EXTERNAL MANAGED Target HTTP proxy Target HTTPS proxy Can reference exactly one port from 1-65535 Classic Application Load Balancer EXTERNAL Target HTTP proxy Target HTTPS proxy Can reference exactly one port from 1-65535 Cross-region internal Application Load Balancer Regional internal Application Load Balancer INTERNAL MANAGED Target HTTP proxy Target HTTPS proxy Can reference exactly one port from 1-65535 Global external proxy Network Load Balancer EXTERNAL MANAGED Target TCP proxy Target SSL proxy Can reference exactly one port from 1-65535 Classic proxy Network Load Balancer EXTERNAL Target TCP proxy Target SSL proxy Can reference exactly one port from 1-65535 Regional external proxy Network Load Balancer EXTERNAL MANAGED Target TCP proxy Can reference exactly one port from 1-65535 Regional internal proxy Network Load Balancer INTERNAL MANAGED Target TCP proxy Can reference exactly one port from 1-65535 Cross-region internal proxy Network Load Balancer INTERNAL MANAGED Target TCP proxy Can reference exactly one port from 1-65535 Regional external passthrough Network Load Balancer EXTERNAL Backend service If the forwarding rule protocol is TCP or UDP , you can configure: A list of up to five (contiguous or non-contiguous) ports, or, A single port range (contiguous), or, All ports.",
+          "Product and scheme Target IP address type IP address scope IP address tier Reservable IP address Notes Global external Application Load Balancer EXTERNAL MANAGED Target HTTP proxy Target HTTPS proxy External Global Premium Tier: Global external IP address and forwarding rule Yes, optional IPv6 available Classic Application Load Balancer EXTERNAL Target HTTP proxy Target HTTPS proxy External Regional or global, matching the forwarding rule Premium Tier: Global external IPv4 or IPv6 address and forwarding rule Standard Tier: Regional external IPv4 address and forwarding rule Yes, optional IPv6 available with a global external address (Premium Tier) Regional external Application Load Balancer EXTERNAL MANAGED Target HTTP proxy Target HTTPS proxy External Regional Premium Tier or Standard Tier Yes, optional IPv6 not available Cross-region internal Application Load Balancer INTERNAL MANAGED Target HTTP proxy Target HTTPS proxy Internal Regional Premium Tier Yes, optional Global forwarding rule is configured with a regional IP address within the primary IPv4 address range of the associated regional subnet.",
+          "Global external proxy Network Load Balancer EXTERNAL MANAGED Target SSL proxy Target TCP proxy External Global Premium Tier Yes, optional IPv6 available Classic proxy Network Load Balancer EXTERNAL Target SSL proxy Target TCP proxy External Regional or global, matching the forwarding rule Premium Tier: Global external IPv4 or IPv6 address and forwarding rule Standard Tier: Regional external IPv4 address and forwarding rule Yes, optional IPv6 available with a global external address (Premium Tier) Regional external proxy Network Load Balancer EXTERNAL MANAGED Target TCP proxy External Regional Premium Tier or Standard Tier Yes, optional IPv6 not available Regional internal proxy Network Load Balancer INTERNAL MANAGED Target TCP proxy Internal Regional Premium Tier Yes, optional Forwarding rule address must be within the primary IPv4 address range of the associated subnet Cross-region internal proxy Network Load Balancer INTERNAL MANAGED Target TCP proxy Internal Regional Premium Tier Yes, optional Forwarding rule address must be within the primary IPv4 address range of the associated subnet Regional external passthrough Network Load Balancer EXTERNAL Backend service Target pool External Regional Standard (IPv4 addresses) Premium (IPv4 or IPv6 addresses) Yes, optional IPv6 support requires a backend service-based regional external passthrough Network Load Balancer."
+        ]
+      },
+      {
+        "title": "\"Load balancer feature comparison \\_|\\_ Cloud Load Balancing \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/load-balancing/docs/features",
+        "source_id": "site-docs-reference-required-3",
+        "final_score": 134,
+        "relevance": "",
+        "evidence_snippets": [
+          "Routing and traffic management Filter this table: Feature Application Load Balancer Proxy Network Load Balancer Passthrough Network Load Balancer Internal External Internal External Internal External HTTP or Layer 7 request routing info info Fault injection info (Only global and regional modes) Configurable timeouts info info info info Retries info info Redirects info global classic regional URL rewrites info global classic regional Request and response header transformations (configured on the URL map) info (Only global and regional modes) Traffic splitting info (Only global and regional modes) Traffic mirroring info 1 (Only global and regional modes) (Only regional mode) Outlier detection info (Only global and regional modes) Retry failed requests info (Only global and regional modes) Custom request and response headers (configured on the backend service) (Only global and regional modes) Custom error responses (Only global mode) Service load balancing policy (Only cross-region mode) (Only global mode) (Only cross-region mode) (Only global mode) Connection tracking policy info info 1 Source IP-based traffic steering info 2 1 This feature is not supported with load balancers that use serverless NEG backends.",
+          "Filter this table: Feature Application Load Balancer Proxy Network Load Balancer Passthrough Network Load Balancer Internal External Internal External Internal External Regional internal IPv4 address, accessible in your VPC network Regional internal IPv6 address, accessible in your VPC network info Global external IPv4 address (Includes BYOIP addresses) (Only global and classic 1 mode) (Only global and classic 1 mode) Global external IPv6 address IPv6 termination (Only global and classic 1 mode) IPv6 termination (Only global and classic 1 mode) Regional external IPv4 address (Includes BYOIP addresses) (Only regional and classic 2 mode) (Only regional and classic 2 mode) Regional external IPv6 address (Includes BYOIP addresses) info 1, 3 Configure BYOIP Multiple forwarding rules with the same IP address, each having a unique protocol and port combination Internet accessible 4 Privately accessible info 5 info 5 info 5 Client source IP address preservation X‑Forwarded‑For header X‑Forwarded‑For header PROXY protocol PROXY protocol 1 Supported for Premium Tier.",
+          "Network topologies Filter this table: Feature Application Load Balancer Proxy Network Load Balancer Passthrough Network Load Balancer Internal External Internal External Internal External Network Service Tiers support Premium Tier Global mode: Premium Tier Classic and regional mode: Premium or Standard Tier Premium Tier Global mode: Premium Tier Classic and regional mode: Premium or Standard Tier Premium Tier Premium or Standard Tier Relationships between VPC networks, load balancers, and their backends Load balancer and backends in different VPC networks info info info info Backends can use a Shared VPC network Cross-project service referencing info info (Only global and regional mode) Client access to load balancers Google Cloud or on-premises clients must access the load balancer privately 1 Google Cloud client VMs require external IP addresses or a NAT solution like Cloud NAT to access the load balancer On-premises client VMs require internet access to access the load balancer Google Cloud client VMs can be located in any region info (Only global and classic 2 modes) info info Google Cloud client VMs can be located in any project More topologies Load balancer as next hop info Specify network interface of a backend VM 3 4 3 4 info info 5 Multi-NIC load balancing info info info info info info 1 Google Cloud or on-premises clients must access the load balancer privately by being either in the same VPC network, in a peered VPC network, or in another network connected using Cloud VPN tunnels or Cloud Interconnect attachments (VLANs) 2 Supported for Premium Tier 3 For regional load balancers, the backend VM's nic0 must be in the same network and region used by the forwarding rule."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/forwarding-rule-concepts",
+        "https://docs.cloud.google.com/load-balancing/docs/features",
+        "https://docs.cloud.google.com/load-balancing/docs/tutorials/http-https-over-same-domain"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/forwarding-rule-concepts",
+        "https://docs.cloud.google.com/load-balancing/docs/features",
+        "https://docs.cloud.google.com/load-balancing/docs/tutorials/http-https-over-same-domain"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/forwarding-rule-concepts",
+        "https://docs.cloud.google.com/load-balancing/docs/features",
+        "https://docs.cloud.google.com/load-balancing/docs/tutorials/http-https-over-same-domain"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/forwarding-rule-concepts",
+        "https://docs.cloud.google.com/load-balancing/docs/features",
+        "https://docs.cloud.google.com/load-balancing/docs/tutorials/http-https-over-same-domain"
+      ]
+    }
+  ]
+}

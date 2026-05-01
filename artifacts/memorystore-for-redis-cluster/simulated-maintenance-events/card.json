@@ -1,0 +1,133 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:43.560Z",
+  "source_step08_card": "data/step-08/current/products/memorystore-for-redis-cluster/card.json",
+  "product_name": "Memorystore for Redis Cluster",
+  "product_slug": "memorystore-for-redis-cluster",
+  "feature_name": "simulated maintenance events",
+  "feature_slug": "simulated-maintenance-events",
+  "summary": "You can simulate maintenance events on a cluster to test how your application behaves during maintenance.",
+  "extended_definition": "You can simulate maintenance events on a cluster to test how your application behaves during maintenance.",
+  "lifecycle": {
+    "latest_feature_date": "2025-08-29",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/memorystore/docs/cluster/about-cross-region-replication",
+      "https://docs.cloud.google.com/memorystore/docs/cluster/about-maintenance",
+      "https://docs.cloud.google.com/memorystore/docs/cluster/cluster-node-specification",
+      "https://docs.cloud.google.com/memorystore/docs/cluster/supported-instance-configurations"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"About maintenance \\_|\\_ Memorystore for Redis Cluster \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/memorystore/docs/cluster/about-maintenance",
+        "source_id": "site-docs-root",
+        "final_score": 212,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Upcoming maintenance notifications To ensure you stay informed about maintenance events on your cluster, you can set up email notifications regarding upcoming maintenance at least one week before it's scheduled.",
+          "As part of rescheduling maintenance , choose one of the following options: Update now : instead of waiting for the scheduled maintenance window, you can apply the updates to your cluster immediately.",
+          "If the current day and time works for your cluster and you expect a high load on your cluster in the future, then you can run the maintenance update immediately."
+        ]
+      },
+      {
+        "title": "\"About cross-region replication \\_|\\_ Memorystore for Redis Cluster \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/memorystore/docs/cluster/about-cross-region-replication",
+        "source_id": "site-docs-root",
+        "final_score": 211,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Settings that a secondary cluster copies from the primary cluster When you create a secondary cluster, this cluster copies the following settings from the primary cluster: Shard count IAM authentication mode In-transit encryption mode Cluster configurations Redis version Node type Persistence mode Override default settings When you create a secondary cluster, you can use the following settings to override the default settings: Zone distribution configuration Replica count Maintenance windows Deletion protection Automated backups Update cluster settings When you update the settings for your cluster in Memorystore for Redis Cluster, you can change some settings only on the primary cluster.",
+          "Shard count Cluster configurations Persistence mode Redis version Node type Configure local settings You configure the following settings locally: Deletion protection Replica count Maintenance windows Cluster endpoints Automated backups Best practices for switching primary and secondary clusters When you perform a switchover , we recommend that you follow the instructions in this section.",
+          "You can perform a switchover for the following reasons: Test your disaster recovery setup Switch over during an actual disaster recovery scenario Perform a migration of your workload After you complete the switchover, Memorystore for Redis Cluster reverses the direction of replication."
+        ]
+      },
+      {
+        "title": "\"Supported instance configurations \\_|\\_ Memorystore for Redis Cluster \\_\\",
+        "url": "https://docs.cloud.google.com/memorystore/docs/cluster/supported-instance-configurations",
+        "source_id": "site-docs-root",
+        "final_score": 195,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Modifiable configuration parameters You can modify the following parameters when creating or updating a Memorystore for Redis Cluster instance.",
+          "E Keyevent events, published with keyevent@<db> prefix. g Generic commands (non-type specific) like DEL, EXPIRE, or RENAME $ String commands l List commands s Set commands h Hash commands z Sorted set commands x Expired events (events generated every time a key expires) e Evicted events (events generated when a key is evicted for maxmemory) A Alias for g$lshzxe, so that the \"AKE\" string means all the events. slowlog-log-slower-than Lets you configure the slow log.",
+          "Home Documentation Databases Memorystore Memorystore for Redis Cluster Guides Send feedback Supported instance configurations Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"Cluster and node specification \\_|\\_ Memorystore for Redis Cluster \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/memorystore/docs/cluster/cluster-node-specification",
+        "source_id": "site-docs-root",
+        "final_score": 187,
+        "relevance": "",
+        "evidence_snippets": [
+          "Your discovery endpoint has the following behavior: Your cluster's discovery endpoint remains unchanged throughout the lifecycle of the cluster instance, even during maintenance, or by any other action you take such as scaling in or out or changing replica counts.",
+          "Ideally, you should use a Redis cluster client that can handle these changes automatically through topology refreshes and redirections.",
+          "The redis-standard-small node type lets you provision small clusters, and grow your cluster by smaller increments at potentially lower costs than other node types. redis-standard-small also offers the advantage of distributing your keyspace across more nodes with a higher total vCPU count."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "redis.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/cluster/about-maintenance",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/about-cross-region-replication",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/supported-instance-configurations",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/cluster-node-specification"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/cluster/about-maintenance",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/about-cross-region-replication",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/supported-instance-configurations",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/cluster-node-specification"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/cluster/about-maintenance",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/about-cross-region-replication",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/supported-instance-configurations",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/cluster-node-specification"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/cluster/about-maintenance",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/about-cross-region-replication",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/supported-instance-configurations",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/cluster-node-specification"
+      ]
+    }
+  ]
+}

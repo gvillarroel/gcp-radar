@@ -1,0 +1,133 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:37.604Z",
+  "source_step08_card": "data/step-08/current/products/gemini-enterprise/card.json",
+  "product_name": "Gemini Enterprise",
+  "product_slug": "gemini-enterprise",
+  "feature_name": "Dropbox data store",
+  "feature_slug": "dropbox-data-store",
+  "summary": "Gemini Enterprise supports the Dropbox data store.",
+  "extended_definition": "Gemini Enterprise supports the Dropbox data store.",
+  "lifecycle": {
+    "latest_feature_date": "2025-12-12",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 1,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "thin_token_overlap",
+        "message": "Supporting pages only weakly overlap with informative feature tokens.",
+        "suggested_steps": [
+          "step-03",
+          "step-04",
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/gemini/enterprise/docs/apps-data-stores",
+      "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/box/set-up-data-store",
+      "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/confluence-cloud/set-up-data-store",
+      "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/confluence-dc/set-up-data-store"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Set up a Confluence Cloud data store \\_|\\_ Gemini Enterprise \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/confluence-cloud/set-up-data-store",
+        "source_id": "site-docs-root",
+        "final_score": 190,
+        "relevance": "",
+        "evidence_snippets": [
+          "To enable real-time sync for a Confluence data store, follow these steps: Generate a webhook URL Navigate to the Gemini Enterprise page, and in the navigation menu, click Data Stores .",
+          "After creating the data store, create an app , connect it to the Confluence Cloud data store , and authorize Gemini Enterprise to access Confluence Cloud before executing any queries.",
+          "Create Confluence Cloud data store To create a Confluence Cloud data store, perform the following steps: In the Google Cloud console, go to the Gemini Enterprise page."
+        ]
+      },
+      {
+        "title": "\"Set up a Confluence Data Center data store \\_|\\_ Gemini Enterprise \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/confluence-dc/set-up-data-store",
+        "source_id": "site-docs-root",
+        "final_score": 190,
+        "relevance": "",
+        "evidence_snippets": [
+          "Create the Confluence Data Center data store To create the Confluence Data Center data store, perform the following steps: In the Google Cloud console, go to the Gemini Enterprise page.",
+          "Data handling and query execution This section describes how Gemini Enterprise manages your query and the privacy implications of using the federated data store.",
+          "In the Connected projects section, select the checkbox next to the Gemini Enterprise tenant project for the data store, and then click Accept project ."
+        ]
+      },
+      {
+        "title": "About apps and data stores \\_|\\_ Gemini Enterprise \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/gemini/enterprise/docs/apps-data-stores",
+        "source_id": "site-docs-root",
+        "final_score": 190,
+        "relevance": "",
+        "evidence_snippets": [
+          "Data stores and apps In Gemini Enterprise, there are various kinds of data stores.",
+          "Home Documentation AI and ML Gemini Enterprise Send feedback About apps and data stores Stay organized with collections Save and categorize content based on your preferences.",
+          "Note: Blended search is rate-limited in the Gemini Enterprise Standard and Gemini Enterprise Frontline editions."
+        ]
+      },
+      {
+        "title": "Set up a Box data store \\_|\\_ Gemini Enterprise \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/box/set-up-data-store",
+        "source_id": "site-docs-root",
+        "final_score": 190,
+        "relevance": "",
+        "evidence_snippets": [
+          "Data handling and query execution This section describes how Gemini Enterprise manages your query and the privacy implications of using the federated data store.",
+          "Create the Box data store To create the Box data store, perform the following steps: In the Google Cloud console, go to the Gemini Enterprise page.",
+          "If you have created a Box federated data store, you must authorize Gemini Enterprise to Box before executing the query."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/confluence-cloud/set-up-data-store",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/confluence-dc/set-up-data-store",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/apps-data-stores",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/box/set-up-data-store"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/confluence-cloud/set-up-data-store",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/confluence-dc/set-up-data-store",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/apps-data-stores",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/box/set-up-data-store"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/confluence-cloud/set-up-data-store",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/confluence-dc/set-up-data-store",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/apps-data-stores",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/box/set-up-data-store"
+      ]
+    }
+  ]
+}

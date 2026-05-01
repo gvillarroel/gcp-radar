@@ -1,0 +1,190 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:37.604Z",
+  "source_step08_card": "data/step-08/current/products/gemini-enterprise/card.json",
+  "product_name": "Gemini Enterprise",
+  "product_slug": "gemini-enterprise",
+  "feature_name": "Customer-managed encryption keys for third-party connectors",
+  "feature_slug": "customer-managed-encryption-keys-for-third-party-connectors",
+  "summary": "Third-party data connectors can use customer-managed encryption keys to protect data at rest.",
+  "extended_definition": "Third-party data connectors can use customer-managed encryption keys to protect data at rest.",
+  "lifecycle": {
+    "latest_feature_date": "2025-03-31",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/gemini/enterprise/docs/cmek",
+      "https://docs.cloud.google.com/gemini/enterprise/docs/connect-third-party-data-source",
+      "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/confluence-cloud/set-up-data-store",
+      "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/confluence-dc/set-up-data-store"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Customer-managed encryption keys \\_|\\_ Gemini Enterprise \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/gemini/enterprise/docs/cmek",
+        "source_id": "site-docs-root",
+        "final_score": 288,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Register single-region Cloud KMS keys for third-party connectors REST To register your own key for Gemini Enterprise, follow these steps: Call the UpdateCmekConfig method with the key that you want to register. curl -X PATCH \\ -H \"Authorization: Bearer $( gcloud auth print-access-token ) \" \\ -H \"Content-Type: application/json\" \\ -d '{\"kmsKey\":\"projects/ KMS PROJECT ID /locations/ KMS LOCATION /keyRings/ KEY RING /cryptoKeys/ KEY NAME \"}' \\ \"https:// LOCATION -discoveryengine.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION /cmekConfigs/ CMEK CONFIG ID ?set default= SET DEFAULT \" Replace the following: KMS PROJECT ID : the ID of your project that contains the key.",
+          "You need to have all three keys with you when you Register your Cloud KMS keys for third-party connectors . us single-regions europe single-regions us-east1 europe-west1 us-central1 europe-west4 us-west1 europe-north1 The CryptoKey Encrypter/Decrypter IAM role ( roles/cloudkms.cryptoKeyEncrypterDecrypter ) on the key has been granted to the Discovery Engine service agent.",
+          "Important: Do not rotate keys on data stores associated with recommendations apps or with any apps that need analytics, and don't rotate the single-region keys used for third-party connectors."
+        ]
+      },
+      {
+        "title": "\"Connect a third-party data source \\_|\\_ Gemini Enterprise \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/gemini/enterprise/docs/connect-third-party-data-source",
+        "source_id": "site-docs-root-2",
+        "final_score": 212,
+        "relevance": "",
+        "evidence_snippets": [
+          "If you are using customer-managed encryption keys, see Register single-region keys for third-party connectors .",
+          "When you connect a third-party data source, Gemini Enterprise creates a data store and associates entity data stores with it for each specified entity.",
+          "Connect a third-party data source Visit a source-specific page for information on how to connect that source to Gemini Enterprise."
+        ]
+      },
+      {
+        "title": "\"Set up a Confluence Data Center data store \\_|\\_ Gemini Enterprise \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/confluence-dc/set-up-data-store",
+        "source_id": "site-docs-root",
+        "final_score": 178,
+        "relevance": "",
+        "evidence_snippets": [
+          "For more information, see Customer-managed encryption keys .",
+          "For more information, see Register a single-region key for third-party connectors .",
+          "To enable alerts for the data store, see Configure alerts for third-party data stores ."
+        ]
+      },
+      {
+        "title": "\"Set up a Confluence Cloud data store \\_|\\_ Gemini Enterprise \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/confluence-cloud/set-up-data-store",
+        "source_id": "site-docs-root",
+        "final_score": 170,
+        "relevance": "",
+        "evidence_snippets": [
+          "For more information, see Customer-managed encryption keys .",
+          "For more information, see Register a single-region key for third-party connectors .",
+          "To enable alerts for the data store, see Configure alerts for third-party data stores ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cloudkms.cryptoKeyEncrypterDecrypter",
+      "discoveryengine.googleapis.com"
+    ],
+    "missing_inventory_roles": [
+      "roles/cloudkms.cryptoKeyEncrypterDecrypter"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/enterprise/docs/cmek",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connect-third-party-data-source",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/confluence-dc/set-up-data-store",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/confluence-cloud/set-up-data-store"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/enterprise/docs/cmek",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connect-third-party-data-source",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/confluence-dc/set-up-data-store",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/confluence-cloud/set-up-data-store"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/enterprise/docs/cmek",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connect-third-party-data-source",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/confluence-dc/set-up-data-store",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/confluence-cloud/set-up-data-store"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/enterprise/docs/cmek",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connect-third-party-data-source",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/confluence-dc/set-up-data-store",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/confluence-cloud/set-up-data-store"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/enterprise/docs/cmek",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connect-third-party-data-source",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/confluence-dc/set-up-data-store",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/confluence-cloud/set-up-data-store"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/enterprise/docs/cmek",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connect-third-party-data-source",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/confluence-dc/set-up-data-store",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/confluence-cloud/set-up-data-store"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/enterprise/docs/cmek",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connect-third-party-data-source",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/confluence-dc/set-up-data-store",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/confluence-cloud/set-up-data-store"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/enterprise/docs/cmek",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connect-third-party-data-source",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/confluence-dc/set-up-data-store",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/confluence-cloud/set-up-data-store"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/enterprise/docs/cmek",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connect-third-party-data-source",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/confluence-dc/set-up-data-store",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/confluence-cloud/set-up-data-store"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/enterprise/docs/cmek",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connect-third-party-data-source",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/confluence-dc/set-up-data-store",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/confluence-cloud/set-up-data-store"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,199 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:40.877Z",
+  "source_step08_card": "data/step-08/current/products/google-secops-marketplace/card.json",
+  "product_name": "Google SecOps Marketplace",
+  "product_slug": "google-secops-marketplace",
+  "feature_name": "Get Machine Recommendations",
+  "feature_slug": "get-machine-recommendations",
+  "summary": "Adds an action that returns machine recommendations.",
+  "extended_definition": "Adds an action that returns machine recommendations.",
+  "lifecycle": {
+    "latest_feature_date": "2026-03-25",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/alienvault-usm-appliance",
+      "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/anomali",
+      "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/any-run",
+      "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/google-cloud-recommender"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Integrate ANY.RUN with Google SecOps \\_|\\_ Google Security Operations \\_\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/any-run",
+        "source_id": "site-docs-root",
+        "final_score": 151,
+        "relevance": "",
+        "evidence_snippets": [
+          "Action results Entity enrichment Mark entity as suspicious if the number of negative engines is equal or above the given threshold. is suspicious: if data.get(\"score\") > threshold Enrichment field name Logic - When to apply domain Returns if it exists in JSON result should block Returns if it exists in JSON result score Returns if it exists in JSON result disposable Returns if it exists in JSON result has mx records Returns if it exists in JSON result has spf records Returns if it exists in JSON result Script result Script result name Value options Example is success True or False is success:False JSON result Option 1: If wait for report checkbox is not set, we return the info about the created analysis task (response to request 1) { \"error\" : false , \"data\" : { \"taskid\" : \" TASK ID \" } } Option 2: If wait for report checkbox is not set, we return the info about the created analysis task (response to request 1) { \"error\" : false , \"data\" : { \"analysis\" : { \"uuid\" : \" UUID \" , \"permanentUrl\" : \"https://app.any.run/tasks/ UUID \" , \"reports\" : { \"IOC\" : \"https://api.any.run/report/ UUID /ioc/json\" , \"MISP\" : \"https://api.any.run/report/ UUID /summary/misp\" , \"HTML\" : \"https://api.any.run/report/ UUID /summary/html\" , \"graph\" : \"https://content.any.run/tasks/ UUID /graph\" }, \"sandbox\" : { \"name\" : \"ANY.RUN - Interactive Sandbox\" , \"plan\" : { \"name\" : \"Tester\" } }, \"duration\" : 60 , \"creation\" : 1602483368256 , \"creationText\" : \"2020-10-12T06:16:08.256Z\" , \"tags\" : [], \"options\" : { } } } } Case wall Result type Description Type Output message Action should not fail and not stop playbook execution: If successfully created analysis task for the provided file: \"Successfully created analysis task for file: {0}\".format(file path).",
+          "Action results Entity enrichment Mark entity as suspicious if the number of negative engines is equal or above the given threshold. if data.get(\"report\", {}).get(\"risk score\", {}).get(\"result\") > threshold Enrichment Field name Logic - When to apply domain blacklist Returns if it exists in JSON result html forms Returns if it exists in JSON result server details Returns if it exists in JSON result response headers Returns if it exists in JSON result redirection Returns if it exists in JSON result file type Returns if it exists in JSON result risk score Returns if it exists in JSON result security checks Returns if it exists in JSON result geo location Returns if it exists in JSON result url parts Returns if it exists in JSON result site category Returns if it exists in JSON result web page Returns if it exists in JSON result dns records Returns if it exists in JSON result Script result Script result name Value options Example is success True or False is success:False JSON result Option 1: If wait for report checkbox is not set, we return the info about the created analysis task (response to request 1) { \"error\" : false , \"data\" : { \"taskid\" : \" TASK ID \" } } Option 2.",
+          "For enhanced functionality, we strongly recommend that you transition to the following dedicated Partner Integrations : ANYRUN Sandbox ANYRUN TI Feeds ANYRUN TI Lookup Parameters N/A Run on The action doesn't run on entities."
+        ]
+      },
+      {
+        "title": "\"Integrate LevelBlue USM Appliance with Google SecOps \\_|\\_ Google Security\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/alienvault-usm-appliance",
+        "source_id": "site-docs-root",
+        "final_score": 147,
+        "relevance": "",
+        "evidence_snippets": [
+          "Parameters N/A Run on This action runs on the following entities: IP Address Hostname Action results Entity enrichment Enrichment field name Logic - When to apply model Returns if it exists in JSON result descr Returns if it exists in JSON result hostname Returns if it exists in JSON result asset type Returns if it exists in JSON result fqdn Returns if it exists in JSON result devices Returns if it exists in JSON result asset value Returns if it exists in JSON result ips Returns if it exists in JSON result id Returns if it exists in JSON result sensors Returns if it exists in JSON result os Returns if it exists in JSON result networks Returns if it exists in JSON result icon Returns if it exists in JSON result Script result Script result name Value options Example success True or False success:False JSON result [ { \"EntityResult\" : { \"model\" : null , \"descr\" : \" \" , \"hostname\" : \"Hostname\" , \"asset type\" : \"Internal\" , \"fqdn\" : \" \" , \"devices\" : [], \"asset value\" : \"2\" , \"ips\" : { \"3.3.3.3\" : { \"ip\" : \"192.0.2.1\" , \"mac\" : \"01:23:45:AB:CD:EF\" }}, \"id\" : \"123D37D595B800734550B9D9D6A958C6\" , \"sensors\" : { \"C221234962EA11E697DE0AF71A09DF3B\" : { \"ip\" : \"192.0.2.1\" , \"ctxs\" : { \"C228355962EA11E697DE0AF71A09DF3B\" : \"AlienVault\" }, \"name\" : \"DA\" }}, \"os\" : \"Linux\" , \"networks\" : { \"7E4B12EEFD06A21F898345C2AB46EB10\" : { \"ips\" : \"192.0.2.1/24\" , \"ctx\" : \"C228355962EA11E697DE0AF71A09DF3B\" , \"name\" : \"Pvt 000\" }}, \"icon\" : \" \" }, \"Entity\" : \"example.com\" } ] Enrich Vulnerabilities Retrieve vulnerability information from the LevelBlue USM Appliance.",
+          "Parameters N/A Run on This action runs on the following entities: IP Address Hostname Action results Entity enrichment Enrichment field name Logic - When to apply AlientVault Severity Returns if it exists in JSON result AlientVault Service Returns if it exists in JSON result AlientVault Vulnerability Returns if it exists in JSON result AlientVault Scan Time Returns if it exists in JSON result AlientVault Asset Returns if it exists in JSON result AlientVault Id Returns if it exists in JSON result Script result Script result name Value options Example success True or False success:False JSON result [ { \"EntityResult\" : [{ \"Severity\" : \"High\" , \"Service\" : \"general (0/tcp))\" , \"Vulnerability\" : \"TCP Sequence Number Approximation Reset Denial of Service Vulnerability\" , \"Scan Time\" : \"2014-02-26 02:08:59\" , \"Asset\" : \"Hostname (192.0.2.1)\" , \"Id\" : \"123456\" }, { \"Severity\" : \"High\" , \"Service\" : \"https (443/tcp)\" , \"Vulnerability\" : \"robot(s).txt exists on the Web Server\" , \"Scan Time\" : \"2014-02-26 02:08:59\" , \"Asset\" : \"Hostname (192.0.2.1)\" , \"Id\" : \"123457\" }, { \"Severity\" : \"Medium\" , \"Service\" : \"general (0/tcp))\" , \"Vulnerability\" : \"TCP timestamps\" , \"Scan Time\" : \"2014-02-26 02:08:59\" , \"Asset\" : \"Hostname (192.0.2.1)\" , \"Id\" : \"123458\" }], \"Entity\" : \"test\" } ] Fetch Last PCAP Files Fetch last PCAP files from AlienVault.",
+          "Action results Script result Script result name Value options Example is success True or False is success:False JSON result [ { \"scan name\" : \"pcap file 1545041396 10 192.0.2.1.pcap\" , \"creation time\" : \"2018-12-17 10:09:56\" , \"user\" : null , \"download link\" : \"https://www.alienvault.com/ossim/pcap/download.php?scan name=0000000 10 192.0.2.1.pcap&sensor ip=192.0.2.1\" , \"sensor ip\" : \"192.0.2.1\" , \"duration\" : \"10\" }, { \"scan name\" : \"pcap file 1545041397 10 192.0.2.1.pcap\" , \"creation time\" : \"2018-12-17 10:09:56\" , \"user\" : null , \"download link\" : \"https://www.alienvault.com/ossim/pcap/download.php?scan name=0000000 10 192.0.2.1.pcap&sensor ip=192.0.2.1\" , \"sensor ip\" : \"192.0.2.1\" , \"duration\" : \"10\" }, { \"scan name\" : \"pcap file 1545041398 10 192.0.2.1.pcap\" , \"creation time\" : \"2018-12-17 10:09:56\" , \"user\" : null , \"download link\" : \"https://www.alienvault.com/ossim/pcap/download.php?scan name=0000000 10 192.0.2.1.pcap&sensor ip=192.0.2.1\" , \"sensor ip\" : \"192.0.2.1\" , \"duration\" : \"10\" } ] Get PCAP Files for Events Get PCAP files for events in an alert."
+        ]
+      },
+      {
+        "title": "\"Integrate Recommender with Google SecOps \\_|\\_ Google Security Operations\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/google-cloud-recommender",
+        "source_id": "site-docs-root-2",
+        "final_score": 144,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Action outputs Action output type Case wall attachment N/A Case wall link N/A Case wall table N/A Enrichment table N/A Entity insight N/A Insight N/A JSON result Available OOTB widget N/A Script result Available Script result Script result name Value is success True/False JSON result { \"applied recommendations\": [ { \"name\": \"projects/ PROJECT ID /locations/global/recommenders/google.iam.policy.Recommender/recommendations/217d3019-bae5-4a52-9968-787fdd546a53\", \"description\": \"Replace the current role with a smaller role to cover the permissions needed.\", \"lastRefreshTime\": \"2023-07-28T07:00:00Z\", \"primaryImpact\": { \"category\": \"SECURITY\", \"securityProjection\": { \"details\": { \"revokedIamPermissionsCount\": 610 } } }, \"content\": { \"operationGroups\": [ { \"operations\": [ { \"action\": \"add\", \"resourceType\": \"cloudresourcemanager.googleapis.com/Project\", \"resource\": \"//cloudresourcemanager.googleapis.com/projects/ PROJECT ID \", \"path\": \"/iamPolicy/bindings/ /members/-\", \"value\": \" USER ID @example.com\", \"pathFilters\": { \"/iamPolicy/bindings/ /condition/expression\": \"\", \"/iamPolicy/bindings/ /role\": \"roles/compute.instanceAdmin\" } }, { \"action\": \"remove\", \"resourceType\": \"cloudresourcemanager.googleapis.com/Project\", \"resource\": \"//cloudresourcemanager.googleapis.com/projects/ PROJECT ID \", \"path\": \"/iamPolicy/bindings/ /members/ \", \"pathFilters\": { \"/iamPolicy/bindings/ /condition/expression\": \"\", \"/iamPolicy/bindings/ /members/ \": \" USER ID @example.com\", \"/iamPolicy/bindings/ /role\": \"roles/compute.admin\" } } ] } ], \"overview\": { \"resource\": \"//cloudresourcemanager.googleapis.com/projects/ PROJECT ID \", \"member\": \"user: USER ID @example.com\", \"removedRole\": \"roles/compute.admin\", \"addedRoles\": [ \"roles/compute.instanceAdmin\" ], \"minimumObservationPeriodInDays\": \"0\" } }, \"stateInfo\": { \"state\": \"SUCCEEDED\", \"stateMetadata\": { \"applied by\": \"bulk apply by automated script-2023-08-11\" } }, \"etag\": \"\\\"892d57ee41baa03e\\\"\", \"recommenderSubtype\": \"REPLACE ROLE\", \"associatedInsights\": [ { \"insight\": \"projects/ PROJECT ID /locations/global/insightTypes/google.iam.policy.Insight/insights/ INSIGHT ID \" } ], \"priority\": \"P4\" }, { \"name\": \"projects/ PROJECT ID /locations/global/recommenders/google.iam.policy.Recommender/recommendations/ RECOMMENDATION ID \", \"description\": \"Replace the current role with a smaller role to cover the permissions needed.\", \"lastRefreshTime\": \"2023-07-28T07:00:00Z\", \"primaryImpact\": { \"category\": \"SECURITY\", \"securityProjection\": { \"details\": { \"revokedIamPermissionsCount\": 19 } } }, \"content\": { \"operationGroups\": [ { \"operations\": [ { \"action\": \"add\", \"resourceType\": \"cloudresourcemanager.googleapis.com/Project\", \"resource\": \"//cloudresourcemanager.googleapis.com/projects/ PROJECT ID \", \"path\": \"/iamPolicy/bindings/ /members/-\", \"value\": \"user: USER ID @example.com\", \"pathFilters\": { \"/iamPolicy/bindings/ /condition/expression\": \"\", \"/iamPolicy/bindings/ /role\": \"roles/storage.objectAdmin\" } }, { \"action\": \"remove\", \"resourceType\": \"cloudresourcemanager.googleapis.com/Project\", \"resource\": \"//cloudresourcemanager.googleapis.com/projects/ PROJECT ID \", \"path\": \"/iamPolicy/bindings/ /members/ \", \"pathFilters\": { \"/iamPolicy/bindings/ /condition/expression\": \"\", \"/iamPolicy/bindings/ /members/ \": \"user: USER ID @example.com\", \"/iamPolicy/bindings/ /role\": \"roles/storage.admin\" } } ] } ], \"overview\": { \"resource\": \"//cloudresourcemanager.googleapis.com/projects/ PROJECT ID \", \"member\": \"user: USER ID @example.com\", \"removedRole\": \"roles/storage.admin\", \"addedRoles\": [ \"roles/storage.objectAdmin\" ], \"minimumObservationPeriodInDays\": \"0\" } }, \"stateInfo\": { \"state\": \"SUCCEEDED\", \"stateMetadata\": { \"applied by\": \"bulk apply by automated script-2023-08-11\" } }, \"etag\": \"\\\"af7635ffeb512998\\\"\", \"recommenderSubtype\": \"REPLACE ROLE\", \"associatedInsights\": [ { \"insight\": \"projects/ PROJECT ID /locations/global/insightTypes/google.iam.policy.Insight/insights/ INSIGHT ID \" } ], \"priority\": \"P4\" } ], \"failed recommendations\": [] } Case wall The action provides the following output messages: Output message Message description Successfully applied provided IAM recommendations.",
+          "Action outputs Action output type Case wall attachment N/A Case wall link N/A Case wall table Available Enrichment table N/A Entity insight N/A Insight N/A JSON result Available OOTB widget N/A Script result Available Script result Script result name Value is success True/False JSON result [ { \"name\": \"name\", \"description\": \"This role has not been used during the observation window.\", \"lastRefreshTime\": \"2023-07-27T07:00:00Z\", \"primaryImpact\": { \"category\": \"SECURITY\", \"securityProjection\": { \"details\": { \"revokedIamPermissionsCount\": 68 } } }, \"content\": { \"operationGroups\": [ { \"operations\": [ { \"action\": \"remove\", \"resourceType\": \"cloudresourcemanager.googleapis.com/Project\", \"resource\": \"//cloudresourcemanager.googleapis.com/projects\", \"path\": \"/iamPolicy/bindings/ /members/ \", \"pathFilters\": { \"/iamPolicy/bindings/ /condition/expression\": \"\", \"/iamPolicy/bindings/ /members/ \": \"serviceAccount: SERVICE ACCOUNT ID \", \"/iamPolicy/bindings/ /role\": \"roles/monitoring.admin\" } } ] } ], \"overview\": { \"resource\": \"//cloudresourcemanager.googleapis.com/\", \"member\": \"serviceAccount: SERVICE ACCOUNT ID \", \"removedRole\": \"roles/monitoring.admin\", \"minimumObservationPeriodInDays\": \"0\" } }, \"stateInfo\": { \"state\": \"ACTIVE\" }, \"etag\": \"\", \"recommenderSubtype\": \"REMOVE ROLE\", \"associatedInsights\": [ { \"insight\": \"projects/i/locations/global/insightTypes/\" } ], \"priority\": \"P4\" }, { \"name\": \"name\", \"description\": \"This role has not been used during the observation window.\", \"lastRefreshTime\": \"2023-07-27T07:00:00Z\", \"primaryImpact\": { \"category\": \"SECURITY\", \"securityProjection\": { \"details\": { \"revokedIamPermissionsCount\": 5 } } }, \"content\": { \"operationGroups\": [ { \"operations\": [ { \"action\": \"remove\", \"resourceType\": \"cloudresourcemanager.googleapis.com/Project\", \"resource\": \"//cloudresourcemanager.googleapis.com/projects/ PROJECT ID \", \"path\": \"/iamPolicy/bindings/ /members/ \", \"pathFilters\": { \"/iamPolicy/bindings/ /condition/expression\": \"\", \"/iamPolicy/bindings/ /members/ \": \"user: USER ID @example.com\", \"/iamPolicy/bindings/ /role\": \"roles/chroniclesm.admin\" } } ] } ], \"overview\": { \"resource\": \"//cloudresourcemanager.googleapis.com/projects\", \"member\": \"user: USER ID @example.com\", \"removedRole\": \"roles/chroniclesm.admin\", \"minimumObservationPeriodInDays\": \"0\" } }, \"stateInfo\": { \"state\": \"ACTIVE\" }, \"etag\": \"\", \"recommenderSubtype\": \"REMOVE ROLE\", \"associatedInsights\": [ { \"insight\": \"projects\" } ], \"priority\": \"P4\" } ] Case wall The action provides the following output messages: Output message Message description Successfully found recommendations for the provided criteria in the Google Cloud Recommender service.",
+          "Example of the expected input: projects/projectname/locations/global/recommenders/google.iam.policy.Recommender/recommendations/0f262740-bf4a-4c3d-9573-0da3345cf3f7 Action outputs Action output type Case wall attachment N/A Case wall link N/A Case wall table N/A Enrichment table N/A Entity insight N/A Insight N/A JSON result Available OOTB widget N/A Script result Available Script result Script result name Value is success True/False JSON result [ { \"name\": \"name\", \"description\": \"This role has not been used during the observation window.\", \"lastRefreshTime\": \"2023-07-28T07:00:00Z\", \"primaryImpact\": { \"category\": \"SECURITY\", \"securityProjection\": { \"details\": { \"revokedIamPermissionsCount\": 68 } } }, \"content\": { \"operationGroups\": [ { \"operations\": [ { \"action\": \"remove\", \"resourceType\": \"cloudresourcemanager.googleapis.com/Project\", \"resource\": \"//cloudresourcemanager.googleapis.com/projects/ PROJECT ID \", \"path\": \"/iamPolicy/bindings/ /members/ \", \"pathFilters\": { \"/iamPolicy/bindings/ /condition/expression\": \"\", \"/iamPolicy/bindings/ /members/ \": \"serviceAccount: SERVICE ACCOUNT ID .iam.gserviceaccount.com\", \"/iamPolicy/bindings/ /role\": \"roles/monitoring.admin\" } } ] } ], \"overview\": { \"resource\": \"//cloudresourcemanager.googleapis.com/projects/ PROJECT ID \", \"member\": \"serviceAccount: SERVICE ACCOUNT ID .iam.gserviceaccount.com\", \"removedRole\": \"roles/monitoring.admin\", \"minimumObservationPeriodInDays\": \"0\" } }, \"stateInfo\": { \"state\": \"ACTIVE\" }, \"etag\": \"\", \"recommenderSubtype\": \"REMOVE ROLE\", \"associatedInsights\": [ { \"insight\": \"projects/ PROJECT ID /locations/global/insightTypes/google.iam.policy.Insight/insights/\" } ], \"priority\": \"P4\" } ] Case wall The action provides the following output messages: Output message Message description Successfully found recommendation in the Google Cloud Recommender service."
+        ]
+      },
+      {
+        "title": "\"Integrate Anomali with Google SecOps \\_|\\_ Google Security Operations \\_\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/anomali",
+        "source_id": "site-docs-root",
+        "final_score": 139,
+        "relevance": "",
+        "evidence_snippets": [
+          "Run on This action runs on the following entities: IP Address URL Hash Email Addresses (User entities that match email regex) Action results Entity enrichment Name Logic - When To Apply id Returns if it exists in JSON result status Returns if it exists in JSON result itype Returns if it exists in JSON result expiration time Returns if it exists in JSON result ip Returns if it exists in JSON result feed id Returns if it exists in JSON result confidence Returns if it exists in JSON result uuid Returns if it exists in JSON result retina confidence Returns if it exists in JSON result trusted circle ids Returns if it exists in JSON result source Returns if it exists in JSON result latitude Returns if it exists in JSON result type Returns if it exists in JSON result description Returns if it exists in JSON result tags Returns if it exists in JSON result threat score Returns if it exists in JSON result source confidence Returns if it exists in JSON result modification time Returns if it exists in JSON result org name Returns if it exists in JSON result asn Returns if it exists in JSON result creation time Returns if it exists in JSON result tlp Returns if it exists in JSON result country Returns if it exists in JSON result longitude Returns if it exists in JSON result severity Returns if it exists in JSON result subtype Returns if it exists in JSON result Script result Script result name Value options Example success True or False success:False JSON result { \"Entity\" : \" ENTITY ID \" , \"EntityResult\" : { \"Info\" : [{ \"source created\" : null , \"status\" : \"inactive\" , \"itype\" : \"mal domain\" , \"expiration ts\" : \"2020-11-28T13:29:57.000Z\" , \"ip\" : \"192.0.2.1\" , \"is editable\" : false , \"feed id\" : 1111111 , \"update id\" : 1111111111 , \"longitude\" : -0.1223454 , \"is public\" : true , \"threat type\" : \"malware\" , \"workgroups\" : [], \"rdns\" : null , \"confidence\" : 11111 , \"uuid\" : \" UUID \" , \"retina confidence\" : 1111111 , \"trusted circle ids\" : null , \"id\" : 111111111111111110000 , \"source\" : \"COVID19 Cyber Threat Coalition Blocklist - Domains\" , \"owner organization id\" : 111 , \"import session id\" : null , \"source modified\" : null , \"type\" : \"domain\" , \"sort\" : [ 1607193157800 , \"56224953198\" ], \"description\" : null , \"tags\" : [{ \"id\" : \"wu6\" , \"name\" : \"Blocklist\" }, { \"id\" : \"pvj\" , \"name\" : \"Coronavirus\" }, { \"id\" : \"01i\" , \"name\" : \"COVID-19\" }, { \"id\" : \"o70\" , \"name\" : \"Malicious\" }, { \"id\" : \"fk0\" , \"name\" : \"Source:COVID19-Cyber-Threat-Coalition\" }], \"threatscore\" : 11111 , \"source reported confidence\" : 11111 , \"modified ts\" : \"2020-12-05T18:32:37.800Z\" , \"org\" : \"Namecheap\" , \"asn\" : \"11111111\" , \"created ts\" : \"2020-10-29T13:33:24.904Z\" , \"tlp\" : null , \"is anonymous\" : false , \"latitude\" : 51.4964 , \"country\" : \"GB\" , \"can add public tags\" : false , \"value\" : \" VALUE \" , \"subtype\" : null , \"meta\" : { \"registration updated\" : \"2020-10-24T22:16:59+00:00\" , \"detail2\" : \"bifocals deactivated on 2020-12-05 18:30:00.085789\" , \"severity\" : \"high\" , \"registration created\" : \"2020-10-24T22:16:42+00:00\" }, \"resource uri\" : \"/api/v2/intelligence/\" }], \"Campaigns\" : [{ \"association info\" : [{ \"comment\" : null , \"created\" : \"2020-10-29T13:33:29.200283\" , \"from id\" : \" ID \" }], \"can add public tags\" : true , \"circles\" : [], \"created ts\" : \"2020-03-15T04:24:55.428496\" , \"end date\" : \"2020-03-23T16:05:00.761000\" , \"feed id\" : 0 , \"id\" : \" ID \" , \"is anonymous\" : true , \"is cloneable\" : \"yes\" , \"is public\" : true , \"modified ts\" : \"2021-02-02T02:38:19.892072\" , \"name\" : \"Coronavirus (COVID-19)\" , \"objective\" : null , \"organization\" : { \"id\" : 0 , \"name\" : \"Analyst\" , \"title\" : \"Analyst\" }, \"publication status\" : \"published\" , \"published ts\" : \"2020-04-06T21:40:24.452312\" , \"resource uri\" : \"/api/v1/campaign/\" , \"source created\" : null , \"source modified\" : null , \"start date\" : \"2020-01-30T13:10:00.070000\" , \"status\" : { \"display name\" : \"Ongoing\" , \"id\" : 1 , \"resource uri\" : \"/api/v1/campaignstatus/1/\" }, \"tags\" : [ \"Malware\" , \"Fraud\" , \"Phishing\" , \"COVID-19\" , \"Coronavirus\" , \"Scams\" ], \"tags v2\" : [{ \"id\" : \"wqe\" , \"name\" : \"Coronavirus\" }, { \"id\" : \"hlg\" , \"name\" : \"COVID-19\" }, { \"id\" : \"74i\" , \"name\" : \"Phishing\" }, { \"id\" : \"0y2\" , \"name\" : \"Malware\" }, { \"id\" : \"u63\" , \"name\" : \"Scams\" }, { \"id\" : \"1er\" , \"name\" : \"Fraud\" }], \"tlp\" : \"white\" , \"uuid\" : \" UUID \" , \"workgroups\" : [] }], \"Tip\" : [{ \"all circles visible\" : true , \"association info\" : [{ \"comment\" : null , \"created\" : \"2020-10-29T13:33:29.212118\" , \"from id\" : \" ID \" }], \"body content type\" : \"richtext\" , \"campaign\" : null , \"can add public tags\" : true , \"circles\" : [], \"created ts\" : \"2020-03-19T04:23:35.714929\" , \"feed id\" : 0 , \"id\" : \" ID \" , \"is anonymous\" : true , \"is cloneable\" : \"yes\" , \"is editable\" : true , \"is email\" : false , \"is public\" : true , \"modified ts\" : \"2021-02-02T02:38:20.061912\" , \"name\" : \"Coronavirus (COVID-19) Cyber Threats\" , \"original source\" : null , \"original source id\" : null , \"owner org\" : { \"id\" : 0 , \"name\" : \"Analyst\" , \"title\" : \"Analyst\" }, \"parent\" : null , \"published ts\" : \"2020-05-25T18:39:36.890647\" , \"resource uri\" : \"/api/v1/ ID /\" , \"source created\" : null , \"source modified\" : null , \"starred by me\" : false , \"starred total count\" : 5 , \"status\" : \"published\" , \"tags\" : [ \"Scams\" , \"HCL-\" , \"Malware\" ], \"tags v2\" : [{ \"id\" : \" ID \" , \"name\" : \"Coronavirus\" }, { \"id\" : \" ID \" , \"name\" : \"COVID-19\" }, { \"id\" : \" ID \" , \"name\" : \"Phishing\" }], \"threat actor\" : null , \"tlp\" : \"white\" , \"ttp\" : null , \"uuid\" : \" UUID \" , \"votes\" : { \"me\" : null , \"total\" : 0 }, \"watched by me\" : false , \"watched total count\" : 11111 , \"workgroups\" : [] }], \"Actors\" : [], \"Incidents\" : [], \"TTP\" : [] } } Case wall Result type Description Type Output message If data is available for one entity (is success=true): \"Successfully returned information about the following entities from Anomali ThreatStream: {entity.identifier}\" If no data is available for one entity (is success=true): \"Action wasn't able to return information about the following entities from Anomali ThreatStream: {entity.identifier}\" If not available for all entities (is success=false): \"No entities were enriched.",
+          "Run on This action runs on the following entities: Hash IP Address URL Email Action results Script result Script result name Value options Example success True or False success:False JSON result { \"campaign\" : [ { \"name\" : \"Example 1\" , \"id\" : 1 }, { \"name\" : \"Example 2\" , \"id\" : 2 } ], \"actor\" : [ { \"name\" : \"Actor 1\" , \"id\" : 1 }, { \"name\" : \"Actor 2\" , \"id\" : 2 } ], \"attackpattern\" : [ { \"name\" : \"Pattern 1\" , \"id\" : 1 }, { \"name\" : \"Pattern 2\" , \"id\" : 2 } ], \"courseofaction\" : [ { \"name\" : \"Course of Action 1\" , \"id\" : 1 }, { \"name\" : \"Course Of Action 2\" , \"id\" : 2 } ], \"identity\" : [ { \"name\" : \"Identity 1\" , \"id\" : 1 }, { \"name\" : \"Identity 2\" , \"id\" : 2 } ], \"incident\" : [ { \"name\" : \"Incident 1\" , \"id\" : 1 }, { \"name\" : \"Incident 2\" , \"id\" : 2 } ], \"infrastructure\" : [ { \"name\" : \"Infrustructure 1\" , \"id\" : 1 }, { \"name\" : \"Infrustructure 2\" , \"id\" : 2 } ], \"intrusionset\" : [ { \"name\" : \"Intrusion set 1\" , \"id\" : 1 }, { \"name\" : \"Intrusion set 2\" , \"id\" : 2 } ], \"malware\" : [ { \"name\" : \"Malware 1\" , \"id\" : 1 }, { \"name\" : \"Malware 2\" , \"id\" : 2 } ], \"signature\" : [ { \"name\" : \"Signature 1\" , \"id\" : 1 }, { \"name\" : \"Signature 2\" , \"id\" : 2 } ], \"tool\" : [ { \"name\" : \"Tool 1\" , \"id\" : 1 }, { \"name\" : \"Tool 2\" , \"id\" : 2 } ], \"ttp\" : [ { \"name\" : \"TTP 1\" , \"id\" : 1 }, { \"name\" : \"TTP 2\" , \"id\" : 2 } ], \"vulnerability\" : [ { \"name\" : \"Vulnerability 1\" , \"id\" : 1 }, { \"name\" : \"Vulnerability 2\" , \"id\" : 2 } ], } Case wall Result type Description Type Output message The action should not fail nor stop a playbook execution: If successful and at least one association across entities is found (is success=true): \"Successfully retrieved related associations from Anomali\" If no associations are found (is success=false): \"No related associations were found.\" Async Message: \"Waiting for all of the association details to be retrieved\" The action should fail and stop a playbook execution: If a fatal error, like wrong credentials, no connection to server, other is reported: \"Error executing action \"Get Related Association\".",
+          "Action results Script result Script result name Value options Example success True or False success:False Get Related Associations Retrieve entity related associations from Anomali ThreatStream."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "api.any.run",
+      "app.any.run",
+      "chroniclesm.admin",
+      "cloudresourcemanager.googleapis.com",
+      "compute.admin",
+      "compute.instanceAdmin",
+      "content.any.run",
+      "data.get",
+      "download.php",
+      "entity.identifier",
+      "example.com",
+      "iam.gserviceaccount.com",
+      "monitoring.admin",
+      "storage.admin",
+      "storage.objectAdmin"
+    ],
+    "missing_inventory_roles": [
+      "roles/chroniclesm.admin",
+      "roles/compute.admin",
+      "roles/compute.instanceAdmin",
+      "roles/monitoring.admin",
+      "roles/storage.admin",
+      "roles/storage.objectAdmin"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/any-run",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/alienvault-usm-appliance",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/google-cloud-recommender",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/anomali"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/any-run",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/alienvault-usm-appliance",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/google-cloud-recommender",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/anomali"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/any-run",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/alienvault-usm-appliance",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/google-cloud-recommender",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/anomali"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/any-run",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/alienvault-usm-appliance",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/google-cloud-recommender",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/anomali"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/any-run",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/alienvault-usm-appliance",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/google-cloud-recommender",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/anomali"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/any-run",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/alienvault-usm-appliance",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/google-cloud-recommender",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/anomali"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/any-run",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/alienvault-usm-appliance",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/google-cloud-recommender",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/anomali"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/any-run",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/alienvault-usm-appliance",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/google-cloud-recommender",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/anomali"
+      ]
+    },
+    {
+      "capability": "threat",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/any-run",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/alienvault-usm-appliance",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/google-cloud-recommender",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/anomali"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,127 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:24.398Z",
+  "source_step08_card": "data/step-08/current/products/cloud-logging/card.json",
+  "product_name": "Cloud Logging",
+  "product_slug": "cloud-logging",
+  "feature_name": "gcloud Agent Policies Commands",
+  "feature_slug": "gcloud-agent-policies-commands",
+  "summary": "Gcloud beta includes commands for managing Agent Policies.",
+  "extended_definition": "Gcloud beta includes commands for managing Agent Policies.",
+  "lifecycle": {
+    "latest_feature_date": "2021-01-26",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/logging/docs/agent/ops-agent/agent-policies",
+      "https://docs.cloud.google.com/logging/docs/agent/ops-agent/agent-vmem-policies",
+      "https://docs.cloud.google.com/logging/docs/agent/ops-agent/managing-agent-policies"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Use agent policies (beta) \\_|\\_ Cloud Logging \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/logging/docs/agent/ops-agent/managing-agent-policies",
+        "source_id": "site-docs-root-2",
+        "final_score": 256,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For more information about the other commands in the command group and the available options, see the gcloud beta compute instances ops-agents policies documentation.",
+          "The ops-agents policy commands fail When a gcloud beta compute instances ops-agents policies command fails, the response shows a validation error.",
+          "Here is an example of a phased rollout plan for Debian 11 VMs in a project called my project : Phase 1: Create a policy named ops-agents-policy-safe-rollout to install the Ops Agent on all VMs with the labels env=test and app=myproduct . gcloud beta compute instances \\ ops - agents policies create ops - agents - policy - safe - rollout \\ -- agent - rules = \"type=ops-agent,version=current-major,package-state=installed,enable-autoupgrade=true\" \\ -- os - types = short - name = debian , version = 11 \\ -- group - labels = env = test , app = myproduct \\ -- project = my project For more information about specifying the operating system, see gcloud beta compute instances ops-agents policies create ."
+        ]
+      },
+      {
+        "title": "Use agent policies (GA) \\_|\\_ Cloud Logging \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/logging/docs/agent/ops-agent/agent-policies",
+        "source_id": "site-docs-root-2",
+        "final_score": 246,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The goog-ops-agent-policy indicator includes several types of policies: Policies created by using the gcloud compute instances ops-agents policies commands.",
+          "To enable the APIs, grant the necessary roles to the default service account, and enable the OS Config metadata for a project, run the script as follows: bash prepare-for-ops-agents-policies.sh --project= PROJECT ID To additionally grant one of the OS Config roles to a user who does not have the Owner ( roles/owner ) role on the project, run the script as follows: bash prepare-for-ops-agents-policies.sh --project= PROJECT ID \\ --iam-user= USER EMAIL \\ --iam-policy-access= [admin editor viewer] To additionally grant one of the OS Config roles to a non-default service account, run the script as follows: bash prepare-for-ops-agents-policies.sh --project= PROJECT ID \\ --iam-service-account= SERVICE ACCT EMAIL \\ --iam-policy-access= [admin editor viewer] The diagnose policies.sh script Given a project ID, a Compute Engine instance ID, a Compute Engine zone, and the agent policy ID, the diagnose policies.sh script automatically collects the necessary information to help diagnose issues with the policy: The OS Config agent version The underlying OS policy assignment The OS policy assignments that are applicable to this Compute Engine instance A description of this Compute Engine instance To invoke the script, run the following command: bash diagnose policies.sh --project-id= PROJECT ID \\ --gce-instance-id= INSTANCE ID \\ --policy-id= POLICY ID \\ --zone= ZONE Pricing The gcloud compute instances ops-agents policies commands are implemented by using OS policy assignment resources from VM Manager .",
+          "Although there is a general gcloud CLI command group for managing OS policy assignments, gcloud compute os-config os-policy-assignments , the gcloud compute instances ops-agents policies command group is designed specifically for the agent policies described in this document."
+        ]
+      },
+      {
+        "title": "\"Install and manage the Ops Agent by using VM Extension Manager policies\\",
+        "url": "https://docs.cloud.google.com/logging/docs/agent/ops-agent/agent-vmem-policies",
+        "source_id": "site-docs-root-2",
+        "final_score": 234,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Troubleshoot extension policies This section provides information about troubleshooting the use of extension policies to manage the Ops Agent: gcloud beta compute zone-vm-extension-policies commands fail The extension policy is created, but the Ops Agent status is \"not detected\" Linux systemctl and Windows Service Manager don't work with the Ops Agent For information about troubleshooting the Ops Agent, see Troubleshoot the Ops Agent . gcloud beta compute zone-vm-extension-policies commands fail When a gcloud beta compute zone-vm-extension-policies command fails, the response includes troubleshooting suggestions.",
+          "For example, suppose you created and rolled out a global policy by using the following command: gcloud beta compute global-vm-extension-policies create POLICY NAME \\ --project= PROJECT ID \\ --extensions=ops-agent \\ --version=ops-agent=2.61.0 \\ --rollout-predefined-plan=slow rollout \\ --config-from-file=ops-agent=\"/usr/ops-agent-config.yaml\" To extend the policy to VMs created in previously unused zones, restart the rollout by using the following command: gcloud beta compute global-vm-extension-policies update test-policy POLICY NAME \\ --project= PROJECT ID \\ --extensions=ops-agent \\ --version=ops-agent=2.61.0 \\ --rollout-predefined-plan=slow rollout \\ --config-from-file=ops-agent=\"/usr/ops-agent-config.yaml\" \\ --rollout-retry-uuid= UUID Replace the following variables in the command: POLICY NAME : A name for the VM extension policy.",
+          "Install the Ops Agent with a fast rollout plan at higher priority (global only) To create a global policy that installs the latest version of the Ops Agent on by using a higher-than-default priority and the fast-rollout plan , use the following gcloud beta compute global-vm-extension-policies create command: gcloud beta compute global-vm-extension-policies create POLICY NAME \\ --project= PROJECT ID \\ --extensions=ops-agent \\ --rollout-predefined-plan=fast rollout \\ --priority=500 Replace the following variables in the command: POLICY NAME : A name for the VM extension policy."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "config.yaml",
+      "policies.sh"
+    ],
+    "missing_inventory_roles": [
+      "roles/owner"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/managing-agent-policies",
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/agent-policies",
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/agent-vmem-policies"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/managing-agent-policies",
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/agent-policies",
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/agent-vmem-policies"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/managing-agent-policies",
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/agent-policies",
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/agent-vmem-policies"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/managing-agent-policies",
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/agent-policies",
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/agent-vmem-policies"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/managing-agent-policies",
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/agent-policies",
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/agent-vmem-policies"
+      ]
+    }
+  ]
+}

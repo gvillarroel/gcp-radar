@@ -1,0 +1,164 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:26.790Z",
+  "source_step08_card": "data/step-08/current/products/cloud-source-repositories/card.json",
+  "product_name": "Cloud Source Repositories",
+  "product_slug": "cloud-source-repositories",
+  "feature_name": "SSH authentication",
+  "feature_slug": "ssh-authentication",
+  "summary": "Cloud Source Repositories supports authenticating to repositories via SSH.",
+  "extended_definition": "Cloud Source Repositories supports authenticating to repositories via SSH.",
+  "lifecycle": {
+    "latest_feature_date": "2018-06-03",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/source-repositories/docs/adding-repositories-as-remotes",
+      "https://docs.cloud.google.com/source-repositories/docs/authentication",
+      "https://docs.cloud.google.com/source-repositories/docs/cloning-repositories",
+      "https://docs.cloud.google.com/source-repositories/docs/pushing-code-from-a-repository"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Setting up local authentication \\_|\\_ Cloud Source Repositories \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/source-repositories/docs/authentication",
+        "source_id": "site-docs-root",
+        "final_score": 278,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Cloud Source Repositories supports the following types of authentication: SSH Google Cloud CLI Manually generated credentials Authenticate by using SSH Cloud Source Repositories lets you use SSH public key authentication to access hosted repositories.",
+          "Cloud Source Repositories supports three SSH key types: RSA (only for keys with more than 2048 bits) ECDSA ED25519 Generate a key pair The SSH key pair consists of a private key that resides on your local system and a public key that you register with Google Cloud.",
+          "Type the following command: git clone https://source.developers.google.com/p/ PROJECT ID /r/ REPOSITORY NAME Where: PROJECT ID is the name of your project REPOSITORY NAME is the name of your repository After you set up authentication with manually generated credentials, you can interact with the hosted repository on Cloud Source Repositories by using the standard Git commands."
+        ]
+      },
+      {
+        "title": "\"Cloning a repository \\_|\\_ Cloud Source Repositories \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/source-repositories/docs/cloning-repositories",
+        "source_id": "site-docs-root",
+        "final_score": 270,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For example: git clone ssh : // user @gmail . com @source . developers . google . com : 2022 / p / example - project / r / test - repo The first time you connect to Cloud Source Repositories by using SSH, you're asked to confirm the SSH key fingerprints for the remote host.",
+          "On your local system, use your Google Cloud username and the fully qualified SSH path to your repository to clone your repository: git clone ssh : //[ EMAIL ] @source . developers . google . com : 2022 / p /[ PROJECT ID ]/ r /[ REPO NAME ] Where: [EMAIL] is your Google Cloud username. [PROJECT ID] is the ID of the Google Cloud project where the repository is located. [REPO NAME] is the name of the repository.",
+          "In a terminal window, provide your authentication credentials: gcloud init Clone your repository: gcloud source repos clone [ REPO NAME ] --project=[PROJECT NAME] Where: [REPO NAME] is the name of your repository. [PROJECT NAME] is the name of your Google Cloud project."
+        ]
+      },
+      {
+        "title": "\"Pushing code from an existing repository \\_|\\_ Cloud Source Repositories\\",
+        "url": "https://docs.cloud.google.com/source-repositories/docs/pushing-code-from-a-repository",
+        "source_id": "site-docs-root",
+        "final_score": 220,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For example: git remote add google ssh : // user @gmail . com @source . developers . google . com : 2022 / p / example - project / r / test - repo Push your code to Cloud Source Repositories: git push --all google gcloud CLI Ensure that the gcloud CLI is installed on your machine.",
+          "Push a local repository into Cloud Source Repositories You can push a local repository to Cloud Source Repositories by using either SSH, the Google Cloud CLI, or manually generated credentials.",
+          "Add your local repository as a remote: git remote add google ssh : //[ EMAIL ] @source . developers . google . com : 2022 / p /[ PROJECT ID ]/ r /[ REPO NAME ] Where: [EMAIL] is your Google Cloud username. [PROJECT ID] is the ID of the Google Cloud project where the repository is located. [REPO NAME] is the name of the repository."
+        ]
+      },
+      {
+        "title": "\"Adding a repository as a remote \\_|\\_ Cloud Source Repositories \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/source-repositories/docs/adding-repositories-as-remotes",
+        "source_id": "site-docs-root",
+        "final_score": 214,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "On Linux or macOS, run the credential helper script: Linux or macOS git config --global credential.'https://source.developers.google.com'.helper gcloud.sh Windows git config --global credential.https://source.developers.google.com.helper gcloud.cmd Credential helper scripts provide the information that Git needs to connect securely to Cloud Source Repositories using your Google Account credentials.",
+          "Home Documentation Application development Cloud Source Repositories Guides Send feedback Adding a repository as a remote Stay organized with collections Save and categorize content based on your preferences.",
+          "Create the repository in Cloud Source Repositories: gcloud source repos create [ REPO NAME ] Where [REPO NAME] is the name for your Google Cloud repository."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "credential.https",
+      "gcloud.cmd",
+      "gcloud.sh",
+      "source.developers.google.com",
+      "source.developers.google.com.helper"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/source-repositories/docs/authentication",
+        "https://docs.cloud.google.com/source-repositories/docs/cloning-repositories",
+        "https://docs.cloud.google.com/source-repositories/docs/pushing-code-from-a-repository",
+        "https://docs.cloud.google.com/source-repositories/docs/adding-repositories-as-remotes"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/source-repositories/docs/authentication",
+        "https://docs.cloud.google.com/source-repositories/docs/cloning-repositories",
+        "https://docs.cloud.google.com/source-repositories/docs/pushing-code-from-a-repository",
+        "https://docs.cloud.google.com/source-repositories/docs/adding-repositories-as-remotes"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/source-repositories/docs/authentication",
+        "https://docs.cloud.google.com/source-repositories/docs/cloning-repositories",
+        "https://docs.cloud.google.com/source-repositories/docs/pushing-code-from-a-repository",
+        "https://docs.cloud.google.com/source-repositories/docs/adding-repositories-as-remotes"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/source-repositories/docs/authentication",
+        "https://docs.cloud.google.com/source-repositories/docs/cloning-repositories",
+        "https://docs.cloud.google.com/source-repositories/docs/pushing-code-from-a-repository",
+        "https://docs.cloud.google.com/source-repositories/docs/adding-repositories-as-remotes"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/source-repositories/docs/authentication",
+        "https://docs.cloud.google.com/source-repositories/docs/cloning-repositories",
+        "https://docs.cloud.google.com/source-repositories/docs/pushing-code-from-a-repository",
+        "https://docs.cloud.google.com/source-repositories/docs/adding-repositories-as-remotes"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/source-repositories/docs/authentication",
+        "https://docs.cloud.google.com/source-repositories/docs/cloning-repositories",
+        "https://docs.cloud.google.com/source-repositories/docs/pushing-code-from-a-repository",
+        "https://docs.cloud.google.com/source-repositories/docs/adding-repositories-as-remotes"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/source-repositories/docs/authentication",
+        "https://docs.cloud.google.com/source-repositories/docs/cloning-repositories",
+        "https://docs.cloud.google.com/source-repositories/docs/pushing-code-from-a-repository",
+        "https://docs.cloud.google.com/source-repositories/docs/adding-repositories-as-remotes"
+      ]
+    }
+  ]
+}

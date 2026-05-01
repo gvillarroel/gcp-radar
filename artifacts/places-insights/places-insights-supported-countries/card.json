@@ -1,0 +1,109 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:45.077Z",
+  "source_step08_card": "data/step-08/current/products/places-insights/card.json",
+  "product_name": "Places Insights",
+  "product_slug": "places-insights",
+  "feature_name": "Places Insights supported countries",
+  "feature_slug": "places-insights-supported-countries",
+  "summary": "Places Insights data is available for 36 additional countries.",
+  "extended_definition": "Places Insights data is available for 36 additional countries.",
+  "lifecycle": {
+    "latest_feature_date": "2026-03-12",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/maps/documentation/placesinsights/about-data",
+      "https://developers.google.com/maps/documentation/placesinsights/experimental/historical-data-overview",
+      "https://developers.google.com/maps/documentation/placesinsights/place-count-functions/function-queries",
+      "https://developers.google.com/maps/documentation/placesinsights/reference/supported-locations"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Historical data overview \\_|\\_ Places Insights \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/maps/documentation/placesinsights/experimental/historical-data-overview",
+        "source_id": "site-api-reference",
+        "final_score": 243,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "SELECT WITH AGGREGATION THRESHOLD snapshot date , COUNT ( ) AS count FROM PROJECT NAME .places insights historical us.places historical WHERE 'restaurant' IN UNNEST ( types ) AND business status = \"OPERATIONAL\" GROUP BY snapshot date ORDER BY snapshot date ASC ; Available listings The following table lists the supported cities and provides links to subscribe.",
+          "Historical Places Insights data is available for the cities listed in the table below .",
+          "Home Products Google Maps Platform Documentation Places Insights Experimental Send feedback Historical data overview Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"Supported locations and table names \\_|\\_ Places Insights \\_|\\_ Google for\\",
+        "url": "https://developers.google.com/maps/documentation/placesinsights/reference/supported-locations",
+        "source_id": "site-api-reference",
+        "final_score": 216,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Products Google Maps Platform Documentation Web Services Places Insights Reference Send feedback Supported locations and table names Stay organized with collections Save and categorize content based on your preferences.",
+          "FUNCTION NAME places insights vn.places Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "The following tables list the cities available as sample data, the countries available as full data, and their corresponding table names."
+        ]
+      },
+      {
+        "title": "\"Query the dataset using Places Count functions \\_|\\_ Places Insights \\_\\",
+        "url": "https://developers.google.com/maps/documentation/placesinsights/place-count-functions/function-queries",
+        "source_id": "site-docs-reference",
+        "final_score": 210,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For more information and example on visualizing Places Insights results, see Visualize query results .",
+          "Supported Places Count functions and countries This product or feature is in Preview (pre-GA).",
+          "Home Products Google Maps Platform Documentation Web Services Places Insights Send feedback Query the dataset using Places Count functions Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "About Places Insights data and queries \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/maps/documentation/placesinsights/about-data",
+        "source_id": "site-docs-reference",
+        "final_score": 206,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The sample listing includes data for a top city for each of the supported countries: Amsterdam (NL) Helsinki (FI) Plovdiv (BG) Ankara (TR) Hong Kong (HK) Riffa (BH) Arequipa (PE) Jakarta (ID) Rome (IT) Athens (GR) Jeddah (SA) Santiago (CL) Bad Gastein (AT) Johannesburg (ZA) Sao Paulo (BR) Berlin (DE) Kuala Lumpur (MY) Sharjah (AE) Brno (CZ) Lisbon (PT) Singapore (SG) Brussels (BE) London (GB) Stockholm (SE) Bucharest (RO) Lusail (QA) Sydney (AU) Buenos Aires (AR) Madrid (ES) Taipei (TW) Busan (KR) Manila (PH) Tel Aviv-Yafo (IL) Cairo (EG) Medellín (CO) Tokyo (JP) Chiang Mai (TH) Mexico City (MX) Toronto (CA) Copenhagen (DK) Mumbai (IN) Warsaw (PL) Cork (IE) New York City (US) Wellington (NZ) Debrecen (HU) Oslo (NO) Zurich (CH) Hanoi (VN) Paris (FR) The full datasets include data for each supported country and must be purchased.",
+          "The sample datasets are intended to allow you to try out Places Insights so that you can assess the usability and value of the product before making a decision to purchase the full dataset.",
+          "Dataset schemas The places dataset schema for each country is comprised of two parts: The core schema that is common to the datasets for all countries."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "developers.google.com",
+      "sample.places",
+      "us.places",
+      "vn.places"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://developers.google.com/maps/documentation/placesinsights/experimental/historical-data-overview",
+        "https://developers.google.com/maps/documentation/placesinsights/reference/supported-locations",
+        "https://developers.google.com/maps/documentation/placesinsights/place-count-functions/function-queries",
+        "https://developers.google.com/maps/documentation/placesinsights/about-data"
+      ]
+    }
+  ]
+}

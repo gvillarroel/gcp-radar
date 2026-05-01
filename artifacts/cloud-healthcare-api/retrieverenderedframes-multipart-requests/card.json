@@ -1,0 +1,163 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:23.577Z",
+  "source_step08_card": "data/step-08/current/products/cloud-healthcare-api/card.json",
+  "product_name": "Cloud Healthcare API",
+  "product_slug": "cloud-healthcare-api",
+  "feature_name": "RetrieveRenderedFrames multipart requests",
+  "feature_slug": "retrieverenderedframes-multipart-requests",
+  "summary": "RetrieveRenderedFrames now supports multipart requests so multiple rendered frames can be retrieved in a single API call; RetrieveRenderedFrames now supports multipart requests so multiple rendered frames can be retrieved in a single API call.",
+  "extended_definition": "RetrieveRenderedFrames now supports multipart requests so multiple rendered frames can be retrieved in a single API call; RetrieveRenderedFrames now supports multipart requests so multiple rendered frames can be retrieved in a single API call.",
+  "lifecycle": {
+    "latest_feature_date": "2025-12-17",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/healthcare-api/docs/dicom",
+      "https://docs.cloud.google.com/healthcare-api/docs/how-tos/dicomweb",
+      "https://docs.cloud.google.com/healthcare-api/docs/reference/rest"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Using the DICOMweb standard \\_|\\_ Cloud Healthcare API \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/healthcare-api/docs/how-tos/dicomweb",
+        "source_id": "site-docs-root",
+        "final_score": 122,
+        "relevance": "",
+        "evidence_snippets": [
+          "Execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method POST -Headers $headers -InFile MULTIPART FILE -Uri \"https://healthcare.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /dicomStores/ DICOM STORE ID /dicomWeb/studies\" Select-Object -Expand Content The output is similar to the following, with multiple instances returned: Response <NativeDicomModel> <DicomAttribute tag=\"00081190\" vr=\"UR\" keyword=\"RetrieveURL\"> <Value number=\"1\">https://healthcare.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /dicomStores/ DICOM STORE ID /dicomWeb/studies/ STUDY INSTANCE UID </Value> </DicomAttribute> <DicomAttribute tag=\"00081199\" vr=\"SQ\" keyword=\"ReferencedSOPSequence\"> <Item number=\"1\"> <DicomAttribute tag=\"00081150\" vr=\"UI\" keyword=\"ReferencedSOPClassUID\"> <Value number=\"1\"> SOP CLASS UID </Value> </DicomAttribute> <DicomAttribute tag=\"00081155\" vr=\"UI\" keyword=\"ReferencedSOPInstanceUID\"> <Value number=\"1\"> SOP INSTANCE UID </Value> </DicomAttribute> <DicomAttribute tag=\"00081190\" vr=\"UR\" keyword=\"RetrieveURL\"> <Value number=\"1\">https://healthcare.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /dicomStores/ DICOM STORE ID /dicomWeb/studies/ STUDY INSTANCE UID /series/ SERIES INSTANCE UID /instances/ INSTANCE UID </Value> </DicomAttribute> </Item> </DicomAttribute> </NativeDicomModel> Specify a storage class for DICOM instances By default, the projects.locations.datasets.dicomStores.storeInstances method stores a DICOM instance in a DICOM store with a standard storage class.",
+          "GoogleAuth ({ scopes : [ 'https://www.googleapis.com/auth/cloud-platform' ], }), }); const fs = require ( 'fs' ); const util = require ( 'util' ); const writeFile = util . promisify ( fs . writeFile ); const fileName = 'rendered image.png' ; const dicomWebRetrieveRendered = async () = > { // TODO(developer): uncomment these lines before running the sample // const cloudRegion = 'us-central1'; // const projectId = 'adjective-noun-123'; // const datasetId = 'my-dataset'; // const dicomStoreId = 'my-dicom-store'; // const studyUid = '1.3.6.1.4.1.5062.55.1.2270943358.716200484.1363785608958.61.0'; // const seriesUid = '2.24.52329571877967561426579904912379710633'; // const instanceUid = '1.3.6.2.4.2.14619.5.2.1.6280.6001.129311971280445372188125744148'; const parent = projects/ ${ projectId } /locations/ ${ cloudRegion } /datasets/ ${ datasetId } /dicomStores/ ${ dicomStoreId } ; const dicomWebPath = studies/ ${ studyUid } /series/ ${ seriesUid } /instances/ ${ instanceUid } /rendered ; const request = { parent , dicomWebPath }; const rendered = await healthcare . projects . locations . datasets . dicomStores . studies . series . instances . retrieveRendered ( request , { headers : { Accept : 'image/png' }, responseType : 'arraybuffer' , } ); const fileBytes = Buffer . from ( rendered . data ); await writeFile ( fileName , fileBytes ); console . log ( Retrieved rendered image and saved to ${ fileName } in current directory ); }; dicomWebRetrieveRendered (); Python def dicomweb retrieve rendered ( project id , location , dataset id , dicom store id , study uid , series uid , instance uid , ): \"\"\"Handles the GET requests specified in the DICOMweb standard.",
+          "GoogleAuth ({ scopes : [ 'https://www.googleapis.com/auth/cloud-platform' ], }), }); const fs = require ( 'fs' ); const util = require ( 'util' ); const writeFile = util . promisify ( fs . writeFile ); // When specifying the output file, use an extension like \".multipart.\" // Then, parse the downloaded multipart file to get each individual // DICOM file. const fileName = 'study file.multipart' ; const dicomWebRetrieveStudy = async () = > { // TODO(developer): uncomment these lines before running the sample // const cloudRegion = 'us-central1'; // const projectId = 'adjective-noun-123'; // const datasetId = 'my-dataset'; // const dicomStoreId = 'my-dicom-store'; // const studyUid = '1.3.6.1.4.1.5062.55.1.2270943358.716200484.1363785608958.61.0'; const parent = projects/ ${ projectId } /locations/ ${ cloudRegion } /datasets/ ${ datasetId } /dicomStores/ ${ dicomStoreId } ; const dicomWebPath = studies/ ${ studyUid } ; const request = { parent , dicomWebPath }; const study = await healthcare . projects . locations . datasets . dicomStores . studies . retrieveStudy ( request , { headers : { Accept : 'multipart/related; type=application/dicom; transfer-syntax= ' , }, responseType : 'arraybuffer' , } ); const fileBytes = Buffer . from ( study . data ); await writeFile ( fileName , fileBytes ); console . log ( Retrieved study and saved to ${ fileName } in current directory ); }; dicomWebRetrieveStudy (); Python def dicomweb retrieve study ( project id , location , dataset id , dicom store id , study uid ): \"\"\"Handles the GET requests specified in the DICOMweb standard."
+        ]
+      },
+      {
+        "title": "\"DICOM conformance statement \\_|\\_ Cloud Healthcare API \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/healthcare-api/docs/dicom",
+        "source_id": "site-api-reference",
+        "final_score": 116,
+        "relevance": "",
+        "evidence_snippets": [
+          "The Retrieve Transaction supports the retrieving following resources: DICOM Resources: Study Series Instance Frames Bulkdata Metadata Resources Study Series Instance Rendered Resources Instance Frames It does not support Thumbnail resources.",
+          "JSON metadata and bulk data requests When storing instances using JSON metadata and bulk data, the first multipart part must consist of a JSON array of DICOM instances .",
+          "DICOM study/series/instances The following Accept Headers are supported: multipart/related; type=\"application/dicom\"; transfer-syntax= multipart/related; type=\"application/dicom\"; transfer-syntax=1.2.840.10008.1.2 multipart/related; type=\"application/dicom\"; transfer-syntax=1.2.840.10008.1.2.1 (default) multipart/related; type=\"application/dicom\"; transfer-syntax=1.2.840.10008.1.2.1.99 multipart/related; type=\"application/dicom\"; transfer-syntax=1.2.840.10008.1.2.4.50 multipart/related; type=\"application/dicom\"; transfer-syntax=1.2.840.10008.1.2.4.51 multipart/related; type=\"application/dicom\"; transfer-syntax=1.2.840.10008.1.2.4.57 multipart/related; type=\"application/dicom\"; transfer-syntax=1.2.840.10008.1.2.4.70 multipart/related; type=\"application/dicom\"; transfer-syntax=1.2.840.10008.1.2.4.80 multipart/related; type=\"application/dicom\"; transfer-syntax=1.2.840.10008.1.2.4.81 multipart/related; type=\"application/dicom\"; transfer-syntax=1.2.840.10008.1.2.4.90 multipart/related; type=\"application/dicom\"; transfer-syntax=1.2.840.10008.1.2.4.91 multipart/related; type=\"application/dicom\"; transfer-syntax=1.2.840.10008.1.2.4.110 multipart/related; type=\"application/dicom\"; transfer-syntax=1.2.840.10008.1.2.4.111 multipart/related; type=\"application/dicom\"; transfer-syntax=1.2.840.10008.1.2.4.112 multipart/related; type=\"application/dicom\"; transfer-syntax=1.2.840.10008.1.2.4.201 multipart/related; type=\"application/dicom\"; transfer-syntax=1.2.840.10008.1.2.4.202 multipart/related; type=\"application/dicom\"; transfer-syntax=1.2.840.10008.1.2.4.203 multipart/related; type=\"application/dicom\"; transfer-syntax=1.2.840.10008.1.2.5 multipart/related; type=\"application/dicom\"; transfer-syntax=1.2.840.10008.1.2.8.1 Warning: The response's default transfer syntax is Little Endian Explicit."
+        ]
+      },
+      {
+        "title": "Cloud Healthcare API \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/healthcare-api/docs/reference/rest",
+        "source_id": "site-api-reference",
+        "final_score": 92,
+        "relevance": "",
+        "evidence_snippets": [
+          "REST Resource: v1beta1.projects.locations.datasets.dicomStores.studies.series.instances.frames Methods retrieveFrames GET /v1beta1/{parent=projects/ /locations/ /datasets/ /dicomStores/ }/dicomWeb/{dicomWebPath=studies/ /series/ /instances/ /frames/ } RetrieveFrames returns instances associated with the given study, series, SOP Instance UID and frame numbers. retrieveRendered GET /v1beta1/{parent=projects/ /locations/ /datasets/ /dicomStores/ }/dicomWeb/{dicomWebPath=studies/ /series/ /instances/ /frames/ /rendered} RetrieveRenderedFrames returns instances associated with the given study, series, SOP Instance UID and frame numbers in an acceptable Rendered Media Type.",
+          "REST Resource: v1.projects.locations.datasets.dicomStores.studies.series.instances.frames Methods retrieveFrames GET /v1/{parent=projects/ /locations/ /datasets/ /dicomStores/ }/dicomWeb/{dicomWebPath=studies/ /series/ /instances/ /frames/ } RetrieveFrames returns instances associated with the given study, series, SOP Instance UID and frame numbers. retrieveRendered GET /v1/{parent=projects/ /locations/ /datasets/ /dicomStores/ }/dicomWeb/{dicomWebPath=studies/ /series/ /instances/ /frames/ /rendered} RetrieveRenderedFrames returns instances associated with the given study, series, SOP Instance UID and frame numbers in an acceptable Rendered Media Type.",
+          "REST Resource: v1beta1.projects.locations.datasets.fhirStores Methods applyAdminConsents POST /v1beta1/{name=projects/ /locations/ /datasets/ /fhirStores/ }:applyAdminConsents Applies the admin Consent resources for the FHIR store and reindexes the underlying resources in the FHIR store according to the aggregate consents. applyConsents POST /v1beta1/{name=projects/ /locations/ /datasets/ /fhirStores/ }:applyConsents Apply the Consent resources for the FHIR store and reindex the underlying resources in the FHIR store according to the aggregate consent. bulk-export-group GET /v1beta1/{name=projects/ /locations/ /datasets/ /fhirStores/ /fhir/Group/ }/$export Bulk exports a Group resource and resources in the member field, including related resources for each Patient member. configureSearch POST /v1beta1/{name=projects/ /locations/ /datasets/ /fhirStores/ }:configureSearch Configure the search parameters for the FHIR store and reindex resources in the FHIR store according to the defined search parameters. create POST /v1beta1/{parent=projects/ /locations/ /datasets/ }/fhirStores Creates a new FHIR store within the parent dataset. deidentify POST /v1beta1/{sourceStore=projects/ /locations/ /datasets/ /fhirStores/ }:deidentify De-identifies data from the source store and writes it to the destination store. delete DELETE /v1beta1/{name=projects/ /locations/ /datasets/ /fhirStores/ } Deletes the specified FHIR store and removes all resources within it. explainDataAccess GET /v1beta1/{name=projects/ /locations/ /datasets/ /fhirStores/ }:explainDataAccess Explains all the permitted/denied actor, purpose and environment for a given resource. export POST /v1beta1/{name=projects/ /locations/ /datasets/ /fhirStores/ }:export Export resources from the FHIR store to the specified destination. exportHistory POST /v1beta1/{name=projects/ /locations/ /datasets/ /fhirStores/ }:exportHistory Export resources including historical versions from the FHIR store to the specified destination. get GET /v1beta1/{name=projects/ /locations/ /datasets/ /fhirStores/ } Gets the configuration of the specified FHIR store. getFHIRStoreMetrics GET /v1beta1/{name=projects/ /locations/ /datasets/ /fhirStores/ }:getFHIRStoreMetrics Gets metrics associated with the FHIR store. getIamPolicy GET /v1beta1/{resource=projects/ /locations/ /datasets/ /fhirStores/ }:getIamPolicy Gets the access control policy for a resource. import POST /v1beta1/{name=projects/ /locations/ /datasets/ /fhirStores/ }:import Import resources to the FHIR store by loading data from the specified sources. importHistory POST /v1beta1/{name=projects/ /locations/ /datasets/ /fhirStores/ }:importHistory Import resource historical versions from Cloud Storage source to destination fhir store. list GET /v1beta1/{parent=projects/ /locations/ /datasets/ }/fhirStores Lists the FHIR stores in the given dataset. patch PATCH /v1beta1/{fhirStore.name=projects/ /locations/ /datasets/ /fhirStores/ } Updates the configuration of the specified FHIR store. rollback POST /v1beta1/{name=projects/ /locations/ /datasets/ /fhirStores/ }:rollback Rolls back resources from the FHIR store to the specified time. setIamPolicy POST /v1beta1/{resource=projects/ /locations/ /datasets/ /fhirStores/ }:setIamPolicy Sets the access control policy on the specified resource. testIamPermissions POST /v1beta1/{resource=projects/ /locations/ /datasets/ /fhirStores/ }:testIamPermissions Returns permissions that a caller has on the specified resource. bulkDelete POST /v1beta1/{name=projects/ /locations/ /datasets/ /fhirStores/ }:bulkDelete Bulk-delete multiple FHIR resources from a FHIR store based on filters."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "file.multipart",
+      "healthcare.googleapis.com",
+      "image.png",
+      "projects.locations.datasets.dicomStores.storeInstances",
+      "v1.projects.locations.datasets.dicomStores.studies.series.instances.frames",
+      "v1.projects.locations.datasets.fhirStores",
+      "v1beta1.projects.locations.datasets.dicomStores.studies.series.instances.frames",
+      "v1beta1.projects.locations.datasets.fhirStores"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/dicomweb",
+        "https://docs.cloud.google.com/healthcare-api/docs/dicom",
+        "https://docs.cloud.google.com/healthcare-api/docs/reference/rest"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/dicomweb",
+        "https://docs.cloud.google.com/healthcare-api/docs/dicom",
+        "https://docs.cloud.google.com/healthcare-api/docs/reference/rest"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/dicomweb",
+        "https://docs.cloud.google.com/healthcare-api/docs/dicom",
+        "https://docs.cloud.google.com/healthcare-api/docs/reference/rest"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/dicomweb",
+        "https://docs.cloud.google.com/healthcare-api/docs/dicom",
+        "https://docs.cloud.google.com/healthcare-api/docs/reference/rest"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/dicomweb",
+        "https://docs.cloud.google.com/healthcare-api/docs/dicom",
+        "https://docs.cloud.google.com/healthcare-api/docs/reference/rest"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/dicomweb",
+        "https://docs.cloud.google.com/healthcare-api/docs/dicom",
+        "https://docs.cloud.google.com/healthcare-api/docs/reference/rest"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/dicomweb",
+        "https://docs.cloud.google.com/healthcare-api/docs/dicom",
+        "https://docs.cloud.google.com/healthcare-api/docs/reference/rest"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/dicomweb",
+        "https://docs.cloud.google.com/healthcare-api/docs/dicom",
+        "https://docs.cloud.google.com/healthcare-api/docs/reference/rest"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/dicomweb",
+        "https://docs.cloud.google.com/healthcare-api/docs/dicom",
+        "https://docs.cloud.google.com/healthcare-api/docs/reference/rest"
+      ]
+    }
+  ]
+}

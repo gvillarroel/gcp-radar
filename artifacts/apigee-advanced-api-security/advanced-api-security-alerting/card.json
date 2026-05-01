@@ -1,0 +1,162 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:14.044Z",
+  "source_step08_card": "data/step-08/current/products/apigee-advanced-api-security/card.json",
+  "product_name": "Apigee Advanced API Security",
+  "product_slug": "apigee-advanced-api-security",
+  "feature_name": "Advanced API Security alerting",
+  "feature_slug": "advanced-api-security-alerting",
+  "summary": "Advanced API Security alerting enables incident and score-related notifications through Google Cloud Monitoring channels such as email.",
+  "extended_definition": "Advanced API Security alerting enables incident and score-related notifications through Google Cloud Monitoring channels such as email.",
+  "lifecycle": {
+    "latest_feature_date": "2023-09-27",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/apigee/docs/api-security/enable-security",
+      "https://docs.cloud.google.com/apigee/docs/api-security/security-alerts",
+      "https://docs.cloud.google.com/apigee/docs/api-security/security-scores"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Security alerts \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-security/security-alerts",
+        "source_id": "site-docs-reference-required-6",
+        "final_score": 101,
+        "relevance": "",
+        "evidence_snippets": [
+          "Advanced API Security Alerts lets you create alerts for events related to API security, such as changes to your security scores or incidents of detected API abuse.",
+          "Example: Create a risk assessment monitoring condition monitoring alert (Risk Assessment v2) This example creates a new Cloud Monitoring alerting policy for a Risk Assessment monitoring condition that alerts if the security score on any of its monitored proxies falls below a certain threshold.",
+          "This value is measured once every hour. location, org, env, incident id, detection rule Apigee API Security Profile Environment Association Security score of Apigee API sources: apigee.googleapis.com/security/source score Applies to Risk Assessment v1."
+        ]
+      },
+      {
+        "title": "Risk assessment overview and UI \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-security/security-scores",
+        "source_id": "site-docs-reference-required-5",
+        "final_score": 87,
+        "relevance": "",
+        "evidence_snippets": [
+          "New events related to proxies (deployment and undeployment) and targets (create, update, delete) in an environment take at least 60 seconds and up to 5 minutes (for very large environments) to reflect in the environment's score.",
+          "New events related to proxies (deployment and undeployment) and targets (create, update, delete) in an environment can take up to 6 hours to reflect in the environment's score.",
+          "For example: Create a custom profile with the following checks and weights: OAuthV2 policy check: Major VerifyAPIKey policy check: Minor With this configuration, the scores are: 100% if both policies are present 94% if only the OAuthV2 policy is present 6% if only the VerifyAPIKey policy is present 0% if neither policy is present Use the scores to determine which policies are configured in the proxies."
+        ]
+      },
+      {
+        "title": "Getting started \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-security/enable-security",
+        "source_id": "site-docs-reference",
+        "final_score": 67,
+        "relevance": "",
+        "evidence_snippets": [
+          "Risk Assessment Task Required Role(s) Create, update, or delete a custom security profile Apigee Security Admin ( roles/apigee.securityAdmin ) Apigee Organization Admin ( roles/apigee.admin ) Attach or detach a security profile Apigee Security Admin ( roles/apigee.securityAdmin ) Apigee Organization Admin ( roles/apigee.admin ) View security scores Apigee Security Admin ( roles/apigee.securityAdmin ) Apigee Security Viewer ( roles/apigee.securityViewer ) Apigee Organization Admin ( roles/apigee.admin ) List all security profiles or get a profile Apigee Security Admin ( roles/apigee.securityAdmin ) Apigee Security Viewer ( roles/apigee.securityViewer ) Apigee Organization Admin ( roles/apigee.admin ) Create, update, or delete a security monitoring condition Apigee Security Admin ( roles/apigee.securityAdmin ) Apigee Organization Admin ( roles/apigee.admin ) List and view security monitoring conditions Apigee Security Admin ( roles/apigee.securityAdmin ) Apigee Security Viewer ( roles/apigee.securityViewer ) Apigee Organization Admin ( roles/apigee.admin ) List and view security monitoring condition metrics Monitoring Admin ( roles/monitoring.admin ) Monitoring Editor ( roles/monitoring.editor ) Create, update, or delete monitoring alerts See Required roles (for security alerts) View monitoring alerts See Incidents for metric-based alerting policies: Before you begin Required roles and permissions for abuse detection The table below shows the required roles and permissions to perform tasks related to abuse detection .",
+          "Abuse Detection Task Required Role(s) and Permission(s) View incidents in the Abuse detection UI Apigee Security Admin ( roles/apigee.securityAdmin ) Apigee Security Viewer ( roles/apigee.securityViewer ) Apigee Organization Admin ( roles/apigee.admin ) View incident generative AI Insights cloudaicompanion.instances.generateText permission Opt an organization in or out of machine learning models for abuse detection apigee.securitySettings.update permission Apigee Security Admin ( roles/apigee.securityAdmin ) Apigee Organization Admin ( roles/apigee.admin ) Required roles for security actions The table below shows the required roles to perform tasks related to security actions .",
+          "For example, if the current add-ons configuration is \"addonsConfig\": { \"integrationConfig\": { \"enabled\":true }, \"monetizationConfig\": { \"enabled\":true } }, the command to enable Advanced API Security would be curl \"https://apigee.googleapis.com/v1/organizations/ ORG :setAddons\" \\ -X POST \\ -H \"Authorization: Bearer $TOKEN\" \\ -H \"Content-type: application/json\" \\ -d '{ \"addonsConfig\": { \"apiSecurityConfig\": { \"enabled\": true }, \"integrationConfig\": { \"enabled\": true }, \"monetizationConfig\": { \"enabled\": true } } }' After you send the request, you will see a response like the following: { \"name\": \"organizations/apigee-docs-d/operations/0718a945-76e0-4393-a456-f9929603b32c\", \"metadata\": { \"@type\": \"type.googleapis.com/google.cloud.apigee.v1.OperationMetadata\", \"operationType\": \"UPDATE\", \"targetResourceName\": \"organizations/apigee-docs-d\", \"state\": \"IN PROGRESS\" } } Note: When you enable Advanced API Security in an organization, it can take up to a day for the scores for existing proxies and targets to be reflected in an environment."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "apigee.admin",
+      "apigee.googleapis.com",
+      "apigee.securityAdmin",
+      "apigee.securitySettings.update",
+      "apigee.securityViewer",
+      "cloudaicompanion.instances.generateText",
+      "monitoring.admin",
+      "monitoring.editor",
+      "type.googleapis.com"
+    ],
+    "missing_inventory_roles": [
+      "roles/apigee.admin",
+      "roles/apigee.securityAdmin",
+      "roles/apigee.securityViewer",
+      "roles/monitoring.admin",
+      "roles/monitoring.editor"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-security/security-alerts",
+        "https://docs.cloud.google.com/apigee/docs/api-security/security-scores",
+        "https://docs.cloud.google.com/apigee/docs/api-security/enable-security"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-security/security-alerts",
+        "https://docs.cloud.google.com/apigee/docs/api-security/security-scores",
+        "https://docs.cloud.google.com/apigee/docs/api-security/enable-security"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-security/security-alerts",
+        "https://docs.cloud.google.com/apigee/docs/api-security/security-scores",
+        "https://docs.cloud.google.com/apigee/docs/api-security/enable-security"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-security/security-alerts",
+        "https://docs.cloud.google.com/apigee/docs/api-security/security-scores",
+        "https://docs.cloud.google.com/apigee/docs/api-security/enable-security"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-security/security-alerts",
+        "https://docs.cloud.google.com/apigee/docs/api-security/security-scores",
+        "https://docs.cloud.google.com/apigee/docs/api-security/enable-security"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-security/security-alerts",
+        "https://docs.cloud.google.com/apigee/docs/api-security/security-scores",
+        "https://docs.cloud.google.com/apigee/docs/api-security/enable-security"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-security/security-alerts",
+        "https://docs.cloud.google.com/apigee/docs/api-security/security-scores",
+        "https://docs.cloud.google.com/apigee/docs/api-security/enable-security"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-security/security-alerts",
+        "https://docs.cloud.google.com/apigee/docs/api-security/security-scores",
+        "https://docs.cloud.google.com/apigee/docs/api-security/enable-security"
+      ]
+    }
+  ]
+}

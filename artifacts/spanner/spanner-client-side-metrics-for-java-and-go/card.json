@@ -1,0 +1,133 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:46.903Z",
+  "source_step08_card": "data/step-08/current/products/spanner/card.json",
+  "product_name": "Spanner",
+  "product_slug": "spanner",
+  "feature_name": "Spanner client-side metrics for Java and Go",
+  "feature_slug": "spanner-client-side-metrics-for-java-and-go",
+  "summary": "Spanner added client-side metrics support for Java and Go applications, available in Java client library v6.81.0+ and Go client library v1.71.0+.",
+  "extended_definition": "Spanner added client-side metrics support for Java and Go applications, available in Java client library v6.81.0+ and Go client library v1.71.0+.",
+  "lifecycle": {
+    "latest_feature_date": "2024-11-05",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/spanner/docs/capture-custom-metrics-opencensus",
+      "https://docs.cloud.google.com/spanner/docs/capture-custom-metrics-opentelemetry",
+      "https://docs.cloud.google.com/spanner/docs/client-side-metrics-descriptions"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Client-side metrics descriptions \\_|\\_ Spanner \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/spanner/docs/client-side-metrics-descriptions",
+        "source_id": "site-docs-root",
+        "final_score": 188,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "If your application is deployed outside Google Cloud, then the metrics are published to the global region. method : the RPC method name—for example, spanner.commit . status : the RPC status—for example, OK or INTERNAL . client name : the library name and version—for example, spanner-java/6.70.1 .",
+          "You can access client-side metrics using the Spanner client libraries for Java, Go, Node.js and Python.",
+          "All client-side metrics have the following dimensions: project ID : the Google Cloud project ID. instance ID : the Spanner instance ID. database ID : the Spanner database ID. location : the Google Cloud region where the client-side metrics are published."
+        ]
+      },
+      {
+        "title": "\"Capture custom client-side metrics using OpenTelemetry \\_|\\_ Spanner \\_\\",
+        "url": "https://docs.cloud.google.com/spanner/docs/capture-custom-metrics-opentelemetry",
+        "source_id": "site-docs-root",
+        "final_score": 176,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "To set up custom client-side metrics using OpenTelemetry, you need to configure the OpenTelemetry SDK and OTLP exporter: Add the necessary dependencies to your application using the following code: Java <dependencyManagement> <dependencies> <dependency> <groupId>com.google.cloud</groupId> <artifactId>libraries-bom</artifactId> <version>26.32.0</version> <type>pom</type> <scope>import</scope> </dependency> <dependency> <groupId>io.opentelemetry</groupId> <artifactId>opentelemetry-bom</artifactId> <version>1.35.0</version> <type>pom</type> <scope>import</scope> </dependency> </dependencies> </dependencyManagement> <dependencies> <dependency> <groupId>com.google.cloud</groupId> <artifactId>google-cloud-spanner</artifactId> </dependency> <dependency> <groupId>io.opentelemetry</groupId> <artifactId>opentelemetry-sdk</artifactId> </dependency> <dependency> <groupId>io.opentelemetry</groupId> <artifactId>opentelemetry-sdk-metrics</artifactId> </dependency> <dependency> <groupId>io.opentelemetry</groupId> <artifactId>opentelemetry-sdk-trace</artifactId> </dependency> <dependency> <groupId>io.opentelemetry</groupId> <artifactId>opentelemetry-exporter-otlp</artifactId> </dependency> </dependencies> Go go . opentelemetry . io / otel v1 .34.0 go . opentelemetry . io / otel / exporters / otlp / otlpmetric / otlpmetricgrpc v1 .28.0 go . opentelemetry . io / otel / exporters / otlp / otlptrace / otlptracegrpc v1 .28.0 go . opentelemetry . io / otel / metric v1 .34.0 go . opentelemetry . io / otel / sdk v1 .34.0 go . opentelemetry . io / otel / sdk / metric v1 .34.0 Create an OpenTelemetry object with the OTLP exporter and inject it into Spanner using SpannerOptions : Java // Enable OpenTelemetry metrics and traces before Injecting OpenTelemetry SpannerOptions . enableOpenTelemetryMetrics (); SpannerOptions . enableOpenTelemetryTraces (); // Create a new meter provider SdkMeterProvider sdkMeterProvider = SdkMeterProvider . builder () // Use Otlp exporter or any other exporter of your choice. . registerMetricReader ( PeriodicMetricReader . builder ( OtlpGrpcMetricExporter . builder (). build ()). build ()) . build (); // Create a new tracer provider SdkTracerProvider sdkTracerProvider = SdkTracerProvider . builder () // Use Otlp exporter or any other exporter of your choice. . addSpanProcessor ( SimpleSpanProcessor . builder ( OtlpGrpcSpanExporter . builder (). build ()). build ()) . build (); // Configure OpenTelemetry object using Meter Provider and Tracer Provider OpenTelemetry openTelemetry = OpenTelemetrySdk . builder () . setMeterProvider ( sdkMeterProvider ) . setTracerProvider ( sdkTracerProvider ) . build (); // Inject OpenTelemetry object via Spanner options or register as GlobalOpenTelemetry.",
+          "You can capture the GFE latency using the following code: Java static void captureGfeMetric ( DatabaseClient dbClient ) { // GFE latency and other Spanner metrics are automatically collected // when OpenTelemetry metrics are enabled. try ( ResultSet resultSet = dbClient . singleUse () // Execute a single read or query against Cloud Spanner. . executeQuery ( Statement . of ( \"SELECT SingerId, AlbumId, AlbumTitle FROM Albums\" ))) { while ( resultSet . next ()) { System . out . printf ( \"%d %d %s\" , resultSet . getLong ( 0 ), resultSet . getLong ( 1 ), resultSet . getString ( 2 )); } } } Go // GFE Latency and other Spanner metrics are automatically collected // when OpenTelemetry metrics are enabled. func captureGFELatencyMetric ( ctx context .",
+          "Home Documentation Databases Spanner Guides Send feedback Capture custom client-side metrics using OpenTelemetry Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"Capture custom client-side metrics using OpenCensus \\_|\\_ Spanner \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/spanner/docs/capture-custom-metrics-opencensus",
+        "source_id": "site-docs-root",
+        "final_score": 168,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "It is imperative that this step exists, // otherwise recorded metrics will be dropped and never exported. static View QUERY STATS LATENCY VIEW = View . create ( Name . create ( \"cloud.google.com/java/spanner/query stats elapsed\" ), \"The execution of the query\" , QUERY STATS ELAPSED , AGGREGATION WITH MILLIS HISTOGRAM , Collections . emptyList ()); static ViewManager manager = Stats . getViewManager (); private static final StatsRecorder STATS RECORDER = Stats . getStatsRecorder (); static void captureQueryStatsMetric ( DatabaseClient dbClient ) { manager . registerView ( QUERY STATS LATENCY VIEW ); // Enable OpenCensus exporters to export metrics to Cloud Monitoring. // Exporters use Application Default Credentials to authenticate. // See https://developers.google.com/identity/protocols/application-default-credentials // for more details. try { StackdriverStatsExporter . createAndRegister (); } catch ( IOException IllegalStateException e ) { System . out . println ( \"Error during StackdriverStatsExporter\" ); } try ( ResultSet resultSet = dbClient . singleUse () . analyzeQuery ( Statement . of ( \"SELECT SingerId, AlbumId, AlbumTitle FROM Albums\" ), QueryAnalyzeMode .",
+          "You can capture client round-trip latency using the following code: Java static void captureGrpcMetric ( DatabaseClient dbClient ) { // Add io.grpc:grpc-census and io.opencensus:opencensus-exporter-stats-stackdriver // dependencies to enable gRPC metrics. // Register basic gRPC views.",
+          "Home Documentation Databases Spanner Guides Send feedback Capture custom client-side metrics using OpenCensus Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.cloud",
+      "com.google.cloud.spanner",
+      "com.google.cloud.spanner.BuiltInMetricsConstant",
+      "developers.google.com",
+      "io.grpc",
+      "io.opencensus",
+      "io.opentelemetry",
+      "spanner.commit",
+      "v1.71.0",
+      "v6.81.0"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/client-side-metrics-descriptions",
+        "https://docs.cloud.google.com/spanner/docs/capture-custom-metrics-opentelemetry",
+        "https://docs.cloud.google.com/spanner/docs/capture-custom-metrics-opencensus"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/client-side-metrics-descriptions",
+        "https://docs.cloud.google.com/spanner/docs/capture-custom-metrics-opentelemetry",
+        "https://docs.cloud.google.com/spanner/docs/capture-custom-metrics-opencensus"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/client-side-metrics-descriptions",
+        "https://docs.cloud.google.com/spanner/docs/capture-custom-metrics-opentelemetry",
+        "https://docs.cloud.google.com/spanner/docs/capture-custom-metrics-opencensus"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/client-side-metrics-descriptions",
+        "https://docs.cloud.google.com/spanner/docs/capture-custom-metrics-opentelemetry",
+        "https://docs.cloud.google.com/spanner/docs/capture-custom-metrics-opencensus"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/client-side-metrics-descriptions",
+        "https://docs.cloud.google.com/spanner/docs/capture-custom-metrics-opentelemetry",
+        "https://docs.cloud.google.com/spanner/docs/capture-custom-metrics-opencensus"
+      ]
+    }
+  ]
+}

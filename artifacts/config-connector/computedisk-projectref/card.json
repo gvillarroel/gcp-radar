@@ -1,0 +1,224 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:30.193Z",
+  "source_step08_card": "data/step-08/current/products/config-connector/card.json",
+  "product_name": "Config Connector",
+  "product_slug": "config-connector",
+  "feature_name": "ComputeDisk projectRef",
+  "feature_slug": "computedisk-projectref",
+  "summary": "Config Connector supports the projectRef field on ComputeDisk.",
+  "extended_definition": "Config Connector supports the projectRef field on ComputeDisk.",
+  "lifecycle": {
+    "latest_feature_date": "2021-04-27",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 1,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "coverage_low",
+        "message": "The feature ended with coverage LOW.",
+        "suggested_steps": [
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/config-connector/docs/how-to/monitoring-prometheus",
+      "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/accesscontextmanager/accesscontextmanagerserviceperimeter",
+      "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicymember"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Monitoring Config Connector with Prometheus \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/config-connector/docs/how-to/monitoring-prometheus",
+        "source_id": "site-docs-reference",
+        "final_score": 30,
+        "relevance": "",
+        "evidence_snippets": []
+      },
+      {
+        "title": "IAMPolicyMember \\_|\\_ Config Connector \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicymember",
+        "source_id": "site-docs-root-2",
+        "final_score": 22,
+        "relevance": "",
+        "evidence_snippets": [
+          "Kind Supports Conditions AccessContextManagerAccessPolicy ApigeeEnvironment ArtifactRegistryRepository BigQueryTable Y BigtableInstance Y BigtableTable Y BillingAccount Y BinaryAuthorizationPolicy CloudFunctionsFunction ComputeBackendBucket ComputeDisk ComputeImage Y ComputeInstance Y ComputeSnapshot ComputeSubnetwork Y DNSManagedZone DataprocCluster Folder Y IAMServiceAccount Y IAMWorkforcePool KMSCryptoKey Y KMSKeyRing Y NetworkSecurityAuthorizationPolicy NetworkSecurityClientTLSPolicy NetworkSecurityServerTLSPolicy Organization Y Project Y PubSubSubscription PubSubTopic RunJob RunService SecretManagerSecret ServiceDirectoryNamespace ServiceDirectoryService SourceRepoRepository SpannerDatabase Y SpannerInstance StorageBucket Y Kind External Reference Formats AccessContextManagerAccessPolicy {{name}} ApigeeEnvironment organizations/{{apigee organization}}/environments/{{name}} ArtifactRegistryRepository projects/{{project}}/locations/{{location}}/repositories/{{repository id}} BigQueryTable projects/{{project}}/datasets/{{dataset id}}/tables/{{table id}} BigtableInstance projects/{{project}}/instances/{{name}} BigtableTable projects/{{project}}/instances/{{instance name}}/tables/{{name}} BillingAccount {{billing account id}} BinaryAuthorizationPolicy projects/{{project}}/policy CloudFunctionsFunction projects/{{project}}/locations/{{region}}/functions/{{name}} ComputeBackendBucket projects/{{project}}/global/backendBuckets/{{name}} ComputeDisk projects/{{project}}/regions/{{region}}/disks/{{name}} projects/{{project}}/zones/{{zone}}/disks/{{name}} ComputeImage projects/{{project}}/global/images/{{name}} ComputeInstance projects/{{project}}/zones/{{zone}}/instances/{{name}} ComputeSnapshot projects/{{project}}/global/snapshots/{{name}} ComputeSubnetwork projects/{{project}}/regions/{{region}}/subnetworks/{{name}} DNSManagedZone projects/{{project}}/managedZones/{{name}} DataprocCluster projects/{{project}}/regions/{{location}}/clusters/{{name}} Folder folders/{{folder id}} IAMServiceAccount projects/{{project}}/serviceAccounts/{{account id}}@{{project}}.iam.gserviceaccount.com IAMWorkforcePool locations/{{location}}/workforcePools/{{name}} KMSCryptoKey projects/{{project}}/locations/{{location}}/keyRings/{{key ring id}}/cryptoKeys/{{name}} KMSKeyRing projects/{{project}}/locations/{{location}}/keyRings/{{name}} NetworkSecurityAuthorizationPolicy projects/{{project}}/locations/{{location}}/authorizationPolicies/{{name}} NetworkSecurityClientTLSPolicy projects/{{project}}/locations/{{location}}/clientTlsPolicies/{{name}} NetworkSecurityServerTLSPolicy projects/{{project}}/locations/{{location}}/serverTlsPolicies/{{name}} Organization {{org id}} Project projects/{{project id}} PubSubSubscription projects/{{project}}/subscriptions/{{name}} PubSubTopic projects/{{project}}/topics/{{name}} RunJob projects/{{project}}/locations/{{location}}/jobs/{{name}} RunService projects/{{project}}/locations/{{location}}/services/{{name}} SecretManagerSecret projects/{{project}}/secrets/{{secret id}} ServiceDirectoryNamespace projects/{{project}}/locations/{{location}}/namespaces/{{namespace id}} ServiceDirectoryService {{namespace}}/services/{{service id}} SourceRepoRepository projects/{{project}}/repos/{{name}} SpannerDatabase projects/{{project}}/instances/{{instance}}/databases/{{name}} SpannerInstance projects/{{project}}/instances/{{name}} StorageBucket {{name}} Custom Resource Definition Properties Spec Schema condition : description : string expression : string title : string member : string memberFrom : bigQueryConnectionConnectionRef : name : string namespace : string type : string logSinkRef : name : string namespace : string serviceAccountRef : name : string namespace : string serviceIdentityRef : name : string namespace : string sqlInstanceRef : name : string namespace : string resourceRef : apiVersion : string external : string kind : string name : string namespace : string role : string Fields condition Optional object Immutable.",
+          "See the License for the specific language governing permissions and limitations under the License. apiVersion : iam.cnrm.cloud.google.com/v1beta1 kind : IAMPolicyMember metadata : name : iampolicymember-sample-bqccref spec : memberFrom : bigQueryConnectionConnectionRef : type : cloudSQL name : iampolicymember-dep-bqccref role : roles/editor resourceRef : kind : Project Replace ${PROJECT ID?} with your project ID external : projects/${PROJECT ID?} --- apiVersion : bigqueryconnection.cnrm.cloud.google.com/v1beta1 kind : BigQueryConnectionConnection metadata : name : iampolicymember-dep-bqccref spec : location : us-central1 projectRef : Replace ${PROJECT ID?} with your project ID external : ${PROJECT ID?} cloudSQL : instanceRef : name : iampolicymember-dep-bqccref databaseRef : name : iampolicymember-dep-bqccref type : \"MYSQL\" credential : secretRef : name : iampolicymember-dep-bqccref --- apiVersion : v1 kind : Secret metadata : name : iampolicymember-dep-bqccref type : kubernetes.io/basic-auth stringData : username : iampolicymember-dep-bqccref password : cGFzc3dvcmQ= --- apiVersion : sql.cnrm.cloud.google.com/v1beta1 kind : SQLDatabase metadata : name : iampolicymember-dep-bqccref spec : charset : utf8 instanceRef : name : iampolicymember-dep-bqccref --- apiVersion : sql.cnrm.cloud.google.com/v1beta1 kind : SQLInstance metadata : name : iampolicymember-dep-bqccref spec : databaseVersion : MYSQL 5 7 region : us-central1 settings : locationPreference : zone : us-central1-a tier : db-custom-1-3840 --- apiVersion : sql.cnrm.cloud.google.com/v1beta1 kind : SQLUser metadata : name : iampolicymember-dep-bqccref spec : instanceRef : name : iampolicymember-dep-bqccref host : foo password : valueFrom : secretKeyRef : name : iampolicymember-dep-bqccref key : password Policy Member With Member Reference Copyright 2020 Google LLC Licensed under the Apache License, Version 2.0 (the \"License\"); you may not use this file except in compliance with the License.",
+          "For \"cloudResource\" connection, the service account is in status.observedState.cloudResource.serviceAccountID. memberFrom.bigQueryConnectionConnectionRef.name Required string memberFrom.bigQueryConnectionConnectionRef.namespace Optional string memberFrom.bigQueryConnectionConnectionRef.type Required string Type field specifies the connection type of the BigQueryConnectionConnection resource, whose service account is to be bound to the role. memberFrom.logSinkRef Optional object The LoggingLogSink whose writer identity (i.e. its 'status.writerIdentity') is to be bound to the role. memberFrom.logSinkRef.name Required string memberFrom.logSinkRef.namespace Optional string memberFrom.serviceAccountRef Optional object The IAMServiceAccount to be bound to the role. memberFrom.serviceAccountRef.name Required string memberFrom.serviceAccountRef.namespace Optional string memberFrom.serviceIdentityRef Optional object The ServiceIdentity whose service account (i.e., its 'status.email') is to be bound to the role. memberFrom.serviceIdentityRef.name Required string memberFrom.serviceIdentityRef.namespace Optional string memberFrom.sqlInstanceRef Optional object The SQLInstance whose service account (i.e. its 'status.serviceAccountEmailAddress') is to be bound to the role. memberFrom.sqlInstanceRef.name Required string memberFrom.sqlInstanceRef.namespace Optional string resourceRef Required object Immutable."
+        ]
+      },
+      {
+        "title": "\"AccessContextManagerServicePerimeter \\_|\\_ Config Connector \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/accesscontextmanager/accesscontextmanagerserviceperimeter",
+        "source_id": "site-docs-root",
+        "final_score": 21,
+        "relevance": "",
+        "evidence_snippets": [
+          "AccessContextManagerServicePerimeter Property Value Google Cloud Service Name AccessContextManager Google Cloud Service Documentation /vpc-service-controls/docs/ Google Cloud REST Resource Name accesscontextmanager.v1.accessPolicies.servicePerimeters Google Cloud REST Resource Documentation /access-context-manager/docs/reference/rest/v1/accessPolicies.servicePerimeters Config Connector Resource Short Names gcpaccesscontextmanagerserviceperimeter gcpaccesscontextmanagerserviceperimeters accesscontextmanagerserviceperimeter Config Connector Service Name accesscontextmanager.googleapis.com Config Connector Resource Fully Qualified Name accesscontextmanagerserviceperimeters.accesscontextmanager.cnrm.cloud.google.com Can Be Referenced by IAMPolicy/IAMPolicyMember No Config Connector Default Average Reconcile Interval In Seconds 600 Custom Resource Definition Properties Spec Schema accessPolicyRef : external : string name : string namespace : string description : string perimeterType : string resourceID : string spec : accessLevels : - external : string name : string namespace : string egressPolicies : - egressFrom : identities : - serviceAccountRef : external : string name : string namespace : string user : string identityType : string egressTo : externalResources : - string operations : - methodSelectors : - method : string permission : string serviceName : string resources : - projectRef : external : string name : string namespace : string ingressPolicies : - ingressFrom : identities : - serviceAccountRef : external : string name : string namespace : string user : string identityType : string sources : - accessLevelRef : external : string name : string namespace : string projectRef : external : string name : string namespace : string ingressTo : operations : - methodSelectors : - method : string permission : string serviceName : string resources : - projectRef : external : string name : string namespace : string resources : - projectRef : external : string name : string namespace : string restrictedServices : - string vpcAccessibleServices : allowedServices : - string enableRestriction : boolean status : accessLevels : - external : string name : string namespace : string egressPolicies : - egressFrom : identities : - serviceAccountRef : external : string name : string namespace : string user : string identityType : string egressTo : externalResources : - string operations : - methodSelectors : - method : string permission : string serviceName : string resources : - projectRef : external : string name : string namespace : string ingressPolicies : - ingressFrom : identities : - serviceAccountRef : external : string name : string namespace : string user : string identityType : string sources : - accessLevelRef : external : string name : string namespace : string projectRef : external : string name : string namespace : string ingressTo : operations : - methodSelectors : - method : string permission : string serviceName : string resources : - projectRef : external : string name : string namespace : string resources : - projectRef : external : string name : string namespace : string restrictedServices : - string vpcAccessibleServices : allowedServices : - string enableRestriction : boolean title : string useExplicitDryRunSpec : boolean Fields accessPolicyRef Required object The AccessContextManagerAccessPolicy this AccessContextManagerServicePerimeter lives in. accessPolicyRef.external Optional string Allowed value: string of the format accessPolicies/{{value}}, where {{value}} is the name field of an AccessContextManagerAccessPolicy resource. accessPolicyRef.name Optional string Name of the referent.",
+          "Format \"projects/{project number}\" The project may be in any Google Cloud organization, not just the organization that the perimeter is defined in. spec.ingressPolicies[].ingressFrom.sources[].projectRef.external Optional string Allowed value: string of the format projects/{{value}}, where {{value}} is the number field of a Project resource. spec.ingressPolicies[].ingressFrom.sources[].projectRef.name Optional string Name of the referent.",
+          "Format \"projects/{project number}\" The project may be in any Google Cloud organization, not just the organization that the perimeter is defined in. ingressPolicies[].ingressFrom.sources[].projectRef.external Optional string Allowed value: string of the format projects/{{value}}, where {{value}} is the number field of a Project resource. ingressPolicies[].ingressFrom.sources[].projectRef.name Optional string Name of the referent."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "accesscontextmanager.googleapis.com",
+      "accesscontextmanager.v1.accessPolicies.servicePerimeters",
+      "accesscontextmanagerserviceperimeters.accesscontextmanager.cnrm.cloud.google.com",
+      "bigqueryconnection.cnrm.cloud.google.com",
+      "i.e",
+      "iam.cnrm.cloud.google.com",
+      "iam.gserviceaccount.com",
+      "kubernetes.io",
+      "spec.ingressPolicies",
+      "sql.cnrm.cloud.google.com",
+      "status.email",
+      "status.observedState.cloudResource.serviceAccountID",
+      "status.serviceAccountEmailAddress",
+      "status.writerIdentity"
+    ],
+    "missing_inventory_roles": [
+      "roles/editor"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicymember",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/monitoring-prometheus",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/accesscontextmanager/accesscontextmanagerserviceperimeter"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicymember",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/monitoring-prometheus",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/accesscontextmanager/accesscontextmanagerserviceperimeter"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicymember",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/monitoring-prometheus",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/accesscontextmanager/accesscontextmanagerserviceperimeter"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicymember",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/monitoring-prometheus",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/accesscontextmanager/accesscontextmanagerserviceperimeter"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicymember",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/monitoring-prometheus",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/accesscontextmanager/accesscontextmanagerserviceperimeter"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicymember",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/monitoring-prometheus",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/accesscontextmanager/accesscontextmanagerserviceperimeter"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicymember",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/monitoring-prometheus",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/accesscontextmanager/accesscontextmanagerserviceperimeter"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicymember",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/monitoring-prometheus",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/accesscontextmanager/accesscontextmanagerserviceperimeter"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicymember",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/monitoring-prometheus",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/accesscontextmanager/accesscontextmanagerserviceperimeter"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicymember",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/monitoring-prometheus",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/accesscontextmanager/accesscontextmanagerserviceperimeter"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicymember",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/monitoring-prometheus",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/accesscontextmanager/accesscontextmanagerserviceperimeter"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicymember",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/monitoring-prometheus",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/accesscontextmanager/accesscontextmanagerserviceperimeter"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicymember",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/monitoring-prometheus",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/accesscontextmanager/accesscontextmanagerserviceperimeter"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicymember",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/monitoring-prometheus",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/accesscontextmanager/accesscontextmanagerserviceperimeter"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iampolicymember",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/monitoring-prometheus",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/accesscontextmanager/accesscontextmanagerserviceperimeter"
+      ]
+    }
+  ]
+}

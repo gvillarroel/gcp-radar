@@ -1,0 +1,78 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:18.499Z",
+  "source_step08_card": "data/step-08/current/products/bare-metal-solution/card.json",
+  "product_name": "Bare Metal Solution",
+  "product_slug": "bare-metal-solution",
+  "feature_name": "Pod visibility for Bare Metal Solution resources",
+  "feature_slug": "pod-visibility-for-bare-metal-solution-resources",
+  "summary": "You can now view pod assignments for Bare Metal Solution servers, networks, volumes, and NFS shares.",
+  "extended_definition": "You can now view pod assignments for Bare Metal Solution servers, networks, volumes, and NFS shares.",
+  "lifecycle": {
+    "latest_feature_date": "2023-09-22",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bare-metal/docs/order-bms-resources",
+      "https://docs.cloud.google.com/bare-metal/docs/reference/rest/v2/projects.locations.nfsShares",
+      "https://docs.cloud.google.com/bare-metal/docs/reference/rest/v2/projects.locations.nfsShares/get"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Order Bare Metal Solution resources \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bare-metal/docs/order-bms-resources",
+        "source_id": "site-docs-reference",
+        "final_score": 69,
+        "relevance": "",
+        "evidence_snippets": [
+          "You can use procurements to order the following Bare Metal Solution resources: Servers ( available server configurations ) Storage ( available storage choices ) Partner Interconnect bandwidth To procure any other Bare Metal Solution resource, contact Google Cloud sales .",
+          "As your resources are procured, you can provision them through the following options and start using them: Google Cloud console intake form Create a network UI Create a storage volume UI Create an NFS volume UI What's next Deploy your Bare Metal Solution environment .",
+          "After you've executed a simplified, one-time Bare Metal Solution Order Form, you can order your Bare Metal Solution resources online by creating procurements through the Google Cloud console."
+        ]
+      },
+      {
+        "title": "\"Method: projects.locations.nfsShares.get \\_|\\_ Bare Metal Solution \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/bare-metal/docs/reference/rest/v2/projects.locations.nfsShares/get",
+        "source_id": "site-api-reference",
+        "final_score": 68,
+        "relevance": "",
+        "evidence_snippets": []
+      },
+      {
+        "title": "\"REST Resource: projects.locations.nfsShares \\_|\\_ Bare Metal Solution \\_\\",
+        "url": "https://docs.cloud.google.com/bare-metal/docs/reference/rest/v2/projects.locations.nfsShares",
+        "source_id": "site-api-reference",
+        "final_score": 68,
+        "relevance": "WEAK",
+        "evidence_snippets": []
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "projects.locations.nfsShares",
+      "projects.locations.nfsShares.create",
+      "projects.locations.nfsShares.delete",
+      "projects.locations.nfsShares.get"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": []
+}

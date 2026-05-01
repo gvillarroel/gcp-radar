@@ -1,0 +1,118 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:46.193Z",
+  "source_step08_card": "data/step-08/current/products/sensitive-data-protection/card.json",
+  "product_name": "Sensitive Data Protection",
+  "product_slug": "sensitive-data-protection",
+  "feature_name": "Cloud Storage results storage",
+  "feature_slug": "cloud-storage-results-storage",
+  "summary": "Allows inspection results from Cloud Datastore or Cloud Storage scans to be written to Cloud Storage.",
+  "extended_definition": "Allows inspection results from Cloud Datastore or Cloud Storage scans to be written to Cloud Storage.",
+  "lifecycle": {
+    "latest_feature_date": "2017-05-01",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/sensitive-data-protection/docs/creating-job-triggers",
+      "https://docs.cloud.google.com/sensitive-data-protection/docs/deidentify-storage",
+      "https://docs.cloud.google.com/sensitive-data-protection/docs/inspecting-storage"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Inspect Google Cloud storage and databases for sensitive data \\_|\\_ Sensitive\\",
+        "url": "https://docs.cloud.google.com/sensitive-data-protection/docs/inspecting-storage",
+        "source_id": "site-docs-reference-3",
+        "final_score": 166,
+        "relevance": "",
+        "evidence_snippets": [
+          "PartitionId partitionId = PartitionId . newBuilder () . setProjectId ( projectId ) . setNamespaceId ( datastoreNamespce ) . build (); KindExpression kindExpression = KindExpression . newBuilder (). setName ( datastoreKind ). build (); DatastoreOptions datastoreOptions = DatastoreOptions . newBuilder (). setKind ( kindExpression ). setPartitionId ( partitionId ). build (); StorageConfig storageConfig = StorageConfig . newBuilder (). setDatastoreOptions ( datastoreOptions ). build (); // Specify the type of info the inspection will look for. // See https://cloud.google.com/dlp/docs/infotypes-reference for complete list of info types List<InfoType> infoTypes = Stream . of ( \"PHONE NUMBER\" , \"EMAIL ADDRESS\" , \"CREDIT CARD NUMBER\" ) . map ( it - > InfoType . newBuilder (). setName ( it ). build ()) . collect ( Collectors . toList ()); // Specify how the content should be inspected.",
+          "FromSeconds ( 30 )); } while ( numOfAttempts > 0 ); throw new InvalidOperationException ( \"Job did not complete in time\" ); } } Configure storage inspection To inspect a Cloud Storage location, Datastore kind, or BigQuery table, you send a request to the projects.dlpJobs.create method of the DLP API that contains at least the location of the data to scan and what to scan for.",
+          "For more information, see Set up authentication for a local development environment . use Google\\Cloud\\Dlp\\V2\\Action; use Google\\Cloud\\Dlp\\V2\\Action\\PublishToPubSub; use Google\\Cloud\\Dlp\\V2\\Client\\DlpServiceClient; use Google\\Cloud\\Dlp\\V2\\CreateDlpJobRequest; use Google\\Cloud\\Dlp\\V2\\DatastoreOptions; use Google\\Cloud\\Dlp\\V2\\DlpJob\\JobState; use Google\\Cloud\\Dlp\\V2\\GetDlpJobRequest; use Google\\Cloud\\Dlp\\V2\\InfoType; use Google\\Cloud\\Dlp\\V2\\InspectConfig; use Google\\Cloud\\Dlp\\V2\\InspectConfig\\FindingLimits; use Google\\Cloud\\Dlp\\V2\\InspectJobConfig; use Google\\Cloud\\Dlp\\V2\\KindExpression; use Google\\Cloud\\Dlp\\V2\\Likelihood; use Google\\Cloud\\Dlp\\V2\\PartitionId; use Google\\Cloud\\Dlp\\V2\\StorageConfig; use Google\\Cloud\\PubSub\\PubSubClient; / Inspect Datastore, using Pub/Sub for job status notifications. @param string $callingProjectId The project ID to run the API call under @param string $dataProjectId The project ID containing the target Datastore @param string $topicId The name of the Pub/Sub topic to notify once the job completes @param string $subscriptionId The name of the Pub/Sub subscription to use when listening for job @param string $kind The datastore kind to inspect @param string $namespaceId The ID namespace of the Datastore document to inspect @param int $maxFindings (Optional) The maximum number of findings to report per request (0 = server maximum) / function inspect datastore( string $callingProjectId, string $dataProjectId, string $topicId, string $subscriptionId, string $kind, string $namespaceId, int $maxFindings = 0 ): void { // Instantiate clients $dlp = new DlpServiceClient(); $pubsub = new PubSubClient(); $topic = $pubsub->topic($topicId); // The infoTypes of information to match $personNameInfoType = (new InfoType()) ->setName('PERSON NAME'); $phoneNumberInfoType = (new InfoType()) ->setName('PHONE NUMBER'); $infoTypes = [$personNameInfoType, $phoneNumberInfoType]; // The minimum likelihood required before returning a match $minLikelihood = likelihood::LIKELIHOOD UNSPECIFIED; // Specify finding limits $limits = (new FindingLimits()) ->setMaxFindingsPerRequest($maxFindings); // Construct items to be inspected $partitionId = (new PartitionId()) ->setProjectId($dataProjectId) ->setNamespaceId($namespaceId); $kindExpression = (new KindExpression()) ->setName($kind); $datastoreOptions = (new DatastoreOptions()) ->setPartitionId($partitionId) ->setKind($kindExpression); // Construct the inspect config object $inspectConfig = (new InspectConfig()) ->setInfoTypes($infoTypes) ->setMinLikelihood($minLikelihood) ->setLimits($limits); // Construct the storage config object $storageConfig = (new StorageConfig()) ->setDatastoreOptions($datastoreOptions); // Construct the action to run when job completes $pubSubAction = (new PublishToPubSub()) ->setTopic($topic->name()); $action = (new Action()) ->setPubSub($pubSubAction); // Construct inspect job config to run $inspectJob = (new InspectJobConfig()) ->setInspectConfig($inspectConfig) ->setStorageConfig($storageConfig) ->setActions([$action]); // Listen for job notifications via an existing topic/subscription. $subscription = $topic->subscription($subscriptionId); // Submit request $parent = \"projects/$callingProjectId/locations/global\"; $createDlpJobRequest = (new CreateDlpJobRequest()) ->setParent($parent) ->setInspectJob($inspectJob); $job = $dlp->createDlpJob($createDlpJobRequest); // Poll Pub/Sub using exponential backoff until job finishes // Consider using an asynchronous execution model such as Cloud Functions $attempt = 1; $startTime = time(); do { foreach ($subscription->pull() as $message) { if ( isset($message->attributes()['DlpJobName']) && $message->attributes()['DlpJobName'] === $job->getName() ) { $subscription->acknowledge($message); // Get the updated job."
+        ]
+      },
+      {
+        "title": "\"Create de-identified copies of data stored in Cloud Storage using the API\\",
+        "url": "https://docs.cloud.google.com/sensitive-data-protection/docs/deidentify-storage",
+        "source_id": "site-docs-root-2",
+        "final_score": 150,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "DlpServiceClient (); // The project ID to run the API call under // const projectId = 'my-project'; // The Cloud Storage directory that needs to be inspected // const inputDirectory = 'your-google-cloud-storage-path'; // The ID of the dataset to inspect, e.g. 'my dataset' // const datasetId = 'my dataset'; // The ID of the table to inspect, e.g. 'my table' // const tableId = 'my table'; // The Cloud Storage directory that will be used to store the de-identified files // const outputDirectory = 'your-output-directory'; // The full resource name of the default de-identify template // const deidentifyTemplateId = 'your-deidentify-template-id'; // The full resource name of the de-identify template for structured files // const structuredDeidentifyTemplateId = 'your-structured-deidentify-template-id'; // The full resource name of the image redaction template for images // const imageRedactTemplateId = 'your-image-redact-template-id'; async function deidentifyCloudStorage () { // Specify storage configuration that uses file set. const storageConfig = { cloudStorageOptions : { fileSet : { url : inputDirectory , }, }, }; // Specify the type of info the inspection will look for. const infoTypes = [{ name : 'PERSON NAME' }, { name : 'EMAIL ADDRESS' }]; // Construct inspect configuration const inspectConfig = { infoTypes : infoTypes , includeQuote : true , }; // Types of files to include for de-identification. const fileTypesToTransform = [ { fileType : 'IMAGE' }, { fileType : 'CSV' }, { fileType : ' TEXT FILE ' }, ]; // Specify the big query table to store the transformation details. const transformationDetailsStorageConfig = { table : { projectId : projectId , tableId : tableId , datasetId : datasetId , }, }; // Specify the de-identify template used for the transformation. const transformationConfig = { deidentifyTemplate : deidentifyTemplateId , structuredDeidentifyTemplate : structuredDeidentifyTemplateId , imageRedactTemplate : imageRedactTemplateId , }; // Construct action to de-identify sensitive data. const action = { deidentify : { cloudStorageOutput : outputDirectory , transformationConfig : transformationConfig , transformationDetailsStorageConfig : transformationDetailsStorageConfig , fileTypes : fileTypesToTransform , }, }; // Construct the inspect job configuration. const inspectJobConfig = { inspectConfig : inspectConfig , storageConfig : storageConfig , actions : [ action ], }; // Construct the job creation request to be sent by the client. const createDlpJobRequest = { parent : projects/ ${ projectId } /locations/global , inspectJob : inspectJobConfig , }; // Send the job creation request and process the response. const [ response ] = await dlp . createDlpJob ( createDlpJobRequest ); const jobName = response . name ; // Waiting for a maximum of 15 minutes for the job to get complete. let job ; let numOfAttempts = 30 ; while ( numOfAttempts > 0 ) { // Fetch DLP Job status [ job ] = await dlp . getDlpJob ({ name : jobName }); // Check if the job has completed. if ( job . state === 'DONE' ) { break ; } if ( job . state === 'FAILED' ) { console . log ( 'Job Failed, Please check the configuration.' ); return ; } // Sleep for a short duration before checking the job status again. await new Promise ( resolve = > { setTimeout (() = > resolve (), 30000 ); }); numOfAttempts -= 1 ; } // Print out the results. const infoTypeStats = job . inspectDetails . result . infoTypeStats ; if ( infoTypeStats . length > 0 ) { infoTypeStats . forEach ( infoTypeStat = > { console . log ( Found ${ infoTypeStat . count } instance(s) of infoType ${ infoTypeStat . infoType . name } . ); }); } else { console . log ( 'No findings.' ); } } await deidentifyCloudStorage (); PHP To learn how to install and use the client library for Sensitive Data Protection, see Sensitive Data Protection client libraries .",
+          "DONE : print ( f \"Job did not complete within { timeout } minutes.\" ) return Print out the results. print ( f \"Job name: { job . name } \" ) result = job . inspect details . result print ( f \"Processed Bytes: { result . processed bytes } \" ) if result . info type stats : for stats in result . info type stats : print ( f \"Info type: { stats . info type . name } \" ) print ( f \"Count: { stats . count } \" ) else : print ( \"No findings.\" ) REST JSON input { \"inspect job\" : { \"storage config\" : { \"cloud storage options\" : { \"file set\" : { \"url\" : \" INPUT DIRECTORY \" } } }, \"inspect config\" : { \"info types\" : [ { \"name\" : \"PERSON NAME\" } ] }, \"actions\" : { \"deidentify\" : { \"cloud storage output\" : \" OUTPUT DIRECTORY \" , \"transformation config\" : { \"deidentify template\" : \" DEIDENTIFY TEMPLATE NAME \" , \"structured deidentify template\" : \" STRUCTURED DEIDENTIFY TEMPLATE NAME \" , \"image redact template\" : \" IMAGE REDACTION TEMPLATE NAME \" }, \"transformation details storage config\" : { \"table\" : { \"project id\" : \" TRANSFORMATION DETAILS PROJECT ID \" , \"dataset id\" : \" TRANSFORMATION DETAILS DATASET ID \" , \"table id\" : \" TRANSFORMATION DETAILS TABLE ID \" } }, \"fileTypesToTransform\" : [ \"IMAGE\" , \"CSV\" , \"TEXT FILE\" ] } } } } Replace the following: PROJECT ID : the ID of the project where you want to store the inspection job.",
+          "For more information about actions, see the following: Actions conceptual topic Action reference documentation Retrieving inspection results If you want to scan only a subset of the files in your bucket, you can limit the files that the job scans."
+        ]
+      },
+      {
+        "title": "\"Creating and scheduling Sensitive Data Protection inspection jobs \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/sensitive-data-protection/docs/creating-job-triggers",
+        "source_id": "site-api-reference-required-2",
+        "final_score": 150,
+        "relevance": "",
+        "evidence_snippets": [
+          "For more information, see Set up authentication for a local development environment . use Google\\Cloud\\Dlp\\V2\\Client\\DlpServiceClient; use Google\\Cloud\\Dlp\\V2\\CloudStorageOptions; use Google\\Cloud\\Dlp\\V2\\CloudStorageOptions\\FileSet; use Google\\Cloud\\Dlp\\V2\\CreateJobTriggerRequest; use Google\\Cloud\\Dlp\\V2\\InfoType; use Google\\Cloud\\Dlp\\V2\\InspectConfig; use Google\\Cloud\\Dlp\\V2\\InspectConfig\\FindingLimits; use Google\\Cloud\\Dlp\\V2\\InspectJobConfig; use Google\\Cloud\\Dlp\\V2\\JobTrigger; use Google\\Cloud\\Dlp\\V2\\JobTrigger\\Status; use Google\\Cloud\\Dlp\\V2\\JobTrigger\\Trigger; use Google\\Cloud\\Dlp\\V2\\Likelihood; use Google\\Cloud\\Dlp\\V2\\Schedule; use Google\\Cloud\\Dlp\\V2\\StorageConfig; use Google\\Cloud\\Dlp\\V2\\StorageConfig\\TimespanConfig; use Google\\Protobuf\\Duration; / Create a Data Loss Prevention API job trigger. @param string $callingProjectId The project ID to run the API call under @param string $bucketName The name of the bucket to scan @param string $triggerId (Optional) The name of the trigger to be created @param string $displayName (Optional) The human-readable name to give the trigger @param string $description (Optional) A description for the trigger to be created @param int $scanPeriod (Optional) How often to wait between scans, in days (minimum = 1 day) @param bool $autoPopulateTimespan (Optional) Automatically limit scan to new content only @param int $maxFindings (Optional) The maximum number of findings to report per request (0 = server maximum) / function create trigger( string $callingProjectId, string $bucketName, string $triggerId, string $displayName, string $description, int $scanPeriod, bool $autoPopulateTimespan, int $maxFindings ): void { // Instantiate a client. $dlp = new DlpServiceClient(); // ----- Construct job config ----- // The infoTypes of information to match $personNameInfoType = (new InfoType()) ->setName('PERSON NAME'); $phoneNumberInfoType = (new InfoType()) ->setName('PHONE NUMBER'); $infoTypes = [$personNameInfoType, $phoneNumberInfoType]; // The minimum likelihood required before returning a match $minLikelihood = likelihood::LIKELIHOOD UNSPECIFIED; // Specify finding limits $limits = (new FindingLimits()) ->setMaxFindingsPerRequest($maxFindings); // Create the inspectConfig object $inspectConfig = (new InspectConfig()) ->setMinLikelihood($minLikelihood) ->setLimits($limits) ->setInfoTypes($infoTypes); // Create triggers $duration = (new Duration()) ->setSeconds($scanPeriod 60 60 24); $schedule = (new Schedule()) ->setRecurrencePeriodDuration($duration); $triggerObject = (new Trigger()) ->setSchedule($schedule); // Create the storageConfig object $fileSet = (new FileSet()) ->setUrl('gs://' . $bucketName . '/ '); $storageOptions = (new CloudStorageOptions()) ->setFileSet($fileSet); // Auto-populate start and end times in order to scan new objects only. $timespanConfig = (new TimespanConfig()) ->setEnableAutoPopulationOfTimespanConfig($autoPopulateTimespan); $storageConfig = (new StorageConfig()) ->setCloudStorageOptions($storageOptions) ->setTimespanConfig($timespanConfig); // Construct the jobConfig object $jobConfig = (new InspectJobConfig()) ->setInspectConfig($inspectConfig) ->setStorageConfig($storageConfig); // ----- Construct trigger object ----- $jobTriggerObject = (new JobTrigger()) ->setTriggers([$triggerObject]) ->setInspectJob($jobConfig) ->setStatus(Status::HEALTHY) ->setDisplayName($displayName) ->setDescription($description); // Run trigger creation request $parent = $dlp->locationName($callingProjectId, 'global'); $createJobTriggerRequest = (new CreateJobTriggerRequest()) ->setParent($parent) ->setJobTrigger($jobTriggerObject) ->setTriggerId($triggerId); $trigger = $dlp->createJobTrigger($createJobTriggerRequest); // Print results printf('Successfully created trigger %s' .",
+          "Example : gs://GOOGLE STORAGE BUCKET NAME/dlp sample.csv / function create job( string $callingProjectId, string $gcsPath ): void { // Instantiate a client. $dlp = new DlpServiceClient(); // Set autoPopulateTimespan to true to scan only new content. $timespanConfig = (new TimespanConfig()) ->setEnableAutoPopulationOfTimespanConfig(true); // Specify the GCS file to be inspected. $cloudStorageOptions = (new CloudStorageOptions()) ->setFileSet((new FileSet()) ->setUrl($gcsPath)); $storageConfig = (new StorageConfig()) ->setCloudStorageOptions(($cloudStorageOptions)) ->setTimespanConfig($timespanConfig); // ----- Construct inspection config ----- $emailAddressInfoType = (new InfoType()) ->setName('EMAIL ADDRESS'); $personNameInfoType = (new InfoType()) ->setName('PERSON NAME'); $locationInfoType = (new InfoType()) ->setName('LOCATION'); $phoneNumberInfoType = (new InfoType()) ->setName('PHONE NUMBER'); $infoTypes = [$emailAddressInfoType, $personNameInfoType, $locationInfoType, $phoneNumberInfoType]; // Whether to include the matching string in the response. $includeQuote = true; // The minimum likelihood required before returning a match. $minLikelihood = likelihood::LIKELIHOOD UNSPECIFIED; // The maximum number of findings to report (0 = server maximum). $limits = (new FindingLimits()) ->setMaxFindingsPerRequest(100); // Create the Inspect configuration object. $inspectConfig = (new InspectConfig()) ->setMinLikelihood($minLikelihood) ->setLimits($limits) ->setInfoTypes($infoTypes) ->setIncludeQuote($includeQuote); // Specify the action that is triggered when the job completes. $action = (new Action()) ->setPublishSummaryToCscc(new PublishSummaryToCscc()); // Configure the inspection job we want the service to perform. $inspectJobConfig = (new InspectJobConfig()) ->setInspectConfig($inspectConfig) ->setStorageConfig($storageConfig) ->setActions([$action]); // Send the job creation request and process the response. $parent = \"projects/$callingProjectId/locations/global\"; $createDlpJobRequest = (new CreateDlpJobRequest()) ->setParent($parent) ->setInspectJob($inspectJobConfig); $job = $dlp->createDlpJob($createDlpJobRequest); // Print results. printf($job->getName()); } Python To learn how to install and use the client library for Sensitive Data Protection, see Sensitive Data Protection client libraries .",
+          "JSON input: { \"jobTrigger\" :{ \"displayName\" : \"JobTrigger1\" , \"description\" : \"Starts an inspection of a Datastore kind\" , \"triggers\" : [ { \"schedule\":{ \"recurrencePeriodDuration\":\"86400s\" } } ] , \"status\" : \"HEALTHY\" , \"inspectJob\" :{ \"storageConfig\" :{ \"datastoreOptions\" :{ \"kind\" :{ \"name\" : \"Example-Kind\" } , \"partitionId\" :{ \"projectId\" : \"[PROJECT ID]\" , \"namespaceId\" : \"[NAMESPACE ID]\" } } } , \"inspectConfig\" :{ \"infoTypes\" : [ { \"name\":\"PHONE NUMBER\" } ] , \"excludeInfoTypes\" : false , \"includeQuote\" : true , \"minLikelihood\" : \"LIKELY\" } , \"actions\" : [ { \"saveFindings\":{ \"outputConfig\":{ \"table\":{ \"projectId\":\"[PROJECT ID ] \", \" datasetId \":\" [ BIGQUERY DATASET NAME ] \", \" tableId \":\" [ BIGQUERY TABLE NAME ] \" } } } } ] } } } JSON output: The following output indicates that the job trigger was successfully created. { \"name\" : \"projects/[PROJECT ID]/jobTriggers/[JOB TRIGGER NAME]\" , \"displayName\" : \"JobTrigger1\" , \"description\" : \"Starts an inspection of a Datastore kind\" , \"inspectJob\" :{ \"storageConfig\" :{ \"datastoreOptions\" :{ \"partitionId\" :{ \"projectId\" : \"[PROJECT ID]\" , \"namespaceId\" : \"[NAMESPACE ID]\" } , \"kind\" :{ \"name\" : \"Example-Kind\" } } } , \"inspectConfig\" :{ \"infoTypes\" : [ { \"name\":\"PHONE NUMBER\" } ] , \"minLikelihood\" : \"LIKELY\" , \"limits\" :{ } , \"includeQuote\" : true } , \"actions\" : [ { \"saveFindings\":{ \"outputConfig\":{ \"table\":{ \"projectId\":\"[PROJECT ID ] \", \" datasetId \":\" [ BIGQUERY DATASET NAME ] \", \" tableId \":\" [ BIGQUERY TABLE NAME ] \" } } } } ] }, \" triggers \":[ { \" schedule \":{ \" recurrencePeriodDuration \":\" 86400 s \" } } ], \" createTime \":\" 2018 - 11 - 30 T01 : 52 : 41.171857 Z \", \" updateTime \":\" 2018 - 11 - 30 T01 : 52 : 41.171857 Z \", \" status \":\" HEALTHY \" } List all jobs To list all jobs for the current project: Console In the Google Cloud console, go to the Sensitive Data Protection page."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "e.g",
+      "projects.dlpJobs.create",
+      "sample.csv"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/inspecting-storage",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/creating-job-triggers",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/deidentify-storage"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/inspecting-storage",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/creating-job-triggers",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/deidentify-storage"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/inspecting-storage",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/creating-job-triggers",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/deidentify-storage"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/inspecting-storage",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/creating-job-triggers",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/deidentify-storage"
+      ]
+    }
+  ]
+}

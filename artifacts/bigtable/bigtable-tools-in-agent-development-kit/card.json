@@ -1,0 +1,76 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:21.669Z",
+  "source_step08_card": "data/step-08/current/products/bigtable/card.json",
+  "product_name": "Bigtable",
+  "product_slug": "bigtable",
+  "feature_name": "Bigtable tools in Agent Development Kit",
+  "feature_slug": "bigtable-tools-in-agent-development-kit",
+  "summary": "Bigtable tools in the Agent Development Kit are now generally available, enabling AI agents to discover table and instance metadata and run LLM-powered SQL queries.",
+  "extended_definition": "Bigtable tools in the Agent Development Kit are now generally available, enabling AI agents to discover table and instance metadata and run LLM-powered SQL queries.",
+  "lifecycle": {
+    "latest_feature_date": "2026-03-06",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigtable/docs/create-instance-write-data-cbt-cli",
+      "https://docs.cloud.google.com/bigtable/docs/reference/admin/mcp/tools_list/create_table",
+      "https://docs.cloud.google.com/bigtable/docs/reference/admin/rest/v2/CreateInstanceMetadata"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Quickstart: Create an instance and write data with the cbt CLI \\_|\\_ Bigtable\\",
+        "url": "https://docs.cloud.google.com/bigtable/docs/create-instance-write-data-cbt-cli",
+        "source_id": "site-docs-root",
+        "final_score": 88,
+        "relevance": "WEAK",
+        "evidence_snippets": []
+      },
+      {
+        "title": "CreateInstanceMetadata \\_|\\_ Bigtable \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigtable/docs/reference/admin/rest/v2/CreateInstanceMetadata",
+        "source_id": "site-docs-reference",
+        "final_score": 82,
+        "relevance": "WEAK",
+        "evidence_snippets": []
+      },
+      {
+        "title": "\"MCP Tools Reference: bigtableadmin.googleapis.com \\_|\\_ Bigtable \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/bigtable/docs/reference/admin/mcp/tools_list/create_table",
+        "source_id": "site-docs-reference",
+        "final_score": 78,
+        "relevance": "",
+        "evidence_snippets": [
+          "Curl Request curl --location 'https://bigtableadmin.googleapis.com/mcp' \\ --header 'content-type: application/json' \\ --header 'accept: application/json, text/event-stream' \\ --data '{ \"method\": \"tools/call\", \"params\": { \"name\": \"create table\", \"arguments\": { // provide these details according to the tool' s MCP specification } } , \"jsonrpc\" : \"2.0\" , \"id\" : 1 } ' Input Schema Request message for Bigtable.CreateTable CreateTableRequest JSON representation { \"projectId\" : string , \"instanceId\" : string , \"tableId\" : string , \"columnFamilies\" : [ string ] } Fields projectId string Required.",
+          "Therefore, binary compatibility needs to be preserved on changes to types. (Use versioned type names to manage breaking changes.) Note: this functionality is not currently available in the official protobuf release, and it is not used for type URLs beginning with type.googleapis.com.",
+          "If it could not be determined whether or not the table has data in a particular cluster (for example, if its zone is unavailable), then there will be an entry for the cluster with UNKNOWN replication status ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "bigtableadmin.googleapis.com",
+      "type.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": []
+}

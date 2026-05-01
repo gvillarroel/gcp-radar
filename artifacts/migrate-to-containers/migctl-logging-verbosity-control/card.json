@@ -1,0 +1,154 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:43.708Z",
+  "source_step08_card": "data/step-08/current/products/migrate-to-containers/card.json",
+  "product_name": "Migrate to Containers",
+  "product_slug": "migrate-to-containers",
+  "feature_name": "Migctl logging verbosity control",
+  "feature_slug": "migctl-logging-verbosity-control",
+  "summary": "The migctl logging set-verbosity command lets users control backend log output between info-only and debug levels.",
+  "extended_definition": "The migctl logging set-verbosity command lets users control backend log output between info-only and debug levels.",
+  "lifecycle": {
+    "latest_feature_date": "2022-12-06",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/migrate/containers/docs/configuring-cloud-logging",
+      "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/windows/windows-customizing-a-migration-plan",
+      "https://docs.cloud.google.com/migrate/containers/docs/monitoring-migrated-workloads"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Configure logging to Cloud Logging \\_|\\_ Migrate to Containers \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/migrate/containers/docs/configuring-cloud-logging",
+        "source_id": "site-docs-reference",
+        "final_score": 89,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Connect is required to pass data back to Cloud Logging. apiVersion: apps/v1 kind: Deployment metadata: creationTimestamp: null labels: app: my-app migrate-for-anthos-type: workload name: test-ibsc-appenhmutimiy spec: replicas: 1 selector: matchLabels: app: test-ibsc-appenhmutimiy migrate-for-anthos-type: workload strategy: {} template: metadata: creationTimestamp: null labels: app: test-ibsc-appenhmutimiy migrate-for-anthos-type: workload spec: containers: - image: gcr.io/myproject/my-container-image:v1.0.0 name: test-ibsc-appenhmutimiy readinessProbe: exec: command: - /code/ready.sh resources: {} securityContext: privileged: true volumeMounts: - mountPath: /sys/fs/cgroup name: cgroups - mountPath: /code/config/logs/ name: logs-config volumes: - hostPath: path: /sys/fs/cgroup type: Directory name: cgroups - configMap: name: <ConfigMap name> name: logs-config Use ConfigMap for common application logs The reference ConfigMap YAML in the following section covers a list of common application log files and their application labels.",
+          "Forward application logs to Cloud Logging In order to log to Cloud Logging from applications on VMs migrated with Migrate to Containers, you must have the following in place: Create a ConfigMap on your target workload cluster that specifies a list of the file system log files whose entries should be written to Cloud Logging.",
+          "Configure logging to Cloud Logging This document describes how to customize logging by using a ConfigMap on your target workload cluster."
+        ]
+      },
+      {
+        "title": "\"Customize migration plan for Windows IIS services \\_|\\_ Migrate to Containers\\",
+        "url": "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/windows/windows-customizing-a-migration-plan",
+        "source_id": "site-docs-reference",
+        "final_score": 86,
+        "relevance": "",
+        "evidence_snippets": [
+          "The next sections discuss this structure, explain what each part is, and how to modify it. globalSettings : globalIis : enablegmsa : string apppools : - enable32bitapponwin64 : bool identitytype : string managedruntimeversion : string name : string connectionStrings : add : - connectionstring : string name : string providername : string security : authentication : windowsAuthentication : enabled : bool providers : - value : string authorization : add : - access type : string roles : string users : string verbs : string remove : - roles : string users : string verbs : string image : extraFeatures : - string target : baseVersion : string requirements : - string warnings : - string msvcRuntimes : - string pathEnvVarAdditionalEntries : - string images : - name : string probes : enabled : bool livenessProbe : probehandler : exec : command : - string - string initialdelayseconds : int timeoutseconds : int periodseconds : int successthreshold : int failurethreshold : int terminationgraceperiodseconds : optional [ int ] readinessProbe : probehandler : exec : command : - string - string initialdelayseconds : int timeoutseconds : int periodseconds : int successthreshold : int failurethreshold : int terminationgraceperiodseconds : optional [ int ] useractions : files : - source : string target : string registry : currentcontrolset : - path : string software : - path : string workloads : sites : site : - applications : - applicationpool : string path : string virtualdirectories : - path : string physicalpath : string bindings : - port : int protocol : string sslflags : int connectionstrings : - connectionstring : string name : string providername : string name : string security : authentication : windowsAuthentication : enabled : bool providers : - value : string authorization : add : - access type : string roles : string users : string verbs : string remove : - roles : string users : string verbs : string serverautostart : bool version : string The globalSettings section The globalSettings section describes basic requirements for pods running IIS sites from this VM.",
+          "The probes are disabled by default, to enable the probes, set the enabled flag to true . images : name : IMAGE NAME probes : enabled : false livenessProbe : probehandler : exec : command : - powershell.exe - C:\\m4a\\probe.ps1 initialdelayseconds : 0 timeoutseconds : 1 periodseconds : 10 successthreshold : 1 failurethreshold : 3 terminationgraceperiodseconds : null readinessProbe : probehandler : exec : command : - powershell.exe - C:\\m4a\\probe.ps1 initialdelayseconds : 0 timeoutseconds : 1 periodseconds : 10 successthreshold : 1 failurethreshold : 3 terminationgraceperiodseconds : null The windowsServices section Windows containers created during a migration run and monitor a single Windows IIS service.",
+          "To run additional services in the migrated container, add entries to the windowsServices section, and copy the necessary binaries in the useractions section . version: v1 globalSettings: target: … globalIIS: … images: - name: migrated-image-zgwb2 workloads: sites: site: - applications: ... bindings: - port: 80 protocol: http name: Default Web Site … windowsServices: - MyService useractions: files: - source: C:\\Program Files\\MyService target: C:\\Program Files\\MyService registry: currentcontrolset: - key: services\\MyService The useractions section The useractions section specifies additional files and registry keys that you might want to migrate."
+        ]
+      },
+      {
+        "title": "\"Monitor migrated workloads \\_|\\_ Migrate to Containers \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/migrate/containers/docs/monitoring-migrated-workloads",
+        "source_id": "site-docs-root-2",
+        "final_score": 58,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "In the example below, the pod's name is suitecrm-app-0 . kubectl get pods NAME READY STATUS RESTARTS AGE csi-disk-controller-0 3/3 Running 4 4d csi-disk-node-5t922 3/3 Running 3 4d csi-disk-node-5tdcp 3/3 Running 3 4d csi-disk-node-86c2t 3/3 Running 3 4d csi-disk-node-8785n 3/3 Running 3 4d suitecrm-app-0 1/1 Running 0 17h View the logs from your pod with kubectl logs . kubectl logs [POD NAME] I0529 07:01:26.000000 12 hclog.py:48] [suitecrm-app-0] - Auto-detected template: centos D0529 07:01:26.000000 12 hclog.py:42] [util] - SHELL OUTPUT: UNIT FILE STATE D0529 07:01:26.000000 12 hclog.py:42] [util] - SHELL OUTPUT: adservice.service enabled The pod's recent logs are displayed.",
+          "You can use Cloud Logging to view logs for the following aspects of your migration: Logs written to stdout by processes launched by init .",
+          "View logs in Cloud Logging Once you enable monitoring , you can view workload logs in the Cloud Monitoring user interface."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "adservice.service",
+      "gcr.io",
+      "hclog.py",
+      "powershell.exe",
+      "probe.ps1",
+      "ready.sh",
+      "v1.0.0"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migrate/containers/docs/configuring-cloud-logging",
+        "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/windows/windows-customizing-a-migration-plan",
+        "https://docs.cloud.google.com/migrate/containers/docs/monitoring-migrated-workloads"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migrate/containers/docs/configuring-cloud-logging",
+        "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/windows/windows-customizing-a-migration-plan",
+        "https://docs.cloud.google.com/migrate/containers/docs/monitoring-migrated-workloads"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migrate/containers/docs/configuring-cloud-logging",
+        "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/windows/windows-customizing-a-migration-plan",
+        "https://docs.cloud.google.com/migrate/containers/docs/monitoring-migrated-workloads"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migrate/containers/docs/configuring-cloud-logging",
+        "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/windows/windows-customizing-a-migration-plan",
+        "https://docs.cloud.google.com/migrate/containers/docs/monitoring-migrated-workloads"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migrate/containers/docs/configuring-cloud-logging",
+        "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/windows/windows-customizing-a-migration-plan",
+        "https://docs.cloud.google.com/migrate/containers/docs/monitoring-migrated-workloads"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migrate/containers/docs/configuring-cloud-logging",
+        "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/windows/windows-customizing-a-migration-plan",
+        "https://docs.cloud.google.com/migrate/containers/docs/monitoring-migrated-workloads"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migrate/containers/docs/configuring-cloud-logging",
+        "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/windows/windows-customizing-a-migration-plan",
+        "https://docs.cloud.google.com/migrate/containers/docs/monitoring-migrated-workloads"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migrate/containers/docs/configuring-cloud-logging",
+        "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/windows/windows-customizing-a-migration-plan",
+        "https://docs.cloud.google.com/migrate/containers/docs/monitoring-migrated-workloads"
+      ]
+    }
+  ]
+}

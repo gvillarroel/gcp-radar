@@ -1,0 +1,107 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:44.316Z",
+  "source_step08_card": "data/step-08/current/products/navigation-sdk-for-android/card.json",
+  "product_name": "Navigation SDK for Android",
+  "product_slug": "navigation-sdk-for-android",
+  "feature_name": "Map background color while tiles load",
+  "feature_slug": "map-background-color-while-tiles-load",
+  "summary": "GoogleMapOptions supports setting the map background color while map tiles are loading.",
+  "extended_definition": "GoogleMapOptions supports setting the map background color while map tiles are loading.",
+  "lifecycle": {
+    "latest_feature_date": "2023-07-06",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/maps/documentation/navigation/android-sdk/customize-map-styles",
+      "https://developers.google.com/maps/documentation/navigation/android-sdk/reference/com/google/android/gms/maps/GoogleMap",
+      "https://developers.google.com/maps/documentation/navigation/android-sdk/reference/com/google/android/gms/maps/GoogleMap.OnMapCapabilitiesChangedListener",
+      "https://developers.google.com/maps/documentation/navigation/android-sdk/reference/com/google/android/gms/maps/GoogleMap.OnMapClickListener"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "GoogleMap \\_|\\_ Navigation SDK for Android \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/maps/documentation/navigation/android-sdk/reference/com/google/android/gms/maps/GoogleMap",
+        "source_id": "site-docs-reference",
+        "final_score": 173,
+        "relevance": "",
+        "evidence_snippets": [
+          "Replaced by setOnCameraMoveStartedListener(GoogleMap.OnCameraMoveStartedListener) , setOnCameraMoveListener(GoogleMap.OnCameraMoveListener) , setOnCameraMoveCanceledListener(GoogleMap.OnCameraMoveCanceledListener) and setOnCameraIdleListener(GoogleMap.OnCameraIdleListener) . void setOnCameraIdleListener ( GoogleMap.OnCameraIdleListener listener) Sets a callback that is invoked when camera movement has ended. void setOnCameraMoveCanceledListener ( GoogleMap.OnCameraMoveCanceledListener listener) Sets a callback that is invoked when camera motion is stopped or interrupted by a new type of animation. void setOnCameraMoveListener ( GoogleMap.OnCameraMoveListener listener) Sets a callback that is invoked repeatedly while the camera is in motion. void setOnCameraMoveStartedListener ( GoogleMap.OnCameraMoveStartedListener listener) Sets a callback that's invoked when the camera starts moving or the reason for camera motion has changed. void setOnCircleClickListener ( GoogleMap.OnCircleClickListener listener) Sets a callback that's invoked when a circle is clicked. void setOnFollowMyLocationCallback ( GoogleMap.OnCameraFollowLocationCallback callback) Sets a callback to get notified about the events related to the state of the camera when it's following user's location. void setOnGroundOverlayClickListener ( GoogleMap.OnGroundOverlayClickListener listener) Sets a callback that's invoked when a ground overlay is clicked. void setOnIndoorStateChangeListener ( GoogleMap.OnIndoorStateChangeListener listener) Sets or clears the listener for indoor events. void setOnInfoWindowClickListener ( GoogleMap.OnInfoWindowClickListener listener) Sets a callback that's invoked when a marker info window is clicked. void setOnInfoWindowCloseListener ( GoogleMap.OnInfoWindowCloseListener listener) Sets a callback that's invoked when a marker's info window is closed. void setOnInfoWindowLongClickListener ( GoogleMap.OnInfoWindowLongClickListener listener) Sets a callback that's invoked when a marker's info window is long pressed. void setOnMapClickListener ( GoogleMap.OnMapClickListener listener) Sets a callback that's invoked when the map is tapped. void setOnMapLoadedCallback ( GoogleMap.OnMapLoadedCallback callback) Sets a callback that's invoked when this map has finished rendering. void setOnMapLongClickListener ( GoogleMap.OnMapLongClickListener listener) Sets a callback that's invoked when the map is long pressed. void setOnMarkerClickListener ( GoogleMap.OnMarkerClickListener listener) Sets a callback that's invoked when a marker is clicked. void setOnMarkerDragListener ( GoogleMap.OnMarkerDragListener listener) Sets a callback that's invoked when a marker is dragged. void setOnMyLocationButtonClickListener ( GoogleMap.OnMyLocationButtonClickListener listener) Sets a callback that's invoked when the my location button is clicked. void setOnMyLocationChangeListener ( GoogleMap.OnMyLocationChangeListener listener) This method is deprecated. use RoadSnappedLocationProvider or com.google.android.gms.location.FusedLocationProviderApi instead, depending on your needs.",
+          "UiSettings getUiSettings () Gets the user interface settings for the map. boolean isBuildingsEnabled () Returns whether 3D buildings layer is enabled. boolean isCameraFollowingMyLocation () Returns whether the camera is following current location or not. boolean isIndoorEnabled () Gets whether indoor maps are currently enabled. boolean isMyLocationEnabled () Gets the status of the my-location layer. boolean isTrafficEnabled () Checks whether the map is drawing traffic data. boolean isTransitEnabled () Checks whether the map is drawing transit data. void moveCamera ( CameraUpdate update) Repositions the camera according to the instructions defined in the update. void removeOnMapCapabilitiesChangedListener ( GoogleMap.OnMapCapabilitiesChangedListener listener) Removes a listener that's invoked when the map capabilities are changed. void resetMinMaxZoomPreference () Removes any previously specified upper and lower zoom bounds. void setBuildingsEnabled (boolean enabled) Turns the 3D buildings layer on or off. void setContentDescription (String description) Sets a contentDescription for the map. boolean setIndoorEnabled (boolean enabled) Sets whether indoor maps should be enabled. void setInfoWindowAdapter ( GoogleMap.InfoWindowAdapter adapter) Sets a custom renderer for the contents of info windows. void setLatLngBoundsForCameraTarget ( LatLngBounds bounds) Specifies a LatLngBounds to constrain the camera target, so that when users scroll and pan the map, the camera target does not move outside these bounds. void setLocationSource ( LocationSource source) Replaces the location source of the my-location layer. void setMapColorScheme (int mapColorScheme) Sets the map rendering color scheme to light, dark, or follow system settings after initialization. boolean setMapStyle ( MapStyleOptions style) Sets the styling of the base map. void setMapType (int type) Sets the type of map tiles that should be displayed. void setMaxZoomPreference (float maxZoomPreference) Sets a preferred upper bound for the camera zoom. void setMinZoomPreference (float minZoomPreference) Sets a preferred lower bound for the camera zoom. void setMyLocationEnabled (boolean enabled) Enables or disables the my-location layer. void setOnCameraChangeListener ( GoogleMap.OnCameraChangeListener listener) This method is deprecated.",
+          "Reinitialize via GoogleMapOptions.mapColorScheme(int) or setMapColorScheme(int) ."
+        ]
+      },
+      {
+        "title": "Customize map styles \\_|\\_ Navigation SDK for Android \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/maps/documentation/navigation/android-sdk/customize-map-styles",
+        "source_id": "site-docs-root",
+        "final_score": 114,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Note: While it is technically possible to define separate styles for the navigation and road map types by associating separate styles with different map IDs, this implementation is not recommended because it requires reloading the map to load the different map ID.",
+          "Apply map styles Once you have map styles associated with a map ID, you can add the ID through a <fragment> element in the activity's layout file, by using the MapView class, or by using the GoogleMapOptions class on a MapFragment , SupportMapFragment , or SupportNavigationFragment instance.",
+          "In particular, you must not remove road networks from the navigation map or significantly reduce color contrast of map features on the navigation map."
+        ]
+      },
+      {
+        "title": "\"GoogleMap.OnMapCapabilitiesChangedListener \\_|\\_ Navigation SDK for Android\\",
+        "url": "https://developers.google.com/maps/documentation/navigation/android-sdk/reference/com/google/android/gms/maps/GoogleMap.OnMapCapabilitiesChangedListener",
+        "source_id": "site-docs-reference",
+        "final_score": 107,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The onMapCapabilitiesChanged method is called when map capabilities are updated, providing information about the available capabilities. public static interface GoogleMap.OnMapCapabilitiesChangedListener Listener interface for when the map capabilities are changed.",
+          "Home Products Google Maps Platform Documentation Android Navigation SDK for Android Reference Send feedback GoogleMap.OnMapCapabilitiesChangedListener Stay organized with collections Save and categorize content based on your preferences.",
+          "Public Method Summary abstract void onMapCapabilitiesChanged ( MapCapabilities availableCapabilities) Called when map capabilities are changed."
+        ]
+      },
+      {
+        "title": "\"GoogleMap.OnMapClickListener \\_|\\_ Navigation SDK for Android \\_|\\_ Google\\",
+        "url": "https://developers.google.com/maps/documentation/navigation/android-sdk/reference/com/google/android/gms/maps/GoogleMap.OnMapClickListener",
+        "source_id": "site-docs-reference",
+        "final_score": 107,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Page Summary outlined flag GoogleMap.OnMapClickListener is an interface to handle user tap interactions on a Google Map. onMapClick() method within this interface is triggered when a user taps on the map, provided no overlays have already handled the event.",
+          "This method provides the geographical coordinates ( LatLng ) of the tapped point and is executed on the Android UI thread. public static interface GoogleMap.OnMapClickListener Callback interface for when the user taps on the map.",
+          "Home Products Google Maps Platform Documentation Android Navigation SDK for Android Reference Send feedback GoogleMap.OnMapClickListener Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.android.gms.location.FusedLocationProviderApi",
+      "developers.google.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://developers.google.com/maps/documentation/navigation/android-sdk/reference/com/google/android/gms/maps/GoogleMap",
+        "https://developers.google.com/maps/documentation/navigation/android-sdk/customize-map-styles",
+        "https://developers.google.com/maps/documentation/navigation/android-sdk/reference/com/google/android/gms/maps/GoogleMap.OnMapCapabilitiesChangedListener",
+        "https://developers.google.com/maps/documentation/navigation/android-sdk/reference/com/google/android/gms/maps/GoogleMap.OnMapClickListener"
+      ]
+    }
+  ]
+}

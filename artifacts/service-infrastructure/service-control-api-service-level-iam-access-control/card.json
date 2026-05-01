@@ -1,0 +1,223 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:46.795Z",
+  "source_step08_card": "data/step-08/current/products/service-infrastructure/card.json",
+  "product_name": "Service Infrastructure",
+  "product_slug": "service-infrastructure",
+  "feature_name": "Service Control API service-level IAM access control",
+  "feature_slug": "service-control-api-service-level-iam-access-control",
+  "summary": "The Service Control API now supports service-level IAM access control for managing permissions at the service scope.",
+  "extended_definition": "The Service Control API now supports service-level IAM access control for managing permissions at the service scope.",
+  "lifecycle": {
+    "latest_feature_date": "2017-05-01",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/service-infrastructure/docs/audit-logging-service-control",
+      "https://docs.cloud.google.com/service-infrastructure/docs/service-control/access-control",
+      "https://docs.cloud.google.com/service-infrastructure/docs/service-control/getting-started",
+      "https://docs.cloud.google.com/service-infrastructure/docs/service-management/access-control"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Service Control API Access Control \\_|\\_ Service Infrastructure \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/service-infrastructure/docs/service-control/access-control",
+        "source_id": "site-iam-reference",
+        "final_score": 270,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The following example uses the gcurl alias defined in the Test with curl section of the Getting started guide: gcurl -d \"{ 'policy': { 'bindings': [ { role: 'roles/servicemanagement.serviceController', members: 'serviceAccount: SERVICE ACCOUNT ' } ] } }\" https://servicemanagement.googleapis.com/v1/services/ YOUR SERVICE NAME /consumers/ CONSUMER PROJECT NUMBER :setIamPolicy Please note the above example will replace all existing consumer project level IAM policies.",
+          "The following example uses the gcurl alias defined in the Test with curl section of the Getting started guide: gcurl -d \"{ 'policy': { 'bindings': [ { role: 'roles/servicemanagement.serviceController', members: 'serviceAccount: SERVICE ACCOUNT ' } ] } }\" https://servicemanagement.googleapis.com/v1/services/ YOUR SERVICE NAME :setIamPolicy Please note the above example will replace all existing service level IAM policies.",
+          "To invoke the Service Control API for a managed service , the caller must have the following Identity and Access Management (IAM) permissions on the service: services.check requires permission servicemanagement.services.check . services.report requires permission servicemanagement.services.report . services.allocateQuota requires permission servicemanagement.services.quota ."
+        ]
+      },
+      {
+        "title": "\"Service Management API Access Control \\_|\\_ Service Infrastructure \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/service-infrastructure/docs/service-management/access-control",
+        "source_id": "site-docs-root",
+        "final_score": 250,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For example: Show the IAM policy of service \"endpointsapis.appspot.com\" . gcloud endpoints services get - iam - policy endpointsapis . appspot . com The above command may produce an output similar to this : bindings : - members : - user : email1 @gmail . com - group : group1 @googlegroups . com role : roles / servicemanagement . serviceConsumer Add a user to \"roles/servicemanagement.serviceConsumer\" role . gcloud endpoints services add - iam - policy - binding endpointsapis . appspot . com --member \"user:email1@gmail.com\" --role \"roles/servicemanagement.serviceConsumer\" Add a group to \"roles/servicemanagement.serviceConsumer\" role . gcloud endpoints services add - iam - policy - binding endpointsapis . appspot . com --member \"group:group1@googlegroups.com\" --role \"roles/servicemanagement.serviceConsumer\" Remove a user from \"roles/servicemanagement.serviceConsumer\" role . gcloud endpoints services remove - iam - policy - binding endpointsapis . appspot . com --member \"user:email1@gmail.com\" --role \"roles/servicemanagement.serviceConsumer\" Remove a group from \"roles/servicemanagement.serviceConsumer\" role . gcloud endpoints services remove - iam - policy - binding endpointsapis . appspot . com --member \"group:group1@googlegroups.com\" --role \"roles/servicemanagement.serviceConsumer\" Managing access using the Service Management API The Service Management API includes the IAM Policy API for managing service-level and consumer-level policies.",
+          "The Service Management API uses Identity and Access Management (Cloud IAM) to control access to managed services and their child resources.",
+          "This page explains the IAM resources, roles, and permissions provided by the Service Management API, and how to use them to control access."
+        ]
+      },
+      {
+        "title": "\"Getting Started with the Service Control API \\_|\\_ Service Infrastructure\\",
+        "url": "https://docs.cloud.google.com/service-infrastructure/docs/service-control/getting-started",
+        "source_id": "site-docs-root",
+        "final_score": 199,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Test with curl First, define a convenient shell alias for calling Google REST APIs: alias gcurl='curl -H \"Authorization: Bearer $(gcloud auth print-access-token)\" -H \"Content-Type: application/json\" ' The following shell command sequence demonstrates the incremental steps to call the Service Control API.",
+          "Enable the Service Control API: Roles required to enable APIs To enable APIs, you need the Service Usage Admin IAM role ( roles/serviceusage.serviceUsageAdmin ), which contains the serviceusage.services.enable permission.",
+          "Enable the Service Control API: Roles required to enable APIs To enable APIs, you need the Service Usage Admin IAM role ( roles/serviceusage.serviceUsageAdmin ), which contains the serviceusage.services.enable permission."
+        ]
+      },
+      {
+        "title": "\"Service Control audit logging \\_|\\_ Service Infrastructure \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/service-infrastructure/docs/audit-logging-service-control",
+        "source_id": "site-iam-reference",
+        "final_score": 179,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "API interface audit logs For information about how and which permissions are evaluated for each method, see the Identity and Access Management documentation for Service Control. google.api.servicecontrol.v1.QuotaController The following audit logs are associated with methods belonging to google.api.servicecontrol.v1.QuotaController .",
+          "For more information about Cloud Audit Logs, see the following: Types of audit logs Audit log entry structure Storing and routing audit logs Cloud Logging pricing summary Enable Data Access audit logs Service name Service Control audit logs use the service name servicecontrol.googleapis.com .",
+          "Permission type Methods OTHER google.api.servicecontrol.v1.QuotaController.AllocateQuota : To enable this log, enable DATA WRITE under the service servicemanagement.googleapis.com . google.api.servicecontrol.v1.ServiceController.Check : To enable this log, enable DATA WRITE under the service servicemanagement.googleapis.com . google.api.servicecontrol.v1.ServiceController.Report : To enable this log, enable DATA WRITE under the service servicemanagement.googleapis.com . google.api.servicecontrol.v2.ServiceController.Check : To enable this log, enable DATA WRITE under the service servicemanagement.googleapis.com . google.api.servicecontrol.v2.ServiceController.Report : To enable this log, enable DATA WRITE under the service servicemanagement.googleapis.com ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "developer.gserviceaccount.com",
+      "endpointsapis.appspot.com",
+      "gmail.com",
+      "googlegroups.com",
+      "servicecontrol.googleapis.com",
+      "servicemanagement.googleapis.com",
+      "servicemanagement.serviceConsumer",
+      "servicemanagement.serviceController",
+      "servicemanagement.services.bind",
+      "servicemanagement.services.check",
+      "servicemanagement.services.create",
+      "servicemanagement.services.delete",
+      "servicemanagement.services.get",
+      "servicemanagement.services.getIamPolicy",
+      "servicemanagement.services.list",
+      "servicemanagement.services.quota",
+      "servicemanagement.services.report",
+      "servicemanagement.services.setIamPolicy",
+      "servicemanagement.services.update",
+      "services.allocateQuota",
+      "services.check",
+      "services.report",
+      "serviceusage.services.enable",
+      "serviceusage.serviceUsageAdmin"
+    ],
+    "missing_inventory_roles": [
+      "roles/servicemanagement.serviceConsumer",
+      "roles/servicemanagement.serviceController",
+      "roles/serviceusage.serviceUsageAdmin"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-infrastructure/docs/service-control/access-control",
+        "https://docs.cloud.google.com/service-infrastructure/docs/service-management/access-control",
+        "https://docs.cloud.google.com/service-infrastructure/docs/service-control/getting-started",
+        "https://docs.cloud.google.com/service-infrastructure/docs/audit-logging-service-control"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-infrastructure/docs/service-control/access-control",
+        "https://docs.cloud.google.com/service-infrastructure/docs/service-management/access-control",
+        "https://docs.cloud.google.com/service-infrastructure/docs/service-control/getting-started",
+        "https://docs.cloud.google.com/service-infrastructure/docs/audit-logging-service-control"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-infrastructure/docs/service-control/access-control",
+        "https://docs.cloud.google.com/service-infrastructure/docs/service-management/access-control",
+        "https://docs.cloud.google.com/service-infrastructure/docs/service-control/getting-started",
+        "https://docs.cloud.google.com/service-infrastructure/docs/audit-logging-service-control"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-infrastructure/docs/service-control/access-control",
+        "https://docs.cloud.google.com/service-infrastructure/docs/service-management/access-control",
+        "https://docs.cloud.google.com/service-infrastructure/docs/service-control/getting-started",
+        "https://docs.cloud.google.com/service-infrastructure/docs/audit-logging-service-control"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-infrastructure/docs/service-control/access-control",
+        "https://docs.cloud.google.com/service-infrastructure/docs/service-management/access-control",
+        "https://docs.cloud.google.com/service-infrastructure/docs/service-control/getting-started",
+        "https://docs.cloud.google.com/service-infrastructure/docs/audit-logging-service-control"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-infrastructure/docs/service-control/access-control",
+        "https://docs.cloud.google.com/service-infrastructure/docs/service-management/access-control",
+        "https://docs.cloud.google.com/service-infrastructure/docs/service-control/getting-started",
+        "https://docs.cloud.google.com/service-infrastructure/docs/audit-logging-service-control"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-infrastructure/docs/service-control/access-control",
+        "https://docs.cloud.google.com/service-infrastructure/docs/service-management/access-control",
+        "https://docs.cloud.google.com/service-infrastructure/docs/service-control/getting-started",
+        "https://docs.cloud.google.com/service-infrastructure/docs/audit-logging-service-control"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-infrastructure/docs/service-control/access-control",
+        "https://docs.cloud.google.com/service-infrastructure/docs/service-management/access-control",
+        "https://docs.cloud.google.com/service-infrastructure/docs/service-control/getting-started",
+        "https://docs.cloud.google.com/service-infrastructure/docs/audit-logging-service-control"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-infrastructure/docs/service-control/access-control",
+        "https://docs.cloud.google.com/service-infrastructure/docs/service-management/access-control",
+        "https://docs.cloud.google.com/service-infrastructure/docs/service-control/getting-started",
+        "https://docs.cloud.google.com/service-infrastructure/docs/audit-logging-service-control"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-infrastructure/docs/service-control/access-control",
+        "https://docs.cloud.google.com/service-infrastructure/docs/service-management/access-control",
+        "https://docs.cloud.google.com/service-infrastructure/docs/service-control/getting-started",
+        "https://docs.cloud.google.com/service-infrastructure/docs/audit-logging-service-control"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-infrastructure/docs/service-control/access-control",
+        "https://docs.cloud.google.com/service-infrastructure/docs/service-management/access-control",
+        "https://docs.cloud.google.com/service-infrastructure/docs/service-control/getting-started",
+        "https://docs.cloud.google.com/service-infrastructure/docs/audit-logging-service-control"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,186 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:27.901Z",
+  "source_step08_card": "data/step-08/current/products/cloud-sql-for-sql-server/card.json",
+  "product_name": "Cloud SQL for SQL Server",
+  "product_slug": "cloud-sql-for-sql-server",
+  "feature_name": "TLS connections to Active Directory endpoints without server certificate trust",
+  "feature_slug": "tls-connections-to-active-directory-endpoints-without-server-certificate-trust",
+  "summary": "This capability enables TLS connections to Active Directory endpoints without requiring trusted server certificates or IP-address-based access.",
+  "extended_definition": "This capability enables TLS connections to Active Directory endpoints without requiring trusted server certificates or IP-address-based access.",
+  "lifecycle": {
+    "latest_feature_date": "2025-05-14",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/sql/docs/sqlserver/ad",
+      "https://docs.cloud.google.com/sql/docs/sqlserver/admin-api/metrics",
+      "https://docs.cloud.google.com/sql/docs/sqlserver/troubleshooting"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Overview of Managed Microsoft AD in Cloud SQL \\_|\\_ Cloud SQL for SQL Server\\",
+        "url": "https://docs.cloud.google.com/sql/docs/sqlserver/ad",
+        "source_id": "site-docs-reference-required-4",
+        "final_score": 120,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Active Directory endpoints and TLS connections If you're using Windows Authentication and you want to establish a TLS connection without trusting the server certificate, you must rotate the certificates after Windows Authentication is enabled on the instance.",
+          "If your Managed Microsoft AD is in a different project, AD PROJECT ID should be the one containing the Managed Service for Microsoft Active Directory instance, while the service account's SQL PROJECT NUMBER should be the one containing the SQL Server instance: gcloud projects add-iam-policy-binding AD PROJECT ID \\ --member = serviceAccount:service- SQL PROJECT NUMBER @gcp-sa-cloud-sql.iam.gserviceaccount.com \\ --role = roles/managedidentities.sqlintegrator Also see gcloud beta services identity create .",
+          "MySQL PostgreSQL SQL Server You can integrate Cloud SQL for SQL Server with Managed Service for Microsoft Active Directory (also called Managed Microsoft AD)."
+        ]
+      },
+      {
+        "title": "Troubleshoot \\_|\\_ Cloud SQL for SQL Server \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/sql/docs/sqlserver/troubleshooting",
+        "source_id": "site-docs-root",
+        "final_score": 120,
+        "relevance": "",
+        "evidence_snippets": [
+          "Execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method GET -Headers $headers ` -Uri \"https://compute.googleapis.com/compute/v1/projects/ PROJECT ID /regions/ REGION NAME /forwardingRules/ ENDPOINT NAME \" Select-Object -Expand Content You should receive a JSON response similar to the following: { \"kind\": \"compute#forwardingRule\", \"id\": \" ENDPOINT ID \", \"creationTimestamp\": \"2024-05-09T12:03:21.383-07:00\", \"name\": \" ENDPOINT NAME \", \"region\": \"https://www.googleapis.com/compute/v1/projects/ PROJECT ID /regions/ REGION NAME \", \"IPAddress\": \" IP ADDRESS \", \"target\": \"https://www.googleapis.com/compute/v1/projects/ PROJECT ID /regions/ REGION NAME /serviceAttachments/ SERVICE ATTACHMENT NAME \", \"selfLink\": \"https://www.googleapis.com/compute/v1/projects/ PROJECT ID /regions/ REGION NAME /forwardingRules/ ENDPOINT NAME \", \"network\": \"https://www.googleapis.com/compute/v1/projects/ PROJECT ID /global/networks/default\", \"serviceDirectoryRegistrations\": [ { \"namespace\": \"goog-psc-default\" } ], \"networkTier\": \"PREMIUM\", \"labelFingerprint\": \" LABEL FINGERPRINT ID \", \"fingerprint\": \" FINGERPRINT ID \", \"pscConnectionId\": \" CONNECTION ID \", \"pscConnectionStatus\": \"ACCEPTED\", \"allowPscGlobalAccess\": true } Verify that the status of the endpoint is ACCEPTED .",
+          "To do this, run the following command: EXEC master.dbo.sp addlinkedserver @server = N ' LINKED SERVER NAME ' , @srvproduct = N '' , @provider = N 'MSOLEDBSQL' , @datasrc = N ' TARGET SERVER ID ' , @provstr = N 'Encrypt=yes;TrustServerCertificate=yes;User ID= USER ID ' Replace the following: LINKED SERVER NAME with the name of the linked server.",
+          "Verify that the DNS names that you want to add to the server certificate of a Cloud SQL instance meet the following criteria: They don't have wildcard characters."
+        ]
+      },
+      {
+        "title": "Cloud SQL metrics \\_|\\_ Cloud SQL for SQL Server \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/sql/docs/sqlserver/admin-api/metrics",
+        "source_id": "site-api-reference",
+        "final_score": 111,
+        "relevance": "",
+        "evidence_snippets": [
+          "After sampling, data is not visible for up to 165 seconds. per database/conn pool/client connections GA (project) Client connections GAUGE , INT64 , 1 cloudsql instance database Number of client connections per database grouped by status. status : Status of the client connection e.g. 'active' or 'waiting'. per database/conn pool/client connections attempts count GA (project) Client connection attempts count CUMULATIVE , INT64 , 1 cloudsql instance database Number of client connection attempts received per database. per database/conn pool/client connections avg wait time GA (project) Average wait time GAUGE , INT64 , us cloudsql instance database Average wait time spent by clients waiting for a server connection per database in microseconds. per database/conn pool/client connections error count GA (project) Error count CUMULATIVE , INT64 , 1 cloudsql instance database Count of errors that cause client disconnection including auth error, client connection setup error, server connection error and timeout errors. per database/conn pool/num pools GA (project) Number of connection pools GAUGE , INT64 , 1 cloudsql instance database Number of connection pools per database. per database/conn pool/server connections GA (project) Server connections GAUGE , INT64 , 1 cloudsql instance database Number of server connections per database grouped by status. status : Status of the server connection e.g. 'active' or 'idle'. per database/postgresql/external sync/initial sync complete GA (project) External server migration phase GAUGE , BOOL , cloudsql instance database Migration phase of each database on the external server (ES) replica.",
+          "After sampling, data is not visible for up to 165 seconds. status : Status of the connection pool threads e.g. 'active' or 'idle'. database/mysql/connections count GA (project) MySQL Connections Count DELTA , INT64 , 1 cloudsql database Connection attempts (successful or not) to the MySQL server, since the last sample.",
+          "After sampling, data is not visible for up to 165 seconds. state : Database state, for example, 'ONLINE' or 'SUSPECT'. recovery model : Database recovery model, one of [FULL, BULK LOGGED, SIMPLE]. is cdc enabled : (BOOL) Indicates whether CDC is enabled. is published : (BOOL) Indicates whether a database is published. auto close : (BOOL) Indicates whether auto-close is enabled on a database. database/sqlserver/memory/buffer cache hit ratio GA (project) Buffer cache hit ratio GAUGE , DOUBLE , % cloudsql database Current percentage of pages found in the buffer cache without having to read from disk."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "compute.googleapis.com",
+      "e.g",
+      "managedidentities.sqlintegrator",
+      "master.dbo.sp",
+      "sql.iam.gserviceaccount.com"
+    ],
+    "missing_inventory_roles": [
+      "roles/managedidentities.sqlintegrator"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/ad",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/troubleshooting",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/admin-api/metrics"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/ad",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/troubleshooting",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/admin-api/metrics"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/ad",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/troubleshooting",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/admin-api/metrics"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/ad",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/troubleshooting",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/admin-api/metrics"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/ad",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/troubleshooting",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/admin-api/metrics"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/ad",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/troubleshooting",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/admin-api/metrics"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/ad",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/troubleshooting",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/admin-api/metrics"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/ad",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/troubleshooting",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/admin-api/metrics"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/ad",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/troubleshooting",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/admin-api/metrics"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/ad",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/troubleshooting",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/admin-api/metrics"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/ad",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/troubleshooting",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/admin-api/metrics"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/ad",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/troubleshooting",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/admin-api/metrics"
+      ]
+    }
+  ]
+}

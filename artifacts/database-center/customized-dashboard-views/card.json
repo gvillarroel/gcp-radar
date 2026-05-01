@@ -1,0 +1,108 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:32.655Z",
+  "source_step08_card": "data/step-08/current/products/database-center/card.json",
+  "product_name": "Database Center",
+  "product_slug": "database-center",
+  "feature_name": "Customized dashboard views",
+  "feature_slug": "customized-dashboard-views",
+  "summary": "Database Center lets users create personal or shared dashboard views filtered to selected health issues.",
+  "extended_definition": "Database Center lets users create personal or shared dashboard views filtered to selected health issues.",
+  "lifecycle": {
+    "latest_feature_date": "2025-04-09",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/database-center/docs/customize-database-fleet-view",
+      "https://docs.cloud.google.com/database-center/docs/dashboard-views",
+      "https://docs.cloud.google.com/python/docs/reference/google-cloud-databasecenter/latest/google.cloud.databasecenter_v1beta.services.database_center.DatabaseCenterAsyncClient",
+      "https://docs.cloud.google.com/python/docs/reference/google-cloud-databasecenter/latest/google.cloud.databasecenter_v1beta.services.database_center.DatabaseCenterClient"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Create customized dashboard views \\_|\\_ Database Center \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/database-center/docs/dashboard-views",
+        "source_id": "site-docs-root",
+        "final_score": 353,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Databases Database Center Guides Send feedback Create customized dashboard views Stay organized with collections Save and categorize content based on your preferences.",
+          "Database Center lets you create a customized dashboard view that shows only the health issues in your database fleet that you want to see.",
+          "To create a dashboard view, do the following: In the Google Cloud console, go to the Database Center page."
+        ]
+      },
+      {
+        "title": "\"Class DatabaseCenterAsyncClient (0.7.0) \\_|\\_ Python client libraries \\_\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/google-cloud-databasecenter/latest/google.cloud.databasecenter_v1beta.services.database_center.DatabaseCenterAsyncClient",
+        "source_id": "site-python-reference",
+        "final_score": 188,
+        "relevance": "",
+        "evidence_snippets": [
+          "Returns Type Description google.cloud.databasecenter v1beta.types.AggregateIssueStatsResponse The response message containing one of more group of relevant health issues for database resources. common billing account path common billing account path ( billing account : str ) - > str Returns a fully-qualified billing account string. common folder path common folder path ( folder : str ) - > str Returns a fully-qualified folder string. common location path common location path ( project : str , location : str ) - > str Returns a fully-qualified location string. common organization path common organization path ( organization : str ) - > str Returns a fully-qualified organization string. common project path common project path ( project : str ) - > str Returns a fully-qualified project string. from service account file from service account file ( filename : str , args , kwargs ) Creates an instance of this client using the provided credentials file.",
+          "It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import databasecenter v1beta async def sample query database resource groups(): Create a client client = databasecenter v1beta .",
+          "It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import databasecenter v1beta async def sample aggregate issue stats(): Create a client client = databasecenter v1beta ."
+        ]
+      },
+      {
+        "title": "\"Class DatabaseCenterClient (0.7.0) \\_|\\_ Python client libraries \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/google-cloud-databasecenter/latest/google.cloud.databasecenter_v1beta.services.database_center.DatabaseCenterClient",
+        "source_id": "site-python-reference",
+        "final_score": 188,
+        "relevance": "",
+        "evidence_snippets": [
+          "Returns Type Description google.cloud.databasecenter v1beta.types.AggregateIssueStatsResponse The response message containing one of more group of relevant health issues for database resources. common billing account path common billing account path ( billing account : str ) - > str Returns a fully-qualified billing account string. common folder path common folder path ( folder : str ) - > str Returns a fully-qualified folder string. common location path common location path ( project : str , location : str ) - > str Returns a fully-qualified location string. common organization path common organization path ( organization : str ) - > str Returns a fully-qualified organization string. common project path common project path ( project : str ) - > str Returns a fully-qualified project string. from service account file from service account file ( filename : str , args , kwargs ) Creates an instance of this client using the provided credentials file.",
+          "It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import databasecenter v1beta def sample query database resource groups(): Create a client client = databasecenter v1beta .",
+          "It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import databasecenter v1beta def sample aggregate issue stats(): Create a client client = databasecenter v1beta ."
+        ]
+      },
+      {
+        "title": "\"Customize your database fleet view \\_|\\_ Database Center \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/database-center/docs/customize-database-fleet-view",
+        "source_id": "site-docs-root",
+        "final_score": 182,
+        "relevance": "",
+        "evidence_snippets": [
+          "Select the following information, which affects the information that's displayed on the Overview and All Resources in the Database Center dashboard: Projects: You can select Google Cloud projects when the scope is at an organization level.",
+          "Database Center When you open Database Center for the first time, the dashboard displays all available databases, database resources, health issues, and database issues for your selected scope.",
+          "To remove health issues from the Database Center dashboard, follow these steps: In the Google Cloud console, go to the Database Center page."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "googleapis.dev",
+      "options.html",
+      "v1beta.types.AggregateIssueStatsResponse"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/database-center/docs/dashboard-views",
+        "https://docs.cloud.google.com/python/docs/reference/google-cloud-databasecenter/latest/google.cloud.databasecenter_v1beta.services.database_center.DatabaseCenterAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/google-cloud-databasecenter/latest/google.cloud.databasecenter_v1beta.services.database_center.DatabaseCenterClient",
+        "https://docs.cloud.google.com/database-center/docs/customize-database-fleet-view"
+      ]
+    }
+  ]
+}

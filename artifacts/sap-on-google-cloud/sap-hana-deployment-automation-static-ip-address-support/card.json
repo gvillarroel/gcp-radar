@@ -1,0 +1,94 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:45.969Z",
+  "source_step08_card": "data/step-08/current/products/sap-on-google-cloud/card.json",
+  "product_name": "SAP on Google Cloud",
+  "product_slug": "sap-on-google-cloud",
+  "feature_name": "SAP HANA deployment automation static IP address support",
+  "feature_slug": "sap-hana-deployment-automation-static-ip-address-support",
+  "summary": "Terraform-based SAP HANA deployment automation can assign static IP addresses to master, worker, standby, primary, and secondary VM instances.",
+  "extended_definition": "Terraform-based SAP HANA deployment automation can assign static IP addresses to master, worker, standby, primary, and secondary VM instances.",
+  "lifecycle": {
+    "latest_feature_date": "2023-06-12",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/sap/docs/architectures/sap-s4hana-on-gcp",
+      "https://docs.cloud.google.com/sap/docs/sap-hana-ha-config-sles",
+      "https://docs.cloud.google.com/sap/docs/sap-hana-ha-dm-deployment"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Deployment Manager: SAP HANA scale-up high-availability cluster configuration\\",
+        "url": "https://docs.cloud.google.com/sap/docs/sap-hana-ha-dm-deployment",
+        "source_id": "site-docs-reference-required-3",
+        "final_score": 196,
+        "relevance": "",
+        "evidence_snippets": [
+          "The guide uses Cloud Deployment Manager to deploy two Compute Engine virtual machines (VMs), two SAP HANA scale up systems, a virtual IP address (VIP) with an internal passthrough Network Load Balancer implementation, and an OS-based HA cluster, all according to the best practices from Google Cloud, SAP, and the OS vendor.",
+          "This guide shows you how to automate the deployment of SAP HANA in a Red Hat Enterprise Linux (RHEL) or SUSE Linux Enterprise Server (SLES) high-availability (HA) cluster that uses an internal passthrough Network Load Balancer to manage the virtual IP (VIP) address.",
+          "For the initial deployment of your SAP HANA system or resizing the machine to increase the number of NUMA nodes, make sure that SAP HANA is running during the execution of automation script that Google Cloud provides to enable SAP HANA Fast Restart."
+        ]
+      },
+      {
+        "title": "\"HA scale-up cluster configuration guide for SAP HANA on SLES \\_|\\_ SAP on\\",
+        "url": "https://docs.cloud.google.com/sap/docs/sap-hana-ha-config-sles",
+        "source_id": "site-docs-reference-required-2",
+        "final_score": 193,
+        "relevance": "",
+        "evidence_snippets": [
+          "Reload the systemd manager configuration. systemctl daemon-reload Confirm the drop-in file was created: service corosync status You should see a line for the drop-in file, as shown in the following example: ● corosync.service - Corosync Cluster Engine Loaded: loaded (/usr/lib/systemd/system/corosync.service; disabled; vendor preset: disabled) Drop-In: /etc/systemd/system/corosync.service.d └─override.conf Active: active (running) since Tue 2021-07-20 23:45:52 UTC; 2 days ago Create a local cluster IP resource for the VIP address To configure the VIP address in the operating system, create a local cluster IP resource for the VIP address that you reserved earlier: crm configure primitive rsc vip int-primary IPaddr2 \\ params ip= vip-address cidr netmask=32 nic=\"lo\" op monitor interval=3600s timeout=60s Note: To ensure that the SAP HANA cluster is future compatible and supports systemd dynamic NIC naming convention, use the loopback interface ( lo ) with the IPaddr2 resource configuration instead of a static interface name like ethX or ensX .",
+          "For the initial deployment of your SAP HANA system or resizing the machine to increase the number of NUMA nodes, make sure that SAP HANA is running during the execution of automation script that Google Cloud provides to enable SAP HANA Fast Restart.",
+          "Confirm IP address reservation: $ gcloud compute addresses describe VIP NAME \\ --region CLUSTER REGION You should see output similar to the following example: address: 10.0.0.19 addressType: INTERNAL creationTimestamp: '2020-05-20T14:19:03.109-07:00' description: '' id: '8961491304398200872' kind: compute#address name: vip-for-hana-ha networkTier: PREMIUM purpose: GCE ENDPOINT region: https://www.googleapis.com/compute/v1/projects/example-project-123456/regions/us-central1 selfLink: https://www.googleapis.com/compute/v1/projects/example-project-123456/regions/us-central1/addresses/vip-for-hana-ha status: RESERVED subnetwork: https://www.googleapis.com/compute/v1/projects/example-project-123456/regions/us-central1/subnetworks/example-subnet-us-central1 Create instance groups for your host VMs In Cloud Shell, create two unmanaged instance groups and assign the primary master host VM to one and the secondary master host VM to the other: $ gcloud compute instance-groups unmanaged create PRIMARY IG NAME \\ --zone= PRIMARY ZONE $ gcloud compute instance-groups unmanaged add-instances PRIMARY IG NAME \\ --zone= PRIMARY ZONE \\ --instances= PRIMARY HOST NAME $ gcloud compute instance-groups unmanaged create SECONDARY IG NAME \\ --zone= SECONDARY ZONE $ gcloud compute instance-groups unmanaged add-instances SECONDARY IG NAME \\ --zone= SECONDARY ZONE \\ --instances= SECONDARY HOST NAME Confirm the creation of the instance groups: $ gcloud compute instance-groups unmanaged list You should see output similar to the following example: NAME ZONE NETWORK NETWORK PROJECT MANAGED INSTANCES hana-ha-ig-1 us-central1-a example-network example-project-123456 No 1 hana-ha-ig-2 us-central1-c example-network example-project-123456 No 1 Create a Compute Engine health check In Cloud Shell, create the health check."
+        ]
+      },
+      {
+        "title": "\"Reference architecture: SAP S/4HANA on Google Cloud \\_|\\_ SAP on Google\\",
+        "url": "https://docs.cloud.google.com/sap/docs/architectures/sap-s4hana-on-gcp",
+        "source_id": "site-docs-reference",
+        "final_score": 169,
+        "relevance": "",
+        "evidence_snippets": [
+          "SAP Note 2456432 - SAP Applications on Google Cloud: Supported Products and Google Cloud machine types 2446441 - Linux on Google Cloud Platform (IaaS): Adaption of your SAP License 2456953 - Windows on Google Cloud (IaaS): Adaption of your SAP License 1380654 - SAP support in public cloud environments SAP Note 2456406 - SAP on Google Cloud Platform: Support Prerequisites Deployment automation To install SAP S/4HANA on Google Cloud, you can use the following deployment options: To automate the deployment of a distributed or distributed with high availability (HA) system, you can use the Guided Deployment Automation tool in Workload Manager.",
+          "To automate the deployment of a centralized or distributed SAP HANA system, you can use the Terraform configurations provided by Google Cloud.",
+          "For an overview about the alternative solutions that you can use to manage single points of failure, see the following sections in this guide: Availability and continuity Deployment architecture for SAP HANA Deployment architecture for SAP S/4HANA Availability and continuity During the planning phase of implementing an SAP S/4HANA system, you need to specify the following data points for defining the system's availability and continuity: Service Level Objectives (SLO) : A target value or range of values for a service level that is measured by a service level indicator (SLI)."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "corosync.service",
+      "corosync.service.d",
+      "override.conf"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sap/docs/sap-hana-ha-dm-deployment",
+        "https://docs.cloud.google.com/sap/docs/sap-hana-ha-config-sles",
+        "https://docs.cloud.google.com/sap/docs/architectures/sap-s4hana-on-gcp"
+      ]
+    }
+  ]
+}

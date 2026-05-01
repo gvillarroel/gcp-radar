@@ -1,0 +1,83 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:46.903Z",
+  "source_step08_card": "data/step-08/current/products/spanner/card.json",
+  "product_name": "Spanner",
+  "product_slug": "spanner",
+  "feature_name": "Spanner GoogleSQL SAFE.ML.PREDICT() function",
+  "feature_slug": "spanner-googlesql-safe-ml-predict-function",
+  "summary": "Adds support for the SAFE.ML.PREDICT() function in GoogleSQL so prediction statements can return NULL instead of an error.",
+  "extended_definition": "Adds support for the SAFE.ML.PREDICT() function in GoogleSQL so prediction statements can return NULL instead of an error.",
+  "lifecycle": {
+    "latest_feature_date": "2024-04-09",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/spanner/docs/backfill-embeddings",
+      "https://docs.cloud.google.com/spanner/docs/ml-tutorial"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Generate vector embeddings for textual data in bulk using partitioned DML\\",
+        "url": "https://docs.cloud.google.com/spanner/docs/backfill-embeddings",
+        "source_id": "site-docs-root",
+        "final_score": 190,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "EMBEDDING VERSION COLUMN = MODEL VERSION WHERE FILTER CONDITION ; Replace the following: TABLE NAME : the name of the table with the textual data EMBEDDING COLUMN NAME : the name of the column in which you want to add generated embeddings DATA COLUMN NAME : the name of the column with the textual data MODEL NAME : the name of the Vertex AI embedding model MAX ROWS : the maximum number of rows per RPC EMBEDDING VERSION COLUMN : the column that manages the version of the embedding model used to backfill your embeddings MODEL VERSION : the version of the text embedding model FILTER CONDITION : a partitionable filter condition that you want to apply Using SAFE.ML.PREDICT returns NULL for failed requests.",
+          "You can also use SAFE.ML.PREDICT in combination with a WHERE embedding column IS NULL filter to rerun your query without computing the embeddings for the fields that are already computed.",
+          "ML PREDICT ROW ( 'projects/ PROJECT /locations/ LOCATION /publishers/google/models/ $MODEL NAME ' , JSONB BUILD OBJECT ( 'instances' , JSONB BUILD ARRAY ( JSONB BUILD OBJECT ( 'content' , DATA COLUMN NAME ))) ) / @ remote udf max rows per rpc= MAX ROWS / - > 'predictions' - > 0 - > 'embeddings' - > 'values' ), EMBEDDING VERSION COLUMN = MODEL VERSION WHERE FILTER CONDITION ; Replace the following: TABLE NAME : the name of the table with the textual data EMBEDDING COLUMN NAME : the name of the column in which you want to add generated embeddings DATA COLUMN NAME : the name of the column with the textual data PROJECT : the project hosting the Vertex AI endpoint LOCATION : the location of the Vertex AI endpoint MODEL NAME : the name of the Vertex AI embedding model MODEL VERSION : the version of the Vertex AI embedding model MAX ROWS : the maximum number of rows per RPC EMBEDDING VERSION COLUMN : the column that manages the version of the text embedding model used to backfill your embeddings FILTER CONDITION : a partitionable filter condition that you want to apply An example backfill query for the products table: GoogleSQL UPDATE products SET products . desc embed = ( SELECT embeddings . values FROM SAFE ."
+        ]
+      },
+      {
+        "title": "Generate ML predictions using SQL \\_|\\_ Spanner \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/spanner/docs/ml-tutorial",
+        "source_id": "site-docs-root",
+        "final_score": 150,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "You can also use SAFE.ML.PREDICT to return null instead of an error in your predictions.",
+          "Spanner Vertex AI integration gives you the ability to generate predictions using your SQL code by calling the ML.PREDICT function for GoogleSQL or the spanner.ML PREDICT ROW function for PostgreSQL.",
+          "GoogleSQL Use the ML.PREDICT GoogleSQL function with the model in a Vertex AI endpoint to generate your prediction."
+        ]
+      },
+      {
+        "title": "Gerar previsões de ML usando SQL | Spanner | Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/spanner/docs/ml-tutorial",
+        "source_id": "feature-recovery-http",
+        "final_score": 89,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Também é possível usar SAFE.ML.PREDICT para retornar null em vez de um erro nas previsões.",
+          "A integração da Vertex AI com o Spanner permite gerar previsões usando o código SQL chamando a ML.PREDICT função para o GoogleSQL ou a spanner.ML_PREDICT_ROW função para o PostgreSQL.",
+          "Selecione um modelo Ao usar a função ML.PREDICT (para GoogleSQL) ou spanner.ML_PREDICT_ROW (para PostgreSQL), especifique o local do modelo de ML."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "spanner.ML",
+      "spanner.ML_PREDICT_ROW"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": []
+}

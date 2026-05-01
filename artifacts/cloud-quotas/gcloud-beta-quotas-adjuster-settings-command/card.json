@@ -1,0 +1,155 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:25.749Z",
+  "source_step08_card": "data/step-08/current/products/cloud-quotas/card.json",
+  "product_name": "Cloud Quotas",
+  "product_slug": "cloud-quotas",
+  "feature_name": "gcloud beta quotas adjuster settings command",
+  "feature_slug": "gcloud-beta-quotas-adjuster-settings-command",
+  "summary": "Cloud Quotas provides a beta gcloud command to view or manage quota adjuster settings.",
+  "extended_definition": "Cloud Quotas provides a beta gcloud command to view or manage quota adjuster settings.",
+  "lifecycle": {
+    "latest_feature_date": "2025-01-30",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/docs/quotas/custom-constraints",
+      "https://docs.cloud.google.com/docs/quotas/gcloud-cli-examples",
+      "https://docs.cloud.google.com/docs/quotas/quota-adjuster",
+      "https://docs.cloud.google.com/docs/quotas/view-manage"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Manage quotas using the gcloud beta CLI \\_|\\_ Cloud Quotas \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/docs/quotas/gcloud-cli-examples",
+        "source_id": "site-docs-reference",
+        "final_score": 296,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Optional: To view the current quota adjuster settings, run the following command: gcloud beta quotas adjuster settings describe --project= RESOURCE PROJECT ID The output is similar to the following example: enablement: ENABLED etag: 8izmJp6EI mOfLyhkQU9 name: projects/ RESOURCE PROJECT ID /locations/global/quotaAdjusterSettings updateTime: '2025-01-10T17:22:37.883221181Z' To enable quota adjuster for multiple client projects, follow the previous steps 5 to 8.",
+          "Activate the service account using the service account key that you created earlier: gcloud auth activate-service-account --key-file= KEY FILE Enable quota adjuster on your resource project by specifying the project and the enablement setting: gcloud beta quotas adjuster settings update --project= RESOURCE PROJECT ID \\ --enablement= enabled The enablement setting is required when using the gcloud CLI and must be set to enabled or disabled .",
+          "Example gcloud quota information commands This section provides examples that show how to use gcloud beta quotas info commands to view quota information for a particular service or for an organization."
+        ]
+      },
+      {
+        "title": "Use the quota adjuster \\_|\\_ Cloud Quotas \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/docs/quotas/quota-adjuster",
+        "source_id": "site-docs-reference",
+        "final_score": 246,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "This updates the enablement status to enabled . gcloud Authenticate using the gcloud CLI: gcloud auth login To enable quota adjuster settings, use the gcloud beta quotas adjuster settings update command .",
+          "This updates the enablement status to disabled . gcloud Authenticate to the gcloud CLI: gcloud auth login To disable quota adjuster settings, use the gcloud beta quotas adjuster settings update command .",
+          "Disable quota adjuster on an organization To specify an organization , use the --organization flag: gcloud beta quotas adjuster settings update --organization= ORGANIZATION ID --enablement=disabled Replace ORGANIZATION ID with the organization ID of the organization for which you want to disable the quota adjuster."
+        ]
+      },
+      {
+        "title": "Use custom organization policies \\_|\\_ Cloud Quotas \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/docs/quotas/custom-constraints",
+        "source_id": "site-docs-reference",
+        "final_score": 207,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Test the policy To test the policy, create a quota preference request: For example, run the following gcloud CLI command to create a quota preference for Compute Engine: gcloud beta quotas preferences create \\ --service = compute.googleapis.com \\ --quota-id = CPUS-per-project-region \\ --preferred-value = 30 \\ --project = PROJECT ID The output is similar to the following: Operation denied by org policy on resource 'projects/ PROJECT ID /locations/global': [\"customConstraints/custom.restrictCPUsPerProjectRegion\": \"Deny quota change for the 'CPUS-per-project-region' quota ID of 'compute.googleapis.com' service.\"] Delete the example policy and constraint After you have tested the policy, you can delete it: Delete the policy: gcloud org-policies delete custom.restrictCPUsPerProjectRegion --project = PROJECT ID Delete the constraint: gcloud org-policies delete-custom-constraint custom.restrictCPUsPerProjectRegion \\ --organization = ORGANIZATION ID Example custom organization policies for common use cases This table provides syntax examples for some common custom constraints.",
+          "Apply the constraint: gcloud org-policies set-custom-constraint quota-constraint.yaml Verify that the constraint exists: gcloud org-policies list-custom-constraints --organization = ORGANIZATION ID The output is similar to the following: CUSTOM CONSTRAINT ACTION TYPE METHOD TYPES RESOURCE TYPES DISPLAY NAME custom.restrictCPUsPerProjectRegion DENY CREATE,UPDATE cloudquotas.googleapis.com/QuotaPreference Restrict quota update for compute CPUS-per-project-region Create the policy Save the following file as quota-policy.yaml : name : projects/ PROJECT ID /policies/custom.restrictCPUsPerProjectRegion spec : rules : - enforce : true Replace PROJECT ID with your project ID.",
+          "After you verify that the organization policy in dry-run mode works as intended, set the live policy with the org-policies set-policy command and the spec flag: gcloud org-policies set-policy POLICY PATH --update-mask = spec Replace POLICY PATH with the full path to your organization policy YAML file."
+        ]
+      },
+      {
+        "title": "View and manage quotas \\_|\\_ Cloud Quotas \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/docs/quotas/view-manage",
+        "source_id": "site-docs-root",
+        "final_score": 205,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For a complete list of gcloud beta quotas commands and flags, see the gcloud beta quotas section of the Google Cloud CLI reference. gcloud beta quotas info gcloud beta quotas preferences Request project quota For more information about requesting additional project quotas , refer to the Project quota requests support article.",
+          "See the following sections for more information: For example gcloud beta quotas info and gcloud beta quotas preferences commands, see Use the gcloud CLI to view and manage quotas .",
+          "Manage quotas using the gcloud CLI To use the gcloud CLI, make sure you have installed and initialized the latest version of the gcloud CLI, including the beta commands component."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cloudquotas.googleapis.com",
+      "compute.googleapis.com",
+      "constraint.yaml",
+      "custom.restrictCPUsPerProjectRegion",
+      "policy.yaml"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/docs/quotas/gcloud-cli-examples",
+        "https://docs.cloud.google.com/docs/quotas/quota-adjuster",
+        "https://docs.cloud.google.com/docs/quotas/custom-constraints",
+        "https://docs.cloud.google.com/docs/quotas/view-manage"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/docs/quotas/gcloud-cli-examples",
+        "https://docs.cloud.google.com/docs/quotas/quota-adjuster",
+        "https://docs.cloud.google.com/docs/quotas/custom-constraints",
+        "https://docs.cloud.google.com/docs/quotas/view-manage"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/docs/quotas/gcloud-cli-examples",
+        "https://docs.cloud.google.com/docs/quotas/quota-adjuster",
+        "https://docs.cloud.google.com/docs/quotas/custom-constraints",
+        "https://docs.cloud.google.com/docs/quotas/view-manage"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/docs/quotas/gcloud-cli-examples",
+        "https://docs.cloud.google.com/docs/quotas/quota-adjuster",
+        "https://docs.cloud.google.com/docs/quotas/custom-constraints",
+        "https://docs.cloud.google.com/docs/quotas/view-manage"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/docs/quotas/gcloud-cli-examples",
+        "https://docs.cloud.google.com/docs/quotas/quota-adjuster",
+        "https://docs.cloud.google.com/docs/quotas/custom-constraints",
+        "https://docs.cloud.google.com/docs/quotas/view-manage"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/docs/quotas/gcloud-cli-examples",
+        "https://docs.cloud.google.com/docs/quotas/quota-adjuster",
+        "https://docs.cloud.google.com/docs/quotas/custom-constraints",
+        "https://docs.cloud.google.com/docs/quotas/view-manage"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,199 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:46.728Z",
+  "source_step08_card": "data/step-08/current/products/service-directory/card.json",
+  "product_name": "Service Directory",
+  "product_slug": "service-directory",
+  "feature_name": "Service Directory",
+  "feature_slug": "service-directory",
+  "summary": "Service Directory is now available in Beta.",
+  "extended_definition": "Service Directory is now available in Beta.",
+  "lifecycle": {
+    "latest_feature_date": "2020-03-30",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/service-directory/docs/audit-logging",
+      "https://docs.cloud.google.com/service-directory/docs/configuring-ilb-in-sd",
+      "https://docs.cloud.google.com/service-directory/docs/configuring-netlb-in-sd",
+      "https://docs.cloud.google.com/service-directory/docs/troubleshooting"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Register an internal load balancer \\_|\\_ Service Directory \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/service-directory/docs/configuring-ilb-in-sd",
+        "source_id": "site-iam-reference",
+        "final_score": 250,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To register a regional internal Application Load Balancer, run the gcloud compute forwarding-rules create command and set the service-directory-registration flag: gcloud beta compute forwarding-rules create FORWARDING RULE NAME \\ --region= REGION \\ --load-balancing-scheme=INTERNAL MANAGED \\ --network= NETWORK NAME \\ --address= RESERVED IP ADDRESS \\ --target-https-proxy= PROXY NAME \\ --target-https-proxy-region= PROXY REGION \\ --ports= PORT NUMBER \\ --service-directory-registration= SD SERVICE NAME Replace the following: FORWARDING RULE NAME : a name for the forwarding rule that you want to create REGION : the region to create the forwarding rule in NETWORK NAME : the network that this forwarding rule applies to RESERVED IP ADDRESS : the IP address that the forwarding rule serves PROXY NAME : the target proxy that receives the traffic PROXY REGION : the region of the proxy to operate on PORT NUMBER : a list of comma-separated ports SD SERVICE NAME : the fully qualified name of the Service Directory service where you want to register the endpoint.",
+          "Register an internal passthrough Network Load Balancer To register an internal passthrough Network Load Balancer, run the gcloud compute forwarding-rules create command and set the service-directory-registration flag: gcloud compute forwarding-rules create FORWARDING RULE NAME \\ --region= REGION \\ --load-balancing-scheme=INTERNAL \\ --network= NETWORK NAME \\ --subnet= SUBNET NAME \\ --address= RESERVED IP ADDRESS \\ --ip-protocol= PROTOCOL TYPE \\ --ports= PORT NUMBER \\ --backend-service= BACKEND SERVICE NAME \\ --backend-service-region= REGION \\ --service-directory-registration= SD SERVICE NAME Replace the following: FORWARDING RULE NAME : a name for the forwarding rule that you want to create REGION : the region to create the forwarding rule in NETWORK NAME : the network that this forwarding rule applies to SUBNET NAME : the subnetwork that this forwarding rule applies to RESERVED IP ADDRESS : the IP address that the forwarding rule serves PROTOCOL TYPE : the IP protocol that the rule will serve PORT NUMBER : a list of comma-separated ports BACKEND SERVICE NAME : target backend service that receives the traffic SD SERVICE NAME : the fully qualified name of the Service Directory service where you want to register the endpoint.",
+          "Permissions servicedirectory.endpoints.create servicedirectory.endpoints.delete Roles roles/compute.networkAdmin roles/compute.securityAdmin roles/compute.instanceAdmin Limitations Service Directory integration with internal load balancing has the following limitations: Automatic registration only applies to internal and network load balancers."
+        ]
+      },
+      {
+        "title": "\"Register an external passthrough Network Load Balancer \\_|\\_ Service Directory\\",
+        "url": "https://docs.cloud.google.com/service-directory/docs/configuring-netlb-in-sd",
+        "source_id": "site-iam-reference",
+        "final_score": 232,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Register an external passthrough Network Load Balancer To register a regional external passthrough Network Load Balancer, run the gcloud compute forwarding-rules create command and set the service-directory-registration flag: gcloud beta compute forwarding-rules create FORWARDING RULE NAME \\ --region= REGION \\ --load-balancing-scheme=EXTERNAL \\ --address= RESERVED IP ADDRESS \\ --ip-protocol= PROTOCOL TYPE \\ --ports= PORT NUMBER \\ --backend-service= BACKEND SERVICE NAME \\ --backend-service-region= REGION \\ --service-directory-registration= SD SERVICE NAME Replace the following: FORWARDING RULE NAME : a name for the forwarding rule that you want to create REGION : the region to create the forwarding rule in RESERVED IP ADDRESS : the IP address that the forwarding rule serves PROTOCOL TYPE : the IP protocol that the rule is to serve PORT NUMBER : a list of comma-separated ports BACKEND SERVICE NAME : the target backend service that receives the traffic SD SERVICE NAME : the fully qualified name of the Service Directory service where you want to register the endpoint.",
+          "Permissions servicedirectory.endpoints.create servicedirectory.endpoints.delete Roles roles/compute.networkAdmin roles/compute.securityAdmin roles/compute.instanceAdmin Limitations Service Directory integration with external passthrough Network Load Balancers has the following limitations: Automatic registration only supports external Layer 4 load balancers.",
+          "Verify the endpoint The Service Directory endpoints that are created when you register an external passthrough Network Load Balancer have the following characteristics: The endpoint has the same name as the name of the forwarding rule with the specified port number ( <forwarding rule name>-<port> )."
+        ]
+      },
+      {
+        "title": "Service Directory audit logging \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/service-directory/docs/audit-logging",
+        "source_id": "site-iam-reference",
+        "final_score": 222,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Permission type Methods ADMIN READ google.cloud.location.Locations.GetLocation google.cloud.location.Locations.ListLocations google.cloud.servicedirectory.v1.RegistrationService.GetIamPolicy google.cloud.servicedirectory.v1.RegistrationService.GetNamespace google.cloud.servicedirectory.v1.RegistrationService.ListNamespaces google.cloud.servicedirectory.v1beta1.RegistrationService.GetIamPolicy google.cloud.servicedirectory.v1beta1.RegistrationService.GetNamespace google.cloud.servicedirectory.v1beta1.RegistrationService.ListNamespaces ADMIN WRITE google.cloud.servicedirectory.v1.RegistrationService.CreateNamespace google.cloud.servicedirectory.v1.RegistrationService.DeleteNamespace google.cloud.servicedirectory.v1.RegistrationService.SetIamPolicy google.cloud.servicedirectory.v1.RegistrationService.UpdateNamespace google.cloud.servicedirectory.v1beta1.RegistrationService.CreateNamespace google.cloud.servicedirectory.v1beta1.RegistrationService.DeleteNamespace google.cloud.servicedirectory.v1beta1.RegistrationService.SetIamPolicy google.cloud.servicedirectory.v1beta1.RegistrationService.UpdateNamespace DATA READ google.cloud.servicedirectory.v1.LookupService.ResolveService google.cloud.servicedirectory.v1.RegistrationService.GetEndpoint google.cloud.servicedirectory.v1.RegistrationService.GetService google.cloud.servicedirectory.v1.RegistrationService.ListEndpoints google.cloud.servicedirectory.v1.RegistrationService.ListServices google.cloud.servicedirectory.v1beta1.LookupService.ResolveService google.cloud.servicedirectory.v1beta1.RegistrationService.GetEndpoint google.cloud.servicedirectory.v1beta1.RegistrationService.GetService google.cloud.servicedirectory.v1beta1.RegistrationService.ListEndpoints google.cloud.servicedirectory.v1beta1.RegistrationService.ListServices DATA WRITE google.cloud.servicedirectory.v1.RegistrationService.CreateEndpoint google.cloud.servicedirectory.v1.RegistrationService.CreateService google.cloud.servicedirectory.v1.RegistrationService.DeleteEndpoint google.cloud.servicedirectory.v1.RegistrationService.DeleteService google.cloud.servicedirectory.v1.RegistrationService.UpdateEndpoint google.cloud.servicedirectory.v1.RegistrationService.UpdateService google.cloud.servicedirectory.v1beta1.RegistrationService.CreateEndpoint google.cloud.servicedirectory.v1beta1.RegistrationService.CreateService google.cloud.servicedirectory.v1beta1.RegistrationService.DeleteEndpoint google.cloud.servicedirectory.v1beta1.RegistrationService.DeleteService google.cloud.servicedirectory.v1beta1.RegistrationService.UpdateEndpoint google.cloud.servicedirectory.v1beta1.RegistrationService.UpdateService API interface audit logs For information about how and which permissions are evaluated for each method, see the Identity and Access Management documentation for Service Directory. google.cloud.location.Locations The following audit logs are associated with methods belonging to google.cloud.location.Locations .",
+          "The following methods don't produce audit logs: google.cloud.servicedirectory.v1.RegistrationService.TestIamPermissions google.cloud.servicedirectory.v1beta1.RegistrationService.TestIamPermissions Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Filter for this method : protoPayload.methodName=\"google.cloud.servicedirectory.v1beta1.RegistrationService.CreateEndpoint\" CreateNamespace Method : google.cloud.servicedirectory.v1beta1.RegistrationService.CreateNamespace Audit log type : Admin activity Permissions : servicedirectory.namespaces.create - ADMIN WRITE Method is a long-running or streaming operation : No."
+        ]
+      },
+      {
+        "title": "Troubleshooting \\_|\\_ Service Directory \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/service-directory/docs/troubleshooting",
+        "source_id": "site-docs-root",
+        "final_score": 214,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Then any DNS query to billing.example.com returns resource records that belong to the billing.example.com zone, and not the billing service in the Service Directory namespace that is associated with example.com.",
+          "Home Documentation Distributed, hybrid, and multicloud Service Directory Guides Send feedback Troubleshooting Stay organized with collections Save and categorize content based on your preferences.",
+          "There could be several reasons, such as the following: Confirm that you have a ServiceDirectoryRegistrationPolicy deployed in your GKE cluster for the namespace that you are trying to sync."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "billing.example.com",
+      "compute.instanceAdmin",
+      "compute.networkAdmin",
+      "compute.securityAdmin",
+      "example.com",
+      "servicedirectory.endpoints.create",
+      "servicedirectory.endpoints.delete",
+      "servicedirectory.namespaces.create",
+      "servicedirectory.namespaces.delete"
+    ],
+    "missing_inventory_roles": [
+      "roles/compute.instanceAdmin",
+      "roles/compute.networkAdmin",
+      "roles/compute.securityAdmin"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-directory/docs/configuring-ilb-in-sd",
+        "https://docs.cloud.google.com/service-directory/docs/configuring-netlb-in-sd",
+        "https://docs.cloud.google.com/service-directory/docs/audit-logging",
+        "https://docs.cloud.google.com/service-directory/docs/troubleshooting"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-directory/docs/configuring-ilb-in-sd",
+        "https://docs.cloud.google.com/service-directory/docs/configuring-netlb-in-sd",
+        "https://docs.cloud.google.com/service-directory/docs/audit-logging",
+        "https://docs.cloud.google.com/service-directory/docs/troubleshooting"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-directory/docs/configuring-ilb-in-sd",
+        "https://docs.cloud.google.com/service-directory/docs/configuring-netlb-in-sd",
+        "https://docs.cloud.google.com/service-directory/docs/audit-logging",
+        "https://docs.cloud.google.com/service-directory/docs/troubleshooting"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-directory/docs/configuring-ilb-in-sd",
+        "https://docs.cloud.google.com/service-directory/docs/configuring-netlb-in-sd",
+        "https://docs.cloud.google.com/service-directory/docs/audit-logging",
+        "https://docs.cloud.google.com/service-directory/docs/troubleshooting"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-directory/docs/configuring-ilb-in-sd",
+        "https://docs.cloud.google.com/service-directory/docs/configuring-netlb-in-sd",
+        "https://docs.cloud.google.com/service-directory/docs/audit-logging",
+        "https://docs.cloud.google.com/service-directory/docs/troubleshooting"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-directory/docs/configuring-ilb-in-sd",
+        "https://docs.cloud.google.com/service-directory/docs/configuring-netlb-in-sd",
+        "https://docs.cloud.google.com/service-directory/docs/audit-logging",
+        "https://docs.cloud.google.com/service-directory/docs/troubleshooting"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-directory/docs/configuring-ilb-in-sd",
+        "https://docs.cloud.google.com/service-directory/docs/configuring-netlb-in-sd",
+        "https://docs.cloud.google.com/service-directory/docs/audit-logging",
+        "https://docs.cloud.google.com/service-directory/docs/troubleshooting"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-directory/docs/configuring-ilb-in-sd",
+        "https://docs.cloud.google.com/service-directory/docs/configuring-netlb-in-sd",
+        "https://docs.cloud.google.com/service-directory/docs/audit-logging",
+        "https://docs.cloud.google.com/service-directory/docs/troubleshooting"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-directory/docs/configuring-ilb-in-sd",
+        "https://docs.cloud.google.com/service-directory/docs/configuring-netlb-in-sd",
+        "https://docs.cloud.google.com/service-directory/docs/audit-logging",
+        "https://docs.cloud.google.com/service-directory/docs/troubleshooting"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-directory/docs/configuring-ilb-in-sd",
+        "https://docs.cloud.google.com/service-directory/docs/configuring-netlb-in-sd",
+        "https://docs.cloud.google.com/service-directory/docs/audit-logging",
+        "https://docs.cloud.google.com/service-directory/docs/troubleshooting"
+      ]
+    }
+  ]
+}

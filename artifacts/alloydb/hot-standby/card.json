@@ -1,0 +1,98 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:12.801Z",
+  "source_step08_card": "data/step-08/current/products/alloydb/card.json",
+  "product_name": "AlloyDB",
+  "product_slug": "alloydb",
+  "feature_name": "Hot standby",
+  "feature_slug": "hot-standby",
+  "summary": "Hot standby improves AlloyDB high availability by keeping the standby node ready for faster failover and consistent post-failover performance.",
+  "extended_definition": "Hot standby improves AlloyDB high availability by keeping the standby node ready for faster failover and consistent post-failover performance.",
+  "lifecycle": {
+    "latest_feature_date": "2026-03-31",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/alloydb/docs/high-availability",
+      "https://docs.cloud.google.com/alloydb/docs/overview",
+      "https://docs.cloud.google.com/alloydb/docs/reference/database-performance-snapshot-report-reference"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"AlloyDB high availability overview \\_|\\_ AlloyDB for PostgreSQL \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/alloydb/docs/high-availability",
+        "source_id": "site-docs-reference-2",
+        "final_score": 190,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Primary and secondary instances An AlloyDB primary instance configured with high availability includes an active node and a standby node, which are located in different zones.",
+          "Home Documentation Databases AlloyDB for PostgreSQL Guides Send feedback AlloyDB high availability overview Stay organized with collections Save and categorize content based on your preferences.",
+          "Failover If the active node becomes unavailable, AlloyDB automatically fails over the primary instance to its standby node, which becomes the new active node."
+        ]
+      },
+      {
+        "title": "AlloyDB overview \\_|\\_ AlloyDB for PostgreSQL \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/alloydb/docs/overview",
+        "source_id": "site-api-reference",
+        "final_score": 97,
+        "relevance": "",
+        "evidence_snippets": [
+          "High availability By default, an AlloyDB cluster offers availability (HA) through its primary instance's redundant nodes, located in two different zones, with automatic failover.",
+          "Adding read pool instances containing at least two nodes creates further load-balanced, multi-zonal, high-availability access points to your data.",
+          "High availability: ensure service continuity through redundant nodes located in different zones, with automatic failover between them."
+        ]
+      },
+      {
+        "title": "\"Database performance snapshot report reference \\_|\\_ AlloyDB for PostgreSQL\\",
+        "url": "https://docs.cloud.google.com/alloydb/docs/reference/database-performance-snapshot-report-reference",
+        "source_id": "site-api-reference",
+        "final_score": 92,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Home Documentation Databases AlloyDB for PostgreSQL Reference Send feedback Database performance snapshot report reference Stay organized with collections Save and categorize content based on your preferences.",
+          "UltraFastCachePWrite I/O Latency of a write to the AlloyDB UltraFast Cache WalBatchWrite I/O Wait time for a minimal batch size to write WAL.",
+          "Wait events in snapshot reports The following table describes wait events that are supported by AlloyDB performance snapshot reports."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/high-availability",
+        "https://docs.cloud.google.com/alloydb/docs/overview",
+        "https://docs.cloud.google.com/alloydb/docs/reference/database-performance-snapshot-report-reference"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/high-availability",
+        "https://docs.cloud.google.com/alloydb/docs/overview",
+        "https://docs.cloud.google.com/alloydb/docs/reference/database-performance-snapshot-report-reference"
+      ]
+    }
+  ]
+}

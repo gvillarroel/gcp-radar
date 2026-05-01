@@ -1,0 +1,127 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:18.771Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery",
+  "feature_name": "ST_REGIONSTATS function",
+  "feature_slug": "st-regionstats-function",
+  "summary": "The ST_REGIONSTATS geography function combines Earth Engine raster data with vector data stored in BigQuery.",
+  "extended_definition": "The ST_REGIONSTATS geography function combines Earth Engine raster data with vector data stored in BigQuery.",
+  "lifecycle": {
+    "latest_feature_date": "2025-08-25",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/gis-data",
+      "https://docs.cloud.google.com/bigquery/docs/raster-tutorial-weather",
+      "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/geography_functions"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Use raster data to analyze temperature \\_|\\_ BigQuery \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/raster-tutorial-weather",
+        "source_id": "site-docs-reference-2",
+        "final_score": 72,
+        "relevance": "",
+        "evidence_snippets": [
+          "Compute the average temperature Run the following query to compute the average temperature of each country on January 1, 2025 using the ST REGIONSTATS function : WITH SimplifiedCountries AS ( SELECT ST SIMPLIFY ( geometry , 10000 ) AS simplified geometry , names . primary AS name FROM bigquery-public-data.overture maps.division area WHERE subtype = 'country' ) SELECT sc . simplified geometry AS geometry , sc . name , ST REGIONSTATS ( sc . simplified geometry , 'ee://ECMWF/ERA5 LAND/DAILY AGGR/20250101' , 'temperature 2m' ). mean - 273.15 AS mean temperature FROM SimplifiedCountries AS sc ORDER BY mean temperature DESC ; This query runs on the publicly available division area table that contains GEOGRAPHY values representing the boundaries of various regions on Earth, including countries.",
+          "Enable the APIs Required roles To get the permissions that you need to perform the tasks in this tutorial, ask your administrator to grant you the following IAM roles on your project: Earth Engine Resource Viewer ( roles/earthengine.viewer ) Service Usage Consumer ( roles/serviceusage.serviceUsageConsumer ) BigQuery Data Editor ( roles/bigquery.dataEditor ) For more information about granting roles, see Manage access to projects, folders, and organizations .",
+          "To see the exact permissions that are required, expand the Required permissions section: Required permissions The following permissions are required to perform the tasks in this tutorial: earthengine.computations.create serviceusage.services.use bigquery.datasets.create You might also be able to get these permissions with custom roles or other predefined roles ."
+        ]
+      },
+      {
+        "title": "Geography functions \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/geography_functions",
+        "source_id": "site-docs-reference-required-7",
+        "final_score": 72,
+        "relevance": "",
+        "evidence_snippets": [
+          "WITH linestring AS ( SELECT ST GEOGFROMTEXT ( 'LINESTRING(1 1, 2 1, 3 2, 3 3)' ) g ) SELECT ST POINTN ( g , 1 ) AS first , ST POINTN ( g , - 1 ) AS last , ST POINTN ( g , 2 ) AS second , ST POINTN ( g , - 2 ) AS second to last FROM linestring ; / --------------+--------------+--------------+----------------+ first last second second to last +--------------+--------------+--------------+----------------+ POINT(1 1) POINT(3 3) POINT(2 1) POINT(3 2) +--------------+--------------+--------------+---------------- / ST REGIONSTATS ST REGIONSTATS ( geography , raster id [ , [ band = > ] value ] [ , include = > value ] [ , options = > value ] ) Description Returns statistics summarizing the pixel values of the raster image referenced by raster id that intersect with geography .",
+          "For more information, read about billing for the ST REGIONSTATS function. geography : A GEOGRAPHY value to intersect with the raster image. raster id : A string that identifies a raster image.",
+          "ST REGIONSTATS Computes statistics describing the pixels in a geospatial raster image that intersect a GEOGRAPHY value."
+        ]
+      },
+      {
+        "title": "Working with geospatial data \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/gis-data",
+        "source_id": "site-docs-reference-required-7",
+        "final_score": 72,
+        "relevance": "",
+        "evidence_snippets": [
+          "Although BigQuery primarily specializes in tabular vector data, representing features with boundaries and points, you can integrate raster data into your BigQuery analyses by using the ST REGIONSTATS function .",
+          "This function uses Earth Engine, Google's raster analysis platform, to perform computations and aggregations on raster data for enhanced geospatial analysis.",
+          "Integrate geospatial raster data with Google Earth Engine Geospatial insights are often presented as grid-based, or raster , data."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "bigquery.dataEditor",
+      "bigquery.datasets.create",
+      "data.overture",
+      "earthengine.computations.create",
+      "earthengine.viewer",
+      "maps.division",
+      "serviceusage.services.use",
+      "serviceusage.serviceUsageConsumer"
+    ],
+    "missing_inventory_roles": [
+      "roles/bigquery.dataEditor",
+      "roles/earthengine.viewer",
+      "roles/serviceusage.serviceUsageConsumer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/gis-data",
+        "https://docs.cloud.google.com/bigquery/docs/raster-tutorial-weather",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/geography_functions"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/gis-data",
+        "https://docs.cloud.google.com/bigquery/docs/raster-tutorial-weather",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/geography_functions"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/gis-data",
+        "https://docs.cloud.google.com/bigquery/docs/raster-tutorial-weather",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/geography_functions"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/gis-data",
+        "https://docs.cloud.google.com/bigquery/docs/raster-tutorial-weather",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/geography_functions"
+      ]
+    }
+  ]
+}

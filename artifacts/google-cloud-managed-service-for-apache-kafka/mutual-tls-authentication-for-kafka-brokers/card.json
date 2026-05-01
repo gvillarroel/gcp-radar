@@ -1,0 +1,196 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:39.148Z",
+  "source_step08_card": "data/step-08/current/products/google-cloud-managed-service-for-apache-kafka/card.json",
+  "product_name": "Google Cloud Managed Service for Apache Kafka",
+  "product_slug": "google-cloud-managed-service-for-apache-kafka",
+  "feature_name": "mutual TLS authentication for Kafka brokers",
+  "feature_slug": "mutual-tls-authentication-for-kafka-brokers",
+  "summary": "Mutual TLS lets you use certificate-based authentication with Managed Service for Apache Kafka brokers.",
+  "extended_definition": "Mutual TLS lets you use certificate-based authentication with Managed Service for Apache Kafka brokers.",
+  "lifecycle": {
+    "latest_feature_date": "2025-09-09",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/managed-service-for-apache-kafka/docs/authentication-kafka-mtls",
+      "https://docs.cloud.google.com/managed-service-for-apache-kafka/docs/authn-types-kafka",
+      "https://docs.cloud.google.com/managed-service-for-apache-kafka/docs/limitations",
+      "https://docs.cloud.google.com/managed-service-for-apache-kafka/docs/overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Authentication types for Kafka brokers \\_|\\_ Google Cloud Managed Service\\",
+        "url": "https://docs.cloud.google.com/managed-service-for-apache-kafka/docs/authn-types-kafka",
+        "source_id": "site-iam-reference",
+        "final_score": 267,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Data analytics Google Cloud Managed Service for Apache Kafka Guides Send feedback Authentication types for Kafka brokers Stay organized with collections Save and categorize content based on your preferences.",
+          "Client configuration JAAS config with specialized login handler class (Java) or a local auth server (non-Java) JAAS config with standard PlainLoginModule (Java) Keystore and truststore properties (For example— security.protocol=SSL ) Cluster availability All clusters All clusters Clusters created after June 24, 2025 Choose SASL versus mTLS Your choice of authentication method is guided by your organization's security policies and existing infrastructure.",
+          "For Google Cloud Managed Service for Apache Kafka client applications running on Google Cloud services like Google Kubernetes Engine, Compute Engine, Cloud Run, or Cloud Run functions, you have the following authentication options: SASL/OAUTHBEARER (recommended) : this is the most seamless and secure method for clients within Google Cloud."
+        ]
+      },
+      {
+        "title": "\"Configure mTLS authentication \\_|\\_ Google Cloud Managed Service for Apache\\",
+        "url": "https://docs.cloud.google.com/managed-service-for-apache-kafka/docs/authentication-kafka-mtls",
+        "source_id": "site-iam-reference",
+        "final_score": 259,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For foundational concepts, see the following documents: CA Service overview Authentication for Kafka clients Access control with IAM and Kafka ACLs Before you begin Before you configure mTLS authentication, complete the following: Confirm cluster eligibility.",
+          "Home Documentation Data analytics Google Cloud Managed Service for Apache Kafka Guides Send feedback Configure mTLS authentication Stay organized with collections Save and categorize content based on your preferences.",
+          "You can configure your Managed Service for Apache Kafka cluster to authenticate Kafka clients using mutual TLS (mTLS)."
+        ]
+      },
+      {
+        "title": "\"Managed Service for Apache Kafka overview \\_|\\_ Google Cloud Managed Service\\",
+        "url": "https://docs.cloud.google.com/managed-service-for-apache-kafka/docs/overview",
+        "source_id": "site-docs-reference",
+        "final_score": 232,
+        "relevance": "",
+        "evidence_snippets": [
+          "For more information, see Configure SASL authentication . mTLS : Principals authenticating with mTLS are authorized through Kafka ACLs.",
+          "For example, if you configure a cluster with 70 vCPUs and 130 GiB RAM, along with a replication factor of 3, the following calculation determines the number of brokers: Calculate the number of brokers required to account for vCPUs: ceiling(70 vCPUs / 15 vCPUs) = 5 brokers Calculate the number of brokers required to account for memory: ceiling(130 GiB / 120 GiB) = 2 brokers In this scenario, the cluster has 5 brokers, because the number of brokers is determined by the number of vCPUs.",
+          "Home Documentation Data analytics Google Cloud Managed Service for Apache Kafka Guides Send feedback Managed Service for Apache Kafka overview Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"Managed Service for Apache Kafka overview \\_|\\_ Google Cloud Managed Service\\",
+        "url": "https://docs.cloud.google.com/managed-service-for-apache-kafka/docs/limitations",
+        "source_id": "site-docs-root",
+        "final_score": 232,
+        "relevance": "",
+        "evidence_snippets": [
+          "For more information, see Configure SASL authentication . mTLS : Principals authenticating with mTLS are authorized through Kafka ACLs.",
+          "For example, if you configure a cluster with 70 vCPUs and 130 GiB RAM, along with a replication factor of 3, the following calculation determines the number of brokers: Calculate the number of brokers required to account for vCPUs: ceiling(70 vCPUs / 15 vCPUs) = 5 brokers Calculate the number of brokers required to account for memory: ceiling(130 GiB / 120 GiB) = 2 brokers In this scenario, the cluster has 5 brokers, because the number of brokers is determined by the number of vCPUs.",
+          "Home Documentation Data analytics Google Cloud Managed Service for Apache Kafka Guides Send feedback Managed Service for Apache Kafka overview Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "security.protocol"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/managed-service-for-apache-kafka/docs/authn-types-kafka",
+        "https://docs.cloud.google.com/managed-service-for-apache-kafka/docs/authentication-kafka-mtls",
+        "https://docs.cloud.google.com/managed-service-for-apache-kafka/docs/overview",
+        "https://docs.cloud.google.com/managed-service-for-apache-kafka/docs/limitations"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/managed-service-for-apache-kafka/docs/authn-types-kafka",
+        "https://docs.cloud.google.com/managed-service-for-apache-kafka/docs/authentication-kafka-mtls",
+        "https://docs.cloud.google.com/managed-service-for-apache-kafka/docs/overview",
+        "https://docs.cloud.google.com/managed-service-for-apache-kafka/docs/limitations"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/managed-service-for-apache-kafka/docs/authn-types-kafka",
+        "https://docs.cloud.google.com/managed-service-for-apache-kafka/docs/authentication-kafka-mtls",
+        "https://docs.cloud.google.com/managed-service-for-apache-kafka/docs/overview",
+        "https://docs.cloud.google.com/managed-service-for-apache-kafka/docs/limitations"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/managed-service-for-apache-kafka/docs/authn-types-kafka",
+        "https://docs.cloud.google.com/managed-service-for-apache-kafka/docs/authentication-kafka-mtls",
+        "https://docs.cloud.google.com/managed-service-for-apache-kafka/docs/overview",
+        "https://docs.cloud.google.com/managed-service-for-apache-kafka/docs/limitations"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/managed-service-for-apache-kafka/docs/authn-types-kafka",
+        "https://docs.cloud.google.com/managed-service-for-apache-kafka/docs/authentication-kafka-mtls",
+        "https://docs.cloud.google.com/managed-service-for-apache-kafka/docs/overview",
+        "https://docs.cloud.google.com/managed-service-for-apache-kafka/docs/limitations"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/managed-service-for-apache-kafka/docs/authn-types-kafka",
+        "https://docs.cloud.google.com/managed-service-for-apache-kafka/docs/authentication-kafka-mtls",
+        "https://docs.cloud.google.com/managed-service-for-apache-kafka/docs/overview",
+        "https://docs.cloud.google.com/managed-service-for-apache-kafka/docs/limitations"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/managed-service-for-apache-kafka/docs/authn-types-kafka",
+        "https://docs.cloud.google.com/managed-service-for-apache-kafka/docs/authentication-kafka-mtls",
+        "https://docs.cloud.google.com/managed-service-for-apache-kafka/docs/overview",
+        "https://docs.cloud.google.com/managed-service-for-apache-kafka/docs/limitations"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/managed-service-for-apache-kafka/docs/authn-types-kafka",
+        "https://docs.cloud.google.com/managed-service-for-apache-kafka/docs/authentication-kafka-mtls",
+        "https://docs.cloud.google.com/managed-service-for-apache-kafka/docs/overview",
+        "https://docs.cloud.google.com/managed-service-for-apache-kafka/docs/limitations"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/managed-service-for-apache-kafka/docs/authn-types-kafka",
+        "https://docs.cloud.google.com/managed-service-for-apache-kafka/docs/authentication-kafka-mtls",
+        "https://docs.cloud.google.com/managed-service-for-apache-kafka/docs/overview",
+        "https://docs.cloud.google.com/managed-service-for-apache-kafka/docs/limitations"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/managed-service-for-apache-kafka/docs/authn-types-kafka",
+        "https://docs.cloud.google.com/managed-service-for-apache-kafka/docs/authentication-kafka-mtls",
+        "https://docs.cloud.google.com/managed-service-for-apache-kafka/docs/overview",
+        "https://docs.cloud.google.com/managed-service-for-apache-kafka/docs/limitations"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/managed-service-for-apache-kafka/docs/authn-types-kafka",
+        "https://docs.cloud.google.com/managed-service-for-apache-kafka/docs/authentication-kafka-mtls",
+        "https://docs.cloud.google.com/managed-service-for-apache-kafka/docs/overview",
+        "https://docs.cloud.google.com/managed-service-for-apache-kafka/docs/limitations"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,98 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:18.771Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery",
+  "feature_name": "SQL translation report log summary",
+  "feature_slug": "sql-translation-report-log-summary",
+  "summary": "The batch SQL translator shows a log summary of issues for a translation job.",
+  "extended_definition": "The batch SQL translator shows a log summary of issues for a translation job.",
+  "lifecycle": {
+    "latest_feature_date": "2023-11-07",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/batch-sql-translator",
+      "https://docs.cloud.google.com/bigquery/docs/config-yaml-translation",
+      "https://docs.cloud.google.com/bigquery/docs/samples/bigquerymigration-quickstart"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Migrate code with the batch SQL translator \\_|\\_ BigQuery \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/batch-sql-translator",
+        "source_id": "site-docs-reference-5",
+        "final_score": 227,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Locations The batch SQL translator is available in the following processing locations: Region description Region name Details Asia Pacific Bangkok asia-southeast3 Delhi asia-south2 Hong Kong asia-east2 Jakarta asia-southeast2 Melbourne australia-southeast2 Mumbai asia-south1 Osaka asia-northeast2 Seoul asia-northeast3 Singapore asia-southeast1 Sydney australia-southeast1 Taiwan asia-east1 Tokyo asia-northeast1 Europe Belgium europe-west1 Low CO 2 Berlin europe-west10 EU multi-region eu Finland europe-north1 Low CO 2 Frankfurt europe-west3 London europe-west2 Low CO 2 Madrid europe-southwest1 Low CO 2 Milan europe-west8 Netherlands europe-west4 Low CO 2 Paris europe-west9 Low CO 2 Stockholm europe-north2 Low CO 2 Turin europe-west12 Warsaw europe-central2 Zürich europe-west6 Low CO 2 Americas Columbus, Ohio us-east5 Dallas us-south1 Low CO 2 Iowa us-central1 Low CO 2 Las Vegas us-west4 Los Angeles us-west2 Mexico northamerica-south1 Northern Virginia us-east4 Oregon us-west1 Low CO 2 Québec northamerica-northeast1 Low CO 2 São Paulo southamerica-east1 Low CO 2 Salt Lake City us-west3 Santiago southamerica-west1 Low CO 2 South Carolina us-east1 Toronto northamerica-northeast2 Low CO 2 US multi-region us Africa Johannesburg africa-south1 MiddleEast Dammam me-central2 Doha me-central1 Israel me-west1 Submit a translation job Follow these steps to start a translation job, view its progress, and see the results.",
+          "The batch SQL translator can translate the following SQL dialects into GoogleSQL: Amazon Redshift SQL Apache HiveQL and Beeline CLI IBM Netezza SQL and NZPLSQL Teradata and Teradata Vantage: SQL Basic Teradata Query (BTEQ) Teradata Parallel Transport (TPT) Additionally, translation of the following SQL dialects is supported in preview : Apache Impala SQL Apache Spark SQL Azure Synapse T-SQL GoogleSQL (BigQuery) Greenplum SQL IBM DB2 SQL MySQL SQL Oracle SQL, PL/SQL, Exadata PostgreSQL SQL Trino or PrestoSQL Snowflake SQL SQL Server T-SQL SQLite Vertica SQL Important: Translation is done on a best effort basis.",
+          "Troubleshoot translation errors RelationNotFound or AttributeNotFound translation issues After translating a querying using the batch SQL translator , you might encounter a failed translation with the RelationNotFound or AttributeNotFound error."
+        ]
+      },
+      {
+        "title": "\"Transform SQL translations using configuration YAML files \\_|\\_ BigQuery\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/config-yaml-translation",
+        "source_id": "site-docs-reference-5",
+        "final_score": 140,
+        "relevance": "",
+        "evidence_snippets": [
+          "You can specify a configuration YAML file to use in a SQL translation in the following ways: If you are using the interactive SQL translator, specify the file path to the configuration file or batch translation job ID in the translation settings .",
+          "The interactive SQL translator, BigQuery Migration API, the batch SQL translator, and the batch translation Python client supports the use of multiple configuration YAML files in a single translation job.",
+          "When using the BigQuery interactive SQL translator , using the BigQuery Migration API , or performing a batch SQL translation , you can provide configuration YAML files to modify a SQL query translation."
+        ]
+      },
+      {
+        "title": "Demonstrate batch query translation \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/samples/bigquerymigration-quickstart",
+        "source_id": "site-docs-reference-required-15",
+        "final_score": 116,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Fatalf ( \"workflow execution failed: %v\\n\" , err ) } reportWorkflowStatus ( workflow ) } // executeTranslationWorkflow constructs a migration workflow that performs batch SQL translation. func executeTranslationWorkflow ( ctx context .",
+          "For more information, see Set up authentication for client libraries . // The bigquery migration quickstart application demonstrates basic usage of the // BigQuery migration API by executing a workflow that performs a batch SQL // translation task. package main import ( \"context\" \"flag\" \"fmt\" \"log\" \"time\" migration \"cloud.google.com/go/bigquery/migration/apiv2\" \"cloud.google.com/go/bigquery/migration/apiv2/migrationpb\" ) func main () { // Define command line flags for controlling the behavior of this quickstart. projectID := flag .",
+          "Home Documentation Data analytics BigQuery Samples Demonstrate batch query translation Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/batch-sql-translator",
+        "https://docs.cloud.google.com/bigquery/docs/config-yaml-translation",
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquerymigration-quickstart"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/batch-sql-translator",
+        "https://docs.cloud.google.com/bigquery/docs/config-yaml-translation",
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquerymigration-quickstart"
+      ]
+    }
+  ]
+}

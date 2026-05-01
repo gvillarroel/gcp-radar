@@ -1,0 +1,83 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:17.437Z",
+  "source_step08_card": "data/step-08/current/products/apps-script/card.json",
+  "product_name": "Apps Script",
+  "product_slug": "apps-script",
+  "feature_name": "Third-party smart chips and link previews",
+  "feature_slug": "third-party-smart-chips-and-link-previews",
+  "summary": "Third-party smart chips and link previews let Google Workspace Add-ons preview links with smart chips.",
+  "extended_definition": "Third-party smart chips and link previews let Google Workspace Add-ons preview links with smart chips.",
+  "lifecycle": {
+    "latest_feature_date": "2023-06-12",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/apps-script/reference/add-ons-response-service",
+      "https://developers.google.com/apps-script/reference/add-ons-response-service/link-preview",
+      "https://developers.google.com/apps-script/releases"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Google Apps Script release notes \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/apps-script/releases",
+        "source_id": "site-docs-root",
+        "final_score": 197,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To learn more, refer to the following: Google Workspace Updates blog : View & compare script versions with Apps Script project history Developer documentation : Versions June 12, 2023 Feature Third-party smart chips and link previews are now generally available.",
+          "To build a Google Workspace Add-on that uses this feature, see Preview links with smart chips .",
+          "January 24, 2024 Feature ( Generally Available ): Google Workspace Add-ons now support third-party resource creation from the @ menu in Google Docs."
+        ]
+      },
+      {
+        "title": "Class LinkPreview \\_|\\_ Apps Script \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/apps-script/reference/add-ons-response-service/link-preview",
+        "source_id": "site-docs-reference-3",
+        "final_score": 122,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For more information, refer to Preview links with smart chips . const decoratedText = CardService . newDecoratedText (). setTopLabel ( 'Hello' ). setText ( 'Hi!' ); const cardSection = CardService . newCardSection (). addWidget ( decoratedText ); const card = CardService . newCardBuilder (). addSection ( cardSection ). build (); const linkPreview = AddOnsResponseService . newLinkPreview (). setPreviewCard ( card ). setTitle ( 'Smart chip title' ); Methods Method Return type Brief description print Json() String Prints the JSON representation of this object. set Link Preview Title(title) Link Preview Sets the title that displays in the link preview above the preview card. set Preview Card(previewCard) Link Preview Sets the card that displays information about a link from a third-party or non-Google service. set Title(title) Link Preview Sets the title that displays in the smart chip for the link preview.",
+          "Return LinkPreview — This object, for chaining. setPreviewCard(previewCard) Sets the card that displays information about a link from a third-party or non-Google service. const decoratedText = CardService . newDecoratedText (). setTopLabel ( 'Hello' ). setText ( 'Hi!' ); const cardSection = CardService . newCardSection (). addWidget ( decoratedText ); const card = CardService . newCardBuilder (). addSection ( cardSection ). build (); const linkPreview = AddOnsResponseService . newLinkPreview (). setPreviewCard ( card ). setTitle ( 'Smart chip title' ); Parameters Name Type Description preview Card Card The preview card.",
+          "If unset, the smart chip displays the header of the PreviewCard . const linkPreview = AddOnsResponseService . newLinkPreview (). setTitle ( 'Smart chip title' ); Parameters Name Type Description title String The title of the smart chip."
+        ]
+      },
+      {
+        "title": "AddOns Response Service \\_|\\_ Apps Script \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/apps-script/reference/add-ons-response-service",
+        "source_id": "site-docs-reference-3",
+        "final_score": 96,
+        "relevance": "",
+        "evidence_snippets": [
+          "LinkPreview Methods Method Return type Brief description print Json() String Prints the JSON representation of this object. set Link Preview Title(title) Link Preview Sets the title that displays in the link preview above the preview card. set Preview Card(previewCard) Link Preview Sets the card that displays information about a link from a third-party or non-Google service. set Title(title) Link Preview Sets the title that displays in the smart chip for the link preview.",
+          "Link The link object from a third-party resource which gets converted it to a smart chip in the host application.",
+          "Update Inline Preview Action The Chat app previews a link in a message by adding or updating one or more cards."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "developers.google.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": []
+}

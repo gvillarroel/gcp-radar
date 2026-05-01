@@ -1,0 +1,143 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:49.581Z",
+  "source_step08_card": "data/step-08/current/products/virtual-private-cloud/card.json",
+  "product_name": "Virtual Private Cloud",
+  "product_slug": "virtual-private-cloud",
+  "feature_name": "VPC RDMA network profile",
+  "feature_slug": "vpc-rdma-network-profile",
+  "summary": "VPC now supports an RDMA network profile that enables AI workloads on VM instances with RDMA network interfaces.",
+  "extended_definition": "VPC now supports an RDMA network profile that enables AI workloads on VM instances with RDMA network interfaces.",
+  "lifecycle": {
+    "latest_feature_date": "2025-01-15",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/network-intelligence-center/docs/network-analyzer/overview",
+      "https://docs.cloud.google.com/vpc/docs/change-mtu-vpc-network",
+      "https://docs.cloud.google.com/vpc/docs/create-modify-vpc-networks",
+      "https://docs.cloud.google.com/vpc/docs/vpc"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Quickstart: Create and manage VPC networks \\_|\\_ Virtual Private Cloud \\_\\",
+        "url": "https://docs.cloud.google.com/vpc/docs/create-modify-vpc-networks",
+        "source_id": "site-docs-root",
+        "final_score": 238,
+        "relevance": "",
+        "evidence_snippets": [
+          "You only need to configure a network profile if you want to run AI Hypercomputer workloads that require RDMA NICs.",
+          "The per network limits describe the maximum number of secondary ranges that you can define for each subnet. --enable-flow-logs : Enables VPC Flow Logs in the subnet at creation time. --enable-private-ip-google-access : Enables Private Google Access in the subnet at creation time. --purpose : Enables you to specify the purpose of the subnet . --role : Enables you to specify a role (active or backup) for a proxy-only subnet .",
+          "POST https://compute.googleapis.com/compute/v1/projects/ PROJECT ID /regions/ REGION /subnetworks { \"ipCidrRange\": \" IP RANGE \", \"network\": \" NETWORK URL \", \"name\": \" SUBNET \" \"stackType\": IPV4 IPV6, \"ipv6AccessType\": IPv6 ACCESS TYPE } Replace the following: PROJECT ID : the ID of the project that contains the VPC network to modify."
+        ]
+      },
+      {
+        "title": "\"Network Analyzer overview \\_|\\_ Network Intelligence Center - Network Analyzer\\",
+        "url": "https://docs.cloud.google.com/network-intelligence-center/docs/network-analyzer/overview",
+        "source_id": "site-iam-reference",
+        "final_score": 220,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Shared VPC insights For Shared VPC cases, there are two scenarios: Host project: Network Analyzer provides relevant information for VPC networks in the host project, such as IP address utilization insights that display the IP address allocation percentage of subnets.",
+          "Insights are grouped into the following categories: VPC network Network services Kubernetes engine Hybrid connectivity Managed services For more information about these groups and their related insight types, see Insight groups and types .",
+          "Network Analyzer automatically monitors your Virtual Private Cloud (VPC) network configurations and detects misconfigurations and suboptimal configurations."
+        ]
+      },
+      {
+        "title": "VPC networks \\_|\\_ Virtual Private Cloud \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vpc/docs/vpc",
+        "source_id": "site-docs-root",
+        "final_score": 220,
+        "relevance": "",
+        "evidence_snippets": [
+          "Google Cloud provides RDMA network profiles that let you create Virtual Private Cloud (VPC) networks that support RDMA connectivity.",
+          "Subnets with IPv6 address ranges aren't supported in the following: Auto mode VPC networks, including the default network Legacy networks If you have an auto mode VPC network that you would like to add subnets with IPv6 address ranges to, you can do the following: Convert the auto mode network to custom mode .",
+          "In addition to the automatically created subnets, you can add more subnets manually to auto mode VPC networks in regions that you choose by using IP ranges outside of 10.128.0.0/9 ."
+        ]
+      },
+      {
+        "title": "\"Change the MTU setting of a VPC network \\_|\\_ Virtual Private Cloud \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/vpc/docs/change-mtu-vpc-network",
+        "source_id": "site-docs-root-2",
+        "final_score": 202,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "There are two ways to start using a VPC network with a different MTU setting: You can change the MTU setting of an existing VPC network, which requires that you shut down all VMs in the network at the same time.",
+          "Run the following command to determine the index of the interface that you want to update: netsh interface ipv4 show interface Update the interface: netsh interface ipv4 set interface INTERFACE INDEX mtu= MTU store=persistent Update the device driver configuration: Open the Device Manager with following command: devmgmt.msc Expand the Network adapters category.",
+          "PATCH https://www.googleapis.com/compute/v1/projects/ PROJECT ID /global/networks/ NETWORK { \"mtu\": MTU } Replace the placeholders with valid values: PROJECT ID is the ID of the project that contains the VPC network to modify."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "compute.googleapis.com",
+      "devmgmt.msc"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/create-modify-vpc-networks",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/network-analyzer/overview",
+        "https://docs.cloud.google.com/vpc/docs/vpc",
+        "https://docs.cloud.google.com/vpc/docs/change-mtu-vpc-network"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/create-modify-vpc-networks",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/network-analyzer/overview",
+        "https://docs.cloud.google.com/vpc/docs/vpc",
+        "https://docs.cloud.google.com/vpc/docs/change-mtu-vpc-network"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/create-modify-vpc-networks",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/network-analyzer/overview",
+        "https://docs.cloud.google.com/vpc/docs/vpc",
+        "https://docs.cloud.google.com/vpc/docs/change-mtu-vpc-network"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/create-modify-vpc-networks",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/network-analyzer/overview",
+        "https://docs.cloud.google.com/vpc/docs/vpc",
+        "https://docs.cloud.google.com/vpc/docs/change-mtu-vpc-network"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/create-modify-vpc-networks",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/network-analyzer/overview",
+        "https://docs.cloud.google.com/vpc/docs/vpc",
+        "https://docs.cloud.google.com/vpc/docs/change-mtu-vpc-network"
+      ]
+    }
+  ]
+}

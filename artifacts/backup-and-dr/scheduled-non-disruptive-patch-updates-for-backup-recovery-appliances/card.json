@@ -1,0 +1,114 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:18.295Z",
+  "source_step08_card": "data/step-08/current/products/backup-and-dr/card.json",
+  "product_name": "Backup and DR",
+  "product_slug": "backup-and-dr",
+  "feature_name": "Scheduled non-disruptive patch updates for backup/recovery appliances",
+  "feature_slug": "scheduled-non-disruptive-patch-updates-for-backup-recovery-appliances",
+  "summary": "Backup and DR now supports a default update window for non-disruptive appliance patching, pre-update notifications, and optional rescheduling of those updates.",
+  "extended_definition": "Backup and DR now supports a default update window for non-disruptive appliance patching, pre-update notifications, and optional rescheduling of those updates.",
+  "lifecycle": {
+    "latest_feature_date": "2025-01-24",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/backup-disaster-recovery/docs/bulletins/backupdr-update-policy",
+      "https://docs.cloud.google.com/backup-disaster-recovery/docs/configuration/update-appliance",
+      "https://docs.cloud.google.com/backup-disaster-recovery/docs/monitor-reports/monitor-jobs"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Update backup/recovery appliances \\_|\\_ Backup and DR \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/backup-disaster-recovery/docs/configuration/update-appliance",
+        "source_id": "site-docs-reference",
+        "final_score": 180,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Auto-patch updates are applied only on backup/recovery appliances that are in the \"Out of support\" state.",
+          "For example, if N (11.0.17) is the latest version available, and a backup/recovery appliance is on unsupported version N-2 (11.0.15), then auto patch upgrades only move the appliances to N-1 (11.0.16), and not to the latest version (11.0.17).",
+          "You cannot schedule updates for backup/recovery appliances that protect agent-based workloads such as file systems and databases."
+        ]
+      },
+      {
+        "title": "Backup and DR Service update policy \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/backup-disaster-recovery/docs/bulletins/backupdr-update-policy",
+        "source_id": "site-docs-reference",
+        "final_score": 111,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Google Cloud Backup and DR Service regularly releases updates for backup/recovery appliances, which includes bug fixes, security patches, and enhancements.",
+          "Backup and DR Service notifies you of available updates to backup/recovery appliances through in-product notifications in the management console.",
+          "However, some updates require you to manually update backup/recovery appliances."
+        ]
+      },
+      {
+        "title": "\"Monitor jobs in the appliance management console \\_|\\_ Backup and DR \\_\\",
+        "url": "https://docs.cloud.google.com/backup-disaster-recovery/docs/monitor-reports/monitor-jobs",
+        "source_id": "site-docs-root",
+        "final_score": 95,
+        "relevance": "",
+        "evidence_snippets": [
+          "From the Monitor tab, you can view and manage jobs (cancel active jobs or change the job priority of a queued job) from backup/recovery appliances managed by the appliance management console.",
+          "About on-demand jobs Most jobs run on a schedule according to their backup plans, but for upcoming maintenance windows, software upgrades, and for the first snapshot of a new application, you want to ensure that you have a successful copy of the data created before you start your scheduled maintenance task.",
+          "Log Replicate logreplicate Uses StreamSnap technology to perform the replication between the local and remote appliances, meaning the log replication goes directly from the snapshot pool on the local appliance to the snapshot pool on the remote appliance."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/configuration/update-appliance",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/bulletins/backupdr-update-policy",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/monitor-reports/monitor-jobs"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/configuration/update-appliance",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/bulletins/backupdr-update-policy",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/monitor-reports/monitor-jobs"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/configuration/update-appliance",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/bulletins/backupdr-update-policy",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/monitor-reports/monitor-jobs"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/configuration/update-appliance",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/bulletins/backupdr-update-policy",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/monitor-reports/monitor-jobs"
+      ]
+    }
+  ]
+}

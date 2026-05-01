@@ -1,0 +1,131 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:43.352Z",
+  "source_step08_card": "data/step-08/current/products/manufacturing-data-engine/card.json",
+  "product_name": "Manufacturing Data Engine",
+  "product_slug": "manufacturing-data-engine",
+  "feature_name": "BigQuery schema extensions",
+  "feature_slug": "bigquery-schema-extensions",
+  "summary": "Extends the BigQuery schema with new fields to better support analytics use cases.",
+  "extended_definition": "Extends the BigQuery schema with new fields to better support analytics use cases.",
+  "lifecycle": {
+    "latest_feature_date": "2023-08-03",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/manufacturing-data-engine/docs/guides/access/how-to-query-in-gcs",
+      "https://docs.cloud.google.com/manufacturing-data-engine/docs/guides/analyze/how-to-use-the-mde-lookml-lib",
+      "https://docs.cloud.google.com/manufacturing-data-engine/docs/guides/model/how-to-create-a-metadata-bucket-version",
+      "https://docs.cloud.google.com/manufacturing-data-engine/docs/guides/model/how-to-create-a-new-type-version"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Use the LookML Library \\_|\\_ Manufacturing Data Engine \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/manufacturing-data-engine/docs/guides/analyze/how-to-use-the-mde-lookml-lib",
+        "source_id": "site-docs-reference",
+        "final_score": 163,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The following example shows how you can extend the base view to define a dimension called device : include : \"//mde lookml lib/mde abstract core/views/dimension/ .view\" view : dim source { derived table : { sql : SELECT FROM mde dimension.metadata-store where bucket number = BUCKET NUMBER ;; } view label : \"DIM - Device\" extends : [ dim base ] dimension : device name { type : string sql : JSON VALUE(${TABLE}.instance,\"$.device name\") ;; } } And, similarly, the library provides base views per MDE archetype for modeling record tables in BigQuery as fact tables.",
+          "If you used the MDE Project Template to bootstrap a new MDE project, the provided Looker model automatically imports the views and explores from the default package: connection : \"@{looker connection}\" DEFAULT MDE EXPLORES ########## include : \"//mde lookml lib/mde packages/default/explores/default.explore.lkml\" CUSTOM VIEWS ################ include : \"/views/dimension/ .view\" include : \"/views/fact/ .view\" Once your project is set up, you can use the default default explores in Looker to analyze data.",
+          "The following example shows how you can define a fact view called sensor readings : include : \"//mde lookml lib/mde abstract core/views/fact/fct numeric archetype.view\" view : fct sensor readings { extends : [ fct numeric archetype ] label : \"FCT - Sensor Readings\" sql table name : mde data.sensor-readings ;; } Packages The mde packages directory contains prebuilt LookML packages for MDE."
+        ]
+      },
+      {
+        "title": "\"Query in Cloud Storage \\_|\\_ Manufacturing Data Engine \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/manufacturing-data-engine/docs/guides/access/how-to-query-in-gcs",
+        "source_id": "site-docs-reference",
+        "final_score": 162,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "See the following examples: NumericDataSeries archetype schema: { \"type\" : \"record\" , \"namespace\" : \"com.google.cloud.industry.manufacturing.sfp.datalake.storage.gcs\" , \"name\" : \"NumericDataSeriesGCSObject\" , \"fields\" : [ { \"name\" : \"id\" , \"type\" : \"string\" , \"doc\" : \"Unique record id\" }, { \"name\" : \"tag name\" , \"type\" : \"string\" , \"doc\" : \"Name of the tag\" }, { \"name\" : \"type name\" , \"type\" : \"string\" }, { \"name\" : \"type version\" , \"type\" : \"int\" }, { \"name\" : \"embedded metadata\" , \"type\" : [ \"null\" , \"string\" ], \"default\" : null }, { \"name\" : \"materialized cloud metadata\" , \"type\" : [ \"null\" , \"string\" ], \"default\" : null }, { \"name\" : \"cloud metadata ref\" , \"type\" : [ \"null\" , \"string\" ], \"default\" : null }, { \"name\" : \"source message id\" , \"type\" : \"string\" }, { \"name\" : \"event timestamp\" , \"type\" : { \"type\" : \"long\" , \"logicalType\" : \"timestamp-millis\" } }, { \"name\" : \"value\" , \"type\" : \"double\" } ] } DiscreteDataSeries archetype schema: { \"type\" : \"record\" , \"name\" : \"DiscreteDataSeriesGCSObject\" , \"namespace\" : \"com.google.cloud.industry.manufacturing.sfp.datalake.storage.gcs\" , \"fields\" : [ { \"name\" : \"id\" , \"type\" : { \"type\" : \"string\" , \"avro.java.string\" : \"String\" }, \"doc\" : \"Unique record id\" }, { \"name\" : \"tag name\" , \"type\" : { \"type\" : \"string\" , \"avro.java.string\" : \"String\" }, \"doc\" : \"Name of the tag\" }, { \"name\" : \"type name\" , \"type\" : { \"type\" : \"string\" , \"avro.java.string\" : \"String\" } }, { \"name\" : \"type version\" , \"type\" : \"int\" }, { \"name\" : \"embedded metadata\" , \"type\" : [ \"null\" , { \"type\" : \"string\" , \"avro.java.string\" : \"String\" } ], \"default\" : null }, { \"name\" : \"materialized cloud metadata\" , \"type\" : [ \"null\" , { \"type\" : \"string\" , \"avro.java.string\" : \"String\" } ], \"default\" : null }, { \"name\" : \"cloud metadata ref\" , \"type\" : [ \"null\" , { \"type\" : \"string\" , \"avro.java.string\" : \"String\" } ], \"default\" : null }, { \"name\" : \"source message id\" , \"type\" : { \"type\" : \"string\" , \"avro.java.string\" : \"String\" } }, { \"name\" : \"event timestamp\" , \"type\" : { \"type\" : \"long\" , \"logicalType\" : \"timestamp-millis\" } }, { \"name\" : \"data\" , \"type\" : { \"type\" : \"string\" , \"avro.java.string\" : \"String\" } } ] } ContinuousDataSeries archetype schema: { \"type\" : \"record\" , \"namespace\" : \"com.google.cloud.industry.manufacturing.sfp.datalake.storage.gcs\" , \"name\" : \"ContinuousDataSeriesGCSObject\" , \"fields\" : [ { \"name\" : \"id\" , \"type\" : \"string\" , \"doc\" : \"Unique record id\" }, { \"name\" : \"tag name\" , \"type\" : \"string\" , \"doc\" : \"Name of the tag\" }, { \"name\" : \"type name\" , \"type\" : \"string\" }, { \"name\" : \"type version\" , \"type\" : \"int\" }, { \"name\" : \"embedded metadata\" , \"type\" : [ \"null\" , \"string\" ], \"default\" : null }, { \"name\" : \"materialized cloud metadata\" , \"type\" : [ \"null\" , \"string\" ], \"default\" : null }, { \"name\" : \"cloud metadata ref\" , \"type\" : [ \"null\" , \"string\" ], \"default\" : null }, { \"name\" : \"source message id\" , \"type\" : \"string\" }, { \"name\" : \"event timestamp start\" , \"type\" : { \"type\" : \"long\" , \"logicalType\" : \"timestamp-millis\" } }, { \"name\" : \"event timestamp end\" , \"type\" : { \"type\" : \"long\" , \"logicalType\" : \"timestamp-millis\" } }, { \"name\" : \"data\" , \"type\" : \"string\" }, { \"name\" : \"duration\" , \"type\" : \"long\" } ] } Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "As with Raw data, messages are grouped in 10 minute windows and 10 files are written in each of the windows, this data is used to produce the filenames, ie: gs://<project-id>-gcs-ingestion/v1.3/default-discrete-records/dt = 2023 -08-08/gcsoutput2023-08-08T09:40:00.000Z-2023-08-08T09:50:00.000Z-00000-of-00010.avro gs://<project-id>-gcs-ingestion/v1.3/default-discrete-records/dt = 2023 -08-08/gcsoutput2023-08-08T09:40:00.000Z-2023-08-08T09:50:00.000Z-00001-of-00010.avro gs://<project-id>-gcs-ingestion/v1.3/default-discrete-records/dt = 2023 -08-08/gcsoutput2023-08-08T09:40:00.000Z-2023-08-08T09:50:00.000Z-00002-of-00010.avro gs://<project-id>-gcs-ingestion/v1.3/default-discrete-records/dt = 2023 -08-08/gcsoutput2023-08-08T09:40:00.000Z-2023-08-08T09:50:00.000Z-00003-of-00010.avro gs://<project-id>-gcs-ingestion/v1.3/default-discrete-records/dt = 2023 -08-08/gcsoutput2023-08-08T09:40:00.000Z-2023-08-08T09:50:00.000Z-00004-of-00010.avro gs://<project-id>-gcs-ingestion/v1.3/default-discrete-records/dt = 2023 -08-08/gcsoutput2023-08-08T09:40:00.000Z-2023-08-08T09:50:00.000Z-00005-of-00010.avro gs://<project-id>-gcs-ingestion/v1.3/default-discrete-records/dt = 2023 -08-08/gcsoutput2023-08-08T09:40:00.000Z-2023-08-08T09:50:00.000Z-00006-of-00010.avro gs://<project-id>-gcs-ingestion/v1.3/default-discrete-records/dt = 2023 -08-08/gcsoutput2023-08-08T09:40:00.000Z-2023-08-08T09:50:00.000Z-00007-of-00010.avro gs://<project-id>-gcs-ingestion/v1.3/default-discrete-records/dt = 2023 -08-08/gcsoutput2023-08-08T09:40:00.000Z-2023-08-08T09:50:00.000Z-00008-of-00010.avro gs://<project-id>-gcs-ingestion/v1.3/default-discrete-records/dt = 2023 -08-08/gcsoutput2023-08-08T09:40:00.000Z-2023-08-08T09:50:00.000Z-00009-of-00010.avro There's a different schema which only vary slightly for each Archetype, and so each type uses that corresponding schema.",
+          "Raw data is stored in AVRO format using the following schema: { \"type\" : \"record\" , \"name\" : \"AvroPubsubMessageRecord\" , \"namespace\" : \"com.google.cloud.industry.manufacturing.sfp.datalake.core\" , \"fields\" : [ { \"name\" : \"attributes\" , \"type\" : { \"type\" : \"map\" , \"values\" : \"string\" } }, { \"name\" : \"message\" , \"type\" : { \"type\" : \"bytes\" , \"java-class\" : \"[B\" } }, { \"name\" : \"messageId\" , \"type\" : \"string\" }, { \"name\" : \"timestamp\" , \"type\" : \"long\" } ] The schema is composed by the following values: attributes : Stores the Pub/Sub message attribute map. message : Stores the raw message as received in the Pub/Sub topic input-messages . messageId : ID set by Pub/Sub when receiving the message, it's written into all the sinks in order to have lineage of where the data came from. timestamp : When the message was received by Pub/Sub."
+        ]
+      },
+      {
+        "title": "\"Create a type version \\_|\\_ Manufacturing Data Engine \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/manufacturing-data-engine/docs/guides/model/how-to-create-a-new-type-version",
+        "source_id": "site-docs-reference",
+        "final_score": 153,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Versioning restrictions When creating new versions of a type, consider the following limitations: New versions may: Add new optional fields to the data schema.",
+          "New versions may not: Remove fields from the data schema.",
+          "REST Execute the following REST API request: POST /configuration/v1/types/ TYPE NAME /versions { \"metadataBuckets\" : [ { \"bucketName\" : \" EXISTING BUCKET NAME \" , \"version\" : \" EXISTING BUCKET VERSION \" }, { \"bucketName\" : \" NEW BUCKET NAME \" , \"version\" : \" NEW BUCKET VERSION \" } ], \"storageSpecs\" : [ { \"sink\" : \"BIG QUERY\" , \"disabled\" : \"false\" , \"materializeCloudMetadata\" : \"true\" }, { \"sink\" : \"BIG TABLE\" , \"disabled\" : \"false\" , \"materializeCloudMetadata\" : \"false\" }, { \"sink\" : \"GCS\" , \"disabled\" : \"false\" , \"materializeCloudMetadata\" : \"false\" }, { \"sink\" : \"PUBSUB PROTO\" , \"disabled\" : \"false\" , \"materializeCloudMetadata\" : \"false\" }, { \"sink\" : \"PUBSUB JSON\" , \"disabled\" : \"false\" , \"materializeCloudMetadata\" : \"false\" } ] } Replace the following: TYPE NAME : Name of the type for which a new version is created."
+        ]
+      },
+      {
+        "title": "\"Create a metadata bucket version \\_|\\_ Manufacturing Data Engine \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/manufacturing-data-engine/docs/guides/model/how-to-create-a-metadata-bucket-version",
+        "source_id": "site-docs-reference",
+        "final_score": 151,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Console To create a new metadata bucket version click Create New Version from the METADATA section of the Cloud Management MC web interface: A configuration panel is displayed with a form to update the parameters of the new metadata bucket version : Only backward compatible changes are allowed for new versions.",
+          "Metadata schema : Add new attributes to the existing schema of the bucket.",
+          "REST Execute the following REST API request: POST /metadata/v1/buckets/ BUCKET NAME /versions { \"schema\" : \" BUCKET SCHEMA \" , \"provider\" : \"local\" } Replace the following: BUCKET NAME : Name of the bucket to be created."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "archetype.view",
+      "avro.java.string",
+      "com.google.cloud.industry.manufacturing.sfp.datalake.core",
+      "com.google.cloud.industry.manufacturing.sfp.datalake.storage.gcs",
+      "data.sensor",
+      "default.explore.lkml",
+      "dimension.metadata",
+      "v1.3"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/manufacturing-data-engine/docs/guides/analyze/how-to-use-the-mde-lookml-lib",
+        "https://docs.cloud.google.com/manufacturing-data-engine/docs/guides/access/how-to-query-in-gcs",
+        "https://docs.cloud.google.com/manufacturing-data-engine/docs/guides/model/how-to-create-a-new-type-version",
+        "https://docs.cloud.google.com/manufacturing-data-engine/docs/guides/model/how-to-create-a-metadata-bucket-version"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/manufacturing-data-engine/docs/guides/analyze/how-to-use-the-mde-lookml-lib",
+        "https://docs.cloud.google.com/manufacturing-data-engine/docs/guides/access/how-to-query-in-gcs",
+        "https://docs.cloud.google.com/manufacturing-data-engine/docs/guides/model/how-to-create-a-new-type-version",
+        "https://docs.cloud.google.com/manufacturing-data-engine/docs/guides/model/how-to-create-a-metadata-bucket-version"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/manufacturing-data-engine/docs/guides/analyze/how-to-use-the-mde-lookml-lib",
+        "https://docs.cloud.google.com/manufacturing-data-engine/docs/guides/access/how-to-query-in-gcs",
+        "https://docs.cloud.google.com/manufacturing-data-engine/docs/guides/model/how-to-create-a-new-type-version",
+        "https://docs.cloud.google.com/manufacturing-data-engine/docs/guides/model/how-to-create-a-metadata-bucket-version"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,177 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:43.466Z",
+  "source_step08_card": "data/step-08/current/products/memorystore-for-redis/card.json",
+  "product_name": "Memorystore for Redis",
+  "product_slug": "memorystore-for-redis",
+  "feature_name": "Memorystore for Redis region us-west4",
+  "feature_slug": "memorystore-for-redis-region-us-west4",
+  "summary": "Adds the Memorystore for Redis region us-west4 in Las Vegas.",
+  "extended_definition": "Adds the Memorystore for Redis region us-west4 in Las Vegas.",
+  "lifecycle": {
+    "latest_feature_date": "2020-04-20",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 1,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "thin_token_overlap",
+        "message": "Supporting pages only weakly overlap with informative feature tokens.",
+        "suggested_steps": [
+          "step-03",
+          "step-04",
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/memorystore/docs/redis/create-instance-console",
+      "https://docs.cloud.google.com/memorystore/docs/redis/create-instance-gcloud",
+      "https://docs.cloud.google.com/memorystore/docs/redis/create-instance-terraform",
+      "https://docs.cloud.google.com/memorystore/docs/redis/high-availability-for-memorystore-for-redis"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Quickstart: Create a Memorystore for Redis instance by using the gcloud\\",
+        "url": "https://docs.cloud.google.com/memorystore/docs/redis/create-instance-gcloud",
+        "source_id": "site-docs-root",
+        "final_score": 275,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Create a Memorystore for Redis instance In this section, you create a 2-GB Memorystore for Redis instance that's located in the us-central1 region and is in the Basic tier.",
+          "If you already have the Google Cloud CLI installed, then update it. gcloud components update Required roles To get the permissions that you need to create a Memorystore for Redis instance, ask your administrator to grant you the following IAM roles on the project: Cloud Memorystore Redis Admin ( roles/redis.admin ) Compute Instance Admin (v1) ( roles/compute.instanceAdmin.v1 ) Service Account User ( roles/iam.serviceAccountUser ) For more information about granting roles, see Manage access to projects, folders, and organizations .",
+          "Connect to the Memorystore for Redis instance from a Compute Engine VM You can connect to the Memorystore for Redis instance from any Compute Engine VM that uses the instance's authorized network with a supported RFC 1918 IP address ."
+        ]
+      },
+      {
+        "title": "\"Quickstart: Create a Memorystore for Redis instance by using Terraform \\_\\",
+        "url": "https://docs.cloud.google.com/memorystore/docs/redis/create-instance-terraform",
+        "source_id": "site-docs-root-2",
+        "final_score": 273,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Add the following resource to your Terraform configuration file: resource \"google redis instance\" \"my memorystore redis instance\" { name = \"myinstance\" tier = \"BASIC\" memory size gb = 2 region = \"us-central1\" redis version = \"REDIS 6 X\" } Add the following output value to your Terraform configuration file to print the IP address of the instance.",
+          "Create a Memorystore for Redis instance In this section, you create a 2-GB Memorystore for Redis instance that's located in the us-central1 region and is in the Basic tier.",
+          "Required roles To get the permissions that you need to create a Memorystore for Redis instance, ask your administrator to grant you the following IAM roles on the project: Cloud Memorystore Redis Admin ( roles/redis.admin ) Compute Instance Admin (v1) ( roles/compute.instanceAdmin.v1 ) Service Account User ( roles/iam.serviceAccountUser ) For more information about granting roles, see Manage access to projects, folders, and organizations ."
+        ]
+      },
+      {
+        "title": "\"Quickstart: Create a Memorystore for Redis instance by using the Google\\",
+        "url": "https://docs.cloud.google.com/memorystore/docs/redis/create-instance-console",
+        "source_id": "site-docs-root",
+        "final_score": 263,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Create a Memorystore for Redis instance In this section, you create a 2-GB Memorystore for Redis instance that's located in the us-central1 region and is in the Basic tier.",
+          "Enable the API Required roles To get the permissions that you need to create a Memorystore for Redis instance, ask your administrator to grant you the following IAM roles on the project: Cloud Memorystore Redis Admin ( roles/redis.admin ) Compute Instance Admin (v1) ( roles/compute.instanceAdmin.v1 ) Service Account User ( roles/iam.serviceAccountUser ) For more information about granting roles, see Manage access to projects, folders, and organizations .",
+          "Connect to the Memorystore for Redis instance from a Compute Engine VM You can connect to the Memorystore for Redis instance from any Compute Engine VM that uses the instance's authorized network with a supported RFC 1918 IP address ."
+        ]
+      },
+      {
+        "title": "High availability for Memorystore for Redis \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/memorystore/docs/redis/high-availability-for-memorystore-for-redis",
+        "source_id": "site-docs-root",
+        "final_score": 262,
+        "relevance": "",
+        "evidence_snippets": [
+          "Memorystore for Redis uses the asynchronous replication protocol to copy any changes that you make to the data on the primary instance to the replicas.",
+          "A failover occurs when you perform the following tasks: Scale your instance Upgrade the Redis version of an instance Initiate a manual failover Perform a maintenance update If you implement retry logic in your application to handle connection drops because of failovers, then your instance probably won't see a significant performance impact.",
+          "How a failover affects your application When the primary instance fails over to the replica, Memorystore for Redis drops existing connections to the primary endpoint of the instance."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "compute.instanceAdmin.v1",
+      "iam.serviceAccountUser",
+      "redis.admin"
+    ],
+    "missing_inventory_roles": [
+      "roles/compute.instanceAdmin.v1",
+      "roles/iam.serviceAccountUser",
+      "roles/redis.admin"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/redis/create-instance-gcloud",
+        "https://docs.cloud.google.com/memorystore/docs/redis/create-instance-terraform",
+        "https://docs.cloud.google.com/memorystore/docs/redis/create-instance-console",
+        "https://docs.cloud.google.com/memorystore/docs/redis/high-availability-for-memorystore-for-redis"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/redis/create-instance-gcloud",
+        "https://docs.cloud.google.com/memorystore/docs/redis/create-instance-terraform",
+        "https://docs.cloud.google.com/memorystore/docs/redis/create-instance-console",
+        "https://docs.cloud.google.com/memorystore/docs/redis/high-availability-for-memorystore-for-redis"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/redis/create-instance-gcloud",
+        "https://docs.cloud.google.com/memorystore/docs/redis/create-instance-terraform",
+        "https://docs.cloud.google.com/memorystore/docs/redis/create-instance-console",
+        "https://docs.cloud.google.com/memorystore/docs/redis/high-availability-for-memorystore-for-redis"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/redis/create-instance-gcloud",
+        "https://docs.cloud.google.com/memorystore/docs/redis/create-instance-terraform",
+        "https://docs.cloud.google.com/memorystore/docs/redis/create-instance-console",
+        "https://docs.cloud.google.com/memorystore/docs/redis/high-availability-for-memorystore-for-redis"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/redis/create-instance-gcloud",
+        "https://docs.cloud.google.com/memorystore/docs/redis/create-instance-terraform",
+        "https://docs.cloud.google.com/memorystore/docs/redis/create-instance-console",
+        "https://docs.cloud.google.com/memorystore/docs/redis/high-availability-for-memorystore-for-redis"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/redis/create-instance-gcloud",
+        "https://docs.cloud.google.com/memorystore/docs/redis/create-instance-terraform",
+        "https://docs.cloud.google.com/memorystore/docs/redis/create-instance-console",
+        "https://docs.cloud.google.com/memorystore/docs/redis/high-availability-for-memorystore-for-redis"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/redis/create-instance-gcloud",
+        "https://docs.cloud.google.com/memorystore/docs/redis/create-instance-terraform",
+        "https://docs.cloud.google.com/memorystore/docs/redis/create-instance-console",
+        "https://docs.cloud.google.com/memorystore/docs/redis/high-availability-for-memorystore-for-redis"
+      ]
+    }
+  ]
+}

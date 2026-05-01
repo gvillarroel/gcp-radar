@@ -1,0 +1,98 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:17.262Z",
+  "source_step08_card": "data/step-08/current/products/application-integration/card.json",
+  "product_name": "Application Integration",
+  "product_slug": "application-integration",
+  "feature_name": "Cloud Monitoring integration for Application Integration",
+  "feature_slug": "cloud-monitoring-integration-for-application-integration",
+  "summary": "Application Integration now integrates with Cloud Monitoring for usage, performance, alerts, and health visibility of integration resources.",
+  "extended_definition": "Application Integration now integrates with Cloud Monitoring for usage, performance, alerts, and health visibility of integration resources.",
+  "lifecycle": {
+    "latest_feature_date": "2023-06-13",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/application-integration/docs/alerts",
+      "https://docs.cloud.google.com/application-integration/docs/autoscaling",
+      "https://docs.cloud.google.com/application-integration/docs/cloud-monitoring"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Use Cloud Monitoring \\_|\\_ Application Integration \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/application-integration/docs/cloud-monitoring",
+        "source_id": "site-docs-root-2",
+        "final_score": 102,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "This means that for all your published integrations, the integration metrics, usage data, and alerts are automatically ingested during the execution of your integrations.",
+          "All the performance metric data that is diaplayed in the Monitoring dashboards are for informational purpose only.",
+          "Access metrics using custom dashboards To create custom monitoring dashboards for your Application Integration resources in your Google Cloud project, do the following: In the Google Cloud console, go to the Cloud Monitoring > Dashboard Overview page: Go to Dashboard Overview page Click Create dashboard ."
+        ]
+      },
+      {
+        "title": "Configure alerts \\_|\\_ Application Integration \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/application-integration/docs/alerts",
+        "source_id": "site-docs-root-2",
+        "final_score": 84,
+        "relevance": "",
+        "evidence_snippets": [
+          "You can set alerts in the following two ways: Alerts in Cloud Monitoring Alerts in Cloud Logging Alerts in Cloud Monitoring You can create and configure Cloud Monitoring alerts to notify you when an Application Integration resource exceeds a specified threshold.",
+          "Create an alert You can create log-based alerts from the Logs Explorer page in the Google Cloud console or by using the Monitoring API.",
+          "For detailed instructions, see the following sections: Create a log-based alert by using the Logs Explorer Create a log-based alert by using the Monitoring API Note: You may incur additional charges for using Cloud Monitoring API directly."
+        ]
+      },
+      {
+        "title": "About autoscaling in Application Integration \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/application-integration/docs/autoscaling",
+        "source_id": "site-docs-root-2",
+        "final_score": 72,
+        "relevance": "",
+        "evidence_snippets": [
+          "Observability and monitoring Application Integration automatically exports a rich set of metrics to Cloud Monitoring, providing deep insights into the usage, performance, and health of your integrations.",
+          "Benefits The autoscaling features of Application Integration provide the following advantages: Performance at scale: Automatically adjust to changes in traffic and usage.",
+          "While a single, pre-built dashboard for all metrics across projects isn't directly available within the Application Integration platform, you can leverage Cloud Monitoring to create custom dashboards tailored to your specific needs."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/application-integration/docs/cloud-monitoring",
+        "https://docs.cloud.google.com/application-integration/docs/alerts",
+        "https://docs.cloud.google.com/application-integration/docs/autoscaling"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/application-integration/docs/cloud-monitoring",
+        "https://docs.cloud.google.com/application-integration/docs/alerts",
+        "https://docs.cloud.google.com/application-integration/docs/autoscaling"
+      ]
+    }
+  ]
+}

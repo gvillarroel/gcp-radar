@@ -1,0 +1,84 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:12.801Z",
+  "source_step08_card": "data/step-08/current/products/alloydb/card.json",
+  "product_name": "AlloyDB",
+  "product_slug": "alloydb",
+  "feature_name": "AlloyDB System insights",
+  "feature_slug": "alloydb-system-insights",
+  "summary": "AlloyDB System insights provides a unified and customizable database monitoring dashboard with predefined and Google Cloud metrics.",
+  "extended_definition": "AlloyDB System insights provides a unified and customizable database monitoring dashboard with predefined and Google Cloud metrics.",
+  "lifecycle": {
+    "latest_feature_date": "2024-12-12",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/alloydb/docs/advanced-query-insights-overview",
+      "https://docs.cloud.google.com/alloydb/docs/cloud-ready/partners",
+      "https://docs.cloud.google.com/alloydb/docs/optimize-database-performance-compare-snapshots"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Google Cloud Ready - AlloyDB Partners \\_|\\_ AlloyDB for PostgreSQL \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/alloydb/docs/cloud-ready/partners",
+        "source_id": "site-docs-reference-2",
+        "final_score": 136,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "For advanced database users, DBeaver suggests a powerful SQL editor, plenty of administration features, abilities of data and schema migration, monitoring database connection sessions, and a lot more Partner references Database driver AlloyDB for PostgreSQL Powering AlloyDB with DBeaver Partner Advantage page Direct link Hex Solution Hex Category Advanced Analytics Description Hex is a platform for collaborative analytics and data science.",
+          "Partner references Consolidate Your Data on AlloyDB With Integrate.io in Minutes Connect AlloyDB to Your Data Sources using Integrate.io ETL Integrate.io + AlloyDB demo Partner Advantage page Direct link Kingswaysoft Solution KingswaySoft Category Data integration and migration Description KingswaySoft is easy to use, and it offers codeless integration of Google's AlloyDB with any virtual application or database system.",
+          "It's designed to accelerate mission-critical databases, like AlloyDB, by providing exceptionally high performance, enterprise data services, and cost efficiency, making cloud environments behave with the speed and reliability of on-premises systems."
+        ]
+      },
+      {
+        "title": "\"Advanced query insights features overview \\_|\\_ AlloyDB for PostgreSQL \\_\\",
+        "url": "https://docs.cloud.google.com/alloydb/docs/advanced-query-insights-overview",
+        "source_id": "site-docs-reference",
+        "final_score": 122,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Home Documentation Databases AlloyDB for PostgreSQL Guides Send feedback Advanced query insights features overview Stay organized with collections Save and categorize content based on your preferences.",
+          "In addition, standard query insights metrics are available in system metrics in Cloud Monitoring to keep the functionalities of the standard query insights intact.",
+          "To help you proactively identify and troubleshoot root causes of query performance issues, advanced query insights features let you do the following: Perform ad hoc analysis to diagnose difficult problems using near real-time query stats and correlation analysis across multiple dimensions like users, hosts, and databases."
+        ]
+      },
+      {
+        "title": "\"Optimize database performance by comparing performance snapshots \\_|\\_ AlloyDB\\",
+        "url": "https://docs.cloud.google.com/alloydb/docs/optimize-database-performance-compare-snapshots",
+        "source_id": "site-docs-reference-2",
+        "final_score": 118,
+        "relevance": "",
+        "evidence_snippets": [
+          "Example report The following is an abridged example of a generated performance snapshot report: Example performance snapshot report $ psql -d postgres -U alloydbsuperuser postgres=> select perfsnap.report(22, 23); report -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- PGSNAP DB Report for: Snapshot details -------------------------------------- Host i841-sr-primary-2a34f46e-06bc Release 14.12 Startup Time 2024-10-08 03:23:15+00 Snap Id Snap Time ------------ ---------- ------------------------ Begin Snap: 22 24.10.2024 04:33:56 (UTC) Automatic snapshot End Snap: 23 25.10.2024 04:38:56 (UTC) Automatic snapshot Elapsed: 1 day 00:04:59.979321 Database Cache sizes Shared Buffers: 31 GB Block Size: 8192 Effective Cache Size: 25 GB WAL Buffers: 16384 Host CPU %User %Nice %System %Idle %WIO %IRQ %SIRQ %Steal %Guest ------- ------- ------- ------- ------- ------- ------- ------- ------- 1.07 0.22 0.91 97.40 0.09 0.00 0.31 0.00 0.00 Host Memory Total Memory: 63 GB Available Memory: 11 GB Free Memory: 726 MB Buffers Memory: 3706 MB Load profile (in bytes) Per Second Per Transaction ------------ --------------- Redo size: 63083.64 4489.93 Logical reads: 1961.21 139.59 ...",
+          "To identify and mitigate AlloyDB for PostgreSQL database performance issues, you can compare snapshots of system metrics between two points in time by manually generating performance snapshot reports.",
+          "This tool complements other AlloyDB observability features like systems insights , query insights , and the Metrics Explorer , which provide real-time metrics about your instance."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "perfsnap.report",
+      "perfsnap.snap"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": []
+}

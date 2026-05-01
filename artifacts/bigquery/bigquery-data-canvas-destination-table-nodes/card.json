@@ -1,0 +1,121 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:18.771Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery",
+  "feature_name": "BigQuery data canvas destination table nodes",
+  "feature_slug": "bigquery-data-canvas-destination-table-nodes",
+  "summary": "BigQuery data canvas supports destination table nodes for persisting query results to new or existing tables.",
+  "extended_definition": "BigQuery data canvas supports destination table nodes for persisting query results to new or existing tables.",
+  "lifecycle": {
+    "latest_feature_date": "2025-09-25",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-browse-table",
+      "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-copy-table-cmek",
+      "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-query-natality-tutorial"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Write to destination table \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-query-natality-tutorial",
+        "source_id": "site-docs-reference-required-15",
+        "final_score": 163,
+        "relevance": "",
+        "evidence_snippets": [
+          "As of google-cloud-bigquery 1.11.0, a fully qualified table ID can be used in place of a TableReference. job config . destination = f \" { dataset id full } .regression input\" Set up a query in Standard SQL, which is the default for the BigQuery Python client library.",
+          "Home Documentation Data analytics BigQuery Samples Write to destination table Stay organized with collections Save and categorize content based on your preferences.",
+          "In the code below, the following actions are taken: A new dataset is created \"natality regression.\" A query is run against the public dataset, bigquery-public-data.samples.natality, selecting only the data of interest to the regression, the output of which is stored in a new \"regression input\" table."
+        ]
+      },
+      {
+        "title": "Preview table data \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-browse-table",
+        "source_id": "site-docs-reference-required-15",
+        "final_score": 161,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For more information, see Set up authentication for client libraries . // Import the Google Cloud client library using default credentials const { BigQuery } = require ( ' @google-cloud/bigquery ' ); const bigquery = new BigQuery (); async function browseTable () { // Retrieve a table's rows using manual pagination. / TODO(developer): Uncomment the following lines before running the sample. / // const datasetId = 'my dataset'; // Existing dataset // const tableId = 'my table'; // Table to create const query = SELECT name, SUM(number) as total people FROM \\bigquery-public-data.usa names.usa 1910 2013\\ GROUP BY name ORDER BY total people DESC LIMIT 100 ; // Create table reference. const dataset = bigquery . dataset ( datasetId ); const destinationTable = dataset . table ( tableId ); // For all options, see https://cloud.google.com/bigquery/docs/reference/rest/v2/Job#jobconfigurationquery const queryOptions = { query : query , destination : destinationTable , }; // Run the query as a job const [ job ] = await bigquery . createQueryJob ( queryOptions ); // For all options, see https://cloud.google.com/bigquery/docs/reference/v2/jobs/getQueryResults const queryResultsOptions = { // Retrieve zero resulting rows. maxResults : 0 , }; // Wait for the job to finish. await job . getQueryResults ( queryResultsOptions ); function manualPaginationCallback ( err , rows , nextQuery ) { rows . forEach ( row = > { console . log ( name: ${ row . name } , ${ row . total people } total people ); }); if ( nextQuery ) { // More results exist. destinationTable . getRows ( nextQuery , manualPaginationCallback ); } } // For all options, see https://cloud.google.com/bigquery/docs/reference/v2/tabledata/list const getRowsOptions = { autoPaginate : false , maxResults : 20 , }; // Retrieve all rows. destinationTable . getRows ( getRowsOptions , manualPaginationCallback ); } browseTable (); PHP Before trying this sample, follow the PHP setup instructions in the BigQuery quickstart using client libraries .",
+          "For more information, see Set up authentication for client libraries . use Google\\Cloud\\BigQuery\\BigQueryClient; / Browses the given table for data @param string $projectId The project Id of your Google Cloud Project. @param string $datasetId The BigQuery dataset ID. @param string $tableId The BigQuery table ID. @param int $startIndex Zero-based index of the starting row. / function browse table( string $projectId, string $datasetId, string $tableId, int $startIndex = 0 ): void { // Query options $maxResults = 10; $options = [ 'maxResults' => $maxResults, 'startIndex' => $startIndex ]; $bigQuery = new BigQueryClient([ 'projectId' => $projectId, ]); $dataset = $bigQuery->dataset($datasetId); $table = $dataset->table($tableId); $numRows = 0; foreach ($table->rows($options) as $row) { print('---'); foreach ($row as $column => $value) { printf('%s: %s' .",
+          "TableResult result = bigquery . listTableData ( tableId , TableDataListOption . pageSize ( 100 )); // Print the records result . iterateAll () . forEach ( row - > { row . forEach ( fieldValue - > System . out . print ( fieldValue . toString () + \", \" )); System . out . println (); }); System . out . println ( \"Query ran successfully\" ); } catch ( BigQueryException e ) { System . out . println ( \"Query failed to run \\n\" + e . toString ()); } } } Node.js Before trying this sample, follow the Node.js setup instructions in the BigQuery quickstart using client libraries ."
+        ]
+      },
+      {
+        "title": "\"Copy a table with customer-managed encryption keys (CMEK) \\_|\\_ BigQuery\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-copy-table-cmek",
+        "source_id": "site-docs-reference-required-15",
+        "final_score": 159,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "BigQuery bigquery = BigQueryOptions . getDefaultInstance (). getService (); TableId sourceTable = TableId . of ( sourceDatasetName , sourceTableId ); TableId destinationTable = TableId . of ( destinationDatasetName , destinationTableId ); // For more information on CopyJobConfiguration see: // https://googleapis.dev/java/google-cloud-clients/latest/com/google/cloud/bigquery/JobConfiguration.html CopyJobConfiguration configuration = CopyJobConfiguration . newBuilder ( destinationTable , sourceTable ) . setDestinationEncryptionConfiguration ( encryption ) . build (); // For more information on Job see: // https://googleapis.dev/java/google-cloud-clients/latest/index.html?com/google/cloud/bigquery/package-summary.html Job job = bigquery . create ( JobInfo . of ( configuration )); // Blocks until this job completes its execution, either failing or succeeding.",
+          "Job completedJob = job . waitFor (); if ( completedJob == null ) { System . out . println ( \"Job not executed since it no longer exists.\" ); return ; } else if ( completedJob . getStatus (). getError () != null ) { System . out . println ( \"BigQuery was unable to copy table due to an error: \\n\" + job . getStatus (). getError ()); return ; } System . out . println ( \"Table cmek copied successfully.\" ); } catch ( BigQueryException InterruptedException e ) { System . out . println ( \"Table cmek copying job was interrupted. \\n\" + e . toString ()); } } } Python Before trying this sample, follow the Python setup instructions in the BigQuery quickstart using client libraries .",
+          "For more information, see Set up authentication for client libraries . import ( \"context\" \"fmt\" \"cloud.google.com/go/bigquery\" ) // copyTableWithCMEK demonstrates creating a copy of a table and ensuring the copied data is // protected with a customer managed encryption key. func copyTableWithCMEK ( projectID , datasetID , tableID string ) error { // projectID := \"my-project-id\" // datasetID := \"mydataset\" // tableID := \"mytable\" ctx := context ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "data.samples.natality",
+      "data.usa",
+      "googleapis.dev",
+      "index.html",
+      "names.usa",
+      "summary.html"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-browse-table",
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-query-natality-tutorial",
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-copy-table-cmek"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-browse-table",
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-query-natality-tutorial",
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-copy-table-cmek"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-browse-table",
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-query-natality-tutorial",
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-copy-table-cmek"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-browse-table",
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-query-natality-tutorial",
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-copy-table-cmek"
+      ]
+    }
+  ]
+}

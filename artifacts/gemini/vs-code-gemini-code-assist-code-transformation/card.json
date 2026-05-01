@@ -1,0 +1,117 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:37.235Z",
+  "source_step08_card": "data/step-08/current/products/gemini/card.json",
+  "product_name": "Gemini",
+  "product_slug": "gemini",
+  "feature_name": "VS Code Gemini Code Assist code transformation",
+  "feature_slug": "vs-code-gemini-code-assist-code-transformation",
+  "summary": "The VS Code Gemini Code Assist extension now supports code transformation and code generation from prompts anywhere in a file.",
+  "extended_definition": "The VS Code Gemini Code Assist extension now supports code transformation and code generation from prompts anywhere in a file.",
+  "lifecycle": {
+    "latest_feature_date": "2024-07-30",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/gemini/docs/codeassist/chat-gemini",
+      "https://docs.cloud.google.com/gemini/docs/codeassist/set-up-gemini",
+      "https://docs.cloud.google.com/gemini/docs/codeassist/use-pre-release-features-gemini-code-assist",
+      "https://docs.cloud.google.com/gemini/docs/codeassist/write-code-gemini"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Code with Gemini Code Assist Standard and Enterprise \\_|\\_ Gemini for Google\\",
+        "url": "https://docs.cloud.google.com/gemini/docs/codeassist/write-code-gemini",
+        "source_id": "site-docs-root-2",
+        "final_score": 339,
+        "relevance": "",
+        "evidence_snippets": [
+          "Known issues This section outlines the known issues of Gemini Code Assist: VS Code Chat responses may be truncated when they include an updated version of a large open file To work around this issue, select a smaller section of code and include an additional directive in the chat prompt, such as only output the selected code.",
+          "This document describes how you can use Gemini Code Assist , an AI-powered collaborator in your IDE, to help you do the following in VS Code or IntelliJ and other supported JetBrains IDEs : Generate code for your project with code transformation.",
+          "To prompt Gemini Code Assist with code transformation, follow these steps: VS Code In your code file, on a new line, press Control+I (for Windows and Linux) or Command+I (for macOS) to open the Gemini Code Assist Quick Pick menu."
+        ]
+      },
+      {
+        "title": "\"Chat with Gemini Code Assist Standard and Enterprise \\_|\\_ Gemini for Google\\",
+        "url": "https://docs.cloud.google.com/gemini/docs/codeassist/chat-gemini",
+        "source_id": "site-docs-root",
+        "final_score": 307,
+        "relevance": "",
+        "evidence_snippets": [
+          "Known issues This section outlines the known issues of Gemini Code Assist: VS Code Chat responses may be truncated when they include an updated version of a large open file To work around this issue, select a smaller section of code and include an additional directive in the chat prompt, such as only output the selected code.",
+          "Toggle automatic outline generation To toggle automatic Gemini Code Assist outline generation of your code files, do the following: VS Code Navigate to Settings > User > Extensions > Gemini Code Assist .",
+          "To change the default setting, perform the following tasks: VS Code In your IDE, navigate to Settings > Extensions Gemini Code Assist ."
+        ]
+      },
+      {
+        "title": "\"Set up Gemini Code Assist Standard and Enterprise \\_|\\_ Gemini for Google\\",
+        "url": "https://docs.cloud.google.com/gemini/docs/codeassist/set-up-gemini",
+        "source_id": "site-docs-root",
+        "final_score": 298,
+        "relevance": "",
+        "evidence_snippets": [
+          "Learn more about the supported features: Code features overview Chat features overview Get started with the following guides: Code with Gemini Code Assist Chat with Gemini Code Assist List of directories where Gemini Code Assist caches information The following table provides a list of directories where Gemini Code Assist stores extension information such as auth tokens: Windows %LOCALAPPDATA%/cloud-code %LOCALAPPDATA%/google-vscode-extension macOS /Library/Application Support/cloud-code /Library/Application Support/google-vscode-extension Linux /.cache/cloud-code /.cache/google-vscode-extension Sign into Google and select a Google Cloud project Once users have installed Gemini Code Assist in their IDEs, they need to sign in to their Google Accounts, and if it's their first time using Gemini Code Assist Standard or Enterprise in their IDE, they select a Google Cloud project.",
+          "If you prefer to follow the Code with Gemini Code Assist walkthrough directly in your IDE, click Launch VS Code and follow the steps in the walkthrough to connect to Google Cloud and activate Gemini Code Assist Standard or Enterprise.",
+          "You can further configure your Gemini Code Assist installation by specifying your preferences using the top-level application taskbar: navigate to Code > Settings > Settings Extensions and search for Gemini Code Assist ."
+        ]
+      },
+      {
+        "title": "\"Use pre-release features in Gemini Code Assist for VS Code \\_|\\_ Gemini\\",
+        "url": "https://docs.cloud.google.com/gemini/docs/codeassist/use-pre-release-features-gemini-code-assist",
+        "source_id": "site-docs-root-2",
+        "final_score": 286,
+        "relevance": "",
+        "evidence_snippets": [
+          "This page describes how to use pre-release features of Gemini Code Assist for VS Code on the insiders release channel.",
+          "Home Documentation AI and ML Gemini for Google Cloud Guides Send feedback Use pre-release features in Gemini Code Assist for VS Code Stay organized with collections Save and categorize content based on your preferences.",
+          "Comment out or remove the following line of your user settings JSON: \"geminicodeassist.updateChannel\": \"Insiders\", Save your user settings."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cloudaicompanion.googleapis.com",
+      "geminicodeassist.updateChannel",
+      "grpc.health.v1.Health"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/docs/codeassist/write-code-gemini",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/chat-gemini",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/set-up-gemini",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/use-pre-release-features-gemini-code-assist"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/docs/codeassist/write-code-gemini",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/chat-gemini",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/set-up-gemini",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/use-pre-release-features-gemini-code-assist"
+      ]
+    }
+  ]
+}

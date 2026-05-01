@@ -1,0 +1,101 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:46.903Z",
+  "source_step08_card": "data/step-08/current/products/spanner/card.json",
+  "product_name": "Spanner",
+  "product_slug": "spanner",
+  "feature_name": "Transaction statistics commit retry reporting",
+  "feature_slug": "transaction-statistics-commit-retry-reporting",
+  "summary": "Spanner transaction statistics now include commit retry information to help diagnose performance issues caused by transaction aborts.",
+  "extended_definition": "Spanner transaction statistics now include commit retry information to help diagnose performance issues caused by transaction aborts.",
+  "lifecycle": {
+    "latest_feature_date": "2021-04-13",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/spanner/docs/commit-statistics",
+      "https://docs.cloud.google.com/spanner/docs/jdbc-session-mgmt-commands",
+      "https://docs.cloud.google.com/spanner/docs/jdbc-session-mgmt-commands-pgcompat"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Retrieve commit statistics for a transaction \\_|\\_ Spanner \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/spanner/docs/commit-statistics",
+        "source_id": "site-docs-root",
+        "final_score": 155,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Create ( options , logger ); var connectionStringBuilder = new SpannerConnectionStringBuilder { ConnectionString = $\"Data Source=projects/{projectId}/instances/{instanceId}/databases/{databaseId}\" , // Set LogCommitStats to true to enable logging commit statistics for all transactions on the connection. // LogCommitStats can also be enabled/disabled for individual Spanner transactions.",
+          "Home Documentation Databases Spanner Guides Send feedback Retrieve commit statistics for a transaction Stay organized with collections Save and categorize content based on your preferences.",
+          "The following code enables commit statistics logging for all transactions by setting the LogCommitStats property on SpannerConnectionStringBuilder to true."
+        ]
+      },
+      {
+        "title": "\"JDBC session management commands (GoogleSQL) \\_|\\_ Spanner \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/spanner/docs/jdbc-session-mgmt-commands",
+        "source_id": "site-docs-reference",
+        "final_score": 136,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "BEGIN ; INSERT INTO T ( id , col a , col b ) VALUES ( 4 , 400 , 4 ); INSERT INTO T ( id , col a , col b ) VALUES ( 5 , 500 , 5 ); COMMIT ; RETRY ABORTS INTERNALLY A boolean indicating whether the connection automatically retries aborted transactions.",
+          "SET OPTIMIZER STATISTICS PACKAGE = '' ; SELECT FirstName , LastName FROM Singers ORDER BY LastName ; RETURN COMMIT STATS A property of type BOOL indicating whether statistics should be returned for transactions on this connection.",
+          "BEGIN ; INSERT INTO T ( id , col a , col b ) VALUES ( 1 , 100 , 1 ), ( 2 , 200 , 2 ), ( 3 , 300 , 3 ); COMMIT ; -- View the commit response with the transaction statistics for the last -- transaction that was committed."
+        ]
+      },
+      {
+        "title": "\"JDBC session management commands (PostgreSQL) \\_|\\_ Spanner \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/spanner/docs/jdbc-session-mgmt-commands-pgcompat",
+        "source_id": "site-docs-reference",
+        "final_score": 132,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "BEGIN ; INSERT INTO T ( id , col a , col b ) VALUES ( 4 , 400 , 4 ); INSERT INTO T ( id , col a , col b ) VALUES ( 5 , 500 , 5 ); COMMIT ; SPANNER.RETRY ABORTS INTERNALLY A boolean indicating whether the connection automatically retries aborted transactions.",
+          "OPTIMIZER STATISTICS PACKAGE = '' ; SELECT FirstName , LastName FROM Singers ORDER BY LastName ; SPANNER.RETURN COMMIT STATS A property of type BOOL indicating whether statistics should be returned for transactions on this connection.",
+          "BEGIN ; INSERT INTO T ( id , col a , col b ) VALUES ( 1 , 100 , 1 ), ( 2 , 200 , 2 ), ( 3 , 300 , 3 ); COMMIT ; -- View the commit response with the transaction statistics for the last -- transaction that was committed."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.cloud.spanner.AsyncTransactionManager",
+      "com.google.cloud.spanner.AsyncTransactionManager.CommitTimestampFuture"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/commit-statistics",
+        "https://docs.cloud.google.com/spanner/docs/jdbc-session-mgmt-commands",
+        "https://docs.cloud.google.com/spanner/docs/jdbc-session-mgmt-commands-pgcompat"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/commit-statistics",
+        "https://docs.cloud.google.com/spanner/docs/jdbc-session-mgmt-commands",
+        "https://docs.cloud.google.com/spanner/docs/jdbc-session-mgmt-commands-pgcompat"
+      ]
+    }
+  ]
+}

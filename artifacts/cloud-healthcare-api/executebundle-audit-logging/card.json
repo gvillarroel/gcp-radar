@@ -1,0 +1,174 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:23.577Z",
+  "source_step08_card": "data/step-08/current/products/cloud-healthcare-api/card.json",
+  "product_name": "Cloud Healthcare API",
+  "product_slug": "cloud-healthcare-api",
+  "feature_name": "executeBundle audit logging",
+  "feature_slug": "executebundle-audit-logging",
+  "summary": "Execution of the executeBundle operation now emits logging records.",
+  "extended_definition": "Execution of the executeBundle operation now emits logging records.",
+  "lifecycle": {
+    "latest_feature_date": "2020-02-10",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/healthcare-api/docs/audit-log-http-headers",
+      "https://docs.cloud.google.com/healthcare-api/docs/best-practices-lros",
+      "https://docs.cloud.google.com/healthcare-api/docs/fhir-consent"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Control access to FHIR resources in the Cloud Healthcare API \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/healthcare-api/docs/fhir-consent",
+        "source_id": "site-docs-root-2",
+        "final_score": 127,
+        "relevance": "",
+        "evidence_snippets": [
+          "To track the status of the operation, you can use the Operation get method: curl -X GET \\ -H \"Authorization: Bearer $( gcloud auth application-default print-access-token ) \" \\ \"https://healthcare.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /operations/ OPERATION ID \" When the operation finishes, the server returns a response with the status of the operation in JSON format: { \"name\": \"projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /operations/ OPERATION ID \"\", \"metadata\": { \"@type\": \"type.googleapis.com/google.cloud.healthcare.v1.OperationMetadata\", \"apiMethodName\": \"google.cloud.healthcare.v1.fhir.FhirStoreService.ApplyAdminConsents\", \"createTime\": \" CREATE TIME \", \"endTime\": \" END TIME \", \"logsUrl\": \"https://console.cloud.google.com/logs/query/ CLOUD LOGGING URL \", \"counter\": { \"success\": \"1\", \"secondarySuccess\": \"7\" } }, \"done\": true, \"response\": { \"@type\": \"type.googleapis.com/google.cloud.healthcare.v1.fhir.ApplyAdminConsentsResponse\", \"consentApplySuccess\": \"1\", \"affectedResources\": \"7\" } } This response indicated that the server successfully processed 1 admin policy and updated the consensual access of 7 resources (1 Practitioner, 1 Patient, 2 Observations, 2 patient Consents and 1 admin policy).",
+          "To track the status of the operation, you can use the Operation get method: curl -X GET \\ -H \"Authorization: Bearer $( gcloud auth application-default print-access-token ) \" \\ \"https://healthcare.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /operations/ OPERATION ID \" When the operation finishes, the server returns a response with the status of the operation in JSON format: { \"name\": \"projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /operations/ OPERATION ID \"\", \"metadata\": { \"@type\": \"type.googleapis.com/google.cloud.healthcare.v1.OperationMetadata\", \"apiMethodName\": \"google.cloud.healthcare.v1.fhir.FhirStoreService.ApplyConsents\", \"createTime\": \" CREATE TIME \", \"endTime\": \" END TIME \", \"logsUrl\": \"https://console.cloud.google.com/logs/query/ CLOUD LOGGING URL \", \"counter\": { \"success\": \"2\", \"secondarySuccess\": \"5\" } }, \"done\": true, \"response\": { \"@type\": \"type.googleapis.com/google.cloud.healthcare.v1.fhir.ApplyConsentsResponse\", \"consentApplySuccess\": \"2\", \"affectedResources\": \"5\" } } This response indicated that the server successfully processed 2 consents and updated the consensual access of 5 resources (1 Patient, 2 Consents, 2 Observations).",
+          "Sample cascade reindex progress log { \"insertId\": \"tz2gtza8\", \"jsonPayload\": { \"@type\": \"type.googleapis.com/google.cloud.healthcare.logging.FhirConsentCascadeLogEntry\", \"state\": \"STATE FINISHED\", \"affectedResources\": \"2\", \"lastUpdated\": \" YYYY-MM-DDTHH:MM:SS+ZZ:ZZ \", \"compartmentBaseResourceName\": \"projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /fhirStores/ FHIR STORE ID /fhir/Patient/ PATIENT RESOURCE ID / history/ PATIENT RESOURCE VERSION \" }, \"resource\": { \"type\": \"healthcare fhir store\", \"labels\": { \"location\": \" LOCATION \", \"dataset id\": \" DATASET ID \", \"fhir store id\": \" FHIR STORE ID \", \"project id\": \" PROJECT ID \" } }, \"timestamp\": \" YYYY-MM-DDTHH:MM:SS+ZZ:ZZ \", \"severity\": \"INFO\", \"logName\": \"projects/ PROJECT ID /logs/healthcare.googleapis.com%2Fconsent cascading fhir\", \"receiveTimestamp\": \" YYYY-MM-DDTHH:MM:SS+ZZ:ZZ \" } jsonPayload.state is the state of the reindex operation, jsonPayload.affectedResources is the number of reindexed compartment resources, and jsonPayload.lastUpdated is the timestamp of patient resource update."
+        ]
+      },
+      {
+        "title": "\"Long-running operations best practices \\_|\\_ Cloud Healthcare API \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/healthcare-api/docs/best-practices-lros",
+        "source_id": "site-docs-root-2",
+        "final_score": 108,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "After the LRO finishes, it has one of the following states: Successfully finished without errors Successfully finished with some errors Failed to finish, but possibly produced a partial output before failing The following JSON example describes the response returned when an LRO finishes: { \"name\": \"projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /operations/ OPERATION ID \", \"metadata\": { \"@type\": \" METADATA TYPE \", \"apiMethodName\": \" API METHOD NAME \", \"createTime\": \" YYYY-MM-DDTHH:MM:SS+ZZ:ZZ \", \"endTime\": \" YYYY-MM-DDTHH:MM:SS+ZZ:ZZ \", \"logsUrl\": \"https://console.cloud.google.com/ CLOUD LOGGING URL \" \"counter\": { \"success\": \" SUCCESS COUNT \", // If there were any failures, they display in the failure field. \"failure\": \" FAILURE COUNT \" } }, \"done\": true, // The response field only displays if there were no errors. \"response\": { \"@type\": }, // If there were any errors, an error field displays instead of a response field. // See Troubleshooting long-running operations for a list of response codes. \"error\": { \"code\": ERROR CODE , \"message\": \" DESCRIPTION \", \"details\": [ { \"@type\": \"...\", FIELD1 : ..., ... } ] } } To get the status of an LRO, list LROs, and cancel LROs, see Managing long-running operations .",
+          "The metadata.counter.failure field might exceed the number of actual errors logged due to the following: Cloud Logging quota limitations Cloud Logging service availability LRO log limits For example, if an LRO imports 10 million FHIR resources, and 50% of them have formatting errors, only a few hundred or a few thousand errors might be logged due to rate limiting and Cloud Logging quotas.",
+          "To use fhirStores.import , your client application needs to ensure FHIR resource references are valid by verifying the following: FHIR resource data and formatting are correct Any errors that occur during the import are managed To enforce referential integrity, use fhir.create or fhir.executeBundle instead of fhirStores.import ."
+        ]
+      },
+      {
+        "title": "\"Configure custom HTTP headers for audit logs \\_|\\_ Cloud Healthcare API\\",
+        "url": "https://docs.cloud.google.com/healthcare-api/docs/audit-log-http-headers",
+        "source_id": "site-docs-root-2",
+        "final_score": 90,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The request contains the following custom HTTP headers: X-Request-Id: 123 X-Goog-Healthcare-Audit-AppName: PatientApp X-Goog-Healthcare-Audit-CohortName: Cohort1 Before sending the request, replace the following: PROJECT ID : the ID of your Google Cloud project LOCATION : the dataset location DATASET ID : the FHIR store's parent dataset FHIR STORE ID : the FHIR store ID curl -X POST \\ -H \"Authorization: Bearer $( gcloud auth application-default print-access-token ) \" \\ -H \"Content-Type: application/json; charset=utf-8\" \\ -H \"X-Request-Id: 123\" \\ -H \"X-Goog-Healthcare-Audit-AppName: PatientApp\" \\ -H \"X-Goog-Healthcare-Audit-CohortName: Cohort1\" \\ --data '{ \"name\": [ { \"use\": \"official\", \"family\": \"Smith\", \"given\": [ \"Darcy\" ] } ], \"gender\": \"female\", \"birthDate\": \"1970-01-01\", \"resourceType\": \"Patient\" }' \"https://healthcare.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /fhirStores/ FHIR STORE ID /fhir/Patient\" The output is the following: { \"birthDate\": \"1970-01-01\", \"gender\": \"female\", \"id\": \" PATIENT ID \", \"meta\": { \"lastUpdated\": \" YYYY-MM-DDTHH:MM:SS+ZZ:ZZ \", \"versionId\": \" VERSION ID \" }, \"name\": [ { \"family\": \"Smith\", \"given\": [ \"Darcy\" ], \"use\": \"official\" } ], \"resourceType\": \"Patient\" } If you search for the request in Cloud Audit Logs, the audit log looks like the following: { logName: \"projects/ PROJECT ID /logs/cloudaudit.googleapis.com%2Fdata write\" protoPayload: { @type: \"type.googleapis.com/google.cloud.audit.AuditLog\" metadata: { X-Request-Id: [123] X-Goog-Healthcare-Audit-AppName: [\"PatientApp\"] X-Goog-Healthcare-Audit-CohortName: [\"Cohort1\"] } ... } ... } View Google Cloud console-generated audit log HTTP headers You can examine specific HTTP headers in audit logs to identify requests made through Cloud Healthcare API applications in the Google Cloud console.",
+          "Configurable methods You can configure custom HTTP headers for the Cloud Healthcare API methods in the following REST resources: projects.locations projects.locations.datasets projects.locations.dicomStores projects.locations.dicomStores.studies projects.locations.dicomStores.studies.series projects.locations.dicomStores.studies.series.instances projects.locations.dicomStores.studies.series.instances.frames projects.locations.datasets.fhirStores projects.locations.datasets.fhirStores.fhir projects.locations.datasets.hl7V2Stores projects.locations.datasets.hl7V2Stores.messages projects.locations.datasets.operations Configure custom HTTP headers Caution: Using custom HTTP headers in a web browser triggers a CORS preflight security check.",
+          "To identify each request from Cohort1 with a unique ID and the name of the mobile application, specify the following custom HTTP headers in each request: X-Request-Id: REQUEST ID X-Goog-Healthcare-Audit-AppName: PatientApp X-Goog-Healthcare-Audit-CohortName: Cohort1 The custom HTTP headers display in the metadata field of each request's audit log in Cloud Audit Logs."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cloudaudit.googleapis.com",
+      "console.cloud.google.com",
+      "fhir.Consent",
+      "fhir.create",
+      "fhir.Encounter",
+      "fhir.executeBundle",
+      "fhir.history",
+      "fhir.Observation",
+      "fhir.Patient",
+      "fhir.read",
+      "fhir.search",
+      "fhir.vread",
+      "healthcare.googleapis.com",
+      "metadata.counter.failure",
+      "projects.locations",
+      "projects.locations.datasets",
+      "projects.locations.datasets.fhirStores",
+      "projects.locations.datasets.fhirStores.fhir",
+      "projects.locations.datasets.hl7V2Stores",
+      "projects.locations.datasets.hl7V2Stores.messages",
+      "projects.locations.datasets.operations",
+      "projects.locations.dicomStores",
+      "projects.locations.dicomStores.studies",
+      "projects.locations.dicomStores.studies.series",
+      "projects.locations.dicomStores.studies.series.instances",
+      "projects.locations.dicomStores.studies.series.instances.frames",
+      "type.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/healthcare-api/docs/fhir-consent",
+        "https://docs.cloud.google.com/healthcare-api/docs/best-practices-lros",
+        "https://docs.cloud.google.com/healthcare-api/docs/audit-log-http-headers"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/healthcare-api/docs/fhir-consent",
+        "https://docs.cloud.google.com/healthcare-api/docs/best-practices-lros",
+        "https://docs.cloud.google.com/healthcare-api/docs/audit-log-http-headers"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/healthcare-api/docs/fhir-consent",
+        "https://docs.cloud.google.com/healthcare-api/docs/best-practices-lros",
+        "https://docs.cloud.google.com/healthcare-api/docs/audit-log-http-headers"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/healthcare-api/docs/fhir-consent",
+        "https://docs.cloud.google.com/healthcare-api/docs/best-practices-lros",
+        "https://docs.cloud.google.com/healthcare-api/docs/audit-log-http-headers"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/healthcare-api/docs/fhir-consent",
+        "https://docs.cloud.google.com/healthcare-api/docs/best-practices-lros",
+        "https://docs.cloud.google.com/healthcare-api/docs/audit-log-http-headers"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/healthcare-api/docs/fhir-consent",
+        "https://docs.cloud.google.com/healthcare-api/docs/best-practices-lros",
+        "https://docs.cloud.google.com/healthcare-api/docs/audit-log-http-headers"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/healthcare-api/docs/fhir-consent",
+        "https://docs.cloud.google.com/healthcare-api/docs/best-practices-lros",
+        "https://docs.cloud.google.com/healthcare-api/docs/audit-log-http-headers"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/healthcare-api/docs/fhir-consent",
+        "https://docs.cloud.google.com/healthcare-api/docs/best-practices-lros",
+        "https://docs.cloud.google.com/healthcare-api/docs/audit-log-http-headers"
+      ]
+    }
+  ]
+}

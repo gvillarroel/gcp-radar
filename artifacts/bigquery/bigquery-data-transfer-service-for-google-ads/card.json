@@ -1,0 +1,81 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:18.771Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery",
+  "feature_name": "BigQuery Data Transfer Service for Google Ads",
+  "feature_slug": "bigquery-data-transfer-service-for-google-ads",
+  "summary": "BigQuery Data Transfer Service can ingest Google Ads data.",
+  "extended_definition": "BigQuery Data Transfer Service can ingest Google Ads data.",
+  "lifecycle": {
+    "latest_feature_date": "2018-07-11",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/blob-storage-transfer-parameters",
+      "https://docs.cloud.google.com/bigquery/docs/gcs-transfer-parameters",
+      "https://docs.cloud.google.com/bigquery/docs/google-ads-transfer"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Load Google Ads data into BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/google-ads-transfer",
+        "source_id": "site-api-reference",
+        "final_score": 149,
+        "relevance": "",
+        "evidence_snippets": [
+          "Data ingestion from Google Ads transfers When you transfer data from Google Ads into BigQuery, the data is loaded into BigQuery tables that are partitioned by date.",
+          "These custom reports ingest data from all resources available in the Google Ads API version supported by the BigQuery Data Transfer Service .",
+          "Query your data When your data is transferred to BigQuery Data Transfer Service, the data is written to ingestion-time partitioned tables."
+        ]
+      },
+      {
+        "title": "\"Runtime parameters in Blob Storage transfers \\_|\\_ BigQuery \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/blob-storage-transfer-parameters",
+        "source_id": "site-api-reference",
+        "final_score": 95,
+        "relevance": "",
+        "evidence_snippets": [
+          "Data source Source URI or data path Destination table name Cloud Storage gs://bucket/ .csv mytable Amazon S3 s3://bucket/ .csv mytable Blob Storage .csv mytable Load a snapshot of all data into an ingestion-time partitioned table In this case, all data in the specified URI or data path is transferred to a table partitioned by today's date.",
+          "Partitioning options There are two types of partitioned tables in BigQuery: Tables that are partitioned by ingestion time.",
+          "For Cloud Storage, Blob Storage, and Amazon S3 transfers, the ingestion time is the transfer's run time."
+        ]
+      },
+      {
+        "title": "\"Runtime parameters in Cloud Storage transfers \\_|\\_ BigQuery \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/gcs-transfer-parameters",
+        "source_id": "site-api-reference",
+        "final_score": 95,
+        "relevance": "",
+        "evidence_snippets": [
+          "Data source Source URI or data path Destination table name Cloud Storage gs://bucket/ .csv mytable Amazon S3 s3://bucket/ .csv mytable Blob Storage .csv mytable Load a snapshot of all data into an ingestion-time partitioned table In this case, all data in the specified URI or data path is transferred to a table partitioned by today's date.",
+          "Partitioning options There are two types of partitioned tables in BigQuery: Tables that are partitioned by ingestion time.",
+          "For Cloud Storage, Blob Storage, and Amazon S3 transfers, the ingestion time is the transfer's run time."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": []
+}

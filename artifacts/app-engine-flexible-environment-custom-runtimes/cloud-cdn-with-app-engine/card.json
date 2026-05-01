@@ -1,0 +1,125 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:15.241Z",
+  "source_step08_card": "data/step-08/current/products/app-engine-flexible-environment-custom-runtimes/card.json",
+  "product_name": "App Engine flexible environment custom runtimes",
+  "product_slug": "app-engine-flexible-environment-custom-runtimes",
+  "feature_name": "Cloud CDN with App Engine",
+  "feature_slug": "cloud-cdn-with-app-engine",
+  "summary": "App Engine can use Cloud CDN when fronted by External HTTP(S) Load Balancing through serverless NEGs.",
+  "extended_definition": "App Engine can use Cloud CDN when fronted by External HTTP(S) Load Balancing through serverless NEGs.",
+  "lifecycle": {
+    "latest_feature_date": "2020-07-08",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/appengine/docs/flexible/disable-external-ip",
+      "https://docs.cloud.google.com/appengine/docs/flexible/known-issues",
+      "https://docs.cloud.google.com/appengine/docs/flexible/php"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"The PHP runtime \\_|\\_ App Engine flexible environment \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/flexible/php",
+        "source_id": "site-docs-reference-2",
+        "final_score": 65,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Metadata server Each instance of your application can use the Compute Engine metadata server to query information about the instance, including its host name, external IP address, instance ID, custom metadata, and service account information.",
+          "An empty string front controller file Default PHP file name for the directory access. index.php nginx conf http include Filename of a partial nginx config, which will be included in the http section in the main nginx config file. nginx-http.conf nginx conf include Filename of a partial nginx config which will be included in the server section in the main nginx config file. nginx-app.conf nginx conf override Filename of a user supplied nginx configuration file, which will be used as the nginx main configuration file. nginx.conf php fpm conf override Filename of a user supplied php-fpm configuration file, which will be included at the bottom of the [app] section so that it will override the existing configurations. php-fpm.conf php ini override Filename of a user supplied PHP configuration file. php.ini supervisord conf addition Filename of a user supplied supervisord config file, which will be included in the main supervisord config file. additional-supervisord.conf supervisord conf override Filename of a user supplied supervisord config file, which will override the main supervisord config file. supervisord.conf You can control whether Nginx serves static files for matching URIs by setting the NGINX SERVES STATIC FILES environment variable in the build env variables section of your app.yaml file: runtime : php env : flex runtime config : document root : \"web\" operating system : \"ubuntu24\" build env variables : NGINX SERVES STATIC FILES : true Configuring supervisord in the PHP runtime The App Engine flexible environment uses supervisord to manage processes.",
+          "This example function uses the metadata server to get the external IP address of an instance: function get external ip using google cloud() { $metadata = new Google\\Cloud\\Core\\Compute\\Metadata(); $externalIp = $metadata->get( 'instance/network-interfaces/0/access-configs/0/external-ip'); return $externalIp; } function get external ip using curl() { $url = 'http://metadata.google.internal/computeMetadata/v1/' . 'instance/network-interfaces/0/access-configs/0/external-ip'; $ch = curl init(); curl setopt($ch, CURLOPT URL, $url); curl setopt($ch, CURLOPT HTTPHEADER, array('Metadata-Flavor: Google')); curl setopt($ch, CURLOPT RETURNTRANSFER, 1); return curl exec($ch); } Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License ."
+        ]
+      },
+      {
+        "title": "Known issues in the App Engine flexible environment \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/appengine/docs/flexible/known-issues",
+        "source_id": "site-docs-reference-2",
+        "final_score": 65,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Some events that may affect App Engine flexible environment minimum number of instances are: Rolling out updates to flexible environment instances Zonal failure (Stockout issues, such as when your region is at capacity for your selected CPU, etc.) App Engine flexible environment uses 3 zones to distribute your instances and in such a configuration, we recommend provisioning 50% more instances than required.",
+          "When migrating traffic to the new version, the global external Application Load Balancer might try to send traffic to instances that aren't fully ready to receive requests, resulting in 503 errors.",
+          "If there is an organization policy on your project that restricts access to external IPs, you won't be able to deploy an App Engine flexible environment app with external IP addresses."
+        ]
+      },
+      {
+        "title": "\"Configure private internal-only services \\_|\\_ App Engine flexible environment\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/flexible/disable-external-ip",
+        "source_id": "site-docs-reference",
+        "final_score": 59,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "This does not prevent your service from receiving requests from the internet or App Engine services with custom domains, because the fully qualified domain name of your service is still externally visible.",
+          "Limitations Disabling ephemeral external IP addresses has the following limitations: Services with custom domains: To send requests to App Engine services with custom domains you must configure Cloud NAT .",
+          "The ephemeral external IP address allows your service to send requests to App Engine services with custom domains, and resources on the internet."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "app.conf",
+      "app.yaml",
+      "fpm.conf",
+      "http.conf",
+      "index.php",
+      "metadata.google.internal",
+      "nginx.conf",
+      "php.ini",
+      "supervisord.conf",
+      "supervisord.pid"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/flexible/known-issues",
+        "https://docs.cloud.google.com/appengine/docs/flexible/php",
+        "https://docs.cloud.google.com/appengine/docs/flexible/disable-external-ip"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/flexible/known-issues",
+        "https://docs.cloud.google.com/appengine/docs/flexible/php",
+        "https://docs.cloud.google.com/appengine/docs/flexible/disable-external-ip"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/flexible/known-issues",
+        "https://docs.cloud.google.com/appengine/docs/flexible/php",
+        "https://docs.cloud.google.com/appengine/docs/flexible/disable-external-ip"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/flexible/known-issues",
+        "https://docs.cloud.google.com/appengine/docs/flexible/php",
+        "https://docs.cloud.google.com/appengine/docs/flexible/disable-external-ip"
+      ]
+    }
+  ]
+}

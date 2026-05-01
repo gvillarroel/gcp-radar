@@ -1,0 +1,98 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:38.623Z",
+  "source_step08_card": "data/step-08/current/products/google-cloud-contact-center-as-a-service/card.json",
+  "product_name": "Google Cloud Contact Center as a Service",
+  "product_slug": "google-cloud-contact-center-as-a-service",
+  "feature_name": "Agent extensions",
+  "feature_slug": "agent-extensions",
+  "summary": "Administrators can assign extension numbers to agents and provide an extension directory for end-users to call them directly; Agents can be assigned extensions for agent-to-agent calling.",
+  "extended_definition": "Administrators can assign extension numbers to agents and provide an extension directory for end-users to call them directly; Agents can be assigned extensions for agent-to-agent calling.",
+  "lifecycle": {
+    "latest_feature_date": "2025-11-03",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/contact-center/ccai-platform/docs/agent-desktop-overview",
+      "https://docs.cloud.google.com/contact-center/ccai-platform/docs/agent-extensions-guide",
+      "https://docs.cloud.google.com/contact-center/ccai-platform/docs/call-settings"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Agent extensions guide \\_|\\_ Google Cloud Contact Center as a Service \\_\\",
+        "url": "https://docs.cloud.google.com/contact-center/ccai-platform/docs/agent-extensions-guide",
+        "source_id": "site-docs-reference",
+        "final_score": 258,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Agent extensions allow agents to be assigned a phone number extension for agent to agent and end-user to agent calling.",
+          "Dial pad and extension directory If you are an agent with an extension assigned, you are able to dial extensions.",
+          "Home Documentation AI and ML Google Cloud CCaaS User Guides Send feedback Agent extensions guide Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"Call settings \\_|\\_ Google Cloud Contact Center as a Service \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/contact-center/ccai-platform/docs/call-settings",
+        "source_id": "site-docs-reference-required-8",
+        "final_score": 200,
+        "relevance": "",
+        "evidence_snippets": [
+          "To assign extension numbers to your agents, do one of the following: To automatically generate phone extensions for your agents, select the Enable Auto-generated extension checkbox.",
+          "The system then automatically generates phone extensions of the length you specified and assigns them to your agents.",
+          "You must assign extension numbers to agents for both agent to agent calling and end-user to agent calling."
+        ]
+      },
+      {
+        "title": "\"Agent desktop \\_|\\_ Google Cloud Contact Center as a Service \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/contact-center/ccai-platform/docs/agent-desktop-overview",
+        "source_id": "site-docs-root",
+        "final_score": 126,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For Extensions , select the Agent desktop checkbox, and then click Save .",
+          "The following agent desktop permissions for administrators display: Settings > Operation Management > All Settings > Agent Desktop > All Settings > Agent Desktop > Layout and panel Management Settings > Announcement Management To find the permission settings for using the agent desktop, do the following: For Agent , click visibility View .",
+          "To turn on the agent desktop extension, follow these steps: In the Google Cloud console, go to the project selector dashboard and select the project that contains your instance."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/agent-extensions-guide",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/call-settings",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/agent-desktop-overview"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/agent-extensions-guide",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/call-settings",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/agent-desktop-overview"
+      ]
+    }
+  ]
+}

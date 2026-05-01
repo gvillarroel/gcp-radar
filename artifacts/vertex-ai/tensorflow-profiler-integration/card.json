@@ -1,0 +1,81 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:48.184Z",
+  "source_step08_card": "data/step-08/current/products/vertex-ai/card.json",
+  "product_name": "Vertex AI",
+  "product_slug": "vertex-ai",
+  "feature_name": "TensorFlow Profiler integration",
+  "feature_slug": "tensorflow-profiler-integration",
+  "summary": "Enables profiling and performance debugging for Vertex AI custom training jobs using TensorFlow Profiler.",
+  "extended_definition": "Enables profiling and performance debugging for Vertex AI custom training jobs using TensorFlow Profiler.",
+  "lifecycle": {
+    "latest_feature_date": "2022-08-01",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/vertex-ai/docs/experiments/tensorboard-profiler",
+      "https://docs.cloud.google.com/vertex-ai/docs/explainable-ai/explainable-ai-notebook-tutorials",
+      "https://docs.cloud.google.com/vertex-ai/docs/tutorials/custom-training-pipelines/custom-training-jupyter-notebooks"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Enable Cloud Profiler for debugging model training performance debugging\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/experiments/tensorboard-profiler",
+        "source_id": "site-docs-reference-3",
+        "final_score": 186,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Notebook To see examples of how to profile model training performance, run the following notebooks in the environment of your choice: \"Profile model training performance using Cloud Profiler\": Open in Colab Open in Colab Enterprise Open in Vertex AI Workbench View on GitHub \"Profile model training performance using Cloud Profiler in custom training with prebuilt container\": Open in Colab Open in Colab Enterprise Open in Vertex AI Workbench View on GitHub What's next See the Tensorflow Profiler documentation to learn about the profiler tools and how to use them to optimize model performance.",
+          "Home Documentation AI and ML Vertex AI Send feedback Enable Cloud Profiler for debugging model training performance debugging Stay organized with collections Save and categorize content based on your preferences.",
+          "Enable Profiler To enable Profiler for your training job, add the following to your training script: Add the cloud profiler import at your top level imports: from google.cloud.aiplatform.training utils import cloud profiler Initialize the cloud profiler plugin by adding: cloud profiler . init () Example Here's a sample training script: #!/usr/bin/env python import tensorflow as tf import argparse import os from google.cloud.aiplatform.training utils import cloud profiler import time \"\"\"Train an mnist model and use cloud profiler for profiling.\"\"\" def create model (): model = tf . keras . models ."
+        ]
+      },
+      {
+        "title": "Custom training notebook tutorials \\_|\\_ Vertex AI \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/tutorials/custom-training-pipelines/custom-training-jupyter-notebooks",
+        "source_id": "site-docs-reference-2",
+        "final_score": 127,
+        "relevance": "",
+        "evidence_snippets": [
+          "Tutorial steps Prepare your custom training code and load your training code as a Python package to a prebuilt container Create and run a custom training job that enables Profiler View the Profiler dashboard to debug your model training performance Colab Colab Enterprise GitHub Vertex AI Workbench Vertex AI TensorBoard Vertex AI Pipelines Vertex AI TensorBoard integration with Vertex AI Pipelines .",
+          "Tutorial steps Setup a service account and a Cloud Storage bucket Create a Vertex AI TensorBoard instance Create and run a custom training job that enables Profiler View the Profiler dashboard to debug your model training performance Colab Colab Enterprise GitHub Vertex AI Workbench Profiler Vertex AI TensorBoard Profile model training performance using Cloud Profiler in custom training with prebuilt container .",
+          "Colab Colab Enterprise GitHub Vertex AI Workbench Profiler Vertex AI TensorBoard Profile model training performance using Cloud Profiler ."
+        ]
+      },
+      {
+        "title": "\"Vertex Explainable AI notebook tutorials \\_|\\_ Vertex AI \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/explainable-ai/explainable-ai-notebook-tutorials",
+        "source_id": "site-docs-reference-2",
+        "final_score": 125,
+        "relevance": "",
+        "evidence_snippets": [
+          "Tutorial steps Prepare your custom training code and load your training code as a Python package to a prebuilt container Create and run a custom training job that enables Profiler View the Profiler dashboard to debug your model training performance Colab Colab Enterprise GitHub Vertex AI Workbench Vertex AI TensorBoard Vertex AI Pipelines Vertex AI TensorBoard integration with Vertex AI Pipelines .",
+          "Tutorial steps Setup a service account and a Cloud Storage bucket Create a Vertex AI TensorBoard instance Create and run a custom training job that enables Profiler View the Profiler dashboard to debug your model training performance Colab Colab Enterprise GitHub Vertex AI Workbench Profiler Vertex AI TensorBoard Profile model training performance using Cloud Profiler in custom training with prebuilt container .",
+          "Colab Colab Enterprise GitHub Vertex AI Workbench Profiler Vertex AI TensorBoard Profile model training performance using Cloud Profiler ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": []
+}

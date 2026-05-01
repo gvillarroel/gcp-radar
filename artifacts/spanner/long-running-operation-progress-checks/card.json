@@ -1,0 +1,98 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:46.903Z",
+  "source_step08_card": "data/step-08/current/products/spanner/card.json",
+  "product_name": "Spanner",
+  "product_slug": "spanner",
+  "feature_name": "Long-running operation progress checks",
+  "feature_slug": "long-running-operation-progress-checks",
+  "summary": "Spanner now supports checking progress for long-running operations, including backups, restores, and schema updates, and this capability is generally available.",
+  "extended_definition": "Spanner now supports checking progress for long-running operations, including backups, restores, and schema updates, and this capability is generally available.",
+  "lifecycle": {
+    "latest_feature_date": "2023-08-15",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient",
+      "https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminClient",
+      "https://docs.cloud.google.com/spanner/docs/best-practices-gaming-database"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Class DatabaseAdminAsyncClient (3.63.0) \\_|\\_ Python client libraries \\_\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient",
+        "source_id": "site-python-reference",
+        "final_score": 123,
+        "relevance": "",
+        "evidence_snippets": [
+          "The returned database [long-running operation][google.longrunning.Operation] has a name of the format projects/<project>/instances/<instance>/databases/<database>/operations/<operation id> , and can be used to track the progress of the operation, and to cancel it.",
+          "Each batch of statements is assigned a name which can be used with the Operations][google.longrunning.Operations] API to monitor progress.",
+          "The returned [long-running operation][google.longrunning.Operation] can be used to track the progress of updating the database."
+        ]
+      },
+      {
+        "title": "\"Class DatabaseAdminClient (3.63.0) \\_|\\_ Python client libraries \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminClient",
+        "source_id": "site-python-reference",
+        "final_score": 123,
+        "relevance": "",
+        "evidence_snippets": [
+          "The returned database [long-running operation][google.longrunning.Operation] has a name of the format projects/<project>/instances/<instance>/databases/<database>/operations/<operation id> , and can be used to track the progress of the operation, and to cancel it.",
+          "Each batch of statements is assigned a name which can be used with the Operations][google.longrunning.Operations] API to monitor progress.",
+          "The returned [long-running operation][google.longrunning.Operation] can be used to track the progress of updating the database."
+        ]
+      },
+      {
+        "title": "\"Best practices for using Spanner as a gaming database \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/spanner/docs/best-practices-gaming-database",
+        "source_id": "site-docs-root",
+        "final_score": 118,
+        "relevance": "",
+        "evidence_snippets": [
+          "If you are planning to repopulate a table with the same kind of data (for example, when running consecutive performance tests), you can instead run a DELETE query on the rows containing data you no longer need.",
+          "In the following example, there is a table for long-term player high-score records: CREATE TABLE Ranking ( PlayerID STRING ( 36 ) NOT NULL , GameMode INT64 NOT NULL , Score INT64 NOT NULL ) PRIMARY KEY ( PlayerID , GameMode ) This table contains the player ID (UUIDv4), a number representing a game mode, stage, or season, and the player's score.",
+          "This document is intended for game backend engineers working on long-term state storage, and game infrastructure operators and admins who support those systems and are interested in hosting their backend database on Google Cloud."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminClient",
+        "https://docs.cloud.google.com/spanner/docs/best-practices-gaming-database"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminClient",
+        "https://docs.cloud.google.com/spanner/docs/best-practices-gaming-database"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,172 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:37.873Z",
+  "source_step08_card": "data/step-08/current/products/generative-ai-on-vertex-ai/card.json",
+  "product_name": "Generative AI on Vertex AI",
+  "product_slug": "generative-ai-on-vertex-ai",
+  "feature_name": "Veo 2 object editing",
+  "feature_slug": "veo-2-object-editing",
+  "summary": "Veo 2 can add and remove objects from videos in Preview.",
+  "extended_definition": "Veo 2 can add and remove objects from videos in Preview.",
+  "lifecycle": {
+    "latest_feature_date": "2025-10-15",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/image/img-gen-prompt-guide",
+      "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/model-garden/deploy-and-inference-tutorial",
+      "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/model-garden/deploy-and-inference-tutorial-tpu",
+      "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/video/video-gen-prompt-guide"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Deploy and inference Gemma using Model Garden and Vertex AI GPU-backed endpoints\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/model-garden/deploy-and-inference-tutorial",
+        "source_id": "site-docs-root",
+        "final_score": 159,
+        "relevance": "",
+        "evidence_snippets": [
+          "QUERY PARAMETERS \" Select-Object -Expand Content You receive a JSON response similar to the following. { \"publisherModels\": [ { \"name\": \"publishers/google/models/gemma3\", \"versionId\": \"gemma-3-1b-it\", \"openSourceCategory\": \"GOOGLE OWNED OSS WITH GOOGLE CHECKPOINT\", \"supportedActions\": { \"openNotebook\": { \"references\": { \"us-central1\": { \"uri\": \"https://colab.research.google.com/github/GoogleCloudPlatform/vertex-ai-samples/blob/main/notebooks/community/model garden/model garden gradio streaming chat completions.ipynb\" } }, \"resourceTitle\": \"Notebook\", \"resourceUseCase\": \"Chat Completion Playground\", \"resourceDescription\": \"Chat with deployed Gemma 2 endpoints via Gradio UI.\" }, \"deploy\": { \"modelDisplayName\": \"gemma-3-1b-it\", \"containerSpec\": { \"imageUri\": \"us-docker.pkg.dev/vertex-ai/vertex-vision-model-garden-dockers/pytorch-vllm-serve:20250312 0916 RC01\", \"args\": [ \"python\", \"-m\", \"vllm.entrypoints.api server\", \"--host=0.0.0.0\", \"--port=8080\", \"--model=gs://vertex-model-garden-restricted-us/gemma3/gemma-3-1b-it\", \"--tensor-parallel-size=1\", \"--swap-space=16\", \"--gpu-memory-utilization=0.95\", \"--disable-log-stats\" ], \"env\": [ { \"name\": \"MODEL ID\", \"value\": \"google/gemma-3-1b-it\" }, { \"name\": \"DEPLOY SOURCE\", \"value\": \"UI NATIVE MODEL\" } ], \"ports\": [ { \"containerPort\": 8080 } ], \"predictRoute\": \"/generate\", \"healthRoute\": \"/ping\" }, \"dedicatedResources\": { \"machineSpec\": { \"machineType\": \"g2-standard-12\", \"acceleratorType\": \"NVIDIA L4\", \"acceleratorCount\": 1 } }, \"publicArtifactUri\": \"gs://vertex-model-garden-restricted-us/gemma3/gemma3.tar.gz\", \"deployTaskName\": \"vLLM 128K context\", \"deployMetadata\": { \"sampleRequest\": \"{\\n \\\"instances\\\": [\\n {\\n \\\"@requestFormat\\\": \\\"chatCompletions\\\",\\n \\\"messages\\\": [\\n {\\n \\\"role\\\": \\\"user\\\",\\n \\\"content\\\": \\\"What is machine learning?\\\"\\n }\\n ],\\n \\\"max tokens\\\": 100\\n }\\n ]\\n}\\n\" } }, ...",
+          "Run the following command in the terminal to create or overwrite this file in the current directory: @' { \"publisher model name\": \" MODEL ID \", \"deploy config\": { \"dedicated resources\": { \"machine spec\": { \"machine type\": \" MACHINE TYPE \", \"accelerator type\": \" ACCELERATOR TYPE \", \"accelerator count\": ACCELERATOR COUNT , \"reservation affinity\": { \"reservation affinity type\": \"ANY RESERVATION\" } }, \"spot\": \"false\" } }, \"model config\": { \"accept eula\": \"true\", \"container spec\": { \"image uri\": \" IMAGE URI \", \"args\": [ CONTAINER ARGS ], \"ports\": [ { \"container port\": CONTAINER PORT } ] } }, \"deploy config\": { \"fast tryout enabled\": false }, } '@ Out-File -FilePath request.json -Encoding utf8 Then execute the following command to send your REST request: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method POST -Headers $headers -ContentType: \"application/json; charset=utf-8\" -InFile request.json -Uri \"https:// LOCATION -aiplatform.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION :deploy\" Select-Object -Expand Content You receive a JSON response similar to the following. { \"name\": \"projects/ PROJECT ID /locations/ LOCATION /operations/ OPERATION ID \", \"metadata\": { \"@type\": \"type.googleapis.com/google.cloud.aiplatform.v1.DeployOperationMetadata\", \"genericMetadata\": { \"createTime\": \"2025-03-13T21:44:44.538780Z\", \"updateTime\": \"2025-03-13T21:44:44.538780Z\" }, \"publisherModel\": \"publishers/google/models/gemma3@gemma-3-1b-it\", \"destination\": \"projects/ PROJECT ID /locations/ LOCATION \", \"projectNumber\": \" PROJECT ID \" } } Console In the Google Cloud console, go to the Model Garden page.",
+          "Run the following command in the terminal to create or overwrite this file in the current directory: @' { \"hugging face model id\": \" MODEL ID \", \"hugging face access token\": \" ACCESS TOKEN \", \"model config\": { \"accept eula\": \"true\" } } '@ Out-File -FilePath request.json -Encoding utf8 Then execute the following command to send your REST request: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method POST -Headers $headers -ContentType: \"application/json; charset=utf-8\" -InFile request.json -Uri \"https:// LOCATION -aiplatform.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION :deploy\" Select-Object -Expand Content You receive a JSON response similar to the following. { \"name\": \"projects/ PROJECT ID /locations/us-central1 LOCATION /operations/ OPERATION ID \", \"metadata\": { \"@type\": \"type.googleapis.com/google.cloud.aiplatform.v1.DeployOperationMetadata\", \"genericMetadata\": { \"createTime\": \"2025-03-13T21:44:44.538780Z\", \"updateTime\": \"2025-03-13T21:44:44.538780Z\" }, \"publisherModel\": \"publishers/ PUBLISHER NAME /model/ MODEL NAME \", \"destination\": \"projects/ PROJECT ID /locations/ LOCATION \", \"projectNumber\": \" PROJECT ID \" } } Deploy a model with customizations Before using any of the request data, make the following replacements: LOCATION : A region where the model is deployed."
+        ]
+      },
+      {
+        "title": "\"Prompt and image attribute guide \\_|\\_ Generative AI on Vertex AI \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/image/img-gen-prompt-guide",
+        "source_id": "site-docs-root",
+        "final_score": 156,
+        "relevance": "",
+        "evidence_snippets": [
+          "Use case Lens type Focal lengths Additional details People (portraits) Prime, zoom 24-35mm black and white film, Film noir, Depth of field, duotone (mention two colors) Food, insects, plants (objects, still life) Macro 60-105mm High detail, precise focusing, controlled lighting Sports, wildlife (motion) Telephoto zoom 100-400mm Fast shutter speed, Action or movement tracking Astronomical, landscape (wide-angle) Wide-angle 10-24mm Long exposure times, sharp focus, long exposure, smooth water or clouds Portraits Use case Lens type Focal lengths Additional details People (portraits) Prime, zoom 24-35mm black and white film, Film noir, Depth of field, duotone (mention two colors) Using several keywords from the table, Imagen can generate the following portraits.",
+          "Prompt: A woman, 35mm portrait, blue and grey duotones Model: Imagen 3 ( imagen-3.0-generate-002 ) Prompt: A woman, 35mm portrait, film noir Model: Imagen 3 ( imagen-3.0-generate-002 ) Objects Use case Lens type Focal lengths Additional details Food, insects, plants (objects, still life) Macro 60-105mm High detail, precise focusing, controlled lighting Using several keywords from the table, Imagen can generate the following object images.",
+          "Prompt: a winning touchdown, fast shutter speed, movement tracking Model: Imagen 3 ( imagen-3.0-generate-002 ) Prompt: A deer running in the forest, fast shutter speed, movement tracking Model: Imagen 3 ( imagen-3.0-generate-002 ) Wide-angle Use case Lens type Focal lengths Additional details Astronomical, landscape (wide-angle) Wide-angle 10-24mm Long exposure times, sharp focus, long exposure, smooth water or clouds Using several keywords from the table, Imagen can generate the following wide-angle images."
+        ]
+      },
+      {
+        "title": "\"Veo on Vertex AI video generation prompt guide \\_|\\_ Generative AI on Vertex\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/video/video-gen-prompt-guide",
+        "source_id": "site-docs-root",
+        "final_score": 155,
+        "relevance": "",
+        "evidence_snippets": [
+          "The following are examples of subjects that you can use: People : Generic descriptors : man, woman, elderly person Specific professions : \"a seasoned detective\", \"a joyful baker\", \"a futuristic astronaut\" Historical figures Mythical beings : a \"mischievous fairy\", \"a stoic knight\" Animals or creatures : Specific breeds of animals : \"a playful Golden Retriever puppy\", \"a majestic bald eagle\", \"a sleek black panther\" Fantastical creatures : \"a miniature dragon with iridescent scales\", \"a wise, ancient talking tree\" Objects : Everyday items : \"a vintage typewriter\", \"a steaming cup of coffee\", \"a worn leather-bound book\" Vehicles : \"a classic 1960s muscle car\", \"a futuristic hovercraft\", \"a weathered pirate ship\" Abstract shapes : \"glowing orbs\", \"crystalline structures\" You can combine people, animals, objects, or any mix of them in the same video (for example, \"A group of diverse friends laughing around a campfire while a curious fox watches from the shadows\", \"a busy marketplace scene with vendors and shoppers\").",
+          "The following are examples of ambiance effects that you can use: Color palettes : \"monochromatic black and white\", \"vibrant and saturated tropical colors\", \"muted earthy tones\", \"cool blue and silver futuristic palette\", \"warm autumnal oranges and browns\" Atmospheric effects : \"thick fog rolling across a moor\", \"swirling desert sands\", \"gentle falling snow creating a soft blanket\", \"heat haze shimmering above asphalt\", \"magical glowing particles in the air\", \"subsurface scattering on a translucent object\" Textural qualities : \"rough-hewn stone walls\", \"smooth, polished chrome surfaces\", \"soft, velvety fabric\", \"dewdrops clinging to a spiderweb\" Temporal elements Temporal elements affect the flow of time in a video, which you can use to highlight changes even in short clips.",
+          "The only other sounds are the slow, rhythmic ticking of a wall clock and the faint sound of rain against the window\" Cinematic terms You can use cinematic terms for editing style and specific techniques."
+        ]
+      },
+      {
+        "title": "\"Deploy and inference Gemma using Model Garden and Vertex AI TPU-backed endpoints\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/model-garden/deploy-and-inference-tutorial-tpu",
+        "source_id": "site-docs-root",
+        "final_score": 147,
+        "relevance": "",
+        "evidence_snippets": [
+          "Maven with BOM Add the following HTML to your pom.xml : <dependencyManagement> <dependencies> <dependency> <artifactId>libraries-bom</artifactId> <groupId>com.google.cloud</groupId> <scope>import</scope> <type>pom</type> <version>26.34.0</version> </dependency> </dependencies> </dependencyManagement> <dependencies> <dependency> <groupId>com.google.cloud</groupId> <artifactId>google-cloud-aiplatform</artifactId> </dependency> <dependency> <groupId>com.google.protobuf</groupId> <artifactId>protobuf-java-util</artifactId> </dependency> <dependency> <groupId>com.google.code.gson</groupId> <artifactId>gson</artifactId> </dependency> </dependencies> Maven without BOM Add the following to your pom.xml : <dependency> <groupId>com.google.cloud</groupId> <artifactId>google-cloud-aiplatform</artifactId> <version>1.1.0</version> </dependency> <dependency> <groupId>com.google.protobuf</groupId> <artifactId>protobuf-java-util</artifactId> <version>5.28</version> </dependency> <dependency> <groupId>com.google.code.gson</groupId> <artifactId>gson</artifactId> <version>2.11.0</version> </dependency> Gradle without BOM Add the following to your build.gradle : implementation 'com.google.cloud:google-cloud-aiplatform:1.1.0' Go Install these Go packages by running the following commands.",
+          "Builder instanceValue = Value . newBuilder (); JsonFormat . parser (). merge ( instance , instanceValue ); // Encapsulate the prompt in a correct format for TPUs // Example format: [{'prompt': 'Why is the sky blue?', 'temperature': 0.9}] List<Value> instances = new ArrayList <> (); instances . add ( instanceValue . build ()); EndpointName endpointName = EndpointName . of ( projectId , region , endpointId ); PredictResponse predictResponse = this . predictionServiceClient . predict ( endpointName , instances , parameters ); String textResponse = predictResponse . getPredictions ( 0 ). getStringValue (); System . out . println ( textResponse ); return textResponse ; } private static Value mapToValue ( Map<String , Object > map ) throws InvalidProtocolBufferException { Gson gson = new Gson (); String json = gson . toJson ( map ); Value .",
+          "Objectives This tutorial shows you how to perform the following tasks: Deploy the Gemma 2 2B open model to a TPU backed endpoint by using Model Garden Use the PredictionServiceClient to get online predictions Costs In this document, you use the following billable components of Google Cloud: A ct5lp-hightpu-1t machine type with one TPU V5 accelerator Vertex AI prediction and explanation To generate a cost estimate based on your projected usage, use the pricing calculator ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "aiplatform.googleapis.com",
+      "build.gradle",
+      "colab.research.google.com",
+      "com.google.cloud",
+      "com.google.code.gson",
+      "com.google.protobuf",
+      "completions.ipynb",
+      "docker.pkg.dev",
+      "gemma3.tar.gz",
+      "pom.xml",
+      "request.json",
+      "type.googleapis.com",
+      "vllm.entrypoints.api"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/model-garden/deploy-and-inference-tutorial",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/image/img-gen-prompt-guide",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/video/video-gen-prompt-guide",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/model-garden/deploy-and-inference-tutorial-tpu"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/model-garden/deploy-and-inference-tutorial",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/image/img-gen-prompt-guide",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/video/video-gen-prompt-guide",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/model-garden/deploy-and-inference-tutorial-tpu"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/model-garden/deploy-and-inference-tutorial",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/image/img-gen-prompt-guide",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/video/video-gen-prompt-guide",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/model-garden/deploy-and-inference-tutorial-tpu"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/model-garden/deploy-and-inference-tutorial",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/image/img-gen-prompt-guide",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/video/video-gen-prompt-guide",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/model-garden/deploy-and-inference-tutorial-tpu"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/model-garden/deploy-and-inference-tutorial",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/image/img-gen-prompt-guide",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/video/video-gen-prompt-guide",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/model-garden/deploy-and-inference-tutorial-tpu"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/model-garden/deploy-and-inference-tutorial",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/image/img-gen-prompt-guide",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/video/video-gen-prompt-guide",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/model-garden/deploy-and-inference-tutorial-tpu"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/model-garden/deploy-and-inference-tutorial",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/image/img-gen-prompt-guide",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/video/video-gen-prompt-guide",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/model-garden/deploy-and-inference-tutorial-tpu"
+      ]
+    }
+  ]
+}

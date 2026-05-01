@@ -1,0 +1,154 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:38.459Z",
+  "source_step08_card": "data/step-08/current/products/google-ad-manager-api/card.json",
+  "product_name": "Google Ad Manager API",
+  "product_slug": "google-ad-manager-api",
+  "feature_name": "Reporting",
+  "feature_slug": "reporting",
+  "summary": "The API adds additional report dimensions, metrics, types, and date ranges.",
+  "extended_definition": "The API adds additional report dimensions, metrics, types, and date ranges.",
+  "lifecycle": {
+    "latest_feature_date": "2025-12-04",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/ad-manager/api/beta/migration",
+      "https://developers.google.com/ad-manager/api/beta/reference/rest",
+      "https://developers.google.com/ad-manager/api/beta/reports",
+      "https://developers.google.com/ad-manager/api/reporting"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Reporting Basics \\_|\\_ Ad Manager SOAP API \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/ad-manager/api/reporting",
+        "source_id": "site-docs-root",
+        "final_score": 227,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Certain reporting features aren't available in the API.",
+          "ToStatement (), 'columns' : [ 'AD SERVER IMPRESSIONS' , 'AD SERVER CLICKS' , 'AD SERVER CTR' , 'AD SERVER CPM AND CPC REVENUE' , 'AD SERVER WITHOUT CPD AVERAGE ECPM' ], 'dateRangeType' : 'CUSTOM DATE' , 'startDate' : start date , 'endDate' : end date } } PHP // Create report query. $reportQuery = new ReportQuery(); $reportQuery->setDimensions( [ Dimension::ORDER ID, Dimension::ORDER NAME ] ); $reportQuery->setDimensionAttributes( [ DimensionAttribute::ORDER TRAFFICKER, DimensionAttribute::ORDER START DATE TIME, DimensionAttribute::ORDER END DATE TIME ] ); $reportQuery->setColumns( [ Column::AD SERVER IMPRESSIONS, Column::AD SERVER CLICKS, Column::AD SERVER CTR, Column::AD SERVER CPM AND CPC REVENUE, Column::AD SERVER WITHOUT CPD AVERAGE ECPM ] ); // Create statement to filter for an order. $statementBuilder = (new StatementBuilder()) ->where('ORDER ID = :orderId') ->withBindVariableValue( 'orderId', $orderId ); // Set the filter statement. $reportQuery->setStatement($statementBuilder->toStatement()); // Set the start and end dates or choose a dynamic date range type. $reportQuery->setDateRangeType(DateRangeType::CUSTOM DATE); $reportQuery->setStartDate( AdManagerDateTimes::fromDateTime( new DateTime( '-10 days', new DateTimeZone('America/New York') ) ) ->getDate() ); $reportQuery->setEndDate( AdManagerDateTimes::fromDateTime( new DateTime( 'now', new DateTimeZone('America/New York') ) ) ->getDate() ); C# // Create report job.",
+          "ToStatement (); Ruby Specify a report to run for the last 7 days. report end date = ad manager . today () report start date = report end date - 7 Create statement object to filter for an order. statement = ad manager . new report statement builder do sb sb . where = 'ORDER ID = :order id' sb . with bind variable ( 'order id' , order id ) end Create report query. report query = { :date range type = > 'CUSTOM DATE' , :start date = > report start date . to h , :end date = > report end date . to h , :dimensions = > [ 'ORDER ID' , 'ORDER NAME' ] , :dimension attributes = > [ 'ORDER TRAFFICKER' , 'ORDER START DATE TIME' , 'ORDER END DATE TIME' ] , :columns = > [ 'AD SERVER IMPRESSIONS' , 'AD SERVER CLICKS' , 'AD SERVER CTR' , 'AD SERVER CPM AND CPC REVENUE' , 'AD SERVER WITHOUT CPD AVERAGE ECPM' ] , :statement = > statement . to statement () } Creating the ReportJob Once you have a ReportQuery, it's time to run the report."
+        ]
+      },
+      {
+        "title": "Create and run reports \\_|\\_ Ad Manager API (Beta) \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/ad-manager/api/beta/reports",
+        "source_id": "site-docs-root-2",
+        "final_score": 191,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To set request fields, pass in keyword arguments. request = Google :: Ads :: AdManager :: V1 :: CreateReportRequest . new ( parent : 'networks/ NETWORK CODE ' report : report ) Call the create report method. result = client . create report request The returned object is of type Google::Ads::AdManager::V1::Report. p result end create report . rb Node.js const parent = 'networks/ NETWORK CODE ' ; const report = { displayName : 'My API Report' , reportDefinition : { dimensions : [ 'LINE ITEM NAME' , 'LINE ITEM ID' ], metrics : [ 'AD SERVER IMPRESSIONS' ], dateRange : { relative : 'YESTERDAY' , }, reportType : 'HISTORICAL' , }, }; // Imports the Admanager library const { ReportServiceClient } = require ( '@google-ads/admanager' ). v1 ; // Instantiates a client const admanagerClient = new ReportServiceClient (); async function callCreateReport () { // Construct request const request = { parent , report , }; // Run request const response = await admanagerClient . createReport ( request ); console . log ( response ); } callCreateReport (); report service . create report . js cURL Request Note: To obtain an access token, see Authentication . curl -X POST -H \"Authorization: Bearer ${ ACCESS TOKEN } \" \\ -H \"Content-Type: application/json\" \\ -d '{ \"report\": { \"displayName\": \"My API Report\", \"reportDefinition\": { \"dimensions\": [\"LINE ITEM NAME\", \"LINE ITEM ID\"], \"metrics\": [\"AD SERVER IMPRESSIONS\"], \"dateRange\": { \"relative\": \"YESTERDAY\" }, \"reportType\": \"HISTORICAL\" } } }' \\ \"https://admanager.googleapis.com/v1/networks/ ${ NETWORK CODE } /reports\" Response { \"name\" : \"networks/234093456/reports/4555265029\" , \"displayName\" : \"My API Report\" , \"reportId\" : \"4555265029\" , \"reportDefinition\" : { \"dimensions\" : [ \"LINE ITEM NAME\" , \"LINE ITEM ID\" ], \"metrics\" : [ \"AD SERVER IMPRESSIONS\" ], \"dateRange\" : { \"relative\" : \"YESTERDAY\" }, \"reportType\" : \"HISTORICAL\" }, \"visibility\" : \"HIDDEN\" } After creating a report, you can use the returned reportId to run it.",
+          "The following is a JSON example of a fetchRows response and a corresponding ReportDefinition : fetchRows Response { \"rows\" : [ { \"dimensionValues\" : [ { \"stringValue\" : \"Line Item #1\" }, { \"intValue\" : \"6378470710\" } ], \"metricValueGroups\" : [ { \"primaryValues\" : [ { \"intValue\" : \"100\" } ] } ] }, { \"dimensionValues\" : [ { \"stringValue\" : \"Line Item #2\" }, { \"intValue\" : \"5457147368\" } ], \"metricValueGroups\" : [ { \"primaryValues\" : [ { \"intValue\" : \"95\" } ] } ] } ], \"runTime\" : \"2024-10-02T10:00:00Z\" , \"dateRanges\" : [ { \"startDate\" : { \"year\" : 2024 , \"month\" : 10 , \"day\" : 1 }, \"endDate\" : { \"year\" : 2024 , \"month\" : 10 , \"day\" : 1 } } ], \"totalRowCount\" : 2 } Report Definition { \"name\" : \"networks/234093456/reports/4555265029\" , \"visibility\" : \"SAVED\" , \"reportId\" : \"4555265029\" , \"reportDefinition\" : { \"dimensions\" : [ \"LINE ITEM NAME\" , \"LINE ITEM ID\" ], \"metrics\" : [ \"AD SERVER IMPRESSIONS\" ], \"currencyCode\" : \"USD\" , \"dateRange\" : { \"relative\" : \"YESTERDAY\" }, \"reportType\" : \"HISTORICAL\" }, \"displayName\" : \"Example Report\" , \"updateTime\" : \"2024-09-01T13:00:00Z\" , \"createTime\" : \"2024-08-01T02:00:00Z\" , \"locale\" : \"en-US\" , \"scheduleOptions\" : {} } If you are using a client library, the response has an iterator that lazily requests additional pages.",
+          "The client can be reused for multiple calls. client = Google :: Ads :: AdManager :: V1 :: ReportService :: Rest :: Client . new report = Google :: Ads :: AdManager :: V1 :: Report . new ( display name : \"My API Report\" , report definition : Google :: Ads :: AdManager :: V1 :: ReportDefinition . new ( dimensions : [ :LINE ITEM NAME , :LINE ITEM ID ] , metrics : [ :AD SERVER IMPRESSIONS ] , date range : Google :: Ads :: AdManager :: V1 :: ReportDefinition :: DateRange . new ( relative : :YESTERDAY ), report type : :HISTORICAL ) ) Create a request."
+        ]
+      },
+      {
+        "title": "\"Migrate from the Ad Manager SOAP API \\_|\\_ Ad Manager API (Beta) \\_|\\_ Google\\",
+        "url": "https://developers.google.com/ad-manager/api/beta/migration",
+        "source_id": "site-docs-root-2",
+        "final_score": 181,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Interactive Reports have a limit of 10 dimensions in both the UI and API.",
+          "The reporting tools and APIs have a different ID space .",
+          "When multithreading, use the pagination token from the first page to ensure you are reading from the same result set: First thread GET networks/ ${ NETWORK CODE } /orders?pageSize = 50&pageToken = ${ TOKEN FROM INITIAL REQUEST } Second thread GET networks/ ${ NETWORK CODE } /orders?pageSize = 50&pageToken = ${ TOKEN FROM INITIAL REQUEST } & skip = 50 Migrate reports The SOAP API can only read and run reports in the deprecated Reports tool."
+        ]
+      },
+      {
+        "title": "Google Ad Manager API \\_|\\_ Ad Manager API (Beta) \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/ad-manager/api/beta/reference/rest",
+        "source_id": "site-api-reference",
+        "final_score": 129,
+        "relevance": "",
+        "evidence_snippets": [
+          "Page Summary outlined flag The Ad Manager API allows management of inventory and reporting.",
+          "REST Resource: v1.networks.reports Methods create POST /v1/{parent}/reports API to create a Report object. get GET /v1/{name} API to retrieve a Report object. list GET /v1/{parent}/reports API to retrieve a list of Report objects. patch PATCH /v1/{report.name} API to update a Report object. run POST /v1/{name}:run Initiates the execution of an existing report asynchronously.",
+          "The API utilizes REST resources like networks, ad units, reports, and more for various functionalities."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "admanager.googleapis.com",
+      "developers.google.com",
+      "report.name",
+      "v1.networks.reports"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://developers.google.com/ad-manager/api/reporting",
+        "https://developers.google.com/ad-manager/api/beta/reports",
+        "https://developers.google.com/ad-manager/api/beta/migration",
+        "https://developers.google.com/ad-manager/api/beta/reference/rest"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://developers.google.com/ad-manager/api/reporting",
+        "https://developers.google.com/ad-manager/api/beta/reports",
+        "https://developers.google.com/ad-manager/api/beta/migration",
+        "https://developers.google.com/ad-manager/api/beta/reference/rest"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://developers.google.com/ad-manager/api/reporting",
+        "https://developers.google.com/ad-manager/api/beta/reports",
+        "https://developers.google.com/ad-manager/api/beta/migration",
+        "https://developers.google.com/ad-manager/api/beta/reference/rest"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://developers.google.com/ad-manager/api/reporting",
+        "https://developers.google.com/ad-manager/api/beta/reports",
+        "https://developers.google.com/ad-manager/api/beta/migration",
+        "https://developers.google.com/ad-manager/api/beta/reference/rest"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://developers.google.com/ad-manager/api/reporting",
+        "https://developers.google.com/ad-manager/api/beta/reports",
+        "https://developers.google.com/ad-manager/api/beta/migration",
+        "https://developers.google.com/ad-manager/api/beta/reference/rest"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://developers.google.com/ad-manager/api/reporting",
+        "https://developers.google.com/ad-manager/api/beta/reports",
+        "https://developers.google.com/ad-manager/api/beta/migration",
+        "https://developers.google.com/ad-manager/api/beta/reference/rest"
+      ]
+    }
+  ]
+}

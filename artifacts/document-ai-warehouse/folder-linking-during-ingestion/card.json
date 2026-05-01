@@ -1,0 +1,124 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:35.751Z",
+  "source_step08_card": "data/step-08/current/products/document-ai-warehouse/card.json",
+  "product_name": "Document AI Warehouse",
+  "product_slug": "document-ai-warehouse",
+  "feature_name": "Folder linking during ingestion",
+  "feature_slug": "folder-linking-during-ingestion",
+  "summary": "Allows pipelines to link documents to a specified folder during data ingestion.",
+  "extended_definition": "Allows pipelines to link documents to a specified folder during data ingestion.",
+  "lifecycle": {
+    "latest_feature_date": "2023-08-11",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/document-warehouse/docs",
+      "https://docs.cloud.google.com/document-warehouse/docs/overview",
+      "https://docs.cloud.google.com/document-warehouse/docs/samples/contentwarehouse-create-folder-link-document"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Create a folder and link a document \\_|\\_ Document AI Warehouse \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/document-warehouse/docs/samples/contentwarehouse-create-folder-link-document",
+        "source_id": "site-iam-reference",
+        "final_score": 139,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Create a folder and link a document Explore further For detailed documentation that includes this code sample, see the following: Organize documents in folders Code sample Python For more information, see the Document AI Warehouse Python API reference documentation .",
+          "UserInfo ( id = user id ) ), ) Create a Document for the given schema document response = document client . create document ( request = create document request ) Read the output print ( f \"Rule Engine Output: { document response . rule engine output } \" ) print ( f \"Document Created: { document response . document } \" ) return document response def create folder link document ( project number : str , location : str , user id : str ) - > None : Function call to create a folder folder = create folder ( project number , location , user id ) Function call to create a Document document = create document ( project number , location , user id ) Create a Link Service client link client = contentwarehouse .",
+          "DocumentSchemaServiceClient () The full resource name of the location, e.g.: projects/{project number}/locations/{location} parent = document schema client . common location path ( project = project number , location = location ) Define Folder Schema Request create folder schema request = contentwarehouse ."
+        ]
+      },
+      {
+        "title": "Document AI Warehouse overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/document-warehouse/docs/overview",
+        "source_id": "site-api-reference",
+        "final_score": 107,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "A user needs Edit permission to the Folder and View permission to the Document), in order to add a Document to a Folder Links Links are used to add documents to folders or to link related documents together.",
+          "Users can search for documents within a folder hierarchy e.g. search within AllLoans->State UI - the product includes Web-accessible UI with the following features: Doc Explorer: search documents, filter search results, select documents to bulk-update properties or delete Doc Viewer: view documents, view/update its properties,assign ACLs, add to folders Upload: upload documents and run them through a DocAI extractor (either OCR or a supported specialized parser such as Invoice DocAI).",
+          "Search within a root-folder hierarchy Operators for search keywords: \"\" exact match, or, + and, - exclude Organization : Flexible Folder management Documents can be cataloged into one or more folders, based on application (for example, an ID card is placed in a KYC folder, Loan folder, Bank Account folder), without replicating the document."
+        ]
+      },
+      {
+        "title": "Document AI Warehouse overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/document-warehouse/docs",
+        "source_id": "site-api-reference",
+        "final_score": 107,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "A user needs Edit permission to the Folder and View permission to the Document), in order to add a Document to a Folder Links Links are used to add documents to folders or to link related documents together.",
+          "Users can search for documents within a folder hierarchy e.g. search within AllLoans->State UI - the product includes Web-accessible UI with the following features: Doc Explorer: search documents, filter search results, select documents to bulk-update properties or delete Doc Viewer: view documents, view/update its properties,assign ACLs, add to folders Upload: upload documents and run them through a DocAI extractor (either OCR or a supported specialized parser such as Invoice DocAI).",
+          "Search within a root-folder hierarchy Operators for search keywords: \"\" exact match, or, + and, - exclude Organization : Flexible Folder management Documents can be cataloged into one or more folders, based on application (for example, an ID card is placed in a KYC folder, Loan folder, Bank Account folder), without replicating the document."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "e.g"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/document-warehouse/docs/samples/contentwarehouse-create-folder-link-document",
+        "https://docs.cloud.google.com/document-warehouse/docs",
+        "https://docs.cloud.google.com/document-warehouse/docs/overview"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/document-warehouse/docs/samples/contentwarehouse-create-folder-link-document",
+        "https://docs.cloud.google.com/document-warehouse/docs",
+        "https://docs.cloud.google.com/document-warehouse/docs/overview"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/document-warehouse/docs/samples/contentwarehouse-create-folder-link-document",
+        "https://docs.cloud.google.com/document-warehouse/docs",
+        "https://docs.cloud.google.com/document-warehouse/docs/overview"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/document-warehouse/docs/samples/contentwarehouse-create-folder-link-document",
+        "https://docs.cloud.google.com/document-warehouse/docs",
+        "https://docs.cloud.google.com/document-warehouse/docs/overview"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/document-warehouse/docs/samples/contentwarehouse-create-folder-link-document",
+        "https://docs.cloud.google.com/document-warehouse/docs",
+        "https://docs.cloud.google.com/document-warehouse/docs/overview"
+      ]
+    }
+  ]
+}

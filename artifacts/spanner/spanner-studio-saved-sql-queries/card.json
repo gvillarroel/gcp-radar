@@ -1,0 +1,90 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:46.903Z",
+  "source_step08_card": "data/step-08/current/products/spanner/card.json",
+  "product_name": "Spanner",
+  "product_slug": "spanner",
+  "feature_name": "Spanner Studio saved SQL queries",
+  "feature_slug": "spanner-studio-saved-sql-queries",
+  "summary": "Spanner Studio now supports saving and managing SQL scripts as part of a preview capability.",
+  "extended_definition": "Spanner Studio now supports saving and managing SQL scripts as part of a preview capability.",
+  "lifecycle": {
+    "latest_feature_date": "2025-03-27",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/spanner/docs/best-practices-gaming-database",
+      "https://docs.cloud.google.com/spanner/docs/build-context-gemini-cli",
+      "https://docs.cloud.google.com/spanner/docs/free-trial-quickstart"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Best practices for using Spanner as a gaming database \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/spanner/docs/best-practices-gaming-database",
+        "source_id": "site-docs-root",
+        "final_score": 86,
+        "relevance": "",
+        "evidence_snippets": [
+          "The studio wants to index this attribute in order to speed up important queries during gameplay.",
+          "Updating the previous query to use this improved index looks like the following: SELECT PlayerID FROM Player @ { force index = idx attribute } WHERE IndexPartition BETWEEN 1 and 6 AND Attribute = 23 LIMIT 10 Because no beta test was run, the studio didn't realize they were testing by using data with incorrect assumptions.",
+          "In order to speed up queries that filter for the game mode, consider the following index: CREATE INDEX idx score ranking ON Ranking ( GameMode , Score DESC ) If everyone plays the same game mode called 1 , this index creates a hotspot where GameMode=1 ."
+        ]
+      },
+      {
+        "title": "Build context sets using Gemini CLI \\_|\\_ Spanner \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/spanner/docs/build-context-gemini-cli",
+        "source_id": "site-docs-root",
+        "final_score": 64,
+        "relevance": "",
+        "evidence_snippets": [
+          "For more information about the context set file and facets, see Context sets overview Generate value search queries If you want to generate value searches that specify how the system should search for and match specific values within a concept type, then you can use the /generate targeted value searches command.",
+          "Learn how to create or delete a context set in Spanner Studio Learn how to test a context set Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "The context set file similar to my-cluster-psc-primary postgres templates 20251104111122.json is saved in the directory where you ran the commands."
+        ]
+      },
+      {
+        "title": "\"Create a Spanner free trial instance and sample application \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/spanner/docs/free-trial-quickstart",
+        "source_id": "site-docs-root",
+        "final_score": 62,
+        "relevance": "",
+        "evidence_snippets": [
+          "You can also access and view saved queries on the Spanner Studio page.",
+          "The saved queries showcase different Spanner features and capabilities.",
+          "Note: A Spanner free trial instance supports Standard edition features, and Enterprise edition features, such as KNN vector distance functions , full-text search , and Spanner Graph ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/best-practices-gaming-database",
+        "https://docs.cloud.google.com/spanner/docs/build-context-gemini-cli",
+        "https://docs.cloud.google.com/spanner/docs/free-trial-quickstart"
+      ]
+    }
+  ]
+}

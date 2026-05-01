@@ -1,0 +1,83 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:32.732Z",
+  "source_step08_card": "data/step-08/current/products/dataflow/card.json",
+  "product_name": "Dataflow",
+  "product_slug": "dataflow",
+  "feature_name": "Data sampling",
+  "feature_slug": "data-sampling",
+  "summary": "Dataflow data sampling lets users observe the data at each step of a pipeline.",
+  "extended_definition": "Dataflow data sampling lets users observe the data at each step of a pipeline.",
+  "lifecycle": {
+    "latest_feature_date": "2023-05-31",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dataflow/docs/guides/data-sampling",
+      "https://docs.cloud.google.com/dataflow/docs/guides/develop-and-test-pipelines",
+      "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataflow/latest/com.google.dataflow.v1beta3"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Use data sampling to observe pipeline data \\_|\\_ Cloud Dataflow \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/dataflow/docs/guides/data-sampling",
+        "source_id": "site-docs-reference-2",
+        "final_score": 242,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Data sampling lets you observe the data at each step of a Dataflow pipeline.",
+          "Home Documentation Data analytics Cloud Dataflow Guides Send feedback Use data sampling to observe pipeline data Stay organized with collections Save and categorize content based on your preferences.",
+          "When running a Dataflow template, use the additional-experiments flag to enable data sampling: --additional-experiments=enable data sampling When periodic sampling is enabled, Dataflow collects samples from each PCollection in the job graph."
+        ]
+      },
+      {
+        "title": "Develop and test Dataflow pipelines \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataflow/docs/guides/develop-and-test-pipelines",
+        "source_id": "site-docs-reference-required-3",
+        "final_score": 186,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Data sampling To observe the data at each step of a Dataflow pipeline, enable data sampling during testing.",
+          "For example, ad hoc pipeline execution lets developers do the following: Observe the effect of code changes on scaling behavior.",
+          "If you run the pipeline asynchronously, you can use the returned PipelineResult instance to cancel execution of the pipeline, as shown in the following code example: public interface StreamingIntegrationTestOptions extends DirectOptions , StreamingOptions , MyOtherPipelineOptions { ... } @Rule public final transient TestPipeline p = TestPipeline . create (); @Test @Category ( NeedsRunner . class ) public void testNonBlockingPipeline () { StreamingIntegrationTestOptions options = p . getOptions (). as ( StreamingIntegrationOptions . class ); options . setBlockOnRun ( false ); // Set non - blocking pipeline execution options . setStreaming ( true ); // Set streaming mode p . apply (...); // Apply pipeline transformations PipelineResult result = p . run (); // Run the pipeline // Generate input , verify output , etc ... // Later on , cancel the pipeline using the previously returned result . cancel (); } End-to-end tests End-to-end tests verify the correct operation of your end-to-end pipeline by running it on the Dataflow Runner under conditions that closely resemble production."
+        ]
+      },
+      {
+        "title": "\"Package com.google.dataflow.v1beta3 (0.92.0) \\_|\\_ Java client libraries\\",
+        "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataflow/latest/com.google.dataflow.v1beta3",
+        "source_id": "site-java-reference",
+        "final_score": 178,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "A job consists of multiple steps, each of which performs some com. google. dataflow. v1beta3.",
+          "A job consists of multiple steps, each of which performs some com. google. dataflow. v1beta3.",
+          "Package The packages that must be installed in order for a worker to run the steps of the Cloud Dataflow job that will be assigned to its worker pool. com. google. dataflow. v1beta3."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.dataflow.v1beta3"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": []
+}

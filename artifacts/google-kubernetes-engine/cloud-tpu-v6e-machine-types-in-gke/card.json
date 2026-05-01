@@ -1,0 +1,134 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:39.542Z",
+  "source_step08_card": "data/step-08/current/products/google-kubernetes-engine/card.json",
+  "product_name": "Google Kubernetes Engine",
+  "product_slug": "google-kubernetes-engine",
+  "feature_name": "Cloud TPU v6e machine types in GKE",
+  "feature_slug": "cloud-tpu-v6e-machine-types-in-gke",
+  "summary": "Cloud TPU v6e ct6e-standard machine types are available for supported GKE clusters in selected zones.",
+  "extended_definition": "Cloud TPU v6e ct6e-standard machine types are available for supported GKE clusters in selected zones.",
+  "lifecycle": {
+    "latest_feature_date": "2024-11-05",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/allocate-network-resources-dra",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/gpus",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/train-llm-tpus-gke-jax"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Fine-tune a LLM using TPUs on GKE with JAX \\_|\\_ GKE AI/ML \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/train-llm-tpus-gke-jax",
+        "source_id": "site-docs-reference-required-4",
+        "final_score": 137,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "See the License for the specific language governing permissions and limitations under the License. apiVersion : jobset.x-k8s.io/v1alpha2 kind : JobSet metadata : name : jax-gemma3-train-multihost spec : replicatedJobs : - name : trainers replicas : 1 template : spec : parallelism : 2 completions : 2 backoffLimit : 1 template : metadata : annotations : gke-gcsfuse/volumes : \"true\" spec : serviceAccountName : jaxserviceaccout nodeSelector : cloud.google.com/gke-tpu-accelerator : tpu-v6e-slice cloud.google.com/gke-tpu-topology : 2x4 cloud.google.com/gke-nodepool : jax-tpu-multihost1 containers : - name : training-container image : ${IMAGE URI} imagePullPolicy : \"Always\" ports : - containerPort : 8471 command : [ \"python\" , \"Gemma3LLMTrain.py\" , \"--maxlen\" , \"256\" , \"--batch size\" , \"64\" , \"--datacount\" , \"5120\" ] resources : limits : google.com/tpu : 4 volumeMounts : - name : gcs-fuse-csi-ephemeral mountPath : /data volumes : - name : gcs-fuse-csi-ephemeral csi : driver : gcsfuse.csi.storage.gke.io volumeAttributes : bucketName : ${GCS BUCKET NAME} mountOptions : \"implicit-dirs,file-cache:enable-parallel-downloads:true,file-cache:parallel-downloads-per-file:100,file-cache:max-parallel-downloads:-1,file-cache:download-chunk-size-mb:10,file-cache:max-size-mb:-1\" Deploy the fine-tuning Job: envsubst < training multihost jobset.yaml kubectl apply -f - Multislice In Cloud Shell, run the following command: gcloud container node-pools create jax-tpu-multihost1 \\ --cluster = ${ CLUSTER NAME } \\ --machine-type = ct6e-standard-4t \\ --num-nodes = 2 \\ --tpu-topology = 2x4 \\ --location = ${ REGION } \\ --node-locations = ${ ZONE } gcloud container node-pools create jax-tpu-multihost2 \\ --cluster = ${ CLUSTER NAME } \\ --machine-type = ct6e-standard-4t \\ --num-nodes = 2 \\ --tpu-topology = 2x4 \\ --location = ${ REGION } \\ --node-locations = ${ ZONE } GKE creates two TPU Trillium node pools.",
+          "The following tabs show how to create for multi-host and multislice node pools: Multi-host In Cloud Shell, run the following command: gcloud container node-pools create jax-tpu-multihost1 \\ --cluster = ${ CLUSTER NAME } \\ --machine-type = ct6e-standard-4t \\ --num-nodes = 2 \\ --tpu-topology = 2x4 \\ --location = ${ REGION } \\ --node-locations = ${ ZONE } GKE creates a TPU Trillium node pool with a 2x4 topology and two nodes.",
+          "Create a single-host node pool: gcloud container node-pools create jax-tpu-nodepool \\ --cluster = ${ CLUSTER NAME } \\ --machine-type = ct6e-standard-1t \\ --num-nodes = 1 \\ --location = ${ REGION } \\ --node-locations = ${ ZONE } \\ --workload-metadata = GKE METADATA GKE creates a TPU Trillium node pool with a 1x1 topology and one node."
+        ]
+      },
+      {
+        "title": "Run GPUs in GKE Standard node pools \\_|\\_ GKE AI/ML \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/gpus",
+        "source_id": "site-docs-root",
+        "final_score": 136,
+        "relevance": "",
+        "evidence_snippets": [
+          "This is necessary for when you set GPU TYPE to nvidia-rtx-pro-6000 and MACHINE TYPE to one of the following: g4-standard-6 (one-eighth of a GPU) g4-standard-12 (one-quarter of a GPU) g4-standard-24 (one-half of a GPU) g4-standard-48 (one GPU) Additionally, ensure that you follow the instructions to prepare workloads for G4 machine types that have less than one GPU .",
+          "Add the following block to your Terraform configuration: provider \"google\" { project = var.project id region = var.region } resource \"google container cluster\" \"ml cluster\" { name = var.cluster name location = var.region initial node count = 1 } resource \"google container node pool\" \"gpu pool\" { name = google container cluster.ml cluster.name location = var.region node locations = [ var.zones ] cluster = google container cluster.ml cluster.name node count = 3 autoscaling { total min node count = \"1\" total max node count = \"5\" } management { auto repair = \"true\" auto upgrade = \"true\" } node config { oauth scopes = [ \"https://www.googleapis.com/auth/logging.write\" , \"https://www.googleapis.com/auth/monitoring\" , \"https://www.googleapis.com/auth/devstorage.read only\" , \"https://www.googleapis.com/auth/trace.append\" , \"https://www.googleapis.com/auth/service.management.readonly\" , \"https://www.googleapis.com/auth/servicecontrol\" , ] labels = { env = var.project id } guest accelerator { type = var.gpu type count = 1 gpu driver installation config { gpu driver version = var.gpu driver version } } image type = \"cos containerd\" machine type = var.machine type tags = [ \"gke-node\", \"${var.project id}-gke\" ] disk size gb = \"30\" disk type = \"pd-standard\" metadata = { disable-legacy-endpoints = \"true\" } } } Terraform calls Google Cloud APIs to set create a new cluster with a node pool that uses GPUs.",
+          "G4 machine series : Machine types that have one or more GPUs : 1.34.0-gke.1662000 or later Machine types that have less than one GPU ( Preview ) : Use one of the following patch versions or later, based on the GKE minor version: 1.34 : 1.34.5-gke.1153000 1.35 or later : 1.35.2-gke.1485000 GPUs on Ubuntu nodes : If you use GPUs with Ubuntu nodes, the following requirements apply: Ubuntu driver compatibility : L4 GPUs and H100 GPUs : NVIDIA driver version 535 or later H200 GPUs : NVIDIA driver version 550 or later B200 GPUs : NVIDIA driver version 570 or later RTX PRO 6000 GPUs : NVIDIA driver version 580 or later."
+        ]
+      },
+      {
+        "title": "\"Allocate network resources by using GKE managed DRANET \\_|\\_ GKE networking\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/allocate-network-resources-dra",
+        "source_id": "site-docs-reference-2",
+        "final_score": 133,
+        "relevance": "",
+        "evidence_snippets": [
+          "You must use one of the following accelerator-optimized machine types: Machine series Machine type Accelerator model Networking technology A3 Ultra a3-ultragpu-8g NVIDIA H200 GPU RDMA A4 a4-highgpu-8g NVIDIA B200 GPU RDMA A4X a4x-highgpu-4g NVIDIA GB200 GPU RDMA A4X Max a4x-maxgpu-4g-metal NVIDIA B300 GPU RDMA TPU v7 tpu7x-standard-4t TPU v7 NetDevice TPU v6e ct6e-standard-8t Trillium TPU NetDevice TPU v6e ct6e-standard-4t Trillium TPU NetDevice TPU v6e ct6e-standard-1t Trillium TPU NetDevice Limitations GKE DRANET has the following limitations: You can't use GKE DRANET to allocate the default network interface card (NIC) or virtual NICs (such as veth).",
+          "The number of NICs and their names will vary based on the machine type of the GKE node. eth0 eth1 eth2 lo Enable DRANET with custom ComputeClass To use GKE managed DRANET in Autopilot clusters or with node auto-provisioning in Standard clusters, you must use a custom ComputeClass resource to opt-in to the feature.",
+          "For more information about TPU-compatible machine types, see Choose the TPU version ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cluster.ml",
+      "cluster.name",
+      "devstorage.read",
+      "gcsfuse.csi.storage.gke.io",
+      "gke.1153000",
+      "gke.1485000",
+      "gke.1662000",
+      "jobset.x",
+      "jobset.yaml",
+      "k8s.io",
+      "logging.write",
+      "service.management.readonly",
+      "trace.append",
+      "var.cluster",
+      "var.gpu",
+      "var.machine",
+      "var.project",
+      "var.region",
+      "var.zones"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/train-llm-tpus-gke-jax",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/allocate-network-resources-dra",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/gpus"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/train-llm-tpus-gke-jax",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/allocate-network-resources-dra",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/gpus"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/train-llm-tpus-gke-jax",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/allocate-network-resources-dra",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/gpus"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/train-llm-tpus-gke-jax",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/allocate-network-resources-dra",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/gpus"
+      ]
+    }
+  ]
+}

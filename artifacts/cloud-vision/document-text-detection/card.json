@@ -1,0 +1,118 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:28.879Z",
+  "source_step08_card": "data/step-08/current/products/cloud-vision/card.json",
+  "product_name": "Cloud Vision",
+  "product_slug": "cloud-vision",
+  "feature_name": "Document text detection",
+  "feature_slug": "document-text-detection",
+  "summary": "Document text detection returns full text annotations for dense OCR text.",
+  "extended_definition": "Document text detection returns full text annotations for dense OCR text.",
+  "lifecycle": {
+    "latest_feature_date": "2017-05-18",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/vision/docs/features-list",
+      "https://docs.cloud.google.com/vision/docs/fulltext-annotations",
+      "https://docs.cloud.google.com/vision/docs/handwriting",
+      "https://docs.cloud.google.com/vision/docs/ocr"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Dense document text detection tutorial \\_|\\_ Cloud Vision API \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/vision/docs/fulltext-annotations",
+        "source_id": "site-docs-root",
+        "final_score": 343,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Image ( content = content ) response = client . document text detection ( image = image ) document = response . full text annotation Collect specified feature bounds by enumerating all document features for page in document . pages : for block in page . blocks : for paragraph in block . paragraphs : for word in paragraph . words : for symbol in word . symbols : if feature == FeatureType .",
+          "Image ( content = content ) response = client . document text detection ( image = image ) document = response . full text annotation Collect specified feature bounds by enumerating all document features for page in document . pages : for block in page . blocks : for paragraph in block . paragraphs : for word in paragraph . words : for symbol in word . symbols : if feature == FeatureType .",
+          "You've performed Text Detection using Google Cloud Vision Full Text Annotations!"
+        ]
+      },
+      {
+        "title": "\"Detect and extract text from images \\_|\\_ Cloud Vision API \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/vision/docs/ocr",
+        "source_id": "site-docs-root",
+        "final_score": 269,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Image () image . source . image uri = uri response = client . text detection ( image = image ) texts = response . text annotations print ( \"Texts:\" ) for text in texts : print ( f ' \\n \" { text . description } \"' ) vertices = [ f \"( { vertex . x } , { vertex . y } )\" for vertex in text . bounding poly . vertices ] print ( \"bounds: {} \" . format ( \",\" . join ( vertices ))) if response . error . message : raise Exception ( \" {} \\n For more info on error messages, check: \" \"https://cloud.google.com/apis/design/errors\" . format ( response . error . message ) ) Additional languages C# : Please follow the C# setup instructions on the client libraries page and then visit the Vision reference documentation for .NET.",
+          "Image ( content = content ) response = client . text detection ( image = image ) texts = response . text annotations print ( \"Texts:\" ) for text in texts : print ( f ' \\n \" { text . description } \"' ) vertices = [ f \"( { vertex . x } , { vertex . y } )\" for vertex in text . bounding poly . vertices ] print ( \"bounds: {} \" . format ( \",\" . join ( vertices ))) if response . error . message : raise Exception ( \" {} \\n For more info on error messages, check: \" \"https://cloud.google.com/apis/design/errors\" . format ( response . error . message ) ) Additional languages C# : Please follow the C# setup instructions on the client libraries page and then visit the Vision reference documentation for .NET.",
+          "This means you can use Cloud Vision for computer vision tasks like image analysis and dense document text detection, including handwriting extraction."
+        ]
+      },
+      {
+        "title": "Detect handwriting in images \\_|\\_ Cloud Vision API \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vision/docs/handwriting",
+        "source_id": "site-docs-root",
+        "final_score": 261,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Image () image . source . image uri = uri response = client . document text detection ( image = image ) for page in response . full text annotation . pages : for block in page . blocks : print ( f \" \\n Block confidence: { block . confidence } \\n \" ) for paragraph in block . paragraphs : print ( \"Paragraph confidence: {} \" . format ( paragraph . confidence )) for word in paragraph . words : word text = \"\" . join ([ symbol . text for symbol in word . symbols ]) print ( \"Word text: {} (confidence: {} )\" . format ( word text , word . confidence ) ) for symbol in word . symbols : print ( \" \\t Symbol: {} (confidence: {} )\" . format ( symbol . text , symbol . confidence ) ) if response . error . message : raise Exception ( \" {} \\n For more info on error messages, check: \" \"https://cloud.google.com/apis/design/errors\" . format ( response . error . message ) ) gcloud To perform handwriting detection, use the gcloud ml vision detect-document command as shown in the following example: gcloud ml vision detect-document gs://cloud-samples-data/vision/handwriting image.png Additional languages C# : Please follow the C# setup instructions on the client libraries page and then visit the Vision reference documentation for .NET.",
+          "ImageAnnotatorClient (); / TODO(developer): Uncomment the following line before running the sample. / // const fileName = 'Local image file, e.g. /path/to/image.png'; // Read a local image as a text document const [ result ] = await client . documentTextDetection ( fileName ); const fullTextAnnotation = result . fullTextAnnotation ; console . log ( Full text: ${ fullTextAnnotation . text } ); fullTextAnnotation . pages . forEach ( page = > { page . blocks . forEach ( block = > { console . log ( Block confidence: ${ block . confidence } ); block . paragraphs . forEach ( paragraph = > { console . log ( Paragraph confidence: ${ paragraph . confidence } ); paragraph . words . forEach ( word = > { const wordText = word . symbols . map ( s = > s . text ). join ( '' ); console . log ( Word text: ${ wordText } ); console . log ( Word confidence: ${ word . confidence } ); word . symbols . forEach ( symbol = > { console . log ( Symbol text: ${ symbol . text } ); console . log ( Symbol confidence: ${ symbol . confidence } ); }); }); }); }); }); Python Before trying this sample, follow the Python setup instructions in the Vision quickstart using client libraries .",
+          "Image ( content = content ) response = client . document text detection ( image = image ) for page in response . full text annotation . pages : for block in page . blocks : print ( f \" \\n Block confidence: { block . confidence } \\n \" ) for paragraph in block . paragraphs : print ( \"Paragraph confidence: {} \" . format ( paragraph . confidence )) for word in paragraph . words : word text = \"\" . join ([ symbol . text for symbol in word . symbols ]) print ( \"Word text: {} (confidence: {} )\" . format ( word text , word . confidence ) ) for symbol in word . symbols : print ( \" \\t Symbol: {} (confidence: {} )\" . format ( symbol . text , symbol . confidence ) ) if response . error . message : raise Exception ( \" {} \\n For more info on error messages, check: \" \"https://cloud.google.com/apis/design/errors\" . format ( response . error . message ) ) Additional languages C# : Please follow the C# setup instructions on the client libraries page and then visit the Vision reference documentation for .NET."
+        ]
+      },
+      {
+        "title": "Features list \\_|\\_ Cloud Vision API \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vision/docs/features-list",
+        "source_id": "site-api-reference",
+        "final_score": 257,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Document text detection (dense text / handwriting) Optical character recognition (OCR) for a file (PDF/TIFF) or dense text image; dense text recognition and conversion to machine-coded text.",
+          "Response : Returns both a list of words identifed with text, bounding boxes, and textAnnotations , as well as the structural hierarchy for the OCR detected text ( fullTextAnnotation ).",
+          "Images : Optimized for dense areas of text in an image (images that are documents), and images that contain handwriting."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.cloud.vision.v1.AnnotateImageResponse.Builder",
+      "e.g",
+      "image.png",
+      "v0.25.1"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vision/docs/fulltext-annotations",
+        "https://docs.cloud.google.com/vision/docs/ocr",
+        "https://docs.cloud.google.com/vision/docs/handwriting",
+        "https://docs.cloud.google.com/vision/docs/features-list"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vision/docs/fulltext-annotations",
+        "https://docs.cloud.google.com/vision/docs/ocr",
+        "https://docs.cloud.google.com/vision/docs/handwriting",
+        "https://docs.cloud.google.com/vision/docs/features-list"
+      ]
+    }
+  ]
+}

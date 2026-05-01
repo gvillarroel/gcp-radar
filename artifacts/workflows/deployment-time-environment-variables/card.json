@@ -1,0 +1,154 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:50.287Z",
+  "source_step08_card": "data/step-08/current/products/workflows/card.json",
+  "product_name": "Workflows",
+  "product_slug": "workflows",
+  "feature_name": "Deployment-time environment variables",
+  "feature_slug": "deployment-time-environment-variables",
+  "summary": "Workflows supports defining environment variables at deployment time.",
+  "extended_definition": "Workflows supports defining environment variables at deployment time.",
+  "lifecycle": {
+    "latest_feature_date": "2024-01-11",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 1,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "coverage_low",
+        "message": "The feature ended with coverage LOW.",
+        "suggested_steps": [
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/workflows/docs/best-practice",
+      "https://docs.cloud.google.com/workflows/docs/overview",
+      "https://docs.cloud.google.com/workflows/docs/reference/googleapis/workflows/v1/Overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Best practices for Workflows \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/workflows/docs/best-practice",
+        "source_id": "site-api-reference-required-2",
+        "final_score": 32,
+        "relevance": "",
+        "evidence_snippets": [
+          "For example: gcloud workflows run multi-env --data='{\"urls\":{\"url1\" : \" URL ONE \" , \"url2\" : \" URL TWO \" }} ' Use environment variables and create a workflow that is dynamically configured depending on the environment to which it is deployed.",
+          "Or, you can use Terraform to provision your infrastructure and define a configuration file that creates workflows for each environment by using input variables .",
+          "Or, create a workflow that can be reused as a template and configured according to separately maintained environment variables."
+        ]
+      },
+      {
+        "title": "Types overview \\_|\\_ Workflows \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/workflows/docs/reference/googleapis/workflows/v1/Overview",
+        "source_id": "site-api-reference",
+        "final_score": 29,
+        "relevance": "",
+        "evidence_snippets": [
+          "Fields apiVersion string API version used to start the operation. createTime string ( Timestamp format) The time the operation was created. endTime string ( Timestamp format) The time the operation finished running. target string Server-defined resource path for the target of the operation. verb string Name of the verb executed by the operation.",
+          "Status The Status type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs.",
+          "Format: projects/{project}/locations/{location}/workflows/{workflow} revisionCreateTime string ( Timestamp format) Output only."
+        ]
+      },
+      {
+        "title": "Workflows overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/workflows/docs/overview",
+        "source_id": "site-docs-root",
+        "final_score": 29,
+        "relevance": "",
+        "evidence_snippets": [
+          "When deploying a workflow, you can set arbitrary key and value string pairs as user-defined environment variables that are accessible by your workflow at runtime.",
+          "Standard library and environment variables The Workflows standard library, built-in environment variables, and user-defined environment variables allow you to efficiently construct arguments for services and process responses.",
+          "You can access a workflow's environment information (such as its location or project identifier) using built-in environment variables."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "api.php",
+      "body.dayOfWeek",
+      "en.wikipedia.org",
+      "http.get",
+      "input.searchTerm",
+      "timeapi.io"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workflows/docs/best-practice",
+        "https://docs.cloud.google.com/workflows/docs/overview",
+        "https://docs.cloud.google.com/workflows/docs/reference/googleapis/workflows/v1/Overview"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workflows/docs/best-practice",
+        "https://docs.cloud.google.com/workflows/docs/overview",
+        "https://docs.cloud.google.com/workflows/docs/reference/googleapis/workflows/v1/Overview"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workflows/docs/best-practice",
+        "https://docs.cloud.google.com/workflows/docs/overview",
+        "https://docs.cloud.google.com/workflows/docs/reference/googleapis/workflows/v1/Overview"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workflows/docs/best-practice",
+        "https://docs.cloud.google.com/workflows/docs/overview",
+        "https://docs.cloud.google.com/workflows/docs/reference/googleapis/workflows/v1/Overview"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workflows/docs/best-practice",
+        "https://docs.cloud.google.com/workflows/docs/overview",
+        "https://docs.cloud.google.com/workflows/docs/reference/googleapis/workflows/v1/Overview"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workflows/docs/best-practice",
+        "https://docs.cloud.google.com/workflows/docs/overview",
+        "https://docs.cloud.google.com/workflows/docs/reference/googleapis/workflows/v1/Overview"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workflows/docs/best-practice",
+        "https://docs.cloud.google.com/workflows/docs/overview",
+        "https://docs.cloud.google.com/workflows/docs/reference/googleapis/workflows/v1/Overview"
+      ]
+    }
+  ]
+}

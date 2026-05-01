@@ -1,0 +1,128 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:46.903Z",
+  "source_step08_card": "data/step-08/current/products/spanner/card.json",
+  "product_name": "Spanner",
+  "product_slug": "spanner",
+  "feature_name": "Spanner Change Streams NEW_ROW_AND_OLD_VALUES capture type",
+  "feature_slug": "spanner-change-streams-new-row-and-old-values-capture-type",
+  "summary": "Spanner Change Streams now supports the NEW_ROW_AND_OLD_VALUES capture type, which records new values for all columns and old values for modified columns.",
+  "extended_definition": "Spanner Change Streams now supports the NEW_ROW_AND_OLD_VALUES capture type, which records new values for all columns and old values for modified columns.",
+  "lifecycle": {
+    "latest_feature_date": "2024-04-08",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/spanner/docs/change-streams",
+      "https://docs.cloud.google.com/spanner/docs/change-streams/manage",
+      "https://docs.cloud.google.com/spanner/docs/change-streams/use-kafka"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Change streams overview \\_|\\_ Spanner \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/spanner/docs/change-streams",
+        "source_id": "site-docs-root",
+        "final_score": 198,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Content of a data change record Every data change record written by a change stream includes the following information about the data change: The name of the affected table The names, values, and data types of the primary keys identifying the changed row The names and data types of the changed row's columns that were captured based on the change stream definition.",
+          "You can use DDL to specify one of the following value capture types for a change stream: OLD AND NEW VALUES : Captures both old and new values of a row's modified columns.",
+          "Value capture type A change stream's value capture type configuration option controls the way that it stores a changed row's values."
+        ]
+      },
+      {
+        "title": "Create and manage change streams \\_|\\_ Spanner \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/spanner/docs/change-streams/manage",
+        "source_id": "site-docs-root",
+        "final_score": 198,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Two examples: GoogleSQL CREATE CHANGE STREAM LongerDataRetention FOR ALL OPTIONS ( retention period = '36h' ); CREATE CHANGE STREAM MaximumDataRetention FOR ALL OPTIONS ( retention period = '7d' ); PostgreSQL CREATE CHANGE STREAM LongerDataRetention FOR ALL WITH ( retention period = '36h' ); CREATE CHANGE STREAM MaximumDataRetention FOR ALL WITH ( retention period = '7d' ); Specify a different value capture type To specify a change stream value capture type other than OLD AND NEW VALUES , set the value capture type to either NEW VALUES or NEW ROW , as shown in the following examples: GoogleSQL CREATE CHANGE STREAM NewRowChangeStream FOR ALL OPTIONS ( value capture type = 'NEW ROW' ); CREATE CHANGE STREAM NewValuesChangeStream FOR ALL OPTIONS ( value capture type = 'NEW VALUES' ); PostgreSQL CREATE CHANGE STREAM NewRowChangeStream FOR ALL WITH ( value capture type = 'NEW ROW' ); CREATE CHANGE STREAM NewValuesChangeStream FOR ALL WITH ( value capture type = 'NEW VALUES' ); Filter TTL-based deletes You can filter TTL-based deletes from your change stream's scope using the exclude ttl deletes filter.",
+          "GoogleSQL ALTER CHANGE STREAM NamesAndAlbums SET OPTIONS ( value capture type = 'NEW VALUES' ); PostgreSQL ALTER CHANGE STREAM NamesAndAlbums SET ( value capture type = 'NEW VALUES' ); Note: Modifying the value capture type of a change stream doesn't cause columns to backfill.",
+          "For example, modifying the value capture type from NEW VALUES to OLD AND NEW VALUES doesn't cause backfill of old values for a change stream."
+        ]
+      },
+      {
+        "title": "\"Build change streams connections to Kafka \\_|\\_ Spanner \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/spanner/docs/change-streams/use-kafka",
+        "source_id": "site-docs-root",
+        "final_score": 196,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "The schema for the payload contains all the // columns that the change stream has tracked since the connector start // time. \"schema\": { \"type\": \"struct\", \"fields\": [ { // The schema for the before values of the changed row. \"type\": \"struct\", \"fields\": [ { \"type\": \"int32\", \"optional\": false, \"field\": \"id\" }, { \"type\": \"string\", \"optional\": true, \"field\": \"first name\" } ], \"optional\": true, \"name\": \"customers.Value\", \"field\": \"before\" }, { // The schema for the after values of the changed row. \"type\": \"struct\", \"fields\": [ { \"type\": \"int32\", \"optional\": false, \"field\": \"id\" }, { \"type\": \"string\", \"optional\": false, \"field\": \"first name\" } ], \"optional\": true, \"name\": \"customers.Value\", \"field\": \"after\" }, { // The schema for the source metadata for the event. \"type\": \"struct\", \"fields\": [ { \"type\": \"string\", \"optional\": false, \"field\": \"version\" }, { \"type\": \"string\", \"optional\": false, \"field\": \"connector\" }, { \"type\": \"string\", \"optional\": false, \"field\": \"name\" }, { \"type\": \"int64\", \"optional\": false, \"field\": \"ts ms\" }, { \"type\": \"boolean\", \"optional\": true, \"default\": false, \"field\": \"snapshot\" }, { \"type\": \"string\", \"optional\": false, \"field\": \"db\" }, { \"type\": \"string\", \"optional\": false, \"field\": \"sequence\" }, { \"type\": \"string\", \"optional\": false, \"field\": \"project id\" }, { \"type\": \"string\", \"optional\": false, \"field\": \"instance id\" }, { \"type\": \"string\", \"optional\": false, \"field\": \"database id\" }, { \"type\": \"string\", \"optional\": false, \"field\": \"change stream name\" }, { \"type\": \"string\", \"optional\": true, \"field\": \"table\" } { \"type\": \"string\", \"optional\": true, \"field\": \"server transaction id\" } { \"type\": \"int64\", \"optional\": true, \"field\": \"low watermark\" } { \"type\": \"int64\", \"optional\": true, \"field\": \"read at timestamp\" } { \"type\": \"int64\", \"optional\": true, \"field\": \"number of records in transaction\" } { \"type\": \"string\", \"optional\": true, \"field\": \"transaction tag\" } { \"type\": \"boolean\", \"optional\": true, \"field\": \"system transaction\" } { \"type\": \"string\", \"optional\": true, \"field\": \"value capture type\" } { \"type\": \"string\", \"optional\": true, \"field\": \"partition token\" } { \"type\": \"int32\", \"optional\": true, \"field\": \"mod number\" } { \"type\": \"boolean\", \"optional\": true, \"field\": \"is last record in transaction in partition\" } { \"type\": \"int64\", \"optional\": true, \"field\": \"number of partitions in transaction\" } ], \"optional\": false, \"name\": \"io.debezium.connector.spanner.Source\", \"field\": \"source\" }, ] { \"type\": \"string\", \"optional\": false, \"field\": \"op\" }, { \"type\": \"int64\", \"optional\": true, \"field\": \"ts ms\" } ], \"optional\": false, \"name\": \"connector name.customers.Envelope\" }, \"payload\": { // The values of the row before the event. \"before\": null, // The values of the row after the event. \"after\": { \"id\": 1, \"first name\": \"Anne\", } }, // The source metadata. \"source\": { \"version\": \"{debezium-version}\", \"connector\": \"spanner\", \"name\": \"spanner connector\", \"ts ms\": 1670955531785, \"snapshot\": \"false\", \"db\": \"database\", \"sequence\": \"1\", \"project id\": \"project\", \"instance id\": \"instance\", \"database id\": \"database\", \"change stream name\": \"change stream\", \"table\": \"customers\", \"server transaction id\": \"transaction id\", \"low watermark\": 1670955471635, \"read at timestamp\": 1670955531791, \"number records in transaction\": 2, \"transaction tag\": \"\", \"system transaction\": false, \"value capture type\": \"OLD AND NEW VALUES\", \"partition token\": \"partition token\", \"mod number\": 0, \"is last record in transaction in partition\": true, \"number of partitions in transaction\": 1 }, \"op\": \"c\", \"ts ms\": 1559033904863 // } Low watermark The low watermark describes the time T at which the Kafka connector is guaranteed to have streamed out and published to a Kafka topic all events with timestamp < T.",
+          "The following is an example of a data change event: { // The schema for the Spanner key. \"schema\": { \"type\": \"struct\", \"name\": \"customers.Key\", \"optional\": false, \"fields\": [ { \"type\": \"int64\", \"optional\": \"false\" \"field\": \"false\" } ] }, // The value of the Spanner key. \"payload\": { \"id\": \"1\" }, // The schema for the payload, which contains the before and after values // of the changed row.",
+          "Note that if you want both changed and unchanged columns to be returned on each data change event, use the value capture type NEW ROW ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "connector.class",
+      "customers.Key",
+      "customers.Value",
+      "gcp.spanner.change.stream",
+      "gcp.spanner.credentials.json",
+      "gcp.spanner.database.id",
+      "gcp.spanner.instance.id",
+      "gcp.spanner.project.id",
+      "heartbeat.interval.ms",
+      "io.debezium.connector.spanner.Source",
+      "io.debezium.connector.spanner.SpannerConnector",
+      "name.customers.Envelope",
+      "tasks.max"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/change-streams",
+        "https://docs.cloud.google.com/spanner/docs/change-streams/manage",
+        "https://docs.cloud.google.com/spanner/docs/change-streams/use-kafka"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/change-streams",
+        "https://docs.cloud.google.com/spanner/docs/change-streams/manage",
+        "https://docs.cloud.google.com/spanner/docs/change-streams/use-kafka"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/change-streams",
+        "https://docs.cloud.google.com/spanner/docs/change-streams/manage",
+        "https://docs.cloud.google.com/spanner/docs/change-streams/use-kafka"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/change-streams",
+        "https://docs.cloud.google.com/spanner/docs/change-streams/manage",
+        "https://docs.cloud.google.com/spanner/docs/change-streams/use-kafka"
+      ]
+    }
+  ]
+}

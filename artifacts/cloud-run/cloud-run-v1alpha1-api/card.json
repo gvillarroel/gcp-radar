@@ -1,0 +1,114 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:25.811Z",
+  "source_step08_card": "data/step-08/current/products/cloud-run/card.json",
+  "product_name": "Cloud Run",
+  "product_slug": "cloud-run",
+  "feature_name": "Cloud Run v1alpha1 API",
+  "feature_slug": "cloud-run-v1alpha1-api",
+  "summary": "The Cloud Run v1alpha1 API is deprecated and replaced by the Cloud Run v1 API; deprecated on 2020-01-27.",
+  "extended_definition": "The Cloud Run v1alpha1 API is deprecated and replaced by the Cloud Run v1 API; deprecated on 2020-01-27.",
+  "lifecycle": {
+    "latest_feature_date": "2020-01-27",
+    "deprecation_date": "2020-01-27",
+    "status": "deprecation_noted"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 1,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "generic_supporting_pages",
+        "message": "Supporting pages do not mention any informative feature tokens.",
+        "suggested_steps": [
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/run/docs/apis",
+      "https://docs.cloud.google.com/run/docs/reference/authenticate-to-cloud-run-api",
+      "https://docs.cloud.google.com/run/docs/reference/cloud-run-admin-api-overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Cloud Run Admin API overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/run/docs/reference/cloud-run-admin-api-overview",
+        "source_id": "site-api-reference",
+        "final_score": 69,
+        "relevance": "",
+        "evidence_snippets": [
+          "Home Documentation Application hosting Cloud Run Reference Send feedback Cloud Run Admin API overview Stay organized with collections Save and categorize content based on your preferences.",
+          "The Cloud Run Admin API provides programmatic access to various administrative features, including creating, configuring, and managing services and jobs."
+        ]
+      },
+      {
+        "title": "APIs and references \\_|\\_ Cloud Run \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/run/docs/apis",
+        "source_id": "site-api-reference",
+        "final_score": 59,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Cloud Run Admin API overview Cloud Run Overview page for the Cloud Run Admin API. gcloud command reference Cloud Run gcloud command reference.",
+          "Authenticate to the Cloud Run Admin API How to authenticate to the Cloud Run Admin API.",
+          "About API versions Describes difference between v1 and v2 of the Cloud Run Admin API."
+        ]
+      },
+      {
+        "title": "Authenticate to Cloud Run Admin API \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/run/docs/reference/authenticate-to-cloud-run-api",
+        "source_id": "site-docs-reference",
+        "final_score": 59,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Application hosting Cloud Run Send feedback Authenticate to Cloud Run Admin API Stay organized with collections Save and categorize content based on your preferences.",
+          "You can access the Cloud Run Admin API using the following methods: Google Cloud CLI REST API Cloud Client Libraries This page doesn't cover authenticating to Cloud Run services.",
+          "Authenticate to the Cloud Run Admin API Authentication varies by the environment that you run your service in."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/reference/cloud-run-admin-api-overview",
+        "https://docs.cloud.google.com/run/docs/apis",
+        "https://docs.cloud.google.com/run/docs/reference/authenticate-to-cloud-run-api"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/reference/cloud-run-admin-api-overview",
+        "https://docs.cloud.google.com/run/docs/apis",
+        "https://docs.cloud.google.com/run/docs/reference/authenticate-to-cloud-run-api"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/reference/cloud-run-admin-api-overview",
+        "https://docs.cloud.google.com/run/docs/apis",
+        "https://docs.cloud.google.com/run/docs/reference/authenticate-to-cloud-run-api"
+      ]
+    }
+  ]
+}

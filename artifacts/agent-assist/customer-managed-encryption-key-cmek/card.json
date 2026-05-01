@@ -1,0 +1,210 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:12.665Z",
+  "source_step08_card": "data/step-08/current/products/agent-assist/card.json",
+  "product_name": "Agent Assist",
+  "product_slug": "agent-assist",
+  "feature_name": "Customer Managed Encryption Key (CMEK)",
+  "feature_slug": "customer-managed-encryption-key-cmek",
+  "summary": "Customer Managed Encryption Keys in Agent Assist are generally available and enable customers to control encryption key management details, audit logs, and key lifecycles.",
+  "extended_definition": "Customer Managed Encryption Keys in Agent Assist are generally available and enable customers to control encryption key management details, audit logs, and key lifecycles.",
+  "lifecycle": {
+    "latest_feature_date": "2025-01-28",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/agent-assist/docs/backend-module-install",
+      "https://docs.cloud.google.com/agent-assist/docs/cmek",
+      "https://docs.cloud.google.com/agent-assist/docs/generative-knowledge-assist"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Customer-managed encryption keys (CMEK) \\_|\\_ Agent Assist \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/agent-assist/docs/cmek",
+        "source_id": "site-docs-reference",
+        "final_score": 225,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Home Documentation AI and ML Agent Assist Guides Send feedback Customer-managed encryption keys (CMEK) Stay organized with collections Save and categorize content based on your preferences.",
+          "If you want to control your encryption keys, then you can use customer-managed encryption keys (CMEKs) in Cloud KMS with CMEK-integrated services including Agent Assist.",
+          "For more information about your encryption options, see Customer-managed encryption keys (CMEK) ."
+        ]
+      },
+      {
+        "title": "\"Integrate backend modules with your system \\_|\\_ Agent Assist \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/agent-assist/docs/backend-module-install",
+        "source_id": "site-docs-reference",
+        "final_score": 67,
+        "relevance": "",
+        "evidence_snippets": [
+          "Build the Docker image Under the /ui-connector folder, run the following command: $ gcloud builds submit --tag gcr.io/ $GCP PROJECT ID / $CONNECTOR IMAGE NAME Deploy UI connector to Cloud Run Under the /ui-connector folder , run the following command: If using Direct Egress to connect for Redis connection. $ gcloud run deploy $CONNECTOR IMAGE NAME \\ --image gcr.io/ $GCP PROJECT ID / $CONNECTOR IMAGE NAME \\ --platform managed \\ --service-account = $CONNECTOR SERVICE ACCOUNT NAME \\ --allow-unauthenticated \\ --timeout 3600 \\ --region $SERVICE REGION \\ --network $VPC NETWORK \\ --subnet $VPC SUBNET \\ --clear-vpc-connector \\ --min-instances = 1 \\ --set-env-vars REDISHOST = $REDIS HOST ,REDISPORT = $REDIS PORT ,GCP PROJECT ID = $GCP PROJECT ID ,AUTH OPTION = $AUTH OPTION \\ --update-secrets = /secret/jwt secret key = ${ JWT SECRET NAME } :latest If using a created Serverless VPC Access connector for Redis connection. $ gcloud run deploy $CONNECTOR IMAGE NAME \\ --image gcr.io/ $GCP PROJECT ID / $CONNECTOR IMAGE NAME \\ --platform managed \\ --service-account = $CONNECTOR SERVICE ACCOUNT NAME \\ --allow-unauthenticated \\ --timeout 3600 \\ --region $SERVICE REGION \\ --vpc-connector $VPC CONNECTOR NAME \\ --clear-network \\ --min-instances = 1 \\ --no-cpu-throttling \\ --set-env-vars REDISHOST = $REDIS HOST ,REDISPORT = $REDIS PORT ,GCP PROJECT ID = $GCP PROJECT ID ,AUTH OPTION = $AUTH OPTION \\ --update-secrets = /secret/jwt secret key = ${ JWT SECRET NAME } :latest Make a note of the service URL for the deployed UI Connector, which will be used by clients (agent desktops).",
+          "Build the Docker image Under the /cloud-pubsub-interceptor folder, run the following command: $ gcloud builds submit --tag gcr.io/ $GCP PROJECT ID / $INTERCEPTOR IMAGE NAME Deploy Pub/Sub interceptor to Cloud Run Under the /cloud-pubsub-interceptor folder, run the following command: If using Direct Egress to connect for Redis connection. $ gcloud run deploy $INTERCEPTOR SERVICE NAME \\ --image gcr.io/ $GCP PROJECT ID / $INTERCEPTOR IMAGE NAME \\ --platform managed \\ --service-account = $INTERCEPTOR SERVICE ACCOUNT NAME \\ --region $SERVICE REGION \\ --network $VPC NETWORK \\ --subnet $VPC SUBNET \\ --clear-vpc-connector \\ --ingress = internal \\ --min-instances = 1 \\ --no-cpu-throttling \\ You can also add LOGGING FILE here to specify the logging file path on Cloud Run. --set-env-vars REDISHOST = $REDIS HOST ,REDISPORT = $REDIS PORT If using a created Serverless VPC Access connector for Redis connection. $ gcloud run deploy $INTERCEPTOR SERVICE NAME \\ --image gcr.io/ $GCP PROJECT ID / $INTERCEPTOR IMAGE NAME \\ --platform managed \\ --service-account = $INTERCEPTOR SERVICE ACCOUNT NAME \\ --region $SERVICE REGION \\ --vpc-connector $VPC CONNECTOR NAME \\ --clear-network \\ --ingress = internal \\ --min-instances = 1 \\ You can also add LOGGING FILE here to specify the logging file path on Cloud Run. --set-env-vars REDISHOST = $REDIS HOST ,REDISPORT = $REDIS PORT Save the deployed URL Set the deployed URL as the INTERCEPTOR SERVICE URL environment variable.",
+          "To do so, you can use python secrets to generate secure random numbers for it. generate secret key.py import secrets jwt secret key = secrets.token bytes ( 16 ) print ( jwt secret key ) # Output example: b'L\\x9b\\xd6i4\\xc3\\x1d\\x95\\xe3\\xf78z\\xdda\\x97\\xec' Store the key in Secret Manager In the following example command, replace my key with the secret key you plan to use. $ python generate secret key.py gcloud secrets create $JWT SECRET NAME --data-file = - \\ --replication-policy = user-managed --locations = $SERVICE REGION Set up Memorystore for Redis To set up Redis, you need the following environment variables: VPC CONNECTOR NAME : The name of your Serverless VPC Access connector for connecting Cloud Run services to Memorystore for Redis ."
+        ]
+      },
+      {
+        "title": "Generative knowledge assist | Agent Assist | Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/agent-assist/docs/generative-knowledge-assist",
+        "source_id": "feature-recovery-direct-http",
+        "final_score": 53,
+        "relevance": "",
+        "evidence_snippets": [
+          "Guides Reference Support Resources Technology areas More Agent Assist Site Selector More Guides Reference Support Resources Cross-product tools More Console Agent Assist Agent Assist console Documentation Overview Send feedback Concepts All concepts Agent Assist basics Agent Assist integrations Cloud logging field definitions Features All features AI Coach Overview Tool integration for AI coach Open API and Integration Connectors tools OpenAPI tool for Datastore Best practices Bidirectional API Build your own GenAI assist Build your own assist Build your own assist extension Extended streaming Implement Agent Assist using pre-built modules UI modules overview Implement UI modules and connectors UI modules Container V1 Container V2 Knowledge assist Generative knowledge assist Smart reply Summarization Transcript Agent desktop integration Custom events and custom UI module connectors UI module events Genesys Cloud integration Deploy the application server AudioHook voice integration Configuration for chat integration Test chat integration Twilio integration Twilio basics Deploy Twilio Flex Twilio SIPREC integration Salesforce integration Overview Salesforce chat integration Salesforce voice integration with Twilio Flex Salesforce voice integration with NiCE CXone LivePerson integration Basics Deploy the application server Deploy the proxy server Backend modules basics Integrate backend modules with your system (Proactive) Generative knowledge assist User guide Knowledge assist filters Skip PubSub notifications for empty suggestions Troubleshoot knowledge assist features Best practices Sentiment analysis Smart Reply Summarization Summarization with custom sections user guide Summarization with custom sections best practices Automatic evaluation basics Automatic evaluation user guide Automatic evaluation best practices Transcription Voice Transcription Transcription with Chirp 3 PubSub intermediate transcription How-to guides All how-to guides Enable Cloud Pub/Sub notifications Enable CMEK Enable real-time entity extraction Handoff a conversation CX Agent Studio Dialogflow CX Dialogflow ES Set up Speech-to-Text model adaptation Upload and export conversation data Upload conversation data Export conversation data Tutorials All tutorials Create a conversation profile Train an AI model Train a smart reply model Train a summarization custom model for chat Upload data Overview Conversation datasets Knowledge bases Use the Agent Assist simulator Deprecations Article suggestion FAQ Assist Knowledge documents best practices AI and ML Application development Application hosting Compute Data analytics and pipelines Databases Distributed, hybrid, and multicloud Industry solutions Migration Networking Observability and monitoring Security Storage Access and resources management Costs and usage management Infrastructure as code SDK, languages, frameworks, and tools Public sites Agent Assist public features Agent Assist console Home Documentation AI and ML Agent Assist Guides Send feedback Generative knowledge assist Stay organized with collections Save and categorize content based on your preferences.",
+          "Within both the Agent Assist simulator and UI modules , both generative knowledge assist and proactive generative knowledge assist automatically display a document metadata value for certain keys. gka_source_label : Value is displayed in the suggestion card directly. gka_source_tooltip : When the value is struct type, holding your cursor over the source link expands and displays the value in a tooltip.",
+          "Access data through Customer Experience Insights Alternatively, your proactive generative knowledge assist generated queries and answers are automatically populated to Customer Experience Insights."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cloudkms.cryptoKeyEncrypterDecrypter",
+      "cmek.iam.gserviceaccount.com",
+      "gcr.io",
+      "key.py",
+      "secrets.token"
+    ],
+    "missing_inventory_roles": [
+      "roles/cloudkms.cryptoKeyEncrypterDecrypter"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/agent-assist/docs/cmek",
+        "https://docs.cloud.google.com/agent-assist/docs/backend-module-install",
+        "https://docs.cloud.google.com/agent-assist/docs/generative-knowledge-assist"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/agent-assist/docs/cmek",
+        "https://docs.cloud.google.com/agent-assist/docs/backend-module-install",
+        "https://docs.cloud.google.com/agent-assist/docs/generative-knowledge-assist"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/agent-assist/docs/cmek",
+        "https://docs.cloud.google.com/agent-assist/docs/backend-module-install",
+        "https://docs.cloud.google.com/agent-assist/docs/generative-knowledge-assist"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/agent-assist/docs/cmek",
+        "https://docs.cloud.google.com/agent-assist/docs/backend-module-install",
+        "https://docs.cloud.google.com/agent-assist/docs/generative-knowledge-assist"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/agent-assist/docs/cmek",
+        "https://docs.cloud.google.com/agent-assist/docs/backend-module-install",
+        "https://docs.cloud.google.com/agent-assist/docs/generative-knowledge-assist"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/agent-assist/docs/cmek",
+        "https://docs.cloud.google.com/agent-assist/docs/backend-module-install",
+        "https://docs.cloud.google.com/agent-assist/docs/generative-knowledge-assist"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/agent-assist/docs/cmek",
+        "https://docs.cloud.google.com/agent-assist/docs/backend-module-install",
+        "https://docs.cloud.google.com/agent-assist/docs/generative-knowledge-assist"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/agent-assist/docs/cmek",
+        "https://docs.cloud.google.com/agent-assist/docs/backend-module-install",
+        "https://docs.cloud.google.com/agent-assist/docs/generative-knowledge-assist"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/agent-assist/docs/cmek",
+        "https://docs.cloud.google.com/agent-assist/docs/backend-module-install",
+        "https://docs.cloud.google.com/agent-assist/docs/generative-knowledge-assist"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/agent-assist/docs/cmek",
+        "https://docs.cloud.google.com/agent-assist/docs/backend-module-install",
+        "https://docs.cloud.google.com/agent-assist/docs/generative-knowledge-assist"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/agent-assist/docs/cmek",
+        "https://docs.cloud.google.com/agent-assist/docs/backend-module-install",
+        "https://docs.cloud.google.com/agent-assist/docs/generative-knowledge-assist"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/agent-assist/docs/cmek",
+        "https://docs.cloud.google.com/agent-assist/docs/backend-module-install",
+        "https://docs.cloud.google.com/agent-assist/docs/generative-knowledge-assist"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/agent-assist/docs/cmek",
+        "https://docs.cloud.google.com/agent-assist/docs/backend-module-install",
+        "https://docs.cloud.google.com/agent-assist/docs/generative-knowledge-assist"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/agent-assist/docs/cmek",
+        "https://docs.cloud.google.com/agent-assist/docs/backend-module-install",
+        "https://docs.cloud.google.com/agent-assist/docs/generative-knowledge-assist"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/agent-assist/docs/cmek",
+        "https://docs.cloud.google.com/agent-assist/docs/backend-module-install",
+        "https://docs.cloud.google.com/agent-assist/docs/generative-knowledge-assist"
+      ]
+    }
+  ]
+}

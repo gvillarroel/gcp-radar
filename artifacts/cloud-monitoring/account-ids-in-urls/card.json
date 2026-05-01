@@ -1,0 +1,140 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:24.989Z",
+  "source_step08_card": "data/step-08/current/products/cloud-monitoring/card.json",
+  "product_name": "Cloud Monitoring",
+  "product_slug": "cloud-monitoring",
+  "feature_name": "Account IDs in URLs",
+  "feature_slug": "account-ids-in-urls",
+  "summary": "Monitoring URLs include the Stackdriver account ID to support multi-account tabs and link sharing.",
+  "extended_definition": "Monitoring URLs include the Stackdriver account ID to support multi-account tabs and link sharing.",
+  "lifecycle": {
+    "latest_feature_date": "2016-12-12",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/monitoring/agent/ops-agent/agent-policies",
+      "https://docs.cloud.google.com/monitoring/docs/metrics-management",
+      "https://docs.cloud.google.com/monitoring/docs/monitoring-overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "View and manage metric usage \\_|\\_ Cloud Monitoring \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/monitoring/docs/metrics-management",
+        "source_id": "site-docs-reference",
+        "final_score": 86,
+        "relevance": "",
+        "evidence_snippets": [
+          "For example, to list active metrics that appear in no alerting policies and in no custom dashboards, add the following filters to the filter bar: Status: Active Alert Policies: (Empty) Custom Dashboards: (Empty) By default, when you add multiple filters, the table includes a row when the row meets all filters.",
+          "Metrics used or not used in a custom dashboard in the current Google Cloud project.These filters don't include metrics that are used in predefined dashboards provided by Cloud Monitoring.",
+          "If your project has multiple projects in its metrics scope, then the metrics shown on the Metrics Management page include the metrics from all of those projects."
+        ]
+      },
+      {
+        "title": "Use agent policies (GA) \\_|\\_ Cloud Monitoring \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/monitoring/agent/ops-agent/agent-policies",
+        "source_id": "site-iam-reference",
+        "final_score": 80,
+        "relevance": "",
+        "evidence_snippets": [
+          "Grant the Identity and Access Management roles Logs Writer ( roles/logging.logWriter ) and Monitoring Metric Writer ( roles/monitoring.metricWriter ) to the Compute Engine default service account so that the agents can write logs and metrics to the Logging and Cloud Monitoring APIs.",
+          "Cloud Monitoring VM Instances page The VM Instances page in Cloud Monitoring includes an Agent column that lists the agent installed on each VM, and for the Ops Agent, includes an indicator for installed agents that are older than the latest version.",
+          "To enable the APIs, grant the necessary roles to the default service account, and enable the OS Config metadata for a project, run the script as follows: bash prepare-for-ops-agents-policies.sh --project= PROJECT ID To additionally grant one of the OS Config roles to a user who does not have the Owner ( roles/owner ) role on the project, run the script as follows: bash prepare-for-ops-agents-policies.sh --project= PROJECT ID \\ --iam-user= USER EMAIL \\ --iam-policy-access= [admin editor viewer] To additionally grant one of the OS Config roles to a non-default service account, run the script as follows: bash prepare-for-ops-agents-policies.sh --project= PROJECT ID \\ --iam-service-account= SERVICE ACCT EMAIL \\ --iam-policy-access= [admin editor viewer] The diagnose policies.sh script Given a project ID, a Compute Engine instance ID, a Compute Engine zone, and the agent policy ID, the diagnose policies.sh script automatically collects the necessary information to help diagnose issues with the policy: The OS Config agent version The underlying OS policy assignment The OS policy assignments that are applicable to this Compute Engine instance A description of this Compute Engine instance To invoke the script, run the following command: bash diagnose policies.sh --project-id= PROJECT ID \\ --gce-instance-id= INSTANCE ID \\ --policy-id= POLICY ID \\ --zone= ZONE Pricing The gcloud compute instances ops-agents policies commands are implemented by using OS policy assignment resources from VM Manager ."
+        ]
+      },
+      {
+        "title": "Cloud Monitoring overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/monitoring/docs/monitoring-overview",
+        "source_id": "site-docs-reference",
+        "final_score": 79,
+        "relevance": "",
+        "evidence_snippets": [
+          "Monitor metrics for multiple Google Cloud projects To view and monitor the time-series data for multiple Google Cloud projects and AWS accounts through a single interface, configure a multi-project metrics scope .",
+          "For information about how to configure our Google Cloud project to view metrics for multiple Google Cloud projects and AWS accounts, see Metrics scopes overview .",
+          "You can configure the metrics scope to include time-series data from other Google Cloud projects and from AWS accounts."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "description.yaml",
+      "logging.logWriter",
+      "monitoring.metricWriter",
+      "policies.sh",
+      "project.These"
+    ],
+    "missing_inventory_roles": [
+      "roles/logging.logWriter",
+      "roles/monitoring.metricWriter",
+      "roles/owner"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/monitoring/docs/metrics-management",
+        "https://docs.cloud.google.com/monitoring/agent/ops-agent/agent-policies",
+        "https://docs.cloud.google.com/monitoring/docs/monitoring-overview"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/monitoring/docs/metrics-management",
+        "https://docs.cloud.google.com/monitoring/agent/ops-agent/agent-policies",
+        "https://docs.cloud.google.com/monitoring/docs/monitoring-overview"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/monitoring/docs/metrics-management",
+        "https://docs.cloud.google.com/monitoring/agent/ops-agent/agent-policies",
+        "https://docs.cloud.google.com/monitoring/docs/monitoring-overview"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/monitoring/docs/metrics-management",
+        "https://docs.cloud.google.com/monitoring/agent/ops-agent/agent-policies",
+        "https://docs.cloud.google.com/monitoring/docs/monitoring-overview"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/monitoring/docs/metrics-management",
+        "https://docs.cloud.google.com/monitoring/agent/ops-agent/agent-policies",
+        "https://docs.cloud.google.com/monitoring/docs/monitoring-overview"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/monitoring/docs/metrics-management",
+        "https://docs.cloud.google.com/monitoring/agent/ops-agent/agent-policies",
+        "https://docs.cloud.google.com/monitoring/docs/monitoring-overview"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,160 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:37.235Z",
+  "source_step08_card": "data/step-08/current/products/gemini/card.json",
+  "product_name": "Gemini",
+  "product_slug": "gemini",
+  "feature_name": "Delete prompt and response pair",
+  "feature_slug": "delete-prompt-and-response-pair",
+  "summary": "Gemini Code Assist users in VS Code can delete a single prompt and response pair from a chat; Gemini Code Assist users in VS Code can delete a single prompt and response pair from a chat.",
+  "extended_definition": "Gemini Code Assist users in VS Code can delete a single prompt and response pair from a chat; Gemini Code Assist users in VS Code can delete a single prompt and response pair from a chat.",
+  "lifecycle": {
+    "latest_feature_date": "2025-09-11",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/gemini/docs/codeassist/chat-gemini",
+      "https://docs.cloud.google.com/gemini/docs/codeassist/chat-overview",
+      "https://docs.cloud.google.com/gemini/docs/codeassist/write-code-gemini",
+      "https://docs.cloud.google.com/gemini/docs/configure-logging"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Chat with Gemini Code Assist Standard and Enterprise \\_|\\_ Gemini for Google\\",
+        "url": "https://docs.cloud.google.com/gemini/docs/codeassist/chat-gemini",
+        "source_id": "site-docs-root",
+        "final_score": 385,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Delete prompt and response pairs To delete your prompt and Gemini Code Assist's response to that particular prompt, follow these steps: VS Code In the chat pane, hold your pointer over your prompt that you wish to remove.",
+          "Your prompt and response pair is removed from your chat history with Gemini Code Assist.",
+          "Your prompt and response pair is removed from your chat history with Gemini Code Assist."
+        ]
+      },
+      {
+        "title": "\"Code with Gemini Code Assist Standard and Enterprise \\_|\\_ Gemini for Google\\",
+        "url": "https://docs.cloud.google.com/gemini/docs/codeassist/write-code-gemini",
+        "source_id": "site-docs-root-2",
+        "final_score": 309,
+        "relevance": "",
+        "evidence_snippets": [
+          "Known issues This section outlines the known issues of Gemini Code Assist: VS Code Chat responses may be truncated when they include an updated version of a large open file To work around this issue, select a smaller section of code and include an additional directive in the chat prompt, such as only output the selected code.",
+          "Prompt Gemini Code Assist in a code file with a comment If you prefer, you can also prompt Gemini Code Assist in your code file with a comment by following these steps: VS Code On a new line, enter the comment Function to create a Cloud Storage bucket , and then press Enter (for Windows and Linux) or Return (for macOS).",
+          "Prompt Gemini Code Assist with code transformation Code transformation allows you to use commands or natural language prompts in the Quick Pick menu to request modifications to your code, and provides you with a diff view to show pending changes to your code."
+        ]
+      },
+      {
+        "title": "\"Gemini Code Assist chat features overview \\_|\\_ Gemini for Google Cloud\\",
+        "url": "https://docs.cloud.google.com/gemini/docs/codeassist/chat-overview",
+        "source_id": "site-docs-root",
+        "final_score": 299,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "You can perform the following chat actions with Gemini Code Assist in any of the supported IDEs : Use Gemini Code Assist to explain your code Create multiple chats Select a Gemini model Edit a prior prompt Regenerate a prompt response Delete prompt and response pairs Configure code preview pane Prompt Gemini Code Assist with selected code using chat Add selected code snippets to context Add terminal output to the chat context Specify files and folders in your workspace context Revert to a checkpoint in chat View code diffs Generate a file outline Create custom commands Create rules Exclude files from your context with an .aiexclude or .gitignore file Use the Gemini Code Assist agent mode Configure local codebase awareness What's next Set up Gemini Code Assist Standard or Enterprise , if you haven't already.",
+          "Home Documentation AI and ML Gemini for Google Cloud Guides Send feedback Gemini Code Assist chat features overview Stay organized with collections Save and categorize content based on your preferences.",
+          "To help you comply with any license requirements for your code, Gemini Code Assist provides source citations when its suggestions directly quote at length from a specific source."
+        ]
+      },
+      {
+        "title": "\"Configure Gemini Code Assist Standard and Enterprise logging \\_|\\_ Gemini\\",
+        "url": "https://docs.cloud.google.com/gemini/docs/configure-logging",
+        "source_id": "site-docs-root-2",
+        "final_score": 280,
+        "relevance": "",
+        "evidence_snippets": [
+          "If the command succeeds, it returns a response body that shows the log prompts and responses and log metadata set to true : { \"name\": \"projects/ CONTAINER PROJECT NAME /locations/global/loggingSettings/ LOGS SETTING ID \", \"createTime\": \"2025-01-23T15:22:49.717166932Z\", \"updateTime\": \"2025-01-23T15:22:49.717166932Z\", \"log prompts and responses\": true, \"log metadata\": true } Run the following command to create the Gemini Code Assist Standard and Enterprise logs setting binding: curl -X POST \\ -H \"Authorization: Bearer $TOKEN\" \\ -H 'Content-Type: application/json' \\ -d '{ \"target\": \"projects/ TARGET PROJECT NAME \" }' \\ \"https://cloudaicompanion.googleapis.com/v1/projects/ CONTAINER PROJECT NAME /locations/global/loggingSettings/ LOGS SETTING ID /settingBindings?setting binding id= LOGS BINDING ID \" Replace the following: TARGET PROJECT NAME : Enter the target project to which the binding should be bound.",
+          "Create the setting and a setting-specific value: Obtain the token: TOKEN=$(gcloud auth print-access-token) Run the following command to disable the Gemini Code Assist Standard and Enterprise logs settings: curl -X POST \\ -H \"Authorization: Bearer $TOKEN\" \\ -H 'Content-Type: application/json' \\ -d '{ \"log prompts and responses\": false, \"log metadata\": false, } ' \\ \"https://cloudaicompanion.googleapis.com/v1/projects/ CONTAINER PROJECT NAME /locations/global/loggingSettings?logging metadata id= LOGS SETTING ID \" Replace the following: CONTAINER PROJECT NAME : Enter the parent project ID.",
+          "If the command succeeds, it returns a response body that shows the log prompts and responses and log metadata set to false : { \"name\": \"projects/ CONTAINER PROJECT NAME /locations/global/loggingSettings/ LOGS SETTING ID \", \"createTime\": \"2025-01-23T15:22:49.717166932Z\", \"updateTime\": \"2025-01-23T15:22:49.717166932Z\", \"log prompts and responses\": false, \"log metadata\": false } Set up multi-project logging You can use logs from Gemini Code Assist to create metrics and dashboards for monitoring per-project usage."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cloudaicompanion.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/docs/codeassist/chat-gemini",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/write-code-gemini",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/chat-overview",
+        "https://docs.cloud.google.com/gemini/docs/configure-logging"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/docs/codeassist/chat-gemini",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/write-code-gemini",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/chat-overview",
+        "https://docs.cloud.google.com/gemini/docs/configure-logging"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/docs/codeassist/chat-gemini",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/write-code-gemini",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/chat-overview",
+        "https://docs.cloud.google.com/gemini/docs/configure-logging"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/docs/codeassist/chat-gemini",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/write-code-gemini",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/chat-overview",
+        "https://docs.cloud.google.com/gemini/docs/configure-logging"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/docs/codeassist/chat-gemini",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/write-code-gemini",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/chat-overview",
+        "https://docs.cloud.google.com/gemini/docs/configure-logging"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/docs/codeassist/chat-gemini",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/write-code-gemini",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/chat-overview",
+        "https://docs.cloud.google.com/gemini/docs/configure-logging"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/docs/codeassist/chat-gemini",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/write-code-gemini",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/chat-overview",
+        "https://docs.cloud.google.com/gemini/docs/configure-logging"
+      ]
+    }
+  ]
+}

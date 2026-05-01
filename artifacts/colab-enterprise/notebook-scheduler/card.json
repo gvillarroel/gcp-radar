@@ -1,0 +1,188 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:29.182Z",
+  "source_step08_card": "data/step-08/current/products/colab-enterprise/card.json",
+  "product_name": "Colab Enterprise",
+  "product_slug": "colab-enterprise",
+  "feature_name": "Notebook scheduler",
+  "feature_slug": "notebook-scheduler",
+  "summary": "The notebook scheduler lets you run notebooks immediately or on a recurring schedule; The notebook scheduler lets you run notebooks immediately or on a recurring schedule.",
+  "extended_definition": "The notebook scheduler lets you run notebooks immediately or on a recurring schedule; The notebook scheduler lets you run notebooks immediately or on a recurring schedule.",
+  "lifecycle": {
+    "latest_feature_date": "2024-08-14",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/colab/docs/create-console-quickstart",
+      "https://docs.cloud.google.com/colab/docs/create-runtime-template",
+      "https://docs.cloud.google.com/colab/docs/manage-access-notebook",
+      "https://docs.cloud.google.com/colab/docs/runtimes"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Create a runtime template in Colab Enterprise \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/colab/docs/create-runtime-template",
+        "source_id": "site-docs-root",
+        "final_score": 172,
+        "relevance": "",
+        "evidence_snippets": [
+          "Schedule notebook runs in a Shared VPC network If you want to use the notebook scheduler with a runtime template or runtime in a service project of a Shared VPC network, you must grant the Colab Enterprise service agent ( service- SERVICE PROJECT NUMBER @gcp-sa-vertex-nb.iam.gserviceaccount.com ) specific permissions on the host project.",
+          "HTTP method and URL: POST https:// REGION -aiplatform.googleapis.com/v1/projects/ PROJECT ID /locations/ REGION /notebookRuntimeTemplates Request JSON body: { \"displayName\": \" DISPLAY NAME \", \"machineSpec\": { { \"machineType\": MACHINE TYPE \"acceleratorType\": ACCELERATOR TYPE , \"acceleratorCount\": ACCELERATOR COUNT , } }, } To send your request, choose one of these options: curl Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI .",
+          "Save the request body in a file named request.json , and execute the following command: curl -X POST \\ -H \"Authorization: Bearer $(gcloud auth print-access-token)\" \\ -H \"Content-Type: application/json; charset=utf-8\" \\ -d @request.json \\ \"https:// REGION -aiplatform.googleapis.com/v1/projects/ PROJECT ID /locations/ REGION /notebookRuntimeTemplates\" PowerShell Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login ."
+        ]
+      },
+      {
+        "title": "\"Quickstart: Create a Colab Enterprise notebook by using the Google Cloud\\",
+        "url": "https://docs.cloud.google.com/colab/docs/create-console-quickstart",
+        "source_id": "site-docs-root",
+        "final_score": 169,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Enable the APIs Required roles To get the permissions that you need to create a Colab Enterprise notebook and run the notebook's code on a runtime, ask your administrator to grant you the Colab Enterprise User ( roles/aiplatform.colabEnterpriseUser ) IAM role on the project.",
+          "Run code in the default runtime To run a Colab Enterprise notebook's code on the default runtime, do the following: In the Google Cloud console, go to the Colab Enterprise My notebooks page.",
+          "Rename your notebook To rename a Colab Enterprise notebook: In the Google Cloud console, go to the Colab Enterprise My notebooks page."
+        ]
+      },
+      {
+        "title": "\"Runtimes and runtime templates \\_|\\_ Colab Enterprise \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/colab/docs/runtimes",
+        "source_id": "site-docs-root",
+        "final_score": 167,
+        "relevance": "",
+        "evidence_snippets": [
+          "If you configure your runtime template this way, notebooks that use runtimes created from the runtime template won't have access to the public internet.",
+          "Instead of running code from multiple notebooks on the same runtime, you can create a runtime for each notebook based on the same runtime template.",
+          "When you create a runtime, it is in the same region as the runtime template, and the runtime can only be used with notebooks in that region."
+        ]
+      },
+      {
+        "title": "Manage access to a Colab Enterprise notebook \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/colab/docs/manage-access-notebook",
+        "source_id": "site-iam-reference",
+        "final_score": 161,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "When you turn off output saving for a selected notebook, Colab Enterprise deletes all output saved in the notebook file and doesn't save the output of subsequent runs.",
+          "Go to My notebooks In the Region menu, select the region that contains your notebook.",
+          "Go to My notebooks In the Region menu, select the region that contains your notebook."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "aiplatform.colabEnterpriseUser",
+      "aiplatform.googleapis.com",
+      "compute.networkUser",
+      "example.com",
+      "gmail.com",
+      "googlegroups.com",
+      "nb.iam.gserviceaccount.com",
+      "request.json"
+    ],
+    "missing_inventory_roles": [
+      "roles/aiplatform.colabEnterpriseUser",
+      "roles/compute.networkUser"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/colab/docs/create-runtime-template",
+        "https://docs.cloud.google.com/colab/docs/create-console-quickstart",
+        "https://docs.cloud.google.com/colab/docs/runtimes",
+        "https://docs.cloud.google.com/colab/docs/manage-access-notebook"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/colab/docs/create-runtime-template",
+        "https://docs.cloud.google.com/colab/docs/create-console-quickstart",
+        "https://docs.cloud.google.com/colab/docs/runtimes",
+        "https://docs.cloud.google.com/colab/docs/manage-access-notebook"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/colab/docs/create-runtime-template",
+        "https://docs.cloud.google.com/colab/docs/create-console-quickstart",
+        "https://docs.cloud.google.com/colab/docs/runtimes",
+        "https://docs.cloud.google.com/colab/docs/manage-access-notebook"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/colab/docs/create-runtime-template",
+        "https://docs.cloud.google.com/colab/docs/create-console-quickstart",
+        "https://docs.cloud.google.com/colab/docs/runtimes",
+        "https://docs.cloud.google.com/colab/docs/manage-access-notebook"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/colab/docs/create-runtime-template",
+        "https://docs.cloud.google.com/colab/docs/create-console-quickstart",
+        "https://docs.cloud.google.com/colab/docs/runtimes",
+        "https://docs.cloud.google.com/colab/docs/manage-access-notebook"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/colab/docs/create-runtime-template",
+        "https://docs.cloud.google.com/colab/docs/create-console-quickstart",
+        "https://docs.cloud.google.com/colab/docs/runtimes",
+        "https://docs.cloud.google.com/colab/docs/manage-access-notebook"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/colab/docs/create-runtime-template",
+        "https://docs.cloud.google.com/colab/docs/create-console-quickstart",
+        "https://docs.cloud.google.com/colab/docs/runtimes",
+        "https://docs.cloud.google.com/colab/docs/manage-access-notebook"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/colab/docs/create-runtime-template",
+        "https://docs.cloud.google.com/colab/docs/create-console-quickstart",
+        "https://docs.cloud.google.com/colab/docs/runtimes",
+        "https://docs.cloud.google.com/colab/docs/manage-access-notebook"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/colab/docs/create-runtime-template",
+        "https://docs.cloud.google.com/colab/docs/create-console-quickstart",
+        "https://docs.cloud.google.com/colab/docs/runtimes",
+        "https://docs.cloud.google.com/colab/docs/manage-access-notebook"
+      ]
+    }
+  ]
+}

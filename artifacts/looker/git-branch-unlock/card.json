@@ -1,0 +1,120 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:42.371Z",
+  "source_step08_card": "data/step-08/current/products/looker/card.json",
+  "product_name": "Looker",
+  "product_slug": "looker",
+  "feature_name": "Git branch unlock",
+  "feature_slug": "git-branch-unlock",
+  "summary": "LookML developers can unlock a locked Git branch from the Looker IDE when Git operations fail or are still in progress.",
+  "extended_definition": "LookML developers can unlock a locked Git branch from the Looker IDE when Git operations fail or are still in progress.",
+  "lifecycle": {
+    "latest_feature_date": "2026-02-17",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/looker/docs/accessing-project-files",
+      "https://docs.cloud.google.com/looker/docs/action-hub",
+      "https://docs.cloud.google.com/looker/docs/additional-lookml-basics"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Sharing data through an action hub \\_|\\_ Looker \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/looker/docs/action-hub",
+        "source_id": "site-docs-reference-required-4",
+        "final_score": 76,
+        "relevance": "",
+        "evidence_snippets": [
+          "On the action settings/enablement page, a Looker admin must configure the action's form fields to pull information from the user attribute by clicking the user attribute icon to the right of the appropriate field and selecting the desired user attribute. requiredField parameters in cell-level actions For cell-level actions, you can configure your model's LookML fields to deliver data to that action destination by specifying which tags your action supports in the requiredFields parameter of your action file.",
+          "You can create a custom action by: Setting up a development repo Writing your action Testing your action Publishing and enabling your action, either in the Looker Action Hub or on your own private action hub server As with any action, you may need to configure your LookML models with specific parameters before you can use the action to deliver your data.",
+          "Configuring a LookML model for use with an action For both custom actions and actions that are available from the Looker Action Hub, you must identify the relevant data fields by using the tags parameter in your LookML model."
+        ]
+      },
+      {
+        "title": "Accessing LookML project files \\_|\\_ Looker \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/looker/docs/accessing-project-files",
+        "source_id": "site-docs-reference-required-4",
+        "final_score": 68,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "When you open a LookML project from the Develop panel, the Looker IDE opens the project to one of the LookML files in that project: If the project contains a document file named readme.md , the IDE will open that file.",
+          "Home Documentation Data analytics Looker Guides Send feedback Accessing LookML project files Stay organized with collections Save and categorize content based on your preferences.",
+          "Searching for and jumping to LookML objects or project files In the Looker IDE, you can do a quick search to navigate directly to LookML objects and project files."
+        ]
+      },
+      {
+        "title": "Common LookML patterns \\_|\\_ Looker \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/looker/docs/additional-lookml-basics",
+        "source_id": "site-docs-reference-required-4",
+        "final_score": 64,
+        "relevance": "",
+        "evidence_snippets": [
+          "This page describes the following common patterns in LookML: Labeling fields (and names in the UI) Filtering counts by a dimension Percentages Using sets for drill-down details Filtering result sets Labeling fields (and names in the UI) Looker converts LookML field names into the strings that the UI displays by combining the view name in regular-weight font with the field's short name in bold.",
+          "Home Documentation Data analytics Looker Guides Send feedback Common LookML patterns Stay organized with collections Save and categorize content based on your preferences.",
+          "If you wanted a field that counted users from the EU, you could use something like this: measure: eu count { type: count # COUNT(CASE WHEN users.countrycode IN 'UK','FR','ES' THEN 1 ELSE NULL END) drill fields: [detail] filters: [users.countrycode: \"UK,FR,ES\"] } If you want to filter with a mathematical expression , be sure to enclose it in double quotes: measure: total orders above 100 dollars { type: sum # SUM(CASE WHEN order.value > 100 THEN order.value ELSE NULL END) sql: ${order.value} ;; drill fields: [detail] filters: [order.value: \">100\"] } Percentages Many key performance indicators are expressed in the form of percentages, such as \"the percent of items returned,\" \"the percent of emails that resulted in a sale,\" or other instances of \"the percent of X that Y.\" In LookML, the design pattern is to create counts for the two conditions and create a third field that computes the percentage between the two. dimension: returned { type: yesno } measure: count { # total count of items type: count distinct sql: ${TABLE}.id ;; drill fields: [detail] } measure: returned count { # count of returned items type: count distinct sql: ${TABLE}.id ;; drill fields: [detail] filters: [returned: \"Yes\"] } measure: percent returned { type: number sql: 100.0 ${returned count} / NULLIF(${count}, 0) ;; value format: \"0.00\" } Use the following format to compute percentages."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "airports.cntrl",
+      "airports.has",
+      "order.value",
+      "readme.md",
+      "users.countrycode"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/action-hub",
+        "https://docs.cloud.google.com/looker/docs/accessing-project-files",
+        "https://docs.cloud.google.com/looker/docs/additional-lookml-basics"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/action-hub",
+        "https://docs.cloud.google.com/looker/docs/accessing-project-files",
+        "https://docs.cloud.google.com/looker/docs/additional-lookml-basics"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/action-hub",
+        "https://docs.cloud.google.com/looker/docs/accessing-project-files",
+        "https://docs.cloud.google.com/looker/docs/additional-lookml-basics"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/action-hub",
+        "https://docs.cloud.google.com/looker/docs/accessing-project-files",
+        "https://docs.cloud.google.com/looker/docs/additional-lookml-basics"
+      ]
+    }
+  ]
+}

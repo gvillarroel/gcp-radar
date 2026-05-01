@@ -1,0 +1,102 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:48.184Z",
+  "source_step08_card": "data/step-08/current/products/vertex-ai/card.json",
+  "product_name": "Vertex AI",
+  "product_slug": "vertex-ai",
+  "feature_name": "Vertex AI Prediction on A2 Ultra machines",
+  "feature_slug": "vertex-ai-prediction-on-a2-ultra-machines",
+  "summary": "Vertex AI now supports serving predictions on A2 Ultra machines in the specified regions, with each machine using NVIDIA A100 80GB GPUs.",
+  "extended_definition": "Vertex AI now supports serving predictions on A2 Ultra machines in the specified regions, with each machine using NVIDIA A100 80GB GPUs.",
+  "lifecycle": {
+    "latest_feature_date": "2023-09-08",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/vertex-ai/docs/featurestore/latest/overview",
+      "https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/colab_enterprise_list_notebook_runtime_templates",
+      "https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/colab_enterprise_list_notebook_runtimes"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"MCP Tools Reference: aiplatform.googleapis.com \\_|\\_ Vertex AI \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/colab_enterprise_list_notebook_runtime_templates",
+        "source_id": "site-api-reference",
+        "final_score": 76,
+        "relevance": "",
+        "evidence_snippets": [
+          "NotebookRuntimeTemplate JSON representation { \"name\" : string , \"displayName\" : string , \"description\" : string , \"isDefault\" : boolean , \"machineSpec\" : { object ( MachineSpec ) } , \"dataPersistentDiskSpec\" : { object ( PersistentDiskSpec ) } , \"networkSpec\" : { object ( NetworkSpec ) } , \"serviceAccount\" : string , \"etag\" : string , \"labels\" : { string : string , ... } , \"idleShutdownConfig\" : { object ( NotebookIdleShutdownConfig ) } , \"eucConfig\" : { object ( NotebookEucConfig ) } , \"createTime\" : string , \"updateTime\" : string , \"notebookRuntimeType\" : enum ( NotebookRuntimeType ) , \"shieldedVmConfig\" : { object ( ShieldedVmConfig ) } , \"networkTags\" : [ string ] , \"encryptionSpec\" : { object ( EncryptionSpec ) } , \"softwareConfig\" : { object ( NotebookSoftwareConfig ) } } Fields name string The resource name of the NotebookRuntimeTemplate. displayName string Required.",
+          "For field names both snake case and camelCase are supported. notebookRuntimeTemplate supports = and !=. notebookRuntimeTemplate represents the NotebookRuntimeTemplate ID, i.e. the last segment of the NotebookRuntimeTemplate's resource name . display name supports = and != labels supports general map functions that is: labels.key=value - key:value equality `labels.key: or labels:key - key existence A key including a space must be quoted. labels.\"a key\" . notebookRuntimeType supports = and !=. notebookRuntimeType enum: [USER DEFINED, ONE CLICK]. machineType supports = and !=. acceleratorType supports = and !=.",
+          "MachineSpec JSON representation { \"machineType\" : string , \"acceleratorType\" : enum ( AcceleratorType ) , \"acceleratorCount\" : integer , \"gpuPartitionSize\" : string , \"tpuTopology\" : string , \"reservationAffinity\" : { object ( ReservationAffinity ) } } Fields machineType string Immutable."
+        ]
+      },
+      {
+        "title": "\"MCP Tools Reference: aiplatform.googleapis.com \\_|\\_ Vertex AI \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/colab_enterprise_list_notebook_runtimes",
+        "source_id": "site-api-reference",
+        "final_score": 76,
+        "relevance": "",
+        "evidence_snippets": [
+          "NotebookRuntime JSON representation { \"name\" : string , \"runtimeUser\" : string , \"notebookRuntimeTemplateRef\" : { object ( NotebookRuntimeTemplateRef ) } , \"proxyUri\" : string , \"createTime\" : string , \"updateTime\" : string , \"healthState\" : enum ( HealthState ) , \"displayName\" : string , \"description\" : string , \"serviceAccount\" : string , \"runtimeState\" : enum ( RuntimeState ) , \"isUpgradable\" : boolean , \"labels\" : { string : string , ... } , \"expirationTime\" : string , \"version\" : string , \"notebookRuntimeType\" : enum ( NotebookRuntimeType ) , \"machineSpec\" : { object ( MachineSpec ) } , \"dataPersistentDiskSpec\" : { object ( PersistentDiskSpec ) } , \"networkSpec\" : { object ( NetworkSpec ) } , \"idleShutdownConfig\" : { object ( NotebookIdleShutdownConfig ) } , \"eucConfig\" : { object ( NotebookEucConfig ) } , \"shieldedVmConfig\" : { object ( ShieldedVmConfig ) } , \"networkTags\" : [ string ] , \"softwareConfig\" : { object ( NotebookSoftwareConfig ) } , \"encryptionSpec\" : { object ( EncryptionSpec ) } , \"satisfiesPzs\" : boolean , \"satisfiesPzi\" : boolean } Fields name string Output only.",
+          "For field names both snake case and camelCase are supported. notebookRuntime supports = and !=. notebookRuntime represents the NotebookRuntime ID, i.e. the last segment of the NotebookRuntime's resource name . displayName supports = and != and regex. notebookRuntimeTemplate supports = and !=. notebookRuntimeTemplate represents the NotebookRuntimeTemplate ID, i.e. the last segment of the NotebookRuntimeTemplate's resource name . healthState supports = and !=. healthState enum: [HEALTHY, UNHEALTHY, HEALTH STATE UNSPECIFIED]. runtimeState supports = and !=. runtimeState enum: [RUNTIME STATE UNSPECIFIED, RUNNING, BEING STARTED, BEING STOPPED, STOPPED, BEING UPGRADED, ERROR, INVALID]. runtimeUser supports = and !=.",
+          "LabelsEntry JSON representation { \"key\" : string , \"value\" : string } Fields key string value string MachineSpec JSON representation { \"machineType\" : string , \"acceleratorType\" : enum ( AcceleratorType ) , \"acceleratorCount\" : integer , \"gpuPartitionSize\" : string , \"tpuTopology\" : string , \"reservationAffinity\" : { object ( ReservationAffinity ) } } Fields machineType string Immutable."
+        ]
+      },
+      {
+        "title": "About Vertex AI Feature Store \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/featurestore/latest/overview",
+        "source_id": "site-docs-reference-3",
+        "final_score": 70,
+        "relevance": "",
+        "evidence_snippets": [
+          "Offline serving for batch predictions or model training Because you don't need to copy or import your feature data from BigQuery to a separate offline store in Vertex AI, you can use the data management and export capabilities of BigQuery to do the following: Query feature data, including historical data at a point in time .",
+          "Online serving Vertex AI Feature Store provides the following types of online serving for real-time online predictions: Bigtable online serving is useful for serving large data volumes (terabytes of data).",
+          "Resource version metadata Vertex AI Feature Store only supports the version 0 for features."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "aiplatform.googleapis.com",
+      "i.e",
+      "labels.key"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/colab_enterprise_list_notebook_runtimes",
+        "https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/colab_enterprise_list_notebook_runtime_templates",
+        "https://docs.cloud.google.com/vertex-ai/docs/featurestore/latest/overview"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/colab_enterprise_list_notebook_runtimes",
+        "https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/colab_enterprise_list_notebook_runtime_templates",
+        "https://docs.cloud.google.com/vertex-ai/docs/featurestore/latest/overview"
+      ]
+    }
+  ]
+}

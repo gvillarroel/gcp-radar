@@ -1,0 +1,105 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:32.732Z",
+  "source_step08_card": "data/step-08/current/products/dataflow/card.json",
+  "product_name": "Dataflow",
+  "product_slug": "dataflow",
+  "feature_name": "Confidential VM worker support",
+  "feature_slug": "confidential-vm-worker-support",
+  "summary": "Dataflow supports Confidential VMs for worker VMs.",
+  "extended_definition": "Dataflow supports Confidential VMs for worker VMs.",
+  "lifecycle": {
+    "latest_feature_date": "2023-06-13",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 1,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "coverage_low",
+        "message": "The feature ended with coverage LOW.",
+        "suggested_steps": [
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dataflow/docs/guides/job-builder-providers",
+      "https://docs.cloud.google.com/dataflow/docs/overview",
+      "https://docs.cloud.google.com/python/docs/reference/dataflow/latest"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Python Client for Dataflow \\_|\\_ Python client libraries \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/dataflow/latest",
+        "source_id": "site-python-reference",
+        "final_score": 30,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Mac/Linux python3 -m venv <your-env> source <your-env>/bin/activate pip install google-cloud-dataflow-client Windows py -m venv <your-env> .\\<your-env>\\Scripts\\activate pip install google-cloud-dataflow-client Next Steps Read the Client Library Documentation for Dataflow to see other available methods on the client.",
+          "Version latest keyboard arrow down 0.11.0 (latest) 0.10.0 0.9.0 0.8.17 0.7.0 0.6.2 0.5.5 0.4.1 0.3.1 0.2.0 0.1.5 Dataflow : Unified stream and batch data processing that’s serverless, fast, and cost-effective.",
+          "Home Documentation Developer tools Python Client libraries Send feedback Python Client for Dataflow Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "Package and import transforms \\_|\\_ Cloud Dataflow \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataflow/docs/guides/job-builder-providers",
+        "source_id": "site-docs-reference-required-3",
+        "final_score": 30,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Data analytics Cloud Dataflow Guides Send feedback Package and import transforms Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "Dataflow overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataflow/docs/overview",
+        "source_id": "site-docs-reference-required-4",
+        "final_score": 27,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Dataflow supports several different ways to create and execute pipelines, depending on your needs: Write code using the Apache Beam SDKs.",
+          "Dataflow can autoscale by provisioning extra worker VMs, or by shutting down some worker VMs if fewer are needed.",
+          "When you run a Dataflow job, the Dataflow service allocates a pool of worker VMs to execute the pipeline."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "confidential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataflow/docs/overview",
+        "https://docs.cloud.google.com/dataflow/docs/guides/job-builder-providers",
+        "https://docs.cloud.google.com/python/docs/reference/dataflow/latest"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataflow/docs/overview",
+        "https://docs.cloud.google.com/dataflow/docs/guides/job-builder-providers",
+        "https://docs.cloud.google.com/python/docs/reference/dataflow/latest"
+      ]
+    }
+  ]
+}

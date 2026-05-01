@@ -1,0 +1,222 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:36.704Z",
+  "source_step08_card": "data/step-08/current/products/filestore/card.json",
+  "product_name": "Filestore",
+  "product_slug": "filestore",
+  "feature_name": "Filestore availability in us-west4",
+  "feature_slug": "filestore-availability-in-us-west4",
+  "summary": "Filestore is available in the us-west4 region.",
+  "extended_definition": "Filestore is available in the us-west4 region.",
+  "lifecycle": {
+    "latest_feature_date": "2020-04-20",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/filestore/docs/create-custom-constraints",
+      "https://docs.cloud.google.com/filestore/docs/create-instance-gcloud",
+      "https://docs.cloud.google.com/filestore/docs/monitoring-instances",
+      "https://docs.cloud.google.com/java/docs/reference/google-cloud-filestore/latest/com.google.cloud.filestore.v1.CloudFilestoreManagerGrpc.CloudFilestoreManagerBlockingStub"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Creating custom constraints for Filestore \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/filestore/docs/create-custom-constraints",
+        "source_id": "site-docs-root-2",
+        "final_score": 255,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Test the policy Try creating an instance without setting deletionProtection to true : gcloud filestore instances create test-ins --zone = us-central1 --tier = enterprise --network = name = \"default\" --file-share = \"capacity=1024,name=test-fs\" The output is similar to the following: ERROR: (gcloud.filestore.instances.create) FAILED PRECONDITION: Operation denied by custom org policy on resource 'projects/test-project/locations/us-central1/instances/test-ins': [\"customConstraints/custom.deletionProtectionEnabledEnforcedOnCreate\": \"Enforce instance creation with deletion protection.\"]. - '@type': type.googleapis.com/google.rpc.DebugInfo detail: \"generic::failed precondition: Operation denied by custom org policy on\\ \\ resource 'projects/test-project/locations/us-central1/instances/test-ins':\\ \\ [\\\"customConstraints/custom.deletionProtectionEnabledEnforcedOnCreate\\\": \\\"\\ Enforce instance creation with deletion protection.\\\"].\" . . . - '@type': type.googleapis.com/google.rpc.DebugInfo - '@type': type.googleapis.com/google.rpc.ErrorInfo domain: file.googleapis.com metadata: customConstraints: customConstraints/custom.deletionProtectionEnabledEnforcedOnCreate resource: projects/test-project/locations/us-central1/instances/test-ins reason: CUSTOM ORG POLICY VIOLATION Example custom organization policies for common use cases The following table lists custom organization policies that you might find useful: Description Constraint syntax When setting the access control to a restricted list of IPs and roles, allow setting the administrator IP to a unique IP name : organizations/ ORGANIZATION ID /customConstraints/custom.filestoreAdminIP resourceTypes : - file.googleapis.com/Instance methodTypes : - CREATE - UPDATE condition : \"resource.fileShares.size() > 0 && resource.fileShares[0].nfsExportOptions.size() > 0 && resource.fileShares[0].nfsExportOptions.exists(o, o.squashMode == 'NO ROOT SQUASH' && o.accessMode == 'READ WRITE' && o.ipRanges.exists(i, i != '10.0.0.1'))\" actionType : ALLOW displayName : Access control admin IP description : Access control restriction allows setting admin IP exclusively to 10.0.0.1.",
+          "Test the custom organization policy The following example creates a custom constraint and policy that lets the users create a Filestore instance if the deletionProtection field is set to true .",
+          "Filestore supported resources The following table lists the Filestore resources that you can reference in custom constraints."
+        ]
+      },
+      {
+        "title": "\"Quickstart: Create a Filestore instance by using the gcloud CLI \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/filestore/docs/create-instance-gcloud",
+        "source_id": "site-docs-root",
+        "final_score": 251,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "In PowerShell , run the following commands to create two new registry entries, AnonymousUid and AnonymousGid : New-ItemProperty -Path \"HKLM:\\SOFTWARE\\Microsoft\\ClientForNFS\\CurrentVersion\\Default\" -Name \"AnonymousUid\" -Value \"0\" -PropertyType DWORD New-ItemProperty -Path \"HKLM:\\SOFTWARE\\Microsoft\\ClientForNFS\\CurrentVersion\\Default\" -Name \"AnonymousGid\" -Value \"0\" -PropertyType DWORD Restart the NFS client service: nfsadmin client stop nfsadmin client start Map the vol1 file share to the nfs-client instance Exit PowerShell : exit From Command Prompt , mount the file share to the nfs-client instance with the mount command by specifying the IP address of the Filestore instance, the name of the file share, and the drive letter to mount to: mount - o mtype = hard 10.0.0.2 : / vol1 z : Create a file on the mounted file share Linux In the nfs-client terminal window, create a file named testfile by running the following command: echo 'This is a test' > /mnt/test/testfile Confirm the file was created by running the following command and verifying that testfile is in the directory contents returned: ls /mnt/test Windows In the Command Prompt window of the nfs-client instance, create a file named testfile : echo 'This is a test' > Z:\\testfile Confirm the file was created by running the following command: dir Z: and verifying that testfile is in the directory contents returned.",
+          "Set the --tags flag to http-server . gcloud compute instances create nfs-client --zone = us-central1-c --image-project = windows-cloud --image-family = windows-2012-r2 --tags = http-server Create a Filestore instance This quickstart shows how to create an instance in the regional service tier with custom performance enabled.",
+          "Enable the Filestore API: Roles required to enable APIs To enable APIs, you need the Service Usage Admin IAM role ( roles/serviceusage.serviceUsageAdmin ), which contains the serviceusage.services.enable permission."
+        ]
+      },
+      {
+        "title": "\"Class CloudFilestoreManagerGrpc.CloudFilestoreManagerBlockingStub (1.89.0)\\",
+        "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-filestore/latest/com.google.cloud.filestore.v1.CloudFilestoreManagerGrpc.CloudFilestoreManagerBlockingStub",
+        "source_id": "site-java-reference",
+        "final_score": 249,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The file.googleapis.com service implements the Filestore API and defines the following resource model for managing instances: The service works with a collection of cloud projects, named: /projects/ Each project has a collection of available locations, named: /locations/ Each location has a collection of instances and backups, named: /instances/ and /backups/ respectively.",
+          "As such, Filestore instances are resources of the form: /projects/{project number}/locations/{location id}/instances/{instance id} and backups are resources of the form: /projects/{project number}/locations/{location id}/backup/{backup id} Note that location id must be a Google Cloud zone for instances, but a Google Cloud region for backups; for example: projects/12345/locations/us-central1-c/instances/my-filestore projects/12345/locations/us-central1/backups/my-backup Inheritance java.lang.Object > io.grpc.stub.AbstractStub > io.grpc.stub.AbstractBlockingStub > CloudFilestoreManagerGrpc.CloudFilestoreManagerBlockingStub Inherited Members io.grpc.stub.AbstractBlockingStub.<T>newStub(io.grpc.stub.AbstractStub.StubFactory<T>,io.grpc.Channel) io.grpc.stub.AbstractBlockingStub.<T>newStub(io.grpc.stub.AbstractStub.StubFactory<T>,io.grpc.Channel,io.grpc.CallOptions) io.grpc.stub.AbstractStub.<T>withOption(io.grpc.CallOptions.Key<T>,T) io.grpc.stub.AbstractStub.build(io.grpc.Channel,io.grpc.CallOptions) io.grpc.stub.AbstractStub.getCallOptions() io.grpc.stub.AbstractStub.getChannel() io.grpc.stub.AbstractStub.withCallCredentials(io.grpc.CallCredentials) io.grpc.stub.AbstractStub.withChannel(io.grpc.Channel) io.grpc.stub.AbstractStub.withCompression(java.lang.String) io.grpc.stub.AbstractStub.withDeadline(io.grpc.Deadline) io.grpc.stub.AbstractStub.withDeadlineAfter(java.time.Duration) io.grpc.stub.AbstractStub.withDeadlineAfter(long,java.util.concurrent.TimeUnit) io.grpc.stub.AbstractStub.withExecutor(java.util.concurrent.Executor) io.grpc.stub.AbstractStub.withInterceptors(io.grpc.ClientInterceptor...) io.grpc.stub.AbstractStub.withMaxInboundMessageSize(int) io.grpc.stub.AbstractStub.withMaxOutboundMessageSize(int) io.grpc.stub.AbstractStub.withOnReadyThreshold(int) io.grpc.stub.AbstractStub.withWaitForReady() Object.clone() Object.equals(Object) Object.finalize() Object.getClass() Object.hashCode() Object.notify() Object.notifyAll() Object.toString() Object.wait() Object.wait(long) Object.wait(long,int) Methods build(Channel channel, CallOptions callOptions) protected CloudFilestoreManagerGrpc .",
+          "Need to tell us more? [[[\"Easy to understand\",\"easyToUnderstand\",\"thumb-up\"],[\"Solved my problem\",\"solvedMyProblem\",\"thumb-up\"],[\"Other\",\"otherUp\",\"thumb-up\"]],[[\"Hard to understand\",\"hardToUnderstand\",\"thumb-down\"],[\"Incorrect information or sample code\",\"incorrectInformationOrSampleCode\",\"thumb-down\"],[\"Missing the information/samples I need\",\"missingTheInformationSamplesINeed\",\"thumb-down\"],[\"Other\",\"otherDown\",\"thumb-down\"]],[\"Last updated 2026-03-30 UTC.\"],[],[]]"
+        ]
+      },
+      {
+        "title": "Monitoring instances and quota \\_|\\_ Filestore \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/filestore/docs/monitoring-instances",
+        "source_id": "site-docs-root",
+        "final_score": 245,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "If the Filestore instance caches the data, some write operations are not reflected as disk writes. ✓ ✓ Metadata operations count Number of disk metadata operations. ✓ Free bytes Number of free disk bytes. ✓ ✓ Free disk space percent Percentage of free disk bytes. ✓ ✓ Free raw capacity percent Free raw capacity as a percentage of total space. ✓ Procedure call count Returns the same information as the nfsstat -s command. ✓ Snapshots used bytes The amount of space used for storing snapshots, measured in bytes. ✓ Time (in milliseconds) spent on read operations Time spent on disk reads. ✓ Time (in milliseconds) spent on write operations Time spent on disk writes. ✓ Used bytes Number of used disk bytes. ✓ ✓ Used space percent Percentage of used disk bytes. ✓ ✓ Memory-cached operations only occur in basic tier instances.",
+          "Add a Filestore metric chart to a Cloud Monitoring dashboard To see Filestore performance metrics in a Cloud Monitoring dashboard, follow these steps: In the Google Cloud console, go to the leaderboard Metrics explorer page: Go to Metrics explorer If you use the search bar to find this page, then select the result whose subheading is Monitoring .",
+          "Need to tell us more? [[[\"Easy to understand\",\"easyToUnderstand\",\"thumb-up\"],[\"Solved my problem\",\"solvedMyProblem\",\"thumb-up\"],[\"Other\",\"otherUp\",\"thumb-up\"]],[[\"Hard to understand\",\"hardToUnderstand\",\"thumb-down\"],[\"Incorrect information or sample code\",\"incorrectInformationOrSampleCode\",\"thumb-down\"],[\"Missing the information/samples I need\",\"missingTheInformationSamplesINeed\",\"thumb-down\"],[\"Other\",\"otherDown\",\"thumb-down\"]],[\"Last updated 2026-04-10 UTC.\"],[],[]]"
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.cloud.filestore.v1.CloudFilestoreManagerClient.ListInstancesFixedSizeCollection",
+      "com.google.cloud.filestore.v1.CloudFilestoreManagerClient.ListInstancesPage",
+      "com.google.cloud.filestore.v1.CloudFilestoreManagerGrpc.CloudFilestoreManagerBlockingStub",
+      "custom.deletionProtectionEnabledEnforcedOnCreate",
+      "custom.filestoreAdminIP",
+      "file.googleapis.com",
+      "gcloud.filestore.instances.create",
+      "io.grpc.CallCredentials",
+      "io.grpc.CallOptions",
+      "io.grpc.CallOptions.Key",
+      "io.grpc.Channel",
+      "io.grpc.ClientInterceptor",
+      "io.grpc.Deadline",
+      "io.grpc.stub.AbstractBlockingStub",
+      "io.grpc.stub.AbstractStub",
+      "io.grpc.stub.AbstractStub.build",
+      "io.grpc.stub.AbstractStub.getCallOptions",
+      "io.grpc.stub.AbstractStub.getChannel",
+      "io.grpc.stub.AbstractStub.StubFactory",
+      "io.grpc.stub.AbstractStub.withCallCredentials",
+      "io.grpc.stub.AbstractStub.withChannel",
+      "io.grpc.stub.AbstractStub.withCompression",
+      "io.grpc.stub.AbstractStub.withDeadline",
+      "io.grpc.stub.AbstractStub.withDeadlineAfter",
+      "io.grpc.stub.AbstractStub.withExecutor",
+      "io.grpc.stub.AbstractStub.withInterceptors",
+      "io.grpc.stub.AbstractStub.withMaxInboundMessageSize",
+      "io.grpc.stub.AbstractStub.withMaxOutboundMessageSize",
+      "io.grpc.stub.AbstractStub.withOnReadyThreshold",
+      "io.grpc.stub.AbstractStub.withWaitForReady",
+      "java.lang.Object",
+      "java.lang.String",
+      "java.time.Duration",
+      "java.util.concurrent.Executor",
+      "java.util.concurrent.TimeUnit",
+      "o.accessMode",
+      "o.ipRanges.exists",
+      "o.squashMode",
+      "resource.fileShares",
+      "resource.fileShares.size",
+      "serviceusage.services.enable",
+      "serviceusage.serviceUsageAdmin",
+      "type.googleapis.com"
+    ],
+    "missing_inventory_roles": [
+      "roles/serviceusage.serviceUsageAdmin"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/filestore/docs/create-custom-constraints",
+        "https://docs.cloud.google.com/filestore/docs/create-instance-gcloud",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-filestore/latest/com.google.cloud.filestore.v1.CloudFilestoreManagerGrpc.CloudFilestoreManagerBlockingStub",
+        "https://docs.cloud.google.com/filestore/docs/monitoring-instances"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/filestore/docs/create-custom-constraints",
+        "https://docs.cloud.google.com/filestore/docs/create-instance-gcloud",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-filestore/latest/com.google.cloud.filestore.v1.CloudFilestoreManagerGrpc.CloudFilestoreManagerBlockingStub",
+        "https://docs.cloud.google.com/filestore/docs/monitoring-instances"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/filestore/docs/create-custom-constraints",
+        "https://docs.cloud.google.com/filestore/docs/create-instance-gcloud",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-filestore/latest/com.google.cloud.filestore.v1.CloudFilestoreManagerGrpc.CloudFilestoreManagerBlockingStub",
+        "https://docs.cloud.google.com/filestore/docs/monitoring-instances"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/filestore/docs/create-custom-constraints",
+        "https://docs.cloud.google.com/filestore/docs/create-instance-gcloud",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-filestore/latest/com.google.cloud.filestore.v1.CloudFilestoreManagerGrpc.CloudFilestoreManagerBlockingStub",
+        "https://docs.cloud.google.com/filestore/docs/monitoring-instances"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/filestore/docs/create-custom-constraints",
+        "https://docs.cloud.google.com/filestore/docs/create-instance-gcloud",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-filestore/latest/com.google.cloud.filestore.v1.CloudFilestoreManagerGrpc.CloudFilestoreManagerBlockingStub",
+        "https://docs.cloud.google.com/filestore/docs/monitoring-instances"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/filestore/docs/create-custom-constraints",
+        "https://docs.cloud.google.com/filestore/docs/create-instance-gcloud",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-filestore/latest/com.google.cloud.filestore.v1.CloudFilestoreManagerGrpc.CloudFilestoreManagerBlockingStub",
+        "https://docs.cloud.google.com/filestore/docs/monitoring-instances"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/filestore/docs/create-custom-constraints",
+        "https://docs.cloud.google.com/filestore/docs/create-instance-gcloud",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-filestore/latest/com.google.cloud.filestore.v1.CloudFilestoreManagerGrpc.CloudFilestoreManagerBlockingStub",
+        "https://docs.cloud.google.com/filestore/docs/monitoring-instances"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/filestore/docs/create-custom-constraints",
+        "https://docs.cloud.google.com/filestore/docs/create-instance-gcloud",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-filestore/latest/com.google.cloud.filestore.v1.CloudFilestoreManagerGrpc.CloudFilestoreManagerBlockingStub",
+        "https://docs.cloud.google.com/filestore/docs/monitoring-instances"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/filestore/docs/create-custom-constraints",
+        "https://docs.cloud.google.com/filestore/docs/create-instance-gcloud",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-filestore/latest/com.google.cloud.filestore.v1.CloudFilestoreManagerGrpc.CloudFilestoreManagerBlockingStub",
+        "https://docs.cloud.google.com/filestore/docs/monitoring-instances"
+      ]
+    }
+  ]
+}

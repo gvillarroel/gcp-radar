@@ -1,0 +1,134 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:49.581Z",
+  "source_step08_card": "data/step-08/current/products/virtual-private-cloud/card.json",
+  "product_name": "Virtual Private Cloud",
+  "product_slug": "virtual-private-cloud",
+  "feature_name": "Folder support for Shared VPC",
+  "feature_slug": "folder-support-for-shared-vpc",
+  "summary": "Folder support for Shared VPC became available in beta.",
+  "extended_definition": "Folder support for Shared VPC became available in beta.",
+  "lifecycle": {
+    "latest_feature_date": "2018-05-09",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/vpc/docs/about-accessing-regional-google-apis-endpoints",
+      "https://docs.cloud.google.com/vpc/docs/about-accessing-vpc-hosted-services-endpoints",
+      "https://docs.cloud.google.com/vpc/docs/byoip-planning",
+      "https://docs.cloud.google.com/vpc/docs/shared-vpc"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Shared VPC \\_|\\_ Virtual Private Cloud \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vpc/docs/shared-vpc",
+        "source_id": "site-docs-root",
+        "final_score": 237,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Shared VPC Admin ( compute.xpnAdmin and resourcemanager.projectIamAdmin ) • IAM principal in the organization, or • IAM principal in a folder Shared VPC Admins have the Compute Shared VPC Admin ( compute.xpnAdmin ) and Project IAM Admin ( resourcemanager.projectIamAdmin ) roles for the organization or one or more folders.",
+          "For example, an existing instance in a service project cannot be reconfigured to use a Shared VPC network, but a new instance can be created to use available subnets in a Shared VPC network.",
+          "Networks A Shared VPC network is a VPC network defined in a host project and made available as a centrally shared network for eligible resources in service projects."
+        ]
+      },
+      {
+        "title": "\"About accessing published services through endpoints \\_|\\_ Virtual Private\\",
+        "url": "https://docs.cloud.google.com/vpc/docs/about-accessing-vpc-hosted-services-endpoints",
+        "source_id": "site-docs-root-2",
+        "final_score": 200,
+        "relevance": "",
+        "evidence_snippets": [
+          "Configuration Consumer support Producer support Regional Cloud Service Mesh Regional external Application Load Balancer Regional external proxy Network Load Balancer Regional internal Application Load Balancer Regional internal proxy Network Load Balancer Internal passthrough Network Load Balancer Internal protocol forwarding (target instance) Shared VPC Service Project Admins can create endpoints in Shared VPC service projects that use IP addresses from Shared VPC networks .",
+          "The configuration is the same as for a regular endpoint, but the endpoint uses an IP address that's reserved from a shared subnet of the Shared VPC.",
+          "For more information, see Create an endpoint with an IP address from a Shared VPC network ."
+        ]
+      },
+      {
+        "title": "\"Planning for bring your own IP addresses \\_|\\_ Virtual Private Cloud \\_\\",
+        "url": "https://docs.cloud.google.com/vpc/docs/byoip-planning",
+        "source_id": "site-docs-root-2",
+        "final_score": 198,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "When the Shared VPC host project or the related service projects need public IP addresses, the Public IP Admin for the organization creates the IP addresses in the Shared VPC host project .",
+          "BYOIP addresses administration with Shared VPC In this example of an organization that contains Shared VPC, there is a dedicated project, Public IP project , used to manage BYOIP addresses.",
+          "When the VPC project needs public IP addresses, the Public IP Admin for the organization creates the IP addresses in the VPC project ."
+        ]
+      },
+      {
+        "title": "\"About accessing regional endpoints through Private Service Connect endpoints\\",
+        "url": "https://docs.cloud.google.com/vpc/docs/about-accessing-regional-google-apis-endpoints",
+        "source_id": "site-docs-root-2",
+        "final_score": 184,
+        "relevance": "",
+        "evidence_snippets": [
+          "Configuration Details Consumer configuration (endpoint) Global reachability If global access is enabled Cloud Interconnect traffic Cloud VPN traffic Access through VPC Network Peering Connection propagation through NCC DNS configuration Manual DNS configuration IP version IPv4 or IPv6 Producer Supported services Supported regional Google APIs Specifications Public hostnames for regional endpoints have the following format: SERVICE .",
+          "An endpoint lets service consumers send traffic from the consumer's VPC network to regional service endpoints for supported Google APIs through a service attachment that is managed by Google (click to enlarge).",
+          "By default, endpoints can be accessed only by clients that are in the same region and the same VPC network (or Shared VPC network) as the endpoint."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "compute.xpnAdmin",
+      "resourcemanager.projectIamAdmin"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/shared-vpc",
+        "https://docs.cloud.google.com/vpc/docs/about-accessing-vpc-hosted-services-endpoints",
+        "https://docs.cloud.google.com/vpc/docs/byoip-planning",
+        "https://docs.cloud.google.com/vpc/docs/about-accessing-regional-google-apis-endpoints"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/shared-vpc",
+        "https://docs.cloud.google.com/vpc/docs/about-accessing-vpc-hosted-services-endpoints",
+        "https://docs.cloud.google.com/vpc/docs/byoip-planning",
+        "https://docs.cloud.google.com/vpc/docs/about-accessing-regional-google-apis-endpoints"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/shared-vpc",
+        "https://docs.cloud.google.com/vpc/docs/about-accessing-vpc-hosted-services-endpoints",
+        "https://docs.cloud.google.com/vpc/docs/byoip-planning",
+        "https://docs.cloud.google.com/vpc/docs/about-accessing-regional-google-apis-endpoints"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/shared-vpc",
+        "https://docs.cloud.google.com/vpc/docs/about-accessing-vpc-hosted-services-endpoints",
+        "https://docs.cloud.google.com/vpc/docs/byoip-planning",
+        "https://docs.cloud.google.com/vpc/docs/about-accessing-regional-google-apis-endpoints"
+      ]
+    }
+  ]
+}

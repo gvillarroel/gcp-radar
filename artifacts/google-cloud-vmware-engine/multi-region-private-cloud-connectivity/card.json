@@ -1,0 +1,100 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:39.256Z",
+  "source_step08_card": "data/step-08/current/products/google-cloud-vmware-engine/card.json",
+  "product_name": "Google Cloud VMware Engine",
+  "product_slug": "google-cloud-vmware-engine",
+  "feature_name": "Multi-region private cloud connectivity",
+  "feature_slug": "multi-region-private-cloud-connectivity",
+  "summary": "Private clouds in different regions can automatically route traffic between each other without additional connectivity.",
+  "extended_definition": "Private clouds in different regions can automatically route traffic between each other without additional connectivity.",
+  "lifecycle": {
+    "latest_feature_date": "2020-10-12",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/vmware-engine/docs/best-practices-compute",
+      "https://docs.cloud.google.com/vmware-engine/docs/concepts-private-cloud",
+      "https://docs.cloud.google.com/vmware-engine/docs/private-clouds/howto-manage-private-cloud"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Manage private cloud resources and activity \\_|\\_ Google Cloud VMware Engine\\",
+        "url": "https://docs.cloud.google.com/vmware-engine/docs/private-clouds/howto-manage-private-cloud",
+        "source_id": "site-docs-root",
+        "final_score": 179,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "All nodes in the cluster are listed in the cluster nodes table. gcloud To list the nodes of one or multiple private clouds using the Google Cloud CLI, do the following: List all nodes that are bound to a particular private cloud's PRIVATE CLOUD ID by running the gcloud vmware private-clouds clusters node list command : gcloud vmware private-clouds clusters node list \\ --project= PROJECT ID \\ --location= ZONE \\ --private-cloud= PRIVATE CLOUD ID \\ --cluster= CLUSTER ID Replace the following: PROJECT ID : the project name for this request.",
+          "Select the private cloud you want to manage from the list of private clouds. gcloud and API requirements To use the gcloud command line tool or the API to manage your VMware Engine resources, we recommend configuring the tools as described below. gcloud Set your default project ID: gcloud config set project PROJECT ID Set a default region and zone: gcloud config set compute/region REGION gcloud config set compute/zone ZONE For more information on the gcloud vmware tool, see the Cloud SDK reference docs .",
+          "DeleteClusterRequest () request . name = ( f \"projects/ { project id } /locations/ { zone } /privateClouds/ { private cloud name } \" f \"/clusters/ { cluster name } \" ) return client . delete cluster ( request ) List nodes To list the nodes of a particular private cloud's cluster and get information about multiple nodes or a specific node using the Google Cloud console, Google Cloud CLI or VMware Engine API, do the following."
+        ]
+      },
+      {
+        "title": "\"About VMware Engine private clouds \\_|\\_ Google Cloud VMware Engine \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/vmware-engine/docs/concepts-private-cloud",
+        "source_id": "site-docs-reference",
+        "final_score": 163,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "You can connect the private cloud to your on-premises environment using the following connections: Cloud VPN Cloud Interconnect Point-to-site VPN Single-node private clouds For pilot testing and proofs of concept with VMware Engine, you can create a private cloud that contains only a single node and cluster in any region where VMware Engine is available.",
+          "The following table describes vSphere cluster limits in private clouds that meet SLA requirements: Resource Limit Minimum number of nodes to create a private cloud (first cluster) 3 Minimum number of nodes to create a cluster 3 Maximum number of nodes per cluster 32 Maximum number of nodes per private cloud 96 Maximum number of clusters per private cloud 32 Private cloud and cluster limitations The following limitations apply to private clouds and clusters: You can create private clouds with mixed node types, combining ve1 and ve2 nodes in a single private cloud.",
+          "The following are common use cases for a single-node private cloud: Proof of concept: evaluating VMware Engine and its capabilities Disaster recovery testing: deploying your application from recent backups to periodically validate disaster recovery preparedness Application upgrade testing: test and validate application component upgrades before upgrading your application in production VMware Engine permits single-node private clouds without a time limit."
+        ]
+      },
+      {
+        "title": "\"Compute best practices \\_|\\_ Google Cloud VMware Engine \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/vmware-engine/docs/best-practices-compute",
+        "source_id": "site-docs-reference-required-4",
+        "final_score": 148,
+        "relevance": "",
+        "evidence_snippets": [
+          "Decide when to choose a multi-region design In the following situations, you might want to deploy to multiple VMware Engine private clouds across regions for the same workload or project scope: Disaster recovery implementations that use Site Recovery Manager (SRM) or Zerto .",
+          "In these regions, for increased fault tolerance, you can also deploy private clouds as a stretched cluster .",
+          "For example, use a dedicated vCenter Server in the following cases: For a specific workload type, such as Virtual Desktop Infrastructure (VDI) When the limits of a private cloud are inadequate For licensing and software management For cost transparency and simplicity For monitoring For compliance with regulatory requirements For multi-tenancy at all layers, including management components and infrastructure To avoid the unnecessary proliferation of management endpoints, use only the required number of private clouds."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "vmwareengine.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vmware-engine/docs/private-clouds/howto-manage-private-cloud",
+        "https://docs.cloud.google.com/vmware-engine/docs/concepts-private-cloud",
+        "https://docs.cloud.google.com/vmware-engine/docs/best-practices-compute"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vmware-engine/docs/private-clouds/howto-manage-private-cloud",
+        "https://docs.cloud.google.com/vmware-engine/docs/concepts-private-cloud",
+        "https://docs.cloud.google.com/vmware-engine/docs/best-practices-compute"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,138 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:21.669Z",
+  "source_step08_card": "data/step-08/current/products/bigtable/card.json",
+  "product_name": "Bigtable",
+  "product_slug": "bigtable",
+  "feature_name": "Bigtable instance-level cost export to BigQuery",
+  "feature_slug": "bigtable-instance-level-cost-export-to-bigquery",
+  "summary": "Bigtable cost data can now be viewed with instance-level granularity in the Cloud Billing detailed export to BigQuery.",
+  "extended_definition": "Bigtable cost data can now be viewed with instance-level granularity in the Cloud Billing detailed export to BigQuery.",
+  "lifecycle": {
+    "latest_feature_date": "2024-03-21",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigtable/docs/backups",
+      "https://docs.cloud.google.com/bigtable/docs/cloud-bigtable-for-cassandra-users",
+      "https://docs.cloud.google.com/bigtable/docs/dynamodb-users"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Bigtable for Cassandra users \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigtable/docs/cloud-bigtable-for-cassandra-users",
+        "source_id": "site-docs-root",
+        "final_score": 116,
+        "relevance": "",
+        "evidence_snippets": [
+          "The number of nodes in each cluster in an instance should be able to handle all writes across the cluster and all reads to at least two data centers in order to maintain service level objectives (SLOs) during a cluster outage.",
+          "The Bigtable Google Cloud console page comes with prebuilt dashboards for tracking throughput and utilization metrics at the instance, cluster, and table levels.",
+          "Compared to Bigtable backups, exports take longer to execute and incur extra compute costs because the exports use Dataflow."
+        ]
+      },
+      {
+        "title": "Bigtable backups overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigtable/docs/backups",
+        "source_id": "site-docs-reference-2",
+        "final_score": 110,
+        "relevance": "",
+        "evidence_snippets": [
+          "If you restore to a different instance than where the backup was created, and the backup's instance and the destination instance don't have at least one cluster in the same region, you are charged a one-time cost for the initial data copy to the destination cluster at the standard network rates .",
+          "If the new table is in an instance that uses replication, you are charged a one-time replication cost for the data to be copied to all clusters in the instance.",
+          "In replicated instances where automated backup is enabled, the storage costs might be higher because a backup is created on each cluster daily."
+        ]
+      },
+      {
+        "title": "Migrate from DynamoDB to Bigtable \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigtable/docs/dynamodb-users",
+        "source_id": "site-docs-reference-2",
+        "final_score": 98,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Replication policies are set at the instance level.",
+          "Garbage collection policies are set at the column family level and can delete items not only based on their age but also according to the number of versions the user wants to maintain.",
+          "Bigtable is not a serverless product; you must create an instance with one or more clusters, whose capacity is determined by the number of nodes that they have."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigtable/docs/cloud-bigtable-for-cassandra-users",
+        "https://docs.cloud.google.com/bigtable/docs/backups",
+        "https://docs.cloud.google.com/bigtable/docs/dynamodb-users"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigtable/docs/cloud-bigtable-for-cassandra-users",
+        "https://docs.cloud.google.com/bigtable/docs/backups",
+        "https://docs.cloud.google.com/bigtable/docs/dynamodb-users"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigtable/docs/cloud-bigtable-for-cassandra-users",
+        "https://docs.cloud.google.com/bigtable/docs/backups",
+        "https://docs.cloud.google.com/bigtable/docs/dynamodb-users"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigtable/docs/cloud-bigtable-for-cassandra-users",
+        "https://docs.cloud.google.com/bigtable/docs/backups",
+        "https://docs.cloud.google.com/bigtable/docs/dynamodb-users"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigtable/docs/cloud-bigtable-for-cassandra-users",
+        "https://docs.cloud.google.com/bigtable/docs/backups",
+        "https://docs.cloud.google.com/bigtable/docs/dynamodb-users"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigtable/docs/cloud-bigtable-for-cassandra-users",
+        "https://docs.cloud.google.com/bigtable/docs/backups",
+        "https://docs.cloud.google.com/bigtable/docs/dynamodb-users"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigtable/docs/cloud-bigtable-for-cassandra-users",
+        "https://docs.cloud.google.com/bigtable/docs/backups",
+        "https://docs.cloud.google.com/bigtable/docs/dynamodb-users"
+      ]
+    }
+  ]
+}

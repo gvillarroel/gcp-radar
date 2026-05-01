@@ -1,0 +1,105 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:18.771Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery",
+  "feature_name": "Scripting CASE statement",
+  "feature_slug": "scripting-case-statement",
+  "summary": "The scripting CASE statement executes the first SQL statement block whose boolean condition evaluates to true.",
+  "extended_definition": "The scripting CASE statement executes the first SQL statement block whose boolean condition evaluates to true.",
+  "lifecycle": {
+    "latest_feature_date": "2021-11-09",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/reference/legacy-sql",
+      "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/procedural-language",
+      "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/query-syntax"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Procedural language \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/procedural-language",
+        "source_id": "site-docs-reference",
+        "final_score": 140,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "DECLARE target product id INT64 DEFAULT 103 ; CASE WHEN EXISTS ( SELECT 1 FROM schema . products a WHERE product id = target product id ) THEN SELECT 'found product in products a table' ; WHEN EXISTS ( SELECT 1 FROM schema . products b WHERE product id = target product id ) THEN SELECT 'found product in products b table' ; ELSE SELECT 'did not find product' ; END CASE ; CASE search expression Syntax CASE search expression WHEN expression THEN sql statement list [...] [ ELSE sql statement list ] END CASE ; Description Executes the first sql statement list where the search expression is matches a WHEN expression.",
+          "DECLARE product id INT64 DEFAULT 1 ; CASE product id WHEN 1 THEN SELECT CONCAT ( 'Product one' ); WHEN 2 THEN SELECT CONCAT ( 'Product two' ); ELSE SELECT CONCAT ( 'Invalid product' ); END CASE ; IF Syntax IF condition THEN [ sql statement list ] [ ELSEIF condition THEN sql statement list ] [...] [ ELSE sql statement list ] END IF ; Description Executes the first sql statement list where the condition is true, or the optional ELSE sql statement list if no conditions match.",
+          "CREATE OR REPLACE PROCEDURE schema1 . proc1 () BEGIN SELECT 1 / 0 ; END ; CREATE OR REPLACE PROCEDURE schema1 . proc2 () BEGIN CALL schema1 . proc1 (); END ; BEGIN CALL schema1 . proc2 (); EXCEPTION WHEN ERROR THEN SELECT @@ error . message , @@ error . stack trace , @@ error . statement text , @@ error . formatted stack trace ; END ; When the exception handler runs, the variables will have the following values: Variable Value @@error.message \"Query error: division by zero: 1 / 0 at <project>.schema1.proc1:2:3]\" @@error.stack trace [ STRUCT(2 AS line, 3 AS column, NULL AS filename, \"<project>.schema1.proc1:2:3\" AS location), STRUCT(2 AS line, 3 AS column, NULL AS filename, \"<project>.schema1.proc2:2:3\" AS location), STRUCT(10 AS line, 3 AS column, NULL AS filename, NULL AS location), ] @@error.statement text \"SELECT 1/0\" @@error.formatted stack trace \"At <project>.schema1.proc1[2:3]\\nAt <project>.schema1.proc2[2:3]\\nAt [10:3]\" CASE Syntax CASE WHEN boolean expression THEN sql statement list [...] [ ELSE sql statement list ] END CASE ; Description Executes the THEN sql statement list where the boolean expression is true, or the optional ELSE sql statement list if no conditions match."
+        ]
+      },
+      {
+        "title": "\"Legacy SQL Syntax, Functions and Operators \\_|\\_ BigQuery \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/reference/legacy-sql",
+        "source_id": "site-docs-reference",
+        "final_score": 128,
+        "relevance": "",
+        "evidence_snippets": [
+          "If the state does not appear as an option in one of the WHEN statements, the state value will default to \"None.\" Example: legacySQL SELECT CASE WHEN state IN ( 'WA' , 'OR' , 'CA' , 'AK' , 'HI' , 'ID' , 'MT' , 'WY' , 'NV' , 'UT' , 'CO' , 'AZ' , 'NM' ) THEN 'West' WHEN state IN ( 'OK' , 'TX' , 'AR' , 'LA' , 'TN' , 'MS' , 'AL' , 'KY' , 'GA' , 'FL' , 'SC' , 'NC' , 'VA' , 'WV' , 'MD' , 'DC' , 'DE' ) THEN 'South' WHEN state IN ( 'ND' , 'SD' , 'NE' , 'KS' , 'MN' , 'IA' , 'MO' , 'WI' , 'IL' , 'IN' , 'MI' , 'OH' ) THEN 'Midwest' WHEN state IN ( 'NY' , 'PA' , 'NJ' , 'CT' , 'RI' , 'MA' , 'VT' , 'NH' , 'ME' ) THEN 'Northeast' ELSE 'None' END as region , average mother age , average father age , state , year FROM ( SELECT year , state , SUM ( mother age ) / COUNT ( mother age ) as average mother age , SUM ( father age ) / COUNT ( father age ) as average father age FROM [ bigquery - public - data : samples . natality ] WHERE father age < 99 GROUP BY year , state ) ORDER BY year LIMIT 5 ; Returns: +--------+--------------------+--------------------+-------+------+ region average mother age average father age state year +--------+--------------------+--------------------+-------+------+ South 24.342600163532296 27.683769419460344 AR 1969 West 25.185041908446163 28.268214055448098 AK 1969 West 24.780776677578217 27.831181063905248 CA 1969 West 25.005834769924412 27.942978384829598 AZ 1969 South 24.541730952905738 27.686430093306885 AL 1969 +--------+--------------------+--------------------+-------+------+ Simulating a Pivot Table Use conditional statements to organize the results of a subselect query into rows and columns.",
+          "Advanced examples Bucketing results into categories using conditionals The following query uses a CASE/WHEN block to bucket results into \"region\" categories based on a list of states.",
+          "This window function requires ORDER BY in the OVER clause. legacySQL SELECT word , word count , RANK () OVER ( PARTITION BY corpus ORDER BY word count DESC ) rank , FROM [ bigquery - public - data : samples . shakespeare ] WHERE corpus = 'othello' and length ( word ) > 10 LIMIT 5 Returns: word word count rank handkerchief 29 1 satisfaction 5 2 displeasure 4 3 instruments 4 3 circumstance 3 5 RATIO TO REPORT( <column> ) Returns the ratio of each value to the sum of the values, as a double between 0 and 1. legacySQL SELECT word , word count , RATIO TO REPORT ( word count ) OVER ( PARTITION BY corpus ORDER BY word count DESC ) r to r , FROM [ bigquery - public - data : samples . shakespeare ] WHERE corpus = 'othello' and length ( word ) > 10 LIMIT 5 Returns: word word count r to r handkerchief 29 0.6444444444444445 satisfaction 5 0.1111111111111111 displeasure 4 0.08888888888888889 instruments 4 0.08888888888888889 circumstance 3 0.06666666666666667 ROW NUMBER() Returns the current row number of the query result over the window, starting with 1. legacySQL SELECT word , word count , ROW NUMBER () OVER ( PARTITION BY corpus ORDER BY word count DESC ) row num , FROM [ bigquery - public - data : samples . shakespeare ] WHERE corpus = 'othello' and length ( word ) > 10 LIMIT 5 Returns: word word count row num handkerchief 29 1 satisfaction 5 2 displeasure 4 3 instruments 4 4 circumstance 3 5 Other functions Syntax Other functions CASE WHEN ..."
+        ]
+      },
+      {
+        "title": "Query syntax \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/query-syntax",
+        "source_id": "site-docs-reference",
+        "final_score": 124,
+        "relevance": "",
+        "evidence_snippets": [
+          "SELECT DISTINCT can't return columns of the following types: GRAPH ELEMENT GRAPH PATH In the following example, SELECT DISTINCT is used to produce distinct arrays: WITH PlayerStats AS ( SELECT [ 'Coolidge' , 'Adams' ] as Name , 3 as PointsScored UNION ALL SELECT [ 'Adams' , 'Buchanan' ] , 0 UNION ALL SELECT [ 'Coolidge' , 'Adams' ] , 1 UNION ALL SELECT [ 'Kiran' , 'Noam' ] , 1 ) SELECT DISTINCT Name FROM PlayerStats ; / ------------------+ Name +------------------+ [Coolidge,Adams] [Adams,Buchanan] [Kiran,Noam] +------------------ / In the following example, SELECT DISTINCT is used to produce distinct structs: WITH PlayerStats AS ( SELECT STRUCT<last name STRING , first name STRING , age INT64 > ( 'Adams' , 'Noam' , 20 ) AS Player , 3 AS PointsScored UNION ALL SELECT ( 'Buchanan' , 'Jie' , 19 ), 0 UNION ALL SELECT ( 'Adams' , 'Noam' , 20 ), 4 UNION ALL SELECT ( 'Buchanan' , 'Jie' , 19 ), 13 ) SELECT DISTINCT Player FROM PlayerStats ; / --------------------------+ player +--------------------------+ { last name: \"Adams\", first name: \"Noam\", age: 20 } +--------------------------+ { last name: \"Buchanan\", first name: \"Jie\", age: 19 } +--------------------------- / SELECT ALL A SELECT ALL statement returns all rows, including duplicate rows.",
+          "The following query executes because the struct fields being grouped have the same group types: WITH TeamStats AS ( SELECT ARRAY<STRUCT<last name STRING , first name STRING , age INT64 >> [ ( 'Adams' , 'Noam' , 20 ), ( 'Buchanan' , 'Jie' , 19 ) ] AS Team , 3 AS PointsScored UNION ALL SELECT [ ( 'Coolidge' , 'Kiran' , 21 ), ( 'Yang' , 'Jason' , 22 ) ] , 4 UNION ALL SELECT [ ( 'Adams' , 'Noam' , 20 ), ( 'Buchanan' , 'Jie' , 19 ) ] , 10 UNION ALL SELECT [ ( 'Coolidge' , 'Kiran' , 21 ), ( 'Yang' , 'Jason' , 22 ) ] , 7 ) SELECT SUM ( PointsScored ) AS total points , Team FROM TeamStats GROUP BY Team ; / --------------+--------------------------+ total points teams +--------------+--------------------------+ 13 [{ last name: \"Adams\", first name: \"Noam\", age: 20 },{ last name: \"Buchanan\", first name: \"Jie\", age: 19 }] +-----------------------------------------+ 11 [{ last name: \"Coolidge\", first name: \"Kiran\", age: 21 },{ last name: \"Yang\", first name: \"Jason\", age: 22 }] +--------------+-------------------------- / To learn more about the data types that are supported for values in the GROUP BY clause, see Groupable data types .",
+          "For example: SELECT A . name , item , ARRAY LENGTH ( A . items ) item count for name FROM UNNEST ( [ STRUCT ( 'first' AS name , [ 1 , 2 , 3 , 4 ] AS items ), STRUCT ( 'second' AS name , [] AS items ) ] ) AS A LEFT JOIN A . items AS item ; / --------+------+---------------------+ name item item count for name +--------+------+---------------------+ first 1 4 first 2 4 first 3 4 first 4 4 second NULL 0 +--------+------+--------------------- / In the case of a correlated INNER JOIN or CROSS JOIN , when the input on the right side is empty for some row from the left side, the final row is dropped from the results."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "error.formatted",
+      "error.message",
+      "error.stack",
+      "error.statement",
+      "schema1.proc1",
+      "schema1.proc2"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/procedural-language",
+        "https://docs.cloud.google.com/bigquery/docs/reference/legacy-sql",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/query-syntax"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/procedural-language",
+        "https://docs.cloud.google.com/bigquery/docs/reference/legacy-sql",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/query-syntax"
+      ]
+    }
+  ]
+}

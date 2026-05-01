@@ -1,0 +1,95 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:36.791Z",
+  "source_step08_card": "data/step-08/current/products/firestore/card.json",
+  "product_name": "Firestore",
+  "product_slug": "firestore",
+  "feature_name": "Firestore collection-level index exemptions",
+  "feature_slug": "firestore-collection-level-index-exemptions",
+  "summary": "You can add collection-level exemptions for all fields in a collection group that do not require indexing.",
+  "extended_definition": "You can add collection-level exemptions for all fields in a collection group that do not require indexing.",
+  "lifecycle": {
+    "latest_feature_date": "2023-10-18",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/firestore/docs/concepts/index-overview",
+      "https://docs.cloud.google.com/firestore/docs/query-data/indexing",
+      "https://docs.cloud.google.com/firestore/native/docs/best-practices"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Standard edition index overview \\_|\\_ Firestore in Native mode \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/firestore/docs/concepts/index-overview",
+        "source_id": "site-docs-reference",
+        "final_score": 152,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Use the field path value to add collection-level index exemptions on all fields in a collection group.",
+          "The app uses combinations of equality clauses for category , city , and editors pick while always sorting by ascending star rating : Web db.collection(\"restaurants\").where(\"category\", \"==\", \"burgers\") .orderBy(\"star rating\") db.collection(\"restaurants\").where(\"city\", \"==\", \"San Francisco\") .orderBy(\"star rating\") db.collection(\"restaurants\").where(\"category\", \"==\", \"burgers\") .where(\"city\", \"==\", \"San Francisco\") .orderBy(\"star rating\") db.collection(\"restaurants\").where(\"category\", \"==\", \"burgers\") .where(\"city\", \"==\" \"San Francisco\") .where(\"editors pick\", \"==\", true ) .orderBy(\"star rating\") You could create an index for each query: Collection Fields indexed Query scope restaurants arrow upward category, arrow upward star rating Collection restaurants arrow upward city, arrow upward star rating Collection restaurants arrow upward category, arrow upward city, arrow upward star rating Collection restaurants arrow upward category, arrow upward city, arrow upward editors pick, arrow upward star rating Collection As a better solution, you can reduce the number of indexes by taking advantage of Firestore Standard edition's ability to merge indexes for equality clauses: Collection Fields indexed Query scope restaurants arrow upward category, arrow upward star rating Collection restaurants arrow upward city, arrow upward star rating Collection restaurants arrow upward editors pick, arrow upward star rating Collection Not only is this set of indexes smaller, it also supports an additional query: Web db.collection(\"restaurants\").where(\"editors pick\", \"==\", true) .orderBy(\"star rating\") Indexing limits The following limits apply to indexes.",
+          "Each row in the following table represents an entry in a single-field index: Collection Field indexed Query scope cities arrow upward name Collection cities arrow upward state Collection cities arrow upward country Collection cities arrow upward capital Collection cities arrow upward population Collection cities arrow upward regions Collection cities arrow downward name Collection cities arrow downward state Collection cities arrow downward country Collection cities arrow downward capital Collection cities arrow downward population Collection cities arrow downward regions Collection cities array-contains regions Collection Queries supported by single-field indexes Using these automatically created single-field indexes, you can run simple queries like the following: Web const stateQuery = citiesRef . where ( \"state\" , \"==\" , \"CA\" ); const populationQuery = citiesRef . where ( \"population\" , \"<\" , 100000 ); const nameQuery = citiesRef . where ( \"name\" , \">=\" , \"San Francisco\" ); test . firestore . js You can also create in and compound equality ( == ) queries: Web citiesRef.where('country', 'in', [\"USA\", \"Japan\", \"China\"]) // Compound equality queries citiesRef.where(\"state\", \"==\", \"CO\").where(\"name\", \"==\", \"Denver\") citiesRef.where(\"country\", \"==\", \"USA\") .where(\"capital\", \"==\", false) .where(\"state\", \"==\", \"CA\") .where(\"population\", \"==\", 860000) If you need to run a compound query that uses a range comparison ( < , <= , , or >= ) or if you need to sort by a different field, you must create a manual index for that query."
+        ]
+      },
+      {
+        "title": "\"Manage Standard edition indexes \\_|\\_ Firestore in Native mode \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/firestore/docs/query-data/indexing",
+        "source_id": "site-docs-reference",
+        "final_score": 134,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For example, consider this google datastore index resource: datastore.tf resource \"google datastore index\" \"legacy\" { kind = \"foo\" properties { name = \"property a\" direction = \"ASCENDING\" } properties { name = \"property b\" direction = \"ASCENDING\" } } The equivalent google firestore index resource would be: resource \"google firestore index\" \"new\" { // note: defaults to the provider project project = project // note: defaults to the (default) database database = \"(default)\" collection = \"foo\" api scope = \"DATASTORE MODE API\" // since there was no \"ancestor\" property set above, use COLLECTION GROUP here query scope = \"COLLECTION GROUP\" fields { field path = \"property a\" order = \"ASCENDING\" } fields { field path = \"property b\" order = \"ASCENDING\" } } Index build time To build an index, Firestore Standard edition must set up the index and then backfill the index with existing data.",
+          "Datastore mode indexes You can also create Datastore Mode indexes using Terraform. datastore.tf resource \"google firestore index\" \"datastore-mode-index\" { project = \" project-id \" database = \" database-id \" collection = \"chatrooms\" fields { field path = \"name\" order = \"ASCENDING\" } fields { field path = \"description\" order = \"DESCENDING\" } query scope = \"COLLECTION GROUP\" api scope = \"DATASTORE MODE API\" } Migrate from google datastore index The google datastore index resource is deprecated and will be unavailable in terraform-provider-google version 6.0.0 and later.",
+          "Single-field (automatic) index The following example Terraform configuration file creates a single-field index on the name field in the chatrooms collection: firestore.tf resource \"random id\" \"variable\"{ byte length = 8 } resource \"google firestore field\" \"single-index\" { project = \" project-id \" database = \" database-id \" collection = \"chatrooms ${random id.variable.hex}\" field = \"name\" index config { indexes { order = \"ASCENDING\" query scope = \"COLLECTION GROUP\" } indexes { array config = \"CONTAINS\" } } ttl config {} } Replace project-id with your project ID."
+        ]
+      },
+      {
+        "title": "Best practices \\_|\\_ Firestore in Native mode \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/firestore/native/docs/best-practices",
+        "source_id": "site-docs-reference-required-4",
+        "final_score": 118,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The best practices to reduce index fanout are: Set collection-level index exemptions .",
+          "The query might look like: docs = db . collection ( 'WorkItems' ) . order by ( 'created' ) . limit ( 100 ) delete batch = db . batch () for doc in docs . stream (): finish work ( doc ) delete batch . delete ( doc . reference ) delete batch . commit () Each time this query runs it scans over the index entries for the created field on any recently deleted documents.",
+          "However, you may want to add single-field exemptions in the following cases: Case Description Large string fields If you have a string field that often holds long string values that you don't use for querying, you can cut storage costs by exempting the field from indexing."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "datastore.tf",
+      "db.collection",
+      "firestore.tf",
+      "id.variable.hex"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/docs/concepts/index-overview",
+        "https://docs.cloud.google.com/firestore/docs/query-data/indexing",
+        "https://docs.cloud.google.com/firestore/native/docs/best-practices"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,173 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:18.066Z",
+  "source_step08_card": "data/step-08/current/products/artifact-registry/card.json",
+  "product_name": "Artifact Registry",
+  "product_slug": "artifact-registry",
+  "feature_name": "Artifact Registry Docker Hub remote repository authentication",
+  "feature_slug": "artifact-registry-docker-hub-remote-repository-authentication",
+  "summary": "Artifact Registry remote repositories support authentication when using Docker Hub as an upstream source.",
+  "extended_definition": "Artifact Registry remote repositories support authentication when using Docker Hub as an upstream source.",
+  "lifecycle": {
+    "latest_feature_date": "2023-10-31",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/artifact-registry/docs/docker/authentication",
+      "https://docs.cloud.google.com/artifact-registry/docs/docker/configure-remote-auth-docker-hub",
+      "https://docs.cloud.google.com/artifact-registry/docs/docker/store-docker-container-images"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Configure remote repository authentication to Docker Hub \\_|\\_ Artifact\\",
+        "url": "https://docs.cloud.google.com/artifact-registry/docs/docker/configure-remote-auth-docker-hub",
+        "source_id": "site-docs-root-2",
+        "final_score": 235,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "In the Remote repository authentication mode section, update or add your Docker Hub username and the secret version containing your Docker Hub access token. gcloud CLI To update your remote repository with your Docker Hub credentials, run the following command: gcloud artifacts repositories update REPOSITORY \\ --project= PROJECT ID \\ --location= LOCATION \\ --remote-username= USERNAME \\ --remote-password-secret-version=projects/ SECRET PROJECT ID /secrets/ SECRET ID /versions/ SECRET VERSION Replace the following: REPOSITORY with the name of your Artifact Registry remote repository.",
+          "Required roles To get the permissions that you need to configure authentication to Docker Hub for remote repositories, ask your administrator to grant you the following IAM roles on the project: Artifact Registry Admin ( roles/artifactregistry.admin ) Secret Manager Admin ( roles/secretmanager.admin ) For more information about granting roles, see Manage access to projects, folders, and organizations .",
+          "Home Documentation Application development Artifact Registry Guides Send feedback Configure remote repository authentication to Docker Hub Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"Configure authentication to Artifact Registry for Docker \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/artifact-registry/docs/docker/authentication",
+        "source_id": "site-docs-root-2",
+        "final_score": 164,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Linux: /.docker/config.json Windows: %USERPROFILE%\\.docker\\config.json There are separate sections in the file for different authentication methods: credHelpers If you use the Docker credential helper for authentication Artifact Registry stores the credential helper settings in the credHelpers section of the file. auths If you use Docker to sign in with a token or service account key as your password, Docker stores a base64-encoded version of your credentials in the auths section of the file. credStore If you configured a credential store to manage your credentials, the settings for the credential store are in the credStore section of the file.",
+          "ARCH = amd64 # or \"386\" for 32-bit OSs curl -fsSL \"https://github.com/GoogleCloudPlatform/docker-credential-gcr/releases/download/v ${ VERSION } /docker-credential-gcr ${ OS } ${ ARCH } - ${ VERSION } .tar.gz\" \\ tar xz docker-credential-gcr \\ && chmod +x docker-credential-gcr && sudo mv docker-credential-gcr /usr/bin/ Configure Docker to use your Artifact Registry credentials when interacting with Artifact Registry (you are only required to do this once): docker-credential-gcr configure-docker --registries = HOSTNAME-LIST Where HOSTNAME-LIST is a comma-separated list of repository hostnames to add to the credential helper configuration.",
+          "To view a list of supported repository locations, run the command: gcloud artifacts locations list The command displays the credHelpers section of your current Docker configuration and the updated configuration after adding the specified hostnames."
+        ]
+      },
+      {
+        "title": "\"Quickstart: Store Docker container images in Artifact Registry \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/artifact-registry/docs/docker/store-docker-container-images",
+        "source_id": "site-docs-root-2",
+        "final_score": 147,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "The repository is added to the repository list. gcloud Run the following command to create a new Docker repository named quickstart-docker-repo in the location us-west1 with the description \"docker repository\". gcloud artifacts repositories create quickstart-docker-repo --repository-format = docker \\ --location = us-west1 --description = \"Docker repository\" \\ --project = PROJECT Where PROJECT is your Google Cloud project ID.",
+          "This quickstart shows you how to: Create a private Docker repository in Artifact Registry Set up authentication Push an image to the repository Pull the image from the repository To follow step-by-step guidance for this task directly in the Google Cloud console, click Guide me : Guide me Before you begin Sign in to your Google Cloud account.",
+          "For this sample image: us-docker.pkg.dev is the hostname for container images stored in Artifact Registry Docker repositories, which includes the location of the repository ( us ). google-samples is the project ID. containers is the repository ID. /gke/hello-app is the path to the image in the repository containers ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "artifactregistry.admin",
+      "config.json",
+      "docker.pkg.dev",
+      "github.com",
+      "projects.locations.repositories",
+      "secretmanager.admin",
+      "tar.gz"
+    ],
+    "missing_inventory_roles": [
+      "roles/artifactregistry.admin",
+      "roles/secretmanager.admin"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/artifact-registry/docs/docker/configure-remote-auth-docker-hub",
+        "https://docs.cloud.google.com/artifact-registry/docs/docker/authentication",
+        "https://docs.cloud.google.com/artifact-registry/docs/docker/store-docker-container-images"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/artifact-registry/docs/docker/configure-remote-auth-docker-hub",
+        "https://docs.cloud.google.com/artifact-registry/docs/docker/authentication",
+        "https://docs.cloud.google.com/artifact-registry/docs/docker/store-docker-container-images"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/artifact-registry/docs/docker/configure-remote-auth-docker-hub",
+        "https://docs.cloud.google.com/artifact-registry/docs/docker/authentication",
+        "https://docs.cloud.google.com/artifact-registry/docs/docker/store-docker-container-images"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/artifact-registry/docs/docker/configure-remote-auth-docker-hub",
+        "https://docs.cloud.google.com/artifact-registry/docs/docker/authentication",
+        "https://docs.cloud.google.com/artifact-registry/docs/docker/store-docker-container-images"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/artifact-registry/docs/docker/configure-remote-auth-docker-hub",
+        "https://docs.cloud.google.com/artifact-registry/docs/docker/authentication",
+        "https://docs.cloud.google.com/artifact-registry/docs/docker/store-docker-container-images"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/artifact-registry/docs/docker/configure-remote-auth-docker-hub",
+        "https://docs.cloud.google.com/artifact-registry/docs/docker/authentication",
+        "https://docs.cloud.google.com/artifact-registry/docs/docker/store-docker-container-images"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/artifact-registry/docs/docker/configure-remote-auth-docker-hub",
+        "https://docs.cloud.google.com/artifact-registry/docs/docker/authentication",
+        "https://docs.cloud.google.com/artifact-registry/docs/docker/store-docker-container-images"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/artifact-registry/docs/docker/configure-remote-auth-docker-hub",
+        "https://docs.cloud.google.com/artifact-registry/docs/docker/authentication",
+        "https://docs.cloud.google.com/artifact-registry/docs/docker/store-docker-container-images"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/artifact-registry/docs/docker/configure-remote-auth-docker-hub",
+        "https://docs.cloud.google.com/artifact-registry/docs/docker/authentication",
+        "https://docs.cloud.google.com/artifact-registry/docs/docker/store-docker-container-images"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/artifact-registry/docs/docker/configure-remote-auth-docker-hub",
+        "https://docs.cloud.google.com/artifact-registry/docs/docker/authentication",
+        "https://docs.cloud.google.com/artifact-registry/docs/docker/store-docker-container-images"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,118 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:14.688Z",
+  "source_step08_card": "data/step-08/current/products/apigee-x/card.json",
+  "product_name": "Apigee X",
+  "product_slug": "apigee-x",
+  "feature_name": "PublishMessage policy body source and attributes support",
+  "feature_slug": "publishmessage-policy-body-source-and-attributes-support",
+  "summary": "The PublishMessage policy now supports using request or response message content as Pub/Sub data and adding string attributes to published messages; The PublishMessage policy now supports using request or response message content as Pub/Sub data and adding string attributes to published messages.",
+  "extended_definition": "The PublishMessage policy now supports using request or response message content as Pub/Sub data and adding string attributes to published messages; The PublishMessage policy now supports using request or response message content as Pub/Sub data and adding string attributes to published messages.",
+  "lifecycle": {
+    "latest_feature_date": "2025-05-14",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/apigee/docs/api-platform/reference/policies/assign-message-policy",
+      "https://docs.cloud.google.com/apigee/docs/api-platform/reference/policies/data-capture-policy",
+      "https://docs.cloud.google.com/apigee/docs/api-platform/reference/policies/graphql-policy"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "AssignMessage policy \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-platform/reference/policies/assign-message-policy",
+        "source_id": "site-api-reference",
+        "final_score": 167,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Required Type Complex object Parent Element N/A Child Elements <Add> <AssignTo> <AssignVariable> <Copy> <DisplayName> <IgnoreUnresolvedVariables> <Remove> <Set> The <AssignMessage> element uses the following syntax: Syntax The <AssignMessage> element uses the following syntax: < AssignMessage continueOnError = \"[false true]\" enabled = \"[true false]\" name = \" POLICY NAME \" > < !-- All AssignMessage child elements are optional -- > < Add > < FormParams > < FormParam name = \" FORMPARAM NAME \" > FORMPARAM VALUE < / FormParam > ... < / FormParams > < Headers > < Header name = \" HEADER NAME \" > HEADER VALUE < / Header > ... < / Headers > < QueryParams > < QueryParam name = \" QUERYPARAM NAME \" > QUERYPARAM VALUE < / QueryParam > ... < / QueryParams > < / Add > < AssignTo createNew = \"[true false]\" transport = \"http\" type = \"[request response]\" > DESTINATION VARIABLE NAME < / AssignTo > < AssignVariable > < Name> VARIABLE NAME < / Name > < PropertySetRef> SOURCE VARIABLE < / PropertySetRef > < Ref> SOURCE VARIABLE < / Ref > < ResourceURL> RESOURCE URL OR TEMPLATE < / ResourceURL > < Template> MESSAGE TEMPLATE < / Template > or < Template ref = ' TEMPLATE VARIABLE ' >< / Template > < Value> VARIABLE VALUE < / Value > < / AssignVariable > < Copy source = \" VARIABLE NAME \" > < !-- Can also be an empty array ( < FormParams / > ) --> < FormParams > < FormParam name = \" FORMPARAM NAME \" > FORMPARAM VALUE < / FormParam > ... < / FormParams > < !-- Copy all headers -- > < Headers / > < !-- or , copy specific headers by name -- > < Headers > < Header name = \" HEADER NAME \" / > < !-- or -- > < Header name = \" HEADER NAME \" > [ false true ] < / Header > ... < / Headers > < Path > [ false true ] < / Path > < Payload > [ false true ] < / Payload > < !-- Can also be an empty array ( < QueryParams / > ) --> < QueryParams > < QueryParam name = \" QUERYPARAM NAME \" > QUERYPARAM VALUE < / QueryParam > ... < / QueryParams > < StatusCode > [ false true ] < / StatusCode > < Verb > [ false true ] < / Verb > < Version > [ false true ] < / Version > < / Copy > < DisplayName> POLICY DISPLAY NAME < / DisplayName > < IgnoreUnresolvedVariables > [ true false ] < / IgnoreUnresolvedVariables > < !-- Can also be empty to remove everything from the message ( < Remove / > ) -- > < Remove > < !-- Remove all form parameters -- > < FormParams / > < !-- or , remove specific form parameters by name -- > < FormParams > < FormParam name = \" FORMPARAM NAME \" / > < !-- or -- > < FormParam name = \" FORMPARAM NAME \" > [ false true ] < / FormParam > ... < / FormParams > < !-- Remove all headers -- > < Headers / > < !-- or , remove specific headers by name -- > < Headers > < Header name = \" HEADER NAME \" / > < !-- or -- > < Header name = \" HEADER NAME \" > [ false true ] < / Header > ... < / Headers > < Payload > [ false true ] < / Payload > < !-- Remove all query parameters -- > < QueryParams / > < !-- or , remove specific query parameters by name -- > < QueryParams > < QueryParam name = \" QUERYPARAM NAME \" / > < !-- or -- > < QueryParam name = \" QUERYPARAM NAME \" > [ false true ] < / QueryParam > ... < / QueryParams > < / Remove > < Set > < Authentication > < HeaderName> HEADER NAME < / HeaderName > < !-- Use either GoogleAccessToken or GoogleIDToken -- > < GoogleAccessToken > < Scopes > < Scope> SCOPE < / Scope > ... < / Scopes > < / GoogleAccessToken > ----- or ----- < GoogleIDToken > < Audience ref = ' FLOW VARIABLE NAME > TARGET URL </Scope> < / GoogleAccessToken > < / Authentication > < FormParams > < FormParam name = \" FORMPARAM NAME \" > FORMPARAM VALUE < / FormParam > ... < / FormParams > < Headers > < Header name = \" HEADER NAME \" > HEADER VALUE < / Header > ... < / Headers > < Path> PATH < / Path > < Payload contentType = \" CONTENT TYPE \" variablePrefix = \" PREFIX \" variableSuffix = \" SUFFIX \" > NEW PAYLOAD < / Payload > < QueryParams > < QueryParam name = \" QUERYPARAM NAME \" > QUERYPARAM VALUE < / QueryParam > ... < / QueryParams > < StatusCode> HTTP STATUS CODE or { variable } < / StatusCode > < Verb > [ GET POST PUT PATCH DELETE { variable }] < / Verb > < Version > [ 1.0 1.1 { variable }] < / Verb > < / Set > < / AssignMessage > Default Policy The following example shows the default settings when you add an AssignMessage policy to your flow in the Apigee UI.",
+          "Optional Type Array of <FormParam> elements or an empty array Parent Element <Copy> Child Elements <FormParam> The <FormParams> element uses the following syntax: Syntax < AssignMessage continueOnError = \"[false true]\" enabled = \"[true false]\" name = \" POLICY NAME \" > < Copy source = \" VARIABLE NAME \" > < !-- Can also be an empty array ( < FormParams / > ) --> < FormParams > < FormParam name = \" FORMPARAM NAME \" > FORMPARAM VALUE < / FormParam > ... < / FormParams > < / Copy > < / AssignMessage > Example 1 The following example copies a single form parameter from the request to the custom request MyCustomRequest : < AssignMessage name = \"AM-copy-formparams-1\" > < Copy source = \"request\" > < FormParams > < FormParam name = \"paramName\" > Form param value 1 < / FormParam > < / FormParams > < / Copy > < AssignTo createNew = \"true\" transport = \"http\" type = \"request\" > MyCustomRequest < / AssignTo > < / AssignMessage > Example 2 The following example copies all form parameters to the custom request MyCustomRequest : < AssignMessage name = \"AM-copy-formparams-2\" > < Copy source = \"request\" > < FormParams / > < / Copy > < AssignTo createNew = \"true\" transport = \"http\" type = \"request\" > MyCustomRequest < / AssignTo > < / AssignMessage > Example 3 The following example copies three form parameters to the custom request MyCustomRequest : < AssignMessage name = \"AM-copy-formparams-3\" > < Copy source = \"request\" > < FormParams > < FormParam name = \"paramName1\" / > < FormParam name = \"paramName2\" / > < FormParam name = \"paramName3\" / > < / FormParams > < / Copy > < AssignTo createNew = \"true\" transport = \"http\" type = \"request\" > MyCustomRequest < / AssignTo > < / AssignMessage > Example 4 If there are multiple form params with the same name, use the following syntax: < AssignMessage name = \"AM-copy-formparams-4\" > < Copy source = \"request\" > < FormParams > < FormParam name = \"f1\" / > < FormParam name = \"f2\" / > < FormParam name = \"f3.2\" / > < / FormParams > < / Copy > < AssignTo createNew = \"true\" transport = \"http\" type = \"request\" > MyCustomRequest < / AssignTo > < / AssignMessage > This example copies f1 , f2 , and the second value of f3 .",
+          "The <Copy> element uses the following syntax: Syntax < AssignMessage continueOnError = \"[false true]\" enabled = \"[true false]\" name = \" POLICY NAME \" > < Copy source = \" VARIABLE NAME \" > < !-- Can also be an empty array ( < FormParams / > ) --> < FormParams > < FormParam name = \" FORMPARAM NAME \" > FORMPARAM VALUE < / FormParam > ... < / FormParams > < !-- Copy all headers -- > < Headers / > < !-- or , copy specific headers by name -- > < Headers > < Header name = \" HEADER NAME \" / > < !-- or -- > < Header name = \" HEADER NAME \" > [ false true ] < / Header > ... < / Headers > < Path > [ false true ] < / Path > < Payload > [ false true ] < / Payload > < !-- Can also be an empty array ( < QueryParams / > ) --> < QueryParams > < QueryParam name = \" QUERYPARAM NAME \" > QUERYPARAM VALUE < / QueryParam > ... < / QueryParams > < StatusCode > [ false true ] < / StatusCode > < Verb > [ false true ] < / Verb > < Version > [ false true ] < / Version > < / Copy > < !-- Used as the destination for the < Copy > values -- > < AssignTo createNew = \"[true false]\" transport = \"http\" type = \"[request response]\" > DESTINATION VARIABLE NAME < / AssignTo > < / AssignMessage > Example 1 The following example copies a header, three form parameters, the path, and all query parameters from the request message to a new, custom request named newRequest : < AssignMessage name = \"AM-copy-1\" > < AssignTo createNew = \"true\" transport = \"http\" type = \"request\" > newRequest < / AssignTo > < Copy source = \"request\" > < Headers > < Header name = \"Header Name 1\" / > < / Headers > < FormParams > < FormParam name = \"Form Param Name 1\" / > < FormParam name = \"Form Param Name 2\" / > < FormParam name = \"Form Param Name 3\" / > < / FormParams > < Path>true < / Path > < QueryParams / > < / Copy > < / AssignMessage > Because elements like <Payload> and <Verb> are not present, the policy does not copy those parts of the message."
+        ]
+      },
+      {
+        "title": "DataCapture policy \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-platform/reference/policies/data-capture-policy",
+        "source_id": "site-api-reference",
+        "final_score": 163,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "The DataCapture element has the following syntax. < DataCapture name = \"capturepayment\" continueOnError = \"false\" enabled = \"true\" > < DisplayName>Data - Capture - Policy - 1 < / DisplayName > < IgnoreUnresolvedVariables>false < / IgnoreUnresolvedVariables > < ThrowExceptionOnLimit>false < / ThrowExceptionOnLimit > < !-- Existing Variable -- > < Capture > < Collect ref = \"existing-variable\" default = \"0\" >< / Collect > < DataCollector>dc 1 < / DataCollector > < / Capture > < !-- JSONPayload -- > < Capture > < DataCollector>dc 2 < / DataCollector > < Collect default = \"0\" > < Source>request < / Source > < JSONPayload > < JSONPath>result . var < / JSONPath > < / JSONPayload > < / Collect > < / Capture > < !-- URIPath -- > < Capture > < DataCollector>dc 3 < / DataCollector > < Collect default = \"0\" > < URIPath > < !-- All patterns must specify a single variable to extract named $ -- > < Pattern ignoreCase = \"false\" > / foo / { $ } < / Pattern > < Pattern ignoreCase = \"false\" > / foo / bar / { $ } < / Pattern > < / URIPath > < / Collect > < / Capture > < / DataCapture > Caution: Some elements of the DataCapture policy behave differently than the corresponding elements of the ExtractVariables policy, which have the same names.",
+          "Description <Namespaces> Optional Specifies zero or more namespaces to be used in the XPath evaluation. <XPath> Required Specifies the XPath defined for the variable. < Collect > < XMLPayload > < Namespaces > < Namespace prefix = \"soap\" > http : // schemas . xmlsoap . org / soap / envelope /</ Namespace > < Namespace prefix = \"ns1\" > http : // ns1 . example . com / operations < / Namespace > < / Namespaces > < ! -- get the local name of the SOAP operation -- > < XPath>local - name ( / soap : Envelope / soap : Body / ns1 : [ 1 ] ) < / XPath > < / XMLPayload > < / Collect > Note: Unlike the <XMLPayload> element in the ExtractVariables policy, the <XMLPayload> element in the DataCapture policy does not nest within a <Variable> element. <Namespaces> Specifies the set of namespaces that can be used in the XPath expression.",
+          "Description <Source> Optional Specifies the variable to be parsed. <URIPath> Optional Extracts a value from the proxy.pathsuffix of a request source message. <QueryParam> Optional Extracts a value from the specified query parameter of a request source message. <Header> Optional Extracts a value from the specified HTTP header of the specified request or response message. <FormParam> Optional Extracts a value from the specified form parameter of the specified request or response message. <JSONPayload> Optional Specifies the JSON-formatted message from which the value of the variable will be extracted."
+        ]
+      },
+      {
+        "title": "GraphQL policy \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-platform/reference/policies/graphql-policy",
+        "source_id": "site-api-reference",
+        "final_score": 161,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Required Type TYPE Parent Element n/a Child Elements <Action> <MaxDepth> <MaxCount> <MaxPayloadSizeInBytes> <OperationType> <Source> <ResourceURL> Syntax The <GraphQL> element uses the following syntax: < GraphQL continueOnError = \"[false true]\" enabled = \"[true false]\" name = \" POLICY NAME \" > < Source>request < / Source > < OperationType > [ query mutuation all ] < / OperationType > < MaxDepth> MAX DEPTH < / MaxDepth > < MaxCount> MAX NUMBER OF QUERIES < / MaxCount > // [Start maxpayloadsize] < MaxPayloadSizeInBytes> MAX PAYLOAD SIZE IN BYTES & lt / MaxPayloadSizeInBytes > < Action>parse < / Action > < ResourceURL> PATH / TO / SCHEMA . xsd < / ResourceURL > < / GraphQL > Default Policy The following example shows the default settings when you add a <GraphQL> policy to your flow in the Apigee UI: < ? xml version = \"1.0\" encoding = \"UTF-8\" standalone = \"yes\" ? > < GraphQL name = \"GraphQLParser\" > < Source>request < / Source > < OperationType>query < / OperationType > < MaxDepth>10 < / MaxDepth > < MaxCount>10 < / MaxCount > < MaxPayloadSizeInBytes >< / MaxPayloadSizeInBytes > < Action>parse < / Action > < ResourceURL >< / ResourceURL > < / GraphQL > This element has the following attributes that are common to all policies: Attribute Default Required?",
+          "Optional Type String Parent Element <GraphQL> Child Elements none The <Source> element uses the following syntax: Syntax <GraphQL continueOnError=\"[false true]\" enabled=\"[true false]\" name=\"POLICY NAME\" > <Source>request</Source> </GraphQL> GraphQL Parser The graphQL parser supports all features of a graphQL query and represents it as a graph in the message flow dotted notation.",
+          "Optional Type String Parent Element <GraphQL> Child Elements none The <OperationType> element uses the following syntax: Syntax <GraphQL continueOnError=\"[false true]\" enabled=\"[true false]\" name=\"POLICY NAME\" > <OperationType>[query mutation query mutation]</OperationType> </GraphQL> <ResourceURL> The path to the GraphQL schema file that the GraphQL policy verifies requests against."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "f3.2",
+      "proxy.pathsuffix",
+      "qp3.2"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/policies/assign-message-policy",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/policies/data-capture-policy",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/policies/graphql-policy"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/policies/assign-message-policy",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/policies/data-capture-policy",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/policies/graphql-policy"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/policies/assign-message-policy",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/policies/data-capture-policy",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/policies/graphql-policy"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/policies/assign-message-policy",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/policies/data-capture-policy",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/policies/graphql-policy"
+      ]
+    }
+  ]
+}

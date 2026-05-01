@@ -1,0 +1,200 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:26.812Z",
+  "source_step08_card": "data/step-08/current/products/cloud-sql-for-mysql/card.json",
+  "product_name": "Cloud SQL for MySQL",
+  "product_slug": "cloud-sql-for-mysql",
+  "feature_name": "Connection organization policies",
+  "feature_slug": "connection-organization-policies",
+  "summary": "Cloud SQL supports connection organization policies to control access to and from instances.",
+  "extended_definition": "Cloud SQL supports connection organization policies to control access to and from instances.",
+  "lifecycle": {
+    "latest_feature_date": "2019-12-13",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/sql/docs/mysql/admin-api/configure-service-controls",
+      "https://docs.cloud.google.com/sql/docs/mysql/connection-org-policy",
+      "https://docs.cloud.google.com/sql/docs/mysql/create-instance"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Cloud SQL organization policies \\_|\\_ Cloud SQL for MySQL \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/sql/docs/mysql/connection-org-policy",
+        "source_id": "site-docs-root",
+        "final_score": 263,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "By default, you can add Authorized Networks to Cloud SQL instances. constraints/sql.restrictAuthorizedNetworks Allowed Restrictions for connection organization policies When you set the organization policy for each project, you need to determine if any one of the following apply to your project: Read replicas public IP conflicts Incompatibility using gcloud CLI sql connect Google Cloud hosted services access MySQL failover replica public IP conflicts Non-RFC 1918 private IP addresses Read replicas public IP address conflicts Cloud SQL read replicas connect to the primary instance over the non-proxied database connection.",
+          "The types of organization policies specific to Cloud SQL are as follows: Predefined organization policies Connection organization policies Customer-managed encryption keys (CMEK) organization policies Custom organization policies Predefined organization policies You can use the predefined constraints to control the public IP settings and Customer Managed Encryption Key (CMEK) settings of Cloud SQL instances.",
+          "Connection organization policies Connection organization policies provide centralized control of the public IP settings for Cloud SQL, to reduce the security attack surface of Cloud SQL instances from the Internet."
+        ]
+      },
+      {
+        "title": "\"Configure VPC Service Controls \\_|\\_ Cloud SQL for MySQL \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/sql/docs/mysql/admin-api/configure-service-controls",
+        "source_id": "site-docs-reference",
+        "final_score": 207,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To either disallow or disable public IP on Cloud SQL instances: Organization administrators can apply organization policies that disallow creating new instances with public IP.",
+          "See Connection organization policies and Configuring the organization policy .",
+          "Disallow or disable public IP for Cloud SQL instances To constrain data within the VPC for your Cloud SQL project, do not allow connections to Cloud SQL instances from public IPs."
+        ]
+      },
+      {
+        "title": "Create instances \\_|\\_ Cloud SQL for MySQL \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/sql/docs/mysql/create-instance",
+        "source_id": "site-docs-reference-3",
+        "final_score": 183,
+        "relevance": "",
+        "evidence_snippets": [
+          "Execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method GET -Headers $headers -Uri \"https://sqladmin.googleapis.com/sql/v1beta4/projects/ project-id /instances/ instance-id \" Select-Object -Expand Content You should receive a JSON response similar to the following: { \"kind\": \"sql#instance\", \"state\": \"RUNNABLE\", \"databaseVersion\": \"MYSQL 8 0 18\", \"settings\": { \"authorizedGaeApplications\": [], \"tier\": \"db-f1-micro\", \"kind\": \"sql#settings\", \"pricingPlan\": \"PER USE\", \"replicationType\": \"SYNCHRONOUS\", \"activationPolicy\": \"ALWAYS\", \"ipConfiguration\": { \"authorizedNetworks\": [], \"ipv4Enabled\": true }, \"locationPreference\": { \"zone\": \"us-west1-a\", \"kind\": \"sql#locationPreference\" }, \"dataDiskType\": \"PD SSD\", \"backupConfiguration\": { \"startTime\": \"18:00\", \"kind\": \"sql#backupConfiguration\", \"enabled\": true, \"binaryLogEnabled\": true }, \"settingsVersion\": \"1\", \"storageAutoResizeLimit\": \"0\", \"storageAutoResize\": true, \"dataDiskSizeGb\": \"10\" }, \"etag\": \"--redacted--\", \"ipAddresses\": [ { \"type\": \"PRIMARY\", \"ipAddress\": \" 10.0.0.1 \" } ], \"serverCaCert\": { ... }, \"instanceType\": \"CLOUD SQL INSTANCE\", \"project\": \" project-id \", \"serviceAccountEmailAddress\": \"redacted@gcp-sa-cloud-sql.iam.gserviceaccount.com\", \"backendType\": \"SECOND GEN\", \"selfLink\": \"https://sqladmin.googleapis.com/sql/v1beta4/projects/ project-id /instances/ instance-id \", \"connectionName\": \" project-id:region:instance-id \", \"name\": \" instance-id \", \"region\": \"us-west1\", \"gceZone\": \"us-west1-a\" } Look for the ipAddress field in the response.",
+          "Execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method GET -Headers $headers -Uri \"https://sqladmin.googleapis.com/v1/projects/ project-id /instances/ instance-id \" Select-Object -Expand Content You should receive a JSON response similar to the following: { \"kind\": \"sql#instance\", \"state\": \"RUNNABLE\", \"databaseVersion\": \"MYSQL 8 0 18\", \"settings\": { \"authorizedGaeApplications\": [], \"tier\": \"db-f1-micro\", \"kind\": \"sql#settings\", \"pricingPlan\": \"PER USE\", \"replicationType\": \"SYNCHRONOUS\", \"activationPolicy\": \"ALWAYS\", \"ipConfiguration\": { \"authorizedNetworks\": [], \"ipv4Enabled\": true }, \"locationPreference\": { \"zone\": \"us-west1-a\", \"kind\": \"sql#locationPreference\" }, \"dataDiskType\": \"PD SSD\", \"backupConfiguration\": { \"startTime\": \"18:00\", \"kind\": \"sql#backupConfiguration\", \"enabled\": true, \"binaryLogEnabled\": true }, \"settingsVersion\": \"1\", \"storageAutoResizeLimit\": \"0\", \"storageAutoResize\": true, \"dataDiskSizeGb\": \"10\" }, \"etag\": \"--redacted--\", \"ipAddresses\": [ { \"type\": \"PRIMARY\", \"ipAddress\": \" 10.0.0.1 \" } ], \"serverCaCert\": { ... }, \"instanceType\": \"CLOUD SQL INSTANCE\", \"project\": \" project-id \", \"serviceAccountEmailAddress\": \"redacted@gcp-sa-cloud-sql.iam.gserviceaccount.com\", \"backendType\": \"SECOND GEN\", \"selfLink\": \"https://sqladmin.googleapis.com/v1/projects/ project-id /instances/ instance-id \", \"connectionName\": \" project-id:region:instance-id \", \"name\": \" instance-id \", \"region\": \"us-west1\", \"gceZone\": \"us-west1-a\" } Look for the ipAddress field in the response.",
+          "The range name should comply with RFC-1035 and be within 1-63 characters. ( gcloud alpha sql instances create ). --enable-google-private-path : If you use this parameter, then you allow other Google Cloud services, such as BigQuery, to access data in Cloud SQL and make queries against this data over a private connection."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "example.com",
+      "request.json",
+      "sql.iam.gserviceaccount.com",
+      "sql.restrictAuthorizedNetworks",
+      "sqladmin.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/connection-org-policy",
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-api/configure-service-controls",
+        "https://docs.cloud.google.com/sql/docs/mysql/create-instance"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/connection-org-policy",
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-api/configure-service-controls",
+        "https://docs.cloud.google.com/sql/docs/mysql/create-instance"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/connection-org-policy",
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-api/configure-service-controls",
+        "https://docs.cloud.google.com/sql/docs/mysql/create-instance"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/connection-org-policy",
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-api/configure-service-controls",
+        "https://docs.cloud.google.com/sql/docs/mysql/create-instance"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/connection-org-policy",
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-api/configure-service-controls",
+        "https://docs.cloud.google.com/sql/docs/mysql/create-instance"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/connection-org-policy",
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-api/configure-service-controls",
+        "https://docs.cloud.google.com/sql/docs/mysql/create-instance"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/connection-org-policy",
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-api/configure-service-controls",
+        "https://docs.cloud.google.com/sql/docs/mysql/create-instance"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/connection-org-policy",
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-api/configure-service-controls",
+        "https://docs.cloud.google.com/sql/docs/mysql/create-instance"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/connection-org-policy",
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-api/configure-service-controls",
+        "https://docs.cloud.google.com/sql/docs/mysql/create-instance"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/connection-org-policy",
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-api/configure-service-controls",
+        "https://docs.cloud.google.com/sql/docs/mysql/create-instance"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/connection-org-policy",
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-api/configure-service-controls",
+        "https://docs.cloud.google.com/sql/docs/mysql/create-instance"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/connection-org-policy",
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-api/configure-service-controls",
+        "https://docs.cloud.google.com/sql/docs/mysql/create-instance"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/connection-org-policy",
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-api/configure-service-controls",
+        "https://docs.cloud.google.com/sql/docs/mysql/create-instance"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/connection-org-policy",
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-api/configure-service-controls",
+        "https://docs.cloud.google.com/sql/docs/mysql/create-instance"
+      ]
+    }
+  ]
+}

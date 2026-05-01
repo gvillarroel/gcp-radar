@@ -1,0 +1,189 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:25.811Z",
+  "source_step08_card": "data/step-08/current/products/cloud-run/card.json",
+  "product_name": "Cloud Run",
+  "product_slug": "cloud-run",
+  "feature_name": "Custom organization policies for Serverless VPC Access connectors",
+  "feature_slug": "custom-organization-policies-for-serverless-vpc-access-connectors",
+  "summary": "Custom organization policies can be created for Serverless VPC Access connectors and applied at project, folder, or organization scope.",
+  "extended_definition": "Custom organization policies can be created for Serverless VPC Access connectors and applied at project, folder, or organization scope.",
+  "lifecycle": {
+    "latest_feature_date": "2024-12-09",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/python/docs/reference/run/latest/google.cloud.run_v2.services.jobs.JobsAsyncClient",
+      "https://docs.cloud.google.com/run/docs/migrate/migrating-nodejs-apps-from-heroku-to-cloud-run",
+      "https://docs.cloud.google.com/run/docs/securing/identity-aware-proxy-cloud-run"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Migrate Node.js apps from Heroku to Cloud Run \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/run/docs/migrate/migrating-nodejs-apps-from-heroku-to-cloud-run",
+        "source_id": "site-docs-root",
+        "final_score": 124,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Deploy the sample app to Cloud Run In Cloud Shell, configure serverless vpc access to allow private traffic from Cloud Run to Cloud SQL: gcloud compute networks subnets create serverless-connector-subnet \\ --network=default \\ --range=10.0.0.0/28 \\ --region=us-central1 gcloud compute networks vpc-access connectors create serverless-connector \\ --region=us-central1 \\ --subnet=serverless-connector-subnet In Cloud Shell, create an environment variable that holds the connection name of the Cloud SQL instance that you created: export DB CONN NAME=$(gcloud sql instances describe $CLOUDSQL DB NAME --format='value(connectionName)') Create an environment variable called DATABASE URL to hold the connection string to connect to the Cloud SQL Proxy over a UNIX port. export DATABASE URL=\"socket:/cloudsql/${DB CONN NAME}?db=postgres&user=postgres&password= POSTGRES PASSWORD \" Create a service account for Cloud Run with an IAM role to connect to the database: gcloud iam service-accounts create sa-run-db-client gcloud projects add-iam-policy-binding PROJECT ID \\ --member=serviceAccount:sa-run-db-client@ PROJECT ID .iam.gserviceaccount.com \\ --role=roles/cloudsql.client Deploy the web app to Cloud Run: gcloud run deploy tasksapp- PROJECT ID \\ --image=$IMAGE NAME \\ --service-account=sa-run-db-client@ PROJECT ID .iam.gserviceaccount.com \\ --set-env-vars=DATABASE URL=$DATABASE URL \\ --add-cloudsql-instances $DB CONN NAME \\ --vpc-connector serverless-connector \\ --allow-unauthenticated The preceding command also links your Cloud Run container to the Cloud SQL database instance that you created.",
+          "Enable the APIs Make sure that you have the following role or roles on the project: Cloud Run > Cloud Run Admin, Cloud Storage > Storage Admin, Cloud SQL > Cloud SQL Admin, Compute Engine > Compute Network Admin, Resource Manager > Project IAM Admin, Cloud Build > Cloud Build Editor, Serverless VPC Access > Serverless VPC Access Admin, Logging > Logs Viewer, Service Accounts > Service Account Admin, Service Accounts > Service Account User, and Service Usage > Service Usage Consumer Check for the roles In the Google Cloud console, go to the IAM page.",
+          "Enable the APIs Make sure that you have the following role or roles on the project: Cloud Run > Cloud Run Admin, Cloud Storage > Storage Admin, Cloud SQL > Cloud SQL Admin, Compute Engine > Compute Network Admin, Resource Manager > Project IAM Admin, Cloud Build > Cloud Build Editor, Serverless VPC Access > Serverless VPC Access Admin, Logging > Logs Viewer, Service Accounts > Service Account Admin, Service Accounts > Service Account User, and Service Usage > Service Usage Consumer Check for the roles In the Google Cloud console, go to the IAM page."
+        ]
+      },
+      {
+        "title": "Configure IAP for Cloud Run \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/run/docs/securing/identity-aware-proxy-cloud-run",
+        "source_id": "site-docs-root",
+        "final_score": 119,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "If you're using the gcloud CLI to manage access for users without an organization, enable IAP on Cloud Run directly from the Google Cloud console or follow the steps in this section to manually create a custom OAuth client.",
+          "Before you begin Enable the IAP API: Enable the IAP API Required roles To get the permissions that you need to enable IAP, ask your administrator to grant you the following IAM roles: Cloud Run Admin ( roles/run.admin ) on the project Grant access to the IAP-enabled service: IAP Policy Admin ( roles/iap.admin ) on the project Create an IAP-enabled service or update an existing service to enable IAP: Artifact Registry Reader ( roles/artifactregistry.reader ) on the deployed container images Service Account User ( roles/iam.serviceAccountUser ) on the service identity Grant access to users not part of a Google organization: IAP Settings Admin ( roles/iap.settingsAdmin ) on the project Grant access to users from outside an organization or not part of an organization: OAuth Config Editor ( roles/oauthconfig.editor ) on the project For more information about granting roles, see Manage access to projects, folders, and organizations .",
+          "To retrieve the current IAM policy data, add the following to a google cloud run v2 service iam policy resource in your Terraform configuration. data \"google cloud run v2 service iam policy\" \"policy\" { project = google cloud run v2 service.default.project location = google cloud run v2 service.default.location name = google cloud run v2 service.default.name } Manage user or group access By default, IAP for Cloud Run uses a Google-managed OAuth client that lets you add in-organization identities with an email address associated with a user."
+        ]
+      },
+      {
+        "title": "\"Class JobsAsyncClient (0.16.0) \\_|\\_ Python client libraries \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/run/latest/google.cloud.run_v2.services.jobs.JobsAsyncClient",
+        "source_id": "site-python-reference",
+        "final_score": 111,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "JSON example: :literal: { \"bindings\": [ { \"role\": \"roles/resourcemanager.organizationAdmin\", \"members\": [ \"user:mike@example.com\", \"group:admins@example.com\", \"domain:google.com\", \"serviceAccount:my-project-id@appspot.gserviceaccount.com\" ] }, { \"role\": \"roles/resourcemanager.organizationViewer\", \"members\": [ \"user:eve@example.com\" ], \"condition\": { \"title\": \"expirable access\", \"description\": \"Does not grant access after Sep 2020\", \"expression\": \"request.time < timestamp('2020-10-01t00:00:00.000z')\",=\"\" }=\"\" }=\"\" ],=\"\" \"etag\":=\"\" \"bwwwja0yfja=\", \" version\":=\"\" 3=\"\"> \\ \\ YAML example: :literal: bindings: - members: - user:mike@example.com - group:admins@example.com - domain:google.com - serviceAccount:my-project-id@appspot.gserviceaccount.com role: roles/resourcemanager.organizationAdmin - members: - user:eve@example.com role: roles/resourcemanager.organizationViewer condition: title: expirable access description: Does not grant access after Sep 2020 expression: request.time < timestamp('2020-10-01t00:00:00.000z')=\"\" etag:=\"\" bwwwja0yfja=\"version:\"> \\ \\ For a description of IAM and its features, see the IAM documentation. test iam permissions test iam permissions ( request : typing .",
+          "JSON example: :literal: { \"bindings\": [ { \"role\": \"roles/resourcemanager.organizationAdmin\", \"members\": [ \"user:mike@example.com\", \"group:admins@example.com\", \"domain:google.com\", \"serviceAccount:my-project-id@appspot.gserviceaccount.com\" ] }, { \"role\": \"roles/resourcemanager.organizationViewer\", \"members\": [ \"user:eve@example.com\" ], \"condition\": { \"title\": \"expirable access\", \"description\": \"Does not grant access after Sep 2020\", \"expression\": \"request.time < timestamp('2020-10-01t00:00:00.000z')\",=\"\" }=\"\" }=\"\" ],=\"\" \"etag\":=\"\" \"bwwwja0yfja=\", \" version\":=\"\" 3=\"\"> \\ \\ YAML example: :literal: bindings: - members: - user:mike@example.com - group:admins@example.com - domain:google.com - serviceAccount:my-project-id@appspot.gserviceaccount.com role: roles/resourcemanager.organizationAdmin - members: - user:eve@example.com role: roles/resourcemanager.organizationViewer condition: title: expirable access description: Does not grant access after Sep 2020 expression: request.time < timestamp('2020-10-01t00:00:00.000z')=\"\" etag:=\"\" bwwwja0yfja=\"version:\"> \\ \\ For a description of IAM and its features, see the IAM documentation. get job get job ( request : typing .",
+          "Exceptions Type Description google.auth.exceptions.MutualTlsChannelError If mutual TLS transport creation failed for any reason. common billing account path common billing account path ( billing account : str ) - > str Returns a fully-qualified billing account string. common folder path common folder path ( folder : str ) - > str Returns a fully-qualified folder string. common location path common location path ( project : str , location : str ) - > str Returns a fully-qualified location string. common organization path common organization path ( organization : str ) - > str Returns a fully-qualified organization string. common project path common project path ( project : str ) - > str Returns a fully-qualified project string. connector path connector path ( project : str , location : str , connector : str ) - > str Returns a fully-qualified connector string. create job create job ( request : typing ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "appspot.gserviceaccount.com",
+      "artifactregistry.reader",
+      "cloudsql.client",
+      "example.com",
+      "iam.gserviceaccount.com",
+      "iam.serviceAccountUser",
+      "iap.admin",
+      "iap.settingsAdmin",
+      "oauthconfig.editor",
+      "request.time",
+      "resourcemanager.organizationAdmin",
+      "resourcemanager.organizationViewer",
+      "run.admin",
+      "service.default.location",
+      "service.default.name",
+      "service.default.project"
+    ],
+    "missing_inventory_roles": [
+      "roles/artifactregistry.reader",
+      "roles/cloudsql.client",
+      "roles/iam.serviceAccountUser",
+      "roles/iap.admin",
+      "roles/iap.settingsAdmin",
+      "roles/oauthconfig.editor",
+      "roles/resourcemanager.organizationAdmin",
+      "roles/resourcemanager.organizationViewer",
+      "roles/run.admin"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/migrate/migrating-nodejs-apps-from-heroku-to-cloud-run",
+        "https://docs.cloud.google.com/run/docs/securing/identity-aware-proxy-cloud-run",
+        "https://docs.cloud.google.com/python/docs/reference/run/latest/google.cloud.run_v2.services.jobs.JobsAsyncClient"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/migrate/migrating-nodejs-apps-from-heroku-to-cloud-run",
+        "https://docs.cloud.google.com/run/docs/securing/identity-aware-proxy-cloud-run",
+        "https://docs.cloud.google.com/python/docs/reference/run/latest/google.cloud.run_v2.services.jobs.JobsAsyncClient"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/migrate/migrating-nodejs-apps-from-heroku-to-cloud-run",
+        "https://docs.cloud.google.com/run/docs/securing/identity-aware-proxy-cloud-run",
+        "https://docs.cloud.google.com/python/docs/reference/run/latest/google.cloud.run_v2.services.jobs.JobsAsyncClient"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/migrate/migrating-nodejs-apps-from-heroku-to-cloud-run",
+        "https://docs.cloud.google.com/run/docs/securing/identity-aware-proxy-cloud-run",
+        "https://docs.cloud.google.com/python/docs/reference/run/latest/google.cloud.run_v2.services.jobs.JobsAsyncClient"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/migrate/migrating-nodejs-apps-from-heroku-to-cloud-run",
+        "https://docs.cloud.google.com/run/docs/securing/identity-aware-proxy-cloud-run",
+        "https://docs.cloud.google.com/python/docs/reference/run/latest/google.cloud.run_v2.services.jobs.JobsAsyncClient"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/migrate/migrating-nodejs-apps-from-heroku-to-cloud-run",
+        "https://docs.cloud.google.com/run/docs/securing/identity-aware-proxy-cloud-run",
+        "https://docs.cloud.google.com/python/docs/reference/run/latest/google.cloud.run_v2.services.jobs.JobsAsyncClient"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/migrate/migrating-nodejs-apps-from-heroku-to-cloud-run",
+        "https://docs.cloud.google.com/run/docs/securing/identity-aware-proxy-cloud-run",
+        "https://docs.cloud.google.com/python/docs/reference/run/latest/google.cloud.run_v2.services.jobs.JobsAsyncClient"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/migrate/migrating-nodejs-apps-from-heroku-to-cloud-run",
+        "https://docs.cloud.google.com/run/docs/securing/identity-aware-proxy-cloud-run",
+        "https://docs.cloud.google.com/python/docs/reference/run/latest/google.cloud.run_v2.services.jobs.JobsAsyncClient"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/migrate/migrating-nodejs-apps-from-heroku-to-cloud-run",
+        "https://docs.cloud.google.com/run/docs/securing/identity-aware-proxy-cloud-run",
+        "https://docs.cloud.google.com/python/docs/reference/run/latest/google.cloud.run_v2.services.jobs.JobsAsyncClient"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/migrate/migrating-nodejs-apps-from-heroku-to-cloud-run",
+        "https://docs.cloud.google.com/run/docs/securing/identity-aware-proxy-cloud-run",
+        "https://docs.cloud.google.com/python/docs/reference/run/latest/google.cloud.run_v2.services.jobs.JobsAsyncClient"
+      ]
+    }
+  ]
+}

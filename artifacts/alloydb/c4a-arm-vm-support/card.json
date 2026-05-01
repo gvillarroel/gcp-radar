@@ -1,0 +1,99 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:12.801Z",
+  "source_step08_card": "data/step-08/current/products/alloydb/card.json",
+  "product_name": "AlloyDB",
+  "product_slug": "alloydb",
+  "feature_name": "C4A Arm VM support",
+  "feature_slug": "c4a-arm-vm-support",
+  "summary": "AlloyDB supports C4A Arm VMs on Google's custom-built Axiom processors in predefined configurations.",
+  "extended_definition": "AlloyDB supports C4A Arm VMs on Google's custom-built Axiom processors in predefined configurations.",
+  "lifecycle": {
+    "latest_feature_date": "2025-04-09",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 1,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "coverage_low",
+        "message": "The feature ended with coverage LOW.",
+        "suggested_steps": [
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/alloydb/docs/advanced-query-insights-overview",
+      "https://docs.cloud.google.com/alloydb/docs/instance-read-pool-scale",
+      "https://docs.cloud.google.com/alloydb/docs/reference/query-tuning-and-optimization"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Scale an instance \\_|\\_ AlloyDB for PostgreSQL \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/alloydb/docs/instance-read-pool-scale",
+        "source_id": "site-docs-root",
+        "final_score": 22,
+        "relevance": "",
+        "evidence_snippets": [
+          "Create a read pool instance with a schedule-based policy To create a read pool instance with a schedule-based automatic scaling policy that defines a minimum number of nodes for a specific time window, run the following command: Note: If you have an existing autoscaling policy that has --autoscaler-max-node-count set , then this becomes an optional field. gcloud beta alloydb instances create INSTANCE ID \\ --instance-type = READ POOL \\ --read-pool-node-count = NODE COUNT \\ --region = REGION ID \\ --cluster = CLUSTER ID \\ --project = PROJECT ID \\ --enable-autoscaler \\ --autoscaler-max-node-count = MAX NODE COUNT \\ --autoscaler-set-schedule = SCHEDULE NAME \\ --autoscaler-schedule-cron-exp = CRON EXPRESSION \\ --autoscaler-schedule-duration-seconds = DURATION SECONDS \\ --autoscaler-schedule-time-zone = TIME ZONE \\ --autoscaler-schedule-min-node-count = MIN NODE COUNT \\ --autoscaler-schedule-description = \" DESCRIPTION \" { --cpu-count = CPU COUNT --machine-type = MACHINE TYPE } Replace the following: MAX NODE COUNT : the maximum number of nodes that the autoscaler can create in the read pool instance.",
+          "Create a read pool instance with CPU and schedule-based policies To create a read pool instance with both CPU-based and schedule-based automatic scaling policies, run the following command: gcloud beta alloydb instances create INSTANCE ID \\ --instance-type = READ POOL \\ --read-pool-node-count = NODE COUNT \\ --region = REGION ID \\ --cluster = CLUSTER ID \\ --project = PROJECT ID \\ --enable-autoscaler \\ --autoscaler-max-node-count = MAX NODE COUNT \\ --autoscaler-target-cpu-usage = TARGET CPU USAGE \\ --autoscaler-set-schedule = SCHEDULE NAME \\ --autoscaler-schedule-cron-exp = CRON EXPRESSION \\ --autoscaler-schedule-duration-seconds = DURATION SECONDS \\ --autoscaler-schedule-time-zone = TIME ZONE \\ --autoscaler-schedule-min-node-count = MIN NODE COUNT \\ --autoscaler-schedule-description = \" DESCRIPTION \" { --cpu-count = CPU COUNT --machine-type = MACHINE TYPE } Replace TARGET CPU USAGE with the target CPU utilization for your read pool instance, expressed as a decimal value between 0.0 and 1.0.",
+          "Create a read pool instance with a CPU-based policy To create a read pool instance with an automatic scaling policy based on a target CPU utilization, run the following command: gcloud beta alloydb instances create INSTANCE ID \\ --instance-type = READ POOL \\ --read-pool-node-count = NODE COUNT \\ --region = REGION ID \\ --cluster = CLUSTER ID \\ --project = PROJECT ID \\ --enable-autoscaler \\ --autoscaler-max-node-count = MAX NODE COUNT \\ --autoscaler-target-cpu-usage = TARGET CPU USAGE \\ { --cpu-count = CPU COUNT --machine-type = MACHINE TYPE } Replace the following: INSTANCE ID : the ID of the read pool instance."
+        ]
+      },
+      {
+        "title": "\"Advanced query insights features overview \\_|\\_ AlloyDB for PostgreSQL \\_\\",
+        "url": "https://docs.cloud.google.com/alloydb/docs/advanced-query-insights-overview",
+        "source_id": "site-docs-reference",
+        "final_score": 20,
+        "relevance": "",
+        "evidence_snippets": [
+          "Benefits of advanced query insights features The following advanced query insights features are available to help you detect and fix query performance problems: Prebuilt dashboards that help you identify query performance problems early and let you identify, diagnose, and resolve issues in a single page on the Google Cloud console.",
+          "Home Documentation Databases AlloyDB for PostgreSQL Guides Send feedback Advanced query insights features overview Stay organized with collections Save and categorize content based on your preferences.",
+          "Application-centric monitoring and simplified performance diagnosis of applications built using object relational mappers (ORM)."
+        ]
+      },
+      {
+        "title": "\"AlloyDB query tuning and optimization \\_|\\_ AlloyDB for PostgreSQL \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/alloydb/docs/reference/query-tuning-and-optimization",
+        "source_id": "site-api-reference",
+        "final_score": 20,
+        "relevance": "",
+        "evidence_snippets": [
+          "All documented hints in the following tables are available in AlloyDB: pg hint plan hint Purpose ColumnarScan(table) , NoColumnarScan(table) Influences the planner to use columnar engine for the specified table.",
+          "Home Documentation Databases AlloyDB for PostgreSQL Reference Send feedback AlloyDB query tuning and optimization Stay organized with collections Save and categorize content based on your preferences.",
+          "INDEX DESC(table [index]) None (built-in functionality) This hint is considered automatically by the PostgreSQL planner as long as the columns being sorted are in the index being used."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/advanced-query-insights-overview",
+        "https://docs.cloud.google.com/alloydb/docs/reference/query-tuning-and-optimization",
+        "https://docs.cloud.google.com/alloydb/docs/instance-read-pool-scale"
+      ]
+    }
+  ]
+}

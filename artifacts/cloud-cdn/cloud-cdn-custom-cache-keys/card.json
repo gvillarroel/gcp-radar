@@ -1,0 +1,154 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:23.081Z",
+  "source_step08_card": "data/step-08/current/products/cloud-cdn/card.json",
+  "product_name": "Cloud CDN",
+  "product_slug": "cloud-cdn",
+  "feature_name": "Cloud CDN Custom Cache Keys",
+  "feature_slug": "cloud-cdn-custom-cache-keys",
+  "summary": "Cloud CDN Custom Cache Keys lets users control which request attributes are used to compute cache keys; Cloud CDN Custom Cache Keys lets users control which request attributes are used to compute cache keys.",
+  "extended_definition": "Cloud CDN Custom Cache Keys lets users control which request attributes are used to compute cache keys; Cloud CDN Custom Cache Keys lets users control which request attributes are used to compute cache keys.",
+  "lifecycle": {
+    "latest_feature_date": "2017-04-19",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/cdn/docs/best-practices",
+      "https://docs.cloud.google.com/cdn/docs/caching",
+      "https://docs.cloud.google.com/cdn/docs/using-cache-keys"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Content delivery best practices \\_|\\_ Cloud CDN \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/cdn/docs/best-practices",
+        "source_id": "site-docs-reference-2",
+        "final_score": 179,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "When you customize the cache keys for the backend service that holds the logo, clear the Protocol checkbox so that requests through HTTP and HTTPS count as matches for the logo's cache entry.",
+          "When you enable Cloud CDN and customize the cache keys for the backend service that holds the logo, clear the Host checkbox so that the cache ignores the domain but caches the logo.",
+          "Following are some examples of when you might use custom cache keys: You have two hosts that resolve to the same IP address and go to the same service."
+        ]
+      },
+      {
+        "title": "Caching overview \\_|\\_ Cloud CDN \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/cdn/docs/caching",
+        "source_id": "site-docs-reference-2",
+        "final_score": 171,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Cloud CDN doesn't allow the following headers to be included in the list of headers: Accept Accept-Encoding Authority , because this is controlled by configuration ( cdnPolicy.includeHost ) Authorization , typically per-user as in OAuth Bearer tokens CDN-Loop Connection Content-MD5 Content-Type Cookie Date Forwarded , often per-client or per-proxy From Host , because this is controlled by configuration ( cdnPolicy.includeHost ) If-Match , If-Modified-Since , or If-None-Match Origin Proxy-Authorization Range Referer (or Referrer ) User-Agent Want-Digest X-CSRFToken and X-CSRF-Token as used by Django and Ruby on Rails X-Forwarded-For , often per-client or per-proxy X-User-IP Any header starting with the following: Access-Control- , such as Access-Control-Request-Headers and Access-Control-Request-Method Sec-Fetch- Sec-GFE- Sec-Google- X-Amz- X-GFE- X-Goog- X-Google- Use custom variables with request headers Cache keys are helpful when you need to serve content differently based on each user's device and location.",
+          "Query string include list You can selectively control which query string parameters Cloud CDN incorporates into cache keys.",
+          "Response directive Response has a Cache-Control header with the no-store or private directive (unless using the FORCE CACHE ALL cache mode, in which case the Cache-Control header is ignored) Request directive Request has a Cache-Control: no-store directive Request authorization Request has an Authorization header, unless overridden by the response Cache-Control."
+        ]
+      },
+      {
+        "title": "Customize cache keys \\_|\\_ Cloud CDN \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/cdn/docs/using-cache-keys",
+        "source_id": "site-docs-reference-2",
+        "final_score": 171,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "These instructions set Cloud CDN cache keys to use HTTP headers, which can include allowed custom variables .",
+          "Home Documentation Networking Cloud CDN Guides Send feedback Customize cache keys Stay organized with collections Save and categorize content based on your preferences.",
+          "Enable Cloud CDN and customize cache keys These instructions activate Cloud CDN for a load balanced backend service and customize the cache key."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/cdn/docs/best-practices",
+        "https://docs.cloud.google.com/cdn/docs/caching",
+        "https://docs.cloud.google.com/cdn/docs/using-cache-keys"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/cdn/docs/best-practices",
+        "https://docs.cloud.google.com/cdn/docs/caching",
+        "https://docs.cloud.google.com/cdn/docs/using-cache-keys"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/cdn/docs/best-practices",
+        "https://docs.cloud.google.com/cdn/docs/caching",
+        "https://docs.cloud.google.com/cdn/docs/using-cache-keys"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/cdn/docs/best-practices",
+        "https://docs.cloud.google.com/cdn/docs/caching",
+        "https://docs.cloud.google.com/cdn/docs/using-cache-keys"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/cdn/docs/best-practices",
+        "https://docs.cloud.google.com/cdn/docs/caching",
+        "https://docs.cloud.google.com/cdn/docs/using-cache-keys"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/cdn/docs/best-practices",
+        "https://docs.cloud.google.com/cdn/docs/caching",
+        "https://docs.cloud.google.com/cdn/docs/using-cache-keys"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/cdn/docs/best-practices",
+        "https://docs.cloud.google.com/cdn/docs/caching",
+        "https://docs.cloud.google.com/cdn/docs/using-cache-keys"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/cdn/docs/best-practices",
+        "https://docs.cloud.google.com/cdn/docs/caching",
+        "https://docs.cloud.google.com/cdn/docs/using-cache-keys"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/cdn/docs/best-practices",
+        "https://docs.cloud.google.com/cdn/docs/caching",
+        "https://docs.cloud.google.com/cdn/docs/using-cache-keys"
+      ]
+    }
+  ]
+}

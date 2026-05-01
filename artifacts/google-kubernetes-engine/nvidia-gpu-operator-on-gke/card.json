@@ -1,0 +1,98 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:39.542Z",
+  "source_step08_card": "data/step-08/current/products/google-kubernetes-engine/card.json",
+  "product_name": "Google Kubernetes Engine",
+  "product_slug": "google-kubernetes-engine",
+  "feature_name": "NVIDIA GPU Operator on GKE",
+  "feature_slug": "nvidia-gpu-operator-on-gke",
+  "summary": "This feature lets you manage your GKE GPU stack with the NVIDIA GPU Operator on COS and Ubuntu node images.",
+  "extended_definition": "This feature lets you manage your GKE GPU stack with the NVIDIA GPU Operator on COS and Ubuntu node images.",
+  "lifecycle": {
+    "latest_feature_date": "2024-08-02",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-dynamic-resource-allocation",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/gpus",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/integrations/ai-infra"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"About GPUs in Google Kubernetes Engine (GKE) \\_|\\_ GKE AI/ML \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/gpus",
+        "source_id": "site-docs-root",
+        "final_score": 162,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "This page helps you to consider choices for requesting GPUs in GKE, including the following: Choosing your GPU quota , the maximum number of GPUs that can run in your project Deciding between Autopilot and Standard modes Manage the GPU stack through GKE or NVIDIA GPU Operator on GKE Choosing features to reduce the amount of underutilized GPU resources Accessing NVIDIA CUDA-X libraries for CUDA applications Monitoring GPU node metrics Handling disruption due to node maintenance Use GKE Sandbox to secure GPU workloads Available GPU models The GPU hardware that's available for use in GKE is a subset of the GPU models available on Compute Engine .",
+          "Get started with GKE for GPU node management by choosing one of the following: Deploy GPU workloads in Autopilot Run GPUs in Standard node pools Deploy clusters with NVIDIA B200 or NVIDIA H200 141GB GPUs The NVIDIA GPU Operator may be used as an alternative to fully managed GPU support on GKE on both Container-Optimized OS (COS) and Ubuntu node images.",
+          "Manage the GPU stack through GKE or the NVIDIA GPU Operator on GKE By default, GKE manages the entire lifecycle of the GPU nodes, including automatic GPU driver installation, monitoring GPU workloads on GKE with NVIDIA Data Center GPU Manager (DCGM) , and GPU sharing strategies."
+        ]
+      },
+      {
+        "title": "AI/ML orchestration on GKE documentation \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/integrations/ai-infra",
+        "source_id": "site-docs-reference-required-5",
+        "final_score": 138,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Tutorial AI/ML Inference GPUs Training Training and tutorials Manage the GPU Stack with the NVIDIA GPU Operator on GKE Learn when to use the NVIDIA GPU operator and how to enable the NVIDIA GPU Operator on GKE.",
+          "Tutorial TPUs Training Training and tutorials Monitoring GPU workloads on GKE with NVIDIA Data Center GPU Manager (DCGM) Learn how to observe GPU workloads on GKE with NVIDIA Data Center GPU Manager (DCGM).",
+          "AI NVIDIA NIM Use case Use cases Accelerate Ray in production with new Ray Operator on GKE Learn how Ray Operator on GKE simplifies your AI/ML production deployments, boosting performance and scalability."
+        ]
+      },
+      {
+        "title": "\"About dynamic resource allocation in GKE \\_|\\_ Google Kubernetes Engine\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-dynamic-resource-allocation",
+        "source_id": "site-docs-reference-2",
+        "final_score": 136,
+        "relevance": "",
+        "evidence_snippets": [
+          "Comparison of DRA and manual device allocation DRA Manual allocation Flexible device selection using CEL expressions Specific node selection using selectors and resource requests Scheduling decisions made by Kubernetes Scheduling decisions made by the operator using node selectors Device filtering is separate from workload creation Device filtering has to be done in the workload manifest Centralized device filtering and needs-based classes, managed by platform administrators Isolated device filtering by application operators App operators don't need to know node capacity, node label information, or the attached device models for each node App operators must know which nodes have specific models and quantities of certain devices attached.",
+          "You should already be familiar with the following: GPUs in GKE Common Expression Language (CEL) Introduction to DRA DRA is a built-in Kubernetes feature that lets you flexibly request, allocate, and share hardware in your cluster among Pods and containers.",
+          "In comparison, DRA lets you use expressions to flexibly filter for devices based on attributes, and doesn't require workload operators to know the exact configuration of nodes in the cluster."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/gpus",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/integrations/ai-infra",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-dynamic-resource-allocation"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/gpus",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/integrations/ai-infra",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-dynamic-resource-allocation"
+      ]
+    }
+  ]
+}

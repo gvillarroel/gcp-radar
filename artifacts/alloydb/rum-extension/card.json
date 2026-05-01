@@ -1,0 +1,124 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:12.801Z",
+  "source_step08_card": "data/step-08/current/products/alloydb/card.json",
+  "product_name": "AlloyDB",
+  "product_slug": "alloydb",
+  "feature_name": "RUM extension",
+  "feature_slug": "rum-extension",
+  "summary": "The RUM extension enables faster phrase searches and relevance ranking for complex full-text search workloads by storing positional information in the index.",
+  "extended_definition": "The RUM extension enables faster phrase searches and relevance ranking for complex full-text search workloads by storing positional information in the index.",
+  "lifecycle": {
+    "latest_feature_date": "2026-03-25",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/alloydb/docs/ai/create-rum-index",
+      "https://docs.cloud.google.com/alloydb/docs/ai/full-text-search-overview",
+      "https://docs.cloud.google.com/alloydb/docs/reference/extensions"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Supported database extensions \\_|\\_ AlloyDB for PostgreSQL \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/alloydb/docs/reference/extensions",
+        "source_id": "site-api-reference",
+        "final_score": 128,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "RUM indexes improve upon standard GIN indexes by storing positional information directly in the index, letting you perform faster phrase searches and relevance ranking without accessing the table data. sslinfo Provides information about the SSL certificate that the current client provided when it connected to the instance. tablefunc Provides various functions that return tables (multiple rows). tcn Provides a trigger function that notifies listeners of changes to the content of database tables. tds fdw Provides a foreign data wrapper ( fdw ) for accessing databases that use the Tabular Data Stream (TDS) protocol, such as Microsoft SQL Server or Sybase. temporal tables Provides support for temporal tables.",
+          "Important: Before you can use CREATE EXTENSION to enable this extension, you must first set the database flag alloydb.enable pg cron to the value on in the AlloyDB instance where you want to use the extension. pg freespacemap Examines the free space map (FSM). pg hint plan Enables you to improve PostgreSQL execution plans using hints, which are simple descriptions in SQL comments.",
+          "However, you can manually install Orafce to an existing AlloyDB Omni installation. pageinspect Inspects the contents of database pages at a low level. pg background Lets you run arbitrary commands in a background worker. pg bigm Provides full text search capability in PostgreSQL using 2-gram (bigram) indexes for faster full text searches."
+        ]
+      },
+      {
+        "title": "\"Full-text search overview \\_|\\_ AlloyDB for PostgreSQL \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/alloydb/docs/ai/full-text-search-overview",
+        "source_id": "site-docs-reference",
+        "final_score": 122,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "RUM improves standard GIN indexes by storing positional information directly in the index, letting you perform faster phrase searches and relevance ranking without accessing the table data.",
+          "The choice of index depends on the balance between search speed, index build time, update speed, and the specific search functionalities required, such as phrase searching or relevance ranking.",
+          "For example, in an ecommerce application, you could first use full-text search with RUM to find products containing specific keywords like \"running shoes\" and use vector search to find results based on semantic similarity to a user's more detailed query, such as \"comfortable footwear for long-distance training.\" The database then fuses the ranked results from both search components into a single, unified list using the Reciprocal Rank Fusion (RRF) algorithm to produce a final ranking."
+        ]
+      },
+      {
+        "title": "\"Create and manage RUM index \\_|\\_ AlloyDB for PostgreSQL \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/alloydb/docs/ai/create-rum-index",
+        "source_id": "site-docs-reference",
+        "final_score": 118,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "N/A Index for basic full-text search Use the rum tsvector ops operator class for standard text search that requires fast ranking and phrase search capabilities.",
+          "Operator Class Main Use Case Limitations rum tsvector ops Standard full-text search with ranking and phrase search.",
+          "It provides examples for common use cases, including ranking, phrase searching, and sorting by timestamp."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "alloydb.enable"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/ai/full-text-search-overview",
+        "https://docs.cloud.google.com/alloydb/docs/ai/create-rum-index",
+        "https://docs.cloud.google.com/alloydb/docs/reference/extensions"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/ai/full-text-search-overview",
+        "https://docs.cloud.google.com/alloydb/docs/ai/create-rum-index",
+        "https://docs.cloud.google.com/alloydb/docs/reference/extensions"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/ai/full-text-search-overview",
+        "https://docs.cloud.google.com/alloydb/docs/ai/create-rum-index",
+        "https://docs.cloud.google.com/alloydb/docs/reference/extensions"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/ai/full-text-search-overview",
+        "https://docs.cloud.google.com/alloydb/docs/ai/create-rum-index",
+        "https://docs.cloud.google.com/alloydb/docs/reference/extensions"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/ai/full-text-search-overview",
+        "https://docs.cloud.google.com/alloydb/docs/ai/create-rum-index",
+        "https://docs.cloud.google.com/alloydb/docs/reference/extensions"
+      ]
+    }
+  ]
+}

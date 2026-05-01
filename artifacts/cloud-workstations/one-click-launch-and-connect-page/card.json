@@ -1,0 +1,149 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:28.991Z",
+  "source_step08_card": "data/step-08/current/products/cloud-workstations/card.json",
+  "product_name": "Cloud Workstations",
+  "product_slug": "cloud-workstations",
+  "feature_name": "One-click launch and connect page",
+  "feature_slug": "one-click-launch-and-connect-page",
+  "summary": "Cloud Workstations provides a launch page in the Google Cloud console that automatically starts a workstation and connects to it.",
+  "extended_definition": "Cloud Workstations provides a launch page in the Google Cloud console that automatically starts a workstation and connects to it.",
+  "lifecycle": {
+    "latest_feature_date": "2026-02-18",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/workstations/docs/configure-vpc-service-controls-private-clusters",
+      "https://docs.cloud.google.com/workstations/docs/create-workstation",
+      "https://docs.cloud.google.com/workstations/docs/quickstart-set-up-workstations-console",
+      "https://docs.cloud.google.com/workstations/docs/tutorial-help-secure-workstations-api-using-beyondcorp-enterprise"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Create and launch a workstation \\_|\\_ Cloud Workstations \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/workstations/docs/create-workstation",
+        "source_id": "site-docs-root",
+        "final_score": 242,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Optional: You can also click the arrow drop down expander arrow next to Launch and select from the list of launch options: Start Connect to port 80 (default) Connect to web app on port Port forwarding Connect using SSH Launch with JetBrains Gateway (if you are using a JetBrains IDE) The Start option starts the workstation without launching it.",
+          "In the list of workstations, find your workstation name and click Launch .",
+          "To follow step-by-step guidance for this task directly in the Google Cloud console, click Guide me : Guide me Before you begin Before you begin using Cloud Workstations, be sure that you have the required permissions and that you complete these required setup steps."
+        ]
+      },
+      {
+        "title": "\"Quickstart: Set up workstations \\_|\\_ Cloud Workstations \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/workstations/docs/quickstart-set-up-workstations-console",
+        "source_id": "site-docs-root-2",
+        "final_score": 232,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "In the list of workstations, find your workstation name and click Launch .",
+          "To follow step-by-step guidance for this task directly in the Google Cloud console, click Guide me : Guide me Before you begin This guide covers steps for administrators to set up Cloud Workstations and for developers to use the workstations.",
+          "Workstation clusters define a group of workstations in a particular region, manage workstations during their lifecycle, and provide configurable network connectivity."
+        ]
+      },
+      {
+        "title": "\"Help secure the Cloud Workstations API using Chrome Enterprise Premium \\_\\",
+        "url": "https://docs.cloud.google.com/workstations/docs/tutorial-help-secure-workstations-api-using-beyondcorp-enterprise",
+        "source_id": "site-docs-root-2",
+        "final_score": 228,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Access the Code OSS for Cloud Workstations URL that appears after you launch your workstation and connect to port 80.",
+          "Test that access to the workstation API from a corporate-owned device is enabled: Developers with Chrome Enterprise Premium and Cloud Workstations access should be able to create their workstation and then launch their workstation .",
+          "Test the DLP rule Now that the DLP rule is added, you can test from Cloud Workstations in Chrome: In a new Chrome tab, enter chrome://policy and click Reload policies to make sure the Chrome policy is updated."
+        ]
+      },
+      {
+        "title": "\"Configure VPC Service Controls and private clusters \\_|\\_ Cloud Workstations\\",
+        "url": "https://docs.cloud.google.com/workstations/docs/configure-vpc-service-controls-private-clusters",
+        "source_id": "site-docs-root",
+        "final_score": 225,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To find your clusterHostname , navigate to the Cloud Workstations Cluster management page in the Google Cloud console, and then click your workstation cluster to view the hostname.",
+          "On the Zone details page, click Add Standard .",
+          "Create a DNS record To add a record that maps .<clusterHostname> to the IP address reserved when you created the Private Service Connect endpoint, follow these steps: In the Google Cloud console, go to the Cloud DNS zones page."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workstations/docs/create-workstation",
+        "https://docs.cloud.google.com/workstations/docs/quickstart-set-up-workstations-console",
+        "https://docs.cloud.google.com/workstations/docs/tutorial-help-secure-workstations-api-using-beyondcorp-enterprise",
+        "https://docs.cloud.google.com/workstations/docs/configure-vpc-service-controls-private-clusters"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workstations/docs/create-workstation",
+        "https://docs.cloud.google.com/workstations/docs/quickstart-set-up-workstations-console",
+        "https://docs.cloud.google.com/workstations/docs/tutorial-help-secure-workstations-api-using-beyondcorp-enterprise",
+        "https://docs.cloud.google.com/workstations/docs/configure-vpc-service-controls-private-clusters"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workstations/docs/create-workstation",
+        "https://docs.cloud.google.com/workstations/docs/quickstart-set-up-workstations-console",
+        "https://docs.cloud.google.com/workstations/docs/tutorial-help-secure-workstations-api-using-beyondcorp-enterprise",
+        "https://docs.cloud.google.com/workstations/docs/configure-vpc-service-controls-private-clusters"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workstations/docs/create-workstation",
+        "https://docs.cloud.google.com/workstations/docs/quickstart-set-up-workstations-console",
+        "https://docs.cloud.google.com/workstations/docs/tutorial-help-secure-workstations-api-using-beyondcorp-enterprise",
+        "https://docs.cloud.google.com/workstations/docs/configure-vpc-service-controls-private-clusters"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workstations/docs/create-workstation",
+        "https://docs.cloud.google.com/workstations/docs/quickstart-set-up-workstations-console",
+        "https://docs.cloud.google.com/workstations/docs/tutorial-help-secure-workstations-api-using-beyondcorp-enterprise",
+        "https://docs.cloud.google.com/workstations/docs/configure-vpc-service-controls-private-clusters"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workstations/docs/create-workstation",
+        "https://docs.cloud.google.com/workstations/docs/quickstart-set-up-workstations-console",
+        "https://docs.cloud.google.com/workstations/docs/tutorial-help-secure-workstations-api-using-beyondcorp-enterprise",
+        "https://docs.cloud.google.com/workstations/docs/configure-vpc-service-controls-private-clusters"
+      ]
+    }
+  ]
+}

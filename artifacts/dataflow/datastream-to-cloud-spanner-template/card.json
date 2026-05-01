@@ -1,0 +1,132 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:32.732Z",
+  "source_step08_card": "data/step-08/current/products/dataflow/card.json",
+  "product_name": "Dataflow",
+  "product_slug": "dataflow",
+  "feature_name": "Datastream to Cloud Spanner template",
+  "feature_slug": "datastream-to-cloud-spanner-template",
+  "summary": "This Google-provided template loads Datastream output into Cloud Spanner.",
+  "extended_definition": "This Google-provided template loads Datastream output into Cloud Spanner.",
+  "lifecycle": {
+    "latest_feature_date": "2022-03-17",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/cloud-spanner-change-streams-to-bigquery",
+      "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/cloud-spanner-change-streams-to-cloud-storage",
+      "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/cloud-spanner-to-vertex-vector-search"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Spanner change streams to BigQuery template \\_|\\_ Cloud Dataflow \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/cloud-spanner-change-streams-to-bigquery",
+        "source_id": "site-api-reference",
+        "final_score": 210,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Specifically:\\n\" + \" - For Cloud Spanner JSON type, the order of the members of an object is\" + \" lexicographically ordered, but there is no such guarantee for BigQuery JSON type.\\n\" + \" - Cloud Spanner supports nanoseconds TIMESTAMP type, BigQuery only supports\" + \" microseconds TIMESTAMP type.\\n\" , \"Learn more about <a href=\\\"https://cloud.google.com/spanner/docs/change-streams\\\">change\" + \" streams</a>, <a\" + \" href=\\\"https://cloud.google.com/spanner/docs/change-streams/use-dataflow\\\">how to\" + \" build change streams Dataflow pipelines</a>, and <a\" + \" href=\\\"https://cloud.google.com/spanner/docs/change-streams/use-dataflow#best practices\\\">best\" + \" practices</a>.\" }, optionsClass = SpannerChangeStreamsToBigQueryOptions . class , flexContainerName = \"googlecloud-to-googlecloud\" , documentation = \"https://cloud.google.com/dataflow/docs/guides/templates/provided/cloud-spanner-change-streams-to-bigquery\" , contactInformation = \"https://cloud.google.com/support\" , requirements = { \"The Cloud Spanner instance must exist prior to running the pipeline.\" , \"The Cloud Spanner database must exist prior to running the pipeline.\" , \"The Cloud Spanner metadata instance must exist prior to running the pipeline.\" , \"The Cloud Spanner metadata database must exist prior to running the pipeline.\" , \"The Cloud Spanner change stream must exist prior to running the pipeline.\" , \"The BigQuery dataset must exist prior to running the pipeline.\" }, streaming = true , supportsExactlyOnce = true , supportsAtLeastOnce = true ) public final class SpannerChangeStreamsToBigQuery { / String/String Coder for {@link FailsafeElement}. / public static final FailsafeElementCoder<String , String > FAILSAFE ELEMENT CODER = FailsafeElementCoder . of ( StringUtf8Coder . of (), StringUtf8Coder . of ()); private static final Logger LOG = LoggerFactory . getLogger ( SpannerChangeStreamsToBigQuery . class ); // Max number of deadletter queue retries. private static final int DLQ MAX RETRIES = 5 ; private static final String USE RUNNER V2 EXPERIMENT = \"use runner v2\" ; / Main entry point for executing the pipeline. @param args The command-line arguments to the pipeline. / public static void main ( String [] args ) { UncaughtExceptionLogger . register (); LOG . info ( \"Starting to replicate change records from Spanner change streams to BigQuery\" ); SpannerChangeStreamsToBigQueryOptions options = PipelineOptionsFactory . fromArgs ( args ) . withValidation () . as ( SpannerChangeStreamsToBigQueryOptions . class ); run ( options ); } private static void validateOptions ( SpannerChangeStreamsToBigQueryOptions options ) { if ( options . getDlqRetryMinutes () < = 0 ) { throw new IllegalArgumentException ( \"dlqRetryMinutes must be positive.\" ); } if ( options . getBigQueryChangelogTableNameTemplate () . equals ( BigQueryUtils .",
+          "Mod changeStreamsMod : input . getMods ()) { Mod mod = new Mod ( changeStreamsMod . getKeysJson (), changeStreamsMod . getNewValuesJson (), input . getCommitTimestamp (), input . getServerTransactionId (), input . isLastRecordInTransactionInPartition (), input . getRecordSequence (), input . getTableName (), input . getRowType (). stream (). map ( ModColumnType :: new ). collect ( Collectors . toList ()), input . getModType (), input . getValueCaptureType (), input . getNumberOfRecordsInTransaction (), input . getNumberOfPartitionsInTransaction ()); String modJsonString ; try { modJsonString = mod . toJson (); } catch ( IOException e ) { // Ignore exception and print bad format. modJsonString = String . format ( \"\\\"%s\\\"\" , input ); } receiver . output ( modJsonString ); } } } } Production considerations When running the Spanner Change Streams to BigQuery template in a production environment, consider the following best practices to help ensure reliability and prevent data loss: Worker provisioning and scaling Set maxNumWorkers adequately: Insufficient Dataflow workers can cause the pipeline to fall behind in processing change stream data.",
+          "Extracted from change stream\" + \" data change record.\\n\" + \"- metadata big query commit timestamp: The commit timestamp of when the row is\" + \" inserted into BigQuery.\\n\" , \"Notes:\\n\" + \"- This template does not propagate schema changes from Cloud Spanner to BigQuery.\" + \" Because performing a schema change in Cloud Spanner is likely going to break the\" + \" pipeline, you might need to recreate the pipeline after the schema change.\\n\" + \"- For OLD AND NEW VALUES and NEW VALUES value capture types, when the data change\" + \" record contains an UPDATE change, the template needs to do a stale read to Cloud\" + \" Spanner at the commit timestamp of the data change record to retrieve the unchanged\" + \" but watched columns."
+        ]
+      },
+      {
+        "title": "\"Spanner change streams to Cloud Storage template \\_|\\_ Cloud Dataflow \\_\\",
+        "url": "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/cloud-spanner-change-streams-to-cloud-storage",
+        "source_id": "site-api-reference",
+        "final_score": 202,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Output files can be written in either JSON or AVRO format, depending on the user configuration.\\n\" , \"Note that you can minimize network latency and network transport costs by running the Dataflow job from the same region as your Cloud Spanner instance or Cloud Storage bucket. \" + \"If you use sources, sinks, staging file locations, or temporary file locations that are located outside of your job's region, your data might be sent across regions. \" + \"See more about <a href=\\\"https://cloud.google.com/dataflow/docs/concepts/regional-endpoints\\\">Dataflow regional endpoints</a>.\\n\" , \"Learn more about <a href=\\\"https://cloud.google.com/spanner/docs/change-streams\\\">change streams</a>, <a href=\\\"https://cloud.google.com/spanner/docs/change-streams/use-dataflow\\\">how to build change streams Dataflow pipelines</a>, and <a href=\\\"https://cloud.google.com/spanner/docs/change-streams/use-dataflow#best practices\\\">best practices</a>.\" }, optionsClass = SpannerChangeStreamsToGcsOptions . class , flexContainerName = \"googlecloud-to-googlecloud\" , documentation = \"https://cloud.google.com/dataflow/docs/guides/templates/provided/cloud-spanner-change-streams-to-cloud-storage\" , contactInformation = \"https://cloud.google.com/support\" , requirements = { \"The Cloud Spanner instance must exist prior to running the pipeline.\" , \"The Cloud Spanner database must exist prior to running the pipeline.\" , \"The Cloud Spanner metadata instance must exist prior to running the pipeline.\" , \"The Cloud Spanner metadata database must exist prior to running the pipeline.\" , \"The Cloud Spanner change stream must exist prior to running the pipeline.\" , \"The Cloud Storage output bucket must exist prior to running the pipeline.\" }, streaming = true , supportsAtLeastOnce = true ) public class SpannerChangeStreamsToGcs { private static final Logger LOG = LoggerFactory . getLogger ( SpannerChangeStreamsToGcs . class ); private static final String USE RUNNER V2 EXPERIMENT = \"use runner v2\" ; public static void main ( String [] args ) { UncaughtExceptionLogger . register (); LOG . info ( \"Starting Input Files to GCS\" ); SpannerChangeStreamsToGcsOptions options = PipelineOptionsFactory . fromArgs ( args ). as ( SpannerChangeStreamsToGcsOptions . class ); run ( options ); } private static String getProjectId ( SpannerChangeStreamsToGcsOptions options ) { return options . getSpannerProjectId (). isEmpty () ? options . getProject () : options . getSpannerProjectId (); } public static PipelineResult run ( SpannerChangeStreamsToGcsOptions options ) { LOG . info ( \"Requested File Format is \" + options . getOutputFileFormat ()); options . setStreaming ( true ); options . setEnableStreamingEngine ( true ); final Pipeline pipeline = Pipeline . create ( options ); // Get the Spanner project, instance, database, and change stream parameters.",
+          "STREAMING , displayName = \"Cloud Spanner change streams to Cloud Storage\" , description = { \"The Cloud Spanner change streams to Cloud Storage template is a streaming pipeline that streams Spanner data change records and writes them into a Cloud Storage bucket using Dataflow Runner V2.\\n\" , \"The pipeline groups Spanner change stream records into windows based on their timestamp, with each window representing a time duration whose length you can configure with this template. \" + \"All records with timestamps belonging to the window are guaranteed to be in the window; there can be no late arrivals. \" + \"You can also define a number of output shards; the pipeline creates one Cloud Storage output file per window per shard. \" + \"Within an output file, records are unordered.",
+          "POST h tt ps : //dataflow.googleapis.com/v1b3/projects/ PROJECT ID /locations/ LOCATION /flexTemplates:launch { \"launch parameter\" : { \"jobName\" : \" JOB NAME \" , \"parameters\" : { \"spannerInstanceId\" : \" SPANNER INSTANCE ID \" , \"spannerDatabase\" : \" SPANNER DATABASE \" , \"spannerMetadataInstanceId\" : \" SPANNER METADATA INSTANCE ID \" , \"spannerMetadataDatabase\" : \" SPANNER METADATA DATABASE \" , \"spannerChangeStreamName\" : \" SPANNER CHANGE STREAM \" , \"gcsOutputDirectory\" : \" GCS OUTPUT DIRECTORY \" }, \"containerSpecGcsPath\" : \"gs://dataflow-templates- LOCATION / VERSION /flex/Spanner Change Streams to Google Cloud Storage\" , } } Replace the following: PROJECT ID : the Google Cloud project ID where you want to run the Dataflow job JOB NAME : a unique job name of your choice VERSION : the version of the template that you want to use You can use the following values: latest to use the latest version of the template, which is available in the non-dated parent folder in the bucket— gs://dataflow-templates- REGION NAME /latest/ the version name, like 2023-09-12-00 RC00 , to use a specific version of the template, which can be found nested in the respective dated parent folder in the bucket— gs://dataflow-templates- REGION NAME / Caution: The latest version of templates might update with breaking changes."
+        ]
+      },
+      {
+        "title": "\"Spanner to Vertex AI Vector Search template \\_|\\_ Cloud Dataflow \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/cloud-spanner-to-vertex-vector-search",
+        "source_id": "site-api-reference",
+        "final_score": 202,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "BATCH , displayName = \"Cloud Spanner vectors to Cloud Storage for Vertex Vector Search\" , optionsClass = SpannerToVectorEmbeddingJsonOptions . class , description = { \"The Cloud Spanner to Vector Embeddings on Cloud Storage template is a batch pipeline that exports vector embeddings data from Cloud Spanner's table to Cloud Storage in JSON format. \" + \"Vector embeddings are exported to a Cloud Storage folder specified by the user in the template parameters.\" + \" The Cloud Storage folder will contain the list of exported .json files representing vector embeddings in a format supported by Vertex AI Vector Search Index.\\n\" , \"Check <a href=\\\"https://cloud.google.com/vertex-ai/docs/vector-search/setup/format-structure#json\\\">Vector Search Format Structure</a> for additional details.\" }, documentation = \"https://cloud.google.com/dataflow/docs/guides/templates/provided/cloud-spanner-to-vertex-vector-search\" , contactInformation = \"https://cloud.google.com/support\" , requirements = { \"The Cloud Spanner database must exist.\" , \"The output Cloud Storage bucket must exist.\" , \"In addition to the Identity and Access Management (IAM) roles necessary to run Dataflow jobs, you must also have the <a href=\\\"https://cloud.google.com/spanner/docs/export#iam\\\">appropriate IAM roles</a> for reading your Cloud Spanner data and writing to your Cloud Storage bucket.\" }) @SuppressWarnings ( \"unused\" ) public class SpannerVectorEmbeddingExport { private static final Logger LOG = LoggerFactory . getLogger ( SpannerVectorEmbeddingExport . class ); / Custom PipelineOptions. / public interface SpannerToVectorEmbeddingJsonOptions extends PipelineOptions { @TemplateParameter.ProjectId ( order = 10 , groupName = \"Source\" , description = \"Cloud Spanner Project Id\" , helpText = \"The project ID of the Spanner instance.\" ) ValueProvider<String> getSpannerProjectId (); void setSpannerProjectId ( ValueProvider<String> value ); @TemplateParameter.Text ( order = 20 , groupName = \"Source\" , regexes = { \"[a-z][a-z0-9\\\\-] [a-z0-9]\" }, description = \"Cloud Spanner instance ID\" , helpText = \"The ID of the Spanner instance to export the vector embeddings from.\" ) ValueProvider<String> getSpannerInstanceId (); void setSpannerInstanceId ( ValueProvider<String> spannerInstanceId ); @TemplateParameter.Text ( order = 30 , groupName = \"Source\" , regexes = { \"[a-z][a-z0-9 \\\\-] [a-z0-9]\" }, description = \"Cloud Spanner database ID\" , helpText = \"The ID of the Spanner database to export the vector embeddings from.\" ) ValueProvider<String> getSpannerDatabaseId (); void setSpannerDatabaseId ( ValueProvider<String> spannerDatabaseId ); @TemplateParameter.Text ( order = 40 , groupName = \"Source\" , regexes = { \"^.+$\" }, description = \"Spanner Table\" , helpText = \"The Spanner table to read from.\" ) ValueProvider<String> getSpannerTable (); void setSpannerTable ( ValueProvider<String> table ); @TemplateParameter.Text ( order = 50 , groupName = \"Source\" , description = \"Columns to Export from Spanner Table\" , helpText = \"A comma-separated list of required columns for the Vertex AI Vector Search index.",
+          "POST h tt ps : //dataflow.googleapis.com/v1b3/projects/ PROJECT ID /locations/ LOCATION /templates:launch?gcsPath=gs://dataflow-templates- LOCATION / VERSION /Cloud Spanner vectors to Cloud Storage { \"jobName\" : \" JOB NAME \" , \"parameters\" : { \"spannerProjectId\" : \" SPANNER PROJECT ID \" , \"spannerInstanceId\" : \" SPANNER INSTANCE ID \" , \"spannerDatabaseId\" : \" SPANNER DATABASE ID \" , \"spannerTable\" : \" SPANNER TABLE \" , \"spannerColumnsToExport\" : \" SPANNER COLUMNS TO EXPORT \" , \"gcsOutputFolder\" : \" GCS OUTPUT FOLDER \" , \"gcsOutputFilePrefix\" : \" GCS OUTPUT FILE PREFIX \" , }, \"environment\" : { \"maxWorkers\" : \"10\" } } Replace the following: PROJECT ID : the Google Cloud project ID where you want to run the Dataflow job JOB NAME : a unique job name of your choice VERSION : the version of the template that you want to use You can use the following values: latest to use the latest version of the template, which is available in the non-dated parent folder in the bucket— gs://dataflow-templates- REGION NAME /latest/ the version name, like 2023-09-12-00 RC00 , to use a specific version of the template, which can be found nested in the respective dated parent folder in the bucket— gs://dataflow-templates- REGION NAME / Caution: The latest version of templates might update with breaking changes.",
+          "In your shell or terminal, run the template: gcloud dataflow jobs run JOB NAME \\ --gcs-location = gs://dataflow-templates- REGION NAME / VERSION /Cloud Spanner vectors to Cloud Storage \\ --project = PROJECT ID \\ --region = REGION NAME \\ --parameters \\ spannerProjectId = SPANNER PROJECT ID , \\ spannerInstanceId = SPANNER INSTANCE ID , \\ spannerDatabaseId = SPANNER DATABASE ID , \\ spannerTable = SPANNER TABLE , \\ spannerColumnsToExport = SPANNER COLUMNS TO EXPORT , \\ gcsOutputFolder = GCS OUTPUT FOLDER , \\ gcsOutputFilePrefix = GCS OUTPUT FILE PREFIX , \\ Replace the following: JOB NAME : a unique job name of your choice VERSION : the version of the template that you want to use You can use the following values: latest to use the latest version of the template, which is available in the non-dated parent folder in the bucket— gs://dataflow-templates- REGION NAME /latest/ the version name, like 2023-09-12-00 RC00 , to use a specific version of the template, which can be found nested in the respective dated parent folder in the bucket— gs://dataflow-templates- REGION NAME / Caution: The latest version of templates might update with breaking changes."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "dataflow.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/cloud-spanner-change-streams-to-bigquery",
+        "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/cloud-spanner-change-streams-to-cloud-storage",
+        "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/cloud-spanner-to-vertex-vector-search"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/cloud-spanner-change-streams-to-bigquery",
+        "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/cloud-spanner-change-streams-to-cloud-storage",
+        "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/cloud-spanner-to-vertex-vector-search"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/cloud-spanner-change-streams-to-bigquery",
+        "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/cloud-spanner-change-streams-to-cloud-storage",
+        "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/cloud-spanner-to-vertex-vector-search"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/cloud-spanner-change-streams-to-bigquery",
+        "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/cloud-spanner-change-streams-to-cloud-storage",
+        "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/cloud-spanner-to-vertex-vector-search"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/cloud-spanner-change-streams-to-bigquery",
+        "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/cloud-spanner-change-streams-to-cloud-storage",
+        "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/cloud-spanner-to-vertex-vector-search"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/cloud-spanner-change-streams-to-bigquery",
+        "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/cloud-spanner-change-streams-to-cloud-storage",
+        "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/cloud-spanner-to-vertex-vector-search"
+      ]
+    }
+  ]
+}

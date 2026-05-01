@@ -1,0 +1,83 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:29.281Z",
+  "source_step08_card": "data/step-08/current/products/compute-engine/card.json",
+  "product_name": "Compute Engine",
+  "product_slug": "compute-engine",
+  "feature_name": "M2 machine types",
+  "feature_slug": "m2-machine-types",
+  "summary": "M2 machine types provide memory-optimized VM configurations for large in-memory workloads; M2 machine types are memory-optimized virtual machine types for large in-memory workloads.",
+  "extended_definition": "M2 machine types provide memory-optimized VM configurations for large in-memory workloads; M2 machine types are memory-optimized virtual machine types for large in-memory workloads.",
+  "lifecycle": {
+    "latest_feature_date": "2021-03-17",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/compute/docs/gpus",
+      "https://docs.cloud.google.com/compute/docs/accelerator-optimized-machines",
+      "https://docs.cloud.google.com/compute/docs/gpus"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Accelerator-optimized machine family \\_|\\_ Compute Engine \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/compute/docs/accelerator-optimized-machines",
+        "source_id": "site-docs-reference-required-6",
+        "final_score": 190,
+        "relevance": "",
+        "evidence_snippets": [
+          "VM instances created by using the A3 machine types provide the following features: Feature A3 Ultra A3 Mega, High, Edge GPU acceleration NVIDIA H200 SXM GPUs attached, which offers 141 GB GPU memory per GPU and provides larger and faster memory for supporting large language models and HPC workloads.",
+          "Google Cloud bills accelerator-optimized machine types for their attached GPUs, predefined vCPU, memory, and bundled Local SSD (if applicable).",
+          "The following table describes the host maintenance features for accelerator-optimized machine types: Machine type Number of GPUs Typical scheduled maintenance event frequency Maintenance behavior Advanced notification for scheduled maintenance On-demand maintenance Simulate maintenance A4X Max 2 and A4X 2 4 Minimum of 90 days Terminates with Local SSD data persistence 90 days Yes No A4 2 8 Minimum of 90 days Terminates with Local SSD data persistence 90 days Yes No A3 Ultra 2 8 Minimum of 90 days Terminates with Local SSD data persistence 90 days Yes No A3 Mega 2 and A3 High 2 8 Minimum of 30 days 1 Terminate and restart 7 days Yes Yes A3 High 1, 2, 4 Minimum of 30 days 1 Terminate and restart 7 days 1 No Yes A3 Edge 8 Minimum of 30 days Terminate and restart 7 days Yes Yes A2 Ultra 1, 2, 4, 8 Minimum of 30 days Terminate and restart 7 days Yes (8 GPUs only) Yes A2 Standard 1, 2, 4, 8, or 16 Minimum of 30 days Terminate and restart 7 days Yes (8 and 16 GPUs only) Yes G4 1, 2, or 4 Minimum of 30 days Terminate and restart."
+        ]
+      },
+      {
+        "title": "GPU machine types \\_|\\_ Compute Engine \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/compute/docs/gpus",
+        "source_id": "site-docs-root",
+        "final_score": 188,
+        "relevance": "",
+        "evidence_snippets": [
+          "Machine type (GPU model) FP64 (TFLOPS) FP32 (TFLOPS) A3 Ultra (H200) 34 67 A3 Mega, High, Edge (H100) 34 67 A2 Ultra (A100 80GB) 9.7 19.5 A2 Standard (A100 40GB) 9.7 19.5 G2 (L4) 0.5 30.3 Volta, Pascal, and Turing architectures The N1 machine types use the following GPU architectures: Volta (V100) Pascal (P100 and P4) Turing (T4) Tensor Core NVIDIA's Turing and Volta architectures, available on N1 instances, provide Tensor Core support for mixed-precision, INT8, and INT4 operations, offering foundational acceleration for deep learning inference.",
+          "Attached NVIDIA H100 GPUs Machine type vCPU count 1 Instance memory (GB) Attached Local SSD (GiB) Physical NIC count Maximum network bandwidth (Gbps) 2 GPU count GPU memory 3 (GB HBM3) a3-megagpu-8g 208 1,872 6,000 9 1,800 8 640 A3 High Note: When provisioning a3-highgpu-1g , a3-highgpu-2g , or a3-highgpu-4g machine types, you must create instances by using Spot VMs or Flex-start VMs.",
+          "G4 machine series G4 accelerator-optimized machine types use NVIDIA RTX PRO 6000 Blackwell Server Edition GPUs ( nvidia-rtx-pro-6000 ) and are suitable for NVIDIA Omniverse simulation workloads, graphics-intensive applications, video transcoding, and virtual desktops."
+        ]
+      },
+      {
+        "title": "GPU machine types \\_|\\_ Compute Engine \\_|\\_ Google Cloud Documentation",
+        "url": "https://developers.google.com/compute/docs/gpus",
+        "source_id": "site-docs-root-3",
+        "final_score": 188,
+        "relevance": "",
+        "evidence_snippets": [
+          "Machine type (GPU model) FP64 (TFLOPS) FP32 (TFLOPS) A3 Ultra (H200) 34 67 A3 Mega, High, Edge (H100) 34 67 A2 Ultra (A100 80GB) 9.7 19.5 A2 Standard (A100 40GB) 9.7 19.5 G2 (L4) 0.5 30.3 Volta, Pascal, and Turing architectures The N1 machine types use the following GPU architectures: Volta (V100) Pascal (P100 and P4) Turing (T4) Tensor Core NVIDIA's Turing and Volta architectures, available on N1 instances, provide Tensor Core support for mixed-precision, INT8, and INT4 operations, offering foundational acceleration for deep learning inference.",
+          "Attached NVIDIA H100 GPUs Machine type vCPU count 1 Instance memory (GB) Attached Local SSD (GiB) Physical NIC count Maximum network bandwidth (Gbps) 2 GPU count GPU memory 3 (GB HBM3) a3-megagpu-8g 208 1,872 6,000 9 1,800 8 640 A3 High Note: When provisioning a3-highgpu-1g , a3-highgpu-2g , or a3-highgpu-4g machine types, you must create instances by using Spot VMs or Flex-start VMs.",
+          "G4 machine series G4 accelerator-optimized machine types use NVIDIA RTX PRO 6000 Blackwell Server Edition GPUs ( nvidia-rtx-pro-6000 ) and are suitable for NVIDIA Omniverse simulation workloads, graphics-intensive applications, video transcoding, and virtual desktops."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "developers.google.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": []
+}

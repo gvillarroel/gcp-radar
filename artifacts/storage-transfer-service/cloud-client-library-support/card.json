@@ -1,0 +1,117 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:47.727Z",
+  "source_step08_card": "data/step-08/current/products/storage-transfer-service/card.json",
+  "product_name": "Storage Transfer Service",
+  "product_slug": "storage-transfer-service",
+  "feature_name": "Cloud Client Library support",
+  "feature_slug": "cloud-client-library-support",
+  "summary": "Storage Transfer Service now supports Google Cloud Client Libraries as the recommended programmatic method for calling its APIs.",
+  "extended_definition": "Storage Transfer Service now supports Google Cloud Client Libraries as the recommended programmatic method for calling its APIs.",
+  "lifecycle": {
+    "latest_feature_date": "2022-03-03",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/storage-transfer/docs/libraries",
+      "https://docs.cloud.google.com/storage-transfer/docs/migration-guide",
+      "https://docs.cloud.google.com/storage-transfer/docs/reference/libraries"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Storage Transfer Service client libraries \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/storage-transfer/docs/libraries",
+        "source_id": "site-api-reference",
+        "final_score": 132,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For more information, see Set up authentication for a local development environment . // Imports the Google Cloud client library const { StorageTransferServiceClient , } = require ( ' @google-cloud/storage-transfer ' ); / TODO(developer): Uncomment the following lines before running the sample. / // Your project id // const projectId = 'my-project' // The ID of the GCS bucket to transfer data from // const gcsSourceBucket = 'my-source-bucket' // The ID of the GCS bucket to transfer data to // const gcsSinkBucket = 'my-sink-bucket' // Creates a client const client = new StorageTransferServiceClient (); / Creates a one-time transfer job. / async function quickstart () { // Creates a request to transfer from the source bucket to // the sink bucket const createRequest = { transferJob : { projectId : projectId , transferSpec : { gcsDataSource : { bucketName : gcsSourceBucket }, gcsDataSink : { bucketName : gcsSinkBucket }, }, status : ' ENABLED ' , }, }; // Runs the request and creates the job const [ transferJob ] = await client . createTransferJob ( createRequest ); const runRequest = { jobName : transferJob . name , projectId : projectId , }; await client . runTransferJob ( runRequest ); console . log ( Created and ran a transfer job from ${ gcsSourceBucket } to ${ gcsSinkBucket } with name ${ transferJob . name } ); } quickstart (); PHP To learn how to install and use the client library for Storage Transfer Service, see Storage Transfer Service client libraries .",
+          "ENABLED ) . build (); TransferJob response = storageTransfer . createTransferJob ( CreateTransferJobRequest . newBuilder (). setTransferJob ( transferJob ). build ()); storageTransfer . runTransferJobAsync ( RunTransferJobRequest . newBuilder () . setProjectId ( projectId ) . setJobName ( response . getName ()) . build ()) . get (); System . out . println ( \"Created and ran transfer job between two GCS buckets with name \" + response . getName ()); } } } Node.js To learn how to install and use the client library for Storage Transfer Service, see Storage Transfer Service client libraries .",
+          "ENABLED , \"transfer spec\" : { \"gcs data source\" : { \"bucket name\" : source bucket , }, \"gcs data sink\" : { \"bucket name\" : sink bucket , }, }, } } ) transfer job = client . create transfer job ( transfer job request ) client . run transfer job ({ \"job name\" : transfer job . name , \"project id\" : project id }) print ( f \"Created and ran transfer job: { transfer job . name } \" ) Ruby To learn how to install and use the client library for Storage Transfer Service, see Storage Transfer Service client libraries ."
+        ]
+      },
+      {
+        "title": "Storage Transfer Service client libraries \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/storage-transfer/docs/reference/libraries",
+        "source_id": "site-docs-reference",
+        "final_score": 132,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For more information, see Set up authentication for a local development environment . // Imports the Google Cloud client library const { StorageTransferServiceClient , } = require ( ' @google-cloud/storage-transfer ' ); / TODO(developer): Uncomment the following lines before running the sample. / // Your project id // const projectId = 'my-project' // The ID of the GCS bucket to transfer data from // const gcsSourceBucket = 'my-source-bucket' // The ID of the GCS bucket to transfer data to // const gcsSinkBucket = 'my-sink-bucket' // Creates a client const client = new StorageTransferServiceClient (); / Creates a one-time transfer job. / async function quickstart () { // Creates a request to transfer from the source bucket to // the sink bucket const createRequest = { transferJob : { projectId : projectId , transferSpec : { gcsDataSource : { bucketName : gcsSourceBucket }, gcsDataSink : { bucketName : gcsSinkBucket }, }, status : ' ENABLED ' , }, }; // Runs the request and creates the job const [ transferJob ] = await client . createTransferJob ( createRequest ); const runRequest = { jobName : transferJob . name , projectId : projectId , }; await client . runTransferJob ( runRequest ); console . log ( Created and ran a transfer job from ${ gcsSourceBucket } to ${ gcsSinkBucket } with name ${ transferJob . name } ); } quickstart (); PHP To learn how to install and use the client library for Storage Transfer Service, see Storage Transfer Service client libraries .",
+          "ENABLED ) . build (); TransferJob response = storageTransfer . createTransferJob ( CreateTransferJobRequest . newBuilder (). setTransferJob ( transferJob ). build ()); storageTransfer . runTransferJobAsync ( RunTransferJobRequest . newBuilder () . setProjectId ( projectId ) . setJobName ( response . getName ()) . build ()) . get (); System . out . println ( \"Created and ran transfer job between two GCS buckets with name \" + response . getName ()); } } } Node.js To learn how to install and use the client library for Storage Transfer Service, see Storage Transfer Service client libraries .",
+          "ENABLED , \"transfer spec\" : { \"gcs data source\" : { \"bucket name\" : source bucket , }, \"gcs data sink\" : { \"bucket name\" : sink bucket , }, }, } } ) transfer job = client . create transfer job ( transfer job request ) client . run transfer job ({ \"job name\" : transfer job . name , \"project id\" : project id }) print ( f \"Created and ran transfer job: { transfer job . name } \" ) Ruby To learn how to install and use the client library for Storage Transfer Service, see Storage Transfer Service client libraries ."
+        ]
+      },
+      {
+        "title": "\"Migrating to the Storage Transfer Service Cloud Client Library \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/storage-transfer/docs/migration-guide",
+        "source_id": "site-api-reference",
+        "final_score": 124,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Java Updating dependencies To switch to the new library, replace your dependency on google-api-services-storagetransfer with google-cloud-storage-transfer . <dependency> <groupId>com.google.cloud</groupId> <artifactId>google-cloud-storage-transfer</artifactId> <version>0.2.3</version> </dependency> If you are using Gradle without BOM, add this to your dependencies: implementation ' com . google . cloud : google - cloud - storage - transfer : 0.2.3 ' < dependencyManagement > < dependencies > < dependency > < groupId>com . google . cloud < / groupId > < artifactId>libraries - bom < / artifactId > < version>24 .1.0 < / version > < type>pom < / type > < scope>import < / scope > < / dependency > < / dependencies > < / dependencyManagement > < dependencies > < dependency > < groupId>com . google . cloud < / groupId > < artifactId>google - cloud - storage - transfer < / artifactId > < / dependency > For the most part, code can be pretty easily converted from the API Client Library to the Cloud Client Library.",
+          "StorageTransferServiceClient () Sample comparisons To illustrate the differences between the two libraries, here are the old API Client Samples side-by-side with their equivalents in the Cloud Client Library.",
+          "ENABLED , \"schedule\" : { \"schedule start date\" : one time schedule , \"schedule end date\" : one time schedule , }, \"transfer spec\" : { \"aws s3 data source\" : { \"bucket name\" : source bucket , \"aws access key\" : { \"access key id\" : aws access key id , \"secret access key\" : aws secret access key , }, }, \"gcs data sink\" : { \"bucket name\" : sink bucket , }, }, } } ) result = client . create transfer job ( transfer job request ) print ( f \"Created transferJob: { result . name } \" ) Transfer to nearline API Client Library def main ( description , project id , start date , start time , source bucket , sink bucket ): \"\"\"Create a daily transfer from Standard to Nearline Storage class.\"\"\" storagetransfer = googleapiclient . discovery . build ( \"storagetransfer\" , \"v1\" ) Edit this template with desired parameters. transfer job = { \"description\" : description , \"status\" : \"ENABLED\" , \"projectId\" : project id , \"schedule\" : { \"scheduleStartDate\" : { \"day\" : start date . day , \"month\" : start date . month , \"year\" : start date . year , }, \"startTimeOfDay\" : { \"hours\" : start time . hour , \"minutes\" : start time . minute , \"seconds\" : start time . second , }, }, \"transferSpec\" : { \"gcsDataSource\" : { \"bucketName\" : source bucket }, \"gcsDataSink\" : { \"bucketName\" : sink bucket }, \"objectConditions\" : { \"minTimeElapsedSinceLastModification\" : \"2592000s\" # 30 days }, \"transferOptions\" : { \"deleteObjectsFromSourceAfterTransfer\" : \"true\" }, }, } result = storagetransfer . transferJobs () . create ( body = transfer job ) . execute () print ( \"Returned transferJob: {} \" . format ( json . dumps ( result , indent = 4 ))) Cloud Client Library Note the import of google.protobuf.duration pb2.Duration . from datetime import datetime from google.cloud import storage transfer from google.protobuf.duration pb2 import Duration def create daily nearline 30 day migration ( project id : str , description : str , source bucket : str , sink bucket : str , start date : datetime , ): \"\"\"Create a daily migration from a GCS bucket to a Nearline GCS bucket for objects untouched for 30 days.\"\"\" client = storage transfer ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.cloud",
+      "pb2.Duration"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/libraries",
+        "https://docs.cloud.google.com/storage-transfer/docs/reference/libraries",
+        "https://docs.cloud.google.com/storage-transfer/docs/migration-guide"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/libraries",
+        "https://docs.cloud.google.com/storage-transfer/docs/reference/libraries",
+        "https://docs.cloud.google.com/storage-transfer/docs/migration-guide"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/libraries",
+        "https://docs.cloud.google.com/storage-transfer/docs/reference/libraries",
+        "https://docs.cloud.google.com/storage-transfer/docs/migration-guide"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/libraries",
+        "https://docs.cloud.google.com/storage-transfer/docs/reference/libraries",
+        "https://docs.cloud.google.com/storage-transfer/docs/migration-guide"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,111 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:42.371Z",
+  "source_step08_card": "data/step-08/current/products/looker/card.json",
+  "product_name": "Looker",
+  "product_slug": "looker",
+  "feature_name": "SQL Runner schema and table limits",
+  "feature_slug": "sql-runner-schema-and-table-limits",
+  "summary": "The SQL Runner schema and table limit preview increases the number of schemas that can be returned to SQL Runner.",
+  "extended_definition": "The SQL Runner schema and table limit preview increases the number of schemas that can be returned to SQL Runner.",
+  "lifecycle": {
+    "latest_feature_date": "2026-02-09",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/exporting-data",
+      "https://docs.cloud.google.com/looker/docs/admin-panel-general-labs",
+      "https://docs.cloud.google.com/looker/docs/admin-panel-general-preview-features"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Admin settings - Preview Features \\_|\\_ Looker \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/looker/docs/admin-panel-general-preview-features",
+        "source_id": "site-docs-reference",
+        "final_score": 186,
+        "relevance": "",
+        "evidence_snippets": [
+          "Increase SQL Runner Schema and Table Limit This preview feature is disabled by default.",
+          "When enabled,the Increased Row Limit preview feature lets admins set row limits up to 50,000 rows or datapoints for map charts , scatterplot charts , and table charts .",
+          "When this preview feature is enabled, the total number of schemas that can be returned to SQL Runner increases to 12,000."
+        ]
+      },
+      {
+        "title": "Admin settings - Preview Features \\_|\\_ Looker \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/looker/docs/admin-panel-general-labs",
+        "source_id": "site-docs-reference",
+        "final_score": 176,
+        "relevance": "",
+        "evidence_snippets": [
+          "Increase SQL Runner Schema and Table Limit This preview feature is disabled by default.",
+          "When enabled,the Increased Row Limit preview feature lets admins set row limits up to 50,000 rows or datapoints for map charts , scatterplot charts , and table charts .",
+          "When this preview feature is enabled, the total number of schemas that can be returned to SQL Runner increases to 12,000."
+        ]
+      },
+      {
+        "title": "Export table data to Cloud Storage \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/exporting-data",
+        "source_id": "site-docs-reference-required-6",
+        "final_score": 131,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Both \\t and tab are allowed for tab delimiters. --print header : When specified, print header rows for formats that have headers such as CSV. bq extract --location= location \\ --destination format format \\ --compression compression type \\ --field delimiter delimiter \\ --print header= boolean \\ project id:dataset.table \\ gs:// bucket / filename.ext Where: location is the name of your location.",
+          "If the format is not specified, 'CSV' will be used. $format = 'NEWLINE DELIMITED JSON'; // Create the extract job $extractConfig = $table->extract($destinationUri)->destinationFormat($format); // Run the job $job = $table->runJob($extractConfig); // Waits for the job to complete printf('Exported %s to %s' .",
+          "Go to BigQuery In the query editor, enter the following statement: EXPORT DATA OPTIONS ( uri = 'gs://bucket/folder/ .csv' , format = 'CSV' , overwrite = true , header = true , field delimiter = ';' ) AS ( SELECT field1 , field2 FROM mydataset . table1 ORDER BY field1 ); Click play circle Run ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "dataset.table",
+      "filename.ext",
+      "mydataset.mytable",
+      "myfile.json"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/admin-panel-general-preview-features",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-general-labs",
+        "https://docs.cloud.google.com/bigquery/docs/exporting-data"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/admin-panel-general-preview-features",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-general-labs",
+        "https://docs.cloud.google.com/bigquery/docs/exporting-data"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/admin-panel-general-preview-features",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-general-labs",
+        "https://docs.cloud.google.com/bigquery/docs/exporting-data"
+      ]
+    }
+  ]
+}

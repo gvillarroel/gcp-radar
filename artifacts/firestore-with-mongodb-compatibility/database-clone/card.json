@@ -1,0 +1,219 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:36.933Z",
+  "source_step08_card": "data/step-08/current/products/firestore-with-mongodb-compatibility/card.json",
+  "product_name": "Firestore with MongoDB compatibility",
+  "product_slug": "firestore-with-mongodb-compatibility",
+  "feature_name": "Database clone",
+  "feature_slug": "database-clone",
+  "summary": "Provides a database cloning feature for Firestore with MongoDB compatibility.",
+  "extended_definition": "Provides a database cloning feature for Firestore with MongoDB compatibility.",
+  "lifecycle": {
+    "latest_feature_date": "2025-10-27",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/cmek",
+      "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/connect",
+      "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/create-databases",
+      "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/disaster-recovery"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Create and manage databases \\_|\\_ Firestore with MongoDB compatibility \\_\\",
+        "url": "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/create-databases",
+        "source_id": "site-docs-root",
+        "final_score": 268,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Required permissions To manage databases, you need the following permissions: Create a database: datastore.databases.create Read database configuration: datastore.databases.getMetadata Configure a database: datastore.databases.update Delete a database: datastore.databases.delete Clone a database: datastore.databases.clone Create a database To create a Firestore with MongoDB compatibility database, use one of the following methods: Google Cloud console In the Google Cloud console, go to the Databases page.",
+          "Example: gcloud firestore databases clone \\ --source-database = 'projects/example-project/databases/example-source-db' \\ --snapshot-time = '2025-06-01T10:20:00.00Z' \\ --destination-database = 'example-dest-db' If you want to bind to some tags while cloning a database, use the previous command with the --tags flag, which is an optional list of tags KEY=VALUE pairs to bind.",
+          "The following example shows how to configure CMEK encryption for the cloned database: gcloud firestore databases clone \\ --source-database = 'projects/example-project/databases/example-source-db' \\ --snapshot-time = '2025-06-01T10:20:00.00Z' \\ --destination-database = 'example-dest-db' \\ --encryption-type = 'customer-managed-encryption' \\ --kms-key-name = 'projects/example-project/locations/us-central1/keyRings/example-key-ring/cryptoKeys/example-key' Configure per-database access permissions You can use Identity and Access Management Conditions to configure access permissions on a per-database level."
+        ]
+      },
+      {
+        "title": "\"Customer-managed encryption keys (CMEK) \\_|\\_ Firestore with MongoDB compatibility\\",
+        "url": "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/cmek",
+        "source_id": "site-iam-reference",
+        "final_score": 262,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For more information about cloning a CMEK-protected Firestore with MongoDB compatibility database, see Clone a CMEK-protected database .",
+          "For more information about cloning a Firestore with MongoDB compatibility database, see Clone a database .",
+          "In the event of a key being unavailable, to preserve data beyond the seven days limit, we recommend that you enable backups for your Firestore with MongoDB compatibility CMEK database with the required retention period."
+        ]
+      },
+      {
+        "title": "\"Plan disaster recovery \\_|\\_ Firestore with MongoDB compatibility \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/disaster-recovery",
+        "source_id": "site-iam-reference",
+        "final_score": 258,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Disaster recovery planning for cloud infrastructure outages To protect against potential cloud infrastructure disruptions in Google Cloud such as a zone or region experiencing an outage, Firestore with MongoDB compatibility replicates data across multiple replica databases.",
+          "Home Documentation Databases Firestore with MongoDB compatibility Guides Send feedback Stay organized with collections Save and categorize content based on your preferences.",
+          "Firestore with MongoDB compatibility automatically handles replication for you and doesn't require additional configuration or provisioning."
+        ]
+      },
+      {
+        "title": "\"Authenticate and connect to a database \\_|\\_ Firestore with MongoDB compatibility\\",
+        "url": "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/connect",
+        "source_id": "site-iam-reference",
+        "final_score": 229,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "CopyFrom ( updated policy ) final policy = client . set iam policy ( set policy request ) print ( f 'Policy updated successfully { final policy } ' ) def provision firestore user creds and iam ( project id : str , database id : str , user name : str ): \"\"\"Provision user credentials and configure an IAM policy.\"\"\" user creds = create user creds ( project id , database id , user name ) Note the password returned in the UserCreds proto - it cannot be retrieved again after the initial call to the create user creds API. print ( f 'Created credentials for username: { user name } ' ) print ( f 'IAM principal: { user creds . resource identity . principal } ' ) print ( f 'Password: [ { user creds . secure password } ]' ) Provision an IAM binding for the principal associated with these user credentials. update iam policy for user creds ( project id , database id , user name , user creds ) Emit the password again print ( f 'Successfully configured IAM policy for database: { database id } ,' f ' username: { user name } ' ) print ( f 'Please make a note of the password: [ { user creds . secure password } ]' ) Use the following connection string to connect to your database with SCRAM: mongodb : // USERNAME : PASSWORD @ UID .",
+          "Create a user and connect to a database To create a user for your Firestore with MongoDB compatibility database, use one of the following method: Google Cloud console In the Google Cloud console, go to the Databases page.",
+          "Authenticate and connect to a database Connection requirements The following are required for Firestore with MongoDB compatibility clients: Drivers must connect in load balanced mode."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.auth",
+      "datastore.databases.clone",
+      "datastore.databases.create",
+      "datastore.databases.delete",
+      "datastore.databases.getMetadata",
+      "datastore.databases.update"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/create-databases",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/cmek",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/disaster-recovery",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/connect"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/create-databases",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/cmek",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/disaster-recovery",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/connect"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/create-databases",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/cmek",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/disaster-recovery",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/connect"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/create-databases",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/cmek",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/disaster-recovery",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/connect"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/create-databases",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/cmek",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/disaster-recovery",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/connect"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/create-databases",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/cmek",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/disaster-recovery",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/connect"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/create-databases",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/cmek",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/disaster-recovery",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/connect"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/create-databases",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/cmek",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/disaster-recovery",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/connect"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/create-databases",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/cmek",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/disaster-recovery",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/connect"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/create-databases",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/cmek",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/disaster-recovery",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/connect"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/create-databases",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/cmek",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/disaster-recovery",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/connect"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/create-databases",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/cmek",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/disaster-recovery",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/connect"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/create-databases",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/cmek",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/disaster-recovery",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/connect"
+      ]
+    }
+  ]
+}

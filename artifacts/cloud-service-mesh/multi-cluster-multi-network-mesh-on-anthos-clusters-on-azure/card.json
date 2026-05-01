@@ -1,0 +1,219 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:26.404Z",
+  "source_step08_card": "data/step-08/current/products/cloud-service-mesh/card.json",
+  "product_name": "Cloud Service Mesh",
+  "product_slug": "cloud-service-mesh",
+  "feature_name": "Multi-cluster multi-network mesh on Anthos clusters on Azure",
+  "feature_slug": "multi-cluster-multi-network-mesh-on-anthos-clusters-on-azure",
+  "summary": "Anthos Service Mesh supports multi-cluster, multi-network meshes on Anthos clusters on Azure; Anthos Service Mesh supports multi-cluster, multi-network meshes on Anthos clusters on Azure.",
+  "extended_definition": "Anthos Service Mesh supports multi-cluster, multi-network meshes on Anthos clusters on Azure; Anthos Service Mesh supports multi-cluster, multi-network meshes on Anthos clusters on Azure.",
+  "lifecycle": {
+    "latest_feature_date": "2023-04-04",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/service-mesh/docs/enable-optional-features-in-cluster",
+      "https://docs.cloud.google.com/service-mesh/docs/onboarding/provision-control-plane",
+      "https://docs.cloud.google.com/service-mesh/docs/supported-features-in-cluster",
+      "https://docs.cloud.google.com/service-mesh/docs/tutorials/migrate-in-cluster-to-managed-on-new-cluster"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Provision a managed Cloud Service Mesh control plane on GKE \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/service-mesh/docs/onboarding/provision-control-plane",
+        "source_id": "site-docs-root",
+        "final_score": 306,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Grant service accounts in the fleet project permission to access the network project: gcloud projects add-iam-policy-binding \" NETWORK PROJECT ID \" \\ --member \"serviceAccount:service- FLEET PROJECT NUMBER @gcp-sa-servicemesh.iam.gserviceaccount.com\" \\ --role roles/anthosservicemesh.serviceAgent Cluster-level settings When you're ready to create clusters to use with Cloud Service Mesh, create and register them in a single step with Google Cloud CLI to use the default configuration.",
+          "Cloud Service Mesh can use multiple GKE clusters in a single-project single-network environment or a multi-project single-network environment.",
+          "Grant service accounts in the fleet project permission to access the network project: gcloud projects add-iam-policy-binding \" NETWORK PROJECT ID \" \\ --member \"serviceAccount:service- FLEET PROJECT NUMBER @gcp-sa-servicemesh.iam.gserviceaccount.com\" \\ --role roles/anthosservicemesh.serviceAgent If your cluster's project differs from your fleet host project, you must allow Cloud Service Mesh service accounts in the fleet project to access the cluster project, and enable required APIs on the cluster project."
+        ]
+      },
+      {
+        "title": "\"Migrate in-cluster to managed control plane on a new cluster \\_|\\_ Cloud\\",
+        "url": "https://docs.cloud.google.com/service-mesh/docs/tutorials/migrate-in-cluster-to-managed-on-new-cluster",
+        "source_id": "site-docs-reference",
+        "final_score": 282,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Set the IP address of the managed Cloud Service Mesh cluster's ingress gateway inside the ServiceEntry resource: sed -i \"s/1.2.3.4/ ${ INGRESS IP OF CLUSTER WITH MANAGED ASM } /\" anthos-service-mesh-samples/docs/migrate-to-managed-asm/service-entry.yaml Deploy the ServiceEntry to the cluster with in-cluster Cloud Service Mesh: kubectl \\ --context cluster-with-in-cluster-asm \\ --namespace onlineboutique \\ apply -f anthos-service-mesh-samples/docs/migrate-to-managed-asm/service-entry.yaml Deploy the VirtualService to the cluster with in-cluster Cloud Service Mesh: kubectl \\ --context cluster-with-in-cluster-asm \\ --namespace onlineboutique \\ apply -f anthos-service-mesh-samples/docs/migrate-to-managed-asm/virtual-service-in-cluster-asm.yaml Visit the IP address of the ingress gateway of the cluster with in-cluster Cloud Service Mesh, in your web browser: kubectl \\ --context cluster-with-in-cluster-asm \\ --namespace asm-ingress \\ get service Refresh the Online Boutique homepage multiple times, and check the footer of the page each time.",
+          "Create the namespace: kubectl \\ --context cluster-with-csm \\ create namespace asm-ingress Use the istio.io/rev=asm-managed label to add the asm-ingress namespace to the service mesh and enable automatic sidecar proxy injection. kubectl \\ --context cluster-with-csm \\ label namespace asm-ingress 'istio.io/rev=asm-managed' Deploy the Cloud Service Mesh ingress gateway : kubectl \\ --context cluster-with-csm \\ --namespace = asm-ingress \\ apply -f anthos-service-mesh-samples/docs/shared/asm-ingress-gateway/asm-gateway-deployment-svc.yaml kubectl \\ --context cluster-with-csm \\ --namespace = asm-ingress \\ apply -f anthos-service-mesh-samples/docs/shared/asm-ingress-gateway/gateway.yaml The output is similar to: namespace/asm-ingress configured serviceaccount/asm-ingressgateway configured service/asm-ingressgateway configured deployment.apps/asm-ingressgateway configured gateway.networking.istio.io/asm-ingressgateway configured Note: You can browse the resources in the official Cloud Service Mesh samples GitHub repository .",
+          "You can see the version suffixed in the name of your istiod-asm- Service by running kubectl get service --context=cluster-with-in-cluster-asm --namespace=istio-system Deploy the Cloud Service Mesh ingress gateway : kubectl \\ --context cluster-with-in-cluster-asm \\ --namespace = asm-ingress \\ apply -f anthos-service-mesh-samples/docs/shared/asm-ingress-gateway/asm-gateway-deployment-svc.yaml kubectl \\ --context cluster-with-in-cluster-asm \\ --namespace = asm-ingress \\ apply -f anthos-service-mesh-samples/docs/shared/asm-ingress-gateway/gateway.yaml The output is similar to: serviceaccount/asm-ingressgateway created service/asm-ingressgateway created deployment.apps/asm-ingressgateway created gateway.networking.istio.io/asm-ingressgateway created Note: You can browse the resources in the official Cloud Service Mesh samples GitHub repository ."
+        ]
+      },
+      {
+        "title": "\"In-cluster control plane supported features \\_|\\_ Cloud Service Mesh \\_\\",
+        "url": "https://docs.cloud.google.com/service-mesh/docs/supported-features-in-cluster",
+        "source_id": "site-docs-root",
+        "final_score": 278,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Network Feature GKE clusters on Google Cloud GKE Enterprise clusters on-premises GKE on AWS GKE on Azure Attached clusters Single network Multi-network Notes: For attached clusters, only multi-cluster meshes spanning a single platform (Microsoft AKS, Amazon EKS) are supported at this time.",
+          "Feature GKE clusters on Google Cloud Other GKE Enterprise clusters Ingress Gateway with class: istio HttpRoute using parentRef Mesh traffic Configuring Istio CRDs using the targetRef field including AuthorizationPolicy, RequestAuthentication, Telemetry and WasmPlugin Warning: Microsoft AKS attached and GKE on Azure clusters require an additional step to use the Kubernetes Gateway API.",
+          "Telemetry Metrics Feature GKE clusters on Google Cloud GKE Enterprise clusters on-premises Other GKE Enterprise clusters Cloud Monitoring (HTTP in-proxy metrics) Cloud Monitoring (TCP in-proxy metrics) Istio Telemetry API Custom adapters/backends, in or out of process Arbitrary telemetry and logging backends Prometheus metrics export to customer-installed Prometheus, Grafana, and Kiali dashboards Compatible Compatible Compatible Google Cloud Managed Service for Prometheus, not including the Cloud Service Mesh dashboard The topology graph in the Google Cloud console no longer uses the Mesh telemetry service as its data source."
+        ]
+      },
+      {
+        "title": "\"Enable optional features on an in-cluster control plane \\_|\\_ Cloud Service\\",
+        "url": "https://docs.cloud.google.com/service-mesh/docs/enable-optional-features-in-cluster",
+        "source_id": "site-docs-reference",
+        "final_score": 260,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Cloud Trace Cloud Trace is available with Cloud Service Mesh installations on the following platforms: GKE on Google Cloud GKE Enterprise clusters on-premises if you install with Cloud Service Mesh certificate authority --- apiVersion : install.istio.io/v1alpha1 kind : IstioOperator spec : meshConfig : enableTracing : true values : global : proxy : tracer : stackdriver For more information, see Accessing traces .",
+          "If you don't need to make any changes to the files in the anthos-service-mesh repository, you can use --option , and the script fetches the file from GitHub for you.",
+          "Enable optional features on an in-cluster control plane This page describes how to enable optional features on Cloud Service Mesh with an in-cluster control plane."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "anthosservicemesh.serviceAgent",
+      "asm.yaml",
+      "deployment.apps",
+      "entry.yaml",
+      "gateway.networking.istio.io",
+      "gateway.yaml",
+      "install.istio.io",
+      "istio.io",
+      "manifests.yaml",
+      "service.yaml",
+      "servicemesh.iam.gserviceaccount.com",
+      "status.loadBalancer.ingress",
+      "svc.yaml"
+    ],
+    "missing_inventory_roles": [
+      "roles/anthosservicemesh.serviceAgent"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/docs/onboarding/provision-control-plane",
+        "https://docs.cloud.google.com/service-mesh/docs/tutorials/migrate-in-cluster-to-managed-on-new-cluster",
+        "https://docs.cloud.google.com/service-mesh/docs/supported-features-in-cluster",
+        "https://docs.cloud.google.com/service-mesh/docs/enable-optional-features-in-cluster"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/docs/onboarding/provision-control-plane",
+        "https://docs.cloud.google.com/service-mesh/docs/tutorials/migrate-in-cluster-to-managed-on-new-cluster",
+        "https://docs.cloud.google.com/service-mesh/docs/supported-features-in-cluster",
+        "https://docs.cloud.google.com/service-mesh/docs/enable-optional-features-in-cluster"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/docs/onboarding/provision-control-plane",
+        "https://docs.cloud.google.com/service-mesh/docs/tutorials/migrate-in-cluster-to-managed-on-new-cluster",
+        "https://docs.cloud.google.com/service-mesh/docs/supported-features-in-cluster",
+        "https://docs.cloud.google.com/service-mesh/docs/enable-optional-features-in-cluster"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/docs/onboarding/provision-control-plane",
+        "https://docs.cloud.google.com/service-mesh/docs/tutorials/migrate-in-cluster-to-managed-on-new-cluster",
+        "https://docs.cloud.google.com/service-mesh/docs/supported-features-in-cluster",
+        "https://docs.cloud.google.com/service-mesh/docs/enable-optional-features-in-cluster"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/docs/onboarding/provision-control-plane",
+        "https://docs.cloud.google.com/service-mesh/docs/tutorials/migrate-in-cluster-to-managed-on-new-cluster",
+        "https://docs.cloud.google.com/service-mesh/docs/supported-features-in-cluster",
+        "https://docs.cloud.google.com/service-mesh/docs/enable-optional-features-in-cluster"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/docs/onboarding/provision-control-plane",
+        "https://docs.cloud.google.com/service-mesh/docs/tutorials/migrate-in-cluster-to-managed-on-new-cluster",
+        "https://docs.cloud.google.com/service-mesh/docs/supported-features-in-cluster",
+        "https://docs.cloud.google.com/service-mesh/docs/enable-optional-features-in-cluster"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/docs/onboarding/provision-control-plane",
+        "https://docs.cloud.google.com/service-mesh/docs/tutorials/migrate-in-cluster-to-managed-on-new-cluster",
+        "https://docs.cloud.google.com/service-mesh/docs/supported-features-in-cluster",
+        "https://docs.cloud.google.com/service-mesh/docs/enable-optional-features-in-cluster"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/docs/onboarding/provision-control-plane",
+        "https://docs.cloud.google.com/service-mesh/docs/tutorials/migrate-in-cluster-to-managed-on-new-cluster",
+        "https://docs.cloud.google.com/service-mesh/docs/supported-features-in-cluster",
+        "https://docs.cloud.google.com/service-mesh/docs/enable-optional-features-in-cluster"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/docs/onboarding/provision-control-plane",
+        "https://docs.cloud.google.com/service-mesh/docs/tutorials/migrate-in-cluster-to-managed-on-new-cluster",
+        "https://docs.cloud.google.com/service-mesh/docs/supported-features-in-cluster",
+        "https://docs.cloud.google.com/service-mesh/docs/enable-optional-features-in-cluster"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/docs/onboarding/provision-control-plane",
+        "https://docs.cloud.google.com/service-mesh/docs/tutorials/migrate-in-cluster-to-managed-on-new-cluster",
+        "https://docs.cloud.google.com/service-mesh/docs/supported-features-in-cluster",
+        "https://docs.cloud.google.com/service-mesh/docs/enable-optional-features-in-cluster"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/docs/onboarding/provision-control-plane",
+        "https://docs.cloud.google.com/service-mesh/docs/tutorials/migrate-in-cluster-to-managed-on-new-cluster",
+        "https://docs.cloud.google.com/service-mesh/docs/supported-features-in-cluster",
+        "https://docs.cloud.google.com/service-mesh/docs/enable-optional-features-in-cluster"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/docs/onboarding/provision-control-plane",
+        "https://docs.cloud.google.com/service-mesh/docs/tutorials/migrate-in-cluster-to-managed-on-new-cluster",
+        "https://docs.cloud.google.com/service-mesh/docs/supported-features-in-cluster",
+        "https://docs.cloud.google.com/service-mesh/docs/enable-optional-features-in-cluster"
+      ]
+    }
+  ]
+}

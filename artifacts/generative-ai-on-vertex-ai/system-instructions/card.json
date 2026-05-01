@@ -1,0 +1,133 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:37.873Z",
+  "source_step08_card": "data/step-08/current/products/generative-ai-on-vertex-ai/card.json",
+  "product_name": "Generative AI on Vertex AI",
+  "product_slug": "generative-ai-on-vertex-ai",
+  "feature_name": "System instructions",
+  "feature_slug": "system-instructions",
+  "summary": "System instructions let you guide Gemini model behavior and are supported in preview.",
+  "extended_definition": "System instructions let you guide Gemini model behavior and are supported in preview.",
+  "lifecycle": {
+    "latest_feature_date": "2024-04-09",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/context-cache/context-cache-for-tuned-gemini",
+      "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/context-cache/context-cache-use",
+      "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/glossary-genai",
+      "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/start/gemini-3-prompting-guide"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Gemini 3 prompting guide \\_|\\_ Generative AI on Vertex AI \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/start/gemini-3-prompting-guide",
+        "source_id": "site-docs-root",
+        "final_score": 240,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Distinguishing between deduction and external information In some cases, providing open-ended system instructions like do not infer or do not guess may cause the model to over-index on that instruction and fail to perform basic logic or arithmetic or synthesize information found in different parts of a document.",
+          "Home Documentation AI and ML Vertex AI Generative AI on Vertex AI Guides Send feedback Gemini 3 prompting guide Stay organized with collections Save and categorize content based on your preferences.",
+          "This guide provides a variety of prompting strategies to help you get the most from Gemini 3 on Vertex AI for a variety of use cases."
+        ]
+      },
+      {
+        "title": "\"Context Caching for Fine-tuned Gemini Models \\_|\\_ Generative AI on Vertex\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/context-cache/context-cache-for-tuned-gemini",
+        "source_id": "site-docs-root",
+        "final_score": 186,
+        "relevance": "",
+        "evidence_snippets": [
+          "When you use a context cache, you can't specify the following properties: GenerativeModel.system instructions GenerativeModel.tool config GenerativeModel.tools REST You can use REST to specify a context cache with a prompt by using the Vertex AI API to send a POST request to the publisher model endpoint.",
+          "Home Documentation AI and ML Vertex AI Generative AI on Vertex AI Guides Send feedback Context Caching for Fine-tuned Gemini Models Stay organized with collections Save and categorize content based on your preferences.",
+          "Make sure that you have the following information: The ID and the version of the tuned Gemini model The endpoint resource name for the deployed fine-tuned model Supported versions Fine-tuned Gemini models support implicit caching for the following versions: Gemini 3.1 Pro Gemini 3.1 Flash-Lite Gemini 3 Pro Gemini 3 Flash Gemini 2.5 Pro Gemini 2.5 Flash Gemini 2.5 Flash-Lite Explicit caching is supported for the following versions: Gemini 3.1 Pro Gemini 3.1 Flash-Lite Gemini 3 Pro Gemini 3 Flash Gemini 2.5 Pro Gemini 2.5 Flash Gemini 2.5 Flash-Lite Gemini 2.0 Flash (note: not supported in gemini-2.0-flash-live-preview-04-09 ) Gemini 2.0 Flash-Lite Create a context cache for a fine-tuned model The procedure for creating a context cache for a fine-tuned model largely follows the steps outlined in Create a context cache ."
+        ]
+      },
+      {
+        "title": "\"Use a context cache \\_|\\_ Generative AI on Vertex AI \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/context-cache/context-cache-use",
+        "source_id": "site-docs-root",
+        "final_score": 182,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "When you use a context cache, you can't specify the following properties: GenerativeModel.system instructions GenerativeModel.tool config GenerativeModel.tools Python Install pip install --upgrade google-genai To learn more, see the SDK reference documentation .",
+          "You shouldn't specify them again in your request: The GenerativeModel.system instructions property.",
+          "HTTP method and URL: POST https:// LOCATION -aiplatform.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION /publishers/google/models/gemini-2.0-flash-001:generateContent Request JSON body: { \"cachedContent\": \"projects/ PROJECT NUMBER /locations/ LOCATION /cachedContents/ CACHE ID \", \"contents\": [ {\"role\":\"user\",\"parts\":[{\"text\":\" PROMPT TEXT \"}]} ], \"generationConfig\": { \"maxOutputTokens\": 8192, \"temperature\": 1, \"topP\": 0.95, }, \"safetySettings\": [ { \"category\": \"HARM CATEGORY HATE SPEECH\", \"threshold\": \"BLOCK MEDIUM AND ABOVE\" }, { \"category\": \"HARM CATEGORY DANGEROUS CONTENT\", \"threshold\": \"BLOCK MEDIUM AND ABOVE\" }, { \"category\": \"HARM CATEGORY SEXUALLY EXPLICIT\", \"threshold\": \"BLOCK MEDIUM AND ABOVE\" }, { \"category\": \"HARM CATEGORY HARASSMENT\", \"threshold\": \"BLOCK MEDIUM AND ABOVE\" } ], } To send your request, choose one of these options: curl Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI ."
+        ]
+      },
+      {
+        "title": "\"Generative AI glossary \\_|\\_ Generative AI on Vertex AI \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/glossary-genai",
+        "source_id": "site-docs-root",
+        "final_score": 170,
+        "relevance": "",
+        "evidence_snippets": [
+          "Unlike the pay-as-you-go (on-demand) option, PT lets customers purchase a dedicated quota, ensuring their requests don't compete with others for model capacity.",
+          "Prompts can contain questions, instructions, contextual information, few-shot examples, and partial input for the model to complete or continue.",
+          "Vertex AI Inference A Vertex AI service that lets you use a trained machine learning (ML) model to make inferences from new, unseen data."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "aiplatform.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/start/gemini-3-prompting-guide",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/context-cache/context-cache-for-tuned-gemini",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/context-cache/context-cache-use",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/glossary-genai"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/start/gemini-3-prompting-guide",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/context-cache/context-cache-for-tuned-gemini",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/context-cache/context-cache-use",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/glossary-genai"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/start/gemini-3-prompting-guide",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/context-cache/context-cache-for-tuned-gemini",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/context-cache/context-cache-use",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/glossary-genai"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/start/gemini-3-prompting-guide",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/context-cache/context-cache-for-tuned-gemini",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/context-cache/context-cache-use",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/glossary-genai"
+      ]
+    }
+  ]
+}

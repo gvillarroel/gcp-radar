@@ -1,0 +1,136 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:30.030Z",
+  "source_step08_card": "data/step-08/current/products/confidential-space/card.json",
+  "product_name": "Confidential Space",
+  "product_slug": "confidential-space",
+  "feature_name": "Memory monitoring status check",
+  "feature_slug": "memory-monitoring-status-check",
+  "summary": "Data collaborators can check whether memory monitoring is enabled on a Confidential VM running a Confidential Space workload.",
+  "extended_definition": "Data collaborators can check whether memory monitoring is enabled on a Confidential VM running a Confidential Space workload.",
+  "lifecycle": {
+    "latest_feature_date": "2024-02-28",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/confidential-computing/confidential-space/docs/create-grant-access-confidential-resources",
+      "https://docs.cloud.google.com/confidential-computing/confidential-space/docs/deploy-workloads",
+      "https://docs.cloud.google.com/confidential-computing/confidential-space/docs/reference/attestation-assertions"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Create and grant access to confidential resources \\_|\\_ Confidential Space\\",
+        "url": "https://docs.cloud.google.com/confidential-computing/confidential-space/docs/create-grant-access-confidential-resources",
+        "source_id": "site-docs-reference",
+        "final_score": 152,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The supported platforms are as follows: GCP AMD SEV INTEL TDX Example assertion.hwmodel == \"GCP AMD SEV\" assertion.submods.confidential space.monitoring enabled Interacts with: Workload author : The monitoring memory allow launch policy.",
+          "Example assertion.submods.confidential space.monitoring enabled.memory == true assertion.submods.gce.instance id String Verifies the VM instance ID.",
+          "Additionally, data collaborators need to choose where the results of the Confidential Space workload are stored, and whether those results are unique to each collaborator, or shared."
+        ]
+      },
+      {
+        "title": "Deploy workloads \\_|\\_ Confidential Space \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/confidential-computing/confidential-space/docs/deploy-workloads",
+        "source_id": "site-docs-reference",
+        "final_score": 135,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Example tee-install-gpu-driver=true tee-monitoring-memory-enable Interacts with: Data collaborators : The instance memory monitoring enabled assertion.",
+          "Example tee-monitoring-memory-enable=true tee-mount Interacts with: Workload author : The allow mount destinations launch policy.",
+          "Workload author : The monitoring memory allow launch policy."
+        ]
+      },
+      {
+        "title": "Attestation assertions \\_|\\_ Confidential Space \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/confidential-computing/confidential-space/docs/reference/attestation-assertions",
+        "source_id": "site-api-reference-required-1",
+        "final_score": 112,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The supported platforms are as follows: GCP AMD SEV INTEL TDX Example assertion.hwmodel == \"GCP AMD SEV\" assertion.submods.confidential space.monitoring enabled Interacts with: Workload author : The monitoring memory allow launch policy.",
+          "Example assertion.submods.confidential space.monitoring enabled.memory == true assertion.submods.gce.instance id String Verifies the VM instance ID.",
+          "Workload operator : The tee-monitoring-memory-enable metadata variable."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "assertion.hwmodel",
+      "assertion.submods.confidential",
+      "assertion.submods.gce.instance",
+      "enabled.memory",
+      "space.monitoring"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/confidential-computing/confidential-space/docs/create-grant-access-confidential-resources",
+        "https://docs.cloud.google.com/confidential-computing/confidential-space/docs/deploy-workloads",
+        "https://docs.cloud.google.com/confidential-computing/confidential-space/docs/reference/attestation-assertions"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/confidential-computing/confidential-space/docs/create-grant-access-confidential-resources",
+        "https://docs.cloud.google.com/confidential-computing/confidential-space/docs/deploy-workloads",
+        "https://docs.cloud.google.com/confidential-computing/confidential-space/docs/reference/attestation-assertions"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/confidential-computing/confidential-space/docs/create-grant-access-confidential-resources",
+        "https://docs.cloud.google.com/confidential-computing/confidential-space/docs/deploy-workloads",
+        "https://docs.cloud.google.com/confidential-computing/confidential-space/docs/reference/attestation-assertions"
+      ]
+    },
+    {
+      "capability": "confidential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/confidential-computing/confidential-space/docs/create-grant-access-confidential-resources",
+        "https://docs.cloud.google.com/confidential-computing/confidential-space/docs/deploy-workloads",
+        "https://docs.cloud.google.com/confidential-computing/confidential-space/docs/reference/attestation-assertions"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/confidential-computing/confidential-space/docs/create-grant-access-confidential-resources",
+        "https://docs.cloud.google.com/confidential-computing/confidential-space/docs/deploy-workloads",
+        "https://docs.cloud.google.com/confidential-computing/confidential-space/docs/reference/attestation-assertions"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/confidential-computing/confidential-space/docs/create-grant-access-confidential-resources",
+        "https://docs.cloud.google.com/confidential-computing/confidential-space/docs/deploy-workloads",
+        "https://docs.cloud.google.com/confidential-computing/confidential-space/docs/reference/attestation-assertions"
+      ]
+    }
+  ]
+}

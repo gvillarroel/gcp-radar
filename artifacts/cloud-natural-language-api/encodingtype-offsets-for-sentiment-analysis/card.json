@@ -1,0 +1,146 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:25.520Z",
+  "source_step08_card": "data/step-08/current/products/cloud-natural-language-api/card.json",
+  "product_name": "Cloud Natural Language API",
+  "product_slug": "cloud-natural-language-api",
+  "feature_name": "EncodingType offsets for Sentiment Analysis",
+  "feature_slug": "encodingtype-offsets-for-sentiment-analysis",
+  "summary": "EncodingType support in Sentiment Analysis requests enables offset calculation for sentence-level sentiment.",
+  "extended_definition": "EncodingType support in Sentiment Analysis requests enables offset calculation for sentence-level sentiment.",
+  "lifecycle": {
+    "latest_feature_date": "2016-11-15",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/natural-language/docs/analyzing-entity-sentiment",
+      "https://docs.cloud.google.com/natural-language/docs/analyzing-sentiment",
+      "https://docs.cloud.google.com/natural-language/docs/sentiment-analysis-client-libraries",
+      "https://docs.cloud.google.com/natural-language/docs/sentiment-analysis-gcloud"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Quickstart: Perform sentiment analysis by using client libraries \\_|\\_ Cloud\\",
+        "url": "https://docs.cloud.google.com/natural-language/docs/sentiment-analysis-client-libraries",
+        "source_id": "site-docs-reference",
+        "final_score": 222,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Run the following code to perform your first text sentiment analysis: Go // Sample language-quickstart uses the Google Cloud Natural API to analyze the // sentiment of \"Hello, world!\". package main import ( \"context\" \"fmt\" \"log\" language \"cloud.google.com/go/language/apiv1\" \"cloud.google.com/go/language/apiv1/languagepb\" ) func main () { ctx := context .",
+          "Perform sentiment analysis by using client libraries This page shows you how to get started with the Cloud Natural Language API in your favorite programming language using the Google Cloud Client Libraries.",
+          "PLAIN TEXT ). build (); // Detects the sentiment of the text Sentiment sentiment = language . analyzeSentiment ( doc ). getDocumentSentiment (); System . out . printf ( \"Text: %s%n\" , text ); System . out . printf ( \"Sentiment: %s, %s%n\" , sentiment . getScore (), sentiment . getMagnitude ()); } } } Node.js Before running the example, make sure you've prepared your environment for Node.js development . async function quickstart () { // Imports the Google Cloud client library const language = require ( ' @google-cloud/language ' ); // Instantiates a client const client = new language ."
+        ]
+      },
+      {
+        "title": "\"Quickstart: Perform sentiment analysis by using the gcloud tool \\_|\\_ Cloud\\",
+        "url": "https://docs.cloud.google.com/natural-language/docs/sentiment-analysis-gcloud",
+        "source_id": "site-docs-root",
+        "final_score": 214,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The example uses the gcloud auth application-default print-access-token command to obtain an access token for the service account that you created when you set up the project. curl -X POST \\ -H \"Authorization: Bearer \" $( gcloud auth application-default print-access-token ) \\ -H \"Content-Type: application/json; charset=utf-8\" \\ \"https://language.googleapis.com/v1/documents:analyzeEntities\" \\ --data \"{ 'document':{ 'type':'PLAIN TEXT', 'content':'Michelangelo Caravaggio, Italian painter, is known for \\'The Calling of Saint Matthew\\'.' }, 'encodingType':'UTF8' }\" You should see a response similar to the following: { \"entities\" : [ { \"name\" : \"Michelangelo Caravaggio\" , \"type\" : \"PERSON\" , \"metadata\" : { \"wikipedia url\" : \"http://en.wikipedia.org/wiki/Caravaggio\" , \"mid\" : \"/m/020bg\" }, \"salience\" : 0.83047235 , \"mentions\" : [ { \"text\" : { \"content\" : \"Michelangelo Caravaggio\" , \"beginOffset\" : 0 }, \"type\" : \"PROPER\" }, { \"text\" : { \"content\" : \"painter\" , \"beginOffset\" : 33 }, \"type\" : \"COMMON\" } ] }, { \"name\" : \"Italian\" , \"type\" : \"LOCATION\" , \"metadata\" : { \"mid\" : \"/m/03rjj\" , \"wikipedia url\" : \"http://en.wikipedia.org/wiki/Italy\" }, \"salience\" : 0.13870546 , \"mentions\" : [ { \"text\" : { \"content\" : \"Italian\" , \"beginOffset\" : 25 }, \"type\" : \"PROPER\" } ] }, { \"name\" : \"The Calling of Saint Matthew\" , \"type\" : \"EVENT\" , \"metadata\" : { \"mid\" : \"/m/085 p7\" , \"wikipedia url\" : \"http://en.wikipedia.org/wiki/The Calling of St Matthew (Caravaggio)\" }, \"salience\" : 0.030822212 , \"mentions\" : [ { \"text\" : { \"content\" : \"The Calling of Saint Matthew\" , \"beginOffset\" : 69 }, \"type\" : \"PROPER\" } ] } ], \"language\" : \"en\" } You can also analyze document sentiment and extract syntax annotations from text by making requests to different Cloud Natural Language API endpoints.",
+          "Perform sentiment analysis by using the gcloud tool This page shows you how to get started with the Cloud Natural Language API using the Google Cloud SDK.",
+          "Learn how to grant roles . gcloud services enable language.googleapis.com Make an entity analysis request gcloud Use the gcloud command line tool to call the analyze-entities command and use the --content flag to specify the text to analyze. gcloud ml language analyze-entities --content = \"Michelangelo Caravaggio, Italian painter, is known for 'The Calling of Saint Matthew'.\" Command-line Use curl to make a POST request to the documents:analyzeEntities method and provide the appropriate request body as shown in the following example."
+        ]
+      },
+      {
+        "title": "\"Analyzing Entity Sentiment \\_|\\_ Cloud Natural Language API \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/natural-language/docs/analyzing-entity-sentiment",
+        "source_id": "site-docs-root",
+        "final_score": 202,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To perform entity sentiment analysis, use the gcloud CLI and use the --content flag to identify the content to analyze: gcloud ml language analyze-entity-sentiment \\ --content-file=gs:// <bucket-name> / <object-name> Java To learn how to install and use the client library for Natural Language, see Natural Language client libraries .",
+          "It was so sad when Marvin Gaye died.' }, 'encodingType':'UTF8' }\" \"https://language.googleapis.com/v1/documents:analyzeEntitySentiment\" gcloud Refer to the analyze-entity-sentiment command for complete details.",
+          "For information on how to interpret the score and magnitude sentiment values included in the analysis, see Interpreting sentiment analysis values ."
+        ]
+      },
+      {
+        "title": "\"Analyzing Sentiment \\_|\\_ Cloud Natural Language API \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/natural-language/docs/analyzing-sentiment",
+        "source_id": "site-docs-root",
+        "final_score": 202,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To perform sentiment analysis on a file in Cloud Storage, use the gcloud command line tool and use the --content-file flag to identify the file path that contains the content to analyze: gcloud ml language analyze-sentiment --content-file=gs:// YOUR BUCKET NAME / YOUR FILE NAME If the request is successful, the server returns a response in JSON format: { \"documentSentiment\": { \"magnitude\": 0.8, \"score\": 0.8 }, \"language\": \"en\", \"sentences\": [ { \"text\": { \"content\": \"Enjoy your vacation!\", \"beginOffset\": 0 }, \"sentiment\": { \"magnitude\": 0.8, \"score\": 0.8 } } ] } documentSentiment.score indicates positive sentiment with a value greater than zero, and negative sentiment with a value less than zero.",
+          "To perform sentiment analysis, use the gcloud CLI and use the --content flag to identify the content to analyze: gcloud ml language analyze-sentiment --content=\"Enjoy your vacation!\" If the request is successful, the server returns a response in JSON format: { \"documentSentiment\": { \"magnitude\": 0.8, \"score\": 0.8 }, \"language\": \"en\", \"sentences\": [ { \"text\": { \"content\": \"Enjoy your vacation!\", \"beginOffset\": 0 }, \"sentiment\": { \"magnitude\": 0.8, \"score\": 0.8 } } ] } documentSentiment.score indicates positive sentiment with a value greater than zero, and negative sentiment with a value less than zero.",
+          "For instructions on installing the gcloud CLI, setting up a project with a service account see the Quickstart . curl -X POST \\ -H \"Authorization: Bearer \" $( gcloud auth application-default print-access-token ) \\ -H \"Content-Type: application/json; charset=utf-8\" \\ --data \"{ 'encodingType': 'UTF8', 'document': { 'type': 'PLAIN TEXT', 'content': 'Enjoy your vacation!' } }\" \"https://language.googleapis.com/v2/documents:analyzeSentiment\" If you don't specify document.language code , then the language will be automatically detected."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "document.language",
+      "e.g",
+      "en.wikipedia.org",
+      "file.txt",
+      "language.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/natural-language/docs/sentiment-analysis-client-libraries",
+        "https://docs.cloud.google.com/natural-language/docs/sentiment-analysis-gcloud",
+        "https://docs.cloud.google.com/natural-language/docs/analyzing-entity-sentiment",
+        "https://docs.cloud.google.com/natural-language/docs/analyzing-sentiment"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/natural-language/docs/sentiment-analysis-client-libraries",
+        "https://docs.cloud.google.com/natural-language/docs/sentiment-analysis-gcloud",
+        "https://docs.cloud.google.com/natural-language/docs/analyzing-entity-sentiment",
+        "https://docs.cloud.google.com/natural-language/docs/analyzing-sentiment"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/natural-language/docs/sentiment-analysis-client-libraries",
+        "https://docs.cloud.google.com/natural-language/docs/sentiment-analysis-gcloud",
+        "https://docs.cloud.google.com/natural-language/docs/analyzing-entity-sentiment",
+        "https://docs.cloud.google.com/natural-language/docs/analyzing-sentiment"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/natural-language/docs/sentiment-analysis-client-libraries",
+        "https://docs.cloud.google.com/natural-language/docs/sentiment-analysis-gcloud",
+        "https://docs.cloud.google.com/natural-language/docs/analyzing-entity-sentiment",
+        "https://docs.cloud.google.com/natural-language/docs/analyzing-sentiment"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/natural-language/docs/sentiment-analysis-client-libraries",
+        "https://docs.cloud.google.com/natural-language/docs/sentiment-analysis-gcloud",
+        "https://docs.cloud.google.com/natural-language/docs/analyzing-entity-sentiment",
+        "https://docs.cloud.google.com/natural-language/docs/analyzing-sentiment"
+      ]
+    }
+  ]
+}

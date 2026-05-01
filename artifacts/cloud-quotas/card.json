@@ -1,0 +1,520 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:03:41.062Z",
+  "source_step08_card": "data/step-08/current/products/cloud-quotas/card.json",
+  "product_name": "Cloud Quotas",
+  "product_slug": "cloud-quotas",
+  "card_type": "service",
+  "service_card_id": "cloud-quotas:service",
+  "service_name": "Cloud Quotas",
+  "service_slug": "cloud-quotas",
+  "feature_count": 14,
+  "validation": {
+    "product_status": "PASS",
+    "failed_feature_count": 0,
+    "warned_feature_count": 0,
+    "fail_ratio": 0,
+    "passed_feature_count": 14
+  },
+  "iam_status_counts": {
+    "explicit": 4,
+    "derived_from_permission_prefix": 0,
+    "unknown": 10
+  },
+  "related_permission_groups": [],
+  "official_source_links": [
+    "https://docs.cloud.google.com/docs/quotas/api-overview",
+    "https://docs.cloud.google.com/docs/quotas/configure-vpc-service-controls",
+    "https://docs.cloud.google.com/docs/quotas/custom-constraints",
+    "https://docs.cloud.google.com/docs/quotas/gcloud-cli-examples",
+    "https://docs.cloud.google.com/docs/quotas/known-issues",
+    "https://docs.cloud.google.com/docs/quotas/quota-adjuster",
+    "https://docs.cloud.google.com/docs/quotas/reference/rest/v1/folders.locations.services.quotaInfos",
+    "https://docs.cloud.google.com/docs/quotas/set-up-quota-alerts",
+    "https://docs.cloud.google.com/docs/quotas/terminology",
+    "https://docs.cloud.google.com/docs/quotas/terraform-support-for-cloud-quotas",
+    "https://docs.cloud.google.com/docs/quotas/view-manage",
+    "https://docs.cloud.google.com/iam/docs/custom-roles-permissions-support",
+    "https://docs.cloud.google.com/iam/docs/deny-permissions-support",
+    "https://docs.cloud.google.com/iam/docs/roles-overview",
+    "https://docs.cloud.google.com/iam/docs/roles-permissions/accessapproval",
+    "https://docs.cloud.google.com/iam/docs/roles-permissions/cloudquotas",
+    "https://docs.cloud.google.com/python/docs/reference/google-cloud-cloudquotas/latest",
+    "https://docs.cloud.google.com/python/docs/reference/google-cloud-cloudquotas/latest/google.cloud.cloudquotas_v1.services.cloud_quotas.CloudQuotasAsyncClient",
+    "https://docs.cloud.google.com/python/docs/reference/google-cloud-cloudquotas/latest/google.cloud.cloudquotas_v1.services.cloud_quotas.CloudQuotasClient"
+  ],
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "feature_count": 13,
+      "evidence_links": [
+        "https://docs.cloud.google.com/docs/quotas/api-overview",
+        "https://docs.cloud.google.com/docs/quotas/configure-vpc-service-controls",
+        "https://docs.cloud.google.com/docs/quotas/custom-constraints",
+        "https://docs.cloud.google.com/docs/quotas/gcloud-cli-examples",
+        "https://docs.cloud.google.com/docs/quotas/known-issues",
+        "https://docs.cloud.google.com/docs/quotas/quota-adjuster",
+        "https://docs.cloud.google.com/docs/quotas/reference/rest/v1/folders.locations.services.quotaInfos",
+        "https://docs.cloud.google.com/docs/quotas/set-up-quota-alerts",
+        "https://docs.cloud.google.com/docs/quotas/terminology",
+        "https://docs.cloud.google.com/docs/quotas/terraform-support-for-cloud-quotas",
+        "https://docs.cloud.google.com/docs/quotas/view-manage",
+        "https://docs.cloud.google.com/iam/docs/custom-roles-permissions-support",
+        "https://docs.cloud.google.com/iam/docs/deny-permissions-support",
+        "https://docs.cloud.google.com/iam/docs/roles-overview",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/accessapproval",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/cloudquotas",
+        "https://docs.cloud.google.com/python/docs/reference/google-cloud-cloudquotas/latest",
+        "https://docs.cloud.google.com/python/docs/reference/google-cloud-cloudquotas/latest/google.cloud.cloudquotas_v1.services.cloud_quotas.CloudQuotasAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/google-cloud-cloudquotas/latest/google.cloud.cloudquotas_v1.services.cloud_quotas.CloudQuotasClient"
+      ]
+    },
+    {
+      "capability": "iam",
+      "feature_count": 12,
+      "evidence_links": [
+        "https://docs.cloud.google.com/docs/quotas/api-overview",
+        "https://docs.cloud.google.com/docs/quotas/configure-vpc-service-controls",
+        "https://docs.cloud.google.com/docs/quotas/custom-constraints",
+        "https://docs.cloud.google.com/docs/quotas/gcloud-cli-examples",
+        "https://docs.cloud.google.com/docs/quotas/known-issues",
+        "https://docs.cloud.google.com/docs/quotas/quota-adjuster",
+        "https://docs.cloud.google.com/docs/quotas/reference/rest/v1/folders.locations.services.quotaInfos",
+        "https://docs.cloud.google.com/docs/quotas/set-up-quota-alerts",
+        "https://docs.cloud.google.com/docs/quotas/terminology",
+        "https://docs.cloud.google.com/docs/quotas/terraform-support-for-cloud-quotas",
+        "https://docs.cloud.google.com/docs/quotas/view-manage",
+        "https://docs.cloud.google.com/iam/docs/custom-roles-permissions-support",
+        "https://docs.cloud.google.com/iam/docs/deny-permissions-support",
+        "https://docs.cloud.google.com/iam/docs/roles-overview",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/accessapproval",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/cloudquotas",
+        "https://docs.cloud.google.com/python/docs/reference/google-cloud-cloudquotas/latest",
+        "https://docs.cloud.google.com/python/docs/reference/google-cloud-cloudquotas/latest/google.cloud.cloudquotas_v1.services.cloud_quotas.CloudQuotasAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/google-cloud-cloudquotas/latest/google.cloud.cloudquotas_v1.services.cloud_quotas.CloudQuotasClient"
+      ]
+    },
+    {
+      "capability": "permission",
+      "feature_count": 12,
+      "evidence_links": [
+        "https://docs.cloud.google.com/docs/quotas/api-overview",
+        "https://docs.cloud.google.com/docs/quotas/configure-vpc-service-controls",
+        "https://docs.cloud.google.com/docs/quotas/custom-constraints",
+        "https://docs.cloud.google.com/docs/quotas/gcloud-cli-examples",
+        "https://docs.cloud.google.com/docs/quotas/known-issues",
+        "https://docs.cloud.google.com/docs/quotas/quota-adjuster",
+        "https://docs.cloud.google.com/docs/quotas/reference/rest/v1/folders.locations.services.quotaInfos",
+        "https://docs.cloud.google.com/docs/quotas/set-up-quota-alerts",
+        "https://docs.cloud.google.com/docs/quotas/terminology",
+        "https://docs.cloud.google.com/docs/quotas/terraform-support-for-cloud-quotas",
+        "https://docs.cloud.google.com/docs/quotas/view-manage",
+        "https://docs.cloud.google.com/iam/docs/custom-roles-permissions-support",
+        "https://docs.cloud.google.com/iam/docs/deny-permissions-support",
+        "https://docs.cloud.google.com/iam/docs/roles-overview",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/accessapproval",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/cloudquotas",
+        "https://docs.cloud.google.com/python/docs/reference/google-cloud-cloudquotas/latest",
+        "https://docs.cloud.google.com/python/docs/reference/google-cloud-cloudquotas/latest/google.cloud.cloudquotas_v1.services.cloud_quotas.CloudQuotasAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/google-cloud-cloudquotas/latest/google.cloud.cloudquotas_v1.services.cloud_quotas.CloudQuotasClient"
+      ]
+    },
+    {
+      "capability": "role",
+      "feature_count": 12,
+      "evidence_links": [
+        "https://docs.cloud.google.com/docs/quotas/api-overview",
+        "https://docs.cloud.google.com/docs/quotas/configure-vpc-service-controls",
+        "https://docs.cloud.google.com/docs/quotas/custom-constraints",
+        "https://docs.cloud.google.com/docs/quotas/gcloud-cli-examples",
+        "https://docs.cloud.google.com/docs/quotas/known-issues",
+        "https://docs.cloud.google.com/docs/quotas/quota-adjuster",
+        "https://docs.cloud.google.com/docs/quotas/reference/rest/v1/folders.locations.services.quotaInfos",
+        "https://docs.cloud.google.com/docs/quotas/set-up-quota-alerts",
+        "https://docs.cloud.google.com/docs/quotas/terminology",
+        "https://docs.cloud.google.com/docs/quotas/terraform-support-for-cloud-quotas",
+        "https://docs.cloud.google.com/docs/quotas/view-manage",
+        "https://docs.cloud.google.com/iam/docs/custom-roles-permissions-support",
+        "https://docs.cloud.google.com/iam/docs/deny-permissions-support",
+        "https://docs.cloud.google.com/iam/docs/roles-overview",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/accessapproval",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/cloudquotas",
+        "https://docs.cloud.google.com/python/docs/reference/google-cloud-cloudquotas/latest",
+        "https://docs.cloud.google.com/python/docs/reference/google-cloud-cloudquotas/latest/google.cloud.cloudquotas_v1.services.cloud_quotas.CloudQuotasAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/google-cloud-cloudquotas/latest/google.cloud.cloudquotas_v1.services.cloud_quotas.CloudQuotasClient"
+      ]
+    },
+    {
+      "capability": "policy",
+      "feature_count": 10,
+      "evidence_links": [
+        "https://docs.cloud.google.com/docs/quotas/api-overview",
+        "https://docs.cloud.google.com/docs/quotas/configure-vpc-service-controls",
+        "https://docs.cloud.google.com/docs/quotas/custom-constraints",
+        "https://docs.cloud.google.com/docs/quotas/gcloud-cli-examples",
+        "https://docs.cloud.google.com/docs/quotas/quota-adjuster",
+        "https://docs.cloud.google.com/docs/quotas/set-up-quota-alerts",
+        "https://docs.cloud.google.com/docs/quotas/terminology",
+        "https://docs.cloud.google.com/docs/quotas/terraform-support-for-cloud-quotas",
+        "https://docs.cloud.google.com/docs/quotas/view-manage",
+        "https://docs.cloud.google.com/iam/docs/custom-roles-permissions-support",
+        "https://docs.cloud.google.com/iam/docs/deny-permissions-support",
+        "https://docs.cloud.google.com/iam/docs/roles-overview",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/accessapproval",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/cloudquotas",
+        "https://docs.cloud.google.com/python/docs/reference/google-cloud-cloudquotas/latest/google.cloud.cloudquotas_v1.services.cloud_quotas.CloudQuotasAsyncClient"
+      ]
+    },
+    {
+      "capability": "auth",
+      "feature_count": 9,
+      "evidence_links": [
+        "https://docs.cloud.google.com/docs/quotas/api-overview",
+        "https://docs.cloud.google.com/docs/quotas/configure-vpc-service-controls",
+        "https://docs.cloud.google.com/docs/quotas/custom-constraints",
+        "https://docs.cloud.google.com/docs/quotas/gcloud-cli-examples",
+        "https://docs.cloud.google.com/docs/quotas/quota-adjuster",
+        "https://docs.cloud.google.com/docs/quotas/set-up-quota-alerts",
+        "https://docs.cloud.google.com/docs/quotas/terminology",
+        "https://docs.cloud.google.com/docs/quotas/terraform-support-for-cloud-quotas",
+        "https://docs.cloud.google.com/docs/quotas/view-manage",
+        "https://docs.cloud.google.com/iam/docs/custom-roles-permissions-support",
+        "https://docs.cloud.google.com/iam/docs/deny-permissions-support",
+        "https://docs.cloud.google.com/iam/docs/roles-overview",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/accessapproval",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/cloudquotas",
+        "https://docs.cloud.google.com/python/docs/reference/google-cloud-cloudquotas/latest/google.cloud.cloudquotas_v1.services.cloud_quotas.CloudQuotasAsyncClient"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "feature_count": 9,
+      "evidence_links": [
+        "https://docs.cloud.google.com/docs/quotas/configure-vpc-service-controls",
+        "https://docs.cloud.google.com/docs/quotas/custom-constraints",
+        "https://docs.cloud.google.com/docs/quotas/gcloud-cli-examples",
+        "https://docs.cloud.google.com/docs/quotas/quota-adjuster",
+        "https://docs.cloud.google.com/docs/quotas/set-up-quota-alerts",
+        "https://docs.cloud.google.com/docs/quotas/terraform-support-for-cloud-quotas",
+        "https://docs.cloud.google.com/docs/quotas/view-manage",
+        "https://docs.cloud.google.com/iam/docs/custom-roles-permissions-support",
+        "https://docs.cloud.google.com/iam/docs/deny-permissions-support",
+        "https://docs.cloud.google.com/iam/docs/roles-overview",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/accessapproval",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/cloudquotas",
+        "https://docs.cloud.google.com/python/docs/reference/google-cloud-cloudquotas/latest/google.cloud.cloudquotas_v1.services.cloud_quotas.CloudQuotasAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/google-cloud-cloudquotas/latest/google.cloud.cloudquotas_v1.services.cloud_quotas.CloudQuotasClient"
+      ]
+    },
+    {
+      "capability": "identity",
+      "feature_count": 9,
+      "evidence_links": [
+        "https://docs.cloud.google.com/docs/quotas/api-overview",
+        "https://docs.cloud.google.com/docs/quotas/configure-vpc-service-controls",
+        "https://docs.cloud.google.com/docs/quotas/custom-constraints",
+        "https://docs.cloud.google.com/docs/quotas/gcloud-cli-examples",
+        "https://docs.cloud.google.com/docs/quotas/known-issues",
+        "https://docs.cloud.google.com/docs/quotas/quota-adjuster",
+        "https://docs.cloud.google.com/docs/quotas/reference/rest/v1/folders.locations.services.quotaInfos",
+        "https://docs.cloud.google.com/docs/quotas/set-up-quota-alerts",
+        "https://docs.cloud.google.com/docs/quotas/terraform-support-for-cloud-quotas",
+        "https://docs.cloud.google.com/docs/quotas/view-manage",
+        "https://docs.cloud.google.com/iam/docs/custom-roles-permissions-support",
+        "https://docs.cloud.google.com/iam/docs/deny-permissions-support",
+        "https://docs.cloud.google.com/iam/docs/roles-overview",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/accessapproval",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/cloudquotas",
+        "https://docs.cloud.google.com/python/docs/reference/google-cloud-cloudquotas/latest/google.cloud.cloudquotas_v1.services.cloud_quotas.CloudQuotasAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/google-cloud-cloudquotas/latest/google.cloud.cloudquotas_v1.services.cloud_quotas.CloudQuotasClient"
+      ]
+    },
+    {
+      "capability": "key",
+      "feature_count": 9,
+      "evidence_links": [
+        "https://docs.cloud.google.com/docs/quotas/api-overview",
+        "https://docs.cloud.google.com/docs/quotas/configure-vpc-service-controls",
+        "https://docs.cloud.google.com/docs/quotas/custom-constraints",
+        "https://docs.cloud.google.com/docs/quotas/gcloud-cli-examples",
+        "https://docs.cloud.google.com/docs/quotas/quota-adjuster",
+        "https://docs.cloud.google.com/docs/quotas/set-up-quota-alerts",
+        "https://docs.cloud.google.com/docs/quotas/terminology",
+        "https://docs.cloud.google.com/docs/quotas/terraform-support-for-cloud-quotas",
+        "https://docs.cloud.google.com/docs/quotas/view-manage",
+        "https://docs.cloud.google.com/iam/docs/custom-roles-permissions-support",
+        "https://docs.cloud.google.com/iam/docs/deny-permissions-support",
+        "https://docs.cloud.google.com/iam/docs/roles-overview",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/accessapproval",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/cloudquotas",
+        "https://docs.cloud.google.com/python/docs/reference/google-cloud-cloudquotas/latest/google.cloud.cloudquotas_v1.services.cloud_quotas.CloudQuotasAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/google-cloud-cloudquotas/latest/google.cloud.cloudquotas_v1.services.cloud_quotas.CloudQuotasClient"
+      ]
+    },
+    {
+      "capability": "logging",
+      "feature_count": 7,
+      "evidence_links": [
+        "https://docs.cloud.google.com/docs/quotas/api-overview",
+        "https://docs.cloud.google.com/docs/quotas/configure-vpc-service-controls",
+        "https://docs.cloud.google.com/docs/quotas/custom-constraints",
+        "https://docs.cloud.google.com/docs/quotas/gcloud-cli-examples",
+        "https://docs.cloud.google.com/docs/quotas/quota-adjuster",
+        "https://docs.cloud.google.com/docs/quotas/terminology",
+        "https://docs.cloud.google.com/docs/quotas/terraform-support-for-cloud-quotas",
+        "https://docs.cloud.google.com/docs/quotas/view-manage",
+        "https://docs.cloud.google.com/iam/docs/custom-roles-permissions-support",
+        "https://docs.cloud.google.com/iam/docs/deny-permissions-support",
+        "https://docs.cloud.google.com/iam/docs/roles-overview",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/accessapproval",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/cloudquotas",
+        "https://docs.cloud.google.com/python/docs/reference/google-cloud-cloudquotas/latest/google.cloud.cloudquotas_v1.services.cloud_quotas.CloudQuotasAsyncClient"
+      ]
+    },
+    {
+      "capability": "audit",
+      "feature_count": 6,
+      "evidence_links": [
+        "https://docs.cloud.google.com/docs/quotas/api-overview",
+        "https://docs.cloud.google.com/docs/quotas/configure-vpc-service-controls",
+        "https://docs.cloud.google.com/docs/quotas/custom-constraints",
+        "https://docs.cloud.google.com/docs/quotas/gcloud-cli-examples",
+        "https://docs.cloud.google.com/docs/quotas/quota-adjuster",
+        "https://docs.cloud.google.com/docs/quotas/terminology",
+        "https://docs.cloud.google.com/docs/quotas/terraform-support-for-cloud-quotas",
+        "https://docs.cloud.google.com/docs/quotas/view-manage",
+        "https://docs.cloud.google.com/iam/docs/custom-roles-permissions-support",
+        "https://docs.cloud.google.com/iam/docs/deny-permissions-support",
+        "https://docs.cloud.google.com/iam/docs/roles-overview",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/accessapproval",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/cloudquotas"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "feature_count": 5,
+      "evidence_links": [
+        "https://docs.cloud.google.com/docs/quotas/api-overview",
+        "https://docs.cloud.google.com/docs/quotas/configure-vpc-service-controls",
+        "https://docs.cloud.google.com/docs/quotas/custom-constraints",
+        "https://docs.cloud.google.com/docs/quotas/gcloud-cli-examples",
+        "https://docs.cloud.google.com/docs/quotas/quota-adjuster",
+        "https://docs.cloud.google.com/docs/quotas/terminology",
+        "https://docs.cloud.google.com/docs/quotas/terraform-support-for-cloud-quotas",
+        "https://docs.cloud.google.com/iam/docs/custom-roles-permissions-support",
+        "https://docs.cloud.google.com/iam/docs/deny-permissions-support",
+        "https://docs.cloud.google.com/iam/docs/roles-overview",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/accessapproval",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/cloudquotas",
+        "https://docs.cloud.google.com/python/docs/reference/google-cloud-cloudquotas/latest/google.cloud.cloudquotas_v1.services.cloud_quotas.CloudQuotasAsyncClient"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "feature_count": 5,
+      "evidence_links": [
+        "https://docs.cloud.google.com/docs/quotas/api-overview",
+        "https://docs.cloud.google.com/docs/quotas/configure-vpc-service-controls",
+        "https://docs.cloud.google.com/docs/quotas/custom-constraints",
+        "https://docs.cloud.google.com/docs/quotas/gcloud-cli-examples",
+        "https://docs.cloud.google.com/docs/quotas/quota-adjuster",
+        "https://docs.cloud.google.com/docs/quotas/terminology",
+        "https://docs.cloud.google.com/docs/quotas/terraform-support-for-cloud-quotas",
+        "https://docs.cloud.google.com/iam/docs/custom-roles-permissions-support",
+        "https://docs.cloud.google.com/iam/docs/deny-permissions-support",
+        "https://docs.cloud.google.com/iam/docs/roles-overview",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/accessapproval",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/cloudquotas",
+        "https://docs.cloud.google.com/python/docs/reference/google-cloud-cloudquotas/latest/google.cloud.cloudquotas_v1.services.cloud_quotas.CloudQuotasAsyncClient"
+      ]
+    },
+    {
+      "capability": "security",
+      "feature_count": 5,
+      "evidence_links": [
+        "https://docs.cloud.google.com/docs/quotas/api-overview",
+        "https://docs.cloud.google.com/docs/quotas/configure-vpc-service-controls",
+        "https://docs.cloud.google.com/docs/quotas/custom-constraints",
+        "https://docs.cloud.google.com/docs/quotas/gcloud-cli-examples",
+        "https://docs.cloud.google.com/docs/quotas/quota-adjuster",
+        "https://docs.cloud.google.com/docs/quotas/terminology",
+        "https://docs.cloud.google.com/docs/quotas/terraform-support-for-cloud-quotas",
+        "https://docs.cloud.google.com/iam/docs/custom-roles-permissions-support",
+        "https://docs.cloud.google.com/iam/docs/deny-permissions-support",
+        "https://docs.cloud.google.com/iam/docs/roles-overview",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/accessapproval",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/cloudquotas",
+        "https://docs.cloud.google.com/python/docs/reference/google-cloud-cloudquotas/latest/google.cloud.cloudquotas_v1.services.cloud_quotas.CloudQuotasAsyncClient"
+      ]
+    },
+    {
+      "capability": "allow",
+      "feature_count": 3,
+      "evidence_links": [
+        "https://docs.cloud.google.com/docs/quotas/configure-vpc-service-controls",
+        "https://docs.cloud.google.com/docs/quotas/custom-constraints",
+        "https://docs.cloud.google.com/docs/quotas/terraform-support-for-cloud-quotas",
+        "https://docs.cloud.google.com/iam/docs/custom-roles-permissions-support",
+        "https://docs.cloud.google.com/iam/docs/deny-permissions-support",
+        "https://docs.cloud.google.com/iam/docs/roles-overview",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/accessapproval",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/cloudquotas"
+      ]
+    },
+    {
+      "capability": "armor",
+      "feature_count": 3,
+      "evidence_links": [
+        "https://docs.cloud.google.com/docs/quotas/configure-vpc-service-controls",
+        "https://docs.cloud.google.com/docs/quotas/custom-constraints",
+        "https://docs.cloud.google.com/docs/quotas/terraform-support-for-cloud-quotas",
+        "https://docs.cloud.google.com/iam/docs/custom-roles-permissions-support",
+        "https://docs.cloud.google.com/iam/docs/deny-permissions-support",
+        "https://docs.cloud.google.com/iam/docs/roles-overview",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/accessapproval",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/cloudquotas"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "feature_count": 3,
+      "evidence_links": [
+        "https://docs.cloud.google.com/docs/quotas/configure-vpc-service-controls",
+        "https://docs.cloud.google.com/docs/quotas/custom-constraints",
+        "https://docs.cloud.google.com/docs/quotas/terraform-support-for-cloud-quotas",
+        "https://docs.cloud.google.com/iam/docs/custom-roles-permissions-support",
+        "https://docs.cloud.google.com/iam/docs/deny-permissions-support",
+        "https://docs.cloud.google.com/iam/docs/roles-overview",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/accessapproval",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/cloudquotas"
+      ]
+    },
+    {
+      "capability": "confidential",
+      "feature_count": 3,
+      "evidence_links": [
+        "https://docs.cloud.google.com/docs/quotas/configure-vpc-service-controls",
+        "https://docs.cloud.google.com/docs/quotas/custom-constraints",
+        "https://docs.cloud.google.com/docs/quotas/terraform-support-for-cloud-quotas",
+        "https://docs.cloud.google.com/iam/docs/custom-roles-permissions-support",
+        "https://docs.cloud.google.com/iam/docs/deny-permissions-support",
+        "https://docs.cloud.google.com/iam/docs/roles-overview",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/accessapproval",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/cloudquotas"
+      ]
+    },
+    {
+      "capability": "credential",
+      "feature_count": 3,
+      "evidence_links": [
+        "https://docs.cloud.google.com/docs/quotas/configure-vpc-service-controls",
+        "https://docs.cloud.google.com/docs/quotas/custom-constraints",
+        "https://docs.cloud.google.com/docs/quotas/terraform-support-for-cloud-quotas",
+        "https://docs.cloud.google.com/iam/docs/custom-roles-permissions-support",
+        "https://docs.cloud.google.com/iam/docs/deny-permissions-support",
+        "https://docs.cloud.google.com/iam/docs/roles-overview",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/accessapproval",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/cloudquotas"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "feature_count": 3,
+      "evidence_links": [
+        "https://docs.cloud.google.com/docs/quotas/configure-vpc-service-controls",
+        "https://docs.cloud.google.com/docs/quotas/custom-constraints",
+        "https://docs.cloud.google.com/docs/quotas/terraform-support-for-cloud-quotas",
+        "https://docs.cloud.google.com/iam/docs/custom-roles-permissions-support",
+        "https://docs.cloud.google.com/iam/docs/deny-permissions-support",
+        "https://docs.cloud.google.com/iam/docs/roles-overview",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/accessapproval",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/cloudquotas"
+      ]
+    },
+    {
+      "capability": "kms",
+      "feature_count": 3,
+      "evidence_links": [
+        "https://docs.cloud.google.com/docs/quotas/configure-vpc-service-controls",
+        "https://docs.cloud.google.com/docs/quotas/custom-constraints",
+        "https://docs.cloud.google.com/docs/quotas/terraform-support-for-cloud-quotas",
+        "https://docs.cloud.google.com/iam/docs/custom-roles-permissions-support",
+        "https://docs.cloud.google.com/iam/docs/deny-permissions-support",
+        "https://docs.cloud.google.com/iam/docs/roles-overview",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/accessapproval",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/cloudquotas"
+      ]
+    },
+    {
+      "capability": "private",
+      "feature_count": 3,
+      "evidence_links": [
+        "https://docs.cloud.google.com/docs/quotas/configure-vpc-service-controls",
+        "https://docs.cloud.google.com/docs/quotas/custom-constraints",
+        "https://docs.cloud.google.com/docs/quotas/terraform-support-for-cloud-quotas",
+        "https://docs.cloud.google.com/iam/docs/custom-roles-permissions-support",
+        "https://docs.cloud.google.com/iam/docs/deny-permissions-support",
+        "https://docs.cloud.google.com/iam/docs/roles-overview",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/accessapproval",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/cloudquotas"
+      ]
+    },
+    {
+      "capability": "secret",
+      "feature_count": 3,
+      "evidence_links": [
+        "https://docs.cloud.google.com/docs/quotas/configure-vpc-service-controls",
+        "https://docs.cloud.google.com/docs/quotas/custom-constraints",
+        "https://docs.cloud.google.com/docs/quotas/terraform-support-for-cloud-quotas",
+        "https://docs.cloud.google.com/iam/docs/custom-roles-permissions-support",
+        "https://docs.cloud.google.com/iam/docs/deny-permissions-support",
+        "https://docs.cloud.google.com/iam/docs/roles-overview",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/accessapproval",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/cloudquotas"
+      ]
+    },
+    {
+      "capability": "threat",
+      "feature_count": 3,
+      "evidence_links": [
+        "https://docs.cloud.google.com/docs/quotas/configure-vpc-service-controls",
+        "https://docs.cloud.google.com/docs/quotas/custom-constraints",
+        "https://docs.cloud.google.com/docs/quotas/terraform-support-for-cloud-quotas",
+        "https://docs.cloud.google.com/iam/docs/custom-roles-permissions-support",
+        "https://docs.cloud.google.com/iam/docs/deny-permissions-support",
+        "https://docs.cloud.google.com/iam/docs/roles-overview",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/accessapproval",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/cloudquotas"
+      ]
+    },
+    {
+      "capability": "token",
+      "feature_count": 3,
+      "evidence_links": [
+        "https://docs.cloud.google.com/docs/quotas/configure-vpc-service-controls",
+        "https://docs.cloud.google.com/docs/quotas/custom-constraints",
+        "https://docs.cloud.google.com/docs/quotas/terraform-support-for-cloud-quotas",
+        "https://docs.cloud.google.com/iam/docs/custom-roles-permissions-support",
+        "https://docs.cloud.google.com/iam/docs/deny-permissions-support",
+        "https://docs.cloud.google.com/iam/docs/roles-overview",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/accessapproval",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/cloudquotas"
+      ]
+    }
+  ],
+  "security_capability_count": 25,
+  "lifecycle": {
+    "latest_feature_date": "2026-01-30"
+  },
+  "release_notes": {
+    "source_row_count": 18,
+    "unique_feature_count": 14,
+    "latest_feature_date": "2026-01-30",
+    "source_file": "data/step-02/current/cloud-quotas.md"
+  },
+  "corpus": {
+    "health_status": "healthy",
+    "page_count": 0,
+    "selected_source_count": 5
+  }
+}

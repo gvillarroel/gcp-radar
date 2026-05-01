@@ -1,0 +1,195 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:44.921Z",
+  "source_step08_card": "data/step-08/current/products/oracle-database-google-cloud/card.json",
+  "product_name": "Oracle Database@Google Cloud",
+  "product_slug": "oracle-database-google-cloud",
+  "feature_name": "ODB Subnets",
+  "feature_slug": "odb-subnets",
+  "summary": "ODB Subnets define subnets for Oracle Database@Google Cloud resources in an OCI child site that connect with a Google Cloud VPC network.",
+  "extended_definition": "ODB Subnets define subnets for Oracle Database@Google Cloud resources in an OCI child site that connect with a Google Cloud VPC network.",
+  "lifecycle": {
+    "latest_feature_date": "2025-08-14",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/oracle/database/docs/create-databases",
+      "https://docs.cloud.google.com/oracle/database/docs/create-odb-network",
+      "https://docs.cloud.google.com/oracle/database/docs/delete-odb-network",
+      "https://docs.cloud.google.com/oracle/database/docs/reference/rest"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Create ODB Network and ODB Subnets \\_|\\_ Oracle Database at Google Cloud\\",
+        "url": "https://docs.cloud.google.com/oracle/database/docs/create-odb-network",
+        "source_id": "site-docs-reference",
+        "final_score": 334,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "API To create an ODB Subnet, run the following curl command: curl -X POST \\ -H \"Authorization: Bearer $(gcloud auth print-access-token)\" \\ -H \"Content-Type: application/json\" \\ \"https://oracledatabase.googleapis.com/v1/projects/ PROJECT ID /locations/ REGION /odbNetworks/ ODB NETWORK ID /odbSubnets/ ODB SUBNET ID \" -d \\ '{ \"cidr range\": \" CIDR RANGE \", \"purpose\": \" PURPOSE \" }' Replace the following: PROJECT ID : the ID of your Google Cloud project that contains your ODB Network for which you want to create an ODB Subnet.",
+          "Click Create . gcloud Use the gcloud oracle-database odb-networks odb-subnets create command to create an ODB Subnet. gcloud oracle-database odb-networks odb-subnets create ODB SUBNET ID \\ --project= PROJECT ID \\ --location= REGION \\ --odb-network= ODB NETWORK ID \\ --cidr-range= CIDR RANGE \\ --purpose= PURPOSE Replace the following: ODB SUBNET ID : a unique identifier for your ODB Subnet.",
+          "Before you begin Make sure that you have the required Identity and Access Management (IAM) roles and permissions to create an ODB Network and ODB Subnets as described in Deploy Oracle Database@Google Cloud environment ."
+        ]
+      },
+      {
+        "title": "\"Delete ODB Network and ODB Subnets \\_|\\_ Oracle Database at Google Cloud\\",
+        "url": "https://docs.cloud.google.com/oracle/database/docs/delete-odb-network",
+        "source_id": "site-docs-reference",
+        "final_score": 326,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Before you begin Make sure that you have the required Identity and Access Management (IAM) roles and permissions to delete an ODB Network and ODB Subnets as described in Deploy Oracle Database@Google Cloud environment .",
+          "API To delete an ODB Subnet, run the following curl command: curl -X DELETE \\ -H \"Authorization: Bearer $(gcloud auth print-access-token)\" \\ -H \"Content-Type: application/json\" \\ \"https://oracledatabase.googleapis.com/v1/projects/ PROJECT ID /locations/ REGION /odbNetworks/ ODB NETWORK ID /odbSubnets/ ODB SUBNET ID \" Replace the following: PROJECT ID : the ID of your Google Cloud project which contains the ODB Subnet to be deleted.",
+          "Click Confirm . gcloud Use the gcloud oracle-database odb-networks odb-subnets delete command to delete an ODB Subnet. gcloud oracle-database odb-networks odb-subnets delete ODB SUBNET ID \\ --project= PROJECT ID \\ --location= REGION \\ --odb-network= ODB NETWORK ID Replace the following: ODB SUBNET ID : the ID of the ODB Subnet."
+        ]
+      },
+      {
+        "title": "\"Create databases \\_|\\_ Oracle Database at Google Cloud \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/oracle/database/docs/create-databases",
+        "source_id": "site-docs-reference",
+        "final_score": 270,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Click Create to create your database. gcloud Use the gcloud oracle-database autonomous-databases create command to create a database. gcloud oracle - database autonomous - databases create DATABASE ID \\ -- project = PROJECT ID \\ -- location = REGION \\ -- display - name = DISPLAY NAME \\ -- database = DATABASE NAME \\ -- admin - password = ADMIN PASSWORD \\ -- odb - subnet = projects / ODB NETWORK PROJECT ID / locations / REGION / odbNetworks / ODB NETWORK ID / odbSubnets / ODB SUBNET ID \\ -- properties - compute - count = COMPUTE COUNT \\ -- properties - db - version = DATABASE VERSION \\ -- properties - license - type = LICENSE TYPE \\ -- properties - db - workload = WORKLOAD TYPE \\ -- properties - data - storage - size - gb = STORAGE SIZE Replace the following: DATABASE ID : a permanent identifier for your instance.",
+          "API To create an Autonomous AI Database, run the following curl command: curl -X POST \\ -H \"Authorization: Bearer $(gcloud auth print-access-token)\" \\ -H \"Content-Type: application/json\" \\ \"https://oracledatabase.googleapis.com/v1/projects/ PROJECT ID /locations/ REGION /autonomousDatabases/ DATABASE ID \" -d \\ '{ \"database\": \" DATABASE NAME \", \"displayName\": \" DISPLAY NAME \", \"admin password\": \" PASSWORD \", \"odb subnet\": \"projects/ ODB NETWORK PROJECT ID /locations/ REGION /odbNetworks/ ODB NETWORK ID /odbSubnets/ ODB SUBNET ID \", \"properties\": { \"licenseType\": \" LICENSE TYPE \", \"computeCount\": COMPUTE COUNT , \"dbVersion\": \" DATABASE VERSION \", \"dbWorkload\": \" WORKLOAD TYPE \", \"dataStorageSizeTb\": STORAGE SIZE } }' Replace the following: PROJECT ID : the ID of your Google Cloud project in which to create the database.",
+          "The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000). / // const requestId = 'abc123' // Imports the Oracledatabase library const { OracleDatabaseClient } = require ( ' @google-cloud/oracledatabase ' ). v1 ; // Instantiates a client const oracledatabaseClient = new OracleDatabaseClient (); async function callCreateAutonomousDatabase () { // Construct request const request = { parent , autonomousDatabaseId , autonomousDatabase , }; // Run request const [ operation ] = await oracledatabaseClient . createAutonomousDatabase ( request ); const [ response ] = await operation . promise (); console . log ( response ); } callCreateAutonomousDatabase (); PHP use Google\\ApiCore\\ApiException; use Google\\ApiCore\\OperationResponse; use Google\\Cloud\\OracleDatabase\\V1\\AutonomousDatabase; use Google\\Cloud\\OracleDatabase\\V1\\Client\\OracleDatabaseClient; use Google\\Cloud\\OracleDatabase\\V1\\CreateAutonomousDatabaseRequest; use Google\\Rpc\\Status; / Creates a new Autonomous Database in a given project and location. @param string $formattedParent The name of the parent in the following format: projects/{project}/locations/{location}."
+        ]
+      },
+      {
+        "title": "\"Oracle Database@Google Cloud API \\_|\\_ Oracle Database at Google Cloud \\_\\",
+        "url": "https://docs.cloud.google.com/oracle/database/docs/reference/rest",
+        "source_id": "site-api-reference",
+        "final_score": 262,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "REST Resource: v1.projects.locations REST Resource: v1.projects.locations.autonomousDatabaseBackups REST Resource: v1.projects.locations.autonomousDatabaseCharacterSets REST Resource: v1.projects.locations.autonomousDatabases REST Resource: v1.projects.locations.autonomousDbVersions REST Resource: v1.projects.locations.cloudExadataInfrastructures REST Resource: v1.projects.locations.cloudExadataInfrastructures.dbServers REST Resource: v1.projects.locations.cloudVmClusters REST Resource: v1.projects.locations.cloudVmClusters.dbNodes REST Resource: v1.projects.locations.databaseCharacterSets REST Resource: v1.projects.locations.databases REST Resource: v1.projects.locations.dbSystemInitialStorageSizes REST Resource: v1.projects.locations.dbSystemShapes REST Resource: v1.projects.locations.dbSystems REST Resource: v1.projects.locations.dbVersions REST Resource: v1.projects.locations.entitlements REST Resource: v1.projects.locations.exadbVmClusters REST Resource: v1.projects.locations.exadbVmClusters.dbNodes REST Resource: v1.projects.locations.exascaleDbStorageVaults REST Resource: v1.projects.locations.giVersions REST Resource: v1.projects.locations.giVersions.minorVersions REST Resource: v1.projects.locations.odbNetworks REST Resource: v1.projects.locations.odbNetworks.odbSubnets REST Resource: v1.projects.locations.operations REST Resource: v1.projects.locations.pluggableDatabases Service: oracledatabase.googleapis.com To call this service, we recommend that you use the Google-provided client libraries .",
+          "This service has the following service endpoint and all URIs below are relative to this service endpoint: https://oracledatabase.googleapis.com REST Resource: v1.projects.locations Methods get GET /v1/{name=projects/ /locations/ } Gets information about a location. list GET /v1/{name=projects/ }/locations Lists information about the supported locations for this service.",
+          "REST Resource: v1.projects.locations.autonomousDatabases Methods create POST /v1/{parent=projects/ /locations/ }/autonomousDatabases Creates a new Autonomous Database in a given project and location. delete DELETE /v1/{name=projects/ /locations/ /autonomousDatabases/ } Deletes a single Autonomous Database. failover POST /v1/{name=projects/ /locations/ /autonomousDatabases/ }:failover Initiates a failover to target autonomous database from the associated primary database. generateWallet POST /v1/{name=projects/ /locations/ /autonomousDatabases/ }:generateWallet Generates a wallet for an Autonomous Database. get GET /v1/{name=projects/ /locations/ /autonomousDatabases/ } Gets the details of a single Autonomous Database. list GET /v1/{parent=projects/ /locations/ }/autonomousDatabases Lists the Autonomous Databases in a given project and location. patch PATCH /v1/{autonomousDatabase.name=projects/ /locations/ /autonomousDatabases/ } Updates the parameters of a single Autonomous Database. restart POST /v1/{name=projects/ /locations/ /autonomousDatabases/ }:restart Restarts an Autonomous Database. restore POST /v1/{name=projects/ /locations/ /autonomousDatabases/ }:restore Restores a single Autonomous Database. start POST /v1/{name=projects/ /locations/ /autonomousDatabases/ }:start Starts an Autonomous Database. stop POST /v1/{name=projects/ /locations/ /autonomousDatabases/ }:stop Stops an Autonomous Database. switchover POST /v1/{name=projects/ /locations/ /autonomousDatabases/ }:switchover Initiates a switchover of specified autonomous database to the associated peer database."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "oracledatabase.googleapis.com",
+      "projects.locations.autonomousDatabases",
+      "v1.projects.locations",
+      "v1.projects.locations.autonomousDatabaseBackups",
+      "v1.projects.locations.autonomousDatabaseCharacterSets",
+      "v1.projects.locations.autonomousDatabases",
+      "v1.projects.locations.autonomousDbVersions",
+      "v1.projects.locations.cloudExadataInfrastructures",
+      "v1.projects.locations.cloudExadataInfrastructures.dbServers",
+      "v1.projects.locations.cloudVmClusters",
+      "v1.projects.locations.cloudVmClusters.dbNodes",
+      "v1.projects.locations.databaseCharacterSets",
+      "v1.projects.locations.databases",
+      "v1.projects.locations.dbSystemInitialStorageSizes",
+      "v1.projects.locations.dbSystems",
+      "v1.projects.locations.dbSystemShapes",
+      "v1.projects.locations.dbVersions",
+      "v1.projects.locations.entitlements",
+      "v1.projects.locations.exadbVmClusters",
+      "v1.projects.locations.exadbVmClusters.dbNodes",
+      "v1.projects.locations.exascaleDbStorageVaults",
+      "v1.projects.locations.giVersions",
+      "v1.projects.locations.giVersions.minorVersions",
+      "v1.projects.locations.odbNetworks",
+      "v1.projects.locations.odbNetworks.odbSubnets",
+      "v1.projects.locations.operations",
+      "v1.projects.locations.pluggableDatabases"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/oracle/database/docs/create-odb-network",
+        "https://docs.cloud.google.com/oracle/database/docs/delete-odb-network",
+        "https://docs.cloud.google.com/oracle/database/docs/create-databases",
+        "https://docs.cloud.google.com/oracle/database/docs/reference/rest"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/oracle/database/docs/create-odb-network",
+        "https://docs.cloud.google.com/oracle/database/docs/delete-odb-network",
+        "https://docs.cloud.google.com/oracle/database/docs/create-databases",
+        "https://docs.cloud.google.com/oracle/database/docs/reference/rest"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/oracle/database/docs/create-odb-network",
+        "https://docs.cloud.google.com/oracle/database/docs/delete-odb-network",
+        "https://docs.cloud.google.com/oracle/database/docs/create-databases",
+        "https://docs.cloud.google.com/oracle/database/docs/reference/rest"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/oracle/database/docs/create-odb-network",
+        "https://docs.cloud.google.com/oracle/database/docs/delete-odb-network",
+        "https://docs.cloud.google.com/oracle/database/docs/create-databases",
+        "https://docs.cloud.google.com/oracle/database/docs/reference/rest"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/oracle/database/docs/create-odb-network",
+        "https://docs.cloud.google.com/oracle/database/docs/delete-odb-network",
+        "https://docs.cloud.google.com/oracle/database/docs/create-databases",
+        "https://docs.cloud.google.com/oracle/database/docs/reference/rest"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/oracle/database/docs/create-odb-network",
+        "https://docs.cloud.google.com/oracle/database/docs/delete-odb-network",
+        "https://docs.cloud.google.com/oracle/database/docs/create-databases",
+        "https://docs.cloud.google.com/oracle/database/docs/reference/rest"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/oracle/database/docs/create-odb-network",
+        "https://docs.cloud.google.com/oracle/database/docs/delete-odb-network",
+        "https://docs.cloud.google.com/oracle/database/docs/create-databases",
+        "https://docs.cloud.google.com/oracle/database/docs/reference/rest"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/oracle/database/docs/create-odb-network",
+        "https://docs.cloud.google.com/oracle/database/docs/delete-odb-network",
+        "https://docs.cloud.google.com/oracle/database/docs/create-databases",
+        "https://docs.cloud.google.com/oracle/database/docs/reference/rest"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,118 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:17.437Z",
+  "source_step08_card": "data/step-08/current/products/apps-script/card.json",
+  "product_name": "Apps Script",
+  "product_slug": "apps-script",
+  "feature_name": "Form one-response limit",
+  "feature_slug": "form-one-response-limit",
+  "summary": "Forms can get and set whether respondents are limited to one response per user.",
+  "extended_definition": "Forms can get and set whether respondents are limited to one response per user.",
+  "lifecycle": {
+    "latest_feature_date": "2014-12-01",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/apps-script/api/reference/rest/v1/processes/list",
+      "https://developers.google.com/apps-script/guides/triggers/events",
+      "https://developers.google.com/apps-script/releases"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Event Objects \\_|\\_ Apps Script \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/apps-script/guides/triggers/events",
+        "source_id": "site-docs-reference",
+        "final_score": 100,
+        "relevance": "",
+        "evidence_snippets": [
+          "Presentation user A User object, representing the active user, if available ( depending on a complex set of security restrictions ). amin@example.com Google Forms events The Forms-specific triggers let scripts respond when a user edits a form or submits a response.",
+          "FormResponse source A Form object, representing the Forms file to which the script is bound.",
+          "LIMITED source A Form object, representing the Forms file to which the script is bound."
+        ]
+      },
+      {
+        "title": "Google Apps Script release notes \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/apps-script/releases",
+        "source_id": "site-docs-root",
+        "final_score": 100,
+        "relevance": "",
+        "evidence_snippets": [
+          "Feature The Forms service now has the following method: Form.deleteResponse(responseId) The Utilities service now has the following methods: Utilities.computeDigest(algorithm, value) , where value is a Byte array Utilities.computeHmacSha256Signature(value, key) , where value and key are Byte arrays Utilities.computeHmacSignature(algorithm, value, key) , where value and key are Byte arrays Change The quota limits for UrlFetch GET response size and POST size have been increased to 50MB / call.",
+          "July 28, 2017 Feature Added a Spreadsheet.getFormUrl() method that returns the URLs of Forms send responses to this Sheet or Spreadsheet.",
+          "Form.setLimitOneResponsePerUser(enabled) : Sets whether the form allows only one response per respondent."
+        ]
+      },
+      {
+        "title": "Method: processes.list \\_|\\_ Apps Script \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/apps-script/api/reference/rest/v1/processes/list",
+        "source_id": "site-api-reference",
+        "final_score": 88,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "JSON representation { \"scriptId\" : string , \"deploymentId\" : string , \"projectName\" : string , \"functionName\" : string , \"startTime\" : string , \"endTime\" : string , \"types\" : [ enum ( ProcessType ) ] , \"statuses\" : [ enum ( ProcessStatus ) ] , \"userAccessLevels\" : [ enum ( UserAccessLevel ) ] } Fields scriptId string Optional field used to limit returned processes to those originating from projects with a specific script ID. deploymentId string Optional field used to limit returned processes to those originating from projects with a specific deployment ID. projectName string Optional field used to limit returned processes to those originating from projects with project names containing a specific string. functionName string Optional field used to limit returned processes to those originating from a script function with the given function name. startTime string ( Timestamp format) Optional field used to limit returned processes to those that were started on or after the given timestamp.",
+          "Examples: \"2014-10-02T15:01:23Z\" and \"2014-10-02T15:01:23.045123456Z\" . endTime string ( Timestamp format) Optional field used to limit returned processes to those that completed on or before the given timestamp.",
+          "Need to tell us more? [[[\"Easy to understand\",\"easyToUnderstand\",\"thumb-up\"],[\"Solved my problem\",\"solvedMyProblem\",\"thumb-up\"],[\"Other\",\"otherUp\",\"thumb-up\"]],[[\"Missing the information I need\",\"missingTheInformationINeed\",\"thumb-down\"],[\"Too complicated / too many steps\",\"tooComplicatedTooManySteps\",\"thumb-down\"],[\"Out of date\",\"outOfDate\",\"thumb-down\"],[\"Samples / code issue\",\"samplesCodeIssue\",\"thumb-down\"],[\"Other\",\"otherDown\",\"thumb-down\"]],[\"Last updated 2024-10-31 UTC.\"],[],[]]"
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "developers.google.com",
+      "example.com",
+      "processes.list"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/guides/triggers/events",
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/api/reference/rest/v1/processes/list"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/guides/triggers/events",
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/api/reference/rest/v1/processes/list"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/guides/triggers/events",
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/api/reference/rest/v1/processes/list"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/guides/triggers/events",
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/api/reference/rest/v1/processes/list"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,130 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:12.801Z",
+  "source_step08_card": "data/step-08/current/products/alloydb/card.json",
+  "product_name": "AlloyDB",
+  "product_slug": "alloydb",
+  "feature_name": "SSL enforcement mode",
+  "feature_slug": "ssl-enforcement-mode",
+  "summary": "AlloyDB lets you enforce SSL encryption for all database connections to an instance.",
+  "extended_definition": "AlloyDB lets you enforce SSL encryption for all database connections to an instance.",
+  "lifecycle": {
+    "latest_feature_date": "2023-08-22",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/alloydb/docs/ai/secure-agent-interactions-mcp",
+      "https://docs.cloud.google.com/alloydb/docs/ai/use-alloydb-mcp",
+      "https://docs.cloud.google.com/alloydb/docs/overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Use the AlloyDB remote MCP server \\_|\\_ AlloyDB for PostgreSQL \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/alloydb/docs/ai/use-alloydb-mcp",
+        "source_id": "site-docs-reference-2",
+        "final_score": 102,
+        "relevance": "",
+        "evidence_snippets": [
+          "See the following example command: gcloud model-armor floorsettings update \\ --full-uri = 'projects/ PROJECT ID /locations/global/floorSetting' \\ --enable-floor-setting-enforcement = TRUE \\ --add-integrated-services = GOOGLE MCP SERVER \\ --google-mcp-server-enforcement-type = INSPECT AND BLOCK \\ --enable-google-mcp-server-cloud-logging \\ --malicious-uri-filter-settings-enforcement = ENABLED \\ --add-rai-settings-filters = '[{\"confidenceLevel\": \"MEDIUM AND ABOVE\", \"filterType\": \"DANGEROUS\"}]' Replace PROJECT ID with your Google Cloud project ID.",
+          "Whether you are deploying AI in your cloud environment, or on external cloud providers, Model Armor can help you prevent malicious input, verify content safety, protect sensitive data, maintain compliance, and enforce your AI safety and security policies consistently across your diverse AI landscape.",
+          "This document shows you how to use the AlloyDB for PostgreSQL remote Model Context Protocol (MCP) server to connect with AI applications including Gemini CLI, ChatGPT, Claude, and custom applications you are developing."
+        ]
+      },
+      {
+        "title": "\"Best practices for securing agent interactions with Model Context Protocol\\",
+        "url": "https://docs.cloud.google.com/alloydb/docs/ai/secure-agent-interactions-mcp",
+        "source_id": "site-docs-reference-2",
+        "final_score": 100,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Enforce minimum safety thresholds for sensitive data operations Model Armor lets you enforce a minimum safety threshold for sensitive data operations—for example, personally identifiable information (PII) detection and de-identification.",
+          "Security and safety configurations AlloyDB provides Model Armor to enforce safety boundaries at the platform level.",
+          "Home Documentation Databases AlloyDB for PostgreSQL Guides Send feedback Best practices for securing agent interactions with Model Context Protocol Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "AlloyDB overview \\_|\\_ AlloyDB for PostgreSQL \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/alloydb/docs/overview",
+        "source_id": "site-api-reference",
+        "final_score": 85,
+        "relevance": "",
+        "evidence_snippets": [
+          "For more information, see Create a ScaNN index . google ml integration : provides access to the AI functions, which enables ML model invocation from AlloyDB for tasks such as generating embeddings, semantic ranking, AI-based filters and joins, and text generation and summarization.",
+          "Low-latency AI applications: build generative AI applications by leveraging AlloyDB AI, which integrates vector search and machine learning model invocation directly into the database engine, removing the need for high-latency external data movement.",
+          "You can use the following tools to connect to and manage your databases: AlloyDB Studio: a web-based tool built directly into the Google Google Cloud console that lets you explore and manage your data using an interactive SQL interface."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/ai/use-alloydb-mcp",
+        "https://docs.cloud.google.com/alloydb/docs/ai/secure-agent-interactions-mcp",
+        "https://docs.cloud.google.com/alloydb/docs/overview"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/ai/use-alloydb-mcp",
+        "https://docs.cloud.google.com/alloydb/docs/ai/secure-agent-interactions-mcp",
+        "https://docs.cloud.google.com/alloydb/docs/overview"
+      ]
+    },
+    {
+      "capability": "armor",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/ai/use-alloydb-mcp",
+        "https://docs.cloud.google.com/alloydb/docs/ai/secure-agent-interactions-mcp",
+        "https://docs.cloud.google.com/alloydb/docs/overview"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/ai/use-alloydb-mcp",
+        "https://docs.cloud.google.com/alloydb/docs/ai/secure-agent-interactions-mcp",
+        "https://docs.cloud.google.com/alloydb/docs/overview"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/ai/use-alloydb-mcp",
+        "https://docs.cloud.google.com/alloydb/docs/ai/secure-agent-interactions-mcp",
+        "https://docs.cloud.google.com/alloydb/docs/overview"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/ai/use-alloydb-mcp",
+        "https://docs.cloud.google.com/alloydb/docs/ai/secure-agent-interactions-mcp",
+        "https://docs.cloud.google.com/alloydb/docs/overview"
+      ]
+    }
+  ]
+}

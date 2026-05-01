@@ -1,0 +1,143 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:34.487Z",
+  "source_step08_card": "data/step-08/current/products/developer-connect/card.json",
+  "product_name": "Developer Connect",
+  "product_slug": "developer-connect",
+  "feature_name": "Gemini Code Assist integration",
+  "feature_slug": "gemini-code-assist-integration",
+  "summary": "Developer Connect integrates with Gemini Code Assist to provide coding assistance tailored to private repositories.",
+  "extended_definition": "Developer Connect integrates with Gemini Code Assist to provide coding assistance tailored to private repositories.",
+  "lifecycle": {
+    "latest_feature_date": "2024-09-30",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/developer-connect/docs/connect-bitbucket-dc",
+      "https://docs.cloud.google.com/developer-connect/docs/connect-github-enterprise",
+      "https://docs.cloud.google.com/python/docs/reference/google-cloud-developerconnect/latest/google.cloud.developerconnect_v1.services.developer_connect.DeveloperConnectAsyncClient",
+      "https://docs.cloud.google.com/python/docs/reference/google-cloud-developerconnect/latest/google.cloud.developerconnect_v1.services.developer_connect.DeveloperConnectClient"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Class DeveloperConnectAsyncClient (0.5.0) \\_|\\_ Python client libraries\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/google-cloud-developerconnect/latest/google.cloud.developerconnect_v1.services.developer_connect.DeveloperConnectAsyncClient",
+        "source_id": "site-python-reference",
+        "final_score": 269,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Connection () connection.github config.github app = \"GEMINI CODE ASSIST\" request = developerconnect v1 .",
+          "Connection () connection.github config.github app = \"GEMINI CODE ASSIST\" request = developerconnect v1 .",
+          "Connections that use Gemini Code Assist will have events forwarded to Gemini Code Assist service."
+        ]
+      },
+      {
+        "title": "\"Class DeveloperConnectClient (0.5.0) \\_|\\_ Python client libraries \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/google-cloud-developerconnect/latest/google.cloud.developerconnect_v1.services.developer_connect.DeveloperConnectClient",
+        "source_id": "site-python-reference",
+        "final_score": 269,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Connection () connection.github config.github app = \"GEMINI CODE ASSIST\" request = developerconnect v1 .",
+          "Connection () connection.github config.github app = \"GEMINI CODE ASSIST\" request = developerconnect v1 .",
+          "Connections that use Gemini Code Assist will have events forwarded to Gemini Code Assist service."
+        ]
+      },
+      {
+        "title": "\"Connect to Bitbucket Data Center \\_|\\_ Developer Connect \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/developer-connect/docs/connect-bitbucket-dc",
+        "source_id": "site-iam-reference",
+        "final_score": 256,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Specifically, you can use Bitbucket Data Center repositories with Gemini Code Assist .",
+          "If you're setting up Gemini Code Assist, continue the process by following the steps in Configure and use Gemini Code Assist code customization . gcloud Create a webhook secret in Secret Manager by running the following command, where WEBHOOK SECRET NAME is a name for your webhook secret: cat /proc/sys/kernel/random/uuid tr -d '\\n' gcloud secrets create WEBHOOK SECRET NAME Store your access tokens in Secret Manager by running the following commands: gcloud secrets create ADMIN SECRET NAME echo -n ADMIN SECRET DATA gcloud secrets versions add ADMIN SECRET NAME --data-file = - gcloud secrets create READ SECRET NAME echo -n READ SECRET DATA gcloud secrets versions add READ SECRET NAME --data-file = - Replace the following: ADMIN SECRET NAME : a name for the secret that stores your admin access token.",
+          "Home Documentation Application development Developer Connect Guides Send feedback Connect to Bitbucket Data Center Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"Connect to GitHub Enterprise \\_|\\_ Developer Connect \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/developer-connect/docs/connect-github-enterprise",
+        "source_id": "site-iam-reference",
+        "final_score": 256,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Specifically, you can use GitHub Enterprise repositories with Gemini Code Assist .",
+          "If you're setting up Gemini Code Assist, continue the process by following the steps in Configure and use Gemini Code Assist code customization . gcloud The following tasks require some actions in your web browser.",
+          "Home Documentation Application development Developer Connect Guides Send feedback Connect to GitHub Enterprise Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "config.github",
+      "connection.github"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/google-cloud-developerconnect/latest/google.cloud.developerconnect_v1.services.developer_connect.DeveloperConnectAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/google-cloud-developerconnect/latest/google.cloud.developerconnect_v1.services.developer_connect.DeveloperConnectClient",
+        "https://docs.cloud.google.com/developer-connect/docs/connect-bitbucket-dc",
+        "https://docs.cloud.google.com/developer-connect/docs/connect-github-enterprise"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/google-cloud-developerconnect/latest/google.cloud.developerconnect_v1.services.developer_connect.DeveloperConnectAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/google-cloud-developerconnect/latest/google.cloud.developerconnect_v1.services.developer_connect.DeveloperConnectClient",
+        "https://docs.cloud.google.com/developer-connect/docs/connect-bitbucket-dc",
+        "https://docs.cloud.google.com/developer-connect/docs/connect-github-enterprise"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/google-cloud-developerconnect/latest/google.cloud.developerconnect_v1.services.developer_connect.DeveloperConnectAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/google-cloud-developerconnect/latest/google.cloud.developerconnect_v1.services.developer_connect.DeveloperConnectClient",
+        "https://docs.cloud.google.com/developer-connect/docs/connect-bitbucket-dc",
+        "https://docs.cloud.google.com/developer-connect/docs/connect-github-enterprise"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/google-cloud-developerconnect/latest/google.cloud.developerconnect_v1.services.developer_connect.DeveloperConnectAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/google-cloud-developerconnect/latest/google.cloud.developerconnect_v1.services.developer_connect.DeveloperConnectClient",
+        "https://docs.cloud.google.com/developer-connect/docs/connect-bitbucket-dc",
+        "https://docs.cloud.google.com/developer-connect/docs/connect-github-enterprise"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/google-cloud-developerconnect/latest/google.cloud.developerconnect_v1.services.developer_connect.DeveloperConnectAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/google-cloud-developerconnect/latest/google.cloud.developerconnect_v1.services.developer_connect.DeveloperConnectClient",
+        "https://docs.cloud.google.com/developer-connect/docs/connect-bitbucket-dc",
+        "https://docs.cloud.google.com/developer-connect/docs/connect-github-enterprise"
+      ]
+    }
+  ]
+}

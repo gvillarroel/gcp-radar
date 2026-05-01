@@ -1,0 +1,171 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:49.581Z",
+  "source_step08_card": "data/step-08/current/products/virtual-private-cloud/card.json",
+  "product_name": "Virtual Private Cloud",
+  "product_slug": "virtual-private-cloud",
+  "feature_name": "Shared VPC host project usable subnet listing",
+  "feature_slug": "shared-vpc-host-project-usable-subnet-listing",
+  "summary": "Shared VPC service projects can now list usable subnets from the host project in General Availability.",
+  "extended_definition": "Shared VPC service projects can now list usable subnets from the host project in General Availability.",
+  "lifecycle": {
+    "latest_feature_date": "2018-07-31",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/vpc/docs/about-vpc-hosted-services",
+      "https://docs.cloud.google.com/vpc/docs/reference/vpcaccess/rest/v1/projects.locations.connectors",
+      "https://docs.cloud.google.com/vpc/docs/shared-vpc",
+      "https://docs.cloud.google.com/vpc/docs/vpc"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Shared VPC \\_|\\_ Virtual Private Cloud \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vpc/docs/shared-vpc",
+        "source_id": "site-docs-root",
+        "final_score": 225,
+        "relevance": "",
+        "evidence_snippets": [
+          "They perform various tasks necessary to set up Shared VPC , such as enabling host projects, attaching service projects to host projects, and delegating access to some or all of the subnets in Shared VPC networks to Service Project Admins.",
+          "A Shared VPC Admin for the organization has created a host project and attached two service projects to it: Service Project Admins in Service project A can be configured to access all or some of the subnets in the Shared VPC network.",
+          "Both host projects have one Shared VPC network with subnets configured to use the same CIDR ranges."
+        ]
+      },
+      {
+        "title": "\"About published services \\_|\\_ Virtual Private Cloud \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/vpc/docs/about-vpc-hosted-services",
+        "source_id": "site-docs-root-2",
+        "final_score": 204,
+        "relevance": "",
+        "evidence_snippets": [
+          "Original target service New target service Internal passthrough Network Load Balancer Internal protocol forwarding (target instance) Port mapping services Regional internal Application Load Balancer Regional internal proxy Network Load Balancer Cross-region internal Application Load Balancer Secure Web Proxy Internal passthrough Network Load Balancer Internal protocol forwarding (target instance) Port mapping services Regional internal Application Load Balancer Regional internal proxy Network Load Balancer Cross-region internal Application Load Balancer Secure Web Proxy Shared VPC Service Project Admins can create service attachments in Shared VPC service projects that connect to resources in Shared VPC networks .",
+          "Establishing a Private Service Connect connection between consumer and producer projects that are not in the same VPC Service Controls perimeter does not require explicit authorization with egress policies.",
+          "The service attachment uses a Private Service Connect subnet from the Shared VPC network."
+        ]
+      },
+      {
+        "title": "VPC networks \\_|\\_ Virtual Private Cloud \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vpc/docs/vpc",
+        "source_id": "site-docs-root",
+        "final_score": 190,
+        "relevance": "",
+        "evidence_snippets": [
+          "Authorized IAM principals from other projects in the same organization can create resources that use subnets of the Shared VPC network.",
+          "Unless you create an organizational policy that prohibits it, new projects start with a default network (an auto mode VPC network) that has one subnetwork (subnet) in each region.",
+          "An organization can use Shared VPC to keep a VPC network in a common host project."
+        ]
+      },
+      {
+        "title": "\"REST Resource: projects.locations.connectors \\_|\\_ Virtual Private Cloud\\",
+        "url": "https://docs.cloud.google.com/vpc/docs/reference/vpcaccess/rest/v1/projects.locations.connectors",
+        "source_id": "site-docs-reference",
+        "final_score": 185,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "JSON representation { \"name\" : string , \"network\" : string , \"ipCidrRange\" : string , \"state\" : enum ( State ) , \"minThroughput\" : integer , \"maxThroughput\" : integer , \"connectedProjects\" : [ string ] , \"subnet\" : { object ( Subnet ) } , \"machineType\" : string , \"minInstances\" : integer , \"maxInstances\" : integer } Fields name string The resource name in the format projects/ /locations/ /connectors/ . network string Name of a VPC network. ipCidrRange string The range of internal addresses that follows RFC 4632 notation.",
+          "List of projects using the connector. subnet object ( Subnet ) The subnet in which to house the VPC Access Connector. machineType string Machine type of VM Instance underlying connector.",
+          "E.g. if the full subnet selfLink is https://compute.googleapis.com/compute/v1/projects/{project}/regions/{region}/subnetworks/{subnetName } the correct input for this field would be {subnetName} projectId string Project in which the subnet exists."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "compute.googleapis.com",
+      "compute.networkUser",
+      "projects.locations.connectors"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/shared-vpc",
+        "https://docs.cloud.google.com/vpc/docs/about-vpc-hosted-services",
+        "https://docs.cloud.google.com/vpc/docs/vpc",
+        "https://docs.cloud.google.com/vpc/docs/reference/vpcaccess/rest/v1/projects.locations.connectors"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/shared-vpc",
+        "https://docs.cloud.google.com/vpc/docs/about-vpc-hosted-services",
+        "https://docs.cloud.google.com/vpc/docs/vpc",
+        "https://docs.cloud.google.com/vpc/docs/reference/vpcaccess/rest/v1/projects.locations.connectors"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/shared-vpc",
+        "https://docs.cloud.google.com/vpc/docs/about-vpc-hosted-services",
+        "https://docs.cloud.google.com/vpc/docs/vpc",
+        "https://docs.cloud.google.com/vpc/docs/reference/vpcaccess/rest/v1/projects.locations.connectors"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/shared-vpc",
+        "https://docs.cloud.google.com/vpc/docs/about-vpc-hosted-services",
+        "https://docs.cloud.google.com/vpc/docs/vpc",
+        "https://docs.cloud.google.com/vpc/docs/reference/vpcaccess/rest/v1/projects.locations.connectors"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/shared-vpc",
+        "https://docs.cloud.google.com/vpc/docs/about-vpc-hosted-services",
+        "https://docs.cloud.google.com/vpc/docs/vpc",
+        "https://docs.cloud.google.com/vpc/docs/reference/vpcaccess/rest/v1/projects.locations.connectors"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/shared-vpc",
+        "https://docs.cloud.google.com/vpc/docs/about-vpc-hosted-services",
+        "https://docs.cloud.google.com/vpc/docs/vpc",
+        "https://docs.cloud.google.com/vpc/docs/reference/vpcaccess/rest/v1/projects.locations.connectors"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/shared-vpc",
+        "https://docs.cloud.google.com/vpc/docs/about-vpc-hosted-services",
+        "https://docs.cloud.google.com/vpc/docs/vpc",
+        "https://docs.cloud.google.com/vpc/docs/reference/vpcaccess/rest/v1/projects.locations.connectors"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/shared-vpc",
+        "https://docs.cloud.google.com/vpc/docs/about-vpc-hosted-services",
+        "https://docs.cloud.google.com/vpc/docs/vpc",
+        "https://docs.cloud.google.com/vpc/docs/reference/vpcaccess/rest/v1/projects.locations.connectors"
+      ]
+    }
+  ]
+}

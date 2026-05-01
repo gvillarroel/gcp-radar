@@ -1,0 +1,254 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:33.658Z",
+  "source_step08_card": "data/step-08/current/products/datastore/card.json",
+  "product_name": "Datastore",
+  "product_slug": "datastore",
+  "feature_name": "Database clone",
+  "feature_slug": "database-clone",
+  "summary": "Database clone lets you create a new database from an existing database state; Database clone lets you create a new database from an existing database at a selected timestamp.",
+  "extended_definition": "Database clone lets you create a new database from an existing database state; Database clone lets you create a new database from an existing database at a selected timestamp.",
+  "lifecycle": {
+    "latest_feature_date": "2025-10-27",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/datastore/docs/access/iam",
+      "https://docs.cloud.google.com/datastore/docs/articles/balancing-strong-and-eventual-consistency-with-google-cloud-datastore",
+      "https://docs.cloud.google.com/datastore/docs/articles/fast-and-reliable-ranking-in-datastore",
+      "https://docs.cloud.google.com/datastore/docs/cmek"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Identity and Access Management (IAM) \\_|\\_ Datastore \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/datastore/docs/access/iam",
+        "source_id": "site-iam-reference",
+        "final_score": 240,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Method Required Permission(s) lookup of entities with kind names matching Stat datastore.statistics.get runQuery using kinds with names matching Stat datastore.statistics.get datastore.statistics.list runQuery using the kind namespace datastore.namespaces.get datastore.namespaces.list Required roles to create a Datastore mode database instance To create a new Datastore mode database instance, you require either the Owner role or the Datastore Owner role .",
+          "This role also gives the ability to create new databases, not necessarily by restoring from a backup. roles/datastore.cloneAdmin datastore.databases.clone datastore.databases.list datastore.databases.create datastore.databases.getMetadata datastore.operations.list datastore.operations.get Ability to clone a Datastore mode database into a new database.",
+          "Intended for application developers and service accounts. roles/datastore.viewer appengine.applications.get datastore.databases.get datastore.databases.getMetadata datastore.databases.list datastore.entities.get datastore.entities.list datastore.schemas.get datastore.schemas.list datastore.namespaces.get datastore.namespaces.list datastore.statistics.get datastore.statistics.list resourcemanager.projects.get resourcemanager.projects.list datastore.insights.get Read access to all Datastore mode database resources. roles/datastore.importExportAdmin appengine.applications.get datastore.databases.export datastore.databases.getMetadata datastore.databases.import datastore.operations.cancel datastore.operations.get datastore.operations.list resourcemanager.projects.get resourcemanager.projects.list Full access to manage imports and exports. roles/datastore.bulkAdmin resourcemanager.projects.get resourcemanager.projects.list datastore.databases.getMetadata datastore.databases.bulkDelete datastore.operations.cancel datastore.operations.get datastore.operations.list Full access to manage bulk operations. roles/datastore.indexAdmin appengine.applications.get datastore.databases.getMetadata datastore.schemas. datastore.operations.get datastore.operations.list resourcemanager.projects.get resourcemanager.projects.list Full access to manage index definitions. roles/datastore.keyVisualizerViewer datastore.databases.getMetadata datastore.keyVisualizerScans.get datastore.keyVisualizerScans.list resourcemanager.projects.get resourcemanager.projects.list Full access to Key Visualizer scans. roles/datastore.backupSchedulesViewer datastore.backupSchedules.get datastore.backupSchedules.list Read access to backup schedules in a Datastore mode database. roles/datastore.backupSchedulesAdmin datastore.backupSchedules.get datastore.backupSchedules.list datastore.backupSchedules.create datastore.backupSchedules.update datastore.backupSchedules.delete datastore.databases.list datastore.databases.getMetadata Full access to backup schedules in a Datastore mode database. roles/datastore.backupsViewer datastore.backups.get datastore.backups.list Read access to backup information in a Datastore mode location. roles/datastore.backupsAdmin datastore.backups.get datastore.backups.list datastore.backups.delete Full access to backups in a Datastore mode location. roles/datastore.restoreAdmin datastore.backups.get datastore.backups.list datastore.backups.restoreDatabase datastore.databases.list datastore.databases.create datastore.databases.getMetadata datastore.operations.list datastore.operations.get Ability to restore a Datastore mode backup into a new database."
+        ]
+      },
+      {
+        "title": "\"Customer-managed encryption keys (CMEK) \\_|\\_ Datastore \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/datastore/docs/cmek",
+        "source_id": "site-iam-reference",
+        "final_score": 234,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "When you clone a database, you can specify a different encryption type in one of the following ways: Clone to a CMEK database with a newly specified key.",
+          "Backup and restore A backup uses the same encryption mechanism as the database from which you created it.",
+          "You can enable CMEK only on new databases, and you must enable it when you create the database."
+        ]
+      },
+      {
+        "title": "\"Balancing Strong and Eventual Consistency with Datastore \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/datastore/docs/articles/balancing-strong-and-eventual-consistency-with-google-cloud-datastore",
+        "source_id": "site-iam-reference",
+        "final_score": 203,
+        "relevance": "",
+        "evidence_snippets": [
+          "If you are currently using the older DB Client Library, read the DB to NDB Migration Guide Contents NoSQL and Eventual Consistency Eventual Consistency in Datastore Ancestor Query and Entity Group Limitations of Entity Group and Ancestor Query Alternatives to Ancestor Queries Minimizing Time to Achieve Full Consistency Conclusion Additional Resources NoSQL and Eventual Consistency Non-relational databases, also known as NoSQL databases, have emerged in recent years as an alternative to relational databases.",
+          "Using this method you can detect a change in any of the entities in the entire entity group by reading from one set of metadata, instead of scanning all the individual entities in the group.",
+          "This strategy allows for a gradual migration from an existing data model to a new data model based on entity groups that minimizes the risk of issues caused by eventual consistency."
+        ]
+      },
+      {
+        "title": "Fast and Reliable Ranking in Google Datastore \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/datastore/docs/articles/fast-and-reliable-ranking-in-datastore",
+        "source_id": "site-iam-reference",
+        "final_score": 191,
+        "relevance": "",
+        "evidence_snippets": [
+          "The Lossy Counting Method and Frugal Streaming are so-called online algorithms and streaming algorithms where you could use very small in-memory storage to calculate a stochastic estimation of top-rankers from a stream of player-score pairs.",
+          "For example, you could execute the following query: SELECT count(key) FROM Players WHERE Score > YourScore This query counts all the players who have a higher score than yours (Figure 4).",
+          "Home Documentation Databases Datastore Guides Send feedback Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "explicit",
+    "explicit_roles": [
+      "roles/accessapproval.admin",
+      "roles/accessapproval.approver",
+      "roles/accessapproval.configEditor"
+    ],
+    "explicit_permissions": [
+      {
+        "permission": "resourcemanager.projects.get",
+        "group": "resourcemanager",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver",
+          "roles/accessapproval.configEditor"
+        ]
+      },
+      {
+        "permission": "resourcemanager.projects.list",
+        "group": "resourcemanager",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver",
+          "roles/accessapproval.configEditor"
+        ]
+      }
+    ],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "appengine.applications.get",
+      "datastore.backups.delete",
+      "datastore.backups.get",
+      "datastore.backups.list",
+      "datastore.backups.restoreDatabase",
+      "datastore.backupsAdmin",
+      "datastore.backupSchedules.create",
+      "datastore.backupSchedules.delete",
+      "datastore.backupSchedules.get",
+      "datastore.backupSchedules.list",
+      "datastore.backupSchedules.update",
+      "datastore.backupSchedulesAdmin",
+      "datastore.backupSchedulesViewer",
+      "datastore.backupsViewer",
+      "datastore.bulkAdmin",
+      "datastore.cloneAdmin",
+      "datastore.databases.bulkDelete",
+      "datastore.databases.clone",
+      "datastore.databases.create",
+      "datastore.databases.createTagBinding",
+      "datastore.databases.export",
+      "datastore.databases.get",
+      "datastore.databases.getMetadata",
+      "datastore.databases.import",
+      "datastore.databases.list",
+      "datastore.databases.listEffectiveTags",
+      "datastore.databases.listTagBindings",
+      "datastore.entities.allocateIds",
+      "datastore.entities.create",
+      "datastore.entities.delete",
+      "datastore.entities.get",
+      "datastore.entities.list",
+      "datastore.entities.update",
+      "datastore.importExportAdmin",
+      "datastore.indexAdmin",
+      "datastore.insights.get",
+      "datastore.keyVisualizerScans.get",
+      "datastore.keyVisualizerScans.list",
+      "datastore.keyVisualizerViewer",
+      "datastore.namespaces.get",
+      "datastore.namespaces.list",
+      "datastore.operations.cancel",
+      "datastore.operations.get",
+      "datastore.operations.list",
+      "datastore.restoreAdmin",
+      "datastore.schemas",
+      "datastore.schemas.get",
+      "datastore.schemas.list",
+      "datastore.statistics.get",
+      "datastore.statistics.list",
+      "datastore.viewer"
+    ],
+    "missing_inventory_roles": [
+      "roles/datastore.backupsAdmin",
+      "roles/datastore.backupSchedulesAdmin",
+      "roles/datastore.backupSchedulesViewer",
+      "roles/datastore.backupsViewer",
+      "roles/datastore.bulkAdmin",
+      "roles/datastore.cloneAdmin",
+      "roles/datastore.importExportAdmin",
+      "roles/datastore.indexAdmin",
+      "roles/datastore.keyVisualizerViewer",
+      "roles/datastore.restoreAdmin",
+      "roles/datastore.viewer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastore/docs/access/iam",
+        "https://docs.cloud.google.com/datastore/docs/cmek",
+        "https://docs.cloud.google.com/datastore/docs/articles/balancing-strong-and-eventual-consistency-with-google-cloud-datastore",
+        "https://docs.cloud.google.com/datastore/docs/articles/fast-and-reliable-ranking-in-datastore"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastore/docs/access/iam",
+        "https://docs.cloud.google.com/datastore/docs/cmek",
+        "https://docs.cloud.google.com/datastore/docs/articles/balancing-strong-and-eventual-consistency-with-google-cloud-datastore",
+        "https://docs.cloud.google.com/datastore/docs/articles/fast-and-reliable-ranking-in-datastore"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastore/docs/access/iam",
+        "https://docs.cloud.google.com/datastore/docs/cmek",
+        "https://docs.cloud.google.com/datastore/docs/articles/balancing-strong-and-eventual-consistency-with-google-cloud-datastore",
+        "https://docs.cloud.google.com/datastore/docs/articles/fast-and-reliable-ranking-in-datastore"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastore/docs/access/iam",
+        "https://docs.cloud.google.com/datastore/docs/cmek",
+        "https://docs.cloud.google.com/datastore/docs/articles/balancing-strong-and-eventual-consistency-with-google-cloud-datastore",
+        "https://docs.cloud.google.com/datastore/docs/articles/fast-and-reliable-ranking-in-datastore"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastore/docs/access/iam",
+        "https://docs.cloud.google.com/datastore/docs/cmek",
+        "https://docs.cloud.google.com/datastore/docs/articles/balancing-strong-and-eventual-consistency-with-google-cloud-datastore",
+        "https://docs.cloud.google.com/datastore/docs/articles/fast-and-reliable-ranking-in-datastore"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastore/docs/access/iam",
+        "https://docs.cloud.google.com/datastore/docs/cmek",
+        "https://docs.cloud.google.com/datastore/docs/articles/balancing-strong-and-eventual-consistency-with-google-cloud-datastore",
+        "https://docs.cloud.google.com/datastore/docs/articles/fast-and-reliable-ranking-in-datastore"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastore/docs/access/iam",
+        "https://docs.cloud.google.com/datastore/docs/cmek",
+        "https://docs.cloud.google.com/datastore/docs/articles/balancing-strong-and-eventual-consistency-with-google-cloud-datastore",
+        "https://docs.cloud.google.com/datastore/docs/articles/fast-and-reliable-ranking-in-datastore"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastore/docs/access/iam",
+        "https://docs.cloud.google.com/datastore/docs/cmek",
+        "https://docs.cloud.google.com/datastore/docs/articles/balancing-strong-and-eventual-consistency-with-google-cloud-datastore",
+        "https://docs.cloud.google.com/datastore/docs/articles/fast-and-reliable-ranking-in-datastore"
+      ]
+    }
+  ]
+}

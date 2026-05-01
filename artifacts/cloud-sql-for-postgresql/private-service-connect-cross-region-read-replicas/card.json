@@ -1,0 +1,154 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:27.301Z",
+  "source_step08_card": "data/step-08/current/products/cloud-sql-for-postgresql/card.json",
+  "product_name": "Cloud SQL for PostgreSQL",
+  "product_slug": "cloud-sql-for-postgresql",
+  "feature_name": "Private Service Connect cross-region read replicas",
+  "feature_slug": "private-service-connect-cross-region-read-replicas",
+  "summary": "Private Service Connect cross-region read replicas let Private Service Connect connectivity work with read replicas in different regions; Private Service Connect cross-region read replicas let Private Service Connect connectivity work with read replicas in different regions.",
+  "extended_definition": "Private Service Connect cross-region read replicas let Private Service Connect connectivity work with read replicas in different regions; Private Service Connect cross-region read replicas let Private Service Connect connectivity work with read replicas in different regions.",
+  "lifecycle": {
+    "latest_feature_date": "2024-03-25",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/sql/docs/mysql/about-private-service-connect",
+      "https://docs.cloud.google.com/sql/docs/postgres/configure-private-service-connect",
+      "https://docs.cloud.google.com/sql/docs/postgres/replication/create-replica"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Connect to an instance using Private Service Connect \\_|\\_ Cloud SQL for\\",
+        "url": "https://docs.cloud.google.com/sql/docs/postgres/configure-private-service-connect",
+        "source_id": "site-iam-reference",
+        "final_score": 226,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Save the request body in a file named request.json , and execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method POST -Headers $headers -ContentType: \"application/json; charset=utf-8\" -InFile request.json -Uri \"https://networkconnectivity.googleapis.com/v1/projects/ PROJECT ID /locations/ REGION /serviceConnectionPolicies?serviceConnectionPolicyId= POLICY NAME \" Select-Object -Expand Content You should receive a JSON response similar to the following: { \"name\": \"projects/ PROJECT ID /locations/ REGION /operations/ OPERATION ID \", \"metadata\": { \"@type\": \"type.googleapis.com/google.cloud.networkconnectivity.v1.OperationMetadata\", \"createTime\": \"2023-08-15T16:59:29.236110917Z\", \"target\": \"projects/ PROJECT ID /locations/ REGION /serviceConnectionPolicies/ POLICY NAME \", \"verb\": \"create\", \"requestedCancellation\": false, \"apiVersion\": \"v1\" }, \"done\": false } Create a Cloud SQL instance You can create an instance with Private Service Connect enabled for the instance and configure the instance to create endpoints automatically by using gcloud CLI or the API.",
+          "You can use Private Service Connect to connect to either a primary Cloud SQL instance or any of its read replicas from multiple Virtual Private Cloud (VPC) networks that belong to different groups, teams, projects, or organizations.",
+          "By using Private Service Connect, you can connect to either a primary instance or any of its read replicas from multiple VPC networks."
+        ]
+      },
+      {
+        "title": "Create read replicas \\_|\\_ Cloud SQL for PostgreSQL \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/sql/docs/postgres/replication/create-replica",
+        "source_id": "site-docs-root",
+        "final_score": 211,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "It also can't replicate from an instance that supports external IP connections or from an instance that's configured with private services access . gcloud To create a read replica of an instance, use the gcloud sql instances create command: gcloud sql instances create REPLICA INSTANCE NAME \\ --master-instance-name = PRIMARY INSTANCE NAME \\ --project = PROJECT ID \\ --region = REGION NAME \\ --enable-private-service-connect \\ --allowed-psc-projects = ALLOWED PROJECTS \\ --availability-type = AVAILABILITY TYPE \\ --no-assign-ip Make the following replacements: REPLICA INSTANCE NAME : the name of the replica instance.",
+          "If the primary instance has a private IP connection and the instance accepts database connections from Cloud SQL Language Connectors only, then you can't create read replicas for the instance.",
+          "Follow steps 4-6 for each new cascading replica that you want to create. gcloud Create the new replica by specifying your primary replica as the primary instance using the --master-instance-name flag: gcloud sql instances create REPLICA NAME \\ --master-instance-name = PARENT REPLICA NAME \\ Replace the following: REPLICA NAME : the unique ID for the replica that you are creating PARENT REPLICA NAME : the name of the parent replica After you create the cascading replica, you can see that the changes made to the primary instance are replicated through all the replicas in the cascading replicas chain. curl To create a replica under the parent replica, edit the following JSON code sample, and save it to a file called request.json : { \"masterInstanceName\" : \" PARENT REPLICA NAME \" , \"project\" : \" PROJECT ID \" , \"name\" : \" REPLICA NAME \" , \"region\" : \" REPLICA REGION \" , \"settings\" : { \"tier\" : \" MACHINE TYPE \" , } } Run the following command: curl -X POST -H \"Authorization: Bearer \" $( gcloud auth print-access-token ) -H \"Content-Type: application/json; charset=utf-8\" -d @request.json \"https://sqladmin.googleapis.com/v1/projects/ PROJECT ID /instances\" Troubleshoot Issue Troubleshooting Read replica didn't start replicating on creation."
+        ]
+      },
+      {
+        "title": "\"Private Service Connect overview \\_|\\_ Cloud SQL for MySQL \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/sql/docs/mysql/about-private-service-connect",
+        "source_id": "site-docs-root",
+        "final_score": 206,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "You can use Private Service Connect for the following purposes: Connect to a Cloud SQL instance from multiple VPC networks that belong to different groups, teams, projects, or organizations Connect to either a primary instance or any of its read replicas Private Service Connect endpoint You can use Private Service Connect endpoints to access Cloud SQL instances privately from your consumer VPC networks.",
+          "Private Service Connect outbound connectivity can't be enabled on a read replica instance.",
+          "Limitations When using a Private Service Connect interface with a network attachment to create outbound connections to your network from your Cloud SQL instance, note the following limitations: Enabling or disabling Private Service Connect outbound connectivity requires downtime."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "address.default.self",
+      "address.ipv6",
+      "data.google",
+      "default.id",
+      "default.name",
+      "example.com",
+      "instance.default.name",
+      "instance.default.psc",
+      "network.ipv6",
+      "networkconnectivity.googleapis.com",
+      "request.json",
+      "resource.google",
+      "sqladmin.googleapis.com",
+      "subnetwork.ipv6",
+      "type.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/configure-private-service-connect",
+        "https://docs.cloud.google.com/sql/docs/postgres/replication/create-replica",
+        "https://docs.cloud.google.com/sql/docs/mysql/about-private-service-connect"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/configure-private-service-connect",
+        "https://docs.cloud.google.com/sql/docs/postgres/replication/create-replica",
+        "https://docs.cloud.google.com/sql/docs/mysql/about-private-service-connect"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/configure-private-service-connect",
+        "https://docs.cloud.google.com/sql/docs/postgres/replication/create-replica",
+        "https://docs.cloud.google.com/sql/docs/mysql/about-private-service-connect"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/configure-private-service-connect",
+        "https://docs.cloud.google.com/sql/docs/postgres/replication/create-replica",
+        "https://docs.cloud.google.com/sql/docs/mysql/about-private-service-connect"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/configure-private-service-connect",
+        "https://docs.cloud.google.com/sql/docs/postgres/replication/create-replica",
+        "https://docs.cloud.google.com/sql/docs/mysql/about-private-service-connect"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/configure-private-service-connect",
+        "https://docs.cloud.google.com/sql/docs/postgres/replication/create-replica",
+        "https://docs.cloud.google.com/sql/docs/mysql/about-private-service-connect"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/configure-private-service-connect",
+        "https://docs.cloud.google.com/sql/docs/postgres/replication/create-replica",
+        "https://docs.cloud.google.com/sql/docs/mysql/about-private-service-connect"
+      ]
+    }
+  ]
+}

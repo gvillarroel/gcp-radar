@@ -1,0 +1,143 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:30.099Z",
+  "source_step08_card": "data/step-08/current/products/confidential-vm/card.json",
+  "product_name": "Confidential VM",
+  "product_slug": "confidential-vm",
+  "feature_name": "AMD SEV on C3D machine types",
+  "feature_slug": "amd-sev-on-c3d-machine-types",
+  "summary": "Confidential VM supports AMD SEV on C3D machine types.",
+  "extended_definition": "Confidential VM supports AMD SEV on C3D machine types.",
+  "lifecycle": {
+    "latest_feature_date": "2024-09-20",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/confidential-computing/confidential-vm/docs/create-a-confidential-vm-instance",
+      "https://docs.cloud.google.com/confidential-computing/confidential-vm/docs/create-confidential-vm-instance",
+      "https://docs.cloud.google.com/confidential-computing/confidential-vm/docs/creating-cvm-instance",
+      "https://docs.cloud.google.com/confidential-computing/confidential-vm/docs/supported-configurations"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Supported configurations \\_|\\_ Confidential VM \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/confidential-computing/confidential-vm/docs/supported-configurations",
+        "source_id": "site-docs-reference",
+        "final_score": 422,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Machine type CPU platform Confidential Computing technology Live migration support GPU support a3-highgpu-1g View machine type names Intel Sapphire Rapids Intel TDX See limitations NVIDIA See limitations Not supported Supported C4D View machine type names AMD EPYC Turin AMD SEV See limitations Not supported Not supported c3-standard- View machine type names Intel Sapphire Rapids Intel TDX See limitations Not supported Not supported C3D View machine type names AMD EPYC Genoa AMD SEV See limitations Supported Not supported C2D View machine type names AMD EPYC Milan AMD SEV See limitations Not supported Not supported N2D View machine type names AMD EPYC Milan AMD SEV on Milan See limitations AMD SEV-SNP on Milan See limitations Supported on AMD SEV VM instances only Not supported View supported zones You can view which zones support these machine types and Confidential Computing technology with one of the following methods.",
+          "AMD SEV on the C4D and C3D machine type has the following limitations: Confidential VM instances that use C4D and C3D machine types might experience lower network bandwidth than equivalent non-confidential VMs, even with per VM Tier 1 networking performance enabled.",
+          "Confidential VM instances with AMD SEV on C3D machine types don't support Hyperdisk Balanced and Hyperdisk Throughput."
+        ]
+      },
+      {
+        "title": "Create a Confidential VM instance \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/confidential-computing/confidential-vm/docs/create-a-confidential-vm-instance",
+        "source_id": "site-docs-reference",
+        "final_score": 356,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "You can check the active account by running gcloud auth list . $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } $body = @\" { \"name\": \"my-instance\", \"confidentialInstanceConfig\": { \"confidentialInstanceType\": \"SEV SNP\" }, \"machineType\": \"zones/us-central1-a/machineTypes/n2d-standard-2\", \"minCpuPlatform\": \"AMD Milan\", \"scheduling\": { \"automaticRestart\": true, \"nodeAffinities\": [], \"onHostMaintenance\": \"TERMINATE\", \"preemptible\": false } \"disks\": [ { \"boot\": true, \"initializeParams\": { \"sourceImage\": \"projects/ubuntu-os-cloud/global/images/family/ubuntu-2404-lts-amd64\" } } ], \"networkInterfaces\": [ { \"nicType\": \"gVNIC\" } ] } \"@ Invoke-WebRequest -Method POST -Headers $headers -ContentType: \"application/json; charset=utf-8\" -Body $body ` -Uri \"https://compute.googleapis.com/compute/projects/my-project/zones/us-central1-a/instances\" Select-Object -Expand Content Response A response to a creation request looks similar to the following example: { \"kind\" : \"compute#operation\" , \"id\" : \"0000000000000000000\" , \"name\" : \"operation-0000000000000-0000000000000-00000000-00000000\" , \"zone\" : \"https://www.googleapis.com/compute/v1/projects/my-project/zones/us-central1-a\" , \"operationType\" : \"insert\" , \"targetLink\" : \"https://www.googleapis.com/compute/v1/projects/my-project/zones/us-central1-a/instances/my-instance\" , \"targetId\" : \"0000000000000000000\" , \"status\" : \"RUNNING\" , \"user\" : \"alex@example.com\" , \"progress\" : 0 , \"insertTime\" : \"2024-09-29T18:06:52.174-07:00\" , \"startTime\" : \"2024-09-29T18:06:52.175-07:00\" , \"selfLink\" : \"https://www.googleapis.com/compute/v1/projects/my-project/zones/us-central1-a/operations/operation-0000000000000-0000000000000-00000000-00000000\" } You can check the VM creation progress by making a GET request to the selfLink : GET https://www.googleapis.com/compute/v1/projects/ PROJECT ID /zones/ ZONE NAME /operations/ OPERATION ID Enable higher network bandwidth for specific machine types Larger machine types support high-bandwidth networking.",
+          "You can check the active account by running gcloud auth list . curl -X POST \\ -H \"Authorization: Bearer $(gcloud auth print-access-token)\" \\ -H \"Content-Type: application/json\" \\ -d '{ \"name\": \"my-instance\", \"confidentialInstanceConfig\": { \"confidentialInstanceType\": \"SEV SNP\" }, \"machineType\": \"zones/us-central1-a/machineTypes/n2d-standard-2\", \"minCpuPlatform\": \"AMD Milan\", \"scheduling\": { \"automaticRestart\": true, \"nodeAffinities\": [], \"onHostMaintenance\": \"TERMINATE\", \"preemptible\": false }, \"disks\": [ { \"boot\": true, \"initializeParams\": { \"sourceImage\": \"projects/ubuntu-os-cloud/global/images/family/ubuntu-2404-lts-amd64\" } } ], \"networkInterfaces\": [ { \"nicType\": \"gVNIC\" } ] }' \\ https://compute.googleapis.com/compute/v1/projects/my-project/zones/us-central1-a/instances PowerShell (Windows) Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login .",
+          "CPU PLATFORM : Choose one of the following values: For AMD SEV: Either AMD Milan (C2D or N2D machine types), AMD Genoa (C3D machine types), or AMD Turin (C4D machine types)."
+        ]
+      },
+      {
+        "title": "Create a Confidential VM instance \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/confidential-computing/confidential-vm/docs/create-confidential-vm-instance",
+        "source_id": "site-docs-root",
+        "final_score": 356,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "You can check the active account by running gcloud auth list . $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } $body = @\" { \"name\": \"my-instance\", \"confidentialInstanceConfig\": { \"confidentialInstanceType\": \"SEV SNP\" }, \"machineType\": \"zones/us-central1-a/machineTypes/n2d-standard-2\", \"minCpuPlatform\": \"AMD Milan\", \"scheduling\": { \"automaticRestart\": true, \"nodeAffinities\": [], \"onHostMaintenance\": \"TERMINATE\", \"preemptible\": false } \"disks\": [ { \"boot\": true, \"initializeParams\": { \"sourceImage\": \"projects/ubuntu-os-cloud/global/images/family/ubuntu-2404-lts-amd64\" } } ], \"networkInterfaces\": [ { \"nicType\": \"gVNIC\" } ] } \"@ Invoke-WebRequest -Method POST -Headers $headers -ContentType: \"application/json; charset=utf-8\" -Body $body ` -Uri \"https://compute.googleapis.com/compute/projects/my-project/zones/us-central1-a/instances\" Select-Object -Expand Content Response A response to a creation request looks similar to the following example: { \"kind\" : \"compute#operation\" , \"id\" : \"0000000000000000000\" , \"name\" : \"operation-0000000000000-0000000000000-00000000-00000000\" , \"zone\" : \"https://www.googleapis.com/compute/v1/projects/my-project/zones/us-central1-a\" , \"operationType\" : \"insert\" , \"targetLink\" : \"https://www.googleapis.com/compute/v1/projects/my-project/zones/us-central1-a/instances/my-instance\" , \"targetId\" : \"0000000000000000000\" , \"status\" : \"RUNNING\" , \"user\" : \"alex@example.com\" , \"progress\" : 0 , \"insertTime\" : \"2024-09-29T18:06:52.174-07:00\" , \"startTime\" : \"2024-09-29T18:06:52.175-07:00\" , \"selfLink\" : \"https://www.googleapis.com/compute/v1/projects/my-project/zones/us-central1-a/operations/operation-0000000000000-0000000000000-00000000-00000000\" } You can check the VM creation progress by making a GET request to the selfLink : GET https://www.googleapis.com/compute/v1/projects/ PROJECT ID /zones/ ZONE NAME /operations/ OPERATION ID Enable higher network bandwidth for specific machine types Larger machine types support high-bandwidth networking.",
+          "You can check the active account by running gcloud auth list . curl -X POST \\ -H \"Authorization: Bearer $(gcloud auth print-access-token)\" \\ -H \"Content-Type: application/json\" \\ -d '{ \"name\": \"my-instance\", \"confidentialInstanceConfig\": { \"confidentialInstanceType\": \"SEV SNP\" }, \"machineType\": \"zones/us-central1-a/machineTypes/n2d-standard-2\", \"minCpuPlatform\": \"AMD Milan\", \"scheduling\": { \"automaticRestart\": true, \"nodeAffinities\": [], \"onHostMaintenance\": \"TERMINATE\", \"preemptible\": false }, \"disks\": [ { \"boot\": true, \"initializeParams\": { \"sourceImage\": \"projects/ubuntu-os-cloud/global/images/family/ubuntu-2404-lts-amd64\" } } ], \"networkInterfaces\": [ { \"nicType\": \"gVNIC\" } ] }' \\ https://compute.googleapis.com/compute/v1/projects/my-project/zones/us-central1-a/instances PowerShell (Windows) Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login .",
+          "CPU PLATFORM : Choose one of the following values: For AMD SEV: Either AMD Milan (C2D or N2D machine types), AMD Genoa (C3D machine types), or AMD Turin (C4D machine types)."
+        ]
+      },
+      {
+        "title": "Create a Confidential VM instance \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/confidential-computing/confidential-vm/docs/creating-cvm-instance",
+        "source_id": "site-docs-root",
+        "final_score": 336,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "You can check the active account by running gcloud auth list . $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } $body = @\" { \"name\": \"my-instance\", \"confidentialInstanceConfig\": { \"confidentialInstanceType\": \"SEV SNP\" }, \"machineType\": \"zones/us-central1-a/machineTypes/n2d-standard-2\", \"minCpuPlatform\": \"AMD Milan\", \"scheduling\": { \"automaticRestart\": true, \"nodeAffinities\": [], \"onHostMaintenance\": \"TERMINATE\", \"preemptible\": false } \"disks\": [ { \"boot\": true, \"initializeParams\": { \"sourceImage\": \"projects/ubuntu-os-cloud/global/images/family/ubuntu-2404-lts-amd64\" } } ], \"networkInterfaces\": [ { \"nicType\": \"gVNIC\" } ] } \"@ Invoke-WebRequest -Method POST -Headers $headers -ContentType: \"application/json; charset=utf-8\" -Body $body ` -Uri \"https://compute.googleapis.com/compute/projects/my-project/zones/us-central1-a/instances\" Select-Object -Expand Content Response A response to a creation request looks similar to the following example: { \"kind\" : \"compute#operation\" , \"id\" : \"0000000000000000000\" , \"name\" : \"operation-0000000000000-0000000000000-00000000-00000000\" , \"zone\" : \"https://www.googleapis.com/compute/v1/projects/my-project/zones/us-central1-a\" , \"operationType\" : \"insert\" , \"targetLink\" : \"https://www.googleapis.com/compute/v1/projects/my-project/zones/us-central1-a/instances/my-instance\" , \"targetId\" : \"0000000000000000000\" , \"status\" : \"RUNNING\" , \"user\" : \"alex@example.com\" , \"progress\" : 0 , \"insertTime\" : \"2024-09-29T18:06:52.174-07:00\" , \"startTime\" : \"2024-09-29T18:06:52.175-07:00\" , \"selfLink\" : \"https://www.googleapis.com/compute/v1/projects/my-project/zones/us-central1-a/operations/operation-0000000000000-0000000000000-00000000-00000000\" } You can check the VM creation progress by making a GET request to the selfLink : GET https://www.googleapis.com/compute/v1/projects/ PROJECT ID /zones/ ZONE NAME /operations/ OPERATION ID Enable higher network bandwidth for specific machine types Larger machine types support high-bandwidth networking.",
+          "You can check the active account by running gcloud auth list . curl -X POST \\ -H \"Authorization: Bearer $(gcloud auth print-access-token)\" \\ -H \"Content-Type: application/json\" \\ -d '{ \"name\": \"my-instance\", \"confidentialInstanceConfig\": { \"confidentialInstanceType\": \"SEV SNP\" }, \"machineType\": \"zones/us-central1-a/machineTypes/n2d-standard-2\", \"minCpuPlatform\": \"AMD Milan\", \"scheduling\": { \"automaticRestart\": true, \"nodeAffinities\": [], \"onHostMaintenance\": \"TERMINATE\", \"preemptible\": false }, \"disks\": [ { \"boot\": true, \"initializeParams\": { \"sourceImage\": \"projects/ubuntu-os-cloud/global/images/family/ubuntu-2404-lts-amd64\" } } ], \"networkInterfaces\": [ { \"nicType\": \"gVNIC\" } ] }' \\ https://compute.googleapis.com/compute/v1/projects/my-project/zones/us-central1-a/instances PowerShell (Windows) Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login .",
+          "CPU PLATFORM : Choose one of the following values: For AMD SEV: Either AMD Milan (C2D or N2D machine types), AMD Genoa (C3D machine types), or AMD Turin (C4D machine types)."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "compute.googleapis.com",
+      "example.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/confidential-computing/confidential-vm/docs/supported-configurations",
+        "https://docs.cloud.google.com/confidential-computing/confidential-vm/docs/create-a-confidential-vm-instance",
+        "https://docs.cloud.google.com/confidential-computing/confidential-vm/docs/create-confidential-vm-instance",
+        "https://docs.cloud.google.com/confidential-computing/confidential-vm/docs/creating-cvm-instance"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/confidential-computing/confidential-vm/docs/supported-configurations",
+        "https://docs.cloud.google.com/confidential-computing/confidential-vm/docs/create-a-confidential-vm-instance",
+        "https://docs.cloud.google.com/confidential-computing/confidential-vm/docs/create-confidential-vm-instance",
+        "https://docs.cloud.google.com/confidential-computing/confidential-vm/docs/creating-cvm-instance"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/confidential-computing/confidential-vm/docs/supported-configurations",
+        "https://docs.cloud.google.com/confidential-computing/confidential-vm/docs/create-a-confidential-vm-instance",
+        "https://docs.cloud.google.com/confidential-computing/confidential-vm/docs/create-confidential-vm-instance",
+        "https://docs.cloud.google.com/confidential-computing/confidential-vm/docs/creating-cvm-instance"
+      ]
+    },
+    {
+      "capability": "confidential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/confidential-computing/confidential-vm/docs/supported-configurations",
+        "https://docs.cloud.google.com/confidential-computing/confidential-vm/docs/create-a-confidential-vm-instance",
+        "https://docs.cloud.google.com/confidential-computing/confidential-vm/docs/create-confidential-vm-instance",
+        "https://docs.cloud.google.com/confidential-computing/confidential-vm/docs/creating-cvm-instance"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/confidential-computing/confidential-vm/docs/supported-configurations",
+        "https://docs.cloud.google.com/confidential-computing/confidential-vm/docs/create-a-confidential-vm-instance",
+        "https://docs.cloud.google.com/confidential-computing/confidential-vm/docs/create-confidential-vm-instance",
+        "https://docs.cloud.google.com/confidential-computing/confidential-vm/docs/creating-cvm-instance"
+      ]
+    }
+  ]
+}

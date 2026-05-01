@@ -1,0 +1,202 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:28.180Z",
+  "source_step08_card": "data/step-08/current/products/cloud-storage/card.json",
+  "product_name": "Cloud Storage",
+  "product_slug": "cloud-storage",
+  "feature_name": "Managed folders in Cloud Console",
+  "feature_slug": "managed-folders-in-cloud-console",
+  "summary": "Managed folders can be created, listed, moved, deleted, and assigned IAM policies in the Google Cloud Console.",
+  "extended_definition": "Managed folders can be created, listed, moved, deleted, and assigned IAM policies in the Google Cloud Console.",
+  "lifecycle": {
+    "latest_feature_date": "2024-04-03",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/storage/docs/access-control/making-data-public",
+      "https://docs.cloud.google.com/storage/docs/access-control/using-iam-for-managed-folders",
+      "https://docs.cloud.google.com/storage/docs/access-control/using-iam-permissions",
+      "https://docs.cloud.google.com/storage/docs/troubleshooting"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Set and manage IAM policies on managed folders \\_|\\_ Cloud Storage \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/storage/docs/access-control/using-iam-for-managed-folders",
+        "source_id": "site-iam-reference",
+        "final_score": 261,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Use cURL to call the JSON API with a PUT setIamPolicy request: curl -X PUT --data-binary @ POLICY FILE \\ -H \"Authorization: Bearer $(gcloud auth print-access-token)\" \\ -H \"Content-Type: application/json\" \\ \"https://storage.googleapis.com/storage/v1/b/ BUCKET NAME /managedFolders/ MANAGED FOLDER NAME /iam\" Where: POLICY FILE is the path to the JSON policy file that you created in the previous step.",
+          "Use cURL to call the JSON API with a PUT setIamPolicy request: curl -X PUT --data-binary @ JSON FILE NAME \\ -H \"Authorization: Bearer $(gcloud auth print-access-token)\" \\ -H \"Content-Type: application/json\" \\ \"https://storage.googleapis.com/storage/v1/b/ BUCKET NAME /managedFolders/ MANAGED FOLDER NAME /iam\" Where: JSON FILE NAME is the path for the file that you created in Step 3.",
+          "This page describes how to set Identity and Access Management (IAM) policies on managed folders , so you can get fine-grained access control over specific groups of objects within a bucket."
+        ]
+      },
+      {
+        "title": "Troubleshooting \\_|\\_ Cloud Storage \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/storage/docs/troubleshooting",
+        "source_id": "site-docs-root",
+        "final_score": 217,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "If any bucket within a project has an IAM Condition that uses either of these resource types, managed folders can't be created in any of the buckets within that project, even if the condition is later removed.",
+          "Solution : Uniform bucket-level access can't be disabled if there are managed folders in the bucket.",
+          "Issue : I can't disable uniform bucket-level access because there are managed folders in my bucket."
+        ]
+      },
+      {
+        "title": "Make data public \\_|\\_ Cloud Storage \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/storage/docs/access-control/making-data-public",
+        "source_id": "site-iam-reference",
+        "final_score": 207,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Create a JSON file that contains the following information: { \"bindings\" :[ { \"role\" : \"roles/storage.objectViewer\" , \"members\" :[ \"allUsers\" ] } ] } Use cURL to call the JSON API with a setIamPolicy ManagedFolder request: curl -X PUT --data-binary @ JSON FILE NAME \\ -H \"Authorization: Bearer $(gcloud auth print-access-token)\" \\ -H \"Content-Type: application/json\" \\ \"https://storage.googleapis.com/storage/v1/b/ BUCKET NAME /managedFolders/ MANAGED FOLDER NAME /iam\" Where: JSON FILE NAME is the path for the file that you created in the previous step.",
+          "Use cURL to call the JSON API with a Insert ManagedFolder request: curl -X POST --data-binary @ JSON FILE NAME \\ -H \"Authorization: Bearer $(gcloud auth print-access-token)\" \\ -H \"Content-Type: application/json\" \\ \"https://storage.googleapis.com/storage/v1/b/ BUCKET NAME /managedFolders\" Where: JSON FILE NAME is the path for the file that you created in the previous step.",
+          "In your development environment, add allUsers to the managed folder's IAM policy using the gcloud storage managed-folders add-iam-policy-binding command : gcloud storage managed-folders add-iam-policy-binding gs:// BUCKET NAME / MANAGED FOLDER NAME --member=allUsers --role=roles/storage.objectViewer Where: BUCKET NAME is the name of the bucket containing the managed folder you're adding the IAM policy to."
+        ]
+      },
+      {
+        "title": "\"Set and manage IAM policies on buckets \\_|\\_ Cloud Storage \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/storage/docs/access-control/using-iam-permissions",
+        "source_id": "site-iam-reference",
+        "final_score": 177,
+        "relevance": "",
+        "evidence_snippets": [
+          "Overview This page describes how to set Identity and Access Management (IAM) policies on buckets, so you can control access to objects and managed folders within those buckets.",
+          "Note: IAM policies cannot be managed using the XML API.",
+          "For more information, see Set up authentication for client libraries . / TODO(developer): Uncomment the following lines before running the sample. / // The ID of your GCS bucket // const bucketName = 'your-unique-bucket-name'; // The role to grant // const roleName = 'roles/storage.objectViewer'; // The members to grant the new role to // const members = [ // 'user:jdoe@example.com', // 'group:admins@example.com', // ]; // Create a condition // const title = 'Title'; // const description = 'Description'; // const expression = 'resource.name.startsWith(\\\"projects/ /buckets/bucket-name/objects/prefix-a-\\\")'; // Imports the Google Cloud client library const { Storage } = require ( ' @google-cloud/storage ' ); // Creates a client const storage = new Storage (); async function removeBucketConditionalBinding () { // Get a reference to a Google Cloud Storage bucket const bucket = storage . bucket ( bucketName ); // Gets and updates the bucket's IAM policy const [ policy ] = await bucket . iam . getPolicy ({ requestedPolicyVersion : 3 }); // Set the policy's version to 3 to use condition in bindings. policy . version = 3 ; // Finds and removes the appropriate role-member group with specific condition. const index = policy . bindings . findIndex ( binding = > binding . role === roleName && binding . condition && binding . condition . title === title && binding . condition . description === description && binding . condition . expression === expression ); const binding = policy . bindings [ index ]; if ( binding ) { policy . bindings . splice ( index , 1 ); // Updates the bucket's IAM policy await bucket . iam . setPolicy ( policy ); console . log ( 'Conditional Binding was removed.' ); } else { // No matching role-member group with specific condition were found throw new Error ( 'No matching binding group found.' ); } } removeBucketConditionalBinding (). catch ( console . error ); PHP For more information, see the Cloud Storage PHP API reference documentation ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "example.com",
+      "policy.json",
+      "resource.name.startsWith",
+      "storage.googleapis.com",
+      "storage.objectViewer"
+    ],
+    "missing_inventory_roles": [
+      "roles/storage.objectViewer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/access-control/using-iam-for-managed-folders",
+        "https://docs.cloud.google.com/storage/docs/troubleshooting",
+        "https://docs.cloud.google.com/storage/docs/access-control/making-data-public",
+        "https://docs.cloud.google.com/storage/docs/access-control/using-iam-permissions"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/access-control/using-iam-for-managed-folders",
+        "https://docs.cloud.google.com/storage/docs/troubleshooting",
+        "https://docs.cloud.google.com/storage/docs/access-control/making-data-public",
+        "https://docs.cloud.google.com/storage/docs/access-control/using-iam-permissions"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/access-control/using-iam-for-managed-folders",
+        "https://docs.cloud.google.com/storage/docs/troubleshooting",
+        "https://docs.cloud.google.com/storage/docs/access-control/making-data-public",
+        "https://docs.cloud.google.com/storage/docs/access-control/using-iam-permissions"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/access-control/using-iam-for-managed-folders",
+        "https://docs.cloud.google.com/storage/docs/troubleshooting",
+        "https://docs.cloud.google.com/storage/docs/access-control/making-data-public",
+        "https://docs.cloud.google.com/storage/docs/access-control/using-iam-permissions"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/access-control/using-iam-for-managed-folders",
+        "https://docs.cloud.google.com/storage/docs/troubleshooting",
+        "https://docs.cloud.google.com/storage/docs/access-control/making-data-public",
+        "https://docs.cloud.google.com/storage/docs/access-control/using-iam-permissions"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/access-control/using-iam-for-managed-folders",
+        "https://docs.cloud.google.com/storage/docs/troubleshooting",
+        "https://docs.cloud.google.com/storage/docs/access-control/making-data-public",
+        "https://docs.cloud.google.com/storage/docs/access-control/using-iam-permissions"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/access-control/using-iam-for-managed-folders",
+        "https://docs.cloud.google.com/storage/docs/troubleshooting",
+        "https://docs.cloud.google.com/storage/docs/access-control/making-data-public",
+        "https://docs.cloud.google.com/storage/docs/access-control/using-iam-permissions"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/access-control/using-iam-for-managed-folders",
+        "https://docs.cloud.google.com/storage/docs/troubleshooting",
+        "https://docs.cloud.google.com/storage/docs/access-control/making-data-public",
+        "https://docs.cloud.google.com/storage/docs/access-control/using-iam-permissions"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/access-control/using-iam-for-managed-folders",
+        "https://docs.cloud.google.com/storage/docs/troubleshooting",
+        "https://docs.cloud.google.com/storage/docs/access-control/making-data-public",
+        "https://docs.cloud.google.com/storage/docs/access-control/using-iam-permissions"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/access-control/using-iam-for-managed-folders",
+        "https://docs.cloud.google.com/storage/docs/troubleshooting",
+        "https://docs.cloud.google.com/storage/docs/access-control/making-data-public",
+        "https://docs.cloud.google.com/storage/docs/access-control/using-iam-permissions"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/access-control/using-iam-for-managed-folders",
+        "https://docs.cloud.google.com/storage/docs/troubleshooting",
+        "https://docs.cloud.google.com/storage/docs/access-control/making-data-public",
+        "https://docs.cloud.google.com/storage/docs/access-control/using-iam-permissions"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,163 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:40.586Z",
+  "source_step08_card": "data/step-08/current/products/google-secops/card.json",
+  "product_name": "Google SecOps",
+  "product_slug": "google-secops",
+  "feature_name": "Product-centric feeds access permissions",
+  "feature_slug": "product-centric-feeds-access-permissions",
+  "summary": "Custom IAM roles can grant access to product-centric feeds with the chronicle.feedPacks.get and chronicle.feedPacks.list permissions.",
+  "extended_definition": "Custom IAM roles can grant access to product-centric feeds with the chronicle.feedPacks.get and chronicle.feedPacks.list permissions.",
+  "lifecycle": {
+    "latest_feature_date": "2025-08-10",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/chronicle/docs/administration/feed-management",
+      "https://docs.cloud.google.com/chronicle/docs/administration/rbac",
+      "https://docs.cloud.google.com/chronicle/docs/deprecations"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Use the Feed Management UI \\_|\\_ Google Security Operations \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/administration/feed-management",
+        "source_id": "site-docs-reference",
+        "final_score": 140,
+        "relevance": "",
+        "evidence_snippets": [
+          "To grant read permission to multiple files , grant access at the bucket level as follows: For \"feedSourceType\": \"GOOGLE CLOUD STORAGE\" : Add the Google SecOps service account as a principal to your storage bucket and grant it the IAM Storage Object Viewer ( roles/storage.objectViewer ) role.",
+          "The following table describes the error messages that you might encounter when working with data feeds: Error Code Cause Troubleshooting ACCESS DENIED The authentication account provided in the feed configuration lacks required permissions.",
+          "Sample egress rule \"egressPolicies\" : [ { \"egressFrom\": { \"identities\": [ \"serviceAccount:service-{replace with project id}@gs-project-accounts.iam.gserviceaccount.com\" ] } , \"egressTo\" : { \"operations\" : [ { \"methodSelectors\": [ { \"method\": \" \" } ] , \"serviceName\" : \"pubsub.googleapis.com\" } ] , \"resources\" : [ \" \" ] } , \"title\" : \"GCS pubsub access\" } , { \"egressFrom\" : { \"identities\" : [ \"serviceAccount:project-{replace with project id}@storage-transfer-service.iam.gserviceaccount.com\" ] } , \"egressTo\" : { \"operations\" : [ { \"methodSelectors\": [ { \"method\": \" \" } ] , \"serviceName\" : \"pubsub.googleapis.com\" } ] , \"resources\" : [ \" \" ] } , \"title\" : \"STS pubsub\" } ] Enable STS access for Amazon S3 and Azure Storage The STS is used by the following Google Cloud Storage feeds to transfer data from Amazon S3 and Azure Storage blobstores to Google SecOps: Amazon S3 (V2) Amazon SQS (V2) Azure Blob Storage (V2) STS sends data transfer requests to the Amazon S3 and Azure storage services from a set of defined STS IP address ranges."
+        ]
+      },
+      {
+        "title": "\"Role-Based Access Control (RBAC) User Guide \\_|\\_ Google Security Operations\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/administration/rbac",
+        "source_id": "site-docs-reference",
+        "final_score": 131,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Profile The Profile page displays the information from the user's profile (user ID, group ID, roles assigned) and some additional information about their organization (customer ID, Google Cloud project number, Google Cloud project ID).",
+          "The available roles are: Default ViewerWithNoDetectAccess Viewer Editor Administrator Once you have added your user or group IDs and selected the appropriate role from the ASSIGN ROLE drop-down menu, click ASSIGN .",
+          "If you migrated your instance to IAM, or if you're onboarding to Google SecOps on or after October 6, 2025, see Configure feature access control using IAM and Google SecOps permissions in IAM ."
+        ]
+      },
+      {
+        "title": "\"Feature deprecations \\_|\\_ Google Security Operations \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/deprecations",
+        "source_id": "site-docs-reference-2",
+        "final_score": 122,
+        "relevance": "",
+        "evidence_snippets": [
+          "To maintain access, transition users to pre-defined roles or use the self-service migration to convert Permission Groups to custom roles.",
+          "BigQuery data lake December 31, 2024 March 31, 2025 On December 31, 2024, the managed BigQuery data lake for export won't be accessible to Google SecOps customers except for customers in the Enterprise Plus Tier.",
+          "To facilitate this, customers might be required to take certain actions, such as updating IP allowlists or service account permissions."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "accounts.iam.gserviceaccount.com",
+      "chronicle.feedPacks.get",
+      "chronicle.feedPacks.list",
+      "pubsub.googleapis.com",
+      "service.iam.gserviceaccount.com",
+      "storage.objectViewer"
+    ],
+    "missing_inventory_roles": [
+      "roles/storage.objectViewer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/administration/feed-management",
+        "https://docs.cloud.google.com/chronicle/docs/administration/rbac",
+        "https://docs.cloud.google.com/chronicle/docs/deprecations"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/administration/feed-management",
+        "https://docs.cloud.google.com/chronicle/docs/administration/rbac",
+        "https://docs.cloud.google.com/chronicle/docs/deprecations"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/administration/feed-management",
+        "https://docs.cloud.google.com/chronicle/docs/administration/rbac",
+        "https://docs.cloud.google.com/chronicle/docs/deprecations"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/administration/feed-management",
+        "https://docs.cloud.google.com/chronicle/docs/administration/rbac",
+        "https://docs.cloud.google.com/chronicle/docs/deprecations"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/administration/feed-management",
+        "https://docs.cloud.google.com/chronicle/docs/administration/rbac",
+        "https://docs.cloud.google.com/chronicle/docs/deprecations"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/administration/feed-management",
+        "https://docs.cloud.google.com/chronicle/docs/administration/rbac",
+        "https://docs.cloud.google.com/chronicle/docs/deprecations"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/administration/feed-management",
+        "https://docs.cloud.google.com/chronicle/docs/administration/rbac",
+        "https://docs.cloud.google.com/chronicle/docs/deprecations"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/administration/feed-management",
+        "https://docs.cloud.google.com/chronicle/docs/administration/rbac",
+        "https://docs.cloud.google.com/chronicle/docs/deprecations"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/administration/feed-management",
+        "https://docs.cloud.google.com/chronicle/docs/administration/rbac",
+        "https://docs.cloud.google.com/chronicle/docs/deprecations"
+      ]
+    }
+  ]
+}

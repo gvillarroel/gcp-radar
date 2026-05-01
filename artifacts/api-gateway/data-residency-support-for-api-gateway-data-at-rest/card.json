@@ -1,0 +1,169 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:13.986Z",
+  "source_step08_card": "data/step-08/current/products/api-gateway/card.json",
+  "product_name": "API Gateway",
+  "product_slug": "api-gateway",
+  "feature_name": "Data residency support for API Gateway data at rest",
+  "feature_slug": "data-residency-support-for-api-gateway-data-at-rest",
+  "summary": "API Gateway now supports data residency requirements for customer data stored at rest.",
+  "extended_definition": "API Gateway now supports data residency requirements for customer data stored at rest.",
+  "lifecycle": {
+    "latest_feature_date": "2025-04-02",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/api-gateway/docs/about-api-gateway",
+      "https://docs.cloud.google.com/api-gateway/docs/architecture-overview",
+      "https://docs.cloud.google.com/api-gateway/docs/reference/rest"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "About API Gateway \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/api-gateway/docs/about-api-gateway",
+        "source_id": "site-docs-reference-required-2",
+        "final_score": 63,
+        "relevance": "",
+        "evidence_snippets": [
+          "A consistent API: Makes it convenient for app developers to consume your services Lets you change the backend service implementation without affecting the public API Lets you take advantage of the scaling, monitoring, and security features built into the Google Cloud The following image shows app developers making requests to your backend services through API Gateway: Using API Gateway, app developers consume your REST APIs to implement apps.",
+          "API Gateway supports the same authentication mechanism and syntax as used by Cloud Endpoints , including using: API keys Authentication methods at Google Google ID tokens You can also use the Google Cloud console to share your API with other developers so they can enable your API and generate API keys to call it.",
+          "For example, the following table describes an example of a REST API that could return information about a book: Property Value Description URL https://www.mybooksapi.com/books/info Return the title, author, and publishing date of a book based on its International Standard Book Number (ISBN)."
+        ]
+      },
+      {
+        "title": "API Gateway Architecture \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/api-gateway/docs/architecture-overview",
+        "source_id": "site-docs-reference-required-2",
+        "final_score": 43,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "The OpenAPI spec defines the publicly facing URL of the REST endpoint for the API, the backend service accessed by the API, and any other characteristics of the API such as authentication, data format, and response options.",
+          "The API client only needs to know the URL of the API, the request verb (such as GET , PUT , POST , DELETE ), any authentication requirements, and the format of any data sent to or received from the API.",
+          "API Gateway provides secure access to your backend services through a well-defined REST API that is consistent across all of your services, regardless of the service implementation."
+        ]
+      },
+      {
+        "title": "API Gateway API \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/api-gateway/docs/reference/rest",
+        "source_id": "site-docs-reference",
+        "final_score": 42,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "REST Resource: v1beta.projects.locations REST Resource: v1beta.projects.locations.apis REST Resource: v1beta.projects.locations.apis.configs REST Resource: v1beta.projects.locations.gateways REST Resource: v1beta.projects.locations.operations REST Resource: v1alpha2.projects.locations REST Resource: v1alpha2.projects.locations.apis REST Resource: v1alpha2.projects.locations.apis.configs REST Resource: v1alpha2.projects.locations.gateways REST Resource: v1alpha2.projects.locations.operations REST Resource: v1alpha1.projects.locations REST Resource: v1alpha1.projects.locations.apis REST Resource: v1alpha1.projects.locations.apis.configs REST Resource: v1alpha1.projects.locations.gateways REST Resource: v1alpha1.projects.locations.operations REST Resource: v1.projects.locations REST Resource: v1.projects.locations.apis REST Resource: v1.projects.locations.apis.configs REST Resource: v1.projects.locations.gateways REST Resource: v1.projects.locations.operations Service: apigateway.googleapis.com To call this service, we recommend that you use the Google-provided client libraries .",
+          "REST Resource: v1beta.projects.locations.apis.configs Methods create POST /v1beta/{parent=projects/ /locations/ /apis/ }/configs Creates a new ApiConfig in a given project and location. delete DELETE /v1beta/{name=projects/ /locations/ /apis/ /configs/ } Deletes a single ApiConfig. get GET /v1beta/{name=projects/ /locations/ /apis/ /configs/ } Gets details of a single ApiConfig. getIamPolicy GET /v1beta/{resource=projects/ /locations/ /apis/ /configs/ }:getIamPolicy Gets the access control policy for a resource. list GET /v1beta/{parent=projects/ /locations/ /apis/ }/configs Lists ApiConfigs in a given project and location. patch PATCH /v1beta/{apiConfig.name=projects/ /locations/ /apis/ /configs/ } Updates the parameters of a single ApiConfig. setIamPolicy POST /v1beta/{resource=projects/ /locations/ /apis/ /configs/ }:setIamPolicy Sets the access control policy on the specified resource. testIamPermissions POST /v1beta/{resource=projects/ /locations/ /apis/ /configs/ }:testIamPermissions Returns permissions that a caller has on the specified resource.",
+          "REST Resource: v1.projects.locations.apis.configs Methods create POST /v1/{parent=projects/ /locations/ /apis/ }/configs Creates a new ApiConfig in a given project and location. delete DELETE /v1/{name=projects/ /locations/ /apis/ /configs/ } Deletes a single ApiConfig. get GET /v1/{name=projects/ /locations/ /apis/ /configs/ } Gets details of a single ApiConfig. getIamPolicy GET /v1/{resource=projects/ /locations/ /apis/ /configs/ }:getIamPolicy Gets the access control policy for a resource. list GET /v1/{parent=projects/ /locations/ /apis/ }/configs Lists ApiConfigs in a given project and location. patch PATCH /v1/{apiConfig.name=projects/ /locations/ /apis/ /configs/ } Updates the parameters of a single ApiConfig. setIamPolicy POST /v1/{resource=projects/ /locations/ /apis/ /configs/ }:setIamPolicy Sets the access control policy on the specified resource. testIamPermissions POST /v1/{resource=projects/ /locations/ /apis/ /configs/ }:testIamPermissions Returns permissions that a caller has on the specified resource."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "apigateway.googleapis.com",
+      "gateway.name",
+      "v1.projects.locations",
+      "v1.projects.locations.apis",
+      "v1.projects.locations.apis.configs",
+      "v1.projects.locations.gateways",
+      "v1.projects.locations.operations",
+      "v1alpha1.projects.locations",
+      "v1alpha1.projects.locations.apis",
+      "v1alpha1.projects.locations.apis.configs",
+      "v1alpha1.projects.locations.gateways",
+      "v1alpha1.projects.locations.operations",
+      "v1alpha2.projects.locations",
+      "v1alpha2.projects.locations.apis",
+      "v1alpha2.projects.locations.apis.configs",
+      "v1alpha2.projects.locations.gateways",
+      "v1alpha2.projects.locations.operations",
+      "v1beta.projects.locations",
+      "v1beta.projects.locations.apis",
+      "v1beta.projects.locations.apis.configs",
+      "v1beta.projects.locations.gateways",
+      "v1beta.projects.locations.operations"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/api-gateway/docs/about-api-gateway",
+        "https://docs.cloud.google.com/api-gateway/docs/architecture-overview",
+        "https://docs.cloud.google.com/api-gateway/docs/reference/rest"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/api-gateway/docs/about-api-gateway",
+        "https://docs.cloud.google.com/api-gateway/docs/architecture-overview",
+        "https://docs.cloud.google.com/api-gateway/docs/reference/rest"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/api-gateway/docs/about-api-gateway",
+        "https://docs.cloud.google.com/api-gateway/docs/architecture-overview",
+        "https://docs.cloud.google.com/api-gateway/docs/reference/rest"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/api-gateway/docs/about-api-gateway",
+        "https://docs.cloud.google.com/api-gateway/docs/architecture-overview",
+        "https://docs.cloud.google.com/api-gateway/docs/reference/rest"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/api-gateway/docs/about-api-gateway",
+        "https://docs.cloud.google.com/api-gateway/docs/architecture-overview",
+        "https://docs.cloud.google.com/api-gateway/docs/reference/rest"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/api-gateway/docs/about-api-gateway",
+        "https://docs.cloud.google.com/api-gateway/docs/architecture-overview",
+        "https://docs.cloud.google.com/api-gateway/docs/reference/rest"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/api-gateway/docs/about-api-gateway",
+        "https://docs.cloud.google.com/api-gateway/docs/architecture-overview",
+        "https://docs.cloud.google.com/api-gateway/docs/reference/rest"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/api-gateway/docs/about-api-gateway",
+        "https://docs.cloud.google.com/api-gateway/docs/architecture-overview",
+        "https://docs.cloud.google.com/api-gateway/docs/reference/rest"
+      ]
+    }
+  ]
+}

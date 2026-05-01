@@ -1,0 +1,114 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:17.102Z",
+  "source_step08_card": "data/step-08/current/products/app-hub/card.json",
+  "product_name": "App Hub",
+  "product_slug": "app-hub",
+  "feature_name": "App Hub Cloud Console setup",
+  "feature_slug": "app-hub-cloud-console-setup",
+  "summary": "App Hub setup is now available in the Google Cloud console in Preview.",
+  "extended_definition": "App Hub setup is now available in the Google Cloud console in Preview.",
+  "lifecycle": {
+    "latest_feature_date": "2023-12-14",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/app-hub/docs/modify-app-hub-resources",
+      "https://docs.cloud.google.com/app-hub/docs/set-up-app-hub-host-project",
+      "https://docs.cloud.google.com/app-hub/docs/set-up-app-hub-single-project"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Set up a single project \\_|\\_ App Hub \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/app-hub/docs/set-up-app-hub-single-project",
+        "source_id": "site-docs-root-2",
+        "final_score": 84,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "In the Enable App Hub page, choose one of the following options: Quick setup : manage a default configuration for resources in this project and define your first application for initial adoption.",
+          "Complete the setup based on your selection: If you selected Quick setup , the Define application tab lets you optionally define an application now or complete the setup without creating one.",
+          "Full setup : manage custom configurations for your applications, including setting up upfront access controls and, optionally, adding more projects for multiple-project boundaries ."
+        ]
+      },
+      {
+        "title": "Manage services and workloads \\_|\\_ App Hub \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/app-hub/docs/modify-app-hub-resources",
+        "source_id": "site-docs-root-2",
+        "final_score": 74,
+        "relevance": "",
+        "evidence_snippets": [
+          "For a list of the supported metadata types and their schemas, see Extended metadata schemas . gcloud List all available extended metadata schemas in a project and location: gcloud alpha apphub extended-metadata-schemas list \\ --project = PROJECT ID \\ --location = LOCATION \\ Replace the following: PROJECT ID : the ID of your management project.",
+          "Alternatively, view a list of all services and workloads with a registration status value of discovered or registered : Discovered Discovered Google Cloud resources within your application management boundary are available to be registered as services or workloads in an application.",
+          "Console View details from services and workloads of an application with a registration status value of registered or detached : In the Google Cloud console, use the project picker to select your management project."
+        ]
+      },
+      {
+        "title": "Set up a host project (Legacy) \\_|\\_ App Hub \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/app-hub/docs/set-up-app-hub-host-project",
+        "source_id": "site-docs-root-2",
+        "final_score": 74,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For a comparison of key differences between the available models for application management, see Choose your application setup model .",
+          "Assign App Hub roles and permissions To grant appropriate App Hub roles and permissions to App Hub users in the host project and service projects, follow these steps: Console In the Google Cloud console, use the project picker to select the host project.",
+          "To attach service projects to the host project and create a multiple-project boundary, follow these steps: Console In the Google Cloud console, use the project picker to select the host project."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/app-hub/docs/set-up-app-hub-single-project",
+        "https://docs.cloud.google.com/app-hub/docs/set-up-app-hub-host-project",
+        "https://docs.cloud.google.com/app-hub/docs/modify-app-hub-resources"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/app-hub/docs/set-up-app-hub-single-project",
+        "https://docs.cloud.google.com/app-hub/docs/set-up-app-hub-host-project",
+        "https://docs.cloud.google.com/app-hub/docs/modify-app-hub-resources"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/app-hub/docs/set-up-app-hub-single-project",
+        "https://docs.cloud.google.com/app-hub/docs/set-up-app-hub-host-project",
+        "https://docs.cloud.google.com/app-hub/docs/modify-app-hub-resources"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/app-hub/docs/set-up-app-hub-single-project",
+        "https://docs.cloud.google.com/app-hub/docs/set-up-app-hub-host-project",
+        "https://docs.cloud.google.com/app-hub/docs/modify-app-hub-resources"
+      ]
+    }
+  ]
+}

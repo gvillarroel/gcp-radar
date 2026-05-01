@@ -1,0 +1,136 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:13.646Z",
+  "source_step08_card": "data/step-08/current/products/anthos-config-management/card.json",
+  "product_name": "Anthos Config Management",
+  "product_slug": "anthos-config-management",
+  "feature_name": "nomos bugreport",
+  "feature_slug": "nomos-bugreport",
+  "summary": "The nomos bugreport command packages Anthos Config Management logs into a ZIP file for support cases.",
+  "extended_definition": "The nomos bugreport command packages Anthos Config Management logs into a ZIP file for support cases.",
+  "lifecycle": {
+    "latest_feature_date": "2020-02-10",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/fleet-packages",
+      "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/nomos-command",
+      "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/reference/nomos-bugreport"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Use the nomos command-line tool \\_|\\_ Config Sync \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/nomos-command",
+        "source_id": "site-docs-root",
+        "final_score": 186,
+        "relevance": "",
+        "evidence_snippets": [
+          "Using RootSync and RepoSync objects nomos-status-reader.yaml apiVersion : rbac.authorization.k8s.io/v1 kind : ClusterRole metadata : name : nomos-status-reader rules : - apiGroups : [ \"configsync.gke.io\" ] resources : [ \"reposyncs\" , \"rootsyncs\" ] verbs : [ \"get\" ] - nonResourceURLs : [ \"/\" ] verbs : [ \"get\" ] Not using RootSync and RepoSync objects apiVersion : rbac.authorization.k8s.io/v1 kind : ClusterRole metadata : name : nomos-status-reader rules : - apiGroups : [ \"configmanagement.gke.io\" ] resources : [ \"configmanagements\" , \"repos\" ] verbs : [ \"get\" , \"list\" ] - nonResourceURLs : [ \"/\" ] verbs : [ \"get\" ] Apply the nomos-status-reader.yaml file: kubectl apply -f nomos-status-reader.yaml Check for errors in the source of truth Before you commit a config to the source of truth, use the nomos vet command to check the syntax and validity of the configs in your source of truth: nomos vet --source-format unstructured If syntax errors are found, the nomos vet command exits with a non-zero status and logs error messages to STDERR . nomos vet flags To customize the nomos vet command, add the following flags: Flag Description --api-server-timeout Accepts a duration string.",
+          "The nomos tool provides you with the following commands: Command Usage nomos status Check Config Sync status nomos vet Check for errors in the source of truth nomos hydrate View all configs in the source of truth nomos bugreport Create a bug report nomos migrate Migrate from ConfigManagement object to RootSync nomos init Initialize a hierarchical source of truth Prerequisites Before you can use the nomos tool to interact with a cluster, Config Sync must already be installed on the target cluster.",
+          "If the migration process is terminated, it can be recovered manually by running the following commands: kubectl apply -f /tmp/nomos-migrate/my managed cluster-1/cm-multi.yaml && \\ kubectl wait --for condition=established crd rootsyncs.configsync.gke.io && \\ kubectl apply -f /tmp/nomos-migrate/my managed cluster-1/root-sync.yaml. - Updating the ConfigManagement object .... - Waiting for the RootSync CRD to be established .... - The RootSync CRD has been established. - Creating the RootSync object .... - Waiting for the reconciler-manager Pod to be ready .... - Haven't detected running Pods with the label selector \"app=reconciler-manager\". - Haven't detected running Pods with the label selector \"app=reconciler-manager\". - Haven't detected running Pods with the label selector \"app=reconciler-manager\". - The reconciler-manager Pod is running. - Waiting for the root-reconciler Pod to be ready .... - Haven't detected running Pods with the label selector \"configsync.gke.io/reconciler=root-reconciler\". - Haven't detected running Pods with the label selector \"configsync.gke.io/reconciler=root-reconciler\". - Haven't detected running Pods with the label selector \"configsync.gke.io/reconciler=root-reconciler\". - The root-reconciler Pod is running. - The migration process is done."
+        ]
+      },
+      {
+        "title": "nomos bugreport contents \\_|\\_ Config Sync \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/reference/nomos-bugreport",
+        "source_id": "site-docs-reference",
+        "final_score": 182,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "The nomos bugreport output file structure looks like this: - raw/ - cluster/ - configmanagement/ - namespaces/ - config-management-monitoring/ - config-management-system/ - gatekeeper-system/ - resource-group-system/ - kube-system/ - processed/ - status.txt - version.txt The information you can get from nomos bugreport : Nomos version shows the Config Sync version, the output of nomos version .",
+          "You can get similar information from your cluster by running kubectl get or kubectl logs , but the advantage of nomos bugreport is that it creates an archive of key information about the Config Sync system.",
+          "Home Documentation Application hosting Google Kubernetes Engine (GKE) Config Sync Reference Send feedback nomos bugreport contents Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "Deploy fleet packages \\_|\\_ Config Sync \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/fleet-packages",
+        "source_id": "site-docs-root",
+        "final_score": 97,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Enable the Config Sync ( anthosconfigmanagement ) API and the ConfigDelivery API: gcloud services enable anthosconfigmanagement.googleapis.com configdelivery.googleapis.com Set a default location: gcloud config set config delivery/location us-central1 Note: the only available location for the ConfigDelivery API is us-central1 .",
+          "Create or update your FleetPackage spec with the label selector: resourceBundleSelector : cloudBuildRepository : name : projects/ PROJECT ID /locations/us-central1/connections/ CONNECTION NAME /repositories/ REPOSITORY NAME tag : TAG serviceAccount : projects/ PROJECT ID /serviceAccounts/ SERVICE ACCOUNT NAME @ PROJECT ID . iam.gserviceaccount.com path : CONFIG FILE PATH target : fleet : project : projects/ PROJECT ID selector : matchLabels : KEY : \" VALUE \" rolloutStrategy : rolling : maxConcurrent : MAX CLUSTERS Create or update the fleet package: Create a fleet package gcloud container fleet packages create FLEET PACKAGE NAME \\ --source = fleetpackage-spec.yaml Update a fleet package gcloud container fleet packages update FLEET PACKAGE NAME \\ --source = fleetpackage-spec.yaml Deploy variant resources to clusters You can deploy unique configurations to different clusters (for example, dev versus prod ) by adding variant definitions to your fleet package.",
+          "Create or update the fleet package: Create a fleet package gcloud container fleet packages create FLEET PACKAGE NAME \\ --source = fleetpackage-spec.yaml Update a fleet package gcloud container fleet packages update FLEET PACKAGE NAME \\ --source = fleetpackage-spec.yaml Delete a fleet package Deleting a fleet package also deletes the following resources: The Kubernetes resources deployed on your clusters The fleet package rollout history To delete a fleet package, run the following command: gcloud container fleet packages delete FLEET PACKAGE NAME --force Troubleshoot To find methods for diagnosing and resolving errors related to Cloud Build, see Troubleshooting build errors ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "anthosconfigmanagement.googleapis.com",
+      "configdelivery.googleapis.com",
+      "configmanagement.gke.io",
+      "configsync.gke.io",
+      "iam.gserviceaccount.com",
+      "multi.yaml",
+      "rbac.authorization.k8s.io",
+      "reader.yaml",
+      "rootsyncs.configsync.gke.io",
+      "spec.yaml",
+      "status.txt",
+      "sync.yaml",
+      "version.txt"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/nomos-command",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/reference/nomos-bugreport",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/fleet-packages"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/nomos-command",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/reference/nomos-bugreport",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/fleet-packages"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/nomos-command",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/reference/nomos-bugreport",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/fleet-packages"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/nomos-command",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/reference/nomos-bugreport",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/fleet-packages"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/nomos-command",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/reference/nomos-bugreport",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/fleet-packages"
+      ]
+    }
+  ]
+}

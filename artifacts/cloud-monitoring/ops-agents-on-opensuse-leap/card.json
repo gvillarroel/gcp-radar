@@ -1,0 +1,136 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:24.989Z",
+  "source_step08_card": "data/step-08/current/products/cloud-monitoring/card.json",
+  "product_name": "Cloud Monitoring",
+  "product_slug": "cloud-monitoring",
+  "feature_name": "Ops agents on OpenSUSE Leap",
+  "feature_slug": "ops-agents-on-opensuse-leap",
+  "summary": "The Cloud Logging agent, Cloud Monitoring agent, and Ops Agent can be installed on VMs running OpenSUSE Leap 15, 15.1, and 15.2.",
+  "extended_definition": "The Cloud Logging agent, Cloud Monitoring agent, and Ops Agent can be installed on VMs running OpenSUSE Leap 15, 15.1, and 15.2.",
+  "lifecycle": {
+    "latest_feature_date": "2021-04-27",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/monitoring/agent/monitoring/managing-agent-policies",
+      "https://docs.cloud.google.com/monitoring/agent/ops-agent",
+      "https://docs.cloud.google.com/monitoring/agent/ops-agent/agent-policies-overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Overview of agent policies for the Ops Agent \\_|\\_ Cloud Monitoring \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/monitoring/agent/ops-agent/agent-policies-overview",
+        "source_id": "site-iam-reference",
+        "final_score": 206,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Supported operating systems You can apply an agent policy to Compute Engine VM instances running the operating systems shown in the following table: Operating system Ops Agent (GA & beta † policies) Logging agent (beta † policies only) Monitoring agent (beta † policies only) CentOS 8 Rocky Linux 8 RHEL 6 RHEL 7: rhel-7, rhel-7-6-sap-ha, rhel-7-7-sap-ha, rhel-7-9-sap-ha ‡ RHEL 8: rhel-8, rhel-8-4-sap-ha, rhel-8-6-sap-ha, rhel-8-8-sap-ha ‡ Debian 9 (Stretch) Debian 11 (Bullseye) Deep Learning VM Images based on Debian 11 (Bullseye) Ubuntu LTS 18.04 (Bionic Beaver): ubuntu-1804-lts, ubuntu-minimal-1804-lts Ubuntu LTS 20.04 (Focal Fossa): ubuntu-2004-lts, ubuntu-minimal-2004-lts Ubuntu LTS 22.04 (Jammy Jellyfish): buntu-2204-lts, ubuntu-minimal-2204-lts SLES 12: sles-12, sles-12-sp5-sap SLES 15: sles-15, sles-15-sp2-sap, sles-15-sp3-sap, sles-15-sp4-sap, sles-15-sp5-sap, sles-15-sp6-sap OpenSUSE Leap 15: opensuse-leap (opensuse-leap-15-3- , opensuse-leap-15-4- ) Windows Server: 2016, 2019, 2022, Core 2016, Core 2019, Core 2022 † In beta agent policies, the agent columns map to an agent type specified to the gcloud beta compute instances ops-agents policies create invocation: Ops Agent maps to agent type ops-agent .",
+          "The beta and GA policies are also structurally different: Policies created by using gcloud beta compute instances ops-agents policies describe agent policies by passing individual options to the commands, for example: gcloud beta compute instances ops-agents policies create ops-agents-test-policy \\ --agent-rules = \"type=logging,enable-autoupgrade=false;type=metrics,enable-autoupgrade=false\" \\ --description = \"A test policy.\" \\ --os-types = short-name = centos,version = 7 \\ --instances = zones/us-central1-a/instances/test-instance \\ --project PROJECT ID The agent-policy Terraform module provides the same capabilities.",
+          "The ops-agent-policy Terraform module Support for the legacy Monitoring agent and Logging agent Beta agent policies can manage the legacy Monitoring agent and Logging agent as well as the Ops Agent."
+        ]
+      },
+      {
+        "title": "Use agent policies \\_|\\_ Cloud Monitoring \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/monitoring/agent/monitoring/managing-agent-policies",
+        "source_id": "site-iam-reference",
+        "final_score": 162,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Supported operating systems You can apply an agent policy to Compute Engine VM instances running the operating systems shown in the following table: Operating system Ops Agent (GA & beta † policies) Logging agent (beta † policies only) Monitoring agent (beta † policies only) CentOS 8 Rocky Linux 8 RHEL 6 RHEL 7: rhel-7, rhel-7-6-sap-ha, rhel-7-7-sap-ha, rhel-7-9-sap-ha ‡ RHEL 8: rhel-8, rhel-8-4-sap-ha, rhel-8-6-sap-ha, rhel-8-8-sap-ha ‡ Debian 9 (Stretch) Debian 11 (Bullseye) Deep Learning VM Images based on Debian 11 (Bullseye) Ubuntu LTS 18.04 (Bionic Beaver): ubuntu-1804-lts, ubuntu-minimal-1804-lts Ubuntu LTS 20.04 (Focal Fossa): ubuntu-2004-lts, ubuntu-minimal-2004-lts Ubuntu LTS 22.04 (Jammy Jellyfish): buntu-2204-lts, ubuntu-minimal-2204-lts SLES 12: sles-12, sles-12-sp5-sap SLES 15: sles-15, sles-15-sp2-sap, sles-15-sp3-sap, sles-15-sp4-sap, sles-15-sp5-sap, sles-15-sp6-sap OpenSUSE Leap 15: opensuse-leap (opensuse-leap-15-3- , opensuse-leap-15-4- ) Windows Server: 2016, 2019, 2022, Core 2016, Core 2019, Core 2022 † In beta agent policies, the agent columns map to an agent type specified to the gcloud beta compute instances ops-agents policies create invocation: Ops Agent maps to agent type ops-agent .",
+          "Here is an example of a phased rollout plan for Debian 11 VMs in a project called my project : Phase 1: Create a policy named ops-agents-policy-safe-rollout to install the legacy Logging agent and Monitoring agent on all VMs with the labels env=test and app=myproduct . gcloud beta compute instances \\ ops - agents policies create ops - agents - policy - safe - rollout \\ -- agent - rules = \"type=logging,version=current-major,package-state=installed,enable-autoupgrade=true;type=metrics,version=current-major,package-state=installed,enable-autoupgrade=true\" \\ -- os - types = short - name = debian , version = 11 \\ -- group - labels = env = test , app = myproduct \\ -- project = my project For more information about specifying the operating system, see gcloud beta compute instances ops-agents policies create .",
+          "To verify that the OS Config metadata is enabled, you can run the following command: gcloud compute project-info describe \\ --project PROJECT ID \\ grep \"enable-osconfig\\ enable-guest-attributes\" -A 1 The expected output follows: - key: enable-guest-attributes value: 'TRUE' - key: enable-osconfig value: 'TRUE' Observability agents are installed, but not functioning properly For information about debugging specific agents, see the following documents: Troubleshoot the Ops Agent Troubleshoot the legacy Logging agent Troubleshoot the legacy Monitoring agent Enable debug-level logs for the OS Config agent It can be useful to enable debug-level logging in the OS Config agent when reporting an issue."
+        ]
+      },
+      {
+        "title": "Ops Agent overview \\_|\\_ Cloud Monitoring \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/monitoring/agent/ops-agent",
+        "source_id": "site-iam-reference",
+        "final_score": 149,
+        "relevance": "",
+        "evidence_snippets": [
+          "Monitoring APIs: monitoring.googleapis.com Logging APIs: logging.googleapis.com The agent uses TCP ports within the VM for inter-process communication.",
+          "Managed Service for Apache Spark instances prior to image version 2.2 have pre-installed legacy Monitoring agents with service-specific configurations.",
+          "Dataflow instances have pre-installed legacy Monitoring agents with service-specific configurations."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "dl.google.com",
+      "logging.googleapis.com",
+      "monitoring.googleapis.com",
+      "oauth2.googleapis.com",
+      "packages.cloud.google.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/monitoring/agent/ops-agent/agent-policies-overview",
+        "https://docs.cloud.google.com/monitoring/agent/monitoring/managing-agent-policies",
+        "https://docs.cloud.google.com/monitoring/agent/ops-agent"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/monitoring/agent/ops-agent/agent-policies-overview",
+        "https://docs.cloud.google.com/monitoring/agent/monitoring/managing-agent-policies",
+        "https://docs.cloud.google.com/monitoring/agent/ops-agent"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/monitoring/agent/ops-agent/agent-policies-overview",
+        "https://docs.cloud.google.com/monitoring/agent/monitoring/managing-agent-policies",
+        "https://docs.cloud.google.com/monitoring/agent/ops-agent"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/monitoring/agent/ops-agent/agent-policies-overview",
+        "https://docs.cloud.google.com/monitoring/agent/monitoring/managing-agent-policies",
+        "https://docs.cloud.google.com/monitoring/agent/ops-agent"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/monitoring/agent/ops-agent/agent-policies-overview",
+        "https://docs.cloud.google.com/monitoring/agent/monitoring/managing-agent-policies",
+        "https://docs.cloud.google.com/monitoring/agent/ops-agent"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/monitoring/agent/ops-agent/agent-policies-overview",
+        "https://docs.cloud.google.com/monitoring/agent/monitoring/managing-agent-policies",
+        "https://docs.cloud.google.com/monitoring/agent/ops-agent"
+      ]
+    }
+  ]
+}

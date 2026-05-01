@@ -1,0 +1,173 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:23.489Z",
+  "source_step08_card": "data/step-08/current/products/cloud-dns/card.json",
+  "product_name": "Cloud DNS",
+  "product_slug": "cloud-dns",
+  "feature_name": "DNS Armor internet-bound query monitoring",
+  "feature_slug": "dns-armor-internet-bound-query-monitoring",
+  "summary": "Cloud DNS supports monitoring internet-bound DNS queries with DNS Armor to detect malicious activity; DNS Armor advanced threat detection becomes available in Cloud DNS to monitor internet-bound DNS queries for malicious activity.",
+  "extended_definition": "Cloud DNS supports monitoring internet-bound DNS queries with DNS Armor to detect malicious activity; DNS Armor advanced threat detection becomes available in Cloud DNS to monitor internet-bound DNS queries for malicious activity.",
+  "lifecycle": {
+    "latest_feature_date": "2026-01-16",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dns/docs/best-practices",
+      "https://docs.cloud.google.com/dns/docs/key-terms",
+      "https://docs.cloud.google.com/dns/docs/overview",
+      "https://docs.cloud.google.com/dns/docs/troubleshooting"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Troubleshoot Cloud DNS \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dns/docs/troubleshooting",
+        "source_id": "site-docs-root",
+        "final_score": 212,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Outbound forwarding to a name server that uses a non-RFC 1918 IP address fails By default, Cloud DNS uses standard routing, which routes queries through the public internet when the target name server has a non-RFC 1918 IP address.",
+          "Alternatively, if you have enabled Cloud logging for DNS queries, use the Logs Explorer to verify that you have internet-bound queries.",
+          "Verify that you have internet-bound queries Query logs are only sent when internet-bound queries or requests are made of your network."
+        ]
+      },
+      {
+        "title": "Cloud DNS overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dns/docs/overview",
+        "source_id": "site-docs-root",
+        "final_score": 185,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Advanced threat detection Monitor your internet-bound DNS queries for malicious activity using DNS Armor, powered by Infoblox .",
+          "Your internet-bound DNS query logs are analyzed by Infoblox for malicious patterns and other signs of compromise, providing visibility into threats without impacting your production traffic.",
+          "Set up DNS64 and network address translation with Public NAT (NAT64) to enable your IPv6-only VM instances to communicate with IPv4 destinations on the internet."
+        ]
+      },
+      {
+        "title": "Key terms \\_|\\_ Cloud DNS \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dns/docs/key-terms",
+        "source_id": "site-iam-reference",
+        "final_score": 182,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Cloud DNS also supports outbound forwarding to non-RFC 1918 addresses by privately routing those addresses within Google Cloud.",
+          "For example, in the following SOA record, you can change the serial number directly from the Google Cloud console by entering the desired value into the third space-delimited field of the record: ns-gcp-private.googledomains.com. cloud-dns-hostmaster.google.com. [serial number] 21600 3600 259200 300` DNS server policy A DNS server policy lets you access name resolution services provided by Google Cloud in a VPC network with inbound forwarding, or supersede the VPC name resolution order with an outbound server policy.",
+          "For more information about how to register and set up your domain, see Setting up a domain using Cloud DNS . private zone Private zones enable you to manage custom domain names for your virtual machine (VM) instances, load balancers, and other Google Cloud resources without exposing the underlying DNS data to the public internet."
+        ]
+      },
+      {
+        "title": "Best practices for Cloud DNS \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dns/docs/best-practices",
+        "source_id": "site-docs-root",
+        "final_score": 163,
+        "relevance": "",
+        "evidence_snippets": [
+          "Use DNS server policies to allow queries from on-premises To allow on-premises hosts to query DNS records that are hosted in Cloud DNS private zones (for example, gcp.example.com ), create a DNS server policy using inbound DNS forwarding .",
+          "As described in DNS forwarding zones , Cloud DNS caches results of outbound-forwarded queries for up to 60 seconds, or for the duration of their TTL.",
+          "Inbound DNS forwarding allows your system to query all private zones in the project as well as internal DNS IP addresses and peered zones."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "gcp.example.com",
+      "hostmaster.google.com",
+      "private.googledomains.com",
+      "projects.locations.dnsThreatDetectors",
+      "x.internal"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dns/docs/troubleshooting",
+        "https://docs.cloud.google.com/dns/docs/overview",
+        "https://docs.cloud.google.com/dns/docs/key-terms",
+        "https://docs.cloud.google.com/dns/docs/best-practices"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dns/docs/troubleshooting",
+        "https://docs.cloud.google.com/dns/docs/overview",
+        "https://docs.cloud.google.com/dns/docs/key-terms",
+        "https://docs.cloud.google.com/dns/docs/best-practices"
+      ]
+    },
+    {
+      "capability": "armor",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dns/docs/troubleshooting",
+        "https://docs.cloud.google.com/dns/docs/overview",
+        "https://docs.cloud.google.com/dns/docs/key-terms",
+        "https://docs.cloud.google.com/dns/docs/best-practices"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dns/docs/troubleshooting",
+        "https://docs.cloud.google.com/dns/docs/overview",
+        "https://docs.cloud.google.com/dns/docs/key-terms",
+        "https://docs.cloud.google.com/dns/docs/best-practices"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dns/docs/troubleshooting",
+        "https://docs.cloud.google.com/dns/docs/overview",
+        "https://docs.cloud.google.com/dns/docs/key-terms",
+        "https://docs.cloud.google.com/dns/docs/best-practices"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dns/docs/troubleshooting",
+        "https://docs.cloud.google.com/dns/docs/overview",
+        "https://docs.cloud.google.com/dns/docs/key-terms",
+        "https://docs.cloud.google.com/dns/docs/best-practices"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dns/docs/troubleshooting",
+        "https://docs.cloud.google.com/dns/docs/overview",
+        "https://docs.cloud.google.com/dns/docs/key-terms",
+        "https://docs.cloud.google.com/dns/docs/best-practices"
+      ]
+    },
+    {
+      "capability": "threat",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dns/docs/troubleshooting",
+        "https://docs.cloud.google.com/dns/docs/overview",
+        "https://docs.cloud.google.com/dns/docs/key-terms",
+        "https://docs.cloud.google.com/dns/docs/best-practices"
+      ]
+    }
+  ]
+}

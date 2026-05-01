@@ -1,0 +1,109 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:28.879Z",
+  "source_step08_card": "data/step-08/current/products/cloud-vision/card.json",
+  "product_name": "Cloud Vision",
+  "product_slug": "cloud-vision",
+  "feature_name": "Offline batch image annotation",
+  "feature_slug": "offline-batch-image-annotation",
+  "summary": "Offline batch image annotation performs asynchronous annotation on batches of images; Offline batch image annotation performs asynchronous image detection and annotation on batches of images.",
+  "extended_definition": "Offline batch image annotation performs asynchronous annotation on batches of images; Offline batch image annotation performs asynchronous image detection and annotation on batches of images.",
+  "lifecycle": {
+    "latest_feature_date": "2019-06-07",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/vision/docs/batch",
+      "https://docs.cloud.google.com/vision/docs/detecting-landmarks",
+      "https://docs.cloud.google.com/vision/docs/handwriting",
+      "https://docs.cloud.google.com/vision/docs/ocr"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Batch image annotation offline \\_|\\_ Cloud Vision API \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/vision/docs/batch",
+        "source_id": "site-docs-root",
+        "final_score": 292,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "With an images:annotate request you can only specify a small number of images (<=16) to be annotated ; with a files:annotate request you can only specify a single file and specify a small number of pages (<=5) in that file to be annotated. offline (asynchronous) requests - An offline annotation request ( images:asyncBatchAnnotate or files:asyncBatchAnnotate ) starts a long-running operation (LRO) and does not immediately return a response to the caller.",
+          "The Vision API can run offline (asynchronous) detection services and annotation of a large batch of image files using any Vision feature type .",
+          "The response also contain a context field showing the file's URI. offline batch output/output-1-to-2.json { \"responses\" : [ { \" labelAnnotations \" : [ { \"mid\" : \"/m/07s6nbt\" , \"description\" : \"Text\" , \"score\" : 0.93413997 , \"topicality\" : 0.93413997 }, { \"mid\" : \"/m/0dwx7\" , \"description\" : \"Logo\" , \"score\" : 0.8733531 , \"topicality\" : 0.8733531 }, ... { \"mid\" : \"/m/03bxgrp\" , \"description\" : \"Company\" , \"score\" : 0.5682425 , \"topicality\" : 0.5682425 } ], \" textAnnotations \" : [ { \"locale\" : \"en\" , \"description\" : \"Google\\n\" , \"boundingPoly\" : { \"vertices\" : [ { \"x\" : 72 , \"y\" : 40 }, { \"x\" : 613 , \"y\" : 40 }, { \"x\" : 613 , \"y\" : 233 }, { \"x\" : 72 , \"y\" : 233 } ] } }, ... ], \"blockType\" : \"TEXT\" } ] } ], \"text\" : \"Google\\n\" }, \"context\" : { \"uri\" : \" gs://cloud-samples-data/vision/document understanding/image1.png \" } }, { \" imagePropertiesAnnotation \" : { \"dominantColors\" : { \"colors\" : [ { \"color\" : { \"red\" : 229 , \"green\" : 230 , \"blue\" : 238 }, \"score\" : 0.2744754 , \"pixelFraction\" : 0.075339235 }, ... { \"color\" : { \"red\" : 86 , \"green\" : 87 , \"blue\" : 95 }, \"score\" : 0.025770646 , \"pixelFraction\" : 0.13109145 } ] } }, \"cropHintsAnnotation\" : { \"cropHints\" : [ { \"boundingPoly\" : { \"vertices\" : [ {}, { \"x\" : 1599 }, { \"x\" : 1599 , \"y\" : 1199 }, { \"y\" : 1199 } ] }, \"confidence\" : 0.79999995 , \"importanceFraction\" : 1 } ] }, \"context\" : { \"uri\" : \" gs://cloud-samples-data/vision/document understanding/image2.jpg \" } } ] } offline batch output/output-3-to-3.json { \"responses\" : [ { \"context\" : { \"uri\" : \" gs://cloud-samples-data/vision/document understanding/image3.jpg \" }, \" localizedObjectAnnotations \" : [ { \"mid\" : \"/m/0bt9lr\" , \"name\" : \"Dog\" , \"score\" : 0.9669734 , \"boundingPoly\" : { \"normalizedVertices\" : [ { \"x\" : 0.6035543 , \"y\" : 0.1357359 }, { \"x\" : 0.98546547 , \"y\" : 0.1357359 }, { \"x\" : 0.98546547 , \"y\" : 0.98426414 }, { \"x\" : 0.6035543 , \"y\" : 0.98426414 } ] } }, ... { \"mid\" : \"/m/0jbk\" , \"name\" : \"Animal\" , \"score\" : 0.58003056 , \"boundingPoly\" : { \"normalizedVertices\" : [ { \"x\" : 0.014534635 , \"y\" : 0.1357359 }, { \"x\" : 0.37197515 , \"y\" : 0.1357359 }, { \"x\" : 0.37197515 , \"y\" : 0.98426414 }, { \"x\" : 0.014534635 , \"y\" : 0.98426414 } ] } } ] } ] } Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License ."
+        ]
+      },
+      {
+        "title": "Detect handwriting in images \\_|\\_ Cloud Vision API \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vision/docs/handwriting",
+        "source_id": "site-docs-root",
+        "final_score": 246,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The Vision API now supports offline asynchronous batch image annotation for all features.",
+          "For more information about this feature, refer to Offline batch image annotation .",
+          "After completing all of your requests, call // the \"close\" method on the client to safely clean up any remaining background resources. try ( ImageAnnotatorClient client = ImageAnnotatorClient . create ()) { BatchAnnotateImagesResponse response = client . batchAnnotateImages ( requests ); List<AnnotateImageResponse> responses = response . getResponsesList (); client . close (); for ( AnnotateImageResponse res : responses ) { if ( res . hasError ()) { System . out . format ( \"Error: %s%n\" , res . getError (). getMessage ()); return ; } // For full list of available annotations, see http://g.co/cloud/vision/docs TextAnnotation annotation = res . getFullTextAnnotation (); for ( Page page : annotation . getPagesList ()) { String pageText = \"\" ; for ( Block block : page . getBlocksList ()) { String blockText = \"\" ; for ( Paragraph para : block . getParagraphsList ()) { String paraText = \"\" ; for ( Word word : para . getWordsList ()) { String wordText = \"\" ; for ( Symbol symbol : word . getSymbolsList ()) { wordText = wordText + symbol . getText (); System . out . format ( \"Symbol text: %s (confidence: %f)%n\" , symbol . getText (), symbol . getConfidence ()); } System . out . format ( \"Word text: %s (confidence: %f)%n%n\" , wordText , word . getConfidence ()); paraText = String . format ( \"%s %s\" , paraText , wordText ); } // Output Example using Paragraph: System . out . println ( \"%nParagraph: %n\" + paraText ); System . out . format ( \"Paragraph Confidence: %f%n\" , para . getConfidence ()); blockText = blockText + paraText ; } pageText = pageText + blockText ; } } System . out . println ( \"%nComplete annotation:\" ); System . out . println ( annotation . getText ()); } } } Node.js Before trying this sample, follow the Node.js setup instructions in the Vision quickstart using client libraries ."
+        ]
+      },
+      {
+        "title": "\"Detect and extract text from images \\_|\\_ Cloud Vision API \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/vision/docs/ocr",
+        "source_id": "site-docs-root",
+        "final_score": 240,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Try Cloud Vision free Text detection requests Note: The Vision API now supports offline asynchronous batch image annotation for all features.",
+          "For more information about this feature, refer to Offline batch image annotation .",
+          "After completing all of your requests, call // the \"close\" method on the client to safely clean up any remaining background resources. try ( ImageAnnotatorClient client = ImageAnnotatorClient . create ()) { BatchAnnotateImagesResponse response = client . batchAnnotateImages ( requests ); List<AnnotateImageResponse> responses = response . getResponsesList (); for ( AnnotateImageResponse res : responses ) { if ( res . hasError ()) { System . out . format ( \"Error: %s%n\" , res . getError (). getMessage ()); return ; } // For full list of available annotations, see http://g.co/cloud/vision/docs for ( EntityAnnotation annotation : res . getTextAnnotationsList ()) { System . out . format ( \"Text: %s%n\" , annotation . getDescription ()); System . out . format ( \"Position : %s%n\" , annotation . getBoundingPoly ()); } } } } } Node.js Before trying this sample, follow the Node.js setup instructions in the Vision quickstart using client libraries ."
+        ]
+      },
+      {
+        "title": "Detect landmarks \\_|\\_ Cloud Vision API \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vision/docs/detecting-landmarks",
+        "source_id": "site-iam-reference",
+        "final_score": 230,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Note: The Vision API now supports offline asynchronous batch image annotation for all features.",
+          "For more information about this feature, refer to Offline batch image annotation .",
+          "After completing all of your requests, call // the \"close\" method on the client to safely clean up any remaining background resources. try ( ImageAnnotatorClient client = ImageAnnotatorClient . create ()) { BatchAnnotateImagesResponse response = client . batchAnnotateImages ( requests ); List<AnnotateImageResponse> responses = response . getResponsesList (); for ( AnnotateImageResponse res : responses ) { if ( res . hasError ()) { System . out . format ( \"Error: %s%n\" , res . getError (). getMessage ()); return ; } // For full list of available annotations, see http://g.co/cloud/vision/docs for ( EntityAnnotation annotation : res . getLandmarkAnnotationsList ()) { LocationInfo info = annotation . getLocationsList (). listIterator (). next (); System . out . format ( \"Landmark: %s%n %s%n\" , annotation . getDescription (), info . getLatLng ()); } } } } } Node.js Before trying this sample, follow the Node.js setup instructions in the Vision quickstart using client libraries ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "g.co",
+      "image1.png",
+      "image2.jpg",
+      "image3.jpg"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vision/docs/batch",
+        "https://docs.cloud.google.com/vision/docs/handwriting",
+        "https://docs.cloud.google.com/vision/docs/ocr",
+        "https://docs.cloud.google.com/vision/docs/detecting-landmarks"
+      ]
+    }
+  ]
+}

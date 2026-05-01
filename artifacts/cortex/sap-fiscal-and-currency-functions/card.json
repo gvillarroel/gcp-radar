@@ -1,0 +1,97 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:32.419Z",
+  "source_step08_card": "data/step-08/current/products/cortex/card.json",
+  "product_name": "Cortex",
+  "product_slug": "cortex",
+  "feature_name": "SAP Fiscal and Currency functions",
+  "feature_slug": "sap-fiscal-and-currency-functions",
+  "summary": "SAP Fiscal and Currency functions provide fiscal calendar and currency conversion helper logic in Cortex; deprecated on 2024-12-19.",
+  "extended_definition": "SAP Fiscal and Currency functions provide fiscal calendar and currency conversion helper logic in Cortex; deprecated on 2024-12-19.",
+  "lifecycle": {
+    "latest_feature_date": "2024-12-19",
+    "deprecation_date": "2024-12-19",
+    "status": "deprecation_noted"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/cortex/docs/dun-and-bradstreet",
+      "https://docs.cloud.google.com/cortex/docs/external-dags-migration",
+      "https://docs.cloud.google.com/cortex/docs/looker-block-customize"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"External DAGs migration from v4.2 to v5.0 \\_|\\_ Google Cloud Cortex Framework\\",
+        "url": "https://docs.cloud.google.com/cortex/docs/external-dags-migration",
+        "source_id": "site-docs-reference",
+        "final_score": 89,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Make sure to remove any DAGs you don't want to migrate from the migrate list section: { \"project id src\" : \"your-source-project\" , \"project id tgt\" : \"your-target-project\" , \"dataset cdc processed\" : \"your-cdc-processed-dataset\" , \"dataset reporting tgt\" : \"your-reporting-target-dataset-OR-SAP REPORTING\" , \"k9 datasets processing\" : \"your-k9-processing-dataset-OR-K9 REPORTING\" , \"migrate list\" : [ \"holiday calendar\" , \"trends\" , \"weather\" , \"currency conversion\" , \"inventory snapshots\" , \"prod hierarchy texts\" ] } EOF For example, if you want to remove weather and trends , the script would look like the following: { \"project id src\" : \"kittycorn-demo\" , \"project id tgt\" : \"kittycorn-demo\" , \"dataset cdc processed\" : \"CDC PROCESSED\" , \"dataset reporting tgt\" : \"SAP REPORTING\" , \"k9 datasets processing\" : \"K9 PROCESSING\" , \"migrate list\" : [ \"holiday calendar\" , \"currency conversion\" , \"inventory snapshots\" , \"prod hierarchy texts\" ] } Create an output folder with the following command: mkdir output Generate the parsed migration script with the following command (this command assumes you are at the root of the repository): jinja -d data.json -o output/migrate external dags.sql docs/external dag migration/scripts/migrate external dags.sql Examine the output SQL file and execute in BigQuery to migrate your tables to the new location.",
+          "The following external data sources are now deployed as a part of K9, into the K9 PROCESSING dataset: date dimension holiday calendar trends weather SAP-dependent DAGs The following SAP-dependent DAGs are still triggered by generate external dags.sh script, but now executes during the reporting build step, and now write into the SAP reporting dataset instead of the CDC (Change Data Capture) stage. currency conversion inventory snapshots prod hierarchy texts Migration Guide This guide outlines the steps to upgrade your Cortex Framework Data Foundation to version 5.0.",
+          "Context Cortex Framework Data Foundation versions prior to 4.2 used a GEN EXT flag to manage the deployment of external data sources, with some sources tied to specific workloads (like currency conversion for SAP)."
+        ]
+      },
+      {
+        "title": "\"Customize Looker Blocks \\_|\\_ Google Cloud Cortex Framework \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/cortex/docs/looker-block-customize",
+        "source_id": "site-docs-reference",
+        "final_score": 44,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "BUSINESS UNIT NAME ) ;; } } Include the new refinement in the Explore : Use the new file in the include property instead of the refinement provided in the Cortex Framework Looker Block. include : \"/views/my customizations/sales invoices rfn.view\" explore : sales invoices { } Editing LookML dashboard filters The common set of dashboard filters used across multiple LookML dashboards are defined in a dashboard named with template suffix and extended into each dashboard.",
+          "Customize Looker Blocks This page provides an overview of best practices and examples on how to adapt the following Cortex Framework Looker Blocks to your specific business requirements: Looker Block for Oracle EBS Looker Block for Meta Looker Block for YouTube (with DV360) Installation You can install the Cortex Framework Looker Blocks in a few ways, as detailed in the Deploy Looker Blocks documentation.",
+          "These user attributes for default language or currency allow you to customize how dashboards are displayed per user or group."
+        ]
+      },
+      {
+        "title": "\"Integration with Dun & Bradstreet \\_|\\_ Google Cloud Cortex Framework \\_\\",
+        "url": "https://docs.cloud.google.com/cortex/docs/dun-and-bradstreet",
+        "source_id": "site-docs-reference",
+        "final_score": 44,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Reporting views Two BigQuery views are provided for this module, in the K9 Reporting dataset (purple objects): SustainableSourcing provides ESG Insights for each vendor.",
+          "The marketplace listing should provide details about the D&B ESG Intelligence offering.",
+          "SustainableVendorSourcing provides vendor performance insights alongside ESG Insights."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "dags.sh",
+      "dags.sql",
+      "data.json",
+      "rfn.view",
+      "v4.2",
+      "v5.0"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/cortex/docs/external-dags-migration",
+        "https://docs.cloud.google.com/cortex/docs/looker-block-customize",
+        "https://docs.cloud.google.com/cortex/docs/dun-and-bradstreet"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,135 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:42.371Z",
+  "source_step08_card": "data/step-08/current/products/looker/card.json",
+  "product_name": "Looker",
+  "product_slug": "looker",
+  "feature_name": "sql_preamble parameter",
+  "feature_slug": "sql-preamble-parameter",
+  "summary": "The sql_preamble parameter now supports Liquid statements.",
+  "extended_definition": "The sql_preamble parameter now supports Liquid statements.",
+  "lifecycle": {
+    "latest_feature_date": "2025-10-02",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/blob-storage-transfer-parameters",
+      "https://docs.cloud.google.com/bigquery/docs/gcs-transfer-parameters",
+      "https://docs.cloud.google.com/looker/docs/liquid-variable-reference"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Liquid variable reference | Looker | Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/looker/docs/liquid-variable-reference",
+        "source_id": "feature-recovery-http",
+        "final_score": 157,
+        "relevance": "",
+        "evidence_snippets": [
+          "For example: {% if value > 10000 %} Basic examples This section provides examples of using Liquid variables in the following ways: Using Liquid with the html parameter to generate product images Using Liquid with the url parameter to dynamically insert a selected value into a URL Using Liquid with the sql_table_name parameter to set the database table based on the field that the user chooses Using Liquid with the label parameter to change the label for a dimension depending on the LookML model name Using Liquid with the sql_preamble parameter to select the appropriate data warehouse For additional usage examples, see the individual LookML parameter page you're interested in.",
+          "Changing the field name dynamically changes the name of the field in the field picker and in any query results that include the email dimension: dimension: email { label: \"{% if _model._name == 'thelook' %} Looker Registered Email Address {% else %} External Email Address {% endif %}\" type: string sql: ${TABLE}.email ;; } Using Liquid with the sql_preamble parameter to select the appropriate data warehouse The sql_preamble parameter specifies a SQL statement that executes before queries in the Explore are run.",
+          "Liquid variable reference | Looker | Google Cloud Documentation Skip to main content Technology areas close AI and ML Application development Application hosting Compute Data analytics and pipelines Databases Distributed, hybrid, and multicloud Industry solutions Migration Networking Observability and monitoring Security Storage Cross-product tools close Access and resources management Costs and usage management Infrastructure as code SDK, languages, frameworks, and tools / Console English Deutsch Español – América Latina Français Português – Brasil 中文 – 简体 日本語 한국어 Sign in Looker Start free Overview Looker Guides How-to guides and feature descriptions Best Practices Best practices and specific use cases LookML Reference Reference for Looker's LookML modeling language API Reference Reference for Looker's APIs Resources Release, support, and contract information Community Community forum for Looker Looker Studio Guides How-to guides and feature descriptions Community Community forum for Looker Studio Guides Technology areas More Overview Looker More Looker Studio More Guides Cross-product tools More Console Looker introduction Landing pages Looker introduction Looker releases Find and organize content Send and share content Retrieve and chart data Create and edit dashboards and Looks Get ready for development Write LookML Use embedding and the API Set up and administer Looker Improve your skills in Looker and Data Studio Personalizing Looker Personalizing your user profile Personalizing user account settings Viewing your query history Viewing your scheduled data deliveries Viewing your conditional alert notifications Viewing information about your session Keyboard shortcuts in Looker Looker glossary Looker and Data Studio shared terms and concepts Looker error catalog Find and organize content Finding and viewing content Finding content in Looker Viewing dashboards Viewing Looks in Looker Looker filter expressions Content certification Organizing content Organizing and managing access to content Presenting content with boards Deleted and unused content for admins Managing unused content Send and share content Sharing data One-time sharing Downloading content Public sharing, importing, and embedding of Looks Sharing data from URLs Periodic sharing Using the Looker Scheduler to deliver content Scheduling and sending dashboards Scheduling deliveries to the Slack integration Sharing data through an action hub Configuring content deliveries for Looker users (Looker admins) Conditional sharing Conditionally delivering Looks and Explores Alerts overview Configuring alerts for Looker users (Looker admins) Retrieve and chart data Retrieving data using the Looker UI Creating and editing Explores Viewing and interacting with Explores Creating self-service Explores Filtering and limiting data Merging results from different Explores Looker filter expressions Looker functions and operators Adding custom formatting to numeric fields Time formatting for charts Retrieving data using connectors Google Sheets Using Connected Sheets Connected Sheets quick link Data Studio SQL Interface Microsoft Excel Power BI Tableau ThoughtSpot Creating your own fields Using table calculations Adding custom fields Creating Looker expressions Looker functions and operators List of Looker functions and operators abs exp ln power rand pivot_index pivot_where matches_filter Creating charts Creating visualizations and graphs Selecting an effective data visualization Visualization types Visualization types list Area chart options Bar chart options Boxplot chart options Column chart options Donut Multiples chart options Funnel chart options Google Maps chart options Line chart options Map (Legacy) chart options Pie chart options Scatterplot chart options Single record chart options Single value chart options Static Map (Points) chart options Static Map (Regions) chart options Table chart options Table (legacy) chart options Timeline chart options Waterfall chart options Word cloud chart options Custom Tooltips Color collections Time formatting for charts Customizing visualizations using the Chart Config Editor Customizing visualizations using the Chart Config Editor Creating a bullet chart Creating a dependency wheel chart Creating an item chart Creating a Sankey chart Creating a solid gauge chart Creating a streamgraph chart Creating a sunburst chart Creating a treemap chart Creating a Venn diagram Using the new Looker Explore and Merge Query experience The new Looker Explore and Merge Query experience Overview Viewing and interacting with Explores in the new Explore experience Creating and editing Explores in the new Explore experience Filtering and limiting data in the new Explore experience Joining data from multiple queries in the new Explore experience Configuring and editing visualizations in the new Explore experience Use Gemini in Looker to gain insights into your data Create dashboards and Looks Saving and editing Looks List of dashboard documentation Comparing user-defined and LookML dashboards Creating user-defined dashboards Creating user-defined dashboards Editing user-defined dashboards Adding tabs to dashboards Adding saved content to dashboards (legacy feature) Using Markdown in Markdown tiles Adding and editing user-defined dashboard filters Looker filter expressions Cross-filtering dashboards Themes for internal dashboards Creating and managing LookML dashboards LookML dashboard overview Building LookML dashboards LookML dashboard parameters Dashboard element parameters Dashboard visualization list LookML dashboard type parameter Column chart parameters Bar chart parameters Scatter chart parameters Line chart parameters Area chart parameters Pie chart parameters Donut multiples chart parameters Funnel chart parameters Timeline chart parameters Waterfall chart parameters Text tile parameters Button parameters Single value chart parameters Single record chart parameters Table (legacy) chart parameters Table chart parameters Google Maps parameters Map parameters Coordinate map parameters Choropleth map parameters Boxplot chart parameters Dashboard reference line parameters Converting from LookML to user-defined dashboards Getting dashboard LookML from a user-defined dashboard Gemini in Looker Gemini in Looker overview Enable and administer Gemini in Looker Enable for Looker (Google Cloud core) Enable for Looker (original) Generate a summary of an Explore Generate Quick Start analyses for an Explore Create custom Looker visualizatons Write Looker expressions Write LookML using natural language Use Gemini in Looker to gain insights into your data Conversational Analytics Conversational Analytics overview Set up Conversational Analytics in Looker Converse with Looker data Create and manage data agents Best practices for configuring Conversational Analytics with Looker Recommended setup and rollout strategy for Conversational Analytics in Looker Enable and use the Code Interpreter Embedding Conversational Analytics Troubleshooting Gemini in Looker issues Looker reports Enabling and disabling Looker reports Create, view, and edit Looker reports Overview of permissions for Looker reports Move, share, and copy reports Download charts and reports Upload CSV files to Looker reports Embed reports Feature availability in Looker reports Managing report connectors Troubleshooting Looker reports SQL in Looker How Looker generates SQL SQL Runner SQL Runner basics Using SQL Runner to create queries and Explores Using SQL Runner to create derived tables Managing database functions with SQL Runner Develop in LookML LookML overview Introduction to LookML LookML terms and concepts Development Mode and Production Mode Accessing LookML project files Types of files in a LookML project Concepts for SQL experts LookML for SQL experts SQL concepts for view files SQL concepts for joins SQL concepts for derived tables LookML models and projects Generating a LookML model Creating a new LookML project Accessing and editing project information The Looker IDE Looker IDE overview File browser Object browser LookML metadata panel Git and version control Setting up and testing a Git connection Configuring project version control settings Using version control and deploying Advanced deploy mode Configuring the webhook deploy secret Git command reference Developing a data model with LookML Managing LookML files and folders Validating your LookML Incorporating SQL and referring to LookML objects Working with joins in LookML Common LookML patterns Customizing the user experience with LookML Changing the Explore menu and field picker Formatting data values with LookML Creating required filters with LookML Changing filter suggestions Advanced LookML customization with Liquid Templated filters and Liquid parameters Liquid variable reference Period over period measures Custom calendars Creating derived tables from queries Derived tables in Looker Creating native derived tables Incremental PDTs Reusing and extending LookML code Reusing code with extends LookML refinements Importing files from other projects Looker Blocks Optimizing performance with LookML Caching queries Aggregate awareness Continuous Integration Continuous Integration (CI) overview SQL Validator Assert Validator Content Validator LookML Validator Creating a CI suite Running CI suites Viewing the results of a CI run Content validation Localizing your model Use Looker with MCP, Gemini CLI and other Agents LookML reference Optimizing Looker performance Index of Looker performance documentation Performance overview Using the Explore query tracker and Performance panel to monitor query performance Considerations when building performant Looker dashboards Optimize Looker performance Aggregate awareness System Activity dashboards Database connection pooling Understanding query performance metrics Looker Marketplace Looker Marketplace overview Using the Looker Marketplace Customizing Looker Marketplace Blocks Using the Looker Data Dictionary Configuring the LookML Diagram Using the LookML Diagram Application Development with Looker Looker application API Looker 4.0 API reference (latest) Deprecated API reference Notices Looker API 4.0 Generally Available Looker API 3.x Deprecation Notice The Looker API now uses query slug values for query IDs Getting started Looker API overview Getting started with the Looker API API details Looker API authentication Using the API Explorer I mastered Looker's API Explorer."
+        ]
+      },
+      {
+        "title": "\"Runtime parameters in Blob Storage transfers \\_|\\_ BigQuery \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/blob-storage-transfer-parameters",
+        "source_id": "site-docs-reference-required-6",
+        "final_score": 76,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Parameters are referenced in the following formats: {run date} {run time[+\\-offset] \"time format\"} Parameter Purpose run date This parameter is replaced by the date in format YYYYMMDD . run time This parameter supports the following properties: offset Time offset expressed in hours (h), minutes (m), and seconds (s) in that order.",
+          "Parameter templating syntax The templating syntax supports basic string templating and time offsetting.",
+          "Parameter templating examples These examples demonstrate specifying destination table names with different time formats, and offsetting the run time. run time (UTC) Templated parameter Output destination table name 2018-02-15 00:00:00 mytable mytable 2018-02-15 00:00:00 mytable { run time \"%Y%m%d\" } mytable 20180215 2018-02-15 00:00:00 mytable { run time+25h \"%Y%m%d\" } mytable 20180216 2018-02-15 00:00:00 mytable { run time-1h \"%Y%m%d\" } mytable 20180214 2018-02-15 00:00:00 mytable { run time+1.5h \"%Y%m%d%H\" } or mytable { run time+90m \"%Y%m%d%H\" } mytable 2018021501 2018-02-15 00:00:00 { run time+97s \"%Y%m%d\" } mytable { run time+97s \"%H%M%S\" } 20180215 mytable 000137 Note: When you use date or time parameters to create tables with names ending in a date format such as YYYYMMDD , BigQuery groups these tables together ."
+        ]
+      },
+      {
+        "title": "\"Runtime parameters in Cloud Storage transfers \\_|\\_ BigQuery \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/gcs-transfer-parameters",
+        "source_id": "site-docs-reference-required-6",
+        "final_score": 76,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Parameters are referenced in the following formats: {run date} {run time[+\\-offset] \"time format\"} Parameter Purpose run date This parameter is replaced by the date in format YYYYMMDD . run time This parameter supports the following properties: offset Time offset expressed in hours (h), minutes (m), and seconds (s) in that order.",
+          "Parameter templating syntax The templating syntax supports basic string templating and time offsetting.",
+          "Parameter templating examples These examples demonstrate specifying destination table names with different time formats, and offsetting the run time. run time (UTC) Templated parameter Output destination table name 2018-02-15 00:00:00 mytable mytable 2018-02-15 00:00:00 mytable { run time \"%Y%m%d\" } mytable 20180215 2018-02-15 00:00:00 mytable { run time+25h \"%Y%m%d\" } mytable 20180216 2018-02-15 00:00:00 mytable { run time-1h \"%Y%m%d\" } mytable 20180214 2018-02-15 00:00:00 mytable { run time+1.5h \"%Y%m%d%H\" } or mytable { run time+90m \"%Y%m%d%H\" } mytable 2018021501 2018-02-15 00:00:00 { run time+97s \"%Y%m%d\" } mytable { run time+97s \"%H%M%S\" } 20180215 mytable 000137 Note: When you use date or time parameters to create tables with names ending in a date format such as YYYYMMDD , BigQuery groups these tables together ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "id._rendered_value",
+      "orders.id",
+      "orders.status",
+      "orders.value"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/liquid-variable-reference",
+        "https://docs.cloud.google.com/bigquery/docs/blob-storage-transfer-parameters",
+        "https://docs.cloud.google.com/bigquery/docs/gcs-transfer-parameters"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/liquid-variable-reference",
+        "https://docs.cloud.google.com/bigquery/docs/blob-storage-transfer-parameters",
+        "https://docs.cloud.google.com/bigquery/docs/gcs-transfer-parameters"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/liquid-variable-reference",
+        "https://docs.cloud.google.com/bigquery/docs/blob-storage-transfer-parameters",
+        "https://docs.cloud.google.com/bigquery/docs/gcs-transfer-parameters"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/liquid-variable-reference",
+        "https://docs.cloud.google.com/bigquery/docs/blob-storage-transfer-parameters",
+        "https://docs.cloud.google.com/bigquery/docs/gcs-transfer-parameters"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/liquid-variable-reference",
+        "https://docs.cloud.google.com/bigquery/docs/blob-storage-transfer-parameters",
+        "https://docs.cloud.google.com/bigquery/docs/gcs-transfer-parameters"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/liquid-variable-reference",
+        "https://docs.cloud.google.com/bigquery/docs/blob-storage-transfer-parameters",
+        "https://docs.cloud.google.com/bigquery/docs/gcs-transfer-parameters"
+      ]
+    }
+  ]
+}

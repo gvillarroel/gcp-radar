@@ -1,0 +1,114 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:15.342Z",
+  "source_step08_card": "data/step-08/current/products/app-engine-flexible-environment-net/card.json",
+  "product_name": "App Engine flexible environment .NET",
+  "product_slug": "app-engine-flexible-environment-net",
+  "feature_name": "App Engine flexible environment .NET Core support",
+  "feature_slug": "app-engine-flexible-environment-net-core-support",
+  "summary": "App Engine flexible environment added general availability for .NET Core, including Docker images for .NET Core 1.0, 1.1, and 2.0.",
+  "extended_definition": "App Engine flexible environment added general availability for .NET Core, including Docker images for .NET Core 1.0, 1.1, and 2.0.",
+  "lifecycle": {
+    "latest_feature_date": "2017-10-05",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://cloud.google.com/appengine/docs/flexible/dotnet/create-app",
+      "https://docs.cloud.google.com/appengine/docs/flexible/dotnet/create-app",
+      "https://docs.cloud.google.com/appengine/docs/flexible/dotnet/understanding-firewalls"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Quickstart: Create a .NET app in the App Engine flexible environment \\_\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/flexible/dotnet/create-app",
+        "source_id": "site-docs-reference",
+        "final_score": 43,
+        "relevance": "",
+        "evidence_snippets": [
+          "Specifies the runtime used by the app. runtime : aspnetcore env : flex runtime config : operating system : ubuntu22 This sample incurs costs to run on the App Engine flexible environment.",
+          "Learn about the App Engine flexible environment Here are some topics to help continue your learning about App Engine: An overview of App Engine Request routing Request handling Managing instances Hello World code review Hello World is the simplest possible App Engine app, as it contains only one service, has only one version, and all of the code is located within the app's root directory.",
+          "Create a .NET app in the App Engine flexible environment Region ID The REGION ID is an abbreviated code that Google assigns based on the region you select when you create your app."
+        ]
+      },
+      {
+        "title": "\"Quickstart: Create a .NET app in the App Engine flexible environment \\_\\",
+        "url": "https://cloud.google.com/appengine/docs/flexible/dotnet/create-app",
+        "source_id": "site-docs-root",
+        "final_score": 39,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Specifies the runtime used by the app. runtime : aspnetcore env : flex runtime config : operating system : ubuntu22 This sample incurs costs to run on the App Engine flexible environment.",
+          "Learn about the App Engine flexible environment Here are some topics to help continue your learning about App Engine: An overview of App Engine Request routing Request handling Managing instances Hello World code review Hello World is the simplest possible App Engine app, as it contains only one service, has only one version, and all of the code is located within the app's root directory.",
+          "Create a .NET app in the App Engine flexible environment Region ID The REGION ID is an abbreviated code that Google assigns based on the region you select when you create your app."
+        ]
+      },
+      {
+        "title": "\"Understanding the App Engine firewall \\_|\\_ App Engine flexible environment\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/flexible/dotnet/understanding-firewalls",
+        "source_id": "site-docs-reference-2",
+        "final_score": 38,
+        "relevance": "",
+        "evidence_snippets": [
+          "Service IP range for requests sent to the App Engine standard environment IP range for requests sent to the App Engine flexible environment App Engine Cron 0.1.0.1/32 or 0.1.0.2/32, bypasses the default firewall rule if set to deny 0.1.0.1/32 or 0.1.0.2/32 Compute Engine instances with external IP addresses External IP address of the instance External IP address of the instance Compute Engine instances without an external IP address 0.0.0.0/32 0.0.0.0/32 Compute Engine instances without an external IP address using Cloud NAT for outbound connections 0.0.0.0/32 0.0.0.0/32 Cloud Scheduler jobs using App Engine HTTP and App Engine tasks in Cloud Tasks (including App Engine Task Queues) 0.1.0.2/32, bypasses the default firewall rule if set to deny 0.1.0.2/32 Cloud Storage or Blobstore 0.1.0.30/32 Not applicable URL Fetch 0.1.0.40/32 0.1.0.40/32 Warming requests 0.1.0.3/32, bypasses the default firewall rule if set to deny Not applicable Depending on your use case, these additional instructions might apply when configuring App Engine firewall rules: Requests from newly created or updated App Engine Cron jobs sent to either the App Engine standard or flexible environment come from 0.1.0.2 .",
+          "App Engine flexible example Your app running in the flexible environment has two services: frontend service and backend service , and has a firewall configured to deny traffic by default. frontend service uses Cloud Tasks with App Engine HTTP to send messages to backend service .",
+          "If your App Engine flexible app uses Shared VPC , the App Engine flexible environment does not automatically create firewall rules. if you need to control access and allow traffic on the VPC network, you can create firewall rules on the Shared VPC network."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/flexible/dotnet/create-app",
+        "https://cloud.google.com/appengine/docs/flexible/dotnet/create-app",
+        "https://docs.cloud.google.com/appengine/docs/flexible/dotnet/understanding-firewalls"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/flexible/dotnet/create-app",
+        "https://cloud.google.com/appengine/docs/flexible/dotnet/create-app",
+        "https://docs.cloud.google.com/appengine/docs/flexible/dotnet/understanding-firewalls"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/flexible/dotnet/create-app",
+        "https://cloud.google.com/appengine/docs/flexible/dotnet/create-app",
+        "https://docs.cloud.google.com/appengine/docs/flexible/dotnet/understanding-firewalls"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/flexible/dotnet/create-app",
+        "https://cloud.google.com/appengine/docs/flexible/dotnet/create-app",
+        "https://docs.cloud.google.com/appengine/docs/flexible/dotnet/understanding-firewalls"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,189 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:28.180Z",
+  "source_step08_card": "data/step-08/current/products/cloud-storage/card.json",
+  "product_name": "Cloud Storage",
+  "product_slug": "cloud-storage",
+  "feature_name": "Bucket labels",
+  "feature_slug": "bucket-labels",
+  "summary": "Cloud Storage buckets can be labeled to organize Google Cloud resources.",
+  "extended_definition": "Cloud Storage buckets can be labeled to organize Google Cloud resources.",
+  "lifecycle": {
+    "latest_feature_date": "2017-04-06",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.bucket.Bucket",
+      "https://docs.cloud.google.com/storage/docs/cloud-storage-fuse/quickstart-mount-bucket",
+      "https://docs.cloud.google.com/storage/docs/creating-buckets",
+      "https://docs.cloud.google.com/storage/docs/gsutil-transition-to-gcloud"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Transition from gsutil to gcloud storage \\_|\\_ Cloud Storage \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/storage/docs/gsutil-transition-to-gcloud",
+        "source_id": "site-docs-reference",
+        "final_score": 302,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Operation gsutil command gcloud storage command Manage bucket labels gsutil label get gsutil label set gsutil label ch gcloud storage buckets describe gcloud storage buckets update gcloud storage buckets update Notes The combination of adding, updating, and removing labels in a single gsutil label ch command can behave differently than the equivalent operations using gcloud storage buckets update .",
+          "Handling of hierarchical namespace buckets gcloud storage can be used to create and manage buckets with hierarchical namespace enabled.",
+          "Operation gsutil command gcloud storage command Synchronize the contents of two buckets or directories gsutil rsync gcloud storage rsync Notes By default, gsutil rsync considers an object unchanged if its size and last modification time match between the source and destination."
+        ]
+      },
+      {
+        "title": "Create a bucket \\_|\\_ Cloud Storage \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/storage/docs/creating-buckets",
+        "source_id": "site-docs-root",
+        "final_score": 262,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To see the exact permissions that are required, expand the Required permissions section: Required permissions storage.buckets.create storage.buckets.enableObjectRetention (only required if enabling object retention configurations for the bucket) storage.buckets.list (only required if creating a bucket using the Google Cloud console.) resourcemanager.projects.get (only required if creating a bucket using the Google Cloud console) You might also be able to get these permissions with custom roles or other predefined roles.",
+          "Client libraries Note: Other options for creating a new bucket can be found in the JSON API reference for bucket.insert C++ For more information, see the Cloud Storage C++ API reference documentation .",
+          "For more information, see Set up authentication for client libraries . / TODO(developer): Uncomment the following lines before running the sample. / // The ID of your GCS bucket // const bucketName = 'your-unique-bucket-name'; // The name of a storage class // See the StorageClass documentation for other valid storage classes: // https://googleapis.dev/java/google-cloud-clients/latest/com/google/cloud/storage/StorageClass.html // const storageClass = 'coldline'; // The name of a location // See this documentation for other valid locations: // http://g.co/cloud/storage/docs/locations#location-mr // const location = 'ASIA'; // Imports the Google Cloud client library const { Storage } = require ( ' @google-cloud/storage ' ); // Creates a client // The bucket in the sample below will be created in the project associated with this client. // For more information, please see https://cloud.google.com/docs/authentication/production or https://googleapis.dev/nodejs/storage/latest/Storage.html const storage = new Storage (); async function createBucketWithStorageClassAndLocation () { // For default values see: https://cloud.google.com/storage/docs/locations and // https://cloud.google.com/storage/docs/storage-classes const [ bucket ] = await storage . createBucket ( bucketName , { location , [ storageClass ] : true , }); console . log ( ${ bucket . name } created with ${ storageClass } class in ${ location } ); } createBucketWithStorageClassAndLocation (). catch ( console . error ); PHP For more information, see the Cloud Storage PHP API reference documentation ."
+        ]
+      },
+      {
+        "title": "\"Mount a Cloud Storage bucket using Cloud Storage FUSE \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/storage/docs/cloud-storage-fuse/quickstart-mount-bucket",
+        "source_id": "site-iam-reference",
+        "final_score": 259,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Learn how to mount a Cloud Storage bucket as a local file system using Cloud Storage FUSE , so you can interact with your objects using standard file system semantics.",
+          "Learn how Vertex AI uses Cloud Storage FUSE to mount Cloud Storage buckets for custom training jobs.",
+          "Clean up To avoid incurring charges to your Google Cloud account for the resources used on this page, delete the resources by completing the following steps: Unmount the storage bucket from your Linux machine by using the fusermount tool: fusermount -u \"$HOME/mount-folder\" To delete the bucket and everything inside of it, use the gcloud storage rm command with the --recursive flag: gcloud storage rm gs:// BUCKET NAME --recursive Replace BUCKET NAME with the name of your bucket."
+        ]
+      },
+      {
+        "title": "Class Bucket (3.10.0) \\_|\\_ Python client libraries \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.bucket.Bucket",
+        "source_id": "site-python-reference",
+        "final_score": 258,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "See https://cloud.google.com/storage/docs/json api/v1/buckets#labels Note: The getter for this property returns a dict which is a copy of the bucket's labels.",
+          "See https://cloud.google.com/storage/docs/json api/v1/buckets and https://cloud.google.com/storage/docs/locations Returns None if the property has not been set before creation, if the bucket's resource has not been loaded from the server, or if the bucket is not a dual-regions bucket. default event based hold Scalar property getter. default kms key name Retrieve / set default KMS encryption key for objects in the bucket.",
+          "See https://cloud.google.com/storage/docs/json api/v1/buckets Returns Type Description datetime.datetime or NoneType Datetime object parsed from RFC3339 valid timestamp, or None if the bucket's resource has not been loaded from the server. user project Project ID to be billed for API requests made via this bucket."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "explicit",
+    "explicit_roles": [
+      "roles/accessapproval.admin",
+      "roles/accessapproval.approver",
+      "roles/accessapproval.configEditor"
+    ],
+    "explicit_permissions": [
+      {
+        "permission": "resourcemanager.projects.get",
+        "group": "resourcemanager",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver",
+          "roles/accessapproval.configEditor"
+        ]
+      }
+    ],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "bucket.insert",
+      "datetime.datetime",
+      "g.co",
+      "googleapis.dev",
+      "storage.buckets.create",
+      "storage.buckets.enableObjectRetention",
+      "storage.buckets.list"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/gsutil-transition-to-gcloud",
+        "https://docs.cloud.google.com/storage/docs/creating-buckets",
+        "https://docs.cloud.google.com/storage/docs/cloud-storage-fuse/quickstart-mount-bucket",
+        "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.bucket.Bucket"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/gsutil-transition-to-gcloud",
+        "https://docs.cloud.google.com/storage/docs/creating-buckets",
+        "https://docs.cloud.google.com/storage/docs/cloud-storage-fuse/quickstart-mount-bucket",
+        "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.bucket.Bucket"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/gsutil-transition-to-gcloud",
+        "https://docs.cloud.google.com/storage/docs/creating-buckets",
+        "https://docs.cloud.google.com/storage/docs/cloud-storage-fuse/quickstart-mount-bucket",
+        "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.bucket.Bucket"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/gsutil-transition-to-gcloud",
+        "https://docs.cloud.google.com/storage/docs/creating-buckets",
+        "https://docs.cloud.google.com/storage/docs/cloud-storage-fuse/quickstart-mount-bucket",
+        "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.bucket.Bucket"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/gsutil-transition-to-gcloud",
+        "https://docs.cloud.google.com/storage/docs/creating-buckets",
+        "https://docs.cloud.google.com/storage/docs/cloud-storage-fuse/quickstart-mount-bucket",
+        "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.bucket.Bucket"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/gsutil-transition-to-gcloud",
+        "https://docs.cloud.google.com/storage/docs/creating-buckets",
+        "https://docs.cloud.google.com/storage/docs/cloud-storage-fuse/quickstart-mount-bucket",
+        "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.bucket.Bucket"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/gsutil-transition-to-gcloud",
+        "https://docs.cloud.google.com/storage/docs/creating-buckets",
+        "https://docs.cloud.google.com/storage/docs/cloud-storage-fuse/quickstart-mount-bucket",
+        "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.bucket.Bucket"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/gsutil-transition-to-gcloud",
+        "https://docs.cloud.google.com/storage/docs/creating-buckets",
+        "https://docs.cloud.google.com/storage/docs/cloud-storage-fuse/quickstart-mount-bucket",
+        "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.bucket.Bucket"
+      ]
+    }
+  ]
+}

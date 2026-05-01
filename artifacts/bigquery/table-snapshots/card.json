@@ -1,0 +1,93 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:18.771Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery",
+  "feature_name": "Table snapshots",
+  "feature_slug": "table-snapshots",
+  "summary": "Table snapshots create point-in-time copies of tables, including support for console management and cross-project snapshot creation; Table snapshots create low-cost, read-only copies of BigQuery tables at a specific point in time.",
+  "extended_definition": "Table snapshots create point-in-time copies of tables, including support for console management and cross-project snapshot creation; Table snapshots create low-cost, read-only copies of BigQuery tables at a specific point in time.",
+  "lifecycle": {
+    "latest_feature_date": "2021-10-28",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/admin-intro",
+      "https://docs.cloud.google.com/bigquery/docs/continuous-integration-of-data-in-bigquery",
+      "https://docs.cloud.google.com/bigquery/docs/tables"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Create and use tables \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/tables",
+        "source_id": "site-docs-root",
+        "final_score": 268,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Applicable only to tables with table type set to CLONE or SNAPSHOT . snapshot time ms TIMESTAMP For table clones and table snapshots , the time when the clone or snapshot operation was run on the base table to create this table.",
+          "For readability, some columns are excluded from the result. +----------------+---------------+----------------+------------+--------------------+---------------------+---------------------------------------------+ table catalog table schema table name table type is insertable into creation time ddl +----------------+---------------+----------------+------------+--------------------+---------------------+---------------------------------------------+ myproject mydataset mytable1 BASE TABLE YES 2018-10-29 20:34:44 CREATE TABLE myproject.mydataset.mytable1 ( id INT64 ); myproject mydataset myview1 VIEW NO 2018-12-29 00:19:20 CREATE VIEW myproject.mydataset.myview1 AS SELECT 100 as id; +----------------+---------------+----------------+------------+--------------------+---------------------+---------------------------------------------+ Example 2: The following example retrieves table metadata for all tables of type CLONE or SNAPSHOT from the INFORMATION SCHEMA.TABLES view.",
+          "Unpartitioned tables return 0. total logical bytes INT64 Total number of logical (uncompressed) bytes in the table or materialized view. active logical bytes INT64 Number of logical (uncompressed) bytes that are younger than 90 days. long term logical bytes INT64 Number of logical (uncompressed) bytes that are older than 90 days. current physical bytes INT64 Total number of physical bytes for the current storage of the table across all partitions. total physical bytes INT64 Total number of physical (compressed) bytes used for storage, including active, long-term, and time-travel (deleted or changed data) bytes."
+        ]
+      },
+      {
+        "title": "Introduction to BigQuery administration \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/admin-intro",
+        "source_id": "site-docs-reference-2",
+        "final_score": 242,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "You can create tables, load data into tables from various types of sources and in various formats, partition tables based on a specific column or by ingestion time, cluster tables, update table properties, and export table data.",
+          "For example, you could create table clones in a test environment so that you can experiment with copies of production data without impacting the production data and without having to pay for storage of full copies of the tables.",
+          "Table snapshots are lightweight, read-only copies that let you preserve the state of your tables indefinitely."
+        ]
+      },
+      {
+        "title": "Continuous data integration in BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/continuous-integration-of-data-in-bigquery",
+        "source_id": "site-docs-reference-5",
+        "final_score": 236,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "This feature lets you capture snapshots and clones of multiple tables at the same point in time, which makes your working environment and snapshots consistent with one another.",
+          "For each of the tables, you create both a clone and a snapshot in the new dataset, potentially for the same point in time.",
+          "Snapshots can be taken at a point in time for all tables, which reduces inconsistencies even if there is a rollback."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "myproject.mydataset.mytable1",
+      "myproject.mydataset.myview1"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/tables",
+        "https://docs.cloud.google.com/bigquery/docs/admin-intro",
+        "https://docs.cloud.google.com/bigquery/docs/continuous-integration-of-data-in-bigquery"
+      ]
+    }
+  ]
+}

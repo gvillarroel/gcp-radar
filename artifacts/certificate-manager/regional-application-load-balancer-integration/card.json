@@ -1,0 +1,90 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:22.422Z",
+  "source_step08_card": "data/step-08/current/products/certificate-manager/card.json",
+  "product_name": "Certificate Manager",
+  "product_slug": "certificate-manager",
+  "feature_name": "Regional Application Load Balancer integration",
+  "feature_slug": "regional-application-load-balancer-integration",
+  "summary": "Certificate Manager supports integration with both regional external and regional internal Application Load Balancers; Certificate Manager supports integration with regional external and regional internal Application Load Balancers in public preview.",
+  "extended_definition": "Certificate Manager supports deployment of Google-managed certificates to regional Application Load Balancers, specifically both regional external and regional internal ALBs, with regional guides stating that certificates can be deployed to either target type. It also provides a separate cross-region deployment guide for cross-region internal ALBs, but the cited pages do not explicitly label these capabilities as being in public preview or GA.",
+  "lifecycle": {
+    "latest_feature_date": "2024-03-12",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/certificate-manager/docs/deploy-google-managed-cas-cross-reg",
+      "https://docs.cloud.google.com/certificate-manager/docs/deploy-google-managed-dns-auth-cross-reg"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Deploy a cross-region Google-managed certificate with Certificate Authority\\",
+        "url": "https://docs.cloud.google.com/certificate-manager/docs/deploy-google-managed-cas-cross-reg",
+        "source_id": "site-iam-reference",
+        "final_score": 68,
+        "relevance": "STRONG",
+        "evidence_snippets": []
+      },
+      {
+        "title": "\"Deploy a global Google-managed certificate with load balancer authorization\\",
+        "url": "https://docs.cloud.google.com/certificate-manager/docs/deploy-google-managed-lb-auth",
+        "source_id": "site-docs-root",
+        "final_score": 66,
+        "relevance": "WEAK",
+        "evidence_snippets": []
+      },
+      {
+        "title": "\"Deploy a cross-region Google-managed certificate with DNS authorization\\",
+        "url": "https://docs.cloud.google.com/certificate-manager/docs/deploy-google-managed-dns-auth-cross-reg",
+        "source_id": "site-iam-reference",
+        "final_score": 58,
+        "relevance": "MODERATE",
+        "evidence_snippets": []
+      }
+    ],
+    "evidence_summary": "The cited Certificate Manager deployment docs identify supported load-balancer scopes (regional and cross-region) and explicitly mention regional external vs regional internal ALB targets in the regional workflow, while also documenting a cross-region internal ALB flow."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/certificate-manager/docs/deploy-google-managed-cas-cross-reg",
+        "https://docs.cloud.google.com/certificate-manager/docs/deploy-google-managed-dns-auth-cross-reg"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/certificate-manager/docs/deploy-google-managed-cas-cross-reg",
+        "https://docs.cloud.google.com/certificate-manager/docs/deploy-google-managed-dns-auth-cross-reg"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/certificate-manager/docs/deploy-google-managed-cas-cross-reg",
+        "https://docs.cloud.google.com/certificate-manager/docs/deploy-google-managed-dns-auth-cross-reg"
+      ]
+    }
+  ]
+}

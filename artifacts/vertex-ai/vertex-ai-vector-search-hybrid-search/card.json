@@ -1,0 +1,100 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:48.184Z",
+  "source_step08_card": "data/step-08/current/products/vertex-ai/card.json",
+  "product_name": "Vertex AI",
+  "product_slug": "vertex-ai",
+  "feature_name": "Vertex AI Vector Search hybrid search",
+  "feature_slug": "vertex-ai-vector-search-hybrid-search",
+  "summary": "Vector Search now supports hybrid search that combines semantic and keyword-style retrieval.",
+  "extended_definition": "Vector Search now supports hybrid search that combines semantic and keyword-style retrieval.",
+  "lifecycle": {
+    "latest_feature_date": "2024-12-20",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/vertex-ai/docs/featurestore/latest/embeddings-search",
+      "https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/count_tokens",
+      "https://docs.cloud.google.com/vertex-ai/docs/vector-search/quickstart"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Vector Search quickstart \\_|\\_ Vertex AI \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/vector-search/quickstart",
+        "source_id": "site-docs-reference-2",
+        "final_score": 126,
+        "relevance": "",
+        "evidence_snippets": [
+          "To see an example of getting started with Vertex AI Vector Search, run the \"Get started with Vertex AI Vector Search\" notebook in one of the following environments: Open in Colab Open in Colab Enterprise Open in Vertex AI Workbench View on GitHub In the Vertex AI Vector Search quickstart, learn how to create an index out of a sample dataset from a fictitious ecommerce clothing site.",
+          "The pricing of the Google Cloud services used in this tutorial are available in the following pages: Vertex AI Vector Search Cloud Storage Vertex AI Workbench You can also use the pricing calculator to generate a cost estimate based on your projected usage.",
+          "To learn more about how to create the embeddings from the data on a BigQuery table and store them in a JSON file, see Getting Started with Text Embeddings + Vertex AI Vector Search ."
+        ]
+      },
+      {
+        "title": "Search using embeddings \\_|\\_ Vertex AI \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/featurestore/latest/embeddings-search",
+        "source_id": "site-docs-reference-3",
+        "final_score": 102,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Search nearest neighbor matches using a public endpoint If you've configured your online store instance to serve feature values using Optimized online serving from a public endpoint, you must do the following to retrieve approximate nearest neighbor matches: Retrieve the public endpoint domain name for the online store Retrieve nearest neighbor matches of an embedding or entity Retrieve the public endpoint domain name for the online store When you create an online store instance for Optimized online serving, Vertex AI Feature Store generates a public endpoint domain name for the online store.",
+          "For online store instances created for Optimized online serving, you can perform a vector similarity search to retrieve a list of semantically similar or related entities, also called approximate nearest neighbors.",
+          "Home Documentation AI and ML Vertex AI Send feedback Search using embeddings Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"MCP Tools Reference: aiplatform.googleapis.com \\_|\\_ Vertex AI \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/count_tokens",
+        "source_id": "site-api-reference",
+        "final_score": 89,
+        "relevance": "",
+        "evidence_snippets": [
+          "For more information on filtering, see Filtering VertexRagStore JSON representation { \"ragCorpora\" : [ string ] , \"ragResources\" : [ { object ( RagResource ) } ] , \"ragRetrievalConfig\" : { object ( RagRetrievalConfig ) } , \"storeContext\" : boolean , // Union field similarity top k can be only one of the following: \"similarityTopK\" : integer // End of list of possible types for union field similarity top k . // Union field vector distance threshold can be only one of the following: \"vectorDistanceThreshold\" : number // End of list of possible types for union field vector distance threshold . } Fields ragCorpora[] (deprecated) string This item is deprecated!",
+          "PropertiesEntry JSON representation { \"key\" : string , \"value\" : { object ( Schema ) } } Fields key string value object ( Schema ) DefsEntry JSON representation { \"key\" : string , \"value\" : { object ( Schema ) } } Fields key string value object ( Schema ) Retrieval JSON representation { \"disableAttribution\" : boolean , // Union field source can be only one of the following: \"vertexAiSearch\" : { object ( VertexAISearch ) } , \"vertexRagStore\" : { object ( VertexRagStore ) } // End of list of possible types for union field source . } Fields disableAttribution (deprecated) boolean This item is deprecated!",
+          "The source of the retrieval. source can be only one of the following: vertexAiSearch object ( VertexAISearch ) Set to use data source powered by Vertex AI Search. vertexRagStore object ( VertexRagStore ) Set to use data source powered by Vertex RAG store."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "aiplatform.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/vector-search/quickstart",
+        "https://docs.cloud.google.com/vertex-ai/docs/featurestore/latest/embeddings-search",
+        "https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/count_tokens"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/vector-search/quickstart",
+        "https://docs.cloud.google.com/vertex-ai/docs/featurestore/latest/embeddings-search",
+        "https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/count_tokens"
+      ]
+    }
+  ]
+}

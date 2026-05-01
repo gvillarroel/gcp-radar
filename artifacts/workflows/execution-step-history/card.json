@@ -1,0 +1,139 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:50.287Z",
+  "source_step08_card": "data/step-08/current/products/workflows/card.json",
+  "product_name": "Workflows",
+  "product_slug": "workflows",
+  "feature_name": "Execution step history",
+  "feature_slug": "execution-step-history",
+  "summary": "Workflows can display the history of an execution as a list of step entries.",
+  "extended_definition": "Workflows can display the history of an execution as a list of step entries.",
+  "lifecycle": {
+    "latest_feature_date": "2023-12-15",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/workflows/docs/reference/executions/rest/v1/projects.locations.workflows.executions.stepEntries",
+      "https://docs.cloud.google.com/workflows/docs/reference/executions/rest/v1/projects.locations.workflows.executions.stepEntries/get",
+      "https://docs.cloud.google.com/workflows/docs/reference/executions/rest/v1/projects.locations.workflows.executions.stepEntries/list"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Method: projects.locations.workflows.executions.stepEntries.list \\_|\\_ Workflows\\",
+        "url": "https://docs.cloud.google.com/workflows/docs/reference/executions/rest/v1/projects.locations.workflows.executions.stepEntries/list",
+        "source_id": "site-api-reference",
+        "final_score": 233,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Response body Response message for ExecutionHistory.ListStepEntries.",
+          "Format: projects/{project}/locations/{location}/workflows/{workflow}/executions/{execution} Authorization requires the following IAM permission on the specified resource parent : workflows.stepEntries.list Query parameters Parameters pageSize integer Optional.",
+          "Home Documentation Application development Workflows Reference Send feedback Method: projects.locations.workflows.executions.stepEntries.list Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"REST Resource: projects.locations.workflows.executions.stepEntries \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/workflows/docs/reference/executions/rest/v1/projects.locations.workflows.executions.stepEntries",
+        "source_id": "site-api-reference",
+        "final_score": 184,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Methods get Returns a step entry for a workflow execution. list Returns a list of step entries for a workflow execution.",
+          "Home Documentation Application development Workflows Reference Send feedback REST Resource: projects.locations.workflows.executions.stepEntries Stay organized with collections Save and categorize content based on your preferences.",
+          "Step entry names have the format: projects/{project}/locations/{location}/workflows/{workflow}/executions/{execution}/stepEntries/{step entry} . createTime string ( Timestamp format) Output only."
+        ]
+      },
+      {
+        "title": "\"Method: projects.locations.workflows.executions.stepEntries.get \\_|\\_ Workflows\\",
+        "url": "https://docs.cloud.google.com/workflows/docs/reference/executions/rest/v1/projects.locations.workflows.executions.stepEntries/get",
+        "source_id": "site-api-reference",
+        "final_score": 172,
+        "relevance": "",
+        "evidence_snippets": [
+          "Format: projects/{project}/locations/{location}/workflows/{workflow}/executions/{execution}/stepEntries/{step entry} Authorization requires the following IAM permission on the specified resource name : workflows.stepEntries.get Request body The request body must be empty.",
+          "Home Documentation Application development Workflows Reference Send feedback Method: projects.locations.workflows.executions.stepEntries.get Stay organized with collections Save and categorize content based on your preferences.",
+          "HTTP request GET https://workflowexecutions.googleapis.com/v1/{name=projects/ /locations/ /workflows/ /executions/ /stepEntries/ } The URL uses gRPC Transcoding syntax."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "projects.locations.workflows.executions",
+      "projects.locations.workflows.executions.deleteExecutionHistory",
+      "projects.locations.workflows.executions.stepEntries",
+      "projects.locations.workflows.executions.stepEntries.get",
+      "projects.locations.workflows.executions.stepEntries.list",
+      "workflowexecutions.googleapis.com",
+      "workflows.stepEntries.get",
+      "workflows.stepEntries.list"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workflows/docs/reference/executions/rest/v1/projects.locations.workflows.executions.stepEntries/list",
+        "https://docs.cloud.google.com/workflows/docs/reference/executions/rest/v1/projects.locations.workflows.executions.stepEntries",
+        "https://docs.cloud.google.com/workflows/docs/reference/executions/rest/v1/projects.locations.workflows.executions.stepEntries/get"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workflows/docs/reference/executions/rest/v1/projects.locations.workflows.executions.stepEntries/list",
+        "https://docs.cloud.google.com/workflows/docs/reference/executions/rest/v1/projects.locations.workflows.executions.stepEntries",
+        "https://docs.cloud.google.com/workflows/docs/reference/executions/rest/v1/projects.locations.workflows.executions.stepEntries/get"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workflows/docs/reference/executions/rest/v1/projects.locations.workflows.executions.stepEntries/list",
+        "https://docs.cloud.google.com/workflows/docs/reference/executions/rest/v1/projects.locations.workflows.executions.stepEntries",
+        "https://docs.cloud.google.com/workflows/docs/reference/executions/rest/v1/projects.locations.workflows.executions.stepEntries/get"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workflows/docs/reference/executions/rest/v1/projects.locations.workflows.executions.stepEntries/list",
+        "https://docs.cloud.google.com/workflows/docs/reference/executions/rest/v1/projects.locations.workflows.executions.stepEntries",
+        "https://docs.cloud.google.com/workflows/docs/reference/executions/rest/v1/projects.locations.workflows.executions.stepEntries/get"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workflows/docs/reference/executions/rest/v1/projects.locations.workflows.executions.stepEntries/list",
+        "https://docs.cloud.google.com/workflows/docs/reference/executions/rest/v1/projects.locations.workflows.executions.stepEntries",
+        "https://docs.cloud.google.com/workflows/docs/reference/executions/rest/v1/projects.locations.workflows.executions.stepEntries/get"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workflows/docs/reference/executions/rest/v1/projects.locations.workflows.executions.stepEntries/list",
+        "https://docs.cloud.google.com/workflows/docs/reference/executions/rest/v1/projects.locations.workflows.executions.stepEntries",
+        "https://docs.cloud.google.com/workflows/docs/reference/executions/rest/v1/projects.locations.workflows.executions.stepEntries/get"
+      ]
+    }
+  ]
+}

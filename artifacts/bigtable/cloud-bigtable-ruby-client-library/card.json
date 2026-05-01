@@ -1,0 +1,136 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:21.669Z",
+  "source_step08_card": "data/step-08/current/products/bigtable/card.json",
+  "product_name": "Bigtable",
+  "product_slug": "bigtable",
+  "feature_name": "Cloud Bigtable Ruby client library",
+  "feature_slug": "cloud-bigtable-ruby-client-library",
+  "summary": "The Ruby client library for Cloud Bigtable became generally available; Cloud Bigtable provides a Ruby client library for interacting with the service in beta.",
+  "extended_definition": "The Ruby client library for Cloud Bigtable became generally available; Cloud Bigtable provides a Ruby client library for interacting with the service in beta.",
+  "lifecycle": {
+    "latest_feature_date": "2019-12-05",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigtable/docs/reference/libraries",
+      "https://docs.cloud.google.com/python/docs/reference/bigtable/latest/google.cloud.bigtable_admin_v2.overlay.services.bigtable_table_admin.BigtableTableAdminAsyncClient",
+      "https://docs.cloud.google.com/python/docs/reference/bigtable/latest/google.cloud.bigtable_admin_v2.overlay.services.bigtable_table_admin.BigtableTableAdminClient"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Class BigtableTableAdminAsyncClient (2.35.0) \\_|\\_ Python client libraries\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/bigtable/latest/google.cloud.bigtable_admin_v2.overlay.services.bigtable_table_admin.BigtableTableAdminAsyncClient",
+        "source_id": "site-python-reference",
+        "final_score": 134,
+        "relevance": "",
+        "evidence_snippets": [
+          "Generally, you only need to set this if you're developing your own client library.",
+          "JSON example: :literal: { \"bindings\": [ { \"role\": \"roles/resourcemanager.organizationAdmin\", \"members\": [ \"user:mike@example.com\", \"group:admins@example.com\", \"domain:google.com\", \"serviceAccount:my-project-id@appspot.gserviceaccount.com\" ] }, { \"role\": \"roles/resourcemanager.organizationViewer\", \"members\": [ \"user:eve@example.com\" ], \"condition\": { \"title\": \"expirable access\", \"description\": \"Does not grant access after Sep 2020\", \"expression\": \"request.time < timestamp('2020-10-01t00:00:00.000z')\",=\"\" }=\"\" }=\"\" ],=\"\" \"etag\":=\"\" \"bwwwja0yfja=\", \" version\":=\"\" 3=\"\"> \\ \\ YAML example: :literal: bindings: - members: - user:mike@example.com - group:admins@example.com - domain:google.com - serviceAccount:my-project-id@appspot.gserviceaccount.com role: roles/resourcemanager.organizationAdmin - members: - user:eve@example.com role: roles/resourcemanager.organizationViewer condition: title: expirable access description: Does not grant access after Sep 2020 expression: request.time < timestamp('2020-10-01t00:00:00.000z')=\"\" etag:=\"\" bwwwja0yfja=\"version:\"> \\ \\ For a description of IAM and its features, see the IAM documentation. get mtls endpoint and cert source get mtls endpoint and cert source ( client options : typing .",
+          "It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud.bigtable import admin v2 async def sample restore table(): Create a client client = admin v2.BigtableTableAdminAsyncClient() Initialize request argument(s) request = admin v2.RestoreTableRequest( backup=\"backup value\", parent=\"parent value\", table id=\"table id value\", ) Make the request operation = await client.restore table(request=request) print(\"Waiting for operation to complete...\") response = await operation.result() Handle the response print(response) Handle LRO2 optimize operation = await operation.optimize restore table operation() if optimize operation: print(\"Waiting for table optimization to complete...\") response = await optimize operation.result() Parameters Name Description request Union[ google.cloud.bigtable admin v2.types.RestoreTableRequest , dict] The request object."
+        ]
+      },
+      {
+        "title": "\"Class BigtableTableAdminClient (2.35.0) \\_|\\_ Python client libraries \\_\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/bigtable/latest/google.cloud.bigtable_admin_v2.overlay.services.bigtable_table_admin.BigtableTableAdminClient",
+        "source_id": "site-python-reference",
+        "final_score": 134,
+        "relevance": "",
+        "evidence_snippets": [
+          "Generally, you only need to set this if you're developing your own client library.",
+          "JSON example: :literal: { \"bindings\": [ { \"role\": \"roles/resourcemanager.organizationAdmin\", \"members\": [ \"user:mike@example.com\", \"group:admins@example.com\", \"domain:google.com\", \"serviceAccount:my-project-id@appspot.gserviceaccount.com\" ] }, { \"role\": \"roles/resourcemanager.organizationViewer\", \"members\": [ \"user:eve@example.com\" ], \"condition\": { \"title\": \"expirable access\", \"description\": \"Does not grant access after Sep 2020\", \"expression\": \"request.time < timestamp('2020-10-01t00:00:00.000z')\",=\"\" }=\"\" }=\"\" ],=\"\" \"etag\":=\"\" \"bwwwja0yfja=\", \" version\":=\"\" 3=\"\"> \\ \\ YAML example: :literal: bindings: - members: - user:mike@example.com - group:admins@example.com - domain:google.com - serviceAccount:my-project-id@appspot.gserviceaccount.com role: roles/resourcemanager.organizationAdmin - members: - user:eve@example.com role: roles/resourcemanager.organizationViewer condition: title: expirable access description: Does not grant access after Sep 2020 expression: request.time < timestamp('2020-10-01t00:00:00.000z')=\"\" etag:=\"\" bwwwja0yfja=\"version:\"> \\ \\ For a description of IAM and its features, see the IAM documentation. get mtls endpoint and cert source get mtls endpoint and cert source ( client options : typing .",
+          "It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud.bigtable import admin v2 def sample restore table(): Create a client client = admin v2.BigtableTableAdminClient() Initialize request argument(s) request = admin v2.RestoreTableRequest( backup=\"backup value\", parent=\"parent value\", table id=\"table id value\", ) Make the request operation = client.restore table(request=request) print(\"Waiting for operation to complete...\") response = operation.result() Handle the response print(response) Handle LRO2 optimize operation = operation.optimize restore table operation() if optimize operation: print(\"Waiting for table optimization to complete...\") response = optimize operation.result() Parameters Name Description request Union[ google.cloud.bigtable admin v2.types.RestoreTableRequest , dict] The request object."
+        ]
+      },
+      {
+        "title": "Bigtable client libraries \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigtable/docs/reference/libraries",
+        "source_id": "site-docs-root",
+        "final_score": 127,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "ArgumentDefaultsHelpFormatter ) parser . add argument ( \"project id\" , help = \"Your Cloud Platform project ID.\" ) parser . add argument ( \"instance id\" , help = \"ID of the Cloud Bigtable instance to connect to.\" ) parser . add argument ( \"--table\" , help = \"Existing table used in the quickstart.\" , default = \"my-table\" ) args = parser . parse args () asyncio . get event loop () . run until complete ( main ( args . project id , args . instance id , args . table ) ) Ruby Import google bigtable client lib require \"google/cloud/bigtable\" Instantiates a client bigtable = Google :: Cloud :: Bigtable . new Your Cloud Bigtable instance ID instance id = \"my-instance\" Your Cloud Bigtable table ID table id = \"my-table\" Get table client table = bigtable . table instance id , table id Read and print row p table . read row \"user0000001\" Additional resources C++ The following list contains links to more resources related to the client library for C++: API reference Client libraries best practices Issue tracker google-cloud-bigtable on Stack Overflow Source code C# The following list contains links to more resources related to the client library for C#: API reference Client libraries best practices Issue tracker google-cloud-bigtable on Stack Overflow Source code Go The following list contains links to more resources related to the client library for Go: API reference Client libraries best practices Issue tracker google-cloud-bigtable on Stack Overflow Source code Java The following list contains links to more resources related to the client library for Java: API reference Client libraries best practices Issue tracker google-cloud-bigtable on Stack Overflow Source code HBase API Reference Documentation (client library) Source Code GitHub Issue Tracker Stack Overflow Node.js The following list contains links to more resources related to the client library for Node.js: API reference Client libraries best practices Issue tracker google-cloud-bigtable on Stack Overflow Source code PHP The following list contains links to more resources related to the client library for PHP: API reference Client libraries best practices Issue tracker google-cloud-bigtable on Stack Overflow Source code Python The following list contains links to more resources related to the client library for Python: API reference Client libraries best practices Issue tracker google-cloud-bigtable on Stack Overflow Source code Ruby The following list contains links to more resources related to the client library for Ruby: API reference Client libraries best practices Issue tracker google-cloud-bigtable on Stack Overflow Source code Third-party Cloud Bigtable API client libraries Scio The Scio client library provides a Scala API for Dataflow , which can read from and write to Bigtable.",
+          "Bytes ; / A quickstart application that shows connecting to a Cloud Bigtable instance using the native HBase API to read a row from a table. / public class Quickstart { public static void main ( String ... args ) { String projectId = args [ 0 ]; // my-gcp-project-id String instanceId = args [ 1 ]; // my-bigtable-instance-id String tableId = args [ 2 ]; // my-bigtable-table-id // Create a connection to the Cloud Bigtable instance. // Use try-with-resources to make sure the connection is closed correctly try ( Connection connection = BigtableConfiguration . connect ( projectId , instanceId )) { System . out . println ( \"--- Connection established with Bigtable Instance ---\" ); // Create a connection to the table that already exists // Use try-with-resources to make sure the connection to the table is closed correctly try ( Table table = connection . getTable ( TableName . valueOf ( tableId ))) { // Read a row String rowKey = \"r1\" ; System . out . printf ( \"--- Reading for row-key: %s for provided table: %s ---\\n\" , rowKey , tableId ); // Retrieve the result Result result = table . get ( new Get ( Bytes . toBytes ( rowKey ))); // Convert row data to string String rowValue = Bytes . toString ( result . value ()); System . out . printf ( \"Scanned value for Row r1: %s \\n\" , rowValue ); System . out . println ( \" --- Finished reading row --- \" ); } catch ( IOException e ) { // handle exception while connecting to a table throw e ; } } catch ( IOException e ) { System . err . println ( \"Exception while running quickstart: \" + e . getMessage ()); e . printStackTrace (); } } } Node.js // Imports the Google Cloud client library const { Bigtable } = require ( ' @google-cloud/bigtable ' ); const bigtable = new Bigtable (); async function quickstart () { // Connect to an existing instance:my-bigtable-instance const instance = bigtable . instance ( INSTANCE ID ); // Connect to an existing table:my-table const table = instance . table ( TABLE ID ); // Read a row from my-table using a row key const [ singleRow ] = await table . row ( 'r1' ). get (); // Print the row key and data (column value, labels, timestamp) const rowData = JSON . stringify ( singleRow . data , null , 4 ); console . log ( Row key: ${ singleRow . id } \\nData: ${ rowData } ); } quickstart (); PHP use Google\\Cloud\\Bigtable\\BigtableClient; / Uncomment and populate these variables in your code / // $projectId = 'The Google project ID'; // $instanceId = 'The Bigtable instance ID'; // $tableId = 'The Bigtable table ID'; // Connect to an existing table with an existing instance. $dataClient = new BigtableClient([ 'projectId' => $projectId, ]); $table = $dataClient->table($instanceId, $tableId); $key = 'r1'; // Read a row from my-table using a row key $row = $table->readRow($key); $columnFamilyId = 'cf1'; $columnId = 'c1'; // Get the Value from the Row, using the column family id and column id $value = $row[$columnFamilyId][$columnId][0]['value']; printf(\"Row key: %s\\nData: %s\\n\", $key, $value); Python The Python client library for Bigtable offers two APIs, asyncio and a synchronous API.",
+          "ReadRow ( row key , cbt :: Filter :: FamilyRegex ( column family )); if ( ! result ) throw std :: move ( result ). status (); if ( ! result - > first ) { std :: cout << \"Cannot find row \" << row key << \" in the table: \" << table id << \" \\n \" ; return 0 ; } cbt :: Cell const & cell = result - > second . cells (). front (); std :: cout << cell . family name () << \":\" << cell . column qualifier () << \" @ \" << cell . timestamp (). count () << \"us \\n \" << '\"' << cell . value () << '\"' << \" \\n \" ; return 0 ; } catch ( google :: cloud :: Status const & status ) { std :: cerr << \"google::cloud::Status thrown: \" << status << \" \\n \" ; return 1 ; } C# using System ; using Google.Cloud.Bigtable.Common.V2 ; // Imports the Google Cloud client library using Google.Cloud.Bigtable.V2 ; namespace GoogleCloudSamples.Bigtable { public class QuickStart { public static int Main ( string [] args ) { // Your Google Cloud Platform project ID const string projectId = \"YOUR-PROJECT-ID\" ; // The name of the Cloud Bigtable instance const string instanceId = \"YOUR-INSTANCE-ID\" ; // The name of the Cloud Bigtable table const string tableId = \"my-table\" ; try { // Creates a Bigtable client BigtableClient bigtableClient = BigtableClient ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "appspot.gserviceaccount.com",
+      "client.restore",
+      "client.wait",
+      "com.google.cloud",
+      "example.com",
+      "googleapis.dev",
+      "operation.optimize",
+      "operation.result",
+      "options.html",
+      "request.time",
+      "resourcemanager.organizationAdmin",
+      "resourcemanager.organizationViewer",
+      "v2.BigtableTableAdminAsyncClient",
+      "v2.BigtableTableAdminClient",
+      "v2.overlay.types.WaitForConsistencyRequest",
+      "v2.RestoreTableRequest",
+      "v2.types.RestoreTableRequest",
+      "v2.WaitForConsistencyRequest"
+    ],
+    "missing_inventory_roles": [
+      "roles/resourcemanager.organizationAdmin",
+      "roles/resourcemanager.organizationViewer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/bigtable/latest/google.cloud.bigtable_admin_v2.overlay.services.bigtable_table_admin.BigtableTableAdminAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/bigtable/latest/google.cloud.bigtable_admin_v2.overlay.services.bigtable_table_admin.BigtableTableAdminClient",
+        "https://docs.cloud.google.com/bigtable/docs/reference/libraries"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/bigtable/latest/google.cloud.bigtable_admin_v2.overlay.services.bigtable_table_admin.BigtableTableAdminAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/bigtable/latest/google.cloud.bigtable_admin_v2.overlay.services.bigtable_table_admin.BigtableTableAdminClient",
+        "https://docs.cloud.google.com/bigtable/docs/reference/libraries"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/bigtable/latest/google.cloud.bigtable_admin_v2.overlay.services.bigtable_table_admin.BigtableTableAdminAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/bigtable/latest/google.cloud.bigtable_admin_v2.overlay.services.bigtable_table_admin.BigtableTableAdminClient",
+        "https://docs.cloud.google.com/bigtable/docs/reference/libraries"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/bigtable/latest/google.cloud.bigtable_admin_v2.overlay.services.bigtable_table_admin.BigtableTableAdminAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/bigtable/latest/google.cloud.bigtable_admin_v2.overlay.services.bigtable_table_admin.BigtableTableAdminClient",
+        "https://docs.cloud.google.com/bigtable/docs/reference/libraries"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,109 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:32.732Z",
+  "source_step08_card": "data/step-08/current/products/dataflow/card.json",
+  "product_name": "Dataflow",
+  "product_slug": "dataflow",
+  "feature_name": "Replacement job graph validation",
+  "feature_slug": "replacement-job-graph-validation",
+  "summary": "Dataflow can validate whether a replacement job is valid before the new job is launched.",
+  "extended_definition": "Dataflow can validate whether a replacement job is valid before the new job is launched.",
+  "lifecycle": {
+    "latest_feature_date": "2023-12-12",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dataflow/docs/guides/common-errors",
+      "https://docs.cloud.google.com/dataflow/docs/guides/job-builder-custom-job",
+      "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/cloud-spanner-change-streams-to-bigquery"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Create a custom job with the job builder \\_|\\_ Cloud Dataflow \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/dataflow/docs/guides/job-builder-custom-job",
+        "source_id": "site-docs-reference-required-3",
+        "final_score": 85,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To validate the pipeline syntax, perform the following steps: Click Validate to open Cloud Shell and start the validation service.",
+          "Run the following command in your shell or terminal: gcloud dataflow yaml run my-job-builder-job --yaml-pipeline-file = YAML FILE PATH Replace YAML FILE PATH with the path of your YAML file, either locally or in Cloud Storage.",
+          "Validate the pipeline before launching For pipelines with complex configuration, such as Python filters and SQL expressions, it can be helpful to check the pipeline configuration for syntax errors before launching."
+        ]
+      },
+      {
+        "title": "Troubleshoot Dataflow errors \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataflow/docs/guides/common-errors",
+        "source_id": "site-docs-reference-2",
+        "final_score": 76,
+        "relevance": "",
+        "evidence_snippets": [
+          "Request payload size exceeds the limit: 20971520 bytes When you run a pipeline, the job might fail with the following error: com.google.api.client.googleapis.json.GoogleJsonResponseException: 400 Bad Request POST https://dataflow.googleapis.com/v1b3/projects/PROJECT ID/locations/REGION/jobs/JOB ID/workItems:reportStatus { \"code\": 400, \"errors\": [ { \"domain\": \"global\", \"message\": \"Request payload size exceeds the limit: 20971520 bytes.\", \"reason\": \"badRequest\" } ], \"message\": \"Request payload size exceeds the limit: 20971520 bytes.\", \"status\": \"INVALID ARGUMENT\" } This error can occur when a job using the Dataflow runner has a very large job graph.",
+          "If object retention isn't enabled on the Cloud Storage bucket, verify whether the Dataflow worker service account has write permission on the Cloud Storage bucket.",
+          "A large job graph can generate a large number of metrics that need to be reported back to the Dataflow service."
+        ]
+      },
+      {
+        "title": "\"Spanner change streams to BigQuery template \\_|\\_ Cloud Dataflow \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/cloud-spanner-change-streams-to-bigquery",
+        "source_id": "site-api-reference",
+        "final_score": 75,
+        "relevance": "",
+        "evidence_snippets": [
+          "Specifically:\\n\" + \" - For Cloud Spanner JSON type, the order of the members of an object is\" + \" lexicographically ordered, but there is no such guarantee for BigQuery JSON type.\\n\" + \" - Cloud Spanner supports nanoseconds TIMESTAMP type, BigQuery only supports\" + \" microseconds TIMESTAMP type.\\n\" , \"Learn more about <a href=\\\"https://cloud.google.com/spanner/docs/change-streams\\\">change\" + \" streams</a>, <a\" + \" href=\\\"https://cloud.google.com/spanner/docs/change-streams/use-dataflow\\\">how to\" + \" build change streams Dataflow pipelines</a>, and <a\" + \" href=\\\"https://cloud.google.com/spanner/docs/change-streams/use-dataflow#best practices\\\">best\" + \" practices</a>.\" }, optionsClass = SpannerChangeStreamsToBigQueryOptions . class , flexContainerName = \"googlecloud-to-googlecloud\" , documentation = \"https://cloud.google.com/dataflow/docs/guides/templates/provided/cloud-spanner-change-streams-to-bigquery\" , contactInformation = \"https://cloud.google.com/support\" , requirements = { \"The Cloud Spanner instance must exist prior to running the pipeline.\" , \"The Cloud Spanner database must exist prior to running the pipeline.\" , \"The Cloud Spanner metadata instance must exist prior to running the pipeline.\" , \"The Cloud Spanner metadata database must exist prior to running the pipeline.\" , \"The Cloud Spanner change stream must exist prior to running the pipeline.\" , \"The BigQuery dataset must exist prior to running the pipeline.\" }, streaming = true , supportsExactlyOnce = true , supportsAtLeastOnce = true ) public final class SpannerChangeStreamsToBigQuery { / String/String Coder for {@link FailsafeElement}. / public static final FailsafeElementCoder<String , String > FAILSAFE ELEMENT CODER = FailsafeElementCoder . of ( StringUtf8Coder . of (), StringUtf8Coder . of ()); private static final Logger LOG = LoggerFactory . getLogger ( SpannerChangeStreamsToBigQuery . class ); // Max number of deadletter queue retries. private static final int DLQ MAX RETRIES = 5 ; private static final String USE RUNNER V2 EXPERIMENT = \"use runner v2\" ; / Main entry point for executing the pipeline. @param args The command-line arguments to the pipeline. / public static void main ( String [] args ) { UncaughtExceptionLogger . register (); LOG . info ( \"Starting to replicate change records from Spanner change streams to BigQuery\" ); SpannerChangeStreamsToBigQueryOptions options = PipelineOptionsFactory . fromArgs ( args ) . withValidation () . as ( SpannerChangeStreamsToBigQueryOptions . class ); run ( options ); } private static void validateOptions ( SpannerChangeStreamsToBigQueryOptions options ) { if ( options . getDlqRetryMinutes () < = 0 ) { throw new IllegalArgumentException ( \"dlqRetryMinutes must be positive.\" ); } if ( options . getBigQueryChangelogTableNameTemplate () . equals ( BigQueryUtils .",
+          "STREAMING , displayName = \"Cloud Spanner change streams to BigQuery\" , description = { \"The Cloud Spanner change streams to BigQuery template is a streaming pipeline that streams\" + \" Cloud Spanner data change records and writes them into BigQuery tables using Dataflow\" + \" Runner V2.\\n\" , \"All change stream watched columns are included in each BigQuery table row, regardless of\" + \" whether they are modified by a Cloud Spanner transaction.",
+          "BQ CHANGELOG FIELD NAME TABLE NAME )); } BigQueryIOUtils . validateBQStorageApiOptionsStreaming ( options ); } private static void setOptions ( SpannerChangeStreamsToBigQueryOptions options ) { options . setStreaming ( true ); options . setEnableStreamingEngine ( true ); // Add use runner v2 to the experiments option, since change streams connector is only supported // on Dataflow runner v2."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.api.client.googleapis.json.GoogleJsonResponseException",
+      "dataflow.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataflow/docs/guides/job-builder-custom-job",
+        "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/cloud-spanner-change-streams-to-bigquery",
+        "https://docs.cloud.google.com/dataflow/docs/guides/common-errors"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataflow/docs/guides/job-builder-custom-job",
+        "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/cloud-spanner-change-streams-to-bigquery",
+        "https://docs.cloud.google.com/dataflow/docs/guides/common-errors"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataflow/docs/guides/job-builder-custom-job",
+        "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/cloud-spanner-change-streams-to-bigquery",
+        "https://docs.cloud.google.com/dataflow/docs/guides/common-errors"
+      ]
+    }
+  ]
+}

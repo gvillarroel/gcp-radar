@@ -1,0 +1,192 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:12.801Z",
+  "source_step08_card": "data/step-08/current/products/alloydb/card.json",
+  "product_name": "AlloyDB",
+  "product_slug": "alloydb",
+  "feature_name": "AlloyDB Language Connectors",
+  "feature_slug": "alloydb-language-connectors",
+  "summary": "AlloyDB Language Connectors provide mutual TLS, IAM-based authorization, and automatic IAM authentication for connections; AlloyDB Language Connectors are client libraries that provide mutual TLS, IAM-based authorization, and automatic IAM authentication.",
+  "extended_definition": "AlloyDB Language Connectors provide mutual TLS, IAM-based authorization, and automatic IAM authentication for connections; AlloyDB Language Connectors are client libraries that provide mutual TLS, IAM-based authorization, and automatic IAM authentication.",
+  "lifecycle": {
+    "latest_feature_date": "2024-03-12",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/alloydb/docs/ai/generate-sql-queries-natural-language",
+      "https://docs.cloud.google.com/alloydb/docs/connect-iam",
+      "https://docs.cloud.google.com/alloydb/docs/quickstart/integrate-kubernetes"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Connect using an IAM account \\_|\\_ AlloyDB for PostgreSQL \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/alloydb/docs/connect-iam",
+        "source_id": "site-docs-reference-2",
+        "final_score": 130,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Authenticate automatically To automatically authenticate an IAM-based AlloyDB user without the need for an OAuth 2.0 token, you have two options: AlloyDB Auth Proxy and AlloyDB Language Connectors .",
+          "There is a corresponding option for each language on Configure the AlloyDB Language Connectors .",
+          "For example, if you run your workload using the IAM user account kai@altostrat.com , then you can use the proxy client or Language Connectors to automatically authenticate the kai@altostrat.com database user without specifying an OAuth 2.0 token."
+        ]
+      },
+      {
+        "title": "\"Generate SQL queries using natural language questions \\_|\\_ AlloyDB for\\",
+        "url": "https://docs.cloud.google.com/alloydb/docs/ai/generate-sql-queries-natural-language",
+        "source_id": "site-docs-reference-required-8",
+        "final_score": 109,
+        "relevance": "",
+        "evidence_snippets": [
+          "To associate a column with a concept type, run the following query: SELECT alloydb ai nl . associate concept type ( column names in = > 'my schema.country.country name' , concept type in = > 'country name' , nl config id in = > 'my app config' ); To create a value index based on all the columns that are part of a natural language config and are associated with a concept type, run the following statement: SELECT alloydb ai nl . create value index ( nl config id in = > 'my app config' ); When you associate concept types to new columns, refresh the value index to reflect the changes.",
+          "To add general context for application-specific rules and application or domain-specific terminology, follow these steps: To add a general context item for the specified configuration, run the following query: SELECT alloydb ai nl . g manage configuration ( 'add general context' , 'my app config' , general context in = > '{\"If the user asks for a good seat, assume that means a window or aisle seat.\"}' ); The preceding statement helps AlloyDB AI natural language provide higher quality responses to users' natural language questions.",
+          "To autogenerate, review, and apply templates, follow these steps: Request AlloyDB to generate templates based on your query history: SELECT alloydb ai nl . generate templates ( 'my app config' , ); Use the provided view, alloydb ai nl.generated templates view , to review the generated templates ."
+        ]
+      },
+      {
+        "title": "\"Connect from Google Kubernetes Engine (GKE) to AlloyDB for PostgreSQL \\_\\",
+        "url": "https://docs.cloud.google.com/alloydb/docs/quickstart/integrate-kubernetes",
+        "source_id": "site-docs-reference",
+        "final_score": 92,
+        "relevance": "",
+        "evidence_snippets": [
+          "In your open Cloud Shell, complete the following steps: Open proxy sidecar deployment.yaml using the editor of your choice, for example, nano: nano proxy sidecar deployment.yaml In the editor, paste the following content: apiVersion : apps/v1 kind : Deployment metadata : name : gke-alloydb spec : selector : matchLabels : app : SAMPLE APPLICATION template : metadata : labels : app : SAMPLE APPLICATION spec : serviceAccountName : KSA NAME containers : - name : SAMPLE APPLICATION Replace <PROJECT ID> and <REGION> with your project ID and region. image : REGION -docker.pkg.dev/ PROJECT ID / REPOSITORY ID / SAMPLE APPLICATION :latest imagePullPolicy : Always This app listens on port 8080 for web traffic by default. ports : - containerPort : 8080 env : - name : PORT value : \"8080\" - name : INSTANCE HOST value : \"127.0.0.1\" - name : DB PORT value : \"5432\" - name : DB USER valueFrom : secretKeyRef : name : SECRET key : username - name : DB PASS valueFrom : secretKeyRef : name : SECRET key : password - name : DB NAME valueFrom : secretKeyRef : name : SECRET key : database - name : alloydb-proxy This uses the latest version of the AlloyDB Auth proxy image : gcr.io/alloydb-connectors/alloydb-auth-proxy:1.10.1 command : - \"/alloydb-auth-proxy\" #AlloyDB instance name as parameter for the AlloyDB proxy - \" INSTANCE URI \" securityContext : runAsNonRoot : true resources : requests : memory : \"2Gi\" cpu : \"1\" Replace INSTANCE URI with the path you copied in step 1.",
+          "See the License for the specific language governing permissions and limitations under the License. apiVersion : apps/v1 kind : Deployment metadata : name : < YOUR-DEPLOYMENT-NAME > spec : selector : matchLabels : app : < YOUR-APPLICATION-NAME > template : metadata : labels : app : < YOUR-APPLICATION-NAME > spec : serviceAccountName : < YOUR-KSA-NAME > containers : Your application container goes here. - name : < YOUR-APPLICATION-NAME > image : < YOUR-APPLICATION-IMAGE-URL > env : - name : DB HOST The port value here (5432) should match the --port flag below. value : \"localhost:5342\" - name : DB USER valueFrom : secretKeyRef : name : < YOUR-DB-SECRET > key : username - name : DB PASS valueFrom : secretKeyRef : name : < YOUR-DB-SECRET > key : password - name : DB NAME valueFrom : secretKeyRef : name : < YOUR-DB-SECRET > key : database The Auth Proxy sidecar goes here. - name : alloydb-auth-proxy Make sure you have automation that upgrades this version regularly.",
+          "A new version of the Proxy is released monthly with bug fixes, security updates, and new features. image : gcr.io/alloydb-connectors/alloydb-auth-proxy:1.10.1 args : If you're connecting over public IP, enable this flag. - \"--public-ip\" If you're connecting with PSC, enable this flag: - \"--psc\" If you're using auto IAM authentication, enable this flag: - \"--auto-iam-authn\" Enable structured logging with Google's LogEntry format: - \"--structured-logs\" Listen on localhost:5432 by default. - \"--port=5432\" Specify your instance URI, e.g., \"projects/myproject/locations/us-central1/clusters/mycluster/instances/myinstance\" - \"<INSTANCE-URI>\" securityContext : The default AlloyDB Auth Proxy image runs as the \"nonroot\" user and group (uid: 65532) by default. runAsNonRoot : true You should use resource requests/limits as a best practice to prevent pods from consuming too many resources and affecting the execution of other pods."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "alloydb.client",
+      "altostrat.com",
+      "deployment.yaml",
+      "docker.pkg.dev",
+      "e.g",
+      "gcr.io",
+      "iam.gserviceaccount.com",
+      "nl.generated",
+      "schema.country.country",
+      "serviceusage.serviceUsageConsumer"
+    ],
+    "missing_inventory_roles": [
+      "roles/alloydb.client",
+      "roles/serviceusage.serviceUsageConsumer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/connect-iam",
+        "https://docs.cloud.google.com/alloydb/docs/ai/generate-sql-queries-natural-language",
+        "https://docs.cloud.google.com/alloydb/docs/quickstart/integrate-kubernetes"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/connect-iam",
+        "https://docs.cloud.google.com/alloydb/docs/ai/generate-sql-queries-natural-language",
+        "https://docs.cloud.google.com/alloydb/docs/quickstart/integrate-kubernetes"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/connect-iam",
+        "https://docs.cloud.google.com/alloydb/docs/ai/generate-sql-queries-natural-language",
+        "https://docs.cloud.google.com/alloydb/docs/quickstart/integrate-kubernetes"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/connect-iam",
+        "https://docs.cloud.google.com/alloydb/docs/ai/generate-sql-queries-natural-language",
+        "https://docs.cloud.google.com/alloydb/docs/quickstart/integrate-kubernetes"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/connect-iam",
+        "https://docs.cloud.google.com/alloydb/docs/ai/generate-sql-queries-natural-language",
+        "https://docs.cloud.google.com/alloydb/docs/quickstart/integrate-kubernetes"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/connect-iam",
+        "https://docs.cloud.google.com/alloydb/docs/ai/generate-sql-queries-natural-language",
+        "https://docs.cloud.google.com/alloydb/docs/quickstart/integrate-kubernetes"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/connect-iam",
+        "https://docs.cloud.google.com/alloydb/docs/ai/generate-sql-queries-natural-language",
+        "https://docs.cloud.google.com/alloydb/docs/quickstart/integrate-kubernetes"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/connect-iam",
+        "https://docs.cloud.google.com/alloydb/docs/ai/generate-sql-queries-natural-language",
+        "https://docs.cloud.google.com/alloydb/docs/quickstart/integrate-kubernetes"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/connect-iam",
+        "https://docs.cloud.google.com/alloydb/docs/ai/generate-sql-queries-natural-language",
+        "https://docs.cloud.google.com/alloydb/docs/quickstart/integrate-kubernetes"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/connect-iam",
+        "https://docs.cloud.google.com/alloydb/docs/ai/generate-sql-queries-natural-language",
+        "https://docs.cloud.google.com/alloydb/docs/quickstart/integrate-kubernetes"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/connect-iam",
+        "https://docs.cloud.google.com/alloydb/docs/ai/generate-sql-queries-natural-language",
+        "https://docs.cloud.google.com/alloydb/docs/quickstart/integrate-kubernetes"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/connect-iam",
+        "https://docs.cloud.google.com/alloydb/docs/ai/generate-sql-queries-natural-language",
+        "https://docs.cloud.google.com/alloydb/docs/quickstart/integrate-kubernetes"
+      ]
+    }
+  ]
+}

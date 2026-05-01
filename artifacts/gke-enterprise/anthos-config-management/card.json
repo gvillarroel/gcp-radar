@@ -1,0 +1,280 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:38.356Z",
+  "source_step08_card": "data/step-08/current/products/gke-enterprise/card.json",
+  "product_name": "GKE Enterprise",
+  "product_slug": "gke-enterprise",
+  "feature_name": "Anthos Config Management",
+  "feature_slug": "anthos-config-management",
+  "summary": "A service for centrally managing Kubernetes configuration and policy across clusters; A service for centrally managing Kubernetes configuration and policy across clusters.",
+  "extended_definition": "A service for centrally managing Kubernetes configuration and policy across clusters; A service for centrally managing Kubernetes configuration and policy across clusters.",
+  "lifecycle": {
+    "latest_feature_date": "2022-06-01",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/architecture/hybrid-environment",
+      "https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/concepts/anthos-connectivity",
+      "https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/concepts/roles-tasks",
+      "https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/support/support-cluster-access"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Impact of temporary disconnection from Google Cloud \\_|\\_ Google Distributed\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/concepts/anthos-connectivity",
+        "source_id": "site-docs-reference",
+        "final_score": 193,
+        "relevance": "",
+        "evidence_snippets": [
+          "Secret and key management using Hashicorp Vault and on-premises services You configure Hashicorp Vault to use an on-premises storage backend for secrets, and an on-premises key management system (such as a hardware security module).",
+          "Config and policy management Config Sync and Policy Controller lets you manage configuration and policies at scale, across all of your clusters.",
+          "Unlimited Never use the Fleet API for Policy Controller, and only configure it by using the Kubernetes API."
+        ]
+      },
+      {
+        "title": "\"Grant support read-only access to clusters \\_|\\_ Google Kubernetes Engine\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/support/support-cluster-access",
+        "source_id": "site-docs-reference",
+        "final_score": 183,
+        "relevance": "",
+        "evidence_snippets": [
+          "Google Distributed Cloud for VMware apiVersion: rbac.authorization.k8s.io/v1 kind: ClusterRole metadata: creationTimestamp: null name: fleet-rrb-imp-actuation-gke-fleet-support-access rules: - apiGroups: - \"\" resourceNames: - service-{PROJECT-NUMBER}@gcp-sa-anthossupport.iam.gserviceaccount.com resources: - users verbs: - impersonate --- apiVersion: rbac.authorization.k8s.io/v1 kind: ClusterRoleBinding metadata: creationTimestamp: null name: fleet-rrb-imp-actuation-gke-fleet-support-access roleRef: apiGroup: \"\" kind: ClusterRole name: fleet-rrb-imp-actuation-gke-fleet-support-access subjects: - kind: ServiceAccount name: connect-agent-sa namespace: gke-connect --- apiVersion: rbac.authorization.k8s.io/v1 kind: ClusterRole metadata: creationTimestamp: null name: fleet-rrb-actuation-gke-fleet-support-access rules: - apiGroups: - acme.cert-manager.io resources: [challenges, orders] verbs: [get, list, watch] - apiGroups: - addons.gke.io resources:[metricsserver, monitoring, stackdrivers] verbs: [get, list, watch] - apiGroups: - admissionregistration.k8s.io resources: [mutatingwebhookconfigurations, validatingwebhookconfigurations] verbs: [get, list, watch] - apiGroups: - anthos.gke.io resources: [entitlements, healthcheckjobs, healthchecks] verbs: [get, list, watch] - apiGroups: - apiextensions.k8s.io resources: [customresourcedefinitions] verbs: [get, list, watch] - apiGroups: - apiregistration.k8s.io resources: [apiservices] verbs: [get, list, watch] - apiGroups: - apiserver.k8s.io resources: [flowschemas, prioritylevelconfigurations] verbs: [get, list, watch] - apiGroups: - apps resources: [controllerrevisions, daemonsets, deployments, replicasets, statefulset] verbs: [get, list, watch] - apiGroups: - apps.k8s.io resources: [applications] verbs: [get, list, watch] - apiGroups: - authentication.gke.io resources: [clientconfigs] verbs: [get, list, watch] - apiGroups: - batch resources: [cronjobs, jobs] verbs: [get, list, watch] - apiGroups: - bootstrap.cluster.x-k8s.io resources: [kubeadmconfigs, kubeadmconfigtemplates] verbs: [get, list, watch] - apiGroups: - bundle.gke.io resources: [bundlebuilders, bundles, clusterbundles, componentbuilders, componentlists, components, componentsets, gkeonprembundles, packagedeploymentclasses, packagedeployments, patchtemplatebuilders, patchtemplates, requirements] verbs: [get, list, watch] - apiGroups: - bundleext.gke.io resources: [nodeconfigs] verbs: [get, list, watch] - apiGroups: - certificates.k8s.io resources: [certificatesigningrequests] verbs: [get, list, watch] - apiGroups: - cert-manager.io resources: [certificaterequests, certificates, clusterissuers, issuers] verbs: [get, list, watch] - apiGroups: - cilium.io resources: [ciliumnodes, ciliumendpoints, ciliumidentities, ciliumegressnatpolicies, ciliumexternalworkloads] verbs: [get, list, watch] - apiGroups: - configmanagement.gke.io resources: [configmanagements] verbs: [get, list, watch] - apiGroups: - config.gatekeeper.sh resources: [configs] verbs: [get, list, watch] - apiGroups: - coordination.k8s.io resources: [leases] verbs: [get, list, watch] - apiGroups: - cluster.k8s.io resources: [clusters, controlplanes, machineclasses, machinedeployments, machines, machinesets] verbs: [get, list, watch] - apiGroups: - cluster.x-k8s.io resources: [clusters, controlplanes, machineclasses, machinedeployments, machinehealthchecks, machines, machinesets] verbs: [get, list, watch] - apiGroups: - clusterctl.cluster.x-k8s.io resources: [metadata, providers] verbs: [get, list, watch] - apiGroups: - crd.projectcalico.org resources: [bgpconfigurations, bgppeers, blockaffinities, clusterinformations, felixconfigurations, globalnetworkpolicies, globalnetworksets, hostendpoints, ipamblocks, ipamconfigs, ipamhandles, ippools, networkpolicies, networksets, vpntunnels] verbs: [get, list, watch] - apiGroups: - discovery.k8s.io resources: [endpointslices] verbs: [get, list, watch] - apiGroups: - expansion.gatekeeper.sh resources: [expansiontemplate] verbs: [get, list, watch] - apiGroups: - extensions.istio.io resources: [ ] verbs: [get, list, watch] - apiGroups: - gateway.networking.k8s.io resources: [gatewayclasses, gateways, grpcroutes, httproutes, referencegrants, tcproutes, tlsroutes, udproutes] verbs: [get, list, watch] - apiGroups: - hub.gke.io resources: [memberships] verbs: [get, list, watch] - apiGroups: - install.istio.io resources: [ ] verbs: [get, list, watch] - apiGroups: - k8s.cni.cncf.io resources: [network-attachment-definitions] verbs: [get, list, watch] - apiGroups: - mutations.gatekeeper.sh resources: [assign, assignimage, assignmetadata, modifyset, mutatorpodstatuses] verbs: [get, list, watch] - apiGroups: - networking.istio.io resources: [ ] verbs: [get, list, watch] - apiGroups: - networking.k8s.io resources: [ingressclasses, ingresses, multiclusterconnectivityconfigs, networkgatewaygroups, networkgatewaynodes, networkinterfaces, networkloggings, networks, trafficsteerings] verbs: [get, list, watch] - apiGroups: - node.k8s.io resources: [runtimeclasses] verbs: [get, list, watch] - apiGroups: - policy resources: [poddisruptionbudgets, podsecuritypolicies] verbs: [get, list, watch] - apiGroups: - rbac.authorization.k8s.io resources: [clusterroles, clusterrolebindings, roles, rolebindings] verbs: [get, list, watch] - apiGroups: - security.istio.io resources: [ ] verbs: [get, list, watch] - apiGroups: - storage.k8s.io resources: [csidrivers, csinodes, csistoragecapacities, storageclasses, volumeattachments] verbs: [get, list, watch] - apiGroups: - sriovnetwork.k8s.cni.cncf.io resources: [sriovnetworknodepolicies, sriovnetworknodestates, sriovoperatorconfigs] verbs: [get, list, watch] - apiGroups: - status.gatekeeper.sh resources: [constraintpodstatuses, constrainttemplatepodstatuses, expansiontemplatepodstatuses] verbs: [get, list, watch] - apiGroups: - telemetry.istio.io resources: [ ] verbs: [get, list, watch] - apiGroups: - templates.gatekeeper.sh resources: [constrainttemplates] verbs: [get, list, watch] - apiGroups: - vm.cluster.gke.io resources: [gpuallocation, guestenvironmentdata, virtualmachineaccessrequest, virtualmachinedisk, virtualmachinepasswordresetrequest, virtualmachinetype, vmhighavailabilitypolicy, vmruntimes] verbs: [get, list, watch] - apiGroups: - ' ' resources: [componentstatuses, configmaps, endpoints, events, horizontalpodautoscalers, limitranges, namespaces, nodes, persistentvolumeclaims, persistentvolumes, pods, pods/log, podtemplates, replicationcontrollers, resourcequotas, serviceaccounts, services] verbs: [get, list, watch] - apiGroups: - onprem.cluster.gke.io resources: [onpremadminclusters, onpremnodepools, onpremuserclusters, validations, onpremplatforms, onprembundles, clusterstates] verbs: [get, list, watch] - apiGroups: - vsphereproviderconfig.k8s.io resources: [vsphereclusterproviderconfigs, vspheremachineproviderconfigs] verbs: [get, list, watch] --- apiVersion: rbac.authorization.k8s.io/v1 kind: ClusterRoleBinding metadata: creationTimestamp: null name: fleet-rrb-actuation-gke-fleet-support-access roleRef: apiGroup: \"\" kind: ClusterRole name: fleet-rrb-actuation-gke-fleet-support-access subjects: - kind: User name: service-{PROJECT-NUMBER}@gcp-sa-anthossupport.iam.gserviceaccount.com Google Distributed Cloud for Bare Metal apiVersion: rbac.authorization.k8s.io/v1 kind: ClusterRole metadata: creationTimestamp: null name: fleet-rrb-imp-actuation-gke-fleet-support-access rules: - apiGroups: - \"\" resourceNames: - service-{PROJECT-NUMBER}@gcp-sa-anthossupport.iam.gserviceaccount.com resources: - users verbs: - impersonate --- apiVersion: rbac.authorization.k8s.io/v1 kind: ClusterRoleBinding metadata: creationTimestamp: null name: fleet-rrb-imp-actuation-gke-fleet-support-access roleRef: apiGroup: \"\" kind: ClusterRole name: fleet-rrb-imp-actuation-gke-fleet-support-access subjects: - kind: ServiceAccount name: connect-agent-sa namespace: gke-connect --- apiVersion: rbac.authorization.k8s.io/v1 kind: ClusterRole metadata: creationTimestamp: null name: fleet-rrb-actuation-gke-fleet-support-access rules: - apiGroups: - acme.cert-manager.io resources: [challenges, orders] verbs: [get, list, watch] - apiGroups: - addons.gke.io resources:[metricsserver, monitoring, stackdrivers] verbs: [get, list, watch] - apiGroups: - admissionregistration.k8s.io resources: [mutatingwebhookconfigurations, validatingwebhookconfigurations] verbs: [get, list, watch] - apiGroups: - anthos.gke.io resources: [entitlements, healthcheckjobs, healthchecks] verbs: [get, list, watch] - apiGroups: - apiextensions.k8s.io resources: [customresourcedefinitions] verbs: [get, list, watch] - apiGroups: - apiregistration.k8s.io resources: [apiservices] verbs: [get, list, watch] - apiGroups: - apiserver.k8s.io resources: [flowschemas, prioritylevelconfigurations] verbs: [get, list, watch] - apiGroups: - apps resources: [controllerrevisions, daemonsets, deployments, replicasets, statefulset] verbs: [get, list, watch] - apiGroups: - apps.k8s.io resources: [applications] verbs: [get, list, watch] - apiGroups: - authentication.gke.io resources: [clientconfigs] verbs: [get, list, watch] - apiGroups: - batch resources: [cronjobs, jobs] verbs: [get, list, watch] - apiGroups: - bootstrap.cluster.x-k8s.io resources: [kubeadmconfigs, kubeadmconfigtemplates] verbs: [get, list, watch] - apiGroups: - bundle.gke.io resources: [bundlebuilders, bundles, clusterbundles, componentbuilders, componentlists, components, componentsets, gkeonprembundles, packagedeploymentclasses, packagedeployments, patchtemplatebuilders, patchtemplates, requirements] verbs: [get, list, watch] - apiGroups: - bundleext.gke.io resources: [nodeconfigs] verbs: [get, list, watch] - apiGroups: - certificates.k8s.io resources: [certificatesigningrequests] verbs: [get, list, watch] - apiGroups: - cert-manager.io resources: [certificaterequests, certificates, clusterissuers, issuers] verbs: [get, list, watch] - apiGroups: - cilium.io resources: [ciliumnodes, ciliumendpoints, ciliumidentities, ciliumegressnatpolicies, ciliumexternalworkloads] verbs: [get, list, watch] - apiGroups: - configmanagement.gke.io resources: [configmanagements] verbs: [get, list, watch] - apiGroups: - config.gatekeeper.sh resources: [configs] verbs: [get, list, watch] - apiGroups: - coordination.k8s.io resources: [leases] verbs: [get, list, watch] - apiGroups: - cluster.k8s.io resources: [clusters, controlplanes, machineclasses, machinedeployments, machines, machinesets] verbs: [get, list, watch] - apiGroups: - cluster.x-k8s.io resources: [clusters, controlplanes, machineclasses, machinedeployments, machinehealthchecks, machines, machinesets] verbs: [get, list, watch] - apiGroups: - clusterctl.cluster.x-k8s.io resources: [metadata, providers] verbs: [get, list, watch] - apiGroups: - crd.projectcalico.org resources: [bgpconfigurations, bgppeers, blockaffinities, clusterinformations, felixconfigurations, globalnetworkpolicies, globalnetworksets, hostendpoints, ipamblocks, ipamconfigs, ipamhandles, ippools, networkpolicies, networksets, vpntunnels] verbs: [get, list, watch] - apiGroups: - discovery.k8s.io resources: [endpointslices] verbs: [get, list, watch] - apiGroups: - expansion.gatekeeper.sh resources: [expansiontemplate] verbs: [get, list, watch] - apiGroups: - extensions.istio.io resources: [ ] verbs: [get, list, watch] - apiGroups: - gateway.networking.k8s.io resources: [gatewayclasses, gateways, grpcroutes, httproutes, referencegrants, tcproutes, tlsroutes, udproutes] verbs: [get, list, watch] - apiGroups: - hub.gke.io resources: [memberships] verbs: [get, list, watch] - apiGroups: - install.istio.io resources: [ ] verbs: [get, list, watch] - apiGroups: - k8s.cni.cncf.io resources: [network-attachment-definitions] verbs: [get, list, watch] - apiGroups: - mutations.gatekeeper.sh resources: [assign, assignimage, assignmetadata, modifyset, mutatorpodstatuses] verbs: [get, list, watch] - apiGroups: - networking.istio.io resources: [ ] verbs: [get, list, watch] - apiGroups: - networking.k8s.io resources: [ingressclasses, ingresses, multiclusterconnectivityconfigs, networkgatewaygroups, networkgatewaynodes, networkinterfaces, networkloggings, networks, trafficsteerings] verbs: [get, list, watch] - apiGroups: - node.k8s.io resources: [runtimeclasses] verbs: [get, list, watch] - apiGroups: - policy resources: [poddisruptionbudgets, podsecuritypolicies] verbs: [get, list, watch] - apiGroups: - rbac.authorization.k8s.io resources: [clusterroles, clusterrolebindings, roles, rolebindings] verbs: [get, list, watch] - apiGroups: - security.istio.io resources: [ ] verbs: [get, list, watch] - apiGroups: - storage.k8s.io resources: [csidrivers, csinodes, csistoragecapacities, storageclasses, volumeattachments] verbs: [get, list, watch] - apiGroups: - sriovnetwork.k8s.cni.cncf.io resources: [sriovnetworknodepolicies, sriovnetworknodestates, sriovoperatorconfigs] verbs: [get, list, watch] - apiGroups: - status.gatekeeper.sh resources: [constraintpodstatuses, constrainttemplatepodstatuses, expansiontemplatepodstatuses] verbs: [get, list, watch] - apiGroups: - telemetry.istio.io resources: [ ] verbs: [get, list, watch] - apiGroups: - templates.gatekeeper.sh resources: [constrainttemplates] verbs: [get, list, watch] - apiGroups: - vm.cluster.gke.io resources: [gpuallocation, guestenvironmentdata, virtualmachineaccessrequest, virtualmachinedisk, virtualmachinepasswordresetrequest, virtualmachinetype, vmhighavailabilitypolicy, vmruntimes] verbs: [get, list, watch] - apiGroups: - ' ' resources: [componentstatuses, configmaps, endpoints, events, horizontalpodautoscalers, limitranges, namespaces, nodes, persistentvolumeclaims, persistentvolumes, pods, pods/log, podtemplates, replicationcontrollers, resourcequotas, serviceaccounts, services] verbs: [get, list, watch] - apiGroups: - addon.baremetal.cluster.gke.io resources: [addonmanifests, addonoverrides, addons, addonsets, addonsettemplates] verbs: [get, list, watch] - apiGroups: - baremetal.cluster.gke.io resources: [addonconfigurations, clustercidrconfigs, clustercredentials, clustermanifestdeployments, clusters, flatipmodes, healthchecks, inventorymachines, kubeletconfigs, machineclasses, machinecredentials, machines, nodepools, nodepoolclaims, nodeproblemdetectors, preflightchecks, secretforwarders] verbs: [get, list, watch] - apiGroups: - infrastructure.baremetal.cluster.gke.io resources: - baremetalclusters - baremetalmachines verbs: [get, list, watch] - apiGroups: - networking.baremetal.cluster.gke.io resources: - dpv2multinics verbs: [get, list, watch] --- apiVersion: rbac.authorization.k8s.io/v1 kind: ClusterRoleBinding metadata: creationTimestamp: null name: fleet-rrb-actuation-gke-fleet-support-access roleRef: apiGroup: \"\" kind: ClusterRole name: fleet-rrb-actuation-gke-fleet-support-access subjects: - kind: User name: service-{PROJECT-NUMBER}@gcp-sa-anthossupport.iam.gserviceaccount.com GKE attached clusters apiVersion: rbac.authorization.k8s.io/v1 kind: ClusterRole metadata: creationTimestamp: null name: fleet-rrb-imp-actuation-gke-fleet-support-access rules: - apiGroups: - \"\" resourceNames: - service-{PROJECT-NUMBER}@gcp-sa-anthossupport.iam.gserviceaccount.com resources: - users verbs: - impersonate --- apiVersion: rbac.authorization.k8s.io/v1 kind: ClusterRoleBinding metadata: creationTimestamp: null name: fleet-rrb-imp-actuation-gke-fleet-support-access roleRef: apiGroup: \"\" kind: ClusterRole name: fleet-rrb-imp-actuation-gke-fleet-support-access subjects: - kind: ServiceAccount name: connect-agent-sa namespace: gke-connect --- apiVersion: rbac.authorization.k8s.io/v1 kind: ClusterRole metadata: creationTimestamp: null name: fleet-rrb-actuation-gke-fleet-support-access rules: - apiGroups: - acme.cert-manager.io resources: [challenges, orders] verbs: [get, list, watch] - apiGroups: - addons.gke.io resources:[metricsserver, monitoring, stackdrivers] verbs: [get, list, watch] - apiGroups: - admissionregistration.k8s.io resources: [mutatingwebhookconfigurations, validatingwebhookconfigurations] verbs: [get, list, watch] - apiGroups: - anthos.gke.io resources: [entitlements, healthcheckjobs, healthchecks] verbs: [get, list, watch] - apiGroups: - apiextensions.k8s.io resources: [customresourcedefinitions] verbs: [get, list, watch] - apiGroups: - apiregistration.k8s.io resources: [apiservices] verbs: [get, list, watch] - apiGroups: - apiserver.k8s.io resources: [flowschemas, prioritylevelconfigurations] verbs: [get, list, watch] - apiGroups: - apps resources: [controllerrevisions, daemonsets, deployments, replicasets, statefulset] verbs: [get, list, watch] - apiGroups: - apps.k8s.io resources: [applications] verbs: [get, list, watch] - apiGroups: - authentication.gke.io resources: [clientconfigs] verbs: [get, list, watch] - apiGroups: - batch resources: [cronjobs, jobs] verbs: [get, list, watch] - apiGroups: - bootstrap.cluster.x-k8s.io resources: [kubeadmconfigs, kubeadmconfigtemplates] verbs: [get, list, watch] - apiGroups: - bundle.gke.io resources: [bundlebuilders, bundles, clusterbundles, componentbuilders, componentlists, components, componentsets, gkeonprembundles, packagedeploymentclasses, packagedeployments, patchtemplatebuilders, patchtemplates, requirements] verbs: [get, list, watch] - apiGroups: - bundleext.gke.io resources: [nodeconfigs] verbs: [get, list, watch] - apiGroups: - certificates.k8s.io resources: [certificatesigningrequests] verbs: [get, list, watch] - apiGroups: - cert-manager.io resources: [certificaterequests, certificates, clusterissuers, issuers] verbs: [get, list, watch] - apiGroups: - cilium.io resources: [ciliumnodes, ciliumendpoints, ciliumidentities, ciliumegressnatpolicies, ciliumexternalworkloads] verbs: [get, list, watch] - apiGroups: - configmanagement.gke.io resources: [configmanagements] verbs: [get, list, watch] - apiGroups: - config.gatekeeper.sh resources: [configs] verbs: [get, list, watch] - apiGroups: - coordination.k8s.io resources: [leases] verbs: [get, list, watch] - apiGroups: - cluster.k8s.io resources: [clusters, controlplanes, machineclasses, machinedeployments, machines, machinesets] verbs: [get, list, watch] - apiGroups: - cluster.x-k8s.io resources: [clusters, controlplanes, machineclasses, machinedeployments, machinehealthchecks, machines, machinesets] verbs: [get, list, watch] - apiGroups: - clusterctl.cluster.x-k8s.io resources: [metadata, providers] verbs: [get, list, watch] - apiGroups: - crd.projectcalico.org resources: [bgpconfigurations, bgppeers, blockaffinities, clusterinformations, felixconfigurations, globalnetworkpolicies, globalnetworksets, hostendpoints, ipamblocks, ipamconfigs, ipamhandles, ippools, networkpolicies, networksets, vpntunnels] verbs: [get, list, watch] - apiGroups: - discovery.k8s.io resources: [endpointslices] verbs: [get, list, watch] - apiGroups: - expansion.gatekeeper.sh resources: [expansiontemplate] verbs: [get, list, watch] - apiGroups: - extensions.istio.io resources: [ ] verbs: [get, list, watch] - apiGroups: - gateway.networking.k8s.io resources: [gatewayclasses, gateways, grpcroutes, httproutes, referencegrants, tcproutes, tlsroutes, udproutes] verbs: [get, list, watch] - apiGroups: - hub.gke.io resources: [memberships] verbs: [get, list, watch] - apiGroups: - install.istio.io resources: [ ] verbs: [get, list, watch] - apiGroups: - k8s.cni.cncf.io resources: [network-attachment-definitions] verbs: [get, list, watch] - apiGroups: - mutations.gatekeeper.sh resources: [assign, assignimage, assignmetadata, modifyset, mutatorpodstatuses] verbs: [get, list, watch] - apiGroups: - networking.istio.io resources: [ ] verbs: [get, list, watch] - apiGroups: - networking.k8s.io resources: [ingressclasses, ingresses, multiclusterconnectivityconfigs, networkgatewaygroups, networkgatewaynodes, networkinterfaces, networkloggings, networks, trafficsteerings] verbs: [get, list, watch] - apiGroups: - node.k8s.io resources: [runtimeclasses] verbs: [get, list, watch] - apiGroups: - policy resources: [poddisruptionbudgets, podsecuritypolicies] verbs: [get, list, watch] - apiGroups: - rbac.authorization.k8s.io resources: [clusterroles, clusterrolebindings, roles, rolebindings] verbs: [get, list, watch] - apiGroups: - security.istio.io resources: [ ] verbs: [get, list, watch] - apiGroups: - storage.k8s.io resources: [csidrivers, csinodes, csistoragecapacities, storageclasses, volumeattachments] verbs: [get, list, watch] - apiGroups: - sriovnetwork.k8s.cni.cncf.io resources: [sriovnetworknodepolicies, sriovnetworknodestates, sriovoperatorconfigs] verbs: [get, list, watch] - apiGroups: - status.gatekeeper.sh resources: [constraintpodstatuses, constrainttemplatepodstatuses, expansiontemplatepodstatuses] verbs: [get, list, watch] - apiGroups: - telemetry.istio.io resources: [ ] verbs: [get, list, watch] - apiGroups: - templates.gatekeeper.sh resources: [constrainttemplates] verbs: [get, list, watch] - apiGroups: - vm.cluster.gke.io resources: [gpuallocation, guestenvironmentdata, virtualmachineaccessrequest, virtualmachinedisk, virtualmachinepasswordresetrequest, virtualmachinetype, vmhighavailabilitypolicy, vmruntimes] verbs: [get, list, watch] - apiGroups: - ' ' resources: [componentstatuses, configmaps, endpoints, events, horizontalpodautoscalers, limitranges, namespaces, nodes, persistentvolumeclaims, persistentvolumes, pods, pods/log, podtemplates, replicationcontrollers, resourcequotas, serviceaccounts, services] verbs: [get, list, watch] --- apiVersion: rbac.authorization.k8s.io/v1 kind: ClusterRoleBinding metadata: creationTimestamp: null name: fleet-rrb-actuation-gke-fleet-support-access roleRef: apiGroup: \"\" kind: ClusterRole name: fleet-rrb-actuation-gke-fleet-support-access subjects: - kind: User name: service-{PROJECT-NUMBER}@gcp-sa-anthossupport.iam.gserviceaccount.com GKE clusters apiVersion: rbac.authorization.k8s.io/v1 kind: ClusterRole metadata: creationTimestamp: null name: fleet-rrb-imp-actuation-gke-fleet-support-access rules: - apiGroups: - \"\" resourceNames: - service-{PROJECT-NUMBER}@gcp-sa-anthossupport.iam.gserviceaccount.com resources: - users verbs: - impersonate --- apiVersion: rbac.authorization.k8s.io/v1 kind: ClusterRoleBinding metadata: creationTimestamp: null name: fleet-rrb-imp-actuation-gke-fleet-support-access roleRef: apiGroup: \"\" kind: ClusterRole name: fleet-rrb-imp-actuation-gke-fleet-support-access subjects: - kind: ServiceAccount name: connect-agent-sa namespace: gke-connect --- apiVersion: rbac.authorization.k8s.io/v1 kind: ClusterRole metadata: creationTimestamp: null name: fleet-rrb-actuation-gke-fleet-support-access rules: - apiGroups: - acme.cert-manager.io resources: [challenges, orders] verbs: [get, list, watch] - apiGroups: - addons.gke.io resources:[metricsserver, monitoring, stackdrivers] verbs: [get, list, watch] - apiGroups: - admissionregistration.k8s.io resources: [mutatingwebhookconfigurations, validatingwebhookconfigurations] verbs: [get, list, watch] - apiGroups: - anthos.gke.io resources: [entitlements, healthcheckjobs, healthchecks] verbs: [get, list, watch] - apiGroups: - apiextensions.k8s.io resources: [customresourcedefinitions] verbs: [get, list, watch] - apiGroups: - apiregistration.k8s.io resources: [apiservices] verbs: [get, list, watch] - apiGroups: - apiserver.k8s.io resources: [flowschemas, prioritylevelconfigurations] verbs: [get, list, watch] - apiGroups: - apps resources: [controllerrevisions, daemonsets, deployments, replicasets, statefulset] verbs: [get, list, watch] - apiGroups: - apps.k8s.io resources: [applications] verbs: [get, list, watch] - apiGroups: - authentication.gke.io resources: [clientconfigs] verbs: [get, list, watch] - apiGroups: - batch resources: [cronjobs, jobs] verbs: [get, list, watch] - apiGroups: - bootstrap.cluster.x-k8s.io resources: [kubeadmconfigs, kubeadmconfigtemplates] verbs: [get, list, watch] - apiGroups: - bundle.gke.io resources: [bundlebuilders, bundles, clusterbundles, componentbuilders, componentlists, components, componentsets, gkeonprembundles, packagedeploymentclasses, packagedeployments, patchtemplatebuilders, patchtemplates, requirements] verbs: [get, list, watch] - apiGroups: - bundleext.gke.io resources: [nodeconfigs] verbs: [get, list, watch] - apiGroups: - certificates.k8s.io resources: [certificatesigningrequests] verbs: [get, list, watch] - apiGroups: - cert-manager.io resources: [certificaterequests, certificates, clusterissuers, issuers] verbs: [get, list, watch] - apiGroups: - cilium.io resources: [ciliumnodes, ciliumendpoints, ciliumidentities, ciliumegressnatpolicies, ciliumexternalworkloads] verbs: [get, list, watch] - apiGroups: - configmanagement.gke.io resources: [configmanagements] verbs: [get, list, watch] - apiGroups: - config.gatekeeper.sh resources: [configs] verbs: [get, list, watch] - apiGroups: - coordination.k8s.io resources: [leases] verbs: [get, list, watch] - apiGroups: - cluster.k8s.io resources: [clusters, controlplanes, machineclasses, machinedeployments, machines, machinesets] verbs: [get, list, watch] - apiGroups: - cluster.x-k8s.io resources: [clusters, controlplanes, machineclasses, machinedeployments, machinehealthchecks, machines, machinesets] verbs: [get, list, watch] - apiGroups: - clusterctl.cluster.x-k8s.io resources: [metadata, providers] verbs: [get, list, watch] - apiGroups: - crd.projectcalico.org resources: [bgpconfigurations, bgppeers, blockaffinities, clusterinformations, felixconfigurations, globalnetworkpolicies, globalnetworksets, hostendpoints, ipamblocks, ipamconfigs, ipamhandles, ippools, networkpolicies, networksets, vpntunnels] verbs: [get, list, watch] - apiGroups: - discovery.k8s.io resources: [endpointslices] verbs: [get, list, watch] - apiGroups: - expansion.gatekeeper.sh resources: [expansiontemplate] verbs: [get, list, watch] - apiGroups: - extensions.istio.io resources: [ ] verbs: [get, list, watch] - apiGroups: - gateway.networking.k8s.io resources: [gatewayclasses, gateways, grpcroutes, httproutes, referencegrants, tcproutes, tlsroutes, udproutes] verbs: [get, list, watch] - apiGroups: - hub.gke.io resources: [memberships] verbs: [get, list, watch] - apiGroups: - install.istio.io resources: [ ] verbs: [get, list, watch] - apiGroups: - k8s.cni.cncf.io resources: [network-attachment-definitions] verbs: [get, list, watch] - apiGroups: - mutations.gatekeeper.sh resources: [assign, assignimage, assignmetadata, modifyset, mutatorpodstatuses] verbs: [get, list, watch] - apiGroups: - networking.istio.io resources: [ ] verbs: [get, list, watch] - apiGroups: - networking.k8s.io resources: [ingressclasses, ingresses, multiclusterconnectivityconfigs, networkgatewaygroups, networkgatewaynodes, networkinterfaces, networkloggings, networks, trafficsteerings] verbs: [get, list, watch] - apiGroups: - node.k8s.io resources: [runtimeclasses] verbs: [get, list, watch] - apiGroups: - policy resources: [poddisruptionbudgets, podsecuritypolicies] verbs: [get, list, watch] - apiGroups: - rbac.authorization.k8s.io resources: [clusterroles, clusterrolebindings, roles, rolebindings] verbs: [get, list, watch] - apiGroups: - security.istio.io resources: [ ] verbs: [get, list, watch] - apiGroups: - storage.k8s.io resources: [csidrivers, csinodes, csistoragecapacities, storageclasses, volumeattachments] verbs: [get, list, watch] - apiGroups: - sriovnetwork.k8s.cni.cncf.io resources: [sriovnetworknodepolicies, sriovnetworknodestates, sriovoperatorconfigs] verbs: [get, list, watch] - apiGroups: - status.gatekeeper.sh resources: [constraintpodstatuses, constrainttemplatepodstatuses, expansiontemplatepodstatuses] verbs: [get, list, watch] - apiGroups: - telemetry.istio.io resources: [ ] verbs: [get, list, watch] - apiGroups: - templates.gatekeeper.sh resources: [constrainttemplates] verbs: [get, list, watch] - apiGroups: - vm.cluster.gke.io resources: [gpuallocation, guestenvironmentdata, virtualmachineaccessrequest, virtualmachinedisk, virtualmachinepasswordresetrequest, virtualmachinetype, vmhighavailabilitypolicy, vmruntimes] verbs: [get, list, watch] - apiGroups: - ' ' resources: [componentstatuses, configmaps, endpoints, events, horizontalpodautoscalers, limitranges, namespaces, nodes, persistentvolumeclaims, persistentvolumes, pods, pods/log, podtemplates, replicationcontrollers, resourcequotas, serviceaccounts, services] verbs: [get, list, watch] --- apiVersion: rbac.authorization.k8s.io/v1 kind: ClusterRoleBinding metadata: creationTimestamp: null name: fleet-rrb-actuation-gke-fleet-support-access roleRef: apiGroup: \"\" kind: ClusterRole name: fleet-rrb-actuation-gke-fleet-support-access subjects: - kind: User name: service-{PROJECT-NUMBER}@gcp-sa-anthossupport.iam.gserviceaccount.com Audit Google Cloud Support usage The support team accesses your cluster using a per-project dedicated Google Cloud Service account through the connect gateway API.",
+          "Manage Support access for the cluster To enable Support access for the cluster, you run a gcloud command that propagates a set of read-only Kubernetes role-based access control (RBAC) policies to the target cluster.",
+          "To review the usage, enable Data Access audit logs and look for audit logs with the caller identity set to service-PROJECT NUMBER@gcp-sa-anthossupport.iam.gserviceaccount.com ."
+        ]
+      },
+      {
+        "title": "\"Common GKE user roles and tasks \\_|\\_ Google Kubernetes Engine (GKE) \\_\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/concepts/roles-tasks",
+        "source_id": "site-iam-reference",
+        "final_score": 150,
+        "relevance": "",
+        "evidence_snippets": [
+          "IT administrators IT administrators are responsible for the upkeep, configuration, and reliable operation of an organization's computer systems, servers, and data security systems.",
+          "Network administrators Network administrators are responsible for the installation, configuration, maintenance, and troubleshooting of computer networks.",
+          "They manage multiple security functions and are responsible for implementing configurations of systems to meet defined requirements."
+        ]
+      },
+      {
+        "title": "\"Reference architecture: Hybrid environment for Google Kubernetes Engine\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/architecture/hybrid-environment",
+        "source_id": "site-docs-reference",
+        "final_score": 144,
+        "relevance": "",
+        "evidence_snippets": [
+          "Design considerations for availability, security and compliance, scale and limits, observability, Git-ops based configuration management, and more.",
+          "The following architecture diagram provides an overview of a complete GKE deployment in a hybrid environment that's explained in detail in the reference architecture: In the previous diagram, Google Cloud-based services help you manage logging and monitoring data, store container images, and provide configuration management.",
+          "Home Documentation Application hosting Google Kubernetes Engine (GKE) Send feedback Reference architecture: Hybrid environment for Google Kubernetes Engine clusters Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "acme.cert",
+      "addon.baremetal.cluster.gke.io",
+      "addons.gke.io",
+      "admissionregistration.k8s.io",
+      "anthos.gke.io",
+      "anthossupport.iam.gserviceaccount.com",
+      "apiextensions.k8s.io",
+      "apiregistration.k8s.io",
+      "apiserver.k8s.io",
+      "apps.k8s.io",
+      "authentication.gke.io",
+      "baremetal.cluster.gke.io",
+      "bootstrap.cluster.x",
+      "bundle.gke.io",
+      "bundleext.gke.io",
+      "certificates.k8s.io",
+      "cilium.io",
+      "cluster.k8s.io",
+      "cluster.x",
+      "clusterctl.cluster.x",
+      "config.gatekeeper.sh",
+      "configmanagement.gke.io",
+      "coordination.k8s.io",
+      "crd.projectcalico.org",
+      "discovery.k8s.io",
+      "expansion.gatekeeper.sh",
+      "extensions.istio.io",
+      "gateway.networking.k8s.io",
+      "hub.gke.io",
+      "infrastructure.baremetal.cluster.gke.io",
+      "install.istio.io",
+      "k8s.cni.cncf.io",
+      "k8s.io",
+      "manager.io",
+      "mutations.gatekeeper.sh",
+      "networking.baremetal.cluster.gke.io",
+      "networking.istio.io",
+      "networking.k8s.io",
+      "node.k8s.io",
+      "onprem.cluster.gke.io",
+      "rbac.authorization.k8s.io",
+      "security.istio.io",
+      "sriovnetwork.k8s.cni.cncf.io",
+      "status.gatekeeper.sh",
+      "storage.k8s.io",
+      "telemetry.istio.io",
+      "templates.gatekeeper.sh",
+      "vm.cluster.gke.io",
+      "vsphereproviderconfig.k8s.io"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/concepts/anthos-connectivity",
+        "https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/support/support-cluster-access",
+        "https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/concepts/roles-tasks",
+        "https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/architecture/hybrid-environment"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/concepts/anthos-connectivity",
+        "https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/support/support-cluster-access",
+        "https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/concepts/roles-tasks",
+        "https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/architecture/hybrid-environment"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/concepts/anthos-connectivity",
+        "https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/support/support-cluster-access",
+        "https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/concepts/roles-tasks",
+        "https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/architecture/hybrid-environment"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/concepts/anthos-connectivity",
+        "https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/support/support-cluster-access",
+        "https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/concepts/roles-tasks",
+        "https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/architecture/hybrid-environment"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/concepts/anthos-connectivity",
+        "https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/support/support-cluster-access",
+        "https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/concepts/roles-tasks",
+        "https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/architecture/hybrid-environment"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/concepts/anthos-connectivity",
+        "https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/support/support-cluster-access",
+        "https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/concepts/roles-tasks",
+        "https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/architecture/hybrid-environment"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/concepts/anthos-connectivity",
+        "https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/support/support-cluster-access",
+        "https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/concepts/roles-tasks",
+        "https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/architecture/hybrid-environment"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/concepts/anthos-connectivity",
+        "https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/support/support-cluster-access",
+        "https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/concepts/roles-tasks",
+        "https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/architecture/hybrid-environment"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/concepts/anthos-connectivity",
+        "https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/support/support-cluster-access",
+        "https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/concepts/roles-tasks",
+        "https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/architecture/hybrid-environment"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/concepts/anthos-connectivity",
+        "https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/support/support-cluster-access",
+        "https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/concepts/roles-tasks",
+        "https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/architecture/hybrid-environment"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/concepts/anthos-connectivity",
+        "https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/support/support-cluster-access",
+        "https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/concepts/roles-tasks",
+        "https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/architecture/hybrid-environment"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/concepts/anthos-connectivity",
+        "https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/support/support-cluster-access",
+        "https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/concepts/roles-tasks",
+        "https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/architecture/hybrid-environment"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/concepts/anthos-connectivity",
+        "https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/support/support-cluster-access",
+        "https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/concepts/roles-tasks",
+        "https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/architecture/hybrid-environment"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/concepts/anthos-connectivity",
+        "https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/support/support-cluster-access",
+        "https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/concepts/roles-tasks",
+        "https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/architecture/hybrid-environment"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/concepts/anthos-connectivity",
+        "https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/support/support-cluster-access",
+        "https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/concepts/roles-tasks",
+        "https://docs.cloud.google.com/kubernetes-engine/enterprise/docs/architecture/hybrid-environment"
+      ]
+    }
+  ]
+}

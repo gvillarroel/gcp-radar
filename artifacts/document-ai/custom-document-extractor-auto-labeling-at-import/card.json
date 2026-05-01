@@ -1,0 +1,134 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:35.157Z",
+  "source_step08_card": "data/step-08/current/products/document-ai/card.json",
+  "product_name": "Document AI",
+  "product_slug": "document-ai",
+  "feature_name": "Custom Document Extractor auto-labeling at import",
+  "feature_slug": "custom-document-extractor-auto-labeling-at-import",
+  "summary": "Custom Document Extractor can auto-label imported data with a trained processor version.",
+  "extended_definition": "Custom Document Extractor can auto-label imported data with a trained processor version.",
+  "lifecycle": {
+    "latest_feature_date": "2022-09-29",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/document-ai/docs/ce-mechanisms",
+      "https://docs.cloud.google.com/document-ai/docs/ce-template-based",
+      "https://docs.cloud.google.com/document-ai/docs/ce-with-genai",
+      "https://docs.cloud.google.com/document-ai/docs/create-dataset"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Custom extractor mechanisms \\_|\\_ Document AI \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/document-ai/docs/ce-mechanisms",
+        "source_id": "site-docs-root",
+        "final_score": 315,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Custom extractor uses the label names you define and previous annotations to make it quicker and easier to label documents at scale with auto-labeling .",
+          "Custom extractor mechanisms You can create custom extractors that are specifically suited to your documents, and trained and evaluated with your data.",
+          "For automated version upgrades, see Previous arrow back Custom extractor overview Next Automated schema extraction arrow forward Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License ."
+        ]
+      },
+      {
+        "title": "Create dataset \\_|\\_ Document AI \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/document-ai/docs/create-dataset",
+        "source_id": "site-docs-root",
+        "final_score": 309,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Train or test dataset If you want to add documents to either training or test dataset: HTTP method POST https:// LOCATION -documentai.googleapis.com/v1beta3/projects/ PROJECT ID /locations/ LOCATION /processors/ PROCESSOR ID /dataset/importDocuments Request JSON: { \"batch documents import configs\" : { \"dataset split\" : DATASET TYPE \"batch input config\" : { \"gcs prefix\" : { \"gcs uri prefix\" : GCS URI } } } } Train & test dataset If you want to autosplit the documents between the training and test dataset: HTTP method POST https:// LOCATION -documentai.googleapis.com/v1beta3/projects/ PROJECT ID /locations/ LOCATION /processors/ PROCESSOR ID /dataset/importDocuments Request JSON: { \"batch documents import configs\" : { \"auto split config\" : { \"training split ratio\" : TRAINING SPLIT RATIO } , \"batch input config\" : { \"gcs prefix\" : { \"gcs uri prefix\" : \"gs://test sbindal/pdfs-1-page/\" } } } } Save the request body in a file named request.json , and execute the following command: CURL curl -X POST \\ -H \"Authorization: Bearer $( gcloud auth print-access-token ) \" \\ -H \"Content-Type: application/json; charset=utf-8\" \\ -d @request.json \\ \"https:// LOCATION -documentai.googleapis.com/v1beta3/projects/ PROJECT ID /locations/ LOCATION /processors/ PROCESSOR ID /dataset/importDocuments\" You should receive a JSON response similar to the following: { \"name\" : \"projects/ PROJECT ID /locations/ LOCATION /operations/ OPERATION ID \" } Tip: You can use ImportDocumentsMetadata to get the status of each document import.",
+          "These can be used for up-training or custom extractors depending on the document type. gs://cloud-samples-data/documentai/Custom/ gs://cloud-samples-data/documentai/Custom/1040/ gs://cloud-samples-data/documentai/Custom/Invoices/ gs://cloud-samples-data/documentai/Custom/Patents/ gs://cloud-samples-data/documentai/Custom/Procurement-Splitter/ gs://cloud-samples-data/documentai/Custom/W2-redacted/ gs://cloud-samples-data/documentai/Custom/W2/ gs://cloud-samples-data/documentai/Custom/W9/ Next Label process arrow forward Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "If you already have an existing version of your processor, you can select the Import with auto-labeling checkbox in the Import documents dialog."
+        ]
+      },
+      {
+        "title": "\"Custom extractor with generative AI \\_|\\_ Document AI \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/document-ai/docs/ce-with-genai",
+        "source_id": "site-docs-root",
+        "final_score": 301,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Auto-labeling with the foundation model The foundation model can accurately extract fields for a variety of document types, but you can also provide additional training data to improve the accuracy of the model for specific document structures.",
+          "Save the request body in a file named request.json , and execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method POST -Headers $headers -ContentType: \"application/json; charset=utf-8\" -InFile request.json ` -Uri \"https:// LOCATION -documentai.googleapis.com/v1beta3/projects/ PROJECT ID /locations/ LOCATION /processors/ PROCESSOR ID /processorVersions/ PROCESSOR VERSION :process\" Select-Object -Expand Content Custom extractor with signature detection Preview This product is subject to the \"Pre-GA Offerings Terms\" in the General Service Terms section of the Service Specific Terms .",
+          "Home Documentation AI and ML Document AI Guides Send feedback Custom extractor with generative AI Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "Template-based extraction \\_|\\_ Document AI \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/document-ai/docs/ce-template-based",
+        "source_id": "site-docs-root",
+        "final_score": 295,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Auto-labeling with the foundation model The foundation model can accurately extract fields for a variety of document types, but you can also provide additional training data to improve the accuracy of the model for specific document structures.",
+          "Navigate to the Build tab and select Import documents with auto-labeling enabled.",
+          "Before you begin If not already done, enable: Billing Document AI API Template-mode labeling best practices Proper labeling is one of the most important steps to achieving high accuracy."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "documentai.googleapis.com",
+      "request.json"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/document-ai/docs/ce-mechanisms",
+        "https://docs.cloud.google.com/document-ai/docs/create-dataset",
+        "https://docs.cloud.google.com/document-ai/docs/ce-with-genai",
+        "https://docs.cloud.google.com/document-ai/docs/ce-template-based"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/document-ai/docs/ce-mechanisms",
+        "https://docs.cloud.google.com/document-ai/docs/create-dataset",
+        "https://docs.cloud.google.com/document-ai/docs/ce-with-genai",
+        "https://docs.cloud.google.com/document-ai/docs/ce-template-based"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/document-ai/docs/ce-mechanisms",
+        "https://docs.cloud.google.com/document-ai/docs/create-dataset",
+        "https://docs.cloud.google.com/document-ai/docs/ce-with-genai",
+        "https://docs.cloud.google.com/document-ai/docs/ce-template-based"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/document-ai/docs/ce-mechanisms",
+        "https://docs.cloud.google.com/document-ai/docs/create-dataset",
+        "https://docs.cloud.google.com/document-ai/docs/ce-with-genai",
+        "https://docs.cloud.google.com/document-ai/docs/ce-template-based"
+      ]
+    }
+  ]
+}

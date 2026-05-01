@@ -1,0 +1,140 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:48.769Z",
+  "source_step08_card": "data/step-08/current/products/vertex-ai-search/card.json",
+  "product_name": "Vertex AI Search",
+  "product_slug": "vertex-ai-search",
+  "feature_name": "Grounded answer generation inputs for language and location",
+  "feature_slug": "grounded-answer-generation-inputs-for-language-and-location",
+  "summary": "The Agent Builder grounded generation API now accepts an explicit language code and latitude/longitude values to localize answers and support location-based queries.",
+  "extended_definition": "The Agent Builder grounded generation API now accepts an explicit language code and latitude/longitude values to localize answers and support location-based queries.",
+  "lifecycle": {
+    "latest_feature_date": "2024-12-09",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/generative-ai-app-builder/docs/answer",
+      "https://docs.cloud.google.com/generative-ai-app-builder/docs/builder-apis",
+      "https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/mcp/conversational_search"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Get answers and follow-ups \\_|\\_ Vertex AI Search \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/generative-ai-app-builder/docs/answer",
+        "source_id": "site-docs-reference",
+        "final_score": 217,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Example command and result curl -X POST -H \"Authorization: Bearer $(gcloud auth print-access-token)\" \\ -H \"Content-Type: application/json\" \\ \"https://discoveryengine.googleapis.com/v1/projects/my-project-123/locations/global/collections/default collection/engines/my-app/servingConfigs/default search:answer\" \\ -d '{\"query\": { \"text\": \"What is SQL\"}, \"answerGenerationSpec\": { \"answerLanguageCode\": \"es\" } }' { \"answer\": { \"state\": \"SUCCEEDED\", \"answerText\": \"SQL, que significa Structured Query Language, es un lenguaje de programación utilizado para almacenar, recuperar y administrar datos en una base de datos relacional.",
+          "Example command and partial result curl -X POST -H \"Authorization: Bearer $(gcloud auth print-access-token)\" \\ -H \"Content-Type: application/json\" \\ \"https://discoveryengine.googleapis.com/v1/projects/my-project-123/locations/global/collections/default collection/engines/my-app/servingConfigs/default search:answer\" \\ -d '{\"query\": { \"text\": \"What is SQL\"}, \"answerGenerationSpec\": { \"includeCitations\": true } }' { \"answer\": { \"state\": \"SUCCEEDED\", \"answerText\": \"SQL stands for Structured Query Language and is a programming language used to manage, query, and retrieve data in a relational database.",
+          "REST To generate an answer using a model different from the default model, do the following: Run the following curl command: curl -X POST -H \"Authorization: Bearer $(gcloud auth print-access-token)\" \\ -H \"Content-Type: application/json\" \\ \"https://discoveryengine.googleapis.com/v1/projects/ PROJECT ID /locations/global/collections/default collection/engines/ APP ID /servingConfigs/default search:answer\" \\ -d '{ \"query\": { \"text\": \" QUERY \"}, \"answerGenerationSpec\": { \"answerLanguageCode\": \" ANSWER LANGUAGE CODE \" } }' Replace the following: PROJECT ID : the ID of your Google Cloud project."
+        ]
+      },
+      {
+        "title": "\"MCP Tools Reference: discoveryengine.googleapis.com \\_|\\_ Vertex AI Search\\",
+        "url": "https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/mcp/conversational_search",
+        "source_id": "site-docs-reference-2",
+        "final_score": 163,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "AnswerGenerationSpec JSON representation { \"modelSpec\" : { object ( ModelSpec ) } , \"promptSpec\" : { object ( PromptSpec ) } , \"includeCitations\" : boolean , \"answerLanguageCode\" : string , \"ignoreAdversarialQuery\" : boolean , \"ignoreNonAnswerSeekingQuery\" : boolean , \"ignoreJailBreakingQuery\" : boolean , \"multimodalSpec\" : { object ( MultimodalSpec ) } , // Union field ignore low relevant content can be only one of the following: \"ignoreLowRelevantContent\" : boolean // End of list of possible types for union field ignore low relevant content . } Fields modelSpec object ( ModelSpec ) Answer generation model specification. promptSpec object ( PromptSpec ) Answer generation prompt specification. includeCitations boolean Specifies whether to include citation metadata in the answer.",
+          "Format: projects/{project}/locations/{location}/collections/{collection}/engines/{engine}/sessions/{session}/assistAnswers/{assist answer} This field must be a UTF-8 encoded string with a length limit of 1024 characters. state enum ( State ) State of the answer generation. replies[] object ( Reply ) Replies of the assistant. assistSkippedReasons[] enum ( AssistSkippedReason ) Reasons for not answering the assist call. customerPolicyEnforcementResult object ( CustomerPolicyEnforcementResult ) Optional.",
+          "Fully qualified name projects/{project}/locations/global/collections/{collection}/engines/{engine}/sessions/ /answers/ state enum ( State ) The state of the answer generation. answerText string The textual answer. citations[] object ( Citation ) Citations. groundingSupports[] object ( GroundingSupport ) Optional."
+        ]
+      },
+      {
+        "title": "\"Vertex AI APIs for building search and RAG experiences \\_|\\_ Vertex AI Search\\",
+        "url": "https://docs.cloud.google.com/generative-ai-app-builder/docs/builder-apis",
+        "source_id": "site-docs-reference",
+        "final_score": 156,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Retrieval and generation RAG is a methodology that enables Large Language Models (LLMs) to generate responses that are grounded to your data source of choice.",
+          "Generation Choose the best generation method for your needs: Ground with your data : Generate well-grounded answers to a user's query.",
+          "Generate grounded answers based on the top-ranked chunks using the grounded generation API or using the generate content API ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "discoveryengine.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/answer",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/mcp/conversational_search",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/builder-apis"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/answer",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/mcp/conversational_search",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/builder-apis"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/answer",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/mcp/conversational_search",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/builder-apis"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/answer",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/mcp/conversational_search",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/builder-apis"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/answer",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/mcp/conversational_search",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/builder-apis"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/answer",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/mcp/conversational_search",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/builder-apis"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/answer",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/mcp/conversational_search",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/builder-apis"
+      ]
+    }
+  ]
+}

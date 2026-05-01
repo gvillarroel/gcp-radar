@@ -1,0 +1,216 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:46.019Z",
+  "source_step08_card": "data/step-08/current/products/secret-manager/card.json",
+  "product_name": "Secret Manager",
+  "product_slug": "secret-manager",
+  "feature_name": "Secret Manager secret version aliases",
+  "feature_slug": "secret-manager-secret-version-aliases",
+  "summary": "Secret Manager added support for aliases to access a secret version by resource path name; Secret Manager added support for accessing secret versions using aliases.",
+  "extended_definition": "Secret Manager added support for aliases to access a secret version by resource path name; Secret Manager added support for accessing secret versions using aliases.",
+  "lifecycle": {
+    "latest_feature_date": "2023-03-13",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/java/docs/reference/google-cloud-secretmanager/latest/com.google.cloud.secretmanager.v1.AccessSecretVersionResponse",
+      "https://docs.cloud.google.com/secret-manager/docs/access-secret-version",
+      "https://docs.cloud.google.com/secret-manager/docs/add-secret-version",
+      "https://docs.cloud.google.com/secret-manager/docs/assign-alias-to-secret-version"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Assign an alias to a secret version \\_|\\_ Secret Manager \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/secret-manager/docs/assign-alias-to-secret-version",
+        "source_id": "site-iam-reference",
+        "final_score": 329,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "On Compute Engine or GKE, you must authenticate with the cloud-platform scope . // Import the Secret Manager client library. use Google\\Cloud\\SecretManager\\V1\\Secret; use Google\\Cloud\\SecretManager\\V1\\Client\\SecretManagerServiceClient; use Google\\Cloud\\SecretManager\\V1\\UpdateSecretRequest; use Google\\Protobuf\\FieldMask; / @param string $projectId Your Google Cloud Project ID (e.g. 'my-project') @param string $secretId Your secret ID (e.g. 'my-secret') / function update secret with alias(string $projectId, string $secretId): void { // Create the Secret Manager client. $client = new SecretManagerServiceClient(); // Build the resource name of the secret. $name = $client->secretName($projectId, $secretId); // Update the secret. $secret = (new Secret()) ->setName($name) ->setVersionAliases(['test' => '1']); $updateMask = (new FieldMask()) ->setPaths(['version aliases']); // Build the request. $request = UpdateSecretRequest::build($secret, $updateMask); $response = $client->updateSecret($request); // Print the upated secret. printf('Updated secret: %s', $response->getName()); } Python To run this code, first set up a Python development environment and install the Secret Manager Python SDK .",
+          "On Compute Engine or GKE, you must authenticate with the cloud-platform scope . project id = \"YOUR-GOOGLE-CLOUD-PROJECT\" # (e.g. \"my-project\") secret id = \"YOUR-SECRET-ID\" # (e.g. \"my-secret\") Require the Secret Manager client library. require \"google/cloud/secret manager\" Create a Secret Manager client. client = Google :: Cloud :: SecretManager . secret manager service Build the resource name of the secret. name = client . secret path project : project id , secret : secret id Create the secret. secret = client . update secret ( secret : { name : name , version aliases : { test : 1 } }, update mask : { paths : [ \"version aliases\" ] } ) Print the updated secret name. puts \"Updated secret: #{ secret . name } \" What's next Learn how to list secret versions and view secret version details .",
+          "Save the request body in a file named request.json , and execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method PATCH -Headers $headers -ContentType: \"application/json; charset=utf-8\" -InFile request.json -Uri \"https://secretmanager.googleapis.com/v1/projects/ PROJECT ID /secrets/ SECRET ID ?updateMask=version aliases\" Select-Object -Expand Content You should receive a JSON response similar to the following: { \"name\": \"projects/ PROJECT ID /locations/ LOCATION /secrets/ SECRET ID \", \"createTime\": \"2024-09-04T06:34:32.995517Z\", \"etag\": \"\\\"16214584d1479c\\\"\", \"versionAliases\": { \"nonprod\": \"1\" } } C# To run this code, first set up a C# development environment and install the Secret Manager C# SDK ."
+        ]
+      },
+      {
+        "title": "Access a secret version \\_|\\_ Secret Manager \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/secret-manager/docs/access-secret-version",
+        "source_id": "site-iam-reference",
+        "final_score": 313,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "On Compute Engine or GKE, you must authenticate with the cloud-platform scope . // Import the Secret Manager client library. use Google\\Cloud\\SecretManager\\V1\\Client\\SecretManagerServiceClient; use Google\\Cloud\\SecretManager\\V1\\AccessSecretVersionRequest; / @param string $projectId Your Google Cloud Project ID (e.g. 'my-project') @param string $secretId Your secret ID (e.g. 'my-secret') @param string $versionId Your version ID (e.g. 'latest' or '5'); / function access secret version(string $projectId, string $secretId, string $versionId): void { // Create the Secret Manager client. $client = new SecretManagerServiceClient(); // Build the resource name of the secret version. $name = $client->secretVersionName($projectId, $secretId, $versionId); // Build the request. $request = AccessSecretVersionRequest::build($name); // Access the secret version. $response = $client->accessSecretVersion($request); // Print the secret payload. // // WARNING: Do not print the secret in a production environment - this // snippet is showing how to access the secret material. $payload = $response->getPayload()->getData(); printf('Plaintext: %s', $payload); } Python To run this code, first set up a Python development environment and install the Secret Manager Python SDK .",
+          "On Compute Engine or GKE, you must authenticate with the cloud-platform scope . / TODO(developer): Uncomment these variables before running the sample. / // const name = 'projects/my-project/secrets/my-secret/versions/5'; // const name = 'projects/my-project/secrets/my-secret/versions/latest'; // Imports the Secret Manager library const { SecretManagerServiceClient } = require ( ' @google-cloud/secret-manager ' ); // Instantiates a client const client = new SecretManagerServiceClient (); async function accessSecretVersion () { const [ version ] = await client . accessSecretVersion ({ name : name , }); // Extract the payload as a string. const payload = version . payload . data . toString (); // WARNING: Do not print the secret in a production environment - this // snippet is showing how to access the secret material. console . info ( Payload: ${ payload } ` ); } accessSecretVersion (); PHP To run this code, first learn about using PHP on Google Cloud and install the Secret Manager PHP SDK .",
+          "REST Access a secret version Before using any of the request data, make the following replacements: PROJECT ID : the Google Cloud project ID SECRET ID : the ID of the secret VERSION ID : the ID of the secret version HTTP method and URL: GET https://secretmanager.googleapis.com/v1/projects/ PROJECT ID /secrets/ SECRET ID /versions/ VERSION ID :access Request JSON body: {} To send your request, choose one of these options: curl Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI ."
+        ]
+      },
+      {
+        "title": "Add a secret version \\_|\\_ Secret Manager \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/secret-manager/docs/add-secret-version",
+        "source_id": "site-docs-root",
+        "final_score": 304,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "On Compute Engine or GKE, you must authenticate with the cloud-platform scope . // Import the Secret Manager client library. use Google\\Cloud\\SecretManager\\V1\\Client\\SecretManagerServiceClient; use Google\\Cloud\\SecretManager\\V1\\AddSecretVersionRequest; use Google\\Cloud\\SecretManager\\V1\\SecretPayload; / @param string $projectId Your Google Cloud Project ID (e.g. 'my-project') @param string $secretId Your secret ID (e.g. 'my-secret') / function add secret version(string $projectId, string $secretId): void { // Create the Secret Manager client. $client = new SecretManagerServiceClient(); // Build the resource name of the parent secret and the payload. $parent = $client->secretName($projectId, $secretId); $secretPayload = new SecretPayload([ 'data' => 'my super secret data', ]); // Build the request. $request = AddSecretVersionRequest::build($parent, $secretPayload); // Access the secret version. $response = $client->addSecretVersion($request); // Print the new secret version name. printf('Added secret version: %s', $response->getName()); } Python To run this code, first set up a Python development environment and install the Secret Manager Python SDK .",
+          "On Compute Engine or GKE, you must authenticate with the cloud-platform scope . / TODO(developer): Uncomment these variables before running the sample. / // const parent = 'projects/my-project/secrets/my-secret'; // Imports the Secret Manager library const { SecretManagerServiceClient } = require ( ' @google-cloud/secret-manager ' ); // Instantiates a client const client = new SecretManagerServiceClient (); // Payload is the plaintext data to store in the secret const payload = Buffer . from ( 'my super secret data' , 'utf8' ); async function addSecretVersion () { const [ version ] = await client . addSecretVersion ({ parent : parent , payload : { data : payload , }, }); console . log ( Added secret version ${ version . name } ` ); } addSecretVersion (); PHP To run this code, first learn about using PHP on Google Cloud and install the Secret Manager PHP SDK .",
+          "On Compute Engine or GKE, you must authenticate with the cloud-platform scope . project id = \"YOUR-GOOGLE-CLOUD-PROJECT\" # (e.g. \"my-project\") secret id = \"YOUR-SECRET-ID\" # (e.g. \"my-secret\") Require the Secret Manager client library. require \"google/cloud/secret manager\" Create a Secret Manager client. client = Google :: Cloud :: SecretManager . secret manager service Build the resource name of the secret version. name = client . secret path project : project id , secret : secret id Add the secret version. version = client . add secret version ( parent : name , payload : { data : \"my super secret data\" } ) Print the new secret version name. puts \"Added secret version: #{ version . name } \" Secret version states A secret version can be in one of the following states at any given time: Enabled - In this state, the secret version can be accessed and described."
+        ]
+      },
+      {
+        "title": "\"Class AccessSecretVersionResponse (2.88.0) \\_|\\_ Java client libraries \\_\\",
+        "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-secretmanager/latest/com.google.cloud.secretmanager.v1.AccessSecretVersionResponse",
+        "source_id": "site-java-reference",
+        "final_score": 294,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Builder newBuilder ( AccessSecretVersionResponse prototype ) Parameter Name Description prototype AccessSecretVersionResponse Returns Type Description AccessSecretVersionResponse.Builder parseDelimitedFrom(InputStream input) public static AccessSecretVersionResponse parseDelimitedFrom ( InputStream input ) Parameter Name Description input InputStream Returns Type Description AccessSecretVersionResponse Exceptions Type Description IOException parseDelimitedFrom(InputStream input, ExtensionRegistryLite extensionRegistry) public static AccessSecretVersionResponse parseDelimitedFrom ( InputStream input , ExtensionRegistryLite extensionRegistry ) Parameters Name Description input InputStream extensionRegistry ExtensionRegistryLite Returns Type Description AccessSecretVersionResponse Exceptions Type Description IOException parseFrom(byte[] data) public static AccessSecretVersionResponse parseFrom ( byte [] data ) Parameter Name Description data byte [] Returns Type Description AccessSecretVersionResponse Exceptions Type Description InvalidProtocolBufferException parseFrom(byte[] data, ExtensionRegistryLite extensionRegistry) public static AccessSecretVersionResponse parseFrom ( byte [] data , ExtensionRegistryLite extensionRegistry ) Parameters Name Description data byte [] extensionRegistry ExtensionRegistryLite Returns Type Description AccessSecretVersionResponse Exceptions Type Description InvalidProtocolBufferException parseFrom(ByteString data) public static AccessSecretVersionResponse parseFrom ( ByteString data ) Parameter Name Description data ByteString Returns Type Description AccessSecretVersionResponse Exceptions Type Description InvalidProtocolBufferException parseFrom(ByteString data, ExtensionRegistryLite extensionRegistry) public static AccessSecretVersionResponse parseFrom ( ByteString data , ExtensionRegistryLite extensionRegistry ) Parameters Name Description data ByteString extensionRegistry ExtensionRegistryLite Returns Type Description AccessSecretVersionResponse Exceptions Type Description InvalidProtocolBufferException parseFrom(CodedInputStream input) public static AccessSecretVersionResponse parseFrom ( CodedInputStream input ) Parameter Name Description input CodedInputStream Returns Type Description AccessSecretVersionResponse Exceptions Type Description IOException parseFrom(CodedInputStream input, ExtensionRegistryLite extensionRegistry) public static AccessSecretVersionResponse parseFrom ( CodedInputStream input , ExtensionRegistryLite extensionRegistry ) Parameters Name Description input CodedInputStream extensionRegistry ExtensionRegistryLite Returns Type Description AccessSecretVersionResponse Exceptions Type Description IOException parseFrom(InputStream input) public static AccessSecretVersionResponse parseFrom ( InputStream input ) Parameter Name Description input InputStream Returns Type Description AccessSecretVersionResponse Exceptions Type Description IOException parseFrom(InputStream input, ExtensionRegistryLite extensionRegistry) public static AccessSecretVersionResponse parseFrom ( InputStream input , ExtensionRegistryLite extensionRegistry ) Parameters Name Description input InputStream extensionRegistry ExtensionRegistryLite Returns Type Description AccessSecretVersionResponse Exceptions Type Description IOException parseFrom(ByteBuffer data) public static AccessSecretVersionResponse parseFrom ( ByteBuffer data ) Parameter Name Description data ByteBuffer Returns Type Description AccessSecretVersionResponse Exceptions Type Description InvalidProtocolBufferException parseFrom(ByteBuffer data, ExtensionRegistryLite extensionRegistry) public static AccessSecretVersionResponse parseFrom ( ByteBuffer data , ExtensionRegistryLite extensionRegistry ) Parameters Name Description data ByteBuffer extensionRegistry ExtensionRegistryLite Returns Type Description AccessSecretVersionResponse Exceptions Type Description InvalidProtocolBufferException parser() public static Parser<AccessSecretVersionResponse> parser () Returns Type Description Parser < AccessSecretVersionResponse > Methods equals(Object obj) public boolean equals ( Object obj ) Parameter Name Description obj Object Returns Type Description boolean Overrides AbstractMessage.equals(Object other) getDefaultInstanceForType() public AccessSecretVersionResponse getDefaultInstanceForType () Returns Type Description AccessSecretVersionResponse getName() public String getName () The resource name of the SecretVersion in the format projects/ /secrets/ /versions/ or projects/ /locations/ /secrets/ /versions/ . string name = 1 [(.google.api.resource reference) = { ... } Returns Type Description String The name. getNameBytes() public ByteString getNameBytes () The resource name of the SecretVersion in the format projects/ /secrets/ /versions/ or projects/ /locations/ /secrets/ /versions/ . string name = 1 [(.google.api.resource reference) = { ... } Returns Type Description ByteString The bytes for name. getParserForType() public Parser<AccessSecretVersionResponse> getParserForType () Returns Type Description Parser < AccessSecretVersionResponse > Overrides GeneratedMessage.getParserForType() getPayload() public SecretPayload getPayload () Secret payload .google.cloud.secretmanager.v1.SecretPayload payload = 2; Returns Type Description SecretPayload The payload. getPayloadOrBuilder() public SecretPayloadOrBuilder getPayloadOrBuilder () Secret payload .google.cloud.secretmanager.v1.SecretPayload payload = 2; Returns Type Description SecretPayloadOrBuilder getSerializedSize() public int getSerializedSize () Returns Type Description int Overrides GeneratedMessage.getSerializedSize() hasPayload() public boolean hasPayload () Secret payload .google.cloud.secretmanager.v1.SecretPayload payload = 2; Returns Type Description boolean Whether the payload field is set. hashCode() public int hashCode () Returns Type Description int Overrides AbstractMessage.hashCode() internalGetFieldAccessorTable() protected GeneratedMessage .",
+          "Protobuf type google.cloud.secretmanager.v1.AccessSecretVersionResponse Inheritance Object > AbstractMessageLite<MessageType,BuilderType> > AbstractMessage > GeneratedMessage > AccessSecretVersionResponse Implements AccessSecretVersionResponseOrBuilder Inherited Members AbstractMessage.equals(Object) AbstractMessage.findInitializationErrors() AbstractMessage.getInitializationErrorString() AbstractMessage.hashCode() AbstractMessage.hashFields(int,Map<Descriptors.FieldDescriptor,Object>) AbstractMessage.newBuilderForType(AbstractMessage.BuilderParent) AbstractMessage.toString() AbstractMessageLite.<T>addAll(Iterable<T>,List<? super T>) AbstractMessageLite.checkByteStringIsUtf8(ByteString) AbstractMessageLite.toByteArray() AbstractMessageLite.toByteString() AbstractMessageLite.writeDelimitedTo(OutputStream) AbstractMessageLite.writeTo(OutputStream) com.google.protobuf.GeneratedMessage.<ContainingT,T>newFileScopedGeneratedExtension(java.lang.Class<?>,com.google.protobuf.Message) com.google.protobuf.GeneratedMessage.<ContainingT,T>newMessageScopedGeneratedExtension(com.google.protobuf.Message,int,java.lang.Class<?>,com.google.protobuf.Message) com.google.protobuf.GeneratedMessage.<ListT>makeMutableCopy(ListT) com.google.protobuf.GeneratedMessage.<ListT>makeMutableCopy(ListT,int) GeneratedMessage.<M>parseDelimitedWithIOException(Parser<M>,InputStream) GeneratedMessage.<M>parseDelimitedWithIOException(Parser<M>,InputStream,ExtensionRegistryLite) GeneratedMessage.<M>parseWithIOException(Parser<M>,CodedInputStream) GeneratedMessage.<M>parseWithIOException(Parser<M>,CodedInputStream,ExtensionRegistryLite) GeneratedMessage.<M>parseWithIOException(Parser<M>,InputStream) GeneratedMessage.<M>parseWithIOException(Parser<M>,InputStream,ExtensionRegistryLite) com.google.protobuf.GeneratedMessage.<T>emptyList(java.lang.Class<T>) com.google.protobuf.GeneratedMessage.<V>serializeBooleanMapTo(com.google.protobuf.CodedOutputStream,com.google.protobuf.MapField<java.lang.Boolean,V>,com.google.protobuf.MapEntry<java.lang.Boolean,V>,int) com.google.protobuf.GeneratedMessage.<V>serializeIntegerMapTo(com.google.protobuf.CodedOutputStream,com.google.protobuf.MapField<java.lang.Integer,V>,com.google.protobuf.MapEntry<java.lang.Integer,V>,int) com.google.protobuf.GeneratedMessage.<V>serializeLongMapTo(com.google.protobuf.CodedOutputStream,com.google.protobuf.MapField<java.lang.Long,V>,com.google.protobuf.MapEntry<java.lang.Long,V>,int) com.google.protobuf.GeneratedMessage.<V>serializeStringMapTo(com.google.protobuf.CodedOutputStream,com.google.protobuf.MapField<java.lang.String,V>,com.google.protobuf.MapEntry<java.lang.String,V>,int) com.google.protobuf.GeneratedMessage.canUseUnsafe() GeneratedMessage.computeStringSize(int,Object) GeneratedMessage.computeStringSizeNoTag(Object) com.google.protobuf.GeneratedMessage.emptyBooleanList() com.google.protobuf.GeneratedMessage.emptyDoubleList() com.google.protobuf.GeneratedMessage.emptyFloatList() com.google.protobuf.GeneratedMessage.emptyIntList() com.google.protobuf.GeneratedMessage.emptyLongList() GeneratedMessage.getAllFields() GeneratedMessage.getDescriptorForType() GeneratedMessage.getField(Descriptors.FieldDescriptor) GeneratedMessage.getOneofFieldDescriptor(Descriptors.OneofDescriptor) GeneratedMessage.getParserForType() GeneratedMessage.getRepeatedField(Descriptors.FieldDescriptor,int) GeneratedMessage.getRepeatedFieldCount(Descriptors.FieldDescriptor) GeneratedMessage.getSerializedSize() GeneratedMessage.getUnknownFields() GeneratedMessage.hasField(Descriptors.FieldDescriptor) GeneratedMessage.hasOneof(Descriptors.OneofDescriptor) GeneratedMessage.internalGetFieldAccessorTable() GeneratedMessage.internalGetMapField(int) com.google.protobuf.GeneratedMessage.internalGetMapFieldReflection(int) GeneratedMessage.isInitialized() com.google.protobuf.GeneratedMessage.isStringEmpty(java.lang.Object) GeneratedMessage.makeExtensionsImmutable() com.google.protobuf.GeneratedMessage.mergeFromAndMakeImmutableInternal(com.google.protobuf.CodedInputStream,com.google.protobuf.ExtensionRegistryLite) com.google.protobuf.GeneratedMessage.newInstance(com.google.protobuf.GeneratedMessage.UnusedPrivateParameter) GeneratedMessage.parseUnknownField(CodedInputStream,UnknownFieldSet.Builder,ExtensionRegistryLite,int) com.google.protobuf.GeneratedMessage.parseUnknownFieldProto3(com.google.protobuf.CodedInputStream,com.google.protobuf.UnknownFieldSet.Builder,com.google.protobuf.ExtensionRegistryLite,int) GeneratedMessage.writeReplace() GeneratedMessage.writeString(CodedOutputStream,int,Object) GeneratedMessage.writeStringNoTag(CodedOutputStream,Object) GeneratedMessage.writeTo(CodedOutputStream) Object.clone() Object.finalize() Object.getClass() Object.notify() Object.notifyAll() Object.wait() Object.wait(long) Object.wait(long,int) Static Fields NAME FIELD NUMBER public static final int NAME FIELD NUMBER Field Value Type Description int PAYLOAD FIELD NUMBER public static final int PAYLOAD FIELD NUMBER Field Value Type Description int Static Methods getDefaultInstance() public static AccessSecretVersionResponse getDefaultInstance () Returns Type Description AccessSecretVersionResponse getDescriptor() public static final Descriptors .",
+          "2.88.0 (latest) 2.87.0 2.85.0 2.83.0 2.82.0 2.80.0 2.78.0 2.76.0 2.75.0 2.74.0 2.73.0 2.72.0 2.70.0 2.68.0 2.67.0 2.64.0 2.63.0 2.62.0 2.60.0 2.59.0 2.58.0 2.57.0 2.56.0 2.55.0 2.54.0 2.53.0 2.52.0 2.51.0 2.49.0 2.48.0 2.47.0 2.46.0 2.45.0 2.44.0 2.43.0 2.42.0 2.41.0 2.40.0 2.39.0 2.37.0 2.36.0 2.35.0 2.34.0 2.33.0 2.32.0 2.31.0 2.30.0 2.29.0 2.28.0 2.27.0 2.24.0 2.23.0 2.22.0 2.21.0 2.20.0 2.19.0 2.18.0 2.17.0 2.16.0 2.15.0 2.14.0 2.13.0 2.12.0 2.11.0 2.9.0 2.8.0 2.7.0 2.6.0 2.5.0 2.4.0 2.3.10 2.2.0 2.1.7 2.0.7 public final class AccessSecretVersionResponse extends GeneratedMessage implements AccessSecretVersionResponseOrBuilder Response message for SecretManagerService.AccessSecretVersion ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cmd.exe",
+      "com.google.cloud.secretmanager.v1.AccessSecretVersionRequest",
+      "com.google.cloud.secretmanager.v1.AccessSecretVersionResponse",
+      "com.google.cloud.secretmanager.v1.AccessSecretVersionResponse.Builder",
+      "com.google.protobuf.CodedInputStream",
+      "com.google.protobuf.CodedOutputStream",
+      "com.google.protobuf.ExtensionRegistryLite",
+      "com.google.protobuf.GeneratedMessage",
+      "com.google.protobuf.GeneratedMessage.canUseUnsafe",
+      "com.google.protobuf.GeneratedMessage.emptyBooleanList",
+      "com.google.protobuf.GeneratedMessage.emptyDoubleList",
+      "com.google.protobuf.GeneratedMessage.emptyFloatList",
+      "com.google.protobuf.GeneratedMessage.emptyIntList",
+      "com.google.protobuf.GeneratedMessage.emptyLongList",
+      "com.google.protobuf.GeneratedMessage.internalGetMapFieldReflection",
+      "com.google.protobuf.GeneratedMessage.isStringEmpty",
+      "com.google.protobuf.GeneratedMessage.mergeFromAndMakeImmutableInternal",
+      "com.google.protobuf.GeneratedMessage.newInstance",
+      "com.google.protobuf.GeneratedMessage.parseUnknownFieldProto3",
+      "com.google.protobuf.GeneratedMessage.UnusedPrivateParameter",
+      "com.google.protobuf.MapEntry",
+      "com.google.protobuf.MapField",
+      "com.google.protobuf.Message",
+      "com.google.protobuf.UnknownFieldSet.Builder",
+      "e.g",
+      "java.lang.Boolean",
+      "java.lang.Class",
+      "java.lang.Integer",
+      "java.lang.Long",
+      "java.lang.Object",
+      "java.lang.String",
+      "payload.data",
+      "request.json",
+      "secretmanager.googleapis.com",
+      "secretmanager.secretVersionAdder",
+      "secretmanager.secretVersionManager"
+    ],
+    "missing_inventory_roles": [
+      "roles/secretmanager.secretVersionAdder",
+      "roles/secretmanager.secretVersionManager"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/secret-manager/docs/assign-alias-to-secret-version",
+        "https://docs.cloud.google.com/secret-manager/docs/access-secret-version",
+        "https://docs.cloud.google.com/secret-manager/docs/add-secret-version",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-secretmanager/latest/com.google.cloud.secretmanager.v1.AccessSecretVersionResponse"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/secret-manager/docs/assign-alias-to-secret-version",
+        "https://docs.cloud.google.com/secret-manager/docs/access-secret-version",
+        "https://docs.cloud.google.com/secret-manager/docs/add-secret-version",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-secretmanager/latest/com.google.cloud.secretmanager.v1.AccessSecretVersionResponse"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/secret-manager/docs/assign-alias-to-secret-version",
+        "https://docs.cloud.google.com/secret-manager/docs/access-secret-version",
+        "https://docs.cloud.google.com/secret-manager/docs/add-secret-version",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-secretmanager/latest/com.google.cloud.secretmanager.v1.AccessSecretVersionResponse"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/secret-manager/docs/assign-alias-to-secret-version",
+        "https://docs.cloud.google.com/secret-manager/docs/access-secret-version",
+        "https://docs.cloud.google.com/secret-manager/docs/add-secret-version",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-secretmanager/latest/com.google.cloud.secretmanager.v1.AccessSecretVersionResponse"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/secret-manager/docs/assign-alias-to-secret-version",
+        "https://docs.cloud.google.com/secret-manager/docs/access-secret-version",
+        "https://docs.cloud.google.com/secret-manager/docs/add-secret-version",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-secretmanager/latest/com.google.cloud.secretmanager.v1.AccessSecretVersionResponse"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/secret-manager/docs/assign-alias-to-secret-version",
+        "https://docs.cloud.google.com/secret-manager/docs/access-secret-version",
+        "https://docs.cloud.google.com/secret-manager/docs/add-secret-version",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-secretmanager/latest/com.google.cloud.secretmanager.v1.AccessSecretVersionResponse"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/secret-manager/docs/assign-alias-to-secret-version",
+        "https://docs.cloud.google.com/secret-manager/docs/access-secret-version",
+        "https://docs.cloud.google.com/secret-manager/docs/add-secret-version",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-secretmanager/latest/com.google.cloud.secretmanager.v1.AccessSecretVersionResponse"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/secret-manager/docs/assign-alias-to-secret-version",
+        "https://docs.cloud.google.com/secret-manager/docs/access-secret-version",
+        "https://docs.cloud.google.com/secret-manager/docs/add-secret-version",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-secretmanager/latest/com.google.cloud.secretmanager.v1.AccessSecretVersionResponse"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/secret-manager/docs/assign-alias-to-secret-version",
+        "https://docs.cloud.google.com/secret-manager/docs/access-secret-version",
+        "https://docs.cloud.google.com/secret-manager/docs/add-secret-version",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-secretmanager/latest/com.google.cloud.secretmanager.v1.AccessSecretVersionResponse"
+      ]
+    }
+  ]
+}

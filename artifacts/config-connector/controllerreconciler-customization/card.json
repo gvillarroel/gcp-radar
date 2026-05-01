@@ -1,0 +1,78 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:30.193Z",
+  "source_step08_card": "data/step-08/current/products/config-connector/card.json",
+  "product_name": "Config Connector",
+  "product_slug": "config-connector",
+  "feature_name": "ControllerReconciler customization",
+  "feature_slug": "controllerreconciler-customization",
+  "summary": "Config Connector added the ControllerReconciler CRD to customize client-side Kubernetes API server request rate limits for reconciliation.",
+  "extended_definition": "Config Connector added the ControllerReconciler CRD to customize client-side Kubernetes API server request rate limits for reconciliation.",
+  "lifecycle": {
+    "latest_feature_date": "2024-06-18",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/config-connector/docs/best-practices",
+      "https://docs.cloud.google.com/config-connector/docs/how-to/customize-controller-manager-rate-limit",
+      "https://docs.cloud.google.com/config-connector/docs/how-to/monitoring-prometheus"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Configure the controller manager rate limit \\_|\\_ Config Connector \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/config-connector/docs/how-to/customize-controller-manager-rate-limit",
+        "source_id": "site-docs-reference",
+        "final_score": 85,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Verify that the --qps and --burst flags are added to the cnrm-controller-manager controller's manager container by running the following command: kubectl describe statefulsets -n cnrm-system -l \"cnrm.cloud.google.com/scoped-namespace= NAMESPACE \" The output should contain the following: Containers : manager : Image : gcr.io/gke-release/cnrm/controller:fd4c42c Port : 23232/TCP Host Port : 0/TCP Command : /configconnector/manager Args : --qps=80 --burst=40 --scoped-namespace=config-control --prometheus-scrape-endpoint=:8888 Configure the rate limit in cluster mode Starting in version 1.125, if Config Connector is configured to run in cluster mode, you can configure the rate limit of the cnrm-controller-manager controller's Kubernetes client using the ControllerReconciler custom resource.",
+          "The usage is similar to the namespaced mode, but in this case, you should use the ControllerReconciler CR instead of NamespacedControllerReconciler , as in the following example: apiVersion : customize.core.cnrm.cloud.google.com/v1alpha1 kind : ControllerReconciler metadata : name : cnrm-controller-manager spec : rateLimit : qps : 80 # the default value is 20 burst : 40 # the default value is 30 Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Create a file named configure-rate-limit.yaml and copy the following YAML into it: apiVersion : customize.core.cnrm.cloud.google.com/v1beta1 kind : NamespacedControllerReconciler metadata : name : cnrm-controller-manager # name must not contain the namespace ID suffix namespace : NAMESPACE spec : rateLimit : qps : 80 # the default value is 20 burst : 40 # the default value is 30 Replace NAMESPACE with the name of your namespace."
+        ]
+      },
+      {
+        "title": "Monitoring Config Connector with Prometheus \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/config-connector/docs/how-to/monitoring-prometheus",
+        "source_id": "site-docs-reference",
+        "final_score": 58,
+        "relevance": "MODERATE",
+        "evidence_snippets": []
+      },
+      {
+        "title": "Best practices for Config Connector \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/config-connector/docs/best-practices",
+        "source_id": "site-docs-reference",
+        "final_score": 50,
+        "relevance": "",
+        "evidence_snippets": []
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cnrm.cloud.google.com",
+      "customize.core.cnrm.cloud.google.com",
+      "gcr.io",
+      "limit.yaml"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": []
+}

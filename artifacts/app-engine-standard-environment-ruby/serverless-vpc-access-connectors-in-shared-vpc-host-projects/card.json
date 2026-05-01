@@ -1,0 +1,159 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:16.715Z",
+  "source_step08_card": "data/step-08/current/products/app-engine-standard-environment-ruby/card.json",
+  "product_name": "App Engine standard environment Ruby",
+  "product_slug": "app-engine-standard-environment-ruby",
+  "feature_name": "Serverless VPC Access connectors in Shared VPC host projects",
+  "feature_slug": "serverless-vpc-access-connectors-in-shared-vpc-host-projects",
+  "summary": "Serverless VPC Access connectors in Shared VPC host projects let services use connectors configured in Shared VPC host projects.",
+  "extended_definition": "Serverless VPC Access connectors in Shared VPC host projects let services use connectors configured in Shared VPC host projects.",
+  "lifecycle": {
+    "latest_feature_date": "2022-03-24",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/appengine/docs/standard/connecting-shared-vpc",
+      "https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc",
+      "https://docs.cloud.google.com/appengine/docs/standard/ruby/connecting-shared-vpc"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Connecting to a Shared VPC network \\_|\\_ App Engine standard environment\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/connecting-shared-vpc",
+        "source_id": "site-docs-reference",
+        "final_score": 191,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "You can either set up connectors in each service project that has standard environment resources that need access to your network, or you can set up shared connectors in the host project.",
+          "Comparison of configuration methods For Shared VPC, Serverless VPC Access connectors can be configured in two different ways.",
+          "Host project Advantages of creating connectors in the host project: Centralized network management: Aligns with the Shared VPC model of centralizing network configuration resources in the host project."
+        ]
+      },
+      {
+        "title": "\"Connecting to a Shared VPC network \\_|\\_ App Engine standard environment\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/ruby/connecting-shared-vpc",
+        "source_id": "site-docs-reference-4",
+        "final_score": 191,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "You can either set up connectors in each service project that has standard environment resources that need access to your network, or you can set up shared connectors in the host project.",
+          "Comparison of configuration methods For Shared VPC, Serverless VPC Access connectors can be configured in two different ways.",
+          "Host project Advantages of creating connectors in the host project: Centralized network management: Aligns with the Shared VPC model of centralizing network configuration resources in the host project."
+        ]
+      },
+      {
+        "title": "\"Connecting to a VPC network \\_|\\_ App Engine standard environment \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc",
+        "source_id": "site-docs-reference",
+        "final_score": 169,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "For Shared VPC users who set up connectors in the Shared VPC host project, you can use the command gcloud compute networks vpc-access connectors describe to list the projects in which there are serverless resources that use a given connector.",
+          "Terraform You can use a Terraform resource to enable the vpcaccess.googleapis.com API. resource \"google project service\" \"vpcaccess-api\" { project = var.project id # Replace this with your project ID in quotes service = \"vpcaccess.googleapis.com\" } You can use Terraform modules to create a VPC network and subnet and then create the connector. module \"test-vpc-module\" { source = \"terraform-google-modules/network/google\" version = \" > 16.0\" project id = var.project id # Replace this with your project ID in quotes network name = \"my-serverless-network\" mtu = 1460 subnets = [ { subnet name = \"serverless-subnet\" subnet ip = \"10.10.10.0/28\" subnet region = \"us-central1\" } ] } module \"serverless-connector\" { source = \"terraform-google-modules/network/google//modules/vpc-serverless-connector-beta\" version = \" > 16.0\" project id = var.project id vpc connectors = [{ name = \"central-serverless\" region = \"us-central1\" subnet name = module.test-vpc-module.subnets[\"us-central1/serverless-subnet\"].name host project id = var.host project id # Specify a host project id for shared VPC machine type = \"e2-standard-4\" min instances = 2 max instances = 7 } Uncomment to specify an ip cidr range , { name = \"central-serverless2\" region = \"us-central1\" network = module.test-vpc-module.network name ip cidr range = \"10.10.11.0/28\" subnet name = null machine type = \"e2-standard-4\" min instances = 2 max instances = 7 } ] depends on = [ google project service.vpcaccess-api ] } Configure your service to use a connector After you have created a Serverless VPC Access connector, you must configure each service in your App Engine app that you want to connect to your VPC network.",
+          "Access to VPC resources Required firewall rules for connectors in service projects If you create a connector in a standalone VPC network or in the host project of a Shared VPC network, Google Cloud creates all necessary firewall rules for the connector's operation."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "compute.firewalls.create",
+      "compute.securityAdmin",
+      "module.network",
+      "module.subnets",
+      "module.test",
+      "service.vpcaccess",
+      "var.host",
+      "var.project",
+      "vpcaccess.googleapis.com"
+    ],
+    "missing_inventory_roles": [
+      "roles/compute.securityAdmin",
+      "roles/owner"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/connecting-shared-vpc",
+        "https://docs.cloud.google.com/appengine/docs/standard/ruby/connecting-shared-vpc",
+        "https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/connecting-shared-vpc",
+        "https://docs.cloud.google.com/appengine/docs/standard/ruby/connecting-shared-vpc",
+        "https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/connecting-shared-vpc",
+        "https://docs.cloud.google.com/appengine/docs/standard/ruby/connecting-shared-vpc",
+        "https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/connecting-shared-vpc",
+        "https://docs.cloud.google.com/appengine/docs/standard/ruby/connecting-shared-vpc",
+        "https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/connecting-shared-vpc",
+        "https://docs.cloud.google.com/appengine/docs/standard/ruby/connecting-shared-vpc",
+        "https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/connecting-shared-vpc",
+        "https://docs.cloud.google.com/appengine/docs/standard/ruby/connecting-shared-vpc",
+        "https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/connecting-shared-vpc",
+        "https://docs.cloud.google.com/appengine/docs/standard/ruby/connecting-shared-vpc",
+        "https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/connecting-shared-vpc",
+        "https://docs.cloud.google.com/appengine/docs/standard/ruby/connecting-shared-vpc",
+        "https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc"
+      ]
+    }
+  ]
+}

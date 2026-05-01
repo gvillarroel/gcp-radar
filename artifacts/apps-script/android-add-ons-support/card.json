@@ -1,0 +1,125 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:17.437Z",
+  "source_step08_card": "data/step-08/current/products/apps-script/card.json",
+  "product_name": "Apps Script",
+  "product_slug": "apps-script",
+  "feature_name": "Android add-ons support",
+  "feature_slug": "android-add-ons-support",
+  "summary": "Apps Script add-ons for Google Docs and Sheets can run on Android.",
+  "extended_definition": "Apps Script add-ons for Google Docs and Sheets can run on Android.",
+  "lifecycle": {
+    "latest_feature_date": "2016-07-28",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/apps-script/add-ons/overview",
+      "https://developers.google.com/apps-script/api/reference/rest/v1/scripts/run",
+      "https://developers.google.com/apps-script/guides/sheets/macros"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Method: scripts.run \\_|\\_ Apps Script \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/apps-script/api/reference/rest/v1/scripts/run",
+        "source_id": "site-api-reference",
+        "final_score": 75,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "When an Android add-on is run with a session state, it gains the privileges of a bound script—that is, it can access information like the user's current cursor position (in Docs) or selected cell (in Sheets).",
+          "Authorization Scopes Requires one of the following OAuth scopes: https://apps-apis.google.com/a/feeds https://apps-apis.google.com/a/feeds/alias/ https://apps-apis.google.com/a/feeds/groups/ https://mail.google.com/ https://sites.google.com/feeds https://www.google.com/calendar/feeds https://www.google.com/m8/feeds https://www.googleapis.com/auth/admin.directory.group https://www.googleapis.com/auth/admin.directory.user https://www.googleapis.com/auth/documents https://www.googleapis.com/auth/documents.currentonly https://www.googleapis.com/auth/drive https://www.googleapis.com/auth/dynamiccreatives https://www.googleapis.com/auth/forms https://www.googleapis.com/auth/forms.currentonly https://www.googleapis.com/auth/groups https://www.googleapis.com/auth/script.cpanel https://www.googleapis.com/auth/script.external request https://www.googleapis.com/auth/script.scriptapp https://www.googleapis.com/auth/script.send mail https://www.googleapis.com/auth/script.storage https://www.googleapis.com/auth/script.webapp.deploy https://www.googleapis.com/auth/spreadsheets https://www.googleapis.com/auth/spreadsheets.currentonly https://www.googleapis.com/auth/sqlservice https://www.googleapis.com/auth/userinfo.email For more information, see the OAuth 2.0 Overview .",
+          "An ID that represents the user's current session in the Android app for Google Docs or Sheets, included as extra data in the Intent that launches the add-on."
+        ]
+      },
+      {
+        "title": "Add-ons overview \\_|\\_ Google Workspace add-ons \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/apps-script/add-ons/overview",
+        "source_id": "site-docs-root",
+        "final_score": 74,
+        "relevance": "",
+        "evidence_snippets": [
+          "Try a quickstart To see how building an add-on works, try a quickstart: Node.js Google Workspace add-on quickstart Apps Script Google Workspace add-on quickstart Apps Script Editor add-on quickstart Want to see Google Workspace add-ons in action?",
+          "Quickstart guides are available for developers to learn how to build Google Workspace add-ons using Node.js or Apps Script.",
+          "Quickstarts are available for Node.js and Apps Script to build these add-ons.\\n\"]]"
+        ]
+      },
+      {
+        "title": "Google Sheets Macros \\_|\\_ Apps Script \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/apps-script/guides/sheets/macros",
+        "source_id": "site-docs-root-2",
+        "final_score": 74,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Alternatively, you can create macros within the Apps Script editor by following these steps: In the Sheets UI, select Extensions > Apps Script to open the script bound to the sheet in the Apps Script editor.",
+          "Macros are limited to bound scripts in Google Sheets and cannot be used in standalone scripts, web apps, add-ons, libraries, or other Google Workspace applications.",
+          "Home Google Workspace Apps Script Guides Send feedback Google Sheets Macros Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "admin.directory.group",
+      "admin.directory.user",
+      "apis.google.com",
+      "com.google.android.apps.docs.addons.SessionState",
+      "developers.google.com",
+      "documents.currentonly",
+      "forms.currentonly",
+      "mail.google.com",
+      "script.cpanel",
+      "script.external",
+      "script.scriptapp",
+      "script.send",
+      "script.storage",
+      "script.webapp.deploy",
+      "scripts.run",
+      "sites.google.com",
+      "spreadsheets.currentonly",
+      "userinfo.email"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/api/reference/rest/v1/scripts/run",
+        "https://developers.google.com/apps-script/guides/sheets/macros",
+        "https://developers.google.com/apps-script/add-ons/overview"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/api/reference/rest/v1/scripts/run",
+        "https://developers.google.com/apps-script/guides/sheets/macros",
+        "https://developers.google.com/apps-script/add-ons/overview"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/api/reference/rest/v1/scripts/run",
+        "https://developers.google.com/apps-script/guides/sheets/macros",
+        "https://developers.google.com/apps-script/add-ons/overview"
+      ]
+    }
+  ]
+}

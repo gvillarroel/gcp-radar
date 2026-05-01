@@ -1,0 +1,131 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:14.202Z",
+  "source_step08_card": "data/step-08/current/products/apigee-api-hub/card.json",
+  "product_name": "Apigee API hub",
+  "product_slug": "apigee-api-hub",
+  "feature_name": "Enhanced list APIs with full responses",
+  "feature_slug": "enhanced-list-apis-with-full-responses",
+  "summary": "The List APIs for specifications, dependencies, and external APIs now return complete responses including user-defined attributes.",
+  "extended_definition": "The List APIs for specifications, dependencies, and external APIs now return complete responses including user-defined attributes.",
+  "lifecycle": {
+    "latest_feature_date": "2024-09-26",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/apigee/docs/api-platform/service-extensions/extension-processor-quickstart",
+      "https://docs.cloud.google.com/apigee/docs/apihub/api-supply-chain",
+      "https://docs.cloud.google.com/apigee/docs/release/known-issues"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Apigee known issues \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/release/known-issues",
+        "source_id": "site-docs-reference",
+        "final_score": 158,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Find the - apiGroups: apiregistration.k8s.io block, and add the apiservices/finalizers resource to the list of resources: - apiGroups: - apiregistration.k8s.io resources: - apiservices - apiservices/finalizers verbs: - create - delete - get - patch - update Find the - apiGroups: authorization.k8s.io block, and add the - apiGroups: apigee.cloud.google.com block after the end of the block with the following text: - apiGroups: - apigee.cloud.google.com resources: - apigeetelemetries/finalizers verbs: - get - patch - update For example: - apiGroups: - authorization.k8s.io resources: - subjectaccessreviews verbs: - create - get - list - apiGroups: - apigee.cloud.google.com resources: - apigeetelemetries/finalizers verbs: - get - patch - update Apply the changes to the apigee-operator chart: Dry run: helm upgrade operator apigee-operator/ \\ --install \\ --namespace APIGEE NAMESPACE \\ --atomic \\ -f OVERRIDES FILE \\ --dry-run=server upgrade the chart: helm upgrade operator apigee-operator/ \\ --install \\ --namespace APIGEE NAMESPACE \\ --atomic \\ -f OVERRIDES FILE \\ 402739748 Apigee OPEN APIproducts are limited to 50 paths.",
+          "Metric Description apigee.googleapis.com/proxy/request count Number of requests to the Apigee proxy since the last sample was recorded. apigee.googleapis.com/proxy/response count Number of responses sent by the Apigee API proxy. apigee.googleapis.com/proxy/latencies Distribution of latencies, which are calculated from the time the request was received by the Apigee proxy to the time the response was sent from the Apigee proxy to the client. apigee.googleapis.com/target/request count Number of requests sent to the Apigee target since the last sample was recorded. apigee.googleapis.com/target/response count Number of responses received from the Apigee target since the last sample was recorded. apigee.googleapis.com/target/latencies Distribution of latencies, which are calculated from the time the request was sent to the Apigee target to the time the response was received by the Apigee proxy.",
+          "N/A Apigee hybrid OPEN Configuring non-API proxy forwarding using httpProxy without also setting envs.httpProxy will not apply the proxy configuration to Apigee Runtime's external calls to services like Pub/Sub or other Google Cloud APIs."
+        ]
+      },
+      {
+        "title": "API supply chain \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/apihub/api-supply-chain",
+        "source_id": "site-docs-reference-2",
+        "final_score": 114,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Note: API hub supports dependencies based on either API operations (APIs stored within API hub) or external APIs (APIs that are not stored in API hub).",
+          "API supply chain views API hub offers two ways to visualize your API supply chain: a graph view for a visual representation of dependencies and a list view for a tabular display of dependencies.",
+          "API hub models a dependency as a directional relationship between API resources or external APIs, where one entity is the supplier and the other is the consumer ."
+        ]
+      },
+      {
+        "title": "Get started with the Apigee Extension Processor \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-platform/service-extensions/extension-processor-quickstart",
+        "source_id": "site-docs-reference-required-3",
+        "final_score": 114,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Get traffic extension details To verify that the traffic service extension was created successfully, use the following command: curl -H \"Authorization: Bearer $TOKEN \" \\ \"https://apigee.googleapis.com/v1/organizations/ $ORG NAME /apimServiceExtensions/ TRAFFIC EXT NAME \" Replace TRAFFIC EXT NAME with the name of the traffic extension you just created.",
+          "Confirm that the environment is created: curl -i -H \"Authorization: Bearer $TOKEN \" \\ \"https://apigee.googleapis.com/v1/organizations/ $ORG NAME /environments\" The list of environments should include the environment you just created.",
+          "Create the traffic extension using the following command to call the Extension Processor provisioning API: curl -X POST -H \"Authorization: Bearer $TOKEN \" \\ https://apigee.googleapis.com/v1/organizations/ $ORG NAME /apimServiceExtensions?apimServiceExtensionId = TRAFFIC EXT NAME \\ -H \"Content-Type:application/json\" -d \\ '{ \"extensionProcessor\": \" TARGET PROXY NAME \" \"lbForwardingRule\": \" LB FORWARDING RULE \", \"network\" : \" NETWORK \", \"networkConfigs\": [ { \"region\": \"$REGION\", \"subnet\": \"project/my-project/regions/$REGION/subnetworks/$SUBNET\" } ], \"extensions\": [ { \"name\": \" TARGET PROXY NAME \", \"matchCondition\": \" CEL EXPRESSION \", \"failOpen\": FAIL OPEN , \"hostname\": \" ENV GROUP HOSTNAME \", \"supportedEvents\": [ \"REQUEST HEADERS\", \"RESPONSE HEADERS\" ] } ] }' Where: TRAFFIC EXT NAME is is the name of the traffic extension you are creating."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "apigee.cloud.google.com",
+      "apigee.googleapis.com",
+      "apiregistration.k8s.io",
+      "authorization.k8s.io",
+      "envs.httpProxy",
+      "googleapis.com",
+      "hostname.apigee.net",
+      "request.url.contains"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/release/known-issues",
+        "https://docs.cloud.google.com/apigee/docs/apihub/api-supply-chain",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/service-extensions/extension-processor-quickstart"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/release/known-issues",
+        "https://docs.cloud.google.com/apigee/docs/apihub/api-supply-chain",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/service-extensions/extension-processor-quickstart"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/release/known-issues",
+        "https://docs.cloud.google.com/apigee/docs/apihub/api-supply-chain",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/service-extensions/extension-processor-quickstart"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/release/known-issues",
+        "https://docs.cloud.google.com/apigee/docs/apihub/api-supply-chain",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/service-extensions/extension-processor-quickstart"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/release/known-issues",
+        "https://docs.cloud.google.com/apigee/docs/apihub/api-supply-chain",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/service-extensions/extension-processor-quickstart"
+      ]
+    }
+  ]
+}

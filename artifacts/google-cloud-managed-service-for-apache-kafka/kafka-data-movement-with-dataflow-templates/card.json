@@ -1,0 +1,154 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:39.148Z",
+  "source_step08_card": "data/step-08/current/products/google-cloud-managed-service-for-apache-kafka/card.json",
+  "product_name": "Google Cloud Managed Service for Apache Kafka",
+  "product_slug": "google-cloud-managed-service-for-apache-kafka",
+  "feature_name": "Kafka data movement with Dataflow templates",
+  "feature_slug": "kafka-data-movement-with-dataflow-templates",
+  "summary": "Managed Service for Apache Kafka supports moving Kafka data to and from Google Cloud services using Dataflow templates.",
+  "extended_definition": "Managed Service for Apache Kafka supports moving Kafka data to and from Google Cloud services using Dataflow templates.",
+  "lifecycle": {
+    "latest_feature_date": "2024-12-13",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/managed-service-for-apache-kafka/docs/access-control",
+      "https://docs.cloud.google.com/managed-service-for-apache-kafka/docs/access-control-kafka-acls",
+      "https://docs.cloud.google.com/managed-service-for-apache-kafka/docs/choose-kafka-pubsub",
+      "https://docs.cloud.google.com/managed-service-for-apache-kafka/docs/terraform"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Choose Cloud Managed Service for Apache Kafka or Pub/Sub \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/managed-service-for-apache-kafka/docs/choose-kafka-pubsub",
+        "source_id": "site-iam-reference",
+        "final_score": 285,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Integration with Cloud products Both Google Managed Service for Apache Kafka and Pub/Sub integrates with various Google Cloud services like Dataflow, BigQuery, Cloud Storage, and more.",
+          "Home Documentation Data analytics Google Cloud Managed Service for Apache Kafka Guides Send feedback Choose Cloud Managed Service for Apache Kafka or Pub/Sub Stay organized with collections Save and categorize content based on your preferences.",
+          "If you need to interact with a messaging system for a specific environment, using Managed Service for Apache Kafka might offer a more unified development experience."
+        ]
+      },
+      {
+        "title": "\"Provision Managed Service for Apache Kafka resources with Terraform \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/managed-service-for-apache-kafka/docs/terraform",
+        "source_id": "site-docs-reference",
+        "final_score": 279,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Data analytics Google Cloud Managed Service for Apache Kafka Reference Send feedback Provision Managed Service for Apache Kafka resources with Terraform Stay organized with collections Save and categorize content based on your preferences.",
+          "This page introduces you to using Terraform with Managed Service for Apache Kafka, including an introduction to how Terraform works and some resources to help you get started using Terraform with Google Cloud.",
+          "Create a Connect cluster Shows how to create a Connect cluster using Terraform. ( Preview ) Create a BigQuery Sink connector Shows how to create a BigQuery Sink connector using Terraform. ( Preview ) Create a Cloud Storage Sink connector Shows how to create a Cloud Storage Sink connector using Terraform. ( Preview ) Create a MirrorMaker 2.0 Source connector Shows how to create a MirrorMaker 2.0 Source connector using Terraform. ( Preview ) Create a Pub/Sub Sink connector Shows how to create a Pub/Sub Sink connector using Terraform. ( Preview ) Create a Pub/Sub Source connector Shows how to create a Pub/Sub Source connector using Terraform. ( Preview ) What's next Terraform code samples for Managed Service for Apache Kafka Terraform on Google Cloud documentation Google Cloud provider documentation in HashiCorp Infrastructure as code for Google Cloud Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License ."
+        ]
+      },
+      {
+        "title": "\"Access control with Kafka ACLs \\_|\\_ Google Cloud Managed Service for Apache\\",
+        "url": "https://docs.cloud.google.com/managed-service-for-apache-kafka/docs/access-control-kafka-acls",
+        "source_id": "site-iam-reference",
+        "final_score": 265,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To remove read access, you can use the remove-acl-entry command with the same parameters. gcloud managed-kafka acls remove-acl-entry topic/topic-name \\ --cluster = CLUSTER ID \\ --location = LOCATION --principal = 'User:test-kafka-client@test-project.iam.gserviceaccount.com' \\ --operation = READ \\ --permission-type = ALLOW \\ --host = ' ' Allow writing to all topics with a common prefix To allow open-source Apache Kafka clients running as the service account test-kafka-client@test-project.iam.gserviceaccount.com to write to all topics whose name starts with the prefix topic-prefix , add a Managed Kafka ACL entry as follows: gcloud managed-kafka acls add-acl-entry topicPrefixed/topic-prefix \\ --cluster = CLUSTER ID \\ --location = LOCATION --principal = 'User:test-kafka-client@test-project.iam.gserviceaccount.com' \\ --operation = WRITE \\ --permission-type = ALLOW \\ --host = ' ' The following is a list of important information about the command: topicPrefixed/topic-prefix : specifies the Managed Service for Apache Kafka resource pattern to which you want to grant access.",
+          "This method involves running the command to deny access to each of the operations ALTER , ALTER CONFIGS , and DELETE , as follows: gcloud managed-kafka acls add-acl-entry allTopics \\ --cluster = CLUSTER ID \\ --location = LOCATION --principal = 'User:test-kafka-client@test-project.iam.gserviceaccount.com' \\ --operation = ALTER \\ --permission-type = DENY \\ --host = ' ' gcloud managed-kafka acls add-acl-entry allTopics \\ --cluster = CLUSTER ID \\ --location = LOCATION --principal = 'User:test-kafka-client@test-project.iam.gserviceaccount.com' \\ --operation = ALTER CONFIGS \\ --permission-type = DENY \\ --host = ' ' gcloud managed-kafka acls add-acl-entry allTopics \\ --cluster = CLUSTER ID \\ --location = LOCATION --principal = 'User:test-kafka-client@test-project.iam.gserviceaccount.com' \\ --operation = DELETE \\ --permission-type = DENY \\ --host = ' ' The following information applies to each of the add-acl-entry commands: allTopics : specifies that this ACL applies to all topics within the Managed Service for Apache Kafka cluster.",
+          "To remove write access for this service account, remove the ACL entry: gcloud managed-kafka acls remove-acl-entry topicPrefixed/topic-prefix \\ --cluster = CLUSTER ID \\ --location = LOCATION --principal = 'User:test-kafka-client@test-project.iam.gserviceaccount.com' \\ --operation = WRITE \\ --permission-type = ALLOW \\ --host = ' ' Deny modifying all topics To prevent open-source Apache Kafka clients running as the service account test-kafka-client@test-project.iam.gserviceaccount.com from modifying all topics in a cluster, you can create a Managed Service for Apache Kafka ACL resource with a list of AclEntry resources to deny the ALTER , ALTER CONFIGS , and DELETE operations on all topics."
+        ]
+      },
+      {
+        "title": "\"Access control with IAM \\_|\\_ Google Cloud Managed Service for Apache Kafka\\",
+        "url": "https://docs.cloud.google.com/managed-service-for-apache-kafka/docs/access-control",
+        "source_id": "site-iam-reference",
+        "final_score": 255,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Data analytics Google Cloud Managed Service for Apache Kafka Guides Send feedback Access control with IAM Stay organized with collections Save and categorize content based on your preferences.",
+          "IAM controls access at the Google Cloud resource level: IAM controls determine who can manage your Managed Service for Apache Kafka resources like clusters, topics, or ACLs using Google Cloud APIs and tools.",
+          "The Managed Service for Apache Kafka service agent requires the Managed Kafka Service Agent ( roles/managedkafka.serviceAgent ) role on the project to manage Managed Service for Apache Kafka resources."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "managedkafka.serviceAgent",
+      "project.iam.gserviceaccount.com"
+    ],
+    "missing_inventory_roles": [
+      "roles/managedkafka.serviceAgent"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/managed-service-for-apache-kafka/docs/choose-kafka-pubsub",
+        "https://docs.cloud.google.com/managed-service-for-apache-kafka/docs/terraform",
+        "https://docs.cloud.google.com/managed-service-for-apache-kafka/docs/access-control-kafka-acls",
+        "https://docs.cloud.google.com/managed-service-for-apache-kafka/docs/access-control"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/managed-service-for-apache-kafka/docs/choose-kafka-pubsub",
+        "https://docs.cloud.google.com/managed-service-for-apache-kafka/docs/terraform",
+        "https://docs.cloud.google.com/managed-service-for-apache-kafka/docs/access-control-kafka-acls",
+        "https://docs.cloud.google.com/managed-service-for-apache-kafka/docs/access-control"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/managed-service-for-apache-kafka/docs/choose-kafka-pubsub",
+        "https://docs.cloud.google.com/managed-service-for-apache-kafka/docs/terraform",
+        "https://docs.cloud.google.com/managed-service-for-apache-kafka/docs/access-control-kafka-acls",
+        "https://docs.cloud.google.com/managed-service-for-apache-kafka/docs/access-control"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/managed-service-for-apache-kafka/docs/choose-kafka-pubsub",
+        "https://docs.cloud.google.com/managed-service-for-apache-kafka/docs/terraform",
+        "https://docs.cloud.google.com/managed-service-for-apache-kafka/docs/access-control-kafka-acls",
+        "https://docs.cloud.google.com/managed-service-for-apache-kafka/docs/access-control"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/managed-service-for-apache-kafka/docs/choose-kafka-pubsub",
+        "https://docs.cloud.google.com/managed-service-for-apache-kafka/docs/terraform",
+        "https://docs.cloud.google.com/managed-service-for-apache-kafka/docs/access-control-kafka-acls",
+        "https://docs.cloud.google.com/managed-service-for-apache-kafka/docs/access-control"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/managed-service-for-apache-kafka/docs/choose-kafka-pubsub",
+        "https://docs.cloud.google.com/managed-service-for-apache-kafka/docs/terraform",
+        "https://docs.cloud.google.com/managed-service-for-apache-kafka/docs/access-control-kafka-acls",
+        "https://docs.cloud.google.com/managed-service-for-apache-kafka/docs/access-control"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,145 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:22.310Z",
+  "source_step08_card": "data/step-08/current/products/calendar-api/card.json",
+  "product_name": "Calendar API",
+  "product_slug": "calendar-api",
+  "feature_name": "Working locations",
+  "feature_slug": "working-locations",
+  "summary": "The Calendar API supports reading and updating users' working locations; The Calendar API supports reading and updating users' working locations.",
+  "extended_definition": "The Calendar API supports reading and updating users' working locations; The Calendar API supports reading and updating users' working locations.",
+  "lifecycle": {
+    "latest_feature_date": "2023-08-17",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 1,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "coverage_low",
+        "message": "The feature ended with coverage LOW.",
+        "suggested_steps": [
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/workspace/calendar/api/auth",
+      "https://developers.google.com/workspace/calendar/api/guides/calendar-status",
+      "https://developers.google.com/workspace/calendar/api/v3/reference"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Manage focus time, out of office, and working location events \\_|\\_ Google\\",
+        "url": "https://developers.google.com/workspace/calendar/api/guides/calendar-status",
+        "source_id": "site-docs-root",
+        "final_score": 32,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For feature details, go to Set your working hours & location and Turn working location on or off for users How to show overlapping working location events A user can have multiple working location events on their calendar at the same time which overlap, meaning that any given time could have multiple working locations set for it.",
+          "Events . get ( calendarId , eventId ); var event = ( response . eventType === 'workingLocation' ) ? parseWorkingLocation ( response ) : response ; console . log ( event ); } catch ( exception ) { console . log ( exception . message ); } } / Lists focus time events. / function listFocusTimes () { listEvents ( 'focusTime' ); } / Lists out of office events. / function listOutOfOffices () { listEvents ( 'outOfOffice' ); } / Lists working location events. / function listWorkingLocations () { listEvents ( 'workingLocation' ); } / Lists events with the given event type.",
+          "This helps users benefit from all Calendar features, for example room suggestions. workingLocationProperties.officeLocation.label : This is the label that's shown on the Calendar Web and mobile clients."
+        ]
+      },
+      {
+        "title": "API Reference \\_|\\_ Google Calendar \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/workspace/calendar/api/v3/reference",
+        "source_id": "site-api-reference",
+        "final_score": 29,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Method HTTP request Description URIs relative to https://www.googleapis.com/calendar/v3, unless otherwise noted delete DELETE /users/me/calendarList/ calendarId Removes a calendar from the user's calendar list. get GET /users/me/calendarList/ calendarId Returns a calendar from the user's calendar list. insert POST /users/me/calendarList Inserts an existing calendar into the user's calendar list. list GET /users/me/calendarList Returns the calendars on the user's calendar list. patch PATCH /users/me/calendarList/ calendarId Updates an existing calendar on the user's calendar list.",
+          "Method HTTP request Description URIs relative to https://www.googleapis.com/calendar/v3, unless otherwise noted get GET /users/me/settings/ setting Returns a single user setting. list GET /users/me/settings Returns all user settings for the authenticated user. watch POST /users/me/settings/watch Watch for changes to Settings resources.",
+          "Array fields, if specified, overwrite the existing arrays; this discards any previous array elements. update PUT /users/me/calendarList/ calendarId Updates an existing calendar on the user's calendar list. watch POST /users/me/calendarList/watch Watch for changes to CalendarList resources."
+        ]
+      },
+      {
+        "title": "Choose Google Calendar API scopes \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/workspace/calendar/api/auth",
+        "source_id": "site-iam-reference",
+        "final_score": 28,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The Calendar API supports the following scopes: Scope Meaning https://www.googleapis.com/auth/calendar See, edit, share, and permanently delete all the calendars you can access using Google Calendar. https://www.googleapis.com/auth/calendar.readonly See and download any calendar you can access using your Calendar. https://www.googleapis.com/auth/calendar.freebusy View your availability in your calendars. https://www.googleapis.com/auth/calendar.events View and edit events on all your calendars. https://www.googleapis.com/auth/calendar.events.readonly View events on all your calendars. https://www.googleapis.com/auth/calendar.settings.readonly View your Calendar settings. https://www.googleapis.com/auth/calendar.addons.execute Run as a Calendar add-on. https://www.googleapis.com/auth/calendar.addons.current.event.read See the events you open in Google Calendar. https://www.googleapis.com/auth/calendar.addons.current.event.write Edit the events you open in Google Calendar. https://www.googleapis.com/auth/calendar.events.owned See, create, change, and delete events on Google calendars you own. https://www.googleapis.com/auth/calendar.events.owned.readonly See the events on Google calendars you own. https://www.googleapis.com/auth/calendar.events.freebusy See the availability on Google calendars you have access to. https://www.googleapis.com/auth/calendar.app.created Make secondary Google calendars, and see, create, change, and delete events on them. https://www.googleapis.com/auth/calendar.calendarlist See, add, and remove Google calendars you're subscribed to. https://www.googleapis.com/auth/calendar.calendarlist.readonly See the list of Google calendars you're subscribed to. https://www.googleapis.com/auth/calendar.calendars See and change the properties of Google calendars you have access to, and create secondary calendars. https://www.googleapis.com/auth/calendar.calendars.readonly See the title, description, default time zone, and other properties of Google calendars you have access to. https://www.googleapis.com/auth/calendar.acls See and change the sharing permissions of Google calendars you own. https://www.googleapis.com/auth/calendar.acls.readonly See the sharing permissions of Google calendars you own. https://www.googleapis.com/auth/calendar.events.public.readonly See the events on public calendars.",
+          "Configure OAuth 2.0 for authorization Configure the OAuth consent screen and choose scopes to define what information is displayed to users and app reviewers, and register your app so that you can publish it later.",
+          "Home Google Workspace Google Calendar Guides Send feedback Choose Google Calendar API scopes Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "calendar.acls",
+      "calendar.acls.readonly",
+      "calendar.addons.current.event.read",
+      "calendar.addons.current.event.write",
+      "calendar.addons.execute",
+      "calendar.app.created",
+      "calendar.calendarlist",
+      "calendar.calendarlist.readonly",
+      "calendar.calendars",
+      "calendar.calendars.readonly",
+      "calendar.events",
+      "calendar.events.freebusy",
+      "calendar.events.owned",
+      "calendar.events.owned.readonly",
+      "calendar.events.public.readonly",
+      "calendar.events.readonly",
+      "calendar.freebusy",
+      "calendar.readonly",
+      "calendar.settings.readonly",
+      "developers.google.com",
+      "i.e"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://developers.google.com/workspace/calendar/api/guides/calendar-status",
+        "https://developers.google.com/workspace/calendar/api/auth",
+        "https://developers.google.com/workspace/calendar/api/v3/reference"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://developers.google.com/workspace/calendar/api/guides/calendar-status",
+        "https://developers.google.com/workspace/calendar/api/auth",
+        "https://developers.google.com/workspace/calendar/api/v3/reference"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://developers.google.com/workspace/calendar/api/guides/calendar-status",
+        "https://developers.google.com/workspace/calendar/api/auth",
+        "https://developers.google.com/workspace/calendar/api/v3/reference"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://developers.google.com/workspace/calendar/api/guides/calendar-status",
+        "https://developers.google.com/workspace/calendar/api/auth",
+        "https://developers.google.com/workspace/calendar/api/v3/reference"
+      ]
+    }
+  ]
+}

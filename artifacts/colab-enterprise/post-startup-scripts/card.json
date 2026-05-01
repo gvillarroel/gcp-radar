@@ -1,0 +1,275 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:29.182Z",
+  "source_step08_card": "data/step-08/current/products/colab-enterprise/card.json",
+  "product_name": "Colab Enterprise",
+  "product_slug": "colab-enterprise",
+  "feature_name": "Post-startup scripts",
+  "feature_slug": "post-startup-scripts",
+  "summary": "Post-startup scripts let you run custom tasks after a Colab Enterprise runtime starts; Post-startup scripts let you run custom tasks after a Colab Enterprise runtime starts.",
+  "extended_definition": "Post-startup scripts let you run custom tasks after a Colab Enterprise runtime starts; Post-startup scripts let you run custom tasks after a Colab Enterprise runtime starts.",
+  "lifecycle": {
+    "latest_feature_date": "2025-12-17",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/colab/docs/create-runtime-template",
+      "https://docs.cloud.google.com/colab/docs/custom-constraints",
+      "https://docs.cloud.google.com/colab/docs/idle-shutdown",
+      "https://docs.cloud.google.com/colab/docs/manage-access-runtime-template"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Create a runtime template in Colab Enterprise \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/colab/docs/create-runtime-template",
+        "source_id": "site-docs-root",
+        "final_score": 182,
+        "relevance": "",
+        "evidence_snippets": [
+          "The following sample uses the google colab runtime template Terraform resource to create a Colab Enterprise runtime template. resource \"google compute network\" \"my network\" { name = \"{{index $.Vars \"network name\"}}\" auto create subnetworks = false } resource \"google compute subnetwork\" \"my subnetwork\" { name = \"{{index $.Vars \"network name\"}}\" network = google compute network.my network.id region = \"us-central1\" ip cidr range = \"10.0.1.0/24\" } resource \"google colab runtime template\" \"{{$.PrimaryResourceId}}\" { name = \"{{index $.Vars \"runtime template name\"}}\" display name = \"Runtime template full\" location = \"us-central1\" description = \"Full runtime template\" machine spec { machine type = \"n1-standard-2\" accelerator type = \"NVIDIA TESLA T4\" accelerator count = \"1\" } data persistent disk spec { disk type = \"pd-standard\" disk size gb = 200 } network spec { enable internet access = true network = google compute network.my network.id subnetwork = google compute subnetwork.my subnetwork.id } labels = { k = \"val\" } idle shutdown config { idle timeout = \"3600s\" } euc config { euc disabled = false } shielded vm config { enable secure boot = false } network tags = [ \"abc\", \"def\" ] encryption spec { kms key name = \"{{index $.Vars \"key name\"}}\" } software config { env { name = \"TEST\" value = 1 } post startup script config { post startup script = \"echo 'hello world'\" post startup script url = \"gs://colab-enterprise-pss-secure/secure pss.sh\" post startup script behavior = \"RUN ONCE\" } colab image { release name = \"py312\" } } } Granting access to the runtime template After you create a runtime template, you must grant access to it for a principal to be able to use it.",
+          "HTTP method and URL: POST https:// REGION -aiplatform.googleapis.com/v1/projects/ PROJECT ID /locations/ REGION /notebookRuntimeTemplates Request JSON body: { \"displayName\": \" DISPLAY NAME \", \"machineSpec\": { { \"machineType\": MACHINE TYPE \"acceleratorType\": ACCELERATOR TYPE , \"acceleratorCount\": ACCELERATOR COUNT , } }, } To send your request, choose one of these options: curl Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI .",
+          "Save the request body in a file named request.json , and execute the following command: curl -X POST \\ -H \"Authorization: Bearer $(gcloud auth print-access-token)\" \\ -H \"Content-Type: application/json; charset=utf-8\" \\ -d @request.json \\ \"https:// REGION -aiplatform.googleapis.com/v1/projects/ PROJECT ID /locations/ REGION /notebookRuntimeTemplates\" PowerShell Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login ."
+        ]
+      },
+      {
+        "title": "Idle shutdown \\_|\\_ Colab Enterprise \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/colab/docs/idle-shutdown",
+        "source_id": "site-iam-reference",
+        "final_score": 154,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Optional: Under the post-startup script URL, select your post-startup script's behavior.",
+          "Execute the following command: Linux, macOS, or Cloud Shell Note: Ensure you have initialized the Google Cloud CLI with authentication and a project by running either gcloud init ; or gcloud auth login and gcloud config set project . gcloud colab runtime-templates create --display-name = DISPLAY NAME \\ --idle-shutdown-timeout = INACTIVITY DURATION \\ --project = PROJECT ID \\ --region = REGION Windows (PowerShell) Note: Ensure you have initialized the Google Cloud CLI with authentication and a project by running either gcloud init ; or gcloud auth login and gcloud config set project . gcloud colab runtime-templates create --display-name = DISPLAY NAME --idle-shutdown-timeout = INACTIVITY DURATION --project = PROJECT ID ` --region = REGION Windows (cmd.exe) Note: Ensure you have initialized the Google Cloud CLI with authentication and a project by running either gcloud init ; or gcloud auth login and gcloud config set project . gcloud colab runtime-templates create --display-name = DISPLAY NAME ^ --idle-shutdown-timeout = INACTIVITY DURATION ^ --project = PROJECT ID ^ --region = REGION For more information about the command for creating a runtime template from the command line, see the gcloud CLI documentation .",
+          "Enable the APIs Required roles To get the permissions that you need to create a runtime in Colab Enterprise, ask your administrator to grant you the Colab Enterprise Admin ( roles/aiplatform.colabEnterpriseAdmin ) IAM role on the project."
+        ]
+      },
+      {
+        "title": "\"Create custom organization policy constraints \\_|\\_ Colab Enterprise \\_\\",
+        "url": "https://docs.cloud.google.com/colab/docs/custom-constraints",
+        "source_id": "site-docs-root",
+        "final_score": 130,
+        "relevance": "",
+        "evidence_snippets": [
+          "Resource Field aiplatform.googleapis.com/NotebookExecutionJob resource.customEnvironmentSpec.machineSpec.acceleratorCount resource.customEnvironmentSpec.machineSpec.acceleratorType resource.customEnvironmentSpec.machineSpec.machineType resource.customEnvironmentSpec.machineSpec.reservationAffinity.key resource.customEnvironmentSpec.machineSpec.reservationAffinity.reservationAffinityType resource.customEnvironmentSpec.machineSpec.reservationAffinity.values resource.customEnvironmentSpec.machineSpec.tpuTopology resource.customEnvironmentSpec.networkSpec.enableInternetAccess resource.customEnvironmentSpec.networkSpec.network resource.customEnvironmentSpec.networkSpec.subnetwork resource.customEnvironmentSpec.persistentDiskSpec.diskSizeGb resource.customEnvironmentSpec.persistentDiskSpec.diskType resource.dataformRepositorySource.commitSha resource.dataformRepositorySource.dataformRepositoryResourceName resource.displayName resource.encryptionSpec.kmsKeyName resource.executionTimeout resource.executionUser resource.gcsNotebookSource.generation resource.gcsNotebookSource.uri resource.gcsOutputUri resource.kernelName resource.notebookRuntimeTemplateResourceName resource.scheduleResourceName resource.serviceAccount aiplatform.googleapis.com/NotebookRuntime resource.description resource.displayName resource.runtimeUser aiplatform.googleapis.com/NotebookRuntimeTemplate resource.dataPersistentDiskSpec.diskSizeGb resource.dataPersistentDiskSpec.diskType resource.description resource.displayName resource.encryptionSpec.kmsKeyName resource.eucConfig.eucDisabled resource.idleShutdownConfig.idleShutdownDisabled resource.idleShutdownConfig.idleTimeout resource.machineSpec.acceleratorCount resource.machineSpec.acceleratorType resource.machineSpec.machineType resource.machineSpec.reservationAffinity.key resource.machineSpec.reservationAffinity.reservationAffinityType resource.machineSpec.reservationAffinity.values resource.machineSpec.tpuTopology resource.networkSpec.enableInternetAccess resource.networkSpec.network resource.networkSpec.subnetwork resource.networkTags resource.notebookRuntimeType resource.reservationAffinity.consumeReservationType resource.reservationAffinity.key resource.reservationAffinity.values resource.shieldedVmConfig.enableSecureBoot resource.softwareConfig.colabImage.releaseName What's next Learn more about Organization Policy Service .",
+          "Before you begin, you must know the following: Your organization ID A project ID Create the constraint Save the following file as constraint-notebook-runtime-template.yaml : name : organizations/ ORGANIZATION ID /customConstraints/custom.restrictMachineSpecForNotebookRuntimeTemplate resourceTypes : - aiplatform.googleapis.com/NotebookRuntimeTemplate methodTypes : - CREATE condition : \"resource.machineSpec.machineType != \\\"n1-standard-2\\\"\" actionType : DENY displayName : Restrict machine type for notebook runtime templates description : All new notebook runtime templates must use n1-standard-2 machines This defines a constraint where every new notebook runtime template must use the n1-standard-2 machine type, otherwise creation of the runtime template is denied.",
+          "Apply the policy: gcloud org-policies set-policy /policy-deny-machine-type.yaml Verify that the policy exists: gcloud org-policies list --project = PROJECT ID The output is similar to the following: CONSTRAINT LIST POLICY BOOLEAN POLICY ETAG custom.restrictMachineSpecForNotebookRuntimeTemplate - SET CPHYssIGEOi23pAB- After you apply the policy, wait for about two minutes for Google Cloud to start enforcing the policy."
+        ]
+      },
+      {
+        "title": "\"Manage access to a runtime template in Colab Enterprise \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/colab/docs/manage-access-runtime-template",
+        "source_id": "site-iam-reference",
+        "final_score": 126,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Click the Delete delete button for the role that you want to revoke, and then click Save . gcloud Before using any of the command data below, make the following replacements: RUNTIME TEMPLATE ID : the ID of your runtime template.",
+          "Execute the following command: Linux, macOS, or Cloud Shell Note: Ensure you have initialized the Google Cloud CLI with authentication and a project by running either gcloud init ; or gcloud auth login and gcloud config set project . gcloud colab runtime-templates remove-iam-policy-binding RUNTIME TEMPLATE ID \\ --member = PRINCIPAL \\ --role = ROLE \\ --project = PROJECT ID \\ --region = REGION Windows (PowerShell) Note: Ensure you have initialized the Google Cloud CLI with authentication and a project by running either gcloud init ; or gcloud auth login and gcloud config set project . gcloud colab runtime-templates remove-iam-policy-binding RUNTIME TEMPLATE ID --member = PRINCIPAL --role = ROLE --project = PROJECT ID --region = REGION Windows (cmd.exe) Note: Ensure you have initialized the Google Cloud CLI with authentication and a project by running either gcloud init ; or gcloud auth login and gcloud config set project . gcloud colab runtime-templates remove-iam-policy-binding RUNTIME TEMPLATE ID ^ --member = PRINCIPAL ^ --role = ROLE ^ --project = PROJECT ID ^ --region = REGION For more information about managing IAM policies for runtime templates from the command line, see the gcloud CLI documentation .",
+          "Execute the following command: Linux, macOS, or Cloud Shell Note: Ensure you have initialized the Google Cloud CLI with authentication and a project by running either gcloud init ; or gcloud auth login and gcloud config set project . gcloud colab runtime-templates add-iam-policy-binding RUNTIME TEMPLATE ID \\ --member = PRINCIPAL \\ --role = ROLE \\ --project = PROJECT ID \\ --region = REGION Windows (PowerShell) Note: Ensure you have initialized the Google Cloud CLI with authentication and a project by running either gcloud init ; or gcloud auth login and gcloud config set project . gcloud colab runtime-templates add-iam-policy-binding RUNTIME TEMPLATE ID --member = PRINCIPAL --role = ROLE --project = PROJECT ID --region = REGION Windows (cmd.exe) Note: Ensure you have initialized the Google Cloud CLI with authentication and a project by running either gcloud init ; or gcloud auth login and gcloud config set project . gcloud colab runtime-templates add-iam-policy-binding RUNTIME TEMPLATE ID ^ --member = PRINCIPAL ^ --role = ROLE ^ --project = PROJECT ID ^ --region = REGION For more information about managing IAM policies for runtime templates from the command line, see the gcloud CLI documentation ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "aiplatform.colabEnterpriseAdmin",
+      "aiplatform.googleapis.com",
+      "cmd.exe",
+      "custom.restrictMachineSpecForNotebookRuntimeTemplate",
+      "data.google",
+      "example.com",
+      "network.id",
+      "network.my",
+      "policy.admin.policy",
+      "pss.sh",
+      "request.json",
+      "resource.customEnvironmentSpec.machineSpec.acceleratorCount",
+      "resource.customEnvironmentSpec.machineSpec.acceleratorType",
+      "resource.customEnvironmentSpec.machineSpec.machineType",
+      "resource.customEnvironmentSpec.machineSpec.reservationAffinity.key",
+      "resource.customEnvironmentSpec.machineSpec.reservationAffinity.reservationAffinityType",
+      "resource.customEnvironmentSpec.machineSpec.reservationAffinity.values",
+      "resource.customEnvironmentSpec.machineSpec.tpuTopology",
+      "resource.customEnvironmentSpec.networkSpec.enableInternetAccess",
+      "resource.customEnvironmentSpec.networkSpec.network",
+      "resource.customEnvironmentSpec.networkSpec.subnetwork",
+      "resource.customEnvironmentSpec.persistentDiskSpec.diskSizeGb",
+      "resource.customEnvironmentSpec.persistentDiskSpec.diskType",
+      "resource.dataformRepositorySource.commitSha",
+      "resource.dataformRepositorySource.dataformRepositoryResourceName",
+      "resource.dataPersistentDiskSpec.diskSizeGb",
+      "resource.dataPersistentDiskSpec.diskType",
+      "resource.description",
+      "resource.displayName",
+      "resource.encryptionSpec.kmsKeyName",
+      "resource.eucConfig.eucDisabled",
+      "resource.executionTimeout",
+      "resource.executionUser",
+      "resource.gcsNotebookSource.generation",
+      "resource.gcsNotebookSource.uri",
+      "resource.gcsOutputUri",
+      "resource.idleShutdownConfig.idleShutdownDisabled",
+      "resource.idleShutdownConfig.idleTimeout",
+      "resource.kernelName",
+      "resource.machineSpec.acceleratorCount",
+      "resource.machineSpec.acceleratorType",
+      "resource.machineSpec.machineType",
+      "resource.machineSpec.reservationAffinity.key",
+      "resource.machineSpec.reservationAffinity.reservationAffinityType",
+      "resource.machineSpec.reservationAffinity.values",
+      "resource.machineSpec.tpuTopology",
+      "resource.networkSpec.enableInternetAccess",
+      "resource.networkSpec.network",
+      "resource.networkSpec.subnetwork",
+      "resource.networkTags",
+      "resource.notebookRuntimeTemplateResourceName",
+      "resource.notebookRuntimeType",
+      "resource.reservationAffinity.consumeReservationType",
+      "resource.reservationAffinity.key",
+      "resource.reservationAffinity.values",
+      "resource.runtimeUser",
+      "resource.scheduleResourceName",
+      "resource.serviceAccount",
+      "resource.shieldedVmConfig.enableSecureBoot",
+      "resource.softwareConfig.colabImage.releaseName",
+      "subnetwork.id",
+      "subnetwork.my",
+      "template.location",
+      "template.name",
+      "template.project",
+      "template.runtime",
+      "template.yaml",
+      "type.yaml"
+    ],
+    "missing_inventory_roles": [
+      "roles/aiplatform.colabEnterpriseAdmin",
+      "roles/viewer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/colab/docs/create-runtime-template",
+        "https://docs.cloud.google.com/colab/docs/idle-shutdown",
+        "https://docs.cloud.google.com/colab/docs/custom-constraints",
+        "https://docs.cloud.google.com/colab/docs/manage-access-runtime-template"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/colab/docs/create-runtime-template",
+        "https://docs.cloud.google.com/colab/docs/idle-shutdown",
+        "https://docs.cloud.google.com/colab/docs/custom-constraints",
+        "https://docs.cloud.google.com/colab/docs/manage-access-runtime-template"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/colab/docs/create-runtime-template",
+        "https://docs.cloud.google.com/colab/docs/idle-shutdown",
+        "https://docs.cloud.google.com/colab/docs/custom-constraints",
+        "https://docs.cloud.google.com/colab/docs/manage-access-runtime-template"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/colab/docs/create-runtime-template",
+        "https://docs.cloud.google.com/colab/docs/idle-shutdown",
+        "https://docs.cloud.google.com/colab/docs/custom-constraints",
+        "https://docs.cloud.google.com/colab/docs/manage-access-runtime-template"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/colab/docs/create-runtime-template",
+        "https://docs.cloud.google.com/colab/docs/idle-shutdown",
+        "https://docs.cloud.google.com/colab/docs/custom-constraints",
+        "https://docs.cloud.google.com/colab/docs/manage-access-runtime-template"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/colab/docs/create-runtime-template",
+        "https://docs.cloud.google.com/colab/docs/idle-shutdown",
+        "https://docs.cloud.google.com/colab/docs/custom-constraints",
+        "https://docs.cloud.google.com/colab/docs/manage-access-runtime-template"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/colab/docs/create-runtime-template",
+        "https://docs.cloud.google.com/colab/docs/idle-shutdown",
+        "https://docs.cloud.google.com/colab/docs/custom-constraints",
+        "https://docs.cloud.google.com/colab/docs/manage-access-runtime-template"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/colab/docs/create-runtime-template",
+        "https://docs.cloud.google.com/colab/docs/idle-shutdown",
+        "https://docs.cloud.google.com/colab/docs/custom-constraints",
+        "https://docs.cloud.google.com/colab/docs/manage-access-runtime-template"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/colab/docs/create-runtime-template",
+        "https://docs.cloud.google.com/colab/docs/idle-shutdown",
+        "https://docs.cloud.google.com/colab/docs/custom-constraints",
+        "https://docs.cloud.google.com/colab/docs/manage-access-runtime-template"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/colab/docs/create-runtime-template",
+        "https://docs.cloud.google.com/colab/docs/idle-shutdown",
+        "https://docs.cloud.google.com/colab/docs/custom-constraints",
+        "https://docs.cloud.google.com/colab/docs/manage-access-runtime-template"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/colab/docs/create-runtime-template",
+        "https://docs.cloud.google.com/colab/docs/idle-shutdown",
+        "https://docs.cloud.google.com/colab/docs/custom-constraints",
+        "https://docs.cloud.google.com/colab/docs/manage-access-runtime-template"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/colab/docs/create-runtime-template",
+        "https://docs.cloud.google.com/colab/docs/idle-shutdown",
+        "https://docs.cloud.google.com/colab/docs/custom-constraints",
+        "https://docs.cloud.google.com/colab/docs/manage-access-runtime-template"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,169 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:23.852Z",
+  "source_step08_card": "data/step-08/current/products/cloud-key-management-service/card.json",
+  "product_name": "Cloud Key Management Service",
+  "product_slug": "cloud-key-management-service",
+  "feature_name": "Cloud KMS key encapsulation mechanisms",
+  "feature_slug": "cloud-kms-key-encapsulation-mechanisms",
+  "summary": "Cloud KMS supports post-quantum-resistant key encapsulation mechanisms for sharing secrets.",
+  "extended_definition": "Cloud KMS supports post-quantum-resistant key encapsulation mechanisms for sharing secrets.",
+  "lifecycle": {
+    "latest_feature_date": "2025-09-23",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kms/docs/algorithms",
+      "https://docs.cloud.google.com/kms/docs/create-key",
+      "https://docs.cloud.google.com/kms/docs/creating-keys",
+      "https://docs.cloud.google.com/kms/docs/reference/rest/v1/CryptoKeyVersionAlgorithm"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Create a key \\_|\\_ Cloud Key Management Service \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/kms/docs/creating-keys",
+        "source_id": "site-docs-root",
+        "final_score": 192,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Create a key with purpose KEY ENCAPSULATION by calling CryptoKey.create . curl \"https://cloudkms.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION /keyRings/ KEY RING /cryptoKeys?crypto key id= KEY NAME \" \\ --request \"POST\" \\ --header \"authorization: Bearer TOKEN \" \\ --header \"content-type: application/json\" \\ --data '{\"purpose\": \"KEY ENCAPSULATION\", \"versionTemplate\": {\"algorithm\": \" ALGORITHM \"}}' Replace the following: PROJECT ID : the ID of the project that contains the key ring.",
+          "To create a Single-tenant Cloud HSM key, set PROTECTION LEVEL to HSM SINGLE TENANT and add the --crypto-key-backend flag to the kms keys create command: curl \"https://cloudkms.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION /keyRings/ KEY RING /cryptoKeys?crypto key id= KEY NAME \" \\ --request \"POST\" \\ --header \"authorization: Bearer TOKEN \" \\ --header \"content-type: application/json\" \\ --data '{\"purpose\": \"ENCRYPT DECRYPT\", \"versionTemplate\": { \"protectionLevel\": \"HSM SINGLE TENANT\", \"algorithm\": \" ALGORITHM \", \"crypto-key-backend\": \"projects/ INSTANCE PROJECT /locations/ LOCATION /singleTenantHsmInstances/ INSTANCE NAME \" }}' Replace the following: INSTANCE PROJECT : the identifier of the project where your Single-tenant Cloud HSM instance exists.",
+          "To create a Single-tenant Cloud HSM key, add the cryptoKeyBackend field to the CryptoKey.create request body: curl \"https://cloudkms.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION /keyRings/ KEY RING /cryptoKeys?crypto key id= KEY NAME \" \\ --request \"POST\" \\ --header \"authorization: Bearer TOKEN \" \\ --header \"content-type: application/json\" \\ --data '{\"purpose\": \"MAC\", \"versionTemplate\": { \"protectionLevel\": \" PROTECTION LEVEL \", \"algorithm\": \" ALGORITHM \", \"cryptoKeyBackend\": \"projects/ INSTANCE PROJECT /locations/ LOCATION /singleTenantHsmInstances/ INSTANCE NAME \" }}' Replace the following: INSTANCE PROJECT : the identifier of the project where your Single-tenant Cloud HSM instance exists."
+        ]
+      },
+      {
+        "title": "Create a key \\_|\\_ Cloud Key Management Service \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/kms/docs/create-key",
+        "source_id": "site-iam-reference",
+        "final_score": 192,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Create a key with purpose KEY ENCAPSULATION by calling CryptoKey.create . curl \"https://cloudkms.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION /keyRings/ KEY RING /cryptoKeys?crypto key id= KEY NAME \" \\ --request \"POST\" \\ --header \"authorization: Bearer TOKEN \" \\ --header \"content-type: application/json\" \\ --data '{\"purpose\": \"KEY ENCAPSULATION\", \"versionTemplate\": {\"algorithm\": \" ALGORITHM \"}}' Replace the following: PROJECT ID : the ID of the project that contains the key ring.",
+          "To create a Single-tenant Cloud HSM key, set PROTECTION LEVEL to HSM SINGLE TENANT and add the --crypto-key-backend flag to the kms keys create command: curl \"https://cloudkms.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION /keyRings/ KEY RING /cryptoKeys?crypto key id= KEY NAME \" \\ --request \"POST\" \\ --header \"authorization: Bearer TOKEN \" \\ --header \"content-type: application/json\" \\ --data '{\"purpose\": \"ENCRYPT DECRYPT\", \"versionTemplate\": { \"protectionLevel\": \"HSM SINGLE TENANT\", \"algorithm\": \" ALGORITHM \", \"crypto-key-backend\": \"projects/ INSTANCE PROJECT /locations/ LOCATION /singleTenantHsmInstances/ INSTANCE NAME \" }}' Replace the following: INSTANCE PROJECT : the identifier of the project where your Single-tenant Cloud HSM instance exists.",
+          "To create a Single-tenant Cloud HSM key, add the cryptoKeyBackend field to the CryptoKey.create request body: curl \"https://cloudkms.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION /keyRings/ KEY RING /cryptoKeys?crypto key id= KEY NAME \" \\ --request \"POST\" \\ --header \"authorization: Bearer TOKEN \" \\ --header \"content-type: application/json\" \\ --data '{\"purpose\": \"MAC\", \"versionTemplate\": { \"protectionLevel\": \" PROTECTION LEVEL \", \"algorithm\": \" ALGORITHM \", \"cryptoKeyBackend\": \"projects/ INSTANCE PROJECT /locations/ LOCATION /singleTenantHsmInstances/ INSTANCE NAME \" }}' Replace the following: INSTANCE PROJECT : the identifier of the project where your Single-tenant Cloud HSM instance exists."
+        ]
+      },
+      {
+        "title": "\"Key purposes and algorithms \\_|\\_ Cloud Key Management Service \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/kms/docs/algorithms",
+        "source_id": "site-iam-reference",
+        "final_score": 191,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Key purposes Cloud KMS provides key purposes for the following scenarios: Scenario Key purpose (SDK) Key purpose (API) Supported methods Symmetric encryption encryption ENCRYPT DECRYPT cryptoKeys.encrypt , cryptoKeys.decrypt Raw symmetric encryption raw-encryption RAW ENCRYPT DECRYPT cryptoKeys.rawEncrypt , cryptoKeys.rawDecrypt Asymmetric signing asymmetric-signing ASYMMETRIC SIGN cryptoKeyVersions.asymmetricSign , cryptoKeyVersions.getPublicKey Asymmetric encryption asymmetric-encryption ASYMMETRIC DECRYPT cryptoKeyVersions.asymmetricDecrypt , cryptoKeyVersions.getPublicKey Key encapsulation mechanisms key-encapsulation KEY ENCAPSULATION cryptoKeyVersions.decapsulate , cryptoKeyVersions.getPublicKey MAC signing mac MAC cryptoKeyVersions.macSign , cryptoKeyVersions.macVerify When you create a key, you define the purpose and the algorithm of that key.",
+          "For key encapsulation, we recommend using KEM XWING , which is a hybrid algorithm that can provide layered defense against both classical and potential quantum adversaries.",
+          "Key encapsulation algorithms The KEY ENCAPSULATION key purpose is used to establish shared secrets using key encapsulation mechanisms ."
+        ]
+      },
+      {
+        "title": "\"CryptoKeyVersionAlgorithm \\_|\\_ Cloud Key Management Service \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/kms/docs/reference/rest/v1/CryptoKeyVersionAlgorithm",
+        "source_id": "site-api-reference",
+        "final_score": 167,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Security Cloud KMS Reference Send feedback CryptoKeyVersionAlgorithm Stay organized with collections Save and categorize content based on your preferences.",
+          "PQ SIGN HASH SLH DSA SHA2 128S SHA256 The post-quantum stateless hash-based digital signature algorithm, at security level 1.",
+          "PQ SIGN ML DSA 44 EXTERNAL MU The post-quantum Module-Lattice-Based Digital Signature Algorithm, at security level 1."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cloudkms.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/creating-keys",
+        "https://docs.cloud.google.com/kms/docs/create-key",
+        "https://docs.cloud.google.com/kms/docs/algorithms",
+        "https://docs.cloud.google.com/kms/docs/reference/rest/v1/CryptoKeyVersionAlgorithm"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/creating-keys",
+        "https://docs.cloud.google.com/kms/docs/create-key",
+        "https://docs.cloud.google.com/kms/docs/algorithms",
+        "https://docs.cloud.google.com/kms/docs/reference/rest/v1/CryptoKeyVersionAlgorithm"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/creating-keys",
+        "https://docs.cloud.google.com/kms/docs/create-key",
+        "https://docs.cloud.google.com/kms/docs/algorithms",
+        "https://docs.cloud.google.com/kms/docs/reference/rest/v1/CryptoKeyVersionAlgorithm"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/creating-keys",
+        "https://docs.cloud.google.com/kms/docs/create-key",
+        "https://docs.cloud.google.com/kms/docs/algorithms",
+        "https://docs.cloud.google.com/kms/docs/reference/rest/v1/CryptoKeyVersionAlgorithm"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/creating-keys",
+        "https://docs.cloud.google.com/kms/docs/create-key",
+        "https://docs.cloud.google.com/kms/docs/algorithms",
+        "https://docs.cloud.google.com/kms/docs/reference/rest/v1/CryptoKeyVersionAlgorithm"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/creating-keys",
+        "https://docs.cloud.google.com/kms/docs/create-key",
+        "https://docs.cloud.google.com/kms/docs/algorithms",
+        "https://docs.cloud.google.com/kms/docs/reference/rest/v1/CryptoKeyVersionAlgorithm"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/creating-keys",
+        "https://docs.cloud.google.com/kms/docs/create-key",
+        "https://docs.cloud.google.com/kms/docs/algorithms",
+        "https://docs.cloud.google.com/kms/docs/reference/rest/v1/CryptoKeyVersionAlgorithm"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/creating-keys",
+        "https://docs.cloud.google.com/kms/docs/create-key",
+        "https://docs.cloud.google.com/kms/docs/algorithms",
+        "https://docs.cloud.google.com/kms/docs/reference/rest/v1/CryptoKeyVersionAlgorithm"
+      ]
+    }
+  ]
+}

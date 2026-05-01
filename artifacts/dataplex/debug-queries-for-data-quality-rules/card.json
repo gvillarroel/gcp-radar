@@ -1,0 +1,321 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:33.146Z",
+  "source_step08_card": "data/step-08/current/products/dataplex/card.json",
+  "product_name": "Dataplex",
+  "product_slug": "dataplex",
+  "feature_name": "Debug queries for data quality rules",
+  "feature_slug": "debug-queries-for-data-quality-rules",
+  "summary": "Dataplex data quality rules can include an optional SQL debug query to help diagnose rule failures.",
+  "extended_definition": "Dataplex data quality rules can include an optional SQL debug query to help diagnose rule failures.",
+  "lifecycle": {
+    "latest_feature_date": "2026-02-19",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dataplex/docs/auto-data-quality-overview",
+      "https://docs.cloud.google.com/dataplex/docs/check-data-quality",
+      "https://docs.cloud.google.com/dataplex/docs/dataplex-custom-constraints",
+      "https://docs.cloud.google.com/dataplex/docs/use-auto-data-quality"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Use auto data quality \\_|\\_ Knowledge Catalog \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataplex/docs/use-auto-data-quality",
+        "source_id": "site-docs-root",
+        "final_score": 264,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Export table schema To export the data quality scan results to an existing BigQuery table, make sure that it is compatible with the following table schema: Column name Column data type Sub field name (if applicable) Sub field data type Mode Example data quality scan struct/record resource name string nullable //dataplex.googleapis.com/projects/test-project/locations/europe-west2/datascans/test-datascan project id string nullable dataplex-back-end-dev-project location string nullable us-central1 data scan id string nullable test-datascan display name string nullable datascan-display-name data source struct/record resource name string nullable Entity case: //dataplex.googleapis.com/projects/dataplex-back-end-dev-project/locations/europe-west2/lakes/a0-datascan-test-lake/zones/a0-datascan-test-zone/entities/table1 Table case: //bigquery.googleapis.com/projects/test-project/datasets/test-dataset/tables/test-table dataplex entity project id string nullable dataplex-back-end-dev-project dataplex entity project number integer nullable 123456789 dataplex lake id string nullable (Valid only if source is entity) test-lake dataplex zone id string nullable (Valid only if source is entity) test-zone dataplex entity id string nullable (Valid only if source is entity) test-entity table project id string nullable test-project table project number integer nullable 987654321 dataset id string nullable (Valid only if source is table) test-dataset table id string nullable (Valid only if source is table) test-table data quality job id string nullable caeba234-cfde-4fca-9e5b-fe02a9812e38 data quality job configuration json trigger string nullable ondemand / schedule incremental boolean nullable true / false sampling percent float nullable (0-100) 20.0 (indicates 20%) row filter string nullable col1 >= 0 AND col2 incremental column string nullable column name job labels json nullable {\"key1\":value1} job start time timestamp nullable 2023-01-01 00:00:00 UTC job end time timestamp nullable 2023-01-01 00:00:00 UTC job quality result struct/record passed boolean nullable true / false score float nullable 90.8 incremental start string nullable 2023-01-01T00:00:00 incremental end string nullable 2024-01-01T00:00:00 job dimension result json nullable {\"ACCURACY\":{\"passed\":true,\"score\":100},\"CONSISTENCY\":{\"passed\":false,\"score\":60}} job rows scanned integer nullable 7500 rule name string nullable test-rule rule description string nullable Test rule description rule type string nullable Range Check rule evaluation type string nullable Per row rule column string nullable Rule only attached to a certain column rule dimension string nullable UNIQUENESS rule threshold percent float nullable (0.0-100.0) Rule-threshold-pct in API 100 rule parameters json nullable {min: 24, max:5345} rule passed boolean nullable true rule rows evaluated integer nullable 7400 rule rows passed integer nullable 3 rule rows null integer nullable 4 rule failed records query string nullable \"SELECT FROM test-project.test-dataset.test-table WHERE (NOT((cTime >= '15:31:38.776361' and cTime created on timestamp nullable 2023-01-01 00:00:00 UTC last updated timestamp nullable 2023-01-01 00:00:00 UTC rule assertion row count integer nullable 10 debug queries struct/record description string nullable Test debug query description sql statement string nullable SELECT MIN(col1) AS min col1, AVG(col1) FROM ${data()} debug query results struct/record repeated [{\"name\": \"min col1\", \"type\": \"INTEGER\", \"value\": \"5\"}, {\"type\": \"FLOAT\", \"value\": \"7\"}] ↳ name string nullable The name of query result column, like min col1 ↳ type string nullable The type of query result column, like INTEGER ↳ value string nullable The value of query result column, like 5 Note: Column rule assertion row count is only applicable for SQL Assertion rule .",
+          "Set alerts on data quality failures for a BigQuery table that isn't organized in a Knowledge Catalog lake: resource.type=\"dataplex.googleapis.com/DataScan\" AND jsonPayload.dataSource=\"//bigquery.googleapis.com/projects/test-project/datasets/testdataset/table/chicago taxi trips\" AND labels.\"dataplex.googleapis.com/data scan state\"=\"SUCCEEDED\" AND resource.labels.resource container=\"projects/112233445566\" AND NOT jsonPayload.dataQuality.passed=true Set alerts on data quality failures for a BigQuery table that's organized in a Knowledge Catalog lake: resource.type=\"dataplex.googleapis.com/DataScan\" AND jsonPayload.dataSource=\"projects/test-project/datasets/testdataset/table/chicago taxi trips\" AND labels.\"dataplex.googleapis.com/data scan state\"=\"SUCCEEDED\" AND resource.labels.resource container=\"projects/112233445566\" AND NOT jsonPayload.dataQuality.passed=true Sample queries to set per rule alerts A sample query to set alerts on all failing data quality rules with the specified custom rule name for a data quality scan: resource.type=\"dataplex.googleapis.com/DataScan\" AND jsonPayload.ruleName=\"custom-name\" AND jsonPayload.result=\"FAILED\" A sample query to set alerts on all failing data quality rules of a specific evaluation type for a data quality scan: resource.type=\"dataplex.googleapis.com/DataScan\" AND jsonPayload.evalutionType=\"PER ROW\" AND jsonPayload.result=\"FAILED\" A sample query to set alerts on all failing data quality rules for a column in the table used for a data quality scan: resource.type=\"dataplex.googleapis.com/DataScan\" AND jsonPayload.column=\"CInteger\" AND jsonPayload.result=\"FAILED\" Troubleshoot a data quality failure For each job with row-level rules that fail, Knowledge Catalog provides a query to get the failed records.",
+          "When you use the gcloud CLI to create or update a data quality scan, you can use a YAML file like this as input to the --data-quality-spec-file argument. rules : - uniquenessExpectation : {} column : transaction id dimension : UNIQUENESS - nonNullExpectation : {} column : amount dimension : COMPLETENESS threshold : 1 - regexExpectation : regex : '^[0-9]{8}[a-zA-Z]{16}$' column : customer id ignoreNull : true dimension : VALIDITY threshold : 1 - setExpectation : values : - 'USD' - 'JPY' - 'INR' - 'GBP' - 'CAN' column : currency id ignoreNull : true dimension : VALIDITY threshold : 1 - rangeExpectation : minValue : '0' maxValue : '100' column : discount pct ignoreNull : true dimension : VALIDITY threshold : 1 - rowConditionExpectation : sqlExpression : 0 < discount pct AND discount pct < 100 column : discount pct dimension : VALIDITY threshold : 1 - rowConditionExpectation : sqlExpression : currency id in (select id from my project id.dim dataset.dim currency) column : currency id dimension : VALIDITY threshold : 1 - tableConditionExpectation : sqlExpression : 30 < avg(discount pct) AND avg(discount pct) < 50 dimension : VALIDITY - rowConditionExpectation : sqlExpression : TIMESTAMP(transaction timestamp) < CURRENT TIMESTAMP() column : transaction timestamp dimension : VALIDITY threshold : 1 - sqlAssertion : sqlStatement : SELECT FROM my project id.dim dataset.dim currency WHERE discount pct > 100 dimension : VALIDITY debugQueries : - sqlStatement : SELECT MAX(discount pct) FROM my project id.dim dataset.dim currency samplingPercent : 50 rowFilter : discount pct > 100 postScanActions : bigqueryExport : resultsTable : projects/my project id/datasets/dim dataset/tables/dim currency notificationReport : recipients : emails : - '222larabrown@gmail.com' - 'cloudysanfrancisco@gmail.com' scoreThresholdTrigger : scoreThreshold : 50 jobFailureTrigger : {} jobEndTrigger : {} catalogPublishingEnabled : true Configure execution identity By default, data quality scans run using the Knowledge Catalog service account."
+        ]
+      },
+      {
+        "title": "Auto data quality overview \\_|\\_ Knowledge Catalog \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataplex/docs/auto-data-quality-overview",
+        "source_id": "site-docs-root",
+        "final_score": 258,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "You can create data quality rules in the following ways: Use recommendations from Knowledge Catalog data profiling Use the predefined rules Create custom SQL rules Predefined rules Knowledge Catalog supports the following categories of predefined rules: Row-level For row-level category rules, the expectation is applied against each data row.",
+          "Recommended: Use the data reference parameter to refer to the source table: discount pct IN ( SELECT discount pct FROM my project id.dim dataset.dim currency AS temp-table WHERE temp-table.transaction timestamp = ${data()}.timestamp ) Omit the table reference: discount pct IN ( SELECT discount pct FROM another project.another dataset.another table AS temp-table WHERE temp-table.transaction timestamp = timestamp Not recommended: Don't use a direct table reference to refer to columns in the source table: discount pct IN ( SELECT discount pct FROM my project id.dim dataset.dim currency AS temp-table WHERE temp-table.transaction timestamp = my project id.dim dataset.dim currency.timestamp ) Valid use of different tables: You can use a direct table reference when comparing columns from a different table: discount pct IN ( SELECT discount pct FROM my project id.dim dataset.dim currency AS temp-table WHERE temp-table.transaction timestamp = another project.another dataset.another table.timestamp ) Debug queries Preview This product or feature is subject to the \"Pre-GA Offerings Terms\" in the General Service Terms section of the Service Specific Terms .",
+          "Simple aggregate example to make sure that discount pct is not greater than 100: SELECT FROM example project.example dataset.table WHERE discount pct > 100 Using an expression subquery to compare values across a different table: SELECT FROM example project.example dataset.different-table WHERE gross weight > (SELECT avg(gross weight) FROM example project.example dataset.different-table) For example rules, see auto data quality sample rules ."
+        ]
+      },
+      {
+        "title": "Use data quality tasks \\_|\\_ Knowledge Catalog \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataplex/docs/check-data-quality",
+        "source_id": "site-docs-root-2",
+        "final_score": 246,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "This is a convenience section that allows you to shorten the entity uri metadata registry defaults : dataplex : projects : PROJECT ID locations : REGION ID lakes : operations zones : procurement You have to define a NONE row filter row filters : NONE : filter sql expr : - True INTERNATIONAL ITEMS : filter sql expr : - REGEXP CONTAINS(item id, 'INTNL') rule dimensions are optional but allow you to aggregate reporting. rule dimensions : - consistency - correctness - duplication - completeness - conformance - integrity Rules can be shared across tables or columns. rules : This rule is parameterized with column names as parameter NO DUPLICATES IN COLUMN GROUPS : rule type : CUSTOM SQL STATEMENT dimension : duplication params : custom sql arguments : - column names custom sql statement : - select a. from data a inner join ( select $column names from data group by $column names having count( ) > 1 ) duplicates using ($column names) VALUE ZERO OR POSITIVE : rule type : CUSTOM SQL EXPR dimension : correctness params : custom sql expr : - $column >= 0 VALID ITEM ID : rule type : REGEX dimension : conformance params : pattern : - [A-Z]{5}[0-9]{15} VALID CURRENCY ID : rule type : CUSTOM SQL EXPR dimension : integrity params : custom sql expr : - $column in ('GBP', 'JPY') #rule bindings associate rules to {table, column} rule bindings : TRANSACTIONS UNIQUE : entity uri : dataplex://projects/ PROJECT ID /locations/ REGION ID /lakes/operations/zones/procurement/entities/sales orders column id : id row filter id : NONE incremental time filter column id : last modified timestamp rule ids : - NO DUPLICATES IN COLUMN GROUPS : column names : \"id\" TRANSACTION AMOUNT VALID : entity uri : dataplex://zones/procurement/entities/sales orders # omitting projects/locations/lakes from uri path to use the default values specified in metadata registry defaults column id : amount row filter id : NONE incremental time filter column id : last modified timestamp rule ids : - VALUE ZERO OR POSITIVE TRANSACTION VALID ITEM ID : entity uri : dataplex://zones/procurement/entities/sales orders column id : item id row filter id : NONE incremental time filter column id : last modified timestamp rule ids : - VALID ITEM ID TRANSACTION CURRENCY VALID : entity uri : dataplex://zones/procurement/entities/sales orders column id : transaction currency row filter id : INTERNATIONAL ITEMS incremental time filter column id : last modified timestamp rule ids : - VALID CURRENCY ID Troubleshoot failed rules with failed records query For every rule that fails, the summary table stores a query in the failed records query column that you can use to get failed records.",
+          "This is a convenience section that allows you to shorten the entity uri metadata registry defaults : dataplex : projects : PROJECT ID locations : REGION ID lakes : operations zones : procurement You have to define a NONE row filter row filters : NONE : filter sql expr : - True INTERNATIONAL ITEMS : filter sql expr : - REGEXP CONTAINS(item id, 'INTNL') rule dimensions are optional but allow you to aggregate reporting. rule dimensions : - consistency - correctness - duplication - completeness - conformance - integrity Rules can be shared across tables or columns. rules : This rule is parameterized with column names as parameter NO DUPLICATES IN COLUMN GROUPS : rule type : CUSTOM SQL STATEMENT dimension : duplication params : custom sql arguments : - column names custom sql statement : - select a. from data a inner join ( select $column names from data group by $column names having count( ) > 1 ) duplicates using ($column names) VALUE ZERO OR POSITIVE : rule type : CUSTOM SQL EXPR dimension : correctness params : custom sql expr : - $column >= 0 VALID ITEM ID : rule type : REGEX dimension : conformance params : pattern : - [A-Z]{5}[0-9]{15} VALID CURRENCY ID : rule type : CUSTOM SQL EXPR dimension : integrity params : custom sql expr : - $column in ('GBP', 'JPY') #rule bindings associate rules to {table, column} rule bindings : TRANSACTIONS UNIQUE : entity uri : dataplex://projects/ PROJECT ID /locations/ REGION ID /lakes/operations/zones/procurement/entities/sales orders column id : id row filter id : NONE rule ids : - NO DUPLICATES IN COLUMN GROUPS : column names : \"id\" TRANSACTION AMOUNT VALID : entity uri : dataplex://zones/procurement/entities/sales orders # omitting projects/locations/lakes from uri path to use the default values specified in metadata registry defaults column id : amount row filter id : NONE rule ids : - VALUE ZERO OR POSITIVE TRANSACTION VALID ITEM ID : entity uri : dataplex://zones/procurement/entities/sales orders column id : item id row filter id : NONE rule ids : - VALID ITEM ID TRANSACTION CURRENCY VALID : entity uri : dataplex://zones/procurement/entities/sales orders column id : transaction currency row filter id : INTERNATIONAL ITEMS rule ids : - VALID CURRENCY ID Sample 4 This example enhances Sample 3 by adding incremental validations using the last modified timestamp column.",
+          "This is a convenience section that allows you to shorten the entity uri metadata registry defaults : dataplex : projects : PROJECT ID locations : REGION ID lakes : operations zones : procurement You have to define a NONE row filter row filters : NONE : filter sql expr : - True INTERNATIONAL ITEMS : filter sql expr : - REGEXP CONTAINS(item id, 'INTNL') rule dimensions are optional but allow you to aggregate reporting. rule dimensions : - consistency - correctness - duplication - completeness - conformance - integrity Rules can be shared across tables or columns. rules : VALUE ZERO OR POSITIVE : rule type : CUSTOM SQL EXPR dimension : correctness params : custom sql expr : - $column >= 0 VALID ITEM ID : rule type : REGEX dimension : conformance params : pattern : - [A-Z]{5}[0-9]{15} VALID CURRENCY ID : rule type : CUSTOM SQL EXPR dimension : integrity params : custom sql expr : - $column in ('GBP', 'JPY') #rule bindings associate rules to {table, column} rule bindings : TRANSACTION AMOUNT VALID : entity uri : dataplex://projects/ PROJECT ID /locations/ REGION ID /lakes/operations/zones/procurement/entities/sales orders column id : amount row filter id : NONE rule ids : - VALUE ZERO OR POSITIVE TRANSACTION VALID ITEM ID : entity uri : dataplex://zones/procurement/entities/sales orders # omitting projects/locations/lakes from uri path to use the default values specified in metadata registry defaults column id : item id row filter id : NONE rule ids : - VALID ITEM ID TRANSACTION CURRENCY VALID : entity uri : dataplex://zones/procurement/entities/sales orders column id : transaction currency row filter id : INTERNATIONAL ITEMS rule ids : - VALID CURRENCY ID Replace the following: PROJECT ID : your project ID."
+        ]
+      },
+      {
+        "title": "\"Manage Dataplex Universal Catalog resources using custom constraints \\_\\",
+        "url": "https://docs.cloud.google.com/dataplex/docs/dataplex-custom-constraints",
+        "source_id": "site-docs-root-2",
+        "final_score": 225,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Resource Field dataplex.googleapis.com/AspectType resource.authorization.alternateUsePermission resource.description resource.displayName resource.metadataTemplate.annotations.deprecated resource.metadataTemplate.annotations.description resource.metadataTemplate.annotations.displayName resource.metadataTemplate.annotations.displayOrder resource.metadataTemplate.annotations.stringType resource.metadataTemplate.annotations.stringValues resource.metadataTemplate.constraints.required resource.metadataTemplate.enumValues.deprecated resource.metadataTemplate.enumValues.index resource.metadataTemplate.enumValues.name resource.metadataTemplate.index resource.metadataTemplate.name resource.metadataTemplate.type resource.metadataTemplate.typeId resource.metadataTemplate.typeRef dataplex.googleapis.com/DataScan resource.data.entity resource.data.resource resource.dataDiscoverySpec.bigqueryPublishingConfig.connection resource.dataDiscoverySpec.bigqueryPublishingConfig.location resource.dataDiscoverySpec.bigqueryPublishingConfig.tableType resource.dataDiscoverySpec.storageConfig.csvOptions.delimiter resource.dataDiscoverySpec.storageConfig.csvOptions.encoding resource.dataDiscoverySpec.storageConfig.csvOptions.headerRows resource.dataDiscoverySpec.storageConfig.csvOptions.quote resource.dataDiscoverySpec.storageConfig.csvOptions.typeInferenceDisabled resource.dataDiscoverySpec.storageConfig.excludePatterns resource.dataDiscoverySpec.storageConfig.includePatterns resource.dataDiscoverySpec.storageConfig.jsonOptions.encoding resource.dataDiscoverySpec.storageConfig.jsonOptions.typeInferenceDisabled resource.dataProfileSpec.excludeFields.fieldNames resource.dataProfileSpec.includeFields.fieldNames resource.dataProfileSpec.postScanActions.bigqueryExport.resultsTable resource.dataProfileSpec.rowFilter resource.dataProfileSpec.samplingPercent resource.dataQualitySpec.postScanActions.bigqueryExport.resultsTable resource.dataQualitySpec.postScanActions.notificationReport.recipients.emails resource.dataQualitySpec.postScanActions.notificationReport.scoreThresholdTrigger.scoreThreshold resource.dataQualitySpec.rowFilter resource.dataQualitySpec.rules.column resource.dataQualitySpec.rules.description resource.dataQualitySpec.rules.dimension resource.dataQualitySpec.rules.ignoreNull resource.dataQualitySpec.rules.name resource.dataQualitySpec.rules.rangeExpectation.maxValue resource.dataQualitySpec.rules.rangeExpectation.minValue resource.dataQualitySpec.rules.rangeExpectation.strictMaxEnabled resource.dataQualitySpec.rules.rangeExpectation.strictMinEnabled resource.dataQualitySpec.rules.regexExpectation.regex resource.dataQualitySpec.rules.rowConditionExpectation.sqlExpression resource.dataQualitySpec.rules.setExpectation.values resource.dataQualitySpec.rules.sqlAssertion.sqlStatement resource.dataQualitySpec.rules.statisticRangeExpectation.maxValue resource.dataQualitySpec.rules.statisticRangeExpectation.minValue resource.dataQualitySpec.rules.statisticRangeExpectation.statistic resource.dataQualitySpec.rules.statisticRangeExpectation.strictMaxEnabled resource.dataQualitySpec.rules.statisticRangeExpectation.strictMinEnabled resource.dataQualitySpec.rules.suspended resource.dataQualitySpec.rules.tableConditionExpectation.sqlExpression resource.dataQualitySpec.rules.threshold resource.dataQualitySpec.samplingPercent resource.description resource.displayName resource.executionSpec.field resource.executionSpec.trigger.schedule.cron dataplex.googleapis.com/EntryGroup resource.description resource.displayName dataplex.googleapis.com/EntryType resource.authorization.alternateUsePermission resource.description resource.displayName resource.platform resource.requiredAspects.type resource.system resource.typeAliases dataplex.googleapis.com/MetadataJob resource.exportSpec.outputPath resource.exportSpec.scope.aspectTypes resource.exportSpec.scope.entryGroups resource.exportSpec.scope.entryTypes resource.exportSpec.scope.organizationLevel resource.exportSpec.scope.projects resource.importSpec.aspectSyncMode resource.importSpec.entrySyncMode resource.importSpec.logLevel resource.importSpec.scope.aspectTypes resource.importSpec.scope.entryGroups resource.importSpec.scope.entryTypes resource.importSpec.sourceCreateTime resource.importSpec.sourceStorageUri resource.type What's next Learn more about Organization Policy Service .",
+          "Description Constraint syntax Require a specific aspect type for entry types name : organizations/ ORGANIZATION ID /customConstraints/custom.requireAspectTypeForEntryType resourceTypes : - dataplex.googleapis.com/EntryType methodTypes : - CREATE - UPDATE condition : \"resource.requiredAspects.exists(value, value.type ==\" projects/ PROJECT ID /locations/ LOCATION /aspectTypes/exampleAspectType\") actionType : DENY displayName : All entry types require aspect type exampleAspectType description : All entry types require the aspect type exampleAspectType Require a minimum sampling rate for data profiling scans name : organizations/ ORGANIZATION ID /customConstraints/custom.minimumSamplingDataScans resourceTypes : - dataplex.googleapis.com/DataScan methodTypes : - CREATE - UPDATE condition : \"resource.dataProfileSpec.samplingPercent > = 20.0\" actionType : ALLOW displayName : Require minimum sampling for data profiling scans description : All data profiling scans need at least 20% sampling rate Dataplex Universal Catalog supported resources The following table lists the Dataplex Universal Catalog resources that you can reference in custom constraints.",
+          "Create the policy Save the following file as policy-deny-entry-group.yaml : name : projects/ PROJECT ID /policies/custom.denyDataplexEntryGroup spec : rules : - enforce : true Replace PROJECT ID with your project ID."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "bigquery.dataEditor",
+      "bigquery.dataViewer",
+      "bigquery.googleapis.com",
+      "bigquery.jobUser",
+      "com.google.cloud.dataplex.v1",
+      "currency.timestamp",
+      "custom.denyDataplexEntryGroup",
+      "custom.minimumSamplingDataScans",
+      "custom.requireAspectTypeForEntryType",
+      "dataplex.catalogEditor",
+      "dataplex.dataScanAdmin",
+      "dataplex.dataScanCreator",
+      "dataplex.dataScanDataViewer",
+      "dataplex.dataScanEditor",
+      "dataplex.dataScanViewer",
+      "dataplex.googleapis.com",
+      "dataset.another",
+      "dataset.different",
+      "dataset.dim",
+      "dataset.table",
+      "dataset.test",
+      "gmail.com",
+      "group.yaml",
+      "id.dim",
+      "project.another",
+      "project.example",
+      "project.test",
+      "resource.authorization.alternateUsePermission",
+      "resource.data.entity",
+      "resource.data.resource",
+      "resource.dataDiscoverySpec.bigqueryPublishingConfig.connection",
+      "resource.dataDiscoverySpec.bigqueryPublishingConfig.location",
+      "resource.dataDiscoverySpec.bigqueryPublishingConfig.tableType",
+      "resource.dataDiscoverySpec.storageConfig.csvOptions.delimiter",
+      "resource.dataDiscoverySpec.storageConfig.csvOptions.encoding",
+      "resource.dataDiscoverySpec.storageConfig.csvOptions.headerRows",
+      "resource.dataDiscoverySpec.storageConfig.csvOptions.quote",
+      "resource.dataDiscoverySpec.storageConfig.csvOptions.typeInferenceDisabled",
+      "resource.dataDiscoverySpec.storageConfig.excludePatterns",
+      "resource.dataDiscoverySpec.storageConfig.includePatterns",
+      "resource.dataDiscoverySpec.storageConfig.jsonOptions.encoding",
+      "resource.dataDiscoverySpec.storageConfig.jsonOptions.typeInferenceDisabled",
+      "resource.dataProfileSpec.excludeFields.fieldNames",
+      "resource.dataProfileSpec.includeFields.fieldNames",
+      "resource.dataProfileSpec.postScanActions.bigqueryExport.resultsTable",
+      "resource.dataProfileSpec.rowFilter",
+      "resource.dataProfileSpec.samplingPercent",
+      "resource.dataQualitySpec.postScanActions.bigqueryExport.resultsTable",
+      "resource.dataQualitySpec.postScanActions.notificationReport.recipients.emails",
+      "resource.dataQualitySpec.postScanActions.notificationReport.scoreThresholdTrigger.scoreThreshold",
+      "resource.dataQualitySpec.rowFilter",
+      "resource.dataQualitySpec.rules.column",
+      "resource.dataQualitySpec.rules.description",
+      "resource.dataQualitySpec.rules.dimension",
+      "resource.dataQualitySpec.rules.ignoreNull",
+      "resource.dataQualitySpec.rules.name",
+      "resource.dataQualitySpec.rules.rangeExpectation.maxValue",
+      "resource.dataQualitySpec.rules.rangeExpectation.minValue",
+      "resource.dataQualitySpec.rules.rangeExpectation.strictMaxEnabled",
+      "resource.dataQualitySpec.rules.rangeExpectation.strictMinEnabled",
+      "resource.dataQualitySpec.rules.regexExpectation.regex",
+      "resource.dataQualitySpec.rules.rowConditionExpectation.sqlExpression",
+      "resource.dataQualitySpec.rules.setExpectation.values",
+      "resource.dataQualitySpec.rules.sqlAssertion.sqlStatement",
+      "resource.dataQualitySpec.rules.statisticRangeExpectation.maxValue",
+      "resource.dataQualitySpec.rules.statisticRangeExpectation.minValue",
+      "resource.dataQualitySpec.rules.statisticRangeExpectation.statistic",
+      "resource.dataQualitySpec.rules.statisticRangeExpectation.strictMaxEnabled",
+      "resource.dataQualitySpec.rules.statisticRangeExpectation.strictMinEnabled",
+      "resource.dataQualitySpec.rules.suspended",
+      "resource.dataQualitySpec.rules.tableConditionExpectation.sqlExpression",
+      "resource.dataQualitySpec.rules.threshold",
+      "resource.dataQualitySpec.samplingPercent",
+      "resource.description",
+      "resource.displayName",
+      "resource.executionSpec.field",
+      "resource.executionSpec.trigger.schedule.cron",
+      "resource.exportSpec.outputPath",
+      "resource.exportSpec.scope.aspectTypes",
+      "resource.exportSpec.scope.entryGroups",
+      "resource.exportSpec.scope.entryTypes",
+      "resource.exportSpec.scope.organizationLevel",
+      "resource.exportSpec.scope.projects",
+      "resource.importSpec.aspectSyncMode",
+      "resource.importSpec.entrySyncMode",
+      "resource.importSpec.logLevel",
+      "resource.importSpec.scope.aspectTypes",
+      "resource.importSpec.scope.entryGroups",
+      "resource.importSpec.scope.entryTypes",
+      "resource.importSpec.sourceCreateTime",
+      "resource.importSpec.sourceStorageUri",
+      "resource.labels.resource",
+      "resource.metadataTemplate.annotations.deprecated",
+      "resource.metadataTemplate.annotations.description",
+      "resource.metadataTemplate.annotations.displayName",
+      "resource.metadataTemplate.annotations.displayOrder",
+      "resource.metadataTemplate.annotations.stringType",
+      "resource.metadataTemplate.annotations.stringValues",
+      "resource.metadataTemplate.constraints.required",
+      "resource.metadataTemplate.enumValues.deprecated",
+      "resource.metadataTemplate.enumValues.index",
+      "resource.metadataTemplate.enumValues.name",
+      "resource.metadataTemplate.index",
+      "resource.metadataTemplate.name",
+      "resource.metadataTemplate.type",
+      "resource.metadataTemplate.typeId",
+      "resource.metadataTemplate.typeRef",
+      "resource.platform",
+      "resource.requiredAspects.exists",
+      "resource.requiredAspects.type",
+      "resource.system",
+      "resource.type",
+      "resource.typeAliases",
+      "table.timestamp",
+      "table.transaction",
+      "value.type"
+    ],
+    "missing_inventory_roles": [
+      "roles/bigquery.dataEditor",
+      "roles/bigquery.dataViewer",
+      "roles/bigquery.jobUser",
+      "roles/dataplex.catalogEditor",
+      "roles/dataplex.dataScanAdmin",
+      "roles/dataplex.dataScanCreator",
+      "roles/dataplex.dataScanDataViewer",
+      "roles/dataplex.dataScanEditor",
+      "roles/dataplex.dataScanViewer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataplex/docs/use-auto-data-quality",
+        "https://docs.cloud.google.com/dataplex/docs/auto-data-quality-overview",
+        "https://docs.cloud.google.com/dataplex/docs/check-data-quality",
+        "https://docs.cloud.google.com/dataplex/docs/dataplex-custom-constraints"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataplex/docs/use-auto-data-quality",
+        "https://docs.cloud.google.com/dataplex/docs/auto-data-quality-overview",
+        "https://docs.cloud.google.com/dataplex/docs/check-data-quality",
+        "https://docs.cloud.google.com/dataplex/docs/dataplex-custom-constraints"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataplex/docs/use-auto-data-quality",
+        "https://docs.cloud.google.com/dataplex/docs/auto-data-quality-overview",
+        "https://docs.cloud.google.com/dataplex/docs/check-data-quality",
+        "https://docs.cloud.google.com/dataplex/docs/dataplex-custom-constraints"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataplex/docs/use-auto-data-quality",
+        "https://docs.cloud.google.com/dataplex/docs/auto-data-quality-overview",
+        "https://docs.cloud.google.com/dataplex/docs/check-data-quality",
+        "https://docs.cloud.google.com/dataplex/docs/dataplex-custom-constraints"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataplex/docs/use-auto-data-quality",
+        "https://docs.cloud.google.com/dataplex/docs/auto-data-quality-overview",
+        "https://docs.cloud.google.com/dataplex/docs/check-data-quality",
+        "https://docs.cloud.google.com/dataplex/docs/dataplex-custom-constraints"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataplex/docs/use-auto-data-quality",
+        "https://docs.cloud.google.com/dataplex/docs/auto-data-quality-overview",
+        "https://docs.cloud.google.com/dataplex/docs/check-data-quality",
+        "https://docs.cloud.google.com/dataplex/docs/dataplex-custom-constraints"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataplex/docs/use-auto-data-quality",
+        "https://docs.cloud.google.com/dataplex/docs/auto-data-quality-overview",
+        "https://docs.cloud.google.com/dataplex/docs/check-data-quality",
+        "https://docs.cloud.google.com/dataplex/docs/dataplex-custom-constraints"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataplex/docs/use-auto-data-quality",
+        "https://docs.cloud.google.com/dataplex/docs/auto-data-quality-overview",
+        "https://docs.cloud.google.com/dataplex/docs/check-data-quality",
+        "https://docs.cloud.google.com/dataplex/docs/dataplex-custom-constraints"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataplex/docs/use-auto-data-quality",
+        "https://docs.cloud.google.com/dataplex/docs/auto-data-quality-overview",
+        "https://docs.cloud.google.com/dataplex/docs/check-data-quality",
+        "https://docs.cloud.google.com/dataplex/docs/dataplex-custom-constraints"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataplex/docs/use-auto-data-quality",
+        "https://docs.cloud.google.com/dataplex/docs/auto-data-quality-overview",
+        "https://docs.cloud.google.com/dataplex/docs/check-data-quality",
+        "https://docs.cloud.google.com/dataplex/docs/dataplex-custom-constraints"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataplex/docs/use-auto-data-quality",
+        "https://docs.cloud.google.com/dataplex/docs/auto-data-quality-overview",
+        "https://docs.cloud.google.com/dataplex/docs/check-data-quality",
+        "https://docs.cloud.google.com/dataplex/docs/dataplex-custom-constraints"
+      ]
+    }
+  ]
+}

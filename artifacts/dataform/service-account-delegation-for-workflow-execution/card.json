@@ -1,0 +1,170 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:33.064Z",
+  "source_step08_card": "data/step-08/current/products/dataform/card.json",
+  "product_name": "Dataform",
+  "product_slug": "dataform",
+  "feature_name": "Service account delegation for workflow execution",
+  "feature_slug": "service-account-delegation-for-workflow-execution",
+  "summary": "Service account delegation lets Dataform configure delegated service accounts for workflow execution at the repository or workflow configuration level.",
+  "extended_definition": "Service account delegation lets Dataform configure delegated service accounts for workflow execution at the repository or workflow configuration level.",
+  "lifecycle": {
+    "latest_feature_date": "2023-09-07",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dataform/docs/access-control",
+      "https://docs.cloud.google.com/dataform/docs/configure-compilation",
+      "https://docs.cloud.google.com/dataform/docs/overview",
+      "https://docs.cloud.google.com/dataform/docs/quickstart-create-workflow"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Configure compilations \\_|\\_ Dataform \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataform/docs/configure-compilation",
+        "source_id": "site-docs-root-2",
+        "final_score": 251,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Ways to configure Dataform execution Dataform provides the following options for configuring execution: Manual execution in a workspace You can manually trigger the instant execution of a workflow in a Dataform workspace, outside of any schedule.",
+          "Dataform release configurations and workflow configurations let you configure compilation and schedule executions within Dataform, without the need to rely on additional services.",
+          "Introduction to the workflow lifecycle in Dataform This section describes the workflow lifecycle in Dataform and ways to configure compilation and execution within Dataform."
+        ]
+      },
+      {
+        "title": "Control access with IAM \\_|\\_ Dataform \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataform/docs/access-control",
+        "source_id": "site-docs-root-2",
+        "final_score": 251,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "About custom service accounts and Dataform service agents You can configure custom service accounts to run workflows on your behalf in the following ways: At the repository level, to run all the workflows in a given repository.",
+          "This lets the default Dataform service agent start new automatic workflow runs for workflow configurations that are run by the custom service account.",
+          "This lets Dataform run your workflows using the permissions defined on your custom service account instead of on the default service agent's account."
+        ]
+      },
+      {
+        "title": "Dataform overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataform/docs/overview",
+        "source_id": "site-docs-root",
+        "final_score": 249,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Dataform offers a web environment for the following activities: Workflow development Connection with GitHub, GitLab, Azure DevOps Services, and Bitbucket Continuous integration and continuous deployment Workflow execution The following sections describe the main features of Dataform.",
+          "To debug errors, you can monitor runs in the following ways: View detailed Dataform execution logs View audit logs for Dataform View Cloud Logging logs for Dataform Dataform core Dataform core is an open source meta-language to create SQL tables and workflows.",
+          "Workflow compilation Dataform uses default compilation settings, configured in the workflow settings file , to compile the workflow code in your workspace to SQL in real-time, creating a compilation result of the workspace."
+        ]
+      },
+      {
+        "title": "\"Quickstart: Create and run a workflow \\_|\\_ Dataform \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/dataform/docs/quickstart-create-workflow",
+        "source_id": "site-docs-root",
+        "final_score": 245,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Run the API request with the following information: Endpoint : GET https://dataform.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION /repositories/ REPOSITORY ID /workflowInvocations Query parameter : to ensure that the most recent executions appear at the top of the results, use ?orderBy=create time desc . curl command: curl -H \"Authorization: Bearer $( gcloud auth print-access-token ) \" \\ \"https://dataform.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION /repositories/ REPOSITORY ID /workflowInvocations?orderBy=create time%20desc\" Replace the following: LOCATION : the Google Cloud region for your repository, for example, europe-west4 .",
+          "Create a view A Dataform view is an asset defined in a SQLX file that lets you transform data and serves as a source for other tables or views in your workflow.",
+          "To learn how to override default Dataform settings of your repository, see Configure Dataform workflow settings ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "dataform.googleapis.com",
+      "settings.yaml"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataform/docs/configure-compilation",
+        "https://docs.cloud.google.com/dataform/docs/access-control",
+        "https://docs.cloud.google.com/dataform/docs/overview",
+        "https://docs.cloud.google.com/dataform/docs/quickstart-create-workflow"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataform/docs/configure-compilation",
+        "https://docs.cloud.google.com/dataform/docs/access-control",
+        "https://docs.cloud.google.com/dataform/docs/overview",
+        "https://docs.cloud.google.com/dataform/docs/quickstart-create-workflow"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataform/docs/configure-compilation",
+        "https://docs.cloud.google.com/dataform/docs/access-control",
+        "https://docs.cloud.google.com/dataform/docs/overview",
+        "https://docs.cloud.google.com/dataform/docs/quickstart-create-workflow"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataform/docs/configure-compilation",
+        "https://docs.cloud.google.com/dataform/docs/access-control",
+        "https://docs.cloud.google.com/dataform/docs/overview",
+        "https://docs.cloud.google.com/dataform/docs/quickstart-create-workflow"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataform/docs/configure-compilation",
+        "https://docs.cloud.google.com/dataform/docs/access-control",
+        "https://docs.cloud.google.com/dataform/docs/overview",
+        "https://docs.cloud.google.com/dataform/docs/quickstart-create-workflow"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataform/docs/configure-compilation",
+        "https://docs.cloud.google.com/dataform/docs/access-control",
+        "https://docs.cloud.google.com/dataform/docs/overview",
+        "https://docs.cloud.google.com/dataform/docs/quickstart-create-workflow"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataform/docs/configure-compilation",
+        "https://docs.cloud.google.com/dataform/docs/access-control",
+        "https://docs.cloud.google.com/dataform/docs/overview",
+        "https://docs.cloud.google.com/dataform/docs/quickstart-create-workflow"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataform/docs/configure-compilation",
+        "https://docs.cloud.google.com/dataform/docs/access-control",
+        "https://docs.cloud.google.com/dataform/docs/overview",
+        "https://docs.cloud.google.com/dataform/docs/quickstart-create-workflow"
+      ]
+    }
+  ]
+}

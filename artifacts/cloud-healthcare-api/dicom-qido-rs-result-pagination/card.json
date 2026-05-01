@@ -1,0 +1,122 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:23.577Z",
+  "source_step08_card": "data/step-08/current/products/cloud-healthcare-api/card.json",
+  "product_name": "Cloud Healthcare API",
+  "product_slug": "cloud-healthcare-api",
+  "feature_name": "DICOM QIDO-RS result pagination",
+  "feature_slug": "dicom-qido-rs-result-pagination",
+  "summary": "The DICOM QIDO-RS API now supports paginated query results.",
+  "extended_definition": "The DICOM QIDO-RS API now supports paginated query results.",
+  "lifecycle": {
+    "latest_feature_date": "2019-04-04",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/healthcare-api/docs/dicom",
+      "https://docs.cloud.google.com/healthcare-api/docs/how-tos/dicom",
+      "https://docs.cloud.google.com/healthcare-api/docs/how-tos/dicomweb"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"DICOM conformance statement \\_|\\_ Cloud Healthcare API \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/healthcare-api/docs/dicom",
+        "source_id": "site-api-reference",
+        "final_score": 123,
+        "relevance": "",
+        "evidence_snippets": [
+          "Returned results The response can be in either JSON or XML format which can be controlled using the following Accept header values: application/dicom+json (default) multipart/related; type=application/dicom+xml By default the following attributes will be returned: Studies: SpecificCharacterSet StudyDate StudyTime AccessionNumber InstanceAvailability ReferringPhysicianName TimezoneOffsetFromUTC PatientName PatientID PatientBirthDate PatientSex StudyInstanceUID StudyID Series: SpecificCharacterSet Modality TimezoneOffsetFromUTC SeriesDescription SeriesInstanceUID PerformedProcedureStepStartDate PerformedProcedureStepStartTime RequestAttributesSequence Instances: SpecificCharacterSet SOPClassUID SOPInstanceUID InstanceAvailability TimezoneOffsetFromUTC InstanceNumber Rows Columns BitsAllocated NumberOfFrames For includefield=all , the default attributes will be returned along with the following attributes: Studies: PersonIdentificationCodeSequence PersonAddress PersonTelephoneNumbers PersonTelecomInformation InstitutionName InstitutionAddress InstitutionCodeSequence ReferringPhysicianIdentificationSequence ConsultingPhysicianName ConsultingPhysicianIdentificationSequence IssuerOfAccessionNumberSequence LocalNamespaceEntityID UniversalEntityID UniversalEntityIDType StudyDescription PhysiciansOfRecord PhysiciansOfRecordIdentificationSequence NameOfPhysiciansReadingStudy PhysiciansReadingStudyIdentificationSequence RequestingServiceCodeSequence ReferencedStudySequence ProcedureCodeSequence ReasonForPerformedProcedureCodeSequence Series: SeriesNumber Laterality SeriesDate SeriesTime Instances: all attributes present in the DICOM instance, excluding the following exceptions.",
+          "DICOM instances In addition to the above Accept Headers, RetrieveInstance supports single part content types for convenience: application/dicom; transfer-syntax= application/dicom; transfer-syntax=1.2.840.10008.1.2 application/dicom; transfer-syntax=1.2.840.10008.1.2.1 application/dicom; transfer-syntax=1.2.840.10008.1.2.1.99 application/dicom; transfer-syntax=1.2.840.10008.1.2.4.50 application/dicom; transfer-syntax=1.2.840.10008.1.2.4.51 application/dicom; transfer-syntax=1.2.840.10008.1.2.4.57 application/dicom; transfer-syntax=1.2.840.10008.1.2.4.70 application/dicom; transfer-syntax=1.2.840.10008.1.2.4.80 application/dicom; transfer-syntax=1.2.840.10008.1.2.4.81 application/dicom; transfer-syntax=1.2.840.10008.1.2.4.90 application/dicom; transfer-syntax=1.2.840.10008.1.2.4.91 application/dicom; transfer-syntax=1.2.840.10008.1.2.4.110 application/dicom; transfer-syntax=1.2.840.10008.1.2.4.111 application/dicom; transfer-syntax=1.2.840.10008.1.2.4.112 application/dicom; transfer-syntax=1.2.840.10008.1.2.4.201 application/dicom; transfer-syntax=1.2.840.10008.1.2.4.202 application/dicom; transfer-syntax=1.2.840.10008.1.2.4.203 application/dicom; transfer-syntax=1.2.840.10008.1.2.5 application/dicom; transfer-syntax=1.2.840.10008.1.2.8.1 This is not part of the official DICOMweb standard.",
+          "The Retrieve Transaction supports the retrieving following resources: DICOM Resources: Study Series Instance Frames Bulkdata Metadata Resources Study Series Instance Rendered Resources Instance Frames It does not support Thumbnail resources."
+        ]
+      },
+      {
+        "title": "\"Creating and managing DICOM stores \\_|\\_ Cloud Healthcare API \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/healthcare-api/docs/how-tos/dicom",
+        "source_id": "site-docs-root",
+        "final_score": 100,
+        "relevance": "",
+        "evidence_snippets": [
+          "Patch request = client . projects () . locations () . datasets () . dicomStores () . patch ( dicomStoreName , store ) . setUpdateMask ( \"notificationConfig\" ); // Execute the request and process the results. store = request . execute (); System . out . println ( \"DICOM store patched: \\n\" + store . toPrettyString ()); } private static CloudHealthcare createClient () throws IOException { // Use Application Default Credentials (ADC) to authenticate the requests // For more information see https://cloud.google.com/docs/authentication/production GoogleCredentials credential = GoogleCredentials . getApplicationDefault () . createScoped ( Collections . singleton ( CloudHealthcareScopes .",
+          "Delete request = client . projects (). locations (). datasets (). dicomStores (). delete ( dicomStoreName ); // Execute the request and process the results. request . execute (); System . out . println ( \"DICOM store deleted.\" ); } private static CloudHealthcare createClient () throws IOException { // Use Application Default Credentials (ADC) to authenticate the requests // For more information see https://cloud.google.com/docs/authentication/production GoogleCredentials credential = GoogleCredentials . getApplicationDefault () . createScoped ( Collections . singleton ( CloudHealthcareScopes .",
+          "ListDicomStoresResponse response = request . execute (); stores . addAll ( response . getDicomStores ()); // Update the page token for the next request. pageToken = response . getNextPageToken (); } while ( pageToken != null ); // Print results."
+        ]
+      },
+      {
+        "title": "\"Using the DICOMweb standard \\_|\\_ Cloud Healthcare API \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/healthcare-api/docs/how-tos/dicomweb",
+        "source_id": "site-docs-root",
+        "final_score": 94,
+        "relevance": "",
+        "evidence_snippets": [
+          "Delete request = client . projects () . locations () . datasets () . dicomStores () . studies () . delete ( dicomStoreName , \"studies/\" + studyId ); // Execute the request and process the results. request . execute (); System . out . println ( \"DICOM study deleted.\" ); } private static CloudHealthcare createClient () throws IOException { // Use Application Default Credentials (ADC) to authenticate the requests // For more information see https://cloud.google.com/docs/authentication/production GoogleCredentials credential = GoogleCredentials . getApplicationDefault () . createScoped ( Collections . singleton ( CloudHealthcareScopes .",
+          "File f = new File ( filePath ); byte [] dicomBytes = Files . readAllBytes ( Paths . get ( filePath )); ByteArrayEntity requestEntity = new ByteArrayEntity ( dicomBytes ); HttpUriRequest request = RequestBuilder . post ( uriBuilder . build ()) . setEntity ( requestEntity ) . addHeader ( \"Content-Type\" , \"application/dicom\" ) . build (); // Execute the request and process the results.",
+          "RetrieveInstance request = client . projects () . locations () . datasets () . dicomStores () . studies () . series () . instances () . retrieveInstance ( dicomStoreName , dicomWebPath ); // Execute the request and process the results."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/healthcare-api/docs/dicom",
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/dicom",
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/dicomweb"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/healthcare-api/docs/dicom",
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/dicom",
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/dicomweb"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/healthcare-api/docs/dicom",
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/dicom",
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/dicomweb"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/healthcare-api/docs/dicom",
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/dicom",
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/dicomweb"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/healthcare-api/docs/dicom",
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/dicom",
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/dicomweb"
+      ]
+    }
+  ]
+}

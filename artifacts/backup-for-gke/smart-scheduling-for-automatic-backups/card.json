@@ -1,0 +1,84 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:18.457Z",
+  "source_step08_card": "data/step-08/current/products/backup-for-gke/card.json",
+  "product_name": "Backup for GKE",
+  "product_slug": "backup-for-gke",
+  "feature_name": "Smart Scheduling for automatic backups",
+  "feature_slug": "smart-scheduling-for-automatic-backups",
+  "summary": "Backup for GKE now supports Smart Scheduling, an RPO-based backup scheduling model in addition to cron scheduling.",
+  "extended_definition": "Backup for GKE now supports Smart Scheduling, an RPO-based backup scheduling model in addition to cron scheduling.",
+  "lifecycle": {
+    "latest_feature_date": "2024-04-22",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/how-to/backup",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/how-to/backup-plan",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/how-to/protected-application"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Plan a set of backups \\_|\\_ Backup for GKE \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/how-to/backup-plan",
+        "source_id": "site-docs-root",
+        "final_score": 136,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "You can create a backup plan with a backup scheduling method to automatically create backups: smart scheduling or cron scheduling.",
+          "Smart scheduling uses this value to automatically create backups.",
+          "CRON SCHEDULE : an optional argument to define a cron schedule that automatically creates backups and supports standard cron syntax."
+        ]
+      },
+      {
+        "title": "\"Define custom backup and restore logic \\_|\\_ Backup for GKE \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/how-to/protected-application",
+        "source_id": "site-docs-root",
+        "final_score": 76,
+        "relevance": "",
+        "evidence_snippets": [
+          "If ready, the application description will show Ready to backup status as true , such as in this example: % kubectl describe protectedapplication nginx Name: nginx Namespace: default API Version: gkebackup.gke.io/v1 Kind: ProtectedApplication Metadata: UID: 90c04a86-9dcd-48f2-abbf-5d84f979b2c2 Spec: Components: Name: nginx Resource Kind: Deployment Resource Names: nginx Strategy: Backup All Restore All: Backup Pre Hooks: Command: /sbin/fsfreeze -f /var/log/nginx Container: nginx Name: freeze Backup Post Hooks: Command: /sbin/fsfreeze -u /var/log/nginx Container: nginx Name: unfreeze Type: BackupAllRestoreAll Resource Selection: Selector: Match Labels: app: nginx Type: Selector Status: Ready To Backup: true Events: <none> What's next Learn more about planning a set of backups .",
+          "If ProtectedApplication resources are not present, Backup for GKE creates volume backups for all volumes within the scope of a backup and the resulting volume backups will be crash consistent - all writes flushed to the disk at a particular point in time will be captured (i.e., no partial writes).",
+          "If some of the resources referenced by your ProtectedApplication are created automatically by an operator, you should also include the operator's custom resources in your ProtectedApplication selector."
+        ]
+      },
+      {
+        "title": "Back up your workloads \\_|\\_ Backup for GKE \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/how-to/backup",
+        "source_id": "site-docs-root",
+        "final_score": 56,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "If the backup plan for this backup defines a minimum lifetime for backups, configured with the --backup-delete-lock-days flag, then backups created for this plan cannot be deleted (either automatically or manually) until that lifetime expires.",
+          "Enter a backup name and optional description. (Optional) Set the number of days to retain the backup before the backup is automatically deleted. (Optional) Set the number of days during which backups cannot be deleted.",
+          "Delete a backup Backups can be deleted in two ways: If the backup plan defines a retention period, backups created for that plan are automatically deleted after that period expires."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "gkebackup.gke.io",
+      "i.e"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": []
+}

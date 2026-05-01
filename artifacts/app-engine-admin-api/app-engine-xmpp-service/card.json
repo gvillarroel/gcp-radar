@@ -1,0 +1,192 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:14.916Z",
+  "source_step08_card": "data/step-08/current/products/app-engine-admin-api/card.json",
+  "product_name": "App Engine Admin API",
+  "product_slug": "app-engine-admin-api",
+  "feature_name": "App Engine XMPP service",
+  "feature_slug": "app-engine-xmpp-service",
+  "summary": "The App Engine XMPP service has been deprecated; deprecated on 2017-10-31.",
+  "extended_definition": "The App Engine XMPP service has been deprecated; deprecated on 2017-10-31.",
+  "lifecycle": {
+    "latest_feature_date": "2016-10-27",
+    "deprecation_date": "2017-10-31",
+    "status": "deprecation_noted"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/appengine/docs/admin-api/accessing-the-api",
+      "https://docs.cloud.google.com/appengine/docs/admin-api/reference/rpc/google.appengine.v1",
+      "https://docs.cloud.google.com/appengine/docs/standard/authenticating-users"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Package google.appengine.v1 \\_|\\_ App Engine Admin API \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/admin-api/reference/rpc/google.appengine.v1",
+        "source_id": "site-docs-reference-4",
+        "final_score": 70,
+        "relevance": "",
+        "evidence_snippets": [
+          "Index Applications (interface) AuthorizedCertificates (interface) AuthorizedDomains (interface) DomainMappings (interface) Firewall (interface) Instances (interface) Services (interface) Versions (interface) ApiConfigHandler (message) ApiEndpointHandler (message) Application (message) Application.DatabaseType (enum) Application.FeatureSettings (message) Application.IdentityAwareProxy (message) Application.ServingStatus (enum) AuthFailAction (enum) AuthorizedCertificate (message) AuthorizedCertificateView (enum) AuthorizedDomain (message) AutomaticScaling (message) BasicScaling (message) BatchUpdateIngressRulesRequest (message) BatchUpdateIngressRulesResponse (message) CertificateRawData (message) CloudBuildOptions (message) ContainerInfo (message) CpuUtilization (message) CreateApplicationRequest (message) CreateAuthorizedCertificateRequest (message) CreateDomainMappingRequest (message) CreateIngressRuleRequest (message) CreateVersionMetadataV1 (message) CreateVersionRequest (message) DebugInstanceRequest (message) DeleteAuthorizedCertificateRequest (message) DeleteDomainMappingRequest (message) DeleteIngressRuleRequest (message) DeleteInstanceRequest (message) DeleteServiceRequest (message) DeleteVersionRequest (message) Deployment (message) DiskUtilization (message) DomainMapping (message) DomainOverrideStrategy (enum) EndpointsApiService (message) EndpointsApiService.RolloutStrategy (enum) Entrypoint (message) ErrorHandler (message) ErrorHandler.ErrorCode (enum) FileInfo (message) FirewallRule (message) FirewallRule.Action (enum) FlexibleRuntimeSettings (message) GetApplicationRequest (message) GetAuthorizedCertificateRequest (message) GetDomainMappingRequest (message) GetIngressRuleRequest (message) GetInstanceRequest (message) GetServiceRequest (message) GetVersionRequest (message) HealthCheck (message) InboundServiceType (enum) Instance (message) Instance.Availability (enum) Instance.Liveness (message) Instance.Liveness.LivenessState (enum) Library (message) ListAuthorizedCertificatesRequest (message) ListAuthorizedCertificatesResponse (message) ListAuthorizedDomainsRequest (message) ListAuthorizedDomainsResponse (message) ListDomainMappingsRequest (message) ListDomainMappingsResponse (message) ListIngressRulesRequest (message) ListIngressRulesResponse (message) ListInstancesRequest (message) ListInstancesResponse (message) ListServicesRequest (message) ListServicesResponse (message) ListVersionsRequest (message) ListVersionsResponse (message) LivenessCheck (message) LocationMetadata (message) LoginRequirement (enum) ManagedCertificate (message) ManagementStatus (enum) ManualScaling (message) Network (message) NetworkSettings (message) NetworkSettings.IngressTrafficAllowed (enum) NetworkUtilization (message) OperationMetadataV1 (message) ReadinessCheck (message) RepairApplicationRequest (message) RequestUtilization (message) ResourceRecord (message) ResourceRecord.RecordType (enum) Resources (message) ScriptHandler (message) SecurityLevel (enum) Service (message) ServingStatus (enum) SslSettings (message) SslSettings.SslManagementType (enum) StandardSchedulerSettings (message) StaticFilesHandler (message) TrafficSplit (message) TrafficSplit.ShardBy (enum) UpdateApplicationRequest (message) UpdateAuthorizedCertificateRequest (message) UpdateDomainMappingRequest (message) UpdateIngressRuleRequest (message) UpdateServiceRequest (message) UpdateVersionRequest (message) UrlDispatchRule (message) UrlMap (message) UrlMap.RedirectHttpResponseCode (enum) Version (message) VersionView (enum) Volume (message) VpcAccessConnector (message) VpcAccessConnector.EgressSetting (enum) ZipInfo (message) Applications Manages App Engine applications.",
+          "You can specify the following fields depending on the App Engine environment and type of scaling that the version resource uses: Standard environment instance class automatic scaling in the standard environment: automatic scaling.min idle instances automatic scaling.max idle instances automaticScaling.standard scheduler settings.max instances automaticScaling.standard scheduler settings.min instances automaticScaling.standard scheduler settings.target cpu utilization automaticScaling.standard scheduler settings.target throughput utilization basic scaling or manual scaling in the standard environment: serving status manual scaling.instances Flexible environment serving status automatic scaling in the flexible environment: automatic scaling.min total instances automatic scaling.max total instances automatic scaling.cool down period sec automatic scaling.cpu utilization.target utilization manual scaling in the flexible environment: manual scaling.instances Authorization Scopes Requires the following OAuth scope: https://www.googleapis.com/auth/cloud-platform For more information, see the Authentication Overview .",
+          "Defaults to the default channel. threadsafe bool Whether multiple requests can be dispatched to this version at once. vm bool Whether to deploy this version in a container on a virtual machine. flexible runtime settings FlexibleRuntimeSettings Settings for App Engine flexible runtimes. app engine apis bool Allows App Engine second generation runtimes to access the legacy bundled services. beta settings map<string, string> Metadata settings that are supplied to this version to enable beta runtime features. env string App Engine execution environment for this version."
+        ]
+      },
+      {
+        "title": "\"Authenticating users \\_|\\_ App Engine standard environment \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/authenticating-users",
+        "source_id": "site-docs-reference",
+        "final_score": 30,
+        "relevance": "",
+        "evidence_snippets": [
+          "Home Documentation Application hosting App Engine Standard environment Guides Send feedback Authenticating users Stay organized with collections Save and categorize content based on your preferences.",
+          "Identity-Aware Proxy (IAP) Provides authentication by adding an Identity and Access Management (IAM) verification layer above your App Engine app.",
+          "The Users API allows an App Engine app to perform the following tasks: Detect whether the current user is signed in using a Google Account."
+        ]
+      },
+      {
+        "title": "Accessing the Admin API \\_|\\_ App Engine Admin API \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/appengine/docs/admin-api/accessing-the-api",
+        "source_id": "site-api-reference",
+        "final_score": 30,
+        "relevance": "",
+        "evidence_snippets": [
+          "This cURL command deploys the resources defined in the app.json configuration file to the v1 version of the default service in the application of project MY PROJECT ID . curl - X POST - T \"app.json\" - H \"Content-Type: application/json\" - H \"Authorization: Bearer [MY ACCESS TOKEN]\" https : // appengine . googleapis . com / v1 / apps /[ MY PROJECT ID ]/ services / default / versions What's next Deploying Versions To Your Application Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Important: This API requires that you request access to one of the following OAuth 2.0 scopes in your code: https://www.googleapis.com/auth/appengine.admin https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/cloud-platform.read-only The Authorization section on each method's reference page describes which OAuth scopes are required.",
+          "Configuring your project and creating credentials To configure your Google Cloud project and create credentials: Enable both the App Engine Admin API and Cloud Storage API in your Google Cloud project: Enable both APIs Create credentials that users and applications use to access the Admin API in your project."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "app.json",
+      "appengine.admin",
+      "appengine.applications.get",
+      "platform.read",
+      "scaling.cool",
+      "scaling.cpu",
+      "scaling.instances",
+      "scaling.max",
+      "scaling.min",
+      "settings.max",
+      "settings.min",
+      "settings.target",
+      "utilization.target"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/admin-api/reference/rpc/google.appengine.v1",
+        "https://docs.cloud.google.com/appengine/docs/admin-api/accessing-the-api",
+        "https://docs.cloud.google.com/appengine/docs/standard/authenticating-users"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/admin-api/reference/rpc/google.appengine.v1",
+        "https://docs.cloud.google.com/appengine/docs/admin-api/accessing-the-api",
+        "https://docs.cloud.google.com/appengine/docs/standard/authenticating-users"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/admin-api/reference/rpc/google.appengine.v1",
+        "https://docs.cloud.google.com/appengine/docs/admin-api/accessing-the-api",
+        "https://docs.cloud.google.com/appengine/docs/standard/authenticating-users"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/admin-api/reference/rpc/google.appengine.v1",
+        "https://docs.cloud.google.com/appengine/docs/admin-api/accessing-the-api",
+        "https://docs.cloud.google.com/appengine/docs/standard/authenticating-users"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/admin-api/reference/rpc/google.appengine.v1",
+        "https://docs.cloud.google.com/appengine/docs/admin-api/accessing-the-api",
+        "https://docs.cloud.google.com/appengine/docs/standard/authenticating-users"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/admin-api/reference/rpc/google.appengine.v1",
+        "https://docs.cloud.google.com/appengine/docs/admin-api/accessing-the-api",
+        "https://docs.cloud.google.com/appengine/docs/standard/authenticating-users"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/admin-api/reference/rpc/google.appengine.v1",
+        "https://docs.cloud.google.com/appengine/docs/admin-api/accessing-the-api",
+        "https://docs.cloud.google.com/appengine/docs/standard/authenticating-users"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/admin-api/reference/rpc/google.appengine.v1",
+        "https://docs.cloud.google.com/appengine/docs/admin-api/accessing-the-api",
+        "https://docs.cloud.google.com/appengine/docs/standard/authenticating-users"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/admin-api/reference/rpc/google.appengine.v1",
+        "https://docs.cloud.google.com/appengine/docs/admin-api/accessing-the-api",
+        "https://docs.cloud.google.com/appengine/docs/standard/authenticating-users"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/admin-api/reference/rpc/google.appengine.v1",
+        "https://docs.cloud.google.com/appengine/docs/admin-api/accessing-the-api",
+        "https://docs.cloud.google.com/appengine/docs/standard/authenticating-users"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/admin-api/reference/rpc/google.appengine.v1",
+        "https://docs.cloud.google.com/appengine/docs/admin-api/accessing-the-api",
+        "https://docs.cloud.google.com/appengine/docs/standard/authenticating-users"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/admin-api/reference/rpc/google.appengine.v1",
+        "https://docs.cloud.google.com/appengine/docs/admin-api/accessing-the-api",
+        "https://docs.cloud.google.com/appengine/docs/standard/authenticating-users"
+      ]
+    }
+  ]
+}

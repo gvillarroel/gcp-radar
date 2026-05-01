@@ -1,0 +1,151 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:18.771Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery",
+  "feature_name": "Gemini Cloud Assist SQL apply to editor",
+  "feature_slug": "gemini-cloud-assist-sql-apply-to-editor",
+  "summary": "BigQuery can apply SQL generated in Gemini Cloud Assist chat to the query open in the editor.",
+  "extended_definition": "BigQuery can apply SQL generated in Gemini Cloud Assist chat to the query open in the editor.",
+  "lifecycle": {
+    "latest_feature_date": "2025-10-01",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/batch-sql-translator",
+      "https://docs.cloud.google.com/bigquery/docs/gemini-overview",
+      "https://docs.cloud.google.com/bigquery/docs/generate-text-tutorial-gemini"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Gemini in BigQuery overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/gemini-overview",
+        "source_id": "site-docs-root",
+        "final_score": 129,
+        "relevance": "",
+        "evidence_snippets": [
+          "To learn how to generate, complete, and summarize code, see the following documentation: SQL code assist Use the SQL generation tool Prompt to generate SQL queries Generate SQL queries with Gemini Cloud Assist ( Preview ) Convert comments to SQL ( Preview ) Complete a SQL query ( Preview ) Explain a SQL query Python code assist Generate Python code with the code generation tool Generate Python code with Gemini Cloud Assist ( Preview ) Python code completion Generate BigQuery DataFrames Python code ( Preview ) Prepare data for analysis .",
+          "Gemini in BigQuery overview This document describes how Gemini in BigQuery, which is part of the Gemini for Google Cloud product suite, provides AI-powered assistance to help you work with your data.",
+          "AI assistance with Gemini in BigQuery Gemini in BigQuery provides AI assistance to help you do the following: Explore and understand your data with data insights ."
+        ]
+      },
+      {
+        "title": "\"Generate text by using a Gemini model and the AI.GENERATE_TEXT function\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/generate-text-tutorial-gemini",
+        "source_id": "site-docs-reference",
+        "final_score": 118,
+        "relevance": "",
+        "evidence_snippets": [
+          "Go to BigQuery In the query editor, run the following statement: CREATE OR REPLACE MODEL bqml tutorial.gemini model REMOTE WITH CONNECTION LOCATION .",
+          "GENERATE TEXT ( MODEL bqml tutorial.gemini model , ( SELECT CONCAT ( \" \"\" Perform sentiment analysis on the following text and return one the following categories: positive, negative: \"\" \" , review ) AS prompt , FROM bigquery-public-data.imdb.reviews LIMIT 5 ), STRUCT ( 0.2 AS temperature , 100 AS max output tokens )); The output is similar to the following: +----------+----------+------------------------------------------------+ title result review +----------+----------+------------------------------------------------+ Quitting Positive This movie is amazing because the fact that...",
+          "CONNECTION ID OPTIONS ( ENDPOINT = 'gemini-2.5-flash' ); Replace the following: LOCATION : the connection location CONNECTION ID : the ID of your BigQuery connection When you view the connection details in the Google Cloud console, this is the value in the last section of the fully qualified connection ID that is shown in Connection ID , for example projects/myproject/locations/connection location/connections/ myconnection The query takes several seconds to complete, after which the model gemini model appears in the bqml tutorial dataset."
+        ]
+      },
+      {
+        "title": "\"Migrate code with the batch SQL translator \\_|\\_ BigQuery \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/batch-sql-translator",
+        "source_id": "site-docs-reference-5",
+        "final_score": 102,
+        "relevance": "",
+        "evidence_snippets": [
+          "Required permissions You must have the following permissions on the project to enable the BigQuery Migration Service: resourcemanager.projects.get serviceusage.services.enable serviceusage.services.get You need the following permissions on the project to access and use the BigQuery Migration Service: bigquerymigration.workflows.create bigquerymigration.workflows.get bigquerymigration.workflows.list bigquerymigration.workflows.delete bigquerymigration.subtasks.get bigquerymigration.subtasks.list Alternatively, you can use the following roles to get the same permissions: bigquerymigration.viewer - Read only access. bigquerymigration.editor - Read/write access.",
+          "Select one of the following options: Apply or Apply and rerun : Click Apply to copy the generated schema file from the output directory to the input directory.",
+          "Click Apply and rerun to copy the generated schema file from the output directory to the input directory and opens a rerun window."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "explicit",
+    "explicit_roles": [
+      "roles/accessapproval.admin",
+      "roles/accessapproval.approver",
+      "roles/accessapproval.configEditor"
+    ],
+    "explicit_permissions": [
+      {
+        "permission": "resourcemanager.projects.get",
+        "group": "resourcemanager",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver",
+          "roles/accessapproval.configEditor"
+        ]
+      }
+    ],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "bigquerymigration.editor",
+      "bigquerymigration.subtasks.get",
+      "bigquerymigration.subtasks.list",
+      "bigquerymigration.viewer",
+      "bigquerymigration.workflows.create",
+      "bigquerymigration.workflows.delete",
+      "bigquerymigration.workflows.get",
+      "bigquerymigration.workflows.list",
+      "data.google",
+      "data.imdb.reviews",
+      "project.default.project",
+      "serviceusage.services.enable",
+      "serviceusage.services.get",
+      "tutorial.gemini"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/gemini-overview",
+        "https://docs.cloud.google.com/bigquery/docs/generate-text-tutorial-gemini",
+        "https://docs.cloud.google.com/bigquery/docs/batch-sql-translator"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/gemini-overview",
+        "https://docs.cloud.google.com/bigquery/docs/generate-text-tutorial-gemini",
+        "https://docs.cloud.google.com/bigquery/docs/batch-sql-translator"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/gemini-overview",
+        "https://docs.cloud.google.com/bigquery/docs/generate-text-tutorial-gemini",
+        "https://docs.cloud.google.com/bigquery/docs/batch-sql-translator"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/gemini-overview",
+        "https://docs.cloud.google.com/bigquery/docs/generate-text-tutorial-gemini",
+        "https://docs.cloud.google.com/bigquery/docs/batch-sql-translator"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/gemini-overview",
+        "https://docs.cloud.google.com/bigquery/docs/generate-text-tutorial-gemini",
+        "https://docs.cloud.google.com/bigquery/docs/batch-sql-translator"
+      ]
+    }
+  ]
+}

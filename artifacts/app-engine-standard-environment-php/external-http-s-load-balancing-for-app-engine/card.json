@@ -1,0 +1,143 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:16.336Z",
+  "source_step08_card": "data/step-08/current/products/app-engine-standard-environment-php/card.json",
+  "product_name": "App Engine standard environment PHP",
+  "product_slug": "app-engine-standard-environment-php",
+  "feature_name": "External HTTP(S) load balancing for App Engine",
+  "feature_slug": "external-http-s-load-balancing-for-app-engine",
+  "summary": "App Engine now supports External HTTP(S) Load Balancing via Serverless Network Endpoint Groups, enabling Cloud CDN usage.",
+  "extended_definition": "App Engine now supports External HTTP(S) Load Balancing via Serverless Network Endpoint Groups, enabling Cloud CDN usage.",
+  "lifecycle": {
+    "latest_feature_date": "2020-07-08",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/appengine/docs/standard/how-requests-are-routed",
+      "https://docs.cloud.google.com/appengine/docs/standard/php7/config/appref",
+      "https://docs.cloud.google.com/appengine/docs/standard/php7/how-requests-are-routed"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"App Engine app.yaml reference \\_|\\_ App Engine standard environment \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/php7/config/appref",
+        "source_id": "site-docs-reference-4",
+        "final_score": 100,
+        "relevance": "",
+        "evidence_snippets": [
+          "Example The following is an example of an app.yaml file: runtime : python314 instance class : F2 env variables : BUCKET NAME : \"example-gcs-bucket\" handlers : Matches requests to /images/... to files in static/images/... - url : /images static dir : static/images - url : /. secure : always redirect http response code : 301 script : auto The following table provides YAML examples of available fields in an app.yaml file: Runtime and app elements Element Description app engine apis Optional.",
+          "Tip: To allow everyone access to your assets, you can use the wildcard ' ' , instead of https://mygame.uc.r.appspot.com . login To use this element, app engine apis must be set to true .",
+          "For example, cron scheduled tasks satisfy the admin restriction, because App Engine sets an HTTP header X-Appengine-Cron: true on the respective requests."
+        ]
+      },
+      {
+        "title": "\"How requests are routed \\_|\\_ App Engine standard environment \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/how-requests-are-routed",
+        "source_id": "site-docs-reference",
+        "final_score": 100,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "For example, you can create a dispatch file to route mobile requests like https://simple-sample.uc.r.appspot.com/mobile/ to a mobile frontend, and route worker requests like https://simple-sample.uc.r.appspot.com/work/ to a static backend: dispatch: Send all mobile traffic to the mobile frontend. - url: \" /mobile/ \" service: mobile-frontend Send all work to the one static backend. - url: \" /work/ \" service: static-backend Deploying the dispatch file To deploy the dispatch file using gcloud, run the following command: gcloud app deploy dispatch.yaml Routing with Cloud Load Balancing Cloud Load Balancing is a separate product that enables advanced network configurations for all of your applications running on Google Cloud.",
+          "Requests that don't pass through Cloud Load Balancing are never intercepted and rerouted by the patterns that you have defined in your dispatch file: Sends the request to an available instance of a specific service and version: https:// VERSION -dot- SERVICE -dot- PROJECT ID .",
+          "When HTTP(S) Load Balancing is enabled for serverless apps , you can: Configure your serverless app to serve from a dedicated IPv4 or IPv6 IP address that is not shared with other services."
+        ]
+      },
+      {
+        "title": "\"How requests are routed \\_|\\_ App Engine standard environment \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/php7/how-requests-are-routed",
+        "source_id": "site-docs-reference-4",
+        "final_score": 100,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "For example, you can create a dispatch file to route mobile requests like https://simple-sample.uc.r.appspot.com/mobile/ to a mobile frontend, and route worker requests like https://simple-sample.uc.r.appspot.com/work/ to a static backend: dispatch: Send all mobile traffic to the mobile frontend. - url: \" /mobile/ \" service: mobile-frontend Send all work to the one static backend. - url: \" /work/ \" service: static-backend Deploying the dispatch file To deploy the dispatch file using gcloud, run the following command: gcloud app deploy dispatch.yaml Routing with Cloud Load Balancing Cloud Load Balancing is a separate product that enables advanced network configurations for all of your applications running on Google Cloud.",
+          "Requests that don't pass through Cloud Load Balancing are never intercepted and rerouted by the patterns that you have defined in your dispatch file: Sends the request to an available instance of a specific service and version: https:// VERSION -dot- SERVICE -dot- PROJECT ID .",
+          "When HTTP(S) Load Balancing is enabled for serverless apps , you can: Configure your serverless app to serve from a dedicated IPv4 or IPv6 IP address that is not shared with other services."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "app.yaml",
+      "dispatch.yaml",
+      "mygame.uc.r.appspot.com",
+      "sample.uc.r.appspot.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/how-requests-are-routed",
+        "https://docs.cloud.google.com/appengine/docs/standard/php7/how-requests-are-routed",
+        "https://docs.cloud.google.com/appengine/docs/standard/php7/config/appref"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/how-requests-are-routed",
+        "https://docs.cloud.google.com/appengine/docs/standard/php7/how-requests-are-routed",
+        "https://docs.cloud.google.com/appengine/docs/standard/php7/config/appref"
+      ]
+    },
+    {
+      "capability": "armor",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/how-requests-are-routed",
+        "https://docs.cloud.google.com/appengine/docs/standard/php7/how-requests-are-routed",
+        "https://docs.cloud.google.com/appengine/docs/standard/php7/config/appref"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/how-requests-are-routed",
+        "https://docs.cloud.google.com/appengine/docs/standard/php7/how-requests-are-routed",
+        "https://docs.cloud.google.com/appengine/docs/standard/php7/config/appref"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/how-requests-are-routed",
+        "https://docs.cloud.google.com/appengine/docs/standard/php7/how-requests-are-routed",
+        "https://docs.cloud.google.com/appengine/docs/standard/php7/config/appref"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/how-requests-are-routed",
+        "https://docs.cloud.google.com/appengine/docs/standard/php7/how-requests-are-routed",
+        "https://docs.cloud.google.com/appengine/docs/standard/php7/config/appref"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/how-requests-are-routed",
+        "https://docs.cloud.google.com/appengine/docs/standard/php7/how-requests-are-routed",
+        "https://docs.cloud.google.com/appengine/docs/standard/php7/config/appref"
+      ]
+    }
+  ]
+}

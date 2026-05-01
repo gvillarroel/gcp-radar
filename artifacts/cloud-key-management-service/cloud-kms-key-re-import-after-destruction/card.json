@@ -1,0 +1,162 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:23.852Z",
+  "source_step08_card": "data/step-08/current/products/cloud-key-management-service/card.json",
+  "product_name": "Cloud Key Management Service",
+  "product_slug": "cloud-key-management-service",
+  "feature_name": "Cloud KMS key re-import after destruction",
+  "feature_slug": "cloud-kms-key-re-import-after-destruction",
+  "summary": "Cloud KMS supports re-importing previously destroyed keys.",
+  "extended_definition": "Cloud KMS supports re-importing previously destroyed keys.",
+  "lifecycle": {
+    "latest_feature_date": "2021-09-03",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kms/docs/creating-keys",
+      "https://docs.cloud.google.com/kms/docs/destroy-restore",
+      "https://docs.cloud.google.com/kms/docs/importing-a-key",
+      "https://docs.cloud.google.com/kms/docs/reference/inventory/rest/v1/projects.cryptoKeys"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"REST Resource: projects.cryptoKeys \\_|\\_ Cloud Key Management Service \\_\\",
+        "url": "https://docs.cloud.google.com/kms/docs/reference/inventory/rest/v1/projects.cryptoKeys",
+        "source_id": "site-api-reference",
+        "final_score": 289,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "JSON representation { \"name\" : string , \"state\" : enum ( CryptoKeyVersionState ) , \"protectionLevel\" : enum ( ProtectionLevel ) , \"algorithm\" : enum ( CryptoKeyVersionAlgorithm ) , \"attestation\" : { object ( KeyOperationAttestation ) } , \"createTime\" : string , \"generateTime\" : string , \"destroyTime\" : string , \"destroyEventTime\" : string , \"importJob\" : string , \"importTime\" : string , \"importFailureReason\" : string , \"generationFailureReason\" : string , \"externalDestructionFailureReason\" : string , \"externalProtectionLevelOptions\" : { object ( ExternalProtectionLevelOptions ) } , \"reimportEligible\" : boolean } Fields name string Output only.",
+          "Only present if state is EXTERNAL DESTRUCTION FAILED . externalProtectionLevelOptions object ( ExternalProtectionLevelOptions ) ExternalProtectionLevelOptions stores a group of additional fields for configuring a CryptoKeyVersion that are specific to the EXTERNAL protection level and EXTERNAL VPC protection levels. reimportEligible boolean Output only.",
+          "JSON representation { \"name\" : string , \"primary\" : { object ( CryptoKeyVersion ) } , \"purpose\" : enum ( CryptoKeyPurpose ) , \"createTime\" : string , \"nextRotationTime\" : string , \"versionTemplate\" : { object ( CryptoKeyVersionTemplate ) } , \"labels\" : { string : string , ... } , \"importOnly\" : boolean , \"destroyScheduledDuration\" : string , \"cryptoKeyBackend\" : string , // Union field rotation schedule can be only one of the following: \"rotationPeriod\" : string // End of list of possible types for union field rotation schedule . } Fields name string Output only."
+        ]
+      },
+      {
+        "title": "\"Import a key version into Cloud KMS \\_|\\_ Cloud Key Management Service \\_\\",
+        "url": "https://docs.cloud.google.com/kms/docs/importing-a-key",
+        "source_id": "site-docs-root",
+        "final_score": 286,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Set the import method to one of the following: rsa-oaep-3072-sha1-aes-256 rsa-oaep-4096-sha1-aes-256 rsa-oaep-3072-sha256-aes-256 rsa-oaep-4096-sha256-aes-256 rsa-oaep-3072-sha256 rsa-oaep-4096-sha256 Go To run this code, first set up a Go development environment and install the Cloud KMS Go SDK . import ( \"context\" \"fmt\" \"io\" kms \"cloud.google.com/go/kms/apiv1\" \"cloud.google.com/go/kms/apiv1/kmspb\" ) // createImportJob creates a new job for importing keys into KMS. func createImportJob ( w io .",
+          "Tip: KEY VERSION is usually 1 , because the imported version is the first version of the key. gcloud kms keys set-primary-version KEY NAME \\ --location= LOCATION \\ --keyring= KEY RING \\ --version= KEY VERSION Re-import a previously destroyed key Cloud Key Management Service supports key re-import, which allows you to restore a previously imported key version in DESTROYED or IMPORT FAILED state to ENABLED state by providing the original key material.",
+          "EC SIGN P256 SHA256 )) // Ensure that only imported versions may be // added to this key. . setImportOnly ( true )) . setSkipInitialVersionCreation ( true ) . build ()); System . out . printf ( \"Created crypto key %s%n\" , createdKey . getName ()); } } } Node.js To run this code, first set up a Node.js development environment and install the Cloud KMS Node.js SDK . // // TODO(developer): Uncomment these variables before running the sample. // // const projectId = 'my-project'; // const locationId = 'us-east1'; // const keyRingId = 'my-key-ring'; // const id = 'my-imported-key'; // Imports the Cloud KMS library const { KeyManagementServiceClient } = require ( ' @google-cloud/kms ' ); // Instantiates a client const client = new KeyManagementServiceClient (); // Build the parent key ring name const keyRingName = client . keyRingPath ( projectId , locationId , keyRingId ); async function createKeyForImport () { const [ key ] = await client . createCryptoKey ({ parent : keyRingName , cryptoKeyId : id , cryptoKey : { purpose : 'ENCRYPT DECRYPT' , versionTemplate : { algorithm : 'GOOGLE SYMMETRIC ENCRYPTION' , protectionLevel : 'HSM' , }, // Optional: ensure that only imported versions may be added to this // key. importOnly : true , }, // Do not allow KMS to generate an initial version of this key. skipInitialVersionCreation : true , }); console . log ( Created key for import: ${ key . name } ); return key ; } return createKeyForImport (); Python To run this code, first set up a Python development environment and install the Cloud KMS Python SDK . from google.cloud import kms def create key for import ( project id : str , location id : str , key ring id : str , crypto key id : str ) - > None : \"\"\" Sets up an empty CryptoKey within a KeyRing for import."
+        ]
+      },
+      {
+        "title": "\"Destroy and restore key versions \\_|\\_ Cloud Key Management Service \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/kms/docs/destroy-restore",
+        "source_id": "site-docs-root",
+        "final_score": 267,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "RestoreCryptoKeyVersion ( cryptoKeyVersionName ); // Return the result. return result ; } } Go To run this code, first set up a Go development environment and install the Cloud KMS Go SDK . import ( \"context\" \"fmt\" \"io\" kms \"cloud.google.com/go/kms/apiv1\" \"cloud.google.com/go/kms/apiv1/kmspb\" ) // restoreKeyVersion attempts to recover a key that has been marked for // destruction in the past 24h. func restoreKeyVersion ( w io .",
+          "CryptoKeyVersion response = client . destroyCryptoKeyVersion ( keyVersionName ); System . out . printf ( \"Destroyed key version: %s%n\" , response . getName ()); } } } Node.js To run this code, first set up a Node.js development environment and install the Cloud KMS Node.js SDK . // // TODO(developer): Uncomment these variables before running the sample. // // const projectId = 'my-project'; // const locationId = 'us-east1'; // const keyRingId = 'my-key-ring'; // const keyId = 'my-key'; // const versionId = '123'; // Imports the Cloud KMS library const { KeyManagementServiceClient } = require ( ' @google-cloud/kms ' ); // Instantiates a client const client = new KeyManagementServiceClient (); // Build the key version name const versionName = client . cryptoKeyVersionPath ( projectId , locationId , keyRingId , keyId , versionId ); async function destroyKeyVersion () { const [ version ] = await client . destroyCryptoKeyVersion ({ name : versionName , }); console . log ( Destroyed key version: ${ version . name } ); return version ; } return destroyKeyVersion (); PHP To run this code, first learn about using PHP on Google Cloud and install the Cloud KMS PHP SDK . use Google\\Cloud\\Kms\\V1\\Client\\KeyManagementServiceClient; use Google\\Cloud\\Kms\\V1\\DestroyCryptoKeyVersionRequest; function destroy key version( string $projectId = 'my-project', string $locationId = 'us-east1', string $keyRingId = 'my-key-ring', string $keyId = 'my-key', string $versionId = '123' ) { // Create the Cloud KMS client. $client = new KeyManagementServiceClient(); // Build the key version name. $keyVersionName = $client->cryptoKeyVersionName($projectId, $locationId, $keyRingId, $keyId, $versionId); // Call the API. $destroyCryptoKeyVersionRequest = (new DestroyCryptoKeyVersionRequest()) ->setName($keyVersionName); $destroyedVersion = $client->destroyCryptoKeyVersion($destroyCryptoKeyVersionRequest); printf('Destroyed key version: %s' .",
+          "CryptoKeyVersion response = client . restoreCryptoKeyVersion ( keyVersionName ); System . out . printf ( \"Restored key version: %s%n\" , response . getName ()); } } } Node.js To run this code, first set up a Node.js development environment and install the Cloud KMS Node.js SDK . // // TODO(developer): Uncomment these variables before running the sample. // // const projectId = 'my-project'; // const locationId = 'us-east1'; // const keyRingId = 'my-key-ring'; // const keyId = 'my-key'; // const versionId = '123'; // Imports the Cloud KMS library const { KeyManagementServiceClient } = require ( ' @google-cloud/kms ' ); // Instantiates a client const client = new KeyManagementServiceClient (); // Build the key version name const versionName = client . cryptoKeyVersionPath ( projectId , locationId , keyRingId , keyId , versionId ); async function restoreKeyVersion () { const [ version ] = await client . restoreCryptoKeyVersion ({ name : versionName , }); console . log ( Restored key version: ${ version . name } ); return version ; } return restoreKeyVersion (); PHP To run this code, first learn about using PHP on Google Cloud and install the Cloud KMS PHP SDK . use Google\\Cloud\\Kms\\V1\\Client\\KeyManagementServiceClient; use Google\\Cloud\\Kms\\V1\\RestoreCryptoKeyVersionRequest; function restore key version( string $projectId = 'my-project', string $locationId = 'us-east1', string $keyRingId = 'my-key-ring', string $keyId = 'my-key', string $versionId = '123' ) { // Create the Cloud KMS client. $client = new KeyManagementServiceClient(); // Build the key version name. $keyVersionName = $client->cryptoKeyVersionName($projectId, $locationId, $keyRingId, $keyId, $versionId); // Call the API. $restoreCryptoKeyVersionRequest = (new RestoreCryptoKeyVersionRequest()) ->setName($keyVersionName); $restoredVersion = $client->restoreCryptoKeyVersion($restoreCryptoKeyVersionRequest); printf('Restored key version: %s' ."
+        ]
+      },
+      {
+        "title": "Create a key \\_|\\_ Cloud Key Management Service \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/kms/docs/creating-keys",
+        "source_id": "site-docs-root",
+        "final_score": 261,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "CryptoKey createdKey = client . createCryptoKey ( keyRingName , id , key ); System . out . printf ( \"Created key with rotation schedule %s%n\" , createdKey . getName ()); } } } Node.js To run this code, first set up a Node.js development environment and install the Cloud KMS Node.js SDK . // // TODO(developer): Uncomment these variables before running the sample. // // const projectId = 'my-project'; // const locationId = 'us-east1'; // const keyRingId = 'my-key-ring'; // const id = 'my-rotating-encryption-key'; // Imports the Cloud KMS library const { KeyManagementServiceClient } = require ( ' @google-cloud/kms ' ); // Instantiates a client const client = new KeyManagementServiceClient (); // Build the parent key ring name const keyRingName = client . keyRingPath ( projectId , locationId , keyRingId ); async function createKeyRotationSchedule () { const [ key ] = await client . createCryptoKey ({ parent : keyRingName , cryptoKeyId : id , cryptoKey : { purpose : 'ENCRYPT DECRYPT' , versionTemplate : { algorithm : 'GOOGLE SYMMETRIC ENCRYPTION' , }, // Rotate the key every 30 days. rotationPeriod : { seconds : 60 60 24 30 , }, // Start the first rotation in 24 hours. nextRotationTime : { seconds : new Date (). getTime () / 1000 + 60 60 24 , }, }, }); console . log ( Created rotating key: ${ key . name } ); return key ; } return createKeyRotationSchedule (); PHP To run this code, first learn about using PHP on Google Cloud and install the Cloud KMS PHP SDK . use Google\\Cloud\\Kms\\V1\\Client\\KeyManagementServiceClient; use Google\\Cloud\\Kms\\V1\\CreateCryptoKeyRequest; use Google\\Cloud\\Kms\\V1\\CryptoKey; use Google\\Cloud\\Kms\\V1\\CryptoKey\\CryptoKeyPurpose; use Google\\Cloud\\Kms\\V1\\CryptoKeyVersion\\CryptoKeyVersionAlgorithm; use Google\\Cloud\\Kms\\V1\\CryptoKeyVersionTemplate; use Google\\Protobuf\\Duration; use Google\\Protobuf\\Timestamp; function create key rotation schedule( string $projectId = 'my-project', string $locationId = 'us-east1', string $keyRingId = 'my-key-ring', string $id = 'my-key-with-rotation-schedule' ): CryptoKey { // Create the Cloud KMS client. $client = new KeyManagementServiceClient(); // Build the parent key ring name. $keyRingName = $client->keyRingName($projectId, $locationId, $keyRingId); // Build the key. $key = (new CryptoKey()) ->setPurpose(CryptoKeyPurpose::ENCRYPT DECRYPT) ->setVersionTemplate((new CryptoKeyVersionTemplate()) ->setAlgorithm(CryptoKeyVersionAlgorithm::GOOGLE SYMMETRIC ENCRYPTION)) // Rotate the key every 30 days. ->setRotationPeriod((new Duration()) ->setSeconds(60 60 24 30) ) // Start the first rotation in 24 hours. ->setNextRotationTime((new Timestamp()) ->setSeconds(time() + 60 60 24) ); // Call the API. $createCryptoKeyRequest = (new CreateCryptoKeyRequest()) ->setParent($keyRingName) ->setCryptoKeyId($id) ->setCryptoKey($key); $createdKey = $client->createCryptoKey($createCryptoKeyRequest); printf('Created key with rotation: %s' .",
+          "CryptoKey createdKey = client . createCryptoKey ( keyRingName , id , key ); System . out . printf ( \"Created asymmetric key %s%n\" , createdKey . getName ()); } } } Node.js To run this code, first set up a Node.js development environment and install the Cloud KMS Node.js SDK . // // TODO(developer): Uncomment these variables before running the sample. // // const projectId = 'my-project'; // const locationId = 'us-east1'; // const keyRingId = 'my-key-ring'; // const id = 'my-asymmetric-decrypt-key'; // Imports the Cloud KMS library const { KeyManagementServiceClient } = require ( ' @google-cloud/kms ' ); // Instantiates a client const client = new KeyManagementServiceClient (); // Build the parent key ring name const keyRingName = client . keyRingPath ( projectId , locationId , keyRingId ); async function createKeyAsymmetricDecrypt () { const [ key ] = await client . createCryptoKey ({ parent : keyRingName , cryptoKeyId : id , cryptoKey : { purpose : 'ASYMMETRIC DECRYPT' , versionTemplate : { algorithm : 'RSA DECRYPT OAEP 2048 SHA256' , }, // Optional: customize how long key versions should be kept before // destroying. destroyScheduledDuration : { seconds : 60 60 24 }, }, }); console . log ( Created asymmetric key: ${ key . name } ); return key ; } return createKeyAsymmetricDecrypt (); PHP To run this code, first learn about using PHP on Google Cloud and install the Cloud KMS PHP SDK . use Google\\Cloud\\Kms\\V1\\Client\\KeyManagementServiceClient; use Google\\Cloud\\Kms\\V1\\CreateCryptoKeyRequest; use Google\\Cloud\\Kms\\V1\\CryptoKey; use Google\\Cloud\\Kms\\V1\\CryptoKey\\CryptoKeyPurpose; use Google\\Cloud\\Kms\\V1\\CryptoKeyVersion\\CryptoKeyVersionAlgorithm; use Google\\Cloud\\Kms\\V1\\CryptoKeyVersionTemplate; use Google\\Protobuf\\Duration; function create key asymmetric decrypt( string $projectId = 'my-project', string $locationId = 'us-east1', string $keyRingId = 'my-key-ring', string $id = 'my-asymmetric-decrypt-key' ): CryptoKey { // Create the Cloud KMS client. $client = new KeyManagementServiceClient(); // Build the parent key ring name. $keyRingName = $client->keyRingName($projectId, $locationId, $keyRingId); // Build the key. $key = (new CryptoKey()) ->setPurpose(CryptoKeyPurpose::ASYMMETRIC DECRYPT) ->setVersionTemplate((new CryptoKeyVersionTemplate()) ->setAlgorithm(CryptoKeyVersionAlgorithm::RSA DECRYPT OAEP 2048 SHA256) ) // Optional: customize how long key versions should be kept before destroying. ->setDestroyScheduledDuration((new Duration()) ->setSeconds(24 60 60) ); // Call the API. $createCryptoKeyRequest = (new CreateCryptoKeyRequest()) ->setParent($keyRingName) ->setCryptoKeyId($id) ->setCryptoKey($key); $createdKey = $client->createCryptoKey($createCryptoKeyRequest); printf('Created asymmetric decryption key: %s' .",
+          "CryptoKey createdKey = client . createCryptoKey ( keyRingName , id , key ); System . out . printf ( \"Created asymmetric key %s%n\" , createdKey . getName ()); } } } Node.js To run this code, first set up a Node.js development environment and install the Cloud KMS Node.js SDK . // // TODO(developer): Uncomment these variables before running the sample. // // const projectId = 'my-project'; // const locationId = 'us-east1'; // const keyRingId = 'my-key-ring'; // const id = 'my-asymmetric-sign-key'; // Imports the Cloud KMS library const { KeyManagementServiceClient } = require ( ' @google-cloud/kms ' ); // Instantiates a client const client = new KeyManagementServiceClient (); // Build the parent key ring name const keyRingName = client . keyRingPath ( projectId , locationId , keyRingId ); async function createKeyAsymmetricSign () { const [ key ] = await client . createCryptoKey ({ parent : keyRingName , cryptoKeyId : id , cryptoKey : { purpose : 'ASYMMETRIC SIGN' , versionTemplate : { algorithm : 'RSA SIGN PKCS1 2048 SHA256' , }, // Optional: customize how long key versions should be kept before // destroying. destroyScheduledDuration : { seconds : 60 60 24 }, }, }); console . log ( Created asymmetric key: ${ key . name } ); return key ; } return createKeyAsymmetricSign (); PHP To run this code, first learn about using PHP on Google Cloud and install the Cloud KMS PHP SDK . use Google\\Cloud\\Kms\\V1\\Client\\KeyManagementServiceClient; use Google\\Cloud\\Kms\\V1\\CreateCryptoKeyRequest; use Google\\Cloud\\Kms\\V1\\CryptoKey; use Google\\Cloud\\Kms\\V1\\CryptoKey\\CryptoKeyPurpose; use Google\\Cloud\\Kms\\V1\\CryptoKeyVersion\\CryptoKeyVersionAlgorithm; use Google\\Cloud\\Kms\\V1\\CryptoKeyVersionTemplate; use Google\\Protobuf\\Duration; function create key asymmetric sign( string $projectId = 'my-project', string $locationId = 'us-east1', string $keyRingId = 'my-key-ring', string $id = 'my-asymmetric-signing-key' ): CryptoKey { // Create the Cloud KMS client. $client = new KeyManagementServiceClient(); // Build the parent key ring name. $keyRingName = $client->keyRingName($projectId, $locationId, $keyRingId); // Build the key. $key = (new CryptoKey()) ->setPurpose(CryptoKeyPurpose::ASYMMETRIC SIGN) ->setVersionTemplate((new CryptoKeyVersionTemplate()) ->setAlgorithm(CryptoKeyVersionAlgorithm::RSA SIGN PKCS1 2048 SHA256) ) // Optional: customize how long key versions should be kept before destroying. ->setDestroyScheduledDuration((new Duration()) ->setSeconds(24 60 60) ); // Call the API. $createCryptoKeyRequest = (new CreateCryptoKeyRequest()) ->setParent($keyRingName) ->setCryptoKeyId($id) ->setCryptoKey($key); $createdKey = $client->createCryptoKey($createCryptoKeyRequest); printf('Created asymmetric signing key: %s' ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cloudkms.googleapis.com",
+      "projects.cryptoKeys",
+      "projects.locations.keyRings.cryptoKeys"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/reference/inventory/rest/v1/projects.cryptoKeys",
+        "https://docs.cloud.google.com/kms/docs/importing-a-key",
+        "https://docs.cloud.google.com/kms/docs/destroy-restore",
+        "https://docs.cloud.google.com/kms/docs/creating-keys"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/reference/inventory/rest/v1/projects.cryptoKeys",
+        "https://docs.cloud.google.com/kms/docs/importing-a-key",
+        "https://docs.cloud.google.com/kms/docs/destroy-restore",
+        "https://docs.cloud.google.com/kms/docs/creating-keys"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/reference/inventory/rest/v1/projects.cryptoKeys",
+        "https://docs.cloud.google.com/kms/docs/importing-a-key",
+        "https://docs.cloud.google.com/kms/docs/destroy-restore",
+        "https://docs.cloud.google.com/kms/docs/creating-keys"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/reference/inventory/rest/v1/projects.cryptoKeys",
+        "https://docs.cloud.google.com/kms/docs/importing-a-key",
+        "https://docs.cloud.google.com/kms/docs/destroy-restore",
+        "https://docs.cloud.google.com/kms/docs/creating-keys"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/reference/inventory/rest/v1/projects.cryptoKeys",
+        "https://docs.cloud.google.com/kms/docs/importing-a-key",
+        "https://docs.cloud.google.com/kms/docs/destroy-restore",
+        "https://docs.cloud.google.com/kms/docs/creating-keys"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/reference/inventory/rest/v1/projects.cryptoKeys",
+        "https://docs.cloud.google.com/kms/docs/importing-a-key",
+        "https://docs.cloud.google.com/kms/docs/destroy-restore",
+        "https://docs.cloud.google.com/kms/docs/creating-keys"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/reference/inventory/rest/v1/projects.cryptoKeys",
+        "https://docs.cloud.google.com/kms/docs/importing-a-key",
+        "https://docs.cloud.google.com/kms/docs/destroy-restore",
+        "https://docs.cloud.google.com/kms/docs/creating-keys"
+      ]
+    }
+  ]
+}

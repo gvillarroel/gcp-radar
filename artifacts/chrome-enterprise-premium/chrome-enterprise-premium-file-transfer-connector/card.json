@@ -1,0 +1,153 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:22.583Z",
+  "source_step08_card": "data/step-08/current/products/chrome-enterprise-premium/card.json",
+  "product_name": "Chrome Enterprise Premium",
+  "product_slug": "chrome-enterprise-premium",
+  "feature_name": "Chrome Enterprise Premium file transfer connector",
+  "feature_slug": "chrome-enterprise-premium-file-transfer-connector",
+  "summary": "The Chrome Enterprise Premium file transfer connector enables scanning of files transferred between different file systems on ChromeOS.",
+  "extended_definition": "The Chrome Enterprise Premium file transfer connector enables scanning of files transferred between different file systems on ChromeOS.",
+  "lifecycle": {
+    "latest_feature_date": "2024-08-01",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/chrome-enterprise-premium/docs/enable-app-connector",
+      "https://docs.cloud.google.com/chrome-enterprise-premium/docs/reference/rest/v1/projects.locations.appConnectors/create",
+      "https://docs.cloud.google.com/chrome-enterprise-premium/docs/securing-on-premises"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Secure non-Google Cloud applications using the app connector \\_|\\_ Chrome\\",
+        "url": "https://docs.cloud.google.com/chrome-enterprise-premium/docs/enable-app-connector",
+        "source_id": "site-iam-reference",
+        "final_score": 84,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Add the following line to the credential source object in the client library configuration file: \"imdsv2 session token url\": \"http://169.254.169.254/latest/api/token\" On the remote agent VM, run the following commands in the bce-connctl CLI: bce-connctl config set project $PROJECT ID bce-connctl config set region $REGION bce-connctl config set connector $CONNECTOR NAME Run the following command to restart the agent and have it pick up the credentials: sudo systemctl restart beyondcorp On your Cloud Shell or gcloud CLI endpoint, set the required environment variable by running the following command: SERVICE ACCOUNT= my-service-account Replace the following: my-service-account : the Google Cloud service account associated with the external identity.",
+          "To change the connectors associated with a connection, run the following command: gcurl -X PATCH \\ https://beyondcorp.googleapis.com/v1/projects/${PROJECT ID}/locations/${REGION}/appConnections/${CONNECTION NAME}?update mask=connectors \\ -d \"{ \\ 'connectors': ['projects/${PROJECT ID}/locations/${REGION}/appConnectors/${CONNECTOR NAME}'], \\ }\" You can verify the update by running the following command and checking the connectors field of the output: gcurl https://beyondcorp.googleapis.com/v1/projects/${PROJECT ID}/locations/${REGION}/appConnections/${CONNECTION NAME} Proxy Support for proxies was introduced in early 2024 and requires changes to the BeyondCorp systemd file.",
+          "Create an app gateway by running the following command: gcurl https://beyondcorp.googleapis.com/v1/projects/${PROJECT ID}/locations/${REGION}/appGateways?app gateway id=${GATEWAY NAME} \\ -d \"{ \\ 'type': 'TCP PROXY', \\ 'display name': '${CONNECTION NAME}' \\ }\" Specify an app gateway in a create connection call by running the following command: gcurl https://beyondcorp.googleapis.com/v1/projects/${PROJECT ID}/locations/${REGION}/appConnections?app connection id=${CONNECTION NAME} \\ -d \"{ \\ 'application endpoint': \\ { \\ 'host': '${APP HOST}', \\ 'port': '${APP PORT}' \\ }, \\ 'gateway': { 'app gateway' : 'projects/${PROJECT ID}/locations/${REGION}/appGateways/${GATEWAY NAME}'}, \\ 'connectors':['projects/${PROJECT ID}/locations/${REGION}/appConnectors/${CONNECTOR NAME}'], \\ 'type': 'TCP PROXY', \\ 'display name': '${CONNECTION NAME}' \\ Next steps See VPC Service Controls for information about securing a VPC."
+        ]
+      },
+      {
+        "title": "\"Securing non-Google Cloud applications using the On-Prem Connector \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/chrome-enterprise-premium/docs/securing-on-premises",
+        "source_id": "site-iam-reference",
+        "final_score": 66,
+        "relevance": "",
+        "evidence_snippets": [
+          "Home Documentation Security Chrome Enterprise Premium Guides Send feedback Securing non-Google Cloud applications using the On-Prem Connector Stay organized with collections Save and categorize content based on your preferences.",
+          "Note: If your on-premises endpoint is an IP address, consider using a hybrid connectivity network endpoint group directly with a load balancer instead of using the IAP on-premises connector.",
+          "This page explains how to secure an HTTP or HTTPS based, on-premises app outside of Google Cloud with Identity-Aware Proxy (IAP) by deploying an IAP connector."
+        ]
+      },
+      {
+        "title": "\"Method: projects.locations.appConnectors.create \\_|\\_ Chrome Enterprise\\",
+        "url": "https://docs.cloud.google.com/chrome-enterprise-premium/docs/reference/rest/v1/projects.locations.appConnectors/create",
+        "source_id": "site-api-reference",
+        "final_score": 57,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "The resource project name of the AppConnector location using the form: projects/{projectId}/locations/{locationId} Authorization requires the following IAM permission on the specified resource parent : beyondcorp.appConnectors.create Query parameters Parameters appConnectorId string Optional.",
+          "Home Documentation Security Chrome Enterprise Premium Send feedback Method: projects.locations.appConnectors.create Stay organized with collections Save and categorize content based on your preferences.",
+          "HTTP request POST https://beyondcorp.googleapis.com/v1/{parent=projects/ /locations/ }/appConnectors The URL uses gRPC Transcoding syntax."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "beyondcorp.appConnectors.create",
+      "beyondcorp.googleapis.com",
+      "projects.locations.appConnections",
+      "projects.locations.appConnections.resolve",
+      "projects.locations.appConnectors",
+      "projects.locations.appConnectors.create"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/enable-app-connector",
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/securing-on-premises",
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/reference/rest/v1/projects.locations.appConnectors/create"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/enable-app-connector",
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/securing-on-premises",
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/reference/rest/v1/projects.locations.appConnectors/create"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/enable-app-connector",
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/securing-on-premises",
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/reference/rest/v1/projects.locations.appConnectors/create"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/enable-app-connector",
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/securing-on-premises",
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/reference/rest/v1/projects.locations.appConnectors/create"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/enable-app-connector",
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/securing-on-premises",
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/reference/rest/v1/projects.locations.appConnectors/create"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/enable-app-connector",
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/securing-on-premises",
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/reference/rest/v1/projects.locations.appConnectors/create"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/enable-app-connector",
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/securing-on-premises",
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/reference/rest/v1/projects.locations.appConnectors/create"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/enable-app-connector",
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/securing-on-premises",
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/reference/rest/v1/projects.locations.appConnectors/create"
+      ]
+    }
+  ]
+}

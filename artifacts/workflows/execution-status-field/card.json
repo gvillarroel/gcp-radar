@@ -1,0 +1,95 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:50.287Z",
+  "source_step08_card": "data/step-08/current/products/workflows/card.json",
+  "product_name": "Workflows",
+  "product_slug": "workflows",
+  "feature_name": "Execution status field",
+  "feature_slug": "execution-status-field",
+  "summary": "A status field tracks the current steps and progress of a workflow execution.",
+  "extended_definition": "A status field tracks the current steps and progress of a workflow execution.",
+  "lifecycle": {
+    "latest_feature_date": "2022-05-12",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/java/docs/reference/google-cloud-workflow-executions/latest/com.google.cloud.workflows.executions.v1.Execution.Builder",
+      "https://docs.cloud.google.com/workflows/docs/reference/executions/rest/v1/projects.locations.workflows.executions",
+      "https://docs.cloud.google.com/workflows/docs/reference/executions/rest/v1beta/projects.locations.workflows.executions"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Class Execution.Builder (2.88.0) \\_|\\_ Java client libraries \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-workflow-executions/latest/com.google.cloud.workflows.executions.v1.Execution.Builder",
+        "source_id": "site-java-reference",
+        "final_score": 273,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Status tracks the current steps and progress data of this execution. .google.cloud.workflows.executions.v1.Execution.Status status = 10 [(.google.api.field behavior) = OUTPUT ONLY]; Parameter Name Description builderForValue Execution.Status.Builder Returns Type Description Execution.Builder setWorkflowRevisionId(String value) public Execution .",
+          "Status tracks the current steps and progress data of this execution. .google.cloud.workflows.executions.v1.Execution.Status status = 10 [(.google.api.field behavior) = OUTPUT ONLY]; Parameter Name Description value Execution.Status Returns Type Description Execution.Builder setStatus(Execution.Status.Builder builderForValue) public Execution .",
+          "Status tracks the current steps and progress data of this execution. .google.cloud.workflows.executions.v1.Execution.Status status = 10 [(.google.api.field behavior) = OUTPUT ONLY]; Parameter Name Description value Execution.Status Returns Type Description Execution.Builder putAllLabels(Map<String,String> values) public Execution ."
+        ]
+      },
+      {
+        "title": "\"REST Resource: projects.locations.workflows.executions \\_|\\_ Workflows \\_\\",
+        "url": "https://docs.cloud.google.com/workflows/docs/reference/executions/rest/v1/projects.locations.workflows.executions",
+        "source_id": "site-api-reference",
+        "final_score": 269,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Status tracks the current steps and progress data of this execution. labels map (key: string, value: string) Labels associated with this execution.",
+          "JSON representation { \"currentSteps\" : [ { object ( Step ) } ] } Fields currentSteps[] object ( Step ) A list of currently executing or last executed step names for the workflow execution currently running.",
+          "JSON representation { \"name\" : string , \"createTime\" : string , \"startTime\" : string , \"endTime\" : string , \"duration\" : string , \"state\" : enum ( State ) , \"argument\" : string , \"result\" : string , \"error\" : { object ( Error ) } , \"workflowRevisionId\" : string , \"callLogLevel\" : enum ( CallLogLevel ) , \"status\" : { object ( Status ) } , \"labels\" : { string : string , ... } , \"stateError\" : { object ( StateError ) } } Fields name string Output only."
+        ]
+      },
+      {
+        "title": "\"REST Resource: projects.locations.workflows.executions \\_|\\_ Workflows \\_\\",
+        "url": "https://docs.cloud.google.com/workflows/docs/reference/executions/rest/v1beta/projects.locations.workflows.executions",
+        "source_id": "site-api-reference",
+        "final_score": 265,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Status tracks the current steps and progress data of this execution.",
+          "JSON representation { \"currentSteps\" : [ { object ( Step ) } ] } Fields currentSteps[] object ( Step ) A list of currently executing or last executed step names for the workflow execution currently running.",
+          "JSON representation { \"name\" : string , \"startTime\" : string , \"endTime\" : string , \"state\" : enum ( State ) , \"argument\" : string , \"result\" : string , \"error\" : { object ( Error ) } , \"workflowRevisionId\" : string , \"callLogLevel\" : enum ( CallLogLevel ) , \"status\" : { object ( Status ) } } Fields name string Output only."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.cloud.workflows.executions.v1.Execution",
+      "com.google.cloud.workflows.executions.v1.Execution.Builder",
+      "projects.locations.workflows.executions",
+      "projects.locations.workflows.executions.stepEntries"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-workflow-executions/latest/com.google.cloud.workflows.executions.v1.Execution.Builder",
+        "https://docs.cloud.google.com/workflows/docs/reference/executions/rest/v1/projects.locations.workflows.executions",
+        "https://docs.cloud.google.com/workflows/docs/reference/executions/rest/v1beta/projects.locations.workflows.executions"
+      ]
+    }
+  ]
+}

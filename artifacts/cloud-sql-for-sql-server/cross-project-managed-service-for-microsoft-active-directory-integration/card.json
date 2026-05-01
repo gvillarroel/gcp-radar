@@ -1,0 +1,137 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:27.901Z",
+  "source_step08_card": "data/step-08/current/products/cloud-sql-for-sql-server/card.json",
+  "product_name": "Cloud SQL for SQL Server",
+  "product_slug": "cloud-sql-for-sql-server",
+  "feature_name": "Cross-project Managed Service for Microsoft Active Directory integration",
+  "feature_slug": "cross-project-managed-service-for-microsoft-active-directory-integration",
+  "summary": "Cloud SQL for SQL Server can integrate with a Managed Service for Microsoft Active Directory domain located in a different project.",
+  "extended_definition": "Cloud SQL for SQL Server can integrate with a Managed Service for Microsoft Active Directory domain located in a different project.",
+  "lifecycle": {
+    "latest_feature_date": "2021-12-13",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/sql/docs/sqlserver/ad",
+      "https://docs.cloud.google.com/sql/docs/sqlserver/ad-diagnosis-tool",
+      "https://docs.cloud.google.com/sql/docs/sqlserver/create-instance"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Overview of Managed Microsoft AD in Cloud SQL \\_|\\_ Cloud SQL for SQL Server\\",
+        "url": "https://docs.cloud.google.com/sql/docs/sqlserver/ad",
+        "source_id": "site-docs-reference-required-4",
+        "final_score": 205,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "If your Managed Microsoft AD is in a different project, AD PROJECT ID should be the one containing the Managed Service for Microsoft Active Directory instance, while the service account's SQL PROJECT NUMBER should be the one containing the SQL Server instance: gcloud projects add-iam-policy-binding AD PROJECT ID \\ --member = serviceAccount:service- SQL PROJECT NUMBER @gcp-sa-cloud-sql.iam.gserviceaccount.com \\ --role = roles/managedidentities.sqlintegrator Also see gcloud beta services identity create .",
+          "Best practices for integrating with Managed Microsoft AD When you plan an integration, review the following: Prerequisites for integration Integrating with a managed AD domain in a different project Managed Microsoft AD documentation Deploy domain controllers in additional regions Use the AD diagnosis tool to troubleshoot AD setup issues with your on-premises domain and Cloud SQL for SQL Server instances in Google Cloud console.",
+          "MySQL PostgreSQL SQL Server You can integrate Cloud SQL for SQL Server with Managed Service for Microsoft Active Directory (also called Managed Microsoft AD)."
+        ]
+      },
+      {
+        "title": "Create instances \\_|\\_ Cloud SQL for SQL Server \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/sql/docs/sqlserver/create-instance",
+        "source_id": "site-docs-root",
+        "final_score": 168,
+        "relevance": "",
+        "evidence_snippets": [
+          "Console Note: If you plan to integrate with Managed Service for Microsoft Active Directory, review the prerequisites for integration .",
+          "To create an instance that is integrated with Managed Service for Microsoft Active Directory, specify a domain, such as subdomain.mydomain.com , for the domain field.",
+          "Additionally, note the procedures and constraints for integrating with a Managed Microsoft AD domain in a different project."
+        ]
+      },
+      {
+        "title": "\"Active Directory Diagnosis tool for Cloud SQL \\_|\\_ Cloud SQL for SQL Server\\",
+        "url": "https://docs.cloud.google.com/sql/docs/sqlserver/ad-diagnosis-tool",
+        "source_id": "site-docs-reference-required-4",
+        "final_score": 145,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "On-premises domain name, such as my-onprem-domain.com Managed AD domain name, such as my-ad-domain.com List of SQL Server Active Directory FQDNs and private IP addresses.",
+          "Home Documentation Databases Cloud SQL SQL Server Guides Send feedback Active Directory Diagnosis tool for Cloud SQL Stay organized with collections Save and categorize content based on your preferences.",
+          "The Active Directory (AD) Diagnosis tool is a utility PowerShell script that helps you to troubleshoot AD setup issues with your on-premises domain and Cloud SQL for SQL Server instances in Google Cloud."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "domain.com",
+      "managedidentities.sqlintegrator",
+      "sql.iam.gserviceaccount.com",
+      "subdomain.mydomain.com"
+    ],
+    "missing_inventory_roles": [
+      "roles/managedidentities.sqlintegrator"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/ad",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/create-instance",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/ad-diagnosis-tool"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/ad",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/create-instance",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/ad-diagnosis-tool"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/ad",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/create-instance",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/ad-diagnosis-tool"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/ad",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/create-instance",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/ad-diagnosis-tool"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/ad",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/create-instance",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/ad-diagnosis-tool"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/ad",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/create-instance",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/ad-diagnosis-tool"
+      ]
+    }
+  ]
+}

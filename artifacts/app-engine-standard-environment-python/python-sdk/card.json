@@ -1,0 +1,93 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:16.544Z",
+  "source_step08_card": "data/step-08/current/products/app-engine-standard-environment-python/card.json",
+  "product_name": "App Engine standard environment Python",
+  "product_slug": "app-engine-standard-environment-python",
+  "feature_name": "Python SDK",
+  "feature_slug": "python-sdk",
+  "summary": "The Python SDK provides development tooling for App Engine standard Python applications.",
+  "extended_definition": "The Python SDK provides development tooling for App Engine standard Python applications.",
+  "lifecycle": {
+    "latest_feature_date": "2018-12-12",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://cloud.google.com/appengine/docs/standard/apis",
+      "https://cloud.google.com/appengine/docs/standard/python3/services/access",
+      "https://docs.cloud.google.com/appengine/docs/standard/apis"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Access legacy bundled services for Python 3 \\_|\\_ App Engine standard environment\\",
+        "url": "https://cloud.google.com/appengine/docs/standard/python3/services/access",
+        "source_id": "site-docs-reference-3",
+        "final_score": 31,
+        "relevance": "",
+        "evidence_snippets": [
+          "For example: python3 CLOUD SDK ROOT / bin / dev appserver . py -- runtime python path = \"python27=/user/bin/python2.7,python3=/usr/bin/python3\" Important: When using the local development server to test Python 3 apps that use the Deferred API , you must set the following environment variable in your app.yaml : DEFERRED USE CROSS COMPATIBLE PICKLE PROTOCOL: 'True' Pickle Compatibility Shared services including Memcache, Cloud NDB and deferred use the pickle module to serialize and share Python objects.",
+          "To locally test the legacy bundled services functionality in your Python 3 app, use the local development server .",
+          "Testing Important: Before running the local development server, follow the setup instructions ."
+        ]
+      },
+      {
+        "title": "\"APIs & Reference \\_|\\_ App Engine standard environment \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/apis",
+        "source_id": "site-docs-reference",
+        "final_score": 30,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Cloud Client Libraries Cloud Client Libraries for Go A client library that embraces idioms of Go and provides high-level API abstractions so that you can easily access Google Cloud services.",
+          "Cloud Client Libraries for Node.js A client library that embraces idioms of Node.js and provides high-level API abstractions so that you can easily access Google Cloud services.",
+          "Cloud Client Libraries for Python A client library that embraces idioms of Python and provides high-level API abstractions so that you can easily access Google Cloud services."
+        ]
+      },
+      {
+        "title": "\"APIs & Reference \\_|\\_ App Engine standard environment \\_|\\_ Google Cloud\\",
+        "url": "https://cloud.google.com/appengine/docs/standard/apis",
+        "source_id": "site-docs-reference-3",
+        "final_score": 30,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Cloud Client Libraries Cloud Client Libraries for Go A client library that embraces idioms of Go and provides high-level API abstractions so that you can easily access Google Cloud services.",
+          "Cloud Client Libraries for Node.js A client library that embraces idioms of Node.js and provides high-level API abstractions so that you can easily access Google Cloud services.",
+          "Cloud Client Libraries for Python A client library that embraces idioms of Python and provides high-level API abstractions so that you can easily access Google Cloud services."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "app.yaml",
+      "python2.7"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://cloud.google.com/appengine/docs/standard/python3/services/access",
+        "https://cloud.google.com/appengine/docs/standard/apis",
+        "https://docs.cloud.google.com/appengine/docs/standard/apis"
+      ]
+    }
+  ]
+}

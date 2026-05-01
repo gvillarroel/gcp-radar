@@ -1,0 +1,164 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:13.646Z",
+  "source_step08_card": "data/step-08/current/products/anthos-config-management/card.json",
+  "product_name": "Anthos Config Management",
+  "product_slug": "anthos-config-management",
+  "feature_name": "nomos status resource-level status in MultiRepo",
+  "feature_slug": "nomos-status-resource-level-status-in-multirepo",
+  "summary": "The nomos status command shows resource-level status when MultiRepo is enabled.",
+  "extended_definition": "The nomos status command shows resource-level status when MultiRepo is enabled.",
+  "lifecycle": {
+    "latest_feature_date": "2021-07-01",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/installing-config-sync",
+      "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/installing-kubectl",
+      "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/nomos-command"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Use the nomos command-line tool \\_|\\_ Config Sync \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/nomos-command",
+        "source_id": "site-docs-root",
+        "final_score": 222,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "If true , nomos status shows the resource level status for your root or namespace source of truth when syncing from more than one source of truth.",
+          "The following example shows you some of the different conditions that the nomos status command might report: nomos status Example output: MANAGED CLUSTER 1 -------------------- <root> git@github.com:foo-corp/acme@main SYNCED f52a11e4 Managed resources: NAMESPACE NAME STATUS k8snoexternalservices.constraints.gatekeeper.sh/no-internet-services Current namespace/hello Current MANAGED CLUSTER 2 -------------------- <root> git@github.com:foo-corp/acme@main PENDING 9edf8444 MANAGED CLUSTER 3 -------------------- <root> git@github.com:foo-corp/acme@main ERROR f52a11e4 Error: KNV1021: No CustomResourceDefinition is defined for the resource in the cluster.",
+          "To turn off showing the resource level status, add --resources=false to the nomos status command."
+        ]
+      },
+      {
+        "title": "Install Config Sync manually using kubectl \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/installing-kubectl",
+        "source_id": "site-docs-root",
+        "final_score": 162,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "To propagate the cluster name to both RootSync and RepoSync reconcilers, restart the reconciler-manager deployment: kubectl rollout restart deployment/reconciler-manager -n config-management-system Verify the sync status of the root repository You can use the nomos status command to inspect the sync status of the root repository: nomos status You should see output similar to the following example: my managed cluster-1 -------------------- <root> git@github.com:foo-corp/acme/admin@main SYNCED f52a11e4 Verify the RootSync installation When you create a RootSync object, Config Sync creates a reconciler with the root-reconciler prefix.",
+          "It must be disabled before migrating.\" echo \"This can be done by unsetting the spec.hierarchyController field on ConfigManagement.\" exit 1 fi kubectl delete deployment -n config-management-system config-management-operator --ignore-not-found --cascade = foreground if kubectl get configmanagement config-management &> /dev/null ; then kubectl patch configmanagement config-management --type = \"merge\" -p '{\"metadata\":{\"finalizers\":[]}}' kubectl delete configmanagement config-management --cascade = orphan --ignore-not-found fi kubectl delete clusterrolebinding config-management-operator --ignore-not-found kubectl delete clusterrole config-management-operator --ignore-not-found kubectl delete serviceaccount -n config-management-system config-management-operator --ignore-not-found kubectl delete customresourcedefinition configmanagements.configmanagement.gke.io --ignore-not-found Install the new Config Sync version To upgrade Config Sync, complete the following steps for each enrolled cluster: Download the Config Sync manifest and nomos commands for the new version.",
+          "Grant project-wide permission if the same permissions apply to all repositories in the project. gcloud projects add-iam-policy-binding PROJECT ID \\ --role = roles/source.reader \\ --member = \"serviceAccount: GSA NAME @ PROJECT ID .iam.gserviceaccount.com\" Grant repository-specific permission when you want service accounts to have different levels of access for each repository in your project. gcloud source repos set-iam-policy REPOSITORY POLICY FILE --project = PROJECT ID Secure Source Manager Grant the Secure Source Manager Instance Accessor ( roles/securesourcemanager.instanceAccessor ) and Secure Source Manager Repo Reader ( roles/securesourcemanager.repoReader ) IAM roles to the Google service account."
+        ]
+      },
+      {
+        "title": "Customize your Config Sync installation \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/installing-config-sync",
+        "source_id": "site-docs-root",
+        "final_score": 158,
+        "relevance": "",
+        "evidence_snippets": [
+          "Verify the installation After you install and configure Config Sync, you can verify that the installation completed successfully. gcloud Run the following command: nomos status A successful installation shows a status of SYNCED or PENDING .",
+          "For more details about the information supplied by nomos status , including reported errors, see Check Config Sync status in the nomos command-line tool documentation. console Complete the following steps: In the Google Cloud console, go to the Config page under the Features section.",
+          "The following example shows how to use the deploymentOverrides field to set a new CPU request and limit and a new memory request and limit for the reconciler-manager container: applySpecVersion : 1 spec : configSync : enabled : true ... other fields... deploymentOverrides : - name : reconciler-manager namespace : config-management-system containers : - name : reconciler-manager cpuRequest : 50m cpuLimit : 100m memoryRequest : 256Mi memoryLimit : 512Mi After you have create your apply-spec.yaml file, apply it by running the following command: gcloud beta container fleet config-management apply \\ --membership = MEMBERSHIP NAME \\ --config = apply-spec.yaml \\ --project = PROJECT ID For a complete list of the fields that you can override, see the gcloud apply spec fields reference documentation ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "configmanagement.gke.io",
+      "configmanagements.configmanagement.gke.io",
+      "configsync.gke.io",
+      "github.com",
+      "iam.gserviceaccount.com",
+      "k8snoexternalservices.constraints.gatekeeper.sh",
+      "rbac.authorization.k8s.io",
+      "reader.yaml",
+      "securesourcemanager.instanceAccessor",
+      "securesourcemanager.repoReader",
+      "source.reader",
+      "spec.hierarchyController",
+      "spec.yaml"
+    ],
+    "missing_inventory_roles": [
+      "roles/securesourcemanager.instanceAccessor",
+      "roles/securesourcemanager.repoReader",
+      "roles/source.reader"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/nomos-command",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/installing-kubectl",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/installing-config-sync"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/nomos-command",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/installing-kubectl",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/installing-config-sync"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/nomos-command",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/installing-kubectl",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/installing-config-sync"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/nomos-command",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/installing-kubectl",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/installing-config-sync"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/nomos-command",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/installing-kubectl",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/installing-config-sync"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/nomos-command",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/installing-kubectl",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/installing-config-sync"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/nomos-command",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/installing-kubectl",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/installing-config-sync"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/nomos-command",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/installing-kubectl",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/installing-config-sync"
+      ]
+    }
+  ]
+}

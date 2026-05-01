@@ -1,0 +1,124 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:39.256Z",
+  "source_step08_card": "data/step-08/current/products/google-cloud-vmware-engine/card.json",
+  "product_name": "Google Cloud VMware Engine",
+  "product_slug": "google-cloud-vmware-engine",
+  "feature_name": "Resource name translation",
+  "feature_slug": "resource-name-translation",
+  "summary": "Resource name translation standardizes private cloud resource names into a Google Cloud-compatible format and is required for gcloud CLI or API access after September 2023.",
+  "extended_definition": "Resource name translation standardizes private cloud resource names into a Google Cloud-compatible format and is required for gcloud CLI or API access after September 2023.",
+  "lifecycle": {
+    "latest_feature_date": "2022-12-08",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/python/docs/reference/vmwareengine/latest/google.cloud.vmwareengine_v1.services.vmware_engine.VmwareEngineAsyncClient",
+      "https://docs.cloud.google.com/vmware-engine/docs/known-issues",
+      "https://docs.cloud.google.com/vmware-engine/docs/private-clouds/howto-manage-private-cloud"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Known issues \\_|\\_ Google Cloud VMware Engine \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vmware-engine/docs/known-issues",
+        "source_id": "site-docs-reference",
+        "final_score": 153,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Private cloud resource name translation error If you are running VMware Engine Horizon (VDI) on Google Cloud VMware Engine, you may encounter errors after changing your private cloud resource naming to meet the standards for Google Cloud CLI and VMware Engine API.",
+          "The following example error occurs when changing private cloud resource names without editing properly provisioning Horizon Desktop Pools: Error during Provisioning Cloning of VM Desktop-UK-005 has failed.",
+          "Once the private cloud resource name change is complete, complete the following steps: Edit each Desktop Pool and reconfigure the following settings on the vCenter Settings tab for both Full Clone and Instant Clone Pools: Resource Pool Datastore Note: Failure to edit these settings for both Full Clone and Instant Clone Pools will result in a provisioning error."
+        ]
+      },
+      {
+        "title": "\"Manage private cloud resources and activity \\_|\\_ Google Cloud VMware Engine\\",
+        "url": "https://docs.cloud.google.com/vmware-engine/docs/private-clouds/howto-manage-private-cloud",
+        "source_id": "site-docs-root",
+        "final_score": 140,
+        "relevance": "",
+        "evidence_snippets": [
+          "Click Save . gcloud To delete a whole cluster using the Google Cloud CLI, use the gcloud vmware private-clouds clusters delete command : gcloud vmware private-clouds clusters delete CLUSTER ID \\ --location= ZONE \\ --private-cloud= PRIVATE CLOUD ID Replace the following: CLUSTER ID : the cluster ID for the cluster to update in this private cloud ZONE : the zone for the private cloud PRIVATE CLOUD ID : the private cloud ID for the private cloud API To delete a whole cluster using the VMware Engine API, make a DELETE request: curl -L -X DELETE -H \"Authorization: Bearer TOKEN \" \\ -H \"Content-Type: application/json\" \\ \"https://vmwareengine.googleapis.com/v1/projects/ PROJECT ID /locations/ ZONE /privateClouds/ PRIVATE CLOUD ID /clusters/ CLUSTER ID \" Replace the following: PROJECT ID : the project ID for the private cloud ZONE : the zone for the private cloud PRIVATE CLOUD ID : the private cloud ID for the private cloud CLUSTER ID : the cluster ID for the cluster to update in this private cloud Python from google.api core import operation from google.cloud import vmwareengine v1 def delete cluster ( project id : str , zone : str , private cloud name : str , cluster name : str ) - > operation .",
+          "For example: curl -L -X POST -H \"Authorization: Bearer TOKEN \" -H \"Content-Type: application/json\" \\ \"https://vmwareengine.googleapis.com/v1/projects/ PROJECT ID /locations/ ZONE /privateClouds/ PRIVATE CLOUD ID /clusters?clusterId= CLUSTER ID \" \\ -d '{ \"nodeTypeConfigs\": { \"standard-72\": { \"nodeCount\": NODE COUNT } } }' Replace the following: CLUSTER ID : the cluster ID for the cluster that you are adding to the private cloud ZONE : the zone for the private cloud PRIVATE CLOUD ID : the private cloud ID for the private cloud NODE COUNT : the number of nodes to add Python Add the new cluster and give it a name. from google.api core import operation from google.cloud import vmwareengine v1 def create cluster ( project id : str , zone : str , private cloud name : str , cluster name : str , node count : int = 4 , ) - > operation .",
+          "List the clusters by entering the gcloud vmware private-clouds clusters list command : gcloud vmware private-clouds clusters list \\ --private-cloud= PRIVATE CLOUD ID \\ --location= ZONE Replace the following: PRIVATE CLOUD ID : the name for the private cloud ZONE : the zone for the private cloud Update the cluster by running the gcloud vmware private-clouds clusters update command : gcloud vmware private-clouds clusters update CLUSTER ID \\ --location= ZONE \\ --private-cloud= PRIVATE CLOUD ID \\ --update-nodes-config=type= NODE TYPE ,count= NODE COUNT Replace the following: CLUSTER ID : the cluster ID to update in this private cloud."
+        ]
+      },
+      {
+        "title": "\"Class VmwareEngineAsyncClient (1.11.0) \\_|\\_ Python client libraries \\_\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/vmwareengine/latest/google.cloud.vmwareengine_v1.services.vmware_engine.VmwareEngineAsyncClient",
+        "source_id": "site-python-reference",
+        "final_score": 134,
+        "relevance": "",
+        "evidence_snippets": [
+          "This identifier must be unique among private connection resources within the parent and becomes the final token in the name URI.",
+          "Resource names are schemeless URIs that follow the conventions in https://cloud.google.com/apis/design/resource names .",
+          "Resource names are schemeless URIs that follow the conventions in https://cloud.google.com/apis/design/resource names ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "vmwareengine.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vmware-engine/docs/known-issues",
+        "https://docs.cloud.google.com/vmware-engine/docs/private-clouds/howto-manage-private-cloud",
+        "https://docs.cloud.google.com/python/docs/reference/vmwareengine/latest/google.cloud.vmwareengine_v1.services.vmware_engine.VmwareEngineAsyncClient"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vmware-engine/docs/known-issues",
+        "https://docs.cloud.google.com/vmware-engine/docs/private-clouds/howto-manage-private-cloud",
+        "https://docs.cloud.google.com/python/docs/reference/vmwareengine/latest/google.cloud.vmwareengine_v1.services.vmware_engine.VmwareEngineAsyncClient"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vmware-engine/docs/known-issues",
+        "https://docs.cloud.google.com/vmware-engine/docs/private-clouds/howto-manage-private-cloud",
+        "https://docs.cloud.google.com/python/docs/reference/vmwareengine/latest/google.cloud.vmwareengine_v1.services.vmware_engine.VmwareEngineAsyncClient"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vmware-engine/docs/known-issues",
+        "https://docs.cloud.google.com/vmware-engine/docs/private-clouds/howto-manage-private-cloud",
+        "https://docs.cloud.google.com/python/docs/reference/vmwareengine/latest/google.cloud.vmwareengine_v1.services.vmware_engine.VmwareEngineAsyncClient"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vmware-engine/docs/known-issues",
+        "https://docs.cloud.google.com/vmware-engine/docs/private-clouds/howto-manage-private-cloud",
+        "https://docs.cloud.google.com/python/docs/reference/vmwareengine/latest/google.cloud.vmwareengine_v1.services.vmware_engine.VmwareEngineAsyncClient"
+      ]
+    }
+  ]
+}

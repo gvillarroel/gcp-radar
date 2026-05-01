@@ -1,0 +1,205 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:28.180Z",
+  "source_step08_card": "data/step-08/current/products/cloud-storage/card.json",
+  "product_name": "Cloud Storage",
+  "product_slug": "cloud-storage",
+  "feature_name": "Stockholm Sweden region support",
+  "feature_slug": "stockholm-sweden-region-support",
+  "summary": "Cloud Storage buckets are supported in the Stockholm, Sweden region (europe-north2).",
+  "extended_definition": "Cloud Storage buckets are supported in the Stockholm, Sweden region (europe-north2).",
+  "lifecycle": {
+    "latest_feature_date": "2025-03-04",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/storage/docs/access-monitoring",
+      "https://docs.cloud.google.com/storage/docs/bandwidth-usage",
+      "https://docs.cloud.google.com/storage/docs/gsutil/addlhelp/ShimforRunninggcloudstorage",
+      "https://docs.cloud.google.com/storage/docs/troubleshooting"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Overview of bandwidth and storage usage in Cloud Storage \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/storage/docs/bandwidth-usage",
+        "source_id": "site-iam-reference",
+        "final_score": 192,
+        "relevance": "",
+        "evidence_snippets": [
+          "Go to Browser In the Filter search bar, select the Metric property, then search for the metric for which you are requesting an increase: Use storage.googleapis.com/google egress bandwidth to increase Google egress for your buckets located in regions.",
+          "Increase requests greater than 1 Tbps for egress from buckets in multi-regions are not supported.",
+          "Go to Browser In the Filter search bar, select the Metric property, then search for the metric for which you are requesting an increase: Use storage.googleapis.com/rapid zonal bytes to increase storage for your buckets located in zones."
+        ]
+      },
+      {
+        "title": "Access monitoring data in Cloud Storage \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/storage/docs/access-monitoring",
+        "source_id": "site-iam-reference",
+        "final_score": 192,
+        "relevance": "",
+        "evidence_snippets": [
+          "Open Cloud Storage Quotas and systems limits Google Egress Bandwidth per second per region Rapid Zonal Egress Bandwidth per second per zone Dualregion Google Egress Bandwidth per second per region per dualregion location MultiRegion Google Egress Bandwidth per second per region Internet Egress Bandwidth per second per region Dualregion Internet Egress Bandwidth per second per region per dualregion location Multiregion Internet Egress Bandwidth per second per region Rapid Zonal Bytes per zone You can also view the Google egress bandwidth usage of buckets in your project that are located in regions on the Cloud Storage monitoring page .",
+          "JSON API For information on programmatically retrieving time series information for non dual-region quotas, see the ListTimeSeries command , using the following values for filter : metric.type=\"serviceruntime.googleapis.com/quota/rate/net usage\" resource.type=\"consumer quota\" One of the following: metric.label.quota metric=\"storage.googleapis.com/google egress bandwidth\" metric.label.quota metric=\"storage.googleapis.com/rapid zonal egress bandwidth\" metric.label.quota metric=\"storage.googleapis.com/internet egress bandwidth\" metric.label.quota metric=\"storage.googleapis.com/multiregion google egress bandwidth\" metric.label.quota metric=\"storage.googleapis.com/multiregion internet egress bandwidth\" For information on programmatically retrieving time series information for dual-region quotas, see the ListTimeSeries command , using the following values for filter : resource.type=\"storage.googleapis.com/Project\" One of the following: metric.type=\"storage.googleapis.com/quota/dualregion google egress bandwidth/usage\" metric.type=\"storage.googleapis.com/quota/dualregion internet egress bandwidth/usage\" For information about bandwidth monitoring metrics and what data they represent, see Bandwidth monitoring metrics .",
+          "In the YAML response, look for the following: storage.googleapis.com/google egress bandwidth storage.googleapis.com/rapid zonal egress bandwidth storage.googleapis.com/dualregion google egress bandwidth storage.googleapis.com/multiregion google egress bandwidth storage.googleapis.com/internet egress bandwidth storage.googleapis.com/dualregion internet egress bandwidth storage.googleapis.com/multiregion internet egress bandwidth storage.googleapis.com/rapid zonal bytes For information about bandwidth monitoring metrics and what data they represent, see Bandwidth monitoring metrics ."
+        ]
+      },
+      {
+        "title": "Troubleshooting \\_|\\_ Cloud Storage \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/storage/docs/troubleshooting",
+        "source_id": "site-docs-root",
+        "final_score": 182,
+        "relevance": "",
+        "evidence_snippets": [
+          "Client ( extra headers = { \"x-custom-header\" : \"value\" } ) Ruby require \"google/cloud/storage\" storage = Google :: Cloud :: Storage . new storage . add custom headers { 'X-Custom-Header' = > 'value' } Accessing buckets with a CORS configuration If you have set a CORS configuration on your bucket and notice that incoming requests from client browsers are failing, try the following troubleshooting steps: Review the CORS configuration on the target bucket.",
+          "The following is an example of a valid URL: curl -X PATCH -H \"Content-Type: application/json\" -d '{\"edition config\": \"STANDARD\" }' -H \"Authorization: Bearer $(gcloud auth print-access-token)\" \"https://storage.googleapis.com/v2/projects/my-project/locations/global/storageIntelligence?updateMask=edition config\" 400: Invalid Argument - Empty Update Mask Issue : When you configure or manage Storage Intelligence for a resource, you might receive this error and the message Empty UPDATE MASK in the request.",
+          "Solution : To create managed folders , make sure the following requirements are met: You have an IAM role that contains the storage.managedfolders.create permission, such as the Storage Object Admin ( roles/storage.objectAdmin ) role."
+        ]
+      },
+      {
+        "title": "Shim for Running gcloud storage \\_|\\_ Cloud Storage \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/storage/docs/gsutil/addlhelp/ShimforRunninggcloudstorage",
+        "source_id": "site-docs-reference",
+        "final_score": 177,
+        "relevance": "",
+        "evidence_snippets": [
+          "In both the shim and unshimmed cases, the old key is maintained. rm $folder$ delete markers are not supported. rpo Works as expected. setmeta Does not throw an error if no headers are changed. stat Includes a field \"Storage class update time:\" which may throw off tabbing. ubla Works as expected. versioning Works as expected. web The get subcommand has different JSON spacing and doesn't print an informational message if no configuration is found.",
+          "The all-version flag ( -A ) silently enables sequential execution rather than raising an error. defacl The ch subcommand is not supported. defstorageclass Works as expected. hash In gsutil, the -m and -c flags that affect which hashes are displayed are ignored for cloud objects.",
+          "Boto Configuration Configuration found in the boto file is mapped 1:1 to gcloud environment variables where appropriate. [Credentials] aws access key id: AWS ACCESS KEY ID aws secret access key: AWS SECRET ACCESS KEY use client certificate: CLOUDSDK CONTEXT AWARE USE CLIENT CERTIFICATE [Boto] proxy: CLOUDSDK PROXY ADDRESS proxy type: CLOUDSDK PROXY TYPE proxy port: CLOUDSDK PROXY PORT proxy user: CLOUDSDK PROXY USERNAME proxy pass: CLOUDSDK PROXY PASSWORD proxy rdns: CLOUDSDK PROXY RDNS http socket timeout: CLOUDSDK CORE HTTP TIMEOUT ca certificates file: CLOUDSDK CORE CUSTOM CA CERTS FILE max retry delay: CLOUDSDK STORAGE BASE RETRY DELAY num retries: CLOUDSDK STORAGE MAX RETRIES [GSUtil] check hashes: CLOUDSDK STORAGE CHECK HASHES default project id: CLOUDSDK CORE PROJECT disable analytics prompt: CLOUDSDK CORE DISABLE USAGE REPORTING use magicfile: CLOUDSDK STORAGE USE MAGICFILE parallel composite upload threshold: CLOUDSDK STORAGE PARALLEL COMPOSITE UPLOAD THRESHOLD resumable threshold: CLOUDSDK STORAGE RESUMABLE THRESHOLD [OAuth2] client id: CLOUDSDK AUTH CLIENT ID client secret: CLOUDSDK AUTH CLIENT SECRET provider authorization uri: CLOUDSDK AUTH AUTH HOST provider token uri: CLOUDSDK AUTH TOKEN HOST General Compatibility Notes Due to its compatibility across all major platforms, multiprocessing is enabled for all commands by default (equivalent to the -m option always being included in gsutil)."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.cloud.storage",
+      "metric.label.quota",
+      "metric.type",
+      "resource.type",
+      "serviceruntime.googleapis.com",
+      "storage.googleapis.com",
+      "storage.managedfolders.create",
+      "storage.objectAdmin"
+    ],
+    "missing_inventory_roles": [
+      "roles/storage.objectAdmin"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/bandwidth-usage",
+        "https://docs.cloud.google.com/storage/docs/access-monitoring",
+        "https://docs.cloud.google.com/storage/docs/troubleshooting",
+        "https://docs.cloud.google.com/storage/docs/gsutil/addlhelp/ShimforRunninggcloudstorage"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/bandwidth-usage",
+        "https://docs.cloud.google.com/storage/docs/access-monitoring",
+        "https://docs.cloud.google.com/storage/docs/troubleshooting",
+        "https://docs.cloud.google.com/storage/docs/gsutil/addlhelp/ShimforRunninggcloudstorage"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/bandwidth-usage",
+        "https://docs.cloud.google.com/storage/docs/access-monitoring",
+        "https://docs.cloud.google.com/storage/docs/troubleshooting",
+        "https://docs.cloud.google.com/storage/docs/gsutil/addlhelp/ShimforRunninggcloudstorage"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/bandwidth-usage",
+        "https://docs.cloud.google.com/storage/docs/access-monitoring",
+        "https://docs.cloud.google.com/storage/docs/troubleshooting",
+        "https://docs.cloud.google.com/storage/docs/gsutil/addlhelp/ShimforRunninggcloudstorage"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/bandwidth-usage",
+        "https://docs.cloud.google.com/storage/docs/access-monitoring",
+        "https://docs.cloud.google.com/storage/docs/troubleshooting",
+        "https://docs.cloud.google.com/storage/docs/gsutil/addlhelp/ShimforRunninggcloudstorage"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/bandwidth-usage",
+        "https://docs.cloud.google.com/storage/docs/access-monitoring",
+        "https://docs.cloud.google.com/storage/docs/troubleshooting",
+        "https://docs.cloud.google.com/storage/docs/gsutil/addlhelp/ShimforRunninggcloudstorage"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/bandwidth-usage",
+        "https://docs.cloud.google.com/storage/docs/access-monitoring",
+        "https://docs.cloud.google.com/storage/docs/troubleshooting",
+        "https://docs.cloud.google.com/storage/docs/gsutil/addlhelp/ShimforRunninggcloudstorage"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/bandwidth-usage",
+        "https://docs.cloud.google.com/storage/docs/access-monitoring",
+        "https://docs.cloud.google.com/storage/docs/troubleshooting",
+        "https://docs.cloud.google.com/storage/docs/gsutil/addlhelp/ShimforRunninggcloudstorage"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/bandwidth-usage",
+        "https://docs.cloud.google.com/storage/docs/access-monitoring",
+        "https://docs.cloud.google.com/storage/docs/troubleshooting",
+        "https://docs.cloud.google.com/storage/docs/gsutil/addlhelp/ShimforRunninggcloudstorage"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/bandwidth-usage",
+        "https://docs.cloud.google.com/storage/docs/access-monitoring",
+        "https://docs.cloud.google.com/storage/docs/troubleshooting",
+        "https://docs.cloud.google.com/storage/docs/gsutil/addlhelp/ShimforRunninggcloudstorage"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/bandwidth-usage",
+        "https://docs.cloud.google.com/storage/docs/access-monitoring",
+        "https://docs.cloud.google.com/storage/docs/troubleshooting",
+        "https://docs.cloud.google.com/storage/docs/gsutil/addlhelp/ShimforRunninggcloudstorage"
+      ]
+    }
+  ]
+}

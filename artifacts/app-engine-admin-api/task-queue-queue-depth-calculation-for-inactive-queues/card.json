@@ -1,0 +1,167 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:14.916Z",
+  "source_step08_card": "data/step-08/current/products/app-engine-admin-api/card.json",
+  "product_name": "App Engine Admin API",
+  "product_slug": "app-engine-admin-api",
+  "feature_name": "Task Queue queue depth calculation for inactive queues",
+  "feature_slug": "task-queue-queue-depth-calculation-for-inactive-queues",
+  "summary": "App Engine Task Queue stops calculating and storing queue depth for non-existent or deleting queues and during queue table outages.",
+  "extended_definition": "App Engine Task Queue stops calculating and storing queue depth for non-existent or deleting queues and during queue table outages.",
+  "lifecycle": {
+    "latest_feature_date": "2015-11-30",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/appengine/docs/standard/audit-logging",
+      "https://docs.cloud.google.com/appengine/docs/standard/communicating-between-services",
+      "https://docs.cloud.google.com/appengine/docs/standard/create-appengine-tasks"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Run asynchronous tasks \\_|\\_ App Engine standard environment \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/create-appengine-tasks",
+        "source_id": "site-docs-reference",
+        "final_score": 92,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Create App Engine tasks in the form of an HTTP request and then place them in Cloud Tasks queues, see Create App Engine tasks .",
+          "To run asynchronous tasks, you can: Create Cloud Tasks queues, see Create Cloud Tasks queues .",
+          "Home Documentation Application hosting App Engine Standard environment Guides Send feedback Run asynchronous tasks Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"App Engine audit logging information \\_|\\_ App Engine standard environment\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/audit-logging",
+        "source_id": "site-docs-reference",
+        "final_score": 48,
+        "relevance": "",
+        "evidence_snippets": [
+          "Audited operations The following table summarizes which API operations correspond to each audit log type in App Engine: Audit logs category App Engine operations Admin Activity audit logs apps.create apps.patch apps.repair apps.authorizedCertificates.create apps.authorizedCertificates.delete apps.authorizedCertificates.patch apps.domainMappings.create apps.domainMappings.delete apps.domainMappings.patch apps.firewall.ingressRules.batchUpdate apps.firewall.ingressRules.create apps.firewall.ingressRules.delete apps.firewall.ingressRules.patch apps.services.delete apps.services.patch apps.services.versions.create apps.services.versions.delete apps.services.versions.patch apps.services.versions.instances.debug apps.services.versions.instances.delete Data Access audit logs GetMemcacheItem SetMemcacheItem DeleteMemcacheItem FlushAllMemcacheItems Memcache audit logs only apply to operations made through Cloud Console.",
+          "Home Documentation Application hosting App Engine Standard environment Guides Send feedback App Engine audit logging information Stay organized with collections Save and categorize content based on your preferences.",
+          "Available audit logs The following types of audit logs are available for App Engine: Admin Activity audit logs Includes \"admin write\" operations that write metadata or configuration information."
+        ]
+      },
+      {
+        "title": "\"Communicating between your services \\_|\\_ App Engine standard environment\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/communicating-between-services",
+        "source_id": "site-docs-reference",
+        "final_score": 42,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Collaborate by assigning work between services through Task Queues .",
+          "Additionally, services in the standard environment that reside within the same Google Cloud project can also use one of the App Engine APIs for the following tasks: Share a single memcache instance.",
+          "Learn how to authorize the requests between your services and other Google Cloud services: Provide credentials for Application Default Credentials Using user-managed service accounts Your App Engine services can also communicate using Pub/Sub , which provides reliable asynchronous many-to-many messaging between processes, including App Engine."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "apps.authorizedCertificates.create",
+      "apps.authorizedCertificates.delete",
+      "apps.authorizedCertificates.patch",
+      "apps.create",
+      "apps.domainMappings.create",
+      "apps.domainMappings.delete",
+      "apps.domainMappings.patch",
+      "apps.firewall.ingressRules.batchUpdate",
+      "apps.firewall.ingressRules.create",
+      "apps.firewall.ingressRules.delete",
+      "apps.firewall.ingressRules.patch",
+      "apps.patch",
+      "apps.repair",
+      "apps.services.delete",
+      "apps.services.patch",
+      "apps.services.versions.create",
+      "apps.services.versions.delete",
+      "apps.services.versions.instances.debug",
+      "apps.services.versions.instances.delete",
+      "apps.services.versions.patch"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/create-appengine-tasks",
+        "https://docs.cloud.google.com/appengine/docs/standard/audit-logging",
+        "https://docs.cloud.google.com/appengine/docs/standard/communicating-between-services"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/create-appengine-tasks",
+        "https://docs.cloud.google.com/appengine/docs/standard/audit-logging",
+        "https://docs.cloud.google.com/appengine/docs/standard/communicating-between-services"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/create-appengine-tasks",
+        "https://docs.cloud.google.com/appengine/docs/standard/audit-logging",
+        "https://docs.cloud.google.com/appengine/docs/standard/communicating-between-services"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/create-appengine-tasks",
+        "https://docs.cloud.google.com/appengine/docs/standard/audit-logging",
+        "https://docs.cloud.google.com/appengine/docs/standard/communicating-between-services"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/create-appengine-tasks",
+        "https://docs.cloud.google.com/appengine/docs/standard/audit-logging",
+        "https://docs.cloud.google.com/appengine/docs/standard/communicating-between-services"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/create-appengine-tasks",
+        "https://docs.cloud.google.com/appengine/docs/standard/audit-logging",
+        "https://docs.cloud.google.com/appengine/docs/standard/communicating-between-services"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/create-appengine-tasks",
+        "https://docs.cloud.google.com/appengine/docs/standard/audit-logging",
+        "https://docs.cloud.google.com/appengine/docs/standard/communicating-between-services"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/create-appengine-tasks",
+        "https://docs.cloud.google.com/appengine/docs/standard/audit-logging",
+        "https://docs.cloud.google.com/appengine/docs/standard/communicating-between-services"
+      ]
+    }
+  ]
+}

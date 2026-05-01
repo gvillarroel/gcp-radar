@@ -1,0 +1,157 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:24.989Z",
+  "source_step08_card": "data/step-08/current/products/cloud-monitoring/card.json",
+  "product_name": "Cloud Monitoring",
+  "product_slug": "cloud-monitoring",
+  "feature_name": "AWS Canada Region Support",
+  "feature_slug": "aws-canada-region-support",
+  "summary": "Monitoring supports the AWS Canada region ca-central-1.",
+  "extended_definition": "Monitoring supports the AWS Canada region ca-central-1.",
+  "lifecycle": {
+    "latest_feature_date": "2017-01-18",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 1,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "thin_token_overlap",
+        "message": "Supporting pages only weakly overlap with informative feature tokens.",
+        "suggested_steps": [
+          "step-03",
+          "step-04",
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/monitoring/agent/ops-agent/agent-policies",
+      "https://docs.cloud.google.com/monitoring/agent/ops-agent/agent-vmem-policies",
+      "https://docs.cloud.google.com/monitoring/docs/region-support"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Data regionality for Cloud Monitoring \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/monitoring/docs/region-support",
+        "source_id": "site-docs-reference",
+        "final_score": 67,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Observability Cloud Monitoring Guides Send feedback Data regionality for Cloud Monitoring Stay organized with collections Save and categorize content based on your preferences.",
+          "To store a time series in a specific region , the monitored resource against which the time series is written must have one of the following labels and the value of the label must be valid: location zone region A time series is discarded when the monitored resource against which the time series is written has one of the previous labels and the value of the label isn't recognized or isn't specified.",
+          "Storage of time-series data Google agents, client-side code using libraries like OpenTelemetry, and third-party sources such as BindPlane , write time series by using the Cloud Monitoring API."
+        ]
+      },
+      {
+        "title": "Use agent policies (GA) \\_|\\_ Cloud Monitoring \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/monitoring/agent/ops-agent/agent-policies",
+        "source_id": "site-iam-reference",
+        "final_score": 51,
+        "relevance": "",
+        "evidence_snippets": [
+          "When you run the terraform plan or terraform apply command, you are prompted for the following values: PROJECT ID : The ID of your Google Cloud project REGION : The region in which to install the agent on VMs Example: ops agent policy install all in zone This example installs the latest version of the Ops Agent on all eligible VMs in a given zone, like us-central1-a .",
+          "The examples assume that you put the YAML in a file named agent-policy-description.yaml and that you create the policy in the us-central1-a zone by using a command like the following: gcloud compute instances ops-agents policies create POLICY ID \\ --zone us-central1-a \\ --file agent-policy-description.yaml \\ --project PROJECT ID Install on all VMs To install the latest version of the Ops Agent on all VMs in the us-central1-a zone, use the following policy description: agentsRule : packageState : installed version : latest instanceFilter : all : True Remove from all VMs To remove the latest version of the Ops Agent on all VMs in the us-central1-a zone, use the following policy description: agentsRule : packageState : removed version : latest instanceFilter : all : True Install on VMs based on labels To install the latest version of the Ops Agent on all VMs in the us-central1-a zone with the label \"env=prod\" or \"app=web\", use the following policy description: agentsRule : packageState : installed version : latest instanceFilter : inclusionLabels : - labels : env : prod - labels : app : web When you specify multiple labels: entries for inclusion or exclusion, a VM matches if any of the labels is present; that is, the sets of labels for inclusion or exclusion are matched as a logical OR operation, not a logical AND operation.",
+          "To enable debug-level logging for the entire project, run the following command: gcloud compute project-info add-metadata \\ --project PROJECT ID \\ --metadata osconfig-log-level=debug To enable debug-level logging for one VM, run the following command: gcloud compute instances add-metadata INSTANCE ID \\ --project PROJECT ID \\ --metadata osconfig-log-level=debug Helper scripts This section provides additional information about the helper scripts described in this document: The prepare-for-ops-agents-policies.sh script The diagnose policies.sh script The prepare-for-ops-agents-policies.sh script After you download the prepare-for-ops-agents-policies.sh script, you can use the script to perform the following actions, based on the arguments you provide: Enable the Cloud Logging API, the Cloud Monitoring API, and the OS Config API for the project."
+        ]
+      },
+      {
+        "title": "\"Install and manage the Ops Agent by using VM Extension Manager policies\\",
+        "url": "https://docs.cloud.google.com/monitoring/agent/ops-agent/agent-vmem-policies",
+        "source_id": "site-iam-reference",
+        "final_score": 35,
+        "relevance": "",
+        "evidence_snippets": [
+          "If you haven't done so already, install the beta component of the gcloud CLI by running the following command: gcloud components install beta To check if you have the beta component installed, run the following command: gcloud components list If you previously installed the beta component, verify that have the latest version: gcloud components update Uninstall any observability agents Before creating a VM Extension Manager policy to manage the Ops Agent on a VM, ensure that there are no instances of the Ops Agent or the legacy Monitoring agent and Logging agent already on the VM.",
+          "Enable the APIs Grant roles required to use the Ops Agent To get the permissions that you need to use the Ops Agent to write logs and metrics, ask your administrator to grant you the following IAM roles on your service account: To write logs: Logging Logs Writer ( roles/logging.logWriter ) To write metrics: Monitoring Metric Writer ( roles/monitoring.metricWriter ) For more information about granting roles, see Manage access to projects, folders, and organizations .",
+          "Home Documentation Observability Cloud Monitoring Guides Send feedback Install and manage the Ops Agent by using VM Extension Manager policies Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "description.yaml",
+      "logging.logWriter",
+      "monitoring.metricWriter",
+      "policies.sh"
+    ],
+    "missing_inventory_roles": [
+      "roles/logging.logWriter",
+      "roles/monitoring.metricWriter"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/monitoring/docs/region-support",
+        "https://docs.cloud.google.com/monitoring/agent/ops-agent/agent-policies",
+        "https://docs.cloud.google.com/monitoring/agent/ops-agent/agent-vmem-policies"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/monitoring/docs/region-support",
+        "https://docs.cloud.google.com/monitoring/agent/ops-agent/agent-policies",
+        "https://docs.cloud.google.com/monitoring/agent/ops-agent/agent-vmem-policies"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/monitoring/docs/region-support",
+        "https://docs.cloud.google.com/monitoring/agent/ops-agent/agent-policies",
+        "https://docs.cloud.google.com/monitoring/agent/ops-agent/agent-vmem-policies"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/monitoring/docs/region-support",
+        "https://docs.cloud.google.com/monitoring/agent/ops-agent/agent-policies",
+        "https://docs.cloud.google.com/monitoring/agent/ops-agent/agent-vmem-policies"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/monitoring/docs/region-support",
+        "https://docs.cloud.google.com/monitoring/agent/ops-agent/agent-policies",
+        "https://docs.cloud.google.com/monitoring/agent/ops-agent/agent-vmem-policies"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/monitoring/docs/region-support",
+        "https://docs.cloud.google.com/monitoring/agent/ops-agent/agent-policies",
+        "https://docs.cloud.google.com/monitoring/agent/ops-agent/agent-vmem-policies"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/monitoring/docs/region-support",
+        "https://docs.cloud.google.com/monitoring/agent/ops-agent/agent-policies",
+        "https://docs.cloud.google.com/monitoring/agent/ops-agent/agent-vmem-policies"
+      ]
+    }
+  ]
+}

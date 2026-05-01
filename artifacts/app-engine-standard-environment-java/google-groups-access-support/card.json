@@ -1,0 +1,252 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:15.897Z",
+  "source_step08_card": "data/step-08/current/products/app-engine-standard-environment-java/card.json",
+  "product_name": "App Engine standard environment Java",
+  "product_slug": "app-engine-standard-environment-java",
+  "feature_name": "Google Groups access support",
+  "feature_slug": "google-groups-access-support",
+  "summary": "App Engine project access can be granted through Google Groups membership.",
+  "extended_definition": "App Engine project access can be granted through Google Groups membership.",
+  "lifecycle": {
+    "latest_feature_date": "2016-01-14",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/appengine/docs/admin-api/access-control",
+      "https://docs.cloud.google.com/appengine/docs/standard/access-control",
+      "https://docs.cloud.google.com/appengine/docs/standard/java-gen2/shared-vpc-host-project"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Roles that grant access to App Engine \\_|\\_ App Engine standard environment\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/admin-api/access-control",
+        "source_id": "site-docs-reference-4",
+        "final_score": 118,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Warning: Do not grant service agent roles to any principals except service agents . appengine.versions.delete appengine.versions.get appengine.versions.list appengine.versions.update artifactregistry. aptartifacts. create artifactregistry. dockerimages. artifactregistry. dockerimages. get artifactregistry. dockerimages. list artifactregistry. files. download artifactregistry.files.get artifactregistry.files.list artifactregistry. kfpartifacts. create artifactregistry.locations. artifactregistry.locations.get artifactregistry. locations. list artifactregistry. mavenartifacts. artifactregistry. mavenartifacts. get artifactregistry. mavenartifacts. list artifactregistry.npmpackages. artifactregistry. npmpackages. get artifactregistry. npmpackages. list artifactregistry.packages.get artifactregistry.packages.list artifactregistry. projectsettings. get artifactregistry. pythonpackages. artifactregistry. pythonpackages. get artifactregistry. pythonpackages. list artifactregistry. repositories. create artifactregistry. repositories. downloadArtifacts artifactregistry. repositories. get artifactregistry. repositories. list artifactregistry. repositories. listEffectiveTags artifactregistry. repositories. listTagBindings artifactregistry. repositories. readViaVirtualRepository artifactregistry. repositories. uploadArtifacts artifactregistry.tags.create artifactregistry.tags.get artifactregistry.tags.list artifactregistry.tags.update artifactregistry.versions.get artifactregistry.versions.list artifactregistry. yumartifacts. create compute.addresses.create compute. addresses. createInternal compute.addresses.delete compute. addresses. deleteInternal compute.addresses.get compute.addresses.list compute.globalOperations.get compute.networks.get compute.regionOperations.get compute.subnetworks.get compute.subnetworks.use compute.zoneOperations.get datastore.databases.get datastore.entities.create datastore.entities.delete datastore.entities.get datastore.entities.list datastore.entities.update datastore.namespaces. datastore.namespaces.get datastore.namespaces.list datastore.schemas.list datastore.statistics. datastore.statistics.get datastore.statistics.list iam. serviceAccounts. getAccessToken iam. serviceAccounts. getOpenIdToken iam.serviceAccounts.signBlob serviceusage.consumerpolicy. serviceusage. consumerpolicy. analyze serviceusage. consumerpolicy. get serviceusage. consumerpolicy. update serviceusage. effectivepolicy. get serviceusage.groups. serviceusage.groups.list serviceusage. groups. listExpandedMembers serviceusage. groups. listMembers serviceusage.services.enable serviceusage.services.get serviceusage.values.test storage.buckets.create storage.buckets.get The predefined roles for App Engine provide you with finer grained options for access control.",
+          "Lowest-level resources where you can grant this role: Project appengine.applications.get appengine. applications. listRuntimes appengine.instances.get appengine.instances.list appengine.operations. appengine.operations.get appengine.operations.list appengine.services.get appengine.services.list appengine.versions.create appengine.versions.delete appengine.versions.get appengine.versions.list artifactregistry. projectsettings. get artifactregistry. repositories. deleteArtifacts artifactregistry. repositories. downloadArtifacts artifactregistry. repositories. uploadArtifacts recommender.locations. recommender.locations.get recommender.locations.list resourcemanager.projects.get resourcemanager.projects.list App Engine Memcache Data Admin ( roles/ appengine.memcacheDataAdmin ) Can get, set, delete, and flush App Engine Memcache items. appengine.applications.get appengine.memcache.addKey appengine.memcache.flush appengine.memcache.get appengine.memcache.update resourcemanager.projects.get resourcemanager.projects.list App Engine Service Admin ( roles/ appengine.serviceAdmin ) Read-only access to all application configuration and settings.",
+          "Lowest-level resources where you can grant this role: Project appengine.applications.get appengine. applications. listRuntimes appengine.instances.get appengine.instances.list appengine.operations. appengine.operations.get appengine.operations.list appengine.services.get appengine.services.list appengine.versions.get appengine. versions. getFileContents appengine.versions.list artifactregistry. projectsettings. get resourcemanager.projects.get resourcemanager.projects.list App Engine Managed VM Debug Access ( roles/ appengine.debugger ) Ability to read or manage v2 instances. appengine.applications.get appengine. applications. listRuntimes appengine.instances. appengine.instances.delete appengine. instances. enableDebug appengine.instances.get appengine.instances.list appengine.operations. appengine.operations.get appengine.operations.list appengine.services.get appengine.services.list appengine.versions.get appengine.versions.list resourcemanager.projects.get resourcemanager.projects.list App Engine Deployer ( roles/ appengine.deployer ) Read-only access to all application configuration and settings."
+        ]
+      },
+      {
+        "title": "\"Configure connectors in the Shared VPC host project \\_|\\_ App Engine standard\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/java-gen2/shared-vpc-host-project",
+        "source_id": "site-docs-reference-4",
+        "final_score": 99,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Terraform You can use a Terraform resource to enable the vpcaccess.googleapis.com API. resource \"google project service\" \"vpcaccess-api\" { project = var.project id # Replace this with your project ID in quotes service = \"vpcaccess.googleapis.com\" } You can use Terraform modules to create a VPC network and subnet and then create the connector. module \"test-vpc-module\" { source = \"terraform-google-modules/network/google\" version = \" > 16.0\" project id = var.project id # Replace this with your project ID in quotes network name = \"my-serverless-network\" mtu = 1460 subnets = [ { subnet name = \"serverless-subnet\" subnet ip = \"10.10.10.0/28\" subnet region = \"us-central1\" } ] } module \"serverless-connector\" { source = \"terraform-google-modules/network/google//modules/vpc-serverless-connector-beta\" version = \" > 16.0\" project id = var.project id vpc connectors = [{ name = \"central-serverless\" region = \"us-central1\" subnet name = module.test-vpc-module.subnets[\"us-central1/serverless-subnet\"].name host project id = var.host project id # Specify a host project id for shared VPC machine type = \"e2-standard-4\" min instances = 2 max instances = 7 } Uncomment to specify an ip cidr range , { name = \"central-serverless2\" region = \"us-central1\" network = module.test-vpc-module.network name ip cidr range = \"10.10.11.0/28\" subnet name = null machine type = \"e2-standard-4\" min instances = 2 max instances = 7 } ] depends on = [ google project service.vpcaccess-api ] } Provide access to the connector Provide access to the connector by granting the Serverless VPC Access User IAM role on the host project to the principal that deploys your App Engine service.",
+          "A green check mark will appear next to the connector's name when it is ready to use. gcloud Update gcloud components to the latest version: gcloud components update Enable the Serverless VPC Access API for your project: gcloud services enable vpcaccess.googleapis.com Create a Serverless VPC Access connector: gcloud compute networks vpc-access connectors create CONNECTOR NAME \\ --region = REGION \\ --subnet = SUBNET \\ --subnet-project = HOST PROJECT ID \\ Optional: specify minimum and maximum instance values between 2 and 10, default is 2 min, 10 max. --min-instances = MIN \\ --max-instances = MAX \\ Optional: specify machine type, default is e2-micro --machine-type = MACHINE TYPE Replace the following: CONNECTOR NAME : a name for your connector.",
+          "Go to Google Cloud console dashboard In the menu bar at the top of the dashboard, click the project dropdown menu and select the host project. gcloud Set the default project in the gcloud CLI to the host project by running the following in your terminal: gcloud config set project HOST PROJECT ID Replace the following: HOST PROJECT ID : the ID of the Shared VPC host project Create a Serverless VPC Access connector To send requests to your VPC network and receive the corresponding responses, you must create a Serverless VPC Access connector."
+        ]
+      },
+      {
+        "title": "\"Setting up access control \\_|\\_ App Engine standard environment \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/access-control",
+        "source_id": "site-docs-reference",
+        "final_score": 89,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Granting access to team members To give a developer access to your Google Cloud project, create one or both of the following: A user account , which is associated with a Google account and is intended to represent a specific individual on your project.",
+          "In App Engine, there are a few separate use cases for setting up access control: Granting team members access to your Google Cloud project so they can set up services and deploy apps.",
+          "Depending on your organization policy configuration, the default service account might automatically be granted the Editor role on your project."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "explicit",
+    "explicit_roles": [
+      "roles/accessapproval.admin",
+      "roles/accessapproval.approver",
+      "roles/accessapproval.configEditor"
+    ],
+    "explicit_permissions": [
+      {
+        "permission": "resourcemanager.projects.get",
+        "group": "resourcemanager",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver",
+          "roles/accessapproval.configEditor"
+        ]
+      },
+      {
+        "permission": "resourcemanager.projects.list",
+        "group": "resourcemanager",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver",
+          "roles/accessapproval.configEditor"
+        ]
+      }
+    ],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "app.yaml",
+      "appengine.applications.get",
+      "appengine.debugger",
+      "appengine.deployer",
+      "appengine.instances",
+      "appengine.instances.delete",
+      "appengine.instances.get",
+      "appengine.instances.list",
+      "appengine.memcache.addKey",
+      "appengine.memcache.flush",
+      "appengine.memcache.get",
+      "appengine.memcache.update",
+      "appengine.memcacheDataAdmin",
+      "appengine.operations",
+      "appengine.operations.get",
+      "appengine.operations.list",
+      "appengine.serviceAdmin",
+      "appengine.services",
+      "appengine.services.delete",
+      "appengine.services.get",
+      "appengine.services.list",
+      "appengine.services.update",
+      "appengine.versions.create",
+      "appengine.versions.delete",
+      "appengine.versions.get",
+      "appengine.versions.list",
+      "appengine.versions.update",
+      "artifactregistry.files.get",
+      "artifactregistry.files.list",
+      "artifactregistry.locations",
+      "artifactregistry.locations.get",
+      "artifactregistry.npmpackages",
+      "artifactregistry.packages.get",
+      "artifactregistry.packages.list",
+      "artifactregistry.tags.create",
+      "artifactregistry.tags.get",
+      "artifactregistry.tags.list",
+      "artifactregistry.tags.update",
+      "artifactregistry.versions.get",
+      "artifactregistry.versions.list",
+      "compute.addresses.create",
+      "compute.addresses.delete",
+      "compute.addresses.get",
+      "compute.addresses.list",
+      "compute.globalOperations.get",
+      "compute.networks.get",
+      "compute.regionOperations.get",
+      "compute.subnetworks.get",
+      "compute.subnetworks.use",
+      "compute.zoneOperations.get",
+      "datastore.databases.get",
+      "datastore.entities.create",
+      "datastore.entities.delete",
+      "datastore.entities.get",
+      "datastore.entities.list",
+      "datastore.entities.update",
+      "datastore.namespaces",
+      "datastore.namespaces.get",
+      "datastore.namespaces.list",
+      "datastore.schemas.list",
+      "datastore.statistics",
+      "datastore.statistics.get",
+      "datastore.statistics.list",
+      "iam.serviceAccounts.signBlob",
+      "module.network",
+      "module.subnets",
+      "module.test",
+      "recommender.locations",
+      "recommender.locations.get",
+      "recommender.locations.list",
+      "service.vpcaccess",
+      "serviceusage.consumerpolicy",
+      "serviceusage.groups",
+      "serviceusage.groups.list",
+      "serviceusage.services.enable",
+      "serviceusage.services.get",
+      "serviceusage.values.test",
+      "storage.buckets.create",
+      "storage.buckets.get",
+      "var.host",
+      "var.project",
+      "vpcaccess.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/admin-api/access-control",
+        "https://docs.cloud.google.com/appengine/docs/standard/java-gen2/shared-vpc-host-project",
+        "https://docs.cloud.google.com/appengine/docs/standard/access-control"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/admin-api/access-control",
+        "https://docs.cloud.google.com/appengine/docs/standard/java-gen2/shared-vpc-host-project",
+        "https://docs.cloud.google.com/appengine/docs/standard/access-control"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/admin-api/access-control",
+        "https://docs.cloud.google.com/appengine/docs/standard/java-gen2/shared-vpc-host-project",
+        "https://docs.cloud.google.com/appengine/docs/standard/access-control"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/admin-api/access-control",
+        "https://docs.cloud.google.com/appengine/docs/standard/java-gen2/shared-vpc-host-project",
+        "https://docs.cloud.google.com/appengine/docs/standard/access-control"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/admin-api/access-control",
+        "https://docs.cloud.google.com/appengine/docs/standard/java-gen2/shared-vpc-host-project",
+        "https://docs.cloud.google.com/appengine/docs/standard/access-control"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/admin-api/access-control",
+        "https://docs.cloud.google.com/appengine/docs/standard/java-gen2/shared-vpc-host-project",
+        "https://docs.cloud.google.com/appengine/docs/standard/access-control"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/admin-api/access-control",
+        "https://docs.cloud.google.com/appengine/docs/standard/java-gen2/shared-vpc-host-project",
+        "https://docs.cloud.google.com/appengine/docs/standard/access-control"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/admin-api/access-control",
+        "https://docs.cloud.google.com/appengine/docs/standard/java-gen2/shared-vpc-host-project",
+        "https://docs.cloud.google.com/appengine/docs/standard/access-control"
+      ]
+    }
+  ]
+}

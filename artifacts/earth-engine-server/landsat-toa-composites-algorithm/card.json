@@ -1,0 +1,87 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:36.223Z",
+  "source_step08_card": "data/step-08/current/products/earth-engine-server/card.json",
+  "product_name": "Earth Engine Server",
+  "product_slug": "earth-engine-server",
+  "feature_name": "Landsat TOA composites algorithm",
+  "feature_slug": "landsat-toa-composites-algorithm",
+  "summary": "Creates Landsat top-of-atmosphere composites.",
+  "extended_definition": "Creates Landsat top-of-atmosphere composites.",
+  "lifecycle": {
+    "latest_feature_date": "2015-08-01",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/earth-engine/guides/clustering",
+      "https://developers.google.com/earth-engine/guides/getstarted",
+      "https://developers.google.com/earth-engine/guides/landsat"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Landsat Algorithms \\_|\\_ Google Earth Engine \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/earth-engine/guides/landsat",
+        "source_id": "site-docs-reference",
+        "final_score": 154,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Simple composite For creating simple cloud-free Landsat composites, Earth Engine provides the ee.Algorithms.Landsat.simpleComposite() method.",
+          "ImageCollection ( 'LANDSAT/LC09/C02/T1 L2' ) Simple cloud score For scoring Landsat pixels by their relative cloudiness, Earth Engine provides a rudimentary cloud scoring algorithm in the ee.Algorithms.Landsat.simpleCloudScore() method. (For details on the implementation, see this Code Editor sample script ).",
+          "This example creates a simple composite using default parameters and compares it to a composite using custom parameters for the cloud score threshold and the percentile: Code Editor (JavaScript) // Load a raw Landsat 5 ImageCollection for a single year. var collection = ee ."
+        ]
+      },
+      {
+        "title": "\"Get Started with Earth Engine \\_|\\_ Google Earth Engine \\_|\\_ Google for\\",
+        "url": "https://developers.google.com/earth-engine/guides/getstarted",
+        "source_id": "site-docs-root",
+        "final_score": 70,
+        "relevance": "",
+        "evidence_snippets": [
+          "Landsat algorithms ), public facing apps , data (asset) management and important details about Earth Engine internal workings .",
+          "The following example demonstrates multiple concepts: filtering, mapping, reducing and the use of a cloud mask: Code Editor (JavaScript) // This function gets NDVI from a Landsat 8 image. var addNDVI = function ( image ) { return image . addBands ( image . normalizedDifference ([ 'B5' , 'B4' ])); }; // This function masks cloudy pixels. var cloudMask = function ( image ) { var clouds = ee .",
+          "For example, the following code adds an NDVI band to every image in an ImageCollection : Code Editor (JavaScript) // This function gets NDVI from Landsat 8 imagery. var addNDVI = function ( image ) { return image . addBands ( image . normalizedDifference ([ 'B5' , 'B4' ])); }; // Load the Landsat 8 TOA data, filter by location and date. var collection = ee ."
+        ]
+      },
+      {
+        "title": "\"Unsupervised Classification (clustering) \\_|\\_ Google Earth Engine \\_|\\_\\",
+        "url": "https://developers.google.com/earth-engine/guides/clustering",
+        "source_id": "site-docs-root",
+        "final_score": 64,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "ImageCollection ( 'LANDSAT/COMPOSITES/C02/T1 L2 32DAY' ) . filterDate ( '2001-05' , '2001-06' ) . first () . clip ( region ) ) Display the sample region. m = geemap .",
+          "ImageCollection ( 'LANDSAT/COMPOSITES/C02/T1 L2 32DAY' ) . filterDate ( '2001-05' , '2001-06' ) . first () . clip ( region ); // Display the sample region.",
+          "Page Summary outlined flag The ee.Clusterer package in Earth Engine is used for unsupervised classification or clustering and is based on algorithms from Weka."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "developers.google.com",
+      "ee.Algorithms.HillShadow",
+      "ee.Algorithms.Landsat.simpleCloudScore",
+      "ee.Algorithms.Landsat.simpleComposite",
+      "ee.Clusterer"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": []
+}

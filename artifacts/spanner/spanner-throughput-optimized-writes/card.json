@@ -1,0 +1,108 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:46.903Z",
+  "source_step08_card": "data/step-08/current/products/spanner/card.json",
+  "product_name": "Spanner",
+  "product_slug": "spanner",
+  "feature_name": "Spanner Throughput optimized writes",
+  "feature_slug": "spanner-throughput-optimized-writes",
+  "summary": "Spanner write requests now support a configurable maximum delay between 0 and 500 milliseconds for throughput-optimized writes.",
+  "extended_definition": "Spanner write requests now support a configurable maximum delay between 0 and 500 milliseconds for throughput-optimized writes.",
+  "lifecycle": {
+    "latest_feature_date": "2024-03-26",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/spanner/docs/batch-write",
+      "https://docs.cloud.google.com/spanner/docs/bulk-loading",
+      "https://docs.cloud.google.com/spanner/docs/change-streams/use-dataflow"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Build change streams connections using Dataflow \\_|\\_ Spanner \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/spanner/docs/change-streams/use-dataflow",
+        "source_id": "site-docs-root",
+        "final_score": 91,
+        "relevance": "",
+        "evidence_snippets": [
+          "WRITE APPEND ) . withSchema ( new TableSchema (). setFields ( Arrays . asList ( new TableFieldSchema () . setName ( \"SingerId\" ) . setType ( \"INT64\" ) . setMode ( \"REQUIRED\" ), new TableFieldSchema () . setName ( \"FirstName\" ) . setType ( \"STRING\" ) . setMode ( \"REQUIRED\" ), new TableFieldSchema () . setName ( \"LastName\" ) . setType ( \"STRING\" ) . setMode ( \"REQUIRED\" ) ))) . withAutoSharding () . optimizedWrites () . withFormatFunction (( String element ) - > { ObjectMapper objectMapper = new ObjectMapper (); JsonNode jsonNode = null ; try { jsonNode = objectMapper . readTree ( element ); } catch ( IOException e ) { e . printStackTrace (); } return new TableRow () . set ( \"SingerId\" , jsonNode . get ( \"SingerId\" ). asInt ()) . set ( \"FirstName\" , jsonNode . get ( \"FirstName\" ). asText ()) . set ( \"LastName\" , jsonNode . get ( \"LastName\" ). asText ()); } ) ); Note that the BigQuery sink provides at-least-once semantics by default.",
+          "This is a good fit for analytics and point-in-time archival, which is independent from Spanner's retention period. pipeline . apply ( SpannerIO . readChangeStream () . withSpannerConfig ( SpannerConfig . create () . withProjectId ( \"my-project-id\" ) . withInstanceId ( \"my-instance-id\" ) . withDatabaseId ( \"my-database-id\" ) . withDatabaseRole ( \"my-database-role\" )) // Needed for fine-grained access control only . withChangeStreamName ( \"my-change-stream\" ) . withMetadataInstance ( \"my-metadata-instance-id\" ) . withMetadataDatabase ( \"my-metadata-database-id\" ) . withInclusiveStartAt ( Timestamp . now ())) . apply ( MapElements . into ( TypeDescriptors . strings ()). via ( Object :: toString )) . apply ( Window . into ( FixedWindows . of ( Duration . standardMinutes ( 1 )))) . apply ( TextIO . write () . to ( \"gs://my-bucket/change-stream-results-\" ) . withSuffix ( \".txt\" ) . withWindowedWrites () . withNumShards ( 1 )); Note that the Cloud Storage sink provides at-least-once semantics by default.",
+          "This is a good fit for triggering downstream processing, as as streaming all new rows inserted into a Spanner table to Pub/Sub for further processing. pipeline . apply ( SpannerIO . readChangeStream () . withSpannerConfig ( SpannerConfig . create () . withProjectId ( \"my-project-id\" ) . withInstanceId ( \"my-instance-id\" ) . withDatabaseId ( \"my-database-id\" ) . withDatabaseRole ( \"my-database-role\" )) // Needed for fine-grained access control only . withChangeStreamName ( \"my-change-stream\" ) . withMetadataInstance ( \"my-metadata-instance-id\" ) . withMetadataDatabase ( \"my-metadata-database-id\" ) . withInclusiveStartAt ( Timestamp . now ())) . apply ( MapElements . into ( TypeDescriptors . strings ()). via ( Object :: toString )) . apply ( PubsubIO . writeStrings (). to ( \"my-topic\" )); Note that the Pub/Sub sink can be configured to assure exactly-once semantics."
+        ]
+      },
+      {
+        "title": "Modify data using batch write \\_|\\_ Spanner \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/spanner/docs/batch-write",
+        "source_id": "site-docs-root",
+        "final_score": 89,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Use cases Spanner batch write is especially useful if you want to commit a large number of writes without a read operation, but don't require an atomic transaction for all your mutations.",
+          "Spanner batch write supports low latency writes without a read operation, and returns responses as mutations are applied in batches.",
+          "This page describes Spanner batch write requests and how you can use them to modify your Spanner data."
+        ]
+      },
+      {
+        "title": "Bulk loading best practices \\_|\\_ Spanner \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/spanner/docs/bulk-loading",
+        "source_id": "site-docs-root",
+        "final_score": 86,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "In general, if your data load is well-distributed and you follow best practices for schema design and bulk loading, your write throughput should double every few minutes until you saturate the available CPU resources in your instance.",
+          "To get optimal write throughput for bulk loads, partition your data by primary key with this pattern: Each partition contains a range of consecutive rows, as determined by the key columns.",
+          "Following this pattern, you should see a maximum overall bulk write throughput of 10-20 MB per second per node for large loads."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.cloud.spanner"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/change-streams/use-dataflow",
+        "https://docs.cloud.google.com/spanner/docs/batch-write",
+        "https://docs.cloud.google.com/spanner/docs/bulk-loading"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/change-streams/use-dataflow",
+        "https://docs.cloud.google.com/spanner/docs/batch-write",
+        "https://docs.cloud.google.com/spanner/docs/bulk-loading"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/change-streams/use-dataflow",
+        "https://docs.cloud.google.com/spanner/docs/batch-write",
+        "https://docs.cloud.google.com/spanner/docs/bulk-loading"
+      ]
+    }
+  ]
+}

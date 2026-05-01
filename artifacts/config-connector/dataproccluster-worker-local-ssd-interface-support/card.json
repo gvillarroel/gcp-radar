@@ -1,0 +1,145 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:30.193Z",
+  "source_step08_card": "data/step-08/current/products/config-connector/card.json",
+  "product_name": "Config Connector",
+  "product_slug": "config-connector",
+  "feature_name": "DataprocCluster worker local SSD interface support",
+  "feature_slug": "dataproccluster-worker-local-ssd-interface-support",
+  "summary": "Config Connector supports the spec.config.workerConfig.diskConfig.localSsdInterface field for DataprocCluster resources.",
+  "extended_definition": "Config Connector supports the spec.config.workerConfig.diskConfig.localSsdInterface field for DataprocCluster resources.",
+  "lifecycle": {
+    "latest_feature_date": "2022-11-15",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 1,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "coverage_low",
+        "message": "The feature ended with coverage LOW.",
+        "suggested_steps": [
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/config-connector/docs/how-to/customizing-container-resources",
+      "https://docs.cloud.google.com/config-connector/docs/how-to/install-upgrade-uninstall",
+      "https://docs.cloud.google.com/config-connector/docs/how-to/organizing-resources/overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Organizing your resources \\_|\\_ Config Connector \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/config-connector/docs/how-to/organizing-resources/overview",
+        "source_id": "site-docs-reference",
+        "final_score": 54,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Depending on the resource type, the schema of the spec may contain at least one of the following fields: projectRef folderRef organizationRef Scope-defining annotation You can define a scope-defining annotation in the resource's configuration or in the Kubernetes namespace which contains the resource.",
+          "There are three types of scope-defining annotations depending on the resource type: cnrm.cloud.google.com/project-id cnrm.cloud.google.com/folder-id cnrm.cloud.google.com/organization-id Most Config Connector resources support scope-defining fields.",
+          "For resources that do not support scope-defining fields, you can either supply the scope-defining annotation in their configuration, or default the annotation for all resources in a particular namespace by annotating the namespace."
+        ]
+      },
+      {
+        "title": "\"Configure container resources and replicas \\_|\\_ Config Connector \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/config-connector/docs/how-to/customizing-container-resources",
+        "source_id": "site-docs-reference",
+        "final_score": 46,
+        "relevance": "",
+        "evidence_snippets": [
+          "Create a file named configure-webhook-manager.yaml and copy the following YAML into it: apiVersion : customize.core.cnrm.cloud.google.com/v1beta1 kind : ControllerResource metadata : name : cnrm-webhook-manager spec : replicas : 3 containers : - name : webhook resources : limits : memory : 512Mi requests : memory : 256Mi Use kubectl apply to apply the modified configuration to your cluster: kubectl apply -f configure-webhook-manager.yaml Verify the successful configuration by running the following command. kubectl get controllerresource cnrm-webhook-manager -o jsonpath='{.status.healthy}' It should display status.healthy field set to true .",
+          "For example, to configure the memory request and limit of the webhook container of the cnrm-webhook-manager controller, create and apply the following YAML file: apiVersion : customize.core.cnrm.cloud.google.com/v1beta1 kind : ControllerResource metadata : name : cnrm-webhook-manager spec : containers : - name : webhook resources : limits : memory : 512Mi requests : memory : 256Mi Use NamespacedControllerResource for the namespaced controller manager Use the NamespacedControllerResource custom resource only to configure resources for the cnrm-controller-manager when Config Connector is running in namespaced mode.",
+          "The following YAML file shows an example configuration: apiVersion : customize.core.cnrm.cloud.google.com/v1beta1 kind : NamespacedControllerResource metadata : name : cnrm-controller-manager # name should not contain the namespace ID suffix namespace : NAMESPACE spec : containers : - name : manager resources : limits : cpu : 200m memory : 512Mi requests : cpu : 100m memory : 256Mi Replace NAMESPACE with the name of your namespace."
+        ]
+      },
+      {
+        "title": "\"Installing with the GKE add-on \\_|\\_ Config Connector \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/config-connector/docs/how-to/install-upgrade-uninstall",
+        "source_id": "site-docs-reference",
+        "final_score": 46,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To enable Workload Identity Federation for GKE for a node pool, use the gcloud command-line tool: gcloud container node-pools update NODE POOL \\ --workload-metadata = GKE METADATA \\ --cluster CLUSTER NAME Replace the following: NODE POOL with your node pool's name CLUSTER NAME with your cluster's name Enabling the Config Connector add-on You can enable the Config Connector add-on in an existing GKE cluster with the Google Cloud CLI or the Google Cloud console. gcloud To enable the Config Connector add-on in an existing GKE cluster use the Google Cloud CLI: gcloud container clusters update CLUSTER NAME \\ --update-addons ConfigConnector = ENABLED Replace CLUSTER NAME with the name of your GKE cluster.",
+          "To uninstall Config Connector, complete the following steps: Use kubectl delete to remove the Config Connector CRDs along with controller components: kubectl delete ConfigConnector configconnector.core.cnrm.cloud.google.com --wait = true Disable the Config Connector add-on in your cluster using the gcloud CLI or the Google Cloud console: gcloud To disable the Config Connector add-on with gcloud , run the following command: gcloud container clusters update CLUSTER NAME --update-addons ConfigConnector = DISABLED Replace CLUSTER NAME with the name of the cluster that has Config Connector add-on installed.",
+          "Create an IAM policy binding between the IAM service account and the predefined Kubernetes service account that Config Connector runs: gcloud iam service-accounts add-iam-policy-binding \\ SERVICE ACCOUNT NAME @ PROJECT ID .iam.gserviceaccount.com \\ --member = \"serviceAccount: PROJECT ID .svc.id.goog[cnrm-system/cnrm-controller-manager]\" \\ --role = \"roles/iam.workloadIdentityUser\" Configuring Config Connector Note: When you enable the Config Connector add-on, it automatically creates a ConfigConnector CustomResource that is configured in namespaced-mode."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cnrm.cloud.google.com",
+      "configconnector.core.cnrm.cloud.google.com",
+      "configconnector.yaml",
+      "core.cnrm.cloud.google.com",
+      "customize.core.cnrm.cloud.google.com",
+      "iam.gserviceaccount.com",
+      "iam.workloadIdentityUser",
+      "manager.yaml",
+      "spec.config.workerConfig.diskConfig.localSsdInterface",
+      "status.healthy",
+      "svc.id.goog"
+    ],
+    "missing_inventory_roles": [
+      "roles/iam.workloadIdentityUser"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/how-to/organizing-resources/overview",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/customizing-container-resources",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/install-upgrade-uninstall"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/how-to/organizing-resources/overview",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/customizing-container-resources",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/install-upgrade-uninstall"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/how-to/organizing-resources/overview",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/customizing-container-resources",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/install-upgrade-uninstall"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/how-to/organizing-resources/overview",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/customizing-container-resources",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/install-upgrade-uninstall"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/how-to/organizing-resources/overview",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/customizing-container-resources",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/install-upgrade-uninstall"
+      ]
+    }
+  ]
+}

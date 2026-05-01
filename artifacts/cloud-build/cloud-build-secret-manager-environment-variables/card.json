@@ -1,0 +1,139 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:22.874Z",
+  "source_step08_card": "data/step-08/current/products/cloud-build/card.json",
+  "product_name": "Cloud Build",
+  "product_slug": "cloud-build",
+  "feature_name": "Cloud Build Secret Manager environment variables",
+  "feature_slug": "cloud-build-secret-manager-environment-variables",
+  "summary": "Cloud Build can be configured to access secrets stored in Secret Manager through environment variables.",
+  "extended_definition": "Cloud Build can be configured to access secrets stored in Secret Manager through environment variables.",
+  "lifecycle": {
+    "latest_feature_date": "2021-02-03",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/appengine/docs/standard/java/config/appref",
+      "https://docs.cloud.google.com/build/docs/automate-builds-webhook-events",
+      "https://docs.cloud.google.com/docs/buildpacks/set-environment-variables"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Automate builds in response to webhook events \\_|\\_ Cloud Build \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/build/docs/automate-builds-webhook-events",
+        "source_id": "site-docs-root-2",
+        "final_score": 164,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Use the following command to invoke a webhook event: curl -X POST -H \"Content-type: application/json\" \"https://cloudbuild.googleapis.com/v1/projects/ ${ PROJECT ID } /locations/ ${ REGION } /triggers/ ${ TRIGGER NAME } :webhook?key= ${ API KEY } & secret= ${ SECRET VALUE } & trigger= ${ TRIGGER NAME } & projectId= ${ PROJECT ID } \" -d \"{}\" After completing these steps, the Secret Manager Secret Accessor role will automatically be granted to your Cloud Build service agent, service-${PROJECT NUMBER}@gcp-sa-cloudbuild.iam.gserviceaccount.com .",
+          "To learn how to restrict your key, see Applying API key restrictions . (Optional) Grant Secret Manager role to your service account Cloud Build automatically grants the Secret Manager Secret Accessor role to service accounts that require the role during secret configuration.",
+          "If you use an existing secret, you may need to manually grant the Secret Manager Secret Accessor role to your Cloud Build service account, service-${PROJECT NUMBER}@gcp-sa-cloudbuild.iam.gserviceaccount.com ."
+        ]
+      },
+      {
+        "title": "\"Set environment variables to configure builds \\_|\\_ Buildpacks \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/docs/buildpacks/set-environment-variables",
+        "source_id": "site-docs-reference",
+        "final_score": 159,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Optional: Download a sample application Clone the sample repository to your local machine: git clone https://github.com/GoogleCloudPlatform/buildpack-samples.git Change to the directory that contains the application sample code: Go cd buildpack-samples/sample-go Java cd buildpack-samples/sample-java-gradle Node.js cd buildpack-samples/sample-node PHP cd buildpack-samples/sample-php Python cd buildpack-samples/sample-python Ruby cd buildpack-samples/sample-ruby .NET cd buildpack-samples/sample-dotnet Build the application with environment variables In the root directory of your service, create or update your project.toml project descriptor to include the [[build.env]] section and any of the supported environment variable : [[ build.env ]] name = \" ENVIRONMENT VARIABLE NAME \" value = \" ENVIRONMENT VARIABLE VALUE \" Replace: ENVIRONMENT VARIABLE NAME with the name of a supported environment variable .",
+          "Example To set the GOOGLE ENTRYPOINT=\"gunicorn -p :8080 main:app\" environment variable in your container image, you run the following command: pack build my-app \\ --builder gcr.io/buildpacks/builder:v1 \\ --env GOOGLE ENTRYPOINT = \"gunicorn -p :8080 main:app\" --env MY-LOCAL-ENV-VARIABLE Remote builds To set environment variables for remote builds, you use the project.toml project descriptor .",
+          "You can use one or more of the environment variables that are supported by your runtime . pack build SERVICE NAME \\ --env ENVIRONMENT VARIABLE Replace: SERVICE NAME with the name of the service for your application or function."
+        ]
+      },
+      {
+        "title": "\"App Engine app.yaml reference \\_|\\_ App Engine standard environment \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/java/config/appref",
+        "source_id": "site-docs-reference-2",
+        "final_score": 145,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "If you are using a runtime that supports buildpacks , you can define build environment variables in your app.yaml file.",
+          "Environment variables that are prefixed with GAE are reserved for system use and not allowed in the app.yaml file.",
+          "See the list of runtime environment variables that cannot be overwritten. error handlers Optional."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "app.yaml",
+      "build.env",
+      "cloudbuild.googleapis.com",
+      "cloudbuild.iam.gserviceaccount.com",
+      "gcr.io",
+      "github.com",
+      "project.toml",
+      "samples.git"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/build/docs/automate-builds-webhook-events",
+        "https://docs.cloud.google.com/docs/buildpacks/set-environment-variables",
+        "https://docs.cloud.google.com/appengine/docs/standard/java/config/appref"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/build/docs/automate-builds-webhook-events",
+        "https://docs.cloud.google.com/docs/buildpacks/set-environment-variables",
+        "https://docs.cloud.google.com/appengine/docs/standard/java/config/appref"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/build/docs/automate-builds-webhook-events",
+        "https://docs.cloud.google.com/docs/buildpacks/set-environment-variables",
+        "https://docs.cloud.google.com/appengine/docs/standard/java/config/appref"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/build/docs/automate-builds-webhook-events",
+        "https://docs.cloud.google.com/docs/buildpacks/set-environment-variables",
+        "https://docs.cloud.google.com/appengine/docs/standard/java/config/appref"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/build/docs/automate-builds-webhook-events",
+        "https://docs.cloud.google.com/docs/buildpacks/set-environment-variables",
+        "https://docs.cloud.google.com/appengine/docs/standard/java/config/appref"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/build/docs/automate-builds-webhook-events",
+        "https://docs.cloud.google.com/docs/buildpacks/set-environment-variables",
+        "https://docs.cloud.google.com/appengine/docs/standard/java/config/appref"
+      ]
+    }
+  ]
+}

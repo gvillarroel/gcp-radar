@@ -1,0 +1,120 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:17.437Z",
+  "source_step08_card": "data/step-08/current/products/apps-script/card.json",
+  "product_name": "Apps Script",
+  "product_slug": "apps-script",
+  "feature_name": "Editor add-on test deployments in new IDE",
+  "feature_slug": "editor-add-on-test-deployments-in-new-ide",
+  "summary": "The new Apps Script IDE lets developers create test deployments for Editor Add-ons.",
+  "extended_definition": "The new Apps Script IDE lets developers create test deployments for Editor Add-ons.",
+  "lifecycle": {
+    "latest_feature_date": "2022-04-13",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/apps-script/api/reference/rest/v1/projects.versions/create",
+      "https://developers.google.com/apps-script/guides/clasp",
+      "https://developers.google.com/apps-script/releases"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Google Apps Script release notes \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/apps-script/releases",
+        "source_id": "site-docs-root",
+        "final_score": 106,
+        "relevance": "",
+        "evidence_snippets": [
+          "April 13, 2022 Feature You can now perform the following actions in the new Apps Script integrated development environment (IDE): Create test deployments for Editor Add-ons .",
+          "It lets you manage and develop Apps Script projects locally from the command line instead of the Apps Script editor.",
+          "Along with a completely new interface, the following features have been updated: The editor now has a collapsible left sidebar to navigate to the Apps Script project overview, settings, executions, and triggers."
+        ]
+      },
+      {
+        "title": "\"Use the command-line interface with clasp \\_|\\_ Apps Script \\_|\\_ Google\\",
+        "url": "https://developers.google.com/apps-script/guides/clasp",
+        "source_id": "site-docs-root",
+        "final_score": 102,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Use that number to deploy and undeploy instances of your project: clasp deploy [ version ] [ description ] clasp undeploy < deploymentId > This command updates an existing deployment with a new version and description: clasp redeploy <deploymentId> <version> <description> List deployments This command lists the script project's deployment IDs, versions, and their descriptions. clasp deployments Open the project in the Apps Script editor This command opens a script project in the Apps Script editor.",
+          "Common clasp operations include logging in and out, creating or cloning projects, downloading or uploading projects, managing versions and deployments, and opening the project in the Apps Script editor.",
+          "CI/CD for Apps Script with clasp and GitHub Actions This guide covers setting up automated linting, testing, and deployment for Google Apps Script projects using clasp and GitHub Actions ."
+        ]
+      },
+      {
+        "title": "Method: projects.versions.create \\_|\\_ Apps Script \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/apps-script/api/reference/rest/v1/projects.versions/create",
+        "source_id": "site-api-reference",
+        "final_score": 96,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Request body The request body contains data with the following structure: JSON representation { \"versionNumber\" : integer , \"description\" : string , \"createTime\" : string } Fields versionNumber integer The incremental ID that is created by Apps Script when a version is created.",
+          "Home Google Workspace Apps Script Reference Send feedback Method: projects.versions.create Stay organized with collections Save and categorize content based on your preferences.",
+          "This is system assigned number and is immutable once created. description string The description for this version. createTime string ( Timestamp format) When the version was created."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "developers.google.com",
+      "notes.xml",
+      "projects.versions",
+      "projects.versions.create",
+      "script.projects"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/guides/clasp",
+        "https://developers.google.com/apps-script/api/reference/rest/v1/projects.versions/create"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/guides/clasp",
+        "https://developers.google.com/apps-script/api/reference/rest/v1/projects.versions/create"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/guides/clasp",
+        "https://developers.google.com/apps-script/api/reference/rest/v1/projects.versions/create"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/guides/clasp",
+        "https://developers.google.com/apps-script/api/reference/rest/v1/projects.versions/create"
+      ]
+    }
+  ]
+}

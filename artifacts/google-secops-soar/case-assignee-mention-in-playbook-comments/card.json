@@ -1,0 +1,142 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:41.382Z",
+  "source_step08_card": "data/step-08/current/products/google-secops-soar/card.json",
+  "product_name": "Google SecOps SOAR",
+  "product_slug": "google-secops-soar",
+  "feature_name": "Case assignee mention in playbook comments",
+  "feature_slug": "case-assignee-mention-in-playbook-comments",
+  "summary": "Playbook comment actions can now mention the case assignee and send the notification to the case wall.",
+  "extended_definition": "Playbook comment actions can now mention the case assignee and send the notification to the case wall.",
+  "lifecycle": {
+    "latest_feature_date": "2023-08-16",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/chronicle/docs/soar/investigate/working-with-cases/cases-overview",
+      "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/akamai",
+      "https://docs.cloud.google.com/chronicle/docs/soar/respond/integrations-setup/integrations-guidelines",
+      "https://docs.cloud.google.com/chronicle/docs/soar/respond/working-with-playbooks/whats-on-the-playbooks-screen"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Cases overview \\_|\\_ Google Security Operations \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/chronicle/docs/soar/investigate/working-with-cases/cases-overview",
+        "source_id": "site-docs-root",
+        "final_score": 216,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "When you open this tab, you can view case-related information such as tasks, user comments, pinned chat messages, manual and system actions, and file attachments (up to 50 MB per file).",
+          "They collect enrichment data, analyst comments, and historical context, letting analysts track entity behavior over time and across cases.",
+          "It also shows the assigned analyst (name or role), and includes controls for Chat , Close Case , Refresh , Explore , and the Case Actions menu."
+        ]
+      },
+      {
+        "title": "\"Integrate Akamai with Google SecOps \\_|\\_ Google Security Operations \\_\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/akamai",
+        "source_id": "site-api-reference",
+        "final_score": 164,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Action outputs The Get Network Lists action provides the following outputs: Action output type Availability Case wall attachment Not available Case wall link Not available Case wall table Not available Enrichment table Not available JSON result Available Script result Available JSON result The following example describes the JSON result output received when using the Get Network Lists action: [ { \"networkListType\" : \"networkListResponse\" , \"accessControlGroup\" : \"KSD\\nwith ION 3-13H1234\" , \"name\" : \"General List\" , \"elementCount\" : 3011 , \"readOnly\" : false , \"shared\" : false , \"syncPoint\" : 22 , \"type\" : \"IP\" , \"uniqueId\" : \"25614 GENERALLIST\" , \"links\" : { \"activateInProduction\" : { \"href\" : \"/network-list/v2/network-lists/25614 GENERALLIST/environments/PRODUCTION/activate\" , \"method\" : \"POST\" }, \"activateInStaging\" : { \"href\" : \"/network-list/v2/network-lists/25614 GENERALLIST/environments/STAGING/activate\" , \"method\" : \"POST\" }, \"appendItems\" : { \"href\" : \"/network-list/v2/network-lists/25614 GENERALLIST\" , \"method\" : \"POST\" }, \"retrieve\" : { \"href\" : \"/network-list/v2/network-lists/25614 GENERALLIST\" }, \"statusInProduction\" : { \"href\" : \"/network-list/v2/network-lists/25614 GENERALLIST/environments/PRODUCTION/status\" }, \"statusInStaging\" : { \"href\" : \"/network-list/v2/network-lists/25614 GENERALLIST/environments/STAGING/status\" }, \"update\" : { \"href\" : \"/network-list/v2/network-lists/25614 GENERALLIST\" , \"method\" : \"PUT\" } }, \"Activation STAGING\" : { \"activationId\" : 12345 , \"activationComments\" : \"Allow IPs of new employees who joined this week\" , \"activationStatus\" : \"PENDING ACTIVATION\" , \"syncPoint\" : 5 , \"uniqueId\" : \"25614 GENERALLIST\" , \"fast\" : false , \"dispatchCount\" : 1 , \"links\" : { \"appendItems\" : { \"href\" : \"/networklist-api/rest/v2/network-lists/25614 GENERALLIST/append\" , \"method\" : \"POST\" }, \"retrieve\" : { \"href\" : \"/networklist-api/rest/v2/network-lists/25614 GENERALLIST\" }, \"statusInProduction\" : { \"href\" : \"/networklist-api/rest/v2/network-lists/25614 GENERALLIST/environments/PRODUCTION/status\" }, \"statusInStaging\" : { \"href\" : \"/networklist-api/rest/v2/network-lists/25614 GENERALLIST/environments/STAGING/status\" }, \"syncPointHistory\" : { \"href\" : \"/networklist-api/rest/v2/network-lists/25614 GENERALLIST/sync-points/5/history\" }, \"update\" : { \"href\" : \"/networklist-api/rest/v2/network-lists/25614 GENERALLIST\" , \"method\" : \"PUT\" }, \"activationDetails\" : { \"href\" : \"/network-list/v2/network-lists/activations/12345/\" } } }, \"Activation PRODUCTION\" : { \"activationId\" : 12345 , \"activationComments\" : \"Allow IPs of new employees who joined this week\" , \"activationStatus\" : \"PENDING ACTIVATION\" , \"syncPoint\" : 5 , \"uniqueId\" : \"25614 GENERALLIST\" , \"fast\" : false , \"dispatchCount\" : 1 , \"links\" : { \"appendItems\" : { \"href\" : \"/networklist-api/rest/v2/network-lists/25614 GENERALLIST/append\" , \"method\" : \"POST\" }, \"retrieve\" : { \"href\" : \"/networklist-api/rest/v2/network-lists/25614 GENERALLIST\" }, \"statusInProduction\" : { \"href\" : \"/networklist-api/rest/v2/network-lists/25614 GENERALLIST/environments/PRODUCTION/status\" }, \"statusInStaging\" : { \"href\" : \"/networklist-api/rest/v2/network-lists/25614 GENERALLIST/environments/STAGING/status\" }, \"syncPointHistory\" : { \"href\" : \"/networklist-api/rest/v2/network-lists/25614 GENERALLIST/sync-points/5/history\" }, \"update\" : { \"href\" : \"/networklist-api/rest/v2/network-lists/25614 GENERALLIST\" , \"method\" : \"PUT\" }, \"activationDetails\" : { \"href\" : \"/network-list/v2/network-lists/activations/12345/\" } } } } ] Output messages The Get Network Lists action provides the following output messages: Output message Message description Successfully returned network lists from Akamai.",
+          "Action outputs The Activate Network List action provides the following outputs: Action output type Availability Case wall attachment Not available Case wall link Not available Case wall table Not available Enrichment table Not available JSON result Available Script result Available JSON result The following example describes the JSON result output received when using the Activate Network Lists action: { \"activationId\" : 12345 , \"activationComments\" : \"Allow IPs of new employees who joined this week\" , \"activationStatus\" : \"PENDING ACTIVATION\" , \"syncPoint\" : 5 , \"uniqueId\" : \"25614 GENERALLIST\" , \"fast\" : false , \"dispatchCount\" : 1 , \"links\" : { \"appendItems\" : { \"href\" : \"/networklist-api/rest/v2/network-lists/25614 GENERALLIST/append\" , \"method\" : \"POST\" }, \"retrieve\" : { \"href\" : \"/networklist-api/rest/v2/network-lists/25614 GENERALLIST\" }, \"statusInProduction\" : { \"href\" : \"/networklist-api/rest/v2/network-lists/25614 GENERALLIST/environments/PRODUCTION/status\" }, \"statusInStaging\" : { \"href\" : \"/networklist-api/rest/v2/network-lists/25614 GENERALLIST/environments/STAGING/status\" }, \"syncPointHistory\" : { \"href\" : \"/networklist-api/rest/v2/network-lists/25614 GENERALLIST/sync-points/5/history\" }, \"update\" : { \"href\" : \"/networklist-api/rest/v2/network-lists/25614 GENERALLIST\" , \"method\" : \"PUT\" }, \"activationDetails\" : { \"href\" : \"/network-list/v2/network-lists/activations/12345/\" } } } Output messages The Activate Network List action provides the following output messages: Output message Message description Successfully activated the network list in Akamai.",
+          "A comma-separated list of email addresses that receive a notification regarding the client list activation Action outputs The Activate Client List action provides the following outputs: Action output type Availability Case wall attachment Not available Case wall link Not available Case wall table Not available Enrichment table Not available JSON result Available Output messages Available Script result Available JSON result The following example describes the JSON result output received when using the Activate Client Lists action: { \"action\" : \"ACTIVATE\" , \"activations\" : { \"STAGING\" : { \"activationId\" : 3797405 , \"activationStatus\" : \"PENDING ACTIVATION\" } }, \"comments\" : \"Activating 235466\" , \"createDate\" : \"2026-02-12T15:12:07.952+00:00\" , \"createdBy\" : \"4wksaj3wyt23jt2i\" , \"listId\" : \"235466 GOOGLESECOPSCLIENTLIST1\" , \"notificationRecipients\" : [ \"12345@email.com\" ], \"version\" : 14 } Output messages The Activate Client List action provides the following output messages: Output message Message description Successfully activated the client list in Akamai."
+        ]
+      },
+      {
+        "title": "\"Response integrations community contribution guidelines \\_|\\_ Google Security\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/soar/respond/integrations-setup/integrations-guidelines",
+        "source_id": "site-docs-root-2",
+        "final_score": 163,
+        "relevance": "",
+        "evidence_snippets": [
+          "You should validate the logo on the following pages: Response > Integration Setup Response > Playbooks > Playbook Designer Cases > Alert > Alert Playbook View The following is an example of an SVG logo, designed to match our style guide: <?xml version=\"1.0\" encoding=\"UTF-8\"?><svg id=\"Layer 1\" data-name=\"Layer 1\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 21 23\"> <defs> <style> .cls-1 { stroke-width: 0px; } </style> </defs> <path class=\"cls-1\" d=\"M15.51,4.79H5.49c-.4,0-.72.32-.72.72v5.75c0,2.3,1.71,4.15,3.69,5.38.54.34,1.1.62,1.66.86l.09.04c.06.02.12.05.18.06.03,0,.07,0,.1,0,.1,0,.19-.03.28-.07l.09-.04c.76-.33,2.22-1.03,3.46-2.24,1.24-1.22,1.89-2.6,1.89-4v-5.75c0-.4-.32-.72-.72-.72ZM14.32,11.26c0,.88-.44,1.77-1.32,2.63-.65.64-1.55,1.22-2.5,1.68-.95-.46-1.84-1.04-2.5-1.68-.88-.86-1.32-1.75-1.32-2.63v-4.55h7.64v4.55ZM20.28,0H.72c-.4,0-.72.32-.72.72v10.77c0,2.56,1.18,4.99,3.51,7.21,2.29,2.18,5.12,3.56,6.61,4.2l.09.04s.1.04.15.05c.04,0,.09.01.13.01.1,0,.19-.02.28-.06l.09-.04c.53-.23,1.23-.55,2.02-.97,1.42-.75,3.11-1.82,4.59-3.23,2.33-2.22,3.51-4.64,3.51-7.21V.72c0-.4-.32-.72-.72-.72ZM16.17,17.31c-1.9,1.81-4.24,3.04-5.67,3.69-1.43-.65-3.77-1.88-5.67-3.69-1.94-1.84-2.92-3.8-2.92-5.82V1.92h17.18v9.57c0,2.02-.98,3.98-2.92,5.82Z\"/></svg> Be sure to encode the SVG before adding it to the integration definition file, as can be found in other integrations in the Content Hub.",
+          "Actions Name The Name of the action should point to the activity that is being performed; for example, Get Case Details , List Entity Events , or Execute Search .",
+          "Release notes The general structure for the release note should follow the following format: {integration item} - {update} For example: Get Case Details - Added ability to fetch information about affected IOCs Depending on the situation, there are unique release notes for specific scenarios: If it's a new integration: New Integration Added - {integration name} If a new action is added: New Action Added - {action name} If a new connector is added: New Connector Added - {connector name} If a new job is added: New Job Added - {job name} If a predefined widget is added to an action: {action name} - Added Predefined Widget."
+        ]
+      },
+      {
+        "title": "\"Explore the Playbooks page \\_|\\_ Google Security Operations \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/soar/respond/working-with-playbooks/whats-on-the-playbooks-screen",
+        "source_id": "site-docs-root",
+        "final_score": 143,
+        "relevance": "",
+        "evidence_snippets": [
+          "For more information about the Playbooks page and how to collaborate with it, see the following: Define custom alert views from Playbook Designer Work with the Playbook Simulator Understand playbook monitoring Use the Playbook Navigator Playbook icons legend The following icons appear on the Cases > Playbooks tab when a playbook is attached.",
+          "Menu : Click edit Edit and select the required playbooks or blocks before using Menu to perform bulk actions: New Folder : Add a new playbooks folder; the playbook automatically inherits any changes made to its associated environment groups.",
+          "Explore the Playbooks page Supported in: Google secops SOAR A playbook is built on triggers, actions, and flows, working together to automate incident response and other security operations tasks."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "email.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/investigate/working-with-cases/cases-overview",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/akamai",
+        "https://docs.cloud.google.com/chronicle/docs/soar/respond/integrations-setup/integrations-guidelines",
+        "https://docs.cloud.google.com/chronicle/docs/soar/respond/working-with-playbooks/whats-on-the-playbooks-screen"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/investigate/working-with-cases/cases-overview",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/akamai",
+        "https://docs.cloud.google.com/chronicle/docs/soar/respond/integrations-setup/integrations-guidelines",
+        "https://docs.cloud.google.com/chronicle/docs/soar/respond/working-with-playbooks/whats-on-the-playbooks-screen"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/investigate/working-with-cases/cases-overview",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/akamai",
+        "https://docs.cloud.google.com/chronicle/docs/soar/respond/integrations-setup/integrations-guidelines",
+        "https://docs.cloud.google.com/chronicle/docs/soar/respond/working-with-playbooks/whats-on-the-playbooks-screen"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/investigate/working-with-cases/cases-overview",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/akamai",
+        "https://docs.cloud.google.com/chronicle/docs/soar/respond/integrations-setup/integrations-guidelines",
+        "https://docs.cloud.google.com/chronicle/docs/soar/respond/working-with-playbooks/whats-on-the-playbooks-screen"
+      ]
+    },
+    {
+      "capability": "threat",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/investigate/working-with-cases/cases-overview",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/akamai",
+        "https://docs.cloud.google.com/chronicle/docs/soar/respond/integrations-setup/integrations-guidelines",
+        "https://docs.cloud.google.com/chronicle/docs/soar/respond/working-with-playbooks/whats-on-the-playbooks-screen"
+      ]
+    }
+  ]
+}

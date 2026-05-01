@@ -1,0 +1,144 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:49.581Z",
+  "source_step08_card": "data/step-08/current/products/virtual-private-cloud/card.json",
+  "product_name": "Virtual Private Cloud",
+  "product_slug": "virtual-private-cloud",
+  "feature_name": "Shared VPC folder-level administration",
+  "feature_slug": "shared-vpc-folder-level-administration",
+  "summary": "Managing Shared VPC at the folder level is now available in General Availability using the Shared VPC Admin role.",
+  "extended_definition": "Managing Shared VPC at the folder level is now available in General Availability using the Shared VPC Admin role.",
+  "lifecycle": {
+    "latest_feature_date": "2023-03-20",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/vpc/docs/about-service-connectivity-automation",
+      "https://docs.cloud.google.com/vpc/docs/byoip-planning",
+      "https://docs.cloud.google.com/vpc/docs/overview",
+      "https://docs.cloud.google.com/vpc/docs/shared-vpc"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Shared VPC \\_|\\_ Virtual Private Cloud \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vpc/docs/shared-vpc",
+        "source_id": "site-docs-root",
+        "final_score": 307,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "You can specify the Shared VPC subnets that a service project can access at the project, folder, or organization level.",
+          "Shared VPC Admin ( compute.xpnAdmin and resourcemanager.projectIamAdmin ) • IAM principal in the organization, or • IAM principal in a folder Shared VPC Admins have the Compute Shared VPC Admin ( compute.xpnAdmin ) and Project IAM Admin ( resourcemanager.projectIamAdmin ) roles for the organization or one or more folders.",
+          "The Shared VPC Admin has granted subnet-level or project-level permissions to the necessary Service Project Admins so they can create instances that use the Shared VPC network: A Service Project Admin for Service project A who has subnet-level permissions to the 10.0.1.0/24 subnet can create Instance A in it."
+        ]
+      },
+      {
+        "title": "\"About service connectivity automation \\_|\\_ Virtual Private Cloud \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/vpc/docs/about-service-connectivity-automation",
+        "source_id": "site-docs-root-2",
+        "final_score": 196,
+        "relevance": "",
+        "evidence_snippets": [
+          "Services with custom service instance scope support By default, service connectivity automation requires that the service instance and the endpoints that connect to the service instance must be in the same project (or in the case of Shared VPC, in connected projects).",
+          "Because the endpoint is configured with an IP address from the Shared VPC network, the endpoint is accessible from the host project and all attached service projects.",
+          "All VMs that are connected to the vm-subnet subnet can access the endpoints because they are connected to the same Shared VPC network as the endpoints."
+        ]
+      },
+      {
+        "title": "\"Planning for bring your own IP addresses \\_|\\_ Virtual Private Cloud \\_\\",
+        "url": "https://docs.cloud.google.com/vpc/docs/byoip-planning",
+        "source_id": "site-docs-root-2",
+        "final_score": 190,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "BYOIP addresses administration with Shared VPC In this example of an organization that contains Shared VPC, there is a dedicated project, Public IP project , used to manage BYOIP addresses.",
+          "Project architecture We recommend that you use organizations to benefit from features such as IAM permissions at the organization level and Shared VPC .",
+          "When the Shared VPC host project or the related service projects need public IP addresses, the Public IP Admin for the organization creates the IP addresses in the Shared VPC host project ."
+        ]
+      },
+      {
+        "title": "Virtual Private Cloud (VPC) overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vpc/docs/overview",
+        "source_id": "site-docs-reference",
+        "final_score": 188,
+        "relevance": "",
+        "evidence_snippets": [
+          "VPC Network Peering lets you configure whether the following types of routes are exchanged: Subnet routes for privately re-used public IP ranges Custom static and dynamic routes Network administration for each peered network is unchanged: IAM policies are never exchanged by VPC Network Peering.",
+          "Shared VPC You can share a VPC network from one project (called a host project) to other projects in your Google Cloud organization.",
+          "VPC Network Peering VPC Network Peering lets you build software as a service (SaaS) ecosystems in Google Cloud, making services available privately across different VPC networks, whether the networks are in the same project, different projects, or projects in different organizations."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "compute.networkUser",
+      "compute.xpnAdmin",
+      "resourcemanager.projectIamAdmin"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/shared-vpc",
+        "https://docs.cloud.google.com/vpc/docs/about-service-connectivity-automation",
+        "https://docs.cloud.google.com/vpc/docs/byoip-planning",
+        "https://docs.cloud.google.com/vpc/docs/overview"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/shared-vpc",
+        "https://docs.cloud.google.com/vpc/docs/about-service-connectivity-automation",
+        "https://docs.cloud.google.com/vpc/docs/byoip-planning",
+        "https://docs.cloud.google.com/vpc/docs/overview"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/shared-vpc",
+        "https://docs.cloud.google.com/vpc/docs/about-service-connectivity-automation",
+        "https://docs.cloud.google.com/vpc/docs/byoip-planning",
+        "https://docs.cloud.google.com/vpc/docs/overview"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/shared-vpc",
+        "https://docs.cloud.google.com/vpc/docs/about-service-connectivity-automation",
+        "https://docs.cloud.google.com/vpc/docs/byoip-planning",
+        "https://docs.cloud.google.com/vpc/docs/overview"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/shared-vpc",
+        "https://docs.cloud.google.com/vpc/docs/about-service-connectivity-automation",
+        "https://docs.cloud.google.com/vpc/docs/byoip-planning",
+        "https://docs.cloud.google.com/vpc/docs/overview"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,106 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:27.301Z",
+  "source_step08_card": "data/step-08/current/products/cloud-sql-for-postgresql/card.json",
+  "product_name": "Cloud SQL for PostgreSQL",
+  "product_slug": "cloud-sql-for-postgresql",
+  "feature_name": "Custom backup locations",
+  "feature_slug": "custom-backup-locations",
+  "summary": "Cloud SQL for PostgreSQL lets you choose the region where backups are stored to keep backup data in a single region.",
+  "extended_definition": "Cloud SQL for PostgreSQL lets you choose the region where backups are stored to keep backup data in a single region.",
+  "lifecycle": {
+    "latest_feature_date": "2019-05-24",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/sql/docs/postgres/backup-recovery/backup-options",
+      "https://docs.cloud.google.com/sql/docs/postgres/backup-recovery/backups",
+      "https://docs.cloud.google.com/sql/docs/postgres/data-residency-overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Choose your backup option \\_|\\_ Cloud SQL for PostgreSQL \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/sql/docs/postgres/backup-recovery/backup-options",
+        "source_id": "site-iam-reference",
+        "final_score": 219,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Custom backup locations Cloud SQL lets you select a custom location for your backup data.",
+          "For more information about setting and view backup locations for an instance, see Set a custom location for backups and View backup locations .",
+          "Custom locations that you choose when you don't want to use the default location."
+        ]
+      },
+      {
+        "title": "\"Data residency overview \\_|\\_ Cloud SQL for PostgreSQL \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/sql/docs/postgres/data-residency-overview",
+        "source_id": "site-docs-root",
+        "final_score": 163,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For more information about backup locations, see Custom backup locations .",
+          "Cloud SQL also lets you add another layer of encryption to data using customer-managed encryption keys (CMEK) .",
+          "To learn more about how Google Cloud protects customer data throughout its lifecycle, and how Google Cloud provides customers with transparency and control over their data, see Trusting your data with Google Cloud ."
+        ]
+      },
+      {
+        "title": "\"Cloud SQL backups overview \\_|\\_ Cloud SQL for PostgreSQL \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/sql/docs/postgres/backup-recovery/backups",
+        "source_id": "site-docs-root",
+        "final_score": 136,
+        "relevance": "",
+        "evidence_snippets": [
+          "The scheduled cadence depends on the backup option you choose for your instance and the cadence you define in the backup configuration for the selected backup option.",
+          "The integrity check is done as an offline process by restoring a sampling of customer initiated backups or recovery backups .",
+          "MySQL PostgreSQL SQL Server Cloud SQL lets you back up your instances on-demand, or automatically using a backup schedule."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/backup-recovery/backup-options",
+        "https://docs.cloud.google.com/sql/docs/postgres/data-residency-overview",
+        "https://docs.cloud.google.com/sql/docs/postgres/backup-recovery/backups"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/backup-recovery/backup-options",
+        "https://docs.cloud.google.com/sql/docs/postgres/data-residency-overview",
+        "https://docs.cloud.google.com/sql/docs/postgres/backup-recovery/backups"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/backup-recovery/backup-options",
+        "https://docs.cloud.google.com/sql/docs/postgres/data-residency-overview",
+        "https://docs.cloud.google.com/sql/docs/postgres/backup-recovery/backups"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,81 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:18.771Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery",
+  "feature_name": "LOAD DATA cross-cloud transfers",
+  "feature_slug": "load-data-cross-cloud-transfers",
+  "summary": "The LOAD DATA statement can transfer data from Amazon S3 and Azure Blob Storage into BigQuery.",
+  "extended_definition": "The LOAD DATA statement can transfer data from Amazon S3 and Azure Blob Storage into BigQuery.",
+  "lifecycle": {
+    "latest_feature_date": "2022-11-09",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/blob-storage-transfer-parameters",
+      "https://docs.cloud.google.com/bigquery/docs/cloud-storage-transfer-overview",
+      "https://docs.cloud.google.com/bigquery/docs/gcs-transfer-parameters"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Runtime parameters in Blob Storage transfers \\_|\\_ BigQuery \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/blob-storage-transfer-parameters",
+        "source_id": "site-api-reference",
+        "final_score": 163,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Data source Source URI or data path Parameterized destination table name Evaluated destination table name Cloud Storage gs://bucket/ .csv mytable${ run time \"%Y%m%d\" } mytable$20180215 Amazon S3 s3://bucket/ .csv mytable${ run time \"%Y%m%d\" } mytable$20180215 Blob Storage .csv mytable${ run time \"%Y%m%d\" } mytable$20180215 This use case transfers today's data into a table partitioned on today's date.",
+          "Data source Source URI or data path Destination table name Cloud Storage gs://bucket/ .csv mytable Amazon S3 s3://bucket/ .csv mytable Blob Storage .csv mytable Load a snapshot of all data into an ingestion-time partitioned table In this case, all data in the specified URI or data path is transferred to a table partitioned by today's date.",
+          "Runtime parameters in Blob Storage transfers When you set up a data transfer in Cloud Storage, Azure Blob Storage, or Amazon Simple Storage Service (Amazon S3), you can parameterize the URI (or data path) and the destination table."
+        ]
+      },
+      {
+        "title": "\"Runtime parameters in Cloud Storage transfers \\_|\\_ BigQuery \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/gcs-transfer-parameters",
+        "source_id": "site-api-reference",
+        "final_score": 161,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Data source Source URI or data path Parameterized destination table name Evaluated destination table name Cloud Storage gs://bucket/ .csv mytable${ run time \"%Y%m%d\" } mytable$20180215 Amazon S3 s3://bucket/ .csv mytable${ run time \"%Y%m%d\" } mytable$20180215 Blob Storage .csv mytable${ run time \"%Y%m%d\" } mytable$20180215 This use case transfers today's data into a table partitioned on today's date.",
+          "Data source Source URI or data path Destination table name Cloud Storage gs://bucket/ .csv mytable Amazon S3 s3://bucket/ .csv mytable Blob Storage .csv mytable Load a snapshot of all data into an ingestion-time partitioned table In this case, all data in the specified URI or data path is transferred to a table partitioned by today's date.",
+          "Runtime parameters in Cloud Storage transfers When you set up a data transfer in Cloud Storage, Azure Blob Storage, or Amazon Simple Storage Service (Amazon S3), you can parameterize the URI (or data path) and the destination table."
+        ]
+      },
+      {
+        "title": "\"Introduction to Cloud Storage transfers \\_|\\_ BigQuery \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/cloud-storage-transfer-overview",
+        "source_id": "site-api-reference",
+        "final_score": 144,
+        "relevance": "",
+        "evidence_snippets": [
+          "Data ingestion for Cloud Storage transfers You can specify how data is loaded into BigQuery by selecting a Write Preference in the transfer configuration when you set up a Cloud Storage transfer .",
+          "Introduction to Cloud Storage transfers The BigQuery Data Transfer Service for Cloud Storage lets you schedule recurring data loads from Cloud Storage buckets to BigQuery.",
+          "For cross-location transfers from Cloud Storage, pricing is determined by the location of the Cloud Storage bucket and the location of the destination BigQuery dataset."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": []
+}

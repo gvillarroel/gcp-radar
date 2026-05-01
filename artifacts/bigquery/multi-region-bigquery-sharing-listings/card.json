@@ -1,0 +1,146 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:18.771Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery",
+  "feature_name": "Multi-region BigQuery sharing listings",
+  "feature_slug": "multi-region-bigquery-sharing-listings",
+  "summary": "BigQuery sharing supports listings for shared datasets and linked dataset replicas across multiple regions.",
+  "extended_definition": "BigQuery sharing supports listings for shared datasets and linked dataset replicas across multiple regions.",
+  "lifecycle": {
+    "latest_feature_date": "2025-09-02",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/analytics-hub-introduction",
+      "https://docs.cloud.google.com/bigquery/docs/analytics-hub-manage-listings",
+      "https://docs.cloud.google.com/bigquery/docs/analytics-hub-view-subscribe-listings"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Introduction to BigQuery sharing \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/analytics-hub-introduction",
+        "source_id": "site-docs-reference-5",
+        "final_score": 202,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The following limitations apply to listings for multiple regions: Listings for multiple regions are supported only for shared datasets and linked dataset replicas.",
+          "For more information about the BigQuery objects that BigQuery sharing supports, see Shared datasets .",
+          "BigQuery sharing supports the following Google Cloud resources: BigQuery datasets Pub/Sub topics Publisher workflow The following diagram describes how a publisher shares assets: The following sections describe the features in this workflow."
+        ]
+      },
+      {
+        "title": "Manage listings \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/analytics-hub-manage-listings",
+        "source_id": "site-docs-reference-5",
+        "final_score": 198,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For example, to view the linked datasets linked to a shared dataset in myproject that are in the eu region, use the following query: SELECT FROM myproject.region-eu.INFORMATION SCHEMA.SCHEMATA LINKS; API Use the projects.locations.dataExchanges.listings.listSubscriptions method .",
+          "To create listings or to update replica regions for a listing, you must have the bigquery.datasets.get and bigquery.datasets.update permissions for the datasets where you want to create or update listings.",
+          "Partners that are interested in their listings being in the Featured section of the BigQuery sharing catalog must meet the following criteria: Shared data must reside in BigQuery."
+        ]
+      },
+      {
+        "title": "\"View and subscribe to listings and data exchanges \\_|\\_ BigQuery \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/analytics-hub-view-subscribe-listings",
+        "source_id": "site-docs-root-2",
+        "final_score": 184,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Required roles To get the permissions that you need to use listings, ask your BigQuery sharing administrator to grant you the following Identity and Access Management (IAM) roles on the BigQuery sharing subscriber project: Discover listings : Analytics Hub Viewer ( roles/analyticshub.viewer ) Discover data exchanges : Analytics Hub Viewer ( roles/analyticshub.viewer ) Subscribe to listings : BigQuery User ( roles/bigquery.user ) To subscribe to listings, you must also ask the BigQuery sharing listing publisher to grant you the Analytics Hub Subscriber role ( roles/analyticshub.subscriber ) on their listing, exchange, or project, depending on the scope that's most appropriate for your use case.",
+          "View and subscribe to listings and data exchanges This document describes how to view and subscribe to listings and data exchanges in BigQuery sharing (formerly Analytics Hub).",
+          "Note: BigQuery sharing subscribers must authorize shared stored procedures in a linked dataset to read from and write to certain resources owned by the subscriber."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "analyticshub.googleapis.com",
+      "analyticshub.publisher",
+      "analyticshub.subscriber",
+      "analyticshub.viewer",
+      "bigquery.datasets.get",
+      "bigquery.datasets.update",
+      "bigquery.user",
+      "eu.INFORMATION",
+      "myproject.region",
+      "projects.locations.dataExchanges.listings.listSubscriptions"
+    ],
+    "missing_inventory_roles": [
+      "roles/analyticshub.publisher",
+      "roles/analyticshub.subscriber",
+      "roles/analyticshub.viewer",
+      "roles/bigquery.user"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-introduction",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-manage-listings",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-view-subscribe-listings"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-introduction",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-manage-listings",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-view-subscribe-listings"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-introduction",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-manage-listings",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-view-subscribe-listings"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-introduction",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-manage-listings",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-view-subscribe-listings"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-introduction",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-manage-listings",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-view-subscribe-listings"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-introduction",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-manage-listings",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-view-subscribe-listings"
+      ]
+    }
+  ]
+}

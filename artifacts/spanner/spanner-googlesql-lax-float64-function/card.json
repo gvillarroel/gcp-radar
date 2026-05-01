@@ -1,0 +1,109 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:46.903Z",
+  "source_step08_card": "data/step-08/current/products/spanner/card.json",
+  "product_name": "Spanner",
+  "product_slug": "spanner",
+  "feature_name": "Spanner GoogleSQL LAX_FLOAT64 function",
+  "feature_slug": "spanner-googlesql-lax-float64-function",
+  "summary": "The Spanner GoogleSQL LAX_FLOAT64 JSON function is now generally available and converts a JSON value to a SQL FLOAT64.",
+  "extended_definition": "The Spanner GoogleSQL LAX_FLOAT64 JSON function is now generally available and converts a JSON value to a SQL FLOAT64.",
+  "lifecycle": {
+    "latest_feature_date": "2024-02-26",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/spanner/docs/ml-tutorial",
+      "https://docs.cloud.google.com/spanner/docs/ml-tutorial-embeddings",
+      "https://docs.cloud.google.com/spanner/docs/reference/dialect-differences"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Dialect parity between GoogleSQL and PostgreSQL \\_|\\_ Spanner \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/spanner/docs/reference/dialect-differences",
+        "source_id": "site-docs-reference",
+        "final_score": 100,
+        "relevance": "",
+        "evidence_snippets": [
+          "In the following example, we use CONCAT as our function F : -- Given the following schema CREATE TABLE singers ( singer id BIGINT PRIMARY KEY, first name VARCHAR(1024), last name VARCHAR(1024), singer info BYTEA ); -- Create a hash for each row (using all columns) WITH hashed rows AS ( SELECT , ABS(MOD(spanner.farm fingerprint( CONCAT( singer id::text, first name, last name, singer info::text ) ), 100)) AS hash value FROM singers ) -- Sample data SELECT FROM hashed rows WHERE hash value < 10 -- sample roughly 10% LIMIT 10; / Optional: LIMIT to a max of 10 rows to be returned / VALUE IN UNNEST(ARRAY(...)) Use the equality operator with the ANY function, as shown in the following example: SELECT value = any(array[...]) GoogleSQL dialect function differences GoogleSQL function PostgreSQL dialect recommendation ACOSH Use the formula of the function explicitly, as shown in the following example: SELECT LN(x + SQRT(x x - 1)); APPROX COSINE DISTANCE No recommendation available.",
+          "SELECT to json(table) FROM table We recommend explicitly mapping each column with the jsonb build object function: WITH singers AS ( SELECT 1::int8 AS id, 'Singer First Name'::text AS first name ) SELECT jsonb build object('id', id, 'first name', first name) FROM singers; ORDER BY … COLLATE … No recommendation available.",
+          "WITH numbers AS ( SELECT 1::int8 AS a, 9223372036854775807::int8 AS b UNION ALL SELECT 1, 2 ) SELECT CASE WHEN a::numeric - b::numeric > 9223372036854775807 THEN NULL WHEN a::numeric - b::numeric < -9223372036854775808 THEN NULL ELSE a - b END AS result FROM numbers; SAFE.TO JSON No recommendation available."
+        ]
+      },
+      {
+        "title": "Get Vertex AI text embeddings \\_|\\_ Spanner \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/spanner/docs/ml-tutorial-embeddings",
+        "source_id": "site-docs-root",
+        "final_score": 91,
+        "relevance": "",
+        "evidence_snippets": [
+          "ML PREDICT ROW ( 'projects/ PROJECT /locations/ LOCATION /publishers/google/models/ $MODEL NAME ' , JSONB BUILD OBJECT ( 'instances' , JSONB BUILD ARRAY ( JSONB BUILD OBJECT ( 'content' , description )))) ) - > 'predictions' - > 0 - > 'embeddings' - > 'values' FROM Products ; Replace the following: PROJECT : the project hosting the Vertex AI endpoint LOCATION : the location of the Vertex AI endpoint MODEL NAME : the name of the Vertex AI text embedding model To specify task type and output dimensions : UPDATE Products p SET description embedding = spanner . float64 array ( spanner .",
+          "ML PREDICT ROW ( 'projects/ PROJECT /locations/ LOCATION /publishers/google/models/ $MODEL NAME ' , JSONB BUILD OBJECT ( 'instances' , JSONB BUILD ARRAY ( JSONB BUILD OBJECT ( 'content' , @ Description ))) ) - > 'predictions' - > 0 - > 'embeddings' - > 'values' )); Replace the following: PROJECT : the project hosting the Vertex AI endpoint LOCATION : the location of the Vertex AI endpoint MODEL NAME : the name of the Vertex AI text embedding model Update text embeddings To update your embeddings or to ingest data in realtime, use the UPDATE ( GoogleSQL and PostgreSQL ) statement.",
+          "ML PREDICT ROW ( 'projects/ PROJECT /locations/ LOCATION /publishers/google/models/ $MODEL NAME ' , JSONB BUILD OBJECT ( 'instances' , JSONB BUILD ARRAY ( JSONB BUILD OBJECT ( 'content' , $ 1 , 'task type' , 'RETRIEVAL QUERY' ) ), 'parameters' , JSONB BUILD OBJECT ( 'outputDimensionality' , 768 ) ) ) - > 'predictions' - > 0 - > 'embeddings' - > 'values' ) ) AS distance FROM Products p ORDER BY distance LIMIT 5 ; Replace the following: PROJECT : the project hosting the Vertex AI endpoint LOCATION : the location of the Vertex AI endpoint MODEL NAME : the name of the Vertex AI text embedding model Store text embeddings After generating the embeddings in a read-only transaction, store them in Spanner so they can be managed with your operational data."
+        ]
+      },
+      {
+        "title": "Generate ML predictions using SQL \\_|\\_ Spanner \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/spanner/docs/ml-tutorial",
+        "source_id": "site-docs-root",
+        "final_score": 89,
+        "relevance": "",
+        "evidence_snippets": [
+          "PREDICT ( MODEL GeminiPro , ( SELECT \"Is 7 a prime number?\" AS prompt ), STRUCT ( 256 AS maxOutputTokens , 0.2 AS temperature , 40 as topK , 0.95 AS topP ) ); Expected output The expected out is as follows: + --------------------+ content + --------------------+ \"Yes\" + --------------------+ PostgreSQL Run the model select spanner . ml predict row ( '{ \"endpoint\": \"projects/ PROJECT ID /locations/us-central1/publishers/google/models/gemini-pro\", \"default batch size\": 1 }' :: jsonb , '{ \"instances\":[{\"prompt\": \"Is 7 a prime number?\"}], \"parameters\":{\"maxOutputTokens\":256, \"topK\": 40, \"topP\":0.96, \"temperature\":0.2} }' ); Expected output The expected out is the following: +--------------------+ content +--------------------+ \"Yes\" +--------------------+ Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "The following is an example schema from Classification and regression Overview CREATE MODEL MyClassificationModel INPUT ( length FLOAT64 , material STRING ( MAX ), tag array ARRAY<STRING ( MAX ) > ) OUTPUT ( scores ARRAY<FLOAT64> , classes ARRAY<STRING ( MAX ) > ) REMOTE OPTIONS ( endpoint = '//aiplatform.googleapis.com/projects/ PROJECT /locations/ LOCATION /endpoints/ ENDPOINT ID ' ) Replace the following: PROJECT ID : the ID of your Google Cloud project LOCATION : the ID of the Google Cloud region that the model is located in—for example, us-central1 ENDPOINT ID : the ID of the ML model you want to use—for example, gemini-pro For more information about models, see Model API reference for Generative AI .",
+          "SELECT spanner . ml predict row ( 'projects/ PROJECT ID /locations/ REGION ID /endpoints/ ENDPOINT ID ' :: text , '{ \"instances\": [ INSTANCES ], \"parameters\": { PARAMETERS } }' :: jsonb ); `` Replace the following : PROJECT ID : the ID of the Google Cloud project that the model is located in REGION ID : the ID of the Google Cloud region the model is located in—for example, us-central1 ENDPOINT ID : the ID of the model endpoint INSTANCES : the inputs to the prediction call, in JSON format PARAMETERS : optional parameters to the prediction call, in JSON format This query produces a JSON response."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "aiplatform.googleapis.com",
+      "spanner.farm"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/reference/dialect-differences",
+        "https://docs.cloud.google.com/spanner/docs/ml-tutorial-embeddings",
+        "https://docs.cloud.google.com/spanner/docs/ml-tutorial"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/reference/dialect-differences",
+        "https://docs.cloud.google.com/spanner/docs/ml-tutorial-embeddings",
+        "https://docs.cloud.google.com/spanner/docs/ml-tutorial"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/reference/dialect-differences",
+        "https://docs.cloud.google.com/spanner/docs/ml-tutorial-embeddings",
+        "https://docs.cloud.google.com/spanner/docs/ml-tutorial"
+      ]
+    }
+  ]
+}

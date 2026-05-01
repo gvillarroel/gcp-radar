@@ -1,0 +1,172 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:16.544Z",
+  "source_step08_card": "data/step-08/current/products/app-engine-standard-environment-python/card.json",
+  "product_name": "App Engine standard environment Python",
+  "product_slug": "app-engine-standard-environment-python",
+  "feature_name": "Python 3.10 runtime",
+  "feature_slug": "python-3-10-runtime",
+  "summary": "Python 3.10 is a supported App Engine standard environment runtime for Python applications; Python 3.10 is a supported App Engine standard environment runtime for Python applications.",
+  "extended_definition": "Python 3.10 is a supported App Engine standard environment runtime for Python applications; Python 3.10 is a supported App Engine standard environment runtime for Python applications.",
+  "lifecycle": {
+    "latest_feature_date": "2022-07-01",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/appengine/docs/admin-api/access-control",
+      "https://docs.cloud.google.com/appengine/docs/standard/lifecycle/runtime-lifecycle",
+      "https://docs.cloud.google.com/appengine/docs/standard/python3"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Runtime lifecycle \\_|\\_ App Engine standard environment \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/lifecycle/runtime-lifecycle",
+        "source_id": "site-docs-reference-4",
+        "final_score": 65,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Decommissioned Applications that continue to use a decommissioned runtime may be disabled without further notice.",
+          "Runtime lifecycle GA-level support End of Support Deprecated Decommissioned Creation & redeployment Yes No 1 No No Project Configuration Updates Yes Yes No No Running existing workloads Yes Yes Yes May be disabled UI & CLI Warnings Yes Yes No No Language patches Automatic No automatic updates No automatic updates No automatic updates Patching APIs & SDKs Automatic No automatic updates No automatic updates No automatic updates Patching OS Automatic No automatic updates No automatic updates No automatic updates Customer Support GA-level support No runtime support No runtime support No runtime support Notification period App Engine will begin issuing in-app notifications 90 days before the application reaches end of support.",
+          "For details, see the migration guides: Migrate from Python 2.7 to the latest Python runtime Migrate from PHP 5 to the latest PHP runtime Migrate from Go 1.11 to the latest Go runtime Migrate from Java 8 to the latest Java runtime In certain cases, Google may permit your Organization to re-enable deployments in unsupported runtimes, subject to service specific terms and conditions."
+        ]
+      },
+      {
+        "title": "\"Python 3 Runtime Environment \\_|\\_ App Engine standard environment \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/python3",
+        "source_id": "site-docs-reference-4",
+        "final_score": 63,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "The following example shows how to use uwsgi with App Engine: runtime : python313 entrypoint : uwsgi --http-socket :$PORT --wsgi-file main.py --callable app --master --processes 1 --threads 2 uwsgi==2.0.22 Flask==3.0.0 Environment variables The following environment variables are set by the runtime: Environment variable Description GAE APPLICATION The ID of your App Engine application.",
+          "Home Documentation Application hosting App Engine Standard environment Guides Send feedback Python 3 Runtime Environment Stay organized with collections Save and categorize content based on your preferences.",
+          "The Python runtime for App Engine in the standard environment is declared in the app.yaml file: runtime : python VERSION Where VERSION is the Python MAJOR and MINOR version numbers."
+        ]
+      },
+      {
+        "title": "\"Roles that grant access to App Engine \\_|\\_ App Engine standard environment\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/admin-api/access-control",
+        "source_id": "site-docs-reference-4",
+        "final_score": 59,
+        "relevance": "",
+        "evidence_snippets": [
+          "Lowest-level resources where you can grant this role: Project appengine.applications.get appengine. applications. listRuntimes appengine.applications.update appengine.instances. appengine.instances.delete appengine. instances. enableDebug appengine.instances.get appengine.instances.list appengine.memcache.addKey appengine.memcache.flush appengine.memcache.get appengine.memcache.update appengine.operations. appengine.operations.get appengine.operations.list appengine.runtimes.actAsAdmin appengine.services. appengine.services.delete appengine.services.get appengine.services.list appengine.services.update appengine.versions.create appengine.versions.delete appengine. versions. exportAppImage appengine.versions.get appengine.versions.list appengine.versions.update artifactregistry. projectsettings. get artifactregistry. repositories. deleteArtifacts artifactregistry. repositories. downloadArtifacts artifactregistry. repositories. uploadArtifacts recommender.locations. recommender.locations.get recommender.locations.list resourcemanager.projects.get resourcemanager.projects.list App Engine Creator ( roles/ appengine.appCreator ) Ability to create the App Engine resource for the project.",
+          "Lowest-level resources where you can grant this role: Project appengine.applications.get appengine. applications. listRuntimes appengine.instances.get appengine.instances.list appengine.operations. appengine.operations.get appengine.operations.list appengine.services.get appengine.services.list appengine.versions.create appengine.versions.delete appengine.versions.get appengine.versions.list artifactregistry. projectsettings. get artifactregistry. repositories. deleteArtifacts artifactregistry. repositories. downloadArtifacts artifactregistry. repositories. uploadArtifacts recommender.locations. recommender.locations.get recommender.locations.list resourcemanager.projects.get resourcemanager.projects.list App Engine Memcache Data Admin ( roles/ appengine.memcacheDataAdmin ) Can get, set, delete, and flush App Engine Memcache items. appengine.applications.get appengine.memcache.addKey appengine.memcache.flush appengine.memcache.get appengine.memcache.update resourcemanager.projects.get resourcemanager.projects.list App Engine Service Admin ( roles/ appengine.serviceAdmin ) Read-only access to all application configuration and settings.",
+          "Lowest-level resources where you can grant this role: Project appengine.applications.get appengine. applications. listRuntimes appengine.instances.get appengine.instances.list appengine.operations. appengine.operations.get appengine.operations.list appengine.services.get appengine.services.list appengine.versions.get appengine. versions. getFileContents appengine.versions.list artifactregistry. projectsettings. get resourcemanager.projects.get resourcemanager.projects.list App Engine Managed VM Debug Access ( roles/ appengine.debugger ) Ability to read or manage v2 instances. appengine.applications.get appengine. applications. listRuntimes appengine.instances. appengine.instances.delete appengine. instances. enableDebug appengine.instances.get appengine.instances.list appengine.operations. appengine.operations.get appengine.operations.list appengine.services.get appengine.services.list appengine.versions.get appengine.versions.list resourcemanager.projects.get resourcemanager.projects.list App Engine Deployer ( roles/ appengine.deployer ) Read-only access to all application configuration and settings."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "explicit",
+    "explicit_roles": [
+      "roles/accessapproval.admin",
+      "roles/accessapproval.approver",
+      "roles/accessapproval.configEditor"
+    ],
+    "explicit_permissions": [
+      {
+        "permission": "resourcemanager.projects.get",
+        "group": "resourcemanager",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver",
+          "roles/accessapproval.configEditor"
+        ]
+      },
+      {
+        "permission": "resourcemanager.projects.list",
+        "group": "resourcemanager",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver",
+          "roles/accessapproval.configEditor"
+        ]
+      }
+    ],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "app.yaml",
+      "appengine.appCreator",
+      "appengine.applications.get",
+      "appengine.applications.update",
+      "appengine.debugger",
+      "appengine.deployer",
+      "appengine.instances",
+      "appengine.instances.delete",
+      "appengine.instances.get",
+      "appengine.instances.list",
+      "appengine.memcache.addKey",
+      "appengine.memcache.flush",
+      "appengine.memcache.get",
+      "appengine.memcache.update",
+      "appengine.memcacheDataAdmin",
+      "appengine.operations",
+      "appengine.operations.get",
+      "appengine.operations.list",
+      "appengine.runtimes.actAsAdmin",
+      "appengine.serviceAdmin",
+      "appengine.services",
+      "appengine.services.delete",
+      "appengine.services.get",
+      "appengine.services.list",
+      "appengine.services.update",
+      "appengine.versions.create",
+      "appengine.versions.delete",
+      "appengine.versions.get",
+      "appengine.versions.list",
+      "appengine.versions.update",
+      "main.py",
+      "recommender.locations",
+      "recommender.locations.get",
+      "recommender.locations.list"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/lifecycle/runtime-lifecycle",
+        "https://docs.cloud.google.com/appengine/docs/standard/python3",
+        "https://docs.cloud.google.com/appengine/docs/admin-api/access-control"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/lifecycle/runtime-lifecycle",
+        "https://docs.cloud.google.com/appengine/docs/standard/python3",
+        "https://docs.cloud.google.com/appengine/docs/admin-api/access-control"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/lifecycle/runtime-lifecycle",
+        "https://docs.cloud.google.com/appengine/docs/standard/python3",
+        "https://docs.cloud.google.com/appengine/docs/admin-api/access-control"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/lifecycle/runtime-lifecycle",
+        "https://docs.cloud.google.com/appengine/docs/standard/python3",
+        "https://docs.cloud.google.com/appengine/docs/admin-api/access-control"
+      ]
+    }
+  ]
+}

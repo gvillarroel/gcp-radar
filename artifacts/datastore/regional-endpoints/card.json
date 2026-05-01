@@ -1,0 +1,149 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:33.658Z",
+  "source_step08_card": "data/step-08/current/products/datastore/card.json",
+  "product_name": "Datastore",
+  "product_slug": "datastore",
+  "feature_name": "Regional endpoints",
+  "feature_slug": "regional-endpoints",
+  "summary": "Regional endpoints let Firestore in Datastore mode API traffic be directed to regional endpoints.",
+  "extended_definition": "Regional endpoints let Firestore in Datastore mode API traffic be directed to regional endpoints.",
+  "lifecycle": {
+    "latest_feature_date": "2023-04-14",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/datastore/docs/datastore-api-tutorial",
+      "https://docs.cloud.google.com/datastore/docs/reference/admin/rest",
+      "https://docs.cloud.google.com/datastore/docs/store-query-data",
+      "https://docs.cloud.google.com/python/docs/reference/datastore/latest/admin_client"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Getting started with the Firestore in Datastore mode API \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/datastore/docs/datastore-api-tutorial",
+        "source_id": "site-iam-reference",
+        "final_score": 268,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Databases Datastore Guides Send feedback Getting started with the Firestore in Datastore mode API Stay organized with collections Save and categorize content based on your preferences.",
+          "This page provides a short exercise in building a command-line TaskList application with the Firestore in Datastore mode API.",
+          "For more information, see Set up authentication for a local development environment . def delete task task id require \"google/cloud/datastore\" datastore = Google :: Cloud :: Datastore . new task = datastore . find \"Task\" , task id datastore . delete task end Running a query In addition to retrieving entities from Datastore mode directly by their keys, an application can perform a query to retrieve them by the values of their properties."
+        ]
+      },
+      {
+        "title": "\"Datastore Admin Client \\_|\\_ Python client libraries \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/datastore/latest/admin_client",
+        "source_id": "site-python-reference",
+        "final_score": 252,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import datastore admin v1 def sample delete index(): Create a client client = datastore admin v1.",
+          "It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import datastore admin v1 def sample export entities(): Create a client client = datastore admin v1.",
+          "It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import datastore admin v1 def sample import entities(): Create a client client = datastore admin v1."
+        ]
+      },
+      {
+        "title": "\"Quickstart: Store and query data in Firestore in Datastore mode \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/datastore/docs/store-query-data",
+        "source_id": "site-docs-root",
+        "final_score": 223,
+        "relevance": "",
+        "evidence_snippets": [
+          "Go to project selector If you are not the project owner, your account requires the following permissions to complete this quickstart: Your account requires the Datastore Owner role which contains the datastore.databases.create permission needed to create a Datastore mode instance.",
+          "Store and query data in Firestore in Datastore mode This page shows you how to store and query data in Firestore in Datastore mode using the Google Cloud console.",
+          "When you create a new Firestore database, you have the option to use Firestore in either Native Mode or Datastore mode."
+        ]
+      },
+      {
+        "title": "Cloud Datastore API \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/datastore/docs/reference/admin/rest",
+        "source_id": "site-docs-reference",
+        "final_score": 220,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Select a location to see its regional service endpoint for this service. global africa-south1 asia-east1 asia-east2 asia-northeast1 asia-northeast2 asia-northeast3 asia-south1 asia-south2 asia-southeast1 asia-southeast2 asia-southeast3 australia-southeast1 australia-southeast2 europe-central2 europe-north1 europe-north2 europe-southwest1 europe-west1 europe-west10 europe-west12 europe-west2 europe-west3 europe-west4 europe-west6 europe-west8 europe-west9 me-central1 me-central2 me-west1 northamerica-northeast1 northamerica-northeast2 northamerica-south1 southamerica-east1 southamerica-west1 us-central1 us-east1 us-east4 us-east5 us-south1 us-west1 us-west2 us-west3 us-west4 eu us https://datastore.googleapis.com REST Resource: v1beta1.projects Methods export POST /v1beta1/projects/{projectId}:export Exports a copy of all or a subset of entities from Google Cloud Datastore to another storage system, such as Google Cloud Storage. import POST /v1beta1/projects/{projectId}:import Imports entities into Google Cloud Datastore.",
+          "This service has the following service endpoint and all URIs below are relative to this service endpoint: https://datastore.googleapis.com Regional service endpoint A regional service endpoint is a base URL that specifies the network address of an API service in a single region.",
+          "This service provides the following discovery documents: https://datastore.googleapis.com/$discovery/rest?version=v1 https://datastore.googleapis.com/$discovery/rest?version=v1beta1 Service endpoint A service endpoint is a base URL that specifies the network address of an API service."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "datastore.databases.create",
+      "datastore.googleapis.com",
+      "googleapis.dev",
+      "options.html",
+      "v1.projects",
+      "v1.projects.indexes",
+      "v1.projects.operations",
+      "v1beta1.projects"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastore/docs/datastore-api-tutorial",
+        "https://docs.cloud.google.com/python/docs/reference/datastore/latest/admin_client",
+        "https://docs.cloud.google.com/datastore/docs/store-query-data",
+        "https://docs.cloud.google.com/datastore/docs/reference/admin/rest"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastore/docs/datastore-api-tutorial",
+        "https://docs.cloud.google.com/python/docs/reference/datastore/latest/admin_client",
+        "https://docs.cloud.google.com/datastore/docs/store-query-data",
+        "https://docs.cloud.google.com/datastore/docs/reference/admin/rest"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastore/docs/datastore-api-tutorial",
+        "https://docs.cloud.google.com/python/docs/reference/datastore/latest/admin_client",
+        "https://docs.cloud.google.com/datastore/docs/store-query-data",
+        "https://docs.cloud.google.com/datastore/docs/reference/admin/rest"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastore/docs/datastore-api-tutorial",
+        "https://docs.cloud.google.com/python/docs/reference/datastore/latest/admin_client",
+        "https://docs.cloud.google.com/datastore/docs/store-query-data",
+        "https://docs.cloud.google.com/datastore/docs/reference/admin/rest"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastore/docs/datastore-api-tutorial",
+        "https://docs.cloud.google.com/python/docs/reference/datastore/latest/admin_client",
+        "https://docs.cloud.google.com/datastore/docs/store-query-data",
+        "https://docs.cloud.google.com/datastore/docs/reference/admin/rest"
+      ]
+    }
+  ]
+}

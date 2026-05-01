@@ -1,0 +1,114 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:23.390Z",
+  "source_step08_card": "data/step-08/current/products/cloud-deployment-manager/card.json",
+  "product_name": "Cloud Deployment Manager",
+  "product_slug": "cloud-deployment-manager",
+  "feature_name": "updateTime field",
+  "feature_slug": "updatetime-field",
+  "summary": "Deployment Manager resources include an updateTime field.",
+  "extended_definition": "Deployment Manager resources include an updateTime field.",
+  "lifecycle": {
+    "latest_feature_date": "2015-06-18",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/deployment-manager/docs/configuration/syntax-reference",
+      "https://docs.cloud.google.com/deployment-manager/docs/configuration/using-schemas",
+      "https://docs.cloud.google.com/deployment-manager/docs/deployments/updating-deployments"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Syntax Reference \\_|\\_ Cloud Deployment Manager \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/deployment-manager/docs/configuration/syntax-reference",
+        "source_id": "site-api-reference",
+        "final_score": 83,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "You can use all supported JSON schema validations for these properties, such as: type (string, boolean, integer, number, ...) default minimum / exclusiveMinimum / maximum / exclusiveMaximum minLength / maxLength pattern not X / allOf X, Y / anyOf X, Y / oneOf X, Y At a minimum, it is good practice to include a type and description of the field so users know what is an acceptable value for the property.",
+          "ITEM ) Examples $(ref.exampleInstance.networkInterfaces[0].natIp) $(ref.exampleInstance.serviceAccounts[0].email) Deployment-specific environment variables When you create a deployment, Deployment Manager creates environment variables that contain pieces of information about your deployment, such as the current project name, the deployment's name, and so on.",
+          "For example, if you want to create an instance group manager that uses an instance template from the same deployment, instead of explicitly typing the full link for the instance template, you can use a reference with the syntax $(ref.instance-template.selfLink) ."
+        ]
+      },
+      {
+        "title": "Using Schemas \\_|\\_ Cloud Deployment Manager \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/deployment-manager/docs/configuration/using-schemas",
+        "source_id": "site-docs-reference-required-5",
+        "final_score": 83,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Deployment Manager accepts schemas written according to draft 4 of the JSON schema specifications . < mongodb . py . schema > info : title : MongoDB Template author : Jane description : Creates a MongoDB cluster version : 1.0 imports : - path : helper . py name : mongodb helper . py required : - name properties : name : type : string description : Name of your Mongo Cluster size : type : integer default : 2 description : Number of Mongo Slaves zone : type : string default : us - central1 - a description : Zone to run metadata : gce - zone A valid schema file is a JSON schema file with the addition of two top level fields, info and imports .",
+          "For example, you can add a metadata field that annotates one of your properties: properties : zone : type : string default : us - central1 - a description : Zone to run metadata : a - special - property Or you create a special variable that you might use in other applications outside of Deployment Manager: properties : size : type : integer default : 2 description : Number of Mongo Slaves variable - x : ultra - secret - sauce Create a schema A schema is a separate document that is named after the template for which it describes.",
+          "In the example above, the imports field imports a file name vm-instance.jinja : imports: - path: vm-instance.jinja In the corresponding configuration file, a user can omit importing the vm-instance.jinja file, because it will be imported automatically when Deployment Manager inspects the schema for the template."
+        ]
+      },
+      {
+        "title": "\"Updating a Deployment \\_|\\_ Cloud Deployment Manager \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/deployment-manager/docs/deployments/updating-deployments",
+        "source_id": "site-docs-root",
+        "final_score": 67,
+        "relevance": "",
+        "evidence_snippets": [
+          "For example, the following API request previews a simple update: PUT https : //www.googleapis.com/deploymentmanager/v2/projects/myproject/global/deployments/example-deployment?preview=true { \"target\" : { \"config\" : { \"content\" : \"resources:\\n- name: vm-created-by-cloud-config\\n type: compute.v1.instance\\n properties:\\n zone: us-central1-a\\n machineType: https://www.googleapis.com/compute/v1/projects/myproject/zones/us-central1-a/machineTypes/n1-standard-1\\n disks:\\n - deviceName: boot\\n type: PERSISTENT\\n boot: true\\n autoDelete: true\\n initializeParams:\\n diskName: disk-created-by-cloud-config\\n sourceImage: https://www.googleapis.com/compute/v1/projects/debian-cloud/global/images/debian-9-stretch-v20180716\\n networkInterfaces:\\n - network: https://www.googleapis.com/compute/v1/projects/myproject/global/networks/default\" } }, \"name\" : \"example-deployment\" } After previewing a deployment, you can fully deploy the configuration by making the same PUT() request, omitting both the configuration and the preview query parameter.",
+          "PUT https : //www.googleapis.com/deploymentmanager/v2/projects/myproject/global/deployments/example-deployment?createPolicy=ACQUIRE&deletePolicy=ABANDON { \"target\" : { \"config\" : { \"content\" : \"resources:\\n- name: vm-created-by-cloud-config\\n type: compute.v1.instance\\n properties:\\n zone: us-central1-a\\n machineType: https://www.googleapis.com/compute/v1/projects/myproject/zones/us-central1-a/machineTypes/n1-standard-1\\n disks:\\n - deviceName: boot\\n type: PERSISTENT\\n boot: true\\n autoDelete: true\\n initializeParams:\\n diskName: disk-created-by-cloud-config\\n sourceImage: https://www.googleapis.com/compute/v1/projects/debian-cloud/global/images/debian-9-stretch-v20180716\\n networkInterfaces:\\n - network: https://www.googleapis.com/compute/v1/projects/myproject/global/networks/default\" } }, \"name\" : \"example-deployment\" , \"fingerprint\" : \"nU2v7bzeA7gBBI8bdbtmFg==\" } Stop an update You can stop an update that is in progress using the stop() . method.",
+          "Deployment Manager does not instantiate any actual resources when you preview a configuration, giving you the opportunity to see the deployment before committing to it. gcloud With the Google Cloud CLI, make an update request with the --preview parameter: gcloud deployment-manager deployments update example-deployment \\ --config configuration-file.yaml \\ --preview API In the API, create a PUT() request with an existing deployment and provide the preview=true query parameter."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "compute.v1.instance",
+      "file.yaml",
+      "instance.jinja",
+      "ref.exampleInstance.networkInterfaces",
+      "ref.exampleInstance.serviceAccounts",
+      "ref.instance",
+      "template.selfLink"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/deployment-manager/docs/configuration/syntax-reference",
+        "https://docs.cloud.google.com/deployment-manager/docs/configuration/using-schemas",
+        "https://docs.cloud.google.com/deployment-manager/docs/deployments/updating-deployments"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/deployment-manager/docs/configuration/syntax-reference",
+        "https://docs.cloud.google.com/deployment-manager/docs/configuration/using-schemas",
+        "https://docs.cloud.google.com/deployment-manager/docs/deployments/updating-deployments"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/deployment-manager/docs/configuration/syntax-reference",
+        "https://docs.cloud.google.com/deployment-manager/docs/configuration/using-schemas",
+        "https://docs.cloud.google.com/deployment-manager/docs/deployments/updating-deployments"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,245 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:43.260Z",
+  "source_step08_card": "data/step-08/current/products/managed-cloud-service-mesh/card.json",
+  "product_name": "Managed Cloud Service Mesh",
+  "product_slug": "managed-cloud-service-mesh",
+  "feature_name": "DNS Proxy",
+  "feature_slug": "dns-proxy",
+  "summary": "Makes the DNS Proxy feature available in the Rapid release channel for supported sidecar versions; Makes the DNS Proxy feature available in the Rapid release channel for supported sidecar versions.",
+  "extended_definition": "Makes the DNS Proxy feature available in the Rapid release channel for supported sidecar versions; Makes the DNS Proxy feature available in the Rapid release channel for supported sidecar versions.",
+  "lifecycle": {
+    "latest_feature_date": "2025-06-06",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/service-mesh/v1.20/docs/automate-tls",
+      "https://docs.cloud.google.com/service-mesh/v1.20/docs/gateways",
+      "https://docs.cloud.google.com/service-mesh/v1.20/docs/migrate-service-mesh",
+      "https://docs.cloud.google.com/service-mesh/v1.26/docs/onboarding/prepare-service-routing-envoy-proxyless"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Automate TLS certificate management for Cloud Service Mesh ingress gateway\\",
+        "url": "https://docs.cloud.google.com/service-mesh/v1.20/docs/automate-tls",
+        "source_id": "site-docs-root",
+        "final_score": 182,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Create an operator manifest for the ingress gateway: cat << EOF > ingressgateway - operator . yaml apiVersion : install . istio . io / v1alpha1 kind : IstioOperator metadata : name : ingressgateway - operator annotations : config . kubernetes . io / local - config : \"true\" spec : profile : empty revision : asm - managed components : ingressGateways : - name : istio - ingressgateway namespace : GATEWAY NAMESPACE enabled : true k8s : overlays : - apiVersion : apps / v1 kind : Deployment name : istio - ingressgateway patches : - path : spec . template . metadata . annotations value : inject . istio . io / templates : gateway - path : spec . template . metadata . labels . sidecar \\ . istio \\ . io / inject value : \"true\" - path : spec . template . spec . containers [ name : istio - proxy ] value : name : istio - proxy image : auto service : loadBalancerIP : $ LOAD BALANCER IP serviceAnnotations : networking . gke . io / load - balancer - type : Internal networking . gke . io / internal - load - balancer - allow - global - access : \"true\" EOF Note the following about the operator manifest : The revision field specifies the managed Cloud Service Mesh release channel to use for the data plane.",
+          "Install the ca-certificates and coreutils packages, and the curl , openssl , and jq command-line tools: sudo apt-get update --yes sudo apt-get install --yes ca-certificates coreutils curl jq openssl Create a key pair for the client TLS certificate: openssl genrsa -out private-key.pem 2048 openssl rsa -in private-key.pem -pubout -out public-key.pem Query the metadata server to get the email address of the Google service account identity attached to the VM instance: GSA EMAIL=$(curl --silent --header \"Metadata-Flavor: Google\" http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/default/email) Create a JSON file that you use as the request body when requesting a client TLS certificate from the Certificate Authority Service API : cat << EOF > request.json { \"config\": { \"publicKey\": { \"format\": \"PEM\", \"key\": \"$(base64 --wrap 0 public-key.pem)\" }, \"subjectConfig\": { \"subject\": { \"commonName\": \"$(hostname --short)\", \"organization\": \"Example Organization\" }, \"subjectAltName\": { \"dnsNames\": [ \"$(hostname --fqdn)\" ], \"emailAddresses\": [ \"$GSA EMAIL\" ] } }, \"x509Config\": { \"caOptions\": { \"isCa\": false }, \"keyUsage\": { \"baseKeyUsage\": { \"digitalSignature\": true, \"keyEncipherment\": true }, \"extendedKeyUsage\": { \"clientAuth\": true } } } }, \"lifetime\": \"86400s\" } EOF To learn more about the fields in the config section, see the CertificateConfig type in the CA Service API documentation.",
+          "5.3 curl -- location -- output ca - service - issuer . yaml \"https://github.com/jetstack/google-cas-issuer/releases/download/${CAS ISSUER VERSION}/google-cas-issuer-${CAS ISSUER VERSION}.yaml\" Create an IAM policy binding to allow the ksa-google-cas-issuer Kubernetes service account in the cert-manager namespace to impersonate the Google service account (GSA) using Workload Identity Federation for GKE : gcloud iam service - accounts add - iam - policy - binding \\ CAS ISSUER GSA @ PROJECT ID . iam.gserviceaccount.com \\ -- member \"serviceAccount: PROJECT ID .svc.id.goog[cert-manager/ksa-google-cas-issuer]\" \\ -- role roles / iam . workloadIdentityUser The CA Service issuer controller pods use the ksa-google-cas-issuer Kubernetes service account."
+        ]
+      },
+      {
+        "title": "\"Installing and upgrading gateways \\_|\\_ Cloud Service Mesh v1.20 \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/service-mesh/v1.20/docs/gateways",
+        "source_id": "site-docs-root",
+        "final_score": 179,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Managed Use the following command to locate the available release channels: kubectl -n istio-system get controlplanerevision The output is similar to the following: NAME AGE asm-managed 6d7h asm-managed-rapid 6d7h In the output, the value under the NAME column is the revision label that corresponds to the available release channel for the Cloud Service Mesh version.",
+          "If you labeled the namespace for injection, set the istio.io/rev label on the namespace to the new revision value: kubectl label namespace GATEWAY NAMESPACE \\ istio-injection- istio.io/rev= REVISION \\ --overwrite If you enabled injection only for the gateway pod, set the istio.io/rev label on the Deployment to the new revision value like the following Kubernetes YAML file: cat <<EOF > gateway-deployment.yaml apiVersion: apps/v1 kind: Deployment metadata: name: istio-ingressgateway namespace: GATEWAY NAMESPACE spec: selector: matchLabels: istio: ingressgateway template: metadata: annotations: This is required to tell Anthos Service Mesh to inject the gateway with the required configuration. inject.istio.io/templates: gateway labels: istio: ingressgateway istio.io/rev: REVISION spec: containers: - name: istio-proxy image: auto # The image will automatically update each time the pod starts.",
+          "For example, if you want to roll out a new revision, canary, create a copy of your gateway Deployment with the istio.io/rev= REVISION label set to the new revision and a new name, for example istio-ingressgateway-canary : apiVersion : apps/v1 kind : Deployment metadata : name : istio-ingressgateway-canary namespace : GATEWAY NAMESPACE spec : selector : matchLabels : istio : ingressgateway template : metadata : annotations : inject.istio.io/templates : gateway labels : istio : ingressgateway istio.io/rev : REVISION # Set to the control plane revision you want to deploy spec : containers : - name : istio-proxy image : auto Note: If the image does not automatically update with the actual Cloud Service Mesh proxy image, then the container will not be found and an error will occur."
+        ]
+      },
+      {
+        "title": "\"Prepare to set up on service routing APIs with Envoy and proxyless workloads\\",
+        "url": "https://docs.cloud.google.com/service-mesh/v1.26/docs/onboarding/prepare-service-routing-envoy-proxyless",
+        "source_id": "site-docs-reference",
+        "final_score": 176,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Continue the setup process After you complete the prerequisites described in this document, continue with one of these documents if you are configuring Cloud Service Mesh with the service routing APIs: Set up proxyless gRPC services with a Mesh resource Set up Envoy proxies with HTTP services Set up an ingress gateway Set up TCP services with a TCPRoute resource Set up cross-project references with Mesh and Route resources Set up Gateway TLS routing Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Prepare to set up on service routing APIs with Envoy and proxyless workloads This document provides information on the prerequisite tasks for setting up Cloud Service Mesh using the service routing APIs with Envoy proxies or with proxyless gRPC as the dataplane.",
+          "Overall process with proxyless gRPC Follow this overall procedure for setting up proxyless gRPC applications in a service mesh: Update your gRPC clients to the latest version of gRPC, with the most recent patch."
+        ]
+      },
+      {
+        "title": "\"Migrating from Istio on GKE to Cloud Service Mesh \\_|\\_ Cloud Service Mesh\\",
+        "url": "https://docs.cloud.google.com/service-mesh/v1.20/docs/migrate-service-mesh",
+        "source_id": "site-docs-root",
+        "final_score": 168,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Deploy Online Boutique to the GKE cluster: kpt pkg get \\ https://github.com/GoogleCloudPlatform/microservices-demo.git/release \\ online-boutique kubectl --context= ${ CLUSTER 1 CTX } create namespace online-boutique kubectl --context= ${ CLUSTER 1 CTX } label namespace online-boutique istio-injection=enabled kubectl --context= ${ CLUSTER 1 CTX } -n online-boutique apply -f online-boutique Wait until all Deployments are ready: kubectl -- context =$ { CLUSTER 1 CTX } - n online - boutique wait -- for = condition = available -- timeout = 5 m deployment adservice kubectl -- context =$ { CLUSTER 1 CTX } - n online - boutique wait -- for = condition = available -- timeout = 5 m deployment checkoutservice kubectl -- context =$ { CLUSTER 1 CTX } - n online - boutique wait -- for = condition = available -- timeout = 5 m deployment currencyservice kubectl -- context =$ { CLUSTER 1 CTX } - n online - boutique wait -- for = condition = available -- timeout = 5 m deployment emailservice kubectl -- context =$ { CLUSTER 1 CTX } - n online - boutique wait -- for = condition = available -- timeout = 5 m deployment frontend kubectl -- context =$ { CLUSTER 1 CTX } - n online - boutique wait -- for = condition = available -- timeout = 5 m deployment paymentservice kubectl -- context =$ { CLUSTER 1 CTX } - n online - boutique wait -- for = condition = available -- timeout = 5 m deployment productcatalogservice kubectl -- context =$ { CLUSTER 1 CTX } - n online - boutique wait -- for = condition = available -- timeout = 5 m deployment shippingservice kubectl -- context =$ { CLUSTER 1 CTX } - n online - boutique wait -- for = condition = available -- timeout = 5 m deployment cartservice kubectl -- context =$ { CLUSTER 1 CTX } - n online - boutique wait -- for = condition = available -- timeout = 5 m deployment loadgenerator kubectl -- context =$ { CLUSTER 1 CTX } - n online - boutique wait -- for = condition = available -- timeout = 5 m deployment recommendationservice Ensure that there are two containers per Pod—the application container and the Istio sidecar proxy that Istio on GKE automatically injects into the Pod: kubectl --context= ${ CLUSTER 1 CTX } -n online-boutique get pods The output is similar to the following: NAME READY STATUS RESTARTS AGE adservice-7cbc9bd9-t92k4 2/2 Running 0 3m21s cartservice-d7db78c66-5qfmt 2/2 Running 1 3m23s checkoutservice-784bfc794f-j8rl5 2/2 Running 0 3m26s currencyservice-5898885559-lkwg4 2/2 Running 0 3m23s emailservice-6bd8b47657-llvgv 2/2 Running 0 3m27s frontend-764c5c755f-9wf97 2/2 Running 0 3m25s loadgenerator-84cbcd768c-5pdbr 2/2 Running 3 3m23s paymentservice-6c676df669-s779c 2/2 Running 0 3m25s productcatalogservice-7fcf4f8cc-hvf5x 2/2 Running 0 3m24s recommendationservice-79f5f4bbf5-6st24 2/2 Running 0 3m26s redis-cart-74594bd569-pfhkz 2/2 Running 0 3m22s shippingservice-b5879cdbf-5z7m5 2/2 Running 0 3m22s You can also check the sidecar Envoy proxy version from any one of the Pods to confirm that you have Istio on GKE v1.4 Envoy proxies deployed: export FRONTEND POD =$ ( kubectl get pod - n online - boutique - l app = frontend -- context =$ { CLUSTER 1 CTX } - o jsonpath = '{.items[0].metadata.name}' ) kubectl -- context =$ { CLUSTER 1 CTX } get pods $ { FRONTEND POD } - n online - boutique - o json jq '.status.containerStatuses[].image' The output is similar to the following: \"gke.gcr.io/istio/proxyv2:1.4.10-gke.8\" \"gcr.io/google-samples/microservices-demo/frontend:v0.3.4\" Access the application by navigating to the IP address of the istio-ingressgateway Service IP address: kubectl -- context =$ { CLUSTER 1 CTX } - n istio - system get service istio - ingressgateway - o jsonpath = '{.status.loadBalancer.ingress[0].ip}' Frequently asked questions This section describes frequently asked questions and related answers about migrating from Istio on GKE to Cloud Service Mesh.",
+          "Check the sidecar Envoy proxy version from any one of the Pods from any Deployment in the namespace to confirm that you now have Cloud Service Mesh Envoy proxies deployed: export POD NAME= NAME OF ANY POD IN NAMESPACE kubectl --context=${CLUSTER 1 CTX} get pods ${POD NAME} -n ${NAMESPACE} -o json jq '.status.containerStatuses[].image' The output is similar to the following: \"gcr.io/gke-release/asm/proxyv2:1.11.5-asm.3\" \"appContainerImage\" Verify and test your applications after restarting. kubectl --context=${CLUSTER 1 CTX} -n istio-system get service istio-ingressgateway -o jsonpath='{.status.loadBalancer.ingress[0].ip}' (Optional) If you want Google to manage upgrades of the proxies, enable the Google-managed data plane View migration status Run the following command to view the status of the migration: kubectl get cm/asm-addon-migration-state -n istio-system -ojsonpath={.data} The output indicates whether the migrations is complete, pending, or failed: {\"migrationStatus\":\"SUCCESS\"} {\"migrationStatus\":\"PENDING\"} {\"migrationStatus\":\"MIGRATION CONFIG ERROR\"} {\"migrationStatus\":\"CONTROLPLANE PROVISION ERROR\"} If migrationStatus outputs SUCCESS , the control plane has successfully upgraded to Cloud Service Mesh.",
+          "Continue? [Y/n] Y Running: kubectl get cm -n istio-system istio-asm-managed -oyaml Running: kubectl -n istio-system apply -f - secret/meshca-root created Running: kubectl get cm istio -n istio-system -o yaml Running: kubectl get cm istio -n istio-system -o yaml Running: kubectl replace -f - configmap/istio replaced Running: kubectl get deploy istio-pilot -n istio-system -o yaml Running: kubectl patch deploy istio-pilot -n istio-system -p={\"spec\":{\"template\":{\"spec\":{\"containers\":[{ \"name\":\"discovery\", \"image\":\"gcr.io/gke-release/istio/pilot:1.4.10-gke.12\", \"env\":[{\"name\":\"PILOT SKIP VALIDATE TRUST DOMAIN\",\"value\":\"true\"}] }]}}}} deployment.apps/istio-pilot patched Running: kubectl get deploy istio-citadel -n istio-system -o yaml Running: kubectl patch deploy istio-citadel -n istio-system -p={\"spec\":{\"template\":{\"spec\":{ \"containers\":[{ \"name\":\"citadel\", \"args\": [\"--append-dns-names=true\", \"--grpc-port=8060\", \"--citadel-storage-namespace=istio-system\", \"--custom-dns-names=istio-pilot-service-account.istio-system:istio-pilot.istio-system\", \"--monitoring-port=15014\", \"--self-signed-ca=true\", \"--workload-cert-ttl=2160h\", \"--root-cert=/var/run/root-certs/meshca-root.pem\"], \"volumeMounts\": [{\"mountPath\": \"/var/run/root-certs\", \"name\": \"meshca-root\", \"readOnly\": true}] }], \"volumes\": [{\"name\": \"meshca-root\", \"secret\":{\"secretName\": \"meshca-root\"}}] }}}} deployment.apps/istio-citadel patched OK Waiting for root certificate to distribute to all pods."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "account.istio",
+      "asm.3",
+      "certificate.yaml",
+      "demo.git",
+      "deployment.apps",
+      "deployment.yaml",
+      "gcr.io",
+      "github.com",
+      "gke.12",
+      "gke.8",
+      "gke.gcr.io",
+      "hello.example.com",
+      "iam.gserviceaccount.com",
+      "inject.istio.io",
+      "issuer.jetstack.io",
+      "istio.io",
+      "job.batch",
+      "key.pem",
+      "manager.io",
+      "metadata.google.internal",
+      "metadata.name",
+      "pilot.istio",
+      "request.json",
+      "root.pem",
+      "status.containerStatuses",
+      "status.loadBalancer.ingress",
+      "svc.id.goog",
+      "v0.3.4",
+      "v1.20",
+      "v1.21",
+      "v1.26",
+      "v1.4"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/v1.20/docs/automate-tls",
+        "https://docs.cloud.google.com/service-mesh/v1.20/docs/gateways",
+        "https://docs.cloud.google.com/service-mesh/v1.26/docs/onboarding/prepare-service-routing-envoy-proxyless",
+        "https://docs.cloud.google.com/service-mesh/v1.20/docs/migrate-service-mesh"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/v1.20/docs/automate-tls",
+        "https://docs.cloud.google.com/service-mesh/v1.20/docs/gateways",
+        "https://docs.cloud.google.com/service-mesh/v1.26/docs/onboarding/prepare-service-routing-envoy-proxyless",
+        "https://docs.cloud.google.com/service-mesh/v1.20/docs/migrate-service-mesh"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/v1.20/docs/automate-tls",
+        "https://docs.cloud.google.com/service-mesh/v1.20/docs/gateways",
+        "https://docs.cloud.google.com/service-mesh/v1.26/docs/onboarding/prepare-service-routing-envoy-proxyless",
+        "https://docs.cloud.google.com/service-mesh/v1.20/docs/migrate-service-mesh"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/v1.20/docs/automate-tls",
+        "https://docs.cloud.google.com/service-mesh/v1.20/docs/gateways",
+        "https://docs.cloud.google.com/service-mesh/v1.26/docs/onboarding/prepare-service-routing-envoy-proxyless",
+        "https://docs.cloud.google.com/service-mesh/v1.20/docs/migrate-service-mesh"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/v1.20/docs/automate-tls",
+        "https://docs.cloud.google.com/service-mesh/v1.20/docs/gateways",
+        "https://docs.cloud.google.com/service-mesh/v1.26/docs/onboarding/prepare-service-routing-envoy-proxyless",
+        "https://docs.cloud.google.com/service-mesh/v1.20/docs/migrate-service-mesh"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/v1.20/docs/automate-tls",
+        "https://docs.cloud.google.com/service-mesh/v1.20/docs/gateways",
+        "https://docs.cloud.google.com/service-mesh/v1.26/docs/onboarding/prepare-service-routing-envoy-proxyless",
+        "https://docs.cloud.google.com/service-mesh/v1.20/docs/migrate-service-mesh"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/v1.20/docs/automate-tls",
+        "https://docs.cloud.google.com/service-mesh/v1.20/docs/gateways",
+        "https://docs.cloud.google.com/service-mesh/v1.26/docs/onboarding/prepare-service-routing-envoy-proxyless",
+        "https://docs.cloud.google.com/service-mesh/v1.20/docs/migrate-service-mesh"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/v1.20/docs/automate-tls",
+        "https://docs.cloud.google.com/service-mesh/v1.20/docs/gateways",
+        "https://docs.cloud.google.com/service-mesh/v1.26/docs/onboarding/prepare-service-routing-envoy-proxyless",
+        "https://docs.cloud.google.com/service-mesh/v1.20/docs/migrate-service-mesh"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/v1.20/docs/automate-tls",
+        "https://docs.cloud.google.com/service-mesh/v1.20/docs/gateways",
+        "https://docs.cloud.google.com/service-mesh/v1.26/docs/onboarding/prepare-service-routing-envoy-proxyless",
+        "https://docs.cloud.google.com/service-mesh/v1.20/docs/migrate-service-mesh"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/v1.20/docs/automate-tls",
+        "https://docs.cloud.google.com/service-mesh/v1.20/docs/gateways",
+        "https://docs.cloud.google.com/service-mesh/v1.26/docs/onboarding/prepare-service-routing-envoy-proxyless",
+        "https://docs.cloud.google.com/service-mesh/v1.20/docs/migrate-service-mesh"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/v1.20/docs/automate-tls",
+        "https://docs.cloud.google.com/service-mesh/v1.20/docs/gateways",
+        "https://docs.cloud.google.com/service-mesh/v1.26/docs/onboarding/prepare-service-routing-envoy-proxyless",
+        "https://docs.cloud.google.com/service-mesh/v1.20/docs/migrate-service-mesh"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/v1.20/docs/automate-tls",
+        "https://docs.cloud.google.com/service-mesh/v1.20/docs/gateways",
+        "https://docs.cloud.google.com/service-mesh/v1.26/docs/onboarding/prepare-service-routing-envoy-proxyless",
+        "https://docs.cloud.google.com/service-mesh/v1.20/docs/migrate-service-mesh"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/v1.20/docs/automate-tls",
+        "https://docs.cloud.google.com/service-mesh/v1.20/docs/gateways",
+        "https://docs.cloud.google.com/service-mesh/v1.26/docs/onboarding/prepare-service-routing-envoy-proxyless",
+        "https://docs.cloud.google.com/service-mesh/v1.20/docs/migrate-service-mesh"
+      ]
+    }
+  ]
+}

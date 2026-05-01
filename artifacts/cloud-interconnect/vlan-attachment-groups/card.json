@@ -1,0 +1,104 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:23.801Z",
+  "source_step08_card": "data/step-08/current/products/cloud-interconnect/card.json",
+  "product_name": "Cloud Interconnect",
+  "product_slug": "cloud-interconnect",
+  "feature_name": "VLAN attachment groups",
+  "feature_slug": "vlan-attachment-groups",
+  "summary": "VLAN attachment groups let you define intended reliability levels for Cloud Interconnect resources and receive resiliency feedback.",
+  "extended_definition": "VLAN attachment groups let you define intended reliability levels for Cloud Interconnect resources and receive resiliency feedback.",
+  "lifecycle": {
+    "latest_feature_date": "2025-06-23",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/network-connectivity/docs/how-to/choose-product",
+      "https://docs.cloud.google.com/network-connectivity/docs/interconnect/concepts/dedicated-overview",
+      "https://docs.cloud.google.com/network-connectivity/docs/interconnect/quotas",
+      "https://docs.cloud.google.com/network-connectivity/docs/interconnect/support/troubleshooting"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Dedicated Interconnect overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/network-connectivity/docs/interconnect/concepts/dedicated-overview",
+        "source_id": "site-docs-root",
+        "final_score": 219,
+        "relevance": "",
+        "evidence_snippets": [
+          "Cloud Interconnect groups You can use connection groups to communicate your intended level of reliability, and to receive feedback on how your Cloud Interconnect resources meet that intended level of reliability.",
+          "You can use Cloud Interconnect connection groups without configuring VLAN attachment groups, and you can use VLAN attachment groups without configuring Cloud Interconnect connection groups.",
+          "Connection groups never change the behavior of your Cloud Interconnect connections or your VLAN attachments."
+        ]
+      },
+      {
+        "title": "Choosing a Network Connectivity product \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/network-connectivity/docs/how-to/choose-product",
+        "source_id": "site-iam-reference",
+        "final_score": 157,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Increases in the number of VLAN attachments or increasing the capacity of an existing VLAN attachment depends on your service provider's available capacity.",
+          "You can only use these internal IP addresses for HA VPN gateways that are associated with VLAN attachments.",
+          "Pay only for the capacity you need, with options of 50 Mbps to 50 Gbps for each VLAN attachment."
+        ]
+      },
+      {
+        "title": "Quotas and limits \\_|\\_ Cloud Interconnect \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/network-connectivity/docs/interconnect/quotas",
+        "source_id": "site-docs-root",
+        "final_score": 157,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Maximum bandwidth per traffic flow on a VLAN attachment 10 Gbps Even if you configure your attachment with a higher bandwidth, an individual traffic flow might be limited to the maximum defined for an attachment.",
+          "Maximum bandwidth per VLAN attachment Dedicated Interconnect, Cross-Cloud Interconnect: Capacities from 50 Mbps to 400 Gbps Partner Interconnect, Cross-Site Interconnect: Capacities from 50 Mbps to 100 Gbps The maximum possible bandwidth per VLAN attachment depends on the bandwidth capacity that you order.",
+          "The following cases describe where the maximum bandwidth is lower than the 10 Gbps limit: If the bandwidth capacity of your VLAN attachment is less than the maximum for the attachment, the bandwidth per traffic flow is limited by the bandwidth of the VLAN attachment."
+        ]
+      },
+      {
+        "title": "Troubleshooting \\_|\\_ Cloud Interconnect \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/network-connectivity/docs/interconnect/support/troubleshooting",
+        "source_id": "site-docs-root",
+        "final_score": 139,
+        "relevance": "",
+        "evidence_snippets": [
+          "Unable to delete an encrypted VLAN attachment You receive the following error when you try to delete an encrypted VLAN attachment for Dedicated Interconnect or Partner Interconnect: ResourceInUseByAnotherResourceException To fix this issue, make sure that you have first deleted all the HA VPN gateways and tunnels associated with the encrypted VLAN attachment.",
+          "This risk is especially great if you let VLAN IDs be automatically assigned when you create the attachment.",
+          "To enter the missing routes, set the following parameters: --set-advertisement-groups = ADVERTISED GROUPS --set-advertisement-ranges = ADVERTISED IP RANGES Replace the following: ADVERTISED GROUPS : a Google-defined group that Cloud Router dynamically advertises; it can have a value of all subnets , which mimics the default behavior of a Cloud Router ADVERTISED IP RANGES : the contents of the new array of IP address ranges; it can have one or more values of your choice For more details and examples, see Advertising custom IP ranges ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-connectivity/docs/interconnect/concepts/dedicated-overview",
+        "https://docs.cloud.google.com/network-connectivity/docs/how-to/choose-product",
+        "https://docs.cloud.google.com/network-connectivity/docs/interconnect/quotas",
+        "https://docs.cloud.google.com/network-connectivity/docs/interconnect/support/troubleshooting"
+      ]
+    }
+  ]
+}

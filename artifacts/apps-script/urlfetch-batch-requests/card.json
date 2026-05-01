@@ -1,0 +1,103 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:17.437Z",
+  "source_step08_card": "data/step-08/current/products/apps-script/card.json",
+  "product_name": "Apps Script",
+  "product_slug": "apps-script",
+  "feature_name": "UrlFetch batch requests",
+  "feature_slug": "urlfetch-batch-requests",
+  "summary": "Apps Script UrlFetch service adds fetchAll() for making multiple fetch requests in one call.",
+  "extended_definition": "Apps Script UrlFetch service adds fetchAll() for making multiple fetch requests in one call.",
+  "lifecycle": {
+    "latest_feature_date": "2018-01-19",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/apps-script/advanced/sheets",
+      "https://developers.google.com/apps-script/guides/v8-runtime",
+      "https://developers.google.com/apps-script/releases"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Google Apps Script release notes \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/apps-script/releases",
+        "source_id": "site-docs-root",
+        "final_score": 107,
+        "relevance": "",
+        "evidence_snippets": [
+          "UrlFetch requests made by scripts that run on a time-based trigger now include an If-Modified-Since HTTP header so that Apps Script can use a cached copy of the page if one is available and the page has not changed.",
+          "Range.copyTo(destination, copyPasteType, transposed) January 19, 2018 Feature The UrlFetch service now has a fetchAll method that makes multiple fetch requests.",
+          "Added support for registering Apps Script web apps in the Chrome Web Store , making it quick and simple to publish and distribute your web apps."
+        ]
+      },
+      {
+        "title": "V8 runtime overview \\_|\\_ Apps Script \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/apps-script/guides/v8-runtime",
+        "source_id": "site-docs-root-3",
+        "final_score": 72,
+        "relevance": "",
+        "evidence_snippets": [
+          "The following V8 example shows the use of object methods when constructing menu items in Google Sheets: function onOpen () { const ui = SpreadsheetApp . getUi (); // Or DocumentApp , SlidesApp , or FormApp . ui . createMenu ( 'Custom Menu' ) . addItem ( 'First item' , 'menu.item1' ) . addSeparator () . addSubMenu ( ui . createMenu ( 'Sub-menu' ) . addItem ( 'Second item' , 'menu.item2' )) . addToUi (); } const menu = { item1 : function () { SpreadsheetApp . getUi () . alert ( 'You clicked: First item' ); }, item2 : function () { SpreadsheetApp . getUi () . alert ( 'You clicked: Second item' ); } } View logs Apps Script provides two logging services: the Logger service and the console class.",
+          "To achieve parallel network requests, use UrlFetchApp.fetchAll .",
+          "Unavailable APIs The following standard JavaScript APIs are NOT available in the Apps Script V8 runtime: Timers : setTimeout , setInterval , clearTimeout , clearInterval Streams : ReadableStream , WritableStream , TextEncoder , TextDecoder Web APIs : fetch , FormData , File , Blob , URL , URLSearchParams , DOMException , atob , btoa Crypto : crypto , SubtleCrypto Global Objects : window , navigator , performance , process (Node.js) Use the following Apps Script APIs as alternatives: Timers : Use Utilities.sleep for synchronous pauses."
+        ]
+      },
+      {
+        "title": "Advanced Sheets Service \\_|\\_ Apps Script \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/apps-script/advanced/sheets",
+        "source_id": "site-docs-reference",
+        "final_score": 70,
+        "relevance": "",
+        "evidence_snippets": [
+          "It is equivalent to the Add a sheet recipe sample. advanced/sheets.gs View on GitHub / Add a new sheet with some properties. @param {string} spreadsheetId The spreadsheet ID. @see https://developers.google.com/sheets/api/reference/rest/v4/spreadsheets/batchUpdate / function addSheet ( spreadsheetId = yourspreadsheetId ) { const requests = [ { addSheet : { properties : { title : \"Deposits\" , gridProperties : { rowCount : 20 , columnCount : 12 , }, tabColor : { red : 1.0 , green : 0.3 , blue : 0.4 , }, }, }, }, ]; try { const response = Sheets .",
+          "Spreadsheets . batchUpdate ( { requests : requests }, spreadsheetId , ); console . log ( Created sheet with ID: ${ response . replies [ 0 ]. addSheet . properties . sheetId } , ); } catch ( e ) { // TODO (developer) - Handle exception console . log ( \"Failed with error %s\" , e . message ); } } Create a pivot table The following example demonstrates how to create a pivot table from source data.",
+          "It is equivalent to the Add a pivot table recipe sample. advanced/sheets.gs View on GitHub / Add a pivot table. @param {string} spreadsheetId The spreadsheet ID to add the pivot table to. @param {string} pivotSourceDataSheetId The sheet ID to get the data from. @param {string} destinationSheetId The sheet ID to add the pivot table to. @see https://developers.google.com/sheets/api/reference/rest/v4/spreadsheets/batchUpdate / function addPivotTable ( spreadsheetId = yourspreadsheetId , pivotSourceDataSheetId = yourpivotSourceDataSheetId , destinationSheetId = yourdestinationSheetId , ) { const requests = [ { updateCells : { rows : { values : [ { pivotTable : { source : { sheetId : pivotSourceDataSheetId , startRowIndex : 0 , startColumnIndex : 0 , endRowIndex : 20 , endColumnIndex : 7 , }, rows : [ { sourceColumnOffset : 0 , showTotals : true , sortOrder : \"ASCENDING\" , valueBucket : { buckets : [ { stringValue : \"West\" , }, ], }, }, { sourceColumnOffset : 1 , showTotals : true , sortOrder : \"DESCENDING\" , valueBucket : {}, }, ], columns : [ { sourceColumnOffset : 4 , sortOrder : \"ASCENDING\" , showTotals : true , valueBucket : {}, }, ], values : [ { summarizeFunction : \"SUM\" , sourceColumnOffset : 3 , }, ], valueLayout : \"HORIZONTAL\" , }, }, ], }, start : { sheetId : destinationSheetId , rowIndex : 49 , columnIndex : 0 , }, fields : \"pivotTable\" , }, }, ]; try { const response = Sheets ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "developers.google.com",
+      "menu.item1",
+      "menu.item2",
+      "sheets.gs"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/guides/v8-runtime",
+        "https://developers.google.com/apps-script/advanced/sheets"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/guides/v8-runtime",
+        "https://developers.google.com/apps-script/advanced/sheets"
+      ]
+    }
+  ]
+}

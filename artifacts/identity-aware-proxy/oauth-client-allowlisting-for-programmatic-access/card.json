@@ -1,0 +1,245 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:42.052Z",
+  "source_step08_card": "data/step-08/current/products/identity-aware-proxy/card.json",
+  "product_name": "Identity-Aware Proxy",
+  "product_slug": "identity-aware-proxy",
+  "feature_name": "OAuth client allowlisting for programmatic access",
+  "feature_slug": "oauth-client-allowlisting-for-programmatic-access",
+  "summary": "Identity-Aware Proxy can allowlist OAuth clients for programmatic access.",
+  "extended_definition": "Identity-Aware Proxy can allowlist OAuth clients for programmatic access.",
+  "lifecycle": {
+    "latest_feature_date": "2023-08-17",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/iap/docs/authentication-howto",
+      "https://docs.cloud.google.com/iap/docs/create-custom-auth-ui",
+      "https://docs.cloud.google.com/iap/docs/custom-oauth-configuration",
+      "https://docs.cloud.google.com/iap/docs/enabling-compute-howto"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Programmatic authentication \\_|\\_ Identity-Aware Proxy \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/iap/docs/authentication-howto",
+        "source_id": "site-docs-root",
+        "final_score": 245,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Returns: The page body, or raises an exception if the page couldn't be retrieved. \"\"\" Set the default timeout, if missing if \"timeout\" not in kwargs : kwargs [ \"timeout\" ] = 90 Obtain an OpenID Connect (OIDC) token from metadata server or using service account. open id connect token = id token . fetch id token ( Request (), client id ) Fetch the Identity-Aware Proxy-protected URL, including an Authorization header containing \"Bearer \" followed by a Google-issued OpenID Connect token for the service account. resp = requests . request ( method , url , headers = { \"Authorization\" : \"Bearer {} \" . format ( open id connect token )}, kwargs ) if resp . status code == 403 : raise Exception ( \"Service account does not have permission to \" \"access the IAP-protected application.\" ) elif resp . status code != 200 : raise Exception ( \"Bad response from application: {!r} / {!r} / {!r} \" . format ( resp . status code , resp . headers , resp . text ) ) else : return resp . text Ruby To authenticate to IAP, set up Application Default Credentials.",
+          "For more information, see Set up authentication for a local development environment . from google.auth.transport.requests import Request from google.oauth2 import id token import requests def make iap request ( url , client id , method = \"GET\" , kwargs ): \"\"\"Makes a request to an application protected by Identity-Aware Proxy.",
+          "Add the OAuth client ID to the allowlist for programmatic access to the application."
+        ]
+      },
+      {
+        "title": "\"Use custom OAuth clients with IAP \\_|\\_ Identity-Aware Proxy \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/iap/docs/custom-oauth-configuration",
+        "source_id": "site-docs-root",
+        "final_score": 243,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Google managed OAuth client Custom OAuth client Users Internal only Internal and External Brand Google Cloud brand Customer owned brand OAuth configuration Google configured Customer configured OAuth credentials Google managed Customer managed Application access Browser flow only Browser flow and Programmatic access Important: The Google-managed OAuth client doesn't create a new OAuth client and secret for every application.",
+          "This document describes when and how to use custom OAuth clients for Identity-Aware Proxy (IAP) .",
+          "Terraform To apply the custom OAuth client using Terraform, do the following: resource \"google iap settings\" \"iap settings\" { name = IAP RESOURCE NAME access settings { oauth settings { oauth client id = CLIENT ID oauth client secret = CLIENT SECRET } } } Replace the following: IAP RESOURCE NAME : the resource name of the iap settings resource for the service, which has the following format: projects/ PROJECT NUMBER /iap web/ REGION /services/ SERVICE NAME CLIENT ID : the client ID from the OAuth credentials that you generated earlier CLIENT SECRET : the client secret from the OAuth credentials that you generated earlier REST API Create a settings JSON file. cat iap-oauth.json { \"accessSettings\": { \"oauthSettings\": { \"clientId\": \" CLIENT ID \", \"clientSecret\": \" CLIENT SECRET \" } } } EOF Replace the following: CLIENT ID : The client ID from the OAuth credentials that you generated earlier."
+        ]
+      },
+      {
+        "title": "\"Creating a custom sign-in page \\_|\\_ Identity-Aware Proxy \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/iap/docs/create-custom-auth-ui",
+        "source_id": "site-docs-root",
+        "final_score": 213,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The following is an example of implementing processUser() : gcip-iap v1.0.0 processUser ( user ) { return lastAuthUsed . getRedirectResult (). then ( function ( result ) { // Save additional data, or ask the user for additional profile information // to store in database, etc. if ( result ) { // Save result.additionalUserInfo. // Save result.credential.accessToken for OAuth provider, etc. } // Return the user. return user ; }); } gcip-iap v2.0.0 import { getRedirectResult } from 'firebase/auth' ; processUser ( user ) { return getRedirectResult ( lastAuthUsed ). then ( function ( result ) { // Save additional data, or ask the user for additional profile information // to store in database, etc. if ( result ) { // Save result.additionalUserInfo. // Save result.credential.accessToken for OAuth provider, etc. } // Return the user. return user ; }); } If you want any changes to a user reflected in the ID token claims propagated by IAP to your app, you must force the token to refresh: gcip-iap v1.0.0 processUser ( user ) { return user . updateProfile ({ photoURL : 'https://example.com/profile/1234/photo.png' , }). then ( function () { // To reflect updated photoURL in the ID token, force token // refresh. return user . getIdToken ( true ); }). then ( function () { return user ; }); } gcip-iap v2.0.0 import { updateProfile } from 'firebase/auth' ; processUser ( user ) { return updateProfile ( user , { photoURL : 'https://example.com/profile/1234/photo.png' , }). then ( function () { // To reflect updated photoURL in the ID token, force token // refresh. return user . getIdToken ( true ); }). then ( function () { return user ; }); } Testing the UI After you've created a class that implements AuthenticationHandler , you can use it to create a new Authentication instance, and start it: // Implement interface AuthenticationHandler . // const authHandlerImplementation = .... const ciapInstance = new ciap .",
+          "IAP supports the same providers as Identity Platform, such as: Email and password OAuth (Google, Facebook, Twitter, GitHub, Microsoft, etc) SAML OIDC Phone number Custom Anonymous Phone number, custom, and anonymous authentication types are not supported for multi-tenancy.",
+          "OAuthProvider ( 'microsoft.com' ); provider . setCustomParameters ({ login hint : selectedTenantInfo . email undefined , }); } else { // Figure out the provider used... } auth . signInWithPopup ( provider ) . then (( userCredential ) = > { resolve ( userCredential ); }) . catch (( error ) = > { // Show the error message. }); }); } gcip-iap v2.0.0 import { signInWithPopup , OAuthProvider } from 'firebase/auth' ; startSignIn ( auth , selectedTenantInfo ) { // Show the UI to sign in or sign up a user. return new Promise (( resolve , reject ) = > { // Use selectedTenantInfo to determine the provider and pass the login hint // if that provider supports it and the user specified an email address. if ( selectedTenantInfo && selectedTenantInfo . providerIds && selectedTenantInfo . providerIds . indexOf ( 'microsoft.com' ) !== - 1 ) { const provider = new OAuthProvider ( 'microsoft.com' ); provider . setCustomParameters ({ login hint : selectedTenantInfo . email undefined , }); } else { // Figure out the provider used... } signInWithPopup ( auth , provider ) . then (( userCredential ) = > { resolve ( userCredential ); }) . catch (( error ) = > { // Show the error message. }); }); } See Authenticating with multi-tenancy for more information."
+        ]
+      },
+      {
+        "title": "\"Enable IAP for Compute Engine \\_|\\_ Identity-Aware Proxy \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/iap/docs/enabling-compute-howto",
+        "source_id": "site-docs-root",
+        "final_score": 208,
+        "relevance": "",
+        "evidence_snippets": [
+          "Home Documentation Security Identity-Aware Proxy Guides Send feedback Enable IAP for Compute Engine Stay organized with collections Save and categorize content based on your preferences.",
+          "Turning on IAP On the Identity-Aware Proxy page, under APPLICATIONS , find the load balancer that serves the instance group you want to restrict access to.",
+          "Setting up IAP access Go to the Identity-Aware Proxy page ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "example.com",
+      "file.json",
+      "iap.googleapis.com",
+      "key.json",
+      "microsoft.com",
+      "networksecurity.googleapis.com",
+      "oauth.json",
+      "photo.png",
+      "policy.json",
+      "result.additionalUserInfo",
+      "result.credential.accessToken",
+      "token.sh",
+      "v1.0.0",
+      "v2.0.0"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/authentication-howto",
+        "https://docs.cloud.google.com/iap/docs/custom-oauth-configuration",
+        "https://docs.cloud.google.com/iap/docs/create-custom-auth-ui",
+        "https://docs.cloud.google.com/iap/docs/enabling-compute-howto"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/authentication-howto",
+        "https://docs.cloud.google.com/iap/docs/custom-oauth-configuration",
+        "https://docs.cloud.google.com/iap/docs/create-custom-auth-ui",
+        "https://docs.cloud.google.com/iap/docs/enabling-compute-howto"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/authentication-howto",
+        "https://docs.cloud.google.com/iap/docs/custom-oauth-configuration",
+        "https://docs.cloud.google.com/iap/docs/create-custom-auth-ui",
+        "https://docs.cloud.google.com/iap/docs/enabling-compute-howto"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/authentication-howto",
+        "https://docs.cloud.google.com/iap/docs/custom-oauth-configuration",
+        "https://docs.cloud.google.com/iap/docs/create-custom-auth-ui",
+        "https://docs.cloud.google.com/iap/docs/enabling-compute-howto"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/authentication-howto",
+        "https://docs.cloud.google.com/iap/docs/custom-oauth-configuration",
+        "https://docs.cloud.google.com/iap/docs/create-custom-auth-ui",
+        "https://docs.cloud.google.com/iap/docs/enabling-compute-howto"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/authentication-howto",
+        "https://docs.cloud.google.com/iap/docs/custom-oauth-configuration",
+        "https://docs.cloud.google.com/iap/docs/create-custom-auth-ui",
+        "https://docs.cloud.google.com/iap/docs/enabling-compute-howto"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/authentication-howto",
+        "https://docs.cloud.google.com/iap/docs/custom-oauth-configuration",
+        "https://docs.cloud.google.com/iap/docs/create-custom-auth-ui",
+        "https://docs.cloud.google.com/iap/docs/enabling-compute-howto"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/authentication-howto",
+        "https://docs.cloud.google.com/iap/docs/custom-oauth-configuration",
+        "https://docs.cloud.google.com/iap/docs/create-custom-auth-ui",
+        "https://docs.cloud.google.com/iap/docs/enabling-compute-howto"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/authentication-howto",
+        "https://docs.cloud.google.com/iap/docs/custom-oauth-configuration",
+        "https://docs.cloud.google.com/iap/docs/create-custom-auth-ui",
+        "https://docs.cloud.google.com/iap/docs/enabling-compute-howto"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/authentication-howto",
+        "https://docs.cloud.google.com/iap/docs/custom-oauth-configuration",
+        "https://docs.cloud.google.com/iap/docs/create-custom-auth-ui",
+        "https://docs.cloud.google.com/iap/docs/enabling-compute-howto"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/authentication-howto",
+        "https://docs.cloud.google.com/iap/docs/custom-oauth-configuration",
+        "https://docs.cloud.google.com/iap/docs/create-custom-auth-ui",
+        "https://docs.cloud.google.com/iap/docs/enabling-compute-howto"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/authentication-howto",
+        "https://docs.cloud.google.com/iap/docs/custom-oauth-configuration",
+        "https://docs.cloud.google.com/iap/docs/create-custom-auth-ui",
+        "https://docs.cloud.google.com/iap/docs/enabling-compute-howto"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/authentication-howto",
+        "https://docs.cloud.google.com/iap/docs/custom-oauth-configuration",
+        "https://docs.cloud.google.com/iap/docs/create-custom-auth-ui",
+        "https://docs.cloud.google.com/iap/docs/enabling-compute-howto"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/authentication-howto",
+        "https://docs.cloud.google.com/iap/docs/custom-oauth-configuration",
+        "https://docs.cloud.google.com/iap/docs/create-custom-auth-ui",
+        "https://docs.cloud.google.com/iap/docs/enabling-compute-howto"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/authentication-howto",
+        "https://docs.cloud.google.com/iap/docs/custom-oauth-configuration",
+        "https://docs.cloud.google.com/iap/docs/create-custom-auth-ui",
+        "https://docs.cloud.google.com/iap/docs/enabling-compute-howto"
+      ]
+    }
+  ]
+}

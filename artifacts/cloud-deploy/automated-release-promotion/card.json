@@ -1,0 +1,101 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:23.307Z",
+  "source_step08_card": "data/step-08/current/products/cloud-deploy/card.json",
+  "product_name": "Cloud Deploy",
+  "product_slug": "cloud-deploy",
+  "feature_name": "Automated release promotion",
+  "feature_slug": "automated-release-promotion",
+  "summary": "Automated release promotion advances releases through the delivery pipeline automatically.",
+  "extended_definition": "Automated release promotion advances releases through the delivery pipeline automatically.",
+  "lifecycle": {
+    "latest_feature_date": "2023-11-13",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/deploy/docs/api/reference/rest/v1/projects.locations.deliveryPipelines.releases.rollouts/create",
+      "https://docs.cloud.google.com/deploy/docs/config-files",
+      "https://docs.cloud.google.com/deploy/docs/deploy-app-automation"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Method: projects.locations.deliveryPipelines.releases.rollouts.create \\_\\",
+        "url": "https://docs.cloud.google.com/deploy/docs/api/reference/rest/v1/projects.locations.deliveryPipelines.releases.rollouts/create",
+        "source_id": "site-api-reference-required-1",
+        "final_score": 189,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Application development Cloud Deploy Reference Send feedback Method: projects.locations.deliveryPipelines.releases.rollouts.create Stay organized with collections Save and categorize content based on your preferences.",
+          "HTTP request POST https://clouddeploy.googleapis.com/v1/{parent=projects/ /locations/ /deliveryPipelines/ /releases/ }/rollouts The URL uses gRPC Transcoding syntax.",
+          "The format is projects/{projectId}/locations/{location name}/deliveryPipelines/{pipeline name}/releases/{release name} ."
+        ]
+      },
+      {
+        "title": "\"Quickstart: Automate pipeline tasks \\_|\\_ Cloud Deploy \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/deploy/docs/deploy-app-automation",
+        "source_id": "site-docs-reference-required-3",
+        "final_score": 177,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Create your delivery pipeline, target definitions, and automation action: GKE In the deploy-automation-gke-quickstart directory, create a new file: clouddeploy.yaml , with the following contents: apiVersion : deploy . cloud . google . com / v1 kind : DeliveryPipeline metadata : name : my - automation - demo - app - 1 description : Automation demonstration pipeline serialPipeline : stages : - targetId : automation - quickstart - dev - targetId : automation - quickstart - staging profiles : [] strategy : canary : runtimeConfig : kubernetes : serviceNetworking : service : \"my-service\" deployment : \"my-deployment\" canaryDeployment : percentages : [ 25 ] verify : false --- apiVersion : deploy . cloud . google . com / v1 kind : Target metadata : name : automation - quickstart - dev description : Dev cluster to demonstrate deploy automation gke : cluster : projects / PROJECT ID / locations / us - central1 / clusters / automation - quickstart - cluster - dev --- apiVersion : deploy . cloud . google . com / v1 kind : Target metadata : name : automation - quickstart - staging description : Staging cluster to demonstrate deploy automation gke : cluster : projects / PROJECT ID / locations / us - central1 / clusters / automation - quickstart - cluster - staging --- apiVersion : deploy . cloud . google . com / v1 kind : Automation metadata : name : my - automation - demo - app - 1 / promote description : promotes a release suspended : false serviceAccount : PROJECT NUMBER - compute @ developer.gserviceaccount.com selector : targets : - id : automation - quickstart - dev rules : - promoteReleaseRule : id : \"promote-release\" wait : 1 m destinationTargetId : \"@next\" --- apiVersion : deploy . cloud . google . com / v1 kind : Automation metadata : name : my - automation - demo - app - 1 / advance description : advances a rollout suspended : false serviceAccount : PROJECT NUMBER - compute @ developer.gserviceaccount.com selector : targets : - id : automation - quickstart - staging rules : - advanceRolloutRule : id : \"advance-rollout\" sourcePhases : [ \"canary-25\" ] wait : 1 m Note: In this file, the targets and the automations config are included with the delivery pipeline, but you can define targets in a separate file or multiple separate files, and automations in a separate file or files.",
+          "Cloud Run In the deploy-automation-run-quickstart directory, create a new file: clouddeploy.yaml , with the following contents: apiVersion : deploy . cloud . google . com / v1 kind : DeliveryPipeline metadata : name : my - automation - demo - app - 1 description : Automation demonstration pipeline serialPipeline : stages : - targetId : automation - quickstart - dev profiles : [ dev ] - targetId : automation - quickstart - staging profiles : [ staging ] strategy : canary : runtimeConfig : cloudRun : automaticTrafficControl : true canaryDeployment : percentages : [ 25 ] verify : false --- apiVersion : deploy . cloud . google . com / v1 kind : Target metadata : name : automation - quickstart - dev description : Dev cluster to demonstrate deploy automation run : location : projects / PROJECT ID / locations / us - central1 --- apiVersion : deploy . cloud . google . com / v1 kind : Target metadata : name : automation - quickstart - staging description : Staging cluster to demonstrate deploy automation run : location : projects / PROJECT ID / locations / us - central1 --- apiVersion : deploy . cloud . google . com / v1 kind : Automation metadata : name : my - automation - demo - app - 1 / promote description : Promotes a release to the next target suspended : false serviceAccount : PROJECT NUMBER - compute @ developer.gserviceaccount.com selector : targets : - id : automation - quickstart - dev rules : - promoteReleaseRule : id : \"promote-release\" wait : 1 m destinationTargetId : \"@next\" --- apiVersion : deploy . cloud . google . com / v1 kind : Automation metadata : name : my - automation - demo - app - 1 / advance description : advances a rollout suspended : false serviceAccount : PROJECT NUMBER - compute @ developer.gserviceaccount.com selector : targets : - id : automation - quickstart - staging rules : - advanceRolloutRule : id : \"advance-rollout\" sourcePhases : [ \"canary-25\" ] wait : 1 m Note: In this file, the targets and the automations config are included with the delivery pipeline, but you can define targets in a separate file or multiple separate files, and automations in a separate file or files.",
+          "Cloud Run Run the following command from the deploy-automation-run-quickstart directory to create a release resource that represents the container image to deploy: gcloud deploy releases create test - release - 001 \\ --project= PROJECT ID \\ --region=us-central1 \\ --delivery-pipeline=my-automation-demo-app-1 \\ --images=my-app-image=us-docker.pkg.dev/cloudrun/container/hello@sha256:95ade4b17adcd07623b0a0c68359e344fe54e65d0cb01b989e24c39f2fcd296a Notice the --images= flag , which you use to replace the placeholder ( my-app-image ) in the service definition with the specific, SHA-qualified image."
+        ]
+      },
+      {
+        "title": "Configuration schema reference \\_|\\_ Cloud Deploy \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/deploy/docs/config-files",
+        "source_id": "site-docs-reference",
+        "final_score": 161,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "This description is shown in the delivery pipeline details in Google Cloud console. suspended A Boolean, which if true suspends the delivery pipeline such that it can't be used to create, promote, roll back, or redeploy releases.",
+          "This service account must have the following permissions: actAs permission to impersonate the execution service account. permission to perform the operation being automated, for example, clouddeploy.releases.promote to promote a release, or clouddeploy.rollouts.advance to advance a rollout phase. [TARGET ID] Is the ID of the target for which this automation is used.",
+          "Avoid mismatches between your release and your delivery pipeline by learning about pipeline instances ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "clouddeploy.googleapis.com",
+      "clouddeploy.releases.promote",
+      "clouddeploy.rollouts.advance",
+      "clouddeploy.yaml",
+      "deploy.cloud.google.com",
+      "developer.gserviceaccount.com",
+      "docker.pkg.dev",
+      "gcr.io",
+      "projects.locations.deliveryPipelines.releases.rollouts",
+      "projects.locations.deliveryPipelines.releases.rollouts.create"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/deploy/docs/api/reference/rest/v1/projects.locations.deliveryPipelines.releases.rollouts/create",
+        "https://docs.cloud.google.com/deploy/docs/deploy-app-automation",
+        "https://docs.cloud.google.com/deploy/docs/config-files"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,131 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:44.769Z",
+  "source_step08_card": "data/step-08/current/products/network-connectivity-center/card.json",
+  "product_name": "Network Connectivity Center",
+  "product_slug": "network-connectivity-center",
+  "feature_name": "Hybrid spoke export and import filters",
+  "feature_slug": "hybrid-spoke-export-and-import-filters",
+  "summary": "Hybrid spokes can use export and import filters to control which subnets or routes are sent to or accepted from the hub.",
+  "extended_definition": "Hybrid spokes can use export and import filters to control which subnets or routes are sent to or accepted from the hub.",
+  "lifecycle": {
+    "latest_feature_date": "2026-03-25",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/connectivity-topologies",
+      "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/dynamic-route-exchange-with-vpc-spokes",
+      "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/overview",
+      "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/producer-vpc-spokes-overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Producer VPC spokes \\_|\\_ Network Connectivity Center \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/producer-vpc-spokes-overview",
+        "source_id": "site-iam-reference",
+        "final_score": 232,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "After the producer VPC spoke is part of the hub, its subnet routes are exported and the other spokes on that hub can access its services.",
+          "Additionally, services in a producer VPC spoke are accessible by other VPC spokes on the hub, subject to spoke group and export filters.",
+          "All of the networks attached to the hub as VPC spokes can access the services in the producer network: The peered consumer network continues to access services by using the subnet routes exported from the service producer network through the existing VPC Network Peering connection."
+        ]
+      },
+      {
+        "title": "\"Route exchange with VPC spokes \\_|\\_ Network Connectivity Center \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/dynamic-route-exchange-with-vpc-spokes",
+        "source_id": "site-iam-reference",
+        "final_score": 206,
+        "relevance": "",
+        "evidence_snippets": [
+          "Establishing connectivity between hybrid spokes and VPC spokes You can establish connectivity between hybrid spokes and VPC spokes by adding workload VPC networks to an NCC hub as VPC spokes, then you add Cloud Interconnect VLAN attachments, HA VPN tunnels, or Router appliance VMs to the same hub as hybrid spokes.",
+          "Route exchange with VPC spokes lets you connect VPC spokes and hybrid spokes, such as Cloud Interconnect VLAN attachments, HA VPN tunnels, and Router appliance VMs on the same hub, which enables highly scalable any-to-any network connectivity between all such spokes attached to a single hub.",
+          "To establish connectivity between hybrid spokes and VPC spokes: Network administrators for the routing VPC networks must first review the Cloud Router path selection and dynamic routing mode: NCC hybrid spokes only support the Cloud Router legacy best path selection mode."
+        ]
+      },
+      {
+        "title": "NCC overview \\_|\\_ Network Connectivity Center \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/overview",
+        "source_id": "site-docs-reference",
+        "final_score": 206,
+        "relevance": "",
+        "evidence_snippets": [
+          "VPC spokes and VPC Network Peering NCC VPC spokes support exchanging the following: Valid IPv4 subnet ranges IPv6 subnet ranges IPv4 dynamic routes VPC spokes don't support exchanging the following: Peering subnet routes Local routes with privately used public IPv4 addresses Local subnet routes with IPv6 addresses VPC spokes don't exchange static routes; however, VPC spokes can import NCC IPv4 dynamic routes from hybrid spokes that are on the same NCC hub.",
+          "Import of hub subnets for hybrid spokes You can achieve the automatic advertisement of VPC spoke IP subnet ranges to on-premises and other cloud provider networks through BGP by enabling the import of hub subnets for hybrid spokes.",
+          "NCC supports the following types of spokes: Virtual Private Cloud (VPC) spokes Producer VPC spokes NCC Gateway spokes Hybrid spokes, that can be associated with any of the following resources: HA VPN tunnels Cloud Interconnect VLAN attachments Router appliance VMs Cross-Cloud Interconnect VLAN attachments Partner Cross-Cloud Interconnect for Oracle Cloud Infrastructure (OCI) VLAN attachments Partner Cross-Cloud Interconnect for Amazon Web Services (AWS) ( Preview ) With the hub and spoke connectivity, you can do the following: Connect multiple VPC networks to one another."
+        ]
+      },
+      {
+        "title": "\"Preset connectivity topologies \\_|\\_ Network Connectivity Center \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/connectivity-topologies",
+        "source_id": "site-iam-reference",
+        "final_score": 185,
+        "relevance": "",
+        "evidence_snippets": [
+          "Subject to the spoke group route table rules, spoke administrators or network administrators can do the following: Use export include and export exclude filters to control which subnet ranges a VPC spoke exports to the route table of the spoke group that the VPC spoke belongs to.",
+          "When you add two or more workload VPC networks to the hub as VPC spokes, each VPC spoke exports its subnet routes according to the configured export include and export exclude filters.",
+          "Destination resource spoke Source resource spoke in the prod group in the non-prod group in the services group in the gateways group in the prod group routing SSE inspection routing SSE inspection routing SSE inspection routing SSE inspection in the non-prod group routing SSE inspection routing SSE inspection routing SSE inspection routing SSE inspection in the services group routing SSE inspection routing SSE inspection routing SSE inspection routing SSE inspection in the gateways group routing SSE inspection routing SSE inspection routing SSE inspection routing SSE inspection Supported spoke types Hybrid inspection topology supports VPC spokes, producer VPC spokes, hybrid spokes, and NCC Gateway spokes."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/producer-vpc-spokes-overview",
+        "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/dynamic-route-exchange-with-vpc-spokes",
+        "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/overview",
+        "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/connectivity-topologies"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/producer-vpc-spokes-overview",
+        "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/dynamic-route-exchange-with-vpc-spokes",
+        "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/overview",
+        "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/connectivity-topologies"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/producer-vpc-spokes-overview",
+        "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/dynamic-route-exchange-with-vpc-spokes",
+        "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/overview",
+        "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/connectivity-topologies"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/producer-vpc-spokes-overview",
+        "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/dynamic-route-exchange-with-vpc-spokes",
+        "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/overview",
+        "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/connectivity-topologies"
+      ]
+    }
+  ]
+}

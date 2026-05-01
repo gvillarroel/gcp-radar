@@ -1,0 +1,179 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:33.800Z",
+  "source_step08_card": "data/step-08/current/products/datastream/card.json",
+  "product_name": "Datastream",
+  "product_slug": "datastream",
+  "feature_name": "Oracle backfill for tables over 100 million rows",
+  "feature_slug": "oracle-backfill-for-tables-over-100-million-rows",
+  "summary": "Datastream supports backfilling Oracle tables with more than 100 million rows.",
+  "extended_definition": "Datastream supports backfilling Oracle tables with more than 100 million rows.",
+  "lifecycle": {
+    "latest_feature_date": "2022-05-13",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/datastream/docs/configure-pluggable-oracle",
+      "https://docs.cloud.google.com/datastream/docs/configure-self-managed-oracle",
+      "https://docs.cloud.google.com/datastream/docs/faq",
+      "https://docs.cloud.google.com/datastream/docs/using-datastream-apis"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Using Datastream APIs \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/datastream/docs/using-datastream-apis",
+        "source_id": "site-docs-root",
+        "final_score": 191,
+        "relevance": "",
+        "evidence_snippets": [
+          "DATASTREAM API VERSION .OperationMetadata\" , \"createTime\" : \" DATE AND TIME STAMP \" , \"target\" : \" PROJECT PATH /streams/ STREAM ID \" , \"verb\" : \"start\" , \"requestedCancellation\" : false , \"apiVersion\" : \" DATASTREAM API VERSION \" }, \"done\" : false } After a few seconds, retrieve information about the stream to confirm that it's running again. curl -H \"Authorization: Bearer $TOKEN\" -H \"Content-Type: application/json\" https://datastream.googleapis.com/ DATASTREAM API VERSION / PROJECT PATH /streams/ STREAM ID Verify that the state of the stream has changed from PAUSED back to RUNNING . { \"name\" : \" PROJECT PATH /streams/ STREAM ID \" , \"createTime\" : \" DATE AND TIME STAMP \" , \"updateTime\" : \" DATE AND TIME STAMP \" , \"displayName\" : \" DISPLAY NAME \" , \"sourceConfig\" : { \"sourceConnectionProfileName\" : \"projects/ YOUR PROJECT NUMBER /locations/ YOUR PROJECT LOCATION /connectionProfiles/ SOURCE CONNECTION PROFILE ID \" , \"oracleSourceConfig\" : { \"allowlist\" : { \"oracleSchemas\" : [ { \"schema\" : \"ROOT\" } ] }, \"rejectlist\" : {} } }, \"destinationConfig\" : { \"destinationConnectionProfileName\" : \"projects/ YOUR PROJECT NUMBER /locations/ YOUR PROJECT LOCATION /connectionProfiles/ DESTINATION CONNECTION PROFILE ID \" , \"gcsDestinationConfig\" : { \"fileRotationMb\" : 100 , \"fileRotationInterval\" : \"15s\" \"avroFileFormat\" : {} } }, \"state\" : \"RUNNING\" , \"backfillAll\" : {} } Now that you created and managed a stream, confirmed that there are no errors associated with the stream, and that the state of the stream is RUNNING , you're ready to verify that it can transfer data from the source database into a folder in the Cloud Storage destination bucket.",
+          "DATASTREAM API VERSION .OperationMetadata\" , \"createTime\" : \" DATE AND TIME STAMP \" , \"target\" : \" PROJECT PATH /streams/ STREAM ID \" , \"verb\" : \"start\" , \"requestedCancellation\" : false , \"apiVersion\" : \" DATASTREAM API VERSION \" }, \"done\" : false } Retrieve information about the stream to confirm that it's paused. curl -H \"Authorization: Bearer $TOKEN\" -H \"Content-Type: application/json\" https://datastream.googleapis.com/ DATASTREAM API VERSION / PROJECT PATH /streams/ STREAM ID Verify that the state of the stream has changed from RUNNING to PAUSED . { \"name\" : \" PROJECT PATH /streams/ STREAM ID \" , \"createTime\" : \" DATE AND TIME STAMP \" , \"updateTime\" : \" DATE AND TIME STAMP \" , \"displayName\" : \" DISPLAY NAME \" , \"sourceConfig\" : { \"sourceConnectionProfileName\" : \"projects/ YOUR PROJECT NUMBER /locations/ YOUR PROJECT LOCATION /connectionProfiles/ SOURCE CONNECTION PROFILE ID \" , \"oracleSourceConfig\" : { \"allowlist\" : { \"oracleSchemas\" : [ { \"schema\" : \"ROOT\" } ] }, \"rejectlist\" : {} } }, \"destinationConfig\" : { \"destinationConnectionProfileName\" : \"projects/ YOUR PROJECT NUMBER /locations/ YOUR PROJECT LOCATION /connectionProfiles/ DESTINATION CONNECTION PROFILE ID \" , \"gcsDestinationConfig\" : { \"fileRotationMb\" : 100 , \"fileRotationInterval\" : \"15s\" \"avroFileFormat\" : {} } }, \"state\" : \"PAUSED\" , \"backfillAll\" : {} } When a stream is paused, Datastream won't pull any new data from the source database into the destination.",
+          "At the prompt, enter the following command: curl -H \"Authorization: Bearer $TOKEN\" -H \"Content-Type: application/json\" https://datastream.googleapis.com/ DATASTREAM API VERSION / PROJECT PATH /streams/ STREAM ID Verify that the value of the fileRotationMb parameter for the Cloud Storage connection profile is now 100 . { \"name\" : \" PROJECT PATH /streams/ STREAM ID \" , \"createTime\" : \" DATE AND TIME STAMP \" , \"updateTime\" : \" DATE AND TIME STAMP \" , \"displayName\" : \" DISPLAY NAME \" , \"sourceConfig\" : { \"sourceConnectionProfileName\" : \"projects/ YOUR PROJECT NUMBER /locations/ YOUR PROJECT LOCATION /connectionProfiles/ SOURCE CONNECTION PROFILE ID \" , \"oracleSourceConfig\" : { \"allowlist\" : { \"oracleSchemas\" : [ { \"schema\" : \"ROOT\" } ] }, \"rejectlist\" : {} } }, \"destinationConfig\" : { \"destinationConnectionProfileName\" : \"projects/ YOUR PROJECT NUMBER /locations/ YOUR PROJECT LOCATION /connectionProfiles/ DESTINATION CONNECTION PROFILE ID \" , \"gcsDestinationConfig\" : { \"fileRotationMb\" : 100 , \"fileRotationInterval\" : \"15s\" \"avroFileFormat\" : {} } }, \"state\" : \"CREATED\" , \"backfillAll\" : {} } Start the stream."
+        ]
+      },
+      {
+        "title": "\"Configure a pluggable Oracle database for CDC \\_|\\_ Datastream \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/datastream/docs/configure-pluggable-oracle",
+        "source_id": "site-docs-root-2",
+        "final_score": 173,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "This privilege lets you use the ROWID based backfill for your Oracle source: GRANT SELECT ON DBA EXTENTS TO USER NAME ; If your database uses Transparent Data Encryption (TDE), grant the following permissions: GRANT SELECT ON DBA TABLESPACES TO USER NAME ; GRANT SELECT ON DBA ENCRYPTED COLUMNS TO USER NAME ; What's next Learn more about how Datastream works with Oracle sources .",
+          "Define a data retention policy for your database by running the following Oracle Recovery Manager (RMAN) command from the CDB$ROOT container: CONFIGURE RETENTION POLICY TO RECOVERY WINDOW OF 4 DAYS ; The command defines the data retention policy for all pluggable databases in your container database.",
+          "Define a data retention policy for your database by running these Oracle Recovery Manager (RMAN) commands: TARGET / CONFIGURE RETENTION POLICY TO RECOVERY WINDOW OF 4 DAYS ; You use the TARGET / command to start an RMAN client and connect to the source database."
+        ]
+      },
+      {
+        "title": "\"Configure a self-managed Oracle database for CDC \\_|\\_ Datastream \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/datastream/docs/configure-self-managed-oracle",
+        "source_id": "site-docs-root-2",
+        "final_score": 173,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Define a data retention policy for your database by running these Oracle Recovery Manager (RMAN) commands: TARGET / CONFIGURE RETENTION POLICY TO RECOVERY WINDOW OF 4 DAYS ; You use the TARGET / command to start an RMAN client and connect to the source database.",
+          "Define a data retention policy for your database by running these Oracle Recovery Manager (RMAN) commands: TARGET / CONFIGURE RETENTION POLICY TO RECOVERY WINDOW OF 4 DAYS ; You use the TARGET / command to start an RMAN client and connect to the source database.",
+          "This privilege lets you use the ROWID based backfill for your Oracle source: GRANT SELECT ON DBA EXTENTS TO USER NAME ; What's next Learn more about how Datastream works with Oracle sources ."
+        ]
+      },
+      {
+        "title": "FAQ \\_|\\_ Datastream \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/datastream/docs/faq",
+        "source_id": "site-docs-root",
+        "final_score": 171,
+        "relevance": "",
+        "evidence_snippets": [
+          "For information about backfill constraints, see the known limitations pages for the respective source types: MySQL Oracle PostgreSQL (including AlloyDB for PostgreSQL) SQL Server Salesforce MongoDB What's the recommended order for CDC and backfill operations?",
+          "In some edge cases, for example when replicating very large tables that can't be backfilled using Datastream, you might need to load the data into BigQuery first before starting the stream.",
+          "There are two types of backfill: Incremental : The default type of backfill for tables."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.cloud.datastream.v1",
+      "datastream.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastream/docs/using-datastream-apis",
+        "https://docs.cloud.google.com/datastream/docs/configure-pluggable-oracle",
+        "https://docs.cloud.google.com/datastream/docs/configure-self-managed-oracle",
+        "https://docs.cloud.google.com/datastream/docs/faq"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastream/docs/using-datastream-apis",
+        "https://docs.cloud.google.com/datastream/docs/configure-pluggable-oracle",
+        "https://docs.cloud.google.com/datastream/docs/configure-self-managed-oracle",
+        "https://docs.cloud.google.com/datastream/docs/faq"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastream/docs/using-datastream-apis",
+        "https://docs.cloud.google.com/datastream/docs/configure-pluggable-oracle",
+        "https://docs.cloud.google.com/datastream/docs/configure-self-managed-oracle",
+        "https://docs.cloud.google.com/datastream/docs/faq"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastream/docs/using-datastream-apis",
+        "https://docs.cloud.google.com/datastream/docs/configure-pluggable-oracle",
+        "https://docs.cloud.google.com/datastream/docs/configure-self-managed-oracle",
+        "https://docs.cloud.google.com/datastream/docs/faq"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastream/docs/using-datastream-apis",
+        "https://docs.cloud.google.com/datastream/docs/configure-pluggable-oracle",
+        "https://docs.cloud.google.com/datastream/docs/configure-self-managed-oracle",
+        "https://docs.cloud.google.com/datastream/docs/faq"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastream/docs/using-datastream-apis",
+        "https://docs.cloud.google.com/datastream/docs/configure-pluggable-oracle",
+        "https://docs.cloud.google.com/datastream/docs/configure-self-managed-oracle",
+        "https://docs.cloud.google.com/datastream/docs/faq"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastream/docs/using-datastream-apis",
+        "https://docs.cloud.google.com/datastream/docs/configure-pluggable-oracle",
+        "https://docs.cloud.google.com/datastream/docs/configure-self-managed-oracle",
+        "https://docs.cloud.google.com/datastream/docs/faq"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastream/docs/using-datastream-apis",
+        "https://docs.cloud.google.com/datastream/docs/configure-pluggable-oracle",
+        "https://docs.cloud.google.com/datastream/docs/configure-self-managed-oracle",
+        "https://docs.cloud.google.com/datastream/docs/faq"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastream/docs/using-datastream-apis",
+        "https://docs.cloud.google.com/datastream/docs/configure-pluggable-oracle",
+        "https://docs.cloud.google.com/datastream/docs/configure-self-managed-oracle",
+        "https://docs.cloud.google.com/datastream/docs/faq"
+      ]
+    }
+  ]
+}

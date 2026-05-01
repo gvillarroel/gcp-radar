@@ -1,0 +1,92 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:18.771Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery",
+  "feature_name": "Flat-rate pricing",
+  "feature_slug": "flat-rate-pricing",
+  "summary": "BigQuery offers flat-rate pricing for unlimited querying at a fixed monthly price.",
+  "extended_definition": "BigQuery offers flat-rate pricing for unlimited querying at a fixed monthly price.",
+  "lifecycle": {
+    "latest_feature_date": "2016-09-29",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/generate-text-embedding-tutorial-open-models",
+      "https://docs.cloud.google.com/bigquery/docs/generate-text-tutorial-gemma",
+      "https://docs.cloud.google.com/bigquery/docs/reference/bq-cli-reference"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "bq command-line tool reference \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/reference/bq-cli-reference",
+        "source_id": "site-docs-reference",
+        "final_score": 125,
+        "relevance": "",
+        "evidence_snippets": [
+          "Must be one of the following: ANNUAL THREE YEAR NONE Customers using legacy flat-rate pricing also may use one of the following values: FLEX MONTHLY ANNUAL --project id= PROJECT ID Specifies the project that administers the slots. --slots= NUMBER OF BASELINE SLOTS Specifies the number of baseline slots to purchase. --edition= EDITION The edition associated with the capacity commitment.",
+          "Replace PLAN with one of the following: ANNUAL THREE YEAR NONE Customers using legacy flat-rate pricing also may use one of the following values: FLEX MONTHLY ANNUAL --reservation={true false} Specifies whether to update a reservation.",
+          "Must be one of the following values: ANNUAL THREE YEAR Customers using legacy flat-rate pricing also may use one of the following values: FLEX MONTHLY ANNUAL --renewal plan= RENEWAL TYPE Specifies the renewal plan type ."
+        ]
+      },
+      {
+        "title": "\"Generate text by using a Gemma open model and the AI.GENERATE_TEXT function\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/generate-text-tutorial-gemma",
+        "source_id": "site-docs-reference",
+        "final_score": 104,
+        "relevance": "",
+        "evidence_snippets": [
+          "Generate text by using a Gemma open model and the AI.GENERATE TEXT function This tutorial shows you how to create a remote model that's based on the Gemma model , and then how to use that model with the AI.GENERATE TEXT function to extract keywords and perform sentiment analysis on movie reviews from the bigquery-public-data.imdb.reviews public table.",
+          "GENERATE TEXT ( MODEL bqml tutorial . gemma model , ( SELECT 'Analyze the sentiment of the following movie review and classify it as either POSITIVE or NEGATIVE. \\nMovie Review: ' review AS prompt , FROM bigquery - public - data . imdb . reviews LIMIT 10 ), STRUCT ( 0 .",
+          "GENERATE TEXT ( MODEL bqml tutorial . gemma model , ( SELECT 'Extract the key words from the movie review below: ' review AS prompt , FROM bigquery - public - data . imdb . reviews LIMIT 10 ), STRUCT ( 0 ."
+        ]
+      },
+      {
+        "title": "\"Generate text embeddings by using an open model and the AI.GENERATE_EMBEDDING\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/generate-text-embedding-tutorial-open-models",
+        "source_id": "site-docs-reference",
+        "final_score": 104,
+        "relevance": "",
+        "evidence_snippets": [
+          "Generate text embeddings by using an open model and the AI.GENERATE EMBEDDING function This tutorial shows you how to create a remote model that's based on the open-source text embedding model Qwen3-Embedding-0.6B , and then how to use that model with the AI.GENERATE EMBEDDING function to embed movie reviews from the bigquery-public-data.imdb.reviews public table.",
+          "GENERATE EMBEDDING ( MODEL bqml tutorial . qwen3 embedding model , ( SELECT review AS content , FROM bigquery - public - data . imdb . reviews LIMIT 5 ) ); The results include the following columns: embedding : an array of double to represent the generated embeddings. status : the API response status for the corresponding row.",
+          "Perform text embedding Perform text embedding on IMDB movie reviews by using the remote model and the AI.GENERATE EMBEDDING function: In the Google Cloud console, go to the BigQuery page."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "data.imdb.reviews"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/bq-cli-reference",
+        "https://docs.cloud.google.com/bigquery/docs/generate-text-embedding-tutorial-open-models",
+        "https://docs.cloud.google.com/bigquery/docs/generate-text-tutorial-gemma"
+      ]
+    }
+  ]
+}

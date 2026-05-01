@@ -1,0 +1,114 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:34.519Z",
+  "source_step08_card": "data/step-08/current/products/dialogflow/card.json",
+  "product_name": "Dialogflow",
+  "product_slug": "dialogflow",
+  "feature_name": "Spanner data store source",
+  "feature_slug": "spanner-data-store-source",
+  "summary": "This data store source is available as a public GA source for Conversational Agents data stores; This data store source is available as a public GA source for Conversational Agents data stores.",
+  "extended_definition": "This data store source is available as a public GA source for Conversational Agents data stores; This data store source is available as a public GA source for Conversational Agents data stores.",
+  "lifecycle": {
+    "latest_feature_date": "2025-07-24",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dialogflow/cx/docs/concept/console-conversational-agents",
+      "https://docs.cloud.google.com/dialogflow/cx/docs/concept/data-store",
+      "https://docs.cloud.google.com/dialogflow/cx/docs/concept/data-store/handler"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Conversational Agents console overview \\_|\\_ Dialogflow CX \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/dialogflow/cx/docs/concept/console-conversational-agents",
+        "source_id": "site-docs-root",
+        "final_score": 169,
+        "relevance": "",
+        "evidence_snippets": [
+          "Using the Conversational Agents console, you can create interactive agents that use generative playbooks , generative data stores , and deterministic flows .",
+          "The Dialogflow CX console will continue to be supported until the Conversational Agents console is generally available (GA).",
+          "To create an agent with data store handlers : Open the Conversational Agents console ."
+        ]
+      },
+      {
+        "title": "Data store tools \\_|\\_ Dialogflow CX \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dialogflow/cx/docs/concept/data-store/handler",
+        "source_id": "site-docs-root",
+        "final_score": 167,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For more information see the dataStoreConnections reference . \"dataStoreConnections\" : [ { \"dataStoreType\" : \"PUBLIC WEB\" , \"dataStore\" : \"projects/PROJECT NUMBER/locations/LOCATION ID/collections/default collection/dataStores/DATASTORE ID\" }, { \"dataStoreType\" : \"UNSTRUCTURED\" , \"dataStore\" : \"projects/PROJECT NUMBER/locations/LOCATION ID/collections/default collection/dataStores/DATASTORE ID\" }, { \"dataStoreType\" : \"STRUCTURED\" , \"dataStore\" : \"projects/PROJECT NUMBER/locations/LOCATION ID/collections/default collection/dataStores/DATASTORE ID\" } ] Data store tool responses might also contain snippets about the content source that was used to generate the response.",
+          "Create a data store tool Open the Conversational Agents console and choose a Google Cloud project.",
+          "Information How to access Snippet of the top identified source of the top answer $sys.func.GET FIELD($sys.func.GET($sys.func.IDENTITY($request.knowledge.sources[0]), 0), \"snippet\") Title of the top identified source of the top answer $sys.func.GET FIELD($sys.func.GET($sys.func.IDENTITY($request.knowledge.sources[0]), 0), \"title\") Link of the top identified source of the top answer $sys.func.GET FIELD($sys.func.GET($sys.func.IDENTITY($request.knowledge.sources[0]), 0), \"uri\") Number of identified sources for the top answer $sys.func.COUNT($sys.func.IDENTITY($request.knowledge.sources[0])) Number of knowledge answers $sys.func.COUNT($request.knowledge.answers) Question corresponding to the top answer (for FAQ data store answers only) $request.knowledge.questions[0] Grounding confidence for the top answer $request.knowledge.grounding confidences[0] Previous arrow back Data stores Next Data store tool settings arrow forward Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License ."
+        ]
+      },
+      {
+        "title": "Data stores \\_|\\_ Dialogflow CX \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dialogflow/cx/docs/concept/data-store",
+        "source_id": "site-docs-root",
+        "final_score": 164,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To see a list of available sources and to request access, see the additional data store sources section on this page.",
+          "Supported regions For supported regions, see the region reference . (Restricted access) Additional data store sources Additional data store types are listed in the following table.",
+          "View tracing data in other locations If the conversational agent is configured with conversation history logging , you can also view data store tracing in Conversation History ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "request.knowledge.answers",
+      "request.knowledge.grounding",
+      "request.knowledge.questions",
+      "request.knowledge.sources",
+      "sys.func.COUNT",
+      "sys.func.GET",
+      "sys.func.IDENTITY"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dialogflow/cx/docs/concept/data-store/handler",
+        "https://docs.cloud.google.com/dialogflow/cx/docs/concept/console-conversational-agents",
+        "https://docs.cloud.google.com/dialogflow/cx/docs/concept/data-store"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dialogflow/cx/docs/concept/data-store/handler",
+        "https://docs.cloud.google.com/dialogflow/cx/docs/concept/console-conversational-agents",
+        "https://docs.cloud.google.com/dialogflow/cx/docs/concept/data-store"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dialogflow/cx/docs/concept/data-store/handler",
+        "https://docs.cloud.google.com/dialogflow/cx/docs/concept/console-conversational-agents",
+        "https://docs.cloud.google.com/dialogflow/cx/docs/concept/data-store"
+      ]
+    }
+  ]
+}

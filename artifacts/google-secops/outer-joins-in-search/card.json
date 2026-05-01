@@ -1,0 +1,104 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:40.586Z",
+  "source_step08_card": "data/step-08/current/products/google-secops/card.json",
+  "product_name": "Google SecOps",
+  "product_slug": "google-secops",
+  "feature_name": "Outer joins in Search",
+  "feature_slug": "outer-joins-in-search",
+  "summary": "Search now supports left and right outer joins that preserve unmatched records.",
+  "extended_definition": "Search now supports left and right outer joins that preserve unmatched records.",
+  "lifecycle": {
+    "latest_feature_date": "2026-02-12",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/chronicle/docs/administration/feed-management",
+      "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+      "https://docs.cloud.google.com/chronicle/docs/reference/search-api"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Search for events and alerts \\_|\\_ Google Security Operations \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "source_id": "site-docs-reference-2",
+        "final_score": 107,
+        "relevance": "",
+        "evidence_snippets": [
+          "Retrieve a saved search To retrieve and run a saved search, do the following: In the Search manager dialog, select a saved search from the list to the left.",
+          "View alerts in search To view alerts, click the Alerts tab, located next to the Events tab, at the top right of the Search page.",
+          "View aggregated results For statistics-based searches, Google SecOps supports large aggregated result sets."
+        ]
+      },
+      {
+        "title": "Search \\_|\\_ Google Security Operations \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/chronicle/docs/reference/search-api",
+        "source_id": "site-docs-reference-2",
+        "final_score": 56,
+        "relevance": "",
+        "evidence_snippets": [
+          "Sample Request https://backstory.googleapis.com/v1/events:udmSearch?query=metadata.event type+%3D+%22NETWORK CONNECTION%22+and+principal.hostname%3D%22jdx%22&time range.start time=2022-08-04T00%3A00%3A00Z&time range.end time=2022-08-04T01%3A00%3A00Z&limit=100 Sample Response { \"events\": [ { \"name\": \"00000000c5fd1146ce52d833659247f68b82009d000000000500000000000000\", \"udm\": { \"metadata\": { \"eventTimestamp\": \"2022-09-14T00:59:59.567051Z\", \"eventType\": \"NETWORK CONNECTION\", \"ingestedTimestamp\": \"2022-09-14T01:00:20.783486Z\", \"id\": \"AAAAAMX9EUbOUtgzZZJH9ouCAJ0AAAAABQAAAAAAAAA=\" }, \"principal\": { \"ip\": [ \"10.9.8.7\" ], }, \"target\": { \"ip\": [ \"74.125.197.190\" ], \"port\": 443 } } }, { \"name\": \"000000000f8e8dc25f873448a3b51ed3e81af0d900000000050000001c000000\", \"udm\": { \"metadata\": { \"eventTimestamp\": \"2022-09-14T00:59:59.567051Z\", \"eventType\": \"NETWORK CONNECTION\", \"ingestedTimestamp\": \"2022-09-14T01:00:20.071428Z\", \"id\": \"AAAAAA+OjcJfhzRIo7Ue0+ga8NkAAAAABQAAABwAAAA=\" }, \"principal\": { \"ip\": [ \"10.9.8.7\" ] }, \"target\": { \"ip\": [ \"74.125.135.103\" ], \"port\": 443 } } } ] } Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Request GET https://backstory.googleapis.com/v1/events:udmSearch?query=<query>&time range.start time=<start time>&time range.end time=<end time>&limit=<limit> Parameters Parameter Name Type Description query string UDM search query. time range.start time ISO 8601 format Inclusive start time. time range.end time ISO 8601 format Exclusive end time. limit integer (Optional) The maximum number of matched events to return.",
+          "The following query submission rate limits are enforced, measured in queries per second (QPS) or queries per hour (QPH): API API Method Limit Search List Alerts 1 QPS ListEvents 1 QPS ListIocs 1 QPS ListIocDetails 1 QPS ListAssets 5 QPS ListAssetAliases 1 QPS ListUserAliases 1 QPS udmSearch 360 QPH GetLog 60 QPS GetEvent 60 QPS See the detailed list of the Backstory API query limits ."
+        ]
+      },
+      {
+        "title": "\"Use the Feed Management UI \\_|\\_ Google Security Operations \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/administration/feed-management",
+        "source_id": "site-docs-reference",
+        "final_score": 53,
+        "relevance": "",
+        "evidence_snippets": [
+          "The following table outlines the different file sizes that Google SecOps feeds transformation supports: Operation Input type Recommended size Expected duration Max size Data Modeling CSV 10 GB Data Modeling CSV 30 min 10 GB Data Modeling CSV TBD TBD 2 GB Data Modeling XML / JSON 2 GB Data Modeling XLS / XLSX 1 min 50 MB Merge Files Any Varies on number of files 100 GB Decompress Files Non-ZIP Varies on number of files 10 GB (uncompressed) Decompress Files ZIP - Varies on number of files 4 GB (uncompressed) Log line limits and delimiters When ingesting text-based logs (JSON, CSV, or Syslog), ensure your data adheres to these specific ingestion limits: Maximum Line Size : A single log line cannot exceed 4MB .",
+          "Troubleshoot failed feeds On the Feeds page, you can view details such as source type, log type, feed ID, and status of the existing feeds, as follows: Hold the pointer over an existing feed and click more vert in the right column.",
+          "The Feeds page provides several tools to help you navigate and organize your list of configured feeds: Search: Use the search bar to find a feed by its Feed Name , Feed ID , or Source type ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "backstory.googleapis.com",
+      "metadata.event",
+      "principal.hostname",
+      "range.end",
+      "range.start"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/administration/feed-management",
+        "https://docs.cloud.google.com/chronicle/docs/reference/search-api"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/administration/feed-management",
+        "https://docs.cloud.google.com/chronicle/docs/reference/search-api"
+      ]
+    }
+  ]
+}

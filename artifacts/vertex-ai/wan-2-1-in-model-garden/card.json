@@ -1,0 +1,100 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:48.184Z",
+  "source_step08_card": "data/step-08/current/products/vertex-ai/card.json",
+  "product_name": "Vertex AI",
+  "product_slug": "vertex-ai",
+  "feature_name": "Wan 2.1 in Model Garden",
+  "feature_slug": "wan-2-1-in-model-garden",
+  "summary": "The Wan 2.1 model is now available in Vertex AI Model Garden.",
+  "extended_definition": "The Wan 2.1 model is now available in Vertex AI Model Garden.",
+  "lifecycle": {
+    "latest_feature_date": "2025-08-14",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/vertex-ai/docs/general/deployment",
+      "https://docs.cloud.google.com/vertex-ai/docs/pipelines/model-evaluation-component",
+      "https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/create_endpoint"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"MCP Tools Reference: aiplatform.googleapis.com \\_|\\_ Vertex AI \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/create_endpoint",
+        "source_id": "site-api-reference-2",
+        "final_score": 83,
+        "relevance": "",
+        "evidence_snippets": [
+          "RolloutOptions JSON representation { \"previousDeployedModel\" : string , \"revisionNumber\" : integer , // Union field max unavailable can be only one of the following: \"maxUnavailableReplicas\" : integer , \"maxUnavailablePercentage\" : integer // End of list of possible types for union field max unavailable . // Union field max surge can be only one of the following: \"maxSurgeReplicas\" : integer , \"maxSurgePercentage\" : integer // End of list of possible types for union field max surge . } Fields previousDeployedModel string ID of the DeployedModel that this deployment should replace. revisionNumber integer Output only.",
+          "Required except for Large Model Deploy use cases. prediction resources can be only one of the following: dedicatedResources object ( DedicatedResources ) A description of resources that are dedicated to the DeployedModel, and that need a higher degree of manual configuration. automaticResources object ( AutomaticResources ) A description of resources that to large degree are decided by Vertex AI, and require only a modest additional configuration. sharedResources string The resource name of the shared DeploymentResourcePool to deploy on.",
+          "Runtime status of the deployed model. systemLabels map (key: string, value: string) System labels to apply to Model Garden deployments."
+        ]
+      },
+      {
+        "title": "Model evaluation components \\_|\\_ Vertex AI \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/pipelines/model-evaluation-component",
+        "source_id": "site-api-reference",
+        "final_score": 76,
+        "relevance": "",
+        "evidence_snippets": [
+          "Vertex AI provides the following model evaluation components: ModelEvaluationClassificationOp ModelEvaluationForecastingOp ModelEvaluationRegressionOp Model type support The following table shows supported model types for each model evaluation component: Model evaluation component Supported model types ModelEvaluationClassificationOp AutoML tabular or image Custom tabular ModelEvaluationRegressionOp AutoML tabular Custom tabular ModelEvaluationForecastingOp AutoML tabular Remove the target field For some model types, the BatchPredictionJob component requires you to exclude the target column (ground truth) from your dataset.",
+          "Home Documentation AI and ML Vertex AI Reference Send feedback Model evaluation components Stay organized with collections Save and categorize content based on your preferences.",
+          "Model evaluations without Vertex AI-generated batch predictions You can use a model evaluation pipeline component with a batch prediction that you didn't generate in Vertex AI."
+        ]
+      },
+      {
+        "title": "Deploy a model to an endpoint \\_|\\_ Vertex AI \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/general/deployment",
+        "source_id": "site-docs-reference-3",
+        "final_score": 74,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For example: https://us-central1-aiplatform.googleapis.com/v1/projects/{project}/locations/{location}/endpoints/{endpoint}:predict Deploy a model to an endpoint You can deploy a model to an endpoint by using the Google Cloud console or by using the gcloud CLI or Vertex AI API .",
+          "For details, see: Create a dedicated or shared public endpoint Deploy a model by using the gcloud CLI or Vertex AI API Deploy a model to a Private Service Connect endpoint For details, see Use Private Service Connect endpoints for online inference .",
+          "Deploy a model to a public endpoint by using the gcloud CLI or Vertex AI API When you deploy a model by using the gcloud CLI or Vertex AI API, you must first create a dedicated or shared endpoint and then deploy the model to it."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "aiplatform.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/create_endpoint",
+        "https://docs.cloud.google.com/vertex-ai/docs/pipelines/model-evaluation-component",
+        "https://docs.cloud.google.com/vertex-ai/docs/general/deployment"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/create_endpoint",
+        "https://docs.cloud.google.com/vertex-ai/docs/pipelines/model-evaluation-component",
+        "https://docs.cloud.google.com/vertex-ai/docs/general/deployment"
+      ]
+    }
+  ]
+}

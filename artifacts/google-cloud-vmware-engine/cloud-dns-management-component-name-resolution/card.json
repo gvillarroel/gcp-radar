@@ -1,0 +1,121 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:39.256Z",
+  "source_step08_card": "data/step-08/current/products/google-cloud-vmware-engine/card.json",
+  "product_name": "Google Cloud VMware Engine",
+  "product_slug": "google-cloud-vmware-engine",
+  "feature_name": "Cloud DNS management component name resolution",
+  "feature_slug": "cloud-dns-management-component-name-resolution",
+  "summary": "Cloud DNS can resolve management component domain names across multiple private clouds in the same or different regions.",
+  "extended_definition": "Cloud DNS can resolve management component domain names across multiple private clouds in the same or different regions.",
+  "lifecycle": {
+    "latest_feature_date": "2021-02-17",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/python/docs/reference/vmwareengine/latest/google.cloud.vmwareengine_v1.services.vmware_engine.VmwareEngineAsyncClient",
+      "https://docs.cloud.google.com/python/docs/reference/vmwareengine/latest/google.cloud.vmwareengine_v1.services.vmware_engine.VmwareEngineClient",
+      "https://docs.cloud.google.com/vmware-engine/docs/networking/howto-dns-on-premises"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Class VmwareEngineAsyncClient (1.11.0) \\_|\\_ Python client libraries \\_\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/vmwareengine/latest/google.cloud.vmwareengine_v1.services.vmware_engine.VmwareEngineAsyncClient",
+        "source_id": "site-python-reference",
+        "final_score": 161,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "This config defines a list of domain to name server mappings, and is attached to the private cloud for custom domain resolution. update external access rule update external access rule ( request : typing .",
+          "This config defines a list of domain to name server mappings, and is attached to the private cloud for custom domain resolution. get external access rule get external access rule ( request : typing .",
+          "Returns Type Description google.cloud.vmwareengine v1.services.vmware engine.pagers.ListVmwareEngineNetworksAsyncPager Response message for VmwareEngine.ListVmwareEngineNetworks Iterating over this object will yield results and resolve additional pages automatically. logging server path logging server path ( project : str , location : str , private cloud : str , logging server : str ) - > str Returns a fully-qualified logging server string. management dns zone binding path management dns zone binding path ( project : str , location : str , private cloud : str , management dns zone binding : str ) - > str Returns a fully-qualified management dns zone binding string. network path network path ( project : str , network : str ) - > str Returns a fully-qualified network string. network peering path network peering path ( project : str , location : str , network peering : str ) - > str Returns a fully-qualified network peering string. network policy path network policy path ( project : str , location : str , network policy : str ) - > str Returns a fully-qualified network policy string. node path node path ( project : str , location : str , private cloud : str , cluster : str , node : str ) - > str Returns a fully-qualified node string. node type path node type path ( project : str , location : str , node type : str ) - > str Returns a fully-qualified node type string. parse cluster path parse cluster path ( path : str ) - > typing ."
+        ]
+      },
+      {
+        "title": "\"Class VmwareEngineClient (1.11.0) \\_|\\_ Python client libraries \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/vmwareengine/latest/google.cloud.vmwareengine_v1.services.vmware_engine.VmwareEngineClient",
+        "source_id": "site-python-reference",
+        "final_score": 161,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "This config defines a list of domain to name server mappings, and is attached to the private cloud for custom domain resolution. update external access rule update external access rule ( request : typing .",
+          "This config defines a list of domain to name server mappings, and is attached to the private cloud for custom domain resolution. get external access rule get external access rule ( request : typing .",
+          "Returns Type Description google.cloud.vmwareengine v1.services.vmware engine.pagers.ListVmwareEngineNetworksPager Response message for VmwareEngine.ListVmwareEngineNetworks Iterating over this object will yield results and resolve additional pages automatically. logging server path logging server path ( project : str , location : str , private cloud : str , logging server : str ) - > str Returns a fully-qualified logging server string. management dns zone binding path management dns zone binding path ( project : str , location : str , private cloud : str , management dns zone binding : str ) - > str Returns a fully-qualified management dns zone binding string. network path network path ( project : str , network : str ) - > str Returns a fully-qualified network string. network peering path network peering path ( project : str , location : str , network peering : str ) - > str Returns a fully-qualified network peering string. network policy path network policy path ( project : str , location : str , network policy : str ) - > str Returns a fully-qualified network policy string. node path node path ( project : str , location : str , private cloud : str , cluster : str , node : str ) - > str Returns a fully-qualified node string. node type path node type path ( project : str , location : str , node type : str ) - > str Returns a fully-qualified node type string. parse cluster path parse cluster path ( path : str ) - > typing ."
+        ]
+      },
+      {
+        "title": "\"Configuring on-premises DNS for management appliance access \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/vmware-engine/docs/networking/howto-dns-on-premises",
+        "source_id": "site-docs-reference",
+        "final_score": 154,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Use one of the following options for the DNS configuration: Create a zone on the DNS server for gve.goog Create a conditional forwarder on your on-premises DNS server to resolve gve.goog Create a zone on the DNS server for gve.goog You can set up a zone as a stub zone and point to the DNS servers on the private cloud for name resolution.",
+          "To do so, you must configure DNS address resolution so that management appliances can be addressed by their hostnames and IP addresses.",
+          "Global address resolution using Cloud DNS VMware Engine lets you use a Cloud DNS zone in your project as a single DNS resolution endpoint for all connected management appliances in a peered Virtual Private Cloud (VPC) network."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "engine.pagers.ListVmwareEngineNetworksAsyncPager",
+      "engine.pagers.ListVmwareEngineNetworksPager",
+      "gve.goog",
+      "operation.result",
+      "v1.services.vmware",
+      "v1.types.CreateManagementDnsZoneBindingRequest"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/vmwareengine/latest/google.cloud.vmwareengine_v1.services.vmware_engine.VmwareEngineAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/vmwareengine/latest/google.cloud.vmwareengine_v1.services.vmware_engine.VmwareEngineClient",
+        "https://docs.cloud.google.com/vmware-engine/docs/networking/howto-dns-on-premises"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/vmwareengine/latest/google.cloud.vmwareengine_v1.services.vmware_engine.VmwareEngineAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/vmwareengine/latest/google.cloud.vmwareengine_v1.services.vmware_engine.VmwareEngineClient",
+        "https://docs.cloud.google.com/vmware-engine/docs/networking/howto-dns-on-premises"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/vmwareengine/latest/google.cloud.vmwareengine_v1.services.vmware_engine.VmwareEngineAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/vmwareengine/latest/google.cloud.vmwareengine_v1.services.vmware_engine.VmwareEngineClient",
+        "https://docs.cloud.google.com/vmware-engine/docs/networking/howto-dns-on-premises"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/vmwareengine/latest/google.cloud.vmwareengine_v1.services.vmware_engine.VmwareEngineAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/vmwareengine/latest/google.cloud.vmwareengine_v1.services.vmware_engine.VmwareEngineClient",
+        "https://docs.cloud.google.com/vmware-engine/docs/networking/howto-dns-on-premises"
+      ]
+    }
+  ]
+}

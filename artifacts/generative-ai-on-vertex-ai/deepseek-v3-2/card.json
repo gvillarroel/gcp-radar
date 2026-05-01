@@ -1,0 +1,148 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:37.873Z",
+  "source_step08_card": "data/step-08/current/products/generative-ai-on-vertex-ai/card.json",
+  "product_name": "Generative AI on Vertex AI",
+  "product_slug": "generative-ai-on-vertex-ai",
+  "feature_name": "DeepSeek-V3.2",
+  "feature_slug": "deepseek-v3-2",
+  "summary": "A managed API for the DeepSeek-V3.2 model is available in Model Garden; The DeepSeek-V3.2 model is available through Model Garden.",
+  "extended_definition": "A managed API for the DeepSeek-V3.2 model is available in Model Garden; The DeepSeek-V3.2 model is available through Model Garden.",
+  "lifecycle": {
+    "latest_feature_date": "2025-12-10",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/web-grounding-enterprise",
+      "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/reference/express-mode/rest/v1/publishers.models/countTokens",
+      "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/reference/express-mode/rest/v1/publishers.models/generateContent",
+      "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/reference/express-mode/rest/v1beta1/publishers.models/countTokens"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Web Grounding for Enterprise \\_|\\_ Generative AI on Vertex AI \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/web-grounding-enterprise",
+        "source_id": "site-docs-root",
+        "final_score": 176,
+        "relevance": "",
+        "evidence_snippets": [
+          "PROMPT : Your prompt. curl -X POST -H \"Authorization: Bearer $( gcloud auth print-access-token ) \" -H \"Content-Type: application/json\" -H \"x-server-timeout: 60\" https:// LOCATION -aiplatform.googleapis.com/v1/projects/ PROJECT NUMBER /locations/ LOCATION /publishers/google/models/gemini-2.0-flash:generateContent -d ' { \"contents\": [{ \"role\": \"user\", \"parts\": [{ \"text\": PROMPT }] }], \"tools\": [{ \"enterpriseWebSearch\": { } }] } ' Use Google Search suggestions When you use Web Grounding for Enterprise, and you receive Search suggestions in your response, you must display the Search suggestions in production and in your applications.",
+          "Client ( http options = HttpOptions ( api version = \"v1\" )) response = client . models . generate content ( model = \"gemini-2.5-flash\" , contents = \"When is the next total solar eclipse in the United States?\" , config = GenerateContentConfig ( tools = [ Use Enterprise Web Search Tool Tool ( enterprise web search = EnterpriseWebSearch ()) ], ), ) print ( response . text ) Example response: 'The next total solar eclipse in the United States will occur on ...' REST Replace the following variables with values: PROJECT NUMBER : Your project number.",
+          "Code to implement a Search suggestion When you use the API to ground a response to search, the model response provides compliant HTML and CSS styling in the renderedContent field, which you implement to display Search suggestions in your application."
+        ]
+      },
+      {
+        "title": "\"Method: publishers.models.countTokens \\_|\\_ Generative AI on Vertex AI \\_\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/reference/express-mode/rest/v1/publishers.models/countTokens",
+        "source_id": "site-api-reference",
+        "final_score": 174,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "A Tool is a piece of code that enables the system to interact with external systems to perform an action, or set of actions, outside of knowledge and scope of the model. systemInstruction object ( Content ) Optional.",
+          "Format: /publishers/google/models/ Request body The request body contains data with the following structure: Fields model string Optional.",
+          "Endpoint post https: / /aiplatform.googleapis.com /v1 /{model}:countTokens Path parameters model string Required."
+        ]
+      },
+      {
+        "title": "\"Method: publishers.models.countTokens \\_|\\_ Generative AI on Vertex AI \\_\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/reference/express-mode/rest/v1beta1/publishers.models/countTokens",
+        "source_id": "site-api-reference",
+        "final_score": 174,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "A Tool is a piece of code that enables the system to interact with external systems to perform an action, or set of actions, outside of knowledge and scope of the model. systemInstruction object ( Content ) Optional.",
+          "Format: /publishers/google/models/ Request body The request body contains data with the following structure: Fields model string Optional.",
+          "Endpoint post https: / /aiplatform.googleapis.com /v1beta1 /{model}:countTokens Path parameters model string Required."
+        ]
+      },
+      {
+        "title": "\"Method: publishers.models.generateContent \\_|\\_ Generative AI on Vertex\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/reference/express-mode/rest/v1/publishers.models/generateContent",
+        "source_id": "site-api-reference",
+        "final_score": 174,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "A Tool is a piece of code that enables the system to interact with external systems to perform an action, or set of actions, outside of knowledge and scope of the model. toolConfig object ( ToolConfig ) Optional.",
+          "Publisher model format: publishers/google/models/ Request body The request body contains data with the following structure: Fields contents[] object ( Content ) Required.",
+          "Endpoint post https: / /aiplatform.googleapis.com /v1 /{model}:generateContent Path parameters model string Required."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "aiplatform.googleapis.com",
+      "parts.text",
+      "publishers.models",
+      "publishers.models.countTokens",
+      "publishers.models.generateContent",
+      "publishers.models.streamGenerateContent",
+      "tools.enterpriseWebSearch"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/web-grounding-enterprise",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/reference/express-mode/rest/v1/publishers.models/countTokens",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/reference/express-mode/rest/v1beta1/publishers.models/countTokens",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/reference/express-mode/rest/v1/publishers.models/generateContent"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/web-grounding-enterprise",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/reference/express-mode/rest/v1/publishers.models/countTokens",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/reference/express-mode/rest/v1beta1/publishers.models/countTokens",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/reference/express-mode/rest/v1/publishers.models/generateContent"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/web-grounding-enterprise",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/reference/express-mode/rest/v1/publishers.models/countTokens",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/reference/express-mode/rest/v1beta1/publishers.models/countTokens",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/reference/express-mode/rest/v1/publishers.models/generateContent"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/web-grounding-enterprise",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/reference/express-mode/rest/v1/publishers.models/countTokens",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/reference/express-mode/rest/v1beta1/publishers.models/countTokens",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/reference/express-mode/rest/v1/publishers.models/generateContent"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/web-grounding-enterprise",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/reference/express-mode/rest/v1/publishers.models/countTokens",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/reference/express-mode/rest/v1beta1/publishers.models/countTokens",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/reference/express-mode/rest/v1/publishers.models/generateContent"
+      ]
+    }
+  ]
+}

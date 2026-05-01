@@ -1,0 +1,101 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:32.732Z",
+  "source_step08_card": "data/step-08/current/products/dataflow/card.json",
+  "product_name": "Dataflow",
+  "product_slug": "dataflow",
+  "feature_name": "Gemma model inference support",
+  "feature_slug": "gemma-model-inference-support",
+  "summary": "Dataflow Apache Beam inference pipelines can use Gemma models.",
+  "extended_definition": "Dataflow Apache Beam inference pipelines can use Gemma models.",
+  "lifecycle": {
+    "latest_feature_date": "2024-02-21",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dataflow/docs/guides/gae-mapreduce-migration",
+      "https://docs.cloud.google.com/dataflow/docs/machine-learning",
+      "https://docs.cloud.google.com/dataflow/docs/support/sdk-version-support-status"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Dataflow ML \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataflow/docs/machine-learning",
+        "source_id": "site-docs-reference-required-4",
+        "final_score": 155,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Prediction and inference with hub models I want to do sentiment analysis and summarization You can use Gemma models in your inference pipelines to gauge the sentiment of a conversation, summarize that conversation's content, and draft a reply for a difficult conversation.",
+          "I want to use Dataflow with TFX TensorFlow Extended (TFX) lets you deploy complete ML pipelines by using an orchestration framework that has a built-in integration with Apache Beam and the Dataflow runner.",
+          "Learn more Model maintenance and evaluation Automatic model refresh RunInference lets you perform automatic model updates without stopping your Apache Beam pipeline."
+        ]
+      },
+      {
+        "title": "\"Migrate from App Engine MapReduce to Apache Beam and Dataflow \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/dataflow/docs/guides/gae-mapreduce-migration",
+        "source_id": "site-docs-reference-required-3",
+        "final_score": 143,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Write ( s , \"wordcounts.txt\" , formatted ) Additional Apache Beam and Dataflow benefits If you choose to migrate your App Engine MapReduce jobs to Apache Beam pipelines, you will benefit from several features that Apache Beam and Dataflow have to offer.",
+          "Converting App Engine MapReduce jobs to Apache Beam pipelines The following table presents the Apache Beam equivalents of the map , shuffle , and reduce steps of the App Engine MapReduce model.",
+          "Use Apache Beam to create complex pipelines for both batch and streaming and run them on Dataflow."
+        ]
+      },
+      {
+        "title": "SDK version support status \\_|\\_ Cloud Dataflow \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataflow/docs/support/sdk-version-support-status",
+        "source_id": "site-docs-root",
+        "final_score": 142,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Python SDK version Status Supported components Details 2.72.0 Supported Core Python SDK library under module apache beam: submodules coders, dataframe, metrics, ml.inference (excluding PytorchModelHandlerKeyedTensor and SklearnModelHandlerPandas), options, portability, runners.dataflow, runners.direct, transforms, typehints, sql, yaml File-based sources and sinks and related modules under module apache beam.io: textio, avroio, parquetio, tfrecordio, gcsfilesystem, localfilesystem, filesystems, fileio Google Cloud I/O connectors under module apache beam.io.gcp: bigquery, datastore, pubsub The connectors under apache beam.io.jdbc: ReadFromJdbc, WriteToJdbc.",
+          "2.64.0 Deprecated Core Python SDK library under module apache beam: submodules coders, dataframe, metrics, ml.inference (excluding PytorchModelHandlerKeyedTensor and SklearnModelHandlerPandas), options, portability, runners.dataflow, runners.direct, transforms, typehints, sql, yaml File-based sources and sinks and related modules under module apache beam.io: textio, avroio, parquetio, tfrecordio, gcsfilesystem, localfilesystem, filesystems, fileio Google Cloud I/O connectors under module apache beam.io.gcp: bigquery, datastore, pubsub The connectors under apache beam.io.jdbc: ReadFromJdbc, WriteToJdbc.",
+          "2.63.0 Deprecated Core Python SDK library under module apache beam: submodules coders, dataframe, metrics, ml.inference (excluding PytorchModelHandlerKeyedTensor and SklearnModelHandlerPandas), options, portability, runners.dataflow, runners.direct, transforms, typehints, sql, yaml File-based sources and sinks and related modules under module apache beam.io: textio, avroio, parquetio, tfrecordio, gcsfilesystem, localfilesystem, filesystems, fileio Google Cloud I/O connectors under module apache beam.io.gcp: bigquery, datastore, pubsub The connectors under apache beam.io.jdbc: ReadFromJdbc, WriteToJdbc."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "beam.Combine",
+      "beam.GroupByKey",
+      "beam.io",
+      "beam.io.gcp",
+      "beam.io.jdbc",
+      "beam.ParDo",
+      "ml.inference",
+      "runners.dataflow",
+      "runners.direct",
+      "wordcounts.txt"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataflow/docs/machine-learning",
+        "https://docs.cloud.google.com/dataflow/docs/guides/gae-mapreduce-migration",
+        "https://docs.cloud.google.com/dataflow/docs/support/sdk-version-support-status"
+      ]
+    }
+  ]
+}

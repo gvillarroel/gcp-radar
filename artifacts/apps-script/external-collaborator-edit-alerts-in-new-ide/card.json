@@ -1,0 +1,110 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:17.437Z",
+  "source_step08_card": "data/step-08/current/products/apps-script/card.json",
+  "product_name": "Apps Script",
+  "product_slug": "apps-script",
+  "feature_name": "External collaborator edit alerts in new IDE",
+  "feature_slug": "external-collaborator-edit-alerts-in-new-ide",
+  "summary": "The new Apps Script IDE emails owners when someone outside their organization edits a script project.",
+  "extended_definition": "The new Apps Script IDE emails owners when someone outside their organization edits a script project.",
+  "lifecycle": {
+    "latest_feature_date": "2022-02-14",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/apps-script/guides/slides/editing-styling",
+      "https://developers.google.com/apps-script/reference/add-ons-response-service/editor-file-scope-action-response-builder",
+      "https://developers.google.com/apps-script/releases"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Google Apps Script release notes \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/apps-script/releases",
+        "source_id": "site-docs-root",
+        "final_score": 110,
+        "relevance": "",
+        "evidence_snippets": [
+          "November 03, 2022 Feature Apps Script added a new method to the Utilities class . parseDate(date, timeZone, format ) parses a provided string date according to the specification described in the Java Standard Edition SimpleDateFormat class .",
+          "For scripts created prior to June 8, 2012, the Share button will remain if the checkbox to \"Allow document collaborators to edit project\" or \"Allow site collaborators and owners to edit project\" was not selected for that script.",
+          "Along with a completely new interface, the following features have been updated: The editor now has a collapsible left sidebar to navigate to the Apps Script project overview, settings, executions, and triggers."
+        ]
+      },
+      {
+        "title": "\"Class EditorFileScopeActionResponseBuilder \\_|\\_ Apps Script \\_|\\_ Google\\",
+        "url": "https://developers.google.com/apps-script/reference/add-ons-response-service/editor-file-scope-action-response-builder",
+        "source_id": "site-docs-reference-3",
+        "final_score": 66,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Google Workspace Apps Script Reference Send feedback Class EditorFileScopeActionResponseBuilder Stay organized with collections Save and categorize content based on your preferences.",
+          "Methods Method Return type Brief description build() Editor File Scope Action Response Builds the current Editor action response. request File Scope For Active Document() Editor File Scope Action Response Builder Requests the drive.file scope for the current active Editor document.",
+          "Return EditorFileScopeActionResponse — A validated EditorFileScopeActionResponse . requestFileScopeForActiveDocument() Requests the drive.file scope for the current active Editor document. // Display a permissions dialog to the user, requesting drive.file scope for // the current document on behalf of this add-on."
+        ]
+      },
+      {
+        "title": "Edit and style text \\_|\\_ Apps Script \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/apps-script/guides/slides/editing-styling",
+        "source_id": "site-docs-root-2",
+        "final_score": 63,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Google Workspace Apps Script Guides Send feedback Edit and style text Stay organized with collections Save and categorize content based on your preferences.",
+          "TEXT BOX , 100 , 200 , 300 , 60 , ); const textRange = shape . getText (); textRange . setText ( \"Hello world!\" ); textRange . clear ( 6 , 11 ); // Insert text in TEXT BOX textRange . insertText ( 6 , \"galaxy\" ); console . log ( Start: ${ textRange . getStartIndex () } ; End: ${ textRange . getEndIndex () } ; Content: ${ textRange . asString () } , ); } catch ( err ) { // TODO (developer) - Handle exception console . log ( \"Failed with an error %s \" , err . message ); } This script creates a text box on the first slide and sets its text content to \"Hello world!\".",
+          "So the script produces the following log statements: Paragraph 1's nesting level: 0 Paragraph 2's nesting level: 1 Paragraph 3's nesting level: 2 Paragraph 4's nesting level: 0 Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "developers.google.com",
+      "drive.file",
+      "style.gs"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/guides/slides/editing-styling",
+        "https://developers.google.com/apps-script/reference/add-ons-response-service/editor-file-scope-action-response-builder"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/guides/slides/editing-styling",
+        "https://developers.google.com/apps-script/reference/add-ons-response-service/editor-file-scope-action-response-builder"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/guides/slides/editing-styling",
+        "https://developers.google.com/apps-script/reference/add-ons-response-service/editor-file-scope-action-response-builder"
+      ]
+    }
+  ]
+}

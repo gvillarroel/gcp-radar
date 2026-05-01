@@ -1,0 +1,202 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:33.064Z",
+  "source_step08_card": "data/step-08/current/products/dataform/card.json",
+  "product_name": "Dataform",
+  "product_slug": "dataform",
+  "feature_name": "Workforce identity federation",
+  "feature_slug": "workforce-identity-federation",
+  "summary": "Workforce identity federation lets external workforce identities access Dataform.",
+  "extended_definition": "Workforce identity federation lets external workforce identities access Dataform.",
+  "lifecycle": {
+    "latest_feature_date": "2023-10-20",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dataform/docs/access-control",
+      "https://docs.cloud.google.com/dataform/docs/authentication",
+      "https://docs.cloud.google.com/dataform/reference/rest/Shared.Types/Binding",
+      "https://docs.cloud.google.com/python/docs/reference/dataform/latest/google.cloud.dataform_v1.services.dataform.DataformAsyncClient"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Control access with IAM \\_|\\_ Dataform \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataform/docs/access-control",
+        "source_id": "site-docs-root-2",
+        "final_score": 279,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Workforce Identity Federation in Dataform Workforce Identity Federation lets you use an external identity provider (IdP) to authenticate and authorize users to Google Cloud services with IAM.",
+          "To learn more about managing access to resources, see Manage access to projects, folders, and organizations To learn more about the key concepts of Workforce Identity Federation, see Workforce Identity Federation .",
+          "Dataform supports Workforce Identity Federation with no known limitations."
+        ]
+      },
+      {
+        "title": "Binding \\_|\\_ Dataform \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataform/reference/rest/Shared.Types/Binding",
+        "source_id": "site-api-reference",
+        "final_score": 127,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Does not include identities that come from external identity providers (IdPs) through identity federation. user:{emailid} : An email address that represents a specific Google account.",
+          "For example, google.com or example.com . principal://iam.googleapis.com/locations/global/workforcePools/{pool id}/subject/{subject attribute value} : A single identity in a workforce identity pool. principalSet://iam.googleapis.com/locations/global/workforcePools/{pool id}/group/{groupId} : All workforce identities in a group. principalSet://iam.googleapis.com/locations/global/workforcePools/{pool id}/attribute.{attribute name}/{attribute value} : All workforce identities with a specific attribute value. principalSet://iam.googleapis.com/locations/global/workforcePools/{pool id}/ : All identities in a workforce identity pool. principal://iam.googleapis.com/projects/{projectNumber}/locations/global/workloadIdentityPools/{pool id}/subject/{subject attribute value} : A single identity in a workload identity pool. principalSet://iam.googleapis.com/projects/{projectNumber}/locations/global/workloadIdentityPools/{pool id}/group/{groupId} : A workload identity pool group. principalSet://iam.googleapis.com/projects/{projectNumber}/locations/global/workloadIdentityPools/{pool id}/attribute.{attribute name}/{attribute value} : All identities in a workload identity pool with a certain attribute. principalSet://iam.googleapis.com/projects/{projectNumber}/locations/global/workloadIdentityPools/{pool id}/ : All identities in a workload identity pool. deleted:user:{emailid}?uid={uniqueid} : An email address (plus unique identifier) representing a user that has been recently deleted.",
+          "If the group is recovered, this value reverts to group:{emailid} and the recovered group retains the role in the binding. deleted:principal://iam.googleapis.com/locations/global/workforcePools/{pool id}/subject/{subject attribute value} : Deleted single identity in a workforce identity pool."
+        ]
+      },
+      {
+        "title": "Authenticate to Dataform \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataform/docs/authentication",
+        "source_id": "site-docs-root",
+        "final_score": 123,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Dataform uses Identity and Access Management (IAM) for authorization.",
+          "After installation, initialize the Google Cloud CLI by running the following command: gcloud init If you're using an external identity provider (IdP), you must first sign in to the gcloud CLI with your federated identity .",
+          "You can access the API in the following ways: Client libraries REST Client libraries The Dataform client libraries provide high-level language support for authenticating to Dataform programmatically."
+        ]
+      },
+      {
+        "title": "\"Class DataformAsyncClient (0.10.0) \\_|\\_ Python client libraries \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/dataform/latest/google.cloud.dataform_v1.services.dataform.DataformAsyncClient",
+        "source_id": "site-python-reference",
+        "final_score": 120,
+        "relevance": "",
+        "evidence_snippets": [
+          "Returns Type Description google.cloud.dataform v1.types.CommitWorkspaceChangesResponse CommitWorkspaceChanges response message. common billing account path common billing account path ( billing account : str ) - > str Returns a fully-qualified billing account string. common folder path common folder path ( folder : str ) - > str Returns a fully-qualified folder string. common location path common location path ( project : str , location : str ) - > str Returns a fully-qualified location string. common organization path common organization path ( organization : str ) - > str Returns a fully-qualified organization string. common project path common project path ( project : str ) - > str Returns a fully-qualified project string. compilation result path compilation result path ( project : str , location : str , repository : str , compilation result : str ) - > str Returns a fully-qualified compilation result string. compute repository access token status compute repository access token status ( request : typing .",
+          "It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import dataform v1 async def sample compute repository access token status(): Create a client client = dataform v1 .",
+          "ComputeRepositoryAccessTokenStatusRequest ( name=\"name value\", ) Make the request response = await client. compute repository access token status (request=request) Handle the response print(response) Parameters Name Description request Optional[Union[ google.cloud.dataform v1.types.ComputeRepositoryAccessTokenStatusRequest , dict]] The request object."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "example.com",
+      "googleapis.dev",
+      "iam.googleapis.com",
+      "options.html",
+      "v1.types.CommitWorkspaceChangesResponse",
+      "v1.types.ComputeRepositoryAccessTokenStatusRequest",
+      "v1.types.ComputeRepositoryAccessTokenStatusResponse"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataform/docs/access-control",
+        "https://docs.cloud.google.com/dataform/reference/rest/Shared.Types/Binding",
+        "https://docs.cloud.google.com/dataform/docs/authentication",
+        "https://docs.cloud.google.com/python/docs/reference/dataform/latest/google.cloud.dataform_v1.services.dataform.DataformAsyncClient"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataform/docs/access-control",
+        "https://docs.cloud.google.com/dataform/reference/rest/Shared.Types/Binding",
+        "https://docs.cloud.google.com/dataform/docs/authentication",
+        "https://docs.cloud.google.com/python/docs/reference/dataform/latest/google.cloud.dataform_v1.services.dataform.DataformAsyncClient"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataform/docs/access-control",
+        "https://docs.cloud.google.com/dataform/reference/rest/Shared.Types/Binding",
+        "https://docs.cloud.google.com/dataform/docs/authentication",
+        "https://docs.cloud.google.com/python/docs/reference/dataform/latest/google.cloud.dataform_v1.services.dataform.DataformAsyncClient"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataform/docs/access-control",
+        "https://docs.cloud.google.com/dataform/reference/rest/Shared.Types/Binding",
+        "https://docs.cloud.google.com/dataform/docs/authentication",
+        "https://docs.cloud.google.com/python/docs/reference/dataform/latest/google.cloud.dataform_v1.services.dataform.DataformAsyncClient"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataform/docs/access-control",
+        "https://docs.cloud.google.com/dataform/reference/rest/Shared.Types/Binding",
+        "https://docs.cloud.google.com/dataform/docs/authentication",
+        "https://docs.cloud.google.com/python/docs/reference/dataform/latest/google.cloud.dataform_v1.services.dataform.DataformAsyncClient"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataform/docs/access-control",
+        "https://docs.cloud.google.com/dataform/reference/rest/Shared.Types/Binding",
+        "https://docs.cloud.google.com/dataform/docs/authentication",
+        "https://docs.cloud.google.com/python/docs/reference/dataform/latest/google.cloud.dataform_v1.services.dataform.DataformAsyncClient"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataform/docs/access-control",
+        "https://docs.cloud.google.com/dataform/reference/rest/Shared.Types/Binding",
+        "https://docs.cloud.google.com/dataform/docs/authentication",
+        "https://docs.cloud.google.com/python/docs/reference/dataform/latest/google.cloud.dataform_v1.services.dataform.DataformAsyncClient"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataform/docs/access-control",
+        "https://docs.cloud.google.com/dataform/reference/rest/Shared.Types/Binding",
+        "https://docs.cloud.google.com/dataform/docs/authentication",
+        "https://docs.cloud.google.com/python/docs/reference/dataform/latest/google.cloud.dataform_v1.services.dataform.DataformAsyncClient"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataform/docs/access-control",
+        "https://docs.cloud.google.com/dataform/reference/rest/Shared.Types/Binding",
+        "https://docs.cloud.google.com/dataform/docs/authentication",
+        "https://docs.cloud.google.com/python/docs/reference/dataform/latest/google.cloud.dataform_v1.services.dataform.DataformAsyncClient"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataform/docs/access-control",
+        "https://docs.cloud.google.com/dataform/reference/rest/Shared.Types/Binding",
+        "https://docs.cloud.google.com/dataform/docs/authentication",
+        "https://docs.cloud.google.com/python/docs/reference/dataform/latest/google.cloud.dataform_v1.services.dataform.DataformAsyncClient"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataform/docs/access-control",
+        "https://docs.cloud.google.com/dataform/reference/rest/Shared.Types/Binding",
+        "https://docs.cloud.google.com/dataform/docs/authentication",
+        "https://docs.cloud.google.com/python/docs/reference/dataform/latest/google.cloud.dataform_v1.services.dataform.DataformAsyncClient"
+      ]
+    }
+  ]
+}

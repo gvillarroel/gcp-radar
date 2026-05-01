@@ -1,0 +1,119 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:39.256Z",
+  "source_step08_card": "data/step-08/current/products/google-cloud-vmware-engine/card.json",
+  "product_name": "Google Cloud VMware Engine",
+  "product_slug": "google-cloud-vmware-engine",
+  "feature_name": "Custom core count per node",
+  "feature_slug": "custom-core-count-per-node",
+  "summary": "Clusters can be created with a custom number of cores per node to match application-specific requirements.",
+  "extended_definition": "Clusters can be created with a custom number of cores per node to match application-specific requirements.",
+  "lifecycle": {
+    "latest_feature_date": "2022-03-25",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/python/docs/reference/vmwareengine/latest/google.cloud.vmwareengine_v1.services.vmware_engine.VmwareEngineAsyncClient",
+      "https://docs.cloud.google.com/python/docs/reference/vmwareengine/latest/google.cloud.vmwareengine_v1.services.vmware_engine.VmwareEngineClient",
+      "https://docs.cloud.google.com/vmware-engine/docs/networking/howto-use-storage-only-nodes"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Manage storage-only nodes \\_|\\_ Google Cloud VMware Engine \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/vmware-engine/docs/networking/howto-use-storage-only-nodes",
+        "source_id": "site-docs-reference",
+        "final_score": 177,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Clicking the Clusters tab displays cluster data in the table. gcloud To create stretched private cloud that contains storage-only nodes using the Google Cloud CLI, do the following: Create a stretched private cloud by entering the gcloud private-clouds create command : gcloud vmware private-clouds create STRETCHED PC STORAGE NODE NAME \\ --description= DESCRIPTION \\ --location= REGION \\ --cluster= STRETCHED CLUSTER NAME \\ --node-type-config=type=standard-72,count= n \\ --node-type-config=type=storage-only-standard-72,count= m \\ --management-range= IP ADDRESS \\ --vmware-engine-network= NETWORK NAME --preferred-zone=projects/ PROJECT ID /locations/ PREFERRED ZONE \\ --secondary-zone=projects/ PROJECT ID /locations/ SECONDARY ZONE \\ --type=STRETCHED Replace the following: STRETCHED PC STORAGE NODE NAME : the name for the stretched private cloud with storage-only node.",
+          "Click Save . gcloud To expand or shrink a stretched cluster by adding or removing storage-only nodes using the Google Cloud CLI, use the gcloud vmware private-clouds clusters update command : gcloud vmware private-clouds clusters update STRETCHED CLUSTER NAME \\ --location= REGION \\ --project= PROJECT ID \\ --private-cloud= STRETCHED PC STORAGE NODE NAME \\ --node-type-config=type=standard-72,count= n \\ --node-type-config=type=storage-only-standard-72,count= m Replace the following: STRETCHED CLUSTER NAME : the name of the stretched cluster in this private cloud.",
+          "Click Create . gcloud To create a new cluster with storage-only nodes using the Google Cloud CLI, use the gcloud vmware private-clouds clusters create command : gcloud vmware private-clouds clusters create CLUSTER NAME \\ --private-cloud= PC STORAGE NODE NAME \\ --location= ZONE \\ --project= PROJECT ID \\ --node-type-config=type=standard-72,count= n \\ --node-type-config=type=storage-only-standard-72,count= m Replace the following: CLUSTER NAME : the name for the new cluster in this private cloud."
+        ]
+      },
+      {
+        "title": "\"Class VmwareEngineAsyncClient (1.11.0) \\_|\\_ Python client libraries \\_\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/vmwareengine/latest/google.cloud.vmwareengine_v1.services.vmware_engine.VmwareEngineAsyncClient",
+        "source_id": "site-python-reference",
+        "final_score": 171,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For example: projects/{project}/locations/{location}/privateClouds/{private cloud}/clusters/{cluster}/nodes/{node} This corresponds to the name field on the request instance; if request is provided, this should not be set. retry google.api core.retry async.AsyncRetry Designation of what errors, if any, should be retried. timeout float The timeout for this request. metadata Sequence[Tuple[str, Union[str, bytes]]] Key/value pairs which should be sent along with the request as metadata.",
+          "For example: projects/my-project/locations/us-central1-a/privateClouds/my-cloud/clusters/my-cluster This corresponds to the parent field on the request instance; if request is provided, this should not be set. retry google.api core.retry async.AsyncRetry Designation of what errors, if any, should be retried. timeout float The timeout for this request. metadata Sequence[Tuple[str, Union[str, bytes]]] Key/value pairs which should be sent along with the request as metadata.",
+          "For example: projects/my-project/locations/us-central1-a/privateClouds/my-cloud/clusters/my-cluster This corresponds to the name field on the request instance; if request is provided, this should not be set. retry google.api core.retry async.AsyncRetry Designation of what errors, if any, should be retried. timeout float The timeout for this request. metadata Sequence[Tuple[str, Union[str, bytes]]] Key/value pairs which should be sent along with the request as metadata."
+        ]
+      },
+      {
+        "title": "\"Class VmwareEngineClient (1.11.0) \\_|\\_ Python client libraries \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/vmwareengine/latest/google.cloud.vmwareengine_v1.services.vmware_engine.VmwareEngineClient",
+        "source_id": "site-python-reference",
+        "final_score": 171,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For example: projects/{project}/locations/{location}/privateClouds/{private cloud}/clusters/{cluster}/nodes/{node} This corresponds to the name field on the request instance; if request is provided, this should not be set. retry google.api core.retry.Retry Designation of what errors, if any, should be retried. timeout float The timeout for this request. metadata Sequence[Tuple[str, Union[str, bytes]]] Key/value pairs which should be sent along with the request as metadata.",
+          "For example: projects/my-project/locations/us-central1-a/privateClouds/my-cloud/clusters/my-cluster This corresponds to the parent field on the request instance; if request is provided, this should not be set. retry google.api core.retry.Retry Designation of what errors, if any, should be retried. timeout float The timeout for this request. metadata Sequence[Tuple[str, Union[str, bytes]]] Key/value pairs which should be sent along with the request as metadata.",
+          "For example: projects/my-project/locations/us-central1-a/privateClouds/my-cloud/clusters/my-cluster This corresponds to the name field on the request instance; if request is provided, this should not be set. retry google.api core.retry.Retry Designation of what errors, if any, should be retried. timeout float The timeout for this request. metadata Sequence[Tuple[str, Union[str, bytes]]] Key/value pairs which should be sent along with the request as metadata."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "async.AsyncRetry",
+      "core.retry",
+      "core.retry.Retry",
+      "vmwareengine.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vmware-engine/docs/networking/howto-use-storage-only-nodes",
+        "https://docs.cloud.google.com/python/docs/reference/vmwareengine/latest/google.cloud.vmwareengine_v1.services.vmware_engine.VmwareEngineAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/vmwareengine/latest/google.cloud.vmwareengine_v1.services.vmware_engine.VmwareEngineClient"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vmware-engine/docs/networking/howto-use-storage-only-nodes",
+        "https://docs.cloud.google.com/python/docs/reference/vmwareengine/latest/google.cloud.vmwareengine_v1.services.vmware_engine.VmwareEngineAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/vmwareengine/latest/google.cloud.vmwareengine_v1.services.vmware_engine.VmwareEngineClient"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vmware-engine/docs/networking/howto-use-storage-only-nodes",
+        "https://docs.cloud.google.com/python/docs/reference/vmwareengine/latest/google.cloud.vmwareengine_v1.services.vmware_engine.VmwareEngineAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/vmwareengine/latest/google.cloud.vmwareengine_v1.services.vmware_engine.VmwareEngineClient"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vmware-engine/docs/networking/howto-use-storage-only-nodes",
+        "https://docs.cloud.google.com/python/docs/reference/vmwareengine/latest/google.cloud.vmwareengine_v1.services.vmware_engine.VmwareEngineAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/vmwareengine/latest/google.cloud.vmwareengine_v1.services.vmware_engine.VmwareEngineClient"
+      ]
+    }
+  ]
+}

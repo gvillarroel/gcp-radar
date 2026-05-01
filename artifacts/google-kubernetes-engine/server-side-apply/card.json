@@ -1,0 +1,141 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:39.542Z",
+  "source_step08_card": "data/step-08/current/products/google-kubernetes-engine/card.json",
+  "product_name": "Google Kubernetes Engine",
+  "product_slug": "google-kubernetes-engine",
+  "feature_name": "Server-side Apply",
+  "feature_slug": "server-side-apply",
+  "summary": "Server-side Apply lets clients declaratively merge fully specified object intent while tracking field ownership.",
+  "extended_definition": "Server-side Apply lets clients declaratively merge fully specified object intent while tracking field ownership.",
+  "lifecycle": {
+    "latest_feature_date": "2021-10-01",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/apache-kafka-strimzi"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Security bulletins \\_|\\_ Google Kubernetes Engine (GKE) \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "source_id": "site-docs-reference-2",
+        "final_score": 149,
+        "relevance": "",
+        "evidence_snippets": [
+          "For security purposes, even if you have node auto-upgrades enabled, we recommend that you manually upgrade your node pools to one of the following GKE versions: Container-Optimized OS: 1.21.14-gke.7100 and later Ubuntu: 1.21.14-gke.9400 and later 1.22.15-gke.2400 and later 1.23.13-gke.800 and later 1.24.7-gke.800 and later 1.25.3-gke.700 and later A recent feature of release channels lets you apply a patch without having to unsubscribe from a channel.",
+          "Even if you have node auto-upgrade enabled, we recommend that you manually upgrade your cluster and Windows Server node pools to one of the following GKE versions or later: 1.24.17-gke.6100 1.25.15-gke.2000 1.26.10-gke.2000 1.27.7-gke.2000 1.28.3-gke.1600 You can apply patch versions from newer release channels if your cluster runs the same minor version in its own release channel.",
+          "For security purposes, even if you have node auto-upgrades enabled, we recommend that you manually upgrade your node pools to one of the following GKE versions: 1.22.15-gke.2300 and later 1.23.13-gke.700 and later 1.24.7-gke.700 and later A recent feature of release channels lets you apply a patch without having to unsubscribe from a channel."
+        ]
+      },
+      {
+        "title": "\"Deploy Apache Kafka to GKE using Strimzi \\_|\\_ Kubernetes Engine \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/apache-kafka-strimzi",
+        "source_id": "site-docs-root",
+        "final_score": 133,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Deployment architecture A Kafka cluster consists of one or more servers, known as brokers , which collaborate to manage incoming data streams and facilitate publish-subscribe messaging for Kafka clients, referred to as consumers .",
+          "A Service named my-cluster-kafka-bootstrap , which serves as the bootstrap server for Kafka clients connecting from within the Kubernetes cluster.",
+          "Communication inside the cluster secured by self-signed certificates: separate Certificate Authorities (CAs) for cluster and clients (mTLS)."
+        ]
+      },
+      {
+        "title": "\"MCP Tools Reference: container.googleapis.com \\_|\\_ Google Kubernetes Engine\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster",
+        "source_id": "site-api-reference",
+        "final_score": 133,
+        "relevance": "",
+        "evidence_snippets": [
+          "Unique id for the cluster. loggingConfig object ( LoggingConfig ) Logging configuration for the cluster. monitoringConfig object ( MonitoringConfig ) Monitoring configuration for the cluster. nodePoolAutoConfig object ( NodePoolAutoConfig ) Node pool configs that apply to all auto-provisioned node pools in autopilot clusters and node auto-provisioning enabled clusters. podAutoscaling object ( PodAutoscaling ) The config for pod autoscaling. etag string This checksum is computed by the server based on the value of cluster fields, and may be sent on update requests to ensure the client has an up-to-date value before proceeding. fleet object ( Fleet ) Fleet information for the cluster. securityPostureConfig object ( SecurityPostureConfig ) Optional.",
+          "ResourceManagerTags JSON representation { \"tags\" : { string : string , ... } } Fields tags map (key: string, value: string) TagKeyValue must be in one of the following formats ([KEY]=[VALUE]) 1. tagKeys/{tag key id}=tagValues/{tag value id} 2. {org id}/{tag key name}={tag value name} 3. {project id}/{tag key name}={tag value name} TagsEntry JSON representation { \"key\" : string , \"value\" : string } Fields key string value string SecondaryBootDisk JSON representation { \"mode\" : enum ( Mode ) , \"diskImage\" : string } Fields mode enum ( Mode ) Disk mode (container image cache, etc.) diskImage string Fully-qualified resource ID for an existing disk image.",
+          "Update info contains relevant information during a node pool update. etag string This checksum is computed by the server based on the value of node pool fields, and may be sent on update requests to ensure the client has an up-to-date value before proceeding. queuedProvisioning object ( QueuedProvisioning ) Specifies the configuration of queued provisioning. bestEffortProvisioning object ( BestEffortProvisioning ) Enable best effort provisioning for nodes nodeDrainConfig object ( NodeDrainConfig ) Specifies the node drain configuration for this node pool."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "container.googleapis.com",
+      "gke.1600",
+      "gke.2000",
+      "gke.2300",
+      "gke.2400",
+      "gke.6100",
+      "gke.700",
+      "gke.7100",
+      "gke.800",
+      "gke.9400"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/apache-kafka-strimzi"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/apache-kafka-strimzi"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/apache-kafka-strimzi"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/apache-kafka-strimzi"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/apache-kafka-strimzi"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/apache-kafka-strimzi"
+      ]
+    }
+  ]
+}

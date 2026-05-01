@@ -1,0 +1,291 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:49.581Z",
+  "source_step08_card": "data/step-08/current/products/virtual-private-cloud/card.json",
+  "product_name": "Virtual Private Cloud",
+  "product_slug": "virtual-private-cloud",
+  "feature_name": "roles/compute.securityAdmin",
+  "feature_slug": "roles-compute-securityadmin",
+  "summary": "The Compute Security Admin IAM role is now generally available for VPC.",
+  "extended_definition": "The Compute Security Admin IAM role is now generally available for VPC.",
+  "lifecycle": {
+    "latest_feature_date": "2016-05-11",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/concepts/access-control",
+      "https://docs.cloud.google.com/vpc/docs/about-peering-connections",
+      "https://docs.cloud.google.com/vpc/docs/access-service-other-vpc-network",
+      "https://docs.cloud.google.com/vpc/docs/shared-vpc"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Access the service from another VPC network \\_|\\_ Virtual Private Cloud\\",
+        "url": "https://docs.cloud.google.com/vpc/docs/access-service-other-vpc-network",
+        "source_id": "site-docs-root-2",
+        "final_score": 198,
+        "relevance": "",
+        "evidence_snippets": [
+          "Enable the API Make sure that you have the following role or roles on the project: Compute Engine > Compute Network Admin, Compute Engine > Compute Instance Admin Check for the roles In the Google Cloud console, go to the IAM page.",
+          "Roles required to enable APIs To enable APIs, you need the Service Usage Admin IAM role ( roles/serviceusage.serviceUsageAdmin ), which contains the serviceusage.services.enable permission.",
+          "Grant the roles In the Google Cloud console, go to the IAM page."
+        ]
+      },
+      {
+        "title": "Shared VPC \\_|\\_ Virtual Private Cloud \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vpc/docs/shared-vpc",
+        "source_id": "site-docs-root",
+        "final_score": 195,
+        "relevance": "",
+        "evidence_snippets": [
+          "Security Admin • IAM principal in the host project, or • IAM principal in the organization A Shared VPC Admin can define a Security Admin by granting an IAM principal the Security Admin ( compute.securityAdmin ) role to the host project.",
+          "Shared VPC Admin ( compute.xpnAdmin and resourcemanager.projectIamAdmin ) • IAM principal in the organization, or • IAM principal in a folder Shared VPC Admins have the Compute Shared VPC Admin ( compute.xpnAdmin ) and Project IAM Admin ( resourcemanager.projectIamAdmin ) roles for the organization or one or more folders.",
+          "Service Project Admin ( compute.networkUser ) • IAM principal in the organization, or • IAM principal in a host project, or • IAM principal in some subnets in the host project A Shared VPC Admin defines a Service Project Admin by granting an IAM principal the Network User ( compute.networkUser ) role to either the whole host project or select subnets of its Shared VPC networks ."
+        ]
+      },
+      {
+        "title": "\"Roles and permissions \\_|\\_ Network Intelligence Center - Connectivity Tests\\",
+        "url": "https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/concepts/access-control",
+        "source_id": "site-iam-reference",
+        "final_score": 190,
+        "relevance": "",
+        "evidence_snippets": [
+          "For more information about project roles and Google Cloud resources, see the following documentation: Resource Manager documentation Identity and Access Management documentation Compute Engine documentation describing access control Predefined roles Connectivity Tests has the following predefined roles: networkmanagement.admin has permission to perform all operations on a test resource. networkmanagement.viewer has permission to list or get a specific test resource.",
+          "Lowest-level resources where you can grant this role: Project networkmanagement. connectivitytests. get networkmanagement. connectivitytests. getIamPolicy networkmanagement. connectivitytests. list networkmanagement.locations. networkmanagement. locations. get networkmanagement. locations. list networkmanagement. monitoringpoints. get networkmanagement. monitoringpoints. list networkmanagement. networkpaths. networkmanagement. networkpaths. get networkmanagement. networkpaths. list networkmanagement. operations. get networkmanagement. operations. list networkmanagement. providers. get networkmanagement. providers. list networkmanagement. topologygraphs. read networkmanagement. vpcflowlogsconfigs. get networkmanagement. vpcflowlogsconfigs. list networkmanagement.webpaths. networkmanagement.webpaths.get networkmanagement. webpaths. list resourcemanager. organizations. get resourcemanager.projects.get resourcemanager.projects.list Cloud Network Insights Admin Beta ( roles/ networkmanagement.CloudNetworkInsightsAdmin ) Full access to Cloud Network Insights resources. networkmanagement.locations. networkmanagement. locations. get networkmanagement. locations. list networkmanagement. monitoringpoints. networkmanagement. monitoringpoints. downloadConfig networkmanagement. monitoringpoints. get networkmanagement. monitoringpoints. list networkmanagement. networkpaths. networkmanagement. networkpaths. get networkmanagement. networkpaths. list networkmanagement. operations. get networkmanagement. operations. list networkmanagement.providers. networkmanagement. providers. create networkmanagement. providers. delete networkmanagement. providers. generateProviderAccessToken networkmanagement. providers. get networkmanagement. providers. list networkmanagement.webpaths. networkmanagement.webpaths.get networkmanagement. webpaths. list resourcemanager. organizations. get resourcemanager.projects.get resourcemanager.projects.list Cloud Network Insights Editor Beta ( roles/ networkmanagement.CloudNetworkInsightsEditor ) Editor access to Cloud Network Insights resources. networkmanagement.locations. networkmanagement. locations. get networkmanagement. locations. list networkmanagement. monitoringpoints. networkmanagement. monitoringpoints. downloadConfig networkmanagement. monitoringpoints. get networkmanagement. monitoringpoints. list networkmanagement. networkpaths. networkmanagement. networkpaths. get networkmanagement. networkpaths. list networkmanagement. operations. get networkmanagement. operations. list networkmanagement.providers. networkmanagement. providers. create networkmanagement. providers. delete networkmanagement. providers. generateProviderAccessToken networkmanagement. providers. get networkmanagement. providers. list networkmanagement.webpaths. networkmanagement.webpaths.get networkmanagement. webpaths. list resourcemanager. organizations. get resourcemanager.projects.get resourcemanager.projects.list Cloud Network Insights Viewer Beta ( roles/ networkmanagement.CloudNetworkInsightsViewer ) Read-only access to Cloud Network Insights resources. networkmanagement. monitoringpoints. get networkmanagement. monitoringpoints. list networkmanagement. networkpaths. networkmanagement. networkpaths. get networkmanagement. networkpaths. list networkmanagement. providers. generateProviderAccessToken networkmanagement. providers. get networkmanagement. providers. list networkmanagement.webpaths. networkmanagement.webpaths.get networkmanagement. webpaths. list resourcemanager. organizations. get resourcemanager.projects.get resourcemanager.projects.list Service agent roles Service agent roles should only be granted to service agents .",
+          "Warning: Do not grant service agent roles to any principals except service agents . cloudsql.instances.get cloudsql.instances.list compute.addresses.get compute.addresses.list compute.backendServices.get compute.backendServices.list compute. externalVpnGateways. get compute. externalVpnGateways. list compute.firewalls.get compute.firewalls.list compute.forwardingRules.get compute.forwardingRules.list compute.globalAddresses.get compute.globalAddresses.list compute. globalForwardingRules. get compute. globalForwardingRules. list compute. globalNetworkEndpointGroups. get compute. globalNetworkEndpointGroups. list compute.healthChecks.get compute.healthChecks.list compute.httpHealthChecks.get compute.httpHealthChecks.list compute.httpsHealthChecks.get compute.httpsHealthChecks.list compute.instanceGroups.get compute.instanceGroups.list compute.instances.get compute.instances.list compute. networkEndpointGroups. get compute. networkEndpointGroups. list compute.networks.get compute. networks. getEffectiveFirewalls compute.networks.list compute. networks. listPeeringRoutes compute.packetMirrorings.get compute.packetMirrorings.list compute. regionBackendServices. get compute. regionBackendServices. list compute.regionHealthChecks.get compute. regionHealthChecks. list compute. regionNetworkEndpointGroups. get compute. regionNetworkEndpointGroups. list compute. regionTargetHttpProxies. get compute. regionTargetHttpProxies. list compute. regionTargetHttpsProxies. get compute. regionTargetHttpsProxies. list compute. regionTargetTcpProxies. get compute. regionTargetTcpProxies. list compute.regionUrlMaps.get compute.regionUrlMaps.list compute.routers.get compute.routers.list compute.routes.get compute.routes.list compute.subnetworks.get compute.subnetworks.list compute.targetGrpcProxies.get compute.targetGrpcProxies.list compute.targetHttpProxies.get compute.targetHttpProxies.list compute.targetHttpsProxies.get compute. targetHttpsProxies. list compute.targetInstances.get compute.targetInstances.list compute.targetPools.get compute.targetPools.list compute.targetSslProxies.get compute.targetSslProxies.list compute.targetTcpProxies.get compute.targetTcpProxies.list compute.targetVpnGateways.get compute.targetVpnGateways.list compute.urlMaps.get compute.urlMaps.list compute.vpnGateways.get compute.vpnGateways.list compute.vpnTunnels.get compute.vpnTunnels.list container.clusters.get container.clusters.list container.nodes.get container.nodes.list Custom roles You can create custom roles by selecting a list of permissions from the permissions table for Connectivity Tests."
+        ]
+      },
+      {
+        "title": "\"About peering connections \\_|\\_ Virtual Private Cloud \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/vpc/docs/about-peering-connections",
+        "source_id": "site-docs-root-2",
+        "final_score": 187,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For example, if you have the Compute Network Admin role ( roles/compute.networkAdmin ) or the Compute Security Admin role ( roles/compute.securityAdmin ) for one network, you don't become a network administrator or a security administrator for the other network.",
+          "Creating a peering connection doesn't grant you any Identity and Access Management roles on the other VPC network.",
+          "For more information about route exchange options, see the following: Options for exchanging subnet routes Options for exchanging static routes Options for exchanging dynamic routes Connection mode The connection mode determines how a peering connection is administered."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "explicit",
+    "explicit_roles": [
+      "roles/accessapproval.admin",
+      "roles/accessapproval.approver",
+      "roles/accessapproval.configEditor"
+    ],
+    "explicit_permissions": [
+      {
+        "permission": "resourcemanager.projects.get",
+        "group": "resourcemanager",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver",
+          "roles/accessapproval.configEditor"
+        ]
+      },
+      {
+        "permission": "resourcemanager.projects.list",
+        "group": "resourcemanager",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver",
+          "roles/accessapproval.configEditor"
+        ]
+      }
+    ],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cloudsql.instances.get",
+      "cloudsql.instances.list",
+      "compute.addresses.get",
+      "compute.addresses.list",
+      "compute.backendServices.get",
+      "compute.backendServices.list",
+      "compute.firewalls.get",
+      "compute.firewalls.list",
+      "compute.forwardingRules.get",
+      "compute.forwardingRules.list",
+      "compute.globalAddresses.get",
+      "compute.globalAddresses.list",
+      "compute.healthChecks.get",
+      "compute.healthChecks.list",
+      "compute.httpHealthChecks.get",
+      "compute.httpHealthChecks.list",
+      "compute.httpsHealthChecks.get",
+      "compute.httpsHealthChecks.list",
+      "compute.instanceGroups.get",
+      "compute.instanceGroups.list",
+      "compute.instances.get",
+      "compute.instances.list",
+      "compute.networkAdmin",
+      "compute.networks.get",
+      "compute.networks.list",
+      "compute.networkUser",
+      "compute.networkViewer",
+      "compute.packetMirrorings.get",
+      "compute.packetMirrorings.list",
+      "compute.regionHealthChecks.get",
+      "compute.regionUrlMaps.get",
+      "compute.regionUrlMaps.list",
+      "compute.routers.get",
+      "compute.routers.list",
+      "compute.routes.get",
+      "compute.routes.list",
+      "compute.securityAdmin",
+      "compute.subnetworks.get",
+      "compute.subnetworks.list",
+      "compute.targetGrpcProxies.get",
+      "compute.targetGrpcProxies.list",
+      "compute.targetHttpProxies.get",
+      "compute.targetHttpProxies.list",
+      "compute.targetHttpsProxies.get",
+      "compute.targetInstances.get",
+      "compute.targetInstances.list",
+      "compute.targetPools.get",
+      "compute.targetPools.list",
+      "compute.targetSslProxies.get",
+      "compute.targetSslProxies.list",
+      "compute.targetTcpProxies.get",
+      "compute.targetTcpProxies.list",
+      "compute.targetVpnGateways.get",
+      "compute.targetVpnGateways.list",
+      "compute.urlMaps.get",
+      "compute.urlMaps.list",
+      "compute.vpnGateways.get",
+      "compute.vpnGateways.list",
+      "compute.vpnTunnels.get",
+      "compute.vpnTunnels.list",
+      "compute.xpnAdmin",
+      "container.clusters.get",
+      "container.clusters.list",
+      "container.nodes.get",
+      "container.nodes.list",
+      "networkmanagement.admin",
+      "networkmanagement.CloudNetworkInsightsAdmin",
+      "networkmanagement.CloudNetworkInsightsEditor",
+      "networkmanagement.CloudNetworkInsightsViewer",
+      "networkmanagement.locations",
+      "networkmanagement.providers",
+      "networkmanagement.viewer",
+      "networkmanagement.webpaths",
+      "networkmanagement.webpaths.get",
+      "resourcemanager.projectIamAdmin",
+      "serviceusage.services.enable",
+      "serviceusage.serviceUsageAdmin"
+    ],
+    "missing_inventory_roles": [
+      "roles/compute.networkAdmin",
+      "roles/compute.networkViewer",
+      "roles/compute.securityAdmin",
+      "roles/serviceusage.serviceUsageAdmin"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/access-service-other-vpc-network",
+        "https://docs.cloud.google.com/vpc/docs/shared-vpc",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/concepts/access-control",
+        "https://docs.cloud.google.com/vpc/docs/about-peering-connections"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/access-service-other-vpc-network",
+        "https://docs.cloud.google.com/vpc/docs/shared-vpc",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/concepts/access-control",
+        "https://docs.cloud.google.com/vpc/docs/about-peering-connections"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/access-service-other-vpc-network",
+        "https://docs.cloud.google.com/vpc/docs/shared-vpc",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/concepts/access-control",
+        "https://docs.cloud.google.com/vpc/docs/about-peering-connections"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/access-service-other-vpc-network",
+        "https://docs.cloud.google.com/vpc/docs/shared-vpc",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/concepts/access-control",
+        "https://docs.cloud.google.com/vpc/docs/about-peering-connections"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/access-service-other-vpc-network",
+        "https://docs.cloud.google.com/vpc/docs/shared-vpc",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/concepts/access-control",
+        "https://docs.cloud.google.com/vpc/docs/about-peering-connections"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/access-service-other-vpc-network",
+        "https://docs.cloud.google.com/vpc/docs/shared-vpc",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/concepts/access-control",
+        "https://docs.cloud.google.com/vpc/docs/about-peering-connections"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/access-service-other-vpc-network",
+        "https://docs.cloud.google.com/vpc/docs/shared-vpc",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/concepts/access-control",
+        "https://docs.cloud.google.com/vpc/docs/about-peering-connections"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/access-service-other-vpc-network",
+        "https://docs.cloud.google.com/vpc/docs/shared-vpc",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/concepts/access-control",
+        "https://docs.cloud.google.com/vpc/docs/about-peering-connections"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/access-service-other-vpc-network",
+        "https://docs.cloud.google.com/vpc/docs/shared-vpc",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/concepts/access-control",
+        "https://docs.cloud.google.com/vpc/docs/about-peering-connections"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/access-service-other-vpc-network",
+        "https://docs.cloud.google.com/vpc/docs/shared-vpc",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/concepts/access-control",
+        "https://docs.cloud.google.com/vpc/docs/about-peering-connections"
+      ]
+    }
+  ]
+}

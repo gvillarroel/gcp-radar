@@ -1,0 +1,161 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:22.475Z",
+  "source_step08_card": "data/step-08/current/products/chat-api/card.json",
+  "product_name": "Chat API",
+  "product_slug": "chat-api",
+  "feature_name": "Read-only custom emoji scope",
+  "feature_slug": "read-only-custom-emoji-scope",
+  "summary": "A read-only OAuth scope lets developers get and list custom emoji through the Chat API.",
+  "extended_definition": "A read-only OAuth scope lets developers get and list custom emoji through the Chat API.",
+  "lifecycle": {
+    "latest_feature_date": "2024-11-04",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/workspace/chat/api/reference/rest/v1/customEmojis/list",
+      "https://developers.google.com/workspace/chat/api/reference/rpc/google.chat.v1",
+      "https://developers.google.com/workspace/chat/create-messages"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Send a message using the Google Chat API \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/workspace/chat/create-messages",
+        "source_id": "site-docs-root",
+        "final_score": 217,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "I created this message by calling \" + \"the Chat API\\'s messages.create() method.\" ) . addCardsV2 ( CardWithId . newBuilder (). setCard ( Card . newBuilder () . setHeader ( CardHeader . newBuilder () . setTitle ( \"About this message\" ) . setImageUrl ( \"https://fonts.gstatic.com/s/i/short-term/release/googlesymbols/info/default/24px.svg\" )) . addSections ( Section . newBuilder () . setHeader ( \"Contents\" ) . addWidgets ( Widget . newBuilder (). setTextParagraph ( TextParagraph . newBuilder (). setText ( \"🔡 <b>Text</b> which can include \" + \"hyperlinks 🔗, emojis 😄🎉, and @mentions 🗣️.\" ))) . addWidgets ( Widget . newBuilder (). setTextParagraph ( TextParagraph . newBuilder (). setText ( \"🖼️ A <b>card</b> to display visual elements \" + \"and request information such as text 🔤, \" + \"dates and times 📅, and selections ☑️.\" ))) . addWidgets ( Widget . newBuilder (). setTextParagraph ( TextParagraph . newBuilder (). setText ( \"👉🔘 An <b>accessory widget</b> which adds \" + \"a button to the bottom of a message.\" )))) . addSections ( Section . newBuilder () . setHeader ( \"What's next\" ) . setCollapsible ( true ) . addWidgets ( Widget . newBuilder (). setTextParagraph ( TextParagraph . newBuilder (). setText ( \"❤️ <a href='https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces.messages.reactions/create'>Add a reaction</a>.\" ))) . addWidgets ( Widget . newBuilder (). setTextParagraph ( TextParagraph . newBuilder (). setText ( \"🔄 <a href='https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces.messages/patch'>Update</a> \" + \"or ❌ <a href='https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces.messages/delete'>delete</a> \" + \"the message.\" )))))) . addAccessoryWidgets ( AccessoryWidget . newBuilder () . setButtonList ( ButtonList . newBuilder () . addButtons ( Button . newBuilder () . setText ( \"View documentation\" ) . setIcon ( Icon . newBuilder () . setMaterialIcon ( MaterialIcon . newBuilder (). setName ( \"link\" ))) . setOnClick ( OnClick . newBuilder () . setOpenLink ( OpenLink . newBuilder () . setUrl ( \"https://developers.google.com/workspace/chat/create-messages\" ))))))); Message response = chatServiceClient . createMessage ( request . build ()); System . out . println ( JsonFormat . printer (). print ( response )); } } } Apps Script chat/advanced-service/Main.gs View on GitHub / This sample shows how to create message with app credential It relies on the OAuth2 scope 'https://www.googleapis.com/auth/chat.bot' used by service accounts. / function createMessageAppCred () { // Initialize request argument(s) // TODO(developer): Replace SPACE NAME here. const parent = \"spaces/SPACE NAME\" ; const message = { text : \"👋🌎 Hello world!",
+          "The following code shows an example of how a Chat app can send a text message with an ID to a given space on behalf of an authenticated user: Node.js chat/client-libraries/cloud/create-message-user-cred-message-id.js View on GitHub import { createClientWithUserCredentials } from './authentication-utils.js' ; const USER AUTH OAUTH SCOPES = [ 'https://www.googleapis.com/auth/chat.messages.create' , ]; // This sample shows how to create a message with user credentials and a custom // message id async function main () { // Create a client const chatClient = await createClientWithUserCredentials ( USER AUTH OAUTH SCOPES , ); // Initialize request argument(s) const request = { // Replace SPACE NAME here. parent : 'spaces/SPACE NAME' , // Message id lets chat apps get, update or delete a message without needing // to store the system assigned ID in the message's resource name messageId : 'client-MESSAGE-ID' , message : { text : 'Hello with user credential!' }, }; // Make the request const response = await chatClient . createMessage ( request ); // Handle the response console . log ( response ); } await main (); Python chat/client-libraries/cloud/create message user cred message id.py View on GitHub from authentication utils import create client with user credentials from google.apps import chat v1 as google chat SCOPES = [ \"https://www.googleapis.com/auth/chat.messages.create\" ] This sample shows how to create message with user credential with message id def create message with user cred message id (): Create a client client = create client with user credentials ( SCOPES ) Initialize request argument(s) request = google chat .",
+          "The following code shows an example of how a Chat app can send a text message in a given space on behalf of an authenticated user: Node.js chat/client-libraries/cloud/create-message-user-cred.js View on GitHub import { createClientWithUserCredentials } from './authentication-utils.js' ; const USER AUTH OAUTH SCOPES = [ 'https://www.googleapis.com/auth/chat.messages.create' , ]; // This sample shows how to create message with user credential async function main () { // Create a client const chatClient = await createClientWithUserCredentials ( USER AUTH OAUTH SCOPES , ); // Initialize request argument(s) const request = { // Replace SPACE NAME here. parent : 'spaces/SPACE NAME' , message : { text : '👋🌎 Hello world!' + 'Text messages can contain things like:\\n\\n' + ' Hyperlinks 🔗\\n' + ' Emojis 😄🎉\\n' + ' Mentions of other Chat users @ \\n\\n' + 'For details, see the ' + '<https://developers.google.com/workspace/chat/format-messages' + ' Chat API developer documentation>.' , }, }; // Make the request const response = await chatClient . createMessage ( request ); // Handle the response console . log ( response ); } await main (); Python chat/client-libraries/cloud/create message user cred.py View on GitHub from authentication utils import create client with user credentials from google.apps import chat v1 as google chat SCOPES = [ \"https://www.googleapis.com/auth/chat.messages.create\" ] def create message with user cred (): Create a client client = create client with user credentials ( SCOPES ) Initialize request argument(s) request = google chat ."
+        ]
+      },
+      {
+        "title": "Method: customEmojis.list \\_|\\_ Google Chat \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/workspace/chat/api/reference/rest/v1/customEmojis/list",
+        "source_id": "site-api-reference",
+        "final_score": 209,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Authorization scopes Requires one of the following OAuth scopes: https://www.googleapis.com/auth/chat.customemojis https://www.googleapis.com/auth/chat.customemojis.readonly For more information, see the Authorization guide .",
+          "Requires user authentication with one of the following authorization scopes : https://www.googleapis.com/auth/chat.customemojis.readonly https://www.googleapis.com/auth/chat.customemojis HTTP request GET https://chat.googleapis.com/v1/customEmojis The URL uses gRPC Transcoding syntax.",
+          "Authorization requires either chat.customemojis or chat.customemojis.readonly scope.\\n\"]]"
+        ]
+      },
+      {
+        "title": "Package google.chat.v1 \\_|\\_ Google Chat \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/workspace/chat/api/reference/rpc/google.chat.v1",
+        "source_id": "site-docs-reference",
+        "final_score": 203,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Requires user authentication with one of the following authorization scopes : https://www.googleapis.com/auth/chat.customemojis.readonly https://www.googleapis.com/auth/chat.customemojis Authorization scopes Requires one of the following OAuth scopes: https://www.googleapis.com/auth/chat.customemojis https://www.googleapis.com/auth/chat.customemojis.readonly For more information, see the Authorization guide .",
+          "Requires user authentication with one of the following authorization scopes : https://www.googleapis.com/auth/chat.customemojis.readonly https://www.googleapis.com/auth/chat.customemojis Authorization scopes Requires one of the following OAuth scopes: https://www.googleapis.com/auth/chat.customemojis https://www.googleapis.com/auth/chat.customemojis.readonly For more information, see the Authorization guide .",
+          "Index ChatService (interface) AccessoryWidget (message) ActionResponse (message) ActionResponse.ResponseType (enum) ActionResponse.SelectionItems (message) ActionResponse.UpdatedWidget (message) ActionStatus (message) Annotation (message) AnnotationType (enum) AppCommandMetadata (message) AppCommandMetadata.AppCommandType (enum) AttachedGif (message) Attachment (message) Attachment.Source (enum) AttachmentDataRef (message) CalendarEventLinkData (message) CardWithId (message) ChatSpaceLinkData (message) CompleteImportSpaceRequest (message) CompleteImportSpaceResponse (message) ContextualAddOnMarkup (message) ContextualAddOnMarkup.Card (message) ContextualAddOnMarkup.Card.CardAction (message) ContextualAddOnMarkup.Card.CardHeader (message) ContextualAddOnMarkup.Card.CardHeader.ImageStyle (enum) ContextualAddOnMarkup.Card.Section (message) CreateCustomEmojiRequest (message) CreateMembershipRequest (message) CreateMessageRequest (message) CreateMessageRequest.MessageReplyOption (enum) CreateReactionRequest (message) CreateSectionRequest (message) CreateSpaceRequest (message) CustomEmoji (message) CustomEmoji.CustomEmojiPayload (message) CustomEmojiMetadata (message) DeleteCustomEmojiRequest (message) DeleteMembershipRequest (message) DeleteMessageRequest (message) DeleteReactionRequest (message) DeleteSectionRequest (message) DeleteSpaceRequest (message) DeletionMetadata (message) DeletionMetadata.DeletionType (enum) Dialog (message) DialogAction (message) DriveDataRef (message) DriveLinkData (message) Emoji (message) EmojiReactionSummary (message) FindDirectMessageRequest (message) FindGroupChatsRequest (message) FindGroupChatsResponse (message) ForwardedMetadata (message) GetAttachmentRequest (message) GetCustomEmojiRequest (message) GetMembershipRequest (message) GetMessageRequest (message) GetSpaceEventRequest (message) GetSpaceNotificationSettingRequest (message) GetSpaceReadStateRequest (message) GetSpaceRequest (message) GetThreadReadStateRequest (message) Group (message) HistoryState (enum) ListCustomEmojisRequest (message) ListCustomEmojisResponse (message) ListMembershipsRequest (message) ListMembershipsResponse (message) ListMessagesRequest (message) ListMessagesResponse (message) ListReactionsRequest (message) ListReactionsResponse (message) ListSectionItemsRequest (message) ListSectionItemsResponse (message) ListSectionsRequest (message) ListSectionsResponse (message) ListSpaceEventsRequest (message) ListSpaceEventsResponse (message) ListSpacesRequest (message) ListSpacesResponse (message) MatchedUrl (message) MeetSpaceLinkData (message) MeetSpaceLinkData.HuddleStatus (enum) MeetSpaceLinkData.Type (enum) Membership (message) Membership.MembershipRole (enum) Membership.MembershipState (enum) MembershipBatchCreatedEventData (message) MembershipBatchDeletedEventData (message) MembershipBatchUpdatedEventData (message) MembershipCreatedEventData (message) MembershipDeletedEventData (message) MembershipUpdatedEventData (message) Message (message) MessageBatchCreatedEventData (message) MessageBatchDeletedEventData (message) MessageBatchUpdatedEventData (message) MessageCreatedEventData (message) MessageDeletedEventData (message) MessageUpdatedEventData (message) MoveSectionItemRequest (message) MoveSectionItemResponse (message) PositionSectionRequest (message) PositionSectionRequest.Position (enum) PositionSectionResponse (message) QuotedMessageMetadata (message) QuotedMessageMetadata.QuoteType (enum) QuotedMessageSnapshot (message) Reaction (message) ReactionBatchCreatedEventData (message) ReactionBatchDeletedEventData (message) ReactionCreatedEventData (message) ReactionDeletedEventData (message) ReplaceMessageCardsRequest (message) ReplaceMessageCardsResponse (message) RichLinkMetadata (message) RichLinkMetadata.RichLinkType (enum) SearchSpacesRequest (message) SearchSpacesResponse (message) Section (message) Section.SectionType (enum) SectionItem (message) SetUpSpaceRequest (message) SlashCommand (message) SlashCommandMetadata (message) SlashCommandMetadata.Type (enum) Space (message) Space.AccessSettings (message) Space.AccessSettings.AccessState (enum) Space.MembershipCount (message) Space.PermissionSetting (message) Space.PermissionSettings (message) Space.PredefinedPermissionSettings (enum) Space.SpaceDetails (message) Space.SpaceThreadingState (enum) Space.SpaceType (enum) Space.Type (enum) SpaceBatchUpdatedEventData (message) SpaceEvent (message) SpaceNotificationSetting (message) SpaceNotificationSetting.MuteSetting (enum) SpaceNotificationSetting.NotificationSetting (enum) SpaceReadState (message) SpaceUpdatedEventData (message) SpaceView (enum) Thread (message) ThreadReadState (message) UpdateMembershipRequest (message) UpdateMessageRequest (message) UpdateSectionRequest (message) UpdateSpaceNotificationSettingRequest (message) UpdateSpaceReadStateRequest (message) UpdateSpaceRequest (message) User (message) User.Type (enum) UserMentionMetadata (message) UserMentionMetadata.Type (enum) WidgetMarkup (message) WidgetMarkup.Button (message) WidgetMarkup.FormAction (message) WidgetMarkup.FormAction.ActionParameter (message) WidgetMarkup.Icon (enum) WidgetMarkup.Image (message) WidgetMarkup.ImageButton (message) WidgetMarkup.KeyValue (message) WidgetMarkup.OnClick (message) WidgetMarkup.OpenLink (message) WidgetMarkup.TextButton (message) WidgetMarkup.TextParagraph (message) ChatService Enables developers to build Chat apps and integrations on Google Chat Platform."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "appsscript.json",
+      "chat.admin.memberships",
+      "chat.admin.memberships.readonly",
+      "chat.app.memberships",
+      "chat.bot",
+      "chat.customemojis",
+      "chat.customemojis.readonly",
+      "chat.googleapis.com",
+      "chat.import",
+      "chat.memberships",
+      "chat.memberships.readonly",
+      "chat.messages.create",
+      "cred.js",
+      "cred.py",
+      "developers.google.com",
+      "fonts.gstatic.com",
+      "id.js",
+      "id.py",
+      "messages.create",
+      "spaces.messages",
+      "spaces.messages.reactions",
+      "utils.js"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://developers.google.com/workspace/chat/create-messages",
+        "https://developers.google.com/workspace/chat/api/reference/rest/v1/customEmojis/list",
+        "https://developers.google.com/workspace/chat/api/reference/rpc/google.chat.v1"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://developers.google.com/workspace/chat/create-messages",
+        "https://developers.google.com/workspace/chat/api/reference/rest/v1/customEmojis/list",
+        "https://developers.google.com/workspace/chat/api/reference/rpc/google.chat.v1"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://developers.google.com/workspace/chat/create-messages",
+        "https://developers.google.com/workspace/chat/api/reference/rest/v1/customEmojis/list",
+        "https://developers.google.com/workspace/chat/api/reference/rpc/google.chat.v1"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://developers.google.com/workspace/chat/create-messages",
+        "https://developers.google.com/workspace/chat/api/reference/rest/v1/customEmojis/list",
+        "https://developers.google.com/workspace/chat/api/reference/rpc/google.chat.v1"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://developers.google.com/workspace/chat/create-messages",
+        "https://developers.google.com/workspace/chat/api/reference/rest/v1/customEmojis/list",
+        "https://developers.google.com/workspace/chat/api/reference/rpc/google.chat.v1"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://developers.google.com/workspace/chat/create-messages",
+        "https://developers.google.com/workspace/chat/api/reference/rest/v1/customEmojis/list",
+        "https://developers.google.com/workspace/chat/api/reference/rpc/google.chat.v1"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://developers.google.com/workspace/chat/create-messages",
+        "https://developers.google.com/workspace/chat/api/reference/rest/v1/customEmojis/list",
+        "https://developers.google.com/workspace/chat/api/reference/rpc/google.chat.v1"
+      ]
+    }
+  ]
+}

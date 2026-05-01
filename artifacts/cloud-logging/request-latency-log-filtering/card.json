@@ -1,0 +1,116 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:24.398Z",
+  "source_step08_card": "data/step-08/current/products/cloud-logging/card.json",
+  "product_name": "Cloud Logging",
+  "product_slug": "cloud-logging",
+  "feature_name": "Request latency log filtering",
+  "feature_slug": "request-latency-log-filtering",
+  "summary": "Cloud Logging can filter log entries by request latency and trace-data availability.",
+  "extended_definition": "Cloud Logging can filter log entries by request latency and trace-data availability.",
+  "lifecycle": {
+    "latest_feature_date": "2018-10-19",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/logging/docs/api/gcloud-logging",
+      "https://docs.cloud.google.com/logging/docs/reference/v2/rest/v2/LogEntry",
+      "https://docs.cloud.google.com/logging/docs/view/logging-query-language"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "LogEntry \\_|\\_ Cloud Logging \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/logging/docs/reference/v2/rest/v2/LogEntry",
+        "source_id": "site-docs-reference",
+        "final_score": 124,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "JSON representation { \"requestMethod\" : string , \"requestUrl\" : string , \"requestSize\" : string , \"status\" : integer , \"responseSize\" : string , \"userAgent\" : string , \"remoteIp\" : string , \"serverIp\" : string , \"referer\" : string , \"latency\" : string , \"cacheLookup\" : boolean , \"cacheHit\" : boolean , \"cacheValidatedWithOriginServer\" : boolean , \"cacheFillBytes\" : string , \"protocol\" : string } Fields requestMethod string The request method.",
+          "Examples: \"192.168.1.1\" , \"10.0.0.1:80\" , \"FE80::0202:B3FF:FE1E:8329\" . referer string The referer URL of the request, as defined in HTTP/1.1 Header Field Definitions . latency string ( Duration format) The request processing latency on the server, from the time the request was received until the response was sent.",
+          "For example, the following filter expression will match log entries with severities INFO , NOTICE , and WARNING : severity > DEBUG AND severity <= WARNING If you are writing log entries, you should map other severity encodings to one of these standard levels."
+        ]
+      },
+      {
+        "title": "Logging query language \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/logging/docs/view/logging-query-language",
+        "source_id": "site-docs-root",
+        "final_score": 124,
+        "relevance": "",
+        "evidence_snippets": [
+          "To use double quotes for escaping special characters using the gcloud logging command, wrap the entire query with single quotes instead: gcloud logging read 'resource.type=gce instance AND jsonPayload.message=\"Stopped Unattended Upgrades Shutdown.\"' gcloud logging read 'timestamp>=\"2020-06-17T21:00:00Z\"' When you are filtering on a field that is associated with the Any message type, the value field is automatically traversed.",
+          "For in-depth information about the Logging query language design, see the Google API formal specifications for filtering .",
+          "Each field is followed by the next level of names for that field, if applicable: httpRequest : { cacheFillBytes , cacheHit , cacheLookup , cacheValidatedWithOriginServer , latency , protocol , referer , remoteIp , requestMethod , requestSize , requestUrl , responseSize , serverIp , status , userAgent } insertId jsonPayload { variable } labels { variable } logName metadata { systemLabels , userLabels } operation { id , producer , first , last } protoPayload { @type , variable } receiveTimestamp resource { type , labels } severity sourceLocation : { file , line , function } spanId textPayload timestamp trace Following are examples of field path identifiers you can use in your comparisons: resource.type : If your first path identifier is resource , then the next identifier must be a field in the MonitoredResource type. httpRequest.latency : If your first path identifier is httpRequest , then the next identifier must be a field in the HttpRequest type. labels.[KEY] If your first path identifier is labels , then the next identifier, [KEY] , must be one of the keys from the key-value pairs appearing in the labels field. logName : Since the logName field is a string, you can't follow it by any subfield names."
+        ]
+      },
+      {
+        "title": "Command-line interface \\_|\\_ Cloud Logging \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/logging/docs/api/gcloud-logging",
+        "source_id": "site-docs-reference",
+        "final_score": 117,
+        "relevance": "",
+        "evidence_snippets": [
+          "Show the information in the default YAML format: gcloud logging metrics describe \"myapp/request latency\" Result: bucketOptions : exponentialBuckets : growthFactor : 2.0 numFiniteBuckets : 64 scale : 0.01 description : Request latency for myapp filter : resource . type = \"gae app\" logName = \"projects/[PROJECT ID]/logs/appengine.googleapis.com%2Fnginx.request\" labelExtractors : path : EXTRACT ( httpRequest . requestUrl ) metricDescriptor : description : Request latency for myapp labels : - description : HTTP Path key : path metricKind : DELTA name : projects /[ PROJECT ID ]/ metricDescriptors / logging . googleapis . com / user / myapp / request latency type : logging . googleapis . com / user / myapp / request latency valueType : DISTRIBUTION name : myapp / request latency valueExtractor : EXTRACT ( jsonPayload . latencySeconds ) Deleting metrics Use the gcloud logging metrics delete command, corresponding to the API method projects.metrics.delete : gcloud logging metrics delete METRIC NAME Examples Delete the metric my-distribution-metric from the current project: gcloud logging metrics delete \"my-distribution-metric\" Result: Really delete metric [my-distribution-metric]?",
+          "Examples Create a distribution metric to record request latencies: gcloud logging metrics create my-distribution-metric --config-from-file=logmetric.dat where logmetric.dat contains the following: bucketOptions : exponentialBuckets : growthFactor : 2.0 numFiniteBuckets : 64 scale : 0.01 description : App Engine Request Latency filter : resource . type = \"gae app\" logName = \"projects/ PROJECT ID /logs/appengine.googleapis.com %2F nginx.request\" labelExtractors : path : EXTRACT ( httpRequest . requestUrl ) metricDescriptor : labels : - description : HTTP Path key : path metricKind : DELTA name : projects / PROJECT ID / metricDescriptors / logging . googleapis . com / user / my - distribution - metric type : logging . googleapis . com / user / my - distribution - metric valueType : DISTRIBUTION name : my - distribution - metric valueExtractor : EXTRACT ( jsonPayload . latencySeconds ) Result: Created [my-distribution-metric].",
+          "Show only the metric name and its description: gcloud logging metrics list --filter=\"metricDescriptor.valueType=DISTRIBUTION\" --format=\"table(name,description)\" Result: NAME DESCRIPTION myapp/request latency Request latency for myapp bigquery billed bytes Billed Bytes food latency How long does it take to service all food requests healthz latencies /healthz latencies in microseconds latency on food Tracking latency on food requests lines written my latency metric no-match-dist-metric pizza latency How long does it take to service pizza requests?"
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "appengine.googleapis.com",
+      "logmetric.dat",
+      "nginx.request",
+      "operation.id",
+      "projects.metrics.delete",
+      "resource.labels",
+      "resource.type",
+      "split.uid",
+      "type.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/view/logging-query-language",
+        "https://docs.cloud.google.com/logging/docs/reference/v2/rest/v2/LogEntry",
+        "https://docs.cloud.google.com/logging/docs/api/gcloud-logging"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/view/logging-query-language",
+        "https://docs.cloud.google.com/logging/docs/reference/v2/rest/v2/LogEntry",
+        "https://docs.cloud.google.com/logging/docs/api/gcloud-logging"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/view/logging-query-language",
+        "https://docs.cloud.google.com/logging/docs/reference/v2/rest/v2/LogEntry",
+        "https://docs.cloud.google.com/logging/docs/api/gcloud-logging"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,125 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:18.771Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery",
+  "feature_name": "Query execution graph visualization",
+  "feature_slug": "query-execution-graph-visualization",
+  "summary": "BigQuery provides a visual SQL-to-execution mapping with a heatmap to help understand and debug query performance.",
+  "extended_definition": "BigQuery provides a visual SQL-to-execution mapping with a heatmap to help understand and debug query performance.",
+  "lifecycle": {
+    "latest_feature_date": "2026-03-11",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners",
+      "https://docs.cloud.google.com/bigquery/docs/geospatial-tutorial-hurricane",
+      "https://docs.cloud.google.com/bigquery/docs/visualize-jupyter"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Google Cloud Ready - BigQuery Partners \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners",
+        "source_id": "site-docs-reference-5",
+        "final_score": 184,
+        "relevance": "",
+        "evidence_snippets": [
+          "Partner references Configuring BigQuery Data Transformation in BigQuery Partner Advantage page Direct link Databricks Solution Databricks Lakehouse Category BI, ML, & Advanced Analytics Description Databricks SQL provides an easy-to-use platform for analysts who want to run SQL queries on their data lake, create multiple visualization types to explore query results from different perspectives, and build and share dashboards.",
+          "It provides a lightweight, scalable, and collaborative interface for data exploration and visualization, enabling teams to create interactive dashboards directly from BigQuery data without proprietary vendor lock-in.",
+          "Partner references Explore & visualize your Google BigQuery data Use BigQuery to query Google Sheets BigQuery supported versions Partner Advantage page Direct link Neo4j Solution Neo4j Graph Database Category BI, ML, & Advanced Analytics Description Neo4j gives developers and data scientists the most trusted and advanced tools to quickly build today's intelligent applications and machine learning workflows."
+        ]
+      },
+      {
+        "title": "\"Visualize geospatial analytics data using a Colab notebook \\_|\\_ BigQuery\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/visualize-jupyter",
+        "source_id": "site-docs-root",
+        "final_score": 183,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "You can open a prebuilt version of the notebook in Colab, Colab Enterprise, or BigQuery Studio by clicking the links at the top of the GitHub version of the tutorial— BigQuery Geospatial Visualization in Colab .",
+          "The output is similar to the following: Visualize polygons Geospatial analytics lets you analyze and visualize geospatial data in BigQuery by using GEOGRAPHY data types and GoogleSQL geography functions.",
+          "This code uses the %%bigquery magic function to run the query and return the results in a DataFrame: Query the incident key and location data from the SFPD reports dataset. %% bigquery gdf incidents -- project { GCP PROJECT ID } -- use geodataframe location geography SELECT unique key , location geography FROM ( SELECT unique key , SAFE ."
+        ]
+      },
+      {
+        "title": "\"Using geospatial analytics to plot a hurricane's path \\_|\\_ BigQuery \\_\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/geospatial-tutorial-hurricane",
+        "source_id": "site-docs-reference",
+        "final_score": 157,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Objectives In this tutorial, you: Use a geospatial analytics function to convert latitude and longitude columns into geographical points Run a query that plots the path of a hurricane Visualize your results in BigQuery Visualize your results in BigQuery Geo Viz Costs BigQuery is a paid product and you will incur BigQuery usage in this tutorial.",
+          "Visualize the query results in BigQuery To visualize your results in BigQuery, follow these steps: To visualize your results in BigQuery, in the Query results pane, click Visualization .",
+          "Visualize the query results in Geo Viz You can also visualize your results using BigQuery Geo Viz — A web tool for visualization of geospatial data in BigQuery using Google Maps APIs."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "data.noaa",
+      "hurricanes.hurricanes"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners",
+        "https://docs.cloud.google.com/bigquery/docs/visualize-jupyter",
+        "https://docs.cloud.google.com/bigquery/docs/geospatial-tutorial-hurricane"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners",
+        "https://docs.cloud.google.com/bigquery/docs/visualize-jupyter",
+        "https://docs.cloud.google.com/bigquery/docs/geospatial-tutorial-hurricane"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners",
+        "https://docs.cloud.google.com/bigquery/docs/visualize-jupyter",
+        "https://docs.cloud.google.com/bigquery/docs/geospatial-tutorial-hurricane"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners",
+        "https://docs.cloud.google.com/bigquery/docs/visualize-jupyter",
+        "https://docs.cloud.google.com/bigquery/docs/geospatial-tutorial-hurricane"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners",
+        "https://docs.cloud.google.com/bigquery/docs/visualize-jupyter",
+        "https://docs.cloud.google.com/bigquery/docs/geospatial-tutorial-hurricane"
+      ]
+    }
+  ]
+}

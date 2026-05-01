@@ -1,0 +1,183 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:45.873Z",
+  "source_step08_card": "data/step-08/current/products/retail-api/card.json",
+  "product_name": "Retail API",
+  "product_slug": "retail-api",
+  "feature_name": "Retail Search with LLM",
+  "feature_slug": "retail-search-with-llm",
+  "summary": "Retail Search with LLM uses LLM-based relevance grading to improve retail search ranking quality.",
+  "extended_definition": "Retail Search with LLM uses LLM-based relevance grading to improve retail search ranking quality.",
+  "lifecycle": {
+    "latest_feature_date": "2023-12-12",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/retail/docs/catalog",
+      "https://docs.cloud.google.com/retail/docs/conversational-commerce-dev-guide",
+      "https://docs.cloud.google.com/retail/docs/conversational-filtering-dev-guide",
+      "https://docs.cloud.google.com/retail/docs/reference/rest"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Conversational Commerce agent developer's guide \\_|\\_ Vertex AI Search for\\",
+        "url": "https://docs.cloud.google.com/retail/docs/conversational-commerce-dev-guide",
+        "source_id": "site-docs-reference",
+        "final_score": 204,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Conversational Commerce agent uses search query categories to determine whether an LLM-based answer is generated and how end-user queries are handled by the Conversational and Search APIs for these scenarios: Categories Query classifications #1.",
+          "HTTP method and endpoint POST h tt ps : //retail.googleapis.com/v2/{placement=projects/ /locations/ /catalogs/ /servingConfigs/ }:search Core product Search API request: Initial query { \"placement\" : \"projects/YOUR PROJECT ID/locations/global/catalogs/default catalog/servingConfigs/default search\" , // Or if using legacy placements: // \"placement\": \"projects/YOUR PROJECT ID/locations/global/catalogs/default catalog/placements/default search\", \"query\" : \"Help me plan a party\" , // This is the original user query \"visitorId\" : \"your visitor id\" , \"branch\" : \"projects/YOUR PROJECT ID/locations/global/catalogs/default catalog/branches/default branch\" , \"pageSize\" : 20 , // Optional: Number of results to return per page \"filter\" : \"categories:(\\\"Party Supplies\\\" OR \\\"Decorations\\\" OR \\\"Food & Drink\\\")\" , // Mirroring the filter from the Conversational Commerce API \"orderBy\" : \"relevance DESC\" , // Optional \"userInfo\" : { // Optional: User information for enhanced personalization, should mirror Conversational Commerce API // \"userId\": \"user123\", \"userAgent\": \"Chrome/120.0\" }, \"searchMode\" : \"PRODUCT SEARCH\" // Typically for product searches } placement (Required) : The resource name of the Retail Search serving config or legacy placement.",
+          "HTTP method and endpoint POST h tt ps : //retail.googleapis.com/v2/{placement=projects/ /locations/ /catalogs/ /placements/ }:conversationalSearch Conversational API request: Initial query { \"query\" : \"Help me plan a party\" , \"branch\" : \"projects/{project id}/locations/{location id}/catalogs/default catalog/branches/default branch\" , \"placement\" : \"projects/{project id}/locations/global/catalogs/default catalog/placements/default search\" , \"visitorId\" : \"your visitor id\" , \"conversationId\" : \"\" , // Leave empty for the first query \"searchParams\" : { // IMPORTANT: These search parameters should mirror the configuration // of your core Search API calls to ensure consistency between LLM answers and search results. \"filter\" : \"categories:(\\\"Party Supplies\\\" OR \\\"Decorations\\\" OR \\\"Food & Drink\\\")\" }, \"userInfo\" : { // Optional: User information for enhanced personalization // Example: \"userId\": \"user123\", \"userAgent\": \"Chrome/120.0\" }, \"conversationalFilteringSpec\" : { // Optional: Controls conversational filtering behavior."
+        ]
+      },
+      {
+        "title": "\"Conversational filtering developer's guide \\_|\\_ Vertex AI Search for commerce\\",
+        "url": "https://docs.cloud.google.com/retail/docs/conversational-filtering-dev-guide",
+        "source_id": "site-docs-reference",
+        "final_score": 200,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The search results are based on the user's input and provide a new follow-up question, prompting a follow-up query and continuing the conversation in multiple turns until the user finds what they're looking for on the retailer website.",
+          "Home Documentation Industry solutions Vertex AI Search for commerce Guides Send feedback Conversational filtering developer's guide Stay organized with collections Save and categorize content based on your preferences.",
+          "Conversational API request { query : \"dress\" co n versa t io n id : \"c154d073-87f5-4edb-accd-587eabe014ff\" co n versa t io nal search spec { \"mode\" : \"CONVERSATIONAL FILTER ONLY\" user a ns wer { selec te d a ns wer { produc t a ttr ibu te value { na me : \"colors\" value : \"yellow\" } } } } } The response from the Conversational API then looks like this: Conversational API response { co n versa t io n id : \"c154d073-87f5-4edb-accd-587eabe014ff\" re f i ne d query : \"dress\" co n versa t io nal f il ter i n g resul t { addi t io nal f il ter { produc t a ttr ibu te value { na me : \"colors\" , value : \"yellow\" } } f ollowup ques t io n { f ollowup ques t io n : \"What is the occasion?\" sugges te d a ns wers { produc t a ttr ibu te value { na me : \"attribute.occasion\" , value : \"wedding\" } } sugges te d a ns wers { produc t a ttr ibu te value { na me : \"attribute.occasion\" , value : \"party\" } } } } } What you should do with the response: The Google response is basically identical to the response to the first query, except the additional filter field can be used to check off the filter box for color = yellow and should be added to any other filters that the user has selected."
+        ]
+      },
+      {
+        "title": "\"About catalogs and products \\_|\\_ Vertex AI Search for commerce \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/retail/docs/catalog",
+        "source_id": "site-docs-reference",
+        "final_score": 196,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Industry solutions Vertex AI Search for commerce Guides Send feedback About catalogs and products Stay organized with collections Save and categorize content based on your preferences.",
+          "The backend utilizes the crawled information, including how the URI was interacted with on the web, such as when your user clicks backlinks, for relevance and popularity scoring in search results.",
+          "Having two products (primary products) with the same title affect the searchability and relevance of the returned results."
+        ]
+      },
+      {
+        "title": "Vertex AI Search for commerce API \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/retail/docs/reference/rest",
+        "source_id": "site-api-reference",
+        "final_score": 180,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Industry solutions Vertex AI Search for commerce Reference Send feedback Vertex AI Search for commerce API Stay organized with collections Save and categorize content based on your preferences.",
+          "REST Resource: v2alpha.projects.locations.catalogs Methods completeQuery GET /v2alpha/{catalog=projects/ /locations/ /catalogs/ }:completeQuery Completes the specified prefix with keyword suggestions. exportAnalyticsMetrics POST /v2alpha/{catalog=projects/ /locations/ /catalogs/ }:exportAnalyticsMetrics Exports analytics metrics. getAttributesConfig GET /v2alpha/{name=projects/ /locations/ /catalogs/ /attributesConfig} Gets an AttributesConfig . getCompletionConfig GET /v2alpha/{name=projects/ /locations/ /catalogs/ /completionConfig} Gets a CompletionConfig . getConversationalSearchCustomizationConfig GET /v2alpha/{name=projects/ /locations/ /catalogs/ }/conversationalSearchCustomizationConfig Returns the conversational search customization config for a given catalog. getDefaultBranch GET /v2alpha/{catalog=projects/ /locations/ /catalogs/ }:getDefaultBranch Get which branch is currently default branch set by CatalogService.SetDefaultBranch method under a specified parent catalog. getGenerativeQuestionFeature GET /v2alpha/{catalog=projects/ /locations/ /catalogs/ }/generativeQuestionFeature Manages overal generative question feature state -- enables toggling feature on and off. list GET /v2alpha/{parent=projects/ /locations/ }/catalogs Lists all the Catalog s associated with the project. patch PATCH /v2alpha/{catalog.name=projects/ /locations/ /catalogs/ } Updates the Catalog s. setDefaultBranch POST /v2alpha/{catalog=projects/ /locations/ /catalogs/ }:setDefaultBranch Set a specified branch id as default branch. updateAttributesConfig PATCH /v2alpha/{attributesConfig.name=projects/ /locations/ /catalogs/ /attributesConfig} Updates the AttributesConfig . updateCompletionConfig PATCH /v2alpha/{completionConfig.name=projects/ /locations/ /catalogs/ /completionConfig} Updates the CompletionConfig s. updateConversationalSearchCustomizationConfig PATCH /v2alpha/{conversationalSearchCustomizationConfig.catalog=projects/ /locations/ /catalogs/ }/conversationalSearchCustomizationConfig Updates the conversational search customization config for a given catalog. updateGenerativeQuestion PATCH /v2alpha/{generativeQuestionConfig.catalog=projects/ /locations/ /catalogs/ }/generativeQuestion Allows management of individual questions. updateGenerativeQuestionFeature PATCH /v2alpha/{generativeQuestionsFeatureConfig.catalog=projects/ /locations/ /catalogs/ }/generativeQuestionFeature Manages overal generative question feature state -- enables toggling feature on and off.",
+          "REST Resource: v2beta.projects.locations.catalogs Methods completeQuery GET /v2beta/{catalog=projects/ /locations/ /catalogs/ }:completeQuery Completes the specified prefix with keyword suggestions. exportAnalyticsMetrics POST /v2beta/{catalog=projects/ /locations/ /catalogs/ }:exportAnalyticsMetrics Exports analytics metrics. getAttributesConfig GET /v2beta/{name=projects/ /locations/ /catalogs/ /attributesConfig} Gets an AttributesConfig . getCompletionConfig GET /v2beta/{name=projects/ /locations/ /catalogs/ /completionConfig} Gets a CompletionConfig . getConversationalSearchCustomizationConfig GET /v2beta/{name=projects/ /locations/ /catalogs/ }/conversationalSearchCustomizationConfig Returns the conversational search customization config for a given catalog. getDefaultBranch GET /v2beta/{catalog=projects/ /locations/ /catalogs/ }:getDefaultBranch Get which branch is currently default branch set by CatalogService.SetDefaultBranch method under a specified parent catalog. getGenerativeQuestionFeature GET /v2beta/{catalog=projects/ /locations/ /catalogs/ }/generativeQuestionFeature Manages overal generative question feature state -- enables toggling feature on and off. list GET /v2beta/{parent=projects/ /locations/ }/catalogs Lists all the Catalog s associated with the project. patch PATCH /v2beta/{catalog.name=projects/ /locations/ /catalogs/ } Updates the Catalog s. setDefaultBranch POST /v2beta/{catalog=projects/ /locations/ /catalogs/ }:setDefaultBranch Set a specified branch id as default branch. updateAttributesConfig PATCH /v2beta/{attributesConfig.name=projects/ /locations/ /catalogs/ /attributesConfig} Updates the AttributesConfig . updateCompletionConfig PATCH /v2beta/{completionConfig.name=projects/ /locations/ /catalogs/ /completionConfig} Updates the CompletionConfig s. updateConversationalSearchCustomizationConfig PATCH /v2beta/{conversationalSearchCustomizationConfig.catalog=projects/ /locations/ /catalogs/ }/conversationalSearchCustomizationConfig Updates the conversational search customization config for a given catalog. updateGenerativeQuestion PATCH /v2beta/{generativeQuestionConfig.catalog=projects/ /locations/ /catalogs/ }/generativeQuestion Allows management of individual questions. updateGenerativeQuestionFeature PATCH /v2beta/{generativeQuestionsFeatureConfig.catalog=projects/ /locations/ /catalogs/ }/generativeQuestionFeature Manages overal generative question feature state -- enables toggling feature on and off."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "attribute.occasion",
+      "catalog.name",
+      "retail.googleapis.com",
+      "v2.projects.locations.catalogs",
+      "v2alpha.projects.locations.catalogs",
+      "v2beta.projects.locations.catalogs"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/retail/docs/conversational-commerce-dev-guide",
+        "https://docs.cloud.google.com/retail/docs/conversational-filtering-dev-guide",
+        "https://docs.cloud.google.com/retail/docs/catalog",
+        "https://docs.cloud.google.com/retail/docs/reference/rest"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/retail/docs/conversational-commerce-dev-guide",
+        "https://docs.cloud.google.com/retail/docs/conversational-filtering-dev-guide",
+        "https://docs.cloud.google.com/retail/docs/catalog",
+        "https://docs.cloud.google.com/retail/docs/reference/rest"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/retail/docs/conversational-commerce-dev-guide",
+        "https://docs.cloud.google.com/retail/docs/conversational-filtering-dev-guide",
+        "https://docs.cloud.google.com/retail/docs/catalog",
+        "https://docs.cloud.google.com/retail/docs/reference/rest"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/retail/docs/conversational-commerce-dev-guide",
+        "https://docs.cloud.google.com/retail/docs/conversational-filtering-dev-guide",
+        "https://docs.cloud.google.com/retail/docs/catalog",
+        "https://docs.cloud.google.com/retail/docs/reference/rest"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/retail/docs/conversational-commerce-dev-guide",
+        "https://docs.cloud.google.com/retail/docs/conversational-filtering-dev-guide",
+        "https://docs.cloud.google.com/retail/docs/catalog",
+        "https://docs.cloud.google.com/retail/docs/reference/rest"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/retail/docs/conversational-commerce-dev-guide",
+        "https://docs.cloud.google.com/retail/docs/conversational-filtering-dev-guide",
+        "https://docs.cloud.google.com/retail/docs/catalog",
+        "https://docs.cloud.google.com/retail/docs/reference/rest"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/retail/docs/conversational-commerce-dev-guide",
+        "https://docs.cloud.google.com/retail/docs/conversational-filtering-dev-guide",
+        "https://docs.cloud.google.com/retail/docs/catalog",
+        "https://docs.cloud.google.com/retail/docs/reference/rest"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/retail/docs/conversational-commerce-dev-guide",
+        "https://docs.cloud.google.com/retail/docs/conversational-filtering-dev-guide",
+        "https://docs.cloud.google.com/retail/docs/catalog",
+        "https://docs.cloud.google.com/retail/docs/reference/rest"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/retail/docs/conversational-commerce-dev-guide",
+        "https://docs.cloud.google.com/retail/docs/conversational-filtering-dev-guide",
+        "https://docs.cloud.google.com/retail/docs/catalog",
+        "https://docs.cloud.google.com/retail/docs/reference/rest"
+      ]
+    }
+  ]
+}

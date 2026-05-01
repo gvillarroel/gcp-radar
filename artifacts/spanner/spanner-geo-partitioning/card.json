@@ -1,0 +1,119 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:46.903Z",
+  "source_step08_card": "data/step-08/current/products/spanner/card.json",
+  "product_name": "Spanner",
+  "product_slug": "spanner",
+  "feature_name": "Spanner Geo-partitioning",
+  "feature_slug": "spanner-geo-partitioning",
+  "summary": "Spanner now supports Geo-partitioning in Preview to segment and store table rows across different geographic configurations.",
+  "extended_definition": "Spanner now supports Geo-partitioning in Preview to segment and store table rows across different geographic configurations.",
+  "lifecycle": {
+    "latest_feature_date": "2024-07-16",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient",
+      "https://docs.cloud.google.com/spanner/docs/backup/restore-backup-overview",
+      "https://docs.cloud.google.com/spanner/docs/cmek"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Restore overview \\_|\\_ Spanner \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/spanner/docs/backup/restore-backup-overview",
+        "source_id": "site-docs-root",
+        "final_score": 74,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "For example, if your instance uses geo-partitioning , then you can't restore it to the Enterprise edition or Standard edition.",
+          "You can use restore from a backup in the following ways: In the Google Cloud console Using the Google Cloud CLI Using the client libraries Using the REST or RPC APIs How database restoration from a backup works When you restore a Spanner database, you must specify a source backup and a new target database.",
+          "If you need to restore from a backup in a different region or project for compliance or business continuity reasons, you can copy the backup to an instance in a separate region or project, then restore from the copied backup."
+        ]
+      },
+      {
+        "title": "\"Customer-managed encryption keys (CMEK) overview \\_|\\_ Spanner \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/spanner/docs/cmek",
+        "source_id": "site-docs-root",
+        "final_score": 68,
+        "relevance": "",
+        "evidence_snippets": [
+          "Note: After you enable CMEK in your Spanner database, you can't change its encryption configuration unless you back up and restore the database, or export then import the database back to Spanner.",
+          "When using geo-partitioning, you must use a regional Cloud KMS key for each instance replica locatoin, including those in the instance partition configuration.",
+          "If Spanner's calls to Cloud KMS detect that a formerly disabled key has been re-enabled, Cloud KMS restores access to the Spanner database automatically."
+        ]
+      },
+      {
+        "title": "\"Class DatabaseAdminAsyncClient (3.63.0) \\_|\\_ Python client libraries \\_\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient",
+        "source_id": "site-python-reference",
+        "final_score": 54,
+        "relevance": "",
+        "evidence_snippets": [
+          "Dict [ str , str ] Parses a instance path into its component segments. restore database restore database ( request : typing .",
+          "RestoreDatabaseRequest ( backup=\"backup value\", parent=\"parent value\", database id=\"database id value\", ) Make the request operation = client. restore database (request=request) print(\"Waiting for operation to complete...\") response = (await operation).result() Handle the response print(response) Parameters Name Description request Optional[Union[ google.cloud.spanner admin database v1.types.RestoreDatabaseRequest , dict]] The request object.",
+          "It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import spanner admin database v1 async def sample restore database(): Create a client client = spanner admin database v1."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.cloud.spanner",
+      "googleapis.dev",
+      "options.html",
+      "v1.types.RestoreDatabaseRequest"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/backup/restore-backup-overview",
+        "https://docs.cloud.google.com/spanner/docs/cmek",
+        "https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/backup/restore-backup-overview",
+        "https://docs.cloud.google.com/spanner/docs/cmek",
+        "https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/backup/restore-backup-overview",
+        "https://docs.cloud.google.com/spanner/docs/cmek",
+        "https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/backup/restore-backup-overview",
+        "https://docs.cloud.google.com/spanner/docs/cmek",
+        "https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner_admin_database_v1.services.database_admin.DatabaseAdminAsyncClient"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,122 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:42.371Z",
+  "source_step08_card": "data/step-08/current/products/looker/card.json",
+  "product_name": "Looker",
+  "product_slug": "looker",
+  "feature_name": "Dashboard extension types merged_queries and join_fields",
+  "feature_slug": "dashboard-extension-types-merged-queries-and-join-fields",
+  "summary": "Looker now treats merged_queries and join_fields as legal types for extending dashboards.",
+  "extended_definition": "Looker now treats merged_queries and join_fields as legal types for extending dashboards.",
+  "lifecycle": {
+    "latest_feature_date": "2023-02-10",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/looker/docs/access-control-and-permission-management",
+      "https://docs.cloud.google.com/looker/docs/admin-panel-general-labs",
+      "https://docs.cloud.google.com/looker/docs/admin-panel-general-preview-features"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Access control and permission management \\_|\\_ Looker \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/looker/docs/access-control-and-permission-management",
+        "source_id": "site-docs-reference-required-4",
+        "final_score": 126,
+        "relevance": "",
+        "evidence_snippets": [
+          "Control the actions a user can perform Create a permission set with the appropriate permissions, then assign a group or user to a role with that permission set Control what fields a user can access Create a model with the appropriate fields, then assign a group or user to a role with that model Control what data a user can access Create a model with the appropriate data limitations, then assign a group or user to a role with that model - or - Use access filters to limit a user to the appropriate data - or - Use user attributes to provide differing database credentials to a group or user - or - Use user attributes with access grants to restrict access to specific Explores, joins, views, or fields Control what database connections a Looker developer can access Create a project with the appropriate connections, associate the project with a set of models, then assign a group or user to a role with those models Feature access can also affect content access .",
+          "Control user access to data There are several ways to control a user's access to data, depending on the use case: To prohibit users from seeing certain columns of data, control the fields that they can access, as described in the Control user access to Looker fields section .",
+          "To limit access to specific Explores, joins, views, or fields, create access grants that limit access to only those users who are assigned the allowed user attribute values, as described on the access grant parameter documentation page."
+        ]
+      },
+      {
+        "title": "Admin settings - Preview Features \\_|\\_ Looker \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/looker/docs/admin-panel-general-labs",
+        "source_id": "site-docs-reference",
+        "final_score": 119,
+        "relevance": "",
+        "evidence_snippets": [
+          "By default, merged queries are processed in Looker memory, and therefore each query is limited to 5,000 rows that can be joined.",
+          "This feature improves performance and allows for unlimited rows of data being joined for merged queries when both queries being merged use the same BigQuery connection.",
+          "When this preview feature is enabled, the new Enhanced search experience lets you search for Looker content using filters for specific content types, special characters, and more metadata options."
+        ]
+      },
+      {
+        "title": "Admin settings - Preview Features \\_|\\_ Looker \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/looker/docs/admin-panel-general-preview-features",
+        "source_id": "site-docs-reference",
+        "final_score": 119,
+        "relevance": "",
+        "evidence_snippets": [
+          "By default, merged queries are processed in Looker memory, and therefore each query is limited to 5,000 rows that can be joined.",
+          "This feature improves performance and allows for unlimited rows of data being joined for merged queries when both queries being merged use the same BigQuery connection.",
+          "When this preview feature is enabled, the new Enhanced search experience lets you search for Looker content using filters for specific content types, special characters, and more metadata options."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/access-control-and-permission-management",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-general-labs",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-general-preview-features"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/access-control-and-permission-management",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-general-labs",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-general-preview-features"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/access-control-and-permission-management",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-general-labs",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-general-preview-features"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/access-control-and-permission-management",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-general-labs",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-general-preview-features"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/access-control-and-permission-management",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-general-labs",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-general-preview-features"
+      ]
+    }
+  ]
+}

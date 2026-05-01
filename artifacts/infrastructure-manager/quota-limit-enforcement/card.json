@@ -1,0 +1,166 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:42.121Z",
+  "source_step08_card": "data/step-08/current/products/infrastructure-manager/card.json",
+  "product_name": "Infrastructure Manager",
+  "product_slug": "infrastructure-manager",
+  "feature_name": "Quota limit enforcement",
+  "feature_slug": "quota-limit-enforcement",
+  "summary": "Validate quota limits and block deployments that would exceed them.",
+  "extended_definition": "Validate quota limits and block deployments that would exceed them.",
+  "lifecycle": {
+    "latest_feature_date": "2024-03-14",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/infrastructure-manager/docs/custom-constraints",
+      "https://docs.cloud.google.com/infrastructure-manager/docs/deploy-resources",
+      "https://docs.cloud.google.com/infrastructure-manager/docs/deployments-revisions",
+      "https://docs.cloud.google.com/infrastructure-manager/docs/quotas"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Quotas and limits \\_|\\_ Infrastructure Manager \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/infrastructure-manager/docs/quotas",
+        "source_id": "site-docs-root",
+        "final_score": 232,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Allocation quotas The following quotas don't reset over time and instead are released when you release the resource: Quotas Value Deployments per project per region 1,000 Previews per project per region 1,000 Rate quotas The following quotas apply to Infra Manager requests: Quota Value Mutating requests per minute per project per region 20 Number of API requests per minute per project per region 1,200 Usage limits Infra Manager enforces the following usage limits: Usage limit Value Number of Terraform input variables 150 Number of resources returned when listing resources 500 Length of identifiers in characters 40 Size of the API payload in bytes 950,000 Number of the historical revisions 100 Caution: The API payload limit is inclusive of metadata associated with your API payload.",
+          "Cloud Build quotas and limits implications Infra Manager uses Cloud Build to create and update deployments.",
+          "Infra Manager uses the quota-validation flag to determine whether to validate the resources outlined in your Terraform configuration as part of the gcloud infra-manager deployments apply command."
+        ]
+      },
+      {
+        "title": "Deploy infrastructure using Infrastructure Manager \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/infrastructure-manager/docs/deploy-resources",
+        "source_id": "site-docs-root",
+        "final_score": 136,
+        "relevance": "",
+        "evidence_snippets": [
+          "For more information, see Quotas and limits .",
+          "For more information, see Quotas and limits .",
+          "For more information, see Quotas and limits ."
+        ]
+      },
+      {
+        "title": "\"Manage Infrastructure Manager resources using custom constraints \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/infrastructure-manager/docs/custom-constraints",
+        "source_id": "site-iam-reference",
+        "final_score": 104,
+        "relevance": "",
+        "evidence_snippets": [
+          "Before you begin, you must have the following: Your organization ID A project ID Create the constraint To create a custom constraint, follow these steps: Create the following YAML file and save it as constraint-import-resources.yaml : name : organizations/ ORGANIZATION ID /customConstraints/custom.disallowImportExistingResources resourceTypes : - config.googleapis.com/Deployment methodTypes : - CREATE condition : \"resource.importExistingResources == true\" actionType : DENY displayName : Reject existing resources description : New deployments disallow the import of existing resources.",
+          "To see the exact permissions that are required, expand the Required permissions section: Required permissions The following permissions are required to manage organization policies: orgpolicy. on the organization resource To create or update a deployment or preview deployment: config.deployments.create on the project resource config.deployments.update on the project resource config.previews.create on the project resource You might also be able to get these permissions with custom roles or other predefined roles .",
+          "Test the custom organization policy The following example creates a custom constraint and policy that forbids all new deployments from importing existing resources."
+        ]
+      },
+      {
+        "title": "\"Deployments, revisions, and previews overview \\_|\\_ Infrastructure Manager\\",
+        "url": "https://docs.cloud.google.com/infrastructure-manager/docs/deployments-revisions",
+        "source_id": "site-iam-reference",
+        "final_score": 103,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Infrastructure as code Infrastructure Manager Guides Send feedback Deployments, revisions, and previews overview Stay organized with collections Save and categorize content based on your preferences.",
+          "End with a number or lowercase letter Cannot be the string archived-deployments or archived-previews Must be unique within the project and location where Infra Manager is run.",
+          "End with a number or lowercase letter Cannot be the string archived-deployments or archived-previews Must be unique within the project and location where Infra Manager is run."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "config.deployments.create",
+      "config.deployments.update",
+      "config.googleapis.com",
+      "config.previews.create",
+      "custom.disallowImportExistingResources",
+      "resource.importExistingResources",
+      "resources.yaml"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/infrastructure-manager/docs/quotas",
+        "https://docs.cloud.google.com/infrastructure-manager/docs/deploy-resources",
+        "https://docs.cloud.google.com/infrastructure-manager/docs/custom-constraints",
+        "https://docs.cloud.google.com/infrastructure-manager/docs/deployments-revisions"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/infrastructure-manager/docs/quotas",
+        "https://docs.cloud.google.com/infrastructure-manager/docs/deploy-resources",
+        "https://docs.cloud.google.com/infrastructure-manager/docs/custom-constraints",
+        "https://docs.cloud.google.com/infrastructure-manager/docs/deployments-revisions"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/infrastructure-manager/docs/quotas",
+        "https://docs.cloud.google.com/infrastructure-manager/docs/deploy-resources",
+        "https://docs.cloud.google.com/infrastructure-manager/docs/custom-constraints",
+        "https://docs.cloud.google.com/infrastructure-manager/docs/deployments-revisions"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/infrastructure-manager/docs/quotas",
+        "https://docs.cloud.google.com/infrastructure-manager/docs/deploy-resources",
+        "https://docs.cloud.google.com/infrastructure-manager/docs/custom-constraints",
+        "https://docs.cloud.google.com/infrastructure-manager/docs/deployments-revisions"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/infrastructure-manager/docs/quotas",
+        "https://docs.cloud.google.com/infrastructure-manager/docs/deploy-resources",
+        "https://docs.cloud.google.com/infrastructure-manager/docs/custom-constraints",
+        "https://docs.cloud.google.com/infrastructure-manager/docs/deployments-revisions"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/infrastructure-manager/docs/quotas",
+        "https://docs.cloud.google.com/infrastructure-manager/docs/deploy-resources",
+        "https://docs.cloud.google.com/infrastructure-manager/docs/custom-constraints",
+        "https://docs.cloud.google.com/infrastructure-manager/docs/deployments-revisions"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/infrastructure-manager/docs/quotas",
+        "https://docs.cloud.google.com/infrastructure-manager/docs/deploy-resources",
+        "https://docs.cloud.google.com/infrastructure-manager/docs/custom-constraints",
+        "https://docs.cloud.google.com/infrastructure-manager/docs/deployments-revisions"
+      ]
+    }
+  ]
+}

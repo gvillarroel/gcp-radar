@@ -1,0 +1,161 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:17.437Z",
+  "source_step08_card": "data/step-08/current/products/apps-script/card.json",
+  "product_name": "Apps Script",
+  "product_slug": "apps-script",
+  "feature_name": "Maps Service client ID authentication",
+  "feature_slug": "maps-service-client-id-authentication",
+  "summary": "Maps Service client ID authentication uses setAuthentication(clientId, signingKey) to authenticate requests with a Maps Platform client ID; deprecated on June 2026.",
+  "extended_definition": "Maps Service client ID authentication uses setAuthentication(clientId, signingKey) to authenticate requests with a Maps Platform client ID; deprecated on June 2026.",
+  "lifecycle": {
+    "latest_feature_date": "2026-03-05",
+    "deprecation_date": "June 2026",
+    "status": "deprecation_noted"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/apps-script/api/quickstart/python",
+      "https://developers.google.com/apps-script/guides/client-verification",
+      "https://developers.google.com/apps-script/releases"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Google Apps Script release notes \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/apps-script/releases",
+        "source_id": "site-docs-root",
+        "final_score": 134,
+        "relevance": "",
+        "evidence_snippets": [
+          "March 05, 2026 Deprecated Deprecated: The method setAuthentication(clientId, signingKey) has been deprecated and is scheduled for sunset in June 2026.",
+          "Feature Generally Available: To authenticate to the Maps service, you can now use an API key with the new methods setAuthenticationByKey(apiKey) and setAuthenticationByKey(apiKey, signingKey) .",
+          "Instead, use setAuthenticationByKey(apiKey) or setAuthenticationByKey(apiKey, signingKey) ."
+        ]
+      },
+      {
+        "title": "OAuth Client Verification \\_|\\_ Apps Script \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/apps-script/guides/client-verification",
+        "source_id": "site-docs-root",
+        "final_score": 82,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The following table illustrates what situations result in the unverified app authorization flow: Client is verified Publisher is a Google Workspace account of customer A Script is in a shared drive of customer A Publisher is a Gmail account User is a Google Workspace account of customer A Normal auth flow Normal auth flow Normal auth flow Unverified auth flow User is a Google Workspace account not of customer A Normal auth flow Unverified auth flow Unverified auth flow Unverified auth flow User is a Gmail account 1 Normal auth flow Unverified auth flow Unverified auth flow Unverified auth flow 1 Any Gmail account, including the account used to publish the app.",
+          "For more information, see the following articles: Unverified Apps OAuth Application Verification FAQ Google API Services: User Data Policy Figure 1 : Unverified app screen Figure 2 : Unverified app authorization flow This change applies to Google OAuth web clients, including those used by all Apps Script projects.",
+          "Page Summary outlined flag Google requires verification for Google OAuth clients requesting certain sensitive OAuth scopes, though Apps Script projects within the same Google Workspace domain or customer are exempt."
+        ]
+      },
+      {
+        "title": "Python quickstart \\_|\\_ Apps Script \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/apps-script/api/quickstart/python",
+        "source_id": "site-docs-root",
+        "final_score": 71,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "This quickstart uses Google Workspace's recommended API client libraries to handle some details of the authentication and authorization flow.",
+          "Install the Google client library for Python using pip to handle authentication and authorization flows.",
+          "This quickstart uses a simplified authentication approach that is appropriate for a testing environment."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "console.log",
+      "credentials.json",
+      "developers.google.com",
+      "script.google.com",
+      "script.projects",
+      "token.json"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/guides/client-verification",
+        "https://developers.google.com/apps-script/api/quickstart/python"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/guides/client-verification",
+        "https://developers.google.com/apps-script/api/quickstart/python"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/guides/client-verification",
+        "https://developers.google.com/apps-script/api/quickstart/python"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/guides/client-verification",
+        "https://developers.google.com/apps-script/api/quickstart/python"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/guides/client-verification",
+        "https://developers.google.com/apps-script/api/quickstart/python"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/guides/client-verification",
+        "https://developers.google.com/apps-script/api/quickstart/python"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/guides/client-verification",
+        "https://developers.google.com/apps-script/api/quickstart/python"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/guides/client-verification",
+        "https://developers.google.com/apps-script/api/quickstart/python"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/guides/client-verification",
+        "https://developers.google.com/apps-script/api/quickstart/python"
+      ]
+    }
+  ]
+}

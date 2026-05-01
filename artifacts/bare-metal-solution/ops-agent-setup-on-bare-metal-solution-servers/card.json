@@ -1,0 +1,182 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:18.499Z",
+  "source_step08_card": "data/step-08/current/products/bare-metal-solution/card.json",
+  "product_name": "Bare Metal Solution",
+  "product_slug": "bare-metal-solution",
+  "feature_name": "Ops Agent setup on Bare Metal Solution servers",
+  "feature_slug": "ops-agent-setup-on-bare-metal-solution-servers",
+  "summary": "You can now set up Ops Agent on Bare Metal Solution servers to view solution metrics.",
+  "extended_definition": "You can now set up Ops Agent on Bare Metal Solution servers to view solution metrics.",
+  "lifecycle": {
+    "latest_feature_date": "2024-05-02",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/iam/docs/roles-permissions/agentregistry",
+      "https://docs.cloud.google.com/sap/docs/agent-for-sap/latest/operations",
+      "https://docs.cloud.google.com/sap/docs/agent-for-sap/whats-new"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"What's new with Google Cloud's Agent for SAP \\_|\\_ SAP on Google Cloud \\_\\",
+        "url": "https://docs.cloud.google.com/sap/docs/agent-for-sap/whats-new",
+        "source_id": "site-docs-reference-2",
+        "final_score": 104,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Validate the Google Cloud setup for agent features : By running the agent's status command, you can validate if your setup in Google Cloud is complete for using the agent features.",
+          "From this version, for agent instances running on Bare Metal Solution servers, the agent configuration parameter instance id has been replaced by the parameter instance name .",
+          "Fixes for accessing the cloud properties configuration of agent instances running on Bare Metal Solution servers."
+        ]
+      },
+      {
+        "title": "\"Google Cloud's Agent for SAP operations guide \\_|\\_ SAP on Google Cloud\\",
+        "url": "https://docs.cloud.google.com/sap/docs/agent-for-sap/latest/operations",
+        "source_id": "site-docs-reference-2",
+        "final_score": 96,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "In the overview pane, check the availability and content of the following fields for the correct end-to-end setup of the SAP and Google monitoring infrastructure: Cloud Provider : Google Cloud Platform Enhanced Monitoring Access : TRUE Enhanced Monitoring Details : ACTIVE View the SAP Host Agent metrics After installing or updating the configuration of Google Cloud's Agent for SAP, you can view the collected SAP Host Agent metrics.",
+          "As an administrator, run the following command from PowerShell: Remove-Service -Name 'google-cloud-sap-agent' View the agent's logs in Cloud Logging By default, the logs for Google Cloud's Agent for SAP are redirected from your Compute Engine instances and Bare Metal Solution servers to Cloud Logging .",
+          "Version 3.12 (latest) keyboard arrow down Version 3.12 (latest) Version 2 This guide covers operational considerations and procedures for running version 3.12 (latest) of Google Cloud's Agent for SAP on Compute Engine instances and Bare Metal Solution servers."
+        ]
+      },
+      {
+        "title": "\"Agent Registry roles and permissions \\_|\\_ Identity and Access Management\\",
+        "url": "https://docs.cloud.google.com/iam/docs/roles-permissions/agentregistry",
+        "source_id": "site-iam-reference",
+        "final_score": 84,
+        "relevance": "",
+        "evidence_snippets": [
+          "Agent Registry roles Role Permissions Agent Registry API Admin Beta ( roles/ agentregistry.admin ) Full access to Agent Registry API resources. agentregistry. agentregistry.agents.get agentregistry.agents.list agentregistry.endpoints.get agentregistry.endpoints.list agentregistry.locations.get agentregistry.locations.list agentregistry.mcpServers.get agentregistry.mcpServers.list agentregistry. operations. cancel agentregistry. operations. delete agentregistry.operations.get agentregistry.operations.list agentregistry.services.create agentregistry.services.delete agentregistry.services.get agentregistry.services.list agentregistry.services.update Agent Registry API Editor Beta ( roles/ agentregistry.editor ) Edit access to Agent Registry API resources. agentregistry. agentregistry.agents.get agentregistry.agents.list agentregistry.endpoints.get agentregistry.endpoints.list agentregistry.locations.get agentregistry.locations.list agentregistry.mcpServers.get agentregistry.mcpServers.list agentregistry. operations. cancel agentregistry. operations. delete agentregistry.operations.get agentregistry.operations.list agentregistry.services.create agentregistry.services.delete agentregistry.services.get agentregistry.services.list agentregistry.services.update Agent Registry API Viewer Beta ( roles/ agentregistry.viewer ) Readonly access to Agent Registry API resources. agentregistry.agents. agentregistry.agents.get agentregistry.agents.list agentregistry.endpoints. agentregistry.endpoints.get agentregistry.endpoints.list agentregistry.locations. agentregistry.locations.get agentregistry.locations.list agentregistry.mcpServers. agentregistry.mcpServers.get agentregistry.mcpServers.list agentregistry.operations.get agentregistry.operations.list agentregistry.services.get agentregistry.services.list Agent Registry permissions Permission Included in roles agentregistry.agents.get Owner ( roles/ owner ) Editor ( roles/ editor ) Viewer ( roles/ viewer ) Agent Registry API Admin ( roles/ agentregistry.admin ) Agent Registry API Editor ( roles/ agentregistry.editor ) Agent Registry API Viewer ( roles/ agentregistry.viewer ) Support User ( roles/ iam.supportUser ) Service agent roles Warning: Don't grant service agent roles to any principals except service agents .",
+          "Discovery Engine Service Agent ( roles/ discoveryengine.serviceAgent ) agentregistry.endpoints.get Owner ( roles/ owner ) Editor ( roles/ editor ) Viewer ( roles/ viewer ) Agent Registry API Admin ( roles/ agentregistry.admin ) Agent Registry API Editor ( roles/ agentregistry.editor ) Agent Registry API Viewer ( roles/ agentregistry.viewer ) Support User ( roles/ iam.supportUser ) agentregistry.endpoints.list Owner ( roles/ owner ) Editor ( roles/ editor ) Viewer ( roles/ viewer ) Agent Registry API Admin ( roles/ agentregistry.admin ) Agent Registry API Editor ( roles/ agentregistry.editor ) Agent Registry API Viewer ( roles/ agentregistry.viewer ) Security Admin ( roles/ iam.securityAdmin ) Security Reviewer ( roles/ iam.securityReviewer ) Security Auditor ( roles/ iam.securityAuditor ) Support User ( roles/ iam.supportUser ) agentregistry.locations.get Owner ( roles/ owner ) Editor ( roles/ editor ) Viewer ( roles/ viewer ) Agent Registry API Admin ( roles/ agentregistry.admin ) Agent Registry API Editor ( roles/ agentregistry.editor ) Agent Registry API Viewer ( roles/ agentregistry.viewer ) Support User ( roles/ iam.supportUser ) agentregistry.locations.list Owner ( roles/ owner ) Editor ( roles/ editor ) Viewer ( roles/ viewer ) Agent Registry API Admin ( roles/ agentregistry.admin ) Agent Registry API Editor ( roles/ agentregistry.editor ) Agent Registry API Viewer ( roles/ agentregistry.viewer ) Security Admin ( roles/ iam.securityAdmin ) Security Reviewer ( roles/ iam.securityReviewer ) Security Auditor ( roles/ iam.securityAuditor ) Support User ( roles/ iam.supportUser ) agentregistry.mcpServers.get Owner ( roles/ owner ) Editor ( roles/ editor ) Viewer ( roles/ viewer ) Agent Registry API Admin ( roles/ agentregistry.admin ) Agent Registry API Editor ( roles/ agentregistry.editor ) Agent Registry API Viewer ( roles/ agentregistry.viewer ) Support User ( roles/ iam.supportUser ) Service agent roles Warning: Don't grant service agent roles to any principals except service agents .",
+          "Discovery Engine Service Agent ( roles/ discoveryengine.serviceAgent ) agentregistry.mcpServers.list Owner ( roles/ owner ) Editor ( roles/ editor ) Viewer ( roles/ viewer ) Agent Registry API Admin ( roles/ agentregistry.admin ) Agent Registry API Editor ( roles/ agentregistry.editor ) Agent Registry API Viewer ( roles/ agentregistry.viewer ) Security Admin ( roles/ iam.securityAdmin ) Security Reviewer ( roles/ iam.securityReviewer ) Security Auditor ( roles/ iam.securityAuditor ) Support User ( roles/ iam.supportUser ) Service agent roles Warning: Don't grant service agent roles to any principals except service agents ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "agentregistry.admin",
+      "agentregistry.agents",
+      "agentregistry.agents.get",
+      "agentregistry.agents.list",
+      "agentregistry.editor",
+      "agentregistry.endpoints",
+      "agentregistry.endpoints.get",
+      "agentregistry.endpoints.list",
+      "agentregistry.locations",
+      "agentregistry.locations.get",
+      "agentregistry.locations.list",
+      "agentregistry.mcpServers",
+      "agentregistry.mcpServers.get",
+      "agentregistry.mcpServers.list",
+      "agentregistry.operations.get",
+      "agentregistry.operations.list",
+      "agentregistry.services.create",
+      "agentregistry.services.delete",
+      "agentregistry.services.get",
+      "agentregistry.services.list",
+      "agentregistry.services.update",
+      "agentregistry.viewer",
+      "discoveryengine.serviceAgent",
+      "iam.securityAdmin",
+      "iam.securityAuditor",
+      "iam.securityReviewer",
+      "iam.supportUser"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sap/docs/agent-for-sap/whats-new",
+        "https://docs.cloud.google.com/sap/docs/agent-for-sap/latest/operations",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/agentregistry"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sap/docs/agent-for-sap/whats-new",
+        "https://docs.cloud.google.com/sap/docs/agent-for-sap/latest/operations",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/agentregistry"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sap/docs/agent-for-sap/whats-new",
+        "https://docs.cloud.google.com/sap/docs/agent-for-sap/latest/operations",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/agentregistry"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sap/docs/agent-for-sap/whats-new",
+        "https://docs.cloud.google.com/sap/docs/agent-for-sap/latest/operations",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/agentregistry"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sap/docs/agent-for-sap/whats-new",
+        "https://docs.cloud.google.com/sap/docs/agent-for-sap/latest/operations",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/agentregistry"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sap/docs/agent-for-sap/whats-new",
+        "https://docs.cloud.google.com/sap/docs/agent-for-sap/latest/operations",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/agentregistry"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sap/docs/agent-for-sap/whats-new",
+        "https://docs.cloud.google.com/sap/docs/agent-for-sap/latest/operations",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/agentregistry"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sap/docs/agent-for-sap/whats-new",
+        "https://docs.cloud.google.com/sap/docs/agent-for-sap/latest/operations",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/agentregistry"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sap/docs/agent-for-sap/whats-new",
+        "https://docs.cloud.google.com/sap/docs/agent-for-sap/latest/operations",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/agentregistry"
+      ]
+    }
+  ]
+}

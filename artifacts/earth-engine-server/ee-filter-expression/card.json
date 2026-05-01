@@ -1,0 +1,96 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:36.223Z",
+  "source_step08_card": "data/step-08/current/products/earth-engine-server/card.json",
+  "product_name": "Earth Engine Server",
+  "product_slug": "earth-engine-server",
+  "feature_name": "ee.Filter.expression()",
+  "feature_slug": "ee-filter-expression",
+  "summary": "Converts conditional and boolean string expressions into filters.",
+  "extended_definition": "Converts conditional and boolean string expressions into filters.",
+  "lifecycle": {
+    "latest_feature_date": "2019-09-05",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/earth-engine/apidocs/ee-algorithms-geometryconstructors-multilinestring",
+      "https://developers.google.com/earth-engine/guides/charts_array",
+      "https://developers.google.com/earth-engine/guides/client_server"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Client vs. Server \\_|\\_ Google Earth Engine \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/earth-engine/guides/client_server",
+        "source_id": "site-docs-root",
+        "final_score": 89,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Python setup See the Python Environment page for information on the Python API and using geemap for interactive development. import ee import geemap.core as geemap Colab (Python) if server boolean : client conditional = True else : client conditional = False print ( 'Should be False:' , client conditional ) # True!",
+          "To correctly check a server-side boolean, use a server-side function: Not recommended — client-side conditional Code Editor (JavaScript) var clientConditional ; if ( serverBoolean ) { clientConditional = true ; } else { clientConditional = false ; } print ( 'Should be false:' , clientConditional ); // True!",
+          "List ([ 1 , 2 , 3 ]) server boolean = my list . contains ( 5 ) print ( server boolean . getInfo ()) # False As shown in the following example, the variable does not behave in a client-side conditional because it is a server-side object."
+        ]
+      },
+      {
+        "title": "Array and List Charts \\_|\\_ Google Earth Engine \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/earth-engine/guides/charts_array",
+        "source_id": "site-docs-root",
+        "final_score": 64,
+        "relevance": "",
+        "evidence_snippets": [
+          "Filter . expression ( 'WRS PATH == 45 && WRS ROW == 30' )); // Reduce image properties to a series of lists; one for each selected property. var propVals = col . reduceColumns ({ reducer : ee .",
+          "Filter . date ( '2018-06-01' , '2018-09-01' )) . select ( 'sur refl b0[0-7]' ) . mean (); // Reduce MODIS reflectance bands by forest region; get a dictionary with // band names as keys, pixel values as lists. var pixelVals = modisSr . reduceRegion ( { reducer : ee .",
+          "LineString ([[ - 122.8 , 47.8 ], [ - 124.5 , 47.8 ]]); // Define a pixel coordinate image. var latLonImg = ee ."
+        ]
+      },
+      {
+        "title": "\"ee.Algorithms.GeometryConstructors.MultiLineString \\_|\\_ Google Earth Engine\\",
+        "url": "https://developers.google.com/earth-engine/apidocs/ee-algorithms-geometryconstructors-multilinestring",
+        "source_id": "site-docs-reference",
+        "final_score": 61,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Need to tell us more? [[[\"Easy to understand\",\"easyToUnderstand\",\"thumb-up\"],[\"Solved my problem\",\"solvedMyProblem\",\"thumb-up\"],[\"Other\",\"otherUp\",\"thumb-up\"]],[[\"Missing the information I need\",\"missingTheInformationINeed\",\"thumb-down\"],[\"Too complicated / too many steps\",\"tooComplicatedTooManySteps\",\"thumb-down\"],[\"Out of date\",\"outOfDate\",\"thumb-down\"],[\"Samples / code issue\",\"samplesCodeIssue\",\"thumb-down\"],[\"Other\",\"otherDown\",\"thumb-down\"]],[\"Last updated 2024-07-13 UTC.\"],[],[\"The function MultiLineString creates a geometry object from a list of coordinates.",
+          "Usage Returns ee.Algorithms.GeometryConstructors.MultiLineString(coordinates, crs , geodesic , maxError ) Geometry Argument Type Details coordinates List The list of LineStrings, or to wrap a single LineString, the list of Points or pairs of Numbers in x,y order. crs Projection, default: null The coordinate reference system of the coordinates.",
+          "Home Products Google Earth Engine Reference Send feedback ee.Algorithms.GeometryConstructors.MultiLineString Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "developers.google.com",
+      "ee.Algorithms.GeometryConstructors.MultiLineString",
+      "ee.Algorithms.If",
+      "ee.Filter.expression",
+      "geemap.core"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://developers.google.com/earth-engine/guides/charts_array",
+        "https://developers.google.com/earth-engine/guides/client_server",
+        "https://developers.google.com/earth-engine/apidocs/ee-algorithms-geometryconstructors-multilinestring"
+      ]
+    }
+  ]
+}

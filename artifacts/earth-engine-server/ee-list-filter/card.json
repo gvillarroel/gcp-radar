@@ -1,0 +1,108 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:36.223Z",
+  "source_step08_card": "data/step-08/current/products/earth-engine-server/card.json",
+  "product_name": "Earth Engine Server",
+  "product_slug": "earth-engine-server",
+  "feature_name": "ee.List.filter()",
+  "feature_slug": "ee-list-filter",
+  "summary": "Filters list elements using a predicate.",
+  "extended_definition": "Filters list elements using a predicate.",
+  "lifecycle": {
+    "latest_feature_date": "2018-08-23",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/earth-engine/guides/best_practices",
+      "https://developers.google.com/earth-engine/guides/charts_array",
+      "https://developers.google.com/earth-engine/guides/debugging"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Coding Best Practices \\_|\\_ Google Earth Engine \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/earth-engine/guides/best_practices",
+        "source_id": "site-docs-root",
+        "final_score": 86,
+        "relevance": "",
+        "evidence_snippets": [
+          "Filter . eq ( 'country na' , 'Chad' ))); As shown in this tutorial , a functional programming approach using filters is the correct way to apply one logic to some elements of a collection and another logic to the other elements of the collection.",
+          "Unless you need random access to collection elements (i.e. you need to get the i'th element of a collection), use filters on the collection to access individual collection elements.",
+          "The following example illustrates the difference between type conversion (not recommended) and filtering (recommended) to access an element in a collection: Don't convert to list unnecessarily! var table = ee ."
+        ]
+      },
+      {
+        "title": "Debugging guide \\_|\\_ Google Earth Engine \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/earth-engine/guides/debugging",
+        "source_id": "site-docs-root",
+        "final_score": 69,
+        "relevance": "",
+        "evidence_snippets": [
+          "ImageCollection ( 'MODIS/006/MOD44B' ) ok map 2 = collection . map ( lambda image : image . set ( 'date' , image . date ())) print ( ok map 2 . getInfo ()) Get a list of the dates. dates list = ok map 2 . aggregate array ( 'date' ) print ( dates list . getInfo ()) Procedural errors Pattern was applied to an Image with no bands The \"Pattern 'my band' was applied to an Image with no bands\" error means there is an ee.Image.select() call for an Image with an empty band list.",
+          "ImageCollection ( 'MODIS/006/MOD44B' ); var okMap2 = collection . map ( function ( image ) { return image . set ( 'date' , image . date ()); }); print ( okMap2 ); // Get a list of the dates. var datesList = okMap2 . aggregate array ( 'date' ); print ( datesList ); Python setup See the Python Environment page for information on the Python API and using geemap for interactive development. import ee import geemap.core as geemap Colab (Python) collection = ee .",
+          "Number ( dictionary . get ( 'B5' )) . divide ( dictionary . get ( 'B4' )) }); }; var noProblem = someFeatures . filterBounds ( image . geometry ()) . map ( functionToMap ); print ( noProblem ); Python setup See the Python Environment page for information on the Python API and using geemap for interactive development. import ee import geemap.core as geemap Colab (Python) def function to map ( feature ): dictionary = image . reduceRegion ( reducer = ee ."
+        ]
+      },
+      {
+        "title": "Array and List Charts \\_|\\_ Google Earth Engine \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/earth-engine/guides/charts_array",
+        "source_id": "site-docs-root",
+        "final_score": 62,
+        "relevance": "",
+        "evidence_snippets": [
+          "Filter . date ( '2018-06-01' , '2018-09-01' )) . select ( 'sur refl b0[0-7]' ) . mean (); // Reduce MODIS reflectance bands by forest region; get a dictionary with // band names as keys, pixel values as lists. var pixelVals = modisSr . reduceRegion ( { reducer : ee .",
+          "Filter . expression ( 'WRS PATH == 45 && WRS ROW == 30' )); // Reduce image properties to a series of lists; one for each selected property. var propVals = col . reduceColumns ({ reducer : ee .",
+          "Chart . array . values ({ array : elevSort , axis : 0 , xLabels : lonSort }) . setOptions ({ title : 'Elevation Profile Across Longitude' , hAxis : { title : 'Longitude' , viewWindow : { min : - 124.50 , max : - 122.8 }, titleTextStyle : { italic : false , bold : true } }, vAxis : { title : 'Elevation (m)' , titleTextStyle : { italic : false , bold : true } }, colors : [ '1d6b99' ], lineSize : 5 , pointSize : 0 , legend : { position : 'none' } }); print ( chart ); Apply .setChartType('AreaChart') to add shading under the line: print ( chart . setChartType ( 'AreaChart' )); ee.List metadata scatter plot Collection property reduction by ee.Reducer.toList() produces a dictionary of property value lists, one for each selected property."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "developers.google.com",
+      "ee.Filter.eq",
+      "ee.Image.select",
+      "ee.List",
+      "ee.List.filter",
+      "ee.Reducer.toList",
+      "geemap.core",
+      "i.e",
+      "table.filter"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://developers.google.com/earth-engine/guides/best_practices",
+        "https://developers.google.com/earth-engine/guides/debugging",
+        "https://developers.google.com/earth-engine/guides/charts_array"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://developers.google.com/earth-engine/guides/best_practices",
+        "https://developers.google.com/earth-engine/guides/debugging",
+        "https://developers.google.com/earth-engine/guides/charts_array"
+      ]
+    }
+  ]
+}

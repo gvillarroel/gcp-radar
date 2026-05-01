@@ -1,0 +1,122 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:13.223Z",
+  "source_step08_card": "data/step-08/current/products/anthos-attached-clusters/card.json",
+  "product_name": "Anthos Attached Clusters",
+  "product_slug": "anthos-attached-clusters",
+  "feature_name": "Improved cluster attachment workflow",
+  "feature_slug": "improved-cluster-attachment-workflow",
+  "summary": "Simplified the process for attaching clusters to Google Cloud infrastructure in the current Anthos Attached Clusters generation.",
+  "extended_definition": "Simplified the process for attaching clusters to Google Cloud infrastructure in the current Anthos Attached Clusters generation.",
+  "lifecycle": {
+    "latest_feature_date": "2022-12-15",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/attached/aks/how-to/attach-cluster",
+      "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/attached/eks/how-to/attach-cluster",
+      "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/attached/generic/how-to/attach-cluster"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Attach your CNCF conformant cluster \\_|\\_ GKE attached clusters \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/attached/generic/how-to/attach-cluster",
+        "source_id": "site-docs-root",
+        "final_score": 99,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "When attaching your cluster, you must specify the following: A supported Google Cloud administrative region A platform version The administrative region is a Google Cloud region to administer your attached cluster from.",
+          "When attaching or updating your cluster, you must choose a platform version whose minor version is the same as or one level below the Kubernetes version of your cluster.",
+          "Note: If you're attaching an Amazon EKS or Azure AKS cluster, see Attach your EKS cluster or Attach your AKS cluster ."
+        ]
+      },
+      {
+        "title": "Attach your AKS cluster \\_|\\_ GKE attached clusters \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/attached/aks/how-to/attach-cluster",
+        "source_id": "site-docs-root",
+        "final_score": 99,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "GOOGLE CLOUD REGION : the Google Cloud region to administer your cluster PROJECT NUMBER : the Fleet host project where the cluster will be registered PLATFORM VERSION : the GKE attached clusters version to use for the cluster ISSUER URL : the issuer URL retrieved earlier KUBECONFIG CONTEXT : context in the kubeconfig for accessing your cluster, as extracted earlier KUBECONFIG PATH : path to your kubeconfig Note: If attaching your cluster fails, the system automatically rolls back any changes made to Google Cloud resources related to the cluster, such as workload identity pool.",
+          "When attaching your cluster, you must specify the following: A supported Google Cloud administrative region A platform version The administrative region is a Google Cloud region to administer your attached cluster from.",
+          "When attaching or updating your cluster, you must choose a platform version whose minor version is the same as or one level below the Kubernetes version of your cluster."
+        ]
+      },
+      {
+        "title": "Attach your EKS cluster \\_|\\_ GKE attached clusters \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/attached/eks/how-to/attach-cluster",
+        "source_id": "site-docs-root",
+        "final_score": 99,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "GOOGLE CLOUD REGION : the Google Cloud region to administer your cluster PLATFORM VERSION : the GKE attached clusters version to use for the cluster PROJECT NUMBER : the fleet host project where the cluster will be registered ISSUER URL : the issuer URL retrieved earlier KUBECONFIG CONTEXT : context in the kubeconfig for accessing the EKS cluster, as extracted earlier KUBECONFIG PATH : path to your kubeconfig Note: If attaching your cluster fails, the system automatically rolls back any changes made to Google Cloud resources related to the cluster, such as workload identity pool.",
+          "When attaching or updating your cluster, you must choose a platform version whose minor version is the same as or one level below the Kubernetes version of your cluster.",
+          "When attaching your cluster, you must specify: a supported Google Cloud administrative region and a platform version."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/attached/aks/how-to/attach-cluster",
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/attached/eks/how-to/attach-cluster",
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/attached/generic/how-to/attach-cluster"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/attached/aks/how-to/attach-cluster",
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/attached/eks/how-to/attach-cluster",
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/attached/generic/how-to/attach-cluster"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/attached/aks/how-to/attach-cluster",
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/attached/eks/how-to/attach-cluster",
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/attached/generic/how-to/attach-cluster"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/attached/aks/how-to/attach-cluster",
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/attached/eks/how-to/attach-cluster",
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/attached/generic/how-to/attach-cluster"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/attached/aks/how-to/attach-cluster",
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/attached/eks/how-to/attach-cluster",
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/attached/generic/how-to/attach-cluster"
+      ]
+    }
+  ]
+}

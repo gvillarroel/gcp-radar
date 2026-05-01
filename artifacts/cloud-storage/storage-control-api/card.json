@@ -1,0 +1,192 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:28.180Z",
+  "source_step08_card": "data/step-08/current/products/cloud-storage/card.json",
+  "product_name": "Cloud Storage",
+  "product_slug": "cloud-storage",
+  "feature_name": "Storage Control API",
+  "feature_slug": "storage-control-api",
+  "summary": "The Storage Control API supports metadata-specific, control plane, and long-running Cloud Storage operations.",
+  "extended_definition": "The Storage Control API supports metadata-specific, control plane, and long-running Cloud Storage operations.",
+  "lifecycle": {
+    "latest_feature_date": "2024-03-29",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/storage/docs/access-control/create-manage-lists",
+      "https://docs.cloud.google.com/storage/docs/access-control/lists",
+      "https://docs.cloud.google.com/storage/docs/apis",
+      "https://docs.cloud.google.com/storage/docs/json_api/v1"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Overview of resources and methods for the JSON API \\_|\\_ Cloud Storage \\_\\",
+        "url": "https://docs.cloud.google.com/storage/docs/json_api/v1",
+        "source_id": "site-docs-reference",
+        "final_score": 251,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Deletions are permanent if versioning is not enabled for the bucket, or if the generation parameter is used. get GET /b/ BUCKET /o/ OBJECT Retrieves an object or its metadata. insert POST https://storage.googleapis.com/upload/storage/v1/b/ BUCKET /o and POST /b/ BUCKET /o Stores a new object and metadata.",
+          "Home Documentation Storage Cloud Storage Reference Send feedback Overview of resources and methods for the JSON API Stay organized with collections Save and categorize content based on your preferences.",
+          "Like the XML API , it is RESTful, but it has slightly different URI endpoints and request syntax, and is specifically intended to be used with the Google Cloud Client Libraries ."
+        ]
+      },
+      {
+        "title": "APIs & reference \\_|\\_ Cloud Storage \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/storage/docs/apis",
+        "source_id": "site-docs-reference",
+        "final_score": 237,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Storage Control API overview A general overview of the Storage Control API which creates one space to perform metadata-specific, control plane, and long-running operations Storage Transfer Service overview A tool for quickly and easily importing data from an online source into a Cloud Storage bucket.",
+          "Connector for Hadoop and Spark Connector for Hadoop and Spark The Cloud Storage connector is a Java library that enables you to perform large-scale data processing on your data stored in Cloud Storage buckets using open-source frameworks like Hadoop and Spark.",
+          "Cloud Storage FUSE Options for the Cloud Storage FUSE CLI Cloud Storage FUSE provides a CLI that lets you mount Cloud Storage buckets within the file system of a local machine, allowing access to the buckets using standard file system semantics."
+        ]
+      },
+      {
+        "title": "\"Create and manage access control lists (ACLs) \\_|\\_ Cloud Storage \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/storage/docs/access-control/create-manage-lists",
+        "source_id": "site-iam-reference",
+        "final_score": 223,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For example, to return the ACL for the object paris.jpg in the bucket example-travel-maps : curl -X GET -H \"Authorization: Bearer $(gcloud auth print-access-token)\" \\ https://storage.googleapis.com/example-travel-maps/paris.jpg?acl You should see a response that looks like: <?xml version=\"1.0\" encoding=\"UTF-8\"?> <AccessControlList> <Owner> <ID>84fac329bceSAMPLE777d5d22b8SAMPLE77d85ac2SAMPLE2dfcf7c4adf34da46</ID> <Name>Owner Name</Name> </Owner> <Entries> <Entry> <Scope type=\"UserById\"> <ID>84fac329bceSAMPLE777d5d22b8SAMPLE77d85ac2SAMPLE2dfcf7c4adf34da46</ID> <Name>Name</Name> </Scope> <Permission>FULL CONTROL</Permission> </Entry> <Entry> <Scope type=\"UserByEmail\"> <EmailAddress>jeffersonloveshiking@gmail.com</EmailAddress> <Name>Jefferson</Name> </Scope> <Permission>FULL CONTROL</Permission> </Entry> <Entry> <Scope type=\"GroupByEmail\"> <EmailAddress>gs-announce@googlegroups.com</EmailAddress> </Scope> <Permission>READ</Permission> </Entry> </Entries> </AccessControlList> You can also use the JSON GET method of the ObjectAccessControls resource to return a specific ACL entry.",
+          "Command line In the following example, the project ID is \"123412341234\"; your project ID will be different. defaultObjectAcl: – entity: project-owners-123412341234 etag: CAE= kind: storage#objectAccessControl projectTeam: projectNumber: '123412341234' team: owners role: OWNER – entity: project-editors-123412341234 etag: CAE= kind: storage#objectAccessControl projectTeam: projectNumber: '123412341234' team: editors role: OWNER – entity: project-viewers-123412341234 etag: CAE= kind: storage#objectAccessControl projectTeam: projectNumber: '123412341234' team: viewers role: READER REST APIs JSON API In the following example, the project ID is \"123412341234\"; your project ID will be different. \"defaultObjectAcl\": [ { \"kind\": \"storage#objectAccessControl\", \"entity\": \"project-owners-123412341234\", \"role\": \"OWNER\", \"projectTeam\": { \"projectNumber\": \"123412341234\", \"team\": \"owners\" } }, { \"kind\": \"storage#objectAccessControl\", \"entity\": \"project-editors-123412341234\", \"role\": \"OWNER\", \"projectTeam\": { \"projectNumber\": \"123412341234\", \"team\": \"editors\" } }, { \"kind\": \"storage#objectAccessControl\", \"entity\": \"project-viewers-123412341234\", \"role\": \"READER\", \"projectTeam\": { \"projectNumber\": \"123412341234\", \"team\": \"viewers\" } } ] XML API In the following example, the project role IDs start with \"00b4903a97...\"; your project IDs will be different. <?xml version='1.0' encoding='UTF-8'?> <AccessControlList> <Entries> <Entry> <Scope type='GroupById'> <ID>00b4903a9721...</ID> </Scope> <Permission>FULL CONTROL</Permission> </Entry> <Entry> <Scope type='GroupById'> <ID>00b4903a9722...</ID> </Scope> <Permission>FULL CONTROL</Permission> </Entry> <Entry> <Scope type='GroupById'> <ID>00b4903a9723...</ID> </Scope> <Permission>READ</Permission> </Entry> </Entries> </AccessControlList> Note that the default object ACL for a newly created bucket is equivalent to the predefined projectPrivate ACL.",
+          "For example, to return the ACL for the object paris.jpg in the bucket example-travel-maps : curl -X GET -H \"Authorization: Bearer $(gcloud auth print-access-token)\" \\ https://storage.googleapis.com/storage/v1/b/example-travel-maps/o/paris.jpg?projection=full You should see a response that looks like: { \"kind\": \"storage#object\", \"id\": \"example-travel-maps/paris.jpg/1412805837131000\", \"selfLink\": \"https://www.googleapis.com/storage/v1/b/example-travel-maps/o/paris.jpg\", \"name\": \"paris.jpg\", \"bucket\": \"example-travel-maps\", ... \"acl\": [ { ... \"entity\": \"project-owners-867489160491\", \"role\": \"OWNER\", \"projectTeam\": { \"projectNumber\": \"867489160491\", \"team\": \"owners\" }, ... }, { ... \"entity\": \"user-jeffersonloveshiking@gmail.com\", \"role\": \"OWNER\", \"email\": \"jeffersonloveshiking@gmail.com\", ... }, { ... \"entity\": \"group-gs-announce@googlegroups.com\", \"role\": \"READER\", \"email\": \"gs-announce@googlegroups.com\", ... } ], \"owner\": { \"entity\": \"user-jeffersonloveshiking@gmail.com\" }, ... } You can also use the objectAccessControls resource GET method to return individual entries in an object's ACL."
+        ]
+      },
+      {
+        "title": "Access control lists (ACLs) \\_|\\_ Cloud Storage \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/storage/docs/access-control/lists",
+        "source_id": "site-iam-reference",
+        "final_score": 223,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "In most cases, you should avoid using ACLs, and you should enable uniform bucket-level access for your buckets, which prevents ACL usage: ACLs can't be used exclusively to control access to your Google Cloud resources, because ACLs can't be set on the overall project or resources outside Cloud Storage.",
+          "JSON API/ gcloud storage XML API Description private private Gives the bucket or object owner OWNER permission for a bucket or object. bucketOwnerRead bucket-owner-read Gives the object owner OWNER permission, and gives the bucket owner READER permission.",
+          "However, if the deny policy specifies the storage.buckets.get permission and the ACL grants the WRITER role on the bucket, the user won't be able to retrieve the bucket's metadata, but can still list, create, and delete objects in the bucket."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.cloud.storage",
+      "gmail.com",
+      "googlegroups.com",
+      "paris.jpg",
+      "storage.buckets.get",
+      "storage.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/json_api/v1",
+        "https://docs.cloud.google.com/storage/docs/apis",
+        "https://docs.cloud.google.com/storage/docs/access-control/create-manage-lists",
+        "https://docs.cloud.google.com/storage/docs/access-control/lists"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/json_api/v1",
+        "https://docs.cloud.google.com/storage/docs/apis",
+        "https://docs.cloud.google.com/storage/docs/access-control/create-manage-lists",
+        "https://docs.cloud.google.com/storage/docs/access-control/lists"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/json_api/v1",
+        "https://docs.cloud.google.com/storage/docs/apis",
+        "https://docs.cloud.google.com/storage/docs/access-control/create-manage-lists",
+        "https://docs.cloud.google.com/storage/docs/access-control/lists"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/json_api/v1",
+        "https://docs.cloud.google.com/storage/docs/apis",
+        "https://docs.cloud.google.com/storage/docs/access-control/create-manage-lists",
+        "https://docs.cloud.google.com/storage/docs/access-control/lists"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/json_api/v1",
+        "https://docs.cloud.google.com/storage/docs/apis",
+        "https://docs.cloud.google.com/storage/docs/access-control/create-manage-lists",
+        "https://docs.cloud.google.com/storage/docs/access-control/lists"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/json_api/v1",
+        "https://docs.cloud.google.com/storage/docs/apis",
+        "https://docs.cloud.google.com/storage/docs/access-control/create-manage-lists",
+        "https://docs.cloud.google.com/storage/docs/access-control/lists"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/json_api/v1",
+        "https://docs.cloud.google.com/storage/docs/apis",
+        "https://docs.cloud.google.com/storage/docs/access-control/create-manage-lists",
+        "https://docs.cloud.google.com/storage/docs/access-control/lists"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/json_api/v1",
+        "https://docs.cloud.google.com/storage/docs/apis",
+        "https://docs.cloud.google.com/storage/docs/access-control/create-manage-lists",
+        "https://docs.cloud.google.com/storage/docs/access-control/lists"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/json_api/v1",
+        "https://docs.cloud.google.com/storage/docs/apis",
+        "https://docs.cloud.google.com/storage/docs/access-control/create-manage-lists",
+        "https://docs.cloud.google.com/storage/docs/access-control/lists"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/json_api/v1",
+        "https://docs.cloud.google.com/storage/docs/apis",
+        "https://docs.cloud.google.com/storage/docs/access-control/create-manage-lists",
+        "https://docs.cloud.google.com/storage/docs/access-control/lists"
+      ]
+    }
+  ]
+}

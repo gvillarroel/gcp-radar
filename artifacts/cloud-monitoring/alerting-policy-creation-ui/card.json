@@ -1,0 +1,110 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:24.989Z",
+  "source_step08_card": "data/step-08/current/products/cloud-monitoring/card.json",
+  "product_name": "Cloud Monitoring",
+  "product_slug": "cloud-monitoring",
+  "feature_name": "Alerting Policy Creation UI",
+  "feature_slug": "alerting-policy-creation-ui",
+  "summary": "A Metrics Explorer-based interface provides fine-grained control for creating alerting policies.",
+  "extended_definition": "A Metrics Explorer-based interface provides fine-grained control for creating alerting policies.",
+  "lifecycle": {
+    "latest_feature_date": "2018-10-10",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/monitoring/agent/ops-agent/otlp",
+      "https://docs.cloud.google.com/monitoring/docs/metrics-management",
+      "https://docs.cloud.google.com/python/docs/reference/monitoring/latest/google.cloud.monitoring_v3.services.alert_policy_service.AlertPolicyServiceAsyncClient"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "View and manage metric usage \\_|\\_ Cloud Monitoring \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/monitoring/docs/metrics-management",
+        "source_id": "site-docs-reference",
+        "final_score": 155,
+        "relevance": "",
+        "evidence_snippets": [
+          "Create alerts based on metric ingestion To be notified of a spike, dip, or trend in the metric collection rates for your billable metrics, create an alerting policy.",
+          "To create an alerting policy that monitors a metric collection rate, do the following: In the Google Cloud console, go to the query stats Metrics management page: Go to Metrics management If you use the search bar to find this page, then select the result whose subheading is Monitoring .",
+          "You can list metrics that appear in no alerting policy or in no custom dashboard defined in the current Google Cloud project by selecting the No alert policies or No custom dashboards quick filter."
+        ]
+      },
+      {
+        "title": "\"Collect OpenTelemetry Protocol (OTLP) metrics and traces \\_|\\_ Cloud Monitoring\\",
+        "url": "https://docs.cloud.google.com/monitoring/agent/ops-agent/otlp",
+        "source_id": "site-iam-reference",
+        "final_score": 140,
+        "relevance": "",
+        "evidence_snippets": [
+          "Cloud Monitoring supports the following tools for querying metric data: A query-builder based interface built into tools like Metrics Explorer, the dashboard-builder interface, and the alert-policy configuration interface.",
+          "These examples use Metrics Explorer, but the principles are the same for dashboards and alerting policies.",
+          "These examples use Metrics Explorer, but the principles are the same for dashboards and alerting policies."
+        ]
+      },
+      {
+        "title": "\"Class AlertPolicyServiceAsyncClient (2.30.0) \\_|\\_ Python client libraries\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/monitoring/latest/google.cloud.monitoring_v3.services.alert_policy_service.AlertPolicyServiceAsyncClient",
+        "source_id": "site-python-reference",
+        "final_score": 133,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The format is: :: projects/[PROJECT ID OR NUMBER] Note that this field names the parent container in which the alerting policy will be written, not the name of the created policy. name\\ must be a host project of a Metrics Scope, otherwise INVALID ARGUMENT error will return.",
+          "Exceptions Type Description google.auth.exceptions.MutualTlsChannelError If mutual TLS transport creation failed for any reason. alert policy condition path alert policy condition path ( project : str , alert policy : str , condition : str ) - > str Returns a fully-qualified alert policy condition string. alert policy path alert policy path ( project : str , alert policy : str ) - > str Returns a fully-qualified alert policy string. common billing account path common billing account path ( billing account : str ) - > str Returns a fully-qualified billing account string. common folder path common folder path ( folder : str ) - > str Returns a fully-qualified folder string. common location path common location path ( project : str , location : str ) - > str Returns a fully-qualified location string. common organization path common organization path ( organization : str ) - > str Returns a fully-qualified organization string. common project path common project path ( project : str ) - > str Returns a fully-qualified project string. create alert policy create alert policy ( request : typing .",
+          "If this field is not empty, each listed field in the existing alerting policy is set to the value of the corresponding field in the supplied policy ( alert policy ), or to the field's default value if the field is not in the supplied alerting policy."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "otlp.test.cumulative",
+      "prometheus.googleapis.com",
+      "workload.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/monitoring/docs/metrics-management",
+        "https://docs.cloud.google.com/monitoring/agent/ops-agent/otlp",
+        "https://docs.cloud.google.com/python/docs/reference/monitoring/latest/google.cloud.monitoring_v3.services.alert_policy_service.AlertPolicyServiceAsyncClient"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/monitoring/docs/metrics-management",
+        "https://docs.cloud.google.com/monitoring/agent/ops-agent/otlp",
+        "https://docs.cloud.google.com/python/docs/reference/monitoring/latest/google.cloud.monitoring_v3.services.alert_policy_service.AlertPolicyServiceAsyncClient"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/monitoring/docs/metrics-management",
+        "https://docs.cloud.google.com/monitoring/agent/ops-agent/otlp",
+        "https://docs.cloud.google.com/python/docs/reference/monitoring/latest/google.cloud.monitoring_v3.services.alert_policy_service.AlertPolicyServiceAsyncClient"
+      ]
+    }
+  ]
+}

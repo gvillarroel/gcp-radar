@@ -1,0 +1,134 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:49.581Z",
+  "source_step08_card": "data/step-08/current/products/virtual-private-cloud/card.json",
+  "product_name": "Virtual Private Cloud",
+  "product_slug": "virtual-private-cloud",
+  "feature_name": "Bring Your Own IP (BYOIP)",
+  "feature_slug": "bring-your-own-ip-byoip",
+  "summary": "Introduced Bring Your Own IP (BYOIP) for Google Cloud VPC in General Availability.",
+  "extended_definition": "Introduced Bring Your Own IP (BYOIP) for Google Cloud VPC in General Availability.",
+  "lifecycle": {
+    "latest_feature_date": "2021-06-15",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/vpc/docs/bring-your-own-ip",
+      "https://docs.cloud.google.com/vpc/docs/byoip-planning",
+      "https://docs.cloud.google.com/vpc/docs/create-modify-vpc-networks",
+      "https://docs.cloud.google.com/vpc/docs/subnets"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Bring your own IP addresses \\_|\\_ Virtual Private Cloud \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/vpc/docs/bring-your-own-ip",
+        "source_id": "site-docs-root-2",
+        "final_score": 311,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Bring your own IP addresses Bring your own IP addresses (BYOIP) lets you provision and use your own public IP addresses for Google Cloud resources.",
+          "Anyone who has the appropriate IAM permissions in the project can use the IP addresses: compute.addresses. for regional IP addresses compute.globalAddresses. for global IP addresses Bring your own IP configurations The following tables summarize the available bring your own IP configurations.",
+          "If you use privately used public IP address ranges for any subnets in your VPC networks, your imported BYOIP prefixes must not overlap with these IP address ranges."
+        ]
+      },
+      {
+        "title": "\"Planning for bring your own IP addresses \\_|\\_ Virtual Private Cloud \\_\\",
+        "url": "https://docs.cloud.google.com/vpc/docs/byoip-planning",
+        "source_id": "site-docs-root-2",
+        "final_score": 297,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Planning for bring your own IP addresses Bring your own IP addresses (BYOIP) lets you provision and use your own public IPv4 addresses for Google Cloud resources.",
+          "Here are some decisions that should be considered when you plan your deployment: Who is responsible for administering BYOIP addresses?",
+          "BYOIP addresses administration with Shared VPC In this example of an organization that contains Shared VPC, there is a dedicated project, Public IP project , used to manage BYOIP addresses."
+        ]
+      },
+      {
+        "title": "Subnets \\_|\\_ Virtual Private Cloud \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vpc/docs/subnets",
+        "source_id": "site-docs-root",
+        "final_score": 231,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "If you have imported public IP addresses to Google using Bring your own IP (BYOIP) , your BYOIP ranges and privately used public IP address ranges in the same VPC network must not overlap.",
+          "If you use bring your own IP addresses (BYOIP), you can privately use your own IPv6 GUAs .",
+          "For more information, see Bring your own IP ."
+        ]
+      },
+      {
+        "title": "\"Quickstart: Create and manage VPC networks \\_|\\_ Virtual Private Cloud \\_\\",
+        "url": "https://docs.cloud.google.com/vpc/docs/create-modify-vpc-networks",
+        "source_id": "site-docs-root",
+        "final_score": 223,
+        "relevance": "",
+        "evidence_snippets": [
+          "Add a subnet that uses an IPv6 BYOIP address range Bring your own IP addresses (BYOIP) lets you import global unicast address (GUA) ranges that you can assign to a subnet's internal or external IPv6 address range.",
+          "If you want to use BYOIP to bring your own IPv6 addresses, see Assign subnet ranges instead.",
+          "If you want to use BYOIP to bring your own IPv6 addresses, see Assign subnet ranges instead."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "compute.addresses",
+      "compute.globalAddresses"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/bring-your-own-ip",
+        "https://docs.cloud.google.com/vpc/docs/byoip-planning",
+        "https://docs.cloud.google.com/vpc/docs/subnets",
+        "https://docs.cloud.google.com/vpc/docs/create-modify-vpc-networks"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/bring-your-own-ip",
+        "https://docs.cloud.google.com/vpc/docs/byoip-planning",
+        "https://docs.cloud.google.com/vpc/docs/subnets",
+        "https://docs.cloud.google.com/vpc/docs/create-modify-vpc-networks"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/bring-your-own-ip",
+        "https://docs.cloud.google.com/vpc/docs/byoip-planning",
+        "https://docs.cloud.google.com/vpc/docs/subnets",
+        "https://docs.cloud.google.com/vpc/docs/create-modify-vpc-networks"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/bring-your-own-ip",
+        "https://docs.cloud.google.com/vpc/docs/byoip-planning",
+        "https://docs.cloud.google.com/vpc/docs/subnets",
+        "https://docs.cloud.google.com/vpc/docs/create-modify-vpc-networks"
+      ]
+    }
+  ]
+}

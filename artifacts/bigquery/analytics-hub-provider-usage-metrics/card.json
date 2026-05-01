@@ -1,0 +1,159 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:18.771Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery",
+  "feature_name": "Analytics Hub Provider Usage Metrics",
+  "feature_slug": "analytics-hub-provider-usage-metrics",
+  "summary": "Analytics Hub Provider Usage Metrics reports jobs, subscriber consumption details, and rows and bytes processed for shared data.",
+  "extended_definition": "Analytics Hub Provider Usage Metrics reports jobs, subscriber consumption details, and rows and bytes processed for shared data.",
+  "lifecycle": {
+    "latest_feature_date": "2024-05-02",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/analytics-hub-introduction",
+      "https://docs.cloud.google.com/bigquery/docs/analytics-hub-manage-listings",
+      "https://docs.cloud.google.com/bigquery/docs/analytics-hub-monitor-listings"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Monitor listings \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/analytics-hub-monitor-listings",
+        "source_id": "site-docs-root-2",
+        "final_score": 169,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "SHARED DATASET USAGE The result is similar to the following: +------------+ num jobs +------------+ 1000 +------------+ To check the total jobs run by subscribers, use the WHERE clause: For datasets, use WHERE dataset id = \"...\" .",
+          "Use Sharing To get usage metrics for your shared data using Sharing, follow these steps: In the Google Cloud console, go to the Sharing (Analytics Hub) page.",
+          "Use INFORMATION SCHEMA view Data providers can track how subscribers use datasets by querying the INFORMATION SCHEMA.SHARED DATASET USAGE view ."
+        ]
+      },
+      {
+        "title": "Introduction to BigQuery sharing \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/analytics-hub-introduction",
+        "source_id": "site-docs-reference-5",
+        "final_score": 163,
+        "relevance": "",
+        "evidence_snippets": [
+          "Publishers Publishers create the following listings for their datasets in the Forecasting project or in a different project: Listing A: Demand Forecast Dataset 1 Listing B: Demand Forecast Dataset 2 Listing C: Demand Forecast Dataset 3 As a data provider, you can track the usage metrics for your shared dataset.",
+          "The usage metrics include the following details: Jobs that run against your shared dataset.",
+          "Usage metrics for consumption are supported only for usage with BigQuery jobs ."
+        ]
+      },
+      {
+        "title": "Manage listings \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/analytics-hub-manage-listings",
+        "source_id": "site-docs-reference-5",
+        "final_score": 149,
+        "relevance": "",
+        "evidence_snippets": [
+          "To enable the Analytics Hub API, you need the following Identity and Access Management (IAM) permissions: serviceUsage.services.get serviceUsage.services.list serviceUsage.services.enable The following predefined IAM role includes the permissions that you need to enable the Analytics Hub API: Service Usage Admin ( roles/serviceusage.serviceUsageAdmin ) To enable the Analytics Hub API, select one of the following options: Console Go to the Analytics Hub API page and enable the Analytics Hub API for your Google Cloud project.",
+          "Use the following format to add members: user:test-user@gmail.com group:admins@example.com serviceAccount:test123@example.domain.com domain:example.domain.com For example, to grant the roles/analyticshub.subscriber role to group:subscribers@example.com , add the following binding to the policy: { \"members\": [ \"group:subscribers@example.com\" ], \"role\":\"roles/analyticshub.subscriber\" } Write the updated policy by using the projects.locations.dataExchanges.listings.setIamPolicy method .",
+          "For read operations, the provider can authorize either the linked shared stored procedure (in the subscriber's linked dataset) or their original shared stored procedure (in the provider's dataset) and attach an IAM role to any of the provider's resources that are accessed by the linked stored procedure."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "analyticshub.subscriber",
+      "example.com",
+      "example.domain.com",
+      "gmail.com",
+      "projects.locations.dataExchanges.listings.setIamPolicy",
+      "services.enable",
+      "services.get",
+      "services.list",
+      "serviceusage.serviceUsageAdmin"
+    ],
+    "missing_inventory_roles": [
+      "roles/analyticshub.subscriber",
+      "roles/serviceusage.serviceUsageAdmin"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-monitor-listings",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-introduction",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-manage-listings"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-monitor-listings",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-introduction",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-manage-listings"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-monitor-listings",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-introduction",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-manage-listings"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-monitor-listings",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-introduction",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-manage-listings"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-monitor-listings",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-introduction",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-manage-listings"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-monitor-listings",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-introduction",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-manage-listings"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-monitor-listings",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-introduction",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-manage-listings"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-monitor-listings",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-introduction",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-manage-listings"
+      ]
+    }
+  ]
+}

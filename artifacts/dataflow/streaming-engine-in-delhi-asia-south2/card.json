@@ -1,0 +1,106 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:32.732Z",
+  "source_step08_card": "data/step-08/current/products/dataflow/card.json",
+  "product_name": "Dataflow",
+  "product_slug": "dataflow",
+  "feature_name": "Streaming Engine in Delhi (asia-south2)",
+  "feature_slug": "streaming-engine-in-delhi-asia-south2",
+  "summary": "This feature makes Streaming Engine available in zones in the Delhi region asia-south2.",
+  "extended_definition": "This feature makes Streaming Engine available in zones in the Delhi region asia-south2.",
+  "lifecycle": {
+    "latest_feature_date": "2021-06-29",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dataflow/docs/guides/interactive-pipeline-development",
+      "https://docs.cloud.google.com/dataflow/docs/quickstarts/create-streaming-pipeline-template",
+      "https://docs.cloud.google.com/dataflow/docs/resources/locations"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Dataflow locations \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataflow/docs/resources/locations",
+        "source_id": "site-docs-reference-required-4",
+        "final_score": 115,
+        "relevance": "",
+        "evidence_snippets": [
+          "Region description Region name Taiwan asia-east1 Hong Kong asia-east2 Tokyo asia-northeast1 Osaka asia-northeast2 Seoul asia-northeast3 Mumbai asia-south1 Delhi asia-south2 Singapore asia-southeast1 Jakarta asia-southeast2 Bangkok asia-southeast3 Sydney australia-southeast1 Melbourne australia-southeast2 Europe The following table lists the regions in Europe where Dataflow is available.",
+          "Region description Region name Montréal northamerica-northeast1 Toronto northamerica-northeast2 Queretaro, Mexico northamerica-south1 São Paulo southamerica-east1 Santiago southamerica-west1 Iowa us-central1 South Carolina us-east1 Northern Virginia us-east4 Columbus, Ohio us-east5 Oregon us-west1 Los Angeles, California us-west2 Salt Lake City, Utah us-west3 Las Vegas, Nevada us-west4 Dallas, Texas us-south1 Asia Pacific The following table lists the regions in Asia Pacific where Dataflow is available.",
+          "For information about available regions and zones for GPUs, see GPU regions and zones availability in the Compute Engine documentation."
+        ]
+      },
+      {
+        "title": "\"Quickstart: Create a streaming pipeline using a Dataflow template \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/dataflow/docs/quickstarts/create-streaming-pipeline-template",
+        "source_id": "site-docs-root",
+        "final_score": 114,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To ensure that the Compute Engine default service account has the necessary permissions to run the Dataflow job, ask your administrator to grant the following IAM roles to the Compute Engine default service account on your project: Important: You must grant these roles to the Compute Engine default service account, not to your user account.",
+          "In the dialog, for Topic name enter the following, and then click Save : projects/pubsub-public-data/topics/taxirides-realtime This publicly available Pub/Sub topic is based on the NYC Taxi & Limousine Commission's open dataset .",
+          "If you clicked Hide preview features to go to the Google Cloud console, then perform the following step instead: In the navigation panel, in the Resources section, select the taxirides dataset you created."
+        ]
+      },
+      {
+        "title": "\"Develop Apache Beam notebooks with the interactive runner \\_|\\_ Cloud Dataflow\\",
+        "url": "https://docs.cloud.google.com/dataflow/docs/guides/interactive-pipeline-development",
+        "source_id": "site-docs-reference-2",
+        "final_score": 104,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The following notebooks are available: Word Count Streaming Word Count Streaming NYC Taxi Ride Data Apache Beam SQL in notebooks with comparisons to pipelines Apache Beam SQL in notebooks with the Dataflow Runner Apache Beam SQL in notebooks Dataflow Word Count Interactive Flink at Scale RunInference Use GPUs with Apache Beam Visualize Data The Tutorials folder contains additional tutorials that explain the fundamentals of Apache Beam.",
+          "The following tutorials are available: Basic Operations Element Wise Operations Aggregations Windows I/O Operations Streaming Final Exercises These notebooks include explanatory text and commented code blocks to help you understand Apache Beam concepts and API usage.",
+          "Advanced features include the following workflows: Use Interactive FlinkRunner on notebook-managed clusters Use Beam SQL and beam sql magic Accelerate using JIT compiler and GPU Build a custom container Disable external IP addresses Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataflow/docs/resources/locations",
+        "https://docs.cloud.google.com/dataflow/docs/quickstarts/create-streaming-pipeline-template",
+        "https://docs.cloud.google.com/dataflow/docs/guides/interactive-pipeline-development"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataflow/docs/resources/locations",
+        "https://docs.cloud.google.com/dataflow/docs/quickstarts/create-streaming-pipeline-template",
+        "https://docs.cloud.google.com/dataflow/docs/guides/interactive-pipeline-development"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataflow/docs/resources/locations",
+        "https://docs.cloud.google.com/dataflow/docs/quickstarts/create-streaming-pipeline-template",
+        "https://docs.cloud.google.com/dataflow/docs/guides/interactive-pipeline-development"
+      ]
+    }
+  ]
+}

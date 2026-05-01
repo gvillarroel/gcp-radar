@@ -1,0 +1,86 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:48.184Z",
+  "source_step08_card": "data/step-08/current/products/vertex-ai/card.json",
+  "product_name": "Vertex AI",
+  "product_slug": "vertex-ai",
+  "feature_name": "Metrics-based model evaluation",
+  "feature_slug": "metrics-based-model-evaluation",
+  "summary": "Adds metrics-based evaluation for foundation and tuned models against evaluation datasets for tasks such as classification, summarization, question answering, and text generation.",
+  "extended_definition": "Adds metrics-based evaluation for foundation and tuned models against evaluation datasets for tasks such as classification, summarization, question answering, and text generation.",
+  "lifecycle": {
+    "latest_feature_date": "2023-08-29",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/vertex-ai/docs/evaluation/model-evaluation-notebook-tutorials",
+      "https://docs.cloud.google.com/vertex-ai/docs/pipelines/model-evaluation-component",
+      "https://docs.cloud.google.com/vertex-ai/docs/reference/rest"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Vertex AI model evaluation notebook tutorials \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/evaluation/model-evaluation-notebook-tutorials",
+        "source_id": "site-docs-reference-2",
+        "final_score": 232,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Import synthetic model training evaluation metrics to the corresponding (contender) models.",
+          "Extracting evaluation metrics from the BigQueryML and AutoML models.",
+          "Tutorial steps Execute module for preprocessing data Create a dataset artifact Log parameters Execute module for training the model Log parameters Create model artifact Assign tracking lineage to dataset, model and parameters Colab Colab Enterprise GitHub Vertex AI Workbench Vertex AI Experiments Track parameters and metrics for locally trained models ."
+        ]
+      },
+      {
+        "title": "Model evaluation components \\_|\\_ Vertex AI \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/pipelines/model-evaluation-component",
+        "source_id": "site-api-reference",
+        "final_score": 190,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Sliced metrics offers more granular evaluation metrics for AutoML tabular and custom training classification models.",
+          "The default schema includes the following fields: id : string displayNames : string type : enum timeSegmentStart : string timeSegmentEnd : string confidence : float The following is an example CSV file with sale dollars as the target column: date,store name,city,zip code,county,sale dollars 2020-03-17,Thriftway,,,,774.08999999999992 2020-03-10,Thriftway,,,,1160.67 2020-03-03,Thriftway,,,,2247.24 2020-06-08,New Star / Fort Dodge,,,,753.98 2020-06-01,New Star / Fort Dodge,,,,967.73 2020-01-10,Casey's General Store #1280 / Fort Dodge,,,,1040.92 2020-10-30,KUM & GO #76 / ADAIR,Adair,50002,ADAIR,1387.02 The TargetFieldDataRemoverOp component removes the target column before sending the file to the BatchPredictionJob component: date,store name,city,zip code,county 2020-03-17,Thriftway,nan,nan,nan 2020-03-10,Thriftway,nan,nan,nan 2020-03-03,Thriftway,nan,nan,nan 2020-06-08,New Star / Fort Dodge,nan,nan,nan 2020-06-01,New Star / Fort Dodge,nan,nan,nan 2020-01-10,Casey's General Store #1280 / Fort Dodge,nan,nan,nan 2020-10-30,KUM & GO #76 / ADAIR,Adair,50002.0,ADAIR The following is an example of a batch prediction output file without the target column of sale dollars : { \"instance\": { \"content\": \"gs://kbn-us-central1-test/datasets/text/happy 11556.txt\", \"mimeType\":\"text/plain\" }, \"prediction\": { \"ids\": [\"7903916851837534208\",\"3292230833410146304\",\"986387824196452352\",\"2139309328803299328\",\"5598073842623840256\",\"6750995347230687232\",\"4559431178561519616\"], \"displayNames\": [\"affection\",\"bonding\",\"achievement\",\"exercise\",\"nature\",\"enjoy the moment\",\"leisure\"], \"confidences\": [0.99483216,0.005162797,4.1117933E-6,3.9997E-7,2.4624453E-7,1.9969502E-7,1.16997434E-7] } } This table describes the required parameters for the ModelEvaluationForecastingOp component with a tabular model: Evaluation component parameter Required target field name Yes prediction label column Not required for forecasting models. prediction score column Not required for default schema.",
+          "The following is an example CSV dataset with species as the target column: petal length,petal width,sepal length,sepal width,species 6.4,2.8,5.6,2.2,2 5.0,2.3,3.3,1.0,1 4.9,2.5,4.5,1.7,2 4.9,3.1,1.5,0.1,0 The TargetFieldDataRemoverOp component removes the target column before sending the file to the batch prediction component: petal length,petal width,sepal length,sepal width 6.4,2.8,5.6,2.2 5.0,2.3,3.3,1.0 4.9,2.5,4.5,1.7 4.9,3.1,1.5,0.1 The following is an example of a batch prediction output file without the target column of species : { \"instance\": [5.6, 2.5, 3.9, 1.1], \"prediction\": [0.0005816521588712931, 0.9989032745361328, 0.0005150380893610418] } { \"instance\": [5.0, 3.6, 1.4, 0.2], \"prediction\": [0.999255359172821, 0.000527293945197016, 0.00021737271163146943] } { \"instance\": [6.0, 2.9, 4.5, 1.5], \"prediction\": [0.00025063654175028205, 0.9994204044342041, 0.00032893591560423374] } This table describes the required parameters for the ModelEvaluationClassificationOp component with a custom-trained model: Evaluation component parameter Required target field name Yes prediction label column Must be empty; this column doesn't exist in custom-trained models. prediction score column Not required for default schema; is set automatically for JSONL , CSV , or BIGQUERY formats. evaluation class labels Yes."
+        ]
+      },
+      {
+        "title": "Vertex AI API \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/reference/rest",
+        "source_id": "site-api-reference",
+        "final_score": 186,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "REST Resource: v1beta1.projects.locations Methods askContexts POST /v1beta1/{parent}:askContexts Agentic Retrieval Ask API for RAG. asyncRetrieveContexts POST /v1beta1/{parent}:asyncRetrieveContexts Asynchronous API to retrieves relevant contexts for a query. augmentPrompt POST /v1beta1/{parent}:augmentPrompt Given an input prompt, it returns augmented prompt from vertex rag store to guide LLM towards generating grounded responses. corroborateContent POST /v1beta1/{parent}:corroborateContent Given an input text, it returns a score that evaluates the factuality of the text. deploy POST /v1beta1/{destination}:deploy Deploys a model to a new endpoint. deployPublisherModel (deprecated) POST /v1beta1/{destination}:deployPublisherModel Deploys publisher models. evaluateDataset POST /v1beta1/{location}:evaluateDataset Evaluates a dataset based on a set of given metrics. evaluateInstances POST /v1beta1/{location}:evaluateInstances Evaluates instances based on a given metric. generateSyntheticData POST /v1beta1/{location}:generateSyntheticData Generates synthetic (artificial) data based on a description getRagEngineConfig GET /v1beta1/{name} Gets a RagEngineConfig. recommendSpec POST /v1beta1/{parent}:recommendSpec Gets a Model's spec recommendations. retrieveContexts POST /v1beta1/{parent}:retrieveContexts Retrieves relevant contexts for a query. updateRagEngineConfig PATCH /v1beta1/{ragEngineConfig.name} Updates a RagEngineConfig.",
+          "REST Resource: v1beta1.projects.locations.models.evaluations.slices Methods batchImport POST /v1beta1/{parent}:batchImport Imports a list of externally generated EvaluatedAnnotations. get GET /v1beta1/{name} Gets a ModelEvaluationSlice. list GET /v1beta1/{parent}/slices Lists ModelEvaluationSlices in a ModelEvaluation.",
+          "REST Resource: v1.projects.locations.models.evaluations.slices Methods batchImport POST /v1/{parent}:batchImport Imports a list of externally generated EvaluatedAnnotations. get GET /v1/{name} Gets a ModelEvaluationSlice. list GET /v1/{parent}/slices Lists ModelEvaluationSlices in a ModelEvaluation."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "v1.projects.locations.models.evaluations.slices",
+      "v1beta1.projects.locations",
+      "v1beta1.projects.locations.models.evaluations",
+      "v1beta1.projects.locations.models.evaluations.slices"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": []
+}

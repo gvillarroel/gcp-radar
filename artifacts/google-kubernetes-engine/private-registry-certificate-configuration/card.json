@@ -1,0 +1,160 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:39.542Z",
+  "source_step08_card": "data/step-08/current/products/google-kubernetes-engine/card.json",
+  "product_name": "Google Kubernetes Engine",
+  "product_slug": "google-kubernetes-engine",
+  "feature_name": "Private registry certificate configuration",
+  "feature_slug": "private-registry-certificate-configuration",
+  "summary": "GKE can use a containerd configuration file to access private image registries that use private certificates.",
+  "extended_definition": "GKE can use a containerd configuration file to access private image registries that use private certificates.",
+  "lifecycle": {
+    "latest_feature_date": "2024-04-30",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/docs/deprecations/migrate-containerd-2",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/access-private-registries-private-certificates",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/reference/rest/v1/ContainerdConfig"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Access private registries with private CA certificates \\_|\\_ GKE security\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/access-private-registries-private-certificates",
+        "source_id": "site-iam-reference",
+        "final_score": 216,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Apply containerd configuration to new node pools You can apply the containerd configuration to a new GKE node pool with following command: gcloud container node-pools create NODE POOL NAME \\ --cluster = CLUSTER NAME \\ --location = LOCATION \\ --scopes = \"cloud-platform\" \\ --containerd-config-from-file = \" PATH TO CONFIG FILE \" Note : If your configuration file does not use secrets from Secret Manager, such as for the privateRegistryAccessConfig feature or when using registryHosts with certificates stored in Secret Manager, you can remove the --scopes=\"cloud-platform\" flag.",
+          "Run the following command to create Autopilot clusters: gcloud container clusters create-auto CLUSTER NAME \\ --location = LOCATION \\ --scopes = \"cloud-platform\" \\ --containerd-config-from-file = \" PATH TO CONFIG FILE \" Note : If your configuration file does not use secrets from Secret Manager, such as for the privateRegistryAccessConfig feature or when using registryHosts with certificates stored in Secret Manager, you can remove the --scopes=\"cloud-platform\" flag.",
+          "For a description of these fields, see registryHosts in the Available containerd configuration options. privateRegistryAccessConfig privateRegistryAccessConfig : certificateAuthorityDomainConfig : - gcpSecretManagerCertificateConfig : secretURI : \"projects/ PROJECT NUMBER /secrets/ SECRET NAME /versions/ SECRET VERSION \" fqdns : - \" FQDN1 \" - \" FQDN2 \" enabled : true Replace the following: PROJECT NUMBER : the project number that you got in the previous step."
+        ]
+      },
+      {
+        "title": "\"ContainerdConfig \\_|\\_ Google Kubernetes Engine (GKE) \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/reference/rest/v1/ContainerdConfig",
+        "source_id": "site-api-reference",
+        "final_score": 166,
+        "relevance": "",
+        "evidence_snippets": [
+          "JSON representation PrivateRegistryAccessConfig JSON representation CertificateAuthorityDomainConfig JSON representation GCPSecretManagerCertificateConfig JSON representation WritableCgroups JSON representation RegistryHostConfig JSON representation HostConfig JSON representation HostCapability RegistryHeader JSON representation CertificateConfig JSON representation CertificateConfigPair JSON representation ContainerdConfig contains configuration to customize containerd.",
+          "JSON representation { \"enabled\" : boolean , \"certificateAuthorityDomainConfig\" : [ { object ( CertificateAuthorityDomainConfig ) } ] } Fields enabled boolean Private registry access is enabled. certificateAuthorityDomainConfig[] object ( CertificateAuthorityDomainConfig ) Private registry access configuration.",
+          "JSON representation { \"privateRegistryAccessConfig\" : { object ( PrivateRegistryAccessConfig ) } , \"writableCgroups\" : { object ( WritableCgroups ) } , \"registryHosts\" : [ { object ( RegistryHostConfig ) } ] } Fields privateRegistryAccessConfig object ( PrivateRegistryAccessConfig ) PrivateRegistryAccessConfig is used to configure access configuration for private container registries. writableCgroups object ( WritableCgroups ) Optional."
+        ]
+      },
+      {
+        "title": "\"Migrate nodes to containerd 2 \\_|\\_ Google Kubernetes Engine (GKE) \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/deprecations/migrate-containerd-2",
+        "source_id": "site-docs-reference-2",
+        "final_score": 156,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Run the following command to check for the DaemonSets: kubectl get daemonsets --all-namespaces -o json \\ jq -r ' [ \"/\", \"/etc\", \"/etc/\", \"/etc/containerd\", \"/etc/containerd/\", \"/etc/containerd/config.toml\" ] as $host paths [ \"kube-system\", \"kube-node-lease\", \"istio-system\", \"asm-system\", \"gatekeeper-system\", \"config-management-system\", \"config-management-monitoring\", \"cnrm-system\", \"hnc-system\", \"gke-managed-system\", \"gke-gmp-system\", \"gmp-system\", \"gke-managed-cim\" ] as $excluded namespaces .items[] select( ([.metadata.namespace] inside($excluded namespaces) not) and ( (any(.spec.template.spec.volumes[]?.hostPath.path; IN($host paths[]))) or ( .spec.template.spec.hostPID == true and any(.spec.template.spec.containers[]; .securityContext?.privileged == true) ) ) ) .metadata.namespace + \"/\" + .metadata.name ' Migrate from the CRI registry auths or configs.auth properties If your workloads use the auths or configs.auth properties in the containerd config to authenticate to a private registry for pulling container images, you must migrate the workloads using those images to the imagePullSecrets field instead.",
+          "If you use the registry.configs.auth property, the authentication details might look like the following: [plugins. \"io.containerd.grpc.v1.cri\" .registry.configs. \"$REGISTRY DOMAIN\" .auth] username = \"example-user\" password = \"example-password\" Collect these authentication details for each registry domain that's specified in your configuration.",
+          "When viewing insights in the Google Cloud console, see the sidebar panel Migrate your containerd configuration off deprecated CRI registry auths field or Migrate your containerd configuration off deprecated CRI registry mirrors field ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "config.toml",
+      "configs.auth",
+      "container.googleapis.com",
+      "example.io",
+      "example.mirror.io",
+      "io.containerd.grpc.v1.cri",
+      "metadata.name",
+      "metadata.namespace",
+      "registry.configs",
+      "registry.configs.auth",
+      "spec.template.spec.containers",
+      "spec.template.spec.hostPID",
+      "spec.template.spec.volumes"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/access-private-registries-private-certificates",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/rest/v1/ContainerdConfig",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/deprecations/migrate-containerd-2"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/access-private-registries-private-certificates",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/rest/v1/ContainerdConfig",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/deprecations/migrate-containerd-2"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/access-private-registries-private-certificates",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/rest/v1/ContainerdConfig",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/deprecations/migrate-containerd-2"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/access-private-registries-private-certificates",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/rest/v1/ContainerdConfig",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/deprecations/migrate-containerd-2"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/access-private-registries-private-certificates",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/rest/v1/ContainerdConfig",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/deprecations/migrate-containerd-2"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/access-private-registries-private-certificates",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/rest/v1/ContainerdConfig",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/deprecations/migrate-containerd-2"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/access-private-registries-private-certificates",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/rest/v1/ContainerdConfig",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/deprecations/migrate-containerd-2"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/access-private-registries-private-certificates",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/rest/v1/ContainerdConfig",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/deprecations/migrate-containerd-2"
+      ]
+    }
+  ]
+}

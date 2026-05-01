@@ -1,0 +1,170 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:23.852Z",
+  "source_step08_card": "data/step-08/current/products/cloud-key-management-service/card.json",
+  "product_name": "Cloud Key Management Service",
+  "product_slug": "cloud-key-management-service",
+  "feature_name": "Cloud EKM asymmetric keys",
+  "feature_slug": "cloud-ekm-asymmetric-keys",
+  "summary": "Cloud EKM supports asymmetric keys.",
+  "extended_definition": "Cloud EKM supports asymmetric keys.",
+  "lifecycle": {
+    "latest_feature_date": "2021-12-23",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kms/docs/asymmetric-encryption",
+      "https://docs.cloud.google.com/kms/docs/ekm",
+      "https://docs.cloud.google.com/kms/docs/key-management-service",
+      "https://docs.cloud.google.com/kms/docs/reference/inventory/rest/v1/projects.cryptoKeys"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"REST Resource: projects.cryptoKeys \\_|\\_ Cloud Key Management Service \\_\\",
+        "url": "https://docs.cloud.google.com/kms/docs/reference/inventory/rest/v1/projects.cryptoKeys",
+        "source_id": "site-api-reference",
+        "final_score": 128,
+        "relevance": "",
+        "evidence_snippets": [
+          "ASYMMETRIC DECRYPT CryptoKeys with this purpose may be used with [AsymmetricDecrypt][KeyManagementService.AsymmetricDecrypt] and [GetPublicKey][KeyManagementService.GetPublicKey].",
+          "ASYMMETRIC SIGN CryptoKeys with this purpose may be used with [AsymmetricSign][KeyManagementService.AsymmetricSign] and [GetPublicKey][KeyManagementService.GetPublicKey].",
+          "JSON representation { \"externalKeyUri\" : string , \"ekmConnectionKeyPath\" : string } Fields externalKeyUri string The URI for an external resource that this CryptoKeyVersion represents. ekmConnectionKeyPath string The path to the external key material on the EKM when using [EkmConnection][] e.g., \"v0/my/key\"."
+        ]
+      },
+      {
+        "title": "\"Cloud External Key Manager \\_|\\_ Cloud Key Management Service \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/kms/docs/ekm",
+        "source_id": "site-docs-root",
+        "final_score": 118,
+        "relevance": "",
+        "evidence_snippets": [
+          "EKM key management from Cloud KMS When using Cloud EKM through a VPC with an external key management partner that supports the Cloud EKM control plane, you can use the Cloud KMS EKM management mode to simplify the process of maintaining external keys in your external key management partner and in Cloud EKM.",
+          "If your EKM supports the Cloud EKM control plane, then you can enable EKM key management from Cloud KMS for your EKM connections to create coordinated external keys.",
+          "Compatibility Supported key managers You can store external keys in the following external key management partner systems: Supported today: Fortanix Futurex Thales Services that support CMEK with Cloud EKM The following services support integration with Cloud KMS for external (Cloud EKM) keys: Agent Assist AlloyDB for PostgreSQL Apigee API hub Application Integration Artifact Registry Backup and DR Service: Backup Vault Container and Backups at rest Backup for GKE BigQuery Bigtable Cloud Composer Cloud Data Fusion Cloud Healthcare API Cloud Logging: Data in the Log Router and Data in Logging storage Cloud Run Cloud Run functions Cloud SQL Cloud Storage Cloud Tasks Cloud Workstations Compute Engine: Persistent disks , Snapshots , Custom images , and Machine images Customer Experience Insights Database Migration Service: MySQL migrations - data written to databases , PostgreSQL migrations - Data written to databases , PostgreSQL to AlloyDB migrations - Data written to databases , SQL Server migrations - Data written to databases , and Oracle to PostgreSQL data at rest Dataflow Dataform Dataplex Universal Catalog Dataproc Metastore Datastream Dialogflow CX Document AI Eventarc Advanced ( Preview ) Eventarc Standard Filestore Firestore Google Cloud Managed Lustre Google Cloud Managed Service for Apache Kafka Google Cloud NetApp Volumes Google Distributed Cloud Google Kubernetes Engine: Data on VM disks and Application-layer secrets Integration Connectors Looker (Google Cloud core) Managed Service for Apache Spark: Dataproc clusters data on VM disks and Dataproc serverless data on VM disks Memorystore for Redis Memorystore for Redis Cluster Memorystore for Valkey Migrate to Virtual Machines: Data migrated from VMware, AWS, and Azure VM sources and Data migrated from disk and machine image sources Parameter Manager Pub/Sub Secret Manager Secure Source Manager Security Command Center Spanner Speech-to-Text Vertex AI Vertex AI Workbench instances Workflows Workload Manager Important: All other services are not compatible with Cloud External Key Manager for CMEK."
+        ]
+      },
+      {
+        "title": "Cloud Key Management Service overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/kms/docs/key-management-service",
+        "source_id": "site-api-reference",
+        "final_score": 114,
+        "relevance": "",
+        "evidence_snippets": [
+          "Supports symmetric and asymmetric keys for encryption, decryption, signing, and signature validation .",
+          "Supports symmetric and asymmetric keys for encryption and decryption .",
+          "Supports symmetric and asymmetric keys for encryption and decryption ."
+        ]
+      },
+      {
+        "title": "\"Asymmetric encryption \\_|\\_ Cloud Key Management Service \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/kms/docs/asymmetric-encryption",
+        "source_id": "site-iam-reference",
+        "final_score": 98,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Example use case for asymmetric encryption Asymmetric encryption only supports a very small plaintext size, so asymmetric encryption is generally used for encryption keys, not large pieces of data.",
+          "Asymmetric encryption algorithms Cloud Key Management Service supports RSA algorithms for asymmetric encryption.",
+          "For information about which algorithms Cloud KMS supports, see asymmetric encryption algorithms ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "e.g",
+      "projects.cryptoKeys"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/reference/inventory/rest/v1/projects.cryptoKeys",
+        "https://docs.cloud.google.com/kms/docs/ekm",
+        "https://docs.cloud.google.com/kms/docs/key-management-service",
+        "https://docs.cloud.google.com/kms/docs/asymmetric-encryption"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/reference/inventory/rest/v1/projects.cryptoKeys",
+        "https://docs.cloud.google.com/kms/docs/ekm",
+        "https://docs.cloud.google.com/kms/docs/key-management-service",
+        "https://docs.cloud.google.com/kms/docs/asymmetric-encryption"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/reference/inventory/rest/v1/projects.cryptoKeys",
+        "https://docs.cloud.google.com/kms/docs/ekm",
+        "https://docs.cloud.google.com/kms/docs/key-management-service",
+        "https://docs.cloud.google.com/kms/docs/asymmetric-encryption"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/reference/inventory/rest/v1/projects.cryptoKeys",
+        "https://docs.cloud.google.com/kms/docs/ekm",
+        "https://docs.cloud.google.com/kms/docs/key-management-service",
+        "https://docs.cloud.google.com/kms/docs/asymmetric-encryption"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/reference/inventory/rest/v1/projects.cryptoKeys",
+        "https://docs.cloud.google.com/kms/docs/ekm",
+        "https://docs.cloud.google.com/kms/docs/key-management-service",
+        "https://docs.cloud.google.com/kms/docs/asymmetric-encryption"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/reference/inventory/rest/v1/projects.cryptoKeys",
+        "https://docs.cloud.google.com/kms/docs/ekm",
+        "https://docs.cloud.google.com/kms/docs/key-management-service",
+        "https://docs.cloud.google.com/kms/docs/asymmetric-encryption"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/reference/inventory/rest/v1/projects.cryptoKeys",
+        "https://docs.cloud.google.com/kms/docs/ekm",
+        "https://docs.cloud.google.com/kms/docs/key-management-service",
+        "https://docs.cloud.google.com/kms/docs/asymmetric-encryption"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/reference/inventory/rest/v1/projects.cryptoKeys",
+        "https://docs.cloud.google.com/kms/docs/ekm",
+        "https://docs.cloud.google.com/kms/docs/key-management-service",
+        "https://docs.cloud.google.com/kms/docs/asymmetric-encryption"
+      ]
+    }
+  ]
+}

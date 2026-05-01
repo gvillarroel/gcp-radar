@@ -1,0 +1,85 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:22.874Z",
+  "source_step08_card": "data/step-08/current/products/cloud-build/card.json",
+  "product_name": "Cloud Build",
+  "product_slug": "cloud-build",
+  "feature_name": "Cloud Build Dashboard",
+  "feature_slug": "cloud-build-dashboard",
+  "summary": "The Cloud Build Dashboard became generally available, providing a high-level overview of recent builds for build triggers.",
+  "extended_definition": "The Cloud Build Dashboard became generally available, providing a high-level overview of recent builds for build triggers.",
+  "lifecycle": {
+    "latest_feature_date": "2020-02-06",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/appengine/docs/quotas",
+      "https://docs.cloud.google.com/appengine/docs/standard/java-gen2/config/appref-xml",
+      "https://docs.cloud.google.com/python/docs/reference/cloudbuild/latest/google.cloud.devtools.cloudbuild_v1.services.cloud_build.CloudBuildAsyncClient"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Quotas and limits \\_|\\_ App Engine standard environment \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/quotas",
+        "source_id": "site-docs-reference-2",
+        "final_score": 93,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "If you're expecting extremely high traffic levels, or for some reason your app requires particularly high quotas (for example, because of a significant product launch or large load tests), we recommend that you sign up for a support package .",
+          "Tip: The maximum per-minute quotas accommodate high traffic levels, enough to handle a spike in traffic from your site getting mentioned in news stories.",
+          "Quotas generally apply at the Google Cloud project level."
+        ]
+      },
+      {
+        "title": "\"appengine-web.xml reference \\_|\\_ App Engine standard environment \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/java-gen2/config/appref-xml",
+        "source_id": "site-docs-reference-2",
+        "final_score": 80,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The default value is \"automatic.\" Keep the following in mind: A high maximum reduces the number of idle instances more gradually when load levels return to normal after a spike.",
+          "A high maximum means users might wait longer for their requests to be served, if there are pending requests and no idle instances to serve them, but your application will cost less to run. <min-idle-instances> The number of instances to be kept running and ready to serve traffic.This setting only applies to the version that receives most of the traffic.",
+          "This parameter specifies the CPU usage threshold at which new instances will be started to handle traffic, enabling you to balance between performance and cost, with lower values increasing performance and increasing cost, and higher values decreasing performance but also decreasing cost."
+        ]
+      },
+      {
+        "title": "\"Class CloudBuildAsyncClient (3.35.0) \\_|\\_ Python client libraries \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/cloudbuild/latest/google.cloud.devtools.cloudbuild_v1.services.cloud_build.CloudBuildAsyncClient",
+        "source_id": "site-python-reference",
+        "final_score": 80,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "At a high level, a Build describes where to find source code, how to build it (for example, the builder image to run on the source), and where to store the built artifacts.",
+          "At a high level, a Build describes where to find source code, how to build it (for example, the builder image to run on the source), and where to store the built artifacts.",
+          "At a high level, a Build describes where to find source code, how to build it (for example, the builder image to run on the source), and where to store the built artifacts."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "app.yaml",
+      "traffic.This",
+      "web.xml"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": []
+}

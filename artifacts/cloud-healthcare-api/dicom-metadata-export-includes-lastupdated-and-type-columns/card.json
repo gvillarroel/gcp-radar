@@ -1,0 +1,130 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:23.577Z",
+  "source_step08_card": "data/step-08/current/products/cloud-healthcare-api/card.json",
+  "product_name": "Cloud Healthcare API",
+  "product_slug": "cloud-healthcare-api",
+  "feature_name": "DICOM metadata export includes LastUpdated and Type columns",
+  "feature_slug": "dicom-metadata-export-includes-lastupdated-and-type-columns",
+  "summary": "When exporting DICOM metadata to BigQuery, generated tables now include LastUpdated and Type columns that capture instance-deleted metadata; When exporting DICOM metadata to BigQuery, generated tables now include LastUpdated and Type columns that capture instance-deleted metadata.",
+  "extended_definition": "When exporting DICOM metadata to BigQuery, generated tables now include LastUpdated and Type columns that capture instance-deleted metadata; When exporting DICOM metadata to BigQuery, generated tables now include LastUpdated and Type columns that capture instance-deleted metadata.",
+  "lifecycle": {
+    "latest_feature_date": "2022-09-23",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/healthcare-api/docs/dicom",
+      "https://docs.cloud.google.com/healthcare-api/docs/dicom-storage-class",
+      "https://docs.cloud.google.com/healthcare-api/docs/how-tos/fhir-import-export"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "DICOM storage classes \\_|\\_ Cloud Healthcare API \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/healthcare-api/docs/dicom-storage-class",
+        "source_id": "site-docs-root-2",
+        "final_score": 175,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Response { \"name\": \"projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /operations/ OPERATION ID \", \"metadata\": { \"@type\": \"type.googleapis.com/google.cloud.healthcare.v1.OperationMetadata\", \"apiMethodName\": \"google.cloud.healthcare.v1.storageinfo.StorageInfoService.SetBlobStorageSettings\", \"createTime\": \" CREATE TIME \", \"endTime\": \" END TIME \", \"logsUrl\": https://console.cloud.google.com/logs/query/ CLOUD LOGGING URL , \"counter\": { \"success\": \" SUCCESS COUNT \" } }, \"done\": true, \"response\": { \"@type\": \"type.googleapis.com/google.protobuf.Empty\" } } Change storage class for multiple objects using a filter file The following sections show how to create and use a filter file to change the storage class of DICOM objects based on a filter criteria.",
+          "Consider the following filter file: /studies/1.123.456.789 /studies/1.666.333.111/series/123.456 /studies/1.666.333.111/series/567.890 /studies/1.888.999.222/series/123.456/instances/111 /studies/1.888.999.222/series/123.456/instances/222 /studies/1.888.999.222/series/123.456/instances/333 This example filter file applies to the following: The entire study with the study instance UID as 1.123.456.789 Two separate series with series instance UIDs as 123.456 and 567.890 in the study 1.666.333.111 Three individual instances with instance IDs as 111 , 222 , and 333 in the study 1.888.999.222 and series 123.456 Create a filter file using BigQuery To create a filter file using BigQuery, you must first export the metadata of your DICOM store to BigQuery .",
+          "Response { \"name\": \"projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /operations/ OPERATION ID \", \"metadata\": { \"@type\": \"type.googleapis.com/google.cloud.healthcare.v1.OperationMetadata\", \"apiMethodName\": \"google.cloud.healthcare.v1.storageinfo.StorageInfoService.SetBlobStorageSettings\", \"createTime\": \" CREATE TIME \", \"endTime\": \" END TIME \", \"logsUrl\": https://console.cloud.google.com/logs/query/ CLOUD LOGGING URL , \"counter\": { \"success\": \" SUCCESS COUNT \" } }, \"done\": true, \"response\": { \"@type\": \"type.googleapis.com/google.protobuf.Empty\" } } View a DICOM object's storage class You can view the storage class of DICOM objects at the study, series, or instance level."
+        ]
+      },
+      {
+        "title": "\"DICOM conformance statement \\_|\\_ Cloud Healthcare API \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/healthcare-api/docs/dicom",
+        "source_id": "site-api-reference",
+        "final_score": 166,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Returned results The response can be in either JSON or XML format which can be controlled using the following Accept header values: application/dicom+json (default) multipart/related; type=application/dicom+xml By default the following attributes will be returned: Studies: SpecificCharacterSet StudyDate StudyTime AccessionNumber InstanceAvailability ReferringPhysicianName TimezoneOffsetFromUTC PatientName PatientID PatientBirthDate PatientSex StudyInstanceUID StudyID Series: SpecificCharacterSet Modality TimezoneOffsetFromUTC SeriesDescription SeriesInstanceUID PerformedProcedureStepStartDate PerformedProcedureStepStartTime RequestAttributesSequence Instances: SpecificCharacterSet SOPClassUID SOPInstanceUID InstanceAvailability TimezoneOffsetFromUTC InstanceNumber Rows Columns BitsAllocated NumberOfFrames For includefield=all , the default attributes will be returned along with the following attributes: Studies: PersonIdentificationCodeSequence PersonAddress PersonTelephoneNumbers PersonTelecomInformation InstitutionName InstitutionAddress InstitutionCodeSequence ReferringPhysicianIdentificationSequence ConsultingPhysicianName ConsultingPhysicianIdentificationSequence IssuerOfAccessionNumberSequence LocalNamespaceEntityID UniversalEntityID UniversalEntityIDType StudyDescription PhysiciansOfRecord PhysiciansOfRecordIdentificationSequence NameOfPhysiciansReadingStudy PhysiciansReadingStudyIdentificationSequence RequestingServiceCodeSequence ReferencedStudySequence ProcedureCodeSequence ReasonForPerformedProcedureCodeSequence Series: SeriesNumber Laterality SeriesDate SeriesTime Instances: all attributes present in the DICOM instance, excluding the following exceptions.",
+          "Metadata resources The following Accept Headers are supported: application/dicom+json (default) multipart/related; type=application/dicom+xml Tags that are encoded as InlineBinary elements will be encoded using little-endian byte ordering, as the transfer syntax parameter is not supported on endpoints requesting metadata resources.",
+          "DICOM Dictionary Version The Cloud Healthcare API uses the DICOM 2025b dictionary for parsing tags of ingested instances and for generating column names when exporting to BigQuery."
+        ]
+      },
+      {
+        "title": "\"Import and export FHIR resources using Cloud Storage \\_|\\_ Cloud Healthcare\\",
+        "url": "https://docs.cloud.google.com/healthcare-api/docs/how-tos/fhir-import-export",
+        "source_id": "site-docs-root",
+        "final_score": 165,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "An optional flag, --resource-type , that only exports specific resource types, defined as a comma-separated list of one or more FHIR resources types An optional flag, --since , that only exports resources updated after a specific time, defined as YYYY-MM-DDThh:mm:ss.sss+zz:zz The following sample shows the gcloud healthcare fhir-stores export gcs command. gcloud healthcare fhir-stores export gcs FHIR STORE ID \\ --dataset = DATASET ID \\ --location = LOCATION \\ --project = PROJECT ID --gcs-uri = gs:// BUCKET / DIRECTORY The command line displays the operation ID: Waiting for operation [ OPERATION ID ] to complete...done. name: projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /fhirStores/ FHIR STORE ID To view the status of the operation, run the gcloud healthcare operations describe command, providing the OPERATION ID from the response: gcloud healthcare operations describe OPERATION ID \\ --dataset = DATASET ID After the command completes, the response includes done . metadata: '@type': type.googleapis.com/google.cloud.healthcare.v1.OperationMetadata apiMethodName: google.cloud.healthcare.v1.fhir.FhirService.ExportFhirData createTime: \" CREATE TIME \" endTime: \" END TIME \" name: projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /operations/ OPERATION ID response: '@type': type.googleapis.com/google.cloud.healthcare.v1.fhir.rest.ExportResourcesResponse fhirStore: projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /operations/ OPERATION ID resourceCount: ' RESOURCE COUNT ' API To export FHIR resources, use the projects.locations.datasets.fhirStores.export method.",
+          "GoogleAuth ({ scopes : [ 'https://www.googleapis.com/auth/cloud-platform' ], }), }); const sleep = ms = > { return new Promise ( resolve = > setTimeout ( resolve , ms )); }; const exportFhirResourcesGcs = async () = > { // TODO(developer): uncomment these lines before running the sample // const cloudRegion = 'us-central1'; // const projectId = 'adjective-noun-123'; // const datasetId = 'my-dataset'; // const fhirStoreId = 'my-fhir-store'; // const gcsUri = 'my-bucket/my-directory' const name = projects/ ${ projectId } /locations/ ${ cloudRegion } /datasets/ ${ datasetId } /fhirStores/ ${ fhirStoreId } ; const request = { name , resource : { gcsDestination : { // The destination location in Cloud Storage for the FHIR resources uriPrefix : gs:// ${ gcsUri } , }, }, }; const operation = await healthcare . projects . locations . datasets . fhirStores . export ( request ); const operationName = operation . data . name ; // Wait ten seconds for the LRO to finish await sleep ( 10000 ); // Check the LRO's status const operationStatus = await healthcare . projects . locations . datasets . operations . get ({ name : operationName , }); if ( typeof operationStatus . data . metadata . counter !== 'undefined' ) { console . log ( 'Exported FHIR resources successfully' ); } else { console . log ( 'Export failed' ); } }; exportFhirResourcesGcs (); Python def export fhir store gcs ( project id , location , dataset id , fhir store id , gcs uri ): \"\"\"Export resources to a Google Cloud Storage bucket by copying them from the FHIR store.",
+          "To track the status of the operation, you can use the Operation get method : $cred = gcloud auth application-default print-access-token $headers = @ { Authorization = \"Bearer $cred \" } Invoke-WebRequest -Method Get -Headers $headers -Uri \"https://healthcare.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /operations/ OPERATION ID \" Select-Object -Expand Content If the request is successful, the server returns a response with the status of the operation in JSON format: { \"name\": \"projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /operations/ OPERATION ID \", \"metadata\": { \"@type\": \"type.googleapis.com/google.cloud.healthcare.v1.OperationMetadata\", \"apiMethodName\": \"google.cloud.healthcare.v1.fhir.FhirService.ExportResources\", \"createTime\": \" CREATE TIME \", \"endTime\": \" END TIME \", \"logsUrl\": \"https://console.cloud.google.com/logs/query/ CLOUD LOGGING URL \", \"counter\": { \"success\": \" SUCCESS COUNT \" } }, \"done\": true, \"response\": { \"@type\": \"type.googleapis.com/google.cloud.healthcare.v1.fhir.rest.ExportResourcesResponse\", } } Go import ( \"context\" \"fmt\" \"io\" \"time\" healthcare \"google.golang.org/api/healthcare/v1\" ) // exportFHIRResource exports the resources in the FHIR store. func exportFHIRResource ( w io ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "complete...done",
+      "console.cloud.google.com",
+      "healthcare.googleapis.com",
+      "projects.locations.datasets.fhirStores.export",
+      "projects.locations.datasets.fhirStores.import",
+      "ss.sss",
+      "type.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/healthcare-api/docs/dicom-storage-class",
+        "https://docs.cloud.google.com/healthcare-api/docs/dicom",
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/fhir-import-export"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/healthcare-api/docs/dicom-storage-class",
+        "https://docs.cloud.google.com/healthcare-api/docs/dicom",
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/fhir-import-export"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/healthcare-api/docs/dicom-storage-class",
+        "https://docs.cloud.google.com/healthcare-api/docs/dicom",
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/fhir-import-export"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/healthcare-api/docs/dicom-storage-class",
+        "https://docs.cloud.google.com/healthcare-api/docs/dicom",
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/fhir-import-export"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/healthcare-api/docs/dicom-storage-class",
+        "https://docs.cloud.google.com/healthcare-api/docs/dicom",
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/fhir-import-export"
+      ]
+    }
+  ]
+}

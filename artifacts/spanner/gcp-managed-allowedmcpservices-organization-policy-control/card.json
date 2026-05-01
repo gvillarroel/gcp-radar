@@ -1,0 +1,203 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:46.903Z",
+  "source_step08_card": "data/step-08/current/products/spanner/card.json",
+  "product_name": "Spanner",
+  "product_slug": "spanner",
+  "feature_name": "gcp.managed.allowedMCPServices organization policy control",
+  "feature_slug": "gcp-managed-allowedmcpservices-organization-policy-control",
+  "summary": "Control of MCP usage via organization policies using the gcp.managed.allowedMCPServices constraint is deprecated, with IAM deny policies recommended instead; deprecated on 2026-03-17.",
+  "extended_definition": "Control of MCP usage via organization policies using the gcp.managed.allowedMCPServices constraint is deprecated, with IAM deny policies recommended instead; deprecated on 2026-03-17.",
+  "lifecycle": {
+    "latest_feature_date": "2026-02-17",
+    "deprecation_date": "2026-03-17",
+    "status": "deprecation_noted"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/mcp/control-mcp-use-iam",
+      "https://docs.cloud.google.com/mcp/organization-control-mcp-servers-deprecation",
+      "https://docs.cloud.google.com/spanner/docs/cmek"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Organization policy control of MCP servers deprecation | Google Cloud MCP servers | Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/mcp/organization-control-mcp-servers-deprecation",
+        "source_id": "feature-recovery-http",
+        "final_score": 206,
+        "relevance": "",
+        "evidence_snippets": [
+          "The custom constraint gcp.managed.allowedMCPServices and organization policy control of MCP use were deprecated on February 17, 2026 and shut down on March 17, 2026.",
+          "Organization policy control of MCP servers deprecation | Google Cloud MCP servers | Google Cloud Documentation Skip to main content Technology areas close AI and ML Application development Application hosting Compute Data analytics and pipelines Databases Distributed, hybrid, and multicloud Industry solutions Migration Networking Observability and monitoring Security Storage Cross-product tools close Access and resources management Costs and usage management Infrastructure as code SDK, languages, frameworks, and tools / Console English Deutsch Español – América Latina Français Português – Brasil 中文 – 简体 日本語 한국어 Sign in Google Cloud MCP servers Start free Overview Guides Resources Technology areas More Overview Guides Resources Cross-product tools More Console Google Cloud MCP servers All resources Stability commitment Quotas and system limits Release notes Deprecation Deprecations Organization policy control of MCP servers deprecation AI and ML Application development Application hosting Compute Data analytics and pipelines Databases Distributed, hybrid, and multicloud Industry solutions Migration Networking Observability and monitoring Security Storage Access and resources management Costs and usage management Infrastructure as code SDK, languages, frameworks, and tools Home Documentation Developer tools Google Cloud MCP servers Resources Send feedback Organization policy control of MCP servers deprecation Stay organized with collections Save and categorize content based on your preferences.",
+          "Use Identity and Access Management (IAM) deny policies to manage control over who can use Google and Google Cloud MCP servers."
+        ]
+      },
+      {
+        "title": "\"Customer-managed encryption keys (CMEK) overview \\_|\\_ Spanner \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/spanner/docs/cmek",
+        "source_id": "site-docs-root",
+        "final_score": 82,
+        "relevance": "",
+        "evidence_snippets": [
+          "External key considerations When you use a Cloud EKM key, Google has no control over the availability of your externally-managed key in the external key management partner system.",
+          "If you want to control your encryption keys, then you can use customer-managed encryption keys (CMEKs) in Cloud KMS with CMEK-integrated services including Spanner.",
+          "Using Cloud KMS keys gives you control over their protection level, location, rotation schedule, usage and access permissions, and cryptographic boundaries."
+        ]
+      },
+      {
+        "title": "Control MCP use with Identity and Access Management | Google Cloud MCP servers | Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/mcp/control-mcp-use-iam",
+        "source_id": "feature-recovery-direct-http",
+        "final_score": 82,
+        "relevance": "",
+        "evidence_snippets": [
+          "Control MCP use with Identity and Access Management | Google Cloud MCP servers | Google Cloud Documentation Skip to main content Technology areas close AI and ML Application development Application hosting Compute Data analytics and pipelines Databases Distributed, hybrid, and multicloud Industry solutions Migration Networking Observability and monitoring Security Storage Cross-product tools close Access and resources management Costs and usage management Infrastructure as code SDK, languages, frameworks, and tools / Console English Deutsch Español – América Latina Français Português – Brasil 中文 – 简体 日本語 한국어 Sign in Google Cloud MCP servers Start free Overview Guides Resources Technology areas More Overview Guides Resources Cross-product tools More Console Discover Google Cloud MCP servers overview Supported products Get started Enable MCP servers Authenticate to MCP servers Manage Manage MCP servers Control access AI security and safety Access control with IAM Control MCP use with IAM Prevent read-write MCP tool use Configure Configure MCP in an AI application Monitor Google Cloud MCP servers Audit logging Use Cloud Trace to Monitor MCP tool use Troubleshoot Known issues AI and ML Application development Application hosting Compute Data analytics and pipelines Databases Distributed, hybrid, and multicloud Industry solutions Migration Networking Observability and monitoring Security Storage Access and resources management Costs and usage management Infrastructure as code SDK, languages, frameworks, and tools Home Documentation Developer tools Google Cloud MCP servers Guides Send feedback Control MCP use with Identity and Access Management Stay organized with collections Save and categorize content based on your preferences.",
+          "Tools that create, modify, or delete resources aren't permitted. { \"rules\" : [ { \"denyRule\" : { \"deniedPrincipals\" : [ \"principalSet://goog/public:all\" ], \"deniedPermissions\" : [ \"mcp.googleapis.com/tools.call\" ], \"denialCondition\" : { \"title\" : \"Deny read-write tools\" , \"expression\" : \"api.getAttribute('mcp.googleapis.com/tool.isReadOnly', false) == false\" , } } } ] } After the policy is applied to a Google Cloud project, when an MCP client makes a tool call to a tool that isn't annotated as read-only , the request fails and an HTTP client error is returned.",
+          "The following IAM deny policy prevents use of MCP tools from all services except one service for all users. { \"rules\" : [ { \"denyRule\" : { \"deniedPrincipals\" : [ \"principalSet://goog/public:all\" ], \"deniedPermissions\" : [ \"mcp.googleapis.com/tools.call\" ], \"denialCondition\" : { \"title\" : \"Only Allow access to the following service's MCP tools\" , \"expression\" : \"resource.service != ' SERVICE_NAME '\" } } } ] } Replace SERVICE_NAME with the name of the service that you want to allow&mdash;for example, compute.googleapis.com ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "api.getAttribute",
+      "compute.googleapis.com",
+      "gcp.managed.allowedMCPServices",
+      "mcp.googleapis.com",
+      "request.auth.oauth.client_id",
+      "resource.service",
+      "tool.isReadOnly",
+      "tools.call"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/mcp/organization-control-mcp-servers-deprecation",
+        "https://docs.cloud.google.com/mcp/control-mcp-use-iam",
+        "https://docs.cloud.google.com/spanner/docs/cmek"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/mcp/organization-control-mcp-servers-deprecation",
+        "https://docs.cloud.google.com/mcp/control-mcp-use-iam",
+        "https://docs.cloud.google.com/spanner/docs/cmek"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/mcp/organization-control-mcp-servers-deprecation",
+        "https://docs.cloud.google.com/mcp/control-mcp-use-iam",
+        "https://docs.cloud.google.com/spanner/docs/cmek"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/mcp/organization-control-mcp-servers-deprecation",
+        "https://docs.cloud.google.com/mcp/control-mcp-use-iam",
+        "https://docs.cloud.google.com/spanner/docs/cmek"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/mcp/organization-control-mcp-servers-deprecation",
+        "https://docs.cloud.google.com/mcp/control-mcp-use-iam",
+        "https://docs.cloud.google.com/spanner/docs/cmek"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/mcp/organization-control-mcp-servers-deprecation",
+        "https://docs.cloud.google.com/mcp/control-mcp-use-iam",
+        "https://docs.cloud.google.com/spanner/docs/cmek"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/mcp/organization-control-mcp-servers-deprecation",
+        "https://docs.cloud.google.com/mcp/control-mcp-use-iam",
+        "https://docs.cloud.google.com/spanner/docs/cmek"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/mcp/organization-control-mcp-servers-deprecation",
+        "https://docs.cloud.google.com/mcp/control-mcp-use-iam",
+        "https://docs.cloud.google.com/spanner/docs/cmek"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/mcp/organization-control-mcp-servers-deprecation",
+        "https://docs.cloud.google.com/mcp/control-mcp-use-iam",
+        "https://docs.cloud.google.com/spanner/docs/cmek"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/mcp/organization-control-mcp-servers-deprecation",
+        "https://docs.cloud.google.com/mcp/control-mcp-use-iam",
+        "https://docs.cloud.google.com/spanner/docs/cmek"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/mcp/organization-control-mcp-servers-deprecation",
+        "https://docs.cloud.google.com/mcp/control-mcp-use-iam",
+        "https://docs.cloud.google.com/spanner/docs/cmek"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/mcp/organization-control-mcp-servers-deprecation",
+        "https://docs.cloud.google.com/mcp/control-mcp-use-iam",
+        "https://docs.cloud.google.com/spanner/docs/cmek"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/mcp/organization-control-mcp-servers-deprecation",
+        "https://docs.cloud.google.com/mcp/control-mcp-use-iam",
+        "https://docs.cloud.google.com/spanner/docs/cmek"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/mcp/organization-control-mcp-servers-deprecation",
+        "https://docs.cloud.google.com/mcp/control-mcp-use-iam",
+        "https://docs.cloud.google.com/spanner/docs/cmek"
+      ]
+    }
+  ]
+}

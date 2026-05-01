@@ -1,0 +1,100 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:16.715Z",
+  "source_step08_card": "data/step-08/current/products/app-engine-standard-environment-ruby/card.json",
+  "product_name": "App Engine standard environment Ruby",
+  "product_slug": "app-engine-standard-environment-ruby",
+  "feature_name": "Faceted Search",
+  "feature_slug": "faceted-search",
+  "summary": "Faceted Search is generally available for App Engine applications.",
+  "extended_definition": "Faceted Search is generally available for App Engine applications.",
+  "lifecycle": {
+    "latest_feature_date": "2015-09-25",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/appengine/docs/quotas",
+      "https://docs.cloud.google.com/appengine/docs/standard/how-requests-are-handled",
+      "https://docs.cloud.google.com/appengine/docs/standard/quotas"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Quotas and limits \\_|\\_ App Engine standard environment \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/quotas",
+        "source_id": "site-docs-reference-4",
+        "final_score": 81,
+        "relevance": "",
+        "evidence_snippets": [
+          "Resource or API call Description System Limit Shared Centi Memcache Compute Units Per Region Per Minute For each project per region and minute, the available centi-MCUs, which are 1/100ths of an Memcache Compute Unit .",
+          "Per-minute quotas protect your application from consuming all of its resources in very short periods of time, and prevent other applications from monopolizing a given resource.",
+          "The Search API imposes these limits to ensure the reliability of the service: 100 aggregated minutes of query execution time per minute, within an app and an index ."
+        ]
+      },
+      {
+        "title": "\"Quotas and limits \\_|\\_ App Engine standard environment \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/quotas",
+        "source_id": "site-docs-reference-4",
+        "final_score": 81,
+        "relevance": "",
+        "evidence_snippets": [
+          "Resource or API call Description System Limit Shared Centi Memcache Compute Units Per Region Per Minute For each project per region and minute, the available centi-MCUs, which are 1/100ths of an Memcache Compute Unit .",
+          "Per-minute quotas protect your application from consuming all of its resources in very short periods of time, and prevent other applications from monopolizing a given resource.",
+          "The Search API imposes these limits to ensure the reliability of the service: 100 aggregated minutes of query execution time per minute, within an app and an index ."
+        ]
+      },
+      {
+        "title": "\"How requests are handled \\_|\\_ App Engine standard environment \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/how-requests-are-handled",
+        "source_id": "site-docs-reference",
+        "final_score": 60,
+        "relevance": "",
+        "evidence_snippets": [
+          "App Engine pending queue prioritization During periods of heavy traffic, App Engine might place requests in a pending queue while waiting for an available instance with the following prioritization: App Engine prioritizes other queued requests over pending queued requests from Task queue .",
+          "However, this is bound by the following restrictions: App Engine reserves automatic scaling capacity for applications with low latency, where the application responds to requests in less than one second.",
+          "After a file is transmitted with a given expiration time, there is generally no way to clear it out of web-proxy caches, even if the user clears their own browser cache."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "app.yaml"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/quotas",
+        "https://docs.cloud.google.com/appengine/docs/standard/quotas",
+        "https://docs.cloud.google.com/appengine/docs/standard/how-requests-are-handled"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/quotas",
+        "https://docs.cloud.google.com/appengine/docs/standard/quotas",
+        "https://docs.cloud.google.com/appengine/docs/standard/how-requests-are-handled"
+      ]
+    }
+  ]
+}

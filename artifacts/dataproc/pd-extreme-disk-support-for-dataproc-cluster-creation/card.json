@@ -1,0 +1,148 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:33.243Z",
+  "source_step08_card": "data/step-08/current/products/dataproc/card.json",
+  "product_name": "Dataproc",
+  "product_slug": "dataproc",
+  "feature_name": "pd-extreme disk support for Dataproc cluster creation",
+  "feature_slug": "pd-extreme-disk-support-for-dataproc-cluster-creation",
+  "summary": "Dataproc cluster creation supports the pd-extreme disk type.",
+  "extended_definition": "Dataproc cluster creation supports the pd-extreme disk type.",
+  "lifecycle": {
+    "latest_feature_date": "2023-03-28",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dataproc/docs/quickstarts/create-cluster-client-libraries",
+      "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ClusterConfig",
+      "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/InstanceGroupConfig"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"InstanceGroupConfig \\_|\\_ Managed Service for Apache Spark \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/InstanceGroupConfig",
+        "source_id": "site-docs-reference",
+        "final_score": 141,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Examples: https://www.googleapis.com/compute/v1/projects/[projectId]/zones/[zone]/machineTypes/n1-standard-2 projects/[projectId]/zones/[zone]/machineTypes/n1-standard-2 n1-standard-2 Auto Zone Exception : If you are using the Dataproc Auto Zone Placement feature, you must use the short name of the machine type resource, for example, n1-standard-2 . diskConfig object ( DiskConfig ) Optional.",
+          "HYPERDISK EXTREME Hyperdisk Extreme disk type.",
+          "JSON representation { \"numInstances\" : integer , \"instanceNames\" : [ string ] , \"imageUri\" : string , \"machineTypeUri\" : string , \"diskConfig\" : { object ( DiskConfig ) } , \"isPreemptible\" : boolean , \"preemptibility\" : enum ( Preemptibility ) , \"managedGroupConfig\" : { object ( ManagedGroupConfig ) } , \"accelerators\" : [ { object ( AcceleratorConfig ) } ] , \"minCpuPlatform\" : string , \"minNumInstances\" : integer , \"instanceFlexibilityPolicy\" : { object ( InstanceFlexibilityPolicy ) } , \"startupConfig\" : { object ( StartupConfig ) } } Fields numInstances integer Optional."
+        ]
+      },
+      {
+        "title": "\"Quickstart: Create a cluster by using client libraries \\_|\\_ Managed Service\\",
+        "url": "https://docs.cloud.google.com/dataproc/docs/quickstarts/create-cluster-client-libraries",
+        "source_id": "site-docs-root",
+        "final_score": 130,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "ClusterControllerClient ( client options = { \"api endpoint\" : \" {} -dataproc.googleapis.com:443\" . format ( region )} ) Create the cluster config. cluster = { \"project id\" : project id , \"cluster name\" : cluster name , \"config\" : { \"master config\" : { \"num instances\" : 1 , \"machine type uri\" : \"n1-standard-2\" , \"disk config\" : { \"boot disk size gb\" : 100 }, }, \"worker config\" : { \"num instances\" : 2 , \"machine type uri\" : \"n1-standard-2\" , \"disk config\" : { \"boot disk size gb\" : 100 }, }, }, } Create the cluster. operation = cluster client . create cluster ( request = { \"project id\" : project id , \"region\" : region , \"cluster\" : cluster } ) result = operation . result () print ( \"Cluster created successfully: {} \" . format ( result . cluster name )) Create the job client. job client = dataproc .",
+          "JobControllerClient ({ apiEndpoint : ${ region } -dataproc.googleapis.com , projectId : projectId , }); async function quickstart () { // Create the cluster config const cluster = { projectId : projectId , region : region , cluster : { clusterName : clusterName , config : { masterConfig : { numInstances : 1 , machineTypeUri : 'n1-standard-2' , }, workerConfig : { numInstances : 2 , machineTypeUri : 'n1-standard-2' , }, }, }, }; // Create the cluster const [ operation ] = await clusterClient . createCluster ( cluster ); const [ response ] = await operation . promise (); // Output a success message console . log ( Cluster created successfully: ${ response . clusterName } ); const job = { projectId : projectId , region : region , job : { placement : { clusterName : clusterName , }, pysparkJob : { mainPythonFileUri : jobFilePath , }, }, }; const [ jobOperation ] = await jobClient . submitJobAsOperation ( job ); const [ jobResponse ] = await jobOperation . promise (); const matches = jobResponse . driverOutputResourceUri . match ( 'gs://(. ?)/(. )' ); const storage = new Storage (); const output = await storage . bucket ( matches [ 1 ]) . file ( ${ matches [ 2 ] } .000000000 ) . download (); // Output a success message. console . log ( Job finished successfully: ${ output } ); // Delete the cluster once the job has terminated. const deleteClusterReq = { projectId : projectId , region : region , clusterName : clusterName , }; const [ deleteOperation ] = await clusterClient . deleteCluster ( deleteClusterReq ); await deleteOperation . promise (); // Output a success message console . log ( Cluster ${ clusterName } successfully deleted. ); } quickstart (); } const args = process . argv . slice ( 2 ); if ( args . length !== 4 ) { console . log ( 'Insufficient number of parameters provided.",
+          "JobPlacement { ClusterName : clusterName , }, TypeJob : & dataprocpb ."
+        ]
+      },
+      {
+        "title": "\"ClusterConfig \\_|\\_ Managed Service for Apache Spark \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ClusterConfig",
+        "source_id": "site-docs-reference",
+        "final_score": 124,
+        "relevance": "",
+        "evidence_snippets": [
+          "JSON representation { \"clusterType\" : enum ( ClusterType ) , \"clusterTier\" : enum ( ClusterTier ) , \"configBucket\" : string , \"tempBucket\" : string , \"gceClusterConfig\" : { object ( GceClusterConfig ) } , \"masterConfig\" : { object ( InstanceGroupConfig ) } , \"workerConfig\" : { object ( InstanceGroupConfig ) } , \"secondaryWorkerConfig\" : { object ( InstanceGroupConfig ) } , \"softwareConfig\" : { object ( SoftwareConfig ) } , \"initializationActions\" : [ { object ( NodeInitializationAction ) } ] , \"encryptionConfig\" : { object ( EncryptionConfig ) } , \"autoscalingConfig\" : { object ( AutoscalingConfig ) } , \"securityConfig\" : { object ( SecurityConfig ) } , \"lifecycleConfig\" : { object ( LifecycleConfig ) } , \"endpointConfig\" : { object ( EndpointConfig ) } , \"metastoreConfig\" : { object ( MetastoreConfig ) } , \"dataprocMetricConfig\" : { object ( DataprocMetricConfig ) } , \"auxiliaryNodeGroups\" : [ { object ( AuxiliaryNodeGroup ) } ] } Fields clusterType enum ( ClusterType ) Optional.",
+          "JSON representation ClusterType ClusterTier GceClusterConfig JSON representation PrivateIpv6GoogleAccess ReservationAffinity JSON representation Type NodeGroupAffinity JSON representation ShieldedInstanceConfig JSON representation ConfidentialInstanceConfig JSON representation SoftwareConfig JSON representation Component NodeInitializationAction JSON representation EncryptionConfig JSON representation AutoscalingConfig JSON representation SecurityConfig JSON representation KerberosConfig JSON representation IdentityConfig JSON representation LifecycleConfig JSON representation EndpointConfig JSON representation DataprocMetricConfig JSON representation Metric JSON representation MetricSource AuxiliaryNodeGroup JSON representation The cluster config.",
+          "When this key resource name is provided, the following job arguments of the following job types submitted to the cluster are encrypted using CMEK: FlinkJob args HadoopJob args SparkJob args SparkRJob args PySparkJob args SparkSqlJob scriptVariables and queryList.queries HiveJob scriptVariables and queryList.queries PigJob scriptVariables and queryList.queries PrestoJob scriptVariables and queryList.queries AutoscalingConfig Autoscaling Policy config associated with the cluster."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "dataproc.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/InstanceGroupConfig",
+        "https://docs.cloud.google.com/dataproc/docs/quickstarts/create-cluster-client-libraries",
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ClusterConfig"
+      ]
+    },
+    {
+      "capability": "confidential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/InstanceGroupConfig",
+        "https://docs.cloud.google.com/dataproc/docs/quickstarts/create-cluster-client-libraries",
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ClusterConfig"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/InstanceGroupConfig",
+        "https://docs.cloud.google.com/dataproc/docs/quickstarts/create-cluster-client-libraries",
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ClusterConfig"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/InstanceGroupConfig",
+        "https://docs.cloud.google.com/dataproc/docs/quickstarts/create-cluster-client-libraries",
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ClusterConfig"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/InstanceGroupConfig",
+        "https://docs.cloud.google.com/dataproc/docs/quickstarts/create-cluster-client-libraries",
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ClusterConfig"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/InstanceGroupConfig",
+        "https://docs.cloud.google.com/dataproc/docs/quickstarts/create-cluster-client-libraries",
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ClusterConfig"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/InstanceGroupConfig",
+        "https://docs.cloud.google.com/dataproc/docs/quickstarts/create-cluster-client-libraries",
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ClusterConfig"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/InstanceGroupConfig",
+        "https://docs.cloud.google.com/dataproc/docs/quickstarts/create-cluster-client-libraries",
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ClusterConfig"
+      ]
+    }
+  ]
+}

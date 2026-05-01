@@ -1,0 +1,204 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:46.019Z",
+  "source_step08_card": "data/step-08/current/products/secret-manager/card.json",
+  "product_name": "Secret Manager",
+  "product_slug": "secret-manager",
+  "feature_name": "Secret Manager locations",
+  "feature_slug": "secret-manager-locations",
+  "summary": "Secret Manager is available in the europe-central2 region; Secret Manager is available in all regions.",
+  "extended_definition": "Secret Manager is available in the europe-central2 region; Secret Manager is available in all regions.",
+  "lifecycle": {
+    "latest_feature_date": "2021-03-24",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/python/docs/reference/secretmanager/latest/google.cloud.secretmanager_v1.services.secret_manager_service.SecretManagerServiceAsyncClient",
+      "https://docs.cloud.google.com/python/docs/reference/secretmanager/latest/google.cloud.secretmanager_v1.services.secret_manager_service.SecretManagerServiceClient",
+      "https://docs.cloud.google.com/secret-manager/docs/creating-and-managing-expiring-secrets",
+      "https://docs.cloud.google.com/secret-manager/docs/locations"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Secret Manager locations \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/secret-manager/docs/locations",
+        "source_id": "site-docs-root",
+        "final_score": 329,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Region Regional Secret Manager Parameter Manager europe-west1 (Belgium) Yes Yes europe-west10 (Berlin) Yes No europe-north1 (Finland) No No europe-north2 (Stockholm) Yes No europe-west3 (Frankfurt) Yes Yes europe-west2 (London) Yes Yes europe-southwest1 (Madrid) Yes Yes europe-west8 (Milan) Yes Yes europe-west4 (Netherlands) Yes Yes europe-west12 (Turin) Yes No europe-west9 (Paris) Yes Yes europe-central2 (Warsaw) Yes Yes europe-west6 (Zurich) Yes Yes Locations in North America The following table lists the locations in North America where Secret Manager and Parameter Manager resources can be stored.",
+          "Region Regional Secret Manager Parameter Manager asia-south2 (Delhi) Yes Yes asia-east2 (Hong Kong) Yes Yes asia-southeast2 (Jakarta) Yes No australia-southeast2 (Melbourne) Yes Yes asia-south1 (Mumbai) Yes Yes asia-northeast2 (Osaka) Yes Yes asia-northeast3 (Seoul) Yes Yes asia-southeast1 (Singapore) Yes No australia-southeast1 (Sydney) Yes Yes asia-east1 (Taiwan) Yes Yes asia-northeast1 (Tokyo) Yes Yes asia-southeast3 (Bangkok) Yes No Locations in Europe The following table lists the locations in Europe where Secret Manager and Parameter Manager resources can be stored.",
+          "Multi-Region Name Multi-Region Description Regional Secret Manager Parameter Manager us Data centers in the United States No Yes eu Data centers in the European Union No Yes What's next Learn more about locations Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License ."
+        ]
+      },
+      {
+        "title": "\"Set an expiration date for a secret \\_|\\_ Secret Manager \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/secret-manager/docs/creating-and-managing-expiring-secrets",
+        "source_id": "site-iam-reference",
+        "final_score": 289,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Update the expiration date and time, and click Update secret . gcloud Update a secret's expiration using a timestamp Before using any of the command data below, make the following replacements: SECRET ID : the ID of the secret TIMESTAMP : the expiration time in RFC 3339 format, for example 2100-01-01T09:00:00-05:00 Execute the following command: Linux, macOS, or Cloud Shell Note: Ensure you have initialized the Google Cloud CLI with authentication and a project by running either gcloud init ; or gcloud auth login and gcloud config set project . gcloud secrets update SECRET ID \\ --expire-time \" TIMESTAMP \" Windows (PowerShell) Note: Ensure you have initialized the Google Cloud CLI with authentication and a project by running either gcloud init ; or gcloud auth login and gcloud config set project . gcloud secrets update SECRET ID --expire-time \" TIMESTAMP \" Windows (cmd.exe) Note: Ensure you have initialized the Google Cloud CLI with authentication and a project by running either gcloud init ; or gcloud auth login and gcloud config set project . gcloud secrets update SECRET ID ^ --expire-time \" TIMESTAMP \" Update a secret's expiration using a duration Before using any of the command data below, make the following replacements: SECRET ID : the ID of the secret DURATION : the expiration duration in seconds, for example 86400s Execute the following command: Linux, macOS, or Cloud Shell Note: Ensure you have initialized the Google Cloud CLI with authentication and a project by running either gcloud init ; or gcloud auth login and gcloud config set project . gcloud secrets update SECRET ID \\ --ttl \" DURATION \" Windows (PowerShell) Note: Ensure you have initialized the Google Cloud CLI with authentication and a project by running either gcloud init ; or gcloud auth login and gcloud config set project . gcloud secrets update SECRET ID --ttl \" DURATION \" Windows (cmd.exe) Note: Ensure you have initialized the Google Cloud CLI with authentication and a project by running either gcloud init ; or gcloud auth login and gcloud config set project . gcloud secrets update SECRET ID ^ --ttl \" DURATION \" REST Update a secret's expiration using a timestamp Before using any of the request data, make the following replacements: PROJECT ID : the Google Cloud project ID SECRET ID : the ID of the secret TOKEN : your own Oauth2.0 access token TIMESTAMP : the expiration time in RFC 3339 format, for example 2100-01-01T09:00:00-05:00 HTTP method and URL: PATCH https://secretmanager.googleapis.com/v1/projects/ PROJECT ID /secrets/ SECRET ID ?updateMask=expire time Request JSON body: {\"expire time\": \" TIMESTAMP \"} To send your request, choose one of these options: curl Save the request body in a file named request.json , and execute the following command: curl -X PATCH \\ -H \"Authorization: Bearer TOKEN \" \\ -H \"Content-Type: application/json; charset=utf-8\" \\ -d @request.json \\ \"https://secretmanager.googleapis.com/v1/projects/ PROJECT ID /secrets/ SECRET ID ?updateMask=expire time\" PowerShell Save the request body in a file named request.json , and execute the following command: $headers = @{ \"Authorization\" = \"Bearer TOKEN \" } Invoke-WebRequest -Method PATCH -Headers $headers -ContentType: \"application/json; charset=utf-8\" -InFile request.json -Uri \"https://secretmanager.googleapis.com/v1/projects/ PROJECT ID /secrets/ SECRET ID ?updateMask=expire time\" Select-Object -Expand Content You should receive a JSON response similar to the following: { \"name\": \"projects/ PROJECT ID /locations/ LOCATION /secrets/ SECRET ID \", \"createTime\": \"2024-09-04T03:58:38.200877Z\", \"expireTime\": \"2024-09-04T09:25:39Z\", \"etag\": \"\\\"162143305d282d\\\"\" } Update a secret's expiration using a duration Before using any of the request data, make the following replacements: PROJECT ID : the Google Cloud project ID SECRET ID : the ID of the secret DURATION : the expiration duration in seconds, for example 86400s HTTP method and URL: PATCH https://secretmanager.googleapis.com/v1/projects/ PROJECT ID /secrets/ SECRET ID ?updateMask=ttl Request JSON body: {\"ttl\": \" DURATION \"} To send your request, choose one of these options: curl Save the request body in a file named request.json , and execute the following command: curl -X PATCH \\ -H \"Authorization: Bearer TOKEN \" \\ -H \"Content-Type: application/json; charset=utf-8\" \\ -d @request.json \\ \"https://secretmanager.googleapis.com/v1/projects/ PROJECT ID /secrets/ SECRET ID ?updateMask=ttl\" PowerShell Save the request body in a file named request.json , and execute the following command: $headers = @{ \"Authorization\" = \"Bearer TOKEN \" } Invoke-WebRequest -Method PATCH -Headers $headers -ContentType: \"application/json; charset=utf-8\" -InFile request.json -Uri \"https://secretmanager.googleapis.com/v1/projects/ PROJECT ID /secrets/ SECRET ID ?updateMask=ttl\" Select-Object -Expand Content You should receive a JSON response similar to the following: { \"name\": \"projects/ PROJECT ID /locations/ LOCATION /secrets/ SECRET ID \", \"createTime\": \"2024-09-04T03:58:38.200877Z\", \"expireTime\": \"2024-09-04T09:25:39Z\", \"etag\": \"\\\"162143305d282d\\\"\" } Remove a secret's expiration date To remove the secret's expiration date and time, use one of the following methods: Console In the Google Cloud console, go to the Secret Manager page.",
+          "Clear the Set expiration date checkbox, and then click Update secret . gcloud Before using any of the command data below, make the following replacements: SECRET ID : the ID of the secret Execute the following command: Linux, macOS, or Cloud Shell Note: Ensure you have initialized the Google Cloud CLI with authentication and a project by running either gcloud init ; or gcloud auth login and gcloud config set project . gcloud secrets update SECRET ID \\ --remove-expiration Windows (PowerShell) Note: Ensure you have initialized the Google Cloud CLI with authentication and a project by running either gcloud init ; or gcloud auth login and gcloud config set project . gcloud secrets update SECRET ID --remove-expiration Windows (cmd.exe) Note: Ensure you have initialized the Google Cloud CLI with authentication and a project by running either gcloud init ; or gcloud auth login and gcloud config set project . gcloud secrets update SECRET ID ^ --remove-expiration REST Before using any of the request data, make the following replacements: PROJECT ID : the Google Cloud project ID SECRET ID : the ID of the secret TOKEN : your own Oauth2.0 access token HTTP method and URL: PATCH https://secretmanager.googleapis.com/v1/projects/ PROJECT ID /secrets/ SECRET ID ?updateMask=expire time Request JSON body: {} To send your request, choose one of these options: curl Save the request body in a file named request.json , and execute the following command: curl -X PATCH \\ -H \"Authorization: Bearer TOKEN \" \\ -H \"Content-Type: application/json; charset=utf-8\" \\ -d @request.json \\ \"https://secretmanager.googleapis.com/v1/projects/ PROJECT ID /secrets/ SECRET ID ?updateMask=expire time\" PowerShell Save the request body in a file named request.json , and execute the following command: $headers = @{ \"Authorization\" = \"Bearer TOKEN \" } Invoke-WebRequest -Method PATCH -Headers $headers -ContentType: \"application/json; charset=utf-8\" -InFile request.json -Uri \"https://secretmanager.googleapis.com/v1/projects/ PROJECT ID /secrets/ SECRET ID ?updateMask=expire time\" Select-Object -Expand Content You should receive a JSON response similar to the following: { \"name\": \"projects/ PROJECT ID /locations/ LOCATION /secrets/ SECRET ID \", \"createTime\": \"2024-09-04T03:58:38.200877Z\", \"etag\": \"\\\"162143305d282d\\\"\" } Expiration logging Cloud Audit Logs are not produced when a secret automatically expires.",
+          "Save the request body in a file named request.json , and execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method POST -Headers $headers -ContentType: \"application/json; charset=utf-8\" -InFile request.json -Uri \"https://secretmanager.googleapis.com/v1/projects/$ PROJECT ID /secrets?secretId=$ SECRET ID \" Select-Object -Expand Content You should receive a JSON response similar to the following: { \"name\": \"projects/ PROJECT ID /locations/ LOCATION /secrets/ SECRET ID \", \"createTime\": \"2024-09-04T03:58:38.200877Z\", \"expireTime\": \"2024-09-04T09:25:39Z\", \"etag\": \"\\\"162143305d282d\\\"\" } Create an expiring secret using a duration Before using any of the request data, make the following replacements: PROJECT ID : the Google Cloud project ID SECRET ID : the ID of the secret DURATION : the expiration duration in seconds, for example 86400s HTTP method and URL: POST https://secretmanager.googleapis.com/v1/projects/ PROJECT ID /secrets?secretId= SECRET ID Request JSON body: { \"replication\": {\"automatic\": {}}, \"ttl\": \" DURATION \" } To send your request, choose one of these options: curl Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI ."
+        ]
+      },
+      {
+        "title": "\"Class SecretManagerServiceAsyncClient (2.27.0) \\_|\\_ Python client libraries\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/secretmanager/latest/google.cloud.secretmanager_v1.services.secret_manager_service.SecretManagerServiceAsyncClient",
+        "source_id": "site-python-reference",
+        "final_score": 279,
+        "relevance": "",
+        "evidence_snippets": [
+          "The resource name of the project associated with the Secrets , in the format projects/ or projects//locations/ This corresponds to the parent field on the request instance; if request is provided, this should not be set. retry google.api core.retry async.AsyncRetry Designation of what errors, if any, should be retried. timeout float The timeout for this request. metadata Sequence[Tuple[str, Union[str, bytes]]] Key/value pairs which should be sent along with the request as metadata.",
+          "It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import secretmanager v1 import google.iam.v1.iam policy pb2 as iam policy pb2 # type: ignore async def sample test iam permissions(): Create a client client = secretmanager v1 .",
+          "It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import secretmanager v1 import google.iam.v1.iam policy pb2 as iam policy pb2 # type: ignore async def sample get iam policy(): Create a client client = secretmanager v1 ."
+        ]
+      },
+      {
+        "title": "\"Class SecretManagerServiceClient (2.27.0) \\_|\\_ Python client libraries\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/secretmanager/latest/google.cloud.secretmanager_v1.services.secret_manager_service.SecretManagerServiceClient",
+        "source_id": "site-python-reference",
+        "final_score": 279,
+        "relevance": "",
+        "evidence_snippets": [
+          "Returns Type Description google.cloud.secretmanager v1.types.SecretVersion A secret version resource in the Secret Manager API. list locations list locations ( request : typing .",
+          "The resource name of the project associated with the Secrets , in the format projects/ or projects//locations/ This corresponds to the parent field on the request instance; if request is provided, this should not be set. retry google.api core.retry.Retry Designation of what errors, if any, should be retried. timeout float The timeout for this request. metadata Sequence[Tuple[str, Union[str, bytes]]] Key/value pairs which should be sent along with the request as metadata.",
+          "It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import secretmanager v1 import google.iam.v1.iam policy pb2 as iam policy pb2 # type: ignore def sample test iam permissions(): Create a client client = secretmanager v1 ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "async.AsyncRetry",
+      "cmd.exe",
+      "core.retry",
+      "core.retry.Retry",
+      "googleapis.dev",
+      "options.html",
+      "request.json",
+      "secretmanager.googleapis.com",
+      "v1.types.SecretVersion"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/secret-manager/docs/locations",
+        "https://docs.cloud.google.com/secret-manager/docs/creating-and-managing-expiring-secrets",
+        "https://docs.cloud.google.com/python/docs/reference/secretmanager/latest/google.cloud.secretmanager_v1.services.secret_manager_service.SecretManagerServiceAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/secretmanager/latest/google.cloud.secretmanager_v1.services.secret_manager_service.SecretManagerServiceClient"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/secret-manager/docs/locations",
+        "https://docs.cloud.google.com/secret-manager/docs/creating-and-managing-expiring-secrets",
+        "https://docs.cloud.google.com/python/docs/reference/secretmanager/latest/google.cloud.secretmanager_v1.services.secret_manager_service.SecretManagerServiceAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/secretmanager/latest/google.cloud.secretmanager_v1.services.secret_manager_service.SecretManagerServiceClient"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/secret-manager/docs/locations",
+        "https://docs.cloud.google.com/secret-manager/docs/creating-and-managing-expiring-secrets",
+        "https://docs.cloud.google.com/python/docs/reference/secretmanager/latest/google.cloud.secretmanager_v1.services.secret_manager_service.SecretManagerServiceAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/secretmanager/latest/google.cloud.secretmanager_v1.services.secret_manager_service.SecretManagerServiceClient"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/secret-manager/docs/locations",
+        "https://docs.cloud.google.com/secret-manager/docs/creating-and-managing-expiring-secrets",
+        "https://docs.cloud.google.com/python/docs/reference/secretmanager/latest/google.cloud.secretmanager_v1.services.secret_manager_service.SecretManagerServiceAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/secretmanager/latest/google.cloud.secretmanager_v1.services.secret_manager_service.SecretManagerServiceClient"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/secret-manager/docs/locations",
+        "https://docs.cloud.google.com/secret-manager/docs/creating-and-managing-expiring-secrets",
+        "https://docs.cloud.google.com/python/docs/reference/secretmanager/latest/google.cloud.secretmanager_v1.services.secret_manager_service.SecretManagerServiceAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/secretmanager/latest/google.cloud.secretmanager_v1.services.secret_manager_service.SecretManagerServiceClient"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/secret-manager/docs/locations",
+        "https://docs.cloud.google.com/secret-manager/docs/creating-and-managing-expiring-secrets",
+        "https://docs.cloud.google.com/python/docs/reference/secretmanager/latest/google.cloud.secretmanager_v1.services.secret_manager_service.SecretManagerServiceAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/secretmanager/latest/google.cloud.secretmanager_v1.services.secret_manager_service.SecretManagerServiceClient"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/secret-manager/docs/locations",
+        "https://docs.cloud.google.com/secret-manager/docs/creating-and-managing-expiring-secrets",
+        "https://docs.cloud.google.com/python/docs/reference/secretmanager/latest/google.cloud.secretmanager_v1.services.secret_manager_service.SecretManagerServiceAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/secretmanager/latest/google.cloud.secretmanager_v1.services.secret_manager_service.SecretManagerServiceClient"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/secret-manager/docs/locations",
+        "https://docs.cloud.google.com/secret-manager/docs/creating-and-managing-expiring-secrets",
+        "https://docs.cloud.google.com/python/docs/reference/secretmanager/latest/google.cloud.secretmanager_v1.services.secret_manager_service.SecretManagerServiceAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/secretmanager/latest/google.cloud.secretmanager_v1.services.secret_manager_service.SecretManagerServiceClient"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/secret-manager/docs/locations",
+        "https://docs.cloud.google.com/secret-manager/docs/creating-and-managing-expiring-secrets",
+        "https://docs.cloud.google.com/python/docs/reference/secretmanager/latest/google.cloud.secretmanager_v1.services.secret_manager_service.SecretManagerServiceAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/secretmanager/latest/google.cloud.secretmanager_v1.services.secret_manager_service.SecretManagerServiceClient"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/secret-manager/docs/locations",
+        "https://docs.cloud.google.com/secret-manager/docs/creating-and-managing-expiring-secrets",
+        "https://docs.cloud.google.com/python/docs/reference/secretmanager/latest/google.cloud.secretmanager_v1.services.secret_manager_service.SecretManagerServiceAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/secretmanager/latest/google.cloud.secretmanager_v1.services.secret_manager_service.SecretManagerServiceClient"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/secret-manager/docs/locations",
+        "https://docs.cloud.google.com/secret-manager/docs/creating-and-managing-expiring-secrets",
+        "https://docs.cloud.google.com/python/docs/reference/secretmanager/latest/google.cloud.secretmanager_v1.services.secret_manager_service.SecretManagerServiceAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/secretmanager/latest/google.cloud.secretmanager_v1.services.secret_manager_service.SecretManagerServiceClient"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,169 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:18.771Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery",
+  "feature_name": "Cross-cloud CTAS and INSERT INTO SELECT statements",
+  "feature_slug": "cross-cloud-ctas-and-insert-into-select-statements",
+  "summary": "BigQuery supports CREATE TABLE AS SELECT and INSERT INTO SELECT statements with billing enabled to filter data from Amazon S3 and Azure Blob Storage before loading into BigQuery tables.",
+  "extended_definition": "BigQuery supports CREATE TABLE AS SELECT and INSERT INTO SELECT statements with billing enabled to filter data from Amazon S3 and Azure Blob Storage before loading into BigQuery tables.",
+  "lifecycle": {
+    "latest_feature_date": "2024-02-28",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 1,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "coverage_low",
+        "message": "The feature ended with coverage LOW.",
+        "suggested_steps": [
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-create-dataset-cmek",
+      "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-create-table",
+      "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-create-table-from-template"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Create a dataset with a customer-managed encryption key \\_|\\_ BigQuery \\_\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-create-dataset-cmek",
+        "source_id": "site-docs-reference-required-15",
+        "final_score": 94,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For more information, see the Terraform provider reference documentation . resource \"google bigquery dataset\" \"default\" { dataset id = \"mydataset\" default partition expiration ms = 2592000000 # 30 days default table expiration ms = 31536000000 # 365 days description = \"dataset description\" location = \"US\" max time travel hours = 96 # 4 days default encryption configuration { kms key name = google kms crypto key.crypto key.id } labels = { billing group = \"accounting\" , pii = \"sensitive\" } depends on = [ google project iam member.service account access ] } resource \"google kms crypto key\" \"crypto key\" { name = \"example-key\" key ring = google kms key ring.key ring.id } resource \"random id\" \"default\" { byte length = 8 } resource \"google kms key ring\" \"key ring\" { name = \"${random id.default.hex}-example-keyring\" location = \"us\" } Enable the BigQuery service account to encrypt/decrypt Cloud KMS keys data \"google project\" \"project\" { } resource \"google project iam member\" \"service account access\" { project = data.google project.project.project id role = \"roles/cloudkms.cryptoKeyEncrypterDecrypter\" member = \"serviceAccount:bq-${data.google project.project.number}@bigquery-encryption.iam.gserviceaccount.com\" } What's next To search and filter code samples for other Google Cloud products, see the Google Cloud sample browser .",
+          "Home Documentation Data analytics BigQuery Samples Create a dataset with a customer-managed encryption key Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "Create table with schema \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-create-table",
+        "source_id": "site-docs-reference-required-15",
+        "final_score": 94,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For more information, see Set up authentication for client libraries . // Import the Google Cloud client library and create a client const { BigQuery } = require ( ' @google-cloud/bigquery ' ); const bigquery = new BigQuery (); async function createTable () { // Creates a new table named \"my table\" in \"my dataset\". / TODO(developer): Uncomment the following lines before running the sample. / // const datasetId = \"my dataset\"; // const tableId = \"my table\"; // const schema = 'Name:string, Age:integer, Weight:float, IsMagic:boolean'; // For all options, see https://cloud.google.com/bigquery/docs/reference/v2/tables#resource const options = { schema : schema , location : 'US' , }; // Create a new table in the dataset const [ table ] = await bigquery . dataset ( datasetId ) . createTable ( tableId , options ); console . log ( Table ${ table . id } created. ); } PHP Before trying this sample, follow the PHP setup instructions in the BigQuery quickstart using client libraries .",
+          "For more information, see the Terraform provider reference documentation . resource \"google bigquery dataset\" \"default\" { dataset id = \"mydataset\" default partition expiration ms = 2592000000 # 30 days default table expiration ms = 31536000000 # 365 days description = \"dataset description\" location = \"US\" max time travel hours = 96 # 4 days labels = { billing group = \"accounting\" , pii = \"sensitive\" } } resource \"google bigquery table\" \"default\" { dataset id = google bigquery dataset.default.dataset id table id = \"mytable\" schema = << EOF [ { \"name\" : \"ID\" , \"type\" : \"INT64\" , \"mode\" : \"NULLABLE\" , \"description\" : \"Item ID\" }, { \"name\" : \"Item\" , \"type\" : \"STRING\" , \"mode\" : \"NULLABLE\" } ] EOF } What's next To search and filter code samples for other Google Cloud products, see the Google Cloud sample browser .",
+          "BigQuery bigquery = BigQueryOptions . getDefaultInstance (). getService (); TableId tableId = TableId . of ( datasetName , tableName ); TableDefinition tableDefinition = StandardTableDefinition . of ( schema ); TableInfo tableInfo = TableInfo . newBuilder ( tableId , tableDefinition ). build (); bigquery . create ( tableInfo ); System . out . println ( \"Table created successfully\" ); } catch ( BigQueryException e ) { System . out . println ( \"Table was not created. \\n\" + e . toString ()); } } } Node.js Before trying this sample, follow the Node.js setup instructions in the BigQuery quickstart using client libraries ."
+        ]
+      },
+      {
+        "title": "Create a table using a template \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-create-table-from-template",
+        "source_id": "site-docs-reference-required-15",
+        "final_score": 92,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For more information, see Set up authentication for client libraries . import ( \"context\" \"fmt\" \"cloud.google.com/go/bigquery\" ) // createTableFromTemplateTable demonstrates how to use the properties of one // table (schema, partitioning, clustering) to create a new empty table with // the same configuration. func createTableFromTemplateTable ( srcProjectID , srcDatasetID , srcTableID , dstProjectID , dstDatasetID , dstTableID string ) error { // srcProjectID := \"bigquery-public-data\" // srcDatasetID := \"samples\" // srcTableID := \"shakespeare\" // dstProjectID := \"my-project-id\" // dstDatasetID := \"mydataset\" // dstTableID := \"mytable\" ctx := context .",
+          "Home Documentation Data analytics BigQuery Samples Create a table using a template Stay organized with collections Save and categorize content based on your preferences.",
+          "Other properties to consider include // attributes like expiration policy and managed encryption settings. dstMeta := & bigquery ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cloudkms.cryptoKeyEncrypterDecrypter",
+      "data.google",
+      "dataset.default.dataset",
+      "encryption.iam.gserviceaccount.com",
+      "id.default.hex",
+      "key.crypto",
+      "key.id",
+      "member.service",
+      "project.project.number",
+      "project.project.project",
+      "ring.id",
+      "ring.key"
+    ],
+    "missing_inventory_roles": [
+      "roles/cloudkms.cryptoKeyEncrypterDecrypter"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-create-table",
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-create-dataset-cmek",
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-create-table-from-template"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-create-table",
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-create-dataset-cmek",
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-create-table-from-template"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-create-table",
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-create-dataset-cmek",
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-create-table-from-template"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-create-table",
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-create-dataset-cmek",
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-create-table-from-template"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-create-table",
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-create-dataset-cmek",
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-create-table-from-template"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-create-table",
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-create-dataset-cmek",
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-create-table-from-template"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-create-table",
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-create-dataset-cmek",
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-create-table-from-template"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-create-table",
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-create-dataset-cmek",
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-create-table-from-template"
+      ]
+    }
+  ]
+}

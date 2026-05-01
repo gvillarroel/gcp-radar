@@ -1,0 +1,101 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:15.241Z",
+  "source_step08_card": "data/step-08/current/products/app-engine-flexible-environment-custom-runtimes/card.json",
+  "product_name": "App Engine flexible environment custom runtimes",
+  "product_slug": "app-engine-flexible-environment-custom-runtimes",
+  "feature_name": "Regional availability in asia-northeast1",
+  "feature_slug": "regional-availability-in-asia-northeast1",
+  "summary": "App Engine flexible environment is available in the asia-northeast1 region.",
+  "extended_definition": "App Engine flexible environment is available in the asia-northeast1 region.",
+  "lifecycle": {
+    "latest_feature_date": "2016-11-15",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/appengine/docs/flexible/java/configuring-the-web-xml-deployment-descriptor",
+      "https://docs.cloud.google.com/appengine/docs/flexible/python/mapping-custom-domains",
+      "https://docs.cloud.google.com/appengine/docs/flexible/quotas"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Mapping custom domains \\_|\\_ App Engine flexible environment \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/flexible/python/mapping-custom-domains",
+        "source_id": "site-docs-reference-2",
+        "final_score": 42,
+        "relevance": "",
+        "evidence_snippets": [
+          "The regions are as follows: us-west2 us-east4 northamerica-northeast1 southamerica-east1 europe-west2 europe-west3 asia-south1 asia-northeast1 australia-southeast1 App Engine custom domains use a pool of shared IP addresses for all applications.",
+          "Home Documentation Application hosting App Engine Flexible environment Guides Send feedback Mapping custom domains Stay organized with collections Save and categorize content based on your preferences.",
+          "If you use Cloud Load Balancing and serverless network endpoint group (NEGS) to route traffic to your App Engine app, we recommend that you map your custom domain to the load balancer instead of directly to your app, and use Google-managed SSL certificates that are created for the load balancer."
+        ]
+      },
+      {
+        "title": "\"Quotas and limits \\_|\\_ App Engine flexible environment \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/flexible/quotas",
+        "source_id": "site-docs-reference-2",
+        "final_score": 42,
+        "relevance": "",
+        "evidence_snippets": [
+          "Home Documentation Application hosting App Engine Flexible environment Resources Send feedback Quotas and limits Stay organized with collections Save and categorize content based on your preferences.",
+          "Quotas for the App Engine flexible environment When you deploy an application to the App Engine flexible environment, some Google Cloud resources are consumed.",
+          "Both the standard environment and the flexible environment share the same limits for services and versions."
+        ]
+      },
+      {
+        "title": "\"Configuring the web.xml deployment descriptor \\_|\\_ App Engine flexible\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/flexible/java/configuring-the-web-xml-deployment-descriptor",
+        "source_id": "site-docs-reference",
+        "final_score": 38,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Application hosting App Engine Flexible environment Guides Send feedback Configuring the web.xml deployment descriptor Stay organized with collections Save and categorize content based on your preferences.",
+          "App Engine doesn't support JNDI environment variables ( <env-entry> ).",
+          "Note that App Engine provides the JavaServer Pages Standard Tag Library (JSTL) , and you do not need to install it. <taglib> <taglib-uri>/escape</taglib-uri> <taglib-location>/WEB-INF/escape-tags.tld</taglib-location> </taglib> The welcome file list When the URLs for your site represent paths to static files or JSPs in your WAR, it is often a good idea for paths to directories to do something useful as well."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "tags.tld",
+      "web.xml"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/flexible/python/mapping-custom-domains",
+        "https://docs.cloud.google.com/appengine/docs/flexible/quotas",
+        "https://docs.cloud.google.com/appengine/docs/flexible/java/configuring-the-web-xml-deployment-descriptor"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/flexible/python/mapping-custom-domains",
+        "https://docs.cloud.google.com/appengine/docs/flexible/quotas",
+        "https://docs.cloud.google.com/appengine/docs/flexible/java/configuring-the-web-xml-deployment-descriptor"
+      ]
+    }
+  ]
+}

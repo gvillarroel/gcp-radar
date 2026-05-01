@@ -1,0 +1,133 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:45.649Z",
+  "source_step08_card": "data/step-08/current/products/resource-manager/card.json",
+  "product_name": "Resource Manager",
+  "product_slug": "resource-manager",
+  "feature_name": "Tag short name length limit",
+  "feature_slug": "tag-short-name-length-limit",
+  "summary": "Tag key and value short names can be up to 256 characters long.",
+  "extended_definition": "Tag key and value short names can be up to 256 characters long.",
+  "lifecycle": {
+    "latest_feature_date": "2023-09-22",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/resource-manager/docs/creating-managing-projects",
+      "https://docs.cloud.google.com/resource-manager/docs/manage-projects-within-folder",
+      "https://docs.cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Create and manage tags \\_|\\_ Resource Manager \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing",
+        "source_id": "site-docs-reference-2",
+        "final_score": 165,
+        "relevance": "",
+        "evidence_snippets": [
+          "You should get a response similar to the following: short name: production namespaced name: 123456789012/environment/production parent: tagKeys/123456789012 description: \"new description\" API To modify a tag value description, use the tagValues.patch command: PATCH https://cloudresourcemanager.googleapis.com/v3/{tagKey.name= TAGVALUE NAME } -d Request JSON body: { \"description\": DESCRIPTION , } Where: TAGVALUE NAME is the permanent ID name of the tag value; for example: tagValues/4567890123 .",
+          "You should get a response similar to the following: name: tagValues/456789012345 short name: production namespaced name: 123456789012/environment/production parent: tagKeys/123456789012 API To display the information related to a given tag value, use the tagValues.get method: GET https://cloudresourcemanager.googleapis.com/v3/{name= TAGVALUE NAME } TAGVALUE NAME is the permanent ID of the tag value; for example: tagValues/4567890123 .",
+          "Replace tags To replace all existing tag bindings on a resource with new key-value pairs, use the --replace-tags flag with the gcloud alpha resource-manager tags bindings update command. gcloud gcloud alpha resource-manager tags bindings update \\ --resource-name= RESOURCE NAME \\ --replace-tags= TAG KEY NAMESPACED NAME = TAG VALUE SHORT NAME Replace the following: RESOURCE NAME : the full resource name of the resource."
+        ]
+      },
+      {
+        "title": "Create projects \\_|\\_ Resource Manager \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/resource-manager/docs/creating-managing-projects",
+        "source_id": "site-docs-reference-2",
+        "final_score": 122,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "You can only add the namespace for the tag key-value pairs in one of the following ways: gcloud To add tags during project creation, run the following command: gcloud projects create PROJECT ID --organization= ORGANIZATION ID --tags= KEY VALUE PAIRS Replace the following: PROJECT ID is the unique identifier of the project.",
+          "POST https://cloudresourcemanager.googleapis.com/v3/projects/ Authorization: Content-Type: application/json { \"projectId\": \"our-project-456\", \"name\": \"my project\", \"parent\": \"organizations/123\", \"tags\": { \"key\": \"123/environment\" \"value\": \"production\" }, \"tags\": { \"key\": \"123/costCenter\" \"value\": \"marketing\" } } Designate project environments with tags You can use tags to visually distinguish projects based on their environment, such as production, staging, or development.",
+          "Don't include sensitive information, for example, personally identifiable information or security data, in your project name, project ID, or other resource names."
+        ]
+      },
+      {
+        "title": "\"Manage projects within folders \\_|\\_ Resource Manager \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/resource-manager/docs/manage-projects-within-folder",
+        "source_id": "site-iam-reference",
+        "final_score": 118,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "TAG KEY PARENT / TAG KEY SHORT NAME : TAG VALUE SHORT NAME \" Replace the following: FOLDER ID : the unique ID of the folder.",
+          "TAG VALUE SHORT NAME : the short name of the tag value.",
+          "Note that the console provides limited support for visual filtering by Tags; use the Google Cloud CLI for advanced Tag queries. gcloud To list projects within a folder that have a specific Tag value, use the --filter flag with the tags attribute: gcloud projects list \\ --filter = \"parent.id: FOLDER ID AND tags."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cloudresourcemanager.googleapis.com",
+      "parent.id"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing",
+        "https://docs.cloud.google.com/resource-manager/docs/creating-managing-projects",
+        "https://docs.cloud.google.com/resource-manager/docs/manage-projects-within-folder"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing",
+        "https://docs.cloud.google.com/resource-manager/docs/creating-managing-projects",
+        "https://docs.cloud.google.com/resource-manager/docs/manage-projects-within-folder"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing",
+        "https://docs.cloud.google.com/resource-manager/docs/creating-managing-projects",
+        "https://docs.cloud.google.com/resource-manager/docs/manage-projects-within-folder"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing",
+        "https://docs.cloud.google.com/resource-manager/docs/creating-managing-projects",
+        "https://docs.cloud.google.com/resource-manager/docs/manage-projects-within-folder"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing",
+        "https://docs.cloud.google.com/resource-manager/docs/creating-managing-projects",
+        "https://docs.cloud.google.com/resource-manager/docs/manage-projects-within-folder"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing",
+        "https://docs.cloud.google.com/resource-manager/docs/creating-managing-projects",
+        "https://docs.cloud.google.com/resource-manager/docs/manage-projects-within-folder"
+      ]
+    }
+  ]
+}

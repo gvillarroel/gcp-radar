@@ -1,0 +1,182 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:29.182Z",
+  "source_step08_card": "data/step-08/current/products/colab-enterprise/card.json",
+  "product_name": "Colab Enterprise",
+  "product_slug": "colab-enterprise",
+  "feature_name": "Data Science Agent BigQuery ML support",
+  "feature_slug": "data-science-agent-bigquery-ml-support",
+  "summary": "The Data Science Agent can use BigQuery ML from Colab Enterprise notebooks.",
+  "extended_definition": "The Data Science Agent can use BigQuery ML from Colab Enterprise notebooks.",
+  "lifecycle": {
+    "latest_feature_date": "2026-01-21",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/colab/docs/chat",
+      "https://docs.cloud.google.com/colab/docs/explain-cells",
+      "https://docs.cloud.google.com/colab/docs/explain-errors",
+      "https://docs.cloud.google.com/colab/docs/use-code-completion"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Use code completion and code generation \\_|\\_ Colab Enterprise \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/colab/docs/use-code-completion",
+        "source_id": "site-docs-root",
+        "final_score": 218,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To learn about other ways to use AI-powered features to help you edit code in Colab Enterprise, see Use the Data Science Agent .",
+          "Use code completion and code generation This document describes how you can use Gemini in Colab Enterprise, which is a product in the Gemini for Google Cloud portfolio, to help you write and generate code in a Colab Enterprise notebook.",
+          "For more ways to write and edit code with Gemini assistance, see the following: Chat about your notebook with Gemini Explain code cells Explain and fix errors Use the Data Science Agent Learn how Gemini for Google Cloud uses your data ."
+        ]
+      },
+      {
+        "title": "\"Chat about your notebook with Gemini \\_|\\_ Colab Enterprise \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/colab/docs/chat",
+        "source_id": "site-iam-reference",
+        "final_score": 200,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For more ways to write and edit code with Gemini assistance, see the following: Use code completion and code generation Explain code cells Explain and fix errors Use the Data Science Agent Learn how Gemini for Google Cloud uses your data .",
+          "If you haven't already authorized the Data Science Agent, a brief dialog appears while Colab Enterprise authenticates your Google Account to the Data Science Agent.",
+          "This document describes how you can use Gemini in Colab Enterprise, which is a product in the Gemini for Google Cloud portfolio, to chat about your notebook."
+        ]
+      },
+      {
+        "title": "\"Explain and fix errors with Gemini assistance \\_|\\_ Colab Enterprise \\_\\",
+        "url": "https://docs.cloud.google.com/colab/docs/explain-errors",
+        "source_id": "site-iam-reference",
+        "final_score": 200,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For more ways to write and edit code with Gemini assistance, see the following: Chat about your notebook with Gemini Use code completion and code generation Explain code cells Use the Data Science Agent Learn how Gemini for Google Cloud uses your data .",
+          "This document describes how you can use Gemini in Colab Enterprise, which is a product in the Gemini for Google Cloud portfolio, to help you explain and fix errors in a Colab Enterprise notebook.",
+          "If you haven't already authorized the Data Science Agent, a brief dialog appears while Colab Enterprise authenticates your Google Account to the Data Science Agent."
+        ]
+      },
+      {
+        "title": "\"Explain code cells with Gemini assistance \\_|\\_ Colab Enterprise \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/colab/docs/explain-cells",
+        "source_id": "site-iam-reference",
+        "final_score": 200,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For more ways to write and edit code with Gemini assistance, see the following: Chat about your notebook with Gemini Use code completion and code generation Explain and fix errors Use the Data Science Agent Learn how Gemini for Google Cloud uses your data .",
+          "This document describes how you can use Gemini in Colab Enterprise, which is a product in the Gemini for Google Cloud portfolio, to help you explain code cells in a Colab Enterprise notebook.",
+          "If you haven't already authorized the Data Science Agent, a brief dialog appears while Colab Enterprise authenticates your Google Account to the Data Science Agent."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "aiplatform.colabEnterpriseUser",
+      "cloudaicompanion.user"
+    ],
+    "missing_inventory_roles": [
+      "roles/aiplatform.colabEnterpriseUser",
+      "roles/cloudaicompanion.user"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/colab/docs/use-code-completion",
+        "https://docs.cloud.google.com/colab/docs/chat",
+        "https://docs.cloud.google.com/colab/docs/explain-errors",
+        "https://docs.cloud.google.com/colab/docs/explain-cells"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/colab/docs/use-code-completion",
+        "https://docs.cloud.google.com/colab/docs/chat",
+        "https://docs.cloud.google.com/colab/docs/explain-errors",
+        "https://docs.cloud.google.com/colab/docs/explain-cells"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/colab/docs/use-code-completion",
+        "https://docs.cloud.google.com/colab/docs/chat",
+        "https://docs.cloud.google.com/colab/docs/explain-errors",
+        "https://docs.cloud.google.com/colab/docs/explain-cells"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/colab/docs/use-code-completion",
+        "https://docs.cloud.google.com/colab/docs/chat",
+        "https://docs.cloud.google.com/colab/docs/explain-errors",
+        "https://docs.cloud.google.com/colab/docs/explain-cells"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/colab/docs/use-code-completion",
+        "https://docs.cloud.google.com/colab/docs/chat",
+        "https://docs.cloud.google.com/colab/docs/explain-errors",
+        "https://docs.cloud.google.com/colab/docs/explain-cells"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/colab/docs/use-code-completion",
+        "https://docs.cloud.google.com/colab/docs/chat",
+        "https://docs.cloud.google.com/colab/docs/explain-errors",
+        "https://docs.cloud.google.com/colab/docs/explain-cells"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/colab/docs/use-code-completion",
+        "https://docs.cloud.google.com/colab/docs/chat",
+        "https://docs.cloud.google.com/colab/docs/explain-errors",
+        "https://docs.cloud.google.com/colab/docs/explain-cells"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/colab/docs/use-code-completion",
+        "https://docs.cloud.google.com/colab/docs/chat",
+        "https://docs.cloud.google.com/colab/docs/explain-errors",
+        "https://docs.cloud.google.com/colab/docs/explain-cells"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/colab/docs/use-code-completion",
+        "https://docs.cloud.google.com/colab/docs/chat",
+        "https://docs.cloud.google.com/colab/docs/explain-errors",
+        "https://docs.cloud.google.com/colab/docs/explain-cells"
+      ]
+    }
+  ]
+}

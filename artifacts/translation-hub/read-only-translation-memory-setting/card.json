@@ -1,0 +1,113 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:48.130Z",
+  "source_step08_card": "data/step-08/current/products/translation-hub/card.json",
+  "product_name": "Translation Hub",
+  "product_slug": "translation-hub",
+  "feature_name": "Read-only translation memory setting",
+  "feature_slug": "read-only-translation-memory-setting",
+  "summary": "Administrators can mark translation memories as read-only in Translation Hub.",
+  "extended_definition": "Administrators can mark translation memories as read-only in Translation Hub.",
+  "lifecycle": {
+    "latest_feature_date": "2023-07-31",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/translation-hub/docs/admin-enable-translations",
+      "https://docs.cloud.google.com/translation-hub/docs/admin-translation-memory",
+      "https://docs.cloud.google.com/translation-hub/docs/admin-translation-memory-manage",
+      "https://docs.cloud.google.com/translation-hub/docs/user-translate"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Centrally manage saved translations \\_|\\_ Translation Hub \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/translation-hub/docs/admin-translation-memory-manage",
+        "source_id": "site-iam-reference",
+        "final_score": 220,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "You might, for example, set a translation memory to read only for most portals so that users can apply the translation memory and freely make post edits without modifying the translation memory.",
+          "However, in cases where you want to ensure that only vetted changes are made to the translation memory, you can set it to read only.",
+          "In the Translation memories section, find the translation memory to set as read only and then select more vert More > Set as read-only ."
+        ]
+      },
+      {
+        "title": "\"Enable users to request translations \\_|\\_ Translation Hub \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/translation-hub/docs/admin-enable-translations",
+        "source_id": "site-docs-root",
+        "final_score": 219,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "You can also set translation memories to read only.",
+          "Translation memory (advanced tier only): A translation memory controls how matching segments are translated at the sentence level.",
+          "Learn about translation memories or read-only translation memories."
+        ]
+      },
+      {
+        "title": "\"Save and reuse human-reviewed translations \\_|\\_ Translation Hub \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/translation-hub/docs/admin-translation-memory",
+        "source_id": "site-iam-reference",
+        "final_score": 216,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To prevent replacements, you can set a translation memory to be read-only.",
+          "After you create a translation memory, it can only be modified through the post editing or self editing process.",
+          "Additional resources Learn how to set a translation memory to read only ."
+        ]
+      },
+      {
+        "title": "Translate documents \\_|\\_ Translation Hub \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/translation-hub/docs/user-translate",
+        "source_id": "site-docs-root",
+        "final_score": 203,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "If you frequently use the same translation settings, creating a template can help you quickly and consistently apply the same settings each time.",
+          "To save and reuse changes from post-editing, you must select a translation memory that's configured as read-write where the edits are saved.",
+          "Translation memory (advanced tier only): A translation memory controls how matching segments are translated at the sentence level."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/translation-hub/docs/admin-translation-memory-manage",
+        "https://docs.cloud.google.com/translation-hub/docs/admin-enable-translations",
+        "https://docs.cloud.google.com/translation-hub/docs/admin-translation-memory",
+        "https://docs.cloud.google.com/translation-hub/docs/user-translate"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/translation-hub/docs/admin-translation-memory-manage",
+        "https://docs.cloud.google.com/translation-hub/docs/admin-enable-translations",
+        "https://docs.cloud.google.com/translation-hub/docs/admin-translation-memory",
+        "https://docs.cloud.google.com/translation-hub/docs/user-translate"
+      ]
+    }
+  ]
+}

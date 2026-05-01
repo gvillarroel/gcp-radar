@@ -1,0 +1,122 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:22.639Z",
+  "source_step08_card": "data/step-08/current/products/cloud-billing/card.json",
+  "product_name": "Cloud Billing",
+  "product_slug": "cloud-billing",
+  "feature_name": "Cloud Billing Report URL Bookmarking and Sharing",
+  "feature_slug": "cloud-billing-report-url-bookmarking-and-sharing",
+  "summary": "Allows saving and sharing configured Cloud Billing report views through bookmarkable URLs.",
+  "extended_definition": "Allows saving and sharing configured Cloud Billing report views through bookmarkable URLs.",
+  "lifecycle": {
+    "latest_feature_date": "2019-09-25",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/billing/docs/how-to/analyze-cuds",
+      "https://docs.cloud.google.com/billing/docs/how-to/cost-breakdown",
+      "https://docs.cloud.google.com/billing/docs/how-to/reports"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Analyze billing data and cost trends with Reports \\_|\\_ Cloud Billing \\_\\",
+        "url": "https://docs.cloud.google.com/billing/docs/how-to/reports",
+        "source_id": "site-docs-root",
+        "final_score": 141,
+        "relevance": "",
+        "evidence_snippets": [
+          "Related topics Export Cloud Billing data to BigQuery Understand your savings with cost breakdown reports View your cost and payment history Create, modify, or close your Cloud Billing account Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "As of May 2021, the following data is available in the Cloud Billing reports: Negotiated savings : Viewable for Cloud Billing accounts that are associated with a custom pricing contract, Negotiated savings shows the difference in cost between your contract price compared to the current list price.",
+          "Negotiated savings: When you set the report time range by Invoice month , starting with the May 2021 invoice, Cloud Billing accounts associated with a custom pricing contract display Negotiated savings as a savings column, separate from the List cost column."
+        ]
+      },
+      {
+        "title": "\"Understand your savings with cost breakdown reports \\_|\\_ Cloud Billing\\",
+        "url": "https://docs.cloud.google.com/billing/docs/how-to/cost-breakdown",
+        "source_id": "site-docs-root",
+        "final_score": 123,
+        "relevance": "",
+        "evidence_snippets": [
+          "For a Cloud Billing account associated with a custom pricing contract , when viewing the report using a time range that starts May 1, 2021 , or later, the cost breakdown report displays a Usage cost column, and a Negotiated savings column, as well as any other applicable credits and invoice-level charges: Figure 2 : Example of the cost breakdown report for a Cloud Billing account associated with a custom pricing contract.",
+          "If your Cloud Billing account is associated with a custom pricing contract , the on-demand rate used to calculate the gross cost of your usage depends on the Time range of the costs you are analyzing: When viewing the report using a time range that starts before May 1, 2021, the gross cost of your usage is calculated using your custom contract prices, and includes the savings you earned compared to list prices.",
+          "Savings and credits The following savings, discounts, and credits appear on the report if applicable to your Cloud Billing account and selected Time range : Negotiated savings : A credit that displays for Cloud Billing accounts associated with a custom pricing contract ."
+        ]
+      },
+      {
+        "title": "\"Analyze the effectiveness of your CUDs \\_|\\_ Cloud Billing \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/billing/docs/how-to/analyze-cuds",
+        "source_id": "site-docs-root-2",
+        "final_score": 92,
+        "relevance": "",
+        "evidence_snippets": [
+          "For more information about Cloud Billing permissions, see: Overview of access control Create custom roles for Cloud Billing Understanding predefined IAM roles for Cloud Billing Access the CUD analysis report To view the CUD analysis report for your Cloud Billing account: In the Google Cloud console, go to the CUD analysis page.",
+          "Understand how CUDs impact your bill Google Cloud uses a balance sheet format for your bill: We display credits from savings programs, such as Committed Use Discounts (CUDs), in your cost reports to provide a direct and transparent view of your actual savings.",
+          "Caution: If you have a shared reservation and you enabled CUD sharing for your commitment's Cloud Billing account, then Google recommends that you share your reservation only with projects that are linked to the commitment's Cloud Billing account."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/billing/docs/how-to/reports",
+        "https://docs.cloud.google.com/billing/docs/how-to/cost-breakdown",
+        "https://docs.cloud.google.com/billing/docs/how-to/analyze-cuds"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/billing/docs/how-to/reports",
+        "https://docs.cloud.google.com/billing/docs/how-to/cost-breakdown",
+        "https://docs.cloud.google.com/billing/docs/how-to/analyze-cuds"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/billing/docs/how-to/reports",
+        "https://docs.cloud.google.com/billing/docs/how-to/cost-breakdown",
+        "https://docs.cloud.google.com/billing/docs/how-to/analyze-cuds"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/billing/docs/how-to/reports",
+        "https://docs.cloud.google.com/billing/docs/how-to/cost-breakdown",
+        "https://docs.cloud.google.com/billing/docs/how-to/analyze-cuds"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/billing/docs/how-to/reports",
+        "https://docs.cloud.google.com/billing/docs/how-to/cost-breakdown",
+        "https://docs.cloud.google.com/billing/docs/how-to/analyze-cuds"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,205 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:40.877Z",
+  "source_step08_card": "data/step-08/current/products/google-secops-marketplace/card.json",
+  "product_name": "Google SecOps Marketplace",
+  "product_slug": "google-secops-marketplace",
+  "feature_name": "Add Network Tags action",
+  "feature_slug": "add-network-tags-action",
+  "summary": "Adds an action that adds network tags to a Google Cloud Compute resource.",
+  "extended_definition": "Adds an action that adds network tags to a Google Cloud Compute resource.",
+  "lifecycle": {
+    "latest_feature_date": "2024-12-24",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/anomali",
+      "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/any-run",
+      "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/automox",
+      "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-elastic-compute-cloud-ec2"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Integrate ANY.RUN with Google SecOps \\_|\\_ Google Security Operations \\_\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/any-run",
+        "source_id": "site-docs-root",
+        "final_score": 204,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Entity Any/Run Report Entity identifier for which insight is created Value from api response Value from api response Value from api response Script result Script result name Value options Example is success True or False is success:False JSON result { \"error\" : false , \"data\" :{ \"analysis\" :{ \"uuid\" : \" UUID \" , \"permanentUrl\" : \"https://app.any.run/tasks/ UUID \" , \"reports\" :{ \"IOC\" : \"https://api.any.run/report/ UUID /ioc/json\" , \"MISP\" : \"https://api.any.run/report/ UUID /summary/misp\" , \"HTML\" : \"https://api.any.run/report/ UUID /summary/html\" , \"graph\" : \"https://content.any.run/tasks/ UUID /graph\" }, \"sandbox\" :{ \"name\" : \"ANY.RUN - Interactive Sandbox\" , \"plan\" :{ \"name\" : \"Tester\" } }, \"duration\" : 60 , \"creation\" : 1602483368256 , \"creationText\" : \"2020-10-12T06:16:08.256Z\" , \"tags\" :[ ], \"options\" :{ \"timeout\" : 60 , \"additionalTime\" : 0 , \"fakeNet\" : false , \"heavyEvasion\" : false , \"mitm\" : false , \"tor\" :{ \"used\" : false , \"geo\" : \"fastest\" }, \"presentation\" : false , \"video\" : true , \"hideSource\" : false , \"network\" : true , \"privacy\" : \"bylink\" , \"privateSample\" : false , \"automatization\" :{ \"uac\" : false } }, \"scores\" :{ \"verdict\" :{ \"score\" : 100 , \"threatLevel\" : 2 , \"threatLevelText\" : \"Malicious activity\" }, \"specs\" :{ \"injects\" : false , \"autostart\" : false , \"cpuOverrun\" : false , \"crashedApps\" : false , \"crashedTask\" : false , \"debugOutput\" : false , \"executableDropped\" : false , \"exploitable\" : false , \"lowAccess\" : false , \"memOverrun\" : false , \"multiprocessing\" : true , } } } } } Case wall Result type Description Type Output message Action should not fail and not stop playbook execution: if successful and got a report for at least one of the provided entities: \"Found ANY.RUN reports for the following entities: {0}\".format([entity.Identifier]).",
+          "Action results Entity enrichment Mark entity as suspicious if the number of negative engines is equal or above the given threshold. is suspicious: if data.get(\"score\") > threshold Enrichment field name Logic - When to apply domain Returns if it exists in JSON result should block Returns if it exists in JSON result score Returns if it exists in JSON result disposable Returns if it exists in JSON result has mx records Returns if it exists in JSON result has spf records Returns if it exists in JSON result Script result Script result name Value options Example is success True or False is success:False JSON result Option 1: If wait for report checkbox is not set, we return the info about the created analysis task (response to request 1) { \"error\" : false , \"data\" : { \"taskid\" : \" TASK ID \" } } Option 2: If wait for report checkbox is not set, we return the info about the created analysis task (response to request 1) { \"error\" : false , \"data\" : { \"analysis\" : { \"uuid\" : \" UUID \" , \"permanentUrl\" : \"https://app.any.run/tasks/ UUID \" , \"reports\" : { \"IOC\" : \"https://api.any.run/report/ UUID /ioc/json\" , \"MISP\" : \"https://api.any.run/report/ UUID /summary/misp\" , \"HTML\" : \"https://api.any.run/report/ UUID /summary/html\" , \"graph\" : \"https://content.any.run/tasks/ UUID /graph\" }, \"sandbox\" : { \"name\" : \"ANY.RUN - Interactive Sandbox\" , \"plan\" : { \"name\" : \"Tester\" } }, \"duration\" : 60 , \"creation\" : 1602483368256 , \"creationText\" : \"2020-10-12T06:16:08.256Z\" , \"tags\" : [], \"options\" : { } } } } Case wall Result type Description Type Output message Action should not fail and not stop playbook execution: If successfully created analysis task for the provided file: \"Successfully created analysis task for file: {0}\".format(file path).",
+          "Action results Script result Script result name Value options Example is success True or False is success:False JSON result Option 1: If wait for report checkbox is not set, we return the info about the created analysis task (response to request 1) { \"error\" : false , \"data\" : { \"taskid\" : \" TASK ID \" } } Option 2: If wait for report checkbox is not set, we return the info about the created analysis task (response to request 1) { \"error\" : false , \"data\" : { \"analysis\" : { \"uuid\" : \" UUID \" , \"permanentUrl\" : \"https://app.any.run/tasks/ UUID \" , \"reports\" : { \"IOC\" : \"https://api.any.run/report/ UUID /ioc/json\" , \"MISP\" : \"https://api.any.run/report/ UUID /summary/misp\" , \"HTML\" : \"https://api.any.run/report/ UUID /summary/html\" , \"graph\" : \"https://content.any.run/tasks/ UUID /graph\" }, \"sandbox\" : { \"name\" : \"ANY.RUN - Interactive Sandbox\" , \"plan\" : { \"name\" : \"Tester\" } }, \"duration\" : 60 , \"creation\" : 1602483368256 , \"creationText\" : \"2020-10-12T06:16:08.256Z\" , \"tags\" : [], \"options\" : { } } } } Case wall Result type Description Type Output message Action should not fail and not stop playbook execution: If successfully created analysis task for at least one of the provided entities: \"Created analysis tasks for the following entities: {0}\".format([entity.Identifier])."
+        ]
+      },
+      {
+        "title": "\"Integrate Amazon EC2 with Google SecOps \\_|\\_ Google Security Operations\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-elastic-compute-cloud-ec2",
+        "source_id": "site-docs-root",
+        "final_score": 202,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Action Results Script Result Script result name Value options Example is success True/False is success:False JSON Result \"EC2 Instances\" : [ { \"AmiLaunchIndex\" : 0 , \"ImageId\" : \"ami-047a51fa27710816e\" , \"InstanceId\" : \"i-044c08c5bfe1a7f98\" , \"InstanceType\" : \"t2.micro\" , \"KeyName\" : \"\\\"Key\\\": \\\"Test\\\", \\\"Value\\\":\\\"Test\\\"\" , \"LaunchTime\" : \"2021-1-30\" , \"Monitoring\" :{ \"State\" : \"disabled\" }, \"Placement\" :{ \"AvailabilityZone\" : \"us-east-1d\" , \"GroupName\" : \"\" , \"Tenancy\" : \"default\" }, \"PrivateDnsName\" : \"ip-192-0-2-220.ec2.internal\" , \"PrivateIpAddress\" : \"192.0.2.220\" , \"ProductCodes\" :[ ], \"PublicDnsName\" : \"ec2-192-0-2-218.compute-1.amazonaws.com\" , \"PublicIpAddress\" : \"192.0.2.218\" , \"State\" :{ \"Code\" : 16 , \"Name\" : \"running\" }, \"StateTransitionReason\" : \"\" , \"SubnetId\" : \"subnet-1b1fda3a\" , \"VpcId\" : \"vpc- ID \" , \"Architecture\" : \"x86 64\" , \"BlockDeviceMappings\" :[ { \"DeviceName\" : \"/dev/xvda\" , \"Ebs\" :{ \"AttachTime\" : \"2021-1-30\" , \"DeleteOnTermination\" : true , \"Status\" : \"attached\" , \"VolumeId\" : \"vol-00f70681a43e5d86e\" } } ], \"ClientToken\" : \"\" , \"EbsOptimized\" : false , \"EnaSupport\" : true , \"Hypervisor\" : \"xen\" , \"NetworkInterfaces\" :[ { \"Association\" :{ \"IpOwnerId\" : \"amazon\" , \"PublicDnsName\" : \"ec2-192-0-2-218.compute-1.amazonaws.com\" , \"PublicIp\" : \"192.0.2.218\" }, \"Attachment\" :{ \"AttachTime\" : \"\" , \"AttachmentId\" : \"eni-attach-06bc5e5901ce99ef2\" , \"DeleteOnTermination\" : true , \"DeviceIndex\" : 0 , \"Status\" : \"attached\" , \"NetworkCardIndex\" : 0 }, \"Description\" : \"\" , \"Groups\" :[ { \"GroupName\" : \"launch-wizard-2\" , \"GroupId\" : \"sg-001700ccddac4189a\" } ], \"Ipv6Addresses\" :[ ], \"MacAddress\" : \"12:34:56:ab:cd:ef\" , \"NetworkInterfaceId\" : \"eni-020fa83efd417e32d\" , \"OwnerId\" : \" ID \" , \"PrivateDnsName\" : \"ip-192-0-2-220.ec2.internal\" , \"PrivateIpAddress\" : \"192.0.2.220\" , \"PrivateIpAddresses\" :[ { \"Association\" :{ \"IpOwnerId\" : \"amazon\" , \"PublicDnsName\" : \"ec2-192-0-2-218.compute-1.amazonaws.com\" , \"PublicIp\" : \"192.0.2.218\" }, \"Primary\" : true , \"PrivateDnsName\" : \"ip-192-0-2-220.ec2.internal\" , \"PrivateIpAddress\" : \"192.0.2.220\" } ], \"SourceDestCheck\" : true , \"Status\" : \"in-use\" , \"SubnetId\" : \"subnet-1b1fda3a\" , \"VpcId\" : \"vpc- ID \" , \"InterfaceType\" : \"interface\" } ], \"RootDeviceName\" : \"/dev/xvda\" , \"RootDeviceType\" : \"ebs\" , \"SecurityGroups\" :[ { \"GroupName\" : \"launch-wizard-2\" , \"GroupId\" : \"sg-001700ccddac4189a\" } ], \"SourceDestCheck\" : true , \"Tags\" :[ { \"Key\" : \"Owner\" , \"Value\" : \"Example\" }, { \"Key\" : \"Name\" , \"Value\" : \"Example test\" } ], \"VirtualizationType\" : \"hvm\" , \"CpuOptions\" :{ \"CoreCount\" : 1 , \"ThreadsPerCore\" : 1 }, \"CapacityReservationSpecification\" :{ \"CapacityReservationPreference\" : \"open\" }, \"HibernationOptions\" :{ \"Configured\" : false }, \"MetadataOptions\" :{ \"State\" : \"applied\" , \"HttpTokens\" : \"optional\" , \"HttpPutResponseHopLimit\" : 1 , \"HttpEndpoint\" : \"enabled\" }, \"EnclaveOptions\" :{ \"Enabled\" : false } } ] Case Wall Result Type Value / Description Type Output message The action should not fail nor stop a playbook execution: If successfully listed instances(is success = true): \"Successfully described Amazon EC2 instances.\" If no available values(is success = false): \"No instances were found in Amazon EC2\" The action should fail and stop a playbook execution: if fatal error, invalid instance ID, SDK error, like wrong credentials, no connection to server, other: \"Error executing action \"List Instances\".",
+          "Action Results Script Result Script result name Value options Example is success True/False is success:False JSON Result \"EC2 Security Groups\" : [ { \"Description\" : \"launch-wizard-2 created 2021-01-30T19:37:11.523+02:00\" , \"GroupName\" : \"launch-wizard-2\" , \"IpPermissions\" :[ { \"FromPort\" : 22 , \"IpProtocol\" : \"tcp\" , \"IpRanges\" :[ { \"CidrIp\" : \"192.0.2.0/0\" } ], \"Ipv6Ranges\" :[ ], \"PrefixListIds\" :[ ], \"ToPort\" : 22 , \"UserIdGroupPairs\" :[ ] } ], \"OwnerId\" : \"582302349248\" , \"GroupId\" : \"sg-001700ccddac4189a\" , \"IpPermissionsEgress\" :[ { \"IpProtocol\" : \"-1\" , \"IpRanges\" :[ { \"CidrIp\" : \"192.0.2.0/0\" } ], \"Ipv6Ranges\" :[ ], \"PrefixListIds\" :[ ], \"UserIdGroupPairs\" :[ ] } ], \"Tags\" :[ { \"Key\" : \"Team\" , \"Value\" : \"A-Team\" }, { \"Key\" : \"Owner\" , \"Value\" : \"Example\" } ], \"VpcId\" : \"vpc- ID \" } ] Case Wall Result Type Value / Description Type Output message The action should not fail nor stop a playbook execution: If successfully listed groups(is success = true): \"Successfully described Amazon EC2 security groups.\" If no available values(is success = false): \"No security groups were found in Amazon EC2\" The action should fail and stop a playbook execution: if fatal error, invalid group ID/Name, SDK error, like wrong credentials, no connection to server, other: \"Error executing action \"List Security Groups\".",
+          "Action Results Script Result Script result name Value options Example is success True/False is success:False Case Wall Result Type Value / Description Type Output message The action should not fail nor stop a playbook execution: if successful: \"Successfully added {tags list} tags to the following resources: \"resource ids\" For invalid resource ids (is success = false): \"Failed to add {tag list} tags to the following resources: {resource ids}."
+        ]
+      },
+      {
+        "title": "\"Integrate Automox with Google SecOps \\_|\\_ Google Security Operations \\_\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/automox",
+        "source_id": "site-docs-root",
+        "final_score": 196,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Run on This action runs on the following entities: IP Address Hostname Action Results Script Result Script result name Value options Example is success True/False is success=False JSON Result { \"id\" : 2263017 , \"agent version\" : \"1.41.125\" , \"commands\" : [], \"compatibility checks\" : { \"missing wmi integrity check\" : false , \"missing powershell\" : false , \"low diskspace\" : false }, \"compliant\" : true , \"connected\" : false , \"create time\" : \"2022-10-24T09:14:12+0000\" , \"custom name\" : \"\" , \"deleted\" : false , \"detail\" : { \"IPS\" : [ \"192.0.2.176\" , \"2001:db8:1:1:1:1:1:1\" ], \"UPDATE SOURCE CHECK\" : { \"CONNECTED\" : \"True\" , \"ERROR\" : \"Succeeded\" }, \"MDM SERVER\" : null , \"FQDNS\" : [ \"DESKTOP-65M05SE.WORKGROUP\" ], \"RAM\" : \"8589934592\" , \"SECURE TOKEN ACCOUNT\" : null , \"LAST USER LOGON\" : { \"SRC\" : \"DESKTOP-65M05SE\" , \"USER\" : \"DESKTOP-65M05SE\\\\Admin\" , \"TIME\" : \"10/24/2022 2:59:45 AM\" }, \"VOLUME\" : [ { \"IS SYSTEM DISK\" : \"True\" , \"VOLUME\" : \"C:\" , \"FSTYPE\" : \"NTFS\" , \"LABEL\" : \"Local Disk\" , \"AVAIL\" : \"63766056960\" , \"FREE\" : \"39201988608\" } ], \"DISTINGUISHED NAME\" : \"\" , \"MODEL\" : \"VMware7,1\" , \"CPU\" : \"Intel(R) Xeon(R) CPU E5-2698 v3 @ 2.30GHz\" , \"MDM PROFILE INSTALLED\" : null , \"VENDOR\" : \"VMware, Inc.\" , \"AUTO UPDATE OPTIONS\" : { \"OPTIONS\" : \"off\" , \"ENABLED\" : \"1\" }, \"SERVICETAG\" : \"No Asset Tag\" , \"PS VERSION\" : \"5\" , \"WSUS CONFIG\" : { \"WSUS REACHABLE\" : \"1\" , \"WSUS MANAGED\" : \"0\" , \"WSUS SERVER\" : \"\" }, \"SERIAL\" : \"VMware\" , \"NICS\" : [ { \"VENDOR\" : \"Intel(R) 82574L Gigabit Network Connection\" , \"DEVICE\" : \"Ethernet0\" , \"TYPE\" : \"enet\" , \"MAC\" : \"01:23:45:AB:CD:EF\" , \"IPS\" : [ \"172.30.201.176\" , \"2001:db8:1:1:1:1:1:1\" ], \"CONNECTED\" : true }, { \"IPS\" : [], \"CONNECTED\" : false , \"VENDOR\" : \"WAN Miniport (IP)\" , \"DEVICE\" : \"\" , \"TYPE\" : \"enet\" , \"MAC\" : \"01:23:45:AB:CD:EF\" }, { \"VENDOR\" : \"WAN Miniport (IPv6)\" , \"DEVICE\" : \"\" , \"TYPE\" : \"enet\" , \"MAC\" : \"01:23:45:AB:CD:EF\" , \"IPS\" : [], \"CONNECTED\" : false }, { \"CONNECTED\" : false , \"VENDOR\" : \"WAN Miniport (Network Monitor)\" , \"DEVICE\" : \"\" , \"TYPE\" : \"enet\" , \"MAC\" : \"01:23:45:AB:CD:EF\" , \"IPS\" : [] } ], \"WMI INTEGRITY CHECK\" : \"True\" , \"VERSION\" : \"440BX Desktop Reference Platform\" , \"DISKS\" : [ { \"TYPE\" : \"VMware Virtual disk SCSI Disk Device\" , \"SIZE\" : \"64420392960\" } ] }, \"display name\" : \"DESKTOP-65M05SE\" , \"exception\" : false , \"instance id\" : \"\" , \"ip addrs\" : [ \"192.0.2.139\" ], \"ip addrs private\" : [ \"192.0.2.176\" , \"2001:db8:1:1:1:1:1:1\" ], \"is compatible\" : true , \"is delayed by notification\" : false , \"is delayed by user\" : false , \"last disconnect time\" : \"2022-10-25T09:19:29+0000\" , \"last logged in user\" : \"DESKTOP-65M05SE\\\\Admin\" , \"last process time\" : \"2022-10-25T08:19:24+0000\" , \"last refresh time\" : \"2022-10-25T08:23:48+0000\" , \"last scan failed\" : false , \"last update time\" : \"2022-10-25T08:22:14+0000\" , \"mdm\" : null , \"name\" : \"DESKTOP-65M05SE\" , \"needs attention\" : false , \"needs reboot\" : false , \"next patch time\" : null , \"notification count\" : 0 , \"organization id\" : 104513 , \"organizational unit\" : \"\" , \"os family\" : \"Windows\" , \"os name\" : \"10 Enterprise Evaluation\" , \"os version\" : \"10.0.19043\" , \"os version id\" : 4876 , \"patch deferral count\" : 0 , \"patches\" : 1 , \"pending\" : false , \"pending patches\" : 0 , \"policy status\" : [ { \"id\" : 316123693 , \"organization id\" : 104513 , \"policy id\" : 245687 , \"server id\" : 2263017 , \"policy name\" : \"Apply All Patches\" , \"policy type name\" : \"patch\" , \"status\" : 1 , \"result\" : \"{}\" , \"create time\" : \"2022-10-25T08:23:48+0000\" , \"will reboot\" : false , \"pending count\" : 0 , \"next remediation\" : null } ], \"reboot deferral count\" : 0 , \"reboot is delayed by notification\" : false , \"reboot is delayed by user\" : false , \"reboot notification count\" : 0 , \"refresh interval\" : 1440 , \"serial number\" : \"VMware\" , \"server group id\" : 145150 , \"server policies\" : [], \"status\" : { \"device status\" : \"not-ready\" , \"agent status\" : \"disconnected\" , \"policy status\" : \"compliant\" , \"policy statuses\" : [ { \"id\" : 245687 , \"compliant\" : true }, { \"id\" : 245688 , \"compliant\" : true } ] }, \"tags\" : [ \"Recently Added\" ], \"timezone\" : \"UTC-0700\" , \"total count\" : 1 , \"uptime\" : \"1872\" , \"uuid\" : \" UUID \" , \"list of patches\" : [ { \"id\" : 2077952013 , \"server id\" : 2263017 , \"package id\" : 227229243 , \"software id\" : 167943 , \"installed\" : true , \"ignored\" : false , \"group ignored\" : false , \"deferred until\" : null , \"group deferred until\" : null , \"name\" : \"example\" , \"display name\" : \"MSXML 6.0 RTM Security Update (925673)\" , \"version\" : \"103\" , \"repo\" : \"WindowsUpdate\" , \"cves\" : [], \"cve score\" : \"9.0\" , \"agent severity\" : \"9.0\" , \"severity\" : \"critical\" , \"package version id\" : 233355423 , \"os name\" : \"10 Enterprise Evaluation\" , \"os version\" : \"10.0.19043\" , \"os version id\" : 4876 , \"create time\" : \"2021-06-28T15:45:57+0000\" , \"requires reboot\" : true , \"patch classification category id\" : 8 , \"patch scope\" : \"important\" , \"is uninstallable\" : false , \"secondary id\" : null , \"is managed\" : true , \"impact\" : 0 , \"organization id\" : 104513 } ] } Entity Enrichment Enrichment Field Name Logic - When to apply id When available in JSON agent version When available in JSON compliant When available in JSON connected When available in JSON create time When available in JSON custom name When available in JSON ip addrs private When available in JSON last disconnect time When available in JSON last logged in user When available in JSON last update time When available in JSON os When available in JSON pending patches When available in JSON tags When available in JSON Case Wall Result Type Value / Description Type Output message The action should not fail nor stop a playbook execution: If data is available for one entity (is success=true): \"Successfully enriched the following entities using information from Automox: {entity.identifier}\".",
+          "Run on This action runs on the following entities: IP Address Hostname Action Results Script Result Script result name Value options Example is success True/False is success=False JSON Result { \"status\" : \"done/failure if entity not found\" } Case Wall Result Type Value / Description Type Output message The action should not fail nor stop a playbook execution: If remediated the server and successful for one entity (is success=true): \"Successfully executed policy {Policy} on the following entities in Automox: {entity.identifier}.\" If remediated the server and one server is not found (is success=true): \"Action wasn't able to execute policy {Policy} on the following entities in Automox: {entity.identifier}.\" If remediated the server and all servers are not found (is success=false): \"No entities were found.",
+          "Run on This action runs on the following entities: IP Address Hostname Action Results Script Result Script result name Value options Example is success True/False is success=False JSON Result { \"id\" : 8527028217 , \"server id\" : 2263017 , \"command id\" : 164850699 , \"organization id\" : 104513 , \"args\" : \"ASD\" , \"reboot\" : 0 , \"exec time\" : \"2022-10-25T08:02:43+0000\" , \"response\" : [ \"0\" , \"Installing MS updates: ASD\\\\r\\\\nCouldn't find update for ASD, skipping.\\\\r\\\\nNothing left to do\" , null ], \"response time\" : \"2022-10-25T08:22:14+0000\" , \"policy id\" : null , \"agent command type\" : 0 , \"command type name\" : \"InstallUpdate\" } { \"reason\" : \"Device is offline."
+        ]
+      },
+      {
+        "title": "\"Integrate Anomali with Google SecOps \\_|\\_ Google Security Operations \\_\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/anomali",
+        "source_id": "site-docs-root",
+        "final_score": 192,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Run on This action runs on the following entities: IP Address URL Hash Email Addresses (User entities that match email regex) Action results Entity enrichment Name Logic - When To Apply id Returns if it exists in JSON result status Returns if it exists in JSON result itype Returns if it exists in JSON result expiration time Returns if it exists in JSON result ip Returns if it exists in JSON result feed id Returns if it exists in JSON result confidence Returns if it exists in JSON result uuid Returns if it exists in JSON result retina confidence Returns if it exists in JSON result trusted circle ids Returns if it exists in JSON result source Returns if it exists in JSON result latitude Returns if it exists in JSON result type Returns if it exists in JSON result description Returns if it exists in JSON result tags Returns if it exists in JSON result threat score Returns if it exists in JSON result source confidence Returns if it exists in JSON result modification time Returns if it exists in JSON result org name Returns if it exists in JSON result asn Returns if it exists in JSON result creation time Returns if it exists in JSON result tlp Returns if it exists in JSON result country Returns if it exists in JSON result longitude Returns if it exists in JSON result severity Returns if it exists in JSON result subtype Returns if it exists in JSON result Script result Script result name Value options Example success True or False success:False JSON result { \"Entity\" : \" ENTITY ID \" , \"EntityResult\" : { \"Info\" : [{ \"source created\" : null , \"status\" : \"inactive\" , \"itype\" : \"mal domain\" , \"expiration ts\" : \"2020-11-28T13:29:57.000Z\" , \"ip\" : \"192.0.2.1\" , \"is editable\" : false , \"feed id\" : 1111111 , \"update id\" : 1111111111 , \"longitude\" : -0.1223454 , \"is public\" : true , \"threat type\" : \"malware\" , \"workgroups\" : [], \"rdns\" : null , \"confidence\" : 11111 , \"uuid\" : \" UUID \" , \"retina confidence\" : 1111111 , \"trusted circle ids\" : null , \"id\" : 111111111111111110000 , \"source\" : \"COVID19 Cyber Threat Coalition Blocklist - Domains\" , \"owner organization id\" : 111 , \"import session id\" : null , \"source modified\" : null , \"type\" : \"domain\" , \"sort\" : [ 1607193157800 , \"56224953198\" ], \"description\" : null , \"tags\" : [{ \"id\" : \"wu6\" , \"name\" : \"Blocklist\" }, { \"id\" : \"pvj\" , \"name\" : \"Coronavirus\" }, { \"id\" : \"01i\" , \"name\" : \"COVID-19\" }, { \"id\" : \"o70\" , \"name\" : \"Malicious\" }, { \"id\" : \"fk0\" , \"name\" : \"Source:COVID19-Cyber-Threat-Coalition\" }], \"threatscore\" : 11111 , \"source reported confidence\" : 11111 , \"modified ts\" : \"2020-12-05T18:32:37.800Z\" , \"org\" : \"Namecheap\" , \"asn\" : \"11111111\" , \"created ts\" : \"2020-10-29T13:33:24.904Z\" , \"tlp\" : null , \"is anonymous\" : false , \"latitude\" : 51.4964 , \"country\" : \"GB\" , \"can add public tags\" : false , \"value\" : \" VALUE \" , \"subtype\" : null , \"meta\" : { \"registration updated\" : \"2020-10-24T22:16:59+00:00\" , \"detail2\" : \"bifocals deactivated on 2020-12-05 18:30:00.085789\" , \"severity\" : \"high\" , \"registration created\" : \"2020-10-24T22:16:42+00:00\" }, \"resource uri\" : \"/api/v2/intelligence/\" }], \"Campaigns\" : [{ \"association info\" : [{ \"comment\" : null , \"created\" : \"2020-10-29T13:33:29.200283\" , \"from id\" : \" ID \" }], \"can add public tags\" : true , \"circles\" : [], \"created ts\" : \"2020-03-15T04:24:55.428496\" , \"end date\" : \"2020-03-23T16:05:00.761000\" , \"feed id\" : 0 , \"id\" : \" ID \" , \"is anonymous\" : true , \"is cloneable\" : \"yes\" , \"is public\" : true , \"modified ts\" : \"2021-02-02T02:38:19.892072\" , \"name\" : \"Coronavirus (COVID-19)\" , \"objective\" : null , \"organization\" : { \"id\" : 0 , \"name\" : \"Analyst\" , \"title\" : \"Analyst\" }, \"publication status\" : \"published\" , \"published ts\" : \"2020-04-06T21:40:24.452312\" , \"resource uri\" : \"/api/v1/campaign/\" , \"source created\" : null , \"source modified\" : null , \"start date\" : \"2020-01-30T13:10:00.070000\" , \"status\" : { \"display name\" : \"Ongoing\" , \"id\" : 1 , \"resource uri\" : \"/api/v1/campaignstatus/1/\" }, \"tags\" : [ \"Malware\" , \"Fraud\" , \"Phishing\" , \"COVID-19\" , \"Coronavirus\" , \"Scams\" ], \"tags v2\" : [{ \"id\" : \"wqe\" , \"name\" : \"Coronavirus\" }, { \"id\" : \"hlg\" , \"name\" : \"COVID-19\" }, { \"id\" : \"74i\" , \"name\" : \"Phishing\" }, { \"id\" : \"0y2\" , \"name\" : \"Malware\" }, { \"id\" : \"u63\" , \"name\" : \"Scams\" }, { \"id\" : \"1er\" , \"name\" : \"Fraud\" }], \"tlp\" : \"white\" , \"uuid\" : \" UUID \" , \"workgroups\" : [] }], \"Tip\" : [{ \"all circles visible\" : true , \"association info\" : [{ \"comment\" : null , \"created\" : \"2020-10-29T13:33:29.212118\" , \"from id\" : \" ID \" }], \"body content type\" : \"richtext\" , \"campaign\" : null , \"can add public tags\" : true , \"circles\" : [], \"created ts\" : \"2020-03-19T04:23:35.714929\" , \"feed id\" : 0 , \"id\" : \" ID \" , \"is anonymous\" : true , \"is cloneable\" : \"yes\" , \"is editable\" : true , \"is email\" : false , \"is public\" : true , \"modified ts\" : \"2021-02-02T02:38:20.061912\" , \"name\" : \"Coronavirus (COVID-19) Cyber Threats\" , \"original source\" : null , \"original source id\" : null , \"owner org\" : { \"id\" : 0 , \"name\" : \"Analyst\" , \"title\" : \"Analyst\" }, \"parent\" : null , \"published ts\" : \"2020-05-25T18:39:36.890647\" , \"resource uri\" : \"/api/v1/ ID /\" , \"source created\" : null , \"source modified\" : null , \"starred by me\" : false , \"starred total count\" : 5 , \"status\" : \"published\" , \"tags\" : [ \"Scams\" , \"HCL-\" , \"Malware\" ], \"tags v2\" : [{ \"id\" : \" ID \" , \"name\" : \"Coronavirus\" }, { \"id\" : \" ID \" , \"name\" : \"COVID-19\" }, { \"id\" : \" ID \" , \"name\" : \"Phishing\" }], \"threat actor\" : null , \"tlp\" : \"white\" , \"ttp\" : null , \"uuid\" : \" UUID \" , \"votes\" : { \"me\" : null , \"total\" : 0 }, \"watched by me\" : false , \"watched total count\" : 11111 , \"workgroups\" : [] }], \"Actors\" : [], \"Incidents\" : [], \"TTP\" : [] } } Case wall Result type Description Type Output message If data is available for one entity (is success=true): \"Successfully returned information about the following entities from Anomali ThreatStream: {entity.identifier}\" If no data is available for one entity (is success=true): \"Action wasn't able to return information about the following entities from Anomali ThreatStream: {entity.identifier}\" If not available for all entities (is success=false): \"No entities were enriched.",
+          "Run on This action runs on the following entities: Hash IP Address URL Email Action results Script result Script result name Value options Example success True or False success:False JSON result { \"campaign\" : [ { \"name\" : \"Example 1\" , \"id\" : 1 }, { \"name\" : \"Example 2\" , \"id\" : 2 } ], \"actor\" : [ { \"name\" : \"Actor 1\" , \"id\" : 1 }, { \"name\" : \"Actor 2\" , \"id\" : 2 } ], \"attackpattern\" : [ { \"name\" : \"Pattern 1\" , \"id\" : 1 }, { \"name\" : \"Pattern 2\" , \"id\" : 2 } ], \"courseofaction\" : [ { \"name\" : \"Course of Action 1\" , \"id\" : 1 }, { \"name\" : \"Course Of Action 2\" , \"id\" : 2 } ], \"identity\" : [ { \"name\" : \"Identity 1\" , \"id\" : 1 }, { \"name\" : \"Identity 2\" , \"id\" : 2 } ], \"incident\" : [ { \"name\" : \"Incident 1\" , \"id\" : 1 }, { \"name\" : \"Incident 2\" , \"id\" : 2 } ], \"infrastructure\" : [ { \"name\" : \"Infrustructure 1\" , \"id\" : 1 }, { \"name\" : \"Infrustructure 2\" , \"id\" : 2 } ], \"intrusionset\" : [ { \"name\" : \"Intrusion set 1\" , \"id\" : 1 }, { \"name\" : \"Intrusion set 2\" , \"id\" : 2 } ], \"malware\" : [ { \"name\" : \"Malware 1\" , \"id\" : 1 }, { \"name\" : \"Malware 2\" , \"id\" : 2 } ], \"signature\" : [ { \"name\" : \"Signature 1\" , \"id\" : 1 }, { \"name\" : \"Signature 2\" , \"id\" : 2 } ], \"tool\" : [ { \"name\" : \"Tool 1\" , \"id\" : 1 }, { \"name\" : \"Tool 2\" , \"id\" : 2 } ], \"ttp\" : [ { \"name\" : \"TTP 1\" , \"id\" : 1 }, { \"name\" : \"TTP 2\" , \"id\" : 2 } ], \"vulnerability\" : [ { \"name\" : \"Vulnerability 1\" , \"id\" : 1 }, { \"name\" : \"Vulnerability 2\" , \"id\" : 2 } ], } Case wall Result type Description Type Output message The action should not fail nor stop a playbook execution: If successful and at least one association across entities is found (is success=true): \"Successfully retrieved related associations from Anomali\" If no associations are found (is success=false): \"No related associations were found.\" Async Message: \"Waiting for all of the association details to be retrieved\" The action should fail and stop a playbook execution: If a fatal error, like wrong credentials, no connection to server, other is reported: \"Error executing action \"Get Related Association\".",
+          "Network Function Default port Direction Protocol API Multivalues Outbound apikey Integration parameters Use the following parameters to configure the integration: Parameter name Type Default value Is mandatory Description Instance Name String N/A No Name of the Instance you intend to configure integration for."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "amazonaws.com",
+      "api.any.run",
+      "app.any.run",
+      "content.any.run",
+      "data.get",
+      "ec2.internal",
+      "entity.identifier",
+      "entity.Identifier",
+      "t2.micro",
+      "users.tpg.com.au"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/any-run",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-elastic-compute-cloud-ec2",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/automox",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/anomali"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/any-run",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-elastic-compute-cloud-ec2",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/automox",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/anomali"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/any-run",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-elastic-compute-cloud-ec2",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/automox",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/anomali"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/any-run",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-elastic-compute-cloud-ec2",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/automox",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/anomali"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/any-run",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-elastic-compute-cloud-ec2",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/automox",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/anomali"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/any-run",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-elastic-compute-cloud-ec2",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/automox",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/anomali"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/any-run",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-elastic-compute-cloud-ec2",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/automox",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/anomali"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/any-run",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-elastic-compute-cloud-ec2",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/automox",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/anomali"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/any-run",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-elastic-compute-cloud-ec2",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/automox",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/anomali"
+      ]
+    },
+    {
+      "capability": "threat",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/any-run",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-elastic-compute-cloud-ec2",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/automox",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/anomali"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/any-run",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-elastic-compute-cloud-ec2",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/automox",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/anomali"
+      ]
+    }
+  ]
+}

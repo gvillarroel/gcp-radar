@@ -1,0 +1,161 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:27.301Z",
+  "source_step08_card": "data/step-08/current/products/cloud-sql-for-postgresql/card.json",
+  "product_name": "Cloud SQL for PostgreSQL",
+  "product_slug": "cloud-sql-for-postgresql",
+  "feature_name": "Query Insights query sampling rate",
+  "feature_slug": "query-insights-query-sampling-rate",
+  "summary": "Query Insights lets you configure the sampling rate used for collected query data.",
+  "extended_definition": "Query Insights lets you configure the sampling rate used for collected query data.",
+  "lifecycle": {
+    "latest_feature_date": "2022-02-01",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/sql/docs/postgres/configure-private-ip",
+      "https://docs.cloud.google.com/sql/docs/postgres/configure-private-service-connect",
+      "https://docs.cloud.google.com/sql/docs/postgres/create-instance"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Create instances \\_|\\_ Cloud SQL for PostgreSQL \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/sql/docs/postgres/create-instance",
+        "source_id": "site-docs-root",
+        "final_score": 147,
+        "relevance": "",
+        "evidence_snippets": [
+          "Set the following parameters, as required: enableGoogleMlIntegration : when this parameter is set to true , Cloud SQL instances can connect to Vertex AI to pass requests for real-time predictions and insights to the AI cloudsql.enable google ml integration : when this parameter is set to on , Cloud SQL can integrate with Vertex AI You can use the sqlNetworkArchitecture field to enforce the use of the new network architecture for the instance upon creation, even if the project isn't fully upgraded.",
+          "Set the following parameters, as required: enableGoogleMlIntegration : when this parameter is set to true , Cloud SQL instances can connect to Vertex AI to pass requests for real-time predictions and insights to the AI cloudsql.enable google ml integration : when this parameter is set to on , Cloud SQL can integrate with Vertex AI You can use the sqlNetworkArchitecture field to enforce the use of the new network architecture for the instance upon creation, even if the project isn't fully upgraded.",
+          "Integration with Vertex AI --enable-google-ml-integration Enables Cloud SQL instances to connect to Vertex AI to pass requests for real-time predictions and insights to the AI. --database-flags cloudsql.enable google ml integration=on By turning this flag on, Cloud SQL can integrate with Vertex AI."
+        ]
+      },
+      {
+        "title": "\"Connect to an instance using Private Service Connect \\_|\\_ Cloud SQL for\\",
+        "url": "https://docs.cloud.google.com/sql/docs/postgres/configure-private-service-connect",
+        "source_id": "site-iam-reference",
+        "final_score": 137,
+        "relevance": "",
+        "evidence_snippets": [
+          "Client IP-based control, logging, and metrics aren't supported for Query and System insights.",
+          "Save the request body in a file named request.json , and execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method POST -Headers $headers -ContentType: \"application/json; charset=utf-8\" -InFile request.json -Uri \"https://sqladmin.googleapis.com/v1/projects/ PROJECT ID /instances\" Select-Object -Expand Content You should receive a JSON response similar to the following: { \"kind\": \"sql#operation\", \"targetLink\": \"https://sqladmin.googleapis.com/v1/projects/ PROJECT ID /instances/ INSTANCE NAME \", \"status\": \"RUNNING\", \"user\": \"user@example.com\", \"insertTime\": \"2020-01-16T02:32:12.281Z\", \"startTime\": \"2023-06-14T18:48:35.499Z\", \"operationType\": \"CREATE\", \"name\": \" OPERATION ID \", \"targetId\": \" INSTANCE NAME \", \"selfLink\": \"https://sqladmin.googleapis.com/v1/projects/ PROJECT ID /operations/ OPERATION ID \", \"targetProject\": \" PROJECT ID \" } Get the service attachment After creating a Cloud SQL instance with Private Service Connect enabled, get the service attachment URI and use it to create the Private Service Connect endpoint. gcloud To view summary information about an instance with Private Service Connect enabled, such as the pscServiceAttachmentLink field which displays the URI that points to the service attachment of the instance, use the gcloud sql instances describe command: gcloud sql instances describe INSTANCE NAME \\ --project = PROJECT ID Note: The service attachment URI is used to create the Private Service Connect endpoint.",
+          "Save the request body in a file named request.json , and execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method POST -Headers $headers -ContentType: \"application/json; charset=utf-8\" -InFile request.json -Uri \"https://networkconnectivity.googleapis.com/v1/projects/ PROJECT ID /locations/ REGION /serviceConnectionPolicies?serviceConnectionPolicyId= POLICY NAME \" Select-Object -Expand Content You should receive a JSON response similar to the following: { \"name\": \"projects/ PROJECT ID /locations/ REGION /operations/ OPERATION ID \", \"metadata\": { \"@type\": \"type.googleapis.com/google.cloud.networkconnectivity.v1.OperationMetadata\", \"createTime\": \"2023-08-15T16:59:29.236110917Z\", \"target\": \"projects/ PROJECT ID /locations/ REGION /serviceConnectionPolicies/ POLICY NAME \", \"verb\": \"create\", \"requestedCancellation\": false, \"apiVersion\": \"v1\" }, \"done\": false } Create a Cloud SQL instance You can create an instance with Private Service Connect enabled for the instance and configure the instance to create endpoints automatically by using gcloud CLI or the API."
+        ]
+      },
+      {
+        "title": "Configure private IP \\_|\\_ Cloud SQL for PostgreSQL \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/sql/docs/postgres/configure-private-ip",
+        "source_id": "site-iam-reference",
+        "final_score": 130,
+        "relevance": "",
+        "evidence_snippets": [
+          "Connect to an instance configured with privately used public IP addresses If your instance is configured in a privately used public IP address range and you want to connect to it, then enable import-subnet-routes-with-public-ip on the network peering between your network and the Cloud SQL network. gcloud compute networks peerings update cloudsql-postgres-googleapis-com \\ --network = VPC NETWORK NAME \\ --import-subnet-routes-with-public-ip \\ --project = PROJECT ID Replace the following: cloudsql-postgres-googleapis-com is a Private Service Connection name from your VPC network page.",
+          "Connect from privately used public IP addresses If you want to configure your instance in a privately used public IP address range, then enable export-subnet-routes-with-public-ip on the network peering between your network and the Cloud SQL network. gcloud compute networks peerings update cloudsql-postgres-googleapis-com \\ --network = VPC NETWORK NAME \\ --export-subnet-routes-with-public-ip \\ --project = PROJECT ID Replace the following: cloudsql-postgres-googleapis-com is a Private Service Connection name from your VPC network page.",
+          "Local routes for a destination are used even though the Cloud SQL peering is configured to import custom routes from your VPC network."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "address.name",
+      "address.private",
+      "cloudsql.enable",
+      "connection.default",
+      "connection.default.peering",
+      "example.com",
+      "network.id",
+      "network.name",
+      "network.peering",
+      "networkconnectivity.googleapis.com",
+      "request.json",
+      "servicenetworking.googleapis.com",
+      "sqladmin.googleapis.com",
+      "type.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/create-instance",
+        "https://docs.cloud.google.com/sql/docs/postgres/configure-private-service-connect",
+        "https://docs.cloud.google.com/sql/docs/postgres/configure-private-ip"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/create-instance",
+        "https://docs.cloud.google.com/sql/docs/postgres/configure-private-service-connect",
+        "https://docs.cloud.google.com/sql/docs/postgres/configure-private-ip"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/create-instance",
+        "https://docs.cloud.google.com/sql/docs/postgres/configure-private-service-connect",
+        "https://docs.cloud.google.com/sql/docs/postgres/configure-private-ip"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/create-instance",
+        "https://docs.cloud.google.com/sql/docs/postgres/configure-private-service-connect",
+        "https://docs.cloud.google.com/sql/docs/postgres/configure-private-ip"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/create-instance",
+        "https://docs.cloud.google.com/sql/docs/postgres/configure-private-service-connect",
+        "https://docs.cloud.google.com/sql/docs/postgres/configure-private-ip"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/create-instance",
+        "https://docs.cloud.google.com/sql/docs/postgres/configure-private-service-connect",
+        "https://docs.cloud.google.com/sql/docs/postgres/configure-private-ip"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/create-instance",
+        "https://docs.cloud.google.com/sql/docs/postgres/configure-private-service-connect",
+        "https://docs.cloud.google.com/sql/docs/postgres/configure-private-ip"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/create-instance",
+        "https://docs.cloud.google.com/sql/docs/postgres/configure-private-service-connect",
+        "https://docs.cloud.google.com/sql/docs/postgres/configure-private-ip"
+      ]
+    }
+  ]
+}

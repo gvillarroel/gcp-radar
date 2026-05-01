@@ -1,0 +1,138 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:41.049Z",
+  "source_step08_card": "data/step-08/current/products/google-secops-siem/card.json",
+  "product_name": "Google SecOps SIEM",
+  "product_slug": "google-secops-siem",
+  "feature_name": "Single sign-on with custom claims role mapping",
+  "feature_slug": "single-sign-on-with-custom-claims-role-mapping",
+  "summary": "Bindplane access can be managed through an identity provider using custom claims role mapping.",
+  "extended_definition": "Bindplane access can be managed through an identity provider using custom claims role mapping.",
+  "lifecycle": {
+    "latest_feature_date": "2026-03-18",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/chronicle/docs/administration/rbac",
+      "https://docs.cloud.google.com/chronicle/docs/ingestion/default-parsers/ingest-bce",
+      "https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/advanced/api-migration-guide"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Role-Based Access Control (RBAC) User Guide \\_|\\_ Google Security Operations\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/administration/rbac",
+        "source_id": "site-docs-reference-required-1",
+        "final_score": 170,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Profile The Profile page displays the information from the user's profile (user ID, group ID, roles assigned) and some additional information about their organization (customer ID, Google Cloud project number, Google Cloud project ID).",
+          "The available roles are: Default ViewerWithNoDetectAccess Viewer Editor Administrator Once you have added your user or group IDs and selected the appropriate role from the ASSIGN ROLE drop-down menu, click ASSIGN .",
+          "Role-Based Access Control (RBAC) User Guide Supported in: Google secops SIEM Role-based access control (RBAC) enables an administrator to tailor access to Google Security Operations features based on an employee's role in your organization."
+        ]
+      },
+      {
+        "title": "\"Collect Chrome Enterprise Premium Context Access Aware Data \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/ingestion/default-parsers/ingest-bce",
+        "source_id": "site-api-reference",
+        "final_score": 144,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To create a new role and assign a privilege, do the following: Select the newly created username.",
+          "To assign the role to the user, do the following: Click Assign Users .",
+          "Navigate to the newly created user and click Assign Role ."
+        ]
+      },
+      {
+        "title": "\"Migrate SOAR endpoints to Chronicle API \\_|\\_ Google Security Operations\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/advanced/api-migration-guide",
+        "source_id": "site-docs-reference-required-1",
+        "final_score": 124,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "This mapping is required to provide the service account or workload identity with the necessary access to SOC Roles and Environments.",
+          "Can be v1alpha , v1beta , or v1 . project id : Your project ID (same project as you defined for your IAM permissions) location : The location of your project (region); same as the regional endpoints instance id : Your Google Security Operations SIEM customer ID.",
+          "Optional: Create a staging integration If you're editing a custom integration or a component of a commercial integration, we recommend that you push the changes to a staging integration first."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/administration/rbac",
+        "https://docs.cloud.google.com/chronicle/docs/ingestion/default-parsers/ingest-bce",
+        "https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/advanced/api-migration-guide"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/administration/rbac",
+        "https://docs.cloud.google.com/chronicle/docs/ingestion/default-parsers/ingest-bce",
+        "https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/advanced/api-migration-guide"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/administration/rbac",
+        "https://docs.cloud.google.com/chronicle/docs/ingestion/default-parsers/ingest-bce",
+        "https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/advanced/api-migration-guide"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/administration/rbac",
+        "https://docs.cloud.google.com/chronicle/docs/ingestion/default-parsers/ingest-bce",
+        "https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/advanced/api-migration-guide"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/administration/rbac",
+        "https://docs.cloud.google.com/chronicle/docs/ingestion/default-parsers/ingest-bce",
+        "https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/advanced/api-migration-guide"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/administration/rbac",
+        "https://docs.cloud.google.com/chronicle/docs/ingestion/default-parsers/ingest-bce",
+        "https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/advanced/api-migration-guide"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/administration/rbac",
+        "https://docs.cloud.google.com/chronicle/docs/ingestion/default-parsers/ingest-bce",
+        "https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/advanced/api-migration-guide"
+      ]
+    }
+  ]
+}

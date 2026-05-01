@@ -1,0 +1,104 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:43.150Z",
+  "source_step08_card": "data/step-08/current/products/mainframe-connector/card.json",
+  "product_name": "Mainframe Connector",
+  "product_slug": "mainframe-connector",
+  "feature_name": "SIGN clause support",
+  "feature_slug": "sign-clause-support",
+  "summary": "The SIGN clause is supported.",
+  "extended_definition": "The SIGN clause is supported.",
+  "lifecycle": {
+    "latest_feature_date": "2024-05-02",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/mainframe-connector/docs/api-reference",
+      "https://docs.cloud.google.com/mainframe-connector/docs/copybook-reference",
+      "https://docs.cloud.google.com/mainframe-connector/docs/local-transcoding",
+      "https://docs.cloud.google.com/mainframe-connector/docs/qsam-vsam-transcoding"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Copybook parser reference \\_|\\_ Mainframe Connector \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/mainframe-connector/docs/copybook-reference",
+        "source_id": "site-docs-reference",
+        "final_score": 133,
+        "relevance": "",
+        "evidence_snippets": [
+          "If you use these constructs in your copybook, Mainframe Connector shows an error. dataAlignedClause dataBlankWhenZeroClause dataCommonOwnLocalClause dataIntegerStringClause dataJustifiedClause dataOccursClause dataReceivedByClause dataRecordAreaClause dataRenamesClause dataSignClause dataSynchronizedClause dataThreadLocalClause dataTypeClause dataTypeDefClause dataUsingClause Data types COBOL data types like COMP-1 and COMP-2 are supported.",
+          "For more information about supported timezone formats, see Supported timezone formats . --omitsuffix (Optional): If this parameter is specified, -SUFFIX STRING or SUFFIX STRING is removed from the field name appearing in BigQuery.",
+          "The following PICTURE fields are supported: Pic A, Pic, B, Pic G (DBCS), Pic N (national or DBCS), Pic U (UTF8), Pic X, and zoned decimal (max precision 38, max scale 38) IBM Hexadecimal floating point (HFP) is supported."
+        ]
+      },
+      {
+        "title": "Mainframe Connector API commands \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/mainframe-connector/docs/api-reference",
+        "source_id": "site-docs-reference",
+        "final_score": 113,
+        "relevance": "",
+        "evidence_snippets": [
+          "Mainframe Connector supports the following subset of the UCM format: <code set name> \"<name>\" <uconv class> \"SBCS\" <subchar> \\x1A #Example CHARMAP # <U0000> \\x00 0 #For the third column, only 0 is supported. <U0001> \\x01 0 #etc END CHARMAP If you want to use a customized character set, define a configuration file in the UCM format.",
+          "The native copybook parser extracts default values from the VALUE clause within a copybook, and assigns them to the corresponding columns in a newly created BigQuery table.",
+          "The following VALUE clauses are supported: VAR1 PIC 9(5) VALUE 55. -- Set VAR1 to 55 VAR1 PIC X(5) VALUE aaaa."
+        ]
+      },
+      {
+        "title": "\"qsam and vsam commands reference \\_|\\_ Mainframe Connector \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/mainframe-connector/docs/qsam-vsam-transcoding",
+        "source_id": "site-docs-reference",
+        "final_score": 108,
+        "relevance": "",
+        "evidence_snippets": [
+          "Picture symbols Picture attributes Logical type S, 9, V DISPLAY Long (signed 64-bit integer), BigInteger, Decimal64, BigDecimal Example 01 REC 02 DEC PIC S9(2)V9(8) DISPLAY Lists (OCCURS) Lists are ordered collections of elements of the same type.",
+          "Picture symbols Picture attributes Logical type S, 9, V COMP-3 Long (signed 64-bit integer), BigInteger, Decimal64, BigDecimal Example 01 REC 02 DEC PIC S9(2)V9(8) COMP-3 Zoned decimal field (DISPLAY) Zoned decimal fields are fully supported.",
+          "Therefore, unsigned long inputs must use only the lower 63 bits, otherwise, the transcoding process fails."
+        ]
+      },
+      {
+        "title": "\"Move data transcoded locally on the mainframe to Google Cloud \\_|\\_ Mainframe\\",
+        "url": "https://docs.cloud.google.com/mainframe-connector/docs/local-transcoding",
+        "source_id": "site-docs-root",
+        "final_score": 104,
+        "relevance": "",
+        "evidence_snippets": [
+          "Using qsam commands (release 5.16.0 and later) Using the vsam decode command (release 5.18.0 and later) Using the gsutil cp command Advantages of qsam and vsam commands The qsam and vsam commands provide the following advantages: Support for compound data types, including the OCCURS clause (lists), REDEFINES clause, and nested records.",
+          "This page discusses how you can transcode mainframe data locally on the mainframe to a supported format , and then move the content to BigQuery.",
+          "For the complete list of environment variables supported by Mainframe Connector, see Environment variables ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/mainframe-connector/docs/copybook-reference",
+        "https://docs.cloud.google.com/mainframe-connector/docs/api-reference",
+        "https://docs.cloud.google.com/mainframe-connector/docs/qsam-vsam-transcoding",
+        "https://docs.cloud.google.com/mainframe-connector/docs/local-transcoding"
+      ]
+    }
+  ]
+}

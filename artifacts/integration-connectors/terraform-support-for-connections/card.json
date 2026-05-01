@@ -1,0 +1,205 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:42.149Z",
+  "source_step08_card": "data/step-08/current/products/integration-connectors/card.json",
+  "product_name": "Integration Connectors",
+  "product_slug": "integration-connectors",
+  "feature_name": "Terraform support for connections",
+  "feature_slug": "terraform-support-for-connections",
+  "summary": "Terraform can be used to create new connections.",
+  "extended_definition": "Terraform can be used to create new connections.",
+  "lifecycle": {
+    "latest_feature_date": "2024-01-17",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/integration-connectors/docs/connectors/activedirectory/configure",
+      "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudsqlformysql/configure",
+      "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudsqlforpostgresql/configure",
+      "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudstorage/configure"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Active Directory \\_|\\_ Integration Connectors \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/integration-connectors/docs/connectors/activedirectory/configure",
+        "source_id": "site-docs-root-2",
+        "final_score": 278,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Create connections using Terraform You can use the Terraform resource to create a new connection.",
+          "When creating this connection by using Terraform, you must set the following variables in your Terraform configuration file: Parameter name Data type Required Description base dn STRING True The base portion of the distinguished name, used for limiting results to specific subtrees. auth mechanism ENUM True The authentication mechanism to be used when connecting to the Active Directory server.",
+          "You can perform Get operation on the following entities: Group, User Membership, Group Membership, OrganizationalPerson, Person, Top, SecurityPrincipal, Organization, OrganizationalRole, DomainPolicy, Contact, Computer, DnsNode, SecurityObject, OrganizationalUnit, Domain, and Account Note: If your entity has a composite primary key, you can specify a filter clause ."
+        ]
+      },
+      {
+        "title": "Cloud Storage \\_|\\_ Integration Connectors \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudstorage/configure",
+        "source_id": "site-docs-root-2",
+        "final_score": 266,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Create connections using Terraform You can use the Terraform resource to create a new connection.",
+          "Examples This examples in this section describe the following operations: List all objects List all objects in a bucket List objects using the LIKE filter for name List all buckets Download an object Download a binary object Upload a binary object to a bucket Upload an object to a bucket Upload an object to a folder Copy an object Move an object Delete an object Create a signed URL for an object The following table lists the sample scenarios and the corresponding configuration in the Connectors task: Task Configuration List all objects In the Configure connector task dialog, click Entities .",
+          "If the copy is successful, the output in the connectorOutputPayload field will be similar to the following: { \"Success\" : \"true\" } Create a signed URL for an object In the Configure connector task dialog, click Actions ."
+        ]
+      },
+      {
+        "title": "\"Cloud SQL for PostgreSQL \\_|\\_ Integration Connectors \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudsqlforpostgresql/configure",
+        "source_id": "site-docs-root-2",
+        "final_score": 264,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Create connections using Terraform You can use the Terraform resource to create a new connection.",
+          "If you want to establish a public connection to your backend systems with additional security, you can consider configuring static outbound IP addresses for your connections , and then configure your firewall rules to allowlist only the specific static IP addresses.",
+          "System limitations The Cloud SQL for PostgreSQL connector can process 9 transaction per second, per node , and throttles any transactions beyond this limit."
+        ]
+      },
+      {
+        "title": "Cloud SQL for MySQL \\_|\\_ Integration Connectors \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudsqlformysql/configure",
+        "source_id": "site-docs-root-2",
+        "final_score": 264,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Create connections using Terraform You can use the Terraform resource to create a new connection.",
+          "If you want to establish a public connection to your backend systems with additional security, you can consider configuring static outbound IP addresses for your connections , and then configure your firewall rules to allowlist only the specific static IP addresses.",
+          "System limitations The Cloud SQL for MySQL connector can process 10 transaction per second, per node , and throttles any transactions beyond this limit."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cat.jpeg",
+      "cloudsql.editor",
+      "project.iam.gserviceaccount.com",
+      "secretmanager.secretAccessor",
+      "secretmanager.viewer",
+      "storage.googleapis.com"
+    ],
+    "missing_inventory_roles": [
+      "roles/cloudsql.editor",
+      "roles/secretmanager.secretAccessor",
+      "roles/secretmanager.viewer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/activedirectory/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudstorage/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudsqlforpostgresql/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudsqlformysql/configure"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/activedirectory/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudstorage/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudsqlforpostgresql/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudsqlformysql/configure"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/activedirectory/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudstorage/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudsqlforpostgresql/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudsqlformysql/configure"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/activedirectory/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudstorage/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudsqlforpostgresql/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudsqlformysql/configure"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/activedirectory/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudstorage/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudsqlforpostgresql/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudsqlformysql/configure"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/activedirectory/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudstorage/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudsqlforpostgresql/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudsqlformysql/configure"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/activedirectory/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudstorage/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudsqlforpostgresql/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudsqlformysql/configure"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/activedirectory/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudstorage/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudsqlforpostgresql/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudsqlformysql/configure"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/activedirectory/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudstorage/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudsqlforpostgresql/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudsqlformysql/configure"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/activedirectory/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudstorage/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudsqlforpostgresql/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudsqlformysql/configure"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/activedirectory/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudstorage/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudsqlforpostgresql/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudsqlformysql/configure"
+      ]
+    }
+  ]
+}

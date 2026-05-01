@@ -1,0 +1,187 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:18.771Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery",
+  "feature_name": "COSINE_DISTANCE function",
+  "feature_slug": "cosine-distance-function",
+  "summary": "The COSINE_DISTANCE function computes cosine distance between vectors in BigQuery.",
+  "extended_definition": "The COSINE_DISTANCE function computes cosine distance between vectors in BigQuery.",
+  "lifecycle": {
+    "latest_feature_date": "2024-03-18",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/reference/legacy-sql",
+      "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/functions-all",
+      "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/mathematical_functions"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Mathematical functions | BigQuery | Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/mathematical_functions",
+        "source_id": "feature-recovery-http",
+        "final_score": 295,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "X COSH(X) +inf +inf -inf +inf NaN NaN COSINE_DISTANCE COSINE_DISTANCE ( vector1 , vector2 ) Description Computes the cosine distance between two vectors.",
+          "COSINE_DISTANCE Computes the cosine distance between two vectors.",
+          "In the following example, the first vector has two dimensions and the second vector has three: -- ERROR SELECT COSINE_DISTANCE ( [ 9.0 , 7.0 ] , [ 8.0 , 4.0 , 5.0 ] ) AS results ; If you use sparse vectors and you repeat a dimension, an error is produced: -- ERROR SELECT COSINE_DISTANCE ( [ ( 1 , 9.0 ), ( 2 , 7.0 ), ( 2 , 8.0 ) ] , [ ( 1 , 8.0 ), ( 2 , 4.0 ), ( 3 , 5.0 ) ] ) AS results ; COT COT ( X ) Description Computes the cotangent for the angle of X , where X is specified in radians."
+        ]
+      },
+      {
+        "title": "\"Legacy SQL Syntax, Functions and Operators \\_|\\_ BigQuery \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/reference/legacy-sql",
+        "source_id": "site-docs-reference",
+        "final_score": 81,
+        "relevance": "",
+        "evidence_snippets": [
+          "This window function requires ORDER BY in the OVER clause. legacySQL SELECT word , word count , RANK () OVER ( PARTITION BY corpus ORDER BY word count DESC ) rank , FROM [ bigquery - public - data : samples . shakespeare ] WHERE corpus = 'othello' and length ( word ) > 10 LIMIT 5 Returns: word word count rank handkerchief 29 1 satisfaction 5 2 displeasure 4 3 instruments 4 3 circumstance 3 5 RATIO TO REPORT( <column> ) Returns the ratio of each value to the sum of the values, as a double between 0 and 1. legacySQL SELECT word , word count , RATIO TO REPORT ( word count ) OVER ( PARTITION BY corpus ORDER BY word count DESC ) r to r , FROM [ bigquery - public - data : samples . shakespeare ] WHERE corpus = 'othello' and length ( word ) > 10 LIMIT 5 Returns: word word count r to r handkerchief 29 0.6444444444444445 satisfaction 5 0.1111111111111111 displeasure 4 0.08888888888888889 instruments 4 0.08888888888888889 circumstance 3 0.06666666666666667 ROW NUMBER() Returns the current row number of the query result over the window, starting with 1. legacySQL SELECT word , word count , ROW NUMBER () OVER ( PARTITION BY corpus ORDER BY word count DESC ) row num , FROM [ bigquery - public - data : samples . shakespeare ] WHERE corpus = 'othello' and length ( word ) > 10 LIMIT 5 Returns: word word count row num handkerchief 29 1 satisfaction 5 2 displeasure 4 3 instruments 4 4 circumstance 3 5 Other functions Syntax Other functions CASE WHEN ...",
+          "This window function requires ORDER BY in the OVER clause. legacySQL SELECT word , word count , PERCENT RANK () OVER ( PARTITION BY corpus ORDER BY word count DESC ) p rank , FROM [ bigquery - public - data : samples . shakespeare ] WHERE corpus = 'othello' and length ( word ) > 10 LIMIT 5 Returns: word word count p rank handkerchief 29 0.0 satisfaction 5 0.25 displeasure 4 0.5 instruments 4 0.5 circumstance 3 1.0 PERCENTILE CONT( <percentile> ) Returns an interpolated value that would map to the percentile argument with respect to the window, after ordering them per the ORDER BY clause. <percentile> must be between 0 and 1.",
+          "Example This query computes the most common first words in the ngram sample dataset that contain the letter a and occur at most 10,000 times. legacySQL SELECT first , COUNT ( ngram ) ngram count FROM [ bigquery - public - data : samples . trigrams ] GROUP BY 1 HAVING first contains \"a\" AND ngram count < 10000 ORDER BY 2 DESC LIMIT 10 ; ORDER BY clause The ORDER BY clause sorts the results of a query in ascending or descending order using one or more key fields."
+        ]
+      },
+      {
+        "title": "Functions (alphabetical) \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/functions-all",
+        "source_id": "site-docs-reference",
+        "final_score": 81,
+        "relevance": "",
+        "evidence_snippets": [
+          "COSINE DISTANCE Computes the cosine distance between two vectors.",
+          "EUCLIDEAN DISTANCE Computes the Euclidean distance between two vectors.",
+          "EDIT DISTANCE Computes the Levenshtein distance between two STRING or BYTES values."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "organizations.locations.dataExchanges",
+      "projects.dataSources",
+      "projects.locations",
+      "projects.locations.capacityCommitments",
+      "projects.locations.connections",
+      "projects.locations.dataExchanges",
+      "projects.locations.dataExchanges.listings",
+      "projects.locations.dataExchanges.queryTemplates",
+      "projects.locations.dataPolicies",
+      "projects.locations.dataSources",
+      "projects.locations.reservationGroups",
+      "projects.locations.reservations",
+      "projects.locations.reservations.assignments",
+      "projects.locations.subscriptions",
+      "projects.locations.transferConfigs",
+      "projects.locations.transferConfigs.runs",
+      "projects.locations.transferConfigs.runs.transferLogs",
+      "projects.locations.transferConfigs.transferResources",
+      "projects.locations.workflows",
+      "projects.locations.workflows.subtasks",
+      "projects.transferConfigs",
+      "projects.transferConfigs.runs",
+      "projects.transferConfigs.runs.transferLogs",
+      "projects.transferConfigs.transferResources"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/mathematical_functions",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/functions-all",
+        "https://docs.cloud.google.com/bigquery/docs/reference/legacy-sql"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/mathematical_functions",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/functions-all",
+        "https://docs.cloud.google.com/bigquery/docs/reference/legacy-sql"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/mathematical_functions",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/functions-all",
+        "https://docs.cloud.google.com/bigquery/docs/reference/legacy-sql"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/mathematical_functions",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/functions-all",
+        "https://docs.cloud.google.com/bigquery/docs/reference/legacy-sql"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/mathematical_functions",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/functions-all",
+        "https://docs.cloud.google.com/bigquery/docs/reference/legacy-sql"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/mathematical_functions",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/functions-all",
+        "https://docs.cloud.google.com/bigquery/docs/reference/legacy-sql"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/mathematical_functions",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/functions-all",
+        "https://docs.cloud.google.com/bigquery/docs/reference/legacy-sql"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/mathematical_functions",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/functions-all",
+        "https://docs.cloud.google.com/bigquery/docs/reference/legacy-sql"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/mathematical_functions",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/functions-all",
+        "https://docs.cloud.google.com/bigquery/docs/reference/legacy-sql"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/mathematical_functions",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/functions-all",
+        "https://docs.cloud.google.com/bigquery/docs/reference/legacy-sql"
+      ]
+    }
+  ]
+}

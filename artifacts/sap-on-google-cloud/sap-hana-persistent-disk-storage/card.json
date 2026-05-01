@@ -1,0 +1,98 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:45.969Z",
+  "source_step08_card": "data/step-08/current/products/sap-on-google-cloud/card.json",
+  "product_name": "SAP on Google Cloud",
+  "product_slug": "sap-on-google-cloud",
+  "feature_name": "SAP HANA persistent disk storage",
+  "feature_slug": "sap-hana-persistent-disk-storage",
+  "summary": "Guidance for using Compute Engine persistent disks, including balanced persistent disks, with SAP applications and SAP HANA on Google Cloud.",
+  "extended_definition": "Guidance for using Compute Engine persistent disks, including balanced persistent disks, with SAP applications and SAP HANA on Google Cloud.",
+  "lifecycle": {
+    "latest_feature_date": "2020-10-01",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/sap/docs/architectures/sap-business-suite-on-hana",
+      "https://docs.cloud.google.com/sap/docs/architectures/sap-s4hana-on-gcp",
+      "https://docs.cloud.google.com/sap/docs/certifications-sap-hana"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Reference architecture: SAP Business Suite on SAP HANA on Google Cloud \\_\\",
+        "url": "https://docs.cloud.google.com/sap/docs/architectures/sap-business-suite-on-hana",
+        "source_id": "site-docs-root",
+        "final_score": 210,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The following diagram shows the flow of backups when you use the Backint feature of Google Cloud's Agent for SAP: Back up to disks You can use the native SAP HANA backup and recovery function with Compute Engine Persistent Disk volumes and use a Cloud Storage bucket for longer-term storage of the backups.",
+          "This new feature is available for SAP HANA instances running on Compute Engine instances, on premises servers, or on other cloud platforms so you can back up directly to, and recover from, Cloud Storage without needing persistent disk storage for your backups.",
+          "What's next Learn more about the Google Cloud services used in this guide: VPC networks Compute Engine Storage options : Persistent Disk, Hyperdisk, and Cloud Storage Google Cloud console Cloud Monitoring Identity and Access Management Filestore NetApp Cloud Volumes ONTAP Google Cloud NetApp Volumes Backup and DR Service For more reference architectures, design guides, and best practices, explore the Cloud Architecture Center ."
+        ]
+      },
+      {
+        "title": "\"Reference architecture: SAP S/4HANA on Google Cloud \\_|\\_ SAP on Google\\",
+        "url": "https://docs.cloud.google.com/sap/docs/architectures/sap-s4hana-on-gcp",
+        "source_id": "site-docs-reference",
+        "final_score": 210,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The following diagram shows the flow of backups when you use the Backint feature of Google Cloud's Agent for SAP: Back up to disks You can use the native SAP HANA backup and recovery function with Compute Engine Persistent Disk volumes and use a Cloud Storage bucket for longer-term storage of the backups.",
+          "This new feature is available for SAP HANA instances running on Compute Engine instances, on premises servers, or on other cloud platforms so you can back up directly to, and recover from, Cloud Storage without needing persistent disk storage for your backups.",
+          "What's next Learn more about the Google Cloud services used in this guide: VPC networks Compute Engine Storage options : Persistent Disk, Hyperdisk, and Cloud Storage Google Cloud console Cloud Monitoring Identity and Access Management Filestore NetApp Cloud Volumes ONTAP Google Cloud NetApp Volumes Backup and DR Service For more reference architectures, design guides, and best practices, explore the Cloud Architecture Center ."
+        ]
+      },
+      {
+        "title": "\"Certifications for SAP HANA on Google Cloud \\_|\\_ SAP on Google Cloud \\_\\",
+        "url": "https://docs.cloud.google.com/sap/docs/certifications-sap-hana",
+        "source_id": "site-docs-root",
+        "final_score": 202,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Machine types vCPUs Memory Operating system CPU platform Application type Notes N1 high-memory, general-purpose machine types n1-highmem-32 32 208 GB RHEL , SUSE Intel Broadwell OLAP or OLTP Block storage: Compute Engine Persistent Disk or, for scale up only, Google Cloud NetApp Volumes (the Premium or Extreme service level for the SAP HANA data and log volumes). n1-highmem-64 64 416 GB RHEL , SUSE Intel Broadwell OLAP or OLTP Block storage: Compute Engine Persistent Disk or, for scale up only, Google Cloud NetApp Volumes (the Premium or Extreme service level for the SAP HANA data and log volumes). n1-highmem-96 96 624 GB RHEL , SUSE Intel Skylake OLAP or OLTP Block storage: Compute Engine Persistent Disk or, for scale up only, Google Cloud NetApp Volumes (the Premium or Extreme service level for the SAP HANA data and log volumes).",
+          "For more information about the different types of Persistent Disk and Hyperdisk volumes, their performance characteristics, and how to work with them, see the following documentation: Storage options About Hyperdisk Hyperdisk performance Hyperdisk performance limits Persistent Disk performance Other factors that affect Persistent Disk performance Attach a non-boot disk to a VM Create and manage disk snapshots Migrate SAP HANA Persistent Disk volumes to Hyperdisk volumes Minimum sizes and performance for Persistent Disk and Hyperdisk volumes When you size certain Compute Engine SSD-based Persistent Disk or Hyperdisk volumes for SAP HANA, you need to account for not only the storage requirements of your SAP HANA instance, but also for the performance of the disk.",
+          "Block storage: Compute Engine Persistent Disk, Hyperdisk Extreme, Hyperdisk Balanced, or Google Cloud NetApp Volumes (the Premium or Extreme service level for the SAP HANA data and log volumes). m2-ultramem-416 416 11,776 GB RHEL , SUSE Intel Cascade Lake-SP OLAP or OLTP OLAP workloads are certified with workload-based sizing for scale up, and scale out up to 16 nodes."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sap/docs/architectures/sap-business-suite-on-hana",
+        "https://docs.cloud.google.com/sap/docs/architectures/sap-s4hana-on-gcp",
+        "https://docs.cloud.google.com/sap/docs/certifications-sap-hana"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sap/docs/architectures/sap-business-suite-on-hana",
+        "https://docs.cloud.google.com/sap/docs/architectures/sap-s4hana-on-gcp",
+        "https://docs.cloud.google.com/sap/docs/certifications-sap-hana"
+      ]
+    }
+  ]
+}

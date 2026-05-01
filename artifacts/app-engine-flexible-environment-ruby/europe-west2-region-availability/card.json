@@ -1,0 +1,92 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:15.571Z",
+  "source_step08_card": "data/step-08/current/products/app-engine-flexible-environment-ruby/card.json",
+  "product_name": "App Engine flexible environment Ruby",
+  "product_slug": "app-engine-flexible-environment-ruby",
+  "feature_name": "europe-west2 region availability",
+  "feature_slug": "europe-west2-region-availability",
+  "summary": "App Engine flexible environment is available in the europe-west2 region in London.",
+  "extended_definition": "App Engine flexible environment is available in the europe-west2 region in London.",
+  "lifecycle": {
+    "latest_feature_date": "2017-06-06",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/appengine/docs/flexible/custom-runtimes/create-app",
+      "https://docs.cloud.google.com/appengine/docs/flexible/locations",
+      "https://docs.cloud.google.com/appengine/docs/flexible/ruby/mapping-custom-domains"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"App Engine locations \\_|\\_ App Engine flexible environment \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/flexible/locations",
+        "source_id": "site-docs-reference-2",
+        "final_score": 66,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Home Documentation Application hosting App Engine Flexible environment Resources Send feedback App Engine locations Stay organized with collections Save and categorize content based on your preferences.",
+          "You can generally select the region nearest to your app's users, but you should consider the locations where App Engine is available as well as the locations of the other Google Cloud products and services that your app uses.",
+          "App Engine is regional , which means the infrastructure that runs your apps is located in a specific region, and Google manages it so that it is available redundantly across all of the zones within that region ."
+        ]
+      },
+      {
+        "title": "\"Quickstart: Create a custom runtime app in the App Engine flexible environment\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/flexible/custom-runtimes/create-app",
+        "source_id": "site-docs-reference",
+        "final_score": 62,
+        "relevance": "",
+        "evidence_snippets": [
+          "Create a custom runtime app in the App Engine flexible environment Region ID The REGION ID is an abbreviated code that Google assigns based on the region you select when you create your app.",
+          "The app.yaml file must reside in the same directory as the Dockerfile file. runtime : custom env : flex The runtime: custom entry tells App Engine to look for a Dockerfile that will define your runtime's image and env: flex specifies that you are deploying to the flexible environment.",
+          "By using a Dockerfile, you can use languages and packages that are not part of the Google Cloud and use the same resources and tooling that are used in the App Engine flexible environment."
+        ]
+      },
+      {
+        "title": "\"Mapping custom domains \\_|\\_ App Engine flexible environment \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/flexible/ruby/mapping-custom-domains",
+        "source_id": "site-docs-reference-2",
+        "final_score": 59,
+        "relevance": "",
+        "evidence_snippets": [
+          "The regions are as follows: us-west2 us-east4 northamerica-northeast1 southamerica-east1 europe-west2 europe-west3 asia-south1 asia-northeast1 australia-southeast1 App Engine custom domains use a pool of shared IP addresses for all applications.",
+          "Home Documentation Application hosting App Engine Flexible environment Guides Send feedback Mapping custom domains Stay organized with collections Save and categorize content based on your preferences.",
+          "Using custom domains might add noticeable latency to responses that App Engine sends to your app's users in some regions."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "app.yaml"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/flexible/locations",
+        "https://docs.cloud.google.com/appengine/docs/flexible/ruby/mapping-custom-domains",
+        "https://docs.cloud.google.com/appengine/docs/flexible/custom-runtimes/create-app"
+      ]
+    }
+  ]
+}

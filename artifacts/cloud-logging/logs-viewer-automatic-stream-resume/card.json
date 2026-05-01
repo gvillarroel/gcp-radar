@@ -1,0 +1,164 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:24.398Z",
+  "source_step08_card": "data/step-08/current/products/cloud-logging/card.json",
+  "product_name": "Cloud Logging",
+  "product_slug": "cloud-logging",
+  "feature_name": "Logs Viewer automatic stream resume",
+  "feature_slug": "logs-viewer-automatic-stream-resume",
+  "summary": "Logs Viewer automatically resumes log streaming when the browser tab or window becomes active again.",
+  "extended_definition": "Logs Viewer automatically resumes log streaming when the browser tab or window becomes active again.",
+  "lifecycle": {
+    "latest_feature_date": "2017-02-06",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/logging/docs/agent/logging/configuration",
+      "https://docs.cloud.google.com/logging/docs/audit",
+      "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "View and analyze logs \\_|\\_ Cloud Logging \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface",
+        "source_id": "site-docs-root",
+        "final_score": 166,
+        "relevance": "",
+        "evidence_snippets": [
+          "The following occurs when you click manage search Analyze results : The time range in the Logs Explorer might be automatically adjusted so that there is meaningful log data in the Observability Analytics page.",
+          "Before you begin To get the permissions that you need to use the Logs Explorer to view log entries, ask your administrator to grant you the following IAM roles: To view log entries in the Required bucket and those in the Default view on the Default bucket, or to select a log scope: Logs Viewer ( roles/logging.viewer ) on your project, folder, or organization.",
+          "To view all log entries in the Required and Default buckets: Private Logs Viewer ( roles/logging.privateLogViewer ) on your project, folder, or organization."
+        ]
+      },
+      {
+        "title": "Cloud Audit Logs overview \\_|\\_ Cloud Logging \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/logging/docs/audit",
+        "source_id": "site-docs-root",
+        "final_score": 115,
+        "relevance": "",
+        "evidence_snippets": [
+          "Clicking this prepopulated form automatically fills the request body, but you need to supply a valid PROJECT ID in each of the log names. { \"resourceNames\": [ \"projects/ PROJECT ID \" ], \"pageSize\": 5, \"filter\": \"logName : projects/ PROJECT ID /logs/cloudaudit.googleapis.com\" } Click Execute .",
+          "Required roles To view audit logs, you must have the appropriate Identity and Access Management (IAM) permissions and roles: To get the permissions that you need to get read-only access to Admin Activity, Policy Denied, and System Event audit logs, ask your administrator to grant you the Logs Viewer ( roles/logging.viewer ) IAM role on your project.",
+          "To get the permissions that you need to get access to all logs in the Required and Default buckets, including Data Access logs, ask your administrator to grant you the Private Logs Viewer ( roles/logging.privateLogViewer ) IAM role on your project."
+        ]
+      },
+      {
+        "title": "Configure the Logging agent \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/logging/docs/agent/logging/configuration",
+        "source_id": "site-docs-root",
+        "final_score": 102,
+        "relevance": "",
+        "evidence_snippets": [
+          "To send logs via the fluentd in forward plugin, read the following instructions: Execute the following command on the VM with the Logging agent installed: echo '{\"code\": \"send-log-via-fluent-cat\", \"message\": \"This is a log from in forward plugin.\"}' /opt/google-fluentd/embedded/bin/fluent-cat log-via-in-forward-plugin Check the Logs Explorer to see the ingested log entry: { insertId: \"1kvvmhsg1ib4689\" jsonPayload: { code: \"send-log-via-fluent-cat\" message: \"This is a log from in forward plugin.\" } labels: { compute.googleapis.com/resource name: \"add-structured-log-resource\" } logName: \"projects/my-sample-project-12345/logs/log-via-in-forward-plugin\" receiveTimestamp: \"2018-03-21T02:11:27.981020900Z\" resource: { labels: { instance id: \"5351724540900470204\" project id: \"my-sample-project-12345\" zone: \"us-central1-c\" } type: \"gce instance\" } timestamp: \"2018-03-21T02:11:22.717692494Z\" } Streaming structured (JSON) log records from application code You can enable connectors in various languages to send structured logs from application code; for more information, review the fluentd documentation .",
+          "Restart the agent to apply the configuration changes: sudo service google-fluentd restart Generate a log record into the log file: echo 'This is a log from the log file at test-unstructured-log.log' >> /tmp/test-unstructured-log.log Check the Logs Explorer to see the ingested log entry: { insertId: \"eps2n7g1hq99qp\" labels: { compute.googleapis.com/resource name: \"add-unstructured-log-resource\" } logName: \"projects/my-sample-project-12345/logs/unstructured-log\" receiveTimestamp: \"2018-03-21T01:47:11.475065313Z\" resource: { labels: { instance id: \"3914079432219560274\" project id: \"my-sample-project-12345\" zone: \"us-central1-c\" } type: \"gce instance\" } textPayload: \"This is a log from the log file at test-unstructured-log.log\" timestamp: \"2018-03-21T01:47:05.051902169Z\" } Streaming structured (JSON) logs via log files Note: This section contains a Linux command example.",
+          "For more information, see trace on the LogEntry page. \"logging.googleapis.com/trace\":\"projects/my-projectid/traces/0679686673a\" Note : If not writing to stdout or stderr , the value of this field should be formatted as projects/[PROJECT-ID]/traces/[TRACE-ID] , so it can be used by the Logs Explorer and the Trace Viewer to group log entries and display them in line with traces."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cloudaudit.googleapis.com",
+      "compute.googleapis.com",
+      "log.log",
+      "logging.googleapis.com",
+      "logging.privateLogViewer",
+      "logging.viewer"
+    ],
+    "missing_inventory_roles": [
+      "roles/logging.privateLogViewer",
+      "roles/logging.viewer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface",
+        "https://docs.cloud.google.com/logging/docs/audit",
+        "https://docs.cloud.google.com/logging/docs/agent/logging/configuration"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface",
+        "https://docs.cloud.google.com/logging/docs/audit",
+        "https://docs.cloud.google.com/logging/docs/agent/logging/configuration"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface",
+        "https://docs.cloud.google.com/logging/docs/audit",
+        "https://docs.cloud.google.com/logging/docs/agent/logging/configuration"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface",
+        "https://docs.cloud.google.com/logging/docs/audit",
+        "https://docs.cloud.google.com/logging/docs/agent/logging/configuration"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface",
+        "https://docs.cloud.google.com/logging/docs/audit",
+        "https://docs.cloud.google.com/logging/docs/agent/logging/configuration"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface",
+        "https://docs.cloud.google.com/logging/docs/audit",
+        "https://docs.cloud.google.com/logging/docs/agent/logging/configuration"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface",
+        "https://docs.cloud.google.com/logging/docs/audit",
+        "https://docs.cloud.google.com/logging/docs/agent/logging/configuration"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface",
+        "https://docs.cloud.google.com/logging/docs/audit",
+        "https://docs.cloud.google.com/logging/docs/agent/logging/configuration"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface",
+        "https://docs.cloud.google.com/logging/docs/audit",
+        "https://docs.cloud.google.com/logging/docs/agent/logging/configuration"
+      ]
+    }
+  ]
+}

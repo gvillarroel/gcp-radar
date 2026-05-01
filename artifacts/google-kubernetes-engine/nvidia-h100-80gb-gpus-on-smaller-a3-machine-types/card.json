@@ -1,0 +1,134 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:39.542Z",
+  "source_step08_card": "data/step-08/current/products/google-kubernetes-engine/card.json",
+  "product_name": "Google Kubernetes Engine",
+  "product_slug": "google-kubernetes-engine",
+  "feature_name": "NVIDIA H100 80GB GPUs on smaller A3 machine types",
+  "feature_slug": "nvidia-h100-80gb-gpus-on-smaller-a3-machine-types",
+  "summary": "The a3-highgpu-1g, a3-highgpu-2g, and a3-highgpu-4g machine types support NVIDIA H100 80GB GPUs on GKE.",
+  "extended_definition": "The a3-highgpu-1g, a3-highgpu-2g, and a3-highgpu-4g machine types support NVIDIA H100 80GB GPUs on GKE.",
+  "lifecycle": {
+    "latest_feature_date": "2024-10-17",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/autopilot-gpus",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/gpus",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/serve-llama-gpus-vllm"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Run GPUs in GKE Standard node pools \\_|\\_ GKE AI/ML \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/gpus",
+        "source_id": "site-docs-root",
+        "final_score": 196,
+        "relevance": "",
+        "evidence_snippets": [
+          "Required for the following GPU types: NVIDIA B200 GPUs (corresponding to the nvidia-b200 accelerator type and A4 machine series ) NVIDIA H200 141 GB GPUs (corresponding to the nvidia-h200-141gb accelerator type and A3 Ultra machine type), or NVIDIA H100 80 GB GPUs (corresponding to the nvidia-h100-80gb accelerator type and A3 High machine type), or NVIDIA H100 80GB Mega GPUs (corresponding to the nvidia-h100-mega-80gb accelerator type and A3 Mega machine type).",
+          "Required for the following GPU types: NVIDIA B200 GPUs (corresponding to the nvidia-b200 accelerator type and A4 machine series ) NVIDIA H200 141 GB GPUs (corresponding to the nvidia-h200-141gb accelerator type and A3 Ultra machine type), or NVIDIA H100 80 GB GPUs (corresponding to the nvidia-h100-80gb accelerator type and A3 High machine type), or NVIDIA H100 80GB Mega GPUs (corresponding to the nvidia-h100-mega-80gb accelerator type and A3 Mega machine type).",
+          "G4 machine series : Machine types that have one or more GPUs : 1.34.0-gke.1662000 or later Machine types that have less than one GPU ( Preview ) : Use one of the following patch versions or later, based on the GKE minor version: 1.34 : 1.34.5-gke.1153000 1.35 or later : 1.35.2-gke.1485000 GPUs on Ubuntu nodes : If you use GPUs with Ubuntu nodes, the following requirements apply: Ubuntu driver compatibility : L4 GPUs and H100 GPUs : NVIDIA driver version 535 or later H200 GPUs : NVIDIA driver version 550 or later B200 GPUs : NVIDIA driver version 570 or later RTX PRO 6000 GPUs : NVIDIA driver version 580 or later."
+        ]
+      },
+      {
+        "title": "Deploy GPU workloads in Autopilot \\_|\\_ GKE AI/ML \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/autopilot-gpus",
+        "source_id": "site-docs-reference-2",
+        "final_score": 183,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "GPU use cases in Autopilot You can allocate GPUs to containers in Autopilot Pods to facilitate workloads such as the following: Machine learning (ML) inference ML training Rendering Supported GPU quantities When you request GPUs in your Pod specification, you must use the following quantities based on the GPU type: GPU quantities NVIDIA B200 (180GB) nvidia-b200 8 NVIDIA H200 (141GB) nvidia-h200-141gb 8 NVIDIA H100 Mega (80GB) nvidia-h100-mega-80gb 8 NVIDIA H100 (80GB) nvidia-h100-80gb 1, 2, 4, 8 NVIDIA A100 (80GB) nvidia-a100-80gb 1, 2, 4, 8 NVIDIA A100 (40GB) nvidia-tesla-a100 1, 2, 4, 8, 16 NVIDIA RTX PRO 6000 nvidia-rtx-pro-6000 1, 2, 4, 8 NVIDIA L4 nvidia-l4 1, 2, 4, 8 NVIDIA T4 nvidia-tesla-t4 1, 2, 4 Note: Autopilot supports the smaller machine shapes of 1, 2, and 4 GPUs for NVIDIA H100 (80GB) GPUs on version 1.31.4-gke.1072000 or later.",
+          "Ensure that you have a GKE Autopilot cluster running one of the following versions to use the following GPUs or features: NVIDIA B200 (180 GB) GPUs: 1.32.2-gke.1422000 or later NVIDIA H200 (141GB) GPUs: 1.31.4-gke.1183000 or later NVIDIA H100 Mega (80GB) GPUs: 1.28.9-gke.1250000 or later, and 1.29.4-gke.1542000 or later NVIDIA H100 (80GB) GPUs: 1.28.6-gke.1369000 or later, and 1.29.1-gke.1575000 or later NVIDIA RTX PRO 6000 GPUs: 1.34.1-gke.1829001 or later (except for G4 machine types that have less than one GPU, see the limitations ) Multiple GPU Pods per VM: 1.29.2-gke.1355000 or later Other GPUs: all supported versions Note: For GKE Sandbox GPU clusters, see GPU model support for gVisor compatibility.",
+          "Allowed values are the following: nvidia-gb200 : NVIDIA GB200 (Preview) nvidia-b200 : NVIDIA B200 (180GB) nvidia-h200-141gb : NVIDIA H200 (141GB) nvidia-h100-mega-80gb : NVIDIA H100 Mega (80GB) nvidia-h100-80gb : NVIDIA H100 (80GB) nvidia-a100-80gb : NVIDIA A100 (80GB) nvidia-tesla-a100 : NVIDIA A100 (40GB) nvidia-rtx-pro-6000 : NVIDIA RTX PRO 6000 (except for G4 machine types that have less than one GPU, see the limitations ) nvidia-l4 : NVIDIA L4 nvidia-tesla-t4 : NVIDIA T4 or if you use GKE Sandbox, one of the following: nvidia-gb200 : NVIDIA GB200 (Preview) nvidia-b200 : NVIDIA B200 (180GB) (Preview) nvidia-h200-141gb : NVIDIA H200 (141GB) (Preview) nvidia-h100-mega-80gb : NVIDIA H100 Mega (80GB) nvidia-h100-80gb : NVIDIA H100 (80GB) nvidia-a100-80gb : NVIDIA A100 (80GB) nvidia-tesla-a100 : NVIDIA A100 (40GB) nvidia-rtx-pro-6000 : NVIDIA RTX PRO 6000 (Preview) (except for G4 machine types that have less than one GPU, see the limitations ) nvidia-l4 : NVIDIA L4 nvidia-tesla-t4 : NVIDIA T4 For more information, see GPU model support ."
+        ]
+      },
+      {
+        "title": "\"Serve Llama models using GPUs on GKE with vLLM \\_|\\_ Kubernetes Engine \\_\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/serve-llama-gpus-vllm",
+        "source_id": "site-docs-root-2",
+        "final_score": 176,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "GKE provides a range of machine type options for node configuration, including machine types with NVIDIA H200, H100, L4, and A100 GPUs. vLLM vLLM is a highly optimized open source LLM serving framework that can increase serving throughput on GPUs, with features such as the following: Optimized transformer implementation with PagedAttention Continuous batching to improve the overall serving throughput Tensor parallelism and distributed serving on multiple GPUs For more information, refer to the vLLM documentation .",
+          "To create a node pool for your cluster with the appropriate disk size, run the following command: gcloud container node-pools create gpupool \\ --accelerator type = nvidia-h100-80gb,count = 1 ,gpu-driver-version = latest \\ --project = PROJECT ID \\ --location = REGION \\ --node-locations = REGION -a \\ --cluster = CLUSTER NAME \\ --machine-type = a3-highgpu-8g \\ --disk-type = pd-ssd \\ --num-nodes = 1 \\ --disk-size = 256 GKE creates a single node pool containing eight H100 80GB GPUs.",
+          "Llama 4 Maverick 17B-128e-it-fp8 To deploy the Llama 4 Maverick 17B-128e-Instruct-FP8 model, follow these instructions: Create the following vllm-llama4-maverick-17b-128e-instruct-fp8.yaml manifest: apiVersion : apps/v1 kind : Deployment metadata : name : llama-deployment spec : replicas : 1 selector : matchLabels : app : llama-server template : metadata : labels : app : llama-server ai.gke.io/model : Llama-4-Maverick-17B-128E-Instruct-FP8 ai.gke.io/inference-server : vllm spec : containers : - name : inference-server image : docker.io/vllm/vllm-openai:v0.10.0 resources : requests : cpu : 146 memory : 1311Gi ephemeral-storage : 600Gi nvidia.com/gpu : 8 limits : cpu : 146 memory : 1311Gi ephemeral-storage : 600Gi nvidia.com/gpu : 8 command : [ \"python3\" , \"-m\" , \"vllm.entrypoints.openai.api server\" ] args : - --host=0.0.0.0 - --port=7080 - --swap-space=16 - --max-model-len=524288 - --gpu-memory-utilization=0.90 - --disable-log-stats - --model=meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8 - --tensor-parallel-size=8 env : - name : LD LIBRARY PATH value : ${LD LIBRARY PATH}:/usr/local/nvidia/lib64 - name : MODEL ID value : 'meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8' - name : HUGGING FACE HUB TOKEN valueFrom : secretKeyRef : name : hf-secret key : hf api token volumeMounts : - mountPath : /dev/shm name : dshm volumes : - name : dshm emptyDir : medium : Memory nodeSelector : cloud.google.com/gke-accelerator : nvidia-h100-80gb --- apiVersion : v1 kind : Service metadata : name : llama-service spec : selector : app : llama-server type : ClusterIP ports : - protocol : TCP port : 8000 targetPort : 7080 --- apiVersion : v1 kind : Secret metadata : name : hf-secret type : Opaque stringData : hf api token : {{HF TOKEN} } Apply the manifest: kubectl apply -f vllm-llama4-maverick-17b-128e-instruct-fp8.yaml In our example, we limit the context window by 512 K by using the --max-model-len=524288 vLLM option."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "ai.gke.io",
+      "docker.io",
+      "fp8.yaml",
+      "gke.1072000",
+      "gke.1153000",
+      "gke.1183000",
+      "gke.1250000",
+      "gke.1355000",
+      "gke.1369000",
+      "gke.1422000",
+      "gke.1485000",
+      "gke.1542000",
+      "gke.1575000",
+      "gke.1662000",
+      "gke.1829001",
+      "instruct.yaml",
+      "nvidia.com",
+      "v0.10.0",
+      "vllm.entrypoints.openai.api"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/gpus",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/autopilot-gpus",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/serve-llama-gpus-vllm"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/gpus",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/autopilot-gpus",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/serve-llama-gpus-vllm"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/gpus",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/autopilot-gpus",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/serve-llama-gpus-vllm"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/gpus",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/autopilot-gpus",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/serve-llama-gpus-vllm"
+      ]
+    }
+  ]
+}

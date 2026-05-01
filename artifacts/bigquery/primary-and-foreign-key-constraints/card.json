@@ -1,0 +1,165 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:18.771Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery",
+  "feature_name": "Primary and foreign key constraints",
+  "feature_slug": "primary-and-foreign-key-constraints",
+  "summary": "BigQuery supports defining primary key and foreign key table constraints.",
+  "extended_definition": "BigQuery supports defining primary key and foreign key table constraints.",
+  "lifecycle": {
+    "latest_feature_date": "2023-02-22",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 1,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "coverage_low",
+        "message": "The feature ended with coverage LOW.",
+        "suggested_steps": [
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/analytics-hub-custom-constraints",
+      "https://docs.cloud.google.com/bigquery/docs/information-schema-constraint-column-usage",
+      "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "CONSTRAINT_COLUMN_USAGE view \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/information-schema-constraint-column-usage",
+        "source_id": "site-docs-reference-3",
+        "final_score": 37,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "CONSTRAINT COLUMN USAGE ; With existing constraints, the query results are similar to the following: +-----+---------------------+--------------+------------+-------------+---------------------+-------------------+-------------------------+ row table catalog table schema table name column name constraint catalog constraint schema constraint name +-----+---------------------+--------------+------------+-------------+---------------------+-------------------+-------------------------+ 1 myConstraintCatalog myDataset orders o okey myConstraintCatalog myDataset orders.pk$ 2 myConstraintCatalog myDataset orders o okey myConstraintCatalog myDataset lineitem.lineitem order +-----+---------------------+--------------+------------+-------------+---------------------+-------------------+-------------------------+ Note: lineitem.lineitem order is the foreign key defined in the lineitem table.",
+          "For FOREIGN KEY constraints, these are the columns of the referenced tables.",
+          "If the table or dataset has no constraints, the query results look like this: +-----------------------------+ There is no data to display +-----------------------------+ Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License ."
+        ]
+      },
+      {
+        "title": "\"Manage Sharing data exchanges and listings using custom constraints \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/analytics-hub-custom-constraints",
+        "source_id": "site-docs-reference-2",
+        "final_score": 31,
+        "relevance": "",
+        "evidence_snippets": [
+          "Resource Field analyticshub.googleapis.com/DataExchange resource.description resource.discoveryType resource.displayName resource.documentation resource.icon resource.logLinkedDatasetQueryUserEmail resource.primaryContact analyticshub.googleapis.com/Listing resource.allowOnlyMetadataSharing resource.bigqueryDataset.dataset resource.bigqueryDataset.replicaLocations resource.bigqueryDataset.restrictedExportPolicy.enabled resource.bigqueryDataset.restrictedExportPolicy.restrictDirectTableAccess resource.bigqueryDataset.restrictedExportPolicy.restrictQueryResult resource.bigqueryDataset.selectedResources.routine resource.bigqueryDataset.selectedResources.table resource.categories resource.dataProvider.name resource.dataProvider.primaryContact resource.description resource.discoveryType resource.displayName resource.documentation resource.icon resource.logLinkedDatasetQueryUserEmail resource.primaryContact resource.publisher.name resource.publisher.primaryContact resource.pubsubTopic.dataAffinityRegions resource.pubsubTopic.topic resource.requestAccess resource.restrictedExportConfig.enabled resource.restrictedExportConfig.restrictQueryResult What's next Learn more about custom constraints .",
+          "BigQuery sharing supported resources The following table lists the BigQuery sharing resources that you can reference in custom constraints.",
+          "The Listing resource must have the restrictedExportPolicy object enabled. name : organizations/ ORGANIZATION ID /customConstraints/custom.listingWithRestrictedExportPolicy resource types : analyticshub.googleapis.com/Listing method types : - CREATE - UPDATE condition : has(resource.bigqueryDataset) && has(resource.bigqueryDataset.restrictedExportPolicy) && resource.bigqueryDataset.restrictedExportPolicy.enabled == true action type : DENY display name : The Listing must have restricted export policy. description : The Listing resource must have restrictedExportPolicy enabled to allow egress controls."
+        ]
+      },
+      {
+        "title": "\"Data definition language (DDL) statements in GoogleSQL \\_|\\_ BigQuery \\_\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "source_id": "site-docs-reference",
+        "final_score": 29,
+        "relevance": "",
+        "evidence_snippets": [
+          "BigQuery only supports unenforced primary keys. foreign key : An expression that defines a foreign key table constraint .",
+          "You cannot use this statement to rename the following: Subfields, such as nested columns in a STRUCT Partitioning columns Clustering columns Fields that are part of primary key constraints or foreign key constraints Columns in a table that has row access policies After one or more columns in a table are renamed, you cannot do the following: Query the table with legacy SQL.",
+          "You cannot use this statement to drop the following: Partitioned columns Clustered columns Fields that are part of primary key constraints or foreign key constraints Nested columns inside existing RECORD fields Columns in a table that has row access policies After one or more columns in a table are dropped you cannot do the following: Query the table with legacy SQL."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "analyticshub.googleapis.com",
+      "custom.listingWithBQDataset",
+      "custom.listingWithRestrictedExportPolicy",
+      "lineitem.lineitem",
+      "orders.pk",
+      "resource.allowOnlyMetadataSharing",
+      "resource.bigqueryDataset",
+      "resource.bigqueryDataset.dataset",
+      "resource.bigqueryDataset.dataset.contains",
+      "resource.bigqueryDataset.replicaLocations",
+      "resource.bigqueryDataset.restrictedExportPolicy",
+      "resource.bigqueryDataset.restrictedExportPolicy.enabled",
+      "resource.bigqueryDataset.restrictedExportPolicy.restrictDirectTableAccess",
+      "resource.bigqueryDataset.restrictedExportPolicy.restrictQueryResult",
+      "resource.bigqueryDataset.selectedResources.routine",
+      "resource.bigqueryDataset.selectedResources.table",
+      "resource.categories",
+      "resource.dataProvider.name",
+      "resource.dataProvider.primaryContact",
+      "resource.description",
+      "resource.discoveryType",
+      "resource.displayName",
+      "resource.documentation",
+      "resource.icon",
+      "resource.logLinkedDatasetQueryUserEmail",
+      "resource.primaryContact",
+      "resource.publisher.name",
+      "resource.publisher.primaryContact",
+      "resource.pubsubTopic.dataAffinityRegions",
+      "resource.pubsubTopic.topic",
+      "resource.requestAccess",
+      "resource.restrictedExportConfig.enabled",
+      "resource.restrictedExportConfig.restrictQueryResult"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/information-schema-constraint-column-usage",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-custom-constraints"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/information-schema-constraint-column-usage",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-custom-constraints"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/information-schema-constraint-column-usage",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-custom-constraints"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/information-schema-constraint-column-usage",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-custom-constraints"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/information-schema-constraint-column-usage",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-custom-constraints"
+      ]
+    }
+  ]
+}

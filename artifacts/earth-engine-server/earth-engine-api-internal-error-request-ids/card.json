@@ -1,0 +1,102 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:36.223Z",
+  "source_step08_card": "data/step-08/current/products/earth-engine-server/card.json",
+  "product_name": "Earth Engine Server",
+  "product_slug": "earth-engine-server",
+  "feature_name": "Earth Engine API internal error request IDs",
+  "feature_slug": "earth-engine-api-internal-error-request-ids",
+  "summary": "Adds a request ID string to internal error messages for debugging.",
+  "extended_definition": "Adds a request ID string to internal error messages for debugging.",
+  "lifecycle": {
+    "latest_feature_date": "2020-11-19",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/earth-engine/guides/auth",
+      "https://developers.google.com/earth-engine/guides/debugging",
+      "https://developers.google.com/earth-engine/help"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Debugging guide \\_|\\_ Google Earth Engine \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/earth-engine/guides/debugging",
+        "source_id": "site-docs-root",
+        "final_score": 88,
+        "relevance": "",
+        "evidence_snippets": [
+          "Internal errors include a request ID, like the following: (request: 4b14e62b-f73f-49cc-9cf7-901cad12058b) These strings act as unique identifiers to help the Earth Engine team to identify specific issues.",
+          "Examples of this type of error include: Computation timed out Too many concurrent aggregations User memory limit exceeded An internal error has occurred Warning: Quota restrictions exist to ensure the availability of computing resources for the entire Earth Engine community.",
+          "ImageCollection ( 'MODIS/006/MOD44B' ) Error: A mapped function's arguments cannot be used in client-side operations. bad map 3 = collection . map ( lambda image : print ( image . getInfo ())) This somewhat cryptic error results from the process Earth Engine uses to turn this code into a set of instructions that can be run on Google servers."
+        ]
+      },
+      {
+        "title": "Get help \\_|\\_ Google Earth Engine \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/earth-engine/help",
+        "source_id": "site-docs-root",
+        "final_score": 72,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Apply for more asset storage or noncommercial partner tier Yes, show the application form Application form If you have questions about your request for uplift, contact Earth Engine Uplift Support with a description of the problem.",
+          "Noncommercial or research use For noncommercial or research use of Earth Engine , you can request a temporary increase for asset storage quota, which controls how much asset data you can store in the EE asset store.",
+          "Change in script behavior or output Earth Engine API code, architecture, and policies can change, resulting in different behavior or errors that appear now but did not some time ago for the same script."
+        ]
+      },
+      {
+        "title": "\"Authentication and Initialization \\_|\\_ Google Earth Engine \\_|\\_ Google\\",
+        "url": "https://developers.google.com/earth-engine/guides/auth",
+        "source_id": "site-docs-root",
+        "final_score": 66,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Error: \"Earth Engine API has not been used in project XXX before or it is disabled\" Firstly, ensure that you have configured a project in ee.Initialize() or on the command line (the default projects provided by Cloud and Colab will not have Earth Engine enabled).",
+          "Before you can make requests to Earth Engine through a client library , you must authenticate and use the resultant credentials to initialize the Earth Engine client.",
+          "The earthengine.googleapis.com API requires a quota project, which is not set by default.\" This error may occur when Earth Engine cannot determine your project ID."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "developers.google.com",
+      "earthengine.googleapis.com",
+      "ee.Initialize"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://developers.google.com/earth-engine/guides/debugging",
+        "https://developers.google.com/earth-engine/help",
+        "https://developers.google.com/earth-engine/guides/auth"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://developers.google.com/earth-engine/guides/debugging",
+        "https://developers.google.com/earth-engine/help",
+        "https://developers.google.com/earth-engine/guides/auth"
+      ]
+    }
+  ]
+}

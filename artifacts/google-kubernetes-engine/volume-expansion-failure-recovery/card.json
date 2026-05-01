@@ -1,0 +1,167 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:39.542Z",
+  "source_step08_card": "data/step-08/current/products/google-kubernetes-engine/card.json",
+  "product_name": "Google Kubernetes Engine",
+  "product_slug": "google-kubernetes-engine",
+  "feature_name": "Volume expansion failure recovery",
+  "feature_slug": "volume-expansion-failure-recovery",
+  "summary": "Support for recovering from volume expansion failure graduated to beta and is enabled by default.",
+  "extended_definition": "Support for recovering from volume expansion failure graduated to beta and is enabled by default.",
+  "lifecycle": {
+    "latest_feature_date": "2024-12-17",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/simulate-zone-failure",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/stateful-workloads/migrate-pd-to-hyperdisk-backup-gke",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/stateful-workloads/postgresql"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Deploy a highly-available PostgreSQL database on GKE \\_|\\_ Kubernetes Engine\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/stateful-workloads/postgresql",
+        "source_id": "site-docs-root-2",
+        "final_score": 129,
+        "relevance": "",
+        "evidence_snippets": [
+          "Terraform creates a private cluster in the us-central1 region, and enables Backup for GKE for disaster recovery and Managed Service for Prometheus for cluster monitoring. module \"gke-db1\" { source = \"../modules/beta-private-cluster\" project id = var.project id name = \"cluster-db1\" regional = true region = \"us-central1\" network = module.network.network name subnetwork = module.network.primary subnet name ip range pods = \"ip-range-pods-db1\" ip range services = \"ip-range-svc-db1\" create service account = true enable private endpoint = false enable private nodes = true master ipv4 cidr block = \"172.16.0.0/28\" network policy = true cluster autoscaling = { \"autoscaling profile\" : \"OPTIMIZE UTILIZATION\" , \"enabled\" : true , \"gpu resources\" : [], \"min cpu cores\" : 36 , \"min memory gb\" : 144 , \"max cpu cores\" : 48 , \"max memory gb\" : 192 , } monitoring enable managed prometheus = true gke backup agent config = true node pools = [ { name = \"pool-sys\" autoscaling = true min count = 1 max count = 3 max surge = 1 max unavailable = 0 machine type = \"e2-standard-4\" node locations = \"us-central1-a,us-central1-b,us-central1-c\" auto repair = true }, { name = \"pool-db\" autoscaling = true max surge = 1 max unavailable = 0 machine type = \"e2-standard-8\" node locations = \"us-central1-a,us-central1-b,us-central1-c\" auto repair = true }, ] node pools labels = { all = {} pool-db = { \"app.stateful/component\" = \"postgresql\" } pool-sys = { \"app.stateful/component\" = \"postgresql-pgpool\" } } node pools taints = { all = [] pool-db = [ { key = \"app.stateful/component\" value = \"postgresql\" effect = \"NO SCHEDULE\" }, ], pool-sys = [ { key = \"app.stateful/component\" value = \"postgresql-pgpool\" effect = \"NO SCHEDULE\" }, ], } gce pd csi driver = true } Create a backup cluster in the us-west1 region for disaster recovery. module \"gke-db2\" { source = \"../modules/beta-private-cluster\" project id = var.project id name = \"cluster-db2\" regional = true region = \"us-west1\" network = module.network.network name subnetwork = module.network.secondary subnet name ip range pods = \"ip-range-pods-db2\" ip range services = \"ip-range-svc-db2\" create service account = false service account = module.gke-db1.service account enable private endpoint = false enable private nodes = true master ipv4 cidr block = \"172.16.0.16/28\" network policy = true cluster autoscaling = { \"autoscaling profile\" : \"OPTIMIZE UTILIZATION\" , \"enabled\" : true , \"gpu resources\" : [], \"min cpu cores\" : 10 , \"min memory gb\" : 144 , \"max cpu cores\" : 48 , \"max memory gb\" : 192 , } monitoring enable managed prometheus = true gke backup agent config = true node pools = [ { name = \"pool-sys\" autoscaling = true min count = 1 max count = 3 max surge = 1 max unavailable = 0 machine type = \"e2-standard-4\" node locations = \"us-west1-a,us-west1-b,us-west1-c\" auto repair = true }, { name = \"pool-db\" autoscaling = true max surge = 1 max unavailable = 0 machine type = \"e2-standard-8\" node locations = \"us-west1-a,us-west1-b,us-west1-c\" auto repair = true }, ] node pools labels = { all = {} pool-db = { \"app.stateful/component\" = \"postgresql\" } pool-sys = { \"app.stateful/component\" = \"postgresql-pgpool\" } } node pools taints = { all = [] pool-db = [ { key = \"app.stateful/component\" value = \"postgresql\" effect = \"NO SCHEDULE\" }, ], pool-sys = [ { key = \"app.stateful/component\" value = \"postgresql-pgpool\" effect = \"NO SCHEDULE\" }, ], } gce pd csi driver = true } Tip: To debug issues when running Terraform, you can capture debug output by setting the Terraform log level environment variable TF LOG .",
+          "To perform a backup and restore, follow these steps: Verify the status of ProtectedApplication on cluster-db1 . kubectl get ProtectedApplication -A The output looks similar to the following: NAMESPACE NAME READY TO BACKUP postgresql postgresql-ha true Create a backup plan for the ProtectedApplication. export NAMESPACE = postgresql export PROTECTED APP = $( kubectl get ProtectedApplication -n $NAMESPACE grep -v 'NAME' awk '{ print $1 }' ) gcloud beta container backup-restore backup-plans create $BACKUP PLAN NAME \\ --project = $PROJECT ID \\ --location = $DR REGION \\ --cluster = projects/ $PROJECT ID /locations/ $REGION /clusters/ $SOURCE CLUSTER \\ --selected-applications = $NAMESPACE / $PROTECTED APP \\ --include-secrets \\ --include-volume-data \\ --cron-schedule = \"0 3 \" \\ --backup-retain-days = 7 \\ --backup-delete-lock-days = 0 Manually create a backup. gcloud beta container backup-restore backups create $BACKUP NAME \\ --project = $PROJECT ID \\ --location = $DR REGION \\ --backup-plan = $BACKUP PLAN NAME \\ --wait-for-completion Set up a restore plan. gcloud beta container backup-restore restore-plans create $RESTORE PLAN NAME \\ --project = $PROJECT ID \\ --location = $DR REGION \\ --backup-plan = projects/ $PROJECT ID /locations/ $DR REGION /backupPlans/ $BACKUP PLAN NAME \\ --cluster = projects/ $PROJECT ID /locations/ $DR REGION /clusters/ $TARGET CLUSTER \\ --cluster-resource-conflict-policy = use-existing-version \\ --namespaced-resource-restore-mode = delete-and-restore \\ --volume-data-restore-policy = restore-volume-data-from-backup \\ --selected-applications = $NAMESPACE / $PROTECTED APP \\ --cluster-resource-scope-selected-group-kinds = \"storage.k8s.io/StorageClass\" , \"scheduling.k8s.io/PriorityClass\" Restore from the backup. gcloud beta container backup-restore restores create $RESTORE NAME \\ --project = $PROJECT ID \\ --location = $DR REGION \\ --restore-plan = $RESTORE PLAN NAME \\ --backup = projects/ $PROJECT ID /locations/ $DR REGION /backupPlans/ $BACKUP PLAN NAME /backups/ $BACKUP NAME \\ --wait-for-completion Verify that your cluster is restored To verify that the restored cluster has all the expected Pods, PersistentVolume, and StorageClass resources, follow these steps: Configure kubectl command line access to the backup cluster cluster-db2 . gcloud container clusters get-credentials $TARGET CLUSTER --location $DR REGION --project $PROJECT ID Verify that the StatefulSet is ready with 3/3 Pods. kubectl get all -n $NAMESPACE The output is similar to the following: NAME READY STATUS RESTARTS AGE pod/postgresql-postgresql-ha-pgpool-778798b5bd-k2q4b 1/1 Running 0 4m49s pod/postgresql-postgresql-ha-postgresql-0 2/2 Running 2 (4m13s ago) 4m49s pod/postgresql-postgresql-ha-postgresql-1 2/2 Running 0 4m49s pod/postgresql-postgresql-ha-postgresql-2 2/2 Running 0 4m49s NAME TYPE CLUSTER-IP EXTERNAL-IP PORT(S) AGE service/postgresql-postgresql-ha-pgpool ClusterIP 192.168.241.46 <none> 5432/TCP 4m49s service/postgresql-postgresql-ha-postgresql ClusterIP 192.168.220.20 <none> 5432/TCP 4m49s service/postgresql-postgresql-ha-postgresql-headless ClusterIP None <none> 5432/TCP 4m49s service/postgresql-postgresql-ha-postgresql-metrics ClusterIP 192.168.226.235 <none> 9187/TCP 4m49s NAME READY UP-TO-DATE AVAILABLE AGE deployment.apps/postgresql-postgresql-ha-pgpool 1/1 1 1 4m49s NAME DESIRED CURRENT READY AGE replicaset.apps/postgresql-postgresql-ha-pgpool-778798b5bd 1 1 1 4m49s NAME READY AGE statefulset.apps/postgresql-postgresql-ha-postgresql 3/3 4m49s Verify all Pods in the postgres namespace are running. kubectl get pods -n $NAMESPACE The output is similar to the following: postgresql-postgresql-ha-pgpool-569d7b8dfc-2f9zx 1/1 Running 0 7m56s postgresql-postgresql-ha-postgresql-0 2/2 Running 0 7m56s postgresql-postgresql-ha-postgresql-1 2/2 Running 0 7m56s postgresql-postgresql-ha-postgresql-2 2/2 Running 0 7m56s Verify the PersistentVolumes and StorageClass.",
+          "GMP on Autopilot requires V1.25 via var.kubernetes version enable vertical pod autoscaling = true enable private endpoint = false enable private nodes = true master ipv4 cidr block = \"172.16.0.0/28\" create service account = false } Create a backup cluster in the us-west1 region for disaster recovery. module \"gke-db2-autopilot\" { source = \"../modules/beta-autopilot-private-cluster\" project id = var.project id name = \"cluster-db2\" kubernetes version = \"1.25\" # Will be ignored if use \"REGULAR\" release channel region = \"us-west1\" regional = true zones = [ \"us-west1-a\", \"us-west1-b\", \"us-west1-c\" ] network = module.network.network name subnetwork = module.network.secondary subnet name ip range pods = \"ip-range-pods-db2\" ip range services = \"ip-range-svc-db2\" horizontal pod autoscaling = true release channel = \"RAPID\" # Default version is 1.22 in REGULAR."
+        ]
+      },
+      {
+        "title": "\"Simulate a zone failure in GKE regional clusters \\_|\\_ Google Kubernetes\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/simulate-zone-failure",
+        "source_id": "site-docs-root-2",
+        "final_score": 117,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "To update the node pool to only run in certain zones and simulate failure, complete the following steps: Check the availability of regional cluster and Services: kubectl get po -o wide \\ kubectl get node -o = custom-columns = 'NAME:.metadata.name,ZONE:.metadata.labels.topology\\.kubernetes\\.io/zone,INT IP:.status.addresses[0].address' The result is similar to the following example output: NAME READY STATUS RESTARTS AGE IP NODE accounts-db-0 1/1 Running 0 6m30s 10.28.1.5 regional-cluster-1-default-pool-node3 balancereader-7dc7d9ff57-shwg5 1/1 Running 0 6m30s 10.28.5.6 regional-cluster-1-default-pool-node1 contacts-7ddc76d94-qv4x5 1/1 Running 0 6m29s 10.28.4.6 regional-cluster-1-default-pool-node2 frontend-747b84bff4-xvjxq 1/1 Running 0 6m29s 10.28.3.6 regional-cluster-1-default-pool-node6 ledger-db-0 1/1 Running 0 6m29s 10.28.5.7 regional-cluster-1-default-pool-node1 ledgerwriter-f6cc7889d-mttmb 1/1 Running 0 6m29s 10.28.1.6 regional-cluster-1-default-pool-node3 loadgenerator-57d4cb57cc-7fvrc 1/1 Running 0 6m29s 10.28.4.7 regional-cluster-1-default-pool-node2 transactionhistory-5dd7c7fd77-cmc2w 1/1 Running 0 6m29s 10.28.3.7 regional-cluster-1-default-pool-node6 userservice-cd5ddb4bb-zfr2g 1/1 Running 0 6m28s 10.28.5.8 regional-cluster-1-default-pool-node1 NAME ZONE INT IP regional-cluster-1-default-pool-node5 asia-southeast1-c 10.148.0.6 regional-cluster-1-default-pool-node6 asia-southeast1-c 10.148.0.7 regional-cluster-1-default-pool-node2 asia-southeast1-a 10.148.0.8 regional-cluster-1-default-pool-node1 asia-southeast1-a 10.148.0.9 regional-cluster-1-default-pool-node3 asia-southeast1-b 10.148.0.5 regional-cluster-1-default-pool-node4 asia-southeast1-b 10.148.0.4 In this example, all the Cymbal Bank workloads are deployed in all zones.",
+          "Look at where the new frontend Pods and other example Cymbal Bank Pods that were previously running on the node in the failure zone are now rescheduled: kubectl get po -o wide kubectl get node -o = custom-columns = 'NAME:.metadata.name,ZONE:.metadata.labels.topology\\.kubernetes\\.io/zone,INT IP:.status.addresses[0].address' The output should look like the following example: NAME READY STATUS RESTARTS AGE IP NODE accounts-db-0 1/1 Running 0 4m7s 10.96.4.4 regional-cluster-1-default-pool-node4 balancereader-7dc7d9ff57-lv4z7 1/1 Running 0 4m7s 10.96.1.5 regional-cluster-1-default-pool-node6 contacts-7ddc76d94-wxvg5 1/1 Running 0 4m7s 10.96.6.11 regional-cluster-1-default-pool-node3 frontend-747b84bff4-gvktl 1/1 Running 0 4m7s 10.96.1.4 regional-cluster-1-default-pool-node3 ledger-db-0 1/1 Running 0 4m7s 10.96.4.5 regional-cluster-1-default-pool-node6 ledger-db-1 1/1 Running 0 3m50s 10.96.0.13 regional-cluster-1-default-pool-node5 ledgerwriter-f6cc7889d-4hqbm 1/1 Running 0 4m6s 10.96.0.12 regional-cluster-1-default-pool-node5 loadgenerator-57d4cb57cc-fmq52 1/1 Running 0 4m6s 10.96.4.6 regional-cluster-1-default-pool-node4 transactionhistory-5dd7c7fd77-72zpx 1/1 Running 0 4m6s 10.96.6.12 regional-cluster-1-default-pool-node3 userservice-cd5ddb4bb-b7862 1/1 Running 0 4m6s 10.96.1.6 regional-cluster-1-default-pool-node3 NAME ZONE INT IP regional-cluster-1-default-pool-node3 asia-southeast1-a 10.148.0.37 regional-cluster-1-default-pool-node4 asia-southeast1-a 10.148.0.38 regional-cluster-1-default-pool-node5 asia-southeast1-c 10.148.0.40 regional-cluster-1-default-pool-node6 asia-southeast1-c 10.148.0.39 In this example output, there are no example Cymbal Bank Pods that run on cordoned nodes, and all Pods only now run in the other two zones.",
+          "To create additional node pools and simulate failure, complete the following steps: Check availability of the regional cluster: gcloud container node-pools list \\ --cluster = CLUSTER NAME \\ --location CONTROL PLANE LOCATION kubectl get node -o = custom-columns = 'NAME:.metadata.name,ZONE:.metadata.labels.topology\\.kubernetes\\.io/zone,INT IP:.status.addresses[0].address' The result is similar to the following example output: NAME: default-pool MACHINE TYPE: e2-medium DISK SIZE GB: 100 NODE VERSION: 1.27.8-gke.1067004 NAME ZONE."
+        ]
+      },
+      {
+        "title": "\"Migrate your MySQL data from Persistent Disk to Hyperdisk by using Backup\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/stateful-workloads/migrate-pd-to-hyperdisk-backup-gke",
+        "source_id": "site-docs-root-2",
+        "final_score": 111,
+        "relevance": "",
+        "evidence_snippets": [
+          "Create a backup plan: gcloud beta container backup-restore backup-plans create main-plan \\ --project = ${ PROJECT ID } \\ --location = us-central1 \\ --cluster = projects/ ${ PROJECT ID } /locations/ ${ ZONE } /clusters/ ${ KUBERNETES CLUSTER PREFIX } -cluster \\ --selected-namespaces = namespace-a,namespace-b,default \\ --include-secrets \\ --include-volume-data \\ --target-rpo-minutes = 1440 \\ --backup-retain-days = 7 \\ --backup-delete-lock-days = 3 \\ --locked --selected-namespaces : backs up specific namespaces to avoid conflicts with system resources. --include-volume-data : helps to ensure the Persistent Disk data is backed up. --target-rpo-minutes : configures the Recovery Point Objective (RPO) based backup schedule.",
+          "Create the target GKE cluster on an N4 node: gcloud container clusters create ${ TARGET CLUSTER PREFIX } -cluster \\ --location ${ ZONE } \\ --node-locations ${ ZONE } \\ --shielded-secure-boot \\ --shielded-integrity-monitoring \\ --machine-type \"e2-micro\" \\ --num-nodes \"1\" Create a node pool with n4-standard-4 machine types, which are required for Hyperdisk: gcloud container node-pools create hyperdisk-pool \\ --cluster ${ TARGET CLUSTER PREFIX } -cluster \\ --machine-type n4-standard-4 \\ --zone ${ ZONE } \\ --num-nodes 1 Get credentials for the target cluster: gcloud container clusters get-credentials ${ TARGET CLUSTER PREFIX } -cluster --zone ${ ZONE } Apply the Hyperdisk StorageClass named balanced-storage : kubectl apply -f manifests/01-storage-class/storage-class-hdb.yaml The following manifest defines a Hyperdisk StorageClass : apiVersion : storage.k8s.io/v1 kind : StorageClass metadata : name : balanced-storage provisioner : pd.csi.storage.gke.io volumeBindingMode : WaitForFirstConsumer allowVolumeExpansion : true parameters : type : hyperdisk-balanced provisioned-throughput-on-create : \"250Mi\" provisioned-iops-on-create : \"7000\" Review the transformation rules in the manifests/03-transformation-rule/volume.yaml file.",
+          "Create a restore plan by using these transformation rules: gcloud beta container backup-restore restore-plans create main-restore \\ --project = ${ PROJECT ID } \\ --location = us-central1 \\ --backup-plan = projects/ ${ PROJECT ID } /locations/us-central1/backupPlans/main-plan \\ --cluster = projects/ ${ PROJECT ID } /locations/ ${ ZONE } /clusters/ ${ TARGET CLUSTER PREFIX } -cluster \\ --namespaced-resource-restore-mode = merge-replace-on-conflict \\ --all-namespaces \\ --cluster-resource-conflict-policy = use-existing-version \\ --cluster-resource-scope-selected-group-kinds = cluster-resource-scope-all-group-kinds \\ --volume-data-restore-policy = restore-volume-data-from-backup \\ --transformation-rules-file = manifests/03-transformation-rule/volume.yaml Perform the restore: gcloud beta container backup-restore restores create first-restore \\ --project = ${ PROJECT ID } \\ --location = us-central1 \\ --restore-plan = main-restore \\ --backup = projects/ ${ PROJECT ID } /locations/us-central1/backupPlans/main-plan/backups/first-backup Verify the migration Verify that the applications are running on the new cluster and the data is intact."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "a.namespace",
+      "app.stateful",
+      "client.yaml",
+      "data.sql",
+      "dataset.tgz",
+      "db.tar.gz",
+      "db1.service",
+      "deployment.apps",
+      "downloads.mysql.com",
+      "gke.1067004",
+      "hdb.yaml",
+      "metadata.labels.topology",
+      "metadata.name",
+      "module.gke",
+      "module.network.network",
+      "module.network.primary",
+      "module.network.secondary",
+      "node.kubernetes.io",
+      "pd.csi.storage.gke.io",
+      "replicaset.apps",
+      "scheduling.k8s.io",
+      "schema.sql",
+      "statefulset.apps",
+      "status.addresses",
+      "storage.k8s.io",
+      "var.kubernetes",
+      "var.project",
+      "volume.yaml"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/stateful-workloads/postgresql",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/stateful-workloads/migrate-pd-to-hyperdisk-backup-gke",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/simulate-zone-failure"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/stateful-workloads/postgresql",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/stateful-workloads/migrate-pd-to-hyperdisk-backup-gke",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/simulate-zone-failure"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/stateful-workloads/postgresql",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/stateful-workloads/migrate-pd-to-hyperdisk-backup-gke",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/simulate-zone-failure"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/stateful-workloads/postgresql",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/stateful-workloads/migrate-pd-to-hyperdisk-backup-gke",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/simulate-zone-failure"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/stateful-workloads/postgresql",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/stateful-workloads/migrate-pd-to-hyperdisk-backup-gke",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/simulate-zone-failure"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/stateful-workloads/postgresql",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/stateful-workloads/migrate-pd-to-hyperdisk-backup-gke",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/simulate-zone-failure"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/stateful-workloads/postgresql",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/stateful-workloads/migrate-pd-to-hyperdisk-backup-gke",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/simulate-zone-failure"
+      ]
+    }
+  ]
+}

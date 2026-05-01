@@ -1,0 +1,104 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:24.398Z",
+  "source_step08_card": "data/step-08/current/products/cloud-logging/card.json",
+  "product_name": "Cloud Logging",
+  "product_slug": "cloud-logging",
+  "feature_name": "Field-Level Access Control",
+  "feature_slug": "field-level-access-control",
+  "summary": "Cloud Logging supports controlling access to individual fields within log entries.",
+  "extended_definition": "Cloud Logging supports controlling access to individual fields within log entries.",
+  "lifecycle": {
+    "latest_feature_date": "2021-07-30",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/java/docs/reference/google-cloud-logging/latest/com.google.cloud.logging.LogEntryIterator",
+      "https://docs.cloud.google.com/java/docs/reference/google-cloud-logging/latest/com.google.cloud.logging.LogEntryServerStream",
+      "https://docs.cloud.google.com/python/docs/reference/logging/latest/google.cloud.logging_v2.entries"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Module entries (3.15.0) \\_|\\_ Python client libraries \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/logging/latest/google.cloud.logging_v2.entries",
+        "source_id": "site-python-reference",
+        "final_score": 54,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Parameters Name Description log name str The name of the logger used to post the entry. labels Optional[dict] Mapping of labels for the entry insert id Optional[str] The ID used to identify an entry uniquely. severity Optional[str] The severity of the event being logged. http request Optional[dict] Info about HTTP request associated with the entry. timestamp Optional[datetime.datetime] Timestamp for the entry. resource Optional[ google.cloud.logging v2.resource.Resource ] Monitored resource of the entry. trace Optional[str] Trace ID to apply to the entry. span id Optional[str] Span ID within the trace for the log entry.",
+          "Parameters Name Description log name str The name of the logger used to post the entry. labels Optional[dict] Mapping of labels for the entry insert id Optional[str] The ID used to identify an entry uniquely. severity Optional[str] The severity of the event being logged. http request Optional[dict] Info about HTTP request associated with the entry. timestamp Optional[datetime.datetime] Timestamp for the entry. resource Optional[ google.cloud.logging v2.resource.Resource ] Monitored resource of the entry. trace Optional[str] Trace ID to apply to the entry. span id Optional[str] Span ID within the trace for the log entry.",
+          "Parameters Name Description log name str The name of the logger used to post the entry. labels Optional[dict] Mapping of labels for the entry insert id Optional[str] The ID used to identify an entry uniquely. severity Optional[str] The severity of the event being logged. http request Optional[dict] Info about HTTP request associated with the entry. timestamp Optional[datetime.datetime] Timestamp for the entry. resource Optional[ google.cloud.logging v2.resource.Resource ] Monitored resource of the entry. trace Optional[str] Trace ID to apply to the entry. span id Optional[str] Span ID within the trace for the log entry."
+        ]
+      },
+      {
+        "title": "\"Class LogEntryIterator (3.29.0) \\_|\\_ Java client libraries \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-logging/latest/com.google.cloud.logging.LogEntryIterator",
+        "source_id": "site-java-reference",
+        "final_score": 42,
+        "relevance": "MODERATE",
+        "evidence_snippets": []
+      },
+      {
+        "title": "\"Class LogEntryServerStream (3.29.0) \\_|\\_ Java client libraries \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-logging/latest/com.google.cloud.logging.LogEntryServerStream",
+        "source_id": "site-java-reference",
+        "final_score": 42,
+        "relevance": "MODERATE",
+        "evidence_snippets": []
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.cloud.logging.LogEntryIterator",
+      "com.google.cloud.logging.LogEntryServerStream",
+      "com.google.cloud.logging.Logging.TailOption",
+      "datetime.datetime",
+      "v2.resource.Resource"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/logging/latest/google.cloud.logging_v2.entries",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-logging/latest/com.google.cloud.logging.LogEntryIterator",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-logging/latest/com.google.cloud.logging.LogEntryServerStream"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/logging/latest/google.cloud.logging_v2.entries",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-logging/latest/com.google.cloud.logging.LogEntryIterator",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-logging/latest/com.google.cloud.logging.LogEntryServerStream"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/logging/latest/google.cloud.logging_v2.entries",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-logging/latest/com.google.cloud.logging.LogEntryIterator",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-logging/latest/com.google.cloud.logging.LogEntryServerStream"
+      ]
+    }
+  ]
+}

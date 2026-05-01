@@ -1,0 +1,126 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:18.066Z",
+  "source_step08_card": "data/step-08/current/products/artifact-registry/card.json",
+  "product_name": "Artifact Registry",
+  "product_slug": "artifact-registry",
+  "feature_name": "Artifact Registry cleanup policies",
+  "feature_slug": "artifact-registry-cleanup-policies",
+  "summary": "Cleanup policies are generally available in Artifact Registry to automatically delete unwanted artifacts while retaining those that should be kept; Cleanup policies allow Artifact Registry to automatically delete unneeded artifacts while retaining artifacts you want to keep.",
+  "extended_definition": "Cleanup policies are generally available in Artifact Registry to automatically delete unwanted artifacts while retaining those that should be kept; Cleanup policies allow Artifact Registry to automatically delete unneeded artifacts while retaining artifacts you want to keep.",
+  "lifecycle": {
+    "latest_feature_date": "2024-05-24",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/artifact-registry/docs/reference/rest/v1/projects.locations.repositories",
+      "https://docs.cloud.google.com/artifact-registry/docs/repositories",
+      "https://docs.cloud.google.com/java/docs/reference/google-cloud-artifact-registry/latest/com.google.devtools.artifactregistry.v1"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"REST Resource: projects.locations.repositories \\_|\\_ Artifact Registry \\_\\",
+        "url": "https://docs.cloud.google.com/artifact-registry/docs/reference/rest/v1/projects.locations.repositories",
+        "source_id": "site-api-reference",
+        "final_score": 136,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Cleanup policies indicate when certain package versions can be automatically deleted.",
+          "JSON representation { \"name\" : string , \"format\" : enum ( Format ) , \"description\" : string , \"labels\" : { string : string , ... } , \"createTime\" : string , \"updateTime\" : string , \"kmsKeyName\" : string , \"mode\" : enum ( Mode ) , \"cleanupPolicies\" : { string : { object ( CleanupPolicy ) } , ... } , \"sizeBytes\" : string , \"satisfiesPzs\" : boolean , \"cleanupPolicyDryRun\" : boolean , \"vulnerabilityScanningConfig\" : { object ( VulnerabilityScanningConfig ) } , \"disallowUnspecifiedMode\" : boolean , \"satisfiesPzi\" : boolean , \"registryUri\" : string , // Union field format config can be only one of the following: \"mavenConfig\" : { object ( MavenRepositoryConfig ) } , \"dockerConfig\" : { object ( DockerRepositoryConfig ) } // End of list of possible types for union field format config . // Union field mode config can be only one of the following: \"virtualRepositoryConfig\" : { object ( VirtualRepositoryConfig ) } , \"remoteRepositoryConfig\" : { object ( RemoteRepositoryConfig ) } // End of list of possible types for union field mode config . } Fields name string The name of the repository, for example: projects/p1/locations/us-central1/repositories/repo1 .",
+          "Repositories that are generally available or in public preview use this to calculate storage costs. satisfiesPzs boolean Output only."
+        ]
+      },
+      {
+        "title": "Repository overview \\_|\\_ Artifact Registry \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/artifact-registry/docs/repositories",
+        "source_id": "site-docs-root",
+        "final_score": 130,
+        "relevance": "",
+        "evidence_snippets": [
+          "Cleanup policies An Artifact Registry cleanup policy defines criteria for automatically deleting artifact versions that you no longer need or keeping artifacts that you want to store indefinitely.",
+          "Use delete policies Delete policies delete artifacts matching the following required criteria: Tag state : indicates if the policy should check for tagged artifacts or untagged artifacts.",
+          "To create and apply cleanup policies to your repository, see Configure cleanup policies . gcr.io domain support Artifact Registry supports hosting of images on the gcr.io domain."
+        ]
+      },
+      {
+        "title": "\"Package com.google.devtools.artifactregistry.v1 (1.87.0) \\_|\\_ Java client\\",
+        "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-artifact-registry/latest/com.google.devtools.artifactregistry.v1",
+        "source_id": "site-java-reference",
+        "final_score": 108,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Cleanup Policy Artifact policy configuration for repository cleanup policies. com. google. devtools. artifactregistry. v1.",
+          "Builder Artifact policy configuration for repository cleanup policies. com. google. devtools. artifactregistry. v1.",
+          "Cleanup Policy Most Recent Versions CleanupPolicyMostRecentVersions is an alternate condition of a CleanupPolicy for retaining a minimum number of versions. com. google. devtools. artifactregistry. v1."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.devtools.artifactregistry.v1",
+      "gcr.io",
+      "projects.locations.repositories"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/artifact-registry/docs/reference/rest/v1/projects.locations.repositories",
+        "https://docs.cloud.google.com/artifact-registry/docs/repositories",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-artifact-registry/latest/com.google.devtools.artifactregistry.v1"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/artifact-registry/docs/reference/rest/v1/projects.locations.repositories",
+        "https://docs.cloud.google.com/artifact-registry/docs/repositories",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-artifact-registry/latest/com.google.devtools.artifactregistry.v1"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/artifact-registry/docs/reference/rest/v1/projects.locations.repositories",
+        "https://docs.cloud.google.com/artifact-registry/docs/repositories",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-artifact-registry/latest/com.google.devtools.artifactregistry.v1"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/artifact-registry/docs/reference/rest/v1/projects.locations.repositories",
+        "https://docs.cloud.google.com/artifact-registry/docs/repositories",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-artifact-registry/latest/com.google.devtools.artifactregistry.v1"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/artifact-registry/docs/reference/rest/v1/projects.locations.repositories",
+        "https://docs.cloud.google.com/artifact-registry/docs/repositories",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-artifact-registry/latest/com.google.devtools.artifactregistry.v1"
+      ]
+    }
+  ]
+}

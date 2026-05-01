@@ -1,0 +1,114 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:32.732Z",
+  "source_step08_card": "data/step-08/current/products/dataflow/card.json",
+  "product_name": "Dataflow",
+  "product_slug": "dataflow",
+  "feature_name": "VPC Service Controls integration",
+  "feature_slug": "vpc-service-controls-integration",
+  "summary": "Dataflow integrates with VPC Service Controls for service perimeter protection; Dataflow integrates with VPC Service Controls for service perimeter protection.",
+  "extended_definition": "Dataflow integrates with VPC Service Controls for service perimeter protection; Dataflow integrates with VPC Service Controls for service perimeter protection.",
+  "lifecycle": {
+    "latest_feature_date": "2019-08-09",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dataflow/docs/guides/develop-and-test-pipelines",
+      "https://docs.cloud.google.com/dataflow/docs/guides/specifying-networks",
+      "https://docs.cloud.google.com/dataflow/docs/resources/shared-responsibility"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Specify a network and subnetwork \\_|\\_ Cloud Dataflow \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/dataflow/docs/guides/specifying-networks",
+        "source_id": "site-docs-reference-2",
+        "final_score": 57,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Dataflow VPC Service Controls help protect against accidental or targeted action by external entities or by insider entities, which helps to minimize unwarranted data exfiltration risks.",
+          "You can use VPC Service Controls to create perimeters that protect the resources and data of services that you explicitly specify.",
+          "To learn about the limitations when using Dataflow with VPC Service Controls, see Supported products and limitations ."
+        ]
+      },
+      {
+        "title": "Dataflow shared responsibility \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataflow/docs/resources/shared-responsibility",
+        "source_id": "site-docs-reference-required-4",
+        "final_score": 57,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Dataflow secures the scalable infrastructure that you use to run your Dataflow pipelines and provides you tools and security controls to protect your data, code, and models.",
+          "Customer's responsibilities Use and update your environment to the latest versions of Dataflow containers and VM images : Dataflow provides prebuilt containers and VM images to simplify the use of its services.",
+          "Home Documentation Data analytics Cloud Dataflow Resources Send feedback Dataflow shared responsibility Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "Develop and test Dataflow pipelines \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataflow/docs/guides/develop-and-test-pipelines",
+        "source_id": "site-docs-reference-required-3",
+        "final_score": 54,
+        "relevance": "",
+        "evidence_snippets": [
+          "If you run the pipeline asynchronously, you can use the returned PipelineResult instance to cancel execution of the pipeline, as shown in the following code example: public interface StreamingIntegrationTestOptions extends DirectOptions , StreamingOptions , MyOtherPipelineOptions { ... } @Rule public final transient TestPipeline p = TestPipeline . create (); @Test @Category ( NeedsRunner . class ) public void testNonBlockingPipeline () { StreamingIntegrationTestOptions options = p . getOptions (). as ( StreamingIntegrationOptions . class ); options . setBlockOnRun ( false ); // Set non - blocking pipeline execution options . setStreaming ( true ); // Set streaming mode p . apply (...); // Apply pipeline transformations PipelineResult result = p . run (); // Run the pipeline // Generate input , verify output , etc ... // Later on , cancel the pipeline using the previously returned result . cancel (); } End-to-end tests End-to-end tests verify the correct operation of your end-to-end pipeline by running it on the Dataflow Runner under conditions that closely resemble production.",
+          "The end-to-end test uses the Dataflow Runner and a small test dataset to verify that the complete pipeline functions correctly, including its integration with data sources, data sinks, and other external systems.",
+          "By using the Direct Runner to run system integration tests, you quickly verify the integration between your pipeline and other systems without needing to submit a Dataflow job and wait for it to finish."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataflow/docs/guides/specifying-networks",
+        "https://docs.cloud.google.com/dataflow/docs/resources/shared-responsibility",
+        "https://docs.cloud.google.com/dataflow/docs/guides/develop-and-test-pipelines"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataflow/docs/guides/specifying-networks",
+        "https://docs.cloud.google.com/dataflow/docs/resources/shared-responsibility",
+        "https://docs.cloud.google.com/dataflow/docs/guides/develop-and-test-pipelines"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataflow/docs/guides/specifying-networks",
+        "https://docs.cloud.google.com/dataflow/docs/resources/shared-responsibility",
+        "https://docs.cloud.google.com/dataflow/docs/guides/develop-and-test-pipelines"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataflow/docs/guides/specifying-networks",
+        "https://docs.cloud.google.com/dataflow/docs/resources/shared-responsibility",
+        "https://docs.cloud.google.com/dataflow/docs/guides/develop-and-test-pipelines"
+      ]
+    }
+  ]
+}

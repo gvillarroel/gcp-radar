@@ -1,0 +1,154 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:26.812Z",
+  "source_step08_card": "data/step-08/current/products/cloud-sql-for-mysql/card.json",
+  "product_name": "Cloud SQL for MySQL",
+  "product_slug": "cloud-sql-for-mysql",
+  "feature_name": "Subset database migration from external server",
+  "feature_slug": "subset-database-migration-from-external-server",
+  "summary": "This feature lets you migrate a subset of databases from an external server to a destination Cloud SQL for MySQL instance.",
+  "extended_definition": "This feature lets you migrate a subset of databases from an external server to a destination Cloud SQL for MySQL instance.",
+  "lifecycle": {
+    "latest_feature_date": "2026-03-31",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/sql/docs/feature_support",
+      "https://docs.cloud.google.com/sql/docs/mysql/1st-2nd-gen-differences",
+      "https://docs.cloud.google.com/sql/docs/mysql/features"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Cloud SQL feature support by database engine \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/sql/docs/feature_support",
+        "source_id": "site-docs-root",
+        "final_score": 159,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Cloud SQL features MySQL PostgreSQL SQL Server Data protection Backups ✓ ✓ ✓ Point-in-time recovery (PITR) ✓ ✓ ✓ High availability ✓ ✓ ✓ Cloning ✓ ✓ ✓ Disaster recovery ✓ ✓ ✓ Data migration Data migration to external servers ✓ Logs Instance logging ✓ ✓ ✓ Planned maintenance Maintenance windows ✓ ✓ ✓ Maintenance controls ✓ ✓ ✓ Self service maintenance ✓ ✓ ✓ Replication Read replicas ✓ ✓ ✓ Cross-region read replicas ✓ ✓ ✓ External read replicas ✓ ✓ ✓ Binary logging on read replicas ✓ Replication from an external server ✓ ✓ Read replica indexes stored procedures ✓ Logical replication ✓ Security Customer-managed encryption keys (CMEK) ✓ ✓ ✓ Cloud SQL Auth Proxy support ✓ ✓ ✓ Audit logging ✓ ✓ ✓ Connection organization policies ✓ ✓ ✓ IAM database authentication ✓ ✓ Access Transparency (AXT) ✓ ✓ ✓ Key Access Justification ✓ ✓ ✓ Private Service Connect ✓ ✓ ✓ Cloud Security Command Center Monitoring ✓ ✓ ✓ Cloud External Key Manager (EKM) ✓ ✓ ✓ VPC Service Controls ✓ ✓ ✓ Insights Query Insights ✓ ✓ Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Home Documentation Databases Cloud SQL Guides Send feedback Cloud SQL feature support by database engine Stay organized with collections Save and categorize content based on your preferences.",
+          "This page lists the main features of Cloud SQL and indicates which database engines support these features."
+        ]
+      },
+      {
+        "title": "Cloud SQL for MySQL features \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/sql/docs/mysql/features",
+        "source_id": "site-docs-root",
+        "final_score": 157,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Although hex-blob isn't a required flag when you're using a local MySQL server instance and the mysql client, it's required if you want to import any databases with binary data into your Cloud SQL instance.",
+          "Home Documentation Databases Cloud SQL MySQL Guides Send feedback Cloud SQL for MySQL features Stay organized with collections Save and categorize content based on your preferences.",
+          "Supports migration from source databases to Cloud SQL destination databases using Database Migration Service (DMS) ."
+        ]
+      },
+      {
+        "title": "Cloud SQL for MySQL features \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/sql/docs/mysql/1st-2nd-gen-differences",
+        "source_id": "site-docs-reference-3",
+        "final_score": 147,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Although hex-blob isn't a required flag when you're using a local MySQL server instance and the mysql client, it's required if you want to import any databases with binary data into your Cloud SQL instance.",
+          "Home Documentation Databases Cloud SQL MySQL Guides Send feedback Cloud SQL for MySQL features Stay organized with collections Save and categorize content based on your preferences.",
+          "Supports migration from source databases to Cloud SQL destination databases using Database Migration Service (DMS) ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/feature_support",
+        "https://docs.cloud.google.com/sql/docs/mysql/features",
+        "https://docs.cloud.google.com/sql/docs/mysql/1st-2nd-gen-differences"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/feature_support",
+        "https://docs.cloud.google.com/sql/docs/mysql/features",
+        "https://docs.cloud.google.com/sql/docs/mysql/1st-2nd-gen-differences"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/feature_support",
+        "https://docs.cloud.google.com/sql/docs/mysql/features",
+        "https://docs.cloud.google.com/sql/docs/mysql/1st-2nd-gen-differences"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/feature_support",
+        "https://docs.cloud.google.com/sql/docs/mysql/features",
+        "https://docs.cloud.google.com/sql/docs/mysql/1st-2nd-gen-differences"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/feature_support",
+        "https://docs.cloud.google.com/sql/docs/mysql/features",
+        "https://docs.cloud.google.com/sql/docs/mysql/1st-2nd-gen-differences"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/feature_support",
+        "https://docs.cloud.google.com/sql/docs/mysql/features",
+        "https://docs.cloud.google.com/sql/docs/mysql/1st-2nd-gen-differences"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/feature_support",
+        "https://docs.cloud.google.com/sql/docs/mysql/features",
+        "https://docs.cloud.google.com/sql/docs/mysql/1st-2nd-gen-differences"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/feature_support",
+        "https://docs.cloud.google.com/sql/docs/mysql/features",
+        "https://docs.cloud.google.com/sql/docs/mysql/1st-2nd-gen-differences"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/feature_support",
+        "https://docs.cloud.google.com/sql/docs/mysql/features",
+        "https://docs.cloud.google.com/sql/docs/mysql/1st-2nd-gen-differences"
+      ]
+    }
+  ]
+}

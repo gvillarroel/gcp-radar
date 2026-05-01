@@ -1,0 +1,69 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:22.342Z",
+  "source_step08_card": "data/step-08/current/products/capacity-planner/card.json",
+  "product_name": "Capacity Planner",
+  "product_slug": "capacity-planner",
+  "feature_name": "Capacity Planner GPU usage and forecast visualization",
+  "feature_slug": "capacity-planner-gpu-usage-and-forecast-visualization",
+  "summary": "Capacity Planner preview displays actual and forecasted GPU usage to help plan and optimize GPU consumption.",
+  "extended_definition": "Capacity Planner provides capacity planning data for compute resources (including GPUs) across project, folder, or organization scopes, including historical usage, forecasted usage, and quota availability, with support for trend analysis. In the usage-and-forecast view, it exposes a \"Usage and forecast by machine types\" table for instances and GPUs that shows historical and forecasted usage, and includes usage data/forecast workflows to compare prediction changes, inspect percentile trends, and evaluate forecast accuracy against actual historical usage. Capacity Planner is a Pre-GA preview feature, and forecast data is also exposed through the QueryForecasts API as forecast objects with predicted time-series values for resources.",
+  "lifecycle": {
+    "latest_feature_date": "2024-07-01",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "HIGH",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/capacity-planner/docs/overview",
+      "https://docs.cloud.google.com/capacity-planner/docs/reference/rest/v1beta/QueryForecastsResponse",
+      "https://docs.cloud.google.com/capacity-planner/docs/view-data"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "View usage and forecast data \\_|\\_ Capacity Planner \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/capacity-planner/docs/view-data",
+        "source_id": "site-docs-root",
+        "final_score": 106,
+        "relevance": "STRONG",
+        "evidence_snippets": []
+      },
+      {
+        "title": "Capacity Planner overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/capacity-planner/docs/overview",
+        "source_id": "site-api-reference",
+        "final_score": 76,
+        "relevance": "STRONG",
+        "evidence_snippets": []
+      },
+      {
+        "title": "QueryForecastsResponse \\_|\\_ Capacity Planner \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/capacity-planner/docs/reference/rest/v1beta/QueryForecastsResponse",
+        "source_id": "site-api-reference",
+        "final_score": 60,
+        "relevance": "",
+        "evidence_snippets": []
+      }
+    ],
+    "evidence_summary": "The overview page defines the scope and resource types (including GPUs) for Capacity Planner’s historical/forecasted usage and quota data, the view-data page details the GPU/instances machine-type usage-and-forecast table and analysis capabilities, and the API reference defines forecast response payloads returned as time-series forecast objects."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": []
+}

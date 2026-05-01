@@ -1,0 +1,90 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:24.125Z",
+  "source_step08_card": "data/step-08/current/products/cloud-load-balancing/card.json",
+  "product_name": "Cloud Load Balancing",
+  "product_slug": "cloud-load-balancing",
+  "feature_name": "Multi-protocol internal passthrough Network Load Balancer",
+  "feature_slug": "multi-protocol-internal-passthrough-network-load-balancer",
+  "summary": "Internal passthrough Network Load Balancers can load balance multiple Layer 3 and Layer 4 protocols including TCP, UDP, ICMP, ICMPv6, SCTP, ESP, AH, and GRE; Internal passthrough Network Load Balancers can load balance multiple Layer 3 and Layer 4 protocols including TCP, UDP, ICMP, ICMPv6, SCTP, ESP, AH, and GRE.",
+  "extended_definition": "Internal passthrough Network Load Balancers can load balance multiple Layer 3 and Layer 4 protocols including TCP, UDP, ICMP, ICMPv6, SCTP, ESP, AH, and GRE; Internal passthrough Network Load Balancers can load balance multiple Layer 3 and Layer 4 protocols including TCP, UDP, ICMP, ICMPv6, SCTP, ESP, AH, and GRE.",
+  "lifecycle": {
+    "latest_feature_date": "2024-04-16",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/load-balancing/docs/internal",
+      "https://docs.cloud.google.com/load-balancing/docs/network",
+      "https://docs.cloud.google.com/load-balancing/docs/network/udp-with-network-load-balancing"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Internal passthrough Network Load Balancer overview \\_|\\_ Cloud Load Balancing\\",
+        "url": "https://docs.cloud.google.com/load-balancing/docs/internal",
+        "source_id": "site-docs-reference-required-4",
+        "final_score": 278,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "An internal passthrough Network Load Balancer doesn't support the following: Backend VMs in multiple regions Balancing traffic that originates from the internet, unless you're using it with an external load balancer IPv6 packets with fragmented headers Internal IP address Internal passthrough Network Load Balancers support IPv4-only, dual-stack, and IPv6-only subnets.",
+          "Forwarding rule protocols Internal passthrough Network Load Balancers support the following IPv4 protocol options for each forwarding rule: TCP , UDP , or L3 DEFAULT .",
+          "Because internal passthrough Network Load Balancers aren't proxies, they pass traffic to backends on the same protocol and port."
+        ]
+      },
+      {
+        "title": "\"Use UDP with regional external passthrough Network Load Balancers \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/load-balancing/docs/network/udp-with-network-load-balancing",
+        "source_id": "site-docs-root",
+        "final_score": 268,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "This document discusses how to work with regional external passthrough Network Load Balancers by using the User Datagram Protocol (UDP).",
+          "However, as the following example shows, the VM does not actually have an interface that owns the load balancer's IP address: root@backend-server: # ip ad ls 1 : lo: <LOOPBACK,UP,LOWER UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1 link/loopback 00 :00:00:00:00:00 brd 00 :00:00:00:00:00 inet 127 .0.0.1/8 scope host lo valid lft forever preferred lft forever inet6 ::1/128 scope host valid lft forever preferred lft forever 2 : eth0: <BROADCAST,MULTICAST,UP,LOWER UP> mtu 1460 qdisc mq state UP group default qlen 1000 link/ether 42 :01:0a:80:00:02 brd ff:ff:ff:ff:ff:ff inet 10 .128.0.2/32 brd 10 .128.0.2 scope global eth0 valid lft forever preferred lft forever inet6 fe80::4001:aff:fe80:2/64 scope link valid lft forever preferred lft forever The regional external passthrough Network Load Balancer transmits the incoming packets, with the destination address untouched, to the backend server.",
+          "Regional external passthrough Network Load Balancer Regional external passthrough Network Load Balancers are passthrough load balancers; they process incoming packets and deliver them to backend servers with the packets intact."
+        ]
+      },
+      {
+        "title": "\"Backend service-based regional external passthrough Network Load Balancer\\",
+        "url": "https://docs.cloud.google.com/load-balancing/docs/network",
+        "source_id": "site-docs-root",
+        "final_score": 260,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Traffic to be load balanced Forwarding rule protocol Backend service protocol TCP TCP TCP or UNSPECIFIED L3 DEFAULT UNSPECIFIED UDP UDP UDP or UNSPECIFIED L3 DEFAULT UNSPECIFIED ESP, GRE, ICMP/ICMPv6 (echo request only) L3 DEFAULT UNSPECIFIED Multiple forwarding rules You can configure multiple regional external forwarding rules for the same regional external passthrough Network Load Balancer.",
+          "For Dynamic NICs, you must manually add local routes for forwarding rule IP addresses as described in the following known issue: Dropped packets when using Dynamic NICs with alias IP ranges, protocol forwarding, or Passthrough Network Load Balancers .",
+          "To configure a regional external passthrough Network Load Balancer for multiple IP protocols (supporting IPv4 and IPv6 traffic), see Set up a regional external passthrough Network Load Balancer for multiple IP protocols ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/internal",
+        "https://docs.cloud.google.com/load-balancing/docs/network/udp-with-network-load-balancing",
+        "https://docs.cloud.google.com/load-balancing/docs/network"
+      ]
+    }
+  ]
+}

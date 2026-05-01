@@ -1,0 +1,201 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:42.121Z",
+  "source_step08_card": "data/step-08/current/products/infrastructure-manager/card.json",
+  "product_name": "Infrastructure Manager",
+  "product_slug": "infrastructure-manager",
+  "feature_name": "Infrastructure Manager in Google Cloud Console",
+  "feature_slug": "infrastructure-manager-in-google-cloud-console",
+  "summary": "Infrastructure Manager can preview, create, manage, and delete deployments in Google Cloud Console.",
+  "extended_definition": "Infrastructure Manager can preview, create, manage, and delete deployments in Google Cloud Console.",
+  "lifecycle": {
+    "latest_feature_date": "2024-12-12",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/infrastructure-manager/docs/custom-constraints",
+      "https://docs.cloud.google.com/infrastructure-manager/docs/deploy-resources",
+      "https://docs.cloud.google.com/infrastructure-manager/docs/reference/rest",
+      "https://docs.cloud.google.com/infrastructure-manager/docs/reference/rpc"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Manage Infrastructure Manager resources using custom constraints \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/infrastructure-manager/docs/custom-constraints",
+        "source_id": "site-iam-reference",
+        "final_score": 382,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Description Constraint syntax Disable importing existing resources for new deployments name : organizations/ ORGANIZATION ID /customConstraints/custom.disallowImportExistingResources resourceTypes : ‐ config.googleapis.com/Deployment methodTypes : ‐ CREATE condition : \"resource.importExistingResources == true\" actionType : DENY displayName : Reject existing resources description : New deployments disallow the import of existing resources Infrastructure Manager supported resources The following table lists the Infrastructure Manager resources that you can reference in custom constraints.",
+          "Required roles To get the permissions that you need to manage organization policies, ask your administrator to grant you the following IAM roles: Organization Policy Administrator ( roles/orgpolicy.policyAdmin ) on the organization resource To create or update a deployment or preview deployment: Infra Manager Admin ( roles/config.admin ) on the project resource For more information about granting roles, see Manage access to projects, folders, and organizations .",
+          "Test the policy Try to create a Infra Manager deployment that imports existing resources in the project: gcloud infra-manager deployments apply projects/ PROJECT ID /locations/us-central1/deployments/quickstart-deployment \\ --service-account = projects/ PROJECT ID /serviceAccounts/ SERVICE ACCOUNT NAME @ PROJECT ID .iam.gserviceaccount.com \\ --git-source-repo = https://github.com/terraform-google-modules/terraform-google-network \\ --git-source-directory = modules/vpc \\ --git-source-ref = main \\ --input-values = project id = PROJECT ID ,network name = quickstart-vpc The output is the following: Operation denied by custom org policies: [\"customConstraints/custom.disallowImportExistingResources\": \"New deployments disallow the import of existing resources.\"] Example custom organization policies for common use cases This table provides syntax examples for some common custom constraints."
+        ]
+      },
+      {
+        "title": "Deploy infrastructure using Infrastructure Manager \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/infrastructure-manager/docs/deploy-resources",
+        "source_id": "site-docs-root",
+        "final_score": 372,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Create a deployment using a Terraform configuration You can use Infra Manager to deploy a Terraform configuration in several ways: Recommended: Use Infra Manager in Google Cloud console to select a source, view deployment details, preview, and deploy Terraform configurations.",
+          "You can use Infra Manager from Google Cloud console to deploy from Cloud Storage buckets and Git repositories.",
+          "Use Infra Manager in Google Cloud CLI to deploy Terraform configurations from: Cloud Storage buckets Git repositories Local directories See Terraform modules and blueprints for Google Cloud for examples and template Terraform configurations you can use with Infra Manager."
+        ]
+      },
+      {
+        "title": "\"Infrastructure Manager API \\_|\\_ Infrastructure Manager \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/infrastructure-manager/docs/reference/rest",
+        "source_id": "site-api-reference",
+        "final_score": 337,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Technology areas Infrastructure Manager Reference Send feedback Infrastructure Manager API Stay organized with collections Save and categorize content based on your preferences.",
+          "Creates and manages Google Cloud Platform resources and infrastructure.",
+          "REST Resource: v1.projects.locations.deploymentGroups Methods create POST /v1/{parent=projects/ /locations/ }/deploymentGroups Creates a DeploymentGroup The newly created DeploymentGroup will be in the CREATING state and can be retrieved via Get and List calls. delete DELETE /v1/{name=projects/ /locations/ /deploymentGroups/ } Deletes a DeploymentGroup deprovision POST /v1/{name=projects/ /locations/ /deploymentGroups/ }:deprovision Deprovisions a deployment group. get GET /v1/{name=projects/ /locations/ /deploymentGroups/ } Get a DeploymentGroup for a given project and location. list GET /v1/{parent=projects/ /locations/ }/deploymentGroups List DeploymentGroups for a given project and location. patch PATCH /v1/{deploymentGroup.name=projects/ /locations/ /deploymentGroups/ } Updates a DeploymentGroup provision POST /v1/{name=projects/ /locations/ /deploymentGroups/ }:provision Provisions a deployment group."
+        ]
+      },
+      {
+        "title": "\"Infrastructure Manager API \\_|\\_ Infrastructure Manager \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/infrastructure-manager/docs/reference/rpc",
+        "source_id": "site-docs-root",
+        "final_score": 333,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Technology areas Infrastructure Manager Reference Send feedback Infrastructure Manager API Stay organized with collections Save and categorize content based on your preferences.",
+          "Creates and manages Google Cloud Platform resources and infrastructure.",
+          "CreateDeploymentGroup Creates a DeploymentGroup The newly created DeploymentGroup will be in the CREATING state and can be retrieved via Get and List calls."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "config.admin",
+      "config.deployments.create",
+      "config.deployments.update",
+      "config.googleapis.com",
+      "config.previews.create",
+      "custom.disallowImportExistingResources",
+      "github.com",
+      "iam.gserviceaccount.com",
+      "orgpolicy.policyAdmin",
+      "resource.importExistingResources",
+      "v1.projects.locations.deploymentGroups",
+      "v1.projects.locations.previews"
+    ],
+    "missing_inventory_roles": [
+      "roles/config.admin",
+      "roles/orgpolicy.policyAdmin"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/infrastructure-manager/docs/custom-constraints",
+        "https://docs.cloud.google.com/infrastructure-manager/docs/deploy-resources",
+        "https://docs.cloud.google.com/infrastructure-manager/docs/reference/rest",
+        "https://docs.cloud.google.com/infrastructure-manager/docs/reference/rpc"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/infrastructure-manager/docs/custom-constraints",
+        "https://docs.cloud.google.com/infrastructure-manager/docs/deploy-resources",
+        "https://docs.cloud.google.com/infrastructure-manager/docs/reference/rest",
+        "https://docs.cloud.google.com/infrastructure-manager/docs/reference/rpc"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/infrastructure-manager/docs/custom-constraints",
+        "https://docs.cloud.google.com/infrastructure-manager/docs/deploy-resources",
+        "https://docs.cloud.google.com/infrastructure-manager/docs/reference/rest",
+        "https://docs.cloud.google.com/infrastructure-manager/docs/reference/rpc"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/infrastructure-manager/docs/custom-constraints",
+        "https://docs.cloud.google.com/infrastructure-manager/docs/deploy-resources",
+        "https://docs.cloud.google.com/infrastructure-manager/docs/reference/rest",
+        "https://docs.cloud.google.com/infrastructure-manager/docs/reference/rpc"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/infrastructure-manager/docs/custom-constraints",
+        "https://docs.cloud.google.com/infrastructure-manager/docs/deploy-resources",
+        "https://docs.cloud.google.com/infrastructure-manager/docs/reference/rest",
+        "https://docs.cloud.google.com/infrastructure-manager/docs/reference/rpc"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/infrastructure-manager/docs/custom-constraints",
+        "https://docs.cloud.google.com/infrastructure-manager/docs/deploy-resources",
+        "https://docs.cloud.google.com/infrastructure-manager/docs/reference/rest",
+        "https://docs.cloud.google.com/infrastructure-manager/docs/reference/rpc"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/infrastructure-manager/docs/custom-constraints",
+        "https://docs.cloud.google.com/infrastructure-manager/docs/deploy-resources",
+        "https://docs.cloud.google.com/infrastructure-manager/docs/reference/rest",
+        "https://docs.cloud.google.com/infrastructure-manager/docs/reference/rpc"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/infrastructure-manager/docs/custom-constraints",
+        "https://docs.cloud.google.com/infrastructure-manager/docs/deploy-resources",
+        "https://docs.cloud.google.com/infrastructure-manager/docs/reference/rest",
+        "https://docs.cloud.google.com/infrastructure-manager/docs/reference/rpc"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/infrastructure-manager/docs/custom-constraints",
+        "https://docs.cloud.google.com/infrastructure-manager/docs/deploy-resources",
+        "https://docs.cloud.google.com/infrastructure-manager/docs/reference/rest",
+        "https://docs.cloud.google.com/infrastructure-manager/docs/reference/rpc"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/infrastructure-manager/docs/custom-constraints",
+        "https://docs.cloud.google.com/infrastructure-manager/docs/deploy-resources",
+        "https://docs.cloud.google.com/infrastructure-manager/docs/reference/rest",
+        "https://docs.cloud.google.com/infrastructure-manager/docs/reference/rpc"
+      ]
+    }
+  ]
+}

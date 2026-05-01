@@ -1,0 +1,136 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:18.771Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery",
+  "feature_name": "ALTER COLUMN SET OPTIONS",
+  "feature_slug": "alter-column-set-options",
+  "summary": "The ALTER COLUMN SET OPTIONS statement lets BigQuery modify column options through SQL.",
+  "extended_definition": "The ALTER COLUMN SET OPTIONS statement lets BigQuery modify column options through SQL.",
+  "lifecycle": {
+    "latest_feature_date": "2021-06-28",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/adding-labels",
+      "https://docs.cloud.google.com/bigquery/docs/column-data-masking",
+      "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Data definition language (DDL) statements in GoogleSQL \\_|\\_ BigQuery \\_\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "source_id": "site-docs-reference",
+        "final_score": 208,
+        "relevance": "",
+        "evidence_snippets": [
+          "Examples Setting the expiration timestamp and description on a table The following example sets the expiration timestamp on a table to seven days from the execution time of the ALTER TABLE statement, and sets the description as well: ALTER TABLE mydataset . mytable SET OPTIONS ( expiration timestamp = TIMESTAMP ADD ( CURRENT TIMESTAMP (), INTERVAL 7 DAY ), description = \"Table that expires seven days from now\" ) Setting the require partition filter attribute on a partitioned table The following example sets the timePartitioning.requirePartitionFilter attribute on a partitioned table : ALTER TABLE mydataset . mypartitionedtable SET OPTIONS ( require partition filter = true ) Queries that reference this table must use a filter on the partitioning column, or else BigQuery returns an error.",
+          "Examples The following example sets a new description on a table column called price : ALTER TABLE mydataset . mytable ALTER COLUMN price SET OPTIONS ( description = 'Price per unit' ); The following example sets a new description on a view column called total : ALTER VIEW mydataset . myview ALTER COLUMN total SET OPTIONS ( description = 'Total sales of the product' ); ALTER COLUMN DROP NOT NULL statement Removes a NOT NULL constraint from a column in a table in BigQuery.",
+          "Column options for a view have the same syntax and requirements as for a table, but with a different list of NAME and VALUE fields: NAME VALUE Details description STRING Example: description=\"a unique id\" Required permissions This statement requires the following IAM permissions : Permission Resource bigquery.tables.get The table to alter. bigquery.tables.update The table to alter."
+        ]
+      },
+      {
+        "title": "Mask column data \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/column-data-masking",
+        "source_id": "site-docs-reference-5",
+        "final_score": 208,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The following example uses the CREATE TABLE statement and sets data policies on a column: CREATE TABLE myproject . table1 ( name INT64 OPTIONS ( data policies = [ \"{'name':'myproject.region-us.data policy name1'}\" , \"{'name':'myproject.region-us.data policy name2'}\" ]) ); The following example uses the ALTER COLUMN SET OPTIONS to add a data policy to an existing column on a table: ALTER TABLE myproject . table1 ALTER COLUMN column name SET OPTIONS ( data policies += [ \"{'name':'myproject.region-us.data policy name1'}\" , \"{'name':'myproject.region-us.data policy name2'}\" ]); API To assign a data policy to a column, call the patch method on the table and update the table schema with the applicable data policies.",
+          "Assign a data policy To assign a data policy directly on a column, do one of the following: SQL To attach a data policy to a column, use the CREATE TABLE , ALTER TABLE ADD COLUMN , or ALTER COLUMN SET OPTIONS DDL statements.",
+          "Unassign a data policy To unassign a data policy directly on a column, do one of the following: SQL To detach a data policy to a column, use the ALTER COLUMN SET OPTIONS DDL statement."
+        ]
+      },
+      {
+        "title": "Add labels to resources \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/adding-labels",
+        "source_id": "site-docs-reference-2",
+        "final_score": 142,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Go to BigQuery In the query editor, enter the following statement: ALTER TABLE mydataset . mytable SET OPTIONS ( labels = [ ( 'department' , 'shipping' ), ( 'cost center' , 'logistics' ) ] ); Click play circle Run .",
+          "Go to BigQuery In the query editor, enter the following statement: ALTER TABLE mydataset . mytable SET OPTIONS ( labels =[ ( \"key1\" , \"\" ), ( \"key2\" , \"\" ) ] ); Click play circle Run .",
+          "Go to BigQuery In the query editor, enter the following statement: ALTER RESERVATION myreservation SET OPTIONS ( labels = [ ( 'sensitivity' , 'high' ) ] ); Click play circle Run ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "bigquery.tables.get",
+      "bigquery.tables.update",
+      "mydataset.mytable",
+      "myproject.region",
+      "us.data"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/column-data-masking",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "https://docs.cloud.google.com/bigquery/docs/adding-labels"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/column-data-masking",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "https://docs.cloud.google.com/bigquery/docs/adding-labels"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/column-data-masking",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "https://docs.cloud.google.com/bigquery/docs/adding-labels"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/column-data-masking",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "https://docs.cloud.google.com/bigquery/docs/adding-labels"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/column-data-masking",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "https://docs.cloud.google.com/bigquery/docs/adding-labels"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/column-data-masking",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "https://docs.cloud.google.com/bigquery/docs/adding-labels"
+      ]
+    }
+  ]
+}

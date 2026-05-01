@@ -1,0 +1,170 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:18.771Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery",
+  "feature_name": "ROUND_HALF_EVEN rounding mode",
+  "feature_slug": "round-half-even-rounding-mode",
+  "summary": "BigQuery supports the ROUND_HALF_EVEN rounding mode for parameterized NUMERIC and BIGNUMERIC columns.",
+  "extended_definition": "BigQuery supports the ROUND_HALF_EVEN rounding mode for parameterized NUMERIC and BIGNUMERIC columns.",
+  "lifecycle": {
+    "latest_feature_date": "2022-09-29",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 3,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "coverage_low",
+        "message": "The feature ended with coverage LOW.",
+        "suggested_steps": [
+          "step-06"
+        ]
+      },
+      {
+        "severity": "warn",
+        "rule": "missing_exact_identifier_page",
+        "message": "No supporting page directly names the exact identifier(s): ROUND_HALF_EVEN.",
+        "suggested_steps": [
+          "step-06"
+        ]
+      },
+      {
+        "severity": "warn",
+        "rule": "thin_token_overlap",
+        "message": "Supporting pages only weakly overlap with informative feature tokens.",
+        "suggested_steps": [
+          "step-03",
+          "step-04",
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/bqms-use-dataproc",
+      "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-dataframes-pandas-methods",
+      "https://docs.cloud.google.com/bigquery/docs/samples/bigquerystorage-arrow-quickstart"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Run queries using the BigQuery DataFrames bigframes.pandas APIs \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-dataframes-pandas-methods",
+        "source_id": "site-docs-reference-required-15",
+        "final_score": 52,
+        "relevance": "",
+        "evidence_snippets": [
+          "For more information, see Set up authentication for client libraries . import bigframes.pandas as bpd Load data from BigQuery query or table = \"bigquery-public-data.ml datasets.penguins\" bq df = bpd . read gbq ( query or table ) Inspect one of the columns (or series) of the DataFrame: bq df [ \"body mass g\" ] Compute the mean of this series: average body mass = bq df [ \"body mass g\" ] . mean () print ( f \"average body mass: { average body mass } \" ) Find the heaviest species using the groupby operation to calculate the mean body mass g: ( bq df [ \"body mass g\" ] . groupby ( by = bq df [ \"species\" ]) . mean () . sort values ( ascending = False ) . head ( 10 ) ) What's next To search and filter code samples for other Google Cloud products, see the Google Cloud sample browser .",
+          "Explore further For detailed documentation that includes this code sample, see the following: Use BigQuery DataFrames Code sample Python Before trying this sample, follow the Python setup instructions in the BigQuery quickstart using client libraries .",
+          "Home Documentation Data analytics BigQuery Samples Run queries using the BigQuery DataFrames bigframes.pandas APIs Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"Download table data in the Arrow data format \\_|\\_ BigQuery \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/samples/bigquerystorage-arrow-quickstart",
+        "source_id": "site-docs-reference-required-15",
+        "final_score": 44,
+        "relevance": "",
+        "evidence_snippets": [
+          "ArrowRecordBatch deserializedBatch = MessageSerializer . deserializeRecordBatch ( new ReadChannel ( new ByteArrayReadableSeekableByteChannel ( batch . getSerializedRecordBatch (). toByteArray ())), allocator ); loader . load ( deserializedBatch ); // Release buffers from batch (they are still held in the vectors in root). deserializedBatch . close (); System . out . println ( root . contentToTSVString ()); // Release buffers from vectors in root. root . clear (); } @Override public void close () { root . close (); allocator . close (); } } public static void main ( String ... args ) throws Exception { // Sets your Google Cloud Platform project ID. // String projectId = \"YOUR PROJECT ID\"; String projectId = args [ 0 ] ; Integer snapshotMillis = null ; if ( args . length > 1 ) { snapshotMillis = Integer . parseInt ( args [ 1 ] ); } try ( BigQueryReadClient client = BigQueryReadClient . create ()) { String parent = String . format ( \"projects/%s\" , projectId ); // This example uses baby name data from the public datasets.",
+          "String srcTable = String . format ( \"projects/%s/datasets/%s/tables/%s\" , \"bigquery-public-data\" , \"usa names\" , \"usa 1910 current\" ); // We specify the columns to be projected by adding them to the selected fields, // and set a simple filter to restrict which rows are transmitted.",
+          "Explore further For detailed documentation that includes this code sample, see the following: BigQuery Storage API Client Libraries Code sample Java Before trying this sample, follow the Java setup instructions in the BigQuery quickstart using client libraries ."
+        ]
+      },
+      {
+        "title": "\"Configure BigLake metastore for Managed Service for Apache Spark and Spark\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/bqms-use-dataproc",
+        "source_id": "site-docs-reference-5",
+        "final_score": 40,
+        "relevance": "",
+        "evidence_snippets": [
+          "Configure the Iceberg custom catalog plugin for BigLake metastore: FLINK VERSION = 1 .19 ICEBERG VERSION = 1 .6.1 cd /usr/lib/flink sudo wget -c https://repo.maven.apache.org/maven2/org/apache/iceberg/iceberg-flink-runtime- ${ FLINK VERSION } / ${ ICEBERG VERSION } /iceberg-flink-runtime- ${ FLINK VERSION } - ${ ICEBERG VERSION } .jar -P lib sudo gcloud storage cp gs://spark-lib/bigquery/iceberg-bigquery-catalog- ${ ICEBERG VERSION } -1.0.2.jar lib/ Start the Flink session on YARN: HADOOP CLASSPATH = hadoop classpath sudo bin/yarn-session.sh -nm flink-dataproc -d sudo bin/sql-client.sh embedded \\ -s yarn-session Create a catalog in Flink: CREATE CATALOG CATALOG NAME WITH ( 'type' = 'iceberg' , 'warehouse' = ' WAREHOUSE DIRECTORY ' , 'catalog-impl' = 'org.apache.iceberg.gcp.bigquery.BigQueryMetastoreCatalog' , 'gcp project' = ' PROJECT ID ' , 'gcp location' = ' LOCATION ' ); Replace the following: CATALOG NAME : the Flink catalog identifier, which is linked to a BigLake metastore catalog.",
+          "Required roles To get the permissions that you need to configure BigLake metastore, ask your administrator to grant you the following IAM roles: Create a Managed Service for Apache Spark cluster: Dataproc Worker ( roles/dataproc.worker ) on the Compute Engine default service account in the project Create BigLake metastore tables: Dataproc Worker ( roles/dataproc.worker ) on the Dataproc VM service account in the project BigQuery Data Editor ( roles/bigquery.dataEditor ) on the Dataproc VM service account in the project Storage Object User ( roles/storage.objectUser ) on the Dataproc VM service account in the project Query BigLake metastore tables: BigQuery Data Viewer ( roles/bigquery.dataViewer ) on the project BigQuery User ( roles/bigquery.user ) on the project Storage Object Viewer ( roles/storage.objectViewer ) on the project For more information about granting roles, see Manage access to projects, folders, and organizations .",
+          "Depending on your Iceberg version number, select one of the following: Iceberg 1.9.1 : gs://spark-lib/bigquery/iceberg-bigquery-catalog-1.9.1-1.0.1.jar Iceberg 1.6.1 : gs://spark-lib/bigquery/iceberg-bigquery-catalog-1.6.1-1.0.2.jar CATALOG NAME : the name of the Spark catalog to that you're using with your SQL job."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "bigframes.pandas",
+      "bigquery.dataEditor",
+      "bigquery.dataViewer",
+      "bigquery.user",
+      "client.sh",
+      "data.ml",
+      "dataproc.worker",
+      "datasets.penguins",
+      "org.apache.iceberg.gcp.bigquery.BigQueryMetastoreCatalog",
+      "repo.maven.apache.org",
+      "session.sh",
+      "storage.objectUser",
+      "storage.objectViewer"
+    ],
+    "missing_inventory_roles": [
+      "roles/bigquery.dataEditor",
+      "roles/bigquery.dataViewer",
+      "roles/bigquery.user",
+      "roles/dataproc.worker",
+      "roles/storage.objectUser",
+      "roles/storage.objectViewer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-dataframes-pandas-methods",
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquerystorage-arrow-quickstart",
+        "https://docs.cloud.google.com/bigquery/docs/bqms-use-dataproc"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-dataframes-pandas-methods",
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquerystorage-arrow-quickstart",
+        "https://docs.cloud.google.com/bigquery/docs/bqms-use-dataproc"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-dataframes-pandas-methods",
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquerystorage-arrow-quickstart",
+        "https://docs.cloud.google.com/bigquery/docs/bqms-use-dataproc"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-dataframes-pandas-methods",
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquerystorage-arrow-quickstart",
+        "https://docs.cloud.google.com/bigquery/docs/bqms-use-dataproc"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-dataframes-pandas-methods",
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquerystorage-arrow-quickstart",
+        "https://docs.cloud.google.com/bigquery/docs/bqms-use-dataproc"
+      ]
+    }
+  ]
+}

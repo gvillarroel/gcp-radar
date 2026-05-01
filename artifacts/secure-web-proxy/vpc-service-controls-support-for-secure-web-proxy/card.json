@@ -1,0 +1,189 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:46.094Z",
+  "source_step08_card": "data/step-08/current/products/secure-web-proxy/card.json",
+  "product_name": "Secure Web Proxy",
+  "product_slug": "secure-web-proxy",
+  "feature_name": "VPC Service Controls support for Secure Web Proxy",
+  "feature_slug": "vpc-service-controls-support-for-secure-web-proxy",
+  "summary": "Secure Web Proxy can be used with VPC Service Controls.",
+  "extended_definition": "Secure Web Proxy can be used with VPC Service Controls.",
+  "lifecycle": {
+    "latest_feature_date": "2025-08-18",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/secure-web-proxy/docs/overview",
+      "https://docs.cloud.google.com/secure-web-proxy/docs/policies-and-rules-overview",
+      "https://docs.cloud.google.com/secure-web-proxy/docs/quickstart",
+      "https://docs.cloud.google.com/secure-web-proxy/docs/use-tags"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Quickstart: Deploy a Secure Web Proxy instance \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/secure-web-proxy/docs/quickstart",
+        "source_id": "site-docs-reference",
+        "final_score": 298,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Cloud Shell gcloud compute instances delete swp-test-vm What's next Deploy Secure Web Proxy as next hop Deploy Secure Web Proxy as a Private Service Connect service Enable TLS inspection Configure VPC Service Controls for Secure Web Proxy Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "The policy can then serve as the container for all security rules that govern traffic flow through the Secure Web Proxy.",
+          "Secure Web Proxy instances in explicit routing mode can be deployed as a Private Service Connect service ."
+        ]
+      },
+      {
+        "title": "Policies and rules \\_|\\_ Secure Web Proxy \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/secure-web-proxy/docs/policies-and-rules-overview",
+        "source_id": "site-iam-reference",
+        "final_score": 290,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "You can assign your enterprise IP addresses (or static Google Cloud IP addresses) that Secure Web Proxy uses for outbound traffic.",
+          "Policies overview A Secure Web Proxy policy is the core security item that defines access controls for all outbound web traffic.",
+          "The following table shows whether various Virtual Private Cloud (VPC) architectures are supported when using source identity-based security policies: VPC VPC architecture Support Within VPC Cross project (Shared VPC) Cross VPC Cross peering link (peer VPC) Cross VPC Cross Private Service Connect Cross VPC Cross Network Connectivity Center spokes Destination attributes Secure Web Proxy policies determine whether a destination is approved by analyzing the following attributes of the target website or service: Destination domain : the website's address, such as example.com ."
+        ]
+      },
+      {
+        "title": "Secure Web Proxy overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/secure-web-proxy/docs/overview",
+        "source_id": "site-docs-root",
+        "final_score": 288,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Internal workloads must comply with Secure Web Proxy security rules before they can reach the internet.",
+          "Here are the key features of Secure Web Proxy rules: Each rule is a highly specific if-then statement that checks a web request against multiple criteria: Who is asking: the source identity, such as a specific VM or service account Where are they trying to go: the destination URL or domain, like trusted-partner.com What action needs to be taken: allow or deny the traffic Secure Web Proxy rules provide granular control, letting you enforce different security standards for different parts of your organization by using clear, structured definitions.",
+          "Secure Web Proxy policies A Secure Web Proxy policy defines the overall security standard for a specific region or set of workloads because it's the main container that stores all your security instructions."
+        ]
+      },
+      {
+        "title": "Use tags to create policies \\_|\\_ Secure Web Proxy \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/secure-web-proxy/docs/use-tags",
+        "source_id": "site-docs-root",
+        "final_score": 281,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Add the following to the gateway.yaml file: name : projects/ PROJECT NAME /locations/ REGION /gateways/ GATEWAY NAME type : SECURE WEB GATEWAY ports : [ GATEWAY PORT NUMBERS ] certificateUrls : [ CERTIFICATE URLS ] gatewaySecurityPolicy : projects/ PROJECT NAME /locations/ REGION /gatewaySecurityPolicies/ POLICY NAME network : projects/ PROJECT NAME /global/networks/ NETWORK NAME subnetwork : projects/ PROJECT NAME /regions/ REGION /subnetworks/ SUBNETWORK addresses : [ GATEWAY IP ADDRESS ] scope : samplescope Replace the following: GATEWAY NAME : name of this Secure Web Proxy instance GATEWAY PORT NUMBERS : list of port numbers for this gateway, such as [80,443] CERTIFICATE URLS : list of SSL certificate URLs SUBNETWORK : VPC subnet that you previously created as part of the initial setup steps GATEWAY IP ADDRESS : optional list of IP addresses for your Secure Web Proxy instances within the proxy subnets that you previously created in the initial setup steps If you choose not to list IP addresses, omit the field to let the web proxy choose an IP address for you.",
+          "Create the Secure Web Proxy instance by using the gcloud network-services gateways import command : gcloud network-services gateways import GATEWAY NAME \\ --source=gateway.yaml \\ --location= REGION Test connectivity To test connectivity, use the curl command from any virtual machine (VM) instance within your Virtual Private Cloud (VPC) network: curl -x https:// GATEWAY IP ADDRESS : PORT NUMBER https://www.example.com --proxy-insecure If everything is working correctly, then your Secure Web Proxy instance returns a 403 Forbidden status code.",
+          "For example, you can create a policy rule that says: \"Only the traffic that originates from resources that have the tag segment=production tag can access a specific set of URLs.\" This page shows you how to do the following: Create a Secure Web Proxy instance with an empty policy Create and attach a Resource Manager tag to a VM instance Create a Secure Web Proxy rule Test the connectivity of your entire Secure Web Proxy configuration Before you begin Configure the initial setup steps ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "example.com",
+      "gateway.yaml",
+      "partner.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/secure-web-proxy/docs/quickstart",
+        "https://docs.cloud.google.com/secure-web-proxy/docs/policies-and-rules-overview",
+        "https://docs.cloud.google.com/secure-web-proxy/docs/overview",
+        "https://docs.cloud.google.com/secure-web-proxy/docs/use-tags"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/secure-web-proxy/docs/quickstart",
+        "https://docs.cloud.google.com/secure-web-proxy/docs/policies-and-rules-overview",
+        "https://docs.cloud.google.com/secure-web-proxy/docs/overview",
+        "https://docs.cloud.google.com/secure-web-proxy/docs/use-tags"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/secure-web-proxy/docs/quickstart",
+        "https://docs.cloud.google.com/secure-web-proxy/docs/policies-and-rules-overview",
+        "https://docs.cloud.google.com/secure-web-proxy/docs/overview",
+        "https://docs.cloud.google.com/secure-web-proxy/docs/use-tags"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/secure-web-proxy/docs/quickstart",
+        "https://docs.cloud.google.com/secure-web-proxy/docs/policies-and-rules-overview",
+        "https://docs.cloud.google.com/secure-web-proxy/docs/overview",
+        "https://docs.cloud.google.com/secure-web-proxy/docs/use-tags"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/secure-web-proxy/docs/quickstart",
+        "https://docs.cloud.google.com/secure-web-proxy/docs/policies-and-rules-overview",
+        "https://docs.cloud.google.com/secure-web-proxy/docs/overview",
+        "https://docs.cloud.google.com/secure-web-proxy/docs/use-tags"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/secure-web-proxy/docs/quickstart",
+        "https://docs.cloud.google.com/secure-web-proxy/docs/policies-and-rules-overview",
+        "https://docs.cloud.google.com/secure-web-proxy/docs/overview",
+        "https://docs.cloud.google.com/secure-web-proxy/docs/use-tags"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/secure-web-proxy/docs/quickstart",
+        "https://docs.cloud.google.com/secure-web-proxy/docs/policies-and-rules-overview",
+        "https://docs.cloud.google.com/secure-web-proxy/docs/overview",
+        "https://docs.cloud.google.com/secure-web-proxy/docs/use-tags"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/secure-web-proxy/docs/quickstart",
+        "https://docs.cloud.google.com/secure-web-proxy/docs/policies-and-rules-overview",
+        "https://docs.cloud.google.com/secure-web-proxy/docs/overview",
+        "https://docs.cloud.google.com/secure-web-proxy/docs/use-tags"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/secure-web-proxy/docs/quickstart",
+        "https://docs.cloud.google.com/secure-web-proxy/docs/policies-and-rules-overview",
+        "https://docs.cloud.google.com/secure-web-proxy/docs/overview",
+        "https://docs.cloud.google.com/secure-web-proxy/docs/use-tags"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/secure-web-proxy/docs/quickstart",
+        "https://docs.cloud.google.com/secure-web-proxy/docs/policies-and-rules-overview",
+        "https://docs.cloud.google.com/secure-web-proxy/docs/overview",
+        "https://docs.cloud.google.com/secure-web-proxy/docs/use-tags"
+      ]
+    }
+  ]
+}

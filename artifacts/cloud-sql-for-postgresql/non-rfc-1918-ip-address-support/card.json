@@ -1,0 +1,153 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:27.301Z",
+  "source_step08_card": "data/step-08/current/products/cloud-sql-for-postgresql/card.json",
+  "product_name": "Cloud SQL for PostgreSQL",
+  "product_slug": "cloud-sql-for-postgresql",
+  "feature_name": "Non-RFC 1918 IP address support",
+  "feature_slug": "non-rfc-1918-ip-address-support",
+  "summary": "Cloud SQL supports non-RFC 1918 IP address ranges for instance creation, replicas, and client connectivity.",
+  "extended_definition": "Cloud SQL supports non-RFC 1918 IP address ranges for instance creation, replicas, and client connectivity.",
+  "lifecycle": {
+    "latest_feature_date": "2023-07-06",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/sql/docs/debugging-connectivity",
+      "https://docs.cloud.google.com/sql/docs/postgres/authorize-networks",
+      "https://docs.cloud.google.com/sql/docs/postgres/configure-private-ip"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Debugging connection issues \\_|\\_ Cloud SQL \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/sql/docs/debugging-connectivity",
+        "source_id": "site-docs-root",
+        "final_score": 108,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The limit flag is an optional parameter that indicates the maximum number of entries to return. gcloud logging read \"projects/ PROJECT ID /logs/cloudsql.googleapis.com/mysql-general.log\" \\ --limit = 10 gcloud logging read \"projects/ PROJECT ID /logs/cloudsql.googleapis.com/postgres.log\" \\ --limit = 10 Private IP addresses Connections to a Cloud SQL instance using a private IP address are automatically authorized for RFC 1918 address ranges .",
+          "Connections to a Cloud SQL instance using a private IP address are automatically authorized for RFC 1918 address ranges .",
+          "Non-RFC 1918 address ranges must be configured in Cloud SQL as authorized networks ."
+        ]
+      },
+      {
+        "title": "Configure private IP \\_|\\_ Cloud SQL for PostgreSQL \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/sql/docs/postgres/configure-private-ip",
+        "source_id": "site-iam-reference",
+        "final_score": 96,
+        "relevance": "",
+        "evidence_snippets": [
+          "Specifically, these are: 10.0.0.0/8 172.16.0.0/12 192.168.0.0/16 Connections to a Cloud SQL instance using a private IP address are automatically authorized for RFC 1918 address ranges .",
+          "To connect from a non-RFC 1918 IP address, you must set per-instance IP authorization to allow traffic from non-RFC 1918 IP address ranges.",
+          "Note: You must configure all the non-RFC 1918 IP address ranges as authorized networks of the Cloud SQL for PostgreSQL instances."
+        ]
+      },
+      {
+        "title": "\"Authorize with authorized networks \\_|\\_ Cloud SQL for PostgreSQL \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/sql/docs/postgres/authorize-networks",
+        "source_id": "site-iam-reference",
+        "final_score": 82,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Save the request body in a file named request.json , and execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method PATCH -Headers $headers -ContentType: \"application/json; charset=utf-8\" -InFile request.json -Uri \"https://sqladmin.googleapis.com/sql/v1beta4/projects/ project-id /instances/ instance-id \" Select-Object -Expand Content You should receive a JSON response similar to the following: Response { \"kind\": \"sql#operation\", \"targetLink\": \"https://sqladmin.googleapis.com/sql/v1beta4/projects/ project-id /instances/ instance-id \", \"status\": \"PENDING\", \"user\": \"user@example.com\", \"insertTime\": \"2020-01-21T22:43:37.981Z\", \"operationType\": \"UPDATE\", \"name\": \" operation-id \", \"targetId\": \" instance-id \", \"selfLink\": \"https://sqladmin.googleapis.com/sql/v1beta4/projects/ project-id /operations/ operation-id \", \"targetProject\": \" project-id \" } Limitations Some IP address ranges can't be added as authorized networks.",
+          "Your client application is connecting directly to a Cloud SQL instance on its private IP address, and your client's IP address is a non-RFC 1918 address The IP address can be either a single endpoint or consist of a range in CIDR notation .",
+          "These are automatically and implicitly included in the authorized networks by Cloud SQL 192.168.0.0/16 RFC 1918 address range."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "address.name",
+      "address.private",
+      "cloudsql.googleapis.com",
+      "connection.default",
+      "connection.default.peering",
+      "example.com",
+      "general.log",
+      "network.id",
+      "network.name",
+      "network.peering",
+      "postgres.log",
+      "request.json",
+      "servicenetworking.googleapis.com",
+      "sqladmin.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/debugging-connectivity",
+        "https://docs.cloud.google.com/sql/docs/postgres/configure-private-ip",
+        "https://docs.cloud.google.com/sql/docs/postgres/authorize-networks"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/debugging-connectivity",
+        "https://docs.cloud.google.com/sql/docs/postgres/configure-private-ip",
+        "https://docs.cloud.google.com/sql/docs/postgres/authorize-networks"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/debugging-connectivity",
+        "https://docs.cloud.google.com/sql/docs/postgres/configure-private-ip",
+        "https://docs.cloud.google.com/sql/docs/postgres/authorize-networks"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/debugging-connectivity",
+        "https://docs.cloud.google.com/sql/docs/postgres/configure-private-ip",
+        "https://docs.cloud.google.com/sql/docs/postgres/authorize-networks"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/debugging-connectivity",
+        "https://docs.cloud.google.com/sql/docs/postgres/configure-private-ip",
+        "https://docs.cloud.google.com/sql/docs/postgres/authorize-networks"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/debugging-connectivity",
+        "https://docs.cloud.google.com/sql/docs/postgres/configure-private-ip",
+        "https://docs.cloud.google.com/sql/docs/postgres/authorize-networks"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/debugging-connectivity",
+        "https://docs.cloud.google.com/sql/docs/postgres/configure-private-ip",
+        "https://docs.cloud.google.com/sql/docs/postgres/authorize-networks"
+      ]
+    }
+  ]
+}

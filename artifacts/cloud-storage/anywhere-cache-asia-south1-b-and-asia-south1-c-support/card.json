@@ -1,0 +1,133 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:28.180Z",
+  "source_step08_card": "data/step-08/current/products/cloud-storage/card.json",
+  "product_name": "Cloud Storage",
+  "product_slug": "cloud-storage",
+  "feature_name": "Anywhere Cache asia-south1-b and asia-south1-c support",
+  "feature_slug": "anywhere-cache-asia-south1-b-and-asia-south1-c-support",
+  "summary": "Anywhere Cache is supported in the asia-south1-b and asia-south1-c zones.",
+  "extended_definition": "Anywhere Cache is supported in the asia-south1-b and asia-south1-c zones.",
+  "lifecycle": {
+    "latest_feature_date": "2025-08-12",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/storage/docs/json_api/v1/AnywhereCache",
+      "https://docs.cloud.google.com/storage/docs/json_api/v1/AnywhereCaches/disable",
+      "https://docs.cloud.google.com/storage/docs/json_api/v1/AnywhereCaches/get",
+      "https://docs.cloud.google.com/storage/docs/json_api/v1/AnywhereCaches/list"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "AnywhereCaches: disable \\_|\\_ Cloud Storage \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/storage/docs/json_api/v1/AnywhereCaches/disable",
+        "source_id": "site-docs-reference",
+        "final_score": 217,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Request HTTP request POST https://storage.googleapis.com/storage/v1/b/ bucket /anywhereCaches/ anywhereCacheID /disable In addition to standard query parameters , the following parameters apply to this method.",
+          "Home Documentation Storage Cloud Storage Reference Send feedback AnywhereCaches: disable Stay organized with collections Save and categorize content based on your preferences.",
+          "When you call this API, the time to live (TTL) of data entries stops resetting and data is evicted from the cache when the entry expires."
+        ]
+      },
+      {
+        "title": "AnywhereCaches: list \\_|\\_ Cloud Storage \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/storage/docs/json_api/v1/AnywhereCaches/list",
+        "source_id": "site-docs-reference",
+        "final_score": 217,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Request HTTP request GET https://storage.googleapis.com/storage/v1/b/ bucket /anywhereCaches In addition to standard query parameters , the following parameters apply to this method.",
+          "Response If successful, this method returns a list of AnywhereCache resources in the following structure: { \"kind\" : \"storage#AnywhereCache\" , \"items\" : [ AnywhereCache Resource ], \"nextPageToken\" : string } Try it!",
+          "Home Documentation Storage Cloud Storage Reference Send feedback AnywhereCaches: list Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "AnywhereCache \\_|\\_ Cloud Storage \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/storage/docs/json_api/v1/AnywhereCache",
+        "source_id": "site-docs-reference",
+        "final_score": 191,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Resource representation { \"kind\": \"storage#AnywhereCache\" \"id\": string , \"selfLink\": string , \"bucket\": string , \"zone\": string , \"state\": string , \"createTime\": datetime , \"updateTime\": datetime , \"ttl\": string , \"ingestOnWrite\": boolean , \"pendingUpdate\": boolean } Property name Value Description Notes kind string The kind of item this is.",
+          "For caches, this is always \" storage#anywhereCache \". id string The ID of the cache instance, formatted as BUCKET NAME / ANYWHERE CACHE ZONE ID .",
+          "Need to tell us more? [[[\"Easy to understand\",\"easyToUnderstand\",\"thumb-up\"],[\"Solved my problem\",\"solvedMyProblem\",\"thumb-up\"],[\"Other\",\"otherUp\",\"thumb-up\"]],[[\"Hard to understand\",\"hardToUnderstand\",\"thumb-down\"],[\"Incorrect information or sample code\",\"incorrectInformationOrSampleCode\",\"thumb-down\"],[\"Missing the information/samples I need\",\"missingTheInformationSamplesINeed\",\"thumb-down\"],[\"Other\",\"otherDown\",\"thumb-down\"]],[\"Last updated 2026-04-08 UTC.\"],[],[]]"
+        ]
+      },
+      {
+        "title": "AnywhereCaches: get \\_|\\_ Cloud Storage \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/storage/docs/json_api/v1/AnywhereCaches/get",
+        "source_id": "site-docs-reference",
+        "final_score": 191,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Request HTTP request GET https://storage.googleapis.com/storage/v1/b/ bucket /anywhereCaches/ anywhereCacheID In addition to standard query parameters , the following parameters apply to this method.",
+          "Response If successful, this method returns an AnywhereCache resource in the response body.",
+          "Need to tell us more? [[[\"Easy to understand\",\"easyToUnderstand\",\"thumb-up\"],[\"Solved my problem\",\"solvedMyProblem\",\"thumb-up\"],[\"Other\",\"otherUp\",\"thumb-up\"]],[[\"Hard to understand\",\"hardToUnderstand\",\"thumb-down\"],[\"Incorrect information or sample code\",\"incorrectInformationOrSampleCode\",\"thumb-down\"],[\"Missing the information/samples I need\",\"missingTheInformationSamplesINeed\",\"thumb-down\"],[\"Other\",\"otherDown\",\"thumb-down\"]],[\"Last updated 2026-04-08 UTC.\"],[],[]]"
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "storage.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/json_api/v1/AnywhereCaches/disable",
+        "https://docs.cloud.google.com/storage/docs/json_api/v1/AnywhereCaches/list",
+        "https://docs.cloud.google.com/storage/docs/json_api/v1/AnywhereCache",
+        "https://docs.cloud.google.com/storage/docs/json_api/v1/AnywhereCaches/get"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/json_api/v1/AnywhereCaches/disable",
+        "https://docs.cloud.google.com/storage/docs/json_api/v1/AnywhereCaches/list",
+        "https://docs.cloud.google.com/storage/docs/json_api/v1/AnywhereCache",
+        "https://docs.cloud.google.com/storage/docs/json_api/v1/AnywhereCaches/get"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/json_api/v1/AnywhereCaches/disable",
+        "https://docs.cloud.google.com/storage/docs/json_api/v1/AnywhereCaches/list",
+        "https://docs.cloud.google.com/storage/docs/json_api/v1/AnywhereCache",
+        "https://docs.cloud.google.com/storage/docs/json_api/v1/AnywhereCaches/get"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/json_api/v1/AnywhereCaches/disable",
+        "https://docs.cloud.google.com/storage/docs/json_api/v1/AnywhereCaches/list",
+        "https://docs.cloud.google.com/storage/docs/json_api/v1/AnywhereCache",
+        "https://docs.cloud.google.com/storage/docs/json_api/v1/AnywhereCaches/get"
+      ]
+    }
+  ]
+}

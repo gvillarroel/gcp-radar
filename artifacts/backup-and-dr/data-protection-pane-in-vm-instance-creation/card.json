@@ -1,0 +1,137 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:18.295Z",
+  "source_step08_card": "data/step-08/current/products/backup-and-dr/card.json",
+  "product_name": "Backup and DR",
+  "product_slug": "backup-and-dr",
+  "feature_name": "Data protection pane in VM instance creation",
+  "feature_slug": "data-protection-pane-in-vm-instance-creation",
+  "summary": "The Google Cloud console instance creation page now includes a Data protection pane to configure backup and replication settings at creation time.",
+  "extended_definition": "The Google Cloud console instance creation page now includes a Data protection pane to configure backup and replication settings at creation time.",
+  "lifecycle": {
+    "latest_feature_date": "2025-03-14",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/backup-disaster-recovery/docs/create-plan/dynamic-protection",
+      "https://docs.cloud.google.com/backup-disaster-recovery/docs/monitor-reports/monitor-jobs",
+      "https://docs.cloud.google.com/backup-disaster-recovery/docs/quickstarts/sap-hana-on-gce-backup-recovery"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Automate protection of Compute Engine instances \\_|\\_ Backup and DR \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/backup-disaster-recovery/docs/create-plan/dynamic-protection",
+        "source_id": "site-docs-reference",
+        "final_score": 179,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Your Dynamic Protection Tags can be attached to Compute Engine instances using these instructions: In the Google Cloud console, go to the Compute Engine > VM instances page.",
+          "You can wait for the scheduled dynamic protection job to run at 4:15 AM or 4:15 PM local time for it to take effect, or you can run a dynamic protection job on-demand by following the steps in Run Manual Auto Protection . variable \"project id\" { description = \"The ID of the existing Google Cloud project\" type = string } variable \"region\" { description = \"The Google Cloud region where demo-instance should be created\" type = string } variable \"zone\" { description = \"The Google Cloud zone where demo-instance should be created\" type = string } provider \"google\" { project = var.project id region = var.region zone = var.zone } data \"google project\" \"project\" { project id = var.project id } Reference: https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/tags tag key resource \"google tags tag key\" \"key\" { parent = \"projects/${var.project id}\" short name = \"backupdr-dynamicprotect\" description = \"Tag key for Dynamic Protection.\" } Reference: https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/tags tag value resource \"google tags tag value\" \"value\" { parent = \"tagKeys/${google tags tag key.key.name}\" short name = \"backupdr-gold\" # This value should be present in the \"Management Console UI\" > \"Backup Plans\" > \"Dynamic Protection Tags\" description = \"Tag value for gold plan.\" } Reference: https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/compute instance Ensure not to define tag in \"resource manager tags\" block while creating VM instance.",
+          "For example, https://bmc-PROJECT NUMBER-GENERATED ID-dot-REGION.backupdr.googleusercontent.com #!/bin/bash export MC ENDPOINT = \" MC ENDPOINT edited value \" Enable migration. curl -H \"Authorization: Bearer $BEARER TOKEN \" -H \"backupdr-management-session: Actifio $SESSION ID \" -H \"Content-Type: application/json\" -XPATCH -d '{ \"enableMigrationToTagBasedProtection\":\"true\"}' \" $MC ENDPOINT /actifio/dynamicprotection/jobconfig\" Appliance management console To enable migration of manually protected Compute Engine instances to tag-based protection, follow these steps: Toggle Enable migration to tag based protection to ON status Confirm the Enable Migration dialog."
+        ]
+      },
+      {
+        "title": "\"Monitor jobs in the appliance management console \\_|\\_ Backup and DR \\_\\",
+        "url": "https://docs.cloud.google.com/backup-disaster-recovery/docs/monitor-reports/monitor-jobs",
+        "source_id": "site-docs-root",
+        "final_score": 154,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Run an on-demand backup job from the appliance management console To run an on-demand capture of a managed application from the Manage Backup Plan page: Click the App Manager tab and select the Applications option from the drop-down list.",
+          "Job status panel The appliance management console Jobs panel provides information about jobs that have run over the past 24 hours (default).",
+          "View job details From the Job Details window, you can review the following: Details about the job Volume information Number of job retries Job statistics When you are done reviewing job details, click Return to Jobs to return to the Jobs page."
+        ]
+      },
+      {
+        "title": "\"Protect and recover SAP HANA databases in Compute Engine instances \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/backup-disaster-recovery/docs/quickstarts/sap-hana-on-gce-backup-recovery",
+        "source_id": "site-docs-reference",
+        "final_score": 154,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "On the Restore page the options are: Restore back to source : All fields are pre-populated with the source value of protected SAP HANA instance and are immutable except application options.",
+          "On the Mount page: Project name , Region , and Zone : Select the project, region, and Zone of the instance to which you want to mount the HANA database image.",
+          "To discover and protect the HANA database applications: Select Add Application from the appliance management console's App Manager > Applications page ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "backupdr.googleusercontent.com",
+      "key.key.name",
+      "registry.terraform.io",
+      "var.project",
+      "var.region",
+      "var.zone"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/create-plan/dynamic-protection",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/monitor-reports/monitor-jobs",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/quickstarts/sap-hana-on-gce-backup-recovery"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/create-plan/dynamic-protection",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/monitor-reports/monitor-jobs",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/quickstarts/sap-hana-on-gce-backup-recovery"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/create-plan/dynamic-protection",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/monitor-reports/monitor-jobs",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/quickstarts/sap-hana-on-gce-backup-recovery"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/create-plan/dynamic-protection",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/monitor-reports/monitor-jobs",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/quickstarts/sap-hana-on-gce-backup-recovery"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/create-plan/dynamic-protection",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/monitor-reports/monitor-jobs",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/quickstarts/sap-hana-on-gce-backup-recovery"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/create-plan/dynamic-protection",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/monitor-reports/monitor-jobs",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/quickstarts/sap-hana-on-gce-backup-recovery"
+      ]
+    }
+  ]
+}

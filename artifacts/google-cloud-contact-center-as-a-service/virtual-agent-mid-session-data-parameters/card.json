@@ -1,0 +1,110 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:38.623Z",
+  "source_step08_card": "data/step-08/current/products/google-cloud-contact-center-as-a-service/card.json",
+  "product_name": "Google Cloud Contact Center as a Service",
+  "product_slug": "google-cloud-contact-center-as-a-service",
+  "feature_name": "Virtual agent mid-session data parameters",
+  "feature_slug": "virtual-agent-mid-session-data-parameters",
+  "summary": "Data parameters can be passed to a virtual agent while a session is in progress.",
+  "extended_definition": "Data parameters can be passed to a virtual agent while a session is in progress.",
+  "lifecycle": {
+    "latest_feature_date": "2025-02-17",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/contact-center/ccai-platform/docs/agent-desktop-session-data-feed",
+      "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Call_and_Chat_Settings",
+      "https://docs.cloud.google.com/contact-center/ccai-platform/docs/iva-guide"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Session data feed \\_|\\_ Google Cloud Contact Center as a Service \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/contact-center/ccai-platform/docs/agent-desktop-session-data-feed",
+        "source_id": "site-docs-root",
+        "final_score": 189,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "How can I help you? ---------------------------------------- [July 5, 2024 at 4:23:10 PM GMT+7 Consumer] human agent ---------------------------------------- Live Translation was used Spanish (Spain) and English (US) were used for translation Data parameters passed to Virtual Agent Data parameters passed to Virtual Agent PN - Chat Data parameters passed: order: yes product: books queueId: 502 queueLanguage: en Pre-session SMS deflection Pre-session SMS deflection was offered in ORDERS RETURNS/PN/PN 1 Pre-session SMS deflection was accepted Dispositions Code: test001 Custom Code ID: 123 UJET Code ID: 3 Note: Okee List: Custom Custom List ID: 2222 UJET List ID: 3 Agent: Alex B CCAI Insight chat history uploaded GCS URL: gs://example-insights/oem/...",
+          "Content Card button was selected End User selected the button Primary with reply 1 from the Title 1 card Call transfer redirected to external SIP SIP destination: sip:returns@returns.onsip.com Data parameters passed: userName: Alex B Virtual Agent call recording Virtual Agent call recording is not available for consumer privacy reasons Virtual Agent transcript Virtual Agent call transcript is not available for consumer privacy reasons VA URL Links URL Links from Virtual Agent Returnsbot https://example.com/returns/...",
+          "Captured VA session variables Chat ID: 3070 Menu: In-App Support (QUEUE qca02)/Support/PN/PN 1 Chatbot Platform: Virtual Agent PN Chatbot Workflow: Post Session Transfer - Chat Virtual Agent: Virtual Agent PN - Chat Intent: Captured At: July 5, 2024 at 3:08:39 PM GMT+7 Captured Variables agentHelpfulness: 4 issueResolution: yes agentComprehension: 5 openFeedback: nothing Co-browse session started Screen Share session was started by Agent Time of start: July 5, 2024 at 3:16:54 PM GMT+7 Co-browse session ended Screen Share session was ended by Agent Time of end: July 5, 2024 at 3:19:31 PM GMT+7 Co-browse remote control requested Screen Share remote control was requested Co-browse remote control accepted Screen Share remote control was accepted Co-browse remote control rejected Screen Share remote control was rejected Co-browse full device control requested Screen Share full device control was requested Co-browse full device control accepted Screen Share full device control was accepted Co-browse full device control rejected Screen Share full device control was rejected Session sentiment score Average sentiment score for the segment: 52 Customer email collected Customer email: 222larabrown@gmail.com Realtime Transcript Call ID: 6800 July 5, 2024 at 4:23:03 PM GMT+7 00:25 ---------------------------------------- [July 5, 2024 at 4:23:05 PM GMT+7 Virtual Agent PN - Voice] Hello, I am CX Agent Number 1."
+        ]
+      },
+      {
+        "title": "\"Interactive Virtual Assistant (IVA) guide \\_|\\_ Google Cloud Contact Center\\",
+        "url": "https://docs.cloud.google.com/contact-center/ccai-platform/docs/iva-guide",
+        "source_id": "site-docs-reference",
+        "final_score": 165,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Note: If you need to send dynamic session parameters from the virtual agent interaction, consider using virtual agent deflection to external telephony.",
+          "The virtual agent needs to dynamically pass custom session headers.",
+          "This will set up an automatic redirection for transferring to an existing third party telephony platform. { \"ujet\" : { \"type\" : \"action\" , \"action\" : \"escalation\" , \"escalation reason\" : \"by virtual agent\" , \"menu id\" : 100 , \"language\" : \"ko\" } } The menu id is the value that you saved for the automatic redirection queue node in step 1."
+        ]
+      },
+      {
+        "title": "\"Call and Chat Settings \\_|\\_ Google Cloud Contact Center as a Service \\_\\",
+        "url": "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Call_and_Chat_Settings",
+        "source_id": "site-docs-reference",
+        "final_score": 153,
+        "relevance": "",
+        "evidence_snippets": [
+          "Here is an example reserved data properties in a SIP header: se tt i n g : { redirec t io n : { op t io n : \"sip\" , sip : { uri : \"Destination SIP URI\" , da ta parame ters e na bled : true false , da ta parame ters : [ { f ield : \"verified customer\" , t ype : \"dynamic\" , source : \"ujet metadata\" , source f ield : \"Incoming Field\" }, { f ield : \"bad actor\" , t ype : \"dynamic\" , source : \"ujet metadata\" , source f ield : \"Incoming Field\" }, { f ield : \"repeat customer\" , t ype : \"dynamic\" , source : \"ujet metadata\" , source f ield : \"Incoming Field\" } ], da ta records : { i n me ta da ta : true false , i n crm record : true false } } } } Support for virtual agents If you have a virtual agent (a support agent or a virtual task assistant) that performs end-user verification, the virtual agent can pass the end-user verification information to CCAI Platform.",
+          "Settings recommendations Use a longer ringtone and/or more frequent notification if: Agents are often multitasking and not always waiting to take a call In an open office or louder environment Agents might listen to music from their computer Use a shorter ringtone if: Agents are always alert and waiting for calls Higher call frequency Call whisper: Use this when the queue selection and type of call highly impact the first communication from the agent Increase speed of whisper for decreased wait time impact For very low second count SLAs: Only use whisper and countdown if necessary as the duration of these messages contributes to the wait time for calls Send reserved data properties With reserved data properties, you can send information about an end-user to CCAI Platform when a chat or call session begins, or even after a session has begun.",
+          "If After Hour Deflection is disabled, mark the checkbox Allow transfers to queues outside of operation when After Hours Deflection is disabled for the following behavior: Agents will be able to see the following queues as options to transfer to in the Agent Adapter: All queues within operating hours All queues that are outside of hours of operation with no deflection enabled and active, logged-in agents All queues that are after hours with after hour deflection enabled All queues that are after hours with an assigned virtual agent in 24-hour availability mode Agents will not be able to see the following types of queues: All queues that are outside of operating hours with an assigned virtual agent limited to queue hours of operation After hour deflection options : Select Email to deflect an end-user to email if chatting in after hours."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "example.com",
+      "gmail.com",
+      "returns.onsip.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/agent-desktop-session-data-feed",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/iva-guide",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Call_and_Chat_Settings"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/agent-desktop-session-data-feed",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/iva-guide",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Call_and_Chat_Settings"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/agent-desktop-session-data-feed",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/iva-guide",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Call_and_Chat_Settings"
+      ]
+    }
+  ]
+}

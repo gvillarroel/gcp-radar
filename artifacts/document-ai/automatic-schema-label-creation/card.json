@@ -1,0 +1,145 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:35.157Z",
+  "source_step08_card": "data/step-08/current/products/document-ai/card.json",
+  "product_name": "Document AI",
+  "product_slug": "document-ai",
+  "feature_name": "Automatic schema label creation",
+  "feature_slug": "automatic-schema-label-creation",
+  "summary": "Custom Document Extractor can create schema labels automatically from pre-labeled documents.",
+  "extended_definition": "Custom Document Extractor can create schema labels automatically from pre-labeled documents.",
+  "lifecycle": {
+    "latest_feature_date": "2023-02-21",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/document-ai/docs/ce-derived-signature",
+      "https://docs.cloud.google.com/document-ai/docs/ce-mechanisms",
+      "https://docs.cloud.google.com/document-ai/docs/ce-with-genai",
+      "https://docs.cloud.google.com/document-ai/docs/label-documents"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Custom extractor mechanisms \\_|\\_ Document AI \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/document-ai/docs/ce-mechanisms",
+        "source_id": "site-docs-root",
+        "final_score": 245,
+        "relevance": "",
+        "evidence_snippets": [
+          "Custom extractor uses the label names you define and previous annotations to make it quicker and easier to label documents at scale with auto-labeling .",
+          "Custom extractor mechanisms You can create custom extractors that are specifically suited to your documents, and trained and evaluated with your data.",
+          "Name Data Type Occurrence control number Number Optional multiple employees social security number Number Required multiple employer identification number Number Required multiple employers name address and zip code Address Required multiple federal income tax withheld Money Required multiple social security tax withheld Money Required multiple social security wages Money Required multiple wages tips other compensation Money Required multiple You can also create and use other types of labels in your processor schema, such as checkboxes and tabular entities ."
+        ]
+      },
+      {
+        "title": "Label documents \\_|\\_ Document AI \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/document-ai/docs/label-documents",
+        "source_id": "site-docs-root-2",
+        "final_score": 237,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Add a description prompt When adding labels to the schema in custom extractor and custom classifier, you can add a description for the label.",
+          "From the list of schema labels on the left side of the labeling tool, select the 'Add' symbol to select the Bounding box tool to highlight entities in the document and assign them to a label.",
+          "Dataset metadata, such as processor schema, document assignments (training/test/unassigned), and document labeling status (labeled, unlabeled, auto-labeled) are not exported."
+        ]
+      },
+      {
+        "title": "\"Custom extractor with generative AI \\_|\\_ Document AI \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/document-ai/docs/ce-derived-signature",
+        "source_id": "site-docs-root",
+        "final_score": 223,
+        "relevance": "",
+        "evidence_snippets": [
+          "Derived fields in the custom extractor Custom extractor supports derived fields in the following models: pretrained-foundation-model-v1.4-2025-02-05 as General Availability (GA) pretrained-foundation-model-v1.5-2025-05-05 as Preview pretrained-foundation-model-v1.5-pro-2025-06-20 as Preview You can enable these features in the console UI when creating or editing labels in your document schema.",
+          "You can enable this feature in the console UI when creating or editing labels in your document schema.",
+          "Signature detection in custom extractor Document AI's custom extractor supports signature detection in custom extractor models pretrained-foundation-model-v1.4-2025-02-05 and pretrained-foundation-model-v1.5-2025-05-05 ."
+        ]
+      },
+      {
+        "title": "\"Custom extractor with generative AI \\_|\\_ Document AI \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/document-ai/docs/ce-with-genai",
+        "source_id": "site-docs-root",
+        "final_score": 223,
+        "relevance": "",
+        "evidence_snippets": [
+          "Custom extractor with property descriptions With property descriptions, you can train a model by describing what the labeled fields are like.",
+          "When your schema is set, you can get predictions from documents with three levels of nesting using auto-labeling.",
+          "HTTP method and URL: POST https:// LOCATION -documentai.googleapis.com/v1beta3/projects/ PROJECT ID /locations/ LOCATION /processors/ PROCESSOR ID /processorVersions/ PROCESSOR VERSION :process Request JSON body: { \"rawDocument\": { \"parent\": \"projects/ PROJECT ID /locations/ LOCATION /processors/ PROCESSOR ID \", \"processor version\": { \"name\": \"projects/ PROJECT ID /locations/ LOCATION /processors/ PROCESSOR ID /processorVersions/ DISPLAY NAME \", \"display name\": \" DISPLAY NAME \", \"model type\": \"MODEL TYPE GENERATIVE\", }, \"base processor version\": \"projects/ PROJECT ID /locations/us/processors/ PROCESSOR ID /processorVersions/ PRETRAINED PROCESSOR VERSION \", \"foundation model tuning options\": { \"train steps\": TRAIN STEPS , \"learning rate multiplier\": LEARN RATE MULTIPLIER , } \"document schema\": DOCUMENT SCHEMA } } To send your request, choose one of these options: curl Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "documentai.googleapis.com",
+      "request.json",
+      "v1.4",
+      "v1.5"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/document-ai/docs/ce-mechanisms",
+        "https://docs.cloud.google.com/document-ai/docs/label-documents",
+        "https://docs.cloud.google.com/document-ai/docs/ce-derived-signature",
+        "https://docs.cloud.google.com/document-ai/docs/ce-with-genai"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/document-ai/docs/ce-mechanisms",
+        "https://docs.cloud.google.com/document-ai/docs/label-documents",
+        "https://docs.cloud.google.com/document-ai/docs/ce-derived-signature",
+        "https://docs.cloud.google.com/document-ai/docs/ce-with-genai"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/document-ai/docs/ce-mechanisms",
+        "https://docs.cloud.google.com/document-ai/docs/label-documents",
+        "https://docs.cloud.google.com/document-ai/docs/ce-derived-signature",
+        "https://docs.cloud.google.com/document-ai/docs/ce-with-genai"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/document-ai/docs/ce-mechanisms",
+        "https://docs.cloud.google.com/document-ai/docs/label-documents",
+        "https://docs.cloud.google.com/document-ai/docs/ce-derived-signature",
+        "https://docs.cloud.google.com/document-ai/docs/ce-with-genai"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/document-ai/docs/ce-mechanisms",
+        "https://docs.cloud.google.com/document-ai/docs/label-documents",
+        "https://docs.cloud.google.com/document-ai/docs/ce-derived-signature",
+        "https://docs.cloud.google.com/document-ai/docs/ce-with-genai"
+      ]
+    }
+  ]
+}

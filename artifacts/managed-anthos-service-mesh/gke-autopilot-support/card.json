@@ -1,0 +1,230 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:43.237Z",
+  "source_step08_card": "data/step-08/current/products/managed-anthos-service-mesh/card.json",
+  "product_name": "Managed Anthos Service Mesh",
+  "product_slug": "managed-anthos-service-mesh",
+  "feature_name": "GKE Autopilot support",
+  "feature_slug": "gke-autopilot-support",
+  "summary": "Managed Anthos Service Mesh supports GKE Autopilot in the Regular and Rapid channels; Managed Anthos Service Mesh supports GKE Autopilot in the Regular and Rapid channels.",
+  "extended_definition": "Managed Anthos Service Mesh supports GKE Autopilot in the Regular and Rapid channels; Managed Anthos Service Mesh supports GKE Autopilot in the Regular and Rapid channels.",
+  "lifecycle": {
+    "latest_feature_date": "2022-01-19",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/service-mesh/docs/deploy-bookinfo",
+      "https://docs.cloud.google.com/service-mesh/docs/security/egress-gateway-gke-tutorial",
+      "https://docs.cloud.google.com/service-mesh/docs/supported-features-managed",
+      "https://docs.cloud.google.com/service-mesh/docs/tutorials/migrate-in-cluster-to-managed-on-new-cluster"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Supported features using Istio APIs (managed control plane) \\_|\\_ Cloud\\",
+        "url": "https://docs.cloud.google.com/service-mesh/docs/supported-features-managed",
+        "source_id": "site-docs-reference",
+        "final_score": 237,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Environments Feature Managed (TD) Managed (istiod) GKE versions currently available in release channels , in one of the supported regions GKE versions currently available in release channels , in one of the supported regions , GKE Autopilot clusters Environments outside of Google Cloud (GKE Enterprise on-premises, GKE Enterprise on other public clouds, Amazon EKS, Microsoft AKS, or other Kubernetes clusters) Scale Refer to the Scalability Limits page Platform environment Feature Managed (TD) Managed (istiod) Single network Multi-network Single-project Multi-project with Shared VPC Multi-cluster deployment Feature Managed (TD) Managed (istiod) Multi-primary Primary-remote Multi-cluster endpoint discovery with declarative API Multi-cluster endpoint discovery with remote secrets Multi-cluster endpoint discovery with declarative API and a simple topology Notes on terminology A multi-primary configuration means that the configuration must be replicated in all clusters.",
+          "Managed control plane supported features Install, upgrade, and rollback Feature Managed (TD) Managed (istiod) Installation on GKE clusters using fleet feature API Upgrades from ASM 1.9 versions that use Mesh CA Direct (skip-level) upgrades from Cloud Service Mesh versions prior to 1.9 (see notes for indirect upgrades) Direct (skip-level) upgrades from Istio OSS (see notes for indirect upgrades) Direct (skip-level) upgrades from Istio-on-GKE add-on (see notes for indirect upgrades) Enabling optional features Note: Indirect migrations and upgrades are supported, meaning that you can follow the standard Cloud Service Mesh upgrade paths through each version until you reach Cloud Service Mesh 1.28 with an in-cluster control plane, then you can migrate to the managed control plane.",
+          "Telemetry Metrics Feature Managed (TD) Managed (istiod) Cloud Monitoring (HTTP in-proxy metrics) Cloud Monitoring (TCP in-proxy metrics) Prometheus metrics export to Grafana (Envoy metrics only) Prometheus metrics export to Kiali Google Cloud Managed Service for Prometheus, not including the Cloud Service Mesh dashboard Istio Telemetry API † Custom adapters/backends, in or out of process Arbitrary telemetry and logging backends † The TRAFFIC DIRECTOR control plane supports a subset of Istio telemetry API used to configure access logs and trace ."
+        ]
+      },
+      {
+        "title": "\"Migrate in-cluster to managed control plane on a new cluster \\_|\\_ Cloud\\",
+        "url": "https://docs.cloud.google.com/service-mesh/docs/tutorials/migrate-in-cluster-to-managed-on-new-cluster",
+        "source_id": "site-docs-reference",
+        "final_score": 224,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Create the namespace: kubectl \\ --context cluster-with-csm \\ create namespace onlineboutique Use the istio.io/rev=asm-managed label to add the onlineboutique namespace to the service mesh and enable automatic sidecar proxy injection. kubectl \\ --context cluster-with-csm \\ label namespace onlineboutique 'istio.io/rev=asm-managed' Deploy Online Boutique's 12 services, including the load generator that imitates user traffic: kubectl \\ --context cluster-with-csm \\ --namespace = onlineboutique \\ apply -f anthos-service-mesh-samples/docs/shared/online-boutique/kubernetes-manifests.yaml kubectl \\ --context cluster-with-csm \\ --namespace = onlineboutique \\ apply -f anthos-service-mesh-samples/docs/shared/online-boutique/virtual-service.yaml Get the external IP address of the Cloud Service Mesh ingress gateway: kubectl \\ --context cluster-with-csm \\ --namespace asm-ingress \\ get service --output jsonpath = '{.items[0].status.loadBalancer.ingress[0].ip}' Copy the external IP address of the asm-ingressgateway Service, and access it through your web browser.",
+          "Set the IP address of the managed Cloud Service Mesh cluster's ingress gateway inside the ServiceEntry resource: sed -i \"s/1.2.3.4/ ${ INGRESS IP OF CLUSTER WITH MANAGED ASM } /\" anthos-service-mesh-samples/docs/migrate-to-managed-asm/service-entry.yaml Deploy the ServiceEntry to the cluster with in-cluster Cloud Service Mesh: kubectl \\ --context cluster-with-in-cluster-asm \\ --namespace onlineboutique \\ apply -f anthos-service-mesh-samples/docs/migrate-to-managed-asm/service-entry.yaml Deploy the VirtualService to the cluster with in-cluster Cloud Service Mesh: kubectl \\ --context cluster-with-in-cluster-asm \\ --namespace onlineboutique \\ apply -f anthos-service-mesh-samples/docs/migrate-to-managed-asm/virtual-service-in-cluster-asm.yaml Visit the IP address of the ingress gateway of the cluster with in-cluster Cloud Service Mesh, in your web browser: kubectl \\ --context cluster-with-in-cluster-asm \\ --namespace asm-ingress \\ get service Refresh the Online Boutique homepage multiple times, and check the footer of the page each time.",
+          "Create the namespace: kubectl \\ --context cluster-with-csm \\ create namespace asm-ingress Use the istio.io/rev=asm-managed label to add the asm-ingress namespace to the service mesh and enable automatic sidecar proxy injection. kubectl \\ --context cluster-with-csm \\ label namespace asm-ingress 'istio.io/rev=asm-managed' Deploy the Cloud Service Mesh ingress gateway : kubectl \\ --context cluster-with-csm \\ --namespace = asm-ingress \\ apply -f anthos-service-mesh-samples/docs/shared/asm-ingress-gateway/asm-gateway-deployment-svc.yaml kubectl \\ --context cluster-with-csm \\ --namespace = asm-ingress \\ apply -f anthos-service-mesh-samples/docs/shared/asm-ingress-gateway/gateway.yaml The output is similar to: namespace/asm-ingress configured serviceaccount/asm-ingressgateway configured service/asm-ingressgateway configured deployment.apps/asm-ingressgateway configured gateway.networking.istio.io/asm-ingressgateway configured Note: You can browse the resources in the official Cloud Service Mesh samples GitHub repository ."
+        ]
+      },
+      {
+        "title": "\"Using Cloud Service Mesh egress gateways on GKE clusters: Tutorial \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/service-mesh/docs/security/egress-gateway-gke-tutorial",
+        "source_id": "site-docs-reference",
+        "final_score": 218,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Download credentials so that you can connect to the cluster with kubectl: gcloud container clusters get-credentials cluster1 Verify that the gateway nodes have the correct taint: kubectl get nodes -l cloud.google.com/gke-nodepool = gateway -o yaml \\ -o = custom-columns = 'name:metadata.name,taints:spec.taints[?(@.key==\"dedicated\")]' The output is similar to the following: name taints gke-cluster1-gateway-9d65b410-cffs map[effect:NoSchedule key:dedicated value:gateway] Installing and setting up Cloud Service Mesh Follow one of the installation guides for Cloud Service Mesh: Managed Cloud Service Mesh In-cluster Cloud Service Mesh Once you have installed Cloud Service Mesh, stop and return to this tutorial without installing ingress or egress gateways.",
+          "Allow workloads and proxies deployed in the team-x namespace to connect to istiod and the egress gateway: cat <<EOF kubectl apply -f - apiVersion : networking.k8s.io/v1 kind : NetworkPolicy metadata : name : allow-egress-to-control-plane namespace : team-x spec : podSelector : {} policyTypes : - Egress egress : - to : - namespaceSelector : matchLabels : \"kubernetes.io/metadata.name\" : istio-system podSelector : matchLabels : istio : istiod - namespaceSelector : matchLabels : \"kubernetes.io/metadata.name\" : istio-egress podSelector : matchLabels : istio : egressgateway EOF Allow workloads and proxies to query DNS: cat <<EOF kubectl apply -f - apiVersion : networking.k8s.io/v1 kind : NetworkPolicy metadata : name : allow-egress-to-dns namespace : team-x spec : podSelector : {} policyTypes : - Egress egress : - to : - namespaceSelector : matchLabels : \"kubernetes.io/metadata.name\" : kube-system ports : - port : 53 protocol : UDP - port : 53 protocol : TCP EOF Allow workloads and proxies to connect to the IPs that serve Google APIs and services, including Cloud Service Mesh certificate authority: cat <<EOF kubectl apply -f - apiVersion : networking.k8s.io/v1 kind : NetworkPolicy metadata : name : allow-egress-to-google-apis namespace : team-x spec : podSelector : {} policyTypes : - Egress egress : - to : - ipBlock : cidr : 199.36.153.4/30 - ipBlock : cidr : 199.36.153.8/30 EOF Allow workloads and proxies to connect to the GKE metadata server: cat <<EOF kubectl apply -f - apiVersion : networking.k8s.io/v1 kind : NetworkPolicy metadata : name : allow-egress-to-metadata-server namespace : team-x spec : podSelector : {} policyTypes : - Egress egress : - to : # For GKE data plane v2 - ipBlock : cidr : 169.254.169.254/32 - to : # For GKE data plane v1 - ipBlock : cidr : 127.0.0.1/32 # Prior to 1.21.0-gke.1000 - ipBlock : cidr : 169.254.169.252/32 # 1.21.0-gke.1000 and later ports : - protocol : TCP port : 987 - protocol : TCP port : 988 EOF Optional: Allow workloads and proxies in the team-x namespace to make connections to each other: cat <<EOF kubectl apply -f - apiVersion : networking.k8s.io/v1 kind : NetworkPolicy metadata : name : allow-egress-to-same-namespace namespace : team-x spec : podSelector : {} ingress : - from : - podSelector : {} egress : - to : - podSelector : {} EOF Optional: Allow workloads and proxies in the team-x namespace to make connections to workloads deployed by a different team: cat <<EOF kubectl apply -f - apiVersion : networking.k8s.io/v1 kind : NetworkPolicy metadata : name : allow-egress-to-team-y namespace : team-x spec : podSelector : {} policyTypes : - Egress egress : - to : - namespaceSelector : matchLabels : \"kubernetes.io/metadata.name\" : team-y EOF Connections between sidecar proxies persist.",
+          "Enable the Cloud DNS API: gcloud services enable dns.googleapis.com Create a private DNS zone, a CNAME , and A records so that nodes and workloads can connect to Google APIs and services using Private Google Access and the private.googleapis.com hostname: gcloud dns managed-zones create private-google-apis \\ --description \"Private DNS zone for Google APIs\" \\ --dns-name googleapis.com \\ --visibility private \\ --networks vpc-network gcloud dns record-sets transaction start --zone private-google-apis gcloud dns record-sets transaction add private.googleapis.com. \\ --name \" .googleapis.com\" \\ --ttl 300 \\ --type CNAME \\ --zone private-google-apis gcloud dns record-sets transaction add \"199.36.153.8\" \\ \"199.36.153.9\" \"199.36.153.10\" \"199.36.153.11\" \\ --name private.googleapis.com \\ --ttl 300 \\ --type A \\ --zone private-google-apis gcloud dns record-sets transaction execute --zone private-google-apis Configuring private access to Container Registry Create a private DNS zone, a CNAME and an A record so that nodes can connect to Container Registry using Private Google Access and the gcr.io hostname: gcloud dns managed-zones create private-gcr-io \\ --description \"private zone for Container Registry\" \\ --dns-name gcr.io \\ --visibility private \\ --networks vpc-network gcloud dns record-sets transaction start --zone private-gcr-io gcloud dns record-sets transaction add gcr.io. \\ --name \" .gcr.io\" \\ --ttl 300 \\ --type CNAME \\ --zone private-gcr-io gcloud dns record-sets transaction add \"199.36.153.8\" \"199.36.153.9\" \"199.36.153.10\" \"199.36.153.11\" \\ --name gcr.io \\ --ttl 300 \\ --type A \\ --zone private-gcr-io gcloud dns record-sets transaction execute --zone private-gcr-io Create a private GKE cluster Find the external IP address of your Cloud Shell so that you can add it to the list of networks that are allowed to access your cluster's API server: SHELL IP = $( dig TXT -4 +short @ns1.google.com o-o.myaddr.l.google.com ) After a period of inactivity, the external IP address of your Cloud Shell VM can change."
+        ]
+      },
+      {
+        "title": "\"Deploying the Bookinfo sample \\_|\\_ Cloud Service Mesh \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/service-mesh/docs/deploy-bookinfo",
+        "source_id": "site-docs-root",
+        "final_score": 214,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "If you installed Cloud Service Mesh on Google Distributed Cloud (software only) for VMware, get the external IP address for the ingress gateway that you configured after installing Cloud Service Mesh If you installed Cloud Service Mesh on GKE, get the external IP address of the ingress gateway as follows: kubectl get service istio-ingressgateway -n istio-system Output: NAME TYPE CLUSTER-IP EXTERNAL-IP PORT(S) AGE istio-ingressgateway LoadBalancer 10.19.247.233 35.239.7.64 80:31380/TCP,443:31390/TCP,31400:31400/TCP 27m In this example, the IP address of the ingress service is 35.239.7.64 .",
+          "This is a simple mock bookstore application made up of four services that provide a web product page, book details, reviews (with several versions of the review service), and ratings—all managed using Cloud Service Mesh.",
+          "Managed (TD) Apply the default injection label to the namespace: kubectl label namespace default \\ istio.io/rev- istio-injection = enabled --overwrite Managed (Istiod) Recommended: Run the following command to apply the default injection label to the namespace: kubectl label namespace default \\ istio.io/rev- istio-injection = enabled --overwrite If you are an existing user with the Managed Istiod control plane: We recommend that you use default injection, but revision-based injection is supported."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "asm.yaml",
+      "deployment.apps",
+      "dns.googleapis.com",
+      "entry.yaml",
+      "gateway.networking.istio.io",
+      "gateway.yaml",
+      "gcr.io",
+      "gke.1000",
+      "googleapis.com",
+      "istio.io",
+      "items..metadata.name",
+      "kubernetes.io",
+      "manifests.yaml",
+      "metadata.google.internal",
+      "metadata.name",
+      "networking.istio.io",
+      "networking.k8s.io",
+      "ns1.google.com",
+      "o.myaddr.l.google.com",
+      "private.googleapis.com",
+      "service.istio.io",
+      "service.yaml",
+      "spec.taints",
+      "status.loadBalancer.ingress",
+      "storage.googleapis.com",
+      "svc.yaml"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/docs/supported-features-managed",
+        "https://docs.cloud.google.com/service-mesh/docs/tutorials/migrate-in-cluster-to-managed-on-new-cluster",
+        "https://docs.cloud.google.com/service-mesh/docs/security/egress-gateway-gke-tutorial",
+        "https://docs.cloud.google.com/service-mesh/docs/deploy-bookinfo"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/docs/supported-features-managed",
+        "https://docs.cloud.google.com/service-mesh/docs/tutorials/migrate-in-cluster-to-managed-on-new-cluster",
+        "https://docs.cloud.google.com/service-mesh/docs/security/egress-gateway-gke-tutorial",
+        "https://docs.cloud.google.com/service-mesh/docs/deploy-bookinfo"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/docs/supported-features-managed",
+        "https://docs.cloud.google.com/service-mesh/docs/tutorials/migrate-in-cluster-to-managed-on-new-cluster",
+        "https://docs.cloud.google.com/service-mesh/docs/security/egress-gateway-gke-tutorial",
+        "https://docs.cloud.google.com/service-mesh/docs/deploy-bookinfo"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/docs/supported-features-managed",
+        "https://docs.cloud.google.com/service-mesh/docs/tutorials/migrate-in-cluster-to-managed-on-new-cluster",
+        "https://docs.cloud.google.com/service-mesh/docs/security/egress-gateway-gke-tutorial",
+        "https://docs.cloud.google.com/service-mesh/docs/deploy-bookinfo"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/docs/supported-features-managed",
+        "https://docs.cloud.google.com/service-mesh/docs/tutorials/migrate-in-cluster-to-managed-on-new-cluster",
+        "https://docs.cloud.google.com/service-mesh/docs/security/egress-gateway-gke-tutorial",
+        "https://docs.cloud.google.com/service-mesh/docs/deploy-bookinfo"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/docs/supported-features-managed",
+        "https://docs.cloud.google.com/service-mesh/docs/tutorials/migrate-in-cluster-to-managed-on-new-cluster",
+        "https://docs.cloud.google.com/service-mesh/docs/security/egress-gateway-gke-tutorial",
+        "https://docs.cloud.google.com/service-mesh/docs/deploy-bookinfo"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/docs/supported-features-managed",
+        "https://docs.cloud.google.com/service-mesh/docs/tutorials/migrate-in-cluster-to-managed-on-new-cluster",
+        "https://docs.cloud.google.com/service-mesh/docs/security/egress-gateway-gke-tutorial",
+        "https://docs.cloud.google.com/service-mesh/docs/deploy-bookinfo"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/docs/supported-features-managed",
+        "https://docs.cloud.google.com/service-mesh/docs/tutorials/migrate-in-cluster-to-managed-on-new-cluster",
+        "https://docs.cloud.google.com/service-mesh/docs/security/egress-gateway-gke-tutorial",
+        "https://docs.cloud.google.com/service-mesh/docs/deploy-bookinfo"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/docs/supported-features-managed",
+        "https://docs.cloud.google.com/service-mesh/docs/tutorials/migrate-in-cluster-to-managed-on-new-cluster",
+        "https://docs.cloud.google.com/service-mesh/docs/security/egress-gateway-gke-tutorial",
+        "https://docs.cloud.google.com/service-mesh/docs/deploy-bookinfo"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/docs/supported-features-managed",
+        "https://docs.cloud.google.com/service-mesh/docs/tutorials/migrate-in-cluster-to-managed-on-new-cluster",
+        "https://docs.cloud.google.com/service-mesh/docs/security/egress-gateway-gke-tutorial",
+        "https://docs.cloud.google.com/service-mesh/docs/deploy-bookinfo"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/docs/supported-features-managed",
+        "https://docs.cloud.google.com/service-mesh/docs/tutorials/migrate-in-cluster-to-managed-on-new-cluster",
+        "https://docs.cloud.google.com/service-mesh/docs/security/egress-gateway-gke-tutorial",
+        "https://docs.cloud.google.com/service-mesh/docs/deploy-bookinfo"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/docs/supported-features-managed",
+        "https://docs.cloud.google.com/service-mesh/docs/tutorials/migrate-in-cluster-to-managed-on-new-cluster",
+        "https://docs.cloud.google.com/service-mesh/docs/security/egress-gateway-gke-tutorial",
+        "https://docs.cloud.google.com/service-mesh/docs/deploy-bookinfo"
+      ]
+    }
+  ]
+}

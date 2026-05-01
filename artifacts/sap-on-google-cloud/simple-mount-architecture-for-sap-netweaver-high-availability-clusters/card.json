@@ -1,0 +1,81 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:45.969Z",
+  "source_step08_card": "data/step-08/current/products/sap-on-google-cloud/card.json",
+  "product_name": "SAP on Google Cloud",
+  "product_slug": "sap-on-google-cloud",
+  "feature_name": "Simple Mount architecture for SAP NetWeaver high-availability clusters",
+  "feature_slug": "simple-mount-architecture-for-sap-netweaver-high-availability-clusters",
+  "summary": "SAP NetWeaver Central Services high-availability clusters can be deployed using the Simple Mount architecture.",
+  "extended_definition": "SAP NetWeaver Central Services high-availability clusters can be deployed using the Simple Mount architecture.",
+  "lifecycle": {
+    "latest_feature_date": "2024-10-22",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/sap/docs/architectures/sap-business-suite-on-ase-or-db2",
+      "https://docs.cloud.google.com/sap/docs/architectures/sap-business-suite-on-hana",
+      "https://docs.cloud.google.com/sap/docs/architectures/sap-s4hana-on-gcp"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Reference architecture: SAP Business Suite on SAP HANA on Google Cloud \\_\\",
+        "url": "https://docs.cloud.google.com/sap/docs/architectures/sap-business-suite-on-hana",
+        "source_id": "site-docs-root",
+        "final_score": 194,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "In both cases, you start by setting up two Compute Engine compute instances in separate zones for maximum redundancy, each with its own SAP HANA database. on SAP HANA The following diagram shows an SAP Business Suite on SAP HANA architecture that uses a Linux cluster to achieve high availability on both the application and the SAP HANA database side: The following diagrams show an SAP HANA database that is highly available during both normal operation and a takeover operation: Normal operation: Takeover operation: To combine both high availability and disaster recovery for the database, you can use SAP HANA System Replication.",
+          "You can update your existing clusters from ENSA1 to ENSA2 by completing the steps described in the following SAP Notes: 2641322 - Installation of ENSA2 and update from ENSA1 to ENSA2 when using the Red Hat HA solutions for SAP 2641019 - Installation of ENSA2 and update from ENSA1 to ENSA2 in SUSE HA environment The following diagram shows an SAP Business Suite system using a Pacemaker cluster to limit the single points of failure from both the Message Server and the Enqueue Server: Details about the deployment of the high availability system and Linux clustering across zones are covered later in this document.",
+          "For a complete list of supported SAP solutions on Google Cloud, see: Certifications for SAP applications on Google Cloud Certifications for SAP HANA on Google Cloud Architecture The following diagrams show a high-level view of three common deployment models for SAP Business Suite on SAP HANA: centralized , distributed , and distributed with high availability ."
+        ]
+      },
+      {
+        "title": "\"Reference architecture: SAP Business Suite on SAP ASE or IBM Db2 on Google\\",
+        "url": "https://docs.cloud.google.com/sap/docs/architectures/sap-business-suite-on-ase-or-db2",
+        "source_id": "site-docs-root",
+        "final_score": 186,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Depending on the SAP NetWeaver version you use with your SAP Business Suite system, the Enqueue Server and the Enqueue Replication Server / Enqueue Replicator run on a different version: The following diagram shows an SAP Business Suite system using a Pacemaker cluster to limit the single points of failure from both the Message Server and the Enqueue Server: Details about the deployment of the high availability system and Linux clustering across zones are covered later in this document.",
+          "The following diagram illustrates an architecture for SAP Business Suite on SAP ASE that uses a Linux cluster to achieve high availability on both the application and the database side: The cluster managing high availability includes the following functions and features: Three host compute instances, two hosts each with a database instance and one with Fault Manager.",
+          "For example, the following are some HA and DR tools that you can use: Linux clustering across zones: For more information check the High-availability planning guide for SAP NetWeaver on Google Cloud ."
+        ]
+      },
+      {
+        "title": "\"Reference architecture: SAP S/4HANA on Google Cloud \\_|\\_ SAP on Google\\",
+        "url": "https://docs.cloud.google.com/sap/docs/architectures/sap-s4hana-on-gcp",
+        "source_id": "site-docs-reference",
+        "final_score": 178,
+        "relevance": "",
+        "evidence_snippets": [
+          "The following diagram shows an SAP S/4HANA architecture that uses a Linux cluster to achieve high availability on both the application and the SAP HANA database side: The following diagrams show an SAP HANA database that is highly available during both normal operation and a takeover operation: Normal operation: Takeover operation: To combine both high availability and disaster recovery for the database, you can use SAP HANA System Replication.",
+          "For example, the following are some HA and DR tools that you can use: Linux clustering across zones: For more information check the High-availability planning guide for SAP NetWeaver on Google Cloud and SAP HANA high-availability planning guide .",
+          "Distributed deployment with high availability In a distributed deployment with high availability, Linux clusters are set up across zones to help guard against component failures in a given region."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": []
+}

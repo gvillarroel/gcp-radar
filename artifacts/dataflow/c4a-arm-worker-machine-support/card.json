@@ -1,0 +1,86 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:32.732Z",
+  "source_step08_card": "data/step-08/current/products/dataflow/card.json",
+  "product_name": "Dataflow",
+  "product_slug": "dataflow",
+  "feature_name": "C4A Arm worker machine support",
+  "feature_slug": "c4a-arm-worker-machine-support",
+  "summary": "Dataflow supports the C4A Arm machine series for worker VMs to improve power efficiency and price-performance for many workloads.",
+  "extended_definition": "Dataflow supports the C4A Arm machine series for worker VMs to improve power efficiency and price-performance for many workloads.",
+  "lifecycle": {
+    "latest_feature_date": "2026-02-27",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 1,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "coverage_low",
+        "message": "The feature ended with coverage LOW.",
+        "suggested_steps": [
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dataflow/docs/guides/customize-monitoring-dashboard",
+      "https://docs.cloud.google.com/dataflow/docs/guides/job-builder-providers",
+      "https://docs.cloud.google.com/dataflow/docs/guides/job-builder-save-load-yaml"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Package and import transforms \\_|\\_ Cloud Dataflow \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataflow/docs/guides/job-builder-providers",
+        "source_id": "site-docs-reference-required-3",
+        "final_score": 52,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Data analytics Cloud Dataflow Guides Send feedback Package and import transforms Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "Customize the Dataflow monitoring dashboard \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataflow/docs/guides/customize-monitoring-dashboard",
+        "source_id": "site-docs-reference-required-3",
+        "final_score": 50,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To get the top 25 jobs, use a top K filter: topk(25, Sum the individual values. ) Write the complete query The following shows the complete query: topk(25, sum( max over time( dataflow googleapis com:job total vcpu time[1m]) / 3600 CPU PRICE ) by (job id) + sum( max over time( dataflow googleapis com:job total memory usage time[1m]) / 3600 MEMORY PRICE ) by (job id) + sum( max over time( dataflow googleapis com:job total streaming data processed[1m]) / 1000000000 SHUFFLE PRICE ) by (job id) + sum( max over time( dataflow googleapis com:job total pd usage time{storage type=\"HDD\"}[1m]) / 3600 STANDARD PD PRICE ) by (job id) + sum( max over time( dataflow googleapis com:job total pd usage time{storage type=\"SSD\"}[1m]) / 3600 SSD PD PRICE ) by (job id) ) Replace the following variables with values from the Dataflow pricing page for your region.",
+          "Map metric names to PromQL strings To use Monitoring metrics in PromQL queries, you must map the metric name to a PromQL string, as follows: Metric name PromQL string job/total vcpu time dataflow googleapis com:job total vcpu time job/total memory usage time dataflow googleapis com:job total memory usage time job/total streaming data processed dataflow googleapis com:job total streaming data processed job/total pd usage time dataflow googleapis com:job total pd usage time For more information, see Mapping Cloud Monitoring metrics to PromQL .",
+          "Formula: ((Standard PD time)[Bucket 1m] / Seconds per hour) Standard PD price sum( max over time( dataflow googleapis com:job total pd usage time{storage type=\"HDD\"}[1m] ) / 3600 STANDARD PD PRICE ) by (job id) Formula: ((SSD PD time)[Bucket 1m] / Seconds per hour) SSD PD price sum( max over time( dataflow googleapis com:job total pd usage time{storage type=\"SSD\"}[1m] ) / 3600 SSD PD PRICE ) by (job id) Summing the previous values gives the estimated cost per job."
+        ]
+      },
+      {
+        "title": "\"Save and load YAML job definitions with the job builder \\_|\\_ Cloud Dataflow\\",
+        "url": "https://docs.cloud.google.com/dataflow/docs/guides/job-builder-save-load-yaml",
+        "source_id": "site-docs-reference-required-3",
+        "final_score": 48,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Data analytics Cloud Dataflow Guides Send feedback Save and load YAML job definitions with the job builder Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": []
+}

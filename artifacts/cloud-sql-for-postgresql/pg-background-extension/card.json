@@ -1,0 +1,136 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:27.301Z",
+  "source_step08_card": "data/step-08/current/products/cloud-sql-for-postgresql/card.json",
+  "product_name": "Cloud SQL for PostgreSQL",
+  "product_slug": "cloud-sql-for-postgresql",
+  "feature_name": "pg_background extension",
+  "feature_slug": "pg-background-extension",
+  "summary": "The pg_background extension lets you run arbitrary commands in a background worker.",
+  "extended_definition": "The pg_background extension lets you run arbitrary commands in a background worker.",
+  "lifecycle": {
+    "latest_feature_date": "2024-02-07",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/sql/docs/postgres/build-context-gemini-cli",
+      "https://docs.cloud.google.com/sql/docs/postgres/create-instance",
+      "https://docs.cloud.google.com/sql/docs/postgres/troubleshooting"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Troubleshoot \\_|\\_ Cloud SQL for PostgreSQL \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/sql/docs/postgres/troubleshooting",
+        "source_id": "site-docs-root",
+        "final_score": 62,
+        "relevance": "",
+        "evidence_snippets": [
+          "Run the following commands: GRANT pg signal backend TO USERNAME ; Find the process ID of the blocked or stuck process: SELECT pid, username, state, query FROM pg stat activity ; Stop a running or idle process using these commands: SELECT pg cancel backend ( pid ) FROM pg stat activity WHERE username = ' USERNAME ' ; SELECT pg terminate backend ( pid ) FROM pg stat activity WHERE username = ' USERNAME ' ; Instance is nearing 100% consumption of transaction IDs.",
+          "From a terminal, connect to your database: gcloud sql connect INSTANCE NAME Run this command to create the extension: CREATE EXTENSION pgaudit ; Exit the database, and from a terminal run the following command: gcloud sql instances patch INSTANCE NAME \\ --database-flags = cloudsql.enable pgaudit = on,pgaudit.log = all Manage instances Issue Troubleshooting You want to find out what queries are running now.",
+          "No response to TCP keep-alive commands (either the client or the server isn't responsive, possibly overloaded) The database engine connection lifetime was exceeded and the server ends the connection."
+        ]
+      },
+      {
+        "title": "\"Build context sets using Gemini CLI \\_|\\_ Cloud SQL for PostgreSQL \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/sql/docs/postgres/build-context-gemini-cli",
+        "source_id": "site-iam-reference",
+        "final_score": 55,
+        "relevance": "",
+        "evidence_snippets": [
+          "Run the following commands in your terminal to authenticate: gcloud auth application-default login Configure the tools.yaml file The extension requires a database connection for context generation, which is supported by the MCP Toolbox and defined within the tools.yaml configuration file.",
+          "To update the DB Context Enrichment extension, run the following command: gemini extensions update mcp-db-context-enrichment To update the DB Context Enrichment extension or to replace the GEMINI API KEY , run the following command: gemini extensions config mcp-db-context-enrichment GEMINI API KEY Replace GEMINI API KEY with your Gemini API key.",
+          "To install the DB Context Enrichment extension, follow these steps: Install the DB Context Enrichment Gemini CLI extension: gemini extensions install https://github.com/GoogleCloudPlatform/db-context-enrichment Note: The extension requires a Gemini API key at installation to authenticate with the Gemini API and enable context generation."
+        ]
+      },
+      {
+        "title": "Create instances \\_|\\_ Cloud SQL for PostgreSQL \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/sql/docs/postgres/create-instance",
+        "source_id": "site-docs-root",
+        "final_score": 52,
+        "relevance": "",
+        "evidence_snippets": [
+          "Managed Connection Pooling lets you scale your workloads by optimizing resource utilization and connection latency Cloud SQL instances using pooling and multiplexing.",
+          "For Private IP-only instances, enabling Data API access lets authorized users connect and execute SQL statements from the public internet.",
+          "This integration lets you apply large language models (LLMs), which are hosted in Vertex AI, to a Cloud SQL for PostgreSQL database."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cloudsql.enable",
+      "github.com",
+      "pgaudit.log",
+      "text.You",
+      "tools.yaml"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/troubleshooting",
+        "https://docs.cloud.google.com/sql/docs/postgres/build-context-gemini-cli",
+        "https://docs.cloud.google.com/sql/docs/postgres/create-instance"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/troubleshooting",
+        "https://docs.cloud.google.com/sql/docs/postgres/build-context-gemini-cli",
+        "https://docs.cloud.google.com/sql/docs/postgres/create-instance"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/troubleshooting",
+        "https://docs.cloud.google.com/sql/docs/postgres/build-context-gemini-cli",
+        "https://docs.cloud.google.com/sql/docs/postgres/create-instance"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/troubleshooting",
+        "https://docs.cloud.google.com/sql/docs/postgres/build-context-gemini-cli",
+        "https://docs.cloud.google.com/sql/docs/postgres/create-instance"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/troubleshooting",
+        "https://docs.cloud.google.com/sql/docs/postgres/build-context-gemini-cli",
+        "https://docs.cloud.google.com/sql/docs/postgres/create-instance"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/troubleshooting",
+        "https://docs.cloud.google.com/sql/docs/postgres/build-context-gemini-cli",
+        "https://docs.cloud.google.com/sql/docs/postgres/create-instance"
+      ]
+    }
+  ]
+}

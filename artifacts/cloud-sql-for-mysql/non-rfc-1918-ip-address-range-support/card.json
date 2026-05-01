@@ -1,0 +1,143 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:26.812Z",
+  "source_step08_card": "data/step-08/current/products/cloud-sql-for-mysql/card.json",
+  "product_name": "Cloud SQL for MySQL",
+  "product_slug": "cloud-sql-for-mysql",
+  "feature_name": "Non-RFC 1918 IP address range support",
+  "feature_slug": "non-rfc-1918-ip-address-range-support",
+  "summary": "Cloud SQL supports creating and connecting to instances and replicas in non-RFC 1918 IP address ranges, including privately used public IP addresses.",
+  "extended_definition": "Cloud SQL supports creating and connecting to instances and replicas in non-RFC 1918 IP address ranges, including privately used public IP addresses.",
+  "lifecycle": {
+    "latest_feature_date": "2023-07-06",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/sql/docs/debugging-connectivity",
+      "https://docs.cloud.google.com/sql/docs/mysql/authorize-networks",
+      "https://docs.cloud.google.com/sql/docs/mysql/connection-org-policy"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Debugging connection issues \\_|\\_ Cloud SQL \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/sql/docs/debugging-connectivity",
+        "source_id": "site-docs-root",
+        "final_score": 111,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The limit flag is an optional parameter that indicates the maximum number of entries to return. gcloud logging read \"projects/ PROJECT ID /logs/cloudsql.googleapis.com/mysql-general.log\" \\ --limit = 10 gcloud logging read \"projects/ PROJECT ID /logs/cloudsql.googleapis.com/postgres.log\" \\ --limit = 10 Private IP addresses Connections to a Cloud SQL instance using a private IP address are automatically authorized for RFC 1918 address ranges .",
+          "Connections to a Cloud SQL instance using a private IP address are automatically authorized for RFC 1918 address ranges .",
+          "Non-RFC 1918 address ranges must be configured in Cloud SQL as authorized networks ."
+        ]
+      },
+      {
+        "title": "\"Cloud SQL organization policies \\_|\\_ Cloud SQL for MySQL \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/sql/docs/mysql/connection-org-policy",
+        "source_id": "site-docs-root",
+        "final_score": 101,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Non-RFC 1918 private IP addresses Connections to a Cloud SQL instance using a private IP address are automatically authorized for RFC 1918 address ranges .",
+          "You must configure non-RFC 1918 address ranges as authorized networks .",
+          "By default, you can add Authorized Networks to Cloud SQL instances. constraints/sql.restrictAuthorizedNetworks Allowed Restrictions for connection organization policies When you set the organization policy for each project, you need to determine if any one of the following apply to your project: Read replicas public IP conflicts Incompatibility using gcloud CLI sql connect Google Cloud hosted services access MySQL failover replica public IP conflicts Non-RFC 1918 private IP addresses Read replicas public IP address conflicts Cloud SQL read replicas connect to the primary instance over the non-proxied database connection."
+        ]
+      },
+      {
+        "title": "\"Authorize with authorized networks \\_|\\_ Cloud SQL for MySQL \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/sql/docs/mysql/authorize-networks",
+        "source_id": "site-docs-reference-required-5",
+        "final_score": 97,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Your client application is connecting directly to a Cloud SQL instance on its private IP address, and your client's IP address is a non-RFC 1918 address The IP address can be either a single endpoint or consist of a range in CIDR notation .",
+          "These are automatically and implicitly included in the authorized networks by Cloud SQL 192.168.0.0/16 RFC 1918 address range.",
+          "These are automatically and implicitly included in the authorized networks by Cloud SQL 172.16.0.0/12 RFC 1918 address range."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cloudsql.googleapis.com",
+      "general.log",
+      "postgres.log",
+      "sql.restrictAuthorizedNetworks"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/debugging-connectivity",
+        "https://docs.cloud.google.com/sql/docs/mysql/connection-org-policy",
+        "https://docs.cloud.google.com/sql/docs/mysql/authorize-networks"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/debugging-connectivity",
+        "https://docs.cloud.google.com/sql/docs/mysql/connection-org-policy",
+        "https://docs.cloud.google.com/sql/docs/mysql/authorize-networks"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/debugging-connectivity",
+        "https://docs.cloud.google.com/sql/docs/mysql/connection-org-policy",
+        "https://docs.cloud.google.com/sql/docs/mysql/authorize-networks"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/debugging-connectivity",
+        "https://docs.cloud.google.com/sql/docs/mysql/connection-org-policy",
+        "https://docs.cloud.google.com/sql/docs/mysql/authorize-networks"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/debugging-connectivity",
+        "https://docs.cloud.google.com/sql/docs/mysql/connection-org-policy",
+        "https://docs.cloud.google.com/sql/docs/mysql/authorize-networks"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/debugging-connectivity",
+        "https://docs.cloud.google.com/sql/docs/mysql/connection-org-policy",
+        "https://docs.cloud.google.com/sql/docs/mysql/authorize-networks"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/debugging-connectivity",
+        "https://docs.cloud.google.com/sql/docs/mysql/connection-org-policy",
+        "https://docs.cloud.google.com/sql/docs/mysql/authorize-networks"
+      ]
+    }
+  ]
+}

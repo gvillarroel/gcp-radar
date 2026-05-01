@@ -1,0 +1,153 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:33.243Z",
+  "source_step08_card": "data/step-08/current/products/dataproc/card.json",
+  "product_name": "Dataproc",
+  "product_slug": "dataproc",
+  "feature_name": "dataproc_cluster audit log resource type",
+  "feature_slug": "dataproc-cluster-audit-log-resource-type",
+  "summary": "The dataproc_cluster audit log resource type was deprecated and replaced by cloud_dataproc_cluster for Cloud Audit Logs; deprecated on 2017-03-17.",
+  "extended_definition": "The dataproc_cluster audit log resource type was deprecated and replaced by cloud_dataproc_cluster for Cloud Audit Logs; deprecated on 2017-03-17.",
+  "lifecycle": {
+    "latest_feature_date": "2017-03-17",
+    "deprecation_date": "2017-03-17",
+    "status": "deprecation_noted"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dataproc-metastore/docs/audit-logging",
+      "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.cluster_controller.ClusterControllerAsyncClient",
+      "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.cluster_controller.ClusterControllerClient"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Class ClusterControllerClient (5.26.0) \\_|\\_ Python client libraries \\_\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.cluster_controller.ClusterControllerClient",
+        "source_id": "site-python-reference",
+        "final_score": 140,
+        "relevance": "",
+        "evidence_snippets": [
+          "UpdateClusterRequest ( project id=\"project id value\", region=\"region value\", cluster name=\"cluster name value\", cluster=cluster, ) Make the request operation = client. update cluster (request=request) print(\"Waiting for operation to complete...\") response = operation.result() Handle the response print(response) Parameters Name Description request Union[ google.cloud.dataproc v1.types.UpdateClusterRequest , dict] The request object.",
+          "DiagnoseClusterRequest ( project id=\"project id value\", region=\"region value\", cluster name=\"cluster name value\", ) Make the request operation = client. diagnose cluster (request=request) print(\"Waiting for operation to complete...\") response = operation.result() Handle the response print(response) Parameters Name Description request Union[ google.cloud.dataproc v1.types.DiagnoseClusterRequest , dict] The request object.",
+          "DeleteClusterRequest ( project id=\"project id value\", region=\"region value\", cluster name=\"cluster name value\", ) Make the request operation = client. delete cluster (request=request) print(\"Waiting for operation to complete...\") response = operation.result() Handle the response print(response) Parameters Name Description request Union[ google.cloud.dataproc v1.types.DeleteClusterRequest , dict] The request object."
+        ]
+      },
+      {
+        "title": "\"Class ClusterControllerAsyncClient (5.26.0) \\_|\\_ Python client libraries\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.cluster_controller.ClusterControllerAsyncClient",
+        "source_id": "site-python-reference",
+        "final_score": 132,
+        "relevance": "",
+        "evidence_snippets": [
+          "UpdateClusterRequest ( project id=\"project id value\", region=\"region value\", cluster name=\"cluster name value\", cluster=cluster, ) Make the request operation = client. update cluster (request=request) print(\"Waiting for operation to complete...\") response = (await operation).result() Handle the response print(response) Parameters Name Description request Optional[Union[ google.cloud.dataproc v1.types.UpdateClusterRequest , dict]] The request object.",
+          "DiagnoseClusterRequest ( project id=\"project id value\", region=\"region value\", cluster name=\"cluster name value\", ) Make the request operation = client. diagnose cluster (request=request) print(\"Waiting for operation to complete...\") response = (await operation).result() Handle the response print(response) Parameters Name Description request Optional[Union[ google.cloud.dataproc v1.types.DiagnoseClusterRequest , dict]] The request object.",
+          "DeleteClusterRequest ( project id=\"project id value\", region=\"region value\", cluster name=\"cluster name value\", ) Make the request operation = client. delete cluster (request=request) print(\"Waiting for operation to complete...\") response = (await operation).result() Handle the response print(response) Parameters Name Description request Optional[Union[ google.cloud.dataproc v1.types.DeleteClusterRequest , dict]] The request object."
+        ]
+      },
+      {
+        "title": "Dataproc Metastore audit logging \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataproc-metastore/docs/audit-logging",
+        "source_id": "site-docs-root-2",
+        "final_score": 132,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Permission type Methods ADMIN READ google.cloud.metastore.v1.DataprocMetastore.GetBackup google.cloud.metastore.v1.DataprocMetastore.GetMetadataImport google.cloud.metastore.v1.DataprocMetastore.GetService google.cloud.metastore.v1.DataprocMetastore.ListBackups google.cloud.metastore.v1.DataprocMetastore.ListMetadataImports google.cloud.metastore.v1.DataprocMetastore.ListServices google.cloud.metastore.v1.DataprocMetastoreFederation.GetFederation google.cloud.metastore.v1.DataprocMetastoreFederation.ListFederations google.cloud.metastore.v1alpha.DataprocMetastore.GetBackup google.cloud.metastore.v1alpha.DataprocMetastore.GetMetadataImport google.cloud.metastore.v1alpha.DataprocMetastore.GetService google.cloud.metastore.v1alpha.DataprocMetastore.ListBackups google.cloud.metastore.v1alpha.DataprocMetastore.ListMetadataImports google.cloud.metastore.v1alpha.DataprocMetastore.ListServices google.cloud.metastore.v1alpha.DataprocMetastoreFederation.GetFederation google.cloud.metastore.v1alpha.DataprocMetastoreFederation.ListFederations google.cloud.metastore.v1beta.DataprocMetastore.GetBackup google.cloud.metastore.v1beta.DataprocMetastore.GetMetadataImport google.cloud.metastore.v1beta.DataprocMetastore.GetService google.cloud.metastore.v1beta.DataprocMetastore.ListBackups google.cloud.metastore.v1beta.DataprocMetastore.ListMetadataImports google.cloud.metastore.v1beta.DataprocMetastore.ListServices google.cloud.metastore.v1beta.DataprocMetastoreFederation.GetFederation google.cloud.metastore.v1beta.DataprocMetastoreFederation.ListFederations GetIamPolicy google.longrunning.Operations.GetOperation google.longrunning.Operations.ListOperations ADMIN WRITE google.cloud.metastore.v1.DataprocMetastore.CreateBackup (LRO) google.cloud.metastore.v1.DataprocMetastore.CreateService (LRO) google.cloud.metastore.v1.DataprocMetastore.DeleteBackup (LRO) google.cloud.metastore.v1.DataprocMetastore.DeleteService (LRO) google.cloud.metastore.v1.DataprocMetastore.UpdateMetadataImport (LRO) google.cloud.metastore.v1.DataprocMetastore.UpdateService (LRO) google.cloud.metastore.v1.DataprocMetastoreFederation.CreateFederation (LRO) google.cloud.metastore.v1.DataprocMetastoreFederation.DeleteFederation (LRO) google.cloud.metastore.v1.DataprocMetastoreFederation.UpdateFederation (LRO) google.cloud.metastore.v1alpha.DataprocMetastore.CreateBackup (LRO) google.cloud.metastore.v1alpha.DataprocMetastore.CreateService (LRO) google.cloud.metastore.v1alpha.DataprocMetastore.DeleteBackup (LRO) google.cloud.metastore.v1alpha.DataprocMetastore.DeleteService (LRO) google.cloud.metastore.v1alpha.DataprocMetastore.RemoveIamPolicy google.cloud.metastore.v1alpha.DataprocMetastore.UpdateMetadataImport (LRO) google.cloud.metastore.v1alpha.DataprocMetastore.UpdateService (LRO) google.cloud.metastore.v1alpha.DataprocMetastoreFederation.CreateFederation (LRO) google.cloud.metastore.v1alpha.DataprocMetastoreFederation.DeleteFederation (LRO) google.cloud.metastore.v1alpha.DataprocMetastoreFederation.UpdateFederation (LRO) google.cloud.metastore.v1beta.DataprocMetastore.CreateService (LRO) google.cloud.metastore.v1beta.DataprocMetastore.DeleteBackup (LRO) google.cloud.metastore.v1beta.DataprocMetastore.DeleteService (LRO) google.cloud.metastore.v1beta.DataprocMetastore.RemoveIamPolicy google.cloud.metastore.v1beta.DataprocMetastore.UpdateMetadataImport (LRO) google.cloud.metastore.v1beta.DataprocMetastore.UpdateService (LRO) google.cloud.metastore.v1beta.DataprocMetastoreFederation.CreateFederation (LRO) google.cloud.metastore.v1beta.DataprocMetastoreFederation.DeleteFederation (LRO) google.cloud.metastore.v1beta.DataprocMetastoreFederation.UpdateFederation (LRO) SetIamPolicy google.longrunning.Operations.DeleteOperation DATA READ google.cloud.metastore.v1.DataprocMetastore.ExportMetadata (LRO) google.cloud.metastore.v1.DataprocMetastore.QueryMetadata (LRO) google.cloud.metastore.v1alpha.DataprocMetastore.ExportMetadata (LRO) google.cloud.metastore.v1alpha.DataprocMetastore.QueryMetadata (LRO) google.cloud.metastore.v1beta.DataprocMetastore.ExportMetadata (LRO) google.cloud.metastore.v1beta.DataprocMetastore.QueryMetadata (LRO) DATA WRITE google.cloud.metastore.v1.DataprocMetastore.AlterMetadataResourceLocation (LRO) google.cloud.metastore.v1.DataprocMetastore.AlterTableProperties (LRO) google.cloud.metastore.v1.DataprocMetastore.CreateMetadataImport (LRO) google.cloud.metastore.v1.DataprocMetastore.MoveTableToDatabase (LRO) google.cloud.metastore.v1.DataprocMetastore.RestoreService (LRO) google.cloud.metastore.v1alpha.DataprocMetastore.AlterMetadataResourceLocation (LRO) google.cloud.metastore.v1alpha.DataprocMetastore.AlterTableProperties (LRO) google.cloud.metastore.v1alpha.DataprocMetastore.CreateMetadataImport (LRO) google.cloud.metastore.v1alpha.DataprocMetastore.MoveTableToDatabase (LRO) google.cloud.metastore.v1alpha.DataprocMetastore.RestoreService (LRO) google.cloud.metastore.v1beta.DataprocMetastore.AlterMetadataResourceLocation (LRO) google.cloud.metastore.v1beta.DataprocMetastore.AlterTableProperties (LRO) google.cloud.metastore.v1beta.DataprocMetastore.MoveTableToDatabase (LRO) google.cloud.metastore.v1beta.DataprocMetastore.RestoreService (LRO) API interface audit logs For information about how and which permissions are evaluated for each method, see the Identity and Access Management documentation for Dataproc Metastore. google.cloud.metastore.v1.DataprocMetastore The following audit logs are associated with methods belonging to google.cloud.metastore.v1.DataprocMetastore .",
+          "AlterMetadataResourceLocation Method : google.cloud.metastore.v1alpha.DataprocMetastore.AlterMetadataResourceLocation Audit log type : Data access Permissions : metastore.services.mutateMetadata - DATA WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName=\"google.cloud.metastore.v1alpha.DataprocMetastore.AlterMetadataResourceLocation\" AlterTableProperties Method : google.cloud.metastore.v1alpha.DataprocMetastore.AlterTableProperties Audit log type : Data access Permissions : metastore.services.mutateMetadata - DATA WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName=\"google.cloud.metastore.v1alpha.DataprocMetastore.AlterTableProperties\" CreateBackup Method : google.cloud.metastore.v1alpha.DataprocMetastore.CreateBackup Audit log type : Admin activity Permissions : metastore.backups.create - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName=\"google.cloud.metastore.v1alpha.DataprocMetastore.CreateBackup\" CreateMetadataImport Method : google.cloud.metastore.v1alpha.DataprocMetastore.CreateMetadataImport Audit log type : Data access Permissions : metastore.imports.create - DATA WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName=\"google.cloud.metastore.v1alpha.DataprocMetastore.CreateMetadataImport\" CreateService Method : google.cloud.metastore.v1alpha.DataprocMetastore.CreateService Audit log type : Admin activity Permissions : metastore.services.create - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName=\"google.cloud.metastore.v1alpha.DataprocMetastore.CreateService\" DeleteBackup Method : google.cloud.metastore.v1alpha.DataprocMetastore.DeleteBackup Audit log type : Admin activity Permissions : metastore.backups.delete - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName=\"google.cloud.metastore.v1alpha.DataprocMetastore.DeleteBackup\" DeleteService Method : google.cloud.metastore.v1alpha.DataprocMetastore.DeleteService Audit log type : Admin activity Permissions : metastore.services.delete - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName=\"google.cloud.metastore.v1alpha.DataprocMetastore.DeleteService\" ExportMetadata Method : google.cloud.metastore.v1alpha.DataprocMetastore.ExportMetadata Audit log type : Data access Permissions : metastore.services.export - DATA READ Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName=\"google.cloud.metastore.v1alpha.DataprocMetastore.ExportMetadata\" GetBackup Method : google.cloud.metastore.v1alpha.DataprocMetastore.GetBackup Audit log type : Data access Permissions : metastore.backups.get - ADMIN READ Method is a long-running or streaming operation : No.",
+          "AlterMetadataResourceLocation Method : google.cloud.metastore.v1.DataprocMetastore.AlterMetadataResourceLocation Audit log type : Data access Permissions : metastore.services.mutateMetadata - DATA WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName=\"google.cloud.metastore.v1.DataprocMetastore.AlterMetadataResourceLocation\" AlterTableProperties Method : google.cloud.metastore.v1.DataprocMetastore.AlterTableProperties Audit log type : Data access Permissions : metastore.services.mutateMetadata - DATA WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName=\"google.cloud.metastore.v1.DataprocMetastore.AlterTableProperties\" CreateBackup Method : google.cloud.metastore.v1.DataprocMetastore.CreateBackup Audit log type : Admin activity Permissions : metastore.backups.create - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName=\"google.cloud.metastore.v1.DataprocMetastore.CreateBackup\" CreateMetadataImport Method : google.cloud.metastore.v1.DataprocMetastore.CreateMetadataImport Audit log type : Data access Permissions : metastore.imports.create - DATA WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName=\"google.cloud.metastore.v1.DataprocMetastore.CreateMetadataImport\" CreateService Method : google.cloud.metastore.v1.DataprocMetastore.CreateService Audit log type : Admin activity Permissions : metastore.services.create - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName=\"google.cloud.metastore.v1.DataprocMetastore.CreateService\" DeleteBackup Method : google.cloud.metastore.v1.DataprocMetastore.DeleteBackup Audit log type : Admin activity Permissions : metastore.backups.delete - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName=\"google.cloud.metastore.v1.DataprocMetastore.DeleteBackup\" DeleteService Method : google.cloud.metastore.v1.DataprocMetastore.DeleteService Audit log type : Admin activity Permissions : metastore.services.delete - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName=\"google.cloud.metastore.v1.DataprocMetastore.DeleteService\" ExportMetadata Method : google.cloud.metastore.v1.DataprocMetastore.ExportMetadata Audit log type : Data access Permissions : metastore.services.export - DATA READ Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName=\"google.cloud.metastore.v1.DataprocMetastore.ExportMetadata\" GetBackup Method : google.cloud.metastore.v1.DataprocMetastore.GetBackup Audit log type : Data access Permissions : metastore.backups.get - ADMIN READ Method is a long-running or streaming operation : No."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.cloud.dataproc.v1.AutoscalingPolicy.ClusterType",
+      "metastore.backups.create",
+      "metastore.backups.delete",
+      "metastore.backups.get",
+      "metastore.imports.create",
+      "metastore.services.create",
+      "metastore.services.delete",
+      "metastore.services.export",
+      "metastore.services.mutateMetadata",
+      "operation.result",
+      "v1.types.DeleteClusterRequest",
+      "v1.types.DiagnoseClusterRequest",
+      "v1.types.StartClusterRequest",
+      "v1.types.UpdateClusterRequest"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc-metastore/docs/audit-logging",
+        "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.cluster_controller.ClusterControllerClient",
+        "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.cluster_controller.ClusterControllerAsyncClient"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc-metastore/docs/audit-logging",
+        "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.cluster_controller.ClusterControllerClient",
+        "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.cluster_controller.ClusterControllerAsyncClient"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc-metastore/docs/audit-logging",
+        "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.cluster_controller.ClusterControllerClient",
+        "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.cluster_controller.ClusterControllerAsyncClient"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc-metastore/docs/audit-logging",
+        "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.cluster_controller.ClusterControllerClient",
+        "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.cluster_controller.ClusterControllerAsyncClient"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc-metastore/docs/audit-logging",
+        "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.cluster_controller.ClusterControllerClient",
+        "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.cluster_controller.ClusterControllerAsyncClient"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc-metastore/docs/audit-logging",
+        "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.cluster_controller.ClusterControllerClient",
+        "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.cluster_controller.ClusterControllerAsyncClient"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc-metastore/docs/audit-logging",
+        "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.cluster_controller.ClusterControllerClient",
+        "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.cluster_controller.ClusterControllerAsyncClient"
+      ]
+    }
+  ]
+}

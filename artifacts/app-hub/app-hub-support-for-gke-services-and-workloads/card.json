@@ -1,0 +1,210 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:17.102Z",
+  "source_step08_card": "data/step-08/current/products/app-hub/card.json",
+  "product_name": "App Hub",
+  "product_slug": "app-hub",
+  "feature_name": "App Hub support for GKE services and workloads",
+  "feature_slug": "app-hub-support-for-gke-services-and-workloads",
+  "summary": "App Hub now supports Google Kubernetes Engine (GKE) services and workloads in Preview.",
+  "extended_definition": "App Hub now supports Google Kubernetes Engine (GKE) services and workloads in Preview.",
+  "lifecycle": {
+    "latest_feature_date": "2025-01-23",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 2,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "coverage_low",
+        "message": "The feature ended with coverage LOW.",
+        "suggested_steps": [
+          "step-06"
+        ]
+      },
+      {
+        "severity": "warn",
+        "rule": "support_matrix_only_evidence",
+        "message": "The feature is backed only by broad support-matrix style evidence, not a dedicated page for the supported target.",
+        "suggested_steps": [
+          "step-02",
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/app-hub/docs/global-regional-applications",
+      "https://docs.cloud.google.com/app-hub/docs/monitor-applications",
+      "https://docs.cloud.google.com/app-hub/docs/roles-permissions"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Monitor application health and performance \\_|\\_ App Hub \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/app-hub/docs/monitor-applications",
+        "source_id": "site-docs-root-2",
+        "final_score": 46,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "When you register infrastructure resources as services or workloads in an application, using either App Hub or Application Design Center, Application Monitoring automatically provides predefined dashboards that display key log, metric, and trace data in an application-centric context.",
+          "Because Application Monitoring understands the logical grouping of your application's services and workloads, it automatically enriches all telemetry with application-specific labels .",
+          "For infrastructure supported by Application Monitoring , the registered services and workloads provide the telemetry needed for the predefined dashboards."
+        ]
+      },
+      {
+        "title": "App Hub IAM roles and permissions \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/app-hub/docs/roles-permissions",
+        "source_id": "site-docs-root",
+        "final_score": 44,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "App Hub permissions The following table lists the permissions that each App Hub IAM role has: App Hub Admin App Hub Editor App Hub Viewer Clear all App Hub Admin ( roles/ apphub.admin ) Full access to App Hub resources. apphub. apphub.applications.create apphub.applications.delete apphub.applications.get apphub. applications. getIamPolicy apphub.applications.list apphub. applications. setIamPolicy apphub.applications.update apphub.boundaries.attach apphub.boundaries.get apphub.boundaries.update apphub.discoveredServices.get apphub.discoveredServices.list apphub. discoveredServices. register apphub.discoveredWorkloads.get apphub. discoveredWorkloads. list apphub. discoveredWorkloads. register apphub. extendedMetadataSchemas. get apphub. extendedMetadataSchemas. list apphub.locations.get apphub.locations.list apphub.operations.cancel apphub.operations.delete apphub.operations.get apphub.operations.list apphub. serviceProjectAttachments. attach apphub. serviceProjectAttachments. create apphub. serviceProjectAttachments. delete apphub. serviceProjectAttachments. detach apphub. serviceProjectAttachments. get apphub. serviceProjectAttachments. list apphub. serviceProjectAttachments. lookup apphub.services.create apphub.services.delete apphub.services.get apphub.services.list apphub.services.update apphub.workloads.create apphub.workloads.delete apphub.workloads.get apphub.workloads.list apphub.workloads.update resourcemanager.projects.get resourcemanager.projects.list App Hub Editor ( roles/ apphub.editor ) Edit access to App Hub resources. apphub.applications.create apphub.applications.delete apphub.applications.get apphub.applications.list apphub.applications.update apphub.boundaries.get apphub.discoveredServices. apphub.discoveredServices.get apphub.discoveredServices.list apphub. discoveredServices. register apphub.discoveredWorkloads. apphub.discoveredWorkloads.get apphub. discoveredWorkloads. list apphub. discoveredWorkloads. register apphub. extendedMetadataSchemas. apphub. extendedMetadataSchemas. get apphub. extendedMetadataSchemas. list apphub.locations. apphub.locations.get apphub.locations.list apphub.operations. apphub.operations.cancel apphub.operations.delete apphub.operations.get apphub.operations.list apphub. serviceProjectAttachments. lookup apphub.services. apphub.services.create apphub.services.delete apphub.services.get apphub.services.list apphub.services.update apphub.workloads. apphub.workloads.create apphub.workloads.delete apphub.workloads.get apphub.workloads.list apphub.workloads.update resourcemanager.projects.get resourcemanager.projects.list App Hub Viewer ( roles/ apphub.viewer ) View access to App Hub resources. apphub.applications.get apphub.applications.list apphub.boundaries.get apphub.discoveredServices.get apphub.discoveredServices.list apphub.discoveredWorkloads.get apphub. discoveredWorkloads. list apphub. extendedMetadataSchemas. apphub. extendedMetadataSchemas. get apphub. extendedMetadataSchemas. list apphub.locations. apphub.locations.get apphub.locations.list apphub.operations.get apphub.operations.list apphub. serviceProjectAttachments. lookup apphub.services.get apphub.services.list apphub.workloads.get apphub.workloads.list resourcemanager.projects.get resourcemanager.projects.list For more information about IAM permissions, see Find the right predefined roles and IAM roles and permissions index .",
+          "App Hub roles The following table describes App Hub IAM roles and their typical responsibilities: Role Description Purpose App Hub Admin Use projects or folders to create applications, attach service projects to a host project, update application attributes, register services and workloads, update service and workload attributes, and delegate application control to the App Hub Editor.",
+          "App Hub Editor Create and update applications, register and unregister services and workloads, and update attributes."
+        ]
+      },
+      {
+        "title": "Global and regional applications \\_|\\_ App Hub \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/app-hub/docs/global-regional-applications",
+        "source_id": "site-docs-root-2",
+        "final_score": 44,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Global and regional applications are defined as follows: Global applications: Functionally group services and workloads that are globally distributed or spread across multiple Google Cloud regions.",
+          "A well-planned hierarchy that aligns with your application management boundaries, whether regional or global, simplifies the grouping and management of services and workloads in applications.",
+          "For example, you can include a regional Application Load Balancer service and its backend workloads, all located in us-central1 ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "explicit",
+    "explicit_roles": [
+      "roles/accessapproval.admin",
+      "roles/accessapproval.approver",
+      "roles/accessapproval.configEditor"
+    ],
+    "explicit_permissions": [
+      {
+        "permission": "resourcemanager.projects.get",
+        "group": "resourcemanager",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver",
+          "roles/accessapproval.configEditor"
+        ]
+      },
+      {
+        "permission": "resourcemanager.projects.list",
+        "group": "resourcemanager",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver",
+          "roles/accessapproval.configEditor"
+        ]
+      }
+    ],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "apphub.admin",
+      "apphub.applications.create",
+      "apphub.applications.delete",
+      "apphub.applications.get",
+      "apphub.applications.list",
+      "apphub.applications.update",
+      "apphub.boundaries.attach",
+      "apphub.boundaries.get",
+      "apphub.boundaries.update",
+      "apphub.discoveredServices",
+      "apphub.discoveredServices.get",
+      "apphub.discoveredServices.list",
+      "apphub.discoveredWorkloads",
+      "apphub.discoveredWorkloads.get",
+      "apphub.editor",
+      "apphub.locations",
+      "apphub.locations.get",
+      "apphub.locations.list",
+      "apphub.operations",
+      "apphub.operations.cancel",
+      "apphub.operations.delete",
+      "apphub.operations.get",
+      "apphub.operations.list",
+      "apphub.services",
+      "apphub.services.create",
+      "apphub.services.delete",
+      "apphub.services.get",
+      "apphub.services.list",
+      "apphub.services.update",
+      "apphub.viewer",
+      "apphub.workloads",
+      "apphub.workloads.create",
+      "apphub.workloads.delete",
+      "apphub.workloads.get",
+      "apphub.workloads.list",
+      "apphub.workloads.update"
+    ],
+    "missing_inventory_roles": [
+      "roles/apphub.editor"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/app-hub/docs/global-regional-applications",
+        "https://docs.cloud.google.com/app-hub/docs/monitor-applications",
+        "https://docs.cloud.google.com/app-hub/docs/roles-permissions"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/app-hub/docs/global-regional-applications",
+        "https://docs.cloud.google.com/app-hub/docs/monitor-applications",
+        "https://docs.cloud.google.com/app-hub/docs/roles-permissions"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/app-hub/docs/global-regional-applications",
+        "https://docs.cloud.google.com/app-hub/docs/monitor-applications",
+        "https://docs.cloud.google.com/app-hub/docs/roles-permissions"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/app-hub/docs/global-regional-applications",
+        "https://docs.cloud.google.com/app-hub/docs/monitor-applications",
+        "https://docs.cloud.google.com/app-hub/docs/roles-permissions"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/app-hub/docs/global-regional-applications",
+        "https://docs.cloud.google.com/app-hub/docs/monitor-applications",
+        "https://docs.cloud.google.com/app-hub/docs/roles-permissions"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/app-hub/docs/global-regional-applications",
+        "https://docs.cloud.google.com/app-hub/docs/monitor-applications",
+        "https://docs.cloud.google.com/app-hub/docs/roles-permissions"
+      ]
+    }
+  ]
+}

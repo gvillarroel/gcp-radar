@@ -1,0 +1,114 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:32.732Z",
+  "source_step08_card": "data/step-08/current/products/dataflow/card.json",
+  "product_name": "Dataflow",
+  "product_slug": "dataflow",
+  "feature_name": "Parameterized queries in Dataflow SQL UI",
+  "feature_slug": "parameterized-queries-in-dataflow-sql-ui",
+  "summary": "The Dataflow SQL UI supports running parameterized SQL queries.",
+  "extended_definition": "The Dataflow SQL UI supports running parameterized SQL queries.",
+  "lifecycle": {
+    "latest_feature_date": "2020-04-15",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dataflow/docs/guides/installing-beam-sdk",
+      "https://docs.cloud.google.com/dataflow/docs/guides/migrate-java-1-to-2",
+      "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/cloud-spanner-change-streams-to-bigquery"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Spanner change streams to BigQuery template \\_|\\_ Cloud Dataflow \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/cloud-spanner-change-streams-to-bigquery",
+        "source_id": "site-api-reference",
+        "final_score": 67,
+        "relevance": "",
+        "evidence_snippets": [
+          "Specifically:\\n\" + \" - For Cloud Spanner JSON type, the order of the members of an object is\" + \" lexicographically ordered, but there is no such guarantee for BigQuery JSON type.\\n\" + \" - Cloud Spanner supports nanoseconds TIMESTAMP type, BigQuery only supports\" + \" microseconds TIMESTAMP type.\\n\" , \"Learn more about <a href=\\\"https://cloud.google.com/spanner/docs/change-streams\\\">change\" + \" streams</a>, <a\" + \" href=\\\"https://cloud.google.com/spanner/docs/change-streams/use-dataflow\\\">how to\" + \" build change streams Dataflow pipelines</a>, and <a\" + \" href=\\\"https://cloud.google.com/spanner/docs/change-streams/use-dataflow#best practices\\\">best\" + \" practices</a>.\" }, optionsClass = SpannerChangeStreamsToBigQueryOptions . class , flexContainerName = \"googlecloud-to-googlecloud\" , documentation = \"https://cloud.google.com/dataflow/docs/guides/templates/provided/cloud-spanner-change-streams-to-bigquery\" , contactInformation = \"https://cloud.google.com/support\" , requirements = { \"The Cloud Spanner instance must exist prior to running the pipeline.\" , \"The Cloud Spanner database must exist prior to running the pipeline.\" , \"The Cloud Spanner metadata instance must exist prior to running the pipeline.\" , \"The Cloud Spanner metadata database must exist prior to running the pipeline.\" , \"The Cloud Spanner change stream must exist prior to running the pipeline.\" , \"The BigQuery dataset must exist prior to running the pipeline.\" }, streaming = true , supportsExactlyOnce = true , supportsAtLeastOnce = true ) public final class SpannerChangeStreamsToBigQuery { / String/String Coder for {@link FailsafeElement}. / public static final FailsafeElementCoder<String , String > FAILSAFE ELEMENT CODER = FailsafeElementCoder . of ( StringUtf8Coder . of (), StringUtf8Coder . of ()); private static final Logger LOG = LoggerFactory . getLogger ( SpannerChangeStreamsToBigQuery . class ); // Max number of deadletter queue retries. private static final int DLQ MAX RETRIES = 5 ; private static final String USE RUNNER V2 EXPERIMENT = \"use runner v2\" ; / Main entry point for executing the pipeline. @param args The command-line arguments to the pipeline. / public static void main ( String [] args ) { UncaughtExceptionLogger . register (); LOG . info ( \"Starting to replicate change records from Spanner change streams to BigQuery\" ); SpannerChangeStreamsToBigQueryOptions options = PipelineOptionsFactory . fromArgs ( args ) . withValidation () . as ( SpannerChangeStreamsToBigQueryOptions . class ); run ( options ); } private static void validateOptions ( SpannerChangeStreamsToBigQueryOptions options ) { if ( options . getDlqRetryMinutes () < = 0 ) { throw new IllegalArgumentException ( \"dlqRetryMinutes must be positive.\" ); } if ( options . getBigQueryChangelogTableNameTemplate () . equals ( BigQueryUtils .",
+          "Mod changeStreamsMod : input . getMods ()) { Mod mod = new Mod ( changeStreamsMod . getKeysJson (), changeStreamsMod . getNewValuesJson (), input . getCommitTimestamp (), input . getServerTransactionId (), input . isLastRecordInTransactionInPartition (), input . getRecordSequence (), input . getTableName (), input . getRowType (). stream (). map ( ModColumnType :: new ). collect ( Collectors . toList ()), input . getModType (), input . getValueCaptureType (), input . getNumberOfRecordsInTransaction (), input . getNumberOfPartitionsInTransaction ()); String modJsonString ; try { modJsonString = mod . toJson (); } catch ( IOException e ) { // Ignore exception and print bad format. modJsonString = String . format ( \"\\\"%s\\\"\" , input ); } receiver . output ( modJsonString ); } } } } Production considerations When running the Spanner Change Streams to BigQuery template in a production environment, consider the following best practices to help ensure reliability and prevent data loss: Worker provisioning and scaling Set maxNumWorkers adequately: Insufficient Dataflow workers can cause the pipeline to fall behind in processing change stream data.",
+          "For the NEW ROW value capture type, the template is more\" + \" efficient, because the data change record captures the full new row including columns\" + \" that are not updated in UPDATEs, and the template does not need to do a stale read.\\n\" + \"- You can minimize network latency and network transport costs by running the Dataflow\" + \" job from the same region as your Cloud Spanner instance or BigQuery tables."
+        ]
+      },
+      {
+        "title": "Install the Apache Beam SDK \\_|\\_ Cloud Dataflow \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataflow/docs/guides/migrate-java-1-to-2",
+        "source_id": "site-docs-reference-2",
+        "final_score": 56,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The console will contain a message like the following, which contains the Dataflow SDK version information: Python To find out what version of the Dataflow SDK that a given pipeline is running, you can look at the console output when running with DataflowRunner .",
+          "The console will contain a message like the following, which contains the Dataflow SDK version information: Go To find out what version of the Dataflow SDK that a given pipeline is running, you can look at the console output when running with DataflowRunner .",
+          "Java To find out what version of the Dataflow SDK that a given pipeline is running, you can look at the console output when running with DataflowPipelineRunner or BlockingDataflowPipelineRunner ."
+        ]
+      },
+      {
+        "title": "Install the Apache Beam SDK \\_|\\_ Cloud Dataflow \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataflow/docs/guides/installing-beam-sdk",
+        "source_id": "site-docs-reference-required-3",
+        "final_score": 56,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The console will contain a message like the following, which contains the Dataflow SDK version information: Python To find out what version of the Dataflow SDK that a given pipeline is running, you can look at the console output when running with DataflowRunner .",
+          "The console will contain a message like the following, which contains the Dataflow SDK version information: Go To find out what version of the Dataflow SDK that a given pipeline is running, you can look at the console output when running with DataflowRunner .",
+          "Java To find out what version of the Dataflow SDK that a given pipeline is running, you can look at the console output when running with DataflowPipelineRunner or BlockingDataflowPipelineRunner ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/cloud-spanner-change-streams-to-bigquery",
+        "https://docs.cloud.google.com/dataflow/docs/guides/installing-beam-sdk",
+        "https://docs.cloud.google.com/dataflow/docs/guides/migrate-java-1-to-2"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/cloud-spanner-change-streams-to-bigquery",
+        "https://docs.cloud.google.com/dataflow/docs/guides/installing-beam-sdk",
+        "https://docs.cloud.google.com/dataflow/docs/guides/migrate-java-1-to-2"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/cloud-spanner-change-streams-to-bigquery",
+        "https://docs.cloud.google.com/dataflow/docs/guides/installing-beam-sdk",
+        "https://docs.cloud.google.com/dataflow/docs/guides/migrate-java-1-to-2"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/cloud-spanner-change-streams-to-bigquery",
+        "https://docs.cloud.google.com/dataflow/docs/guides/installing-beam-sdk",
+        "https://docs.cloud.google.com/dataflow/docs/guides/migrate-java-1-to-2"
+      ]
+    }
+  ]
+}

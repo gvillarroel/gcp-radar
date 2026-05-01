@@ -1,0 +1,117 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:14.611Z",
+  "source_step08_card": "data/step-08/current/products/apigee-ui/card.json",
+  "product_name": "Apigee UI",
+  "product_slug": "apigee-ui",
+  "feature_name": "Recent debug sessions list",
+  "feature_slug": "recent-debug-sessions-list",
+  "summary": "The Apigee Debug UI can show recent debug sessions for a proxy across revisions, environments, and deployment states.",
+  "extended_definition": "The Apigee Debug UI can show recent debug sessions for a proxy across revisions, environments, and deployment states.",
+  "lifecycle": {
+    "latest_feature_date": "2025-05-06",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/apigee/docs/api-platform/develop/server-sent-events",
+      "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/fault-handling",
+      "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/view-with-trace"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Streaming server-sent events \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-platform/develop/server-sent-events",
+        "source_id": "site-docs-reference-required-14",
+        "final_score": 64,
+        "relevance": "",
+        "evidence_snippets": [
+          "EventFlow use cases and examples The following examples show how to implement common use cases for SSE proxies: Modify an SSE response Filter an SSE response Send an SSE event to an external system Use an Apigee Model Armor policy in an EventFlows Error handling in the EventFlow Propagate fault messages in an EventFlow Modify an SSE response This example shows how to remove data from an SSE EventFlow response before returning it to the client.",
+          "Call the deployed proxy: curl -X POST -H 'Content-Type: application/json' \\ \"https:// YOUR APIGEE ENVIRONMENT GROUP HOSTNAME / YOUR API PATH \" \\ -d '{ \"contents\":[{\"parts\":[{\"text\": \"Write a story about a magic pen.\"}]}]}' Show a sample response Here's a sample of how the response might look without applying any filtering.",
+          "Call the deployed proxy: curl -X POST -H 'Content-Type: application/json' \\ \"https:// YOUR APIGEE ENVIRONMENT GROUP HOSTNAME / YOUR API PATH \" \\ -d '{ \"contents\":[{\"parts\":[{\"text\": \"Write a story about a magic pen.\"}]}]}' Show a sample response This is a sample response without any filtering applied."
+        ]
+      },
+      {
+        "title": "View message data with the Debug view \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/view-with-trace",
+        "source_id": "site-docs-reference",
+        "final_score": 60,
+        "relevance": "",
+        "evidence_snippets": [
+          "In the dialog: Select the Environment in which you want to run the debug session. (Optional) From the Filter list, select a filter to apply to all transactions in the debug session you are creating.",
+          "Home Documentation Application development Apigee Guides Send feedback View message data with the Debug view Stay organized with collections Save and categorize content based on your preferences.",
+          "View message data The Debug view in the Apigee Proxy Editor lets you view headers, variables, objects, and other details such as response time in the API proxy request and response flow."
+        ]
+      },
+      {
+        "title": "Handling faults \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/fault-handling",
+        "source_id": "site-docs-reference-required-14",
+        "final_score": 58,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Therefore, when using the Apigee UI to create a policy for a FaultRule, select the plus sign, + , next to Policies in the UI to add the policy: The example below shows a typical AssignMessage policy configuration: < AssignMessage name = \"AM-Invalid-Key\" > < Set > < Payload contentType = \"text/plain\" > That is an error .</ Payload > < StatusCode>401 < / StatusCode > < / Set > < IgnoreUnresolvedVariables>true < / IgnoreUnresolvedVariables > < / AssignMessage > Notice that it does not specify an <AssignTo> element.",
+          "The name comes from the policy's name attribute on the parent element, as shown in the policy example earlier. <Condition> : Apigee evaluates the condition and executes the policy only if the condition is true.",
+          "By default, following is the response that gets returned to the client app: HTTP / 1.1 401 Unauthorized Date : Wed, 20 Jul 2016 19:19:32 GMT Content-Type : application/json Content-Length : 150 Connection : keep-alive Server : Apigee Router Co nne c t io n # 0 t o hos t myorg - test .apigee. net le ft i nta c t { \"fault\" :{ \"faultstring\" : \"Failed to resolve API Key variable request.queryparam.apikey\" , \"detail\" :{ \"errorcode\" : \"steps.oauth.v2.FailedToResolveAPIKey\" }}} Your API users may be able to figure out the error message, but they may not."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "request.queryparam.apikey",
+      "steps.oauth.v2.FailedToResolveAPIKey"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "armor",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/develop/server-sent-events",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/view-with-trace",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/fault-handling"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/develop/server-sent-events",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/view-with-trace",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/fault-handling"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/develop/server-sent-events",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/view-with-trace",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/fault-handling"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/develop/server-sent-events",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/view-with-trace",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/fault-handling"
+      ]
+    }
+  ]
+}

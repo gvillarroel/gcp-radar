@@ -1,0 +1,90 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:18.269Z",
+  "source_step08_card": "data/step-08/current/products/automl-translation/card.json",
+  "product_name": "AutoML Translation",
+  "product_slug": "automl-translation",
+  "feature_name": "AutoML Translation Google NMT TPU training architecture",
+  "feature_slug": "automl-translation-google-nmt-tpu-training-architecture",
+  "summary": "AutoML Translation upgraded Google NMT-based model training and serving to a new end-to-end TPU-based architecture.",
+  "extended_definition": "AutoML Translation upgraded Google NMT-based model training and serving to a new end-to-end TPU-based architecture.",
+  "lifecycle": {
+    "latest_feature_date": "2019-10-14",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/translate/docs/advanced/custom-nmt-prepare",
+      "https://docs.cloud.google.com/translate/docs/advanced/custom-tllm-prepare",
+      "https://docs.cloud.google.com/translate/docs/advanced/custom-translations"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Prepare training data \\_|\\_ Cloud Translation \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/translate/docs/advanced/custom-nmt-prepare",
+        "source_id": "site-docs-root",
+        "final_score": 53,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Data requirements Your training data must conform to the following requirements: If you let Cloud Translation automatically split your data, you must submit at least 1,000 segment pairs to train a custom model.",
+          "Home Documentation AI and ML Cloud Translation Guides Send feedback Stay organized with collections Save and categorize content based on your preferences.",
+          "You can control which segment pairs Cloud Translation uses for each purpose by uploading separate files for the training, validation, and testing sets."
+        ]
+      },
+      {
+        "title": "Prepare training data for Translation LLM models \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/translate/docs/advanced/custom-tllm-prepare",
+        "source_id": "site-docs-root",
+        "final_score": 52,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Home Documentation AI and ML Cloud Translation Guides Send feedback Stay organized with collections Save and categorize content based on your preferences.",
+          "Prepare training data for Translation LLM models This document describes how to define a supervised fine-tuning dataset for a Translation LLM model.",
+          "Limitations: Max input and output tokens per example: 1,000 Max file size of training dataset: Up to 1GB for JSONL."
+        ]
+      },
+      {
+        "title": "\"Custom translations overview \\_|\\_ Cloud Translation \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/translate/docs/advanced/custom-translations",
+        "source_id": "site-docs-root",
+        "final_score": 49,
+        "relevance": "",
+        "evidence_snippets": [
+          "Home Documentation AI and ML Cloud Translation Guides Send feedback Stay organized with collections Save and categorize content based on your preferences.",
+          "You are charged both for the model training time and the number of input characters that you send for translation.",
+          "You are charged both for the model training time and the number of input characters that you send for translation."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/translate/docs/advanced/custom-nmt-prepare",
+        "https://docs.cloud.google.com/translate/docs/advanced/custom-tllm-prepare",
+        "https://docs.cloud.google.com/translate/docs/advanced/custom-translations"
+      ]
+    }
+  ]
+}

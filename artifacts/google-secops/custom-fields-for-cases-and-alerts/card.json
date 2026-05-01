@@ -1,0 +1,129 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:40.586Z",
+  "source_step08_card": "data/step-08/current/products/google-secops/card.json",
+  "product_name": "Google SecOps",
+  "product_slug": "google-secops",
+  "feature_name": "Custom fields for cases and alerts",
+  "feature_slug": "custom-fields-for-cases-and-alerts",
+  "summary": "Analysts can use custom fields in case and alert workflows, and add them as widgets, playbook actions, or placeholders.",
+  "extended_definition": "Analysts can use custom fields in case and alert workflows, and add them as widgets, playbook actions, or placeholders.",
+  "lifecycle": {
+    "latest_feature_date": "2025-02-22",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+      "https://docs.cloud.google.com/chronicle/docs/secops/triage-investigation-agent",
+      "https://docs.cloud.google.com/chronicle/docs/soar/investigate/working-with-cases/cases-overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Cases overview \\_|\\_ Google Security Operations \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/chronicle/docs/soar/investigate/working-with-cases/cases-overview",
+        "source_id": "site-docs-reference-2",
+        "final_score": 194,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Analysts can also: Automatically group additional alerts into existing cases based on shared entities and configurable rules.",
+          "Case creation and grouping The Cases page is where analysts can investigate incoming alerts and manage incident workflows.",
+          "Each case entry shows key metadata, such as: Case name and unique ID Case timestamp Number of associated alerts Assigned analyst (with avatar) Case priority and stage (optional, depending on view) Analysts can toggle between these views: Default view : Shows case cards with essential information."
+        ]
+      },
+      {
+        "title": "\"Search for events and alerts \\_|\\_ Google Security Operations \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "source_id": "site-docs-reference-2",
+        "final_score": 158,
+        "relevance": "",
+        "evidence_snippets": [
+          "When searching Values , UDM Lookup displays Possible value match when a match is found in the following cases: Matches in the following UDM fields: metadata.description security result.description security result.detection fields.value security result.summary network.http.user agent Matches in fields with a full path that ends in one of the following values: .command line For example principal.process.command line . .file.full path For example principal.process.file.full path . .labels.value For example src.labels.value . .registry.registry key For example principal.registry.registry key . .url For example principal.url .",
+          "When searching Values , UDM Lookup does not return matches in the following cases: Matches in the following UDM fields: metadata.product log id network.session id security result.rule id network.parent session id Matches in UDM fields with a full path that ends in one of the following values: .pid For example target.process.pid . .asset id For example principal.asset id . .product specific process id For example principal.process.product specific process id . .resource.id For example principal.resource.id .",
+          "In such cases, the system retrieves only the latest results, up to the search limit of 1M events and 1,000 alerts."
+        ]
+      },
+      {
+        "title": "\"Use Triage and Investigation Agent to investigate alerts \\_|\\_ Google Security\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/secops/triage-investigation-agent",
+        "source_id": "site-docs-reference-2",
+        "final_score": 147,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "If no custom criteria are defined, the agent investigates all alerts that match the supported log types listed in Default supported log types .",
+          "Note: The TIN integration in Case Summary is available for customers with Enterprise or Enterprise+ license tiers.",
+          "Investigation criteria You can define custom criteria to trigger auto-investigations only for specific alerts."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cmd.exe",
+      "fields.value",
+      "file.full",
+      "labels.value",
+      "metadata.description",
+      "metadata.event",
+      "metadata.product",
+      "network.http.user",
+      "network.parent",
+      "network.sent",
+      "network.session",
+      "powershell.exe",
+      "principal.asset",
+      "principal.process.command",
+      "principal.process.file.full",
+      "principal.process.product",
+      "principal.registry.registry",
+      "principal.resource.id",
+      "principal.url",
+      "registry.registry",
+      "resource.id",
+      "result.description",
+      "result.detection",
+      "result.rule",
+      "result.summary",
+      "src.labels.value",
+      "target.hostname",
+      "target.process.file.full",
+      "target.process.pid",
+      "winword.exe"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/investigate/working-with-cases/cases-overview",
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/secops/triage-investigation-agent"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/investigate/working-with-cases/cases-overview",
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/secops/triage-investigation-agent"
+      ]
+    }
+  ]
+}

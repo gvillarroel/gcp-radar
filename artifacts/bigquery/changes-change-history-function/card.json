@@ -1,0 +1,98 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:18.771Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery",
+  "feature_name": "CHANGES change history function",
+  "feature_slug": "changes-change-history-function",
+  "summary": "The CHANGES table-valued function returns a time-windowed history of table changes across DDL, DML, loads, streaming, and partition deletions.",
+  "extended_definition": "The CHANGES table-valued function returns a time-windowed history of table changes across DDL, DML, loads, streaming, and partition deletions.",
+  "lifecycle": {
+    "latest_feature_date": "2024-07-22",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/change-data-capture",
+      "https://docs.cloud.google.com/bigquery/docs/information-schema-bi-capacity-changes",
+      "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"INFORMATION_SCHEMA.BI_CAPACITY_CHANGES view \\_|\\_ BigQuery \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/information-schema-bi-capacity-changes",
+        "source_id": "site-api-reference",
+        "final_score": 185,
+        "relevance": "",
+        "evidence_snippets": [
+          "BI CAPACITY CHANGES WHERE user email = \"email@mycompanymail.com\" The result looks similar to the following: +---------------------+---------------+----------------+------------------+--------------+---------------------+----------------------------------------------------------------------------------------+ change timestamp project id project number bi capacity name size user email preferred tables +---------------------+---------------+----------------+------------------+--------------+---------------------+----------------------------------------------------------------------------------------+ 2022-06-14 02:22:18 my-project-id 123456789000 default 268435456000 email@mycompany.com [\"my-project-id.dataset1.table1\",\"bigquery-public-data.chicago taxi trips.taxi trips\"] 2022-06-08 20:25:51 my-project-id 123456789000 default 268435456000 email@mycompany.com [\"bigquery-public-data.chicago taxi trips.taxi trips\"] 2022-04-01 21:06:49 my-project-id 123456789000 default 161061273600 email@mycompany.com [\"\"] +---------------------+---------------+----------------+------------------+--------------+---------------------+----------------------------------------------------------------------------------------+ The following example gets BI Engine capacity changes for the last seven days: SELECT change timestamp , size , user email , preferred tables FROM my-project-id.region-us .",
+          "BI CAPACITY CHANGES WHERE change timestamp > TIMESTAMP SUB ( CURRENT DATE (), INTERVAL 7 DAY ) The result looks similar to the following: +---------------------+--------------+----------------------+-------------------+ change timestamp size user email preferred tables +---------------------+--------------+----------------------+-------------------+ 2023-07-08 18:25:09 268435456000 sundar@mycompany.com [\"\"] 2023-07-09 17:47:26 161061273600 pichai@mycompany.com [\"pr.dataset.t1\"] +---------------------+--------------+----------------------+-------------------+ Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "The INFORMATION SCHEMA.BI CAPACITY CHANGES view has the following schema: Column name Data type Value change timestamp TIMESTAMP Timestamp when the current update to BI Engine capacity was made. project id STRING The project ID of the project that contains BI Engine capacity. project number INTEGER The project number of the project that contains BI Engine capacity. bi capacity name STRING The name of the object."
+        ]
+      },
+      {
+        "title": "\"Stream table updates with change data capture ingestion \\_|\\_ BigQuery \\_\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/change-data-capture",
+        "source_id": "site-docs-reference-5",
+        "final_score": 185,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Example with UPSERT and DELETE values Consider the following table in BigQuery: ID Name Salary 100 Charlie 2000 101 Tal 3000 102 Lee 5000 The following row modifications are streamed by the Storage Write API: ID Name Salary CHANGE TYPE 100 DELETE 101 Tal 8000 UPSERT 105 Izumi 6000 UPSERT The updated table is now the following: ID Name Salary 101 Tal 8000 102 Lee 5000 105 Izumi 6000 Manage table staleness By default, every time you run a query, BigQuery returns the most up-to-date results.",
+          "To calculate the time it takes to apply upserted changes to an existing table, use the following SQL query to determine the 95th percentile duration of background apply jobs, plus a seven-minute buffer to allow for the BigQuery write-optimized storage (streaming buffer) conversion.",
+          "Twice the maximum time it takes to apply upserted changes into your table, plus some additional buffer."
+        ]
+      },
+      {
+        "title": "\"Data definition language (DDL) statements in GoogleSQL \\_|\\_ BigQuery \\_\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "source_id": "site-docs-reference",
+        "final_score": 172,
+        "relevance": "",
+        "evidence_snippets": [
+          "Example: enable change history=TRUE Set this property to TRUE in order to capture change history on the table, which you can then view by using the CHANGES function .",
+          "Example: enable change history=TRUE Set this property to TRUE in order to capture change history on the table, which you can then view by using the CHANGES function .",
+          "Examples Changing the data type for a column The following example changes the data type of column c1 from an INT64 to NUMERIC : CREATE TABLE dataset . my table ( c1 INT64 ); ALTER TABLE dataset . my table ALTER COLUMN c1 SET DATA TYPE NUMERIC ; Changing the data type for a field The following example changes the data type of one of the fields in the s1 column: CREATE TABLE dataset . my table ( s1 STRUCT < a INT64 , b STRING > ); ALTER TABLE dataset . my table ALTER COLUMN s1 SET DATA TYPE STRUCT < a NUMERIC , b STRING > ; Changing precision The following example changes the precision of a parameterized data type column: CREATE TABLE dataset . my table ( pt NUMERIC ( 7 , 2 )); ALTER TABLE dataset . my table ALTER COLUMN pt SET DATA TYPE NUMERIC ( 8 , 2 ); ALTER COLUMN SET DEFAULT statement Sets the default value of a column."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "data.chicago",
+      "id.dataset1.table1",
+      "id.region",
+      "mycompany.com",
+      "mycompanymail.com",
+      "pr.dataset.t1",
+      "trips.taxi"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/change-data-capture",
+        "https://docs.cloud.google.com/bigquery/docs/information-schema-bi-capacity-changes",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language"
+      ]
+    }
+  ]
+}

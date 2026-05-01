@@ -1,0 +1,179 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:39.542Z",
+  "source_step08_card": "data/step-08/current/products/google-kubernetes-engine/card.json",
+  "product_name": "Google Kubernetes Engine",
+  "product_slug": "google-kubernetes-engine",
+  "feature_name": "Multi-Cluster Ingress SSL policies and HTTPS redirects",
+  "feature_slug": "multi-cluster-ingress-ssl-policies-and-https-redirects",
+  "summary": "Multi-Cluster Ingress can use FrontendConfig to configure SSL policies and HTTPS redirects.",
+  "extended_definition": "Multi-Cluster Ingress can use FrontendConfig to configure SSL policies and HTTPS redirects.",
+  "lifecycle": {
+    "latest_feature_date": "2021-09-14",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/http-balancer",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/tpu-multislice-kueue"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Set up an external Application Load Balancer with Ingress \\_|\\_ GKE networking\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/http-balancer",
+        "source_id": "site-docs-root",
+        "final_score": 157,
+        "relevance": "",
+        "evidence_snippets": [
+          "If you have an application running on multiple Kubernetes Engine clusters in different regions, set up a multi-cluster Ingress to route traffic to a cluster in the region closest to the user.",
+          "You can install kubectl using gcloud : gcloud components install kubectl Clone the sample code from GitHub: git clone https://github.com/GoogleCloudPlatform/kubernetes-engine-samples cd kubernetes-engine-samples/networking/load-balancing Set defaults for the gcloud command-line tool To save time typing your project ID and Compute Engine zone options in the gcloud command-line tool, you can set the defaults: gcloud config set project project-id gcloud config set compute/zone compute-zone Create a GKE cluster Create a GKE Autopilot cluster: gcloud container clusters create-auto loadbalancedcluster Deploying a web application The following manifest describes a Deployment that runs the sample web application container image on an HTTP server on port 8080: apiVersion : apps/v1 kind : Deployment metadata : name : web namespace : default spec : selector : matchLabels : run : web template : metadata : labels : run : web spec : containers : - image : us-docker.pkg.dev/google-samples/containers/gke/hello-app:1.0 imagePullPolicy : IfNotPresent name : web ports : - containerPort : 8080 protocol : TCP Apply the resource to the cluster: kubectl apply -f web-deployment.yaml Exposing your Deployment inside your cluster The following manifest describes a Service that makes the web deployment accessible within your container cluster: apiVersion : v1 kind : Service metadata : name : web namespace : default spec : ports : - port : 8080 protocol : TCP targetPort : 8080 selector : run : web type : NodePort Apply the resource to the cluster: kubectl apply -f web-service.yaml When you create a Service of type NodePort with this command, GKE makes your Service available on a randomly selected high port number (e.g.",
+          "The following manifest describes a Deployment with version 2.0 of the same web application: apiVersion : apps/v1 kind : Deployment metadata : name : web2 namespace : default spec : selector : matchLabels : run : web2 template : metadata : labels : run : web2 spec : containers : - image : us-docker.pkg.dev/google-samples/containers/gke/hello-app:2.0 imagePullPolicy : IfNotPresent name : web2 ports : - containerPort : 8080 protocol : TCP Apply the resource to the cluster: kubectl apply -f web-deployment-v2.yaml The following manifest describes a Service that exposes web2 internally to the cluster on a NodePort Service called web2 : apiVersion : v1 kind : Service metadata : name : web2 namespace : default spec : ports : - port : 8080 protocol : TCP targetPort : 8080 selector : run : web2 type : NodePort Apply the resource to the cluster: kubectl apply -f web-service-v2.yaml The following manifest describes an Ingress resource that: routes the requests with path starting with /v2/ to the web2 Service routes all other requests to the web Service apiVersion : networking.k8s.io/v1 kind : Ingress metadata : name : fanout-ingress spec : rules : - http : paths : - path : / pathType : ImplementationSpecific backend : service : name : web port : number : 8080 - path : /v2/ pathType : ImplementationSpecific backend : service : name : web2 port : number : 8080 Apply the resource to the cluster: kubectl create -f fanout-ingress.yaml After the Ingress is deployed, run kubectl get ingress fanout-ingress to find out the public IP address of the cluster."
+        ]
+      },
+      {
+        "title": "\"Security bulletins \\_|\\_ Google Kubernetes Engine (GKE) \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "source_id": "site-docs-reference-2",
+        "final_score": 139,
+        "relevance": "",
+        "evidence_snippets": [
+          "Check if your GKE clusters are using ingress-nginx by using one of the following commands: Check an individual cluster: kubectl get pods --all-namespaces --selector app.kubernetes.io/name = ingress-nginx Check multiple clusters at once using a Cloud Asset Inventory resource search query : gcloud asset search-all-resources \\ --scope = 'organizations/ ORGANIZATION ID ' \\ --asset-types = 'k8s.io/Pod' \\ --query = 'labels.\"app.kubernetes.io/name\"=\"ingress-nginx\"' Replace ORGANIZATION ID with your organization resource ID.",
+          "You can use the following tools to check inbound traffic to your resources running in Google Cloud: VPC Flow Logs for visibility into network throughput and performance Cloud Logging to search and analyze logging data and events from Google Cloud services and applications configured to send logs Firewall Rules Logging to audit, verify, and analyze the effects of your firewall rules Security Command Center for visibility into security findings indicating suspicious network activity Your application logs High GDC (VMware) Description Severity A security issue was discovered that impacts Multi-Cluster Gateway (MCG), a GKE feature that allows customers to load balance traffic across multiple clusters.",
+          "This issue affects the following GKE versions: 1.18.19-gke.1400 to 1.18.20-gke.5100 (exclusive) 1.19.10-gke.700 to 1.19.14-gke.300 (exclusive) 1.20.6-gke.700 to 1.20.9-gke.900 (exclusive) 1.21 to 1.21.1-gke.2700 (exclusive) If you do not configure Google Cloud Armor on your Ingress resources via the BackendConfig , then this issue does not affect your clusters."
+        ]
+      },
+      {
+        "title": "\"Orchestrate Multislice workloads using JobSet and Kueue \\_|\\_ GKE AI/ML\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/tpu-multislice-kueue",
+        "source_id": "site-docs-reference-required-4",
+        "final_score": 137,
+        "relevance": "",
+        "evidence_snippets": [
+          "Install the JobSet API in your cluster: VERSION = v0.8.1 kubectl apply --server-side -f https://github.com/kubernetes-sigs/jobset/releases/download/ $VERSION /manifests.yaml Create the following jobsets-multislice.yaml manifest: Autopilot apiVersion : jobset.x-k8s.io/v1alpha2 kind : JobSet metadata : name : multislice-1slice labels : kueue.x-k8s.io/queue-name : multislice-queue annotations : alpha.jobset.sigs.k8s.io/exclusive-topology : cloud.google.com/gke-nodepool spec : failurePolicy : maxRestarts : 4 replicatedJobs : - name : slice replicas : 1 template : spec : parallelism : 2 completions : 2 backoffLimit : 0 template : spec : nodeSelector : cloud.google.com/gke-tpu-accelerator : tpu-v5-lite-podslice cloud.google.com/gke-tpu-topology : 2x4 containers : - name : jax-tpu image : python:3.8 ports : - containerPort : 8471 - containerPort : 8080 command : - bash - -c - pip install \"jax[tpu]\" -f https://storage.googleapis.com/jax-releases/libtpu releases.html python -c 'import jax; print(\"Global device count:\", jax.device count())' resources : limits : google.com/tpu : 4 --- apiVersion : jobset.x-k8s.io/v1alpha2 kind : JobSet metadata : name : multislice-2slice labels : kueue.x-k8s.io/queue-name : multislice-queue annotations : alpha.jobset.sigs.k8s.io/exclusive-topology : cloud.google.com/gke-nodepool spec : failurePolicy : maxRestarts : 4 replicatedJobs : - name : slice replicas : 2 template : spec : parallelism : 2 completions : 2 backoffLimit : 0 template : spec : nodeSelector : cloud.google.com/gke-tpu-accelerator : tpu-v5-lite-podslice cloud.google.com/gke-tpu-topology : 2x4 containers : - name : jax-tpu image : python:3.8 ports : - containerPort : 8471 - containerPort : 8080 command : - bash - -c - pip install \"jax[tpu]\" -f https://storage.googleapis.com/jax-releases/libtpu releases.html python -c 'import jax; print(\"Global device count:\", jax.device count())' sleep 60 resources : limits : google.com/tpu : 4 --- apiVersion : jobset.x-k8s.io/v1alpha2 kind : JobSet metadata : name : multislice-3slice labels : kueue.x-k8s.io/queue-name : multislice-queue annotations : alpha.jobset.sigs.k8s.io/exclusive-topology : cloud.google.com/gke-nodepool spec : failurePolicy : maxRestarts : 4 replicatedJobs : - name : slice replicas : 3 template : spec : parallelism : 2 completions : 2 backoffLimit : 0 template : spec : nodeSelector : cloud.google.com/gke-tpu-accelerator : tpu-v5-lite-podslice cloud.google.com/gke-tpu-topology : 2x4 containers : - name : jax-tpu image : python:3.8 ports : - containerPort : 8471 - containerPort : 8080 command : - bash - -c - sleep 60 resources : limits : google.com/tpu : 4 Standard apiVersion : jobset.x-k8s.io/v1alpha2 kind : JobSet metadata : name : multislice-1slice labels : kueue.x-k8s.io/queue-name : multislice-queue annotations : alpha.jobset.sigs.k8s.io/exclusive-topology : cloud.google.com/gke-nodepool spec : failurePolicy : maxRestarts : 4 replicatedJobs : - name : slice replicas : 1 template : spec : parallelism : 2 completions : 2 backoffLimit : 0 template : spec : hostNetwork : true dnsPolicy : ClusterFirstWithHostNet nodeSelector : cloud.google.com/gke-tpu-accelerator : tpu-v5-lite-podslice cloud.google.com/gke-tpu-topology : 2x4 containers : - name : jax-tpu image : python:3.8 ports : - containerPort : 8471 - containerPort : 8080 securityContext : privileged : true command : - bash - -c - pip install \"jax[tpu]\" -f https://storage.googleapis.com/jax-releases/libtpu releases.html python -c 'import jax; print(\"Global device count:\", jax.device count())' resources : limits : google.com/tpu : 4 --- apiVersion : jobset.x-k8s.io/v1alpha2 kind : JobSet metadata : name : multislice-2slice labels : kueue.x-k8s.io/queue-name : multislice-queue annotations : alpha.jobset.sigs.k8s.io/exclusive-topology : cloud.google.com/gke-nodepool spec : failurePolicy : maxRestarts : 4 replicatedJobs : - name : slice replicas : 2 template : spec : parallelism : 2 completions : 2 backoffLimit : 0 template : spec : hostNetwork : true dnsPolicy : ClusterFirstWithHostNet nodeSelector : cloud.google.com/gke-tpu-accelerator : tpu-v5-lite-podslice cloud.google.com/gke-tpu-topology : 2x4 containers : - name : jax-tpu image : python:3.8 ports : - containerPort : 8471 - containerPort : 8080 securityContext : privileged : true command : - bash - -c - pip install \"jax[tpu]\" -f https://storage.googleapis.com/jax-releases/libtpu releases.html python -c 'import jax; print(\"Global device count:\", jax.device count())' sleep 60 resources : limits : google.com/tpu : 4 --- apiVersion : jobset.x-k8s.io/v1alpha2 kind : JobSet metadata : name : multislice-3slice labels : kueue.x-k8s.io/queue-name : multislice-queue annotations : alpha.jobset.sigs.k8s.io/exclusive-topology : cloud.google.com/gke-nodepool spec : failurePolicy : maxRestarts : 4 replicatedJobs : - name : slice replicas : 3 template : spec : parallelism : 2 completions : 2 backoffLimit : 0 template : spec : hostNetwork : true dnsPolicy : ClusterFirstWithHostNet nodeSelector : cloud.google.com/gke-tpu-accelerator : tpu-v5-lite-podslice cloud.google.com/gke-tpu-topology : 2x4 containers : - name : jax-tpu image : python:3.8 ports : - containerPort : 8471 - containerPort : 8080 securityContext : privileged : true command : - bash - -c - sleep 60 resources : limits : google.com/tpu : 4 Apply the jobsets-multislice.yaml manifest: kubectl apply -f jobsets-multislice.yaml GKE creates the Jobs with the following resource requests: The multislice-1slice JobSet creates one Job that requires one TPU slice in total.",
+          "Update your ClusterQueue to have a preemption policy: apiVersion : kueue.x-k8s.io/v1beta1 kind : ResourceFlavor metadata : name : \"vlp-24\" spec : nodeLabels : cloud.google.com/gke-tpu-accelerator : tpu-v5-lite-podslice cloud.google.com/gke-tpu-topology : 2x4 --- apiVersion : kueue.x-k8s.io/v1beta1 kind : ClusterQueue metadata : name : \"cluster-queue\" spec : namespaceSelector : {} resourceGroups : - coveredResources : [ \"google.com/tpu\" ] flavors : - name : \"vlp-24\" resources : - name : \"google.com/tpu\" nominalQuota : 24 preemption : reclaimWithinCohort : Any withinClusterQueue : LowerPriority --- apiVersion : kueue.x-k8s.io/v1beta1 kind : LocalQueue metadata : namespace : default name : multislice-queue spec : clusterQueue : cluster-queue Create a PriorityClass for each distinct priority level you want to assign to workloads: apiVersion : scheduling.k8s.io/v1 kind : PriorityClass metadata : name : low-priority value : 100 globalDefault : false description : \"This low priority class should be used for some Pods only.\" Assign the priorityClassName to your JobSet: Autopilot apiVersion : jobset.x-k8s.io/v1alpha2 kind : JobSet metadata : name : low-priority labels : kueue.x-k8s.io/queue-name : multislice-queue annotations : alpha.jobset.sigs.k8s.io/exclusive-topology : cloud.google.com/gke-nodepool spec : failurePolicy : maxRestarts : 4 replicatedJobs : - name : slice replicas : 1 template : spec : parallelism : 2 completions : 2 backoffLimit : 0 template : spec : nodeSelector : cloud.google.com/gke-tpu-accelerator : tpu-v5-lite-podslice cloud.google.com/gke-tpu-topology : 2x4 priorityClassName : low-priority containers : - name : jax-tpu image : python:3.8 ports : - containerPort : 8471 - containerPort : 8080 command : - bash - -c - sleep 60 resources : limits : google.com/tpu : 4 # Number of TPU chips per worker Standard apiVersion : jobset.x-k8s.io/v1alpha2 kind : JobSet metadata : name : low-priority labels : kueue.x-k8s.io/queue-name : multislice-queue annotations : alpha.jobset.sigs.k8s.io/exclusive-topology : cloud.google.com/gke-nodepool spec : failurePolicy : maxRestarts : 4 replicatedJobs : - name : slice replicas : 1 template : spec : parallelism : 2 completions : 2 backoffLimit : 0 template : spec : hostNetwork : true dnsPolicy : ClusterFirstWithHostNet nodeSelector : cloud.google.com/gke-tpu-accelerator : tpu-v5-lite-podslice cloud.google.com/gke-tpu-topology : 2x4 priorityClassName : low-priority containers : - name : jax-tpu image : python:3.8 ports : - containerPort : 8471 - containerPort : 8080 securityContext : privileged : true command : - bash - -c - sleep 60 resources : limits : google.com/tpu : 4 # Number of TPU chips per worker GKE includes a preemption policy, which defines how Kueue assigns the available resources.",
+          "To view uptime for the JobSets that you used in this tutorial, run the following PromQL query: avg over time ( kubernetes io : jobset uptime { monitored resource = \" k8s entity \", entity type = \" jobset \", entity name = \" multislice-. \", cluster name = \" multislice-cluster \"}[ ${ interval} ] ) To view the TBI distributions for the JobSets from this tutorial, run the following PromQL query: histogram quantile ( 0.50 , sum over time ( kubernetes io : jobset times between interruptions bucket { monitored resource = \" k8s entity \", entity type = \" jobset \", entity name = \" multislice-. \", cluster name = \" multislice-cluster \"}[ ${ interval} ] )) You can extend the interval of the query to a longer time horizon, such as 7 days, and compute the mean time between interruptions (MTBI) over this period: sum ( sum over time ( kubernetes io : jobset times between interruptions sum { monitored resource = \" k8s entity \", entity type = \" jobset \", entity name = \" multislice-. \", cluster name = \" multislice-cluster \"}[ ${ interval} ] )) / sum ( sum over time ( kubernetes io : jobset times between interruptions count { monitored resource = \" k8s entity \", entity type = \" jobset \", entity name = \" multislice-. \", cluster name = \" multislice-cluster \"}[ ${ interval} ] )) To view the TTR distributions, you can run the following PromQL queries: histogram quantile ( 0.50 , sum over time ( kubernetes io : jobset times to recover bucket { monitored resource = \" k8s entity \", entity type = \" jobset \", entity name = \" multislice-. \", cluster name = \" multislice-cluster \"}[ ${ interval} ] )) After you increase the query interval to a longer time horizon, such as 7 days, you can compute the mean time to recover (MTTR) over this period: sum ( sum over time ( kubernetes io : jobset times to recover sum { monitored resource = \" k8s entity \", entity type = \" jobset \", entity name = \" multislice-. \", cluster name = \" multislice-cluster \"}[ ${ interval} ] )) / sum ( sum over time ( kubernetes io : jobset times to recover count { monitored resource = \" k8s entity \", entity type = \" jobset \", entity name = \" multislice-. \", cluster name = \" multislice-cluster \"}[ ${ interval} ] )) Success: You've successfully run a three Multislice Jax workloads."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "address.yaml",
+      "alpha.jobset.sigs.k8s.io",
+      "app.kubernetes.io",
+      "compute.cnrm.cloud.google.com",
+      "container.googleapis.com",
+      "deployment.yaml",
+      "docker.pkg.dev",
+      "e.g",
+      "github.com",
+      "gke.1400",
+      "gke.2700",
+      "gke.300",
+      "gke.5100",
+      "gke.700",
+      "gke.900",
+      "ingress.global",
+      "ingress.yaml",
+      "jax.device",
+      "jobset.x",
+      "k8s.io",
+      "kubernetes.io",
+      "kueue.x",
+      "manifests.yaml",
+      "multislice.yaml",
+      "networking.k8s.io",
+      "releases.html",
+      "scheduling.k8s.io",
+      "service.yaml",
+      "static.yaml",
+      "storage.googleapis.com",
+      "v0.8.1",
+      "v2.yaml"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/http-balancer",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/tpu-multislice-kueue"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/http-balancer",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/tpu-multislice-kueue"
+      ]
+    },
+    {
+      "capability": "armor",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/http-balancer",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/tpu-multislice-kueue"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/http-balancer",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/tpu-multislice-kueue"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/http-balancer",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/tpu-multislice-kueue"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/http-balancer",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/tpu-multislice-kueue"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/http-balancer",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/tpu-multislice-kueue"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/http-balancer",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/tpu-multislice-kueue"
+      ]
+    }
+  ]
+}

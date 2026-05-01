@@ -1,0 +1,163 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:39.391Z",
+  "source_step08_card": "data/step-08/current/products/google-distributed-cloud-software-only-for-bare-metal/card.json",
+  "product_name": "Google Distributed Cloud (software only) for bare metal",
+  "product_slug": "google-distributed-cloud-software-only-for-bare-metal",
+  "feature_name": "Anthos multi-cluster connectivity",
+  "feature_slug": "anthos-multi-cluster-connectivity",
+  "summary": "Connected Anthos clusters in the same data center can communicate with each other over pod IP addresses without NAT.",
+  "extended_definition": "Connected Anthos clusters in the same data center can communicate with each other over pod IP addresses without NAT.",
+  "lifecycle": {
+    "latest_feature_date": "2021-12-10",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/installing/creating-clusters/admin-cluster-creation",
+      "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/installing/creating-clusters/hybrid-cluster-creation",
+      "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/installing/install-edge-profile"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Create admin clusters \\_|\\_ Google Distributed Cloud (software only) for\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/installing/creating-clusters/admin-cluster-creation",
+        "source_id": "site-docs-reference-2",
+        "final_score": 206,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Afterwards, when creating user clusters by directly applying the cluster and node pool resources to the existing cluster, you must remove this section. gcrKeyPath : bmctl-workspace/.sa-keys/my-gcp-project-anthos-baremetal-gcr.json sshPrivateKeyPath : /path/to/your/ssh private key gkeConnectAgentServiceAccountKeyPath : bmctl-workspace/.sa-keys/my-gcp-project-anthos-baremetal-connect.json gkeConnectRegisterServiceAccountKeyPath : bmctl-workspace/.sa-keys/my-gcp-project-anthos-baremetal-register.json cloudOperationsServiceAccountKeyPath : bmctl-workspace/.sa-keys/my-gcp-project-anthos-baremetal-cloud-ops.json Register your clusters to a fleet.",
+          "Admin clusters managing multi-cluster workloads can provide highly available (HA) reliability.",
+          "Workstation running bmctl has network connectivity to all nodes in the target user clusters."
+        ]
+      },
+      {
+        "title": "\"Deploy clusters on the edge \\_|\\_ Google Distributed Cloud (software only)\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/installing/install-edge-profile",
+        "source_id": "site-iam-reference",
+        "final_score": 200,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Notice that the lines that were updated are highlighted: GSA Key used for provisioning (result of running ./scripts/create-primary-gsa.sh) LOCAL GSA FILE =$ ( pwd ) / build - artifacts / consumer - edge - gsa . json export LOCAL GSA FILE GCP Project ID export PROJECT ID = \"abm-edge-project\" Bucket to store cluster snapshot information export SNAPSHOT GCS = \"abm-edge-project-cluster-snapshots\" GCP Project Region (Adjust as desired) export REGION = \"us-central1\" GCP Project Zone (Adjust as desired) export ZONE = \"us-central1-a\" Gitlab Personal Access Token credentials (generated in Quick Start step 2) export SCM TOKEN USER = \"LarryPage\" export SCM TOKEN TOKEN = \"oo901Sp-FHuzmz dgl0393atkf69c8L\" Default Root Repo setup for multiple locations export ROOT REPO URL = \"https://github.com/LarryPage/anthos-samples\" export ROOT REPO BRANCH = \"main\" export ROOT REPO DIR = \"/anthos-bm-edge-deployment/acm-config-sink\" OIDC Configuration (off by default) export OIDC CLIENT ID = \"\" # Optional, requires GCP API setup work export OIDC CLIENT SECRET = \"\" # Optional export OIDC USER = \"\" # Optional export OIDC ENABLED = \"false\" # Flip to true IF implementing OIDC on cluster Create Compute Engine instances: ./scripts/cloud/create-cloud-gce-baseline.sh -c \" $GCE COUNT \" \\ tee ./build-artifacts/gce-info Install a bare metal cluster with Ansible The script used in this guide creates clusters in groups of three Compute Engine instances.",
+          "On your workstation, initialize the environment variables in a new shell instance: export PROJECT ID = \" PROJECT ID \" export REGION = \"us-central1\" export ZONE = \"us-central1-a\" port on the admin Compute Engine instance you use to set up an nginx proxy this allows to reach the workloads inside the cluster via the VM IP export PROXY PORT = \"8082\" should be a multiple of 3 since N/3 clusters are created with each having 3 nodes export GCE COUNT = \"3\" url to the fork of: https://github.com/GoogleCloudPlatform/anthos-samples export ROOT REPO URL = \"https://github.com/ GITHUB USERNAME /anthos-samples\" this is the username used to authenticate to your fork of this repository export SCM TOKEN USER = \" GITHUB USERNAME \" access token created in the earlier step export SCM TOKEN TOKEN = \" ACCESS TOKEN \" Replace the following values: PROJECT ID : your Google Cloud project ID.",
+          "You may also run the following ansible playbook to fetch the token again: ansible-playbook all-get-login-tokens.yaml -i inventory In the Google Cloud console, go to the Kubernetes clusters page and use the copied token to sign in to the cnuc-1 cluster."
+        ]
+      },
+      {
+        "title": "\"Create hybrid clusters \\_|\\_ Google Distributed Cloud (software only) for\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/installing/creating-clusters/hybrid-cluster-creation",
+        "source_id": "site-docs-reference-2",
+        "final_score": 192,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Afterwards, when creating user clusters by directly applying the cluster and node pool resources to the existing cluster, you must remove this section. gcrKeyPath : bmctl-workspace/.sa-keys/my-gcp-project-anthos-baremetal-gcr.json sshPrivateKeyPath : /path/to/your/ssh private key gkeConnectAgentServiceAccountKeyPath : bmctl-workspace/.sa-keys/my-gcp-project-anthos-baremetal-connect.json gkeConnectRegisterServiceAccountKeyPath : bmctl-workspace/.sa-keys/my-gcp-project-anthos-baremetal-register.json cloudOperationsServiceAccountKeyPath : bmctl-workspace/.sa-keys/my-gcp-project-anthos-baremetal-cloud-ops.json Register your clusters to a fleet .",
+          "4) standalone: to create a cluster that manages itself, runs user workloads, but does not manage other clusters. type : hybrid Change the config to specify a multi-node, high availability control plane.",
+          "Since hybrid clusters manage themselves, running workloads on the same cluster increases the risk of security exposure to sensitive administrative data, like SSH keys."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "baseline.sh",
+      "connect.json",
+      "gcr.json",
+      "github.com",
+      "gsa.sh",
+      "ops.json",
+      "register.json",
+      "tokens.yaml"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/installing/creating-clusters/admin-cluster-creation",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/installing/install-edge-profile",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/installing/creating-clusters/hybrid-cluster-creation"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/installing/creating-clusters/admin-cluster-creation",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/installing/install-edge-profile",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/installing/creating-clusters/hybrid-cluster-creation"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/installing/creating-clusters/admin-cluster-creation",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/installing/install-edge-profile",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/installing/creating-clusters/hybrid-cluster-creation"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/installing/creating-clusters/admin-cluster-creation",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/installing/install-edge-profile",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/installing/creating-clusters/hybrid-cluster-creation"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/installing/creating-clusters/admin-cluster-creation",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/installing/install-edge-profile",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/installing/creating-clusters/hybrid-cluster-creation"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/installing/creating-clusters/admin-cluster-creation",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/installing/install-edge-profile",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/installing/creating-clusters/hybrid-cluster-creation"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/installing/creating-clusters/admin-cluster-creation",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/installing/install-edge-profile",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/installing/creating-clusters/hybrid-cluster-creation"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/installing/creating-clusters/admin-cluster-creation",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/installing/install-edge-profile",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/installing/creating-clusters/hybrid-cluster-creation"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/installing/creating-clusters/admin-cluster-creation",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/installing/install-edge-profile",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/installing/creating-clusters/hybrid-cluster-creation"
+      ]
+    }
+  ]
+}

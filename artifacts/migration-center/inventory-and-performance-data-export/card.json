@@ -1,0 +1,154 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:44.028Z",
+  "source_step08_card": "data/step-08/current/products/migration-center/card.json",
+  "product_name": "Migration Center",
+  "product_slug": "migration-center",
+  "feature_name": "Inventory and performance data export",
+  "feature_slug": "inventory-and-performance-data-export",
+  "summary": "Migration Center lets you export inventory and performance data in CSV and Google Sheets formats.",
+  "extended_definition": "Migration Center lets you export inventory and performance data in CSV and Google Sheets formats.",
+  "lifecycle": {
+    "latest_feature_date": "2024-09-30",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/migration-center/docs/ramp-overview",
+      "https://docs.cloud.google.com/migration-center/docs/start-asset-discovery",
+      "https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterAsyncClient",
+      "https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterClient"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Class MigrationCenterAsyncClient (0.4.0) \\_|\\_ Python client libraries \\_\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterAsyncClient",
+        "source_id": "site-python-reference",
+        "final_score": 238,
+        "relevance": "",
+        "evidence_snippets": [
+          "Home Documentation Developer tools Python Client libraries Send feedback Class MigrationCenterAsyncClient (0.4.0) Stay organized with collections Save and categorize content based on your preferences.",
+          "CreateImportDataFileRequest ( parent=\"parent value\", import data file id=\"import data file id value\", import data file=import data file, ) Make the request operation = client. create import data file (request=request) print(\"Waiting for operation to complete...\") response = (await operation).result() Handle the response print(response) Parameters Name Description request Optional[Union[ google.cloud.migrationcenter v1.types.CreateImportDataFileRequest , dict]] The request object.",
+          "CreateReportConfigRequest ( parent=\"parent value\", report config id=\"report config id value\", report config=report config, ) Make the request operation = client. create report config (request=request) print(\"Waiting for operation to complete...\") response = (await operation).result() Handle the response print(response) Parameters Name Description request Optional[Union[ google.cloud.migrationcenter v1.types.CreateReportConfigRequest , dict]] The request object."
+        ]
+      },
+      {
+        "title": "\"Class MigrationCenterClient (0.4.0) \\_|\\_ Python client libraries \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterClient",
+        "source_id": "site-python-reference",
+        "final_score": 238,
+        "relevance": "",
+        "evidence_snippets": [
+          "Home Documentation Developer tools Python Client libraries Send feedback Class MigrationCenterClient (0.4.0) Stay organized with collections Save and categorize content based on your preferences.",
+          "CreateImportDataFileRequest ( parent=\"parent value\", import data file id=\"import data file id value\", import data file=import data file, ) Make the request operation = client. create import data file (request=request) print(\"Waiting for operation to complete...\") response = operation.result() Handle the response print(response) Parameters Name Description request Union[ google.cloud.migrationcenter v1.types.CreateImportDataFileRequest , dict] The request object.",
+          "CreateReportConfigRequest ( parent=\"parent value\", report config id=\"report config id value\", report config=report config, ) Make the request operation = client. create report config (request=request) print(\"Waiting for operation to complete...\") response = operation.result() Handle the response print(response) Parameters Name Description request Union[ google.cloud.migrationcenter v1.types.CreateReportConfigRequest , dict] The request object."
+        ]
+      },
+      {
+        "title": "\"Rapid Migration and Modernization Program (RaMP) overview \\_|\\_ Migration\\",
+        "url": "https://docs.cloud.google.com/migration-center/docs/ramp-overview",
+        "source_id": "site-docs-root",
+        "final_score": 235,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "In this phase, use Google Cloud Migration Center to organize assets into groups, generate TCO reports, and define migration waves: Start a cost estimation Review and export cost estimation results Collect asset data for one-time export Collect asset data and automatically upload it to Google Cloud Directly import asset inventory data from AWS Manually import data Detected software workloads Migrate We work with your team to perform a thorough, data-driven discovery of your existing environment.",
+          "In this phase, use Google Cloud Migration Center to specific tools for lift and shift, replatforming, or refactoring applications to Google Cloud: Migration and modernization tools Innovate We work with your team to perform a thorough, data-driven discovery of your existing environment.",
+          "Home Documentation Migration Migration Center Resources Send feedback Rapid Migration and Modernization Program (RaMP) overview Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "Start an asset discovery \\_|\\_ Migration Center \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/migration-center/docs/start-asset-discovery",
+        "source_id": "site-docs-root",
+        "final_score": 218,
+        "relevance": "",
+        "evidence_snippets": [
+          "Collection methods Migration Center lets you collect data from your infrastructure in different ways to give you the flexibility to balance speed and depth of discovery.",
+          "Manually fill in template tables with your infrastructure data, including specifications, performance, and disk data, and upload them to Migration Center.",
+          "Finally, export the collected configuration and performance data to Migration Center."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "operation.result",
+      "v1.types.CreateImportDataFileRequest",
+      "v1.types.CreateImportJobRequest",
+      "v1.types.CreateReportConfigRequest"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterClient",
+        "https://docs.cloud.google.com/migration-center/docs/ramp-overview",
+        "https://docs.cloud.google.com/migration-center/docs/start-asset-discovery"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterClient",
+        "https://docs.cloud.google.com/migration-center/docs/ramp-overview",
+        "https://docs.cloud.google.com/migration-center/docs/start-asset-discovery"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterClient",
+        "https://docs.cloud.google.com/migration-center/docs/ramp-overview",
+        "https://docs.cloud.google.com/migration-center/docs/start-asset-discovery"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterClient",
+        "https://docs.cloud.google.com/migration-center/docs/ramp-overview",
+        "https://docs.cloud.google.com/migration-center/docs/start-asset-discovery"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterClient",
+        "https://docs.cloud.google.com/migration-center/docs/ramp-overview",
+        "https://docs.cloud.google.com/migration-center/docs/start-asset-discovery"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterClient",
+        "https://docs.cloud.google.com/migration-center/docs/ramp-overview",
+        "https://docs.cloud.google.com/migration-center/docs/start-asset-discovery"
+      ]
+    }
+  ]
+}

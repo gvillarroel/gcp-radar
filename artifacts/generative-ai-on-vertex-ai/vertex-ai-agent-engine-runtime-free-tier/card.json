@@ -1,0 +1,173 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:37.873Z",
+  "source_step08_card": "data/step-08/current/products/generative-ai-on-vertex-ai/card.json",
+  "product_name": "Generative AI on Vertex AI",
+  "product_slug": "generative-ai-on-vertex-ai",
+  "feature_name": "Vertex AI Agent Engine Runtime free tier",
+  "feature_slug": "vertex-ai-agent-engine-runtime-free-tier",
+  "summary": "A new free tier is available for Vertex AI Agent Engine Runtime.",
+  "extended_definition": "A new free tier is available for Vertex AI Agent Engine Runtime.",
+  "lifecycle": {
+    "latest_feature_date": "2025-11-07",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/glossary-genai",
+      "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/grounding-with-google-maps",
+      "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/grounding-with-vertex-ai-search",
+      "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/reference/rest"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Generative AI glossary \\_|\\_ Generative AI on Vertex AI \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/glossary-genai",
+        "source_id": "site-docs-root",
+        "final_score": 264,
+        "relevance": "",
+        "evidence_snippets": [
+          "Vertex AI Agent Engine Vertex AI Agent Engine, a part of the Vertex AI Platform, is a set of services that enables developers to deploy, manage, and scale AI agents in production.",
+          "For more information, see Vertex AI Agent Engine overview .",
+          "Home Documentation AI and ML Vertex AI Generative AI on Vertex AI Guides Send feedback Generative AI glossary Stay organized with collections Save and categorize content based on your preferences. agent In the context of generative AI, an agent is software that autonomously plans and executes a series of actions in pursuit of a goal, potentially in novel situations."
+        ]
+      },
+      {
+        "title": "\"Vertex AI GenAI API \\_|\\_ Generative AI on Vertex AI \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/reference/rest",
+        "source_id": "site-api-reference",
+        "final_score": 234,
+        "relevance": "",
+        "evidence_snippets": [
+          "REST Resource: v1beta1.projects.locations Methods askContexts POST /v1beta1/{parent}:askContexts Agentic Retrieval Ask API for RAG. asyncRetrieveContexts POST /v1beta1/{parent}:asyncRetrieveContexts Asynchronous API to retrieves relevant contexts for a query. augmentPrompt POST /v1beta1/{parent}:augmentPrompt Given an input prompt, it returns augmented prompt from vertex rag store to guide LLM towards generating grounded responses. corroborateContent POST /v1beta1/{parent}:corroborateContent Given an input text, it returns a score that evaluates the factuality of the text. evaluateDataset POST /v1beta1/{location}:evaluateDataset Evaluates a dataset based on a set of given metrics. evaluateInstances POST /v1beta1/{location}:evaluateInstances Evaluates instances based on a given metric. generateInstanceRubrics POST /v1beta1/{location}:generateInstanceRubrics Generates rubrics for a given prompt. generateSyntheticData POST /v1beta1/{location}:generateSyntheticData Generates synthetic (artificial) data based on a description getRagEngineConfig GET /v1beta1/{name} Gets a RagEngineConfig. retrieveContexts POST /v1beta1/{parent}:retrieveContexts Retrieves relevant contexts for a query. updateRagEngineConfig PATCH /v1beta1/{ragEngineConfig.name} Updates a RagEngineConfig.",
+          "REST Resource: v1.projects.locations Methods askContexts POST /v1/{parent}:askContexts Agentic Retrieval Ask API for RAG. asyncRetrieveContexts POST /v1/{parent}:asyncRetrieveContexts Asynchronous API to retrieves relevant contexts for a query. augmentPrompt POST /v1/{parent}:augmentPrompt Given an input prompt, it returns augmented prompt from vertex rag store to guide LLM towards generating grounded responses. corroborateContent POST /v1/{parent}:corroborateContent Given an input text, it returns a score that evaluates the factuality of the text. evaluateDataset POST /v1/{location}:evaluateDataset Evaluates a dataset based on a set of given metrics. evaluateInstances POST /v1/{location}:evaluateInstances Evaluates instances based on a given metric. generateInstanceRubrics POST /v1/{location}:generateInstanceRubrics Generates rubrics for a given prompt. generateSyntheticData POST /v1/{location}:generateSyntheticData Generates synthetic (artificial) data based on a description getRagEngineConfig GET /v1/{name} Gets a RagEngineConfig. retrieveContexts POST /v1/{parent}:retrieveContexts Retrieves relevant contexts for a query. updateRagEngineConfig PATCH /v1/{ragEngineConfig.name} Updates a RagEngineConfig.",
+          "REST Resource: v1beta1.projects.locations.reasoningEngines.sessions Methods appendEvent POST /v1beta1/{name}:appendEvent Appends an event to a given session. create POST /v1beta1/{parent}/sessions Creates a new Session . delete DELETE /v1beta1/{name} Deletes details of the specific Session . get GET /v1beta1/{name} Gets details of the specific Session . list GET /v1beta1/{parent}/sessions Lists Sessions in a given reasoning engine. patch PATCH /v1beta1/{session.name} Updates the specific Session ."
+        ]
+      },
+      {
+        "title": "\"Grounding with Google Maps in Vertex AI \\_|\\_ Generative AI on Vertex AI\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/grounding-with-google-maps",
+        "source_id": "site-docs-root",
+        "final_score": 219,
+        "relevance": "",
+        "evidence_snippets": [
+          "Set environment variables to use the Gen AI SDK with Vertex AI: Replace the GOOGLE CLOUD PROJECT and GOOGLE CLOUD LOCATION values with appropriate values for your project. export GOOGLE CLOUD PROJECT = GOOGLE CLOUD PROJECT export GOOGLE CLOUD LOCATION = global export GOOGLE GENAI USE VERTEXAI = True from google import genai from google.genai.types import ( GenerateContentConfig , GoogleMaps , HttpOptions , Tool , ) client = genai .",
+          "Address Curbside pickup Debit card Distance Free parking lot Live music Menu for children Opening hours Payment options (such as cash or credit card ) Place answer Pet friendly Serves beer Serves vegetarian food Wheelchair accessible Wifi Place answers are a response from Grounding with Google Maps based on information derived from user reviews.",
+          "The following metadata is also returned: source uri title ID When presenting results from Grounding with Google Maps with Vertex AI, you must specify the associated Google Maps sources, and inform your users of the following: The Google Maps sources must immediately follow the generated content that the sources support."
+        ]
+      },
+      {
+        "title": "\"Grounding with Vertex AI Search \\_|\\_ Generative AI on Vertex AI \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/grounding-with-vertex-ai-search",
+        "source_id": "site-docs-root",
+        "final_score": 219,
+        "relevance": "",
+        "evidence_snippets": [
+          "Save the request body in a file named request.json , and execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method POST -Headers $headers -ContentType: \"application/json; charset=utf-8\" -InFile request.json ` -Uri \"https:// LOCATION -aiplatform.googleapis.com/v1beta1/projects/ PROJECT ID /locations/ LOCATION /publishers/google/models/ MODEL ID :generateContent\" Select-Object -Expand Content You should receive a JSON response similar to the following: { \"candidates\": [ { \"content\": { \"role\": \"model\", \"parts\": [ { \"text\": \"You can make an appointment on the website https://dmv.gov/\" } ] }, \"finishReason\": \"STOP\", \"safetyRatings\": [ \"...\" ], \"groundingMetadata\": { \"retrievalQueries\": [ \"How to make appointment to renew driving license?\" ], \"groundingChunks\": [ { \"retrievedContext\": { \"uri\": \"https://vertexaisearch.cloud.google.com/grounding-api-redirect/AXiHM.....QTN92V5ePQ==\", \"title\": \"dmv\" } } ], \"groundingSupport\": [ { \"segment\": { \"startIndex\": 25, \"endIndex\": 147 }, \"segment text\": \"ipsum lorem ...\", \"supportChunkIndices\": [1, 2], \"confidenceScore\": [0.9541752, 0.97726375] }, { \"segment\": { \"startIndex\": 294, \"endIndex\": 439 }, \"segment text\": \"ipsum lorem ...\", \"supportChunkIndices\": [1], \"confidenceScore\": [0.9541752, 0.9325467] } ] } } ], \"usageMetadata\": { \"...\" } } Understand your response The response from both APIs include the LLM-generated text, which is called a candidate .",
+          "Go to IAM To get the permissions that you need to use grounding with Vertex AI Search, ask your administrator to grant you the following IAM roles: To read all Discovery Engine resources: Discovery Engine Viewer ( roles/discoveryengine.viewer ).",
+          "Select a grounding source option from the following table: Grounding option Description Input Vertex AI RAG Engine Grounds using your data and do-it-yourself components."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "aiplatform.googleapis.com",
+      "discoveryengine.editor",
+      "discoveryengine.viewer",
+      "dmv.gov",
+      "request.json",
+      "session.name",
+      "v1.projects.locations",
+      "v1.projects.locations.reasoningEngines.sessions",
+      "v1beta1.projects.locations",
+      "v1beta1.projects.locations.reasoningEngines.sessions",
+      "vertexaisearch.cloud.google.com"
+    ],
+    "missing_inventory_roles": [
+      "roles/discoveryengine.editor",
+      "roles/discoveryengine.viewer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/glossary-genai",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/reference/rest",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/grounding-with-google-maps",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/grounding-with-vertex-ai-search"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/glossary-genai",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/reference/rest",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/grounding-with-google-maps",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/grounding-with-vertex-ai-search"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/glossary-genai",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/reference/rest",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/grounding-with-google-maps",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/grounding-with-vertex-ai-search"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/glossary-genai",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/reference/rest",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/grounding-with-google-maps",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/grounding-with-vertex-ai-search"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/glossary-genai",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/reference/rest",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/grounding-with-google-maps",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/grounding-with-vertex-ai-search"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/glossary-genai",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/reference/rest",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/grounding-with-google-maps",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/grounding-with-vertex-ai-search"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/glossary-genai",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/reference/rest",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/grounding-with-google-maps",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/grounding-with-vertex-ai-search"
+      ]
+    }
+  ]
+}

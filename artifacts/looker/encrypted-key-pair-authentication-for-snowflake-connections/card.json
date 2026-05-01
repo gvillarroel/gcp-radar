@@ -1,0 +1,149 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:42.371Z",
+  "source_step08_card": "data/step-08/current/products/looker/card.json",
+  "product_name": "Looker",
+  "product_slug": "looker",
+  "feature_name": "Encrypted key-pair authentication for Snowflake connections",
+  "feature_slug": "encrypted-key-pair-authentication-for-snowflake-connections",
+  "summary": "Lets Looker use encrypted files for key-pair authentication on Snowflake connections.",
+  "extended_definition": "Lets Looker use encrypted files for key-pair authentication on Snowflake connections.",
+  "lifecycle": {
+    "latest_feature_date": "2026-01-08",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-ldap",
+      "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-openid-connect",
+      "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-saml"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Admin settings - OpenID Connect authentication \\_|\\_ Looker \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-openid-connect",
+        "source_id": "site-docs-reference",
+        "final_score": 127,
+        "relevance": "",
+        "evidence_snippets": [
+          "For example, if you have configured OpenID Connect to make user-specific connections to your database, you could pair your OpenID Connect claims with Looker user attributes to make your database connections user-specific in Looker.",
+          "The OpenID Connect page in the Authentication section of the Admin menu lets you configure Looker to authenticate users using the OpenID Connect protocol.",
+          "The following section is from an example of a discovery document: { \"issuer\": \"https://accounts.google.com\", \"authorization endpoint\": \"https://accounts.google.com/o/oauth2/v2/auth\", \"token endpoint\": \"https://www.googleapis.com/oauth2/v4/token\", \"userinfo endpoint\": \"https://www.googleapis.com/oauth2/v3/userinfo\", \"revocation endpoint\": \"https://accounts.google.com/o/oauth2/revoke\", \"jwks uri\": \"https://www.googleapis.com/oauth2/v3/certs\", \"response types supported\": [ \"code\", \"token\", \"id token\", \"code token\" \"code id token\", \"token id token\", \"code token id token\", \"none\" ], \"subject types supported\": [ \"public\" ], \"id token signing alg values supported\": [ \"RS256\" ], \"scopes supported\": [ \"openid\", \"email\", \"profile\" ], \"token endpoint auth methods supported\": [ \"client secret post\", \"client secret basic\" ], \"claims supported\": [ \"aud\", \"email\", \"email verified\", \"exp\", \"family name\", \"given name\", \"iat\", \"iss\", \"locale\", \"name\", \"picture\", \"sub\" ], Configuring OpenID Connect auth settings To configure OpenID Connect authentication for your Looker instance, select OpenID Connect from the Authentication section of the Admin panel."
+        ]
+      },
+      {
+        "title": "Admin settings - LDAP authentication \\_|\\_ Looker \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-ldap",
+        "source_id": "site-docs-reference",
+        "final_score": 124,
+        "relevance": "",
+        "evidence_snippets": [
+          "For example, if you have configured LDAP to make user-specific connections to your database, you could pair your LDAP user attributes with Looker user attributes to make your database connections user-specific in Looker.",
+          "The LDAP page in the Authentication section of the Admin menu lets you configure Looker to authenticate users with Lightweight Directory Access Protocol (LDAP).",
+          "Example This example ldiff user entry demonstrates how to set corresponding Looker settings: Ldiff User Entry dn: cn=mward,ou=People,dc=example,dc=com objectClass: person objectClass: inetOrgPerson objectClass: organizationalPerson objectClass: top cn: mward userpassword: normal givenname: Marcus telephonenumber: +1 408 555 5688 sn: Ward mail: mward@example.com ou: People Corresponding Looker Settings Base DN: ou=People,dc=looker,dc=com User Object Class: person Login Attrs: cn Email Attr: mail First Name Attr: givenname Last Name Attr: sn ID Attr: cn Pairing LDAP user attributes with Looker user attributes You can optionally use the data in your LDAP user attributes to automatically populate values in Looker user attributes when a user logs in."
+        ]
+      },
+      {
+        "title": "Admin settings - SAML authentication \\_|\\_ Looker \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-saml",
+        "source_id": "site-docs-reference",
+        "final_score": 123,
+        "relevance": "",
+        "evidence_snippets": [
+          "For example, if you have configured SAML to make user-specific connections to your database, you could pair your SAML attributes with Looker user attributes to make your database connections user-specific in Looker.",
+          "The SAML page in the Authentication section of the Admin menu lets you configure Looker to authenticate users using Security Assertion Markup Language (SAML).",
+          "To pair SAML attributes with corresponding Looker user attributes, follow these steps: Enter the name of the SAML attribute in the SAML Attribute field and the name of the Looker user attribute that you want to pair it with in the Looker User Attributes field."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "accounts.google.com",
+      "example.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-openid-connect",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-ldap",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-saml"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-openid-connect",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-ldap",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-saml"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-openid-connect",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-ldap",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-saml"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-openid-connect",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-ldap",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-saml"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-openid-connect",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-ldap",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-saml"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-openid-connect",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-ldap",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-saml"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-openid-connect",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-ldap",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-saml"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-openid-connect",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-ldap",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-saml"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,124 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:22.290Z",
+  "source_step08_card": "data/step-08/current/products/buildpacks/card.json",
+  "product_name": "Buildpacks",
+  "product_slug": "buildpacks",
+  "feature_name": "Go modules dependency management requirement",
+  "feature_slug": "go-modules-dependency-management-requirement",
+  "summary": "Go version 1.22 and later requires dependency management with a go.mod file instead of GOPATH.",
+  "extended_definition": "Go version 1.22 and later requires dependency management with a go.mod file instead of GOPATH.",
+  "lifecycle": {
+    "latest_feature_date": "2024-02-26",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/docs/buildpacks/go"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Building a Go application | Buildpacks | Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/docs/buildpacks/go",
+        "source_id": "feature-recovery-http",
+        "final_score": 84,
+        "relevance": "",
+        "evidence_snippets": [
+          "To ensure that your app uses module-aware mode, you should include a go.mod file in your application root.",
+          "Building a Go application | Buildpacks | Google Cloud Documentation Skip to main content Technology areas close AI and ML Application development Application hosting Compute Data analytics and pipelines Databases Distributed, hybrid, and multicloud Industry solutions Migration Networking Observability and monitoring Security Storage Cross-product tools close Access and resources management Costs and usage management Infrastructure as code SDK, languages, frameworks, and tools / Console English Deutsch Español Español – América Latina Français Indonesia Italiano Português Português – Brasil עברית 中文 – 简体 中文 – 繁體 日本語 한국어 Sign in Buildpacks Start free Overview Guides Resources Technology areas More Overview Guides Resources Cross-product tools More Console Discover Product overview Stacks Builders Base images Get started Build an application Build a function Customize container images Set environment variables Configure Cloud Run and Cloud Function services Use a specific builder Configure build and run images Speed up builds with cache images About Procfiles Runtime-specific configurations Node.js Python Go Java Ruby PHP OS only AI and ML Application development Application hosting Compute Data analytics and pipelines Databases Distributed, hybrid, and multicloud Industry solutions Migration Networking Observability and monitoring Security Storage Access and resources management Costs and usage management Infrastructure as code SDK, languages, frameworks, and tools Home Documentation Application hosting Buildpacks Guides Send feedback Building a Go application Stay organized with collections Save and categorize content based on your preferences.",
+          "If your application requires a specific version, you can use the GOOGLE_GO_VERSION environment variable to provide a semver constraint that will be used to select an available Go version. pack build sample - go -- builder = gcr . io / buildpacks / builder \\ -- env GOOGLE_GO_VERSION = \"17.x.x\" Compilation Flags The Go buildpack compiles your application source into an executable using the go build command ."
+        ]
+      },
+      {
+        "title": "Building a Node.js application \\_|\\_ Buildpacks \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/docs/buildpacks/nodejs",
+        "source_id": "site-docs-reference",
+        "final_score": 77,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For example, when using NPM or Yarn version 1: @ SCOPE : registry = https : // REGION ID -npm.pkg.dev/ PROJECT ID / REPOSITORY NAME // REGION ID -npm.pkg.dev/ PROJECT ID / REPOSITORY NAME :always-auth=true If you're using Yarn version 2 or later, you only need to list the Artifact Registry repository in your .yarnrc.yml file without additional credentials.",
+          "If you're using Yarn version 2 or later as your package manager, this file is named .yarnrc.yml .",
+          "To configure the buildpack to use Node.js 24 when deploying your app, run the following command: pack build --builder=gcr.io/buildpacks/builder \\ sample-functions-framework-node \\ --env GOOGLE NODEJS VERSION=24.x.x You can also use a project.toml project descriptor to encode the environment variable alongside your project files."
+        ]
+      },
+      {
+        "title": "Build a Python application \\_|\\_ Buildpacks \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/docs/buildpacks/python",
+        "source_id": "site-docs-reference",
+        "final_score": 70,
+        "relevance": "",
+        "evidence_snippets": [
+          "Python version 3.13 and later For Python version 3.13 and later, the Python buildpack sets the default entrypoint for Cloud Run source deploys based on the web server or framework configuration in your requirements.txt file.",
+          "Python 3.14 and later Starting from Python version 3.14 and later, the Python buildpack uses the uv package manager as the default installer for the dependencies you specify in your requirements.txt file.",
+          "The Python buildpack sets the default entrypoint based on the following order of precedence, as defined in the requirements.txt file: gunicorn uvicorn fastapi[standard] gradio streamlit google-adk Configure the web server or framework For each common Python configurations in the requirements.txt file, the following table shows the default entrypoints when deploying to Cloud Run from source: Primary configuration Default entrypoint Environment variables gunicorn gunicorn -b :8080 main:app numpy gunicorn -b :8080 main:app fastapi uvicorn uvicorn main:app --host 0.0.0.0 --port 8080 fastapi[standard] uvicorn main:app --host 0.0.0.0 --port 8080 uvicorn gunicorn gunicorn -b :8080 main:app gradio python main.py GRADIO SERVER NAME=0.0.0.0 GRADIO SERVER PORT=8080 streamlit streamlit run main.py --server.address 0.0.0.0 --server.port 8080 google-adk adk api server --host 0.0.0.0 --port 8080 To avoid deployment failures, use a supported Python version in your source files, and specify a web server in your requirements.txt file."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "gcr.io",
+      "go.mod",
+      "main.py",
+      "npm.pkg.dev",
+      "package.json",
+      "project.toml",
+      "pyproject.toml",
+      "requirements.txt",
+      "server.address",
+      "server.port",
+      "setuptools.build",
+      "x.x",
+      "yarnrc.yml"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/docs/buildpacks/go"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/docs/buildpacks/go"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/docs/buildpacks/go"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/docs/buildpacks/go"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/docs/buildpacks/go"
+      ]
+    }
+  ]
+}

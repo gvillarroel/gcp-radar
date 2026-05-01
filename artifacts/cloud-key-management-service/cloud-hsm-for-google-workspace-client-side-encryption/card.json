@@ -1,0 +1,227 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:23.852Z",
+  "source_step08_card": "data/step-08/current/products/cloud-key-management-service/card.json",
+  "product_name": "Cloud Key Management Service",
+  "product_slug": "cloud-key-management-service",
+  "feature_name": "Cloud HSM for Google Workspace client-side encryption",
+  "feature_slug": "cloud-hsm-for-google-workspace-client-side-encryption",
+  "summary": "Cloud HSM for Google Workspace lets you use Cloud HSM keys for client-side encryption in Google Workspace.",
+  "extended_definition": "Cloud HSM for Google Workspace lets you use Cloud HSM keys for client-side encryption in Google Workspace.",
+  "lifecycle": {
+    "latest_feature_date": "2025-06-30",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kms/docs/client-side-encryption",
+      "https://docs.cloud.google.com/kms/docs/cmek-best-practices",
+      "https://docs.cloud.google.com/kms/docs/key-management-service",
+      "https://docs.cloud.google.com/kms/docs/reference/pkcs11-nginx"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Client-side encryption with Tink and Cloud KMS \\_|\\_ Cloud Key Management\\",
+        "url": "https://docs.cloud.google.com/kms/docs/client-side-encryption",
+        "source_id": "site-iam-reference",
+        "final_score": 230,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "When using client-side encryption, you're responsible for creating and managing your encryption keys and encrypting your data before sending it to the cloud.",
+          "Overview Client-side encryption is any encryption performed prior to sending your data to the cloud.",
+          "StorageOptions ; import com.google.crypto.tink.Aead ; import com.google.crypto.tink.KmsClient ; import com.google.crypto.tink.aead.AeadConfig ; import com.google.crypto.tink.aead.KmsEnvelopeAead ; import com.google.crypto.tink.aead.PredefinedAeadParameters ; import com.google.crypto.tink.integration.gcpkms.GcpKmsClient ; import java.io.File ; import java.io.FileInputStream ; import java.io.FileOutputStream ; import java.nio.file.Files ; import java.nio.file.Paths ; import java.security.GeneralSecurityException ; import java.util.Arrays ; / A command-line utility for encrypting small files with envelope encryption and uploading the results to GCS. <p>The CLI takes the following required arguments: <ul> <li>mode: \"encrypt\" or \"decrypt\" to indicate if you want to encrypt or decrypt. <li>kek-uri: The URI for the Cloud KMS key to be used for envelope encryption. <li>gcp-credential-file: Name of the file with the GCP credentials (in JSON format) that can access the Cloud KMS key and the GCS input/output blobs. <li>gcp-project-id: The ID of the GCP project hosting the GCS blobs that you want to encrypt or decrypt. </ul> <p>When mode is \"encrypt\", it takes the following additional arguments: <ul> <li>local-input-file: Read the plaintext from this local file. <li>gcs-output-blob: Write the encryption result to this blob in GCS."
+        ]
+      },
+      {
+        "title": "Cloud Key Management Service overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/kms/docs/key-management-service",
+        "source_id": "site-api-reference",
+        "final_score": 216,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Multi-tenant Cloud HSM for Google Workspace You can use your Multi-tenant Cloud HSM keys in Cloud HSM for Google Workspace to manage the keys used for client-side encryption (CSE) in Google Workspace.",
+          "Use Multi-tenant Cloud HSM keys for client-side encryption in Google Workspace You control automatic key rotation schedule; IAM roles and permissions; enable, disable, or destroy key versions.",
+          "Generate Multi-tenant Cloud HSM keys and use them with Cloud HSM for Google Workspace to enable client-side encryption (CSE) in Google Workspace."
+        ]
+      },
+      {
+        "title": "\"Use a Cloud HSM key for TLS offloading with NGINX \\_|\\_ Cloud Key Management\\",
+        "url": "https://docs.cloud.google.com/kms/docs/reference/pkcs11-nginx",
+        "source_id": "site-api-reference",
+        "final_score": 197,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Prepare library configurations for NGINX Allow NGINX to log its PKCS #11 engine operations with the library with the following: sudo mkdir /var/log/kmsp11 sudo chown www-data /var/log/kmsp11 Create an empty library configuration file with the appropriate permissions for NGINX. sudo touch /etc/nginx/pkcs11-config.yaml sudo chmod 744 /etc/nginx/pkcs11-config.yaml Edit the empty config file and add the needed configuration as shown in the following snippet: cat /etc/nginx/pkcs11-config.yaml --- tokens: - key ring: \"projects/ PROJECT ID /locations/ LOCATION /keyRings/ KEY RING \" log directory: \"/var/log/kmsp11\" Test your OpenSSL configuration Run the following command: openssl engine -tt -c -v pkcs11 You should see output similar to the following: (pkcs11) pkcs11 engine [RSA, rsaEncryption, id-ecPublicKey] [ available ] SO PATH, MODULE PATH, PIN, VERBOSE, QUIET, INIT ARGS, FORCE LOGIN Configure NGINX to use Cloud HSM Allow TLS offloading by editing a few NGINX files.",
+          "Test NGINX uses TLS offloading to your Cloud HSM Use the openssl s client to test connection to your NGINX server by running the following command: openssl s client -connect localhost:443 The client completes the SSL handshake and waits for your input: completes SSL handshake ... ... ...",
+          "Create a Cloud HSM-hosted signing key Create a Cloud HSM EC-P256-SHA256 signing key in your Google Cloud project, in the key ring that you previously configured for OpenSSL: gcloud kms keys create NGINX KEY \\ --keyring \" KEY RING \" --project \" PROJECT ID \" \\ --location \" LOCATION \" --purpose \"asymmetric-signing\" \\ --default-algorithm \"ec-sign-p256-sha256\" --protection-level \"hsm\" Note: Make sure that your Compute Engine service account has the correct Identity and Access Management (IAM) permissions on the key ring to be able to use it."
+        ]
+      },
+      {
+        "title": "\"Best practices for using CMEKs \\_|\\_ Cloud Key Management Service \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/kms/docs/cmek-best-practices",
+        "source_id": "site-iam-reference",
+        "final_score": 181,
+        "relevance": "",
+        "evidence_snippets": [
+          "For other use cases such as client-side encryption, review the available key purposes and algorithms to choose the option most appropriate to your use case.",
+          "If you want to follow a different granularity strategy, consider the following trade-offs of different patterns: High granularity keys —for example, one key for each individual resource More control to safely disable key versions: Disabling or destroying a key version that is used for a narrow scope has lower risk of affecting other resources than disabling or destroying a shared key.",
+          "When you create a key, you must either allow Cloud KMS to generate the key material for you or manually import key material generated outside of Google Cloud."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.crypto.tink.Aead",
+      "com.google.crypto.tink.aead.AeadConfig",
+      "com.google.crypto.tink.aead.KmsEnvelopeAead",
+      "com.google.crypto.tink.aead.PredefinedAeadParameters",
+      "com.google.crypto.tink.integration.gcpkms.GcpKmsClient",
+      "com.google.crypto.tink.KmsClient",
+      "config.yaml",
+      "java.io.File",
+      "java.io.FileInputStream",
+      "java.io.FileOutputStream",
+      "java.nio.file.Files",
+      "java.nio.file.Paths",
+      "java.security.GeneralSecurityException",
+      "java.util.Arrays"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/client-side-encryption",
+        "https://docs.cloud.google.com/kms/docs/key-management-service",
+        "https://docs.cloud.google.com/kms/docs/reference/pkcs11-nginx",
+        "https://docs.cloud.google.com/kms/docs/cmek-best-practices"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/client-side-encryption",
+        "https://docs.cloud.google.com/kms/docs/key-management-service",
+        "https://docs.cloud.google.com/kms/docs/reference/pkcs11-nginx",
+        "https://docs.cloud.google.com/kms/docs/cmek-best-practices"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/client-side-encryption",
+        "https://docs.cloud.google.com/kms/docs/key-management-service",
+        "https://docs.cloud.google.com/kms/docs/reference/pkcs11-nginx",
+        "https://docs.cloud.google.com/kms/docs/cmek-best-practices"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/client-side-encryption",
+        "https://docs.cloud.google.com/kms/docs/key-management-service",
+        "https://docs.cloud.google.com/kms/docs/reference/pkcs11-nginx",
+        "https://docs.cloud.google.com/kms/docs/cmek-best-practices"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/client-side-encryption",
+        "https://docs.cloud.google.com/kms/docs/key-management-service",
+        "https://docs.cloud.google.com/kms/docs/reference/pkcs11-nginx",
+        "https://docs.cloud.google.com/kms/docs/cmek-best-practices"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/client-side-encryption",
+        "https://docs.cloud.google.com/kms/docs/key-management-service",
+        "https://docs.cloud.google.com/kms/docs/reference/pkcs11-nginx",
+        "https://docs.cloud.google.com/kms/docs/cmek-best-practices"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/client-side-encryption",
+        "https://docs.cloud.google.com/kms/docs/key-management-service",
+        "https://docs.cloud.google.com/kms/docs/reference/pkcs11-nginx",
+        "https://docs.cloud.google.com/kms/docs/cmek-best-practices"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/client-side-encryption",
+        "https://docs.cloud.google.com/kms/docs/key-management-service",
+        "https://docs.cloud.google.com/kms/docs/reference/pkcs11-nginx",
+        "https://docs.cloud.google.com/kms/docs/cmek-best-practices"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/client-side-encryption",
+        "https://docs.cloud.google.com/kms/docs/key-management-service",
+        "https://docs.cloud.google.com/kms/docs/reference/pkcs11-nginx",
+        "https://docs.cloud.google.com/kms/docs/cmek-best-practices"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/client-side-encryption",
+        "https://docs.cloud.google.com/kms/docs/key-management-service",
+        "https://docs.cloud.google.com/kms/docs/reference/pkcs11-nginx",
+        "https://docs.cloud.google.com/kms/docs/cmek-best-practices"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/client-side-encryption",
+        "https://docs.cloud.google.com/kms/docs/key-management-service",
+        "https://docs.cloud.google.com/kms/docs/reference/pkcs11-nginx",
+        "https://docs.cloud.google.com/kms/docs/cmek-best-practices"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/client-side-encryption",
+        "https://docs.cloud.google.com/kms/docs/key-management-service",
+        "https://docs.cloud.google.com/kms/docs/reference/pkcs11-nginx",
+        "https://docs.cloud.google.com/kms/docs/cmek-best-practices"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/client-side-encryption",
+        "https://docs.cloud.google.com/kms/docs/key-management-service",
+        "https://docs.cloud.google.com/kms/docs/reference/pkcs11-nginx",
+        "https://docs.cloud.google.com/kms/docs/cmek-best-practices"
+      ]
+    }
+  ]
+}

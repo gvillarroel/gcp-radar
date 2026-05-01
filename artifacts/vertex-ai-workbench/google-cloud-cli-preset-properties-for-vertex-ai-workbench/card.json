@@ -1,0 +1,127 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:49.125Z",
+  "source_step08_card": "data/step-08/current/products/vertex-ai-workbench/card.json",
+  "product_name": "Vertex AI Workbench",
+  "product_slug": "vertex-ai-workbench",
+  "feature_name": "Google Cloud CLI preset properties for Vertex AI Workbench",
+  "feature_slug": "google-cloud-cli-preset-properties-for-vertex-ai-workbench",
+  "summary": "Prepopulates project and region properties when using Google Cloud CLI commands with Vertex AI Workbench instances.",
+  "extended_definition": "Prepopulates project and region properties when using Google Cloud CLI commands with Vertex AI Workbench instances.",
+  "lifecycle": {
+    "latest_feature_date": "2025-10-09",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/vertex-ai/docs/tutorials/image-classification-automl",
+      "https://docs.cloud.google.com/vertex-ai/docs/tutorials/image-classification-custom",
+      "https://docs.cloud.google.com/vertex-ai/docs/tutorials/tabular-automl/setup"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Hello custom training: Set up your project and environment \\_|\\_ Vertex\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/tutorials/image-classification-custom",
+        "source_id": "site-docs-root",
+        "final_score": 58,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation AI and ML Vertex AI Send feedback Hello custom training: Set up your project and environment Stay organized with collections Save and categorize content based on your preferences.",
+          "This page walks through setting up your Google Cloud project to use Vertex AI and downloading some TensorFlow code for training.",
+          "Download sample code Download sample code to use for the rest of the tutorial. gcloud storage cp gs://cloud-samples-data/ai-platform/hello-custom/hello-custom-sample-v1.tar.gz - tar -xzv To optionally view the sample code files, run the following command: ls -lpR hello-custom-sample The hello-custom-sample directory has four items: trainer/ : A directory of TensorFlow Keras code for training the flower classification model. setup.py : A configuration file for packaging the trainer/ directory into a Python source distribution that Vertex AI can use. function/ : A directory of Python code for a Cloud Run function that can receive and preprocess prediction requests from a web browser, send them to Vertex AI, process the prediction responses, and send them back to the browser. webapp/ : A directory with code and markup for a web app that gets flower classification predictions from Vertex AI."
+        ]
+      },
+      {
+        "title": "\"Hello image data: Set up your project and environment \\_|\\_ Vertex AI \\_\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/tutorials/image-classification-automl",
+        "source_id": "site-docs-root",
+        "final_score": 58,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation AI and ML Vertex AI Send feedback Hello image data: Set up your project and environment Stay organized with collections Save and categorize content based on your preferences.",
+          "You'll set up your Google Cloud project to use Vertex AI.",
+          "Enable the IAM, Compute Engine, Notebooks, Cloud Storage, and Vertex AI APIs: Roles required to enable APIs To enable APIs, you need the Service Usage Admin IAM role ( roles/serviceusage.serviceUsageAdmin ), which contains the serviceusage.services.enable permission."
+        ]
+      },
+      {
+        "title": "\"Hello tabular data: Set up your project and environment \\_|\\_ Vertex AI\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/tutorials/tabular-automl/setup",
+        "source_id": "site-docs-root",
+        "final_score": 58,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation AI and ML Vertex AI Send feedback Hello tabular data: Set up your project and environment Stay organized with collections Save and categorize content based on your preferences.",
+          "For this part of the tutorial, you set up your Google Cloud project to use Vertex AI and a Cloud Storage bucket that contains the documents for training your AutoML model.",
+          "Enable the IAM, Compute Engine, Notebooks, Cloud Storage, and Vertex AI APIs: Roles required to enable APIs To enable APIs, you need the Service Usage Admin IAM role ( roles/serviceusage.serviceUsageAdmin ), which contains the serviceusage.services.enable permission."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "aiplatform.user",
+      "projects.locations.instances",
+      "projects.locations.instances.getInstanceHealth",
+      "serviceusage.services.enable",
+      "serviceusage.serviceUsageAdmin",
+      "setup.py",
+      "storage.admin",
+      "v1.tar.gz"
+    ],
+    "missing_inventory_roles": [
+      "roles/aiplatform.user",
+      "roles/serviceusage.serviceUsageAdmin",
+      "roles/storage.admin"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/tutorials/image-classification-custom",
+        "https://docs.cloud.google.com/vertex-ai/docs/tutorials/image-classification-automl",
+        "https://docs.cloud.google.com/vertex-ai/docs/tutorials/tabular-automl/setup"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/tutorials/image-classification-custom",
+        "https://docs.cloud.google.com/vertex-ai/docs/tutorials/image-classification-automl",
+        "https://docs.cloud.google.com/vertex-ai/docs/tutorials/tabular-automl/setup"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/tutorials/image-classification-custom",
+        "https://docs.cloud.google.com/vertex-ai/docs/tutorials/image-classification-automl",
+        "https://docs.cloud.google.com/vertex-ai/docs/tutorials/tabular-automl/setup"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/tutorials/image-classification-custom",
+        "https://docs.cloud.google.com/vertex-ai/docs/tutorials/image-classification-automl",
+        "https://docs.cloud.google.com/vertex-ai/docs/tutorials/tabular-automl/setup"
+      ]
+    }
+  ]
+}

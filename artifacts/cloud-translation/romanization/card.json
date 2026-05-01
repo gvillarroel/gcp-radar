@@ -1,0 +1,109 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:28.821Z",
+  "source_step08_card": "data/step-08/current/products/cloud-translation/card.json",
+  "product_name": "Cloud Translation",
+  "product_slug": "cloud-translation",
+  "feature_name": "Romanization",
+  "feature_slug": "romanization",
+  "summary": "Romanization converts text from a source script into the Latin alphabet.",
+  "extended_definition": "Romanization converts text from a source script into the Latin alphabet.",
+  "lifecycle": {
+    "latest_feature_date": "2023-05-19",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/translate/docs/advanced/translate-text-advance",
+      "https://docs.cloud.google.com/translate/docs/advanced/translating-text-v3",
+      "https://docs.cloud.google.com/translate/docs/basic/translate-text-basic",
+      "https://docs.cloud.google.com/translate/docs/hybrid-glossaries-tutorial"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Translating text from a photo \\_|\\_ Cloud Translation \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/translate/docs/hybrid-glossaries-tutorial",
+        "source_id": "site-iam-reference",
+        "final_score": 174,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Args: None Returns: None \"\"\" Photo from which to extract text infile = \"resources/example.png\" Name of file that will hold synthetic speech outfile = \"resources/example.mp3\" Defines the languages in the glossary This list must match the languages in the glossary Here, the glossary includes French and English glossary langs = [ \"fr\" , \"en\" ] Name that will be assigned to your project's glossary resource glossary name = \"bistro-glossary\" uri of .csv file uploaded to Cloud Storage glossary uri = \"gs://cloud-samples-data/translation/bistro glossary.csv\" created glossary name = create glossary ( glossary langs , PROJECT ID , glossary name , glossary uri ) photo -> detected text text to translate = pic to text ( infile ) detected text -> translated text text to speak = translate text ( text to translate , \"fr\" , \"en\" , PROJECT ID , created glossary name ) translated text -> synthetic audio text to speech ( text to speak , outfile ) Node.js Before trying this sample, follow the Node.js setup instructions in the Cloud Translation quickstart using client libraries .",
+          "For more information, see Set up authentication for a local development environment . def text to speech ( text : str , outfile : str ) - > str : \"\"\"Converts plaintext to SSML and generates synthetic audio from SSML Args: text: text to synthesize outfile: filename to use to store synthetic audio Returns: String of synthesized audio \"\"\" Replace special characters with HTML Ampersand Character Codes These Codes prevent the API from confusing text with SSML commands For example, '<' --> '&lt;' and '&' --> '&amp;' escaped lines = html . escape ( text ) Convert plaintext to SSML in order to wait two seconds between each line in synthetic speech ssml = \"<speak> {} < /speak>\" . format ( escaped lines . replace ( \" \\n \" , ' \\n < break time=\"2s\"/>' ) ) Instantiates a client client = texttospeech .",
+          "TranslateTextGlossaryConfig ( glossary = glossary ) parent = f \"projects/ { project id } /locations/ { location } \" result = client . translate text ( request = { \"parent\" : parent , \"contents\" : [ text ], \"mime type\" : \"text/plain\" , # mime types: text/plain, text/html \"source language code\" : source language code , \"target language code\" : target language code , \"glossary config\" : glossary config , } ) Extract translated text from API response return result . glossary translations [ 0 ] . translated text Node.js Before trying this sample, follow the Node.js setup instructions in the Cloud Translation quickstart using client libraries ."
+        ]
+      },
+      {
+        "title": "Translate text with Cloud Translation \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/translate/docs/advanced/translate-text-advance",
+        "source_id": "site-docs-root",
+        "final_score": 162,
+        "relevance": "",
+        "evidence_snippets": [
+          "Before using any of the request data, make the following replacements: PROJECT NUMBER OR ID : the numeric or alphanumeric ID of your Google Cloud project HTTP method and URL: POST https://translation.googleapis.com/language/translate/v2 Request JSON body: { \"q\": \"The Great Pyramid of Giza (also known as the Pyramid of Khufu or the Pyramid of Cheops) is the oldest and largest of the three pyramids in the Giza pyramid complex.\", \"source\": \"en\", \"target\": \"es\", \"format\": \"text\" } To send your request, choose one of these options: curl Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI .",
+          "HTTP method and URL: POST https://translation.googleapis.com/v3/projects/ PROJECT NUMBER OR ID /locations/ LOCATION :translateText Request JSON body: { \"source language code\": \" SOURCE LANGUAGE \", \"target language code\": \" TARGET LANGUAGE \", \"contents\": \" SOURCE TEXT \", \"mime type\": \"text/plain\", \"transliteration config\": { \"enable transliteration\": true} } To send your request, expand one of these options: curl (Linux, macOS, or Cloud Shell) Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI .",
+          "For more information, see Set up authentication for a local development environment . import os Import the Google Cloud Translation library. from google.cloud import translate v3 PROJECT ID = os . environ . get ( \"GOOGLE CLOUD PROJECT\" ) def translate text ( text : str = \"YOUR TEXT TO TRANSLATE\" , source language code : str = \"en-US\" , target language code : str = \"fr\" , ) - > translate v3 ."
+        ]
+      },
+      {
+        "title": "Translate text with Cloud Translation \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/translate/docs/advanced/translating-text-v3",
+        "source_id": "site-docs-root",
+        "final_score": 162,
+        "relevance": "",
+        "evidence_snippets": [
+          "Before using any of the request data, make the following replacements: PROJECT NUMBER OR ID : the numeric or alphanumeric ID of your Google Cloud project HTTP method and URL: POST https://translation.googleapis.com/language/translate/v2 Request JSON body: { \"q\": \"The Great Pyramid of Giza (also known as the Pyramid of Khufu or the Pyramid of Cheops) is the oldest and largest of the three pyramids in the Giza pyramid complex.\", \"source\": \"en\", \"target\": \"es\", \"format\": \"text\" } To send your request, choose one of these options: curl Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI .",
+          "HTTP method and URL: POST https://translation.googleapis.com/v3/projects/ PROJECT NUMBER OR ID /locations/ LOCATION :translateText Request JSON body: { \"source language code\": \" SOURCE LANGUAGE \", \"target language code\": \" TARGET LANGUAGE \", \"contents\": \" SOURCE TEXT \", \"mime type\": \"text/plain\", \"transliteration config\": { \"enable transliteration\": true} } To send your request, expand one of these options: curl (Linux, macOS, or Cloud Shell) Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI .",
+          "For more information, see Set up authentication for a local development environment . import os Import the Google Cloud Translation library. from google.cloud import translate v3 PROJECT ID = os . environ . get ( \"GOOGLE CLOUD PROJECT\" ) def translate text ( text : str = \"YOUR TEXT TO TRANSLATE\" , source language code : str = \"en-US\" , target language code : str = \"fr\" , ) - > translate v3 ."
+        ]
+      },
+      {
+        "title": "Translate text with Cloud Translation \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/translate/docs/basic/translate-text-basic",
+        "source_id": "site-docs-root",
+        "final_score": 162,
+        "relevance": "",
+        "evidence_snippets": [
+          "Before using any of the request data, make the following replacements: PROJECT NUMBER OR ID : the numeric or alphanumeric ID of your Google Cloud project HTTP method and URL: POST https://translation.googleapis.com/language/translate/v2 Request JSON body: { \"q\": \"The Great Pyramid of Giza (also known as the Pyramid of Khufu or the Pyramid of Cheops) is the oldest and largest of the three pyramids in the Giza pyramid complex.\", \"source\": \"en\", \"target\": \"es\", \"format\": \"text\" } To send your request, choose one of these options: curl Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI .",
+          "HTTP method and URL: POST https://translation.googleapis.com/v3/projects/ PROJECT NUMBER OR ID /locations/ LOCATION :translateText Request JSON body: { \"source language code\": \" SOURCE LANGUAGE \", \"target language code\": \" TARGET LANGUAGE \", \"contents\": \" SOURCE TEXT \", \"mime type\": \"text/plain\", \"transliteration config\": { \"enable transliteration\": true} } To send your request, expand one of these options: curl (Linux, macOS, or Cloud Shell) Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI .",
+          "For more information, see Set up authentication for a local development environment . import os Import the Google Cloud Translation library. from google.cloud import translate v3 PROJECT ID = os . environ . get ( \"GOOGLE CLOUD PROJECT\" ) def translate text ( text : str = \"YOUR TEXT TO TRANSLATE\" , source language code : str = \"en-US\" , target language code : str = \"fr\" , ) - > translate v3 ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "example.mp3",
+      "example.png",
+      "glossary.csv",
+      "translation.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/translate/docs/hybrid-glossaries-tutorial",
+        "https://docs.cloud.google.com/translate/docs/advanced/translate-text-advance",
+        "https://docs.cloud.google.com/translate/docs/advanced/translating-text-v3",
+        "https://docs.cloud.google.com/translate/docs/basic/translate-text-basic"
+      ]
+    }
+  ]
+}

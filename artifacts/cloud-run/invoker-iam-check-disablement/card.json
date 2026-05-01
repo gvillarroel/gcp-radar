@@ -1,0 +1,171 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:25.811Z",
+  "source_step08_card": "data/step-08/current/products/cloud-run/card.json",
+  "product_name": "Cloud Run",
+  "product_slug": "cloud-run",
+  "feature_name": "Invoker IAM check disablement",
+  "feature_slug": "invoker-iam-check-disablement",
+  "summary": "Cloud Run services can disable the Invoker IAM check for invocation access control behavior.",
+  "extended_definition": "Cloud Run services can disable the Invoker IAM check for invocation access control behavior.",
+  "lifecycle": {
+    "latest_feature_date": "2025-03-28",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/run/docs/deploy-functions",
+      "https://docs.cloud.google.com/run/docs/deploying",
+      "https://docs.cloud.google.com/run/docs/securing/managing-access"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Access control with IAM \\_|\\_ Cloud Run \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/run/docs/securing/managing-access",
+        "source_id": "site-iam-reference",
+        "final_score": 101,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Required roles To disable or re-enable the Invoker IAM check on a service, you must have the following permissions: run.services.create run.services.update run.services.setIamPolicy These permissions are included in the Cloud Run Admin ( roles/run.admin ) role.",
+          "If you're an administrator, you can restrict the ability to disable the Invoker IAM check by using the constraints/run.managed.requireInvokerIam managed constraint.",
+          "Make a service public There are two ways to create a public Cloud Run service: Disable the Cloud Run Invoker IAM check (recommended)."
+        ]
+      },
+      {
+        "title": "Deploy a Cloud Run function \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/run/docs/deploy-functions",
+        "source_id": "site-docs-reference-required-4",
+        "final_score": 95,
+        "relevance": "",
+        "evidence_snippets": [
+          "YAML To disable the deployment health check, add the run.googleapis.com/health-check-disabled annotation with value 'true' to spec.template.metadata.annotations . apiVersion : serving.knative.dev/v1 kind : Service metadata : name : SERVICE spec : template : metadata : annotations : run.googleapis.com/health-check-disabled : 'true' Terraform To disable the deployment health check, set the health check disabled argument to true in the template block. resource \"google cloud run v2 service\" \"default\" { name = \"SERVICE\" ... template { health check disabled = true ... } } Source bucket Your source code must be accessible to the build process and the Google Cloud console source editor.",
+          "If it is not needed or to increase deployment speed, the deployment health check can be disabled: gcloud To disable the deployment health check, use the --no-deploy-health-check flag: gcloud run deploy --image IMAGE URL --no-deploy-health-check Replace the following: IMAGE URL : a reference to the container image, for example, us-docker.pkg.dev/cloudrun/container/hello:latest .",
+          "Use --deploy-health-check to re-enable the deployment health check if it was previous disabled."
+        ]
+      },
+      {
+        "title": "Deploying container images to Cloud Run \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/run/docs/deploying",
+        "source_id": "site-docs-reference-required-3",
+        "final_score": 87,
+        "relevance": "",
+        "evidence_snippets": [
+          "YAML To disable the deployment health check, add the run.googleapis.com/health-check-disabled annotation with value 'true' to spec.template.metadata.annotations . apiVersion : serving.knative.dev/v1 kind : Service metadata : name : SERVICE spec : template : metadata : annotations : run.googleapis.com/health-check-disabled : 'true' Terraform To disable the deployment health check, set the health check disabled argument to true in the template block. resource \"google cloud run v2 service\" \"default\" { name = \"SERVICE\" ... template { health check disabled = true ... } } What's next After you deploy a new service, you can do the following: Gradual rollouts, rollback revisions, traffic migration View service logs Monitor service performances Set memory limits Set environment variables Change service concurrency Manage the service Manage service revisions Cloud Run OpenTelemetry sidecar example Deploy only trusted images with Binary Authorization ( Preview ) You can automate the builds and deployments of your Cloud Run services using Cloud Build Triggers: Set up Continuous Deployment You can also use Cloud Deploy to set up a continuous-delivery pipeline to deploy Cloud Run services to multiple environments: Deploy an app to Cloud Run using Cloud Deploy Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "If it is not needed or to increase deployment speed, the deployment health check can be disabled: gcloud To disable the deployment health check, use the --no-deploy-health-check flag: gcloud run deploy --image IMAGE URL --no-deploy-health-check Replace the following: IMAGE URL : a reference to the container image, for example, us-docker.pkg.dev/cloudrun/container/hello:latest .",
+          "Use --deploy-health-check to re-enable the deployment health check if it was previous disabled."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "docker.pkg.dev",
+      "main.tf",
+      "run.admin",
+      "run.googleapis.com",
+      "run.invoker",
+      "run.managed.requireInvokerIam",
+      "run.services.create",
+      "run.services.setIamPolicy",
+      "run.services.update",
+      "service.default.location",
+      "service.default.name",
+      "serving.knative.dev",
+      "spec.template.metadata.annotations"
+    ],
+    "missing_inventory_roles": [
+      "roles/run.admin",
+      "roles/run.invoker"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/securing/managing-access",
+        "https://docs.cloud.google.com/run/docs/deploy-functions",
+        "https://docs.cloud.google.com/run/docs/deploying"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/securing/managing-access",
+        "https://docs.cloud.google.com/run/docs/deploy-functions",
+        "https://docs.cloud.google.com/run/docs/deploying"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/securing/managing-access",
+        "https://docs.cloud.google.com/run/docs/deploy-functions",
+        "https://docs.cloud.google.com/run/docs/deploying"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/securing/managing-access",
+        "https://docs.cloud.google.com/run/docs/deploy-functions",
+        "https://docs.cloud.google.com/run/docs/deploying"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/securing/managing-access",
+        "https://docs.cloud.google.com/run/docs/deploy-functions",
+        "https://docs.cloud.google.com/run/docs/deploying"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/securing/managing-access",
+        "https://docs.cloud.google.com/run/docs/deploy-functions",
+        "https://docs.cloud.google.com/run/docs/deploying"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/securing/managing-access",
+        "https://docs.cloud.google.com/run/docs/deploy-functions",
+        "https://docs.cloud.google.com/run/docs/deploying"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/securing/managing-access",
+        "https://docs.cloud.google.com/run/docs/deploy-functions",
+        "https://docs.cloud.google.com/run/docs/deploying"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/securing/managing-access",
+        "https://docs.cloud.google.com/run/docs/deploy-functions",
+        "https://docs.cloud.google.com/run/docs/deploying"
+      ]
+    }
+  ]
+}

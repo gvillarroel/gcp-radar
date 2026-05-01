@@ -1,0 +1,200 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:30.030Z",
+  "source_step08_card": "data/step-08/current/products/confidential-space/card.json",
+  "product_name": "Confidential Space",
+  "product_slug": "confidential-space",
+  "feature_name": "Namespaced cgroup read/write access",
+  "feature_slug": "namespaced-cgroup-read-write-access",
+  "summary": "Confidential Space provides a namespaced cgroup with read or write access.",
+  "extended_definition": "Confidential Space provides a namespaced cgroup with read or write access.",
+  "lifecycle": {
+    "latest_feature_date": "2025-03-31",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/confidential-computing/confidential-space/docs/connect-external-resources",
+      "https://docs.cloud.google.com/confidential-computing/confidential-space/docs/create-customize-workloads",
+      "https://docs.cloud.google.com/confidential-computing/confidential-space/docs/deploy-workloads"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Deploy workloads \\_|\\_ Confidential Space \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/confidential-computing/confidential-space/docs/deploy-workloads",
+        "source_id": "site-docs-reference",
+        "final_score": 129,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The service account must be set up in the following way: With the following roles: roles/confidentialcomputing.workloadUser to generate an attestation token. roles/artifactregistry.reader to retrieve a workload container image stored in Artifact Registry . roles/logging.logWriter if you want to redirect STDOUT and STDERR to Cloud Logging .",
+          "What service account to attach to the VM to run the workload, and what permissions it needs to access confidential data in other projects and write the results somewhere.",
+          "With read access to where the data collaborators store their confidential data, for example, a Cloud Storage bucket or BigQuery table."
+        ]
+      },
+      {
+        "title": "\"Create and customize workloads \\_|\\_ Confidential Space \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/confidential-computing/confidential-space/docs/create-customize-workloads",
+        "source_id": "site-docs-reference",
+        "final_score": 125,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "When building your Docker image, take the following things into account: Additional Linux capabilities Disk and memory limits Expired OIDC tokens Resources not managed by Google Cloud IAM Inbound ports Launch policies Multiple workload runs Namespaced cgroups Reproducible container images Signed container images Additional Linux capabilities The Confidential Space workload runs in a Linux container using containerd.",
+          "Namespaced cgroups The Confidential Space workload runs without a cgroup mount by default.",
+          "Boolean (default is false ) Determines if workload container is allowed to include a namespaced cgroup mount at /sys/fs/cgroup . tee.launch policy.allow cmd override Interacts with: Workload operator : The tee-cmd metadata variable."
+        ]
+      },
+      {
+        "title": "\"Access resources not managed by Google Cloud IAM \\_|\\_ Confidential Space\\",
+        "url": "https://docs.cloud.google.com/confidential-computing/confidential-space/docs/connect-external-resources",
+        "source_id": "site-docs-reference",
+        "final_score": 111,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Errorf ( \"couldn't handle this token or couldn't read a validation error: %v\" , err ) } func main () { // Get a token from a workload running in Confidential Space tokenbytes , err := getTokenBytesFromWorkload () // Write a method to return a public key from the well-known endpoint keyFunc := getRSAPublicKeyFromJWKsFile // Verify properties of the original Confidential Space workload that generated the attestation // using the token claims. token , err := decodeAndValidateToken ( tokenbytes , keyFunc ) if err != nil { panic ( err ) } claimsString , err := json .",
+          "Data collaborators Workload author If access to your protected resources isn't managed by Google Cloud's IAM—for example, the resources are stored in another cloud service, on-premises, or on a local device such as a mobile phone—you can still authenticate a Confidential Space workload to the device or system that provides access to those resources, otherwise known as a relying party .",
+          "The following is an example AWS policy that grants access to a workload with a specified digest and audience, CONFIDENTIAL SPACE as the software running on the VM instance, and STABLE as the support attribute: { \"Version\" : \"2012-10-17\" , \"Statement\" : [ { \"Effect\" : \"Allow\" , \"Principal\" : { \"Federated\" : \"arn:aws:iam::232510754029:oidc-provider/confidentialcomputing.googleapis.com\" }, \"Action\" : [ \"sts:AssumeRoleWithWebIdentity\" , \"sts:TagSession\" ], \"Condition\" : { \"StringEquals\" : { \"confidentialcomputing.googleapis.com:aud\" : \"https://integration.test\" , \"aws:RequestTag/swname\" : \"CONFIDENTIAL SPACE\" , \"aws:RequestTag/container.image digest\" : \"sha256:ac74cbeca443e36325bad15a7c28f2598b22966aa94681a444553f0b838717cf\" }, \"StringLike\" : { \"aws:RequestTag/confidential space.support attributes\" : \" STABLE \" } } } ] } Configure AWS resources After your integration is complete, configure your AWS resources."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "artifactregistry.reader",
+      "confidentialcomputing.googleapis.com",
+      "confidentialcomputing.workloadUser",
+      "container.image",
+      "integration.test",
+      "logging.logWriter",
+      "policy.allow",
+      "space.support",
+      "tee.launch"
+    ],
+    "missing_inventory_roles": [
+      "roles/artifactregistry.reader",
+      "roles/confidentialcomputing.workloadUser",
+      "roles/logging.logWriter"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/confidential-computing/confidential-space/docs/deploy-workloads",
+        "https://docs.cloud.google.com/confidential-computing/confidential-space/docs/create-customize-workloads",
+        "https://docs.cloud.google.com/confidential-computing/confidential-space/docs/connect-external-resources"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/confidential-computing/confidential-space/docs/deploy-workloads",
+        "https://docs.cloud.google.com/confidential-computing/confidential-space/docs/create-customize-workloads",
+        "https://docs.cloud.google.com/confidential-computing/confidential-space/docs/connect-external-resources"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/confidential-computing/confidential-space/docs/deploy-workloads",
+        "https://docs.cloud.google.com/confidential-computing/confidential-space/docs/create-customize-workloads",
+        "https://docs.cloud.google.com/confidential-computing/confidential-space/docs/connect-external-resources"
+      ]
+    },
+    {
+      "capability": "confidential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/confidential-computing/confidential-space/docs/deploy-workloads",
+        "https://docs.cloud.google.com/confidential-computing/confidential-space/docs/create-customize-workloads",
+        "https://docs.cloud.google.com/confidential-computing/confidential-space/docs/connect-external-resources"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/confidential-computing/confidential-space/docs/deploy-workloads",
+        "https://docs.cloud.google.com/confidential-computing/confidential-space/docs/create-customize-workloads",
+        "https://docs.cloud.google.com/confidential-computing/confidential-space/docs/connect-external-resources"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/confidential-computing/confidential-space/docs/deploy-workloads",
+        "https://docs.cloud.google.com/confidential-computing/confidential-space/docs/create-customize-workloads",
+        "https://docs.cloud.google.com/confidential-computing/confidential-space/docs/connect-external-resources"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/confidential-computing/confidential-space/docs/deploy-workloads",
+        "https://docs.cloud.google.com/confidential-computing/confidential-space/docs/create-customize-workloads",
+        "https://docs.cloud.google.com/confidential-computing/confidential-space/docs/connect-external-resources"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/confidential-computing/confidential-space/docs/deploy-workloads",
+        "https://docs.cloud.google.com/confidential-computing/confidential-space/docs/create-customize-workloads",
+        "https://docs.cloud.google.com/confidential-computing/confidential-space/docs/connect-external-resources"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/confidential-computing/confidential-space/docs/deploy-workloads",
+        "https://docs.cloud.google.com/confidential-computing/confidential-space/docs/create-customize-workloads",
+        "https://docs.cloud.google.com/confidential-computing/confidential-space/docs/connect-external-resources"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/confidential-computing/confidential-space/docs/deploy-workloads",
+        "https://docs.cloud.google.com/confidential-computing/confidential-space/docs/create-customize-workloads",
+        "https://docs.cloud.google.com/confidential-computing/confidential-space/docs/connect-external-resources"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/confidential-computing/confidential-space/docs/deploy-workloads",
+        "https://docs.cloud.google.com/confidential-computing/confidential-space/docs/create-customize-workloads",
+        "https://docs.cloud.google.com/confidential-computing/confidential-space/docs/connect-external-resources"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/confidential-computing/confidential-space/docs/deploy-workloads",
+        "https://docs.cloud.google.com/confidential-computing/confidential-space/docs/create-customize-workloads",
+        "https://docs.cloud.google.com/confidential-computing/confidential-space/docs/connect-external-resources"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/confidential-computing/confidential-space/docs/deploy-workloads",
+        "https://docs.cloud.google.com/confidential-computing/confidential-space/docs/create-customize-workloads",
+        "https://docs.cloud.google.com/confidential-computing/confidential-space/docs/connect-external-resources"
+      ]
+    }
+  ]
+}

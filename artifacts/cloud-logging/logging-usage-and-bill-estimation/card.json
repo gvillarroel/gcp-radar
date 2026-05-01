@@ -1,0 +1,103 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:24.398Z",
+  "source_step08_card": "data/step-08/current/products/cloud-logging/card.json",
+  "product_name": "Cloud Logging",
+  "product_slug": "cloud-logging",
+  "feature_name": "Logging usage and bill estimation",
+  "feature_slug": "logging-usage-and-bill-estimation",
+  "summary": "Cloud Logging shows usage and estimated billing under the new Stackdriver pricing model.",
+  "extended_definition": "Cloud Logging shows usage and estimated billing under the new Stackdriver pricing model.",
+  "lifecycle": {
+    "latest_feature_date": "2018-05-17",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/logging/docs/api/gcloud-logging",
+      "https://docs.cloud.google.com/logging/docs/audit",
+      "https://docs.cloud.google.com/logging/docs/reference/tools/gcloud-logging"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Cloud Audit Logs overview \\_|\\_ Cloud Logging \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/logging/docs/audit",
+        "source_id": "site-docs-root",
+        "final_score": 109,
+        "relevance": "",
+        "evidence_snippets": [
+          "To read your Google Cloud project-level audit log entries, run the following command: gcloud logging read \"logName : projects/ PROJECT ID /logs/cloudaudit.googleapis.com\" \\ --project= PROJECT ID To read your folder-level audit log entries, run the following command: gcloud logging read \"logName : folders/ FOLDER ID /logs/cloudaudit.googleapis.com\" \\ --folder= FOLDER ID To read your organization-level audit log entries, run the following command: gcloud logging read \"logName : organizations/ ORGANIZATION ID /logs/cloudaudit.googleapis.com\" \\ --organization= ORGANIZATION ID To read your Cloud Billing account-level audit log entries, run the following command: gcloud logging read \"logName : billingAccounts/ BILLING ACCOUNT ID /logs/cloudaudit.googleapis.com\" \\ --billing-account= BILLING ACCOUNT ID Add the --freshness flag to your command to read logs that are more than 1 day old.",
+          "For each billing account, Google Cloud project, folder, and organization, Logging automatically creates two log buckets, Required and Default , and correspondingly named sinks .",
+          "The audit log name includes the resource identifier of the Google Cloud project, folder, billing account, or organization for which you want to view audit logging information."
+        ]
+      },
+      {
+        "title": "Command-line interface \\_|\\_ Cloud Logging \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/logging/docs/api/gcloud-logging",
+        "source_id": "site-docs-reference",
+        "final_score": 107,
+        "relevance": "",
+        "evidence_snippets": [
+          "Examples Write a log entry to log my-test-log in the current project with a plain-text payload and a severity of ERROR : gcloud logging write my - test - log \"A simple entry\" -- severity = ERROR Write a log entry with a structured (JSON) payload: gcloud logging write my - test - log '{ \"message\": \"My second entry\", \"weather\": \"partly cloudy\"}' -- payload - type = json Write a log entry to a folder, billing account, or organization.",
+          "The full resource name for a log must be one of the following: projects/ PROJECT ID /logs/ LOG ID organizations/ ORGANIZATION ID /logs/ LOG ID folders/ FOLDER ID /logs/ LOG ID billingAccounts/ BILLING ACCOUNT ID /logs/ LOG ID LOG ID can only contain alphanumeric characters, forward-slash, underscore, hyphen, and period characters.",
+          "Use the gcloud logging sinks command group, corresponding to the API methods projects.sinks , folders.sinks , billingAccounts.sinks , and organizations.sinks ."
+        ]
+      },
+      {
+        "title": "Command-line interface \\_|\\_ Cloud Logging \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/logging/docs/reference/tools/gcloud-logging",
+        "source_id": "site-docs-reference",
+        "final_score": 107,
+        "relevance": "",
+        "evidence_snippets": [
+          "Examples Write a log entry to log my-test-log in the current project with a plain-text payload and a severity of ERROR : gcloud logging write my - test - log \"A simple entry\" -- severity = ERROR Write a log entry with a structured (JSON) payload: gcloud logging write my - test - log '{ \"message\": \"My second entry\", \"weather\": \"partly cloudy\"}' -- payload - type = json Write a log entry to a folder, billing account, or organization.",
+          "The full resource name for a log must be one of the following: projects/ PROJECT ID /logs/ LOG ID organizations/ ORGANIZATION ID /logs/ LOG ID folders/ FOLDER ID /logs/ LOG ID billingAccounts/ BILLING ACCOUNT ID /logs/ LOG ID LOG ID can only contain alphanumeric characters, forward-slash, underscore, hyphen, and period characters.",
+          "Use the gcloud logging sinks command group, corresponding to the API methods projects.sinks , folders.sinks , billingAccounts.sinks , and organizations.sinks ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cloudaudit.googleapis.com",
+      "folders.sinks",
+      "organizations.sinks",
+      "projects.sinks"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/api/gcloud-logging",
+        "https://docs.cloud.google.com/logging/docs/reference/tools/gcloud-logging",
+        "https://docs.cloud.google.com/logging/docs/audit"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/api/gcloud-logging",
+        "https://docs.cloud.google.com/logging/docs/reference/tools/gcloud-logging",
+        "https://docs.cloud.google.com/logging/docs/audit"
+      ]
+    }
+  ]
+}

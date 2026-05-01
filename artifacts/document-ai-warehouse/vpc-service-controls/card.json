@@ -1,0 +1,126 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:35.751Z",
+  "source_step08_card": "data/step-08/current/products/document-ai-warehouse/card.json",
+  "product_name": "Document AI Warehouse",
+  "product_slug": "document-ai-warehouse",
+  "feature_name": "VPC Service Controls",
+  "feature_slug": "vpc-service-controls",
+  "summary": "Adds public support for VPC Service Controls in Document AI Warehouse.",
+  "extended_definition": "Adds public support for VPC Service Controls in Document AI Warehouse.",
+  "lifecycle": {
+    "latest_feature_date": "2022-12-08",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 1,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "thin_token_overlap",
+        "message": "Supporting pages only weakly overlap with informative feature tokens.",
+        "suggested_steps": [
+          "step-03",
+          "step-04",
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/document-ai/docs/languages",
+      "https://docs.cloud.google.com/document-ai/docs/libraries",
+      "https://docs.cloud.google.com/document-ai/docs/process-documents-client-libraries"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Quickstart: Process documents by using client libraries \\_|\\_ Document AI\\",
+        "url": "https://docs.cloud.google.com/document-ai/docs/process-documents-client-libraries",
+        "source_id": "site-docs-root",
+        "final_score": 43,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For more information, see Set up authentication for a local development environment . using Google.Cloud.DocumentAI.V1 ; using Google.Protobuf ; using System ; using System.IO ; public class QuickstartSample { public Document Quickstart ( string projectId = \"your-project-id\" , string locationId = \"your-processor-location\" , string processorId = \"your-processor-id\" , string localPath = \"my-local-path/my-file-name\" , string mimeType = \"application/pdf\" ) { // Create client var client = new DocumentProcessorServiceClientBuilder { Endpoint = $\"{locationId}-documentai.googleapis.com\" }.",
+          "For more information, see Set up authentication for a local development environment . / TODO(developer): Uncomment these variables before running the sample. / // const projectId = 'YOUR PROJECT ID'; // const location = 'YOUR PROJECT LOCATION'; // Format is 'us' or 'eu' // const processorId = 'YOUR PROCESSOR ID'; // Create processor in Cloud Console // const filePath = '/path/to/local/pdf'; const { DocumentProcessorServiceClient } = require ( ' @google-cloud/documentai ' ). v1 ; // Instantiates a client // apiEndpoint regions available: eu-documentai.googleapis.com, us-documentai.googleapis.com (Required if using eu based processor) // const client = new DocumentProcessorServiceClient({apiEndpoint: 'eu-documentai.googleapis.com'}); const client = new DocumentProcessorServiceClient (); async function quickstart () { // The full resource name of the processor, e.g.: // projects/project-id/locations/location/processor/processor-id // You must create new processors in the Cloud Console first const name = projects/ ${ projectId } /locations/ ${ location } /processors/ ${ processorId } ; // Read the file into memory. const fs = require ( 'fs' ). promises ; const imageFile = await fs . readFile ( filePath ); // Convert the image data to a Buffer and base64 encode it. const encodedImage = Buffer . from ( imageFile ). toString ( 'base64' ); const request = { name , rawDocument : { content : encodedImage , mimeType : 'application/pdf' , }, }; // Recognizes text entities in the PDF document const [ result ] = await client . processDocument ( request ); const { document } = result ; // Get all of the document text as one big string const { text } = document ; // Extract shards from the text field const getText = textAnchor = > { if ( ! textAnchor . textSegments textAnchor . textSegments . length === 0 ) { return '' ; } // First shard in document doesn't have startIndex property const startIndex = textAnchor . textSegments [ 0 ]. startIndex 0 ; const endIndex = textAnchor . textSegments [ 0 ]. endIndex ; return text . substring ( startIndex , endIndex ); }; // Read the text recognition output from the processor console . log ( 'The document contains the following paragraphs:' ); const [ page1 ] = document . pages ; const { paragraphs } = page1 ; for ( const paragraph of paragraphs ) { const paragraphText = getText ( paragraph . layout . textAnchor ); console . log ( Paragraph text:\\n ${ paragraphText } ); } } PHP For more information, see the Document AI PHP API reference documentation .",
+          "For more information, see Set up authentication for a local development environment . require \"google/cloud/document ai/v1\" Document AI quickstart @param project id [String] Your Google Cloud project (e.g. \"my-project\") @param location id [String] Your Processor Location (e.g. \"us\") @param processor id [String] Your Processor ID (e.g. \"a14dae8f043b60bd\") @param file path [String] Path to Local File (e.g. \"invoice.pdf\") @param mime type [String] Refer to https://cloud.google.com/document-ai/docs/file-types (e.g. \"application/pdf\") def quickstart project id :, location id :, processor id :, file path :, mime type : Create the Document AI client. client = :: Google :: Cloud :: DocumentAI :: V1 :: DocumentProcessorService :: Client . new do config config . endpoint = \" #{ location id } -documentai.googleapis.com\" end Build the resource name from the project. name = client . processor path ( project : project id , location : location id , processor : processor id ) Read the bytes into memory content = File . binread file path Create request request = Google :: Cloud :: DocumentAI :: V1 :: ProcessRequest . new ( skip human review : true , name : name , raw document : { content : content , mime type : mime type } ) Process document response = client . process document request Handle response puts response . document . text end Congratulations!"
+        ]
+      },
+      {
+        "title": "Document AI client libraries \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/document-ai/docs/libraries",
+        "source_id": "site-docs-root",
+        "final_score": 41,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "ProcessDocument ( std :: move ( req )); if ( ! resp ) throw std :: move ( resp ). status (); std :: cout << resp - > document (). text () << \" \\n \" ; return 0 ; } catch ( google :: cloud :: Status const & status ) { std :: cerr << \"google::cloud::Status thrown: \" << status << \" \\n \" ; return 1 ; } C# using Google.Cloud.DocumentAI.V1 ; using Google.Protobuf ; using System ; using System.IO ; public class QuickstartSample { public Document Quickstart ( string projectId = \"your-project-id\" , string locationId = \"your-processor-location\" , string processorId = \"your-processor-id\" , string localPath = \"my-local-path/my-file-name\" , string mimeType = \"application/pdf\" ) { // Create client var client = new DocumentProcessorServiceClientBuilder { Endpoint = $\"{locationId}-documentai.googleapis.com\" }.",
+          "For a full list of Document object attributes, reference this page: https://cloud.google.com/document-ai/docs/reference/rest/v1/Document print ( \"The document contains the following text:\" ) print ( document . text ) Ruby require \"google/cloud/document ai/v1\" Document AI quickstart @param project id [String] Your Google Cloud project (e.g. \"my-project\") @param location id [String] Your Processor Location (e.g. \"us\") @param processor id [String] Your Processor ID (e.g. \"a14dae8f043b60bd\") @param file path [String] Path to Local File (e.g. \"invoice.pdf\") @param mime type [String] Refer to https://cloud.google.com/document-ai/docs/file-types (e.g. \"application/pdf\") def quickstart project id :, location id :, processor id :, file path :, mime type : Create the Document AI client. client = :: Google :: Cloud :: DocumentAI :: V1 :: DocumentProcessorService :: Client . new do config config . endpoint = \" #{ location id } -documentai.googleapis.com\" end Build the resource name from the project. name = client . processor path ( project : project id , location : location id , processor : processor id ) Read the bytes into memory content = File . binread file path Create request request = Google :: Cloud :: DocumentAI :: V1 :: ProcessRequest . new ( skip human review : true , name : name , raw document : { content : content , mime type : mime type } ) Process document response = client . process document request Handle response puts response . document . text end Additional resources C++ The following list contains links to more resources related to the client library for C++: API reference Client libraries best practices Issue tracker cloud-document-ai on Stack Overflow Source code C# The following list contains links to more resources related to the client library for C#: API reference Client libraries best practices Issue tracker cloud-document-ai on Stack Overflow Source code Go The following list contains links to more resources related to the client library for Go: API reference Client libraries best practices Issue tracker cloud-document-ai on Stack Overflow Source code Java The following list contains links to more resources related to the client library for Java: API reference Client libraries best practices Issue tracker cloud-document-ai on Stack Overflow Source code Node.js The following list contains links to more resources related to the client library for Node.js: API reference Client libraries best practices Issue tracker cloud-document-ai on Stack Overflow Source code PHP The following list contains links to more resources related to the client library for PHP: API reference Client libraries best practices Issue tracker cloud-document-ai on Stack Overflow Source code Python The following list contains links to more resources related to the client library for Python: API reference Client libraries best practices Issue tracker cloud-document-ai on Stack Overflow Source code Ruby The following list contains links to more resources related to the client library for Ruby: API reference Client libraries best practices Issue tracker cloud-document-ai on Stack Overflow Source code Previous arrow back Toolbox Next Sample processor output arrow forward Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "TextAnchor textAnchor , String text ) { if ( textAnchor . getTextSegmentsList (). size () > 0 ) { int startIdx = ( int ) textAnchor . getTextSegments ( 0 ). getStartIndex (); int endIdx = ( int ) textAnchor . getTextSegments ( 0 ). getEndIndex (); return text . substring ( startIdx , endIdx ); } return \"[NO TEXT]\" ; } } Node.js / TODO(developer): Uncomment these variables before running the sample. / // const projectId = 'YOUR PROJECT ID'; // const location = 'YOUR PROJECT LOCATION'; // Format is 'us' or 'eu' // const processorId = 'YOUR PROCESSOR ID'; // Create processor in Cloud Console // const filePath = '/path/to/local/pdf'; const { DocumentProcessorServiceClient } = require ( ' @google-cloud/documentai ' ). v1 ; // Instantiates a client // apiEndpoint regions available: eu-documentai.googleapis.com, us-documentai.googleapis.com (Required if using eu based processor) // const client = new DocumentProcessorServiceClient({apiEndpoint: 'eu-documentai.googleapis.com'}); const client = new DocumentProcessorServiceClient (); async function quickstart () { // The full resource name of the processor, e.g.: // projects/project-id/locations/location/processor/processor-id // You must create new processors in the Cloud Console first const name = projects/ ${ projectId } /locations/ ${ location } /processors/ ${ processorId } ; // Read the file into memory. const fs = require ( 'fs' ). promises ; const imageFile = await fs . readFile ( filePath ); // Convert the image data to a Buffer and base64 encode it. const encodedImage = Buffer . from ( imageFile ). toString ( 'base64' ); const request = { name , rawDocument : { content : encodedImage , mimeType : 'application/pdf' , }, }; // Recognizes text entities in the PDF document const [ result ] = await client . processDocument ( request ); const { document } = result ; // Get all of the document text as one big string const { text } = document ; // Extract shards from the text field const getText = textAnchor = > { if ( ! textAnchor . textSegments textAnchor . textSegments . length === 0 ) { return '' ; } // First shard in document doesn't have startIndex property const startIndex = textAnchor . textSegments [ 0 ]. startIndex 0 ; const endIndex = textAnchor . textSegments [ 0 ]. endIndex ; return text . substring ( startIndex , endIndex ); }; // Read the text recognition output from the processor console . log ( 'The document contains the following paragraphs:' ); const [ page1 ] = document . pages ; const { paragraphs } = page1 ; for ( const paragraph of paragraphs ) { const paragraphText = getText ( paragraph . layout . textAnchor ); console . log ( Paragraph text:\\n ${ paragraphText } ); } } PHP Include the autoloader for libraries installed with Composer. require DIR . '/vendor/autoload.php'; Import the Google Cloud client library. use Google\\Cloud\\DocumentAI\\V1\\Client\\DocumentProcessorServiceClient; use Google\\Cloud\\DocumentAI\\V1\\RawDocument; use Google\\Cloud\\DocumentAI\\V1\\ProcessRequest; TODO(developer): Update the following lines before running the sample."
+        ]
+      },
+      {
+        "title": "Processor list \\_|\\_ Document AI \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/document-ai/docs/languages",
+        "source_id": "site-docs-root",
+        "final_score": 41,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Category Digitize Functions OCR, Quality Analysis Release stage General availability Access status Public lock open Type in API OCR PROCESSOR Supported languages Full list of languages Language Name BCP 47 Tag Script Handwriting supported Afrikaans af Latn Albanian sq Latn Arabic ar Arab Armenian hy Armn Belarusian be Cyrl Bangla bn Beng Bengali bn Beng Bulgarian bg Cyrl Catalan ca Latn Chinese zh Hani Croatian hr Latn Czech cs Latn Danish da Latn Dutch nl Latn English en Latn Estonian et Latn Filipino fil Latn Finnish fi Latn French fr Latn German de Latn Greek el Grek Gujarati gu Gujr Hebrew iw Hebr Hindi hi Deva Hungarian hu Latn Icelandic is Latn Indonesian id Latn Italian it Latn Japanese ja Jpan Kannada kn Knda Khmer km Khmr Korean ko Kore Lao lo Laoo Latvian lv Latn Lithuanian lt Latn Macedonian mk Cyrl Malay ms Latn Malayalam ml Mlym Marathi mr Deva Nepali ne Deva Norwegian no Latn Persian fa Arab Polish pl Latn Portuguese (Portugal & Brazil) pt Latn Punjabi pa Guru Romanian ro Latn Russian ru Cyrl Serbian sr Cyrl Slovak sk Latn Slovenian sl Latn Spanish es Latn Swedish sv Latn Tagalog tl Latn Tamil ta Taml Telugu te Telu Thai th Thai Turkish tr Latn Ukrainian uk Cyrl Vietnamese vi Latn Yiddish yi Hebr Processor versions Version ID Release Channel Release Maturity Description pretrained-ocr-v1.2-2022-11-10 Stable GA Frozen model version of v1.0: Model files, configurations, and binaries of a version snapshot frozen in a container image for up to 18 months. pretrained-ocr-v2.0-2023-06-02 Stable GA Production-ready model specialized for document use cases.",
+          "Category Pretrained Functions OCR, Entity Extraction Release stage General availability Access status Public lock open Type in API BANK STATEMENT PROCESSOR Notes If a page of a multi-page input file is the correct document type and one of the supported versions, the processor performs entity extraction on the first supported document.",
+          "Category Pretrained Functions OCR, Entity Extraction Release stage General availability Access status Public lock open Type in API FORM W2 PROCESSOR Notes If a page of a multi-page input file is the correct document type and one of the supported versions, the processor performs entity extraction on the first supported document."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "autoload.php",
+      "com.google.cloud",
+      "documentai.googleapis.com",
+      "e.g",
+      "invoice.pdf",
+      "v1.0",
+      "v1.2",
+      "v2.0"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/document-ai/docs/process-documents-client-libraries",
+        "https://docs.cloud.google.com/document-ai/docs/languages",
+        "https://docs.cloud.google.com/document-ai/docs/libraries"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/document-ai/docs/process-documents-client-libraries",
+        "https://docs.cloud.google.com/document-ai/docs/languages",
+        "https://docs.cloud.google.com/document-ai/docs/libraries"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/document-ai/docs/process-documents-client-libraries",
+        "https://docs.cloud.google.com/document-ai/docs/languages",
+        "https://docs.cloud.google.com/document-ai/docs/libraries"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,133 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:12.801Z",
+  "source_step08_card": "data/step-08/current/products/alloydb/card.json",
+  "product_name": "AlloyDB",
+  "product_slug": "alloydb",
+  "feature_name": "Database auditing recommender",
+  "feature_slug": "database-auditing-recommender",
+  "summary": "The Database auditing recommender helps identify opportunities to enable database auditing in AlloyDB.",
+  "extended_definition": "The Database auditing recommender helps identify opportunities to enable database auditing in AlloyDB.",
+  "lifecycle": {
+    "latest_feature_date": "2025-04-25",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/alloydb/docs/ai/secure-agent-interactions-mcp",
+      "https://docs.cloud.google.com/alloydb/docs/cloud-ready/partners",
+      "https://docs.cloud.google.com/alloydb/docs/optimize-database-performance-compare-snapshots"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Optimize database performance by comparing performance snapshots \\_|\\_ AlloyDB\\",
+        "url": "https://docs.cloud.google.com/alloydb/docs/optimize-database-performance-compare-snapshots",
+        "source_id": "site-docs-reference-2",
+        "final_score": 105,
+        "relevance": "",
+        "evidence_snippets": [
+          "To identify and mitigate AlloyDB for PostgreSQL database performance issues, you can compare snapshots of system metrics between two points in time by manually generating performance snapshot reports.",
+          "Example report The following is an abridged example of a generated performance snapshot report: Example performance snapshot report $ psql -d postgres -U alloydbsuperuser postgres=> select perfsnap.report(22, 23); report -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- PGSNAP DB Report for: Snapshot details -------------------------------------- Host i841-sr-primary-2a34f46e-06bc Release 14.12 Startup Time 2024-10-08 03:23:15+00 Snap Id Snap Time ------------ ---------- ------------------------ Begin Snap: 22 24.10.2024 04:33:56 (UTC) Automatic snapshot End Snap: 23 25.10.2024 04:38:56 (UTC) Automatic snapshot Elapsed: 1 day 00:04:59.979321 Database Cache sizes Shared Buffers: 31 GB Block Size: 8192 Effective Cache Size: 25 GB WAL Buffers: 16384 Host CPU %User %Nice %System %Idle %WIO %IRQ %SIRQ %Steal %Guest ------- ------- ------- ------- ------- ------- ------- ------- ------- 1.07 0.22 0.91 97.40 0.09 0.00 0.31 0.00 0.00 Host Memory Total Memory: 63 GB Available Memory: 11 GB Free Memory: 726 MB Buffers Memory: 3706 MB Load profile (in bytes) Per Second Per Transaction ------------ --------------- Redo size: 63083.64 4489.93 Logical reads: 1961.21 139.59 ...",
+          "You can use the performance snapshot report information to identify performance issues with your performance snapshot report instance, like decreased database performance during certain times of the day or decreased performance over a certain time period."
+        ]
+      },
+      {
+        "title": "\"Google Cloud Ready - AlloyDB Partners \\_|\\_ AlloyDB for PostgreSQL \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/alloydb/docs/cloud-ready/partners",
+        "source_id": "site-docs-reference-2",
+        "final_score": 103,
+        "relevance": "",
+        "evidence_snippets": [
+          "Partner references Vaultree and AlloyDB: the world's first Fully Homomorphic and Searchable Cloud Encryption Solution Vaultree launches support for Google's AlloyDB Partner Advantage page Direct link Data integration, optimization, and migration Airbyte Solution Airbyte Cloud Category Data integration and migration Description Airbyte is an open-source data integration engine that helps you consolidate your data in your data warehouses, lakes, and databases.",
+          "Partner references AlloyDB ODBC Driver Connect to live Google AlloyDB databases through bi-directional data drivers Partner Advantage page Direct link CData JDBC Driver Solution CData JDBC Driver for AlloyDB Category Data integration and migration Description CData AlloyDB JDBC Driver enables users to connect with live AlloyDB data, directly from any applications that support JDBC connectivity.",
+          "Partner references Collibra JDBC driver for AlloyDB Collibra catalogue connector for AlloyDB Partner Advantage page Direct link Liquibase Solution Liquibase Secure Category CI/CD automation with security and governance Description Liquibase helps forward-thinking companies harness the power of Database DevOps to accelerate, secure, and manage their organization."
+        ]
+      },
+      {
+        "title": "\"Best practices for securing agent interactions with Model Context Protocol\\",
+        "url": "https://docs.cloud.google.com/alloydb/docs/ai/secure-agent-interactions-mcp",
+        "source_id": "site-docs-reference-2",
+        "final_score": 96,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "The following is a conceptual example for configuration: Example: Apply a DeidentifyTemplate to filter PII gcloud ai endpoints update ENDPOINT ID \\ --region=REGION \\ --model-armor-config-file=model armor config.json In the following example, model armor config.json might reference a DLP template: { \"safety thresholds\": { \"injection\": \"HIGH\", \"harmful content\": \"MEDIUM\" }, \"data protection config\": { \"dlp deidentify template\": \"projects/PROJECT NUMBER/locations/LOCATION/deidentifyTemplates/DLP TEMPLATE ID\" } } Auditing and observability Visibility into agent actions is crucial for post-incident analysis and detection of compromised agents.",
+          "Home Documentation Databases AlloyDB for PostgreSQL Guides Send feedback Best practices for securing agent interactions with Model Context Protocol Stay organized with collections Save and categorize content based on your preferences.",
+          "Enable Cloud Audit Logs Make sure that Data Access audit logs are enabled for MCP as well as all relevant Google Cloud services like BigQuery, Cloud SQL, AlloyDB, Firestore, and Spanner."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "config.json",
+      "perfsnap.report"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/optimize-database-performance-compare-snapshots",
+        "https://docs.cloud.google.com/alloydb/docs/cloud-ready/partners",
+        "https://docs.cloud.google.com/alloydb/docs/ai/secure-agent-interactions-mcp"
+      ]
+    },
+    {
+      "capability": "armor",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/optimize-database-performance-compare-snapshots",
+        "https://docs.cloud.google.com/alloydb/docs/cloud-ready/partners",
+        "https://docs.cloud.google.com/alloydb/docs/ai/secure-agent-interactions-mcp"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/optimize-database-performance-compare-snapshots",
+        "https://docs.cloud.google.com/alloydb/docs/cloud-ready/partners",
+        "https://docs.cloud.google.com/alloydb/docs/ai/secure-agent-interactions-mcp"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/optimize-database-performance-compare-snapshots",
+        "https://docs.cloud.google.com/alloydb/docs/cloud-ready/partners",
+        "https://docs.cloud.google.com/alloydb/docs/ai/secure-agent-interactions-mcp"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/optimize-database-performance-compare-snapshots",
+        "https://docs.cloud.google.com/alloydb/docs/cloud-ready/partners",
+        "https://docs.cloud.google.com/alloydb/docs/ai/secure-agent-interactions-mcp"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/optimize-database-performance-compare-snapshots",
+        "https://docs.cloud.google.com/alloydb/docs/cloud-ready/partners",
+        "https://docs.cloud.google.com/alloydb/docs/ai/secure-agent-interactions-mcp"
+      ]
+    }
+  ]
+}

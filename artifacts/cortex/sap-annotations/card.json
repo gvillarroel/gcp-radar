@@ -1,0 +1,116 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:32.419Z",
+  "source_step08_card": "data/step-08/current/products/cortex/card.json",
+  "product_name": "Cortex",
+  "product_slug": "cortex",
+  "feature_name": "SAP Annotations",
+  "feature_slug": "sap-annotations",
+  "summary": "SAP Annotations add functional descriptions and business context to SAP reporting views and fields.",
+  "extended_definition": "SAP Annotations add functional descriptions and business context to SAP reporting views and fields.",
+  "lifecycle": {
+    "latest_feature_date": "2024-12-19",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/cortex/docs/datamesh",
+      "https://docs.cloud.google.com/cortex/docs/datamesh-concepts",
+      "https://docs.cloud.google.com/cortex/docs/looker-block-customize"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"(Deprecated) Data Mesh User Guide \\_|\\_ Google Cloud Cortex Framework \\_\\",
+        "url": "https://docs.cloud.google.com/cortex/docs/datamesh",
+        "source_id": "site-docs-reference",
+        "final_score": 118,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To ensure that you are deploying with required packages and versions, you can run the utility from the same image used by the Cortex deployment process with the following commands: Run container interactively docker container run -it gcr.io/kittycorn-public/deploy-kittycorn:v2.0 Clone the repo git clone https://github.com/GoogleCloudPlatform/cortex-data-foundation Navigate into the repo cd cortex-data-foundation For help with the available parameters and their usage, run the following command: python src/common/data mesh/deploy data mesh.py -h The following is an example for invocation for SAP ECC: python src/common/data mesh/deploy data mesh.py \\ --config-file config/config.json \\ --lake-directories \\ src/SAP/SAP REPORTING/config/ecc/lakes \\ --tag-template-directories \\ src/SAP/SAP REPORTING/config/ecc/tag templates \\ --policy-directories \\ src/SAP/SAP REPORTING/config/ecc/policy taxonomies \\ --annotation-directories \\ src/SAP/SAP REPORTING/config/ecc/annotations See the Data Mesh directories section for information about directory locations.",
+          "Annotations include: Asset descriptions Field descriptions Catalog Tags Asset, row, and column level access control Note: If you modify an annotation file, consider that the console only renders new lines in descriptions as a whitespace.",
+          "Option Notes deployDescriptions This is the only option enabled by default and it deploys BigQuery annotations with asset and column descriptions."
+        ]
+      },
+      {
+        "title": "\"Customize Looker Blocks \\_|\\_ Google Cloud Cortex Framework \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/cortex/docs/looker-block-customize",
+        "source_id": "site-docs-reference",
+        "final_score": 71,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Each view definition begins with annotations that furnish background information, including descriptions, sources, references, extended fields, and other relevant notes.",
+          "BUSINESS UNIT NAME ) ;; } } Include the new refinement in the Explore : Use the new file in the include property instead of the refinement provided in the Cortex Framework Looker Block. include : \"/views/my customizations/sales invoices rfn.view\" explore : sales invoices { } Editing LookML dashboard filters The common set of dashboard filters used across multiple LookML dashboards are defined in a dashboard named with template suffix and extended into each dashboard.",
+          "Customize Looker Blocks This page provides an overview of best practices and examples on how to adapt the following Cortex Framework Looker Blocks to your specific business requirements: Looker Block for Oracle EBS Looker Block for Meta Looker Block for YouTube (with DV360) Installation You can install the Cortex Framework Looker Blocks in a few ways, as detailed in the Deploy Looker Blocks documentation."
+        ]
+      },
+      {
+        "title": "\"(Deprecated) Data Mesh concepts \\_|\\_ Google Cloud Cortex Framework \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/cortex/docs/datamesh-concepts",
+        "source_id": "site-docs-reference",
+        "final_score": 57,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Before diving into the detailed guide on deploying Data Mesh with Google Cloud Cortex Framework, this page provides a foundation for how relevant Data Mesh concepts are generally implemented within a Google Cloud product and specifically with the Cortex Framework context.",
+          "Cortex Data Mesh concept The following table defines specific Data Mesh concepts within Cortex Framework: Concept Description Cortex Framework context Metadata Resource Metadata entities that can be re-used across multiple BigQuery assets.",
+          "Dataplex Universal Catalog The following table defines Data Mesh concepts within Dataplex Universal Catalog: Concept Description Cortex Framework context Lake Top level unit for organizing data within a Data Mesh."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "config.json",
+      "gcr.io",
+      "github.com",
+      "invoices.view",
+      "mesh.py",
+      "rfn.view",
+      "v2.0",
+      "v4.2",
+      "v5.0"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/cortex/docs/datamesh",
+        "https://docs.cloud.google.com/cortex/docs/looker-block-customize",
+        "https://docs.cloud.google.com/cortex/docs/datamesh-concepts"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/cortex/docs/datamesh",
+        "https://docs.cloud.google.com/cortex/docs/looker-block-customize",
+        "https://docs.cloud.google.com/cortex/docs/datamesh-concepts"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/cortex/docs/datamesh",
+        "https://docs.cloud.google.com/cortex/docs/looker-block-customize",
+        "https://docs.cloud.google.com/cortex/docs/datamesh-concepts"
+      ]
+    }
+  ]
+}

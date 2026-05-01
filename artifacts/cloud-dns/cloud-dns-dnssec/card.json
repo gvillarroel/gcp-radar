@@ -1,0 +1,199 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:23.489Z",
+  "source_step08_card": "data/step-08/current/products/cloud-dns/card.json",
+  "product_name": "Cloud DNS",
+  "product_slug": "cloud-dns",
+  "feature_name": "Cloud DNS DNSSEC",
+  "feature_slug": "cloud-dns-dnssec",
+  "summary": "Cloud DNS DNSSEC adds DNS authentication support to protect domain responses from tampering; Cloud DNS DNSSEC adds DNS authentication support to protect domain responses from tampering.",
+  "extended_definition": "Cloud DNS DNSSEC adds DNS authentication support to protect domain responses from tampering; Cloud DNS DNSSEC adds DNS authentication support to protect domain responses from tampering.",
+  "lifecycle": {
+    "latest_feature_date": "2018-05-02",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dns/docs/dnssec",
+      "https://docs.cloud.google.com/dns/docs/dnssec-advanced",
+      "https://docs.cloud.google.com/dns/docs/dnssec-migrate",
+      "https://docs.cloud.google.com/dns/docs/tutorials/create-domain-tutorial"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "DNS Security Extensions (DNSSEC) overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dns/docs/dnssec",
+        "source_id": "site-docs-root",
+        "final_score": 235,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The Domain Name System Security Extensions (DNSSEC) is a feature of the Domain Name System (DNS) that authenticates responses to domain name lookups.",
+          "To protect domains from spoofing and poisoning attacks, enable and configure DNSSEC in the following places: The DNS zone.",
+          "Before enabling DNSSEC, check the following resources: The DNSSEC documentation for both your domain registrar and TLD registry The Google Cloud community tutorial's domain registrar-specific instructions The ICANN list of domain registrar DNSSEC support to confirm DNSSEC support for your domain."
+        ]
+      },
+      {
+        "title": "Use advanced DNSSEC \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dns/docs/dnssec-advanced",
+        "source_id": "site-iam-reference",
+        "final_score": 231,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Use new DNS record types with DNSSEC-secured zones After your domain has been fully DNSSEC-secured, you can start by using several new DNS record types that use the authenticity and integrity guarantees of DNSSEC-signed zones to enhance the security of other services.",
+          "Note: If you want your domain to resolve while DNSSEC is disabled, you must first deactivate DNSSEC for your zone at your domain registrar to ensure that DNSSEC-validating resolvers can still resolve names in the zone.",
+          "To enable DNSSEC for delegated subdomains, first create a DS record within a Cloud DNS zone."
+        ]
+      },
+      {
+        "title": "Migrate or transfer DNSSEC-enabled zones \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dns/docs/dnssec-migrate",
+        "source_id": "site-iam-reference",
+        "final_score": 203,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "This page describes how to migrate a DNSSEC-enabled zone that is activated at the domain registrar between Cloud DNS and other DNS hosting providers while maintaining the DNSSEC chain of trust.",
+          "If your domain registrar also provides DNS hosting, you must coordinate with your domain registrar to migrate the DNSSEC chain of trust.",
+          "Limitations Migrating a DNSSEC zone has the following limitations: You can only migrate a zone while maintaining the DNSSEC chain of trust if the new operator and registrar support DNSSEC migration, including importing DNSKEY records, setting multiple DS records, and preventing automatic key rotation during migration."
+        ]
+      },
+      {
+        "title": "Tutorial: Set up a domain by using Cloud DNS \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dns/docs/tutorials/create-domain-tutorial",
+        "source_id": "site-iam-reference",
+        "final_score": 197,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For more information about zones, see the DNS zones overview . to setup a web-server resource \"random id\" \"rnd\" { byte length = 4 } resource \"google compute instance\" \"default\" { name = \"dns-compute-instance\" machine type = \"g1-small\" zone = \"us-central1-b\" boot disk { initialize params { image = \"debian-cloud/debian-11\" } } network interface { network = \"default\" access config { // Ephemeral public IP } } metadata startup script = <<-EOF sudo apt-get update && \\ sudo apt-get install apache2 -y && \\ echo \"<!doctype html><html><body><h1>Hello World!</h1></body></html>\" > /var/www/html/index.html EOF } to allow http traffic resource \"google compute firewall\" \"default\" { name = \"allow-http-traffic\" network = \"default\" allow { ports = [\"80\"] protocol = \"tcp\" } source ranges = [\"0.0.0.0/0\"] } to create a DNS zone resource \"google dns managed zone\" \"default\" { name = \"example-zone-googlecloudexample\" dns name = \"example-${random id.rnd.hex}.com.\" description = \"Example DNS zone\" force destroy = \"true\" } to register web-server's ip address in DNS resource \"google dns record set\" \"default\" { name = google dns managed zone.default.dns name managed zone = google dns managed zone.default.name type = \"A\" ttl = 300 rrdatas = [ google compute instance.default.network interface[0].access config[0].nat ip ] } Verify your setup To verify that your configuration is working, after the name servers are updated, navigate to your domain name (for example, example.com ).",
+          "Objectives This tutorial demonstrates how to complete the following tasks: Register a domain name by using Cloud Domains Create a Compute Engine virtual machine (VM) instance Run a basic Apache web server Set up your domain using Cloud DNS Update name servers Verify your setup Costs There is a cost associated with registering a domain name.",
+          "Home Documentation Networking Cloud DNS Guides Send feedback Tutorial: Set up a domain by using Cloud DNS Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "dns.admin",
+      "dns.dnsKeys.create",
+      "dns.dnsKeys.delete",
+      "dns.dnsKeys.list",
+      "dns.dnsKeys.update",
+      "example.com",
+      "id.rnd.hex",
+      "index.html",
+      "instance.default.network",
+      "zone.default.dns",
+      "zone.default.name"
+    ],
+    "missing_inventory_roles": [
+      "roles/dns.admin"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dns/docs/dnssec",
+        "https://docs.cloud.google.com/dns/docs/dnssec-advanced",
+        "https://docs.cloud.google.com/dns/docs/dnssec-migrate",
+        "https://docs.cloud.google.com/dns/docs/tutorials/create-domain-tutorial"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dns/docs/dnssec",
+        "https://docs.cloud.google.com/dns/docs/dnssec-advanced",
+        "https://docs.cloud.google.com/dns/docs/dnssec-migrate",
+        "https://docs.cloud.google.com/dns/docs/tutorials/create-domain-tutorial"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dns/docs/dnssec",
+        "https://docs.cloud.google.com/dns/docs/dnssec-advanced",
+        "https://docs.cloud.google.com/dns/docs/dnssec-migrate",
+        "https://docs.cloud.google.com/dns/docs/tutorials/create-domain-tutorial"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dns/docs/dnssec",
+        "https://docs.cloud.google.com/dns/docs/dnssec-advanced",
+        "https://docs.cloud.google.com/dns/docs/dnssec-migrate",
+        "https://docs.cloud.google.com/dns/docs/tutorials/create-domain-tutorial"
+      ]
+    },
+    {
+      "capability": "dnssec",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dns/docs/dnssec",
+        "https://docs.cloud.google.com/dns/docs/dnssec-advanced",
+        "https://docs.cloud.google.com/dns/docs/dnssec-migrate",
+        "https://docs.cloud.google.com/dns/docs/tutorials/create-domain-tutorial"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dns/docs/dnssec",
+        "https://docs.cloud.google.com/dns/docs/dnssec-advanced",
+        "https://docs.cloud.google.com/dns/docs/dnssec-migrate",
+        "https://docs.cloud.google.com/dns/docs/tutorials/create-domain-tutorial"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dns/docs/dnssec",
+        "https://docs.cloud.google.com/dns/docs/dnssec-advanced",
+        "https://docs.cloud.google.com/dns/docs/dnssec-migrate",
+        "https://docs.cloud.google.com/dns/docs/tutorials/create-domain-tutorial"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dns/docs/dnssec",
+        "https://docs.cloud.google.com/dns/docs/dnssec-advanced",
+        "https://docs.cloud.google.com/dns/docs/dnssec-migrate",
+        "https://docs.cloud.google.com/dns/docs/tutorials/create-domain-tutorial"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dns/docs/dnssec",
+        "https://docs.cloud.google.com/dns/docs/dnssec-advanced",
+        "https://docs.cloud.google.com/dns/docs/dnssec-migrate",
+        "https://docs.cloud.google.com/dns/docs/tutorials/create-domain-tutorial"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dns/docs/dnssec",
+        "https://docs.cloud.google.com/dns/docs/dnssec-advanced",
+        "https://docs.cloud.google.com/dns/docs/dnssec-migrate",
+        "https://docs.cloud.google.com/dns/docs/tutorials/create-domain-tutorial"
+      ]
+    }
+  ]
+}

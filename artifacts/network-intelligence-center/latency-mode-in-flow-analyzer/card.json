@@ -1,0 +1,135 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:44.804Z",
+  "source_step08_card": "data/step-08/current/products/network-intelligence-center/card.json",
+  "product_name": "Network Intelligence Center",
+  "product_slug": "network-intelligence-center",
+  "feature_name": "Latency mode in Flow Analyzer",
+  "feature_slug": "latency-mode-in-flow-analyzer",
+  "summary": "Flow Analyzer can display traffic flows in latency mode to analyze round-trip time.",
+  "extended_definition": "Flow Analyzer can display traffic flows in latency mode to analyze round-trip time.",
+  "lifecycle": {
+    "latest_feature_date": "2026-02-13",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/network-intelligence-center/docs/cloud-network-insights/add-monitoring-points",
+      "https://docs.cloud.google.com/network-intelligence-center/docs/flow-analyzer/overview",
+      "https://docs.cloud.google.com/network-intelligence-center/docs/network-topology/concepts/overview",
+      "https://docs.cloud.google.com/network-intelligence-center/docs/overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Flow Analyzer overview \\_|\\_ Network Intelligence Center - Flow Analyzer\\",
+        "url": "https://docs.cloud.google.com/network-intelligence-center/docs/flow-analyzer/overview",
+        "source_id": "site-docs-root",
+        "final_score": 329,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "In Flow Analyzer, you can do the following: Query logs reported by VPC Flow Logs Use SQL filters to refine your queries Sort query results by total traffic, aggregate packets, or latency View traffic for a specific time period View the top five flows with the highest traffic or latency, for the selected time period View resources with the highest traffic or latency, for the selected time period View traffic details for specific source and destination pairs in your query results How it works VPC Flow Logs samples packets in your VPC network to generate flow logs, which can be stored in Cloud Logging or routed to supported destinations, such as BigQuery or a third-party platform through Pub/Sub.",
+          "When flow logs are stored in Observability Analytics-enabled buckets in Cloud Logging, you can use Flow Analyzer to query and visualize your traffic data.",
+          "Flow Analyzer provides two modes for customizing how data is displayed: Data volume (default): displays bytes and packets sent."
+        ]
+      },
+      {
+        "title": "\"Add Monitoring Points \\_|\\_ Network Intelligence Center - Cloud Network\\",
+        "url": "https://docs.cloud.google.com/network-intelligence-center/docs/cloud-network-insights/add-monitoring-points",
+        "source_id": "site-iam-reference",
+        "final_score": 193,
+        "relevance": "",
+        "evidence_snippets": [
+          "The following environments are supported: Google Cloud VPC networks in the same or different projects Remote branch offices or retail locations On-premises data centers Other cloud environments, for example, AWS or Azure If you need help to determine where to install Monitoring Points to target strategic web application deployment, use VPC Flow Logs or vm flow metrics in a performance dashboard to understand where traffic is flowing in your network.",
+          "They are the source of all synthetic network traffic and can also be a target of testing.",
+          "Linux-based virtualized environments such as OpenStack, custom Linux hypervisors. v35-KVM Before you begin In addition to the Cloud Network Editor ( roles/networkmanagement.CloudNetworkInsightsEditor ) role, the deployment environment and Monitoring Points have specific networking requirements to ensure that the Monitoring Point can be installed successfully and communicate back to Cloud Network Insights control plane."
+        ]
+      },
+      {
+        "title": "\"Network Topology overview \\_|\\_ Network Intelligence Center - Network Topology\\",
+        "url": "https://docs.cloud.google.com/network-intelligence-center/docs/network-topology/concepts/overview",
+        "source_id": "site-docs-root",
+        "final_score": 181,
+        "relevance": "",
+        "evidence_snippets": [
+          "Metrics for the selected hour on the timeline include the following: Average hourly throughput available for most entities Average hourly packet loss available for traffic within Google Cloud regions and zones Hourly median latency (RTT) available for many entity types In the GKE Enterprise view available for GKE Enterprise projects, the metrics for the selected hour on the timeline also include the following: Average hourly throughput available for most entities Median latency available for traffic within Google Cloud regions and zones with GKE clusters Network verdict metrics displaying the GKE workloads with the most dropped and most forwarded traffic flows for the selected cluster You can also download the table of outliers in a CSV format for the High egress and Network verdict traffic insights.",
+          "In the Infrastructure view, the insights for metrics for the selected hour on the timeline include the following: High egress instances: aggregated hourly values for various types of egress High egress instance groups: aggregated hourly values for various types of egress In the GKE Enterprise view available for GKE Enterprise projects, the insights for metrics for the selected hour on the timeline include the following: High egress GKE workloads: aggregated hourly values for various types of egress for GKE workloads, in the GKE Enterprise view Filter the traffic based on the traffic types You can further filter the traffic based on the following traffic types: All egress traffic for an entity Cross-zonal egress traffic: useful for analyzing billable traffic Egress to internet: used for analyzing billable traffic and for analyzing the traffic that reaches external endpoints Hybrid egress: used to analyze the volume of traffic to on-premises, including Cloud Interconnect, Cloud VPN, and Router appliance connections In the GKE Enterprise view, you can further filter the traffic based on the following traffic types: All measured egress traffic from the selected entity Cross-zonal egress traffic: useful for analyzing billable traffic between Google Cloud zones Multiple projects Network Topology visualizes resources in your project, or you can use Cloud Monitoring, which can visualize metrics for multiple Google Cloud projects.",
+          "Instead, Network Topology displays the traffic as if it were to and from an external location by using two connections: one connection between the first VM and the country of the second VM, and another connection between the second VM and the country of the first VM."
+        ]
+      },
+      {
+        "title": "Network Intelligence Center overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/network-intelligence-center/docs/overview",
+        "source_id": "site-docs-reference",
+        "final_score": 176,
+        "relevance": "",
+        "evidence_snippets": [
+          "Flow Analyzer Flow Analyzer lets you quickly and efficiently understand your Virtual Private Cloud (VPC) traffic flows without the need to write complex SQL queries for analyzing VPC Flow Logs.",
+          "Flow Analyzer lets you perform opinionated network traffic analysis with 5-tuple granularity (source IP, destination IP, source port, destination port, and protocol).",
+          "Developed using Observability Analytics and powered by BigQuery , Flow Analyzer enables in-depth analysis of inbound and outbound traffic of your VM instances."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "networkmanagement.CloudNetworkInsightsEditor"
+    ],
+    "missing_inventory_roles": [
+      "roles/networkmanagement.CloudNetworkInsightsEditor"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-intelligence-center/docs/flow-analyzer/overview",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/cloud-network-insights/add-monitoring-points",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/network-topology/concepts/overview",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/overview"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-intelligence-center/docs/flow-analyzer/overview",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/cloud-network-insights/add-monitoring-points",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/network-topology/concepts/overview",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/overview"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-intelligence-center/docs/flow-analyzer/overview",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/cloud-network-insights/add-monitoring-points",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/network-topology/concepts/overview",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/overview"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-intelligence-center/docs/flow-analyzer/overview",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/cloud-network-insights/add-monitoring-points",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/network-topology/concepts/overview",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/overview"
+      ]
+    }
+  ]
+}

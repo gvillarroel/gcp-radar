@@ -1,0 +1,117 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:43.708Z",
+  "source_step08_card": "data/step-08/current/products/migrate-to-containers/card.json",
+  "product_name": "Migrate to Containers",
+  "product_slug": "migrate-to-containers",
+  "feature_name": "Data repository support",
+  "feature_slug": "data-repository-support",
+  "summary": "Migrate for Anthos supports additional data repositories, including Amazon ECR, Amazon S3, and Docker registries with basic authentication.",
+  "extended_definition": "Migrate for Anthos supports additional data repositories, including Amazon ECR, Amazon S3, and Docker registries with basic authentication.",
+  "lifecycle": {
+    "latest_feature_date": "2021-01-25",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/migrate/containers/docs/convert-runtime",
+      "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/windows/windows-customizing-a-migration-plan",
+      "https://docs.cloud.google.com/migrate/containers/docs/migration-journey"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Customize migration plan for Windows IIS services \\_|\\_ Migrate to Containers\\",
+        "url": "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/windows/windows-customizing-a-migration-plan",
+        "source_id": "site-docs-reference",
+        "final_score": 57,
+        "relevance": "",
+        "evidence_snippets": [
+          "To run additional services in the migrated container, add entries to the windowsServices section, and copy the necessary binaries in the useractions section . version: v1 globalSettings: target: … globalIIS: … images: - name: migrated-image-zgwb2 workloads: sites: site: - applications: ... bindings: - port: 80 protocol: http name: Default Web Site … windowsServices: - MyService useractions: files: - source: C:\\Program Files\\MyService target: C:\\Program Files\\MyService registry: currentcontrolset: - key: services\\MyService The useractions section The useractions section specifies additional files and registry keys that you might want to migrate.",
+          "You can modify the PATH environment variables by editing the members of pathEnvVarAdditionalEntries : pathEnvVarAdditionalEntries : - \"C:\\\\myDllsFolder\" - \"C:\\\\ProgramData\\\\SomeSoftware\" Edit the image section You might want to edit the image section in the following cases: Some suggested features are not be required by the migrated sites.",
+          "Migrate to Containers only supports a value of System.Data.SqlClient . supports the .NET Framework data provider: System.Data.SqlClient System.Data.OleDb System.Data.Odbc System.Data.OracleClient connectionstring specifies the Connection Strings used to connect to the data provider."
+        ]
+      },
+      {
+        "title": "\"Upgrade container workloads for enhanced runtime \\_|\\_ Migrate to Containers\\",
+        "url": "https://docs.cloud.google.com/migrate/containers/docs/convert-runtime",
+        "source_id": "site-docs-reference",
+        "final_score": 53,
+        "relevance": "",
+        "evidence_snippets": [
+          "Set the product version to 1.15.0: FROM anthos-migrate.gcr.io/v2k-run-embedded: v1.15.0 as migrate-for-anthos-runtime ...",
+          "Set the product version to 1.15.0: FROM anthos-migrate.gcr.io/v2k-run-embedded: v1.15.0 as migrate-for-anthos-runtime ...",
+          "FROM anthos-migrate.gcr.io/v2k-run-embedded: v1.15.0 as migrate-for-anthos-runtime ..."
+        ]
+      },
+      {
+        "title": "\"Migration journey for GKE, GKE Enterprise, and Cloud Run \\_|\\_ Migrate to\\",
+        "url": "https://docs.cloud.google.com/migrate/containers/docs/migration-journey",
+        "source_id": "site-docs-reference",
+        "final_score": 52,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Migration journey for GKE, GKE Enterprise, and Cloud Run To migrate your VMs from your source environment to containers running in Google Cloud, we recommend that you follow the framework described in the Migration to Google Cloud series .",
+          "Home Documentation Migration Migrate to Containers Guides Send feedback Stay organized with collections Save and categorize content based on your preferences.",
+          "In this phase, you assess your source environment, assess the workloads that you want to migrate to Google Cloud, and assess which VMs support each workload."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "migrate.gcr.io",
+      "v1.15.0"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/windows/windows-customizing-a-migration-plan",
+        "https://docs.cloud.google.com/migrate/containers/docs/convert-runtime",
+        "https://docs.cloud.google.com/migrate/containers/docs/migration-journey"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/windows/windows-customizing-a-migration-plan",
+        "https://docs.cloud.google.com/migrate/containers/docs/convert-runtime",
+        "https://docs.cloud.google.com/migrate/containers/docs/migration-journey"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/windows/windows-customizing-a-migration-plan",
+        "https://docs.cloud.google.com/migrate/containers/docs/convert-runtime",
+        "https://docs.cloud.google.com/migrate/containers/docs/migration-journey"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/windows/windows-customizing-a-migration-plan",
+        "https://docs.cloud.google.com/migrate/containers/docs/convert-runtime",
+        "https://docs.cloud.google.com/migrate/containers/docs/migration-journey"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,191 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:12.801Z",
+  "source_step08_card": "data/step-08/current/products/alloydb/card.json",
+  "product_name": "AlloyDB",
+  "product_slug": "alloydb",
+  "feature_name": "AlloyDB-scoped OAuth 2.0 access tokens",
+  "feature_slug": "alloydb-scoped-oauth-2-0-access-tokens",
+  "summary": "OAuth 2.0 access tokens can be restricted so they work only for AlloyDB authentication.",
+  "extended_definition": "OAuth 2.0 access tokens can be restricted so they work only for AlloyDB authentication.",
+  "lifecycle": {
+    "latest_feature_date": "2023-11-15",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/alloydb/docs/about-private-services-access",
+      "https://docs.cloud.google.com/alloydb/docs/ai/use-alloydb-mcp",
+      "https://docs.cloud.google.com/alloydb/docs/connect-iam"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Private services access overview \\_|\\_ AlloyDB for PostgreSQL \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/alloydb/docs/about-private-services-access",
+        "source_id": "site-docs-reference",
+        "final_score": 63,
+        "relevance": "",
+        "evidence_snippets": [
+          "A VPC network in the same project as your cluster How you configure AlloyDB connectivity using a VPC network that resides in the same Google Cloud project as your AlloyDB cluster depends on whether a private services access configuration already exists in the VPC network.",
+          "IP address range size considerations It's important to choose a private services access address range that is wide enough to accommodate the needs of AlloyDB, as well as any other Google Cloud services that require IP addresses from the same address pool.",
+          "If the VPC network already has an existing private services access configuration, then make sure the configuration has sufficient IP address space for AlloyDB and increase the address space if necessary."
+        ]
+      },
+      {
+        "title": "\"Connect using an IAM account \\_|\\_ AlloyDB for PostgreSQL \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/alloydb/docs/connect-iam",
+        "source_id": "site-docs-reference-2",
+        "final_score": 62,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "For additional security, you can restrict the token for use with only AlloyDB authentication by following these alternative steps: Add the alloydb.login scope to your current environment's access credentials using the gcloud auth application-default login command , if you have not already done so: gcloud auth application-default login --scopes = https://www.googleapis.com/auth/alloydb.login,https://www.googleapis.com/auth/cloud-platform,https://www.googleapis.com/auth/userinfo.email,openid Print a restricted OAuth 2.0 token using the gcloud auth application-default print-access-token command , scoping the token only to AlloyDB authentication: gcloud auth application-default print-access-token –-scopes=https://www.googleapis.com/auth/alloydb.login Caution: Treat your OAuth 2.0 token as sensitive information.",
+          "Authenticate with an OAuth 2.0 token A user or an application can authenticate with an AlloyDB database by following these steps: If you haven't already done so, authorize the Google Cloud CLI using the same user or service account that you want to log in to your AlloyDB instance with.",
+          "To view the principal specified by the token, run the following command: curl -H \"Content-Type: application/x-www-form-urlencoded\" -d \"access token= ACCESS TOKEN \" https://www.googleapis.com/oauth2/v1/tokeninfo Replace ACCESS TOKEN with the OAuth 2.0 access token."
+        ]
+      },
+      {
+        "title": "\"Use the AlloyDB remote MCP server \\_|\\_ AlloyDB for PostgreSQL \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/alloydb/docs/ai/use-alloydb-mcp",
+        "source_id": "site-docs-reference-2",
+        "final_score": 58,
+        "relevance": "",
+        "evidence_snippets": [
+          "Authentication and authorization The AlloyDB for PostgreSQL remote MCP server uses the OAuth 2.0 protocol with Identity and Access Management (IAM) for authentication and authorization.",
+          "To initialize the gcloud CLI, run the following command: gcloud init Required roles To get the permissions that you need to use the AlloyDB for PostgreSQL MCP server, ask your administrator to grant you the following IAM roles on the project where you want to use the AlloyDB for PostgreSQL MCP server: Make MCP tool calls: MCP Tool User ( roles/mcp.toolUser ) Create an AlloyDB instance: AlloyDB Admin ( roles/alloydb.admin ) Create an AlloyDB user: AlloyDB Admin ( roles/alloydb.admin ) Execute SQL queries in AlloyDB: AlloyDB Admin ( roles/alloydb.admin ) Studio Query User ( roles/databasesconsole.studioQueryUser ) Get a AlloyDB instance or list all AlloyDB instances in a project: AlloyDB Viewer ( roles/alloydb.viewer ) List AlloyDB users: AlloyDB Viewer ( roles/alloydb.viewer ) For more information about granting roles, see Manage access to projects, folders, and organizations .",
+          "If the data api access configuration isn't enabled on an instance, you can enable it using the curl command to update the value of the field dataApiAccess to ENABLED : curl -X PATCH \\ -H \"Authorization: Bearer $(gcloud auth print-access-token)\" \\ -H \"Content-Type: application/json\" \\ https://alloydb.googleapis.com/v1alpha/projects/ PROJECT ID /locations/ LOCATION /clusters/ CLUSTER ID /instances/ INSTANCE ID ?updateMask=dataApiAccess \\ -d '{ \"dataApiAccess\": \"ENABLED\", }' Replace the following: PROJECT ID : The ID of your Google Cloud project."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "alloydb.admin",
+      "alloydb.googleapis.com",
+      "alloydb.login",
+      "alloydb.viewer",
+      "databasesconsole.studioQueryUser",
+      "mcp.toolUser",
+      "userinfo.email"
+    ],
+    "missing_inventory_roles": [
+      "roles/alloydb.admin",
+      "roles/alloydb.viewer",
+      "roles/databasesconsole.studioQueryUser",
+      "roles/mcp.toolUser"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/connect-iam",
+        "https://docs.cloud.google.com/alloydb/docs/about-private-services-access",
+        "https://docs.cloud.google.com/alloydb/docs/ai/use-alloydb-mcp"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/connect-iam",
+        "https://docs.cloud.google.com/alloydb/docs/about-private-services-access",
+        "https://docs.cloud.google.com/alloydb/docs/ai/use-alloydb-mcp"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/connect-iam",
+        "https://docs.cloud.google.com/alloydb/docs/about-private-services-access",
+        "https://docs.cloud.google.com/alloydb/docs/ai/use-alloydb-mcp"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/connect-iam",
+        "https://docs.cloud.google.com/alloydb/docs/about-private-services-access",
+        "https://docs.cloud.google.com/alloydb/docs/ai/use-alloydb-mcp"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/connect-iam",
+        "https://docs.cloud.google.com/alloydb/docs/about-private-services-access",
+        "https://docs.cloud.google.com/alloydb/docs/ai/use-alloydb-mcp"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/connect-iam",
+        "https://docs.cloud.google.com/alloydb/docs/about-private-services-access",
+        "https://docs.cloud.google.com/alloydb/docs/ai/use-alloydb-mcp"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/connect-iam",
+        "https://docs.cloud.google.com/alloydb/docs/about-private-services-access",
+        "https://docs.cloud.google.com/alloydb/docs/ai/use-alloydb-mcp"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/connect-iam",
+        "https://docs.cloud.google.com/alloydb/docs/about-private-services-access",
+        "https://docs.cloud.google.com/alloydb/docs/ai/use-alloydb-mcp"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/connect-iam",
+        "https://docs.cloud.google.com/alloydb/docs/about-private-services-access",
+        "https://docs.cloud.google.com/alloydb/docs/ai/use-alloydb-mcp"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/connect-iam",
+        "https://docs.cloud.google.com/alloydb/docs/about-private-services-access",
+        "https://docs.cloud.google.com/alloydb/docs/ai/use-alloydb-mcp"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/connect-iam",
+        "https://docs.cloud.google.com/alloydb/docs/about-private-services-access",
+        "https://docs.cloud.google.com/alloydb/docs/ai/use-alloydb-mcp"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/connect-iam",
+        "https://docs.cloud.google.com/alloydb/docs/about-private-services-access",
+        "https://docs.cloud.google.com/alloydb/docs/ai/use-alloydb-mcp"
+      ]
+    }
+  ]
+}

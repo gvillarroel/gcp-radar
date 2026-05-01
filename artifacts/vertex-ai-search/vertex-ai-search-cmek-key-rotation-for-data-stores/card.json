@@ -1,0 +1,156 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:48.769Z",
+  "source_step08_card": "data/step-08/current/products/vertex-ai-search/card.json",
+  "product_name": "Vertex AI Search",
+  "product_slug": "vertex-ai-search",
+  "feature_name": "Vertex AI Search CMEK key rotation for data stores",
+  "feature_slug": "vertex-ai-search-cmek-key-rotation-for-data-stores",
+  "summary": "Introduces key rotation for customer-managed encryption keys used by Vertex AI Search data stores associated with search apps, available in Private Preview.",
+  "extended_definition": "Introduces key rotation for customer-managed encryption keys used by Vertex AI Search data stores associated with search apps, available in Private Preview.",
+  "lifecycle": {
+    "latest_feature_date": "2024-07-15",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/generative-ai-app-builder/docs/cmek",
+      "https://docs.cloud.google.com/generative-ai-app-builder/docs/create-data-store-es",
+      "https://docs.cloud.google.com/generative-ai-app-builder/docs/create-data-store-recommendations"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Customer-managed encryption keys \\_|\\_ Vertex AI Search \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/generative-ai-app-builder/docs/cmek",
+        "source_id": "site-docs-reference",
+        "final_score": 114,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "An example response looks like this: { \"name\": \"projects/969795412903/locations/us/collections/default collection/dataStores/my-data-store-1\", \"displayName\": \"my-data-store-1\", \"industryVertical\": \"GENERIC\", \"createTime\": \"2023-09-05T21:20:21.520552Z\", \"solutionTypes\": [ \"SOLUTION TYPE SEARCH\" ], \"defaultSchemaId\": \"default schema\", \"cmekConfig\": { \"name\": \"projects/969795412903/locations/us/collections/default collection/dataStores/my-data-store-1/cmekConfigs/default cmek config\", \"kmsKey\": \"projects/my-ai-app-project-123/locations/us/keyRings/my-key-ring/cryptoKeys/my-key\" } } Other data protected by the Cloud KMS key In addition to data in the data stores, your keys can protect other types of app-owned core information held by Vertex AI Search, such as the session data generated during search with follow-ups .",
+          "An example curl call and response looks like this: $ curl -X GET -H \"Authorization: Bearer $(gcloud auth print-access-token)\" \"https://us-discoveryengine.googleapis.com/v1/projects/my-ai-app-project-123/locations/us/cmekConfigs\" { \"cmek configs\": [ { \"name\": \"projects/my-ai-app-project-123/locations/us/cmekConfigs/default cmek config\", \"kmsKey\": \"projects/key-project-456/locations/us/keyRings/my-key-ring/cryptoKeys/my-key\" \"state\": \"ACTIVE\" \"isDefault\": true } ] } Unregister your Cloud KMS key To unregister your key from Vertex AI Search, follow these steps: Call the DeleteCmekConfig method with the CmekConfig resource name that you want to unregister. curl -X DELETE \\ -H \"Authorization: Bearer $( gcloud auth print-access-token ) \" \\ \"https:// LOCATION -discoveryengine.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION /cmekConfigs/ CMEK CONFIG ID \" Replace the following: LOCATION : the multi-region of your data store: us or eu .",
+          "Procedure REST To register your own key for Vertex AI Search, follow these steps: Call the UpdateCmekConfig method with the key that you want to register. curl -X PATCH \\ -H \"Authorization: Bearer $( gcloud auth print-access-token ) \" \\ -H \"Content-Type: application/json\" \\ -d '{\"kmsKey\":\"projects/ KMS PROJECT ID /locations/ KMS LOCATION /keyRings/ KEY RING /cryptoKeys/ KEY NAME \"}' \\ \"https:// LOCATION -discoveryengine.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION /cmekConfigs/ CMEK CONFIG ID ?set default= SET DEFAULT \" Replace the following: KMS PROJECT ID : the ID of your project that contains the key."
+        ]
+      },
+      {
+        "title": "\"Create a custom recommendations data store \\_|\\_ Vertex AI Search \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/generative-ai-app-builder/docs/create-data-store-recommendations",
+        "source_id": "site-docs-root",
+        "final_score": 75,
+        "relevance": "",
+        "evidence_snippets": [
+          "The following table compares the two ways that you can import Cloud Storage data into Vertex AI Search data stores.",
+          "The following table compares the two ways that you can import BigQuery data into Vertex AI Search data stores.",
+          "FieldMask ; public class SyncImportDocuments { public static void main ( String [] args ) throws Exception { syncImportDocuments (); } public static void syncImportDocuments () throws Exception { // This snippet has been automatically generated and should be regarded as a code template only. // It will require modifications to work: // - It may require correct/in-range values for request initialization. // - It may require specifying regional endpoints when creating the service client as shown in // https://cloud.google.com/java/docs/setup#configure endpoints for the client library try ( DocumentServiceClient documentServiceClient = DocumentServiceClient . create ()) { ImportDocumentsRequest request = ImportDocumentsRequest . newBuilder () . setParent ( BranchName . ofProjectLocationDataStoreBranchName ( \"[PROJECT]\" , \"[LOCATION]\" , \"[DATA STORE]\" , \"[BRANCH]\" ) . toString ()) . setErrorConfig ( ImportErrorConfig . newBuilder (). build ()) . setUpdateMask ( FieldMask . newBuilder (). build ()) . setAutoGenerateIds ( true ) . setIdField ( \"idField1629396127\" ) . setForceRefreshContent ( true ) . build (); ImportDocumentsResponse response = documentServiceClient . importDocumentsAsync ( request ). get (); } } } Node.js For more information, see the Vertex AI Search Node.js API reference documentation ."
+        ]
+      },
+      {
+        "title": "Create a search data store \\_|\\_ Vertex AI Search \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/generative-ai-app-builder/docs/create-data-store-es",
+        "source_id": "site-docs-root",
+        "final_score": 75,
+        "relevance": "",
+        "evidence_snippets": [
+          "Import data from Bigtable. curl -X POST \\ -H \"Authorization: Bearer $( gcloud auth print-access-token ) \" \\ -H \"Content-Type: application/json\" \\ \"https://discoveryengine.googleapis.com/v1/projects/ PROJECT ID /locations/global/collections/default collection/dataStores/ DATA STORE ID /branches/0/documents:import\" \\ -d '{ \"bigtableSource \": { \"projectId\": \" BIGTABLE PROJECT ID \", \"instanceId\": \" INSTANCE ID \", \"tableId\": \" TABLE ID \", \"bigtableOptions\": { \"keyFieldName\": \" KEY FIELD NAME \", \"families\": { \"key\": \" KEY \", \"value\": { \"fieldName\": \" FIELD NAME \", \"encoding\": \" ENCODING \", \"type\": \" TYPE \", \"columns\": [ { \"qualifier\": \" QUALIFIER \", \"fieldName\": \" FIELD NAME \", \"encoding\": \" COLUMN ENCODING \", \"type\": \" COLUMN VALUES TYPE \" } ] } } ... } }, \"reconciliationMode\": \" RECONCILIATION MODE \", \"autoGenerateIds\": \" AUTO GENERATE IDS \", \"idField\": \" ID FIELD \", }' Replace the following: PROJECT ID : the ID of your Vertex AI Search project.",
+          "Import data from Spanner. curl -X POST \\ -H \"Authorization: Bearer $( gcloud auth print-access-token ) \" \\ -H \"Content-Type: application/json\" \\ \"https://discoveryengine.googleapis.com/v1/projects/ PROJECT ID /locations/global/collections/default collection/dataStores/ DATA STORE ID /branches/0/documents:import\" \\ -d '{ \"cloudSpannerSource\": { \"projectId\": \" SPANNER PROJECT ID \", \"instanceId\": \" INSTANCE ID \", \"databaseId\": \" DATABASE ID \", \"tableId\": \" TABLE ID \", \"enableDataBoost\": \" DATA BOOST BOOLEAN \" }, \"reconciliationMode\": \" RECONCILIATION MODE \", \"autoGenerateIds\": \" AUTO GENERATE IDS \", \"idField\": \" ID FIELD \", }' Replace the following: PROJECT ID : the ID of your Vertex AI Search project.",
+          "Import data from AlloyDB for PostgreSQL. curl -X POST \\ -H \"Authorization: Bearer $( gcloud auth print-access-token ) \" \\ -H \"Content-Type: application/json\" \\ \"https://discoveryengine.googleapis.com/v1/projects/ PROJECT ID /locations/global/collections/default collection/dataStores/ DATA STORE ID /branches/0/documents:import\" \\ -d '{ \"alloydbSource\": { \"projectId\": \" ALLOYDB PROJECT ID \", \"locationId\": \" LOCATION ID \", \"clusterId\": \" CLUSTER ID \", \"databaseId\": \" DATABASE ID \", \"tableId\": \" TABLE ID \", }, \"reconciliationMode\": \" RECONCILIATION MODE \", \"autoGenerateIds\": \" AUTO GENERATE IDS \", \"idField\": \" ID FIELD \", }' Replace the following: PROJECT ID : the ID of your Vertex AI Search project."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "discoveryengine.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/cmek",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/create-data-store-es",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/create-data-store-recommendations"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/cmek",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/create-data-store-es",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/create-data-store-recommendations"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/cmek",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/create-data-store-es",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/create-data-store-recommendations"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/cmek",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/create-data-store-es",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/create-data-store-recommendations"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/cmek",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/create-data-store-es",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/create-data-store-recommendations"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/cmek",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/create-data-store-es",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/create-data-store-recommendations"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/cmek",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/create-data-store-es",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/create-data-store-recommendations"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/cmek",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/create-data-store-es",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/create-data-store-recommendations"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/cmek",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/create-data-store-es",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/create-data-store-recommendations"
+      ]
+    }
+  ]
+}

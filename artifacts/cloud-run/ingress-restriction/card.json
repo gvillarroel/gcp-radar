@@ -1,0 +1,142 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:25.811Z",
+  "source_step08_card": "data/step-08/current/products/cloud-run/card.json",
+  "product_name": "Cloud Run",
+  "product_slug": "cloud-run",
+  "feature_name": "Ingress restriction",
+  "feature_slug": "ingress-restriction",
+  "summary": "Cloud Run services can restrict which inbound traffic is allowed to reach them.",
+  "extended_definition": "Cloud Run services can restrict which inbound traffic is allowed to reach them.",
+  "lifecycle": {
+    "latest_feature_date": "2020-12-18",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/run/docs/container-contract",
+      "https://docs.cloud.google.com/run/docs/deploying",
+      "https://docs.cloud.google.com/run/docs/reference/container-contract"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Container runtime contract \\_|\\_ Cloud Run \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/run/docs/container-contract",
+        "source_id": "site-docs-root",
+        "final_score": 112,
+        "relevance": "",
+        "evidence_snippets": [
+          "Process and system call restrictions Basic security profiles, similar to seccomp security profiles for Docker , are applied around each of your containers.",
+          "The ingress container within an instance must listen for requests on 0.0.0.0 on the port to which requests are sent.",
+          "Container security restrictions The following restrictions apply to containers that run in Cloud Run."
+        ]
+      },
+      {
+        "title": "Container runtime contract \\_|\\_ Cloud Run \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/run/docs/reference/container-contract",
+        "source_id": "site-docs-root",
+        "final_score": 112,
+        "relevance": "",
+        "evidence_snippets": [
+          "Process and system call restrictions Basic security profiles, similar to seccomp security profiles for Docker , are applied around each of your containers.",
+          "The ingress container within an instance must listen for requests on 0.0.0.0 on the port to which requests are sent.",
+          "Container security restrictions The following restrictions apply to containers that run in Cloud Run."
+        ]
+      },
+      {
+        "title": "Deploying container images to Cloud Run \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/run/docs/deploying",
+        "source_id": "site-docs-reference-required-3",
+        "final_score": 98,
+        "relevance": "",
+        "evidence_snippets": [
+          "Add the following to a google cloud run v2 service resource in your Terraform configuration: resource \"google cloud run v2 service\" \"default\" { name = \" SERVICE \" location = \" REGION \" ingress = \"INGRESS TRAFFIC ALL\" template { containers { name = \" INGRESS CONTAINER NAME \" ports { container port = CONTAINER PORT } image = \" INGRESS IMAGE \" depends on = [ \" SIDECAR CONTAINER NAME \" ] } containers { name = \" SIDECAR CONTAINER NAME \" image = \" SIDECAR IMAGE \" } } } The CONTAINER PORT represents the port where the ingress container listens for incoming requests.",
+          "Before you start If you are under a domain restriction organization policy restricting unauthenticated invocations for your project, you will need to access your deployed service as described under Testing private services .",
+          "In a service with multiple containers, only one container can be configured as the ingress container that handles all incoming requests, and this must be the container for which a containerPort is configured."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "run.googleapis.com",
+      "serving.knative.dev",
+      "spec.template.metadata.annotations"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/container-contract",
+        "https://docs.cloud.google.com/run/docs/reference/container-contract",
+        "https://docs.cloud.google.com/run/docs/deploying"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/container-contract",
+        "https://docs.cloud.google.com/run/docs/reference/container-contract",
+        "https://docs.cloud.google.com/run/docs/deploying"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/container-contract",
+        "https://docs.cloud.google.com/run/docs/reference/container-contract",
+        "https://docs.cloud.google.com/run/docs/deploying"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/container-contract",
+        "https://docs.cloud.google.com/run/docs/reference/container-contract",
+        "https://docs.cloud.google.com/run/docs/deploying"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/container-contract",
+        "https://docs.cloud.google.com/run/docs/reference/container-contract",
+        "https://docs.cloud.google.com/run/docs/deploying"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/container-contract",
+        "https://docs.cloud.google.com/run/docs/reference/container-contract",
+        "https://docs.cloud.google.com/run/docs/deploying"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/container-contract",
+        "https://docs.cloud.google.com/run/docs/reference/container-contract",
+        "https://docs.cloud.google.com/run/docs/deploying"
+      ]
+    }
+  ]
+}

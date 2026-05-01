@@ -1,0 +1,155 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:15.897Z",
+  "source_step08_card": "data/step-08/current/products/app-engine-standard-environment-java/card.json",
+  "product_name": "App Engine standard environment Java",
+  "product_slug": "app-engine-standard-environment-java",
+  "feature_name": "Project spending limits",
+  "feature_slug": "project-spending-limits",
+  "summary": "Project spending limits allowed App Engine projects to cap spending; deprecated on 2020-02-06.",
+  "extended_definition": "Project spending limits allowed App Engine projects to cap spending; deprecated on 2020-02-06.",
+  "lifecycle": {
+    "latest_feature_date": "2020-02-06",
+    "deprecation_date": "2020-02-06",
+    "status": "deprecation_noted"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/appengine/docs/quotas",
+      "https://docs.cloud.google.com/appengine/docs/standard/java-gen2/building-app/creating-project",
+      "https://docs.cloud.google.com/appengine/docs/standard/java-gen2/shared-vpc-host-project"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Quotas and limits \\_|\\_ App Engine standard environment \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/quotas",
+        "source_id": "site-docs-reference-4",
+        "final_score": 90,
+        "relevance": "",
+        "evidence_snippets": [
+          "For example, quotas can restrict the number of API calls to a service, the number of load balancers used concurrently by your project, or the number of projects that you can create.",
+          "Resource Daily limit Maximum rate UrlFetch API calls 860,000,000 calls 660,000 calls/minute UrlFetch data sent 4.5 TB 3,600 MB/minute UrlFetch data received 4.5 TB 3,600 MB/minute Networking limits The following networking limits apply to App Engine: Outbound connections per second per instance: 500 (cannot be increased) Outbound DNS resolutions per second per instance: 100 (cannot be increased) Maximum packets per second per instance: 80,000 Maximum bits per second per instance: 100,000,000 Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "The following example illustrates how to catch the OverQuotaError , which may be raised by the SendMessage() method if an email-related quota has been exceeded: try: mail.SendMessage ( to = 'test@example.com' , from = 'admin@example.com' , subject = 'Test Email' , body = 'Testing' ) except apiproxy errors.OverQuotaError, message: Log the error. logging.error(message) Display an informative message to the user. self.response.out.write ( 'The email could not be sent. ' 'Please try again later.' ) Is your app exceeding the default limits?"
+        ]
+      },
+      {
+        "title": "\"Configure connectors in the Shared VPC host project \\_|\\_ App Engine standard\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/java-gen2/shared-vpc-host-project",
+        "source_id": "site-docs-reference-4",
+        "final_score": 81,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Add the vpc access connector to your service's app.yaml file: vpc access connector: name: projects/ HOST PROJECT ID /locations/ REGION /connectors/ CONNECTOR NAME Replace the following: HOST PROJECT ID : the ID of the Shared VPC host project REGION : the region of your connector CONNECTOR NAME : the name of your connector Deploy the service: gcloud app deploy After deploying, your service is able to send requests to your Shared VPC network and receive the corresponding responses.",
+          "Click Save . gcloud Run the following in your terminal: gcloud projects add-iam-policy-binding HOST PROJECT ID \\ --member= PRINCIPAL \\ --role=roles/vpcaccess.user Replace the following: HOST PROJECT ID : the ID of the Shared VPC host project PRINCIPAL : the principal that deploys your App Engine service.",
+          "Click Save . gcloud Run the following in your terminal: gcloud projects add-iam-policy-binding SERVICE PROJECT ID \\ --member= PRINCIPAL \\ --role=roles/compute.networkViewer Replace the following: SERVICE PROJECT ID : the ID of the service project PRINCIPAL : the principal who deploys App Engine services."
+        ]
+      },
+      {
+        "title": "\"Create your project \\_|\\_ App Engine standard environment \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/java-gen2/building-app/creating-project",
+        "source_id": "site-docs-reference",
+        "final_score": 73,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Due to changes in the default behavior for how Cloud Build uses service accounts in new projects, and secure-by-default organization policy changes , you might need to grant additional roles to your deploying service account.",
+          "Create a project : To create a project, you need the Project Creator role ( roles/resourcemanager.projectCreator ), which contains the resourcemanager.projects.create permission.",
+          "Create a project : To create a project, you need the Project Creator role ( roles/resourcemanager.projectCreator ), which contains the resourcemanager.projects.create permission."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "app.yaml",
+      "compute.networkViewer",
+      "errors.OverQuotaError",
+      "example.com",
+      "logging.error",
+      "mail.SendMessage",
+      "resourcemanager.projectCreator",
+      "resourcemanager.projects.create",
+      "self.response.out.write",
+      "vpcaccess.user",
+      "vpcaccess.viewer"
+    ],
+    "missing_inventory_roles": [
+      "roles/compute.networkViewer",
+      "roles/resourcemanager.projectCreator",
+      "roles/vpcaccess.user",
+      "roles/vpcaccess.viewer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/quotas",
+        "https://docs.cloud.google.com/appengine/docs/standard/java-gen2/shared-vpc-host-project",
+        "https://docs.cloud.google.com/appengine/docs/standard/java-gen2/building-app/creating-project"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/quotas",
+        "https://docs.cloud.google.com/appengine/docs/standard/java-gen2/shared-vpc-host-project",
+        "https://docs.cloud.google.com/appengine/docs/standard/java-gen2/building-app/creating-project"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/quotas",
+        "https://docs.cloud.google.com/appengine/docs/standard/java-gen2/shared-vpc-host-project",
+        "https://docs.cloud.google.com/appengine/docs/standard/java-gen2/building-app/creating-project"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/quotas",
+        "https://docs.cloud.google.com/appengine/docs/standard/java-gen2/shared-vpc-host-project",
+        "https://docs.cloud.google.com/appengine/docs/standard/java-gen2/building-app/creating-project"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/quotas",
+        "https://docs.cloud.google.com/appengine/docs/standard/java-gen2/shared-vpc-host-project",
+        "https://docs.cloud.google.com/appengine/docs/standard/java-gen2/building-app/creating-project"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/quotas",
+        "https://docs.cloud.google.com/appengine/docs/standard/java-gen2/shared-vpc-host-project",
+        "https://docs.cloud.google.com/appengine/docs/standard/java-gen2/building-app/creating-project"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/quotas",
+        "https://docs.cloud.google.com/appengine/docs/standard/java-gen2/shared-vpc-host-project",
+        "https://docs.cloud.google.com/appengine/docs/standard/java-gen2/building-app/creating-project"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,141 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:18.771Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery",
+  "feature_name": "CREATE EXTERNAL TABLE and LOAD DATA time_zone option",
+  "feature_slug": "create-external-table-and-load-data-time-zone-option",
+  "summary": "The time_zone option specifies a time zone to use when loading data with CREATE EXTERNAL TABLE or LOAD DATA.",
+  "extended_definition": "The time_zone option specifies a time zone to use when loading data with CREATE EXTERNAL TABLE or LOAD DATA.",
+  "lifecycle": {
+    "latest_feature_date": "2025-06-02",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/loading-data-cloud-storage-csv",
+      "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+      "https://docs.cloud.google.com/bigquery/docs/tables"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Create and use tables \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/tables",
+        "source_id": "site-docs-root",
+        "final_score": 272,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For more information, see Set up authentication for client libraries . // Import the Google Cloud client library const { BigQuery } = require ( ' @google-cloud/bigquery ' ); const bigquery = new BigQuery (); async function queryDestinationTable () { // Queries the U.S. given names dataset for the state of Texas // and saves results to permanent table. / TODO(developer): Uncomment the following lines before running the sample. / // const datasetId = 'my dataset'; // const tableId = 'my table'; // Create destination table reference const dataset = bigquery . dataset ( datasetId ); const destinationTable = dataset . table ( tableId ); const query = SELECT name FROM \\bigquery-public-data.usa names.usa 1910 2013\\ WHERE state = 'TX' LIMIT 100 ; // For all options, see https://cloud.google.com/bigquery/docs/reference/v2/tables#resource const options = { query : query , // Location must match that of the dataset(s) referenced in the query. location : 'US' , destination : destinationTable , }; // Run the query as a job const [ job ] = await bigquery . createQueryJob ( options ); console . log ( Job ${ job . id } started. ); console . log ( Query results loaded to table ${ destinationTable . id } ); } Python Before trying this sample, follow the Python setup instructions in the BigQuery quickstart using client libraries .",
+          "These logs record API calls and actions that modify the configuration or metadata of your resources. resource.type = \"bigquery dataset\" : This narrows the search to events related to BigQuery datasets, where table operations are logged. timestamp >= \" STARTING TIMESTAMP \" : Filters log entries to only show those created on or after the specified timestamp. protoPayload.@type = \"type.googleapis.com/google.cloud.audit.AuditLog\" : Ensures the log message conforms to the standard Cloud Audit Log structure. ( ... ) : This block groups conditions to find different types of table events, as outlined in the previous section.",
+          "QueryJobConfig ( destination = table id ) sql = \"\"\" SELECT corpus FROM bigquery-public-data.samples.shakespeare GROUP BY corpus; \"\"\" Start the query, passing in the extra configuration. query job = client . query ( sql , job config = job config ) # Make an API request. query job . result () # Wait for the job to complete. print ( \"Query results loaded to the table {} \" . format ( table id )) Create a table that references an external data source An external data source is a data source that you can query directly from BigQuery, even though the data is not stored in BigQuery storage."
+        ]
+      },
+      {
+        "title": "Loading CSV data from Cloud Storage \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/loading-data-cloud-storage-csv",
+        "source_id": "site-docs-root",
+        "final_score": 244,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "At most, five errors of any type are returned regardless of the --max bad records value. --ignore unknown values : When specified, allows and ignores extra, unrecognized values in CSV or JSON data. --time zone : An optional default time zone that will apply when parsing timestamp values that have no specific time zone in CSV or JSON data. --date format : An optional custom string that defines how the DATE values are formatted in CSV or JSON data. --datetime format : An optional custom string that defines how the DATETIME values are formatted in CSV or JSON data. --time format : An optional custom string that defines how the TIME values are formatted in CSV or JSON data. --timestamp format : An optional custom string that defines how the TIMESTAMP values are formatted in CSV or JSON data. --autodetect : When specified, enable schema auto-detection for CSV and JSON data. --destination kms key : The Cloud KMS key for encryption of the table data. bq --location = location load \\ -- [ no ] replace \\ --source format = format \\ dataset.table \\ path to source \\ schema where: location is your location .",
+          "DAYS ). toMillis ()) . build (); LoadJobConfiguration loadJobConfig = LoadJobConfiguration . builder ( tableId , sourceUri ) . setFormatOptions ( FormatOptions . csv ()) . setSchema ( schema ) . setTimePartitioning ( partitioning ) . build (); // Create a job ID so that we can safely retry.",
+          "If time-based partitioning is enabled without this value, an ingestion-time partitioned table is created. --require partition filter : When enabled, this option requires users to include a WHERE clause that specifies the partitions to query."
+        ]
+      },
+      {
+        "title": "\"Data definition language (DDL) statements in GoogleSQL \\_|\\_ BigQuery \\_\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "source_id": "site-docs-reference",
+        "final_score": 220,
+        "relevance": "",
+        "evidence_snippets": [
+          "CREATE MATERIALIZED VIEW IF NOT EXISTS myproject . mydataset . new mv OPTIONS ( expiration timestamp = TIMESTAMP ADD ( CURRENT TIMESTAMP (), INTERVAL 48 HOUR ), friendly name = \"new mv\" , description = \"a view that expires in 2 days\" , labels =[ ( \"org unit\" , \"development\" ) ] , enable refresh = false ) AS SELECT column 1 , column 2 , column 3 FROM myproject.mydataset.mytable The materialized view is defined using the following GoogleSQL query: SELECT column 1, column 2, column 3 FROM myproject.mydataset.mytable The materialized view option list specifies the: Expiration time: 48 hours from the time the view is created Friendly name: new mv Description: A view that expires in 2 days Label: org unit = development Refresh enabled: false Creating a materialized view with partitioning and clustering The following example creates a materialized view named new mv in mydataset , partitioned by the col datetime column and clustered by the col int column: CREATE MATERIALIZED VIEW myproject . mydataset . new mv PARTITION BY DATE ( col datetime ) CLUSTER BY col int AS SELECT col int , col datetime , COUNT ( 1 ) as cnt FROM myproject . mydataset . mv base table GROUP BY col int , col datetime The base table, mv base table , must also be partitioned by the col datetime column.",
+          "The table option list specifies the following: Expiration time: 365 days after the time that the table is created Friendly name: my table Description: A table that expires in 1 year Label: org unit = development Create a clone of a table: ignore if the destination table already exists The following example creates the table clone myproject.mydataset.mytableclone based on the table myproject.mydataset.mytable : CREATE TABLE IF NOT EXISTS myproject.mydataset.mytableclone CLONE myproject.mydataset.mytable OPTIONS ( expiration timestamp = TIMESTAMP ADD ( CURRENT TIMESTAMP (), INTERVAL 365 DAY ), friendly name = \"my table\" , description = \"A table that expires in 1 year\" , labels =[ ( \"org unit\" , \"development\" ) ] ) The table option list specifies the following: Expiration time: 365 days after the time the table is created Friendly name: my table Description: A table that expires in 1 year Label: org unit = development If the table name exists in the dataset, then no action is taken, and no error is returned.",
+          "Examples Creating a new view The following example creates a view named newview in mydataset : CREATE VIEW myproject.mydataset.newview OPTIONS ( expiration timestamp = TIMESTAMP ADD ( CURRENT TIMESTAMP (), INTERVAL 48 HOUR ), friendly name = \"newview\" , description = \"a view that expires in 2 days\" , labels =[ ( \"org unit\" , \"development\" ) ] ) AS SELECT column 1 , column 2 , column 3 FROM myproject.mydataset.mytable If the view name exists in the dataset, the following error is returned: Already Exists: project id:dataset.table The view is defined using the following GoogleSQL query: SELECT column 1, column 2, column 3 FROM myproject.mydataset.mytable The view option list specifies the: Expiration time: 48 hours from the time the view is created Friendly name: newview Description: A view that expires in 2 days Label: org unit = development Creating a view only if the view doesn't exist The following example creates a view named newview in mydataset only if no view named newview exists in mydataset ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "data.samples.shakespeare",
+      "data.usa",
+      "dataset.table",
+      "myproject.mydataset.mytable",
+      "myproject.mydataset.mytableclone",
+      "myproject.mydataset.mytablesnapshot",
+      "myproject.mydataset.newview",
+      "names.usa",
+      "resource.type",
+      "type.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/tables",
+        "https://docs.cloud.google.com/bigquery/docs/loading-data-cloud-storage-csv",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/tables",
+        "https://docs.cloud.google.com/bigquery/docs/loading-data-cloud-storage-csv",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/tables",
+        "https://docs.cloud.google.com/bigquery/docs/loading-data-cloud-storage-csv",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/tables",
+        "https://docs.cloud.google.com/bigquery/docs/loading-data-cloud-storage-csv",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/tables",
+        "https://docs.cloud.google.com/bigquery/docs/loading-data-cloud-storage-csv",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/tables",
+        "https://docs.cloud.google.com/bigquery/docs/loading-data-cloud-storage-csv",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language"
+      ]
+    }
+  ]
+}

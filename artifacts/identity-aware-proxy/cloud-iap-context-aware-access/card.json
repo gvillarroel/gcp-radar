@@ -1,0 +1,209 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:42.052Z",
+  "source_step08_card": "data/step-08/current/products/identity-aware-proxy/card.json",
+  "product_name": "Identity-Aware Proxy",
+  "product_slug": "identity-aware-proxy",
+  "feature_name": "Cloud IAP context-aware access",
+  "feature_slug": "cloud-iap-context-aware-access",
+  "summary": "Cloud IAP access policies can be extended with access levels and the IAM Conditions Framework; Cloud IAP access policies can be extended with access levels and the IAM Conditions Framework.",
+  "extended_definition": "Cloud IAP access policies can be extended with access levels and the IAM Conditions Framework; Cloud IAP access policies can be extended with access levels and the IAM Conditions Framework.",
+  "lifecycle": {
+    "latest_feature_date": "2019-04-10",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/iap/docs/cloud-iap-context-aware-access-howto",
+      "https://docs.cloud.google.com/iap/docs/concepts-overview",
+      "https://docs.cloud.google.com/iap/docs/managing-access",
+      "https://docs.cloud.google.com/iap/docs/reference/rest/v1/IapSettings"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Setting up context-aware access with Identity-Aware Proxy \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/iap/docs/cloud-iap-context-aware-access-howto",
+        "source_id": "site-docs-root",
+        "final_score": 311,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Example policy.json file { \"policy\" : { \"bindings\" : [ { \"role\" : \"roles/iap.httpsResourceAccessor\" , \"members\" : [ \"group\" : EXAMPLE GROUP@GOOGLE.COM , \"user: EXAMPLE USER@GOOGLE.COM \" ], \"condition\" : { \"expression\" : \"\" accessPolicies/ ORGANIZATION NUMBER /accessLevels/ ACCESS LEVEL NAME \" in request.auth.access levels && request.path.startsWith(\" / \")\" , \"title\" : \" CONDITION NAME \" } } ] } } Set your new policy.json file using the setIamPolicy method. curl -i -H \"Content-Type:application/json\" \\ -H \"Authentication: Bearer $(gcloud auth print-access-token)\" \\ ${IAP BASE URL}/compute/services/${BACKEND SERVICE NAME}:setIamPolicy \\ -d @${JSON NEW POLICY} Use hostname and path conditions Access to your app can be secured using the hostname and path of a request URL.",
+          "Example policy.json file { \"policy\" : { \"bindings\" : [ { \"role\" : \"roles/iap.httpsResourceAccessor\" , \"members\" : [ \"group: EXAMPLE GROUP@GOOGLE.COM \" , \"user: EXAMPLE USER@GOOGLE.COM \" ], \"condition\" : { \"expression\" : \"\" accessPolicies/ ORGANIZATION NUMBER /accessLevels/ ACCESS LEVEL NAME \" in request.auth.access levels && request.path.startsWith(\" / \")\" , \"title\" : \" CONDITION NAME \" } } ] } } Set your new policy.json file using the setIamPolicy method. curl -i -H \"Authentication: Bearer $(gcloud auth print-access-token)\" \\ ${GAE BASE URL}:setIamPolicy -d @${JSON NEW POLICY} App Engine services and versions You can also update the IAM policy of a App Engine service, all versions, or a specific version of a service.",
+          "This guide describes how to extend Identity-Aware Proxy (IAP) access policies using access levels and the Identity and Access Management (IAM) Conditions Framework ."
+        ]
+      },
+      {
+        "title": "\"Manage access to IAP-secured resources \\_|\\_ Identity-Aware Proxy \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/iap/docs/managing-access",
+        "source_id": "site-iam-reference",
+        "final_score": 244,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The following is an example of an IAM deny policy to deny access to the getSettings API to a principal at an organization and its descendants. { \"name\" : \"policies/cloudresourcemanager.googleapis.com%2Forganizations%2F253519172624/denypolicies/testpolicyid\" , \"uid\" : \"06ccd2eb-d2a5-5dd1-a746-eaf4c6g3f816\" , \"kind\" : \"DenyPolicy\" , \"displayName\" : \"Only project admins can delete projects.\" , \"etag\" : \"MTc1MTkzMjY0MjUyMTExODMxMDQ=\" , \"createTime\" : \"2021-09-07T23:15:35.258319Z\" , \"updateTime\" : \"2021-09-07T23:15:35.258319Z\" , \"rules\" : [ { \"denyRule\" : { \"deniedPrincipals\" : [ \"principalSet://goog/public:all\" ], \"deniedPermissions\" : [ \"iap.googleapis.com/iap.organizations.getSettings\" , \"iap.googleapis.com/iap.folders.getSettings\" , \"iap.googleapis.com/iap.projects.getSettings\" , \"iap.googleapis.com/iap.web.getSettings\" , \"iap.googleapis.com/iap.webTypes.getSettings\" , \"iap.googleapis.com/iap.webServices.getSettings\" , \"iap.googleapis.com/iap.webServicesVersions.getSettings\" , ], } } ] } Instead of specifying all granular permissions, the following is an example of the IAM deny policy with only one permission: .getSettings . { \"name\" : \"policies/cloudresourcemanager.googleapis.com%2Forganizations%2F253519172624/denypolicies/testpolicyid\" , \"uid\" : \"06ccd2eb-d2a5-5dd1-a746-eaf4c6g3f816\" , \"kind\" : \"DenyPolicy\" , \"displayName\" : \"Only project admins can delete projects.\" , \"etag\" : \"MTc1MTkzMjY0MjUyMTExODMxMDQ=\" , \"createTime\" : \"2021-09-07T23:15:35.258319Z\" , \"updateTime\" : \"2021-09-07T23:15:35.258319Z\" , \"rules\" : [ { \"denyRule\" : { \"deniedPrincipals\" : [ \"principalSet://goog/public:all\" ], \"deniedPermissions\" : [ \"iap.googleapis.com/ .getSettings\" , ], } } ] } The following are some simpler ways to create an IAM deny policy without having to specify all of the granular permissions.",
+          "This page describes how to manage individual or group access to Identity-Aware Proxy (IAP) secured resources at the resource level.",
+          "Although deny policies can be applied to any IAP permissions, their effectiveness is tied to a deny policy attachment point ."
+        ]
+      },
+      {
+        "title": "Identity-Aware Proxy overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/iap/docs/concepts-overview",
+        "source_id": "site-docs-root",
+        "final_score": 221,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Context-aware access As part of the authorization step, you can use context-aware access to provide secure access to the following types of resources: Google Cloud console and APIs First layer of defense in protecting infrastructure access to Google Cloud.",
+          "How IAP works When an application or resource is protected by IAP, it can only be accessed through the proxy by principals , also known as users, who have the correct Identity and Access Management (IAM) role .",
+          "With IAP, you can set up group-based application access: a resource could be accessible for employees and inaccessible for contractors, or only accessible to a specific department."
+        ]
+      },
+      {
+        "title": "IapSettings \\_|\\_ Identity-Aware Proxy \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/iap/docs/reference/rest/v1/IapSettings",
+        "source_id": "site-api-reference",
+        "final_score": 212,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Enables redirect to primary IDP by skipping Google's login screen. https://developers.google.com/identity/protocols/OpenIDConnect#hd-param Note: IAP does not verify that the id token's hd claim matches this value since access behavior is managed by IAM policies. clientId string Optional.",
+          "Settings to configure IAP's behavior for a service mesh. accessDeniedPageSettings object ( AccessDeniedPageSettings ) Optional.",
+          "If IAP prevents access to this page, the default IAP error page will be displayed instead."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cloudresourcemanager.googleapis.com",
+      "developers.google.com",
+      "iap.admin",
+      "iap.folders.getSettings",
+      "iap.googleapis.com",
+      "iap.httpsResourceAccessor",
+      "iap.organizations.getSettings",
+      "iap.projects.getSettings",
+      "iap.tunnel.getIamPolicy",
+      "iap.tunnel.setIamPolicy",
+      "iap.tunnelInstances.getIamPolicy",
+      "iap.tunnelInstances.setIamPolicy",
+      "iap.tunnelZones.getIamPolicy",
+      "iap.tunnelZones.setIamPolicy",
+      "iap.web.getIamPolicy",
+      "iap.web.getSettings",
+      "iap.web.setIamPolicy",
+      "iap.webServices.getIamPolicy",
+      "iap.webServices.getSettings",
+      "iap.webServices.setIamPolicy",
+      "iap.webServicesVersions.getSettings",
+      "iap.webServiceVersions.getIamPolicy",
+      "iap.webServiceVersions.setIamPolicy",
+      "iap.webTypes.getIamPolicy",
+      "iap.webTypes.getSettings",
+      "iap.webTypes.setIamPolicy",
+      "policy.json",
+      "request.auth.access",
+      "request.path.startsWith"
+    ],
+    "missing_inventory_roles": [
+      "roles/iap.admin",
+      "roles/iap.httpsResourceAccessor"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/cloud-iap-context-aware-access-howto",
+        "https://docs.cloud.google.com/iap/docs/managing-access",
+        "https://docs.cloud.google.com/iap/docs/concepts-overview",
+        "https://docs.cloud.google.com/iap/docs/reference/rest/v1/IapSettings"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/cloud-iap-context-aware-access-howto",
+        "https://docs.cloud.google.com/iap/docs/managing-access",
+        "https://docs.cloud.google.com/iap/docs/concepts-overview",
+        "https://docs.cloud.google.com/iap/docs/reference/rest/v1/IapSettings"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/cloud-iap-context-aware-access-howto",
+        "https://docs.cloud.google.com/iap/docs/managing-access",
+        "https://docs.cloud.google.com/iap/docs/concepts-overview",
+        "https://docs.cloud.google.com/iap/docs/reference/rest/v1/IapSettings"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/cloud-iap-context-aware-access-howto",
+        "https://docs.cloud.google.com/iap/docs/managing-access",
+        "https://docs.cloud.google.com/iap/docs/concepts-overview",
+        "https://docs.cloud.google.com/iap/docs/reference/rest/v1/IapSettings"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/cloud-iap-context-aware-access-howto",
+        "https://docs.cloud.google.com/iap/docs/managing-access",
+        "https://docs.cloud.google.com/iap/docs/concepts-overview",
+        "https://docs.cloud.google.com/iap/docs/reference/rest/v1/IapSettings"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/cloud-iap-context-aware-access-howto",
+        "https://docs.cloud.google.com/iap/docs/managing-access",
+        "https://docs.cloud.google.com/iap/docs/concepts-overview",
+        "https://docs.cloud.google.com/iap/docs/reference/rest/v1/IapSettings"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/cloud-iap-context-aware-access-howto",
+        "https://docs.cloud.google.com/iap/docs/managing-access",
+        "https://docs.cloud.google.com/iap/docs/concepts-overview",
+        "https://docs.cloud.google.com/iap/docs/reference/rest/v1/IapSettings"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/cloud-iap-context-aware-access-howto",
+        "https://docs.cloud.google.com/iap/docs/managing-access",
+        "https://docs.cloud.google.com/iap/docs/concepts-overview",
+        "https://docs.cloud.google.com/iap/docs/reference/rest/v1/IapSettings"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/cloud-iap-context-aware-access-howto",
+        "https://docs.cloud.google.com/iap/docs/managing-access",
+        "https://docs.cloud.google.com/iap/docs/concepts-overview",
+        "https://docs.cloud.google.com/iap/docs/reference/rest/v1/IapSettings"
+      ]
+    }
+  ]
+}

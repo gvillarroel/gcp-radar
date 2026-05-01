@@ -1,0 +1,123 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:40.586Z",
+  "source_step08_card": "data/step-08/current/products/google-secops/card.json",
+  "product_name": "Google SecOps",
+  "product_slug": "google-secops",
+  "feature_name": "Events table column customization",
+  "feature_slug": "events-table-column-customization",
+  "summary": "A Search feature that lets you choose which columns appear in the Events table and dashboard widget tables.",
+  "extended_definition": "A Search feature that lets you choose which columns appear in the Events table and dashboard widget tables.",
+  "lifecycle": {
+    "latest_feature_date": "2025-09-30",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/chronicle/docs/administration/datarbac-impact",
+      "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+      "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/arcsight"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Search for events and alerts \\_|\\_ Google Security Operations \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "source_id": "site-docs-reference-2",
+        "final_score": 211,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For example, if you have a database called suspicious with a column of IP addresses you know are problematic, you can reference that database in Search instead of manually entering individual IP addresses in Search: events: $e.principal.ip in %susupicious.ip You can narrow your results by searching for specific metadata in addition to IP addresses, for example you might be specifically concerned with changes to user resources: events: $e.metadata.event type = \"USER RESOURCE UPDATE CONTENT\" $e.principal.ip in %susupicious.ip You can narrow a search against interrelated UDM fields and match against multiple data table columns.",
+          "Click an entity to display the Entity context dialog, which can include the following items: Asset name First time seen Last time seen IP addresses MAC addresses Number of alerts Highest alert count by rule Alerts-over-time bar graph Open Alerts & IOCs link View in Alerts Tab link Use the Pivot Table to analyze events The Pivot Table lets you analyze events using expressions and functions against the results from the search.",
+          "It then matches those events against the hostnames column and the ip column in the badApps data table. events: $e.metadata.event type = \"NETWORK CONNECTION\" $e.security result.action = \"ALLOW\" $e.target.asset.asset id = $assetid // Event hostname matches at least one value in table column hostname. $e.target.hostname in %badApps.hostname // Event IP matches at least one value in table column ip. $e.target.ip in %badApps.ip For more information, see Use data tables ."
+        ]
+      },
+      {
+        "title": "\"Impact of data RBAC on Google SecOps features \\_|\\_ Google Security Operations\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/administration/datarbac-impact",
+        "source_id": "site-docs-reference",
+        "final_score": 129,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Can view and use unscoped data table Yes Yes Can run search queries with unscoped data tables Yes Yes Can run search queries with scoped data tables Yes Yes (if there's at least one matching scope between the user and the data table) For example, a user with scope A can run search queries with data tables with scopes A, B, and C, but not with data tables with scopes B and C.",
+          "Access control : While feature RBAC determines who can create or edit a dashboard, data RBAC determines what specific data is visible within the charts and tables.",
+          "Data tables Data tables are multicolumn data constructs that let you input your own data into Google SecOps."
+        ]
+      },
+      {
+        "title": "\"Integrate ArcSight with Google SecOps \\_|\\_ Google Security Operations \\_\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/arcsight",
+        "source_id": "site-api-reference",
+        "final_score": 119,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The search for events searches for a value (for example, abc) stored in the field specified (for example, in the field of name only).",
+          "Google Security Operations uses the following main methods when using ArcSight ESM API: Core Service: Login , GetSession Manager Service: GetSecurityEvents Network access with ArcSight ESM To access from Google SecOps to ArcSight ESM, allow traffic over ports 443 (HTTPS) and 8443 (API over SSL), or as configured in your environment.",
+          "Parameters Parameter name Type Default value Is mandatory Description Columns String N/A Yes Example: Message;Username Entries String N/A Yes Example: test1 Me1;Test Me2 Active List UUID String N/A Yes Example: HCN75QGABABCZXCOdT9P51w== Run on This action runs on all entities."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "e.metadata.event",
+      "e.principal.ip",
+      "e.security",
+      "e.target.asset.asset",
+      "e.target.hostname",
+      "e.target.ip",
+      "result.action",
+      "susupicious.ip"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/administration/datarbac-impact",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/arcsight"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/administration/datarbac-impact",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/arcsight"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/administration/datarbac-impact",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/arcsight"
+      ]
+    },
+    {
+      "capability": "threat",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/administration/datarbac-impact",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/arcsight"
+      ]
+    }
+  ]
+}

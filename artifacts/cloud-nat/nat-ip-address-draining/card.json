@@ -1,0 +1,169 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:25.494Z",
+  "source_step08_card": "data/step-08/current/products/cloud-nat/card.json",
+  "product_name": "Cloud NAT",
+  "product_slug": "cloud-nat",
+  "feature_name": "NAT IP address draining",
+  "feature_slug": "nat-ip-address-draining",
+  "summary": "Cloud NAT can drain NAT IP addresses to transition traffic away from selected addresses.",
+  "extended_definition": "Cloud NAT can drain NAT IP addresses to transition traffic away from selected addresses.",
+  "lifecycle": {
+    "latest_feature_date": "2019-09-30",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/nat/docs/monitoring",
+      "https://docs.cloud.google.com/nat/docs/overview",
+      "https://docs.cloud.google.com/nat/docs/set-up-network-address-translation",
+      "https://docs.cloud.google.com/nat/docs/troubleshooting"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Quickstart: Set up and manage network address translation with Public NAT\\",
+        "url": "https://docs.cloud.google.com/nat/docs/set-up-network-address-translation",
+        "source_id": "site-docs-root",
+        "final_score": 274,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Drain external IP addresses assigned to NAT Before you remove a manually configured IP address, you can drain it so that existing connections aren't disrupted.",
+          "For NAT IP addresses , set the IP draining value next to the IP address to On .",
+          "To view NAT status, see the Status column for your NAT gateway. gcloud You can view the NAT configuration details by running the following commands: View the Public NAT gateway configuration. gcloud compute routers nats describe NAT CONFIG \\ --router= ROUTER NAME \\ --region= REGION Replace the following: NAT CONFIG : the name of your NAT configuration ROUTER NAME : the name of your Cloud Router REGION : the region of the NAT to describe; if not specified, you might be prompted to select a region (interactive mode only) View the mapping of the IP:port-ranges allocated to each VM's interface. gcloud compute routers get-nat-mapping-info ROUTER NAME \\ --region= REGION View the status of the Public NAT gateway. gcloud compute routers get-status ROUTER NAME \\ --region= REGION View external IP addresses assigned to a Cloud NAT gateway By default, Cloud NAT gateways for Public NAT use automatic IP address allocation."
+        ]
+      },
+      {
+        "title": "Cloud NAT overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/nat/docs/overview",
+        "source_id": "site-docs-reference",
+        "final_score": 197,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Scalability Cloud NAT can be configured to automatically scale the number of NAT IP addresses that it uses, and it supports VMs that belong to managed instance groups, including the groups with autoscaling enabled.",
+          "If you use manual NAT IP address assignment to configure a Cloud NAT gateway for Public NAT, you can confidently share a set of common external source IP addresses with a destination party.",
+          "Benefits Cloud NAT provides the following benefits: Security When using a Cloud NAT gateway for Public NAT, you can reduce the need for individual VMs to each have external IP addresses."
+        ]
+      },
+      {
+        "title": "Troubleshoot configuration \\_|\\_ Cloud NAT \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/nat/docs/troubleshooting",
+        "source_id": "site-docs-root",
+        "final_score": 195,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "When Cloud NAT can and cannot be used Does Cloud NAT apply to instances, including GKE node VMs, that have external IP addresses?",
+          "Common issues VMs can reach the internet unexpectedly, without Cloud NAT If your virtual machine (VM) instances or container instances can reach the internet without Cloud NAT, but you don't want them to, check for the following issues: Determine if the VM's network interface has an external IP address.",
+          "Dropped received packets A Cloud NAT gateway maintains a connection tracking table to store active connection details and IP address and port mappings—how VM IP addresses and ports translate to NAT IP addresses and ports."
+        ]
+      },
+      {
+        "title": "Logs and metrics \\_|\\_ Cloud NAT \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/nat/docs/monitoring",
+        "source_id": "site-docs-root",
+        "final_score": 193,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Sending VM was trying to reach the external IP address of another VM in the same project. { insertId: \"1the8juf6vab1l\" jsonPayload: { allocation status: \"DROPPED\" connection: { dest ip : \"192.0.2.87\" dest port: 80 protocol: \"tcp\" src ip: \"10.0.128.1\" src port: 45047 } destination: { instance: { project id: \"service-project-1\" region: \"asia-east1\" vm name: \"vm-2\" zone: \"asia-east1-b\" } } endpoint: { project id: \"service-project-1\" region: \"europe-west1\" vm name: \"vm-1\" zone: \"europe-west1-b\" } gateway identifiers: { cloud router: \"my-router-1\" gateway name: \"my-nat-2\" region: \"europe-west1\" } vpc: { project id: \"host-project\" subnetwork name: \"subnetwork-1\" vpc name: \"network-1\" } } logName: \"projects/host-project/logs/compute.googleapis.com%2Fnat flows\" receiveTimestamp: \"2018-06-28T10:46:09.123456789Z\" resource: { labels: { gateway name: \"my-nat-2\" project id: \"host-project\" region: \"europe-west1-d\" router id: \"987654321123456\" } type: \"nat gateway\" } timestamp: \"2018-06-28T10:46:01.602240572Z\" } Pricing for Cloud NAT logging See Logging pricing .",
+          "In each command, replace the following: NAT GATEWAY : the name of the NAT gateway ROUTER NAME : the name of the Cloud Router that hosts the NAT gateway REGION : the region of the Cloud Router To log network address translation events and errors: gcloud compute routers nats update NAT GATEWAY \\ --router= ROUTER NAME \\ --region= REGION \\ --enable-logging To log only network address translation events: gcloud compute routers nats update NAT GATEWAY \\ --router= ROUTER NAME \\ --region= REGION \\ --enable-logging \\ --log-filter=TRANSLATIONS ONLY To log only errors: gcloud compute routers nats update NAT GATEWAY \\ --router= ROUTER NAME \\ --region= REGION \\ --enable-logging \\ --log-filter=ERRORS ONLY Clear log filters If you have a filter set, you can clear it.",
+          "VM instance filtering dimensions label key Type Description project id STRING The project ID of the VM instance. instance id STRING The ID of the VM instance. zone STRING The zone of the VM instance. nat project number STRING The project number to which the NAT gateway belongs. router id STRING The Cloud Router ID to which the NAT gateway belongs. nat gateway name STRING The name of the NAT gateway. nat ip STRING The NAT IP address allocated to the NAT gateway."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "compute.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/nat/docs/set-up-network-address-translation",
+        "https://docs.cloud.google.com/nat/docs/overview",
+        "https://docs.cloud.google.com/nat/docs/troubleshooting",
+        "https://docs.cloud.google.com/nat/docs/monitoring"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/nat/docs/set-up-network-address-translation",
+        "https://docs.cloud.google.com/nat/docs/overview",
+        "https://docs.cloud.google.com/nat/docs/troubleshooting",
+        "https://docs.cloud.google.com/nat/docs/monitoring"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/nat/docs/set-up-network-address-translation",
+        "https://docs.cloud.google.com/nat/docs/overview",
+        "https://docs.cloud.google.com/nat/docs/troubleshooting",
+        "https://docs.cloud.google.com/nat/docs/monitoring"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/nat/docs/set-up-network-address-translation",
+        "https://docs.cloud.google.com/nat/docs/overview",
+        "https://docs.cloud.google.com/nat/docs/troubleshooting",
+        "https://docs.cloud.google.com/nat/docs/monitoring"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/nat/docs/set-up-network-address-translation",
+        "https://docs.cloud.google.com/nat/docs/overview",
+        "https://docs.cloud.google.com/nat/docs/troubleshooting",
+        "https://docs.cloud.google.com/nat/docs/monitoring"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/nat/docs/set-up-network-address-translation",
+        "https://docs.cloud.google.com/nat/docs/overview",
+        "https://docs.cloud.google.com/nat/docs/troubleshooting",
+        "https://docs.cloud.google.com/nat/docs/monitoring"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/nat/docs/set-up-network-address-translation",
+        "https://docs.cloud.google.com/nat/docs/overview",
+        "https://docs.cloud.google.com/nat/docs/troubleshooting",
+        "https://docs.cloud.google.com/nat/docs/monitoring"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/nat/docs/set-up-network-address-translation",
+        "https://docs.cloud.google.com/nat/docs/overview",
+        "https://docs.cloud.google.com/nat/docs/troubleshooting",
+        "https://docs.cloud.google.com/nat/docs/monitoring"
+      ]
+    }
+  ]
+}

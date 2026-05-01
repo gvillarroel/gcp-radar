@@ -1,0 +1,160 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:22.874Z",
+  "source_step08_card": "data/step-08/current/products/cloud-build/card.json",
+  "product_name": "Cloud Build",
+  "product_slug": "cloud-build",
+  "feature_name": "Cloud Build custom disk size",
+  "feature_slug": "cloud-build-custom-disk-size",
+  "summary": "Cloud Build added an option to set a custom disk size.",
+  "extended_definition": "Cloud Build added an option to set a custom disk size.",
+  "lifecycle": {
+    "latest_feature_date": "2017-10-25",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/build/docs/build-config",
+      "https://docs.cloud.google.com/build/docs/build-config-file-schema",
+      "https://docs.cloud.google.com/java/docs/reference/google-cloud-build/latest/com.google.cloud.devtools.cloudbuild.v2.RepositoryManagerClient"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Build configuration file schema \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/build/docs/build-config",
+        "source_id": "site-docs-root-2",
+        "final_score": 109,
+        "relevance": "",
+        "evidence_snippets": [
+          "Add the machineType option to request a virtual machine with a higher CPU: YAML steps : - name : 'gcr.io/cloud-builders/docker' args : [ 'build' , '-t' , 'gcr.io/myproject/myimage' , '.' ] options : machineType : 'E2 HIGHCPU 8' JSON { \"steps\" : [ { \"name\" : \"gcr.io/cloud-builders/docker\" , \"args\" : [ \"build\" , \"-t\" , \"gcr.io/myproject/myimage\" , \".\" ] }, ], \"options\" : { \"machineType\" : \"E2 HIGHCPU 8\" } } For more information on using the machineType option see Speeding up builds . diskSizeGb : Use the diskSizeGb option to request a custom disk size for your build.",
+          "A build config file has the following structure: YAML steps : - name : string args : [ string , string , ... ] env : [ string , string , ... ] allowFailure : boolean allowExitCodes : [ string (int64 format) , string (int64 format) , ... ] dir : string id : string waitFor : [ string , string , ... ] entrypoint : string secretEnv : string volumes : object(Volume) timeout : string (Duration format) script : string automapSubstitutions : boolean - name : string ... - name : string ... timeout : string (Duration format) queueTtl : string (Duration format) logsBucket : string options : env : [ string , string , ... ] secretEnv : string volumes : object(Volume) sourceProvenanceHash : enum(HashType) machineType : enum(MachineType) diskSizeGb : string (int64 format) substitutionOption : enum(SubstitutionOption) dynamicSubstitutions : boolean automapSubstitutions : boolean logStreamingOption : enum(LogStreamingOption) logging : enum(LoggingMode) defaultLogsBucketBehavior : enum(DefaultLogsBucketBehavior) pool : object(PoolOption) pubsubTopic : string requestedVerifyOption : enum(RequestedVerifyOption) substitutions: map (key : string, value : string) tags : [ string , string , ... ] serviceAccount : string secrets : object(Secret) availableSecrets : object(Secrets) artifacts : object(Artifacts) goModules : [ object(GoModules) , ... ] mavenArtifacts : [ object(MavenArtifact) , ... ] pythonPackages : [ object(PythonPackage) , ... ] npmPackages : [ object(npmPackage) , ... ] images : - [ string , string , ... ] JSON { \"steps\" : [ { \"name\" : \"string\" , \"args\" : [ \"string\" , \"string\" , \"...\" ], \"env\" : [ \"string\" , \"string\" , \"...\" ], \"allowFailure\" : \"boolean\" , \"allowExitCodes: [ \" s tr i n g (i nt 64 f orma t ) \", \" s tr i n g (i nt 64 f orma t ) \", \" ... \" ], \" dir \": \" s tr i n g \", \" id \": \" s tr i n g \", \" wai t For \": [ \" s tr i n g \", \" s tr i n g \", \" ... \" ], \" e ntr ypoi nt \": \" s tr i n g \", \" secre t E n v \": \" s tr i n g \", \" volumes \": \" objec t (Volume) \", \" t imeou t \": \" s tr i n g (Dura t io n f orma t ) \", \" scrip t \" : \" s tr i n g \", \" au t omapSubs t i tut io ns \" : \" boolea n \" }, { \" na me \": \" s tr i n g \" ... }, { \" na me \": \" s tr i n g \" ... } ], \" t imeou t \": \" s tr i n g (Dura t io n f orma t ) \", \" queueT tl \": \" s tr i n g (Dura t io n f orma t ) \", \" logsBucke t \": \" s tr i n g \", \" op t io ns \": { \" sourceProve nan ceHash \": \" e nu m(HashType) \", \" machi ne Type \": \" e nu m(Machi ne Type) \", \" diskSizeGb \": \" s tr i n g (i nt 64 f orma t ) \", \" subs t i tut io n Op t io n \": \" e nu m(Subs t i tut io n Op t io n ) \", \" dy na micSubs t i tut io ns \": \" boolea n \", \" au t omapSubs t i tut io ns \": \" boolea n \", \" logS trea mi n gOp t io n \": \" e nu m(LogS trea mi n gOp t io n ) \", \" loggi n g \": \" e nu m(Loggi n gMode) \" \" de fault LogsBucke t Behavior \": \" e nu m(De fault LogsBucke t Behavior) \" \" e n v \": [ \" s tr i n g \", \" s tr i n g \", \" ... \" ], \" secre t E n v \": \" s tr i n g \", \" volumes \": \" objec t (Volume) \", \" pool \": \" objec t (PoolOp t io n ) \" \" reques te dVeri f yOp t io n \": \" e nu m(Reques te dVeri f yOp t io n ) \" }, \" subs t i tut io ns \": \" map (key : s tr i n g , value : s tr i n g) \", \" ta gs \": [ \" s tr i n g \", \" s tr i n g \", \" ... \" ], \" serviceAccou nt \": \" s tr i n g \", \" secre ts \": \" objec t (Secre t ) \", \" availableSecre ts \": \" objec t (Secre ts ) \", \" ar t i fa c ts \": \" objec t (Ar t i fa c ts ) \", \" goModules \": [object(GoModules), ...], \" mave n Ar t i fa c ts \": [\" objec t (Mave n Ar t i fa c t ) \", ...], \" py t ho n Packages \": [\" objec t (Py t ho n Package) \", ...], \" n pmPackages \": [\" objec t ( n pmPackage) \", ...], \" images \": [ \" s tr i n g \", \" s tr i n g \", \" ...\" ] } Each of the sections of the build config file defines a part of the task you want Cloud Build to execute: Build steps A build step specifies an action that you want Cloud Build to perform.",
+          "The following snippet requests a disk size of 200 GB: YAML steps : - name : 'gcr.io/cloud-builders/docker' args : [ 'build' , '-t' , 'gcr.io/myproject/myimage' , '.' ] options : diskSizeGb : '200' JSON { \"steps\" : [ { \"name\" : \"gcr.io/cloud-builders/docker\" , \"args\" : [ \"build\" , \"-t\" , \"gcr.io/myproject/myimage\" , \".\" ] } ], \"options\" : { \"diskSizeGb\" : ' 200 ' } } logStreamingOption : Use this option to specify if you want to stream build logs to Cloud Storage."
+        ]
+      },
+      {
+        "title": "Build configuration file schema \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/build/docs/build-config-file-schema",
+        "source_id": "site-docs-root-2",
+        "final_score": 109,
+        "relevance": "",
+        "evidence_snippets": [
+          "Add the machineType option to request a virtual machine with a higher CPU: YAML steps : - name : 'gcr.io/cloud-builders/docker' args : [ 'build' , '-t' , 'gcr.io/myproject/myimage' , '.' ] options : machineType : 'E2 HIGHCPU 8' JSON { \"steps\" : [ { \"name\" : \"gcr.io/cloud-builders/docker\" , \"args\" : [ \"build\" , \"-t\" , \"gcr.io/myproject/myimage\" , \".\" ] }, ], \"options\" : { \"machineType\" : \"E2 HIGHCPU 8\" } } For more information on using the machineType option see Speeding up builds . diskSizeGb : Use the diskSizeGb option to request a custom disk size for your build.",
+          "A build config file has the following structure: YAML steps : - name : string args : [ string , string , ... ] env : [ string , string , ... ] allowFailure : boolean allowExitCodes : [ string (int64 format) , string (int64 format) , ... ] dir : string id : string waitFor : [ string , string , ... ] entrypoint : string secretEnv : string volumes : object(Volume) timeout : string (Duration format) script : string automapSubstitutions : boolean - name : string ... - name : string ... timeout : string (Duration format) queueTtl : string (Duration format) logsBucket : string options : env : [ string , string , ... ] secretEnv : string volumes : object(Volume) sourceProvenanceHash : enum(HashType) machineType : enum(MachineType) diskSizeGb : string (int64 format) substitutionOption : enum(SubstitutionOption) dynamicSubstitutions : boolean automapSubstitutions : boolean logStreamingOption : enum(LogStreamingOption) logging : enum(LoggingMode) defaultLogsBucketBehavior : enum(DefaultLogsBucketBehavior) pool : object(PoolOption) pubsubTopic : string requestedVerifyOption : enum(RequestedVerifyOption) substitutions: map (key : string, value : string) tags : [ string , string , ... ] serviceAccount : string secrets : object(Secret) availableSecrets : object(Secrets) artifacts : object(Artifacts) goModules : [ object(GoModules) , ... ] mavenArtifacts : [ object(MavenArtifact) , ... ] pythonPackages : [ object(PythonPackage) , ... ] npmPackages : [ object(npmPackage) , ... ] images : - [ string , string , ... ] JSON { \"steps\" : [ { \"name\" : \"string\" , \"args\" : [ \"string\" , \"string\" , \"...\" ], \"env\" : [ \"string\" , \"string\" , \"...\" ], \"allowFailure\" : \"boolean\" , \"allowExitCodes: [ \" s tr i n g (i nt 64 f orma t ) \", \" s tr i n g (i nt 64 f orma t ) \", \" ... \" ], \" dir \": \" s tr i n g \", \" id \": \" s tr i n g \", \" wai t For \": [ \" s tr i n g \", \" s tr i n g \", \" ... \" ], \" e ntr ypoi nt \": \" s tr i n g \", \" secre t E n v \": \" s tr i n g \", \" volumes \": \" objec t (Volume) \", \" t imeou t \": \" s tr i n g (Dura t io n f orma t ) \", \" scrip t \" : \" s tr i n g \", \" au t omapSubs t i tut io ns \" : \" boolea n \" }, { \" na me \": \" s tr i n g \" ... }, { \" na me \": \" s tr i n g \" ... } ], \" t imeou t \": \" s tr i n g (Dura t io n f orma t ) \", \" queueT tl \": \" s tr i n g (Dura t io n f orma t ) \", \" logsBucke t \": \" s tr i n g \", \" op t io ns \": { \" sourceProve nan ceHash \": \" e nu m(HashType) \", \" machi ne Type \": \" e nu m(Machi ne Type) \", \" diskSizeGb \": \" s tr i n g (i nt 64 f orma t ) \", \" subs t i tut io n Op t io n \": \" e nu m(Subs t i tut io n Op t io n ) \", \" dy na micSubs t i tut io ns \": \" boolea n \", \" au t omapSubs t i tut io ns \": \" boolea n \", \" logS trea mi n gOp t io n \": \" e nu m(LogS trea mi n gOp t io n ) \", \" loggi n g \": \" e nu m(Loggi n gMode) \" \" de fault LogsBucke t Behavior \": \" e nu m(De fault LogsBucke t Behavior) \" \" e n v \": [ \" s tr i n g \", \" s tr i n g \", \" ... \" ], \" secre t E n v \": \" s tr i n g \", \" volumes \": \" objec t (Volume) \", \" pool \": \" objec t (PoolOp t io n ) \" \" reques te dVeri f yOp t io n \": \" e nu m(Reques te dVeri f yOp t io n ) \" }, \" subs t i tut io ns \": \" map (key : s tr i n g , value : s tr i n g) \", \" ta gs \": [ \" s tr i n g \", \" s tr i n g \", \" ... \" ], \" serviceAccou nt \": \" s tr i n g \", \" secre ts \": \" objec t (Secre t ) \", \" availableSecre ts \": \" objec t (Secre ts ) \", \" ar t i fa c ts \": \" objec t (Ar t i fa c ts ) \", \" goModules \": [object(GoModules), ...], \" mave n Ar t i fa c ts \": [\" objec t (Mave n Ar t i fa c t ) \", ...], \" py t ho n Packages \": [\" objec t (Py t ho n Package) \", ...], \" n pmPackages \": [\" objec t ( n pmPackage) \", ...], \" images \": [ \" s tr i n g \", \" s tr i n g \", \" ...\" ] } Each of the sections of the build config file defines a part of the task you want Cloud Build to execute: Build steps A build step specifies an action that you want Cloud Build to perform.",
+          "The following snippet requests a disk size of 200 GB: YAML steps : - name : 'gcr.io/cloud-builders/docker' args : [ 'build' , '-t' , 'gcr.io/myproject/myimage' , '.' ] options : diskSizeGb : '200' JSON { \"steps\" : [ { \"name\" : \"gcr.io/cloud-builders/docker\" , \"args\" : [ \"build\" , \"-t\" , \"gcr.io/myproject/myimage\" , \".\" ] } ], \"options\" : { \"diskSizeGb\" : ' 200 ' } } logStreamingOption : Use this option to specify if you want to stream build logs to Cloud Storage."
+        ]
+      },
+      {
+        "title": "\"Class RepositoryManagerClient (3.90.0) \\_|\\_ Java client libraries \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-build/latest/com.google.cloud.devtools.cloudbuild.v2.RepositoryManagerClient",
+        "source_id": "site-java-reference",
+        "final_score": 108,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For example: To customize credentials: // This snippet has been automatically generated and should be regarded as a code template only. // It will require modifications to work: // - It may require correct/in-range values for request initialization. // - It may require specifying regional endpoints when creating the service client as shown in // https://cloud.google.com/java/docs/setup#configure endpoints for the client library RepositoryManagerSettings repositoryManagerSettings = RepositoryManagerSettings . newBuilder () . setCredentialsProvider ( FixedCredentialsProvider . create ( myCredentials )) . build (); RepositoryManagerClient repositoryManagerClient = RepositoryManagerClient . create ( repositoryManagerSettings ); To customize the endpoint: // This snippet has been automatically generated and should be regarded as a code template only. // It will require modifications to work: // - It may require correct/in-range values for request initialization. // - It may require specifying regional endpoints when creating the service client as shown in // https://cloud.google.com/java/docs/setup#configure endpoints for the client library RepositoryManagerSettings repositoryManagerSettings = RepositoryManagerSettings . newBuilder (). setEndpoint ( myEndpoint ). build (); RepositoryManagerClient repositoryManagerClient = RepositoryManagerClient . create ( repositoryManagerSettings ); To use REST (HTTP1.1/JSON) transport (instead of gRPC) for sending and receiving requests over the wire: // This snippet has been automatically generated and should be regarded as a code template only. // It will require modifications to work: // - It may require correct/in-range values for request initialization. // - It may require specifying regional endpoints when creating the service client as shown in // https://cloud.google.com/java/docs/setup#configure endpoints for the client library RepositoryManagerSettings repositoryManagerSettings = RepositoryManagerSettings . newHttpJsonBuilder (). build (); RepositoryManagerClient repositoryManagerClient = RepositoryManagerClient . create ( repositoryManagerSettings ); Please refer to the GitHub repository's samples for more quickstart code snippets.",
+          "Sample code: // This snippet has been automatically generated and should be regarded as a code template only. // It will require modifications to work: // - It may require correct/in-range values for request initialization. // - It may require specifying regional endpoints when creating the service client as shown in // https://cloud.google.com/java/docs/setup#configure endpoints for the client library try ( RepositoryManagerClient repositoryManagerClient = RepositoryManagerClient . create ()) { FetchLinkableRepositoriesRequest request = FetchLinkableRepositoriesRequest . newBuilder () . setConnection ( ConnectionName . of ( \"[PROJECT]\" , \"[LOCATION]\" , \"[CONNECTION]\" ). toString ()) . setPageSize ( 883849137 ) . setPageToken ( \"pageToken873572522\" ) . build (); ApiFuture<Repository> future = repositoryManagerClient . fetchLinkableRepositoriesPagedCallable (). futureCall ( request ); // Do something. for ( Repository element : future . get (). iterateAll ()) { // doThingsWith(element); } } Returns Type Description UnaryCallable < FetchLinkableRepositoriesRequest , FetchLinkableRepositoriesPagedResponse > fetchReadToken(FetchReadTokenRequest request) public final FetchReadTokenResponse fetchReadToken ( FetchReadTokenRequest request ) Fetches read token of a given repository.",
+          "Sample code: // This snippet has been automatically generated and should be regarded as a code template only. // It will require modifications to work: // - It may require correct/in-range values for request initialization. // - It may require specifying regional endpoints when creating the service client as shown in // https://cloud.google.com/java/docs/setup#configure endpoints for the client library try ( RepositoryManagerClient repositoryManagerClient = RepositoryManagerClient . create ()) { ListRepositoriesRequest request = ListRepositoriesRequest . newBuilder () . setParent ( ConnectionName . of ( \"[PROJECT]\" , \"[LOCATION]\" , \"[CONNECTION]\" ). toString ()) . setPageSize ( 883849137 ) . setPageToken ( \"pageToken873572522\" ) . setFilter ( \"filter-1274492040\" ) . build (); ApiFuture<Repository> future = repositoryManagerClient . listRepositoriesPagedCallable (). futureCall ( request ); // Do something. for ( Repository element : future . get (). iterateAll ()) { // doThingsWith(element); } } Returns Type Description UnaryCallable < ListRepositoriesRequest , ListRepositoriesPagedResponse > setIamPolicy(SetIamPolicyRequest request) public final Policy setIamPolicy ( SetIamPolicyRequest request ) Sets the access control policy on the specified resource."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.cloud.devtools.cloudbuild.v2.RepositoryManagerClient",
+      "com.mycompany.app",
+      "gcr.io",
+      "maven.pkg.dev",
+      "web.xml"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/build/docs/build-config",
+        "https://docs.cloud.google.com/build/docs/build-config-file-schema",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-build/latest/com.google.cloud.devtools.cloudbuild.v2.RepositoryManagerClient"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/build/docs/build-config",
+        "https://docs.cloud.google.com/build/docs/build-config-file-schema",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-build/latest/com.google.cloud.devtools.cloudbuild.v2.RepositoryManagerClient"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/build/docs/build-config",
+        "https://docs.cloud.google.com/build/docs/build-config-file-schema",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-build/latest/com.google.cloud.devtools.cloudbuild.v2.RepositoryManagerClient"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/build/docs/build-config",
+        "https://docs.cloud.google.com/build/docs/build-config-file-schema",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-build/latest/com.google.cloud.devtools.cloudbuild.v2.RepositoryManagerClient"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/build/docs/build-config",
+        "https://docs.cloud.google.com/build/docs/build-config-file-schema",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-build/latest/com.google.cloud.devtools.cloudbuild.v2.RepositoryManagerClient"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/build/docs/build-config",
+        "https://docs.cloud.google.com/build/docs/build-config-file-schema",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-build/latest/com.google.cloud.devtools.cloudbuild.v2.RepositoryManagerClient"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/build/docs/build-config",
+        "https://docs.cloud.google.com/build/docs/build-config-file-schema",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-build/latest/com.google.cloud.devtools.cloudbuild.v2.RepositoryManagerClient"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/build/docs/build-config",
+        "https://docs.cloud.google.com/build/docs/build-config-file-schema",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-build/latest/com.google.cloud.devtools.cloudbuild.v2.RepositoryManagerClient"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/build/docs/build-config",
+        "https://docs.cloud.google.com/build/docs/build-config-file-schema",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-build/latest/com.google.cloud.devtools.cloudbuild.v2.RepositoryManagerClient"
+      ]
+    }
+  ]
+}

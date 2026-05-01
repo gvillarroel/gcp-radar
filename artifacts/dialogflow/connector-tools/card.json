@@ -1,0 +1,94 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:34.519Z",
+  "source_step08_card": "data/step-08/current/products/dialogflow/card.json",
+  "product_name": "Dialogflow",
+  "product_slug": "dialogflow",
+  "feature_name": "Connector tools",
+  "feature_slug": "connector-tools",
+  "summary": "Connector tools can be used in Dialogflow CX playbooks to connect with external systems.",
+  "extended_definition": "Connector tools can be used in Dialogflow CX playbooks to connect with external systems.",
+  "lifecycle": {
+    "latest_feature_date": "2025-03-10",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dialogflow/cx/docs/concept/data-store",
+      "https://docs.cloud.google.com/java/docs/reference/google-cloud-dialogflow/latest/com.google.cloud.dialogflow.v2",
+      "https://docs.cloud.google.com/java/docs/reference/google-cloud-dialogflow/latest/com.google.cloud.dialogflow.v2.Agent.Builder"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Package com.google.cloud.dialogflow.v2 (4.94.0) \\_|\\_ Java client libraries\\",
+        "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-dialogflow/latest/com.google.cloud.dialogflow.v2",
+        "source_id": "site-java-reference",
+        "final_score": 104,
+        "relevance": "",
+        "evidence_snippets": [
+          "Connector Tool A ConnectorTool enabling using Integration Connectors Connections as tools. com. google. cloud. dialogflow. v2.",
+          "Builder A ConnectorTool enabling using Integration Connectors Connections as tools. com. google. cloud. dialogflow. v2.",
+          "Tools can be used to interact with remote APIs (e.g. fetching orders) to retrieve additional information as input to LLM. com. google. cloud. dialogflow. v2."
+        ]
+      },
+      {
+        "title": "\"Class Agent.Builder (4.94.0) \\_|\\_ Java client libraries \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-dialogflow/latest/com.google.cloud.dialogflow.v2.Agent.Builder",
+        "source_id": "site-java-reference",
+        "final_score": 94,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "However, bots connectors and webhook calls will follow the specified API version. .google.cloud.dialogflow.v2.Agent.ApiVersion api version = 14 [(.google.api.field behavior) = OPTIONAL]; Returns Type Description int The enum numeric value on the wire for apiVersion. getAvatarUri() public String getAvatarUri () Optional.",
+          "However, bots connectors and webhook calls will follow the specified API version. .google.cloud.dialogflow.v2.Agent.ApiVersion api version = 14 [(.google.api.field behavior) = OPTIONAL]; Returns Type Description Agent.ApiVersion The apiVersion. getApiVersionValue() public int getApiVersionValue () Optional.",
+          "However, bots connectors and webhook calls will follow the specified API version. .google.cloud.dialogflow.v2.Agent.ApiVersion api version = 14 [(.google.api.field behavior) = OPTIONAL]; Returns Type Description Agent.Builder This builder for chaining. clearAvatarUri() public Agent ."
+        ]
+      },
+      {
+        "title": "Data stores \\_|\\_ Dialogflow CX \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dialogflow/cx/docs/concept/data-store",
+        "source_id": "site-docs-root",
+        "final_score": 88,
+        "relevance": "",
+        "evidence_snippets": [
+          "Each connector can contain multiple data stores, which are stored as entities in the Dialogflow CX system.",
+          "Set up a third-party data store using a connector This section outlines the process of setting up a data store using third-party data.",
+          "Note: We only support user accounts for authentication; service accounts are not supported for connectors."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.cloud.dialogflow.v2",
+      "com.google.cloud.dialogflow.v2.Agent.Builder",
+      "e.g"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dialogflow/cx/docs/concept/data-store",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dialogflow/latest/com.google.cloud.dialogflow.v2",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dialogflow/latest/com.google.cloud.dialogflow.v2.Agent.Builder"
+      ]
+    }
+  ]
+}

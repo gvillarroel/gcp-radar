@@ -1,0 +1,184 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:33.658Z",
+  "source_step08_card": "data/step-08/current/products/datastore/card.json",
+  "product_name": "Datastore",
+  "product_slug": "datastore",
+  "feature_name": "Managed export and import in Google Cloud Console",
+  "feature_slug": "managed-export-and-import-in-google-cloud-console",
+  "summary": "The Google Cloud Console can start managed Datastore export and import operations.",
+  "extended_definition": "The Google Cloud Console can start managed Datastore export and import operations.",
+  "lifecycle": {
+    "latest_feature_date": "2019-11-18",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/datastore/docs/cmek",
+      "https://docs.cloud.google.com/datastore/docs/console/datastore-admin-console",
+      "https://docs.cloud.google.com/datastore/docs/datastore-api-tutorial",
+      "https://docs.cloud.google.com/datastore/docs/export-import-entities"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Exporting and Importing Entities \\_|\\_ Datastore \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/datastore/docs/export-import-entities",
+        "source_id": "site-docs-root",
+        "final_score": 326,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For example, a recently completed export operation shows the following information: { \"operations\": [ { \"name\": \"projects/ project-id /operations/ASAyMDAwOTEzBxp0bHVhZmVkBxJsYXJ0bmVjc3Utc2Jvai1uaW1kYRQKKhI\", \"metadata\": { \"@type\": \"type.googleapis.com/google.datastore.admin.v1.ExportEntitiesMetadata\", \"common\": { \"startTime\": \"2017-12-05T23:01:39.583780Z\", \"endTime\": \"2017-12-05T23:54:58.474750Z\", \"operationType\": \"EXPORT ENTITIES\" }, \"progressEntities\": { \"workCompleted\": \"21933027\", \"workEstimated\": \"21898182\" }, \"progressBytes\": { \"workCompleted\": \"12421451292\", \"workEstimated\": \"9759724245\" }, \"entityFilter\": { \"namespaceIds\": [ \"\" ] }, \"outputUrlPrefix\": \"gs:// bucket-name \" }, \"done\": true, \"response\": { \"@type\": \"type.googleapis.com/google.datastore.admin.v1.ExportEntitiesResponse\", \"outputUrl\": \"gs:// bucket-name /2017-05-25T23:54:39 76544/2017-05-25T23:54:39 76544.overall export metadata\" } } ] } Check operation status To view the status of a long-running operation: Console You can view a list of the most recent export and import operations in the Import/Export page of the Google Cloud console.",
+          "Export operations For export operations involving a bucket in another project, modify the permissions of the bucket to assign one of the following Identity and Access Management roles to the Datastore mode service agent of the project that contains your Datastore mode database: Storage Admin Owner (basic role) You can also create an IAM custom role with slightly different permissions than the ones contained in the roles listed earlier: storage.buckets.get storage.objects.create storage.objects.delete storage.objects.list Import operations For import operations involving a Cloud Storage bucket in another project, modify the permissions of the bucket to assign one of the following Cloud Storage roles to the Datastore mode service agent of the project that contains your Datastore mode database: Storage Admin Both Storage Object Viewer and Storage Legacy Bucket Reader You can also create an IAM custom role with the following permissions: storage.buckets.get storage.objects.get Starting managed export and import operations This section describes how to start a managed export or import operation.",
+          "Locating your overall export metadata file You can determine the value to use for the import location by using the Cloud Storage browser in the Google Cloud console: Open the Cloud Storage Browser You can also list and describe completed operations ."
+        ]
+      },
+      {
+        "title": "Datastore Admin \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/datastore/docs/console/datastore-admin-console",
+        "source_id": "site-docs-root",
+        "final_score": 254,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Datastore Admin was replaced by more reliable alternatives: The backup feature was replaced by managed exports and imports .",
+          "You should use the managed export and import service instead.",
+          "You should use the managed export and import service instead."
+        ]
+      },
+      {
+        "title": "\"Getting started with the Firestore in Datastore mode API \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/datastore/docs/datastore-api-tutorial",
+        "source_id": "site-iam-reference",
+        "final_score": 235,
+        "relevance": "",
+        "evidence_snippets": [
+          "For more information, see Set up authentication for a local development environment . async function markDone ( taskId ) { const transaction = datastore . transaction (); const taskKey = datastore . key ([ 'Task' , datastore . int ( taskId )]); try { await transaction . run (); const [ task ] = await transaction . get ( taskKey ); task . done = true ; transaction . save ({ key : taskKey , data : task , }); await transaction . commit (); console . log ( Task ${ taskId } updated successfully. ); } catch ( err ) { await transaction . rollback (); } } PHP To learn how to install and use the client library for Cloud Datastore, see Cloud Datastore client libraries .",
+          "For more information, see Set up authentication for a local development environment . async function addTask ( description ) { const taskKey = datastore . key ( 'Task' ); const entity = { key : taskKey , data : [ { name : 'created' , value : new Date (). toJSON (), }, { name : 'description' , value : description , excludeFromIndexes : true , }, { name : 'done' , value : false , }, ], }; try { await datastore . save ( entity ); console . log ( Task ${ taskKey . id } created successfully. ); } catch ( err ) { console . error ( 'ERROR:' , err ); } } PHP To learn how to install and use the client library for Cloud Datastore, see Cloud Datastore client libraries .",
+          "Extract the download: unzip master . zip Change directories to the TaskList application: cd google - cloud - ruby - master / google - cloud - datastore / samples Install the dependencies: bundle install At a command prompt, run the following, where <project-id> is the ID of your Google Cloud project. export GOOGLE CLOUD PROJECT = < project - id > (Windows users: use set instead of export .) Run the application! bundle exec ruby tasks . rb Creating an Authorized Service Object In order to make authenticated requests to Google Cloud APIs using the Google APIs Client libraries, you must: Fetch the credential to use for requests."
+        ]
+      },
+      {
+        "title": "\"Customer-managed encryption keys (CMEK) \\_|\\_ Datastore \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/datastore/docs/cmek",
+        "source_id": "site-iam-reference",
+        "final_score": 218,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "If the database has long-running operations in progress, they will be affected as follows: Data import or export operations will stop making progress, and be marked as Failed .",
+          "To migrate data in an existing non-CMEK database to a CMEK-protected database, export your data and then import data to a new CMEK-protected database.",
+          "Data from a CMEK-protected database can be moved to a non-CMEK database by using Backup and Restore , Clone , or Import and Export ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "export0.export",
+      "storage.buckets.get",
+      "storage.objects.create",
+      "storage.objects.delete",
+      "storage.objects.get",
+      "storage.objects.list",
+      "type.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastore/docs/export-import-entities",
+        "https://docs.cloud.google.com/datastore/docs/console/datastore-admin-console",
+        "https://docs.cloud.google.com/datastore/docs/datastore-api-tutorial",
+        "https://docs.cloud.google.com/datastore/docs/cmek"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastore/docs/export-import-entities",
+        "https://docs.cloud.google.com/datastore/docs/console/datastore-admin-console",
+        "https://docs.cloud.google.com/datastore/docs/datastore-api-tutorial",
+        "https://docs.cloud.google.com/datastore/docs/cmek"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastore/docs/export-import-entities",
+        "https://docs.cloud.google.com/datastore/docs/console/datastore-admin-console",
+        "https://docs.cloud.google.com/datastore/docs/datastore-api-tutorial",
+        "https://docs.cloud.google.com/datastore/docs/cmek"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastore/docs/export-import-entities",
+        "https://docs.cloud.google.com/datastore/docs/console/datastore-admin-console",
+        "https://docs.cloud.google.com/datastore/docs/datastore-api-tutorial",
+        "https://docs.cloud.google.com/datastore/docs/cmek"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastore/docs/export-import-entities",
+        "https://docs.cloud.google.com/datastore/docs/console/datastore-admin-console",
+        "https://docs.cloud.google.com/datastore/docs/datastore-api-tutorial",
+        "https://docs.cloud.google.com/datastore/docs/cmek"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastore/docs/export-import-entities",
+        "https://docs.cloud.google.com/datastore/docs/console/datastore-admin-console",
+        "https://docs.cloud.google.com/datastore/docs/datastore-api-tutorial",
+        "https://docs.cloud.google.com/datastore/docs/cmek"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastore/docs/export-import-entities",
+        "https://docs.cloud.google.com/datastore/docs/console/datastore-admin-console",
+        "https://docs.cloud.google.com/datastore/docs/datastore-api-tutorial",
+        "https://docs.cloud.google.com/datastore/docs/cmek"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastore/docs/export-import-entities",
+        "https://docs.cloud.google.com/datastore/docs/console/datastore-admin-console",
+        "https://docs.cloud.google.com/datastore/docs/datastore-api-tutorial",
+        "https://docs.cloud.google.com/datastore/docs/cmek"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastore/docs/export-import-entities",
+        "https://docs.cloud.google.com/datastore/docs/console/datastore-admin-console",
+        "https://docs.cloud.google.com/datastore/docs/datastore-api-tutorial",
+        "https://docs.cloud.google.com/datastore/docs/cmek"
+      ]
+    }
+  ]
+}

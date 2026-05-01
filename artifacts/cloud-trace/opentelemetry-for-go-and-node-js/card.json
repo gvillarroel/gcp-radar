@@ -1,0 +1,151 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:28.744Z",
+  "source_step08_card": "data/step-08/current/products/cloud-trace/card.json",
+  "product_name": "Cloud Trace",
+  "product_slug": "cloud-trace",
+  "feature_name": "OpenTelemetry for Go and Node.js",
+  "feature_slug": "opentelemetry-for-go-and-node-js",
+  "summary": "Cloud Trace supports using OpenTelemetry with Go and Node.js applications on GKE and Compute Engine.",
+  "extended_definition": "Cloud Trace supports using OpenTelemetry with Go and Node.js applications on GKE and Compute Engine.",
+  "lifecycle": {
+    "latest_feature_date": "2020-03-30",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/trace/docs/reference/trace-schema",
+      "https://docs.cloud.google.com/trace/docs/setup",
+      "https://docs.cloud.google.com/trace/docs/setup/nodejs",
+      "https://docs.cloud.google.com/trace/docs/setup/nodejs-ot"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Node.js instrumentation sample \\_|\\_ Cloud Trace \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/trace/docs/setup/nodejs-ot",
+        "source_id": "site-docs-root",
+        "final_score": 312,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Instrument your app to collect traces, metrics, and logs To instrument your app to collect trace and metric data, and to write structured JSON to standard out, perform the following steps as described in subsequent sections of this document: Configure OpenTelemetry Configure your app to preload the OpenTelemetry configuration Configure structured logging Write structured logs Configure OpenTelemetry The default configuration for the OpenTelemetry Node.js SDK exports traces by using the OTLP protocol .",
+          "The following code sample illustrates a Pino LoggerOptions object that configures the app to output JSON structured logs: // Expected attributes that OpenTelemetry adds to correlate logs with spans interface LogRecord { trace id ?: string ; span id ?: string ; trace flags ?: string ; [ key : string ] : unknown ; } // https://cloud.google.com/logging/docs/reference/v2/rest/v2/LogEntry#logseverity const PinoLevelToSeverityLookup : Record<string , string undefined > = { trace : 'DEBUG' , debug : 'DEBUG' , info : 'INFO' , warn : 'WARNING' , error : 'ERROR' , fatal : 'CRITICAL' , }; export const loggerConfig = { messageKey : 'message' , // Same as pino.stdTimeFunctions.isoTime but uses \"timestamp\" key instead of \"time\" timestamp () : string { return ,\"timestamp\":\" ${ new Date ( Date . now ()). toISOString () } \" ; }, formatters : { log ( object : LogRecord ) : Record<string , unknown > { // Add trace context attributes following Cloud Logging structured log format described // in https://cloud.google.com/logging/docs/structured-logging#special-payload-fields const { trace id , span id , trace flags , ... rest } = object ; return { 'logging.googleapis.com/trace' : trace id , 'logging.googleapis.com/spanId' : span id , 'logging.googleapis.com/trace sampled' : trace flags ? trace flags === '01' : undefined , ... rest , }; }, // See // https://getpino.io/#/docs/help?id=mapping-pino-log-levels-to-google-cloud-logging-stackdriver-severity-levels level ( label : string ) { return { severity : PinoLevelToSeverityLookup [ label ] ??",
+          "Clone the repository: git clone https://github.com/GoogleCloudPlatform/opentelemetry-operations-js Go to the sample directory: cd opentelemetry-operations-js/samples/instrumentation-quickstart Build and run the sample: docker compose up --abort-on-container-exit If you aren't running on Cloud Shell, then run the application with the GOOGLE APPLICATION CREDENTIALS environment variable pointing to a credentials file."
+        ]
+      },
+      {
+        "title": "Node.js instrumentation sample \\_|\\_ Cloud Trace \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/trace/docs/setup/nodejs",
+        "source_id": "site-docs-root-2",
+        "final_score": 312,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Instrument your app to collect traces, metrics, and logs To instrument your app to collect trace and metric data, and to write structured JSON to standard out, perform the following steps as described in subsequent sections of this document: Configure OpenTelemetry Configure your app to preload the OpenTelemetry configuration Configure structured logging Write structured logs Configure OpenTelemetry The default configuration for the OpenTelemetry Node.js SDK exports traces by using the OTLP protocol .",
+          "The following code sample illustrates a Pino LoggerOptions object that configures the app to output JSON structured logs: // Expected attributes that OpenTelemetry adds to correlate logs with spans interface LogRecord { trace id ?: string ; span id ?: string ; trace flags ?: string ; [ key : string ] : unknown ; } // https://cloud.google.com/logging/docs/reference/v2/rest/v2/LogEntry#logseverity const PinoLevelToSeverityLookup : Record<string , string undefined > = { trace : 'DEBUG' , debug : 'DEBUG' , info : 'INFO' , warn : 'WARNING' , error : 'ERROR' , fatal : 'CRITICAL' , }; export const loggerConfig = { messageKey : 'message' , // Same as pino.stdTimeFunctions.isoTime but uses \"timestamp\" key instead of \"time\" timestamp () : string { return ,\"timestamp\":\" ${ new Date ( Date . now ()). toISOString () } \" ; }, formatters : { log ( object : LogRecord ) : Record<string , unknown > { // Add trace context attributes following Cloud Logging structured log format described // in https://cloud.google.com/logging/docs/structured-logging#special-payload-fields const { trace id , span id , trace flags , ... rest } = object ; return { 'logging.googleapis.com/trace' : trace id , 'logging.googleapis.com/spanId' : span id , 'logging.googleapis.com/trace sampled' : trace flags ? trace flags === '01' : undefined , ... rest , }; }, // See // https://getpino.io/#/docs/help?id=mapping-pino-log-levels-to-google-cloud-logging-stackdriver-severity-levels level ( label : string ) { return { severity : PinoLevelToSeverityLookup [ label ] ??",
+          "Clone the repository: git clone https://github.com/GoogleCloudPlatform/opentelemetry-operations-js Go to the sample directory: cd opentelemetry-operations-js/samples/instrumentation-quickstart Build and run the sample: docker compose up --abort-on-container-exit If you aren't running on Cloud Shell, then run the application with the GOOGLE APPLICATION CREDENTIALS environment variable pointing to a credentials file."
+        ]
+      },
+      {
+        "title": "Storage schema for trace data \\_|\\_ Cloud Trace \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/trace/docs/reference/trace-schema",
+        "source_id": "site-docs-reference",
+        "final_score": 267,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Observability Cloud Trace Reference Send feedback Storage schema for trace data Stay organized with collections Save and categorize content based on your preferences.",
+          "The Cloud Trace API doesn't use the OpenTelemetry OTLP Protocol and defines a proprietary data format.",
+          "For the same executable and the same endpoint, using a consistent name makes it easier to correlate cross-trace spans."
+        ]
+      },
+      {
+        "title": "Instrument for Cloud Trace \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/trace/docs/setup",
+        "source_id": "site-docs-root-2",
+        "final_score": 260,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The instrumentation samples we provide use OpenTelemetry : For samples that use a collector-based export, see the following: Go Java Node.js Python These samples send trace data to the Telemetry API.",
+          "OpenTelemetry examples: Python sample Java sample Node.js sample Go sample C++ sample Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "The following lists the default paths for Windows and Linux: Windows: %APPDATA%/gcloud/application default credentials.json Linux: $HOME/.config/gcloud/application default credentials.json Set the GOOGLE APPLICATION CREDENTIALS environment variable to the path to your service account: Linux/macOS export GOOGLE APPLICATION CREDENTIALS = path-to-your-service-accounts-private-key Windows set GOOGLE APPLICATION CREDENTIALS = path-to-your-service-accounts-private-key PowerShell: $env :GOOGLE APPLICATION CREDENTIALS = \"path-to-your-service-accounts-private-key\" What's next For detailed configuration information, samples, and links to GitHub and other open source repositories, go to the setup page for your language."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "app.log",
+      "com.google.cloud.trace.v1.stub.HttpJsonTraceServiceCallableFactory",
+      "credentials.json",
+      "getpino.io",
+      "github.com",
+      "index.js",
+      "instrumentation.js",
+      "logging.googleapis.com",
+      "pino.stdTimeFunctions.isoTime",
+      "trace.append"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/trace/docs/setup/nodejs-ot",
+        "https://docs.cloud.google.com/trace/docs/setup/nodejs",
+        "https://docs.cloud.google.com/trace/docs/reference/trace-schema",
+        "https://docs.cloud.google.com/trace/docs/setup"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/trace/docs/setup/nodejs-ot",
+        "https://docs.cloud.google.com/trace/docs/setup/nodejs",
+        "https://docs.cloud.google.com/trace/docs/reference/trace-schema",
+        "https://docs.cloud.google.com/trace/docs/setup"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/trace/docs/setup/nodejs-ot",
+        "https://docs.cloud.google.com/trace/docs/setup/nodejs",
+        "https://docs.cloud.google.com/trace/docs/reference/trace-schema",
+        "https://docs.cloud.google.com/trace/docs/setup"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/trace/docs/setup/nodejs-ot",
+        "https://docs.cloud.google.com/trace/docs/setup/nodejs",
+        "https://docs.cloud.google.com/trace/docs/reference/trace-schema",
+        "https://docs.cloud.google.com/trace/docs/setup"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/trace/docs/setup/nodejs-ot",
+        "https://docs.cloud.google.com/trace/docs/setup/nodejs",
+        "https://docs.cloud.google.com/trace/docs/reference/trace-schema",
+        "https://docs.cloud.google.com/trace/docs/setup"
+      ]
+    }
+  ]
+}

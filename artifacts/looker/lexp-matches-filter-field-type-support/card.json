@@ -1,0 +1,136 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:42.371Z",
+  "source_step08_card": "data/step-08/current/products/looker/card.json",
+  "product_name": "Looker",
+  "product_slug": "looker",
+  "feature_name": "Lexp matches_filter field type support",
+  "feature_slug": "lexp-matches-filter-field-type-support",
+  "summary": "The Lexp matches_filter expression now supports tier, location, and zip code field types.",
+  "extended_definition": "The Lexp matches_filter expression now supports tier, location, and zip code field types.",
+  "lifecycle": {
+    "latest_feature_date": "2023-07-12",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/hdfs-data-lake-transfer",
+      "https://docs.cloud.google.com/looker/docs/and-or-filters-in-explores",
+      "https://docs.cloud.google.com/looker/docs/reference/looker-api/latest/methods/Alert/update_alert_field"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Migrate Apache Hive Metastore tables to Google Cloud \\_|\\_ BigQuery \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/hdfs-data-lake-transfer",
+        "source_id": "site-docs-reference-required-6",
+        "final_score": 146,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The following is an example of the filter JSON file structure: { \"filters\" : [ { \"table\" : \"db1.table1\" , \"condition\" : \"IN\" , \"partition\" : [ \"partition1=value1/partition2=value2\" ] }, { \"table\" : \"db1.table2\" , \"condition\" : \"LESS THAN\" , \"partition\" : [ \"partition1;value1\" ] }, { \"table\" : \"db1.table3\" , \"condition\" : \"GREATER THAN\" , \"partition\" : [ \"partition1;value1\" ] }, { \"table\" : \"db1.table4\" , \"condition\" : \"RANGE\" , \"partition\" : [ \"partition1;value1;value2\" ] } ] } Filter conditions The condition field in the JSON file supports the following values, each with a specific format for the partition array: IN : Specifies the exact partition paths to include.",
+          "The Table name filter supports wildcard matching—for example, using —but wildcard matching isn't supported for other filter fields.",
+          "This field supports RE2 regular expression to specify tables."
+        ]
+      },
+      {
+        "title": "Update select fields on an alert \\_|\\_ Looker \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/looker/docs/reference/looker-api/latest/methods/Alert/update_alert_field",
+        "source_id": "site-api-reference",
+        "final_score": 129,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Datatype Description (object) Alert applied dashboard filters AlertAppliedDashboardFilter [] Expand AlertAppliedDashboardFilter definition... filter title string Field Title.",
+          "400: Bad Request Datatype Description (object) Error message lock string Error details documentation url lock string Documentation link 403: Permission Denied Datatype Description (object) Error message lock string Error details documentation url lock string Documentation link 404: Not Found Datatype Description (object) Error message lock string Error details documentation url lock string Documentation link 422: Validation Error Datatype Description (object) ValidationError message lock string Error details errors ValidationErrorDetail [] Expand ValidationErrorDetail definition... field lock string Field with error code lock string Error code message lock string Error info message documentation url lock string Documentation link documentation url lock string Documentation link 429: Too Many Requests Datatype Description (object) Error message lock string Error details documentation url lock string Documentation link Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Version 4.0.26.6 (latest) Update select alert fields Available fields: owner id , is disabled , disabled reason , is public , threshold , enhancements Request PATCH /alerts/{alert id} Datatype Description Request HTTP Request path HTTP Path Expand HTTP Path definition... alert id string ID of an alert body HTTP Body Expand HTTP Body definition... body AlertPatch Alert Expand AlertPatch definition... owner id string New owner ID of the alert is disabled boolean Set alert enabled or disabled disabled reason string The reason this alert is disabled is public boolean Set alert public or private threshold number New threshold value enhancements string Enum of additional alert properties."
+        ]
+      },
+      {
+        "title": "AND/OR Filters in Explores \\_|\\_ Looker \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/looker/docs/and-or-filters-in-explores",
+        "source_id": "site-docs-reference",
+        "final_score": 127,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Important: Depending on the filter conditions, the AND or OR buttons may be unactionable, indicating that the logic cannot be switched. + Filter button — Select this option to add another filter in the same group. + New Group button — Select this option to create a new filter group . + Custom expression button — Select this option to create a custom expression manually using Lexp .",
+          "Filter section options When you add more than one filter, the option to specify between AND and OR filter logic and switch between them appears to the left of the filter fields.",
+          "AND/OR filters on dashboards AND/OR filters are created in the Explore Filters section and are translated into Looker expressions before the query is run."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "db1.table1",
+      "db1.table2",
+      "db1.table3",
+      "db1.table4",
+      "output.zip"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/hdfs-data-lake-transfer",
+        "https://docs.cloud.google.com/looker/docs/reference/looker-api/latest/methods/Alert/update_alert_field",
+        "https://docs.cloud.google.com/looker/docs/and-or-filters-in-explores"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/hdfs-data-lake-transfer",
+        "https://docs.cloud.google.com/looker/docs/reference/looker-api/latest/methods/Alert/update_alert_field",
+        "https://docs.cloud.google.com/looker/docs/and-or-filters-in-explores"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/hdfs-data-lake-transfer",
+        "https://docs.cloud.google.com/looker/docs/reference/looker-api/latest/methods/Alert/update_alert_field",
+        "https://docs.cloud.google.com/looker/docs/and-or-filters-in-explores"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/hdfs-data-lake-transfer",
+        "https://docs.cloud.google.com/looker/docs/reference/looker-api/latest/methods/Alert/update_alert_field",
+        "https://docs.cloud.google.com/looker/docs/and-or-filters-in-explores"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/hdfs-data-lake-transfer",
+        "https://docs.cloud.google.com/looker/docs/reference/looker-api/latest/methods/Alert/update_alert_field",
+        "https://docs.cloud.google.com/looker/docs/and-or-filters-in-explores"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/hdfs-data-lake-transfer",
+        "https://docs.cloud.google.com/looker/docs/reference/looker-api/latest/methods/Alert/update_alert_field",
+        "https://docs.cloud.google.com/looker/docs/and-or-filters-in-explores"
+      ]
+    }
+  ]
+}

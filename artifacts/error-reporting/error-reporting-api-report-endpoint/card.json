@@ -1,0 +1,107 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:36.552Z",
+  "source_step08_card": "data/step-08/current/products/error-reporting/card.json",
+  "product_name": "Error Reporting",
+  "product_slug": "error-reporting",
+  "feature_name": "Error Reporting API report endpoint",
+  "feature_slug": "error-reporting-api-report-endpoint",
+  "summary": "The Stackdriver Error Reporting API includes the projects.events.report endpoint for reporting errors.",
+  "extended_definition": "The Stackdriver Error Reporting API includes the projects.events.report endpoint for reporting errors.",
+  "lifecycle": {
+    "latest_feature_date": "2016-07-12",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/error-reporting/docs/setup/kubernetes-engine",
+      "https://docs.cloud.google.com/error-reporting/docs/setup/php",
+      "https://docs.cloud.google.com/error-reporting/docs/setup/ruby"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Instrument Ruby apps for Error Reporting \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/error-reporting/docs/setup/ruby",
+        "source_id": "site-docs-root",
+        "final_score": 182,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Run apps on Google Cloud To create error groups by using projects.events.report , your service account requires the Error Reporting Writer role ( roles/errorreporting.writer ).",
+          "The projects.events.report method also supports API keys.",
+          "To enable Error Reporting in development mode, add the following: Add this to config/environments/development.rb Rails . application . configure do config config . google cloud . use error reporting = true end Using instrumentation configuration interface To use the Error Reporting library for Ruby in other Rack-based applications, provide the parameters through the configuration interface: require \"google/cloud/error reporting\" Google :: Cloud . configure do config Stackdriver Error Reporting specific parameters config . error reporting . project id = \"YOUR-PROJECT-ID\" config . error reporting . keyfile = \"/path/to/service-account.json\" end You can also set shared configuration for all Google Cloud Observability gems using the following: require \"stackdriver\" Google :: Cloud . configure do config Stackdriver Shared parameters config . project id = \"YOUR-PROJECT-ID\" config . keyfile = \"/path/to/service-account.json\" end App Engine flexible environment App Engine grants the Error Reporting Writer role ( roles/errorreporting.writer ) to your default service account automatically."
+        ]
+      },
+      {
+        "title": "Setting up on Google Kubernetes Engine | Error Reporting | Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/error-reporting/docs/setup/kubernetes-engine",
+        "source_id": "feature-recovery-direct-http",
+        "final_score": 181,
+        "relevance": "",
+        "evidence_snippets": [
+          "If the agent isn't capable of reconstructing multiple lines as a single error, then use the projects.events.report API endpoint , which lets you to control the contents of an error.",
+          "Using the Error Reporting API to write errors The Error Reporting API provides a report endpoint for writing error information to the service.",
+          "For more details see: // https://cloud.google.com/error-reporting/reference/rest/v1beta1/projects.events#ServiceContext ServiceContext serviceContext = new ServiceContext () { Service = \"myapp\" , Version = \"8c1917a9eca3475b5a3686d1d44b52908463b989\" , }; ReportedErrorEvent errorEvent = new ReportedErrorEvent () { Message = e ."
+        ]
+      },
+      {
+        "title": "Instrument PHP apps for Error Reporting \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/error-reporting/docs/setup/php",
+        "source_id": "site-docs-root",
+        "final_score": 170,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Run apps on Google Cloud To create error groups by using projects.events.report , your service account requires the Error Reporting Writer role ( roles/errorreporting.writer ).",
+          "The projects.events.report method also supports API keys.",
+          "Laravel Edit the report function in the file app/Exceptions/Handler.php as follows: public function report(Exception $exception) { if (isset($ SERVER['GAE SERVICE'])) { // Ensure Stackdriver is initialized and handle the exception Bootstrap::init(); Bootstrap::exceptionHandler($exception); } else { parent::report($exception); } } You also need to add a one-line use statement at the beginning of the file: use Google\\Cloud\\ErrorReporting\\Bootstrap; Symfony Create a new file src/AppBundle/EventSubscriber/ExceptionSubscriber.php with the following content: // src/AppBundle/EventSubscriber/ExceptionSubscriber.php namespace AppBundle\\EventSubscriber; use Google\\Cloud\\ErrorReporting\\Bootstrap; use Symfony\\Component\\EventDispatcher\\EventSubscriberInterface; use Symfony\\Component\\HttpKernel\\Event\\ExceptionEvent; use Symfony\\Component\\HttpKernel\\KernelEvents; class ExceptionSubscriber implements EventSubscriberInterface { public static function getSubscribedEvents() { // return the subscribed events, their methods and priorities return [KernelEvents::EXCEPTION => [ ['logException', 0] ]]; } public function logException(ExceptionEvent $event) { $exception = $event->getThrowable(); Bootstrap::exceptionHandler($exception); } } Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "account.json",
+      "app.yaml",
+      "development.rb",
+      "errorreporting.writer",
+      "projects.events",
+      "projects.events.report"
+    ],
+    "missing_inventory_roles": [
+      "roles/errorreporting.writer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/error-reporting/docs/setup/kubernetes-engine",
+        "https://docs.cloud.google.com/error-reporting/docs/setup/ruby",
+        "https://docs.cloud.google.com/error-reporting/docs/setup/php"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/error-reporting/docs/setup/kubernetes-engine",
+        "https://docs.cloud.google.com/error-reporting/docs/setup/ruby",
+        "https://docs.cloud.google.com/error-reporting/docs/setup/php"
+      ]
+    }
+  ]
+}

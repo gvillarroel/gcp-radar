@@ -1,0 +1,96 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:36.223Z",
+  "source_step08_card": "data/step-08/current/products/earth-engine-server/card.json",
+  "product_name": "Earth Engine Server",
+  "product_slug": "earth-engine-server",
+  "feature_name": "ee.Image.sample() geometries option",
+  "feature_slug": "ee-image-sample-geometries-option",
+  "summary": "Includes per-feature geometries in sampled outputs.",
+  "extended_definition": "Includes per-feature geometries in sampled outputs.",
+  "lifecycle": {
+    "latest_feature_date": "2018-09-14",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/earth-engine/guides/charts_feature",
+      "https://developers.google.com/earth-engine/guides/charts_image",
+      "https://developers.google.com/earth-engine/guides/playground"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Feature and FeatureCollection Charts \\_|\\_ Google Earth Engine \\_|\\_ Google\\",
+        "url": "https://developers.google.com/earth-engine/guides/charts_feature",
+        "source_id": "site-docs-root",
+        "final_score": 142,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Chart . feature . histogram ({ features : climSamp , property : '07 ppt' , maxBuckets : 30 }) . setOptions ({ title : 'July Precipitation Distribution for NW USA' , hAxis : { title : 'Precipitation (mm)' , titleTextStyle : { italic : false , bold : true } }, vAxis : { title : 'Pixel count' , titleTextStyle : { italic : false , bold : true } }, colors : [ '1d6b99' ], legend : { position : 'none' } }); print ( chart ); Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Chart . feature . byFeature ({ features : ecoregions , xProperty : 'label' , yProperties : [ '06 ppt' , '06 tmean' ] }) . setSeriesNames ([ 'Precipitation' , 'Temperature' ]) . setChartType ( 'ColumnChart' ) . setOptions ({ title : 'Average June Temperature and Precipitation by Ecoregion' , series : { 0 : { targetAxisIndex : 1 , type : 'bar' , color : '1d6b99' }, 1 : { targetAxisIndex : 0 , type : 'line' , lineWidth : 0 , pointSize : 10 , color : 'e37d05' } }, hAxis : { title : 'Ecoregion' , titleTextStyle : { italic : false , bold : true }}, vAxes : { 0 : { title : 'Temperature (°C)' , baseline : 0 , titleTextStyle : { italic : false , bold : true , color : 'e37d05' } }, 1 : { title : 'Precipitation (mm)' , titleTextStyle : { italic : false , bold : true , color : '1d6b99' } }, }, bar : { groupWidth : '40%' }, }); print ( chart ); ui.Chart.feature.byProperty Example setup The ui.Chart.feature.byProperty function accepts a dictionary that allows you to control the label and order of property names along the x-axis by assigning numerical values to them.",
+          "Need to tell us more? [[[\"Easy to understand\",\"easyToUnderstand\",\"thumb-up\"],[\"Solved my problem\",\"solvedMyProblem\",\"thumb-up\"],[\"Other\",\"otherUp\",\"thumb-up\"]],[[\"Missing the information I need\",\"missingTheInformationINeed\",\"thumb-down\"],[\"Too complicated / too many steps\",\"tooComplicatedTooManySteps\",\"thumb-down\"],[\"Out of date\",\"outOfDate\",\"thumb-down\"],[\"Samples / code issue\",\"samplesCodeIssue\",\"thumb-down\"],[\"Other\",\"otherDown\",\"thumb-down\"]],[\"Last updated 2023-10-06 UTC.\"],[],[\"The ui.Chart.feature module generates charts from Feature data. byFeature plots features on the x-axis, property values on the y-axis, and defines series by property names. byProperty plots properties on the x-axis, values on the y-axis, and uses features as series. groups plots features on the x-axis, property values on the y-axis, and generates series based on unique property values. histogram shows the frequency of features within buckets."
+        ]
+      },
+      {
+        "title": "Image Charts \\_|\\_ Google Earth Engine \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/earth-engine/guides/charts_image",
+        "source_id": "site-docs-root",
+        "final_score": 140,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Chart . image . histogram ({ image : modisSr , region : histRegion , scale : 500 }) . setSeriesNames ([ 'Red' , 'NIR' , 'SWIR' ]) . setOptions ({ title : 'MODIS SR Reflectance Histogram' , hAxis : { title : 'Reflectance (x1e4)' , titleTextStyle : { italic : false , bold : true }, }, vAxis : { title : 'Count' , titleTextStyle : { italic : false , bold : true }}, colors : [ 'cf513e' , '1d6b99' , 'f0af07' ] }); print ( chart ); Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Filter . eq ( 'NAME' , 'Colorado' )); // Draw a random sample of elevation points from within Colorado. var samp = elev . sample ( { region : colorado , scale : 30 , numPixels : 500 , geometries : true }); // Load PRISM climate normals image collection; convert images to bands. var normClim = ee .",
+          "Reducer . mean (), scale : 500 , xProperty : 'label' }) . setSeriesNames ([ 'Precipitation' , 'Temperature' ]) . setChartType ( 'ColumnChart' ) . setOptions ({ title : 'Average June Temperature and Precipitation by Ecoregion' , series : { 0 : { targetAxisIndex : 1 , type : 'bar' , color : '1d6b99' }, 1 : { targetAxisIndex : 0 , type : 'line' , lineWidth : 0 , pointSize : 10 , color : 'e37d05' } }, hAxis : { title : 'Ecoregion' , titleTextStyle : { italic : false , bold : true }}, vAxes : { 0 : { title : 'Temperature (°C)' , baseline : 0 , titleTextStyle : { italic : false , bold : true , color : 'e37d05' } }, 1 : { title : 'Precipitation (mm)' , titleTextStyle : { italic : false , bold : true , color : '1d6b99' } }, }, bar : { groupWidth : '40%' }, }); print ( chart ); ui.Chart.image.regions Example setup The ui.Chart.image.regions function accepts a list that allows you to control the label and order of band names along the x-axis by assigning numerical values to them."
+        ]
+      },
+      {
+        "title": "Earth Engine Code Editor \\_|\\_ Google Earth Engine \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/earth-engine/guides/playground",
+        "source_id": "site-docs-root",
+        "final_score": 130,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Note that you can import the drawn shapes as geometries, features or feature collections.",
+          "Notice the end of the following two URLs, the first sets the debug variable as false and the second sets it as true ; visit both links and notice that the debug checkbox in the console is not checked in the first, and is checked in the second, changing the behavior of each script. https :// code . earthengine . google . com / 5695887aad76979388a723a85339fbf2 # debug = false ; https :// code . earthengine . google . com / 5695887aad76979388a723a85339fbf2 # debug = true ; This feature can be used to set map zoom and center, as well as other behaviors you might want to customize when sending links to particular people or groups.",
+          "Need to tell us more? [[[\"Easy to understand\",\"easyToUnderstand\",\"thumb-up\"],[\"Solved my problem\",\"solvedMyProblem\",\"thumb-up\"],[\"Other\",\"otherUp\",\"thumb-up\"]],[[\"Missing the information I need\",\"missingTheInformationINeed\",\"thumb-down\"],[\"Too complicated / too many steps\",\"tooComplicatedTooManySteps\",\"thumb-down\"],[\"Out of date\",\"outOfDate\",\"thumb-down\"],[\"Samples / code issue\",\"samplesCodeIssue\",\"thumb-down\"],[\"Other\",\"otherDown\",\"thumb-down\"]],[\"Last updated 2024-08-05 UTC.\"],[],[\"The Earth Engine Code Editor, a web-based IDE, allows geospatial workflow development."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "developers.google.com",
+      "ee.Image.sample",
+      "ui.Chart.feature",
+      "ui.Chart.feature.byProperty",
+      "ui.Chart.image.regions"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://developers.google.com/earth-engine/guides/charts_image",
+        "https://developers.google.com/earth-engine/guides/charts_feature",
+        "https://developers.google.com/earth-engine/guides/playground"
+      ]
+    }
+  ]
+}

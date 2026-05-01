@@ -1,0 +1,124 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:49.125Z",
+  "source_step08_card": "data/step-08/current/products/vertex-ai-workbench/card.json",
+  "product_name": "Vertex AI Workbench",
+  "product_slug": "vertex-ai-workbench",
+  "feature_name": "Vertex AI Workbench BigQuery and Cloud Storage access in JupyterLab",
+  "feature_slug": "vertex-ai-workbench-bigquery-and-cloud-storage-access-in-jupyterlab",
+  "summary": "Workbench notebooks can access BigQuery data and Cloud Storage directly from the JupyterLab interface.",
+  "extended_definition": "Workbench notebooks can access BigQuery data and Cloud Storage directly from the JupyterLab interface.",
+  "lifecycle": {
+    "latest_feature_date": "2022-04-06",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/vertex-ai/docs/workbench/managed/access-control",
+      "https://docs.cloud.google.com/vertex-ai/docs/workbench/managed/manage-access-jupyterlab",
+      "https://docs.cloud.google.com/vertex-ai/docs/workbench/user-managed/iam"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Vertex AI Workbench managed notebooks access control \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/workbench/managed/access-control",
+        "source_id": "site-docs-reference-2",
+        "final_score": 160,
+        "relevance": "",
+        "evidence_snippets": [
+          "Vertex AI Workbench uses IAM to manage access to managed notebooks instances and an access mode to manage access to each instance's JupyterLab interface.",
+          "This page describes how to use Identity and Access Management (IAM) and an access mode to manage access to Vertex AI Workbench managed notebooks resources.",
+          "Therefore, Notebooks roles define permissions and access to the use of Vertex AI Workbench."
+        ]
+      },
+      {
+        "title": "\"Manage access to a Vertex AI Workbench managed notebooks instance's JupyterLab\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/workbench/managed/manage-access-jupyterlab",
+        "source_id": "site-docs-reference-2",
+        "final_score": 157,
+        "relevance": "",
+        "evidence_snippets": [
+          "Manage access to a managed notebooks instance's JupyterLab interface Vertex AI Workbench managed notebooks is deprecated .",
+          "This page describes how to grant access to the JupyterLab interface of a Vertex AI Workbench managed notebooks instance.",
+          "The following are examples of single user access metadata entries: proxy-mode=mail proxy-user-mail=user@example.com When you select the Service account access mode, Vertex AI Workbench stores a proxy-mode=service account metadata entry."
+        ]
+      },
+      {
+        "title": "\"Vertex AI Workbench user-managed notebooks access control \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/workbench/user-managed/iam",
+        "source_id": "site-docs-reference-2",
+        "final_score": 150,
+        "relevance": "",
+        "evidence_snippets": [
+          "Vertex AI Workbench uses IAM to manage access to user-managed notebooks instances and an access mode to manage access to each instance's JupyterLab interface.",
+          "This page describes how to use Identity and Access Management (IAM) and an access mode to manage access to Vertex AI Workbench user-managed notebooks resources.",
+          "User-managed notebooks access control Vertex AI Workbench user-managed notebooks is deprecated ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "example.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/managed/access-control",
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/managed/manage-access-jupyterlab",
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/user-managed/iam"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/managed/access-control",
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/managed/manage-access-jupyterlab",
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/user-managed/iam"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/managed/access-control",
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/managed/manage-access-jupyterlab",
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/user-managed/iam"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/managed/access-control",
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/managed/manage-access-jupyterlab",
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/user-managed/iam"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/managed/access-control",
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/managed/manage-access-jupyterlab",
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/user-managed/iam"
+      ]
+    }
+  ]
+}

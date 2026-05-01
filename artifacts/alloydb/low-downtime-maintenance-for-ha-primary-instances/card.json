@@ -1,0 +1,90 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:12.801Z",
+  "source_step08_card": "data/step-08/current/products/alloydb/card.json",
+  "product_name": "AlloyDB",
+  "product_slug": "alloydb",
+  "feature_name": "Low-downtime maintenance for HA primary instances",
+  "feature_slug": "low-downtime-maintenance-for-ha-primary-instances",
+  "summary": "Maintenance operations on highly available AlloyDB primary instances now typically complete with less than one second of downtime.",
+  "extended_definition": "Maintenance operations on highly available AlloyDB primary instances now typically complete with less than one second of downtime.",
+  "lifecycle": {
+    "latest_feature_date": "2023-09-15",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/alloydb/docs/high-availability",
+      "https://docs.cloud.google.com/alloydb/docs/maintenance",
+      "https://docs.cloud.google.com/alloydb/docs/overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Maintenance overview \\_|\\_ AlloyDB for PostgreSQL \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/alloydb/docs/maintenance",
+        "source_id": "site-docs-reference-2",
+        "final_score": 148,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "AlloyDB's non-disruptive maintenance operations limit the downtime to <1 second for primary instances, and zero seconds for read pools.",
+          "However, for clusters with multiple read pools, the downtime might continue past the one-hour window because the maintenance can start at any time in that window—for example, at the last minute—and then take up to an hour.",
+          "The maintenance window duration depends upon the complexity of the cluster—that is, the number of read pool instances that require updates—and the nature of the update."
+        ]
+      },
+      {
+        "title": "AlloyDB overview \\_|\\_ AlloyDB for PostgreSQL \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/alloydb/docs/overview",
+        "source_id": "site-api-reference",
+        "final_score": 128,
+        "relevance": "",
+        "evidence_snippets": [
+          "During this process, primary instances typically experience less than a second of downtime, while read pools remain continuously available.",
+          "The following diagram illustrates the AlloyDB resource hierarchy, featuring a cluster scaled with a primary instance and multiple load-balanced read pool instances: Cluster: a top-level resource that acts as a logical container for your databases, logs, and other metadata within a region.",
+          "AlloyDB pricing varies based on your configuration settings and depends on the following factors: Instance resources: the machine type (number of vCPUs and amount of RAM) selected for your primary and read pool instances."
+        ]
+      },
+      {
+        "title": "\"AlloyDB high availability overview \\_|\\_ AlloyDB for PostgreSQL \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/alloydb/docs/high-availability",
+        "source_id": "site-docs-reference-2",
+        "final_score": 114,
+        "relevance": "",
+        "evidence_snippets": [
+          "Requirements For AlloyDB to allow failover, the configuration must meet these requirements: The primary instance must be in a normal operating state (not stopped or undergoing maintenance).",
+          "Primary and secondary instances An AlloyDB primary instance configured with high availability includes an active node and a standby node, which are located in different zones.",
+          "While zonal instances may experience extended downtime during failure events, with HA, your data remains available to client applications."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/maintenance",
+        "https://docs.cloud.google.com/alloydb/docs/overview",
+        "https://docs.cloud.google.com/alloydb/docs/high-availability"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,115 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:22.874Z",
+  "source_step08_card": "data/step-08/current/products/cloud-build/card.json",
+  "product_name": "Cloud Build",
+  "product_slug": "cloud-build",
+  "feature_name": "Cloud Build supported build steps",
+  "feature_slug": "cloud-build-supported-build-steps",
+  "summary": "Support for official build steps in Cloud Build was generally released.",
+  "extended_definition": "Support for official build steps in Cloud Build was generally released.",
+  "lifecycle": {
+    "latest_feature_date": "2016-12-15",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/build/docs/building/build-containerize-python",
+      "https://docs.cloud.google.com/build/docs/create-custom-build-steps",
+      "https://docs.cloud.google.com/docs/buildpacks/nodejs"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Using community-contributed builders and custom builders \\_|\\_ Cloud Build\\",
+        "url": "https://docs.cloud.google.com/build/docs/create-custom-build-steps",
+        "source_id": "site-docs-root",
+        "final_score": 54,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The following code shows an example Dockerfile : FROM alpine RUN apk add curl CMD curl https : //httpbin.org/ip -s > myip.txt; echo \" My IP is: $(cat myip.txt)\" Build and push the custom builder to the Artifact Registry in your project, replacing values for project-id and image-name : gcloud builds submit -- tag gcr . io / project - id / image - name Use the custom builder image in Cloud Build by specifying the builder in the name field of a build step: YAML steps : - name : 'gcr.io/ project-id / image-name ' id : Determine IP of this build worker JSON { \"steps\" : [ { \"name\" : \"gcr.io/ project-id / image-name \" , \"id\" : \"Determine IP of this build worker\" } ] } Use the build config file to start the build manually or build using triggers .",
+          "Remove the repository from your root directory: rm - rf cloud - builders - community / In your Cloud Build config file, use the builder in a build step: YAML steps : - name : 'gcr.io/ project-id / builder-name ' args : [ ' arg1 ' , ' arg2 ' , ... ] ...",
+          "JSON { \"steps\" : [ { \"name\" : \"gcr.io/ project-id / builder-name \" , \"args\" : [ \" arg1 \" , \" arg2 \" , ... ] ... } ] } Use the build config file to start the build manually or build using triggers ."
+        ]
+      },
+      {
+        "title": "Building a Node.js application \\_|\\_ Buildpacks \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/docs/buildpacks/nodejs",
+        "source_id": "site-docs-reference",
+        "final_score": 52,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "By default, when you configure custom build steps, both the dependencies and devDependencies in your package.json file are installed first before any scripts or commands are executed.",
+          "For more information about the engines.node configuration option in package.json file, see the official NPM documentation for the engines topic .",
+          "However, you can instead specify custom build steps to override the default behavior and run only the scripts that you want during the build."
+        ]
+      },
+      {
+        "title": "Build, test, and containerize Python applications \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/build/docs/building/build-containerize-python",
+        "source_id": "site-docs-root-2",
+        "final_score": 51,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The following build step stores the test logs that you saved in the JUNIT XML file to a Cloud Storage bucket: Save test logs to Google Cloud Storage artifacts : objects : location : gs://${ BUCKET NAME}/ paths : - ${SHORT SHA} test log.xml The following snippet shows the complete build config file for the all the steps described above: steps : Install dependencies - name : python entrypoint : pip args : [ \"install\" , \"-r\" , \"requirements.txt\" , \"--user\" ] Run unit tests - name : python entrypoint : python args : [ \"-m\" , \"pytest\" , \"--junitxml=${SHORT SHA} test log.xml\" ] Docker Build - name : 'gcr.io/cloud-builders/docker' args : [ 'build' , '-t' , 'us-central1-docker.pkg.dev/${PROJECT ID}/${ ARTIFACT REGISTRY REPO}/myimage:${SHORT SHA}' , '.' ] Docker push to Google Artifact Registry - name : 'gcr.io/cloud-builders/docker' args : [ 'push' , 'us-central1-docker.pkg.dev/${PROJECT ID}/${ ARTIFACT REGISTRY REPO}/myimage:${SHORT SHA}' ] Deploy to Cloud Run - name : google/cloud-sdk args : [ 'gcloud' , 'run' , 'deploy' , 'helloworld-${SHORT SHA}' , '--image=us-central1-docker.pkg.dev/${PROJECT ID}/${ ARTIFACT REGISTRY REPO}/myimage:${SHORT SHA}' , '--region' , 'us-central1' , '--platform' , 'managed' , '--allow-unauthenticated' ] Save test logs to Google Cloud Storage artifacts : objects : location : gs://${ BUCKET NAME}/ paths : - ${SHORT SHA} test log.xml Store images in Google Artifact Registry images : - us-central1-docker.pkg.dev/${PROJECT ID}/${ ARTIFACT REGISTRY REPO}/myimage:${SHORT SHA} Start your build : manually or using build triggers .",
+          "The following build step adds arguments to install requirements from the requirements.txt file: steps : Install dependencies - name : python entrypoint : pip args : [ \"install\" , \"-r\" , \"requirements.txt\" , \"--user\" ] Add unit tests : If you've defined unit tests in your application using a testing framework such as pytest , you can configure Cloud Build to run the tests by adding the following fields in a build step: name : Set the value of this field to python to use the python image from Docker Hub for your task. entrypoint : Set the value of this field to python to run python commands. args : Add the arguments for running the python pytest command.",
+          "To configure Cloud Build to store the image in an Artifact Registry Docker repository, add a build step with the following fields: name : Set the value of this field to gcr.io/cloud-builders/docker to use the official docker builder image for your task. args : Add the arguments for the docker push command as values of this field."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "docker.pkg.dev",
+      "engines.node",
+      "gcr.io",
+      "httpbin.org",
+      "log.xml",
+      "myip.txt",
+      "package.json",
+      "requirements.txt"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/docs/buildpacks/nodejs",
+        "https://docs.cloud.google.com/build/docs/building/build-containerize-python",
+        "https://docs.cloud.google.com/build/docs/create-custom-build-steps"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/docs/buildpacks/nodejs",
+        "https://docs.cloud.google.com/build/docs/building/build-containerize-python",
+        "https://docs.cloud.google.com/build/docs/create-custom-build-steps"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/docs/buildpacks/nodejs",
+        "https://docs.cloud.google.com/build/docs/building/build-containerize-python",
+        "https://docs.cloud.google.com/build/docs/create-custom-build-steps"
+      ]
+    }
+  ]
+}

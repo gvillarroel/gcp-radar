@@ -1,0 +1,182 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:45.292Z",
+  "source_step08_card": "data/step-08/current/products/pub-sub/card.json",
+  "product_name": "Pub/Sub",
+  "product_slug": "pub-sub",
+  "feature_name": "Pub/Sub gcloud commands",
+  "feature_slug": "pub-sub-gcloud-commands",
+  "summary": "Pub/Sub gcloud commands reached general availability and no longer require the beta label.",
+  "extended_definition": "Pub/Sub gcloud commands reached general availability and no longer require the beta label.",
+  "lifecycle": {
+    "latest_feature_date": "2018-01-24",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/pubsub/docs/create-topic-client-libraries",
+      "https://docs.cloud.google.com/pubsub/docs/publish-receive-messages-client-library",
+      "https://docs.cloud.google.com/pubsub/docs/publish-receive-messages-gcloud",
+      "https://docs.cloud.google.com/pubsub/docs/resource-location-restriction"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Quickstart: Publish and receive messages in Pub/Sub by using the gcloud\\",
+        "url": "https://docs.cloud.google.com/pubsub/docs/publish-receive-messages-gcloud",
+        "source_id": "site-docs-root",
+        "final_score": 252,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "What's next See all the available gcloud CLI commands for Pub/Sub Learn more about the Pub/Sub concepts discussed in this page.",
+          "Create a topic Create a topic with the ID my-topic : gcloud pubsub topics create my-topic Create a subscription Create a subscription with the ID my-sub and attach it to my-topic : gcloud pubsub subscriptions create my-sub --topic = my-topic Publish messages Publish a message to my-topic : gcloud pubsub topics publish my-topic --message = \"hello\" Receive messages Receive the message from my-sub : gcloud pubsub subscriptions pull my-sub --auto-ack The gcloud CLI prints the message to the command line.",
+          "Publish and receive messages in Pub/Sub by using the gcloud CLI This page shows you how to do the following operations in Pub/Sub using the Google Cloud CLI: Create a topic and subscription."
+        ]
+      },
+      {
+        "title": "\"Quickstart: Publish and receive messages in Pub/Sub by using a client library\\",
+        "url": "https://docs.cloud.google.com/pubsub/docs/publish-receive-messages-client-library",
+        "source_id": "site-docs-root",
+        "final_score": 234,
+        "relevance": "",
+        "evidence_snippets": [
+          "Learn how to grant roles . gcloud services enable pubsub.googleapis.com Create local authentication credentials for your user account: gcloud auth application-default login Note: If the gcloud CLI prints a warning that your account doesn't have the serviceusage.services.use permission, then some gcloud CLI commands and client libraries might not work.",
+          "Learn how to grant roles . gcloud services enable pubsub.googleapis.com Create local authentication credentials for your user account: gcloud auth application-default login Note: If the gcloud CLI prints a warning that your account doesn't have the serviceusage.services.use permission, then some gcloud CLI commands and client libraries might not work.",
+          "Clean up (optional) To avoid incurring charges to your Google Cloud account for the resources used in this guide, you can use the command line to delete the topic and subscription. gcloud pubsub subscriptions delete my-sub gcloud pubsub topics delete my-topic Optional: Revoke the authentication credentials that you created, and delete the local credential file. gcloud auth application-default revoke Optional: Revoke credentials from the gcloud CLI. gcloud auth revoke What's next Learn more about the Pub/Sub concepts discussed in this page."
+        ]
+      },
+      {
+        "title": "\"Quickstart: Publish and receive messages in Pub/Sub by using a client library\\",
+        "url": "https://docs.cloud.google.com/pubsub/docs/create-topic-client-libraries",
+        "source_id": "site-docs-reference",
+        "final_score": 224,
+        "relevance": "",
+        "evidence_snippets": [
+          "Learn how to grant roles . gcloud services enable pubsub.googleapis.com Create local authentication credentials for your user account: gcloud auth application-default login Note: If the gcloud CLI prints a warning that your account doesn't have the serviceusage.services.use permission, then some gcloud CLI commands and client libraries might not work.",
+          "Learn how to grant roles . gcloud services enable pubsub.googleapis.com Create local authentication credentials for your user account: gcloud auth application-default login Note: If the gcloud CLI prints a warning that your account doesn't have the serviceusage.services.use permission, then some gcloud CLI commands and client libraries might not work.",
+          "Clean up (optional) To avoid incurring charges to your Google Cloud account for the resources used in this guide, you can use the command line to delete the topic and subscription. gcloud pubsub subscriptions delete my-sub gcloud pubsub topics delete my-topic Optional: Revoke the authentication credentials that you created, and delete the local credential file. gcloud auth application-default revoke Optional: Revoke credentials from the gcloud CLI. gcloud auth revoke What's next Learn more about the Pub/Sub concepts discussed in this page."
+        ]
+      },
+      {
+        "title": "Configure message storage policies \\_|\\_ Pub/Sub \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/pubsub/docs/resource-location-restriction",
+        "source_id": "site-docs-root",
+        "final_score": 205,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Click Update . gcloud CLI To push the message storage policy defined in your organization's Resource Location Restriction policy to a topic, run the following gcloud pubsub topics update command: gcloud pubsub topics update TOPIC ID \\ --recompute-message-storage-policy To update the message storage policy of a topic with specific regions, run the gcloud pubsub topics update command with the --message-storage-policy-allowed-regions flag: gcloud pubsub topics update TOPIC ID \\ --message-storage-policy-allowed-regions = REGION1,REGION2 Replace the following: TOPIC ID : the ID of the topic you're updating.",
+          "However, after you create a topic, you can change its message storage policy in the console with an update operation. gcloud CLI To create a topic with a specific message storage policy, use the gcloud pubsub topics create command with the --message-storage-policy-allowed-regions flag: gcloud pubsub topics create TOPIC ID \\ --message-storage-policy-allowed-regions = REGION1,REGION2 Replace the following: TOPIC ID : the ID or name for your new topic.",
+          "For example: subscription/num retained acked messages by region Performance and availability implications The message storage policy does not affect the overall SLA, but it does introduce an availability-control trade-off when publishers or subscribers run outside Google Cloud or in regions not allowed by the policy."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "pubsub.admin",
+      "pubsub.googleapis.com",
+      "serviceusage.services.use"
+    ],
+    "missing_inventory_roles": [
+      "roles/pubsub.admin"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/pubsub/docs/publish-receive-messages-gcloud",
+        "https://docs.cloud.google.com/pubsub/docs/publish-receive-messages-client-library",
+        "https://docs.cloud.google.com/pubsub/docs/create-topic-client-libraries",
+        "https://docs.cloud.google.com/pubsub/docs/resource-location-restriction"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/pubsub/docs/publish-receive-messages-gcloud",
+        "https://docs.cloud.google.com/pubsub/docs/publish-receive-messages-client-library",
+        "https://docs.cloud.google.com/pubsub/docs/create-topic-client-libraries",
+        "https://docs.cloud.google.com/pubsub/docs/resource-location-restriction"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/pubsub/docs/publish-receive-messages-gcloud",
+        "https://docs.cloud.google.com/pubsub/docs/publish-receive-messages-client-library",
+        "https://docs.cloud.google.com/pubsub/docs/create-topic-client-libraries",
+        "https://docs.cloud.google.com/pubsub/docs/resource-location-restriction"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/pubsub/docs/publish-receive-messages-gcloud",
+        "https://docs.cloud.google.com/pubsub/docs/publish-receive-messages-client-library",
+        "https://docs.cloud.google.com/pubsub/docs/create-topic-client-libraries",
+        "https://docs.cloud.google.com/pubsub/docs/resource-location-restriction"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/pubsub/docs/publish-receive-messages-gcloud",
+        "https://docs.cloud.google.com/pubsub/docs/publish-receive-messages-client-library",
+        "https://docs.cloud.google.com/pubsub/docs/create-topic-client-libraries",
+        "https://docs.cloud.google.com/pubsub/docs/resource-location-restriction"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/pubsub/docs/publish-receive-messages-gcloud",
+        "https://docs.cloud.google.com/pubsub/docs/publish-receive-messages-client-library",
+        "https://docs.cloud.google.com/pubsub/docs/create-topic-client-libraries",
+        "https://docs.cloud.google.com/pubsub/docs/resource-location-restriction"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/pubsub/docs/publish-receive-messages-gcloud",
+        "https://docs.cloud.google.com/pubsub/docs/publish-receive-messages-client-library",
+        "https://docs.cloud.google.com/pubsub/docs/create-topic-client-libraries",
+        "https://docs.cloud.google.com/pubsub/docs/resource-location-restriction"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/pubsub/docs/publish-receive-messages-gcloud",
+        "https://docs.cloud.google.com/pubsub/docs/publish-receive-messages-client-library",
+        "https://docs.cloud.google.com/pubsub/docs/create-topic-client-libraries",
+        "https://docs.cloud.google.com/pubsub/docs/resource-location-restriction"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/pubsub/docs/publish-receive-messages-gcloud",
+        "https://docs.cloud.google.com/pubsub/docs/publish-receive-messages-client-library",
+        "https://docs.cloud.google.com/pubsub/docs/create-topic-client-libraries",
+        "https://docs.cloud.google.com/pubsub/docs/resource-location-restriction"
+      ]
+    }
+  ]
+}

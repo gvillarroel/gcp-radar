@@ -1,0 +1,126 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:12.574Z",
+  "source_step08_card": "data/step-08/current/products/access-context-manager/card.json",
+  "product_name": "Access Context Manager",
+  "product_slug": "access-context-manager",
+  "feature_name": "Access Context Manager Require admin approval attribute",
+  "feature_slug": "access-context-manager-require-admin-approval-attribute",
+  "summary": "The Require admin approval device-policy access-level attribute became available in Access Context Manager.",
+  "extended_definition": "The Require admin approval device-policy access-level attribute became available in Access Context Manager.",
+  "lifecycle": {
+    "latest_feature_date": "2019-03-19",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/access-context-manager/docs/access-level-attributes",
+      "https://docs.cloud.google.com/access-context-manager/docs/create-access-level",
+      "https://docs.cloud.google.com/access-context-manager/docs/use-mobile-devices"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Access level attributes \\_|\\_ Access Context Manager \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/access-context-manager/docs/access-level-attributes",
+        "source_id": "site-api-reference",
+        "final_score": 154,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "The following attributes are supported: Require screen lock Storage encryption Require administrator approval Require corp owned device OS policy Only certain device policy attributes can be used with mobile devices.",
+          "YAML allowedEncryptionStatuses Valid values One or more of the following values: ENCRYPTION UNSUPPORTED ENCRYPTED UNENCRYPTED API reference REST RPC Require admin approval Description Checks whether the device has been approved by a an administrator.",
+          "This attribute can only be included in conditions when creating or modifying an access level using the gcloud command-line tool or the Access Context Manager API."
+        ]
+      },
+      {
+        "title": "\"Use mobile devices with access levels \\_|\\_ Access Context Manager \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/access-context-manager/docs/use-mobile-devices",
+        "source_id": "site-docs-root",
+        "final_score": 119,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "While changes to access levels usually come into effect within a few minutes, enforcement of mobile device attributes can be delayed while changes to your managed mobile device settings are propagated.",
+          "Getting started To start using access levels to check mobile device attributes, do the following: Set up basic mobile management or advanced mobile management for your organization.",
+          "If a request from a mobile device doesn't meet the previous criteria, that request will be denied, even if the request otherwise meets the requirements of the access level."
+        ]
+      },
+      {
+        "title": "\"Creating a basic access level \\_|\\_ Access Context Manager \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/access-context-manager/docs/create-access-level",
+        "source_id": "site-api-reference",
+        "final_score": 111,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "The OR value will give the principals access even if other conditions, such as IP address or those inherited from other required access levels, are not met. { \"name\" : \" NAME \" , \"title\" : \" TITLE \" , \"basic\" : { \"conditions\" : [ { \"members\" : [ \"user:sysadmin@example.com\" , \"serviceAccount:service@project.iam.gserviceaccount.com\" ] }, { \"requiredAccessLevels\" : [ \"accessPolicies/247332951433/accessLevels/Device Trust\" , \"accessPolicies/247332951433/accessLevels/IP Trust\" ] } ], \"combiningFunction\" : \"OR\" } } Create the access level by calling accessLevels.create .",
+          "In this example, assume the access levels are named Device Trust and IP Trust , and that 247332951433 is the name of your access policy. { \"name\" : \" NAME \" , \"title\" : \" TITLE \" , \"basic\" : { \"conditions\" : [ { \"members\" : [ \"user:sysadmin@example.com\" , \"serviceAccount:service@project.iam.gserviceaccount.com\" ] }, { \"requiredAccessLevels\" : [ \"accessPolicies/247332951433/accessLevels/Device Trust\" , \"accessPolicies/247332951433/accessLevels/IP Trust\" ] } ] } } Set combiningFunction to OR .",
+          "In this example, assume the access levels are named Device Trust and IP Trust , and that 247332951433 is the name of your access policy. - members : - user:sysadmin@example.com - serviceAccount:service@project. iam.gserviceaccount.com - requiredAccessLevels : - accessPolicies/247332951433/accessLevels/Device Trust - accessPolicies/247332951433/accessLevels/IP Trust Save the file."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "example.com",
+      "iam.gserviceaccount.com",
+      "project.iam.gserviceaccount.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/access-context-manager/docs/access-level-attributes",
+        "https://docs.cloud.google.com/access-context-manager/docs/use-mobile-devices",
+        "https://docs.cloud.google.com/access-context-manager/docs/create-access-level"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/access-context-manager/docs/access-level-attributes",
+        "https://docs.cloud.google.com/access-context-manager/docs/use-mobile-devices",
+        "https://docs.cloud.google.com/access-context-manager/docs/create-access-level"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/access-context-manager/docs/access-level-attributes",
+        "https://docs.cloud.google.com/access-context-manager/docs/use-mobile-devices",
+        "https://docs.cloud.google.com/access-context-manager/docs/create-access-level"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/access-context-manager/docs/access-level-attributes",
+        "https://docs.cloud.google.com/access-context-manager/docs/use-mobile-devices",
+        "https://docs.cloud.google.com/access-context-manager/docs/create-access-level"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/access-context-manager/docs/access-level-attributes",
+        "https://docs.cloud.google.com/access-context-manager/docs/use-mobile-devices",
+        "https://docs.cloud.google.com/access-context-manager/docs/create-access-level"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,114 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:13.646Z",
+  "source_step08_card": "data/step-08/current/products/anthos-config-management/card.json",
+  "product_name": "Anthos Config Management",
+  "product_slug": "anthos-config-management",
+  "feature_name": "nomos hydrate rendering support",
+  "feature_slug": "nomos-hydrate-rendering-support",
+  "summary": "The nomos hydrate command can render unstructured source format, Kustomize configurations, and Helm charts.",
+  "extended_definition": "The nomos hydrate command can render unstructured source format, Kustomize configurations, and Helm charts.",
+  "lifecycle": {
+    "latest_feature_date": "2021-09-23",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/nomos-command",
+      "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/reference/errors",
+      "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/tutorials/config-sync-helm"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Use the nomos command-line tool \\_|\\_ Config Sync \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/nomos-command",
+        "source_id": "site-docs-root",
+        "final_score": 200,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "This command can also convert a hierarchical source of truth to one or more unstructured sources of truth , using the content in the compiled/ directory. nomos hydrate flags To customize the nomos hydrate command, add the following flags: Flag Description --api-server-timeout Accepts a duration string.",
+          "Using RootSync and RepoSync objects nomos-status-reader.yaml apiVersion : rbac.authorization.k8s.io/v1 kind : ClusterRole metadata : name : nomos-status-reader rules : - apiGroups : [ \"configsync.gke.io\" ] resources : [ \"reposyncs\" , \"rootsyncs\" ] verbs : [ \"get\" ] - nonResourceURLs : [ \"/\" ] verbs : [ \"get\" ] Not using RootSync and RepoSync objects apiVersion : rbac.authorization.k8s.io/v1 kind : ClusterRole metadata : name : nomos-status-reader rules : - apiGroups : [ \"configmanagement.gke.io\" ] resources : [ \"configmanagements\" , \"repos\" ] verbs : [ \"get\" , \"list\" ] - nonResourceURLs : [ \"/\" ] verbs : [ \"get\" ] Apply the nomos-status-reader.yaml file: kubectl apply -f nomos-status-reader.yaml Check for errors in the source of truth Before you commit a config to the source of truth, use the nomos vet command to check the syntax and validity of the configs in your source of truth: nomos vet --source-format unstructured If syntax errors are found, the nomos vet command exits with a non-zero status and logs error messages to STDERR . nomos vet flags To customize the nomos vet command, add the following flags: Flag Description --api-server-timeout Accepts a duration string.",
+          "The nomos tool provides you with the following commands: Command Usage nomos status Check Config Sync status nomos vet Check for errors in the source of truth nomos hydrate View all configs in the source of truth nomos bugreport Create a bug report nomos migrate Migrate from ConfigManagement object to RootSync nomos init Initialize a hierarchical source of truth Prerequisites Before you can use the nomos tool to interact with a cluster, Config Sync must already be installed on the target cluster."
+        ]
+      },
+      {
+        "title": "Use Config Sync with Kustomize and Helm \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/tutorials/config-sync-helm",
+        "source_id": "site-docs-root",
+        "final_score": 183,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Check the syntax and validity of your configs by running nomos vet with the following flags: nomos vet \\ --source-format = unstructured \\ --keep-output = true \\ --output = OUTPUT DIRECTORY In this command: --source-format=unstructured lets nomos vet work on an unstructured repository. --keep-output=true saves the rendered configs. --output= OUTPUT DIRECTORY is the path to the rendered configs.",
+          "Run the following nomos hydrate with the following flags: nomos hydrate \\ --source-format = unstructured \\ --output = OUTPUT DIRECTORY In this command: --source-format=unstructured lets nomos hydrate work on an unstructured repository.",
+          "To configure your RootSync object, create a root-sync.yaml file: root-sync.yaml apiVersion : configsync.gke.io/v1beta1 kind : RootSync metadata : name : root-sync namespace : config-management-system spec : sourceFormat : unstructured git : repo : YOUR GIT REPOSITORY branch : main auth : none override : enableShellInRendering : true Replace YOUR GIT REPOSITORY with the URL of your Git repository."
+        ]
+      },
+      {
+        "title": "Error reference \\_|\\_ Config Sync \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/reference/errors",
+        "source_id": "site-docs-reference",
+        "final_score": 157,
+        "relevance": "",
+        "evidence_snippets": [
+          "For example, if the rendering state doesn't match the source config, you might see this error.",
+          "If the Git repository contains Kustomize configurations, but no kustomization.yaml file exists in the Git sync directory, either add kustomization.yaml in the sync directory to trigger the rendering process, or remove kustomization.yaml from all sub directories to skip rendering.",
+          "If you were previously syncing to a hierarchical repository and had to declare the controller namespace alongside any resources, consider switching to an unstructured repository for more flexibility in your source structure."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "configmanagement.gke.io",
+      "configsync.gke.io",
+      "kustomization.yaml",
+      "rbac.authorization.k8s.io",
+      "reader.yaml",
+      "spec.override.enableShellInRendering",
+      "sync.yaml"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/nomos-command",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/tutorials/config-sync-helm",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/reference/errors"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/nomos-command",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/tutorials/config-sync-helm",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/reference/errors"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/nomos-command",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/tutorials/config-sync-helm",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/reference/errors"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,115 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:28.821Z",
+  "source_step08_card": "data/step-08/current/products/cloud-translation/card.json",
+  "product_name": "Cloud Translation",
+  "product_slug": "cloud-translation",
+  "feature_name": "Document Translation auto-rotate",
+  "feature_slug": "document-translation-auto-rotate",
+  "summary": "Document Translation can automatically rotate scanned PDFs to the correct orientation.",
+  "extended_definition": "Document Translation can automatically rotate scanned PDFs to the correct orientation.",
+  "lifecycle": {
+    "latest_feature_date": "2023-03-30",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/translate/docs/advanced/adaptive-translation-data",
+      "https://docs.cloud.google.com/translate/docs/advanced/batch-translation",
+      "https://docs.cloud.google.com/translate/docs/advanced/custom-nmt-datasets",
+      "https://docs.cloud.google.com/translate/docs/advanced/custom-nmt-models"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Batch requests (Advanced) \\_|\\_ Cloud Translation \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/translate/docs/advanced/batch-translation",
+        "source_id": "site-iam-reference",
+        "final_score": 179,
+        "relevance": "",
+        "evidence_snippets": [
+          "TranslationServiceClient () Supported file types: https://cloud.google.com/translate/docs/supported-formats gcs source = { \"input uri\" : input uri } location = \"us-central1\" input configs element = { \"gcs source\" : gcs source , \"mime type\" : \"text/plain\" , # Can be \"text/plain\" or \"text/html\". } gcs destination = { \"output uri prefix\" : output uri } output config = { \"gcs destination\" : gcs destination } parent = f \"projects/ { project id } /locations/ { location } \" model path = \"projects/ {} /locations/ {} /models/ {} \" . format ( project id , location , model id # The location of AutoML model. ) Supported language codes: https://cloud.google.com/translate/docs/languages models = { \"ja\" : model path } # takes a target lang as key. operation = client . batch translate text ( request = { \"parent\" : parent , \"source language code\" : \"en\" , \"target language codes\" : [ \"ja\" ], # Up to 10 language codes here. \"input configs\" : [ input configs element ], \"output config\" : output config , \"models\" : models , } ) print ( \"Waiting for operation to complete...\" ) response = operation . result () Display the translation for each input text provided. print ( f \"Total Characters: { response . total characters } \" ) print ( f \"Translated Characters: { response . translated characters } \" ) return response Additional languages C# : Please follow the C# setup instructions on the client libraries page and then visit the Cloud Translation reference documentation for .NET.",
+          "TranslationServiceClient () location = \"us-central1\" Supported file types: https://cloud.google.com/translate/docs/supported-formats gcs source = { \"input uri\" : input uri } input configs element = { \"gcs source\" : gcs source , \"mime type\" : \"text/plain\" , # Can be \"text/plain\" or \"text/html\". } gcs destination = { \"output uri prefix\" : output uri } output config = { \"gcs destination\" : gcs destination } parent = f \"projects/ { project id } /locations/ { location } \" Supported language codes: https://cloud.google.com/translate/docs/languages operation = client . batch translate text ( request = { \"parent\" : parent , \"source language code\" : \"en\" , \"target language codes\" : [ \"ja\" ], # Up to 10 language codes here. \"input configs\" : [ input configs element ], \"output config\" : output config , } ) print ( \"Waiting for operation to complete...\" ) response = operation . result ( timeout ) print ( f \"Total Characters: { response . total characters } \" ) print ( f \"Translated Characters: { response . translated characters } \" ) return response Additional languages C# : Please follow the C# setup instructions on the client libraries page and then visit the Cloud Translation reference documentation for .NET.",
+          "Before using any of the request data, make the following replacements: PROJECT NUMBER OR ID : the numeric or alphanumeric ID of your Google Cloud project HTTP method and URL: POST https://translation.googleapis.com/v3/projects/ PROJECT NUMBER OR ID /locations/us-central1:batchTranslateText Request JSON body: { \"models\": { \"es\": \"projects/ project number or id /locations/us-central1/models/ model-id \" }, \"sourceLanguageCode\": \"en\", \"targetLanguageCodes\": [\"es\"], \"glossaries\": { \"es\": { \"glossary\": \"projects/ project number or id /locations/us-central1/glossaries/ glossary-id \" } }, \"inputConfigs\": [{ \"gcsSource\": { \"inputUri\": \"gs:// bucket-name-source / input-file-name \" } }, { \"gcsSource\": { \"inputUri\": \"gs:// bucket-name-source / input-file-name2 \" } } ], \"outputConfig\": { \"gcsDestination\": { \"outputUriPrefix\": \"gs:// bucket-name-destination /\" } } } To send your request, choose one of these options: curl Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI ."
+        ]
+      },
+      {
+        "title": "Manage datasets \\_|\\_ Cloud Translation \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/translate/docs/advanced/adaptive-translation-data",
+        "source_id": "site-iam-reference",
+        "final_score": 179,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "HTTP method and URL: DELETE https://translation.googleapis.com/v3/projects/ PROJECT ID /locations/ LOCATION /adaptiveMtDatasets/ DATASET ID /adaptiveMtFiles/ FILE ID To send your request, expand one of these options: curl (Linux, macOS, or Cloud Shell) Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI .",
+          "HTTP method and URL: GET https://translation.googleapis.com/v3/projects/ PROJECT ID /locations/ LOCATION /adaptiveMtDatasets/ DATASET ID /adaptiveMtFiles To send your request, expand one of these options: curl (Linux, macOS, or Cloud Shell) Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI .",
+          "HTTP method and URL: DELETE https://translation.googleapis.com/v3/projects/ PROJECT ID /locations/ LOCATION /adaptiveMtDatasets/ DATASET ID To send your request, expand one of these options: curl (Linux, macOS, or Cloud Shell) Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI ."
+        ]
+      },
+      {
+        "title": "Create and manage datasets \\_|\\_ Cloud Translation \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/translate/docs/advanced/custom-nmt-datasets",
+        "source_id": "site-iam-reference",
+        "final_score": 177,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "HTTP method and URL: POST https://translation.googleapis.com/v3/projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID :importData Request JSON body: { \"input config\": { \"input files\": [ { \"display name\": \" FILE DISPLAY NAME \", \"usage\": \" USAGE \", \"gcs source\": { \"input uris\": \"gs:// FILE PATH \" } }, ... ] } } To send your request, expand one of these options: curl (Linux, macOS, or Cloud Shell) Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI .",
+          "HTTP method and URL: POST https://translation.googleapis.com/v3/projects/ PROJECT ID /locations/ LOCATION /datasets Request JSON body: { \"display name\": \" DATASET NAME \", \"source language code\": \" SOURCE LANG CODE \", \"target language code\": \" TARGET LANG CODE \" } To send your request, expand one of these options: curl (Linux, macOS, or Cloud Shell) Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI .",
+          "HTTP method and URL: POST https://translation.googleapis.com/v3/projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID :exportData Request JSON body: { \"output config\": { \"gcs destination\": { \"output uri prefix\": \"gs:// DESTINATION DIRECTORY \" } } } To send your request, expand one of these options: curl (Linux, macOS, or Cloud Shell) Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI ."
+        ]
+      },
+      {
+        "title": "Create and manage models \\_|\\_ Cloud Translation \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/translate/docs/advanced/custom-nmt-models",
+        "source_id": "site-iam-reference",
+        "final_score": 177,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Before using any of the request data, make the following replacements: PROJECT NUMBER OR ID : the numeric or alphanumeric ID of your Google Cloud project location-id : the location you chose for your Cloud Storage bucket operation-id : operation ID you received above HTTP method and URL: GET https://translation.googleapis.com/v3/projects/ PROJECT NUMBER OR ID /locations/ location-id /operations/ operation-id To send your request, expand one of these options: curl (Linux, macOS, or Cloud Shell) Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI .",
+          "HTTP method and URL: POST https://translation.googleapis.com/v3/projects/ PROJECT ID /locations/ LOCATION /models Request JSON body: { \"display name\": \" MODEL NAME \", \"dataset\": \"projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID \", } To send your request, expand one of these options: curl (Linux, macOS, or Cloud Shell) Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI .",
+          "HTTP method and URL: DELETE https://translation.googleapis.com/v3/projects/ PROJECT ID /locations/ LOCATION /models/ MODEL ID To send your request, expand one of these options: curl (Linux, macOS, or Cloud Shell) Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "translation.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/translate/docs/advanced/batch-translation",
+        "https://docs.cloud.google.com/translate/docs/advanced/adaptive-translation-data",
+        "https://docs.cloud.google.com/translate/docs/advanced/custom-nmt-datasets",
+        "https://docs.cloud.google.com/translate/docs/advanced/custom-nmt-models"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/translate/docs/advanced/batch-translation",
+        "https://docs.cloud.google.com/translate/docs/advanced/adaptive-translation-data",
+        "https://docs.cloud.google.com/translate/docs/advanced/custom-nmt-datasets",
+        "https://docs.cloud.google.com/translate/docs/advanced/custom-nmt-models"
+      ]
+    }
+  ]
+}

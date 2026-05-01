@@ -1,0 +1,45 @@
+# Role API
+
+Product: Google Kubernetes Engine
+Feature slug: `role-api`
+Coverage: `MEDIUM`
+IAM mapping: `unknown`
+
+## Technical Summary
+
+The v1beta1 Role API was removed in Kubernetes 1.22 in favor of the GA API; deprecated on 2021-10-01.
+
+## Lifecycle
+
+- Latest feature date: 2021-10-01
+- Deprecation date: 2021-10-01
+- Status: deprecation_noted
+
+## IAM
+
+No defensible IAM mapping was found in the current evidence.
+
+## Security Capabilities
+
+- access
+- allow
+- armor
+- auth
+- authorization
+- constraint
+- iam
+- identity
+- key
+- logging
+- permission
+- policy
+- role
+- secret
+- security
+- token
+
+## Official Evidence
+
+- [https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins](https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins)
+- [https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/automatically-bootstrapping-gke-nodes-with-daemonsets](https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/automatically-bootstrapping-gke-nodes-with-daemonsets)
+- [https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/kueue-cohort](https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/kueue-cohort)

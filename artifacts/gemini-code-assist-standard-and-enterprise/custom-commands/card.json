@@ -1,0 +1,167 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:37.462Z",
+  "source_step08_card": "data/step-08/current/products/gemini-code-assist-standard-and-enterprise/card.json",
+  "product_name": "Gemini Code Assist Standard and Enterprise",
+  "product_slug": "gemini-code-assist-standard-and-enterprise",
+  "feature_name": "Custom commands",
+  "feature_slug": "custom-commands",
+  "summary": "Lets you create, save, and run preconfigured prompts for repetitive tasks in IntelliJ Gemini Code Assist; VS Code Gemini Code Assist supports custom commands in the inline chat menu and lightbulb menu.",
+  "extended_definition": "Lets you create, save, and run preconfigured prompts for repetitive tasks in IntelliJ Gemini Code Assist; VS Code Gemini Code Assist supports custom commands in the inline chat menu and lightbulb menu.",
+  "lifecycle": {
+    "latest_feature_date": "2025-05-14",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/gemini/docs/codeassist/chat-gemini",
+      "https://docs.cloud.google.com/gemini/docs/codeassist/code-customization",
+      "https://docs.cloud.google.com/gemini/docs/codeassist/security-privacy-compliance",
+      "https://docs.cloud.google.com/gemini/docs/codeassist/use-agentic-chat-pair-programmer"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Chat with Gemini Code Assist Standard and Enterprise \\_|\\_ Gemini for Google\\",
+        "url": "https://docs.cloud.google.com/gemini/docs/codeassist/chat-gemini",
+        "source_id": "site-docs-reference",
+        "final_score": 244,
+        "relevance": "",
+        "evidence_snippets": [
+          "For IntelliJ and other supported JetBrains IDEs, you'll create, save, and execute the custom command from the Prompt Library, and from the in-editor prompt.",
+          "You can also create your own custom commands to help you accomplish repetitive tasks faster in your IDE.",
+          "To manage the files and folders in your Context Drawer, perform the following tasks: VS Code Note: Chats created with Gemini Code Assist for VS Code, prior to version 2.34.0 , won't retain and display the saved context in the Context Drawer."
+        ]
+      },
+      {
+        "title": "\"Use the Gemini Code Assist agent mode \\_|\\_ Gemini for Google Cloud \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/gemini/docs/codeassist/use-agentic-chat-pair-programmer",
+        "source_id": "site-docs-root",
+        "final_score": 200,
+        "relevance": "",
+        "evidence_snippets": [
+          "Help me understand the architecture.\" \"What does this [class/function] do?\" \"Add a feature to this codebase - \"[link-or-path-to-codebase]\".\" \"Refactor function [A] and [B] to use the common method [C].\" \"Fix the GitHub issue [link-to-github-issue].\" \"Build an application to do [goal] with a UI that lets the user do [task] in the [environment].\" \"Migrate library versions in this repository from [X] to [Y].\" \"Optimize performance of this Go code so that it runs faster.\" \"Use [name-of-API] to build out this feature.\" \"Implement an algorithm to do [x], [Y], and [Z].\" Optional: Use an API Key Gemini Code Assist includes different daily quotas for agentic features, depending on the tier you're in.",
+          "VS Code You can use the following built-in Gemini CLI commands in agent mode: /tools : Displays a list of tools that are available in your agent mode session. /mcp : Lists configured Model Context Protocol (MCP) servers, their connection status, server details, and available tools. /deploy : Deploys a web application to Cloud Run.",
+          "This Gemini CLI-based custom command uses the Cloud Run Model Context Protocol (MCP) server to build, containerize, push, configure, and return a public URL for your application."
+        ]
+      },
+      {
+        "title": "\"Configure Gemini Code Assist code customization \\_|\\_ Gemini for Google\\",
+        "url": "https://docs.cloud.google.com/gemini/docs/codeassist/code-customization",
+        "source_id": "site-docs-reference",
+        "final_score": 182,
+        "relevance": "",
+        "evidence_snippets": [
+          "You also can create a repository group with repositories defined in a JSON (or YAML) file, formatted as follows: JSON [ { \"resource\" : \" REPOSITORY RESOURCE NAME \" , \"branchPattern\" : \"main dev\" }, { \"resource\" : \" REPOSITORY RESOURCE NAME \" , \"branchPattern\" : \"dev\" } ] YAML - resource : REPOSITORY RESOURCE NAME branchPattern : main dev - resource : REPOSITORY RESOURCE NAME branchPattern : dev To create a repository group based on a JSON or YAML file, in a shell environment, use the gemini code-repository-indexes repository-groups create command : JSON gcloud gemini code-repository-indexes repository-groups create REPOSITORY GROUP \\ --project = PROJECT ID \\ --location = REGION \\ --code-repository-index = INDEX NAME \\ --repositories = FILEPATH .json YAML gcloud gemini code-repository-indexes repository-groups create REPOSITORY GROUP \\ --project = PROJECT ID \\ --location = REGION \\ --code-repository-index = INDEX NAME \\ --repositories = FILEPATH .yaml If preferred, you can encrypt and control your data with a customer-managed encryption key (CMEK) through Cloud Key Management Service .",
+          "You also can create a repository group with repositories defined in a JSON (or YAML) file, formatted as follows: JSON [ { \"resource\" : \" REPOSITORY RESOURCE NAME \" , \"branchPattern\" : \"main dev\" }, { \"resource\" : \" REPOSITORY RESOURCE NAME \" , \"branchPattern\" : \"dev\" } ] YAML - resource : REPOSITORY RESOURCE NAME branchPattern : main dev - resource : REPOSITORY RESOURCE NAME branchPattern : dev To create a repository group based on a JSON or YAML file, in a shell environment, use the gemini code-repository-indexes repository-groups create command : JSON gcloud gemini code-repository-indexes repository-groups create REPOSITORY GROUP \\ --project = PROJECT ID \\ --location = REGION \\ --code-repository-index = INDEX NAME \\ --repositories = FILEPATH .json YAML gcloud gemini code-repository-indexes repository-groups create REPOSITORY GROUP \\ --project = PROJECT ID \\ --location = REGION \\ --code-repository-index = INDEX NAME \\ --repositories = FILEPATH .yaml If preferred, you can encrypt and control your data with a customer-managed encryption key (CMEK) through Cloud Key Management Service .",
+          "Home Documentation AI and ML Gemini for Google Cloud Guides Send feedback Configure Gemini Code Assist code customization Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"Security, privacy, and compliance for Gemini Code Assist Standard and Enterprise\\",
+        "url": "https://docs.cloud.google.com/gemini/docs/codeassist/security-privacy-compliance",
+        "source_id": "site-docs-root",
+        "final_score": 177,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation AI and ML Gemini for Google Cloud Guides Send feedback Security, privacy, and compliance for Gemini Code Assist Standard and Enterprise Stay organized with collections Save and categorize content based on your preferences.",
+          "VPC Service Controls lets you define security policies that prevent access to Google-managed services outside of a trusted perimeter, block access to data from untrusted locations, and mitigate data exfiltration risks.",
+          "To manage IAM roles at scale, we recommend that you create a group for your application developers and grant the IAM roles or permissions that are required for Gemini Code Assist Standard and Enterprise to that group."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/docs/codeassist/chat-gemini",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/use-agentic-chat-pair-programmer",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/code-customization",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/security-privacy-compliance"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/docs/codeassist/chat-gemini",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/use-agentic-chat-pair-programmer",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/code-customization",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/security-privacy-compliance"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/docs/codeassist/chat-gemini",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/use-agentic-chat-pair-programmer",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/code-customization",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/security-privacy-compliance"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/docs/codeassist/chat-gemini",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/use-agentic-chat-pair-programmer",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/code-customization",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/security-privacy-compliance"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/docs/codeassist/chat-gemini",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/use-agentic-chat-pair-programmer",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/code-customization",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/security-privacy-compliance"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/docs/codeassist/chat-gemini",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/use-agentic-chat-pair-programmer",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/code-customization",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/security-privacy-compliance"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/docs/codeassist/chat-gemini",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/use-agentic-chat-pair-programmer",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/code-customization",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/security-privacy-compliance"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/docs/codeassist/chat-gemini",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/use-agentic-chat-pair-programmer",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/code-customization",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/security-privacy-compliance"
+      ]
+    }
+  ]
+}

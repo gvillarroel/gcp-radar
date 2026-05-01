@@ -1,0 +1,100 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:26.812Z",
+  "source_step08_card": "data/step-08/current/products/cloud-sql-for-mysql/card.json",
+  "product_name": "Cloud SQL for MySQL",
+  "product_slug": "cloud-sql-for-mysql",
+  "feature_name": "Performance capture",
+  "feature_slug": "performance-capture",
+  "summary": "This feature captures diagnostic snapshots of database state when configurable performance thresholds are reached.",
+  "extended_definition": "This feature captures diagnostic snapshots of database state when configurable performance thresholds are reached.",
+  "lifecycle": {
+    "latest_feature_date": "2026-01-23",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/sql/docs/mysql/1st-2nd-gen-differences",
+      "https://docs.cloud.google.com/sql/docs/mysql/configure-performance-capture",
+      "https://docs.cloud.google.com/sql/docs/mysql/features"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Configure performance capture \\_|\\_ Cloud SQL for MySQL \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/sql/docs/mysql/configure-performance-capture",
+        "source_id": "site-docs-reference-required-5",
+        "final_score": 214,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "HTTP method and URL: POST https://sqladmin.googleapis.com/sql/v1beta4/projects/ PROJECT ID /instances Request JSON body: { \"name\": \" INSTANCE ID \", \"region\": \" REGION \", \"databaseVersion\": \" DATABASE VERSION \", \"settings\": { \"tier\": \" MACHINE TYPE \", \"edition\": \" EDITION TYPE \", }, \"performanceCaptureConfig\": { \"enabled\": true, \"probingIntervalSeconds\": PROBING INTERVAL SECONDS , \"probeThreshold\": PROBE THRESHOLD , \"runningThreadsThreshold\": RUNNING THREADS THRESHOLD , \"secondsBehindSourceThreshold\": SECONDS BEHIND SOURCE THRESHOLD , \"transactionDurationThreshold\": TRANSACTION DURATION THRESHOLD }, } To send your request, expand one of these options: curl (Linux, macOS, or Cloud Shell) Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI .",
+          "HTTP method and URL: POST https://sqladmin.googleapis.com/v1/projects/ PROJECT ID /instances Request JSON body: { \"name\": \" INSTANCE ID \", \"region\": \" REGION \", \"databaseVersion\": \" DATABASE VERSION \", \"settings\": { \"tier\": \" MACHINE TYPE \", \"edition\": \" EDITION TYPE \" }, \"performanceCaptureConfig\": { \"enabled\": true, \"probingIntervalSeconds\": PROBING INTERVAL SECONDS , \"probeThreshold\": PROBE THRESHOLD , \"runningThreadsThreshold\": RUNNING THREADS THRESHOLD , \"secondsBehindSourceThreshold\": SECONDS BEHIND SOURCE THRESHOLD , \"transactionDurationThreshold\": TRANSACTION DURATION THRESHOLD } } To send your request, expand one of these options: curl (Linux, macOS, or Cloud Shell) Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI .",
+          "For example: gcloud beta sql instances create my-instance \\ --database-version = MYSQL 8 0 \\ --edition = ENTERPRISE PLUS \\ --tier = db-perf-optimized-N-4 \\ --region = us-west1 \\ --performance-capture-config = \"enabled=true,probing-interval-seconds=30,probe-threshold=5,running-threads-threshold=10,transaction-duration-threshold=300\" Update an existing instance To enable performance capture for an existing Cloud SQL instance, run the following command: gcloud beta sql instances patch INSTANCE NAME \\ --performance-capture-config = \"enabled=true, PROBE CONFIGURATION , PERFORMANCE CAPTURE THRESHOLDS \" For the performance-capture-config flag, include enabled=true ."
+        ]
+      },
+      {
+        "title": "Cloud SQL for MySQL features \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/sql/docs/mysql/features",
+        "source_id": "site-docs-root",
+        "final_score": 102,
+        "relevance": "",
+        "evidence_snippets": [
+          "Home Documentation Databases Cloud SQL MySQL Guides Send feedback Cloud SQL for MySQL features Stay organized with collections Save and categorize content based on your preferences.",
+          "General MySQL features supported for Cloud SQL Fully managed MySQL Community Edition databases in the cloud.",
+          "In addition, Cloud SQL for MySQL doesn't grant the following privileges introduced in MySQL 8.4: TRANSACTION GTID TAG TELEMETRY LOG ADMIN MySQL plugins unsupported for Cloud SQL InnoDB memcached plugin X plugin Clone plugin InnoDB data-at-rest encryption validate password component MySQL statements unsupported for Cloud SQL The following SQL statements generate an error with the Error 1290: The MySQL server is running with the Google option so it cannot execute this statement message: LOAD DATA INFILE Note: LOAD DATA LOCAL INFILE is supported."
+        ]
+      },
+      {
+        "title": "Cloud SQL for MySQL features \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/sql/docs/mysql/1st-2nd-gen-differences",
+        "source_id": "site-docs-reference-3",
+        "final_score": 100,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Databases Cloud SQL MySQL Guides Send feedback Cloud SQL for MySQL features Stay organized with collections Save and categorize content based on your preferences.",
+          "General MySQL features supported for Cloud SQL Fully managed MySQL Community Edition databases in the cloud.",
+          "In addition, Cloud SQL for MySQL doesn't grant the following privileges introduced in MySQL 8.4: TRANSACTION GTID TAG TELEMETRY LOG ADMIN MySQL plugins unsupported for Cloud SQL InnoDB memcached plugin X plugin Clone plugin InnoDB data-at-rest encryption validate password component MySQL statements unsupported for Cloud SQL The following SQL statements generate an error with the Error 1290: The MySQL server is running with the Google option so it cannot execute this statement message: LOAD DATA INFILE Note: LOAD DATA LOCAL INFILE is supported."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "sqladmin.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/configure-performance-capture",
+        "https://docs.cloud.google.com/sql/docs/mysql/features",
+        "https://docs.cloud.google.com/sql/docs/mysql/1st-2nd-gen-differences"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/configure-performance-capture",
+        "https://docs.cloud.google.com/sql/docs/mysql/features",
+        "https://docs.cloud.google.com/sql/docs/mysql/1st-2nd-gen-differences"
+      ]
+    }
+  ]
+}

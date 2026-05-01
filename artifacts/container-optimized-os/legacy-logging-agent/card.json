@@ -1,0 +1,109 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:31.901Z",
+  "source_step08_card": "data/step-08/current/products/container-optimized-os/card.json",
+  "product_name": "Container Optimized OS",
+  "product_slug": "container-optimized-os",
+  "feature_name": "Legacy Logging Agent",
+  "feature_slug": "legacy-logging-agent",
+  "summary": "Provides the legacy fluentd-based logging agent in Container-Optimized OS; The legacy fluentd logging agent was removed from Container-Optimized OS; deprecated on 2024-08-20.",
+  "extended_definition": "Provides the legacy fluentd-based logging agent in Container-Optimized OS; The legacy fluentd logging agent was removed from Container-Optimized OS; deprecated on 2024-08-20.",
+  "lifecycle": {
+    "latest_feature_date": "2024-08-20",
+    "deprecation_date": "2024-08-20",
+    "status": "deprecation_noted"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/container-optimized-os/docs/how-to/arm",
+      "https://docs.cloud.google.com/container-optimized-os/docs/how-to/cis-compliance",
+      "https://docs.cloud.google.com/container-optimized-os/docs/how-to/logging"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Using Cloud Logging with Container-Optimized OS \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/container-optimized-os/docs/how-to/logging",
+        "source_id": "site-docs-reference",
+        "final_score": 223,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Selecting the logging agent x86-based Container-Optimized OS 105 and 109 images ship two implementations of the logging agent: fluentd (legacy) and fluent-bit.",
+          "Logging agent configuration compatibility The logging agent is a fluentd-based container on x86-based Container-Optimized OS images and a fluent-bit binary on Arm-based Container-Optimized OS images.",
+          "Up until Container-Optimized OS 101, x86-based Container-Optimized OS images used a containerized logging agent based on fluentd."
+        ]
+      },
+      {
+        "title": "Using Arm-based Container-Optimized OS images \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/container-optimized-os/docs/how-to/arm",
+        "source_id": "site-docs-reference",
+        "final_score": 124,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Cloud Logging agent Container-Optimized OS Arm-based images use fluent-bit as Cloud Logging agent and x86-based images use fluentd.",
+          "The following table describes which containers are compatible with Arm-based images: Container images Compatible with Arm-based images gcr.io/cos-cloud/toolbox Yes gcr.io/cos-cloud/cos-gpu-installer No gcr.io/stackdriver-agents/stackdriver-logging-agent No gcr.io/gce-containers/konlet No Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "However, if you have custom fluentd configurations, you might experience breakage when migrating workloads to Arm-based Container-Optimized OS images."
+        ]
+      },
+      {
+        "title": "\"Configuring and Checking CIS Compliance \\_|\\_ Container-Optimized OS \\_\\",
+        "url": "https://docs.cloud.google.com/container-optimized-os/docs/how-to/cis-compliance",
+        "source_id": "site-docs-reference",
+        "final_score": 63,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Periodic checking of CIS compliance status Container-Optimized OS images include the following services to periodically check CIS compliance: cis-compliance-scanner.service : checks the compliance status based on environment variables defined at /etc/cis-scanner/env vars .",
+          "Home Documentation Compute Compute Engine Container-Optimized OS Guides Send feedback Configuring and Checking CIS Compliance Stay organized with collections Save and categorize content based on your preferences.",
+          "Note: Arm-based Container-Optimized OS images don't comply with the CIS benchmarks."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "gcr.io",
+      "scanner.service"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/logging",
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/arm",
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/cis-compliance"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/logging",
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/arm",
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/cis-compliance"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/logging",
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/arm",
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/cis-compliance"
+      ]
+    }
+  ]
+}

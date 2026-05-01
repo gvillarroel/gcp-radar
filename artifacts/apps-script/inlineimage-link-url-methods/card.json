@@ -1,0 +1,83 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:17.437Z",
+  "source_step08_card": "data/step-08/current/products/apps-script/card.json",
+  "product_name": "Apps Script",
+  "product_slug": "apps-script",
+  "feature_name": "InlineImage link URL methods",
+  "feature_slug": "inlineimage-link-url-methods",
+  "summary": "Inline images in DocumentApp can now get and set hyperlink URLs.",
+  "extended_definition": "Inline images in DocumentApp can now get and set hyperlink URLs.",
+  "lifecycle": {
+    "latest_feature_date": "2013-09-09",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/apps-script/guides/docs",
+      "https://developers.google.com/apps-script/reference/add-ons-response-service/hyperlink",
+      "https://developers.google.com/apps-script/releases"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Google Apps Script release notes \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/apps-script/releases",
+        "source_id": "site-docs-root",
+        "final_score": 134,
+        "relevance": "",
+        "evidence_snippets": [
+          "Feature Added the DocumentApp methods InlineImage.getLinkUrl() and InlineImage.setLinkUrl(url) .",
+          "September 09, 2013 Deprecated Deprecated the DocumentApp methods getFootnotes() , getLinkUrl() , setLinkUrl(url) , and isAtDocumentEnd() in the classes FooterSection , FootnoteSection , and HeaderSection , as well as the methods getNextSibling() and getPreviousSibling() in the classes FooterSection and HeaderSection .",
+          "September 26, 2011 Feature Added support for inlineImages when sending emails with MailApp.sendEmail() ."
+        ]
+      },
+      {
+        "title": "Extend Google Docs \\_|\\_ Apps Script \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/apps-script/guides/docs",
+        "source_id": "site-docs-root",
+        "final_score": 77,
+        "relevance": "",
+        "evidence_snippets": [
+          "Both of these functions use the getActiveDocument and getActiveTab methods, which only apply to scripts created inside a Docs document; in a stand-alone script, use DocumentApp.create , openById , or openByUrl , combined with Document.getTab , instead.",
+          "HeaderSection ListItem HorizontalRule InlineDrawing InlineImage Text UnsupportedElement (page number, etc.) Paragraph HorizontalRule InlineDrawing InlineImage Text UnsupportedElement (page number, etc.) Table TableRow TableCell Paragraph ...",
+          "FooterSection ListItem HorizontalRule InlineDrawing InlineImage Text UnsupportedElement (page number, etc.) Paragraph HorizontalRule InlineDrawing InlineImage Text UnsupportedElement (page number, etc.) Table TableRow TableCell Paragraph ..."
+        ]
+      },
+      {
+        "title": "Class Hyperlink \\_|\\_ Apps Script \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/apps-script/reference/add-ons-response-service/hyperlink",
+        "source_id": "site-docs-reference-3",
+        "final_score": 75,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Only available for Google Workspace add-ons that extend Google Workspace Studio. const hyperLink = AddOnsResponseService . newHyperlink () . setText ( \"Hyperlink text\" ) . setLink ( \"https://www.google.com\" ); Methods Method Return type Brief description set Link(link) Hyperlink Sets the destination URL of the hyperlink. set Text(text) Hyperlink Sets the text of the hyperlink.",
+          "Home Google Workspace Apps Script Reference Send feedback Class Hyperlink Stay organized with collections Save and categorize content based on your preferences.",
+          "Return Hyperlink — This hyperlink object, for chaining. setText(text) Sets the text of the hyperlink."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "developers.google.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": []
+}

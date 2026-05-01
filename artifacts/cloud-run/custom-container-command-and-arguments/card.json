@@ -1,0 +1,186 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:25.811Z",
+  "source_step08_card": "data/step-08/current/products/cloud-run/card.json",
+  "product_name": "Cloud Run",
+  "product_slug": "cloud-run",
+  "feature_name": "Custom container command and arguments",
+  "feature_slug": "custom-container-command-and-arguments",
+  "summary": "Cloud Run lets deployed containers specify custom startup commands and arguments.",
+  "extended_definition": "Cloud Run lets deployed containers specify custom startup commands and arguments.",
+  "lifecycle": {
+    "latest_feature_date": "2020-01-07",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/run/docs/deploying",
+      "https://docs.cloud.google.com/run/docs/mapping-custom-domains",
+      "https://docs.cloud.google.com/run/docs/migrate/migrating-nodejs-apps-from-heroku-to-cloud-run"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Migrate Node.js apps from Heroku to Cloud Run \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/run/docs/migrate/migrating-nodejs-apps-from-heroku-to-cloud-run",
+        "source_id": "site-docs-root",
+        "final_score": 156,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Cloud Run is a managed compute platform that lets you run stateless containers that are invocable through HTTP requests.",
+          "Deploy the sample app to Cloud Run In Cloud Shell, configure serverless vpc access to allow private traffic from Cloud Run to Cloud SQL: gcloud compute networks subnets create serverless-connector-subnet \\ --network=default \\ --range=10.0.0.0/28 \\ --region=us-central1 gcloud compute networks vpc-access connectors create serverless-connector \\ --region=us-central1 \\ --subnet=serverless-connector-subnet In Cloud Shell, create an environment variable that holds the connection name of the Cloud SQL instance that you created: export DB CONN NAME=$(gcloud sql instances describe $CLOUDSQL DB NAME --format='value(connectionName)') Create an environment variable called DATABASE URL to hold the connection string to connect to the Cloud SQL Proxy over a UNIX port. export DATABASE URL=\"socket:/cloudsql/${DB CONN NAME}?db=postgres&user=postgres&password= POSTGRES PASSWORD \" Create a service account for Cloud Run with an IAM role to connect to the database: gcloud iam service-accounts create sa-run-db-client gcloud projects add-iam-policy-binding PROJECT ID \\ --member=serviceAccount:sa-run-db-client@ PROJECT ID .iam.gserviceaccount.com \\ --role=roles/cloudsql.client Deploy the web app to Cloud Run: gcloud run deploy tasksapp- PROJECT ID \\ --image=$IMAGE NAME \\ --service-account=sa-run-db-client@ PROJECT ID .iam.gserviceaccount.com \\ --set-env-vars=DATABASE URL=$DATABASE URL \\ --add-cloudsql-instances $DB CONN NAME \\ --vpc-connector serverless-connector \\ --allow-unauthenticated The preceding command also links your Cloud Run container to the Cloud SQL database instance that you created.",
+          "Set the pack CLI to use the Heroku builder by default: pack config default-builder heroku/buildpacks:22 Create an environment variable to hold the Docker image name: export IMAGE NAME=gcr.io/ PROJECT ID / APP NAME :1 Build the image using the pack command and push or publish the image to Container Registry: pack build --publish $IMAGE NAME Create a Cloud SQL for PostgreSQL instance You create a Cloud SQL for PostgreSQL instance to serve as the backend for the web app."
+        ]
+      },
+      {
+        "title": "Deploying container images to Cloud Run \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/run/docs/deploying",
+        "source_id": "site-docs-reference-required-3",
+        "final_score": 148,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Verify that root containers are compatible with user namespaces Test your changes locally or in a VM by evaluating your code when running under user namespaces, such as when using Docker's userns-remap feature, running your container in rootless Podman , or deploying those changes to VMs running the Container-Optimized OS from Google with the --userns-remap=default argument in the docker run command.",
+          "To deploy multiple containers to a service, run the following command: gcloud run deploy SERVICE \\ --container INGRESS CONTAINER NAME \\ --image = ' INGRESS IMAGE ' \\ --port = ' CONTAINER PORT ' \\ --container SIDECAR CONTAINER NAME \\ --image = ' SIDECAR IMAGE ' Replace the following: SERVICE : the name of the service you are deploying to.",
+          "After you update the YAML to include the ingress and sidecar containers, deploy to Cloud Run using the command: gcloud run services replace service.yaml Terraform To learn how to apply or remove a Terraform configuration, see Basic Terraform commands ."
+        ]
+      },
+      {
+        "title": "Mapping custom domains \\_|\\_ Cloud Run \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/run/docs/mapping-custom-domains",
+        "source_id": "site-docs-root",
+        "final_score": 148,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To create a Cloud Run service, add the following to your existing main.tf file: resource \"google cloud run v2 service\" \"default\" { name = \"custom-domain\" # Replace with your service name location = \"us-central1\" deletion protection = false # set to true to prevent destruction of the resource template { containers { image = \"us-docker.pkg.dev/cloudrun/container/hello\" # Replace with your container image } } } Replace: custom-domain with your Cloud Run service name. us-docker.pkg.dev/cloudrun/container/hello with a reference to your container image.",
+          "You can determine whether the custom domain you want to use has been verified by running the following command: gcloud domains list-user-verified If your ownership of the domain needs to be verified, open the Search Console verification page: gcloud domains verify BASE-DOMAIN where BASE-DOMAIN is the base domain you want to verify.",
+          "You can set up a custom domain rather than the default address that Cloud Run provides for a deployed service."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "artifactregistry.reader",
+      "cloudsql.client",
+      "data.google",
+      "docker.pkg.dev",
+      "domain.com",
+      "example.com",
+      "gcr.io",
+      "iam.gserviceaccount.com",
+      "iam.serviceAccountTokenCreator",
+      "iam.serviceAccountUser",
+      "main.tf",
+      "project.project.project",
+      "run.developer",
+      "service.default.location",
+      "service.default.name",
+      "service.yaml",
+      "subdomain.example.com"
+    ],
+    "missing_inventory_roles": [
+      "roles/artifactregistry.reader",
+      "roles/cloudsql.client",
+      "roles/iam.serviceAccountTokenCreator",
+      "roles/iam.serviceAccountUser",
+      "roles/run.developer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/migrate/migrating-nodejs-apps-from-heroku-to-cloud-run",
+        "https://docs.cloud.google.com/run/docs/deploying",
+        "https://docs.cloud.google.com/run/docs/mapping-custom-domains"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/migrate/migrating-nodejs-apps-from-heroku-to-cloud-run",
+        "https://docs.cloud.google.com/run/docs/deploying",
+        "https://docs.cloud.google.com/run/docs/mapping-custom-domains"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/migrate/migrating-nodejs-apps-from-heroku-to-cloud-run",
+        "https://docs.cloud.google.com/run/docs/deploying",
+        "https://docs.cloud.google.com/run/docs/mapping-custom-domains"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/migrate/migrating-nodejs-apps-from-heroku-to-cloud-run",
+        "https://docs.cloud.google.com/run/docs/deploying",
+        "https://docs.cloud.google.com/run/docs/mapping-custom-domains"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/migrate/migrating-nodejs-apps-from-heroku-to-cloud-run",
+        "https://docs.cloud.google.com/run/docs/deploying",
+        "https://docs.cloud.google.com/run/docs/mapping-custom-domains"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/migrate/migrating-nodejs-apps-from-heroku-to-cloud-run",
+        "https://docs.cloud.google.com/run/docs/deploying",
+        "https://docs.cloud.google.com/run/docs/mapping-custom-domains"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/migrate/migrating-nodejs-apps-from-heroku-to-cloud-run",
+        "https://docs.cloud.google.com/run/docs/deploying",
+        "https://docs.cloud.google.com/run/docs/mapping-custom-domains"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/migrate/migrating-nodejs-apps-from-heroku-to-cloud-run",
+        "https://docs.cloud.google.com/run/docs/deploying",
+        "https://docs.cloud.google.com/run/docs/mapping-custom-domains"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/migrate/migrating-nodejs-apps-from-heroku-to-cloud-run",
+        "https://docs.cloud.google.com/run/docs/deploying",
+        "https://docs.cloud.google.com/run/docs/mapping-custom-domains"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/migrate/migrating-nodejs-apps-from-heroku-to-cloud-run",
+        "https://docs.cloud.google.com/run/docs/deploying",
+        "https://docs.cloud.google.com/run/docs/mapping-custom-domains"
+      ]
+    }
+  ]
+}

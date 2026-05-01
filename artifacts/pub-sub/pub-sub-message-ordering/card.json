@@ -1,0 +1,142 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:45.292Z",
+  "source_step08_card": "data/step-08/current/products/pub-sub/card.json",
+  "product_name": "Pub/Sub",
+  "product_slug": "pub-sub",
+  "feature_name": "Pub/Sub message ordering",
+  "feature_slug": "pub-sub-message-ordering",
+  "summary": "Pub/Sub message ordering preserves the order of messages within an ordering key; Pub/Sub message ordering preserves the order of messages within an ordering key.",
+  "extended_definition": "Pub/Sub message ordering preserves the order of messages within an ordering key; Pub/Sub message ordering preserves the order of messages within an ordering key.",
+  "lifecycle": {
+    "latest_feature_date": "2020-10-19",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/pubsub/docs/publish-message-overview",
+      "https://docs.cloud.google.com/pubsub/docs/publisher",
+      "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/get_subscription",
+      "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/list_subscriptions"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Publish message overview \\_|\\_ Pub/Sub \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/pubsub/docs/publish-message-overview",
+        "source_id": "site-docs-root",
+        "final_score": 304,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The Pub/Sub service adds the following fields to the message: A message ID unique to the topic A timestamp for when the Pub/Sub service receives the message For example, here is a message format in JSON : { \"data\" : \"This is the core message content.\" , \"attributes\" : { \"category\" : \"notification\" , \"user id\" : \"12345\" , \"priority\" : \"medium\" }, \"orderingKey\" : \"12345\" } When publishing messages using Pub/Sub client libraries, provide the message data as a byte array, such as a Node.js Buffer .",
+          "Messages with the same ordering key are expected to be delivered to a subscriber in the order they were published.",
+          "Pub/Sub offers at-least-once message delivery and best-effort ordering to existing subscribers."
+        ]
+      },
+      {
+        "title": "Publish messages to topics \\_|\\_ Pub/Sub \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/pubsub/docs/publisher",
+        "source_id": "site-docs-root",
+        "final_score": 292,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Click Publish . gcloud To publish a message with an ordering key, use the gcloud pubsub topics publish command and the --ordering-key flag: gcloud pubsub topics publish TOPIC ID \\ --message= MESSAGE DATA \\ --ordering-key= ORDERING KEY Replace the following: TOPIC ID : the ID of the topic MESSAGE DATA : a string with the message data ORDERING KEY : a string with an ordering key REST To publish a message with an ordering key, send a POST request like the following: POST https://pubsub.googleapis.com/v1/projects/ PROJECT ID /topics/ TOPIC ID :publish Content-Type: application/json Authorization: Bearer $(gcloud auth application-default print-access-token) Replace the following: PROJECT ID : the project ID of the project with the topic TOPIC ID : the ID of the topic Specify the following fields in the request body: { \"messages\": [ { \"attributes\": { \" KEY \": \" VALUE \", ... }, \"data\": \" MESSAGE DATA \", \"ordering key\": \" ORDERING KEY \", } ] } Replace the following: KEY : the key of a message attribute VALUE : the value for the key of the message attribute MESSAGE DATA : a base64-encoded string with the message data ORDERING KEY : a string with an ordering key The message must contain either a non-empty data field or at least one attribute.",
+          "For list of locational endpoints for Pub/Sub, see: // https://cloud.google.com/pubsub/docs/reference/service apis overview#list of locational endpoints const publishOptions = { messageOrdering : true , }; const topic = pubSubClient . topic ( topicNameOrId , publishOptions ); // Publishes the message const messageId = await topic . publishMessage ( message ); console . log ( Message ${ messageId } published. ); return messageId ; } Python Before trying this sample, follow the Python setup instructions in Quickstart: Using Client Libraries .",
+          "For more information, see the Pub/Sub Ruby API reference documentation . topic id = \"your-topic-id\" pubsub = Google :: Cloud :: PubSub . new Start sending messages in one request once the size of all queued messages reaches 1 MB or the number of queued messages reaches 20 publisher = pubsub . publisher topic id , async : { max bytes : 1 000 000 , max messages : 20 } publisher . enable message ordering!"
+        ]
+      },
+      {
+        "title": "\"MCP Tools Reference: pubsub.googleapis.com \\_|\\_ Pub/Sub \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/get_subscription",
+        "source_id": "site-api-reference",
+        "final_score": 290,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Keys: - (optional) 'message id' : {string} - (optional) 'publish time': {string} YYYY-MM-DDTHH:MM:SSZ format - (optional) 'ordering key': {string} / function <function name>(message, metadata) { } AIInference JSON representation { \"endpoint\" : string , \"serviceAccountEmail\" : string , // Union field inference mode can be only one of the following: \"unstructuredInference\" : { object ( UnstructuredInference ) } // End of list of possible types for union field inference mode . } Fields endpoint string Required.",
+          "The subscription name, message id, and publish time fields are put in their own fields while all other message properties other than data (for example, an ordering key, if present) are added as entries in the attributes map. useTopicSchema boolean Optional.",
+          "If true, messages published with the same ordering key in PubsubMessage will be delivered to the subscribers in the order in which they are received by the Pub/Sub system."
+        ]
+      },
+      {
+        "title": "\"MCP Tools Reference: pubsub.googleapis.com \\_|\\_ Pub/Sub \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/list_subscriptions",
+        "source_id": "site-api-reference",
+        "final_score": 290,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Keys: - (optional) 'message id' : {string} - (optional) 'publish time': {string} YYYY-MM-DDTHH:MM:SSZ format - (optional) 'ordering key': {string} / function <function name>(message, metadata) { } AIInference JSON representation { \"endpoint\" : string , \"serviceAccountEmail\" : string , // Union field inference mode can be only one of the following: \"unstructuredInference\" : { object ( UnstructuredInference ) } // End of list of possible types for union field inference mode . } Fields endpoint string Required.",
+          "The subscription name, message id, and publish time fields are put in their own fields while all other message properties other than data (for example, an ordering key, if present) are added as entries in the attributes map. useTopicSchema boolean Optional.",
+          "If true, messages published with the same ordering key in PubsubMessage will be delivered to the subscribers in the order in which they are received by the Pub/Sub system."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "pubsub.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/pubsub/docs/publish-message-overview",
+        "https://docs.cloud.google.com/pubsub/docs/publisher",
+        "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/get_subscription",
+        "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/list_subscriptions"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/pubsub/docs/publish-message-overview",
+        "https://docs.cloud.google.com/pubsub/docs/publisher",
+        "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/get_subscription",
+        "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/list_subscriptions"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/pubsub/docs/publish-message-overview",
+        "https://docs.cloud.google.com/pubsub/docs/publisher",
+        "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/get_subscription",
+        "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/list_subscriptions"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/pubsub/docs/publish-message-overview",
+        "https://docs.cloud.google.com/pubsub/docs/publisher",
+        "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/get_subscription",
+        "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/list_subscriptions"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/pubsub/docs/publish-message-overview",
+        "https://docs.cloud.google.com/pubsub/docs/publisher",
+        "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/get_subscription",
+        "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/list_subscriptions"
+      ]
+    }
+  ]
+}

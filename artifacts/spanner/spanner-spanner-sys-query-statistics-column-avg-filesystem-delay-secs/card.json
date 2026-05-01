@@ -1,0 +1,93 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:46.903Z",
+  "source_step08_card": "data/step-08/current/products/spanner/card.json",
+  "product_name": "Spanner",
+  "product_slug": "spanner",
+  "feature_name": "Spanner SPANNER_SYS query statistics column AVG_FILESYSTEM_DELAY_SECS",
+  "feature_slug": "spanner-spanner-sys-query-statistics-column-avg-filesystem-delay-secs",
+  "summary": "Spanner added support for the AVG_FILESYSTEM_DELAY_SECS column in the SPANNER_SYS query statistics table.",
+  "extended_definition": "Spanner added support for the AVG_FILESYSTEM_DELAY_SECS column in the SPANNER_SYS query statistics table.",
+  "lifecycle": {
+    "latest_feature_date": "2024-05-29",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/java/docs/reference/google-cloud-spanner/latest/com.google.cloud.spanner",
+      "https://docs.cloud.google.com/spanner/docs/query-operators-binary",
+      "https://docs.cloud.google.com/spanner/docs/query-operators-unary"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Package com.google.cloud.spanner (6.111.1) \\_|\\_ Java client libraries \\_\\",
+        "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-spanner/latest/com.google.cloud.spanner",
+        "source_id": "site-java-reference",
+        "final_score": 95,
+        "relevance": "",
+        "evidence_snippets": [
+          "Partition Options Defines the configuration for the number and size of partitions returned from BatchReadOnlyTransaction#partitionRead , BatchReadOnlyTransaction#partitionReadUsingIndex and BatchReadOnlyTransaction#partitionQuery Note: these options may not be honored based on the other parameters in the request. com. google. cloud. spanner.",
+          "For example, Mutation.WriteBuilder#set(String) returns a binder to bind a column value, and Statement#bind(String) returns a binder to bind a parameter to a value. com. google. cloud. spanner.X Goog Spanner Request Id Interfaces Interface Description com. google. cloud. spanner.",
+          "Individual rows from a read or query operation can be considered as structs; ResultSet#getCurrentRowAsStruct() allows an immutable struct to be created from the row that the result set is currently positioned over. com. google. cloud. spanner."
+        ]
+      },
+      {
+        "title": "Binary operators \\_|\\_ Spanner \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/spanner/docs/query-operators-binary",
+        "source_id": "site-docs-reference",
+        "final_score": 95,
+        "relevance": "",
+        "evidence_snippets": [
+          "The following query uses a semi join to find which singers do have an Album: SELECT FirstName , LastName FROM Singers WHERE SingerId IN ( SELECT SingerId FROM Albums ); / -----------+----------+ FirstName LastName +-----------+----------+ Marc Richards Catalina Smith Alice Trentor Lea Martin +-----------+---------- / The plan segment appears as follows: Anti-semi apply An Anti-semi apply operator is similar to a semi apply operator, except that it returns the input table columns only when a match doesn't occur on the map side.",
+          "SELECT si . firstname , ( SELECT so . songname FROM songs AS so WHERE so . singerid = si . singerid LIMIT 1 ) FROM singers AS si ; / -----------+--------------------------+ FirstName Unspecified +-----------+--------------------------+ Alice Not About The Guitar Catalina Let's Get Back Together David NULL Lea NULL Marc NULL +-----------+-------------------------- / The query populates the first column from the Singers table, and the second column from the Songs table.",
+          "Consider another merge join example using the following query: SELECT a . albumtitle , s . songname FROM albums AS a join @{ join method = merge join } songs AS s ON a . albumid = s . albumid ; / -----------------------+--------------------------+ AlbumTitle SongName +-----------------------+--------------------------+ Total Junk The Second Time Total Junk Starting Again Total Junk Nothing Is The Same Total Junk Let's Get Back Together Total Junk I Knew You Were Magic Total Junk Blue Total Junk 42 Total Junk Not About The Guitar Green The Second Time Green Starting Again Green Nothing Is The Same Green Let's Get Back Together Green I Knew You Were Magic Green Blue Green 42 Green Not About The Guitar Nothing To Do With Me The Second Time Nothing To Do With Me Starting Again Nothing To Do With Me Nothing Is The Same Nothing To Do With Me Let's Get Back Together Nothing To Do With Me I Knew You Were Magic Nothing To Do With Me Blue Nothing To Do With Me 42 Nothing To Do With Me Not About The Guitar Play The Second Time Play Starting Again Play Nothing Is The Same Play Let's Get Back Together Play I Knew You Were Magic Play Blue Play 42 Play Not About The Guitar Terrified Fight Story +-----------------------+-------------------------- / The execution plan appears as follows: In the preceding execution plan, the query optimizer introduced additional sort operators to execute the merge join."
+        ]
+      },
+      {
+        "title": "Unary operators \\_|\\_ Spanner \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/spanner/docs/query-operators-unary",
+        "source_id": "site-docs-reference",
+        "final_score": 94,
+        "relevance": "",
+        "evidence_snippets": [
+          "The following query demonstrates this operator: SELECT genre , songname FROM ml . predict ( model genreclassifier , TABLE songs ) / -----------------------+--------------------------+ Genre SongName +-----------------------+--------------------------+ Country Not About The Guitar Rock The Second Time Pop Starting Again Pop Nothing Is The Same Country Let's Get Back Together Pop I Knew You Were Magic Electronic Blue Rock 42 Rock Fight Story +-----------------------+-------------------------- / Properties and execution statistics A property of an operator describes a trait that is used when the operator is executed.",
+          "The following query demonstrates this operator: DELETE FROM singers WHERE firstname = 'Alice' ; / 4 rows deleted This statement deleted 4 rows and did not return any rows. / The execution plan appears as follows: Properties and execution statistics A property of an operator describes a trait that is used when the operator is executed.",
+          "The following query demonstrates this operator: SELECT array ( select as struct so . songname , so . songgenre FROM songs AS so WHERE so . singerid = s . singerid ) FROM singers AS s ; / ------------------------------------------------------------------+ Unspecified +------------------------------------------------------------------+ [] [[Let's Get Back Together, COUNTRY], [Starting Again, ROCK]] [[\"Not About The Guitar\", \"BLUES\"]] [] [] +------------------------------------------------------------------ / The execution plan appears as follows: The serialize result operator creates a result that contains, for each row of the Singers table, an array of SongName and SongGenre pairs for the songs by the singer."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.cloud.spanner",
+      "spanner.X"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-spanner/latest/com.google.cloud.spanner",
+        "https://docs.cloud.google.com/spanner/docs/query-operators-binary",
+        "https://docs.cloud.google.com/spanner/docs/query-operators-unary"
+      ]
+    }
+  ]
+}

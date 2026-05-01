@@ -1,0 +1,128 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:27.301Z",
+  "source_step08_card": "data/step-08/current/products/cloud-sql-for-postgresql/card.json",
+  "product_name": "Cloud SQL for PostgreSQL",
+  "product_slug": "cloud-sql-for-postgresql",
+  "feature_name": "Cloud SQL Admin API v1",
+  "feature_slug": "cloud-sql-admin-api-v1",
+  "summary": "Cloud SQL provides a generally available v1 Admin API that remains compatible with v1beta4.",
+  "extended_definition": "Cloud SQL provides a generally available v1 Admin API that remains compatible with v1beta4.",
+  "lifecycle": {
+    "latest_feature_date": "2021-08-09",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/sql/docs/mysql/admin-api",
+      "https://docs.cloud.google.com/sql/docs/postgres/admin-api",
+      "https://docs.cloud.google.com/sql/docs/postgres/admin-api-error-messages"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Use the Cloud SQL Admin API \\_|\\_ Cloud SQL for MySQL \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/sql/docs/mysql/admin-api",
+        "source_id": "site-docs-reference",
+        "final_score": 142,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Important: The Cloud SQL Admin API v1 is now generally available.",
+          "MySQL PostgreSQL SQL Server Cloud SQL provides a REST API for administering your instances programmatically.",
+          "Select Continue . gcloud Enter the following to display the project IDs for your Google Cloud projects: gcloud projects list Set your default project: gcloud config set project YOUR PROJECT ID Enable the Cloud SQL Admin API: gcloud services enable sqladmin.googleapis.com Authorize requests Your application needs to identify itself every time it sends a request to the Cloud SQL Admin API, by including an API key with each request."
+        ]
+      },
+      {
+        "title": "\"Use the Cloud SQL Admin API \\_|\\_ Cloud SQL for PostgreSQL \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/sql/docs/postgres/admin-api",
+        "source_id": "site-api-reference",
+        "final_score": 142,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Important: The Cloud SQL Admin API v1 is now generally available.",
+          "MySQL PostgreSQL SQL Server Cloud SQL provides a REST API for administering your instances programmatically.",
+          "Select Continue . gcloud Enter the following to display the project IDs for your Google Cloud projects: gcloud projects list Set your default project: gcloud config set project YOUR PROJECT ID Enable the Cloud SQL Admin API: gcloud services enable sqladmin.googleapis.com Authorize requests Your application needs to identify itself every time it sends a request to the Cloud SQL Admin API, by including an API key with each request."
+        ]
+      },
+      {
+        "title": "\"Cloud SQL Admin API error messages \\_|\\_ Cloud SQL for PostgreSQL \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/sql/docs/postgres/admin-api-error-messages",
+        "source_id": "site-api-reference",
+        "final_score": 104,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Databases Cloud SQL PostgreSQL Reference Send feedback Cloud SQL Admin API error messages Stay organized with collections Save and categorize content based on your preferences.",
+          "ERROR READ REPLICA INCOMPATIBLE DATABASE TYPES The database versions for the source and target instances are incompatible for replication.",
+          "Error class Error code Error message 500 - BACKEND ERROR SERVER EXCEPTION The service is temporarily unavailable."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "serviceusage.services.enable",
+      "serviceusage.serviceUsageAdmin",
+      "sqladmin.googleapis.com"
+    ],
+    "missing_inventory_roles": [
+      "roles/serviceusage.serviceUsageAdmin"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-api",
+        "https://docs.cloud.google.com/sql/docs/postgres/admin-api",
+        "https://docs.cloud.google.com/sql/docs/postgres/admin-api-error-messages"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-api",
+        "https://docs.cloud.google.com/sql/docs/postgres/admin-api",
+        "https://docs.cloud.google.com/sql/docs/postgres/admin-api-error-messages"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-api",
+        "https://docs.cloud.google.com/sql/docs/postgres/admin-api",
+        "https://docs.cloud.google.com/sql/docs/postgres/admin-api-error-messages"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-api",
+        "https://docs.cloud.google.com/sql/docs/postgres/admin-api",
+        "https://docs.cloud.google.com/sql/docs/postgres/admin-api-error-messages"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-api",
+        "https://docs.cloud.google.com/sql/docs/postgres/admin-api",
+        "https://docs.cloud.google.com/sql/docs/postgres/admin-api-error-messages"
+      ]
+    }
+  ]
+}

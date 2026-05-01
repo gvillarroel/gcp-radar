@@ -1,0 +1,109 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:38.623Z",
+  "source_step08_card": "data/step-08/current/products/google-cloud-contact-center-as-a-service/card.json",
+  "product_name": "Google Cloud Contact Center as a Service",
+  "product_slug": "google-cloud-contact-center-as-a-service",
+  "feature_name": "Virtual agent ticket creation and assignment for custom CRM apps",
+  "feature_slug": "virtual-agent-ticket-creation-and-assignment-for-custom-crm-apps",
+  "summary": "Virtual agents can create and assign incoming tickets for custom CRM apps before a human agent takes ownership.",
+  "extended_definition": "Virtual agents can create and assign incoming tickets for custom CRM apps before a human agent takes ownership.",
+  "lifecycle": {
+    "latest_feature_date": "2024-09-03",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/contact-center/ccai-platform/docs/apps-api-call",
+      "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Call_and_Chat_Settings",
+      "https://docs.cloud.google.com/contact-center/ccai-platform/docs/salesforce-integration-guide"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Call endpoints \\_|\\_ Google Cloud Contact Center as a Service \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/contact-center/ccai-platform/docs/apps-api-call",
+        "source_id": "site-docs-reference-required-7",
+        "final_score": 160,
+        "relevance": "",
+        "evidence_snippets": [
+          "Request URL variables Key Value Description id integer (Required) Response { \"verified customer\" : \"boolean\" , \"bad actor\" : \"boolean\" , \"repeat customer\" : \"boolean\" } Status code 0 Update reserved data attributes during a call Endpoint Method: PATCH Type: RAW URL: https:// { subdomain } . { domain } /apps/api/v1/calls/:id/customer flag URL variables Key Value Description id integer (Required) Body { \"verified customer\" : \"boolean\" , \"bad actor\" : \"boolean\" , \"repeat customers\" : \"boolean\" } Pass data parameters to virtual agents mid-session To use the apps API to pass data parameters to virtual agents in the middle of a call session, see Pass data parameters to virtual agents mid-session .",
+          "The following are the call API endpoints: Outbound call - end user number Outbound call - ticket id Incoming call Scheduled call Update reserved data attributes during a call Get reserved data attributes during a call Pass data parameters to virtual agents mid-session Call object The following is an example of the call object: [ { \"id\" : 0 , \"parent id\" : 0 , \"lang\" : \"en\" , \"call type\" : \"Voice Scheduled (API)\" , \"status\" : \"scheduled\" , \"created at\" : \"2018-06-07T19:49:52.896Z\" , \"queued at\" : \"2018-06-07T19:49:52.896Z\" , \"assigned at\" : \"2018-06-07T19:49:52.896Z\" , \"connected at\" : \"2018-06-07T19:49:52.896Z\" , \"ends at\" : \"2018-06-07T19:49:52.896Z\" , \"scheduled at\" : \"2018-06-07T19:49:52.896Z\" , \"wait duration\" : 0 , \"call duration\" : 0 , \"hold duration\" : 0 , \"rating\" : 0 , \"has feedback\" : true , \"voip provider\" : \"voip provider twilio\" , \"out ticket id\" : \"string\" , \"out ticket url\" : \"string\" , \"verified\" : true , \"recording url\" : \"string\" , \"recording permission\" : \"not asked\" , \"voicemail reason\" : \"not voicemail\" , \"deflection\" : \"no deflection\" , \"disconnected by\" : \"disconnected by unknown\" , \"fail details\" : \"string\" , \"fail reason\" : \"nothing\" , \"support number\" : \"string\" , \"selected menu\" : { \"id\" : 0 , \"name\" : \"string\" , \"parent id\" : 0 , \"position\" : 0 , \"deleted\" : true , \"hidden\" : \"string\" , \"menu type\" : \"ivr menu\" , \"output msg\" : \"string\" }, \"menu path\" : { \"items count\" : 0 , \"name\" : \"string\" , \"materialized path\" : \"string\" }, \"agent info\" : { \"id\" : 0 , \"name\" : \"string\" , \"last name\" : \"string\" , \"first name\" : \"string\" , \"agent number\" : \"string\" , \"avatar url\" : \"string\" }, \"end user\" : { \"id\" : 0 , \"identifier\" : \"string\" , \"out contact id\" : \"string\" }, \"photos\" : [ { \"id\" : 0 , \"photo type\" : \"photo\" , \"url\" : \"string\" } ], \"videos\" : [ { \"id\" : 0 , \"url\" : \"string\" } ], \"transfers\" : [ { \"id\" : 0 , \"status\" : \"transferring\" , \"fail reason\" : \"nothing\" , \"created at\" : \"2018-06-07T19:49:52.896Z\" , \"from menu\" : { \"items count\" : 0 , \"name\" : \"string\" , \"materialized path\" : \"string\" }, \"to menu\" : { \"items count\" : 0 , \"name\" : \"string\" , \"materialized path\" : \"string\" }, \"from agent\" : { \"id\" : 0 , \"name\" : \"string\" , \"last name\" : \"string\" , \"first name\" : \"string\" , \"agent number\" : \"string\" , \"avatar url\" : \"string\" }, \"to agent\" : { \"id\" : 0 , \"name\" : \"string\" , \"last name\" : \"string\" , \"first name\" : \"string\" , \"agent number\" : \"string\" , \"avatar url\" : \"string\" } } ], \"participants\" : [ { \"id\" : 0 , \"type\" : \"end user\" , \"status\" : \"waiting\" , \"call id\" : 0 , \"user id\" : 0 , \"end user id\" : 0 , \"call duration\" : 0 , \"hold duration\" : 0 , \"connected at\" : \"2018-06-07T19:49:52.896Z\" , \"ended at\" : \"2018-06-07T19:49:52.896Z\" , \"fail reason\" : \"nothing\" } ] } ] Call status definitions The status field can be in any of the following states: Call Status Description Selecting State that occurs when an end user has called into the contact center, but is still navigating the menu options prior to being placed in a leaf menu.",
+          "Request Headers: Key Value Description Content-Type application/json Body: { \"call type\" : \"Voice Outbound (API)\" , \"agent email\" : \"admin@somedomain.com\" , \"end user number\" : \"+1 859-657-9625\" , \"outbound number\" : \"+1 339-219-5276\" , \"lang\" : \"en\" } Response: Create an outbound call with end user number { \"id\" : 397 , \"lang\" : \"en\" , \"call type\" : \"Voice Outbound (API)\" , \"status\" : \"assigned\" , \"created at\" : \"2019-06-07T01:27:30.406Z\" , \"queued at\" : null , \"assigned at\" : \"2019-06-07T01:27:30.441Z\" , \"connected at\" : null , \"ends at\" : null , \"scheduled at\" : null , \"wait duration\" : 0 , \"call duration\" : 0 , \"hold duration\" : 0 , \"rating\" : null , \"has feedback\" : false , \"voip provider\" : \"voip provider twilio\" , \"out ticket id\" : null , \"out ticket url\" : null , \"verified\" : false , \"recording url\" : null , \"recording permission\" : \"not asked\" , \"voicemail reason\" : \"not voicemail\" , \"deflection\" : \"no deflection\" , \"disconnected by\" : \"disconnected by unknown\" , \"fail reason\" : \"nothing\" , \"fail details\" : null , \"support number\" : null , \"selected menu\" : null , \"menu path\" : null , \"agent info\" : { \"id\" : 1 , \"agent number\" : null , \"name\" : \"Admin UJET\" , \"last name\" : \"UJET\" , \"first name\" : \"Admin\" , \"avatar url\" : \"https://somedomain.com/avatar.jpg\" }, \"end user\" : null , \"photos\" : [], \"videos\" : [], \"transfers\" : [], \"deflection details\" : [], \"participants\" : [ { \"id\" : 610 , \"type\" : \"agent\" , \"status\" : \"waiting\" , \"call id\" : 397 , \"user id\" : 1 , \"end user id\" : null , \"call duration\" : null , \"hold duration\" : null , \"connected at\" : null , \"ended at\" : null , \"fail reason\" : \"nothing\" }, { \"id\" : 611 , \"type\" : \"end user\" , \"status\" : \"waiting\" , \"call id\" : 397 , \"user id\" : null , \"end user id\" : null , \"call duration\" : null , \"hold duration\" : null , \"connected at\" : null , \"ended at\" : null , \"fail reason\" : \"nothing\" } ], \"offer type\" : null , \"offer events\" : [], \"answer type\" : \"manual\" , \"outbound number\" : \"+1 339-219-5276\" } Status Code: 201 Create an outbound call with ticket ID This example demonstrates the creation of an outbound call with a specific ticket ID."
+        ]
+      },
+      {
+        "title": "\"Salesforce integration guide \\_|\\_ Google Cloud Contact Center as a Service\\",
+        "url": "https://docs.cloud.google.com/contact-center/ccai-platform/docs/salesforce-integration-guide",
+        "source_id": "site-docs-reference",
+        "final_score": 154,
+        "relevance": "",
+        "evidence_snippets": [
+          "Case owner and assignment After the default administrator is enabled, the default administrator is used as the owner for the following: Ticket/case and contact creation when a new chat is initiated before an agent is assigned to the chat Voicemail tickets/cases before receiving a callback call Call ticket/cases for abandoned calls (if enabled) Note: If the default user is not configured, CCAI Platform uses a random Agent When a call/chat is transferred: CCAI Platform assigns the case to the agent who the call is transferred to.",
+          "Select the Use the admin user for all record creations/updates that can't be attributed to a specific agent checkbox to make the instance administrator the default author of new or updated tickets created in CCAI Platform when a specific agent hasn't been assigned.",
+          "No Case: ability to connect the CCAI Platform Custom Session object directly to any Salesforce account object, bypassing the need to create a case This builds on two related features: Option to look-up end users in Person Account object (instead of Contact ( default )) Option to leverage our CCAI Platform Session Object which stores all assets and data related to a single session in optimized CCAI Platform Session object Configuration availability requirements The configuration options for Account Lookup and Session Data are only available if the following conditions are met: Account Lookup configuration To configure custom account lookup settings, the following is required: Logged in Agent - at least one agent needs to be logged into a CCAI Platform adapter in Salesforce."
+        ]
+      },
+      {
+        "title": "\"Call and Chat Settings \\_|\\_ Google Cloud Contact Center as a Service \\_\\",
+        "url": "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Call_and_Chat_Settings",
+        "source_id": "site-docs-reference",
+        "final_score": 150,
+        "relevance": "",
+        "evidence_snippets": [
+          "Here is an example reserved data properties in a SIP header: se tt i n g : { redirec t io n : { op t io n : \"sip\" , sip : { uri : \"Destination SIP URI\" , da ta parame ters e na bled : true false , da ta parame ters : [ { f ield : \"verified customer\" , t ype : \"dynamic\" , source : \"ujet metadata\" , source f ield : \"Incoming Field\" }, { f ield : \"bad actor\" , t ype : \"dynamic\" , source : \"ujet metadata\" , source f ield : \"Incoming Field\" }, { f ield : \"repeat customer\" , t ype : \"dynamic\" , source : \"ujet metadata\" , source f ield : \"Incoming Field\" } ], da ta records : { i n me ta da ta : true false , i n crm record : true false } } } } Support for virtual agents If you have a virtual agent (a support agent or a virtual task assistant) that performs end-user verification, the virtual agent can pass the end-user verification information to CCAI Platform.",
+          "Viewing live chat UI Agent : Name of Agent as entered on the Users and Teams page End User : Consumer name or unique ID if available Issue : Queue menu path View Case / Ticket : If your CRM is integrated with Contact Center AI Platform (CCAI Platform), click the link to view the CRM record associated with the chat session After Hour Deflection for Calls and Chats Overview Customize your consumer's experience by configuring specific deflection paths for when consumers try to contact you outside of your Hours of Operation are first configured, then deflection is enabled and configured at the global level in the Call Settings and Chat Settings pages.",
+          "Configure a virtual task assistant to pass the Verified Customer parameter To configure a virtual task assistant to pass the Verified Customer parameter, follow these steps: In the CCAI Platform portal, click Settings > Virtual Agent ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "avatar.jpg",
+      "somedomain.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/apps-api-call",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/salesforce-integration-guide",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Call_and_Chat_Settings"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/apps-api-call",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/salesforce-integration-guide",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Call_and_Chat_Settings"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/apps-api-call",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/salesforce-integration-guide",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Call_and_Chat_Settings"
+      ]
+    }
+  ]
+}

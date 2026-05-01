@@ -1,0 +1,235 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:29.281Z",
+  "source_step08_card": "data/step-08/current/products/compute-engine/card.json",
+  "product_name": "Compute Engine",
+  "product_slug": "compute-engine",
+  "feature_name": "OS Policy Orchestrator",
+  "feature_slug": "os-policy-orchestrator",
+  "summary": "OS Policy Orchestrator lets organizations manage OS policy assignments across projects and zones at scale in VM Manager; OS Policy Orchestrator in VM Manager manages OS policy assignments across projects and zones at organizational scale.",
+  "extended_definition": "OS Policy Orchestrator lets organizations manage OS policy assignments across projects and zones at scale in VM Manager; OS Policy Orchestrator in VM Manager manages OS policy assignments across projects and zones at organizational scale.",
+  "lifecycle": {
+    "latest_feature_date": "2025-04-02",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/compute/docs/access/add-remove-change-permissions-for-team-members",
+      "https://docs.cloud.google.com/compute/docs/access/managed-constraints",
+      "https://docs.cloud.google.com/compute/docs/tutorials/migrate-workload-to-stateful-mig"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Manage access to projects, folders, and organizations \\_|\\_ Identity and\\",
+        "url": "https://docs.cloud.google.com/compute/docs/access/add-remove-change-permissions-for-team-members",
+        "source_id": "site-iam-reference",
+        "final_score": 143,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To see the exact permissions that are required, expand the Required permissions section: Required permissions The following permissions are required to manage access to a project, folder, or organization: To manage access to projects: resourcemanager.projects.getIamPolicy resourcemanager.projects.setIamPolicy To manage access to folders: resourcemanager.folders.getIamPolicy resourcemanager.folders.setIamPolicy To manage access to organizations: resourcemanager.organizations.getIamPolicy resourcemanager.organizations.setIamPolicy You might also be able to get these permissions with custom roles or other predefined roles .",
+          "Required roles To get the permissions that you need to manage access to a project, folder, or organization, ask your administrator to grant you the following IAM roles on the resource that you want to manage access for (project, folder, or organization): To manage access to a project: Project IAM Admin ( roles/resourcemanager.projectIamAdmin ) To manage access to a folder: Folder Admin ( roles/resourcemanager.folderAdmin ) To manage access to projects, folders, and organizations: Organization Admin ( roles/resourcemanager.organizationAdmin ) To manage access to almost all Google Cloud resources: Security Admin ( roles/iam.securityAdmin ) These predefined roles contain the permissions required to manage access to a project, folder, or organization.",
+          "String projectId = \"your-project-id\" ; getProjectPolicy ( projectId ); } // Gets a project's policy. public static Policy getProjectPolicy ( String projectId ) throws IOException { // Initialize client that will be used to send requests. // This client only needs to be created once, and can be reused for multiple requests. try ( ProjectsClient projectsClient = ProjectsClient . create ()) { GetIamPolicyRequest request = GetIamPolicyRequest . newBuilder () . setResource ( ProjectName . of ( projectId ). toString ()) . build (); return projectsClient . getIamPolicy ( request ); } } } Python To authenticate to Resource Manager, set up Application Default Credentials."
+        ]
+      },
+      {
+        "title": "Managed constraints \\_|\\_ Compute Engine \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/compute/docs/access/managed-constraints",
+        "source_id": "site-docs-reference-required-6",
+        "final_score": 123,
+        "relevance": "",
+        "evidence_snippets": [
+          "Required roles To get the permissions that you need to manage organization policies with managed constraints, ask your administrator to grant you the following IAM roles: Organization policy administrator ( roles/orgpolicy.policyAdmin ) on the organization resource To test the constraints: Compute Instance Admin (v1) ( roles/compute.instanceAdmin.v1 ) on the project For more information about granting roles, see Manage access to projects, folders, and organizations .",
+          "To see the exact permissions that are required, expand the Required permissions section: Required permissions The following permissions are required to manage organization policies with managed constraints: orgpolicy.constraints.list orgpolicy.policies.create orgpolicy.policies.delete orgpolicy.policies.list orgpolicy.policies.update orgpolicy.policy.get orgpolicy.policy.set To test the constraints: compute.instances.create on the project To use a custom image to create the VM: compute.images.useReadOnly on the image To use a snapshot to create the VM: compute.snapshots.useReadOnly on the snapshot To use an instance template to create the VM: compute.instanceTemplates.useReadOnly on the instance template To assign a legacy network to the VM: compute.networks.use on the project To specify a static IP address for the VM: compute.addresses.use on the project To assign an external IP address to the VM when using a legacy network: compute.networks.useExternalIp on the project To specify a subnet for the VM: compute.subnetworks.use on the project or on the chosen subnet To assign an external IP address to the VM when using a VPC network: compute.subnetworks.useExternalIp on the project or on the chosen subnet To set VM instance metadata for the VM: compute.instances.setMetadata on the project To set tags for the VM: compute.instances.setTags on the VM To set labels for the VM: compute.instances.setLabels on the VM To set a service account for the VM to use: compute.instances.setServiceAccount on the VM To create a new disk for the VM: compute.disks.create on the project To attach an existing disk in read-only or read-write mode: compute.disks.use on the disk To attach an existing disk in read-only mode: compute.disks.useReadOnly on the disk You might also be able to get these permissions with custom roles or other predefined roles .",
+          "Metadata-based constraints and levels Constraint Metadata key Metadata hierarchy levels compute.managed.disableSerialPortAccess serial-port-enable Project, Zonal, Instance compute.managed.requireOsLogin enable-oslogin Project, Zonal, Instance compute.managed.disableGuestAttributesAccess enable-guest-attributes Project, Zonal, Instance compute.managed.requireOsConfig enable-osconfig Project, Zonal, Instance compute.managed.disallowGlobalDns VmDnsSetting Project, Instance Safe rollout: The policy lifecycle To prevent service disruptions when you gradually implement new constraints, Google recommends that you implement managed constraints by following these steps: Analyze with Policy Simulator Before enforcing a policy, use Policy Simulator to see which existing resources violate the policy."
+        ]
+      },
+      {
+        "title": "\"Migrate an existing workload to a stateful managed instance group \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/compute/docs/tutorials/migrate-workload-to-stateful-mig",
+        "source_id": "site-docs-reference-required-6",
+        "final_score": 113,
+        "relevance": "",
+        "evidence_snippets": [
+          "Using a stateful policy instead of per-instance configurations A stateful policy lets you declare disks that have a common device name as stateful across the MIG.",
+          "This lets you use a stateful policy to declare those disks as stateful across your MIG, with less overhead than per-instance configurations.",
+          "For example, to delete the per-instance configuration, use the following command: gcloud compute instance-groups managed instance-configs delete my-mig \\ --instances= my-instance-1 \\ --update-instance (Optional.) Verify that the stateful items are now stored in the preserved state from policy ( preservedStateFromPolicy ) for each managed instance."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "compute.addresses.use",
+      "compute.disks.create",
+      "compute.disks.use",
+      "compute.disks.useReadOnly",
+      "compute.images.useReadOnly",
+      "compute.instanceAdmin.v1",
+      "compute.instances.create",
+      "compute.instances.setLabels",
+      "compute.instances.setMetadata",
+      "compute.instances.setServiceAccount",
+      "compute.instances.setTags",
+      "compute.instanceTemplates.useReadOnly",
+      "compute.managed.disableGuestAttributesAccess",
+      "compute.managed.disableSerialPortAccess",
+      "compute.managed.disallowGlobalDns",
+      "compute.managed.requireOsConfig",
+      "compute.managed.requireOsLogin",
+      "compute.managed.restrictNonConfidentialComputing",
+      "compute.networks.use",
+      "compute.networks.useExternalIp",
+      "compute.snapshots.useReadOnly",
+      "compute.subnetworks.use",
+      "compute.subnetworks.useExternalIp",
+      "iam.securityAdmin",
+      "orgpolicy.constraints.list",
+      "orgpolicy.policies.create",
+      "orgpolicy.policies.delete",
+      "orgpolicy.policies.list",
+      "orgpolicy.policies.update",
+      "orgpolicy.policy.get",
+      "orgpolicy.policy.set",
+      "orgpolicy.policyAdmin",
+      "resourcemanager.folderAdmin",
+      "resourcemanager.folders.getIamPolicy",
+      "resourcemanager.folders.setIamPolicy",
+      "resourcemanager.organizationAdmin",
+      "resourcemanager.organizations.getIamPolicy",
+      "resourcemanager.organizations.setIamPolicy",
+      "resourcemanager.projectIamAdmin",
+      "resourcemanager.projects.getIamPolicy",
+      "resourcemanager.projects.setIamPolicy"
+    ],
+    "missing_inventory_roles": [
+      "roles/compute.instanceAdmin.v1",
+      "roles/iam.securityAdmin",
+      "roles/orgpolicy.policyAdmin",
+      "roles/resourcemanager.folderAdmin",
+      "roles/resourcemanager.organizationAdmin",
+      "roles/resourcemanager.projectIamAdmin"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/compute/docs/access/add-remove-change-permissions-for-team-members",
+        "https://docs.cloud.google.com/compute/docs/access/managed-constraints",
+        "https://docs.cloud.google.com/compute/docs/tutorials/migrate-workload-to-stateful-mig"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/compute/docs/access/add-remove-change-permissions-for-team-members",
+        "https://docs.cloud.google.com/compute/docs/access/managed-constraints",
+        "https://docs.cloud.google.com/compute/docs/tutorials/migrate-workload-to-stateful-mig"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/compute/docs/access/add-remove-change-permissions-for-team-members",
+        "https://docs.cloud.google.com/compute/docs/access/managed-constraints",
+        "https://docs.cloud.google.com/compute/docs/tutorials/migrate-workload-to-stateful-mig"
+      ]
+    },
+    {
+      "capability": "confidential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/compute/docs/access/add-remove-change-permissions-for-team-members",
+        "https://docs.cloud.google.com/compute/docs/access/managed-constraints",
+        "https://docs.cloud.google.com/compute/docs/tutorials/migrate-workload-to-stateful-mig"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/compute/docs/access/add-remove-change-permissions-for-team-members",
+        "https://docs.cloud.google.com/compute/docs/access/managed-constraints",
+        "https://docs.cloud.google.com/compute/docs/tutorials/migrate-workload-to-stateful-mig"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/compute/docs/access/add-remove-change-permissions-for-team-members",
+        "https://docs.cloud.google.com/compute/docs/access/managed-constraints",
+        "https://docs.cloud.google.com/compute/docs/tutorials/migrate-workload-to-stateful-mig"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/compute/docs/access/add-remove-change-permissions-for-team-members",
+        "https://docs.cloud.google.com/compute/docs/access/managed-constraints",
+        "https://docs.cloud.google.com/compute/docs/tutorials/migrate-workload-to-stateful-mig"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/compute/docs/access/add-remove-change-permissions-for-team-members",
+        "https://docs.cloud.google.com/compute/docs/access/managed-constraints",
+        "https://docs.cloud.google.com/compute/docs/tutorials/migrate-workload-to-stateful-mig"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/compute/docs/access/add-remove-change-permissions-for-team-members",
+        "https://docs.cloud.google.com/compute/docs/access/managed-constraints",
+        "https://docs.cloud.google.com/compute/docs/tutorials/migrate-workload-to-stateful-mig"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/compute/docs/access/add-remove-change-permissions-for-team-members",
+        "https://docs.cloud.google.com/compute/docs/access/managed-constraints",
+        "https://docs.cloud.google.com/compute/docs/tutorials/migrate-workload-to-stateful-mig"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/compute/docs/access/add-remove-change-permissions-for-team-members",
+        "https://docs.cloud.google.com/compute/docs/access/managed-constraints",
+        "https://docs.cloud.google.com/compute/docs/tutorials/migrate-workload-to-stateful-mig"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/compute/docs/access/add-remove-change-permissions-for-team-members",
+        "https://docs.cloud.google.com/compute/docs/access/managed-constraints",
+        "https://docs.cloud.google.com/compute/docs/tutorials/migrate-workload-to-stateful-mig"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/compute/docs/access/add-remove-change-permissions-for-team-members",
+        "https://docs.cloud.google.com/compute/docs/access/managed-constraints",
+        "https://docs.cloud.google.com/compute/docs/tutorials/migrate-workload-to-stateful-mig"
+      ]
+    }
+  ]
+}

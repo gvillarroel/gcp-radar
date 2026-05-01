@@ -1,0 +1,126 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:22.310Z",
+  "source_step08_card": "data/step-08/current/products/calendar-api/card.json",
+  "product_name": "Calendar API",
+  "product_slug": "calendar-api",
+  "feature_name": "Global HTTP batch endpoints",
+  "feature_slug": "global-http-batch-endpoints",
+  "summary": "Calendar API support for Global HTTP batch endpoints is deprecated and scheduled for discontinuation; deprecated on 2019-03-25.",
+  "extended_definition": "Calendar API support for Global HTTP batch endpoints is deprecated and scheduled for discontinuation; deprecated on 2019-03-25.",
+  "lifecycle": {
+    "latest_feature_date": "2018-03-22",
+    "deprecation_date": "2019-03-25",
+    "status": "deprecation_noted"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/workspace/calendar/api/guides/batch",
+      "https://developers.google.com/workspace/calendar/api/guides/calendar-status",
+      "https://developers.google.com/workspace/calendar/api/guides/errors"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Send batch requests \\_|\\_ Google Calendar \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/workspace/calendar/api/guides/batch",
+        "source_id": "site-docs-root",
+        "final_score": 96,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Format of a batch request A batch request is a single standard HTTP request containing multiple Google Calendar API calls, using the multipart/mixed content type.",
+          "The Google Calendar API supports batching, to allow your client to put several API calls into a single HTTP request.",
+          "HTTP/1.1 200 Content-Length: response total content length Content-Type: multipart/mixed; boundary=batch foobarbaz --batch foobarbaz Content-Type: application/http Content-ID: <response-item1:12930812@barnyard.example.com> HTTP/1.1 200 OK Content-Type application/json Content-Length: response part 1 content length ETag: \"etag/pony\" { \"kind\": \"farm#animal\", \"etag\": \"etag/pony\", \"selfLink\": \"/farm/v1/animals/pony\", \"animalName\": \"pony\", \"animalAge\": 34, \"peltColor\": \"white\" } --batch foobarbaz Content-Type: application/http Content-ID: <response-item2:12930812@barnyard.example.com> HTTP/1.1 200 OK Content-Type: application/json Content-Length: response part 2 content length ETag: \"etag/sheep\" { \"kind\": \"farm#animal\", \"etag\": \"etag/sheep\", \"selfLink\": \"/farm/v1/animals/sheep\", \"animalName\": \"sheep\", \"animalAge\": 5, \"peltColor\": \"green\" } --batch foobarbaz Content-Type: application/http Content-ID: <response-item3:12930812@barnyard.example.com> HTTP/1.1 304 Not Modified ETag: \"etag/animals\" --batch foobarbaz-- Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License ."
+        ]
+      },
+      {
+        "title": "Handle API errors \\_|\\_ Google Calendar \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/workspace/calendar/api/guides/errors",
+        "source_id": "site-docs-root",
+        "final_score": 81,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "This error can also occur if a request attempts to delete an event that has already been deleted. { \"error\": { \"errors\": [ { \"domain\": \"calendar\", \"reason\": \"fullSyncRequired\", \"message\": \"Sync token is no longer valid, a full sync is required.\", \"locationType\": \"parameter\", \"location\": \"syncToken\", } ], \"code\": 410, \"message\": \"Sync token is no longer valid, a full sync is required.\" } } or { \"error\": { \"errors\": [ { \"domain\": \"calendar\", \"reason\": \"updatedMinTooLongAgo\", \"message\": \"The requested minimum modification time lies too far in the past.\", \"locationType\": \"parameter\", \"location\": \"updatedMin\", } ], \"code\": 410, \"message\": \"The requested minimum modification time lies too far in the past.\" } } or { \"error\": { \"errors\": [ { \"domain\": \"global\", \"reason\": \"deleted\", \"message\": \"Resource has been deleted\" } ], \"code\": 410, \"message\": \"Resource has been deleted\" } } Suggested action: For the syncToken or updatedMin parameters, wipe the store and re-sync.",
+          "409: Conflict A batched item inside an events.batch operation can't be executed due to an operational conflict with other requested batched items. { \"error\": { \"errors\": [ { \"domain\": \"global\", \"reason\": \"conflict\", \"message\": \"Conflict\" } ], \"code\": 409, \"message\": \"Conflict\" } } Suggested action: Exclude all successfully finished and all definitely failed batched items and retry the remaining ones in a different events.batch or corresponding single event operations.",
+          "Here are some examples: when the requested resource (with the provided ID) has never existed when accessing a calendar that the user can not access { \"error\": { \"errors\": [ { \"domain\": \"global\", \"reason\": \"notFound\", \"message\": \"Not Found\" } ], \"code\": 404, \"message\": \"Not Found\" } } Suggested action: Use exponential backoff ."
+        ]
+      },
+      {
+        "title": "\"Manage focus time, out of office, and working location events \\_|\\_ Google\\",
+        "url": "https://developers.google.com/workspace/calendar/api/guides/calendar-status",
+        "source_id": "site-docs-root",
+        "final_score": 59,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "See https://developers.google.com/workspace/calendar/api/v3/reference/events#resource / function parseWorkingLocation ( event ) { if ( event . eventType != \"workingLocation\" ) { throw new Error ( \"'\" + event . summary + \"' is not a working location event.\" ); } var location = 'No Location' ; const workingLocation = event . workingLocationProperties ; if ( workingLocation ) { if ( workingLocation . type === 'homeOffice' ) { location = 'Home' ; } if ( workingLocation . type === 'officeLocation' ) { location = workingLocation . officeLocation . label ; } if ( workingLocation . type === 'customLocation' ) { location = workingLocation . customLocation . label ; } } return ${ event . start . date } : ${ location } ; } Run the code sample Above the code editor, select the function to run from the drop-down menu, and click Run .",
+          "See https://developers.google.com/workspace/calendar/api/v3/reference/events/list / function listEvents ( eventType = 'default' ) { const calendarId = 'primary' // Query parameters for the list request. const optionalArgs = { eventTypes : [ eventType ], showDeleted : false , singleEvents : true , timeMax : '2023-04-01T00:00:00+01:00' , timeMin : '2023-03-27T00:00:00+01:00' , } try { var response = Calendar .",
+          "See https://developers.google.com/workspace/calendar/api/v3/reference/events/get / function readEvent () { const calendarId = 'primary' ; // Replace with a valid eventId. const eventId = \"sample-event-id\" ; try { var response = Calendar ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "barnyard.example.com",
+      "developers.google.com",
+      "events.batch"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://developers.google.com/workspace/calendar/api/guides/batch",
+        "https://developers.google.com/workspace/calendar/api/guides/errors",
+        "https://developers.google.com/workspace/calendar/api/guides/calendar-status"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://developers.google.com/workspace/calendar/api/guides/batch",
+        "https://developers.google.com/workspace/calendar/api/guides/errors",
+        "https://developers.google.com/workspace/calendar/api/guides/calendar-status"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://developers.google.com/workspace/calendar/api/guides/batch",
+        "https://developers.google.com/workspace/calendar/api/guides/errors",
+        "https://developers.google.com/workspace/calendar/api/guides/calendar-status"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://developers.google.com/workspace/calendar/api/guides/batch",
+        "https://developers.google.com/workspace/calendar/api/guides/errors",
+        "https://developers.google.com/workspace/calendar/api/guides/calendar-status"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://developers.google.com/workspace/calendar/api/guides/batch",
+        "https://developers.google.com/workspace/calendar/api/guides/errors",
+        "https://developers.google.com/workspace/calendar/api/guides/calendar-status"
+      ]
+    }
+  ]
+}

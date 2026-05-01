@@ -1,0 +1,207 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:35.934Z",
+  "source_step08_card": "data/step-08/current/products/earth-engine-code-editor/card.json",
+  "product_name": "Earth Engine Code Editor",
+  "product_slug": "earth-engine-code-editor",
+  "feature_name": "Task Manager",
+  "feature_slug": "task-manager",
+  "summary": "A standalone Task Manager and a new Tasks tab interface were launched for Earth Engine task management.",
+  "extended_definition": "A standalone Task Manager and a new Tasks tab interface were launched for Earth Engine task management.",
+  "lifecycle": {
+    "latest_feature_date": "2021-09-15",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/earth-engine/guides/access_control",
+      "https://developers.google.com/earth-engine/guides/playground",
+      "https://developers.google.com/earth-engine/guides/python_install"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Earth Engine Code Editor \\_|\\_ Google Earth Engine \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/earth-engine/guides/playground",
+        "source_id": "site-docs-root",
+        "final_score": 108,
+        "relevance": "",
+        "evidence_snippets": [
+          "The Code Editor has the following elements (illustrated in Figure 1): JavaScript code editor Map display for visualizing geospatial datasets API reference documentation (Docs tab) Git -based Script Manager (Scripts tab) Console output (Console tab) Task Manager (Tasks tab) to handle long-running queries Interactive map query (Inspector tab) Search of the data archive or saved scripts Geometry drawing tools Figure 1.",
+          "These long-running tasks are the only mechanism for creating persistent artifacts in Earth Engine and adjacent systems (Google Cloud Storage, Google Drive, etc.), and they fall into two categories: Import and Export .",
+          "The Code Editor includes essential elements such as a JavaScript editor, map display, API reference, Script Manager, Console output, Task Manager, interactive map query, search tool, and geometry drawing tools."
+        ]
+      },
+      {
+        "title": "Control access to resources \\_|\\_ Google Earth Engine \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/earth-engine/guides/access_control",
+        "source_id": "site-docs-root-2",
+        "final_score": 76,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "These roles are: Role Title Description roles/earthengine.viewer Earth Engine Resource Viewer Provides permission to view and list Assets and tasks. roles/earthengine.writer Earth Engine Resource Writer Provides permission to read, create, modify and delete assets, import images and tables, read and update tasks, perform interactive computations, and create long running export tasks. roles/earthengine.admin Earth Engine Admin Provides permission for all Earth Engine resources including changing access controls for Earth Engine assets. roles/earthengine.appsPublisher Earth Engine Apps Publisher Provides permission to create a service account for use with an Earth Engine app.",
+          "App tasks such as app creation and deletion require specific permissions like iam.serviceAccounts.create and roles like Service Account Admin.\\n\"]]",
+          "Full access to the Earth Engine API To give users full access to the Earth Engine service, either through the REST API directly, through the Code Editor or through a client library, users will need permission to perform operations like: Executing Earth Engine expressions Running batch computations (exports) Getting interactive results (online maps, thumbnails, charts, etc.) Creating/deleting Earth Engine assets Using OAuth Authentication via a Client Library to connect to Earth Engine Permissions needed clientauthconfig.clients.listWithSecrets earthengine.assets.get earthengine.assets.getIamPolicy earthengine.assets.list earthengine.computations.create earthengine.operations.get earthengine.operations.list monitoring.timeSeries.list resourcemanager.projects.get resourcemanager.projects.list serviceusage.operations.get serviceusage.operations.list serviceusage.quotas.get serviceusage.services.get serviceusage.services.list serviceusage.services.use Suggested roles Service Usage Consumer ( roles/serviceusage.serviceUsageConsumer ) AND one of: Earth Engine Resource Viewer ( roles/earthengine.viewer ) OR Earth Engine Resource Writer ( roles/earthengine.writer ) OR Earth Engine Resource Admin ( roles/earthengine.admin ) OAuth Config Editor ( roles/oauthconfig.editor ) is additionally required for users who access Earth Engine through a notebook environment and use the Notebook Authenticator."
+        ]
+      },
+      {
+        "title": "Python Installation \\_|\\_ Google Earth Engine \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/earth-engine/guides/python_install",
+        "source_id": "site-docs-root",
+        "final_score": 68,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Note: Tasks started from the Python API will also appear in the Tasks tab of the JavaScript Code Editor for the same Google account.",
+          "Export tasks must be started by calling the start() method on a defined task.",
+          "Export . image . toDrive ( image = my image , # an ee.Image object. region = my geometry , # an ee.Geometry object. description = 'mock export' , folder = 'gdrive folder' , fileNamePrefix = 'mock export' , scale = 1000 , crs = 'EPSG:4326' ) Start an export task: task . start () Check export task status: task . status () The result of task.status() is a dictionary containing information such as the state of the task and its ID. { 'state' : 'READY' , 'description' : 'my export task' , 'creation timestamp ms' : 1647567508236 , 'update timestamp ms' : 1647567508236 , 'start timestamp ms' : 0 , 'task type' : 'EXPORT IMAGE' , 'id' : '56TVJIZABUMTD5CJ5YHTMYK4' , 'name' : 'projects/earthengine-legacy/operations/56TVJIZABUMTX5CJ5HHTMYK4' } You can monitor task progress using the state field."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "explicit",
+    "explicit_roles": [
+      "roles/accessapproval.admin",
+      "roles/accessapproval.approver",
+      "roles/accessapproval.configEditor"
+    ],
+    "explicit_permissions": [
+      {
+        "permission": "resourcemanager.projects.get",
+        "group": "resourcemanager",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver",
+          "roles/accessapproval.configEditor"
+        ]
+      },
+      {
+        "permission": "resourcemanager.projects.list",
+        "group": "resourcemanager",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver",
+          "roles/accessapproval.configEditor"
+        ]
+      }
+    ],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "clientauthconfig.clients.listWithSecrets",
+      "developers.google.com",
+      "earthengine.admin",
+      "earthengine.appsPublisher",
+      "earthengine.assets.get",
+      "earthengine.assets.getIamPolicy",
+      "earthengine.assets.list",
+      "earthengine.computations.create",
+      "earthengine.operations.get",
+      "earthengine.operations.list",
+      "earthengine.viewer",
+      "earthengine.writer",
+      "ee.Geometry",
+      "ee.Image",
+      "iam.serviceAccounts.create",
+      "monitoring.timeSeries.list",
+      "oauthconfig.editor",
+      "resourcemanager.projectCreator",
+      "resourcemanager.projectIamAdmin",
+      "resourcemanager.projectMover",
+      "resourcemanager.projects.create",
+      "resourcemanager.projects.update",
+      "serviceusage.operations.get",
+      "serviceusage.operations.list",
+      "serviceusage.quotas.get",
+      "serviceusage.services.enable",
+      "serviceusage.services.get",
+      "serviceusage.services.list",
+      "serviceusage.services.use",
+      "serviceusage.serviceUsageAdmin",
+      "serviceusage.serviceUsageConsumer",
+      "task.status"
+    ],
+    "missing_inventory_roles": [
+      "roles/earthengine.admin",
+      "roles/earthengine.appsPublisher",
+      "roles/earthengine.viewer",
+      "roles/earthengine.writer",
+      "roles/editor",
+      "roles/oauthconfig.editor",
+      "roles/resourcemanager.projectCreator",
+      "roles/resourcemanager.projectIamAdmin",
+      "roles/resourcemanager.projectMover",
+      "roles/serviceusage.serviceUsageAdmin",
+      "roles/serviceusage.serviceUsageConsumer",
+      "roles/viewer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://developers.google.com/earth-engine/guides/playground",
+        "https://developers.google.com/earth-engine/guides/python_install",
+        "https://developers.google.com/earth-engine/guides/access_control"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://developers.google.com/earth-engine/guides/playground",
+        "https://developers.google.com/earth-engine/guides/python_install",
+        "https://developers.google.com/earth-engine/guides/access_control"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://developers.google.com/earth-engine/guides/playground",
+        "https://developers.google.com/earth-engine/guides/python_install",
+        "https://developers.google.com/earth-engine/guides/access_control"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://developers.google.com/earth-engine/guides/playground",
+        "https://developers.google.com/earth-engine/guides/python_install",
+        "https://developers.google.com/earth-engine/guides/access_control"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://developers.google.com/earth-engine/guides/playground",
+        "https://developers.google.com/earth-engine/guides/python_install",
+        "https://developers.google.com/earth-engine/guides/access_control"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://developers.google.com/earth-engine/guides/playground",
+        "https://developers.google.com/earth-engine/guides/python_install",
+        "https://developers.google.com/earth-engine/guides/access_control"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://developers.google.com/earth-engine/guides/playground",
+        "https://developers.google.com/earth-engine/guides/python_install",
+        "https://developers.google.com/earth-engine/guides/access_control"
+      ]
+    }
+  ]
+}

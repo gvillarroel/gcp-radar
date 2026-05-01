@@ -1,0 +1,109 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:17.437Z",
+  "source_step08_card": "data/step-08/current/products/apps-script/card.json",
+  "product_name": "Apps Script",
+  "product_slug": "apps-script",
+  "feature_name": "ChromeOS autocomplete keyboard shortcut",
+  "feature_slug": "chromeos-autocomplete-keyboard-shortcut",
+  "summary": "On ChromeOS devices, autocomplete in the script editor can now be activated with Ctrl+Space.",
+  "extended_definition": "On ChromeOS devices, autocomplete in the script editor can now be activated with Ctrl+Space.",
+  "lifecycle": {
+    "latest_feature_date": "2013-07-29",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/apps-script/guides/sheets/macros",
+      "https://developers.google.com/apps-script/reference/add-ons-response-service/editor-file-scope-action-response-builder",
+      "https://developers.google.com/apps-script/releases"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Google Apps Script release notes \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/apps-script/releases",
+        "source_id": "site-docs-root",
+        "final_score": 116,
+        "relevance": "",
+        "evidence_snippets": [
+          "Feature On ChromeOS devices, it is now possible to activate autocomplete (sometimes called \"content assist\") with the keyboard shortcut Ctrl + Space .",
+          "Autocomplete in the editor has been enhanced to be faster, more consistent, and extends its support to user-defined functions and JavaScript language features.",
+          "Fixed Fixed some issues where autocomplete stopped working after certain statements were typed in the script editor."
+        ]
+      },
+      {
+        "title": "Google Sheets Macros \\_|\\_ Apps Script \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/apps-script/guides/sheets/macros",
+        "source_id": "site-docs-root-2",
+        "final_score": 76,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Import functions as macros If there is already a script bound to a sheet, you can import a function in the script as a new macro and then assign it a keyboard shortcut.",
+          "Sheets also automatically updates the script project manifest , recording the name and keyboard shortcut assigned to the macro.",
+          "Alternatively, you can create macros within the Apps Script editor by following these steps: In the Sheets UI, select Extensions > Apps Script to open the script bound to the sheet in the Apps Script editor."
+        ]
+      },
+      {
+        "title": "\"Class EditorFileScopeActionResponseBuilder \\_|\\_ Apps Script \\_|\\_ Google\\",
+        "url": "https://developers.google.com/apps-script/reference/add-ons-response-service/editor-file-scope-action-response-builder",
+        "source_id": "site-docs-reference-3",
+        "final_score": 54,
+        "relevance": "",
+        "evidence_snippets": [
+          "Methods Method Return type Brief description build() Editor File Scope Action Response Builds the current Editor action response. request File Scope For Active Document() Editor File Scope Action Response Builder Requests the drive.file scope for the current active Editor document.",
+          "Home Google Workspace Apps Script Reference Send feedback Class EditorFileScopeActionResponseBuilder Stay organized with collections Save and categorize content based on your preferences.",
+          "Return EditorFileScopeActionResponse — A validated EditorFileScopeActionResponse . requestFileScopeForActiveDocument() Requests the drive.file scope for the current active Editor document. // Display a permissions dialog to the user, requesting drive.file scope for // the current document on behalf of this add-on."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "developers.google.com",
+      "drive.file"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/guides/sheets/macros",
+        "https://developers.google.com/apps-script/reference/add-ons-response-service/editor-file-scope-action-response-builder"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/guides/sheets/macros",
+        "https://developers.google.com/apps-script/reference/add-ons-response-service/editor-file-scope-action-response-builder"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/guides/sheets/macros",
+        "https://developers.google.com/apps-script/reference/add-ons-response-service/editor-file-scope-action-response-builder"
+      ]
+    }
+  ]
+}

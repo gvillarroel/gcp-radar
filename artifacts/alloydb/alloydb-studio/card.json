@@ -1,0 +1,125 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:12.801Z",
+  "source_step08_card": "data/step-08/current/products/alloydb/card.json",
+  "product_name": "AlloyDB",
+  "product_slug": "alloydb",
+  "feature_name": "AlloyDB Studio",
+  "feature_slug": "alloydb-studio",
+  "summary": "AlloyDB Studio lets authorized users run SQL queries and interact with databases from the Google Cloud console; AlloyDB Studio provides a single interface with an Explorer pane and enhanced query editor to browse, query, and modify databases.",
+  "extended_definition": "AlloyDB Studio lets authorized users run SQL queries and interact with databases from the Google Cloud console; AlloyDB Studio provides a single interface with an Explorer pane and enhanced query editor to browse, query, and modify databases.",
+  "lifecycle": {
+    "latest_feature_date": "2024-04-09",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/alloydb/docs/ai/integrate-applications-data-agent",
+      "https://docs.cloud.google.com/alloydb/docs/ai/model-endpoint-console",
+      "https://docs.cloud.google.com/alloydb/docs/quickstart/integrate-kubernetes"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Integrate QueryData with an application \\_|\\_ AlloyDB for PostgreSQL \\_\\",
+        "url": "https://docs.cloud.google.com/alloydb/docs/ai/integrate-applications-data-agent",
+        "source_id": "site-docs-root-2",
+        "final_score": 143,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "For more information, see Gemini Data Analytics Source and Gemini Data Analytics QueryData Tool. kind : source name : gda-api-source type : cloud-gemini-data-analytics projectId : \" PROJECT ID \" --- kind : tool name : cloud gda query tool type : cloud-gemini-data-analytics-query source : gda-api-source description : Use this tool to send natural language queries to the Gemini Data Analytics API and receive SQL, natural language answers, and explanations. location : \" REGION ID \" context : datasourceReferences : alloydb : databaseReference : projectId : \" PROJECT ID \" region : \" REGION ID \" clusterId : \" CLUSTER ID \" instanceId : \" INSTANCE ID \" databaseId : \" DATABASE ID \" agentContextReference : contextSetId : \" CONTEXT SET ID \" generationOptions : generateQueryResult : true generateNaturalLanguageAnswer : true generateExplanation : true generateDisambiguationQuestion : true Replace the following: PROJECT ID : Your Google Cloud project ID.",
+          "This grants SELECT permissions on the view and USAGE on the underlying schema to authorized database users.",
+          "Test QueryData and generate SQL queries in Studio."
+        ]
+      },
+      {
+        "title": "\"Connect from Google Kubernetes Engine (GKE) to AlloyDB for PostgreSQL \\_\\",
+        "url": "https://docs.cloud.google.com/alloydb/docs/quickstart/integrate-kubernetes",
+        "source_id": "site-docs-reference",
+        "final_score": 123,
+        "relevance": "",
+        "evidence_snippets": [
+          "You use this information in Create a Kubernetes secret . gcloud To create an AlloyDB database user, run the following command in the Cloud Shell: gcloud alloydb users create USERNAME \\ --cluster = CLUSTER ID \\ --region = REGION \\ --password = DATABASE PASSWORD Replace the following: USERNAME : the name of the AlloyDB user, such as tutorial user .",
+          "To connect to an AlloyDB for PostgreSQL cluster from outside its configured VPC, you configure Private Service Access configuration in the VPC for AlloyDB and use the default VPC network to run queries from an application deployed on a GKE cluster.",
+          "Because the AlloyDB Proxy consumes resources linearly to usage, this pattern lets you more accurately scope and request resources to match your applications as it scales."
+        ]
+      },
+      {
+        "title": "\"Use model endpoint management in AlloyDB Studio \\_|\\_ AlloyDB for PostgreSQL\\",
+        "url": "https://docs.cloud.google.com/alloydb/docs/ai/model-endpoint-console",
+        "source_id": "site-docs-root-required-3",
+        "final_score": 113,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Home Documentation Databases AlloyDB for PostgreSQL Guides Send feedback Use model endpoint management in AlloyDB Studio Stay organized with collections Save and categorize content based on your preferences.",
+          "You can run the google ml.alter model() function in the Editor tab of AlloyDB Studio to modify model metadata of other registered model endpoints.",
+          "Call pre-registered embedding model endpoints The supported pre-registered embedding models are listed in the Explorer pane of AlloyDB Studio."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "ml.alter",
+      "ml.drop"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/ai/integrate-applications-data-agent",
+        "https://docs.cloud.google.com/alloydb/docs/quickstart/integrate-kubernetes",
+        "https://docs.cloud.google.com/alloydb/docs/ai/model-endpoint-console"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/ai/integrate-applications-data-agent",
+        "https://docs.cloud.google.com/alloydb/docs/quickstart/integrate-kubernetes",
+        "https://docs.cloud.google.com/alloydb/docs/ai/model-endpoint-console"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/ai/integrate-applications-data-agent",
+        "https://docs.cloud.google.com/alloydb/docs/quickstart/integrate-kubernetes",
+        "https://docs.cloud.google.com/alloydb/docs/ai/model-endpoint-console"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/ai/integrate-applications-data-agent",
+        "https://docs.cloud.google.com/alloydb/docs/quickstart/integrate-kubernetes",
+        "https://docs.cloud.google.com/alloydb/docs/ai/model-endpoint-console"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/ai/integrate-applications-data-agent",
+        "https://docs.cloud.google.com/alloydb/docs/quickstart/integrate-kubernetes",
+        "https://docs.cloud.google.com/alloydb/docs/ai/model-endpoint-console"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,98 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:40.586Z",
+  "source_step08_card": "data/step-08/current/products/google-secops/card.json",
+  "product_name": "Google SecOps",
+  "product_slug": "google-secops",
+  "feature_name": "Quick actions",
+  "feature_slug": "quick-actions",
+  "summary": "Administrators can predefine actions that analysts run directly from cases and alerts.",
+  "extended_definition": "Administrators can predefine actions that analysts run directly from cases and alerts.",
+  "lifecycle": {
+    "latest_feature_date": "2025-04-06",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/chronicle/docs/reference/google-unified-security",
+      "https://docs.cloud.google.com/chronicle/docs/secops/secops-overview",
+      "https://docs.cloud.google.com/chronicle/docs/soar/investigate/working-with-alerts/whats-on-the-alert-overview-tab"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Explore the alert overview tab \\_|\\_ Google Security Operations \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/soar/investigate/working-with-alerts/whats-on-the-alert-overview-tab",
+        "source_id": "site-docs-reference-2",
+        "final_score": 104,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Quick Actions : This widget lets you quickly execute predefined actions directly from the Alert Overview tab.",
+          "The information displayed varies based on the alert type, and you can execute actions directly from this tab.",
+          "If you're a Google Security Operations customer, click Explore to be redirected to the Asset page to perform more actions."
+        ]
+      },
+      {
+        "title": "\"Google SecOps overview \\_|\\_ Google Security Operations \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/secops/secops-overview",
+        "source_id": "site-api-reference",
+        "final_score": 76,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Playbook designer Build playbooks by selecting predefined actions and dragging and dropping them into the playbook canvas without additional coding.",
+          "Response : Security analysts can respond quickly and provide resolutions using automated playbooks and incident management.",
+          "The Google SecOps platform enables security analysts to analyze and mitigate a security threat throughout its lifecycle by employing the following capabilities: Collection : Data is ingested into the platform using forwarders, parsers, OpenTelemetry collectors, connectors, and webhooks."
+        ]
+      },
+      {
+        "title": "\"Google Unified Security \\_|\\_ Google Security Operations \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/reference/google-unified-security",
+        "source_id": "site-docs-reference-2",
+        "final_score": 69,
+        "relevance": "",
+        "evidence_snippets": [
+          "Automated response :Leveraging native playbook orchestration capabilities, security teams can also automate response actions on Chrome Enterprise, such as blocking malicious URLs, blocking extensions, and even quarantining devices, directly from the Google SecOps platform.",
+          "By applying this frontline intelligence directly within Google SecOps, security teams gain unparalleled visibility and context, ensuring that security events are actively interpreted through the lens of the latest, validated threat intelligence to help you stay ahead of novel and sophisticated attacks.",
+          "SIEM Log Searching and Investigation : During a CDIR investigation, or on an ad-hoc basis, analysts can use either natural language syntax, Yara-L syntax, or raw log searching to surface information in various logs ingested into Google SecOps related to cloud infrastructure and services."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/investigate/working-with-alerts/whats-on-the-alert-overview-tab",
+        "https://docs.cloud.google.com/chronicle/docs/secops/secops-overview",
+        "https://docs.cloud.google.com/chronicle/docs/reference/google-unified-security"
+      ]
+    },
+    {
+      "capability": "threat",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/investigate/working-with-alerts/whats-on-the-alert-overview-tab",
+        "https://docs.cloud.google.com/chronicle/docs/secops/secops-overview",
+        "https://docs.cloud.google.com/chronicle/docs/reference/google-unified-security"
+      ]
+    }
+  ]
+}

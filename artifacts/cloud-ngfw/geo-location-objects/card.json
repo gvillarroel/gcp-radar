@@ -1,0 +1,268 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:25.556Z",
+  "source_step08_card": "data/step-08/current/products/cloud-ngfw/card.json",
+  "product_name": "Cloud NGFW",
+  "product_slug": "cloud-ngfw",
+  "feature_name": "Geo-location objects",
+  "feature_slug": "geo-location-objects",
+  "summary": "Geo-location objects let firewall policy rules filter external IPv4 and IPv6 traffic by geographic location or region.",
+  "extended_definition": "Geo-location objects let firewall policy rules filter external IPv4 and IPv6 traffic by geographic location or region.",
+  "lifecycle": {
+    "latest_feature_date": "2023-06-05",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/firewall/docs/about-url-filtering",
+      "https://docs.cloud.google.com/firewall/docs/audit-logging",
+      "https://docs.cloud.google.com/firewall/docs/quickstarts/configure-hfwpolicy-allow-egress-vpc",
+      "https://docs.cloud.google.com/firewall/docs/tutorials/configure-fwpolicy-deny-egress-geolocation"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Configure global network firewall policy to deny egress connections to specific\\",
+        "url": "https://docs.cloud.google.com/firewall/docs/tutorials/configure-fwpolicy-deny-egress-geolocation",
+        "source_id": "site-docs-root",
+        "final_score": 238,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Click Create . gcloud To allow IAP access to all VM instances in the vpc-geo-location network, run the following command: To create a firewall policy, run the following command: gcloud compute network-firewall-policies create fw-policy \\ --global To create a firewall rule that allows traffic to all destinations and enables logs, run the following command: gcloud compute network-firewall-policies rules create 100 \\ --firewall-policy=fw-policy \\ --direction=INGRESS \\ --action=ALLOW \\ --layer4-configs=tcp:22 \\ --src-ip-ranges=35.235.240.0/20 \\ --global-firewall-policy \\ --enable-logging To associate the firewall policy with the VPC network, run the following command: gcloud compute network-firewall-policies associations create \\ --firewall-policy=fw-policy \\ --network=vpc-geo-location \\ --name=pol-association-fw-rules \\ --global-firewall-policy Create a firewall rule In this section, you create a firewall rule to allow ingress connection on the instance-2-sg VM.",
+          "Click Create . gcloud To add a new rule in the fw-policy that you created in the Create a global network firewall policy section, run the following command: gcloud compute network-firewall-policies rules create 200 \\ --firewall-policy=fw-policy \\ --direction=EGRESS \\ --action=DENY \\ --dest-region-codes=SG,PL,IT \\ --layer4-configs=all \\ --global-firewall-policy \\ --enable-logging Test the geolocation firewall rule Console After you have added the rule to block egress traffic to Singapore (SG), Poland (PL), and Italy (IT), follow these steps to test the rule: In the Google Cloud console, go to the VM instances page.",
+          "It walks through an example of creating a Virtual Private Cloud (VPC) network with two subnets, setting up a firewall policy with geolocation firewall rules, and then testing the firewall rules."
+        ]
+      },
+      {
+        "title": "\"Cloud NGFW audit logging \\_|\\_ Cloud Next Generation Firewall \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/firewall/docs/audit-logging",
+        "source_id": "site-docs-root",
+        "final_score": 202,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Permission type Methods ADMIN READ google.cloud.networksecurity.v1.AddressGroupService.GetAddressGroup google.cloud.networksecurity.v1.AddressGroupService.ListAddressGroupReferences google.cloud.networksecurity.v1.AddressGroupService.ListAddressGroups google.cloud.networksecurity.v1.FirewallActivation.GetFirewallEndpoint google.cloud.networksecurity.v1.FirewallActivation.GetFirewallEndpointAssociation google.cloud.networksecurity.v1.FirewallActivation.ListFirewallEndpointAssociations google.cloud.networksecurity.v1.FirewallActivation.ListFirewallEndpoints google.cloud.networksecurity.v1.Intercept.GetInterceptDeployment google.cloud.networksecurity.v1.Intercept.GetInterceptDeploymentGroup google.cloud.networksecurity.v1.Intercept.GetInterceptEndpointGroup google.cloud.networksecurity.v1.Intercept.GetInterceptEndpointGroupAssociation google.cloud.networksecurity.v1.Intercept.ListInterceptDeploymentGroups google.cloud.networksecurity.v1.Intercept.ListInterceptDeployments google.cloud.networksecurity.v1.Intercept.ListInterceptEndpointGroupAssociations google.cloud.networksecurity.v1.Intercept.ListInterceptEndpointGroups google.cloud.networksecurity.v1.Mirroring.GetMirroringDeployment google.cloud.networksecurity.v1.Mirroring.GetMirroringDeploymentGroup google.cloud.networksecurity.v1.Mirroring.GetMirroringEndpointGroup google.cloud.networksecurity.v1.Mirroring.GetMirroringEndpointGroupAssociation google.cloud.networksecurity.v1.Mirroring.ListMirroringDeploymentGroups google.cloud.networksecurity.v1.Mirroring.ListMirroringDeployments google.cloud.networksecurity.v1.Mirroring.ListMirroringEndpointGroupAssociations google.cloud.networksecurity.v1.Mirroring.ListMirroringEndpointGroups google.cloud.networksecurity.v1.NetworkSecurity.GetAuthorizationPolicy google.cloud.networksecurity.v1.NetworkSecurity.GetAuthzPolicy google.cloud.networksecurity.v1.NetworkSecurity.GetBackendAuthenticationConfig google.cloud.networksecurity.v1.NetworkSecurity.GetClientTlsPolicy google.cloud.networksecurity.v1.NetworkSecurity.GetGatewaySecurityPolicy google.cloud.networksecurity.v1.NetworkSecurity.GetGatewaySecurityPolicyRule google.cloud.networksecurity.v1.NetworkSecurity.GetServerTlsPolicy google.cloud.networksecurity.v1.NetworkSecurity.GetTlsInspectionPolicy google.cloud.networksecurity.v1.NetworkSecurity.GetUrlList google.cloud.networksecurity.v1.NetworkSecurity.ListAuthorizationPolicies google.cloud.networksecurity.v1.NetworkSecurity.ListAuthzPolicies google.cloud.networksecurity.v1.NetworkSecurity.ListBackendAuthenticationConfigs google.cloud.networksecurity.v1.NetworkSecurity.ListClientTlsPolicies google.cloud.networksecurity.v1.NetworkSecurity.ListGatewaySecurityPolicies google.cloud.networksecurity.v1.NetworkSecurity.ListGatewaySecurityPolicyRules google.cloud.networksecurity.v1.NetworkSecurity.ListServerTlsPolicies google.cloud.networksecurity.v1.NetworkSecurity.ListTlsInspectionPolicies google.cloud.networksecurity.v1.NetworkSecurity.ListUrlLists google.cloud.networksecurity.v1.OrganizationAddressGroupService.GetAddressGroup google.cloud.networksecurity.v1.OrganizationAddressGroupService.ListAddressGroups google.cloud.networksecurity.v1.OrganizationSecurityProfileGroupService.GetSecurityProfile google.cloud.networksecurity.v1.OrganizationSecurityProfileGroupService.GetSecurityProfileGroup google.cloud.networksecurity.v1.OrganizationSecurityProfileGroupService.ListSecurityProfileGroups google.cloud.networksecurity.v1.OrganizationSecurityProfileGroupService.ListSecurityProfiles google.cloud.networksecurity.v1alpha1.Intercept.GetInterceptDeployment google.cloud.networksecurity.v1alpha1.Intercept.GetInterceptDeploymentGroup google.cloud.networksecurity.v1alpha1.Intercept.GetInterceptEndpointGroup google.cloud.networksecurity.v1alpha1.Intercept.GetInterceptEndpointGroupAssociation google.cloud.networksecurity.v1alpha1.Intercept.ListInterceptDeploymentGroups google.cloud.networksecurity.v1alpha1.Intercept.ListInterceptDeployments google.cloud.networksecurity.v1alpha1.Intercept.ListInterceptEndpointGroupAssociations google.cloud.networksecurity.v1alpha1.Intercept.ListInterceptEndpointGroups google.cloud.networksecurity.v1alpha1.Mirroring.GetMirroringDeployment google.cloud.networksecurity.v1alpha1.Mirroring.GetMirroringDeploymentGroup google.cloud.networksecurity.v1alpha1.Mirroring.GetMirroringEndpointGroup google.cloud.networksecurity.v1alpha1.Mirroring.GetMirroringEndpointGroupAssociation google.cloud.networksecurity.v1alpha1.Mirroring.ListMirroringDeploymentGroups google.cloud.networksecurity.v1alpha1.Mirroring.ListMirroringDeployments google.cloud.networksecurity.v1alpha1.Mirroring.ListMirroringEndpointGroupAssociations google.cloud.networksecurity.v1alpha1.Mirroring.ListMirroringEndpointGroups google.cloud.networksecurity.v1alpha1.SSEGatewayService.GetPartnerSSEGateway google.cloud.networksecurity.v1alpha1.SSERealmService.ListSACAttachments google.cloud.networksecurity.v1beta1.Intercept.GetInterceptDeployment google.cloud.networksecurity.v1beta1.Intercept.GetInterceptDeploymentGroup google.cloud.networksecurity.v1beta1.Intercept.GetInterceptEndpointGroup google.cloud.networksecurity.v1beta1.Intercept.GetInterceptEndpointGroupAssociation google.cloud.networksecurity.v1beta1.Intercept.ListInterceptDeploymentGroups google.cloud.networksecurity.v1beta1.Intercept.ListInterceptDeployments google.cloud.networksecurity.v1beta1.Intercept.ListInterceptEndpointGroupAssociations google.cloud.networksecurity.v1beta1.Intercept.ListInterceptEndpointGroups google.cloud.networksecurity.v1beta1.Mirroring.GetMirroringDeployment google.cloud.networksecurity.v1beta1.Mirroring.GetMirroringDeploymentGroup google.cloud.networksecurity.v1beta1.Mirroring.GetMirroringEndpointGroup google.cloud.networksecurity.v1beta1.Mirroring.GetMirroringEndpointGroupAssociation google.cloud.networksecurity.v1beta1.Mirroring.ListMirroringDeploymentGroups google.cloud.networksecurity.v1beta1.Mirroring.ListMirroringDeployments google.cloud.networksecurity.v1beta1.Mirroring.ListMirroringEndpointGroupAssociations google.cloud.networksecurity.v1beta1.Mirroring.ListMirroringEndpointGroups google.cloud.networksecurity.v1beta1.SSERealmService.ListSACAttachments google.cloud.networksecurity.v1beta1.SSERealmService.ListSACRealms GetIamPolicy google.longrunning.Operations.GetOperation google.longrunning.Operations.ListOperations ADMIN WRITE google.cloud.networksecurity.v1.AddressGroupService.AddAddressGroupItems (LRO) google.cloud.networksecurity.v1.AddressGroupService.CloneAddressGroupItems (LRO) google.cloud.networksecurity.v1.AddressGroupService.CreateAddressGroup (LRO) google.cloud.networksecurity.v1.AddressGroupService.DeleteAddressGroup (LRO) google.cloud.networksecurity.v1.AddressGroupService.RemoveAddressGroupItems (LRO) google.cloud.networksecurity.v1.AddressGroupService.UpdateAddressGroup (LRO) google.cloud.networksecurity.v1.FirewallActivation.CreateFirewallEndpoint (LRO) google.cloud.networksecurity.v1.FirewallActivation.CreateFirewallEndpointAssociation (LRO) google.cloud.networksecurity.v1.FirewallActivation.DeleteFirewallEndpoint (LRO) google.cloud.networksecurity.v1.FirewallActivation.DeleteFirewallEndpointAssociation (LRO) google.cloud.networksecurity.v1.FirewallActivation.UpdateFirewallEndpoint (LRO) google.cloud.networksecurity.v1.FirewallActivation.UpdateFirewallEndpointAssociation (LRO) google.cloud.networksecurity.v1.Intercept.CreateInterceptDeployment (LRO) google.cloud.networksecurity.v1.Intercept.CreateInterceptDeploymentGroup (LRO) google.cloud.networksecurity.v1.Intercept.CreateInterceptEndpointGroup (LRO) google.cloud.networksecurity.v1.Intercept.CreateInterceptEndpointGroupAssociation (LRO) google.cloud.networksecurity.v1.Intercept.DeleteInterceptDeployment (LRO) google.cloud.networksecurity.v1.Intercept.DeleteInterceptDeploymentGroup (LRO) google.cloud.networksecurity.v1.Intercept.DeleteInterceptEndpointGroup (LRO) google.cloud.networksecurity.v1.Intercept.DeleteInterceptEndpointGroupAssociation (LRO) google.cloud.networksecurity.v1.Intercept.UpdateInterceptDeployment (LRO) google.cloud.networksecurity.v1.Intercept.UpdateInterceptDeploymentGroup (LRO) google.cloud.networksecurity.v1.Intercept.UpdateInterceptEndpointGroup (LRO) google.cloud.networksecurity.v1.Intercept.UpdateInterceptEndpointGroupAssociation (LRO) google.cloud.networksecurity.v1.Mirroring.CreateMirroringDeployment (LRO) google.cloud.networksecurity.v1.Mirroring.CreateMirroringDeploymentGroup (LRO) google.cloud.networksecurity.v1.Mirroring.CreateMirroringEndpointGroup (LRO) google.cloud.networksecurity.v1.Mirroring.CreateMirroringEndpointGroupAssociation (LRO) google.cloud.networksecurity.v1.Mirroring.DeleteMirroringDeployment (LRO) google.cloud.networksecurity.v1.Mirroring.DeleteMirroringDeploymentGroup (LRO) google.cloud.networksecurity.v1.Mirroring.DeleteMirroringEndpointGroup (LRO) google.cloud.networksecurity.v1.Mirroring.DeleteMirroringEndpointGroupAssociation (LRO) google.cloud.networksecurity.v1.Mirroring.UpdateMirroringDeployment (LRO) google.cloud.networksecurity.v1.Mirroring.UpdateMirroringDeploymentGroup (LRO) google.cloud.networksecurity.v1.Mirroring.UpdateMirroringEndpointGroup (LRO) google.cloud.networksecurity.v1.Mirroring.UpdateMirroringEndpointGroupAssociation (LRO) google.cloud.networksecurity.v1.NetworkSecurity.CreateAuthorizationPolicy (LRO) google.cloud.networksecurity.v1.NetworkSecurity.CreateAuthzPolicy (LRO) google.cloud.networksecurity.v1.NetworkSecurity.CreateBackendAuthenticationConfig (LRO) google.cloud.networksecurity.v1.NetworkSecurity.CreateClientTlsPolicy (LRO) google.cloud.networksecurity.v1.NetworkSecurity.CreateGatewaySecurityPolicy (LRO) google.cloud.networksecurity.v1.NetworkSecurity.CreateGatewaySecurityPolicyRule (LRO) google.cloud.networksecurity.v1.NetworkSecurity.CreateServerTlsPolicy (LRO) google.cloud.networksecurity.v1.NetworkSecurity.CreateUrlList (LRO) google.cloud.networksecurity.v1.NetworkSecurity.DeleteAuthorizationPolicy (LRO) google.cloud.networksecurity.v1.NetworkSecurity.DeleteAuthzPolicy (LRO) google.cloud.networksecurity.v1.NetworkSecurity.DeleteBackendAuthenticationConfig (LRO) google.cloud.networksecurity.v1.NetworkSecurity.DeleteClientTlsPolicy (LRO) google.cloud.networksecurity.v1.NetworkSecurity.DeleteGatewaySecurityPolicy (LRO) google.cloud.networksecurity.v1.NetworkSecurity.DeleteGatewaySecurityPolicyRule (LRO) google.cloud.networksecurity.v1.NetworkSecurity.DeleteServerTlsPolicy (LRO) google.cloud.networksecurity.v1.NetworkSecurity.DeleteUrlList (LRO) google.cloud.networksecurity.v1.NetworkSecurity.UpdateAuthorizationPolicy (LRO) google.cloud.networksecurity.v1.NetworkSecurity.UpdateAuthzPolicy (LRO) google.cloud.networksecurity.v1.NetworkSecurity.UpdateBackendAuthenticationConfig (LRO) google.cloud.networksecurity.v1.NetworkSecurity.UpdateClientTlsPolicy (LRO) google.cloud.networksecurity.v1.NetworkSecurity.UpdateGatewaySecurityPolicy (LRO) google.cloud.networksecurity.v1.NetworkSecurity.UpdateGatewaySecurityPolicyRule (LRO) google.cloud.networksecurity.v1.NetworkSecurity.UpdateServerTlsPolicy (LRO) google.cloud.networksecurity.v1.NetworkSecurity.UpdateUrlList (LRO) google.cloud.networksecurity.v1.OrganizationAddressGroupService.AddAddressGroupItems (LRO) google.cloud.networksecurity.v1.OrganizationAddressGroupService.CloneAddressGroupItems (LRO) google.cloud.networksecurity.v1.OrganizationAddressGroupService.CreateAddressGroup (LRO) google.cloud.networksecurity.v1.OrganizationAddressGroupService.DeleteAddressGroup (LRO) google.cloud.networksecurity.v1.OrganizationAddressGroupService.RemoveAddressGroupItems (LRO) google.cloud.networksecurity.v1.OrganizationAddressGroupService.UpdateAddressGroup (LRO) google.cloud.networksecurity.v1.OrganizationSecurityProfileGroupService.CreateSecurityProfile (LRO) google.cloud.networksecurity.v1.OrganizationSecurityProfileGroupService.CreateSecurityProfileGroup (LRO) google.cloud.networksecurity.v1.OrganizationSecurityProfileGroupService.DeleteSecurityProfile (LRO) google.cloud.networksecurity.v1.OrganizationSecurityProfileGroupService.DeleteSecurityProfileGroup (LRO) google.cloud.networksecurity.v1.OrganizationSecurityProfileGroupService.UpdateSecurityProfile (LRO) google.cloud.networksecurity.v1.OrganizationSecurityProfileGroupService.UpdateSecurityProfileGroup (LRO) google.cloud.networksecurity.v1alpha1.Intercept.CreateInterceptDeployment (LRO) google.cloud.networksecurity.v1alpha1.Intercept.CreateInterceptDeploymentGroup (LRO) google.cloud.networksecurity.v1alpha1.Intercept.CreateInterceptEndpointGroup (LRO) google.cloud.networksecurity.v1alpha1.Intercept.CreateInterceptEndpointGroupAssociation (LRO) google.cloud.networksecurity.v1alpha1.Intercept.DeleteInterceptDeployment (LRO) google.cloud.networksecurity.v1alpha1.Intercept.DeleteInterceptDeploymentGroup (LRO) google.cloud.networksecurity.v1alpha1.Intercept.DeleteInterceptEndpointGroup (LRO) google.cloud.networksecurity.v1alpha1.Intercept.DeleteInterceptEndpointGroupAssociation (LRO) google.cloud.networksecurity.v1alpha1.Intercept.UpdateInterceptDeployment (LRO) google.cloud.networksecurity.v1alpha1.Intercept.UpdateInterceptDeploymentGroup (LRO) google.cloud.networksecurity.v1alpha1.Intercept.UpdateInterceptEndpointGroup (LRO) google.cloud.networksecurity.v1alpha1.Intercept.UpdateInterceptEndpointGroupAssociation (LRO) google.cloud.networksecurity.v1alpha1.Mirroring.CreateMirroringDeployment (LRO) google.cloud.networksecurity.v1alpha1.Mirroring.CreateMirroringDeploymentGroup (LRO) google.cloud.networksecurity.v1alpha1.Mirroring.CreateMirroringEndpointGroup (LRO) google.cloud.networksecurity.v1alpha1.Mirroring.CreateMirroringEndpointGroupAssociation (LRO) google.cloud.networksecurity.v1alpha1.Mirroring.DeleteMirroringDeployment (LRO) google.cloud.networksecurity.v1alpha1.Mirroring.DeleteMirroringDeploymentGroup (LRO) google.cloud.networksecurity.v1alpha1.Mirroring.DeleteMirroringEndpointGroup (LRO) google.cloud.networksecurity.v1alpha1.Mirroring.DeleteMirroringEndpointGroupAssociation (LRO) google.cloud.networksecurity.v1alpha1.Mirroring.UpdateMirroringDeployment (LRO) google.cloud.networksecurity.v1alpha1.Mirroring.UpdateMirroringDeploymentGroup (LRO) google.cloud.networksecurity.v1alpha1.Mirroring.UpdateMirroringEndpointGroup (LRO) google.cloud.networksecurity.v1alpha1.Mirroring.UpdateMirroringEndpointGroupAssociation (LRO) google.cloud.networksecurity.v1alpha1.SSEGatewayService.CreatePartnerSSEGateway (LRO) google.cloud.networksecurity.v1alpha1.SSEGatewayService.DeletePartnerSSEGateway (LRO) google.cloud.networksecurity.v1alpha1.SSEGatewayService.UpdatePartnerSSEGateway (LRO) google.cloud.networksecurity.v1alpha1.SSERealmService.CreatePartnerSSERealm (LRO) google.cloud.networksecurity.v1alpha1.SSERealmService.CreateSACAttachment (LRO) google.cloud.networksecurity.v1alpha1.SSERealmService.CreateSACRealm (LRO) google.cloud.networksecurity.v1alpha1.SSERealmService.DeletePartnerSSERealm (LRO) google.cloud.networksecurity.v1alpha1.SSERealmService.DeleteSACAttachment (LRO) google.cloud.networksecurity.v1alpha1.SSERealmService.DeleteSACRealm (LRO) google.cloud.networksecurity.v1beta1.Intercept.CreateInterceptDeployment (LRO) google.cloud.networksecurity.v1beta1.Intercept.CreateInterceptDeploymentGroup (LRO) google.cloud.networksecurity.v1beta1.Intercept.CreateInterceptEndpointGroup (LRO) google.cloud.networksecurity.v1beta1.Intercept.CreateInterceptEndpointGroupAssociation (LRO) google.cloud.networksecurity.v1beta1.Intercept.DeleteInterceptDeployment (LRO) google.cloud.networksecurity.v1beta1.Intercept.DeleteInterceptDeploymentGroup (LRO) google.cloud.networksecurity.v1beta1.Intercept.DeleteInterceptEndpointGroup (LRO) google.cloud.networksecurity.v1beta1.Intercept.DeleteInterceptEndpointGroupAssociation (LRO) google.cloud.networksecurity.v1beta1.Intercept.UpdateInterceptDeployment (LRO) google.cloud.networksecurity.v1beta1.Intercept.UpdateInterceptDeploymentGroup (LRO) google.cloud.networksecurity.v1beta1.Intercept.UpdateInterceptEndpointGroup (LRO) google.cloud.networksecurity.v1beta1.Intercept.UpdateInterceptEndpointGroupAssociation (LRO) google.cloud.networksecurity.v1beta1.Mirroring.CreateMirroringDeployment (LRO) google.cloud.networksecurity.v1beta1.Mirroring.CreateMirroringDeploymentGroup (LRO) google.cloud.networksecurity.v1beta1.Mirroring.CreateMirroringEndpointGroup (LRO) google.cloud.networksecurity.v1beta1.Mirroring.CreateMirroringEndpointGroupAssociation (LRO) google.cloud.networksecurity.v1beta1.Mirroring.DeleteMirroringDeployment (LRO) google.cloud.networksecurity.v1beta1.Mirroring.DeleteMirroringDeploymentGroup (LRO) google.cloud.networksecurity.v1beta1.Mirroring.DeleteMirroringEndpointGroup (LRO) google.cloud.networksecurity.v1beta1.Mirroring.DeleteMirroringEndpointGroupAssociation (LRO) google.cloud.networksecurity.v1beta1.Mirroring.UpdateMirroringDeployment (LRO) google.cloud.networksecurity.v1beta1.Mirroring.UpdateMirroringDeploymentGroup (LRO) google.cloud.networksecurity.v1beta1.Mirroring.UpdateMirroringEndpointGroup (LRO) google.cloud.networksecurity.v1beta1.Mirroring.UpdateMirroringEndpointGroupAssociation (LRO) google.cloud.networksecurity.v1beta1.SSERealmService.CreateSACAttachment (LRO) google.cloud.networksecurity.v1beta1.SSERealmService.CreateSACRealm (LRO) google.cloud.networksecurity.v1beta1.SSERealmService.DeleteSACAttachment (LRO) google.cloud.networksecurity.v1beta1.SSERealmService.DeleteSACRealm (LRO) SetIamPolicy google.longrunning.Operations.CancelOperation google.longrunning.Operations.DeleteOperation DATA WRITE google.cloud.networksecurity.v1.NetworkSecurity.CreateTlsInspectionPolicy (LRO) google.cloud.networksecurity.v1.NetworkSecurity.DeleteTlsInspectionPolicy (LRO) google.cloud.networksecurity.v1.NetworkSecurity.UpdateTlsInspectionPolicy (LRO) API interface audit logs For information about how and which permissions are evaluated for each method, see the Identity and Access Management documentation for Cloud Next Generation Firewall. google.cloud.networksecurity.v1.AddressGroupService The following audit logs are associated with methods belonging to google.cloud.networksecurity.v1.AddressGroupService .",
+          "CreateAuthorizationPolicy Method : google.cloud.networksecurity.v1.NetworkSecurity.CreateAuthorizationPolicy Audit log type : Admin activity Permissions : networksecurity.authorizationPolicies.create - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName=\"google.cloud.networksecurity.v1.NetworkSecurity.CreateAuthorizationPolicy\" CreateAuthzPolicy Method : google.cloud.networksecurity.v1.NetworkSecurity.CreateAuthzPolicy Audit log type : Admin activity Permissions : networksecurity.authzPolicies.create - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName=\"google.cloud.networksecurity.v1.NetworkSecurity.CreateAuthzPolicy\" CreateBackendAuthenticationConfig Method : google.cloud.networksecurity.v1.NetworkSecurity.CreateBackendAuthenticationConfig Audit log type : Admin activity Permissions : networksecurity.backendAuthenticationConfigs.create - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName=\"google.cloud.networksecurity.v1.NetworkSecurity.CreateBackendAuthenticationConfig\" CreateClientTlsPolicy Method : google.cloud.networksecurity.v1.NetworkSecurity.CreateClientTlsPolicy Audit log type : Admin activity Permissions : networksecurity.clientTlsPolicies.create - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName=\"google.cloud.networksecurity.v1.NetworkSecurity.CreateClientTlsPolicy\" CreateGatewaySecurityPolicy Method : google.cloud.networksecurity.v1.NetworkSecurity.CreateGatewaySecurityPolicy Audit log type : Admin activity Permissions : networksecurity.gatewaySecurityPolicies.create - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName=\"google.cloud.networksecurity.v1.NetworkSecurity.CreateGatewaySecurityPolicy\" CreateGatewaySecurityPolicyRule Method : google.cloud.networksecurity.v1.NetworkSecurity.CreateGatewaySecurityPolicyRule Audit log type : Admin activity Permissions : networksecurity.gatewaySecurityPolicyRules.create - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName=\"google.cloud.networksecurity.v1.NetworkSecurity.CreateGatewaySecurityPolicyRule\" CreateServerTlsPolicy Method : google.cloud.networksecurity.v1.NetworkSecurity.CreateServerTlsPolicy Audit log type : Admin activity Permissions : networksecurity.serverTlsPolicies.create - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName=\"google.cloud.networksecurity.v1.NetworkSecurity.CreateServerTlsPolicy\" CreateTlsInspectionPolicy Method : google.cloud.networksecurity.v1.NetworkSecurity.CreateTlsInspectionPolicy Audit log type : Data access Permissions : networksecurity.tlsInspectionPolicies.create - DATA WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName=\"google.cloud.networksecurity.v1.NetworkSecurity.CreateTlsInspectionPolicy\" CreateUrlList Method : google.cloud.networksecurity.v1.NetworkSecurity.CreateUrlList Audit log type : Admin activity Permissions : networksecurity.urlLists.create - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName=\"google.cloud.networksecurity.v1.NetworkSecurity.CreateUrlList\" DeleteAuthorizationPolicy Method : google.cloud.networksecurity.v1.NetworkSecurity.DeleteAuthorizationPolicy Audit log type : Admin activity Permissions : networksecurity.authorizationPolicies.delete - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName=\"google.cloud.networksecurity.v1.NetworkSecurity.DeleteAuthorizationPolicy\" DeleteAuthzPolicy Method : google.cloud.networksecurity.v1.NetworkSecurity.DeleteAuthzPolicy Audit log type : Admin activity Permissions : networksecurity.authzPolicies.delete - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName=\"google.cloud.networksecurity.v1.NetworkSecurity.DeleteAuthzPolicy\" DeleteBackendAuthenticationConfig Method : google.cloud.networksecurity.v1.NetworkSecurity.DeleteBackendAuthenticationConfig Audit log type : Admin activity Permissions : networksecurity.backendAuthenticationConfigs.delete - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName=\"google.cloud.networksecurity.v1.NetworkSecurity.DeleteBackendAuthenticationConfig\" DeleteClientTlsPolicy Method : google.cloud.networksecurity.v1.NetworkSecurity.DeleteClientTlsPolicy Audit log type : Admin activity Permissions : networksecurity.clientTlsPolicies.delete - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName=\"google.cloud.networksecurity.v1.NetworkSecurity.DeleteClientTlsPolicy\" DeleteGatewaySecurityPolicy Method : google.cloud.networksecurity.v1.NetworkSecurity.DeleteGatewaySecurityPolicy Audit log type : Admin activity Permissions : networksecurity.gatewaySecurityPolicies.delete - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName=\"google.cloud.networksecurity.v1.NetworkSecurity.DeleteGatewaySecurityPolicy\" DeleteGatewaySecurityPolicyRule Method : google.cloud.networksecurity.v1.NetworkSecurity.DeleteGatewaySecurityPolicyRule Audit log type : Admin activity Permissions : networksecurity.gatewaySecurityPolicyRules.delete - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName=\"google.cloud.networksecurity.v1.NetworkSecurity.DeleteGatewaySecurityPolicyRule\" DeleteServerTlsPolicy Method : google.cloud.networksecurity.v1.NetworkSecurity.DeleteServerTlsPolicy Audit log type : Admin activity Permissions : networksecurity.serverTlsPolicies.delete - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName=\"google.cloud.networksecurity.v1.NetworkSecurity.DeleteServerTlsPolicy\" DeleteTlsInspectionPolicy Method : google.cloud.networksecurity.v1.NetworkSecurity.DeleteTlsInspectionPolicy Audit log type : Data access Permissions : networksecurity.tlsInspectionPolicies.delete - DATA WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName=\"google.cloud.networksecurity.v1.NetworkSecurity.DeleteTlsInspectionPolicy\" DeleteUrlList Method : google.cloud.networksecurity.v1.NetworkSecurity.DeleteUrlList Audit log type : Admin activity Permissions : networksecurity.urlLists.delete - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName=\"google.cloud.networksecurity.v1.NetworkSecurity.DeleteUrlList\" GetAuthorizationPolicy Method : google.cloud.networksecurity.v1.NetworkSecurity.GetAuthorizationPolicy Audit log type : Data access Permissions : networksecurity.authorizationPolicies.get - ADMIN READ Method is a long-running or streaming operation : No.",
+          "Filter for this method : protoPayload.methodName=\"google.cloud.networksecurity.v1.NetworkSecurity.ListUrlLists\" UpdateAuthorizationPolicy Method : google.cloud.networksecurity.v1.NetworkSecurity.UpdateAuthorizationPolicy Audit log type : Admin activity Permissions : networksecurity.authorizationPolicies.update - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName=\"google.cloud.networksecurity.v1.NetworkSecurity.UpdateAuthorizationPolicy\" UpdateAuthzPolicy Method : google.cloud.networksecurity.v1.NetworkSecurity.UpdateAuthzPolicy Audit log type : Admin activity Permissions : networksecurity.authzPolicies.update - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName=\"google.cloud.networksecurity.v1.NetworkSecurity.UpdateAuthzPolicy\" UpdateBackendAuthenticationConfig Method : google.cloud.networksecurity.v1.NetworkSecurity.UpdateBackendAuthenticationConfig Audit log type : Admin activity Permissions : networksecurity.backendAuthenticationConfigs.update - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName=\"google.cloud.networksecurity.v1.NetworkSecurity.UpdateBackendAuthenticationConfig\" UpdateClientTlsPolicy Method : google.cloud.networksecurity.v1.NetworkSecurity.UpdateClientTlsPolicy Audit log type : Admin activity Permissions : networksecurity.clientTlsPolicies.update - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName=\"google.cloud.networksecurity.v1.NetworkSecurity.UpdateClientTlsPolicy\" UpdateGatewaySecurityPolicy Method : google.cloud.networksecurity.v1.NetworkSecurity.UpdateGatewaySecurityPolicy Audit log type : Admin activity Permissions : networksecurity.gatewaySecurityPolicies.update - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName=\"google.cloud.networksecurity.v1.NetworkSecurity.UpdateGatewaySecurityPolicy\" UpdateGatewaySecurityPolicyRule Method : google.cloud.networksecurity.v1.NetworkSecurity.UpdateGatewaySecurityPolicyRule Audit log type : Admin activity Permissions : networksecurity.gatewaySecurityPolicyRules.update - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName=\"google.cloud.networksecurity.v1.NetworkSecurity.UpdateGatewaySecurityPolicyRule\" UpdateServerTlsPolicy Method : google.cloud.networksecurity.v1.NetworkSecurity.UpdateServerTlsPolicy Audit log type : Admin activity Permissions : networksecurity.serverTlsPolicies.update - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName=\"google.cloud.networksecurity.v1.NetworkSecurity.UpdateServerTlsPolicy\" UpdateTlsInspectionPolicy Method : google.cloud.networksecurity.v1.NetworkSecurity.UpdateTlsInspectionPolicy Audit log type : Data access Permissions : networksecurity.tlsInspectionPolicies.update - DATA WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName=\"google.cloud.networksecurity.v1.NetworkSecurity.UpdateTlsInspectionPolicy\" UpdateUrlList Method : google.cloud.networksecurity.v1.NetworkSecurity.UpdateUrlList Audit log type : Admin activity Permissions : networksecurity.urlLists.update - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName=\"google.cloud.networksecurity.v1.NetworkSecurity.UpdateUrlList\" google.cloud.networksecurity.v1.OrganizationAddressGroupService The following audit logs are associated with methods belonging to google.cloud.networksecurity.v1.OrganizationAddressGroupService ."
+        ]
+      },
+      {
+        "title": "\"Configure a hierarchical firewall policy to allow egress traffic from a\\",
+        "url": "https://docs.cloud.google.com/firewall/docs/quickstarts/configure-hfwpolicy-allow-egress-vpc",
+        "source_id": "site-docs-root",
+        "final_score": 191,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Make sure that you have the following Identity and Access Management (IAM) roles: Organization Administrator role (roles/resourcemanager.organizationAdmin) Folder Admin role (roles/resourcemanager.folderAdmin) Project Creator role (roles/resourcemanager.projectCreator) Project Deleter role (roles/resourcemanager.projectDeleter) Compute Network Admin role ( roles/compute.networkAdmin ) Compute Organization Firewall Policy Admin role ( roles/compute.orgFirewallPolicyAdmin ) Enable the Compute Engine and Identity-Aware Proxy (IAP) APIs.",
+          "Create a hierarchical firewall policy and add firewall rules Create a hierarchical firewall policy and add the following firewall policy rules to it: Enable IAP for all the VMs in test-folder to enable administrative access to the VMs.",
+          "The page walks through an example of creating two VPC networks, creating virtual machine (VM) instances in the VPC networks, setting up a hierarchical firewall policy with firewall rules, and then testing the firewall policy."
+        ]
+      },
+      {
+        "title": "\"URL filtering service overview \\_|\\_ Cloud Next Generation Firewall \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/firewall/docs/about-url-filtering",
+        "source_id": "site-docs-root",
+        "final_score": 186,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "How the URL filtering service works The URL filtering service processes the HTTP(S) traffic in the following sequence: The URL filtering service applies firewall policy rules to the traffic to and from the VM instances or Google Kubernetes Engine (GKE) clusters in the network.",
+          "Firewall policy rules Firewall policy rules let you control the type of traffic that is intercepted and inspected.",
+          "To configure the URL filtering service, create a firewall policy rule that does the following: Identifies the type of traffic to be inspected by using multiple Layer 3 and Layer 4 firewall policy rule components ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "compute.networkAdmin",
+      "compute.orgFirewallPolicyAdmin",
+      "networksecurity.authorizationPolicies.create",
+      "networksecurity.authorizationPolicies.delete",
+      "networksecurity.authorizationPolicies.get",
+      "networksecurity.authorizationPolicies.update",
+      "networksecurity.authzPolicies.create",
+      "networksecurity.authzPolicies.delete",
+      "networksecurity.authzPolicies.update",
+      "networksecurity.backendAuthenticationConfigs.create",
+      "networksecurity.backendAuthenticationConfigs.delete",
+      "networksecurity.backendAuthenticationConfigs.update",
+      "networksecurity.clientTlsPolicies.create",
+      "networksecurity.clientTlsPolicies.delete",
+      "networksecurity.clientTlsPolicies.update",
+      "networksecurity.firewallEndpointAssociations.create",
+      "networksecurity.firewallEndpointAssociations.delete",
+      "networksecurity.firewallEndpoints.create",
+      "networksecurity.firewallEndpoints.delete",
+      "networksecurity.firewallEndpoints.get",
+      "networksecurity.gatewaySecurityPolicies.create",
+      "networksecurity.gatewaySecurityPolicies.delete",
+      "networksecurity.gatewaySecurityPolicies.update",
+      "networksecurity.gatewaySecurityPolicyRules.create",
+      "networksecurity.gatewaySecurityPolicyRules.delete",
+      "networksecurity.gatewaySecurityPolicyRules.update",
+      "networksecurity.serverTlsPolicies.create",
+      "networksecurity.serverTlsPolicies.delete",
+      "networksecurity.serverTlsPolicies.update",
+      "networksecurity.tlsInspectionPolicies.create",
+      "networksecurity.tlsInspectionPolicies.delete",
+      "networksecurity.tlsInspectionPolicies.update",
+      "networksecurity.urlLists.create",
+      "networksecurity.urlLists.delete",
+      "networksecurity.urlLists.update",
+      "resourcemanager.folderAdmin",
+      "resourcemanager.organizationAdmin",
+      "resourcemanager.projectCreator",
+      "resourcemanager.projectDeleter"
+    ],
+    "missing_inventory_roles": [
+      "roles/compute.networkAdmin",
+      "roles/compute.orgFirewallPolicyAdmin",
+      "roles/resourcemanager.folderAdmin",
+      "roles/resourcemanager.organizationAdmin",
+      "roles/resourcemanager.projectCreator",
+      "roles/resourcemanager.projectDeleter"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firewall/docs/tutorials/configure-fwpolicy-deny-egress-geolocation",
+        "https://docs.cloud.google.com/firewall/docs/audit-logging",
+        "https://docs.cloud.google.com/firewall/docs/quickstarts/configure-hfwpolicy-allow-egress-vpc",
+        "https://docs.cloud.google.com/firewall/docs/about-url-filtering"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firewall/docs/tutorials/configure-fwpolicy-deny-egress-geolocation",
+        "https://docs.cloud.google.com/firewall/docs/audit-logging",
+        "https://docs.cloud.google.com/firewall/docs/quickstarts/configure-hfwpolicy-allow-egress-vpc",
+        "https://docs.cloud.google.com/firewall/docs/about-url-filtering"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firewall/docs/tutorials/configure-fwpolicy-deny-egress-geolocation",
+        "https://docs.cloud.google.com/firewall/docs/audit-logging",
+        "https://docs.cloud.google.com/firewall/docs/quickstarts/configure-hfwpolicy-allow-egress-vpc",
+        "https://docs.cloud.google.com/firewall/docs/about-url-filtering"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firewall/docs/tutorials/configure-fwpolicy-deny-egress-geolocation",
+        "https://docs.cloud.google.com/firewall/docs/audit-logging",
+        "https://docs.cloud.google.com/firewall/docs/quickstarts/configure-hfwpolicy-allow-egress-vpc",
+        "https://docs.cloud.google.com/firewall/docs/about-url-filtering"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firewall/docs/tutorials/configure-fwpolicy-deny-egress-geolocation",
+        "https://docs.cloud.google.com/firewall/docs/audit-logging",
+        "https://docs.cloud.google.com/firewall/docs/quickstarts/configure-hfwpolicy-allow-egress-vpc",
+        "https://docs.cloud.google.com/firewall/docs/about-url-filtering"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firewall/docs/tutorials/configure-fwpolicy-deny-egress-geolocation",
+        "https://docs.cloud.google.com/firewall/docs/audit-logging",
+        "https://docs.cloud.google.com/firewall/docs/quickstarts/configure-hfwpolicy-allow-egress-vpc",
+        "https://docs.cloud.google.com/firewall/docs/about-url-filtering"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firewall/docs/tutorials/configure-fwpolicy-deny-egress-geolocation",
+        "https://docs.cloud.google.com/firewall/docs/audit-logging",
+        "https://docs.cloud.google.com/firewall/docs/quickstarts/configure-hfwpolicy-allow-egress-vpc",
+        "https://docs.cloud.google.com/firewall/docs/about-url-filtering"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firewall/docs/tutorials/configure-fwpolicy-deny-egress-geolocation",
+        "https://docs.cloud.google.com/firewall/docs/audit-logging",
+        "https://docs.cloud.google.com/firewall/docs/quickstarts/configure-hfwpolicy-allow-egress-vpc",
+        "https://docs.cloud.google.com/firewall/docs/about-url-filtering"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firewall/docs/tutorials/configure-fwpolicy-deny-egress-geolocation",
+        "https://docs.cloud.google.com/firewall/docs/audit-logging",
+        "https://docs.cloud.google.com/firewall/docs/quickstarts/configure-hfwpolicy-allow-egress-vpc",
+        "https://docs.cloud.google.com/firewall/docs/about-url-filtering"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firewall/docs/tutorials/configure-fwpolicy-deny-egress-geolocation",
+        "https://docs.cloud.google.com/firewall/docs/audit-logging",
+        "https://docs.cloud.google.com/firewall/docs/quickstarts/configure-hfwpolicy-allow-egress-vpc",
+        "https://docs.cloud.google.com/firewall/docs/about-url-filtering"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firewall/docs/tutorials/configure-fwpolicy-deny-egress-geolocation",
+        "https://docs.cloud.google.com/firewall/docs/audit-logging",
+        "https://docs.cloud.google.com/firewall/docs/quickstarts/configure-hfwpolicy-allow-egress-vpc",
+        "https://docs.cloud.google.com/firewall/docs/about-url-filtering"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firewall/docs/tutorials/configure-fwpolicy-deny-egress-geolocation",
+        "https://docs.cloud.google.com/firewall/docs/audit-logging",
+        "https://docs.cloud.google.com/firewall/docs/quickstarts/configure-hfwpolicy-allow-egress-vpc",
+        "https://docs.cloud.google.com/firewall/docs/about-url-filtering"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firewall/docs/tutorials/configure-fwpolicy-deny-egress-geolocation",
+        "https://docs.cloud.google.com/firewall/docs/audit-logging",
+        "https://docs.cloud.google.com/firewall/docs/quickstarts/configure-hfwpolicy-allow-egress-vpc",
+        "https://docs.cloud.google.com/firewall/docs/about-url-filtering"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firewall/docs/tutorials/configure-fwpolicy-deny-egress-geolocation",
+        "https://docs.cloud.google.com/firewall/docs/audit-logging",
+        "https://docs.cloud.google.com/firewall/docs/quickstarts/configure-hfwpolicy-allow-egress-vpc",
+        "https://docs.cloud.google.com/firewall/docs/about-url-filtering"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,100 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:48.184Z",
+  "source_step08_card": "data/step-08/current/products/vertex-ai/card.json",
+  "product_name": "Vertex AI",
+  "product_slug": "vertex-ai",
+  "feature_name": "Vertex AI Experiment Management run visualization and comparison",
+  "feature_slug": "vertex-ai-experiment-management-run-visualization-and-comparison",
+  "summary": "The Google Cloud Console now visualizes model performance over training steps and supports advanced comparisons of experiment runs in Vertex AI.",
+  "extended_definition": "The Google Cloud Console now visualizes model performance over training steps and supports advanced comparisons of experiment runs in Vertex AI.",
+  "lifecycle": {
+    "latest_feature_date": "2023-08-31",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/vertex-ai/docs/experiments/compare-analyze-runs",
+      "https://docs.cloud.google.com/vertex-ai/docs/experiments/run-training-job-experiments",
+      "https://docs.cloud.google.com/vertex-ai/docs/explainable-ai/explainable-ai-notebook-tutorials"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Compare and analyze runs \\_|\\_ Vertex AI \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/experiments/compare-analyze-runs",
+        "source_id": "site-docs-reference-3",
+        "final_score": 111,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For example, share the comparison view of timeseries metrics data: See Create and manage experiment runs for how to update the status of a run.",
+          "Google Cloud console Use the Google Cloud console to view details of your experiment runs and compare the experiment runs to each other.",
+          "You can find your list of experiments in the Google Cloud console by selecting Experiments in the section nav. project : ."
+        ]
+      },
+      {
+        "title": "\"Run training job with experiment tracking \\_|\\_ Vertex AI \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/experiments/run-training-job-experiments",
+        "source_id": "site-docs-reference-3",
+        "final_score": 99,
+        "relevance": "",
+        "evidence_snippets": [
+          "You can find these Project IDs in the Google Cloud console welcome page. location : See List of available locations. staging bucket : The name you gave your bucket, for example, my bucket . display name : The user-defined name of the CustomJob . script path : The path, relative to the working directory on your local file system, to the script that is the entry point for your training code. container uri : The URI of the training container image can be a Vertex AI prebuilt training container or a custom container service account : See Create a service account with required permissions . experiment : Provide a name for your experiment.",
+          "DataFrame ( data ) X = df [[ 'A' , 'B' ]] Y = df [ 'Y' ] Train model model = LinearRegression () . fit ( X , Y ) Save the model to gcs model dir = os . getenv ( 'AIP MODEL DIR' ) model gcs = model dir . replace ( 'gs://' , '/gcs/' ) model name = 'model.joblib' os . mkdir ( model gcs ) f = open ( os . path . join ( model gcs , model name ), 'wb' ) pickle . dump ( model , f ) f = open ( os . path . join ( model gcs , model name ), 'wb' ) pickle . dump ( model , f ) Call aiplatform's logging APIs to save data to Vertex AI Experiments. params = model . get params () aiplatform . log params ( params ) metrics = { \"training accuracy\" : model . score ( X , Y )} aiplatform . log metrics ( metrics ) You have the option to create an experiment run, or not.",
+          "You can find these Project IDs in the Google Cloud console welcome page. location : See List of available locations staging bucket : The name you gave your bucket, for example, my bucket . display name : The user-defined name of the CustomJob . script path : The path, relative to the working directory on your local file system, to the script that is the entry point for your training code. container uri : The URI of the training container image can be a Vertex AI prebuilt training container , or a custom container ."
+        ]
+      },
+      {
+        "title": "\"Vertex Explainable AI notebook tutorials \\_|\\_ Vertex AI \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/explainable-ai/explainable-ai-notebook-tutorials",
+        "source_id": "site-docs-reference-2",
+        "final_score": 94,
+        "relevance": "",
+        "evidence_snippets": [
+          "Execute the KFP pipeline using Vertex AI Pipelines Colab Colab Enterprise GitHub Vertex AI Workbench Vertex AI Pipelines Metrics visualization and run comparison using the KFP SDK .",
+          "List of notebooks Select a service AutoML BigQuery BigQuery ML Custom training Image Ray on Vertex AI Tabular Text Vector Search Vertex AI Experiments Vertex AI Feature Store Vertex AI Inference Vertex AI model evaluation Vertex AI Model Monitoring Vertex AI Model Registry Vertex AI Pipelines Vertex AI TensorBoard Vertex AI Vizier Vertex AI Workbench Vertex Explainable AI Vertex ML Metadata Services Description Open in Classification for tabular data AutoML tabular training and prediction .",
+          "Tutorial steps Prepare the training script Submit a Ray job using the Ray Jobs API Download a trained image model from PyTorch Create a custom model handler Package model artifacts in a model archive file Register model in Vertex AI Model Registry Deploy model in Vertex AI Endpoint Make online predictions Colab Colab Enterprise GitHub Vertex AI Workbench Ray on Vertex AI overview Ray on Vertex AI cluster management ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "model.joblib"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/experiments/compare-analyze-runs",
+        "https://docs.cloud.google.com/vertex-ai/docs/experiments/run-training-job-experiments",
+        "https://docs.cloud.google.com/vertex-ai/docs/explainable-ai/explainable-ai-notebook-tutorials"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/experiments/compare-analyze-runs",
+        "https://docs.cloud.google.com/vertex-ai/docs/experiments/run-training-job-experiments",
+        "https://docs.cloud.google.com/vertex-ai/docs/explainable-ai/explainable-ai-notebook-tutorials"
+      ]
+    }
+  ]
+}

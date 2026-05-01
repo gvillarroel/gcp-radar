@@ -1,0 +1,124 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:23.081Z",
+  "source_step08_card": "data/step-08/current/products/cloud-cdn/card.json",
+  "product_name": "Cloud CDN",
+  "product_slug": "cloud-cdn",
+  "feature_name": "Cloud CDN TLS 1.3 early data (0-RTT)",
+  "feature_slug": "cloud-cdn-tls-1-3-early-data-0-rtt",
+  "summary": "External HTTP(S) Load Balancing with Cloud CDN supports TLS 1.3 early data (0-RTT) to send request data during the TLS handshake for resumed connections.",
+  "extended_definition": "External HTTP(S) Load Balancing with Cloud CDN supports TLS 1.3 early data (0-RTT) to send request data during the TLS handshake for resumed connections.",
+  "lifecycle": {
+    "latest_feature_date": "2025-02-18",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/cdn/docs/best-practices",
+      "https://docs.cloud.google.com/cdn/docs/caching",
+      "https://docs.cloud.google.com/cdn/docs/cdn-logging-monitoring"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Logs and metrics for backend services \\_|\\_ Cloud CDN \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/cdn/docs/cdn-logging-monitoring",
+        "source_id": "site-docs-root-2",
+        "final_score": 32,
+        "relevance": "",
+        "evidence_snippets": [
+          "Request count loadbalancing.googleapis.com/https/request count The number of requests served by the external Application Load Balancer Request bytes count loadbalancing.googleapis.com/https/request bytes count The number of bytes sent as requests from clients to the external Application Load Balancer Response bytes count loadbalancing.googleapis.com/https/response bytes count The number of bytes sent as responses from the external Application Load Balancer to clients Total latencies loadbalancing.googleapis.com/https/total latencies A distribution of the total latency.",
+          "Backend response bytes count loadbalancing.googleapis.com/https/backend response bytes count The number of bytes sent as responses from the backends (including cache) to the external Application Load Balancer.",
+          "Backend request bytes count loadbalancing.googleapis.com/https/backend request bytes count The number of bytes sent as requests from the external Application Load Balancer to the backends."
+        ]
+      },
+      {
+        "title": "Caching overview \\_|\\_ Cloud CDN \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/cdn/docs/caching",
+        "source_id": "site-docs-reference-2",
+        "final_score": 27,
+        "relevance": "",
+        "evidence_snippets": [
+          "Go to the Load balancing page Click the name of your external Application Load Balancer.",
+          "You can improve cache hit rates and origin offload with the following cache key configuration settings: For backend services and buckets: Use HTTP headers as part of cache keys by including named headers in the cache key configuration.",
+          "N/A Where possible, Cloud CDN endeavors to be RFC-compliant (HTTP RFC 7234), but favors optimizing for cache offload and minimizing the impact that clients can have on hit rate and overall origin load."
+        ]
+      },
+      {
+        "title": "Content delivery best practices \\_|\\_ Cloud CDN \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/cdn/docs/best-practices",
+        "source_id": "site-docs-reference-2",
+        "final_score": 25,
+        "relevance": "",
+        "evidence_snippets": [
+          "HTTP/3 is supported between the external HTTP(S) load balancer, Cloud CDN, and clients.",
+          "An external Application Load Balancer can deliver a mix of static and dynamically created content to users through one global IP address from the following types of backends: Instance groups Zonal network endpoint groups (NEGs) Serverless NEGs : One or more App Engine , Cloud Run , or Cloud Run functions services Internet NEGs for external backends Buckets in Cloud Storage Because of the seamless integration with Google Cloud, you have several options for deploying Cloud CDN and managing content.",
+          "Additionally, if origin firewalls prevent access to the origin, use IP allowlisting to ensure that a request is from Cloud CDN or the external Application Load Balancer."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "loadbalancing.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/cdn/docs/cdn-logging-monitoring",
+        "https://docs.cloud.google.com/cdn/docs/best-practices",
+        "https://docs.cloud.google.com/cdn/docs/caching"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/cdn/docs/cdn-logging-monitoring",
+        "https://docs.cloud.google.com/cdn/docs/best-practices",
+        "https://docs.cloud.google.com/cdn/docs/caching"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/cdn/docs/cdn-logging-monitoring",
+        "https://docs.cloud.google.com/cdn/docs/best-practices",
+        "https://docs.cloud.google.com/cdn/docs/caching"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/cdn/docs/cdn-logging-monitoring",
+        "https://docs.cloud.google.com/cdn/docs/best-practices",
+        "https://docs.cloud.google.com/cdn/docs/caching"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/cdn/docs/cdn-logging-monitoring",
+        "https://docs.cloud.google.com/cdn/docs/best-practices",
+        "https://docs.cloud.google.com/cdn/docs/caching"
+      ]
+    }
+  ]
+}

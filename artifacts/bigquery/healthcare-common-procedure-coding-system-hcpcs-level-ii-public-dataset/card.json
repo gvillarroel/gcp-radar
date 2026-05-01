@@ -1,0 +1,115 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:18.771Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery",
+  "feature_name": "Healthcare Common Procedure Coding System (HCPCS) Level II public dataset",
+  "feature_slug": "healthcare-common-procedure-coding-system-hcpcs-level-ii-public-dataset",
+  "summary": "The BigQuery public datasets program includes the Healthcare Common Procedure Coding System (HCPCS) Level II dataset.",
+  "extended_definition": "The BigQuery public datasets program includes the Healthcare Common Procedure Coding System (HCPCS) Level II dataset.",
+  "lifecycle": {
+    "latest_feature_date": "2017-05-22",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/reference/bq-cli-reference",
+      "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+      "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/procedural-language"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Data definition language (DDL) statements in GoogleSQL \\_|\\_ BigQuery \\_\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "source_id": "site-docs-reference",
+        "final_score": 129,
+        "relevance": "",
+        "evidence_snippets": [
+          "Procedure options have the same syntax and requirements as table options but with a different list of NAME s and VALUE s: NAME VALUE Details strict mode BOOL It is useful for catching many common types of errors.",
+          "The value JSON is equivalent to NEWLINE DELIMITED JSON . hive partition uri prefix STRING A common prefix for all source URIs before the partition key encoding begins.",
+          "DROP PROCEDURE other-project . sample dataset . myprocedure ; DROP ROW ACCESS POLICY statement Deletes a row-level access policy."
+        ]
+      },
+      {
+        "title": "bq command-line tool reference \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/reference/bq-cli-reference",
+        "source_id": "site-docs-reference",
+        "final_score": 125,
+        "relevance": "",
+        "evidence_snippets": [
+          "Routines include persistent user-defined functions , table functions ( Preview ), and stored procedures . --row access policies When specified, lists all the row-level access policies on a table.",
+          "In this case, you can call the BQ.REFRESH EXTERNAL METADATA CACHE system procedure to refresh the cache.",
+          "The common prefix value is the portion of the URI that immediately precedes the partition key encoding."
+        ]
+      },
+      {
+        "title": "Procedural language \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/procedural-language",
+        "source_id": "site-docs-reference",
+        "final_score": 97,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "CREATE OR REPLACE PROCEDURE schema1 . proc1 () BEGIN SELECT 1 / 0 ; END ; CREATE OR REPLACE PROCEDURE schema1 . proc2 () BEGIN CALL schema1 . proc1 (); END ; BEGIN CALL schema1 . proc2 (); EXCEPTION WHEN ERROR THEN SELECT @@ error . message , @@ error . stack trace , @@ error . statement text , @@ error . formatted stack trace ; END ; When the exception handler runs, the variables will have the following values: Variable Value @@error.message \"Query error: division by zero: 1 / 0 at <project>.schema1.proc1:2:3]\" @@error.stack trace [ STRUCT(2 AS line, 3 AS column, NULL AS filename, \"<project>.schema1.proc1:2:3\" AS location), STRUCT(2 AS line, 3 AS column, NULL AS filename, \"<project>.schema1.proc2:2:3\" AS location), STRUCT(10 AS line, 3 AS column, NULL AS filename, NULL AS location), ] @@error.statement text \"SELECT 1/0\" @@error.formatted stack trace \"At <project>.schema1.proc1[2:3]\\nAt <project>.schema1.proc2[2:3]\\nAt [10:3]\" CASE Syntax CASE WHEN boolean expression THEN sql statement list [...] [ ELSE sql statement list ] END CASE ; Description Executes the THEN sql statement list where the boolean expression is true, or the optional ELSE sql statement list if no conditions match.",
+          "DECLARE x INT64 DEFAULT 0 ; REPEAT SET x = x + 1 ; SELECT x ; UNTIL x >= 3 END REPEAT ; This example outputs the following: / ---+ x +---+ 1 +--- / / ---+ x +---+ 2 +--- / / ---+ x +---+ 3 +--- / WHILE Syntax WHILE boolean expression DO sql statement list END WHILE ; There is a maximum nesting level of 50 for blocks and conditional statements such as BEGIN / END , IF / ELSE / END IF , and WHILE / END WHILE .",
+          "If the frame occurs within a procedure body, then line 1 column 1 corresponds to the BEGIN keyword at the start of the procedure body. location: If the frame occurs within a procedure body, specifies the full name of the procedure, in the form [project name].[schema name].[procedure name] ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "data.usa",
+      "error.formatted",
+      "error.message",
+      "error.stack",
+      "error.statement",
+      "names.usa",
+      "schema1.proc1",
+      "schema1.proc2"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "https://docs.cloud.google.com/bigquery/docs/reference/bq-cli-reference",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/procedural-language"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "https://docs.cloud.google.com/bigquery/docs/reference/bq-cli-reference",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/procedural-language"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "https://docs.cloud.google.com/bigquery/docs/reference/bq-cli-reference",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/procedural-language"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,153 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:49.999Z",
+  "source_step08_card": "data/step-08/current/products/vpc-service-controls/card.json",
+  "product_name": "VPC Service Controls",
+  "product_slug": "vpc-service-controls",
+  "feature_name": "Bulk changes to service perimeters",
+  "feature_slug": "bulk-changes-to-service-perimeters",
+  "summary": "Bulk changes to service perimeters let you replace all service perimeters in an organization in one operation using Access Context Manager's Bulk API.",
+  "extended_definition": "Bulk changes to service perimeters let you replace all service perimeters in an organization in one operation using Access Context Manager's Bulk API.",
+  "lifecycle": {
+    "latest_feature_date": "2020-06-11",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/vpc-service-controls/docs/bulk-operations",
+      "https://docs.cloud.google.com/vpc-service-controls/docs/custom-constraints",
+      "https://docs.cloud.google.com/vpc-service-controls/docs/enable-internal-ip-access",
+      "https://docs.cloud.google.com/vpc-service-controls/docs/manage-service-perimeters"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Making bulk changes to service perimeters \\_|\\_ VPC Service Controls \\_\\",
+        "url": "https://docs.cloud.google.com/vpc-service-controls/docs/bulk-operations",
+        "source_id": "site-docs-reference",
+        "final_score": 331,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "If existing service perimeters aren't included in the operation, those service perimeters are deleted. gcloud To bulk replace all service perimeters, use the replace-all command. gcloud access-context-manager perimeters replace-all POLICY NAME \\ --source-file = FILE \\ --etag = ETAG \\ Where: POLICY NAME is the name of your organization's access policy.",
+          "Instead of manually removing each of the etag properties within the perimeters, you can fetch the perimeters without etag properties by specifying a --format with all fields except etag . gcloud access-context-manager perimeters list \\ --policy = POLICY NAME \\ --format = \"json(name,title,description,perimeterType,status,spec,useExplicitDryRunSpec)\" Bulk replace service perimeters The following section details how to bulk replace your service perimeters.",
+          "Home Documentation Networking VPC Service Controls Guides Send feedback Making bulk changes to service perimeters Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"Manage service perimeters \\_|\\_ VPC Service Controls \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/vpc-service-controls/docs/manage-service-perimeters",
+        "source_id": "site-docs-reference",
+        "final_score": 263,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To update all of your organization's service perimeters in one operation, see Making bulk changes to service perimeters .",
+          "For example, to ensure that the VPC networks in your perimeter have access only to the Logging and Cloud Storage services, use the following command: gcloud access-context-manager perimeters update example perimeter \\ --enable-vpc-accessible-services \\ --add-vpc-allowed-services = RESTRICTED-SERVICES,logging.googleapis.com,storage.googleapis.com \\ --policy = 11271009391 Add a service to the VPC accessible services To add additional services to the VPC accessible services for your perimeter, use the update command : gcloud access-context-manager perimeters update PERIMETER ID \\ --add-vpc-allowed-services = SERVICES Replace the following: PERIMETER ID is the ID of your service perimeter.",
+          "For example, if you enable VPC accessible services and require that the VPC networks in your perimeter have access to the Pub/Sub service, use the following command: gcloud access-context-manager perimeters update example perimeter \\ --add-vpc-allowed-services = RESTRICTED-SERVICES,pubsub.googleapis.com \\ --policy = 11271009391 Remove a service from the VPC accessible services To remove services from the VPC accessible services for your service perimeter, use the update command : gcloud access-context-manager perimeters update PERIMETER ID \\ --remove-vpc-allowed-services = SERVICES Replace the following: PERIMETER ID is the ID of your service perimeter."
+        ]
+      },
+      {
+        "title": "Create custom constraints for VPC Service Controls \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vpc-service-controls/docs/custom-constraints",
+        "source_id": "site-docs-reference",
+        "final_score": 200,
+        "relevance": "",
+        "evidence_snippets": [
+          "When you have entered a value into each field, the equivalent YAML configuration for this custom constraint appears on the right. gcloud To create a custom constraint, create a YAML file using the following format: name : organizations/ ORGANIZATION ID /customConstraints/ CONSTRAINT NAME resourceTypes : RESOURCE NAME methodTypes : - CREATE - UPDATE condition : \" CONDITION \" actionType : ACTION displayName : DISPLAY NAME description : DESCRIPTION Replace the following: ORGANIZATION ID : your organization ID, such as 123456789 .",
+          "After you verify that the organization policy in dry-run mode works as intended, set the live policy by clicking Set policy . gcloud To create an organization policy with boolean rules, create a policy YAML file that references the constraint: name : projects/ PROJECT ID /policies/ CONSTRAINT NAME spec : rules : - enforce : true dryRunSpec : rules : - enforce : true Replace the following: PROJECT ID : the project that you want to enforce your constraint on.",
+          "After you verify that the organization policy in dry-run mode works as intended, set the live policy with the org-policies set-policy command and the spec flag: gcloud org-policies set-policy POLICY PATH --update-mask = spec Replace POLICY PATH with the full path to your organization policy YAML file."
+        ]
+      },
+      {
+        "title": "\"Allow access to protected resources from an internal IP address \\_|\\_ VPC\\",
+        "url": "https://docs.cloud.google.com/vpc-service-controls/docs/enable-internal-ip-access",
+        "source_id": "site-docs-reference",
+        "final_score": 193,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To update the ingress policy for a service perimeter, run the following gcloud CLI command: gcloud access-context-manager perimeters update PERIMETER --set-ingress-policies= FILE NAME Replace the following: PERIMETER : The name of your service perimeter that protects the Cloud Storage project.",
+          "To update the egress policy for a service perimeter, run the following command: gcloud access-context-manager perimeters update PERIMETER --set-egress-policies= FILE NAME Replace the following: PERIMETER : The name of your service perimeter that protects the network host project.",
+          "When you delete a VPC network that is referenced by an access level or a service perimeter and then recreate another VPC network with the same name, VPC Service Controls doesn't automatically enable internal IP addresses on the recreated VPC network."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "logging.googleapis.com",
+      "pubsub.googleapis.com",
+      "storage.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc-service-controls/docs/bulk-operations",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/manage-service-perimeters",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/custom-constraints",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/enable-internal-ip-access"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc-service-controls/docs/bulk-operations",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/manage-service-perimeters",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/custom-constraints",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/enable-internal-ip-access"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc-service-controls/docs/bulk-operations",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/manage-service-perimeters",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/custom-constraints",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/enable-internal-ip-access"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc-service-controls/docs/bulk-operations",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/manage-service-perimeters",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/custom-constraints",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/enable-internal-ip-access"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc-service-controls/docs/bulk-operations",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/manage-service-perimeters",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/custom-constraints",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/enable-internal-ip-access"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc-service-controls/docs/bulk-operations",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/manage-service-perimeters",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/custom-constraints",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/enable-internal-ip-access"
+      ]
+    }
+  ]
+}

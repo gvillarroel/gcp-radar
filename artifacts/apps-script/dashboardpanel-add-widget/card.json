@@ -1,0 +1,101 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:17.437Z",
+  "source_step08_card": "data/step-08/current/products/apps-script/card.json",
+  "product_name": "Apps Script",
+  "product_slug": "apps-script",
+  "feature_name": "DashboardPanel.add(widget)",
+  "feature_slug": "dashboardpanel-add-widget",
+  "summary": "DashboardPanel.add(widget) added UiApp widgets to a dashboard panel; deprecated on 2016-03-25.",
+  "extended_definition": "DashboardPanel.add(widget) added UiApp widgets to a dashboard panel; deprecated on 2016-03-25.",
+  "lifecycle": {
+    "latest_feature_date": "2016-03-25",
+    "deprecation_date": "2016-03-25",
+    "status": "deprecation_noted"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/apps-script/guides/dashboard",
+      "https://developers.google.com/apps-script/reference/add-ons-response-service/accessory-widget",
+      "https://developers.google.com/apps-script/releases"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Google Apps Script release notes \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/apps-script/releases",
+        "source_id": "site-docs-root",
+        "final_score": 153,
+        "relevance": "",
+        "evidence_snippets": [
+          "March 25, 2016 Deprecated Deprecated the add(widget) method in the DashboardPanel class because it takes a UiApp.Widget argument, and UiApp was deprecated in 2014.",
+          "FileIterator.getContinuationToken() FolderIterator.getContinuationToken() DriveApp.continueFileIterator(continuationToken) DriveApp.continueFolderIterator(continuationToken) Deprecated The UiApp widgets Hyperlink , InlineHyperlink , LayoutPanel , and RichTextArea have now been disabled, as announced on March 13, 2013 and documented in the Apps Script sunset schedule .",
+          "Deprecated Deprecated UiApp widgets DeckPanel , DecoratedPopupPanel , DockLayoutPanel , DockPanel , StackLayoutPanel , and TabLayoutPanel , which had limited usability."
+        ]
+      },
+      {
+        "title": "The Google Apps Script Dashboard \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/apps-script/guides/dashboard",
+        "source_id": "site-docs-root",
+        "final_score": 79,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Google Workspace Apps Script Guides Send feedback The Google Apps Script Dashboard Stay organized with collections Save and categorize content based on your preferences.",
+          "Use the dashboard to: View and search for your existing Apps Script projects, including bound scripts attached to Google Workspace documents.",
+          "The My Executions panel shows a log of all previous and running executions for projects for which you are an owner, editor or viewer."
+        ]
+      },
+      {
+        "title": "Class AccessoryWidget \\_|\\_ Apps Script \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/apps-script/reference/add-ons-response-service/accessory-widget",
+        "source_id": "site-docs-reference-3",
+        "final_score": 76,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Accessory widgets are interactive widgets that appear at the bottom of a message.",
+          "PHONE ) . setOnClickAction ( CardService . newAction () . setFunctionName ( \"phone\" ))) . addButton ( CardService . newTextButton () . setText ( \"Robot\" ) . setIconUrl ( \"https://developers.google.com/chat/images/quickstart-app-avatar.png\" ) . setOnClickAction ( CardService . newAction () . setFunctionName ( \"robot\" ))); const accessoryWidget = AddOnsResponseService . newAccessoryWidget () . addWidget ( widget ); Methods Method Return type Brief description add Widget(widget) Accessory Widget Sets the widget for this action.",
+          "Available for Google Workspace add-ons that extend Google Chat. const widget = CardService . newButtonSet () . addButton ( CardService . newImageButton () . setIcon ( CardService ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "avatar.png",
+      "developers.google.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/guides/dashboard",
+        "https://developers.google.com/apps-script/reference/add-ons-response-service/accessory-widget"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/guides/dashboard",
+        "https://developers.google.com/apps-script/reference/add-ons-response-service/accessory-widget"
+      ]
+    }
+  ]
+}

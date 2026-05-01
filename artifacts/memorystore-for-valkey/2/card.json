@@ -1,0 +1,117 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:43.616Z",
+  "source_step08_card": "data/step-08/current/products/memorystore-for-valkey/card.json",
+  "product_name": "Memorystore for Valkey",
+  "product_slug": "memorystore-for-valkey",
+  "feature_name": "2-",
+  "feature_slug": "2",
+  "summary": "Memorystore for Valkey supports instance shapes with 1, 2, or 4 shards in Preview.",
+  "extended_definition": "Memorystore for Valkey supports instance shapes with 1, 2, or 4 shards in Preview.",
+  "lifecycle": {
+    "latest_feature_date": "2024-09-19",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 1,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "thin_token_overlap",
+        "message": "Supporting pages only weakly overlap with informative feature tokens.",
+        "suggested_steps": [
+          "step-03",
+          "step-04",
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/memorystore/docs/valkey/reference/mcp/tools_list/create_instance",
+      "https://docs.cloud.google.com/memorystore/docs/valkey/reference/mcp/tools_list/get_instance",
+      "https://docs.cloud.google.com/memorystore/docs/valkey/reference/mcp/tools_list/list_instances",
+      "https://docs.cloud.google.com/memorystore/docs/valkey/reference/mcp/tools_list/update_instance"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"MCP Tools Reference: memorystore.googleapis.com \\_|\\_ Memorystore for Valkey\\",
+        "url": "https://docs.cloud.google.com/memorystore/docs/valkey/reference/mcp/tools_list/create_instance",
+        "source_id": "site-api-reference",
+        "final_score": 354,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Databases Memorystore Memorystore for Valkey Reference Send feedback MCP Tools Reference: memorystore.googleapis.com Stay organized with collections Save and categorize content based on your preferences.",
+          "Tool: create instance Create a Memorystore for Valkey instance.",
+          "Curl Request curl --location 'https://memorystore.googleapis.com/mcp' \\ --header 'content-type: application/json' \\ --header 'accept: application/json, text/event-stream' \\ --data '{ \"method\": \"tools/call\", \"params\": { \"name\": \"create instance\", \"arguments\": { // provide these details according to the tool' s MCP specification } } , \"jsonrpc\" : \"2.0\" , \"id\" : 1 } ' Input Schema Request message for CreateInstance ."
+        ]
+      },
+      {
+        "title": "\"MCP Tools Reference: memorystore.googleapis.com \\_|\\_ Memorystore for Valkey\\",
+        "url": "https://docs.cloud.google.com/memorystore/docs/valkey/reference/mcp/tools_list/get_instance",
+        "source_id": "site-api-reference",
+        "final_score": 354,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Databases Memorystore Memorystore for Valkey Reference Send feedback MCP Tools Reference: memorystore.googleapis.com Stay organized with collections Save and categorize content based on your preferences.",
+          "Tool: get instance Get detailed information about a Memorystore for Valkey instance.",
+          "Curl Request curl --location 'https://memorystore.googleapis.com/mcp' \\ --header 'content-type: application/json' \\ --header 'accept: application/json, text/event-stream' \\ --data '{ \"method\": \"tools/call\", \"params\": { \"name\": \"get instance\", \"arguments\": { // provide these details according to the tool' s MCP specification } } , \"jsonrpc\" : \"2.0\" , \"id\" : 1 } ' Input Schema Request message for GetInstance ."
+        ]
+      },
+      {
+        "title": "\"MCP Tools Reference: memorystore.googleapis.com \\_|\\_ Memorystore for Valkey\\",
+        "url": "https://docs.cloud.google.com/memorystore/docs/valkey/reference/mcp/tools_list/list_instances",
+        "source_id": "site-api-reference",
+        "final_score": 354,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Databases Memorystore Memorystore for Valkey Reference Send feedback MCP Tools Reference: memorystore.googleapis.com Stay organized with collections Save and categorize content based on your preferences.",
+          "Tool: list instances List all Memorystore for Valkey instances.",
+          "Curl Request curl --location 'https://memorystore.googleapis.com/mcp' \\ --header 'content-type: application/json' \\ --header 'accept: application/json, text/event-stream' \\ --data '{ \"method\": \"tools/call\", \"params\": { \"name\": \"list instances\", \"arguments\": { // provide these details according to the tool' s MCP specification } } , \"jsonrpc\" : \"2.0\" , \"id\" : 1 } ' Input Schema Request message for ListInstances ."
+        ]
+      },
+      {
+        "title": "\"MCP Tools Reference: memorystore.googleapis.com \\_|\\_ Memorystore for Valkey\\",
+        "url": "https://docs.cloud.google.com/memorystore/docs/valkey/reference/mcp/tools_list/update_instance",
+        "source_id": "site-docs-reference",
+        "final_score": 354,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Databases Memorystore Memorystore for Valkey Reference Send feedback MCP Tools Reference: memorystore.googleapis.com Stay organized with collections Save and categorize content based on your preferences.",
+          "Tool: update instance Update a Memorystore for Valkey instance.",
+          "Curl Request curl --location 'https://memorystore.googleapis.com/mcp' \\ --header 'content-type: application/json' \\ --header 'accept: application/json, text/event-stream' \\ --data '{ \"method\": \"tools/call\", \"params\": { \"name\": \"update instance\", \"arguments\": { // provide these details according to the tool' s MCP specification } } , \"jsonrpc\" : \"2.0\" , \"id\" : 1 } ' Input Schema Request message for UpdateInstance ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "memorystore.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/valkey/reference/mcp/tools_list/create_instance",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/reference/mcp/tools_list/get_instance",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/reference/mcp/tools_list/list_instances",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/reference/mcp/tools_list/update_instance"
+      ]
+    }
+  ]
+}

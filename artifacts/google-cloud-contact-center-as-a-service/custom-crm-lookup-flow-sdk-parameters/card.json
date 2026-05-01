@@ -1,0 +1,108 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:38.623Z",
+  "source_step08_card": "data/step-08/current/products/google-cloud-contact-center-as-a-service/card.json",
+  "product_name": "Google Cloud Contact Center as a Service",
+  "product_slug": "google-cloud-contact-center-as-a-service",
+  "feature_name": "Custom CRM lookup flow SDK parameters",
+  "feature_slug": "custom-crm-lookup-flow-sdk-parameters",
+  "summary": "The CRM lookup flow can now use SDK data parameters.",
+  "extended_definition": "The CRM lookup flow can now use SDK data parameters.",
+  "lifecycle": {
+    "latest_feature_date": "2024-11-07",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/contact-center/ccai-platform/docs/call-settings",
+      "https://docs.cloud.google.com/contact-center/ccai-platform/docs/iva-guide",
+      "https://docs.cloud.google.com/contact-center/ccai-platform/docs/salesforce-integration-guide"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Call settings \\_|\\_ Google Cloud Contact Center as a Service \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/contact-center/ccai-platform/docs/call-settings",
+        "source_id": "site-docs-reference-required-8",
+        "final_score": 87,
+        "relevance": "",
+        "evidence_snippets": [
+          "Voicemail: Once the agent has listened to the voicemail, they will be given the option to call the consumer back, and the entered custom callback number will be used What happens when a consumer hangs up before completing the flow?",
+          "Blocked or unknown caller behavior CCAI Platform checks for blocked numbers and automatically triggers the custom callback flow.",
+          "Default messages There are 2 messages that are not customizable and will be played during the custom callback flow."
+        ]
+      },
+      {
+        "title": "\"Interactive Virtual Assistant (IVA) guide \\_|\\_ Google Cloud Contact Center\\",
+        "url": "https://docs.cloud.google.com/contact-center/ccai-platform/docs/iva-guide",
+        "source_id": "site-docs-reference",
+        "final_score": 86,
+        "relevance": "",
+        "evidence_snippets": [
+          "You can define session parameters in this payload from the Dialogflow CX interaction to pass in custom headers using SIP by assigning key value pairs in sip parameters .",
+          "The following is an sample custom payload: { \"ujet\" : { \"type\" : \"action\" , \"action\" : \"deflection\" , \"deflection type\" : \"sip\" \"sip uri\" : \"sip:1-999-123-4567@voip-provider.example.net:5060\" \"sip refer\" : true \"sip parameters\" : { \"x-header\" : \"value\" , \"x-header\" : \"value\" } } } In the example, \"sip refer\": true indicates that the call is transferred using the SIP REFER method.",
+          "Virtual agent escalation using SIP integration This section explains how to create a Dialogflow CX custom payload for virtual agent escalations when you have the following requirements: The virtual agent needs to escalate to human agents on your own contact center using SIP."
+        ]
+      },
+      {
+        "title": "\"Salesforce integration guide \\_|\\_ Google Cloud Contact Center as a Service\\",
+        "url": "https://docs.cloud.google.com/contact-center/ccai-platform/docs/salesforce-integration-guide",
+        "source_id": "site-docs-reference",
+        "final_score": 83,
+        "relevance": "",
+        "evidence_snippets": [
+          "No Case: ability to connect the CCAI Platform Custom Session object directly to any Salesforce account object, bypassing the need to create a case This builds on two related features: Option to look-up end users in Person Account object (instead of Contact ( default )) Option to leverage our CCAI Platform Session Object which stores all assets and data related to a single session in optimized CCAI Platform Session object Configuration availability requirements The configuration options for Account Lookup and Session Data are only available if the following conditions are met: Account Lookup configuration To configure custom account lookup settings, the following is required: Logged in Agent - at least one agent needs to be logged into a CCAI Platform adapter in Salesforce.",
+          "Salesforce flexible lookup permission changes For Flexible Account lookup, the Agent permission set needs to be adjusted in order to open up flexibility regarding how CCAI Platform manages Salesforce data and process flow.",
+          "To configure a custom lookup field for sessions originating from the web SDK or the mobile SDKs, do the following: Select the Mobile / Web SDKs: lookup users by custom field for SDK sessions checkbox."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "provider.example.net"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/call-settings",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/iva-guide",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/salesforce-integration-guide"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/call-settings",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/iva-guide",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/salesforce-integration-guide"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/call-settings",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/iva-guide",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/salesforce-integration-guide"
+      ]
+    }
+  ]
+}

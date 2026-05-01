@@ -1,0 +1,136 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:33.243Z",
+  "source_step08_card": "data/step-08/current/products/dataproc/card.json",
+  "product_name": "Dataproc",
+  "product_slug": "dataproc",
+  "feature_name": "Cloud Profiler for Dataproc jobs",
+  "feature_slug": "cloud-profiler-for-dataproc-jobs",
+  "summary": "Dataproc jobs can enable Cloud Profiler and set profiling metadata through job properties.",
+  "extended_definition": "Dataproc jobs can enable Cloud Profiler and set profiling metadata through job properties.",
+  "lifecycle": {
+    "latest_feature_date": "2020-03-17",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dataproc/docs/guides/iceberg-metadata-biglake-metastore",
+      "https://docs.cloud.google.com/dataproc/docs/guides/profiling",
+      "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.job_controller.pagers.ListJobsAsyncPager"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Cloud Profiler \\_|\\_ Managed Service for Apache Spark \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/dataproc/docs/guides/profiling",
+        "source_id": "site-iam-reference",
+        "final_score": 147,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Profiler Service Version Optional Managed Service for Apache Spark job UUID mapreduce.task.profile.maps Numeric range of map tasks to profile (example: for up to 100, specify \"0-100\") number range Optional 0-10000 Applies to Hadoop mapreduce jobs only mapreduce.task.profile.reduces Numeric range of reducer tasks to profile (example: for up to 100, specify \"0-100\") number range Optional 0-10000 Applies to Hadoop mapreduce jobs only PySpark Example Google Cloud CLI PySpark job submit with profiling example: gcloud dataproc jobs submit pyspark python-job-file \\ --cluster= cluster-name \\ --region= region \\ --properties=cloud.profiler.enable=true,cloud.profiler.name= profiler name ,cloud.profiler.service.version= version \\ -- job args Two profiles will be created: profiler name -driver to profile spark driver tasks profiler name -executor to profile spark executor tasks For example, if the profiler name is \"spark word count job\", spark word count job-driver and spark word count job-executor profiles are created.",
+          "Hadoop Example gcloud CLI Hadoop (teragen mapreduce) job submit with profiling example: gcloud dataproc jobs submit hadoop \\ --cluster= cluster-name \\ --region= region \\ --jar= jar-file \\ --properties=cloud.profiler.enable=true,cloud.profiler.name= profiler name ,cloud.profiler.service.version= version \\ -- teragen 100000 gs:// bucket-name View profiles View profiles from the Profiler on the Google Cloud console.",
+          "Enable profiling Complete the following steps to enable and use the Profiler on your Managed Service for Apache Spark Spark and Hadoop jobs."
+        ]
+      },
+      {
+        "title": "\"Create an Apache Iceberg table with metadata in BigLake metastore \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/dataproc/docs/guides/iceberg-metadata-biglake-metastore",
+        "source_id": "site-iam-reference",
+        "final_score": 118,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "In a local terminal window or in Cloud Shell , run the following curl command to download the iceberg-spark-runtime-3.5 2.12-1.6.1 JAR file to the current directory. curl -o iceberg-spark-runtime-3.5 2.12-1.6.1.jar https://storage-download.googleapis.com/maven-central/maven2/org/apache/iceberg/iceberg-spark-runtime-3.5 2.12/1.6.1/iceberg-spark-runtime-3.5 2.12-1.6.1.jar Uses the gcloud CLI to copy the local iceberg-spark-runtime-3.5 2.12-1.6.1 JAR file from the current directory to your bucket in Cloud Storage. gcloud storage cp iceberg-spark-runtime-3.5 2.12-1.6.1.jar gs:// BUCKET / Submit the Spark SQL job Select a tab to follow the instructions to submit the Spark SQL job to the Managed Service for Apache Spark service using the gcloud CLI, Google Cloud console, or Managed Service for Apache Spark REST API. gcloud Run the following gcloud dataproc jobs submit spark-sql command locally in a local terminal window or in Cloud Shell to submit the Spark SQL job to create the Iceberg table. gcloud dataproc jobs submit spark-sql \\ --project= PROJECT ID \\ --cluster= CLUSTER NAME \\ --region= REGION \\ --jars=\"gs:// BUCKET /1.6.1/iceberg-spark-runtime-3.5 2.12-1.6.1.jar, BIGLAKE ICEBERG CATALOG JAR \" \\ --properties=\"spark.sql.catalog.",
+          "HTTP method and URL: POST https://dataproc.googleapis.com/v1/projects/ PROJECT ID /regions/ REGION /jobs:submit Request JSON body: { \"projectId\": \" PROJECT ID \", \"job\": { \"placement\": { \"clusterName\": \" CLUSTER NAME \" }, \"statusHistory\": [], \"reference\": { \"jobId\": \"\", \"projectId\": \" PROJECT ID \" }, \"sparkSqlJob\": { \"properties\": { \"spark.sql.catalog.\" CATALOG NAME \": \"org.apache.iceberg.spark.SparkCatalog\", \"spark.sql.catalog.\" CATALOG NAME \".catalog-impl\": \"org.apache.iceberg.gcp.bigquery.BigQueryMetastoreCatalog\", \"spark.sql.catalog.\" CATALOG NAME \".gcp project\": \" PROJECT ID \", \"spark.sql.catalog.\" CATALOG NAME \".gcp location\": \" LOCATION \", \"spark.sql.catalog.\" CATALOG NAME \".warehouse\": \"gs:// BUCKET / WAREHOUSE FOLDER \" }, \"jarFileUris\": [ \"gs:// BUCKET /iceberg-spark-runtime-3.5 2.12-1.6.1.jar, BIGLAKE ICEBERG CATALOG JAR \" ], \"scriptVariables\": {}, \"queryFileUri\": \"gs:// BUCKET /iceberg-table.sql\" } } } To send your request, expand one of these options: curl (Linux, macOS, or Cloud Shell) Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI .",
+          "Save the request body in a file named request.json , and execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method POST -Headers $headers -ContentType: \"application/json; charset=utf-8\" -InFile request.json -Uri \"https://dataproc.googleapis.com/v1/projects/ PROJECT ID /regions/ REGION /jobs:submit\" Select-Object -Expand Content You should receive a JSON response similar to the following: { \"reference\": { \"projectId\": \" PROJECT ID \", \"jobId\": \"...\" }, \"placement\": { \"clusterName\": \" CLUSTER NAME \", \"clusterUuid\": \"...\" }, \"status\": { \"state\": \"PENDING\", \"stateStartTime\": \"...\" }, \"submittedBy\": \" USER \", \"sparkSqlJob\": { \"queryFileUri\": \"gs:// BUCKET /iceberg-table.sql\", \"properties\": { \"spark.sql.catalog."
+        ]
+      },
+      {
+        "title": "\"Class ListJobsAsyncPager (5.26.0) \\_|\\_ Python client libraries \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.job_controller.pagers.ListJobsAsyncPager",
+        "source_id": "site-python-reference",
+        "final_score": 98,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Parameters Name Description method Callable The method that was originally called, and which instantiated this pager. request google.cloud.dataproc v1.types.ListJobsRequest The initial request object. response google.cloud.dataproc v1.types.ListJobsResponse The initial response object. retry google.api core.retry.AsyncRetry Designation of what errors, if any, should be retried. timeout float The timeout for this request. metadata Sequence[Tuple[str, Union[str, bytes]]] Key/value pairs which should be sent along with the request as metadata.",
+          "ListJobsResponse ] ], request : google . cloud . dataproc v1 . types . jobs .",
+          "ListJobsResponse ] ], request : google . cloud . dataproc v1 . types . jobs ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "catalog.warehouse",
+      "core.retry.AsyncRetry",
+      "dataproc.googleapis.com",
+      "download.googleapis.com",
+      "mapreduce.task.profile.maps",
+      "mapreduce.task.profile.reduces",
+      "org.apache.iceberg.gcp.bigquery.BigQueryMetastoreCatalog",
+      "org.apache.iceberg.spark.SparkCatalog",
+      "request.json",
+      "spark.sql.catalog",
+      "table.sql",
+      "v1.types.ListJobsRequest",
+      "v1.types.ListJobsResponse"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/profiling",
+        "https://docs.cloud.google.com/dataproc/docs/guides/iceberg-metadata-biglake-metastore",
+        "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.job_controller.pagers.ListJobsAsyncPager"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/profiling",
+        "https://docs.cloud.google.com/dataproc/docs/guides/iceberg-metadata-biglake-metastore",
+        "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.job_controller.pagers.ListJobsAsyncPager"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/profiling",
+        "https://docs.cloud.google.com/dataproc/docs/guides/iceberg-metadata-biglake-metastore",
+        "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.job_controller.pagers.ListJobsAsyncPager"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/profiling",
+        "https://docs.cloud.google.com/dataproc/docs/guides/iceberg-metadata-biglake-metastore",
+        "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.job_controller.pagers.ListJobsAsyncPager"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/profiling",
+        "https://docs.cloud.google.com/dataproc/docs/guides/iceberg-metadata-biglake-metastore",
+        "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.job_controller.pagers.ListJobsAsyncPager"
+      ]
+    }
+  ]
+}

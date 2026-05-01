@@ -1,0 +1,168 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:41.049Z",
+  "source_step08_card": "data/step-08/current/products/google-secops-siem/card.json",
+  "product_name": "Google SecOps SIEM",
+  "product_slug": "google-secops-siem",
+  "feature_name": "Prebuilt parser version management",
+  "feature_slug": "prebuilt-parser-version-management",
+  "summary": "Lets administrators control deployment, comparison, update, and rollback of prebuilt parser versions.",
+  "extended_definition": "Lets administrators control deployment, comparison, update, and rollback of prebuilt parser versions.",
+  "lifecycle": {
+    "latest_feature_date": "2025-10-07",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/chronicle/docs/administration/datarbac-overview",
+      "https://docs.cloud.google.com/chronicle/docs/detection/cloud-threats-category",
+      "https://docs.cloud.google.com/chronicle/docs/secops/secops-overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Cloud Threats category overview \\_|\\_ Google Security Operations \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/detection/cloud-threats-category",
+        "source_id": "site-api-reference",
+        "final_score": 103,
+        "relevance": "",
+        "evidence_snippets": [
+          "Google Workspace-related rule sets The following rule sets detect patterns in Google Workspace data: Potential Insider Data Exfiltration from Chrome Potential Insider Data Exfiltration from Drive Potential Insider Data Exfiltration from Gmail Potential Workspace Account Compromise Suspicious Workspace Administrative Actions These rule sets require the following log types, listed by product name and Google SecOps ingestion label: Workspace Activities ( WORKSPACE ACTIVITY ) Workspace Alerts ( WORKSPACE ALERTS ) Workspace ChromeOS Devices ( WORKSPACE CHROMEOS ) Workspace Mobile Devices ( WORKSPACE MOBILE ) Workspace Users ( WORKSPACE USERS ) Google Chrome Browser Cloud Management ( CHROME MANAGEMENT ) Gmail logs ( GMAIL LOGS ) To ingest the required data, do the following: Collect the data listed in the All rule sets section of this document.",
+          "CDIR SCC Enhanced rule sets All rule sets that begin with the name CDIR SCC Enhanced use Security Command Center Premium findings contextualized with several other Google Cloud log sources, including the following: Cloud Audit Logs Cloud DNS logs Identity and Access Management (IAM) analysis Sensitive Data Protection context BigQuery context Compute Engine context To use the CDIR SCC Enhanced rule sets, we recommend that you collect the following Google Cloud data: Log data listed in the All rule sets section.",
+          "Azure - Identity : Detects activity related to authentication and authorization, indicating unusual behavior, including concurrent access from multiple geographic locations, overly permissive access management policies, or Azure RBAC activity from suspicious tools."
+        ]
+      },
+      {
+        "title": "\"Google SecOps overview \\_|\\_ Google Security Operations \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/secops/secops-overview",
+        "source_id": "site-api-reference",
+        "final_score": 91,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Identity and Access Management provides access control for Google SecOps.",
+          "Data collection Google SecOps can ingest numerous security telemetry types through a variety of methods, including the following: Forwarder : A lightweight software component, deployed in the customer's network, that supports syslog, packet capture, and existing log management or security information and event management (SIEM) data repositories.",
+          "The Google SecOps platform enables security analysts to analyze and mitigate a security threat throughout its lifecycle by employing the following capabilities: Collection : Data is ingested into the platform using forwarders, parsers, OpenTelemetry collectors, connectors, and webhooks."
+        ]
+      },
+      {
+        "title": "Data RBAC overview \\_|\\_ Google Security Operations \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/chronicle/docs/administration/datarbac-overview",
+        "source_id": "site-docs-reference-required-1",
+        "final_score": 84,
+        "relevance": "",
+        "evidence_snippets": [
+          "Data RBAC administrators can create scopes and assign them to users to control their data access within Google SecOps.",
+          "Access control with scopes and labels Google SecOps lets you control data access to users by using scopes.",
+          "The following permissions apply to Dashboards: chronicle.dashboards.list : Lets users see the list of available dashboards. chronicle.dashboards.get : Lets users open and view a dashboard content. chronicle.dashboards.create : Lets users create new dashboards. chronicle.dashboards.update : Lets users edit and save changes to existing dashboards. chronicle.dashboards.delete : Lets users delete custom dashboards."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "chronicle.dashboards.create",
+      "chronicle.dashboards.delete",
+      "chronicle.dashboards.get",
+      "chronicle.dashboards.list",
+      "chronicle.dashboards.update"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/detection/cloud-threats-category",
+        "https://docs.cloud.google.com/chronicle/docs/secops/secops-overview",
+        "https://docs.cloud.google.com/chronicle/docs/administration/datarbac-overview"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/detection/cloud-threats-category",
+        "https://docs.cloud.google.com/chronicle/docs/secops/secops-overview",
+        "https://docs.cloud.google.com/chronicle/docs/administration/datarbac-overview"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/detection/cloud-threats-category",
+        "https://docs.cloud.google.com/chronicle/docs/secops/secops-overview",
+        "https://docs.cloud.google.com/chronicle/docs/administration/datarbac-overview"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/detection/cloud-threats-category",
+        "https://docs.cloud.google.com/chronicle/docs/secops/secops-overview",
+        "https://docs.cloud.google.com/chronicle/docs/administration/datarbac-overview"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/detection/cloud-threats-category",
+        "https://docs.cloud.google.com/chronicle/docs/secops/secops-overview",
+        "https://docs.cloud.google.com/chronicle/docs/administration/datarbac-overview"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/detection/cloud-threats-category",
+        "https://docs.cloud.google.com/chronicle/docs/secops/secops-overview",
+        "https://docs.cloud.google.com/chronicle/docs/administration/datarbac-overview"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/detection/cloud-threats-category",
+        "https://docs.cloud.google.com/chronicle/docs/secops/secops-overview",
+        "https://docs.cloud.google.com/chronicle/docs/administration/datarbac-overview"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/detection/cloud-threats-category",
+        "https://docs.cloud.google.com/chronicle/docs/secops/secops-overview",
+        "https://docs.cloud.google.com/chronicle/docs/administration/datarbac-overview"
+      ]
+    },
+    {
+      "capability": "threat",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/detection/cloud-threats-category",
+        "https://docs.cloud.google.com/chronicle/docs/secops/secops-overview",
+        "https://docs.cloud.google.com/chronicle/docs/administration/datarbac-overview"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/detection/cloud-threats-category",
+        "https://docs.cloud.google.com/chronicle/docs/secops/secops-overview",
+        "https://docs.cloud.google.com/chronicle/docs/administration/datarbac-overview"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,103 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:30.193Z",
+  "source_step08_card": "data/step-08/current/products/config-connector/card.json",
+  "product_name": "Config Connector",
+  "product_slug": "config-connector",
+  "feature_name": "state-into-spec annotation support",
+  "feature_slug": "state-into-spec-annotation-support",
+  "summary": "Config Connector supports the cnrm.cloud.google.com/state-into-spec annotation for merging or omitting resource state in spec, initially for BigQueryDataset.",
+  "extended_definition": "Config Connector supports the cnrm.cloud.google.com/state-into-spec annotation for merging or omitting resource state in spec, initially for BigQueryDataset.",
+  "lifecycle": {
+    "latest_feature_date": "2021-08-02",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 1,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "coverage_low",
+        "message": "The feature ended with coverage LOW.",
+        "suggested_steps": [
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields",
+      "https://docs.cloud.google.com/config-connector/docs/how-to/install-upgrade-uninstall",
+      "https://docs.cloud.google.com/config-connector/docs/resources"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Resources \\_|\\_ Config Connector \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/config-connector/docs/resources",
+        "source_id": "site-docs-reference",
+        "final_score": 58,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License ."
+        ]
+      },
+      {
+        "title": "Ignore unspecified fields \\_|\\_ Config Connector \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields",
+        "source_id": "site-docs-reference",
+        "final_score": 36,
+        "relevance": "",
+        "evidence_snippets": [
+          "This skips populating unspecified fields into the Kubernetes resource spec: metadata : annotations : cnrm.cloud.google.com/state-into-spec : absent This annotation has a default value of merge if not specified, which means Config Connector populates all unspecified fields into spec.",
+          "To further explain the difference introduced by this annotation, assume there is a spec with the following schema: foo1 : string foo2 : string bars : - bar : br1 : string br2 : string barz : bz1 : string bz2 : string Also assume you have specified the spec in your YAML as: spec : foo1 : \"foo1\" bars : - br1 : \"1 br1\" - br1 : \"2 br1\" barz : bz1 : \"bz1\" Then by default, the populated spec in the created Kubernetes resource might be: spec : foo1 : \"foo1\" foo2 : \"foo2\" bars : - br1 : \"1 br1\" br2 : \"1 br2\" - br1 : \"2 br1\" br2 : \"2 br2\" barz : bz1 : \"bz1\" bz2 : \"bz2\" While if you set cnrm.cloud.google.com/state-into-spec: absent , the final spec in the created Kubernetes resource will be: spec : foo1 : \"foo1\" bars : - br1 : \"1 br1\" - br1 : \"2 br1\" barz : bz1 : \"bz1\" When to use cnrm.cloud.google.com/state-into-spec: absent In most cases, you'll want to set cnrm.cloud.google.com/state-into-spec: absent to get the Absent populating behavior for spec fields.",
+          "Configure the cluster-level or namespace-level stateIntoSpec override When installing Config Connector, or updating the Config Connector installation, you can configure the cluster-level or namespace-level stateIntoSpec override to be Absent in the ConfigConnector CR or ConfigConnectorContext CR. spec : stateIntoSpec : Absent This makes Absent the default spec fields populating behavior for any new resources created in the cluster or in the namespace when you don't specify the cnrm.cloud.google.com/state-into-spec annotation in the new resource YAMLs."
+        ]
+      },
+      {
+        "title": "\"Installing with the GKE add-on \\_|\\_ Config Connector \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/config-connector/docs/how-to/install-upgrade-uninstall",
+        "source_id": "site-docs-reference",
+        "final_score": 34,
+        "relevance": "",
+        "evidence_snippets": [
+          "It means setting cnrm.cloud.google.com/state-into-spec annotation to absent for all Config Connector resources created in the cluster in the future.",
+          "To configure the operator as cluster mode, complete the following steps: Copy the following YAML file into a file named configconnector.yaml : configconnector.yaml apiVersion : core.cnrm.cloud.google.com/v1beta1 kind : ConfigConnector metadata : the name is restricted to ensure that there is only one ConfigConnector resource installed in your cluster name : configconnector.core.cnrm.cloud.google.com spec : mode : cluster googleServiceAccount : \" SERVICE ACCOUNT NAME @ PROJECT ID .iam.gserviceaccount.com\" Setting stateIntoSpec to Absent is recommended.",
+          "To uninstall Config Connector, complete the following steps: Use kubectl delete to remove the Config Connector CRDs along with controller components: kubectl delete ConfigConnector configconnector.core.cnrm.cloud.google.com --wait = true Disable the Config Connector add-on in your cluster using the gcloud CLI or the Google Cloud console: gcloud To disable the Config Connector add-on with gcloud , run the following command: gcloud container clusters update CLUSTER NAME --update-addons ConfigConnector = DISABLED Replace CLUSTER NAME with the name of the cluster that has Config Connector add-on installed."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cnrm.cloud.google.com",
+      "configconnector.core.cnrm.cloud.google.com",
+      "configconnector.yaml",
+      "core.cnrm.cloud.google.com",
+      "iam.gserviceaccount.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/install-upgrade-uninstall",
+        "https://docs.cloud.google.com/config-connector/docs/resources"
+      ]
+    }
+  ]
+}

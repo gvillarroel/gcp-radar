@@ -1,0 +1,160 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:46.903Z",
+  "source_step08_card": "data/step-08/current/products/spanner/card.json",
+  "product_name": "Spanner",
+  "product_slug": "spanner",
+  "feature_name": "Spanner health issue monitoring in Database Center",
+  "feature_slug": "spanner-health-issue-monitoring-in-database-center",
+  "summary": "Database Center can monitor Spanner health issues such as short backup retention, stale last backup, and non-replicating resources across regions.",
+  "extended_definition": "Database Center can monitor Spanner health issues such as short backup retention, stale last backup, and non-replicating resources across regions.",
+  "lifecycle": {
+    "latest_feature_date": "2024-10-10",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/spanner/docs/best-practices-gaming-database",
+      "https://docs.cloud.google.com/spanner/docs/change-dual-region-quorum",
+      "https://docs.cloud.google.com/spanner/docs/change-streams/use-dataflow"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Change dual-region quorum \\_|\\_ Spanner \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/spanner/docs/change-dual-region-quorum",
+        "source_id": "site-docs-root",
+        "final_score": 124,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Save the request body in a file named request.json , and execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method GET -Headers $headers -ContentType: \"application/json; charset=utf-8\" -InFile request.json ` -Uri \"https://monitoring.googleapis.com/v3/projects/ PROJECT ID /timeSeries\" Select-Object -Expand Content You should receive a JSON response similar to the following: { \"timeSeries\": [ { \"metric\": { \"type\": \"spanner.googleapis.com/instance/dual region quorum availability\" }, \"resource\": { \"type\": \"spanner instance\", \"labels\": { \"project id\": \"spanner-project\", \"location\": \"australia-southeast1\" } }, \"metricKind\": \"GAUGE\", \"valueType\": \"DOUBLE\", \"points\": [ { \"interval\": { \"startTime\": \"2024-07-11T05:41:23Z\", \"endTime\": \"2024-07-11T05:41:23Z\" }, \"value\": { \"doubleValue\": 1 } } ] } ], \"unit\": \"10^2.%\" } If you don't see a similar response, your region might not be healthy, and you might need to change the dual-region quorum from dual-region to single region . gcloud CLI Download the dual-region-quorum-health-check-script.sh file.",
+          "HTTP method and URL: GET https://monitoring.googleapis.com/v3/projects/ PROJECT ID /timeSeries Request JSON body: { \"name\": \" PROJECT ID \", \"aggregation.alignmentPeriod\": \"60s\", \"aggregation.crossSeriesReducer\": \"REDUCE FRACTION TRUE\", \"aggregation.groupByFields\": \"resource.labels.location\", \"aggregation.perSeriesAligner\": \"ALIGN NEXT OLDER\", \"filter\": \"metric.labels.quorum availability = \"Healthy\" AND metric.type = \"spanner.googleapis.com/instance/dual region quorum availability\" AND resource.labels.location = \" DUAL REGION LOCATION \"\", \"interval.startTime\": \" START TIME \", \"interval.endTime\": \" END TIME \" } To send your request, expand one of these options: curl (Linux, macOS, or Cloud Shell) Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI .",
+          "The quorumInfo field provides information about the operation. gcloud spanner databases describe DATABASE ID --instance= INSTANCE ID Change the dual-region quorum from single region to dual-region (failback) To failback manually after the disrupted region is healthy or after the network partition issue is resolved: Google Cloud console Go to the Spanner Instances page in the Google Cloud console."
+        ]
+      },
+      {
+        "title": "\"Best practices for using Spanner as a gaming database \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/spanner/docs/best-practices-gaming-database",
+        "source_id": "site-docs-root",
+        "final_score": 113,
+        "relevance": "",
+        "evidence_snippets": [
+          "Monitor and understand performance Any production database requires comprehensive monitoring and performance metrics.",
+          "In Monitoring, you can see details on your Spanner usage, including data storage and CPU usage.",
+          "Spanner comes with built-in metrics in Cloud Monitoring ."
+        ]
+      },
+      {
+        "title": "\"Build change streams connections using Dataflow \\_|\\_ Spanner \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/spanner/docs/change-streams/use-dataflow",
+        "source_id": "site-docs-root",
+        "final_score": 108,
+        "relevance": "",
+        "evidence_snippets": [
+          "Custom change stream metrics These metrics are exposed in Cloud Monitoring and include: Bucketed (histogram) latency between a record being committed in Spanner to it being emitted into a PCollection by the connector.",
+          "After initial resourcing, it is important to keep track of the metrics mentioned in Monitor a pipeline , to ensure the pipeline is healthy.",
+          "You can find more information in Using Monitoring for Dataflow pipelines ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "aggregation.alignmentPeriod",
+      "aggregation.crossSeriesReducer",
+      "aggregation.groupByFields",
+      "aggregation.perSeriesAligner",
+      "interval.endTime",
+      "interval.startTime",
+      "metric.labels.quorum",
+      "metric.type",
+      "monitoring.googleapis.com",
+      "request.json",
+      "resource.labels.location",
+      "script.sh",
+      "spanner.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/change-dual-region-quorum",
+        "https://docs.cloud.google.com/spanner/docs/change-streams/use-dataflow",
+        "https://docs.cloud.google.com/spanner/docs/best-practices-gaming-database"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/change-dual-region-quorum",
+        "https://docs.cloud.google.com/spanner/docs/change-streams/use-dataflow",
+        "https://docs.cloud.google.com/spanner/docs/best-practices-gaming-database"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/change-dual-region-quorum",
+        "https://docs.cloud.google.com/spanner/docs/change-streams/use-dataflow",
+        "https://docs.cloud.google.com/spanner/docs/best-practices-gaming-database"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/change-dual-region-quorum",
+        "https://docs.cloud.google.com/spanner/docs/change-streams/use-dataflow",
+        "https://docs.cloud.google.com/spanner/docs/best-practices-gaming-database"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/change-dual-region-quorum",
+        "https://docs.cloud.google.com/spanner/docs/change-streams/use-dataflow",
+        "https://docs.cloud.google.com/spanner/docs/best-practices-gaming-database"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/change-dual-region-quorum",
+        "https://docs.cloud.google.com/spanner/docs/change-streams/use-dataflow",
+        "https://docs.cloud.google.com/spanner/docs/best-practices-gaming-database"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/change-dual-region-quorum",
+        "https://docs.cloud.google.com/spanner/docs/change-streams/use-dataflow",
+        "https://docs.cloud.google.com/spanner/docs/best-practices-gaming-database"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/change-dual-region-quorum",
+        "https://docs.cloud.google.com/spanner/docs/change-streams/use-dataflow",
+        "https://docs.cloud.google.com/spanner/docs/best-practices-gaming-database"
+      ]
+    }
+  ]
+}

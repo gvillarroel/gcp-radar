@@ -1,0 +1,115 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:43.616Z",
+  "source_step08_card": "data/step-08/current/products/memorystore-for-valkey/card.json",
+  "product_name": "Memorystore for Valkey",
+  "product_slug": "memorystore-for-valkey",
+  "feature_name": "JSON documents",
+  "feature_slug": "json-documents",
+  "summary": "Memorystore for Valkey supports JSON documents version 1.0.",
+  "extended_definition": "Memorystore for Valkey supports JSON documents version 1.0.",
+  "lifecycle": {
+    "latest_feature_date": "2026-03-26",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/memorystore/docs/valkey/about-json",
+      "https://docs.cloud.google.com/memorystore/docs/valkey/reference/mcp/tools_list/get_backup",
+      "https://docs.cloud.google.com/memorystore/docs/valkey/reference/mcp/tools_list/list_backups",
+      "https://docs.cloud.google.com/memorystore/docs/valkey/supported-versions"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "About JSON \\_|\\_ Memorystore for Valkey \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/memorystore/docs/valkey/about-json",
+        "source_id": "site-iam-reference",
+        "final_score": 264,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Availability If you create a Memorystore for Valkey instance, version 8.0 and later, then version 1.0 of the JSON data type and associated commands is available automatically.",
+          "Multiple conditional expressions If there are multiple conditional expressions for filtering, then Memorystore for Valkey evaluates them in the following order: Operations inside of parentheses The logical AND expression ( && ) The logical OR ( ) expression Maximum nesting depth limit When a JSON object or array has an element that's another JSON object or array, the inner object or array nests within the outer object or array.",
+          "When Memorystore for Valkey receives a JSON number, it converts the number into one of the following internal binary representations: A 64-bit IEEE double precision floating point number A 64-bit signed integer JSON doesn't retain the original string and all of its formatting."
+        ]
+      },
+      {
+        "title": "\"MCP Tools Reference: memorystore.googleapis.com \\_|\\_ Memorystore for Valkey\\",
+        "url": "https://docs.cloud.google.com/memorystore/docs/valkey/reference/mcp/tools_list/get_backup",
+        "source_id": "site-api-reference",
+        "final_score": 211,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Curl Request curl --location 'https://memorystore.googleapis.com/mcp' \\ --header 'content-type: application/json' \\ --header 'accept: application/json, text/event-stream' \\ --data '{ \"method\": \"tools/call\", \"params\": { \"name\": \"get backup\", \"arguments\": { // provide these details according to the tool' s MCP specification } } , \"jsonrpc\" : \"2.0\" , \"id\" : 1 } ' Input Schema Request for GetBackup .",
+          "Home Documentation Databases Memorystore Memorystore for Valkey Reference Send feedback MCP Tools Reference: memorystore.googleapis.com Stay organized with collections Save and categorize content based on your preferences.",
+          "Tool: get backup Get detailed information about a Memorystore for Valkey backup."
+        ]
+      },
+      {
+        "title": "\"MCP Tools Reference: memorystore.googleapis.com \\_|\\_ Memorystore for Valkey\\",
+        "url": "https://docs.cloud.google.com/memorystore/docs/valkey/reference/mcp/tools_list/list_backups",
+        "source_id": "site-api-reference",
+        "final_score": 211,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Curl Request curl --location 'https://memorystore.googleapis.com/mcp' \\ --header 'content-type: application/json' \\ --header 'accept: application/json, text/event-stream' \\ --data '{ \"method\": \"tools/call\", \"params\": { \"name\": \"list backups\", \"arguments\": { // provide these details according to the tool' s MCP specification } } , \"jsonrpc\" : \"2.0\" , \"id\" : 1 } ' Input Schema Request for ListBackups .",
+          "Home Documentation Databases Memorystore Memorystore for Valkey Reference Send feedback MCP Tools Reference: memorystore.googleapis.com Stay organized with collections Save and categorize content based on your preferences.",
+          "Tool: list backups List all Memorystore for Valkey backups."
+        ]
+      },
+      {
+        "title": "Supported versions \\_|\\_ Memorystore for Valkey \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/memorystore/docs/valkey/supported-versions",
+        "source_id": "site-docs-root",
+        "final_score": 208,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Memorystore for Valkey supports Valkey versions 7.2, 8.0, and 9.0.",
+          "Valkey version 8.0 The following table outlines Memorystore support of some major features introduced by Valkey 8.0: Feature Description Asynchronous I/O threading for performance boost This feature significantly improves performance by enabling parallel processing between the main thread and I/O threads.",
+          "Home Documentation Databases Memorystore Memorystore for Valkey Guides Send feedback Supported versions Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "memorystore.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/valkey/about-json",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/reference/mcp/tools_list/get_backup",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/reference/mcp/tools_list/list_backups",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/supported-versions"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/valkey/about-json",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/reference/mcp/tools_list/get_backup",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/reference/mcp/tools_list/list_backups",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/supported-versions"
+      ]
+    }
+  ]
+}

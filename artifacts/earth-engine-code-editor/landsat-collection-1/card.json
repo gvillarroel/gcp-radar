@@ -1,0 +1,85 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:35.934Z",
+  "source_step08_card": "data/step-08/current/products/earth-engine-code-editor/card.json",
+  "product_name": "Earth Engine Code Editor",
+  "product_slug": "earth-engine-code-editor",
+  "feature_name": "Landsat Collection 1",
+  "feature_slug": "landsat-collection-1",
+  "summary": "Landsat Collection 1 is highlighted as deprecated in the script editor with a code annotation and warning message; deprecated on 2024-03-13.",
+  "extended_definition": "Landsat Collection 1 is highlighted as deprecated in the script editor with a code annotation and warning message; deprecated on 2024-03-13.",
+  "lifecycle": {
+    "latest_feature_date": "2024-03-13",
+    "deprecation_date": "2024-03-13",
+    "status": "deprecation_noted"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/earth-engine/guides/charts_image_collection",
+      "https://developers.google.com/earth-engine/guides/debugging",
+      "https://developers.google.com/earth-engine/guides/landsat"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Landsat Algorithms \\_|\\_ Google Earth Engine \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/earth-engine/guides/landsat",
+        "source_id": "site-docs-reference",
+        "final_score": 106,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "ImageCollection ( 'LANDSAT/LC09/C02/T1 L2' ) Simple cloud score For scoring Landsat pixels by their relative cloudiness, Earth Engine provides a rudimentary cloud scoring algorithm in the ee.Algorithms.Landsat.simpleCloudScore() method. (For details on the implementation, see this Code Editor sample script ).",
+          "This example creates a simple composite using default parameters and compares it to a composite using custom parameters for the cloud score threshold and the percentile: Code Editor (JavaScript) // Load a raw Landsat 5 ImageCollection for a single year. var collection = ee .",
+          "To apply this algorithm to an Earth Engine mosaic of Landsat scenes, set the SENSOR ID property: Code Editor (JavaScript) // Load a Landsat 8 TOA collection, make 15-day mosaic, set SENSOR ID property. var mosaic = ee ."
+        ]
+      },
+      {
+        "title": "Debugging guide \\_|\\_ Google Earth Engine \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/earth-engine/guides/debugging",
+        "source_id": "site-docs-root-2",
+        "final_score": 96,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "With the same image and features used previously: Code Editor (JavaScript) // Define a function to be mapped over the collection. var functionToMap = function ( feature ) { var dictionary = image . reduceRegion ({ reducer : 'first' , geometry : feature . geometry (), scale : 10 , }); // Debug: print ( dictionary ); return feature . set ({ result : ee .",
+          "Code Editor (JavaScript) Export . table . toDrive ({ collection : terribleAggregations , description : 'terribleAggregations' , fileFormat : 'CSV' }); Python setup See the Python Environment page for information on the Python API and using geemap for interactive development. import ee import geemap.core as geemap Colab (Python) task = ee . batch .",
+          "Code Editor (JavaScript) Export . table . toDrive ({ collection : ee ."
+        ]
+      },
+      {
+        "title": "ImageCollection Charts \\_|\\_ Google Earth Engine \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/earth-engine/guides/charts_image_collection",
+        "source_id": "site-docs-root-2",
+        "final_score": 85,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Code Editor (JavaScript) // Import the example feature collection and subset the grassland feature. var grassland = ee .",
+          "Code Editor (JavaScript) // Import the example feature collection and subset the grassland feature. var grassland = ee .",
+          "Code Editor (JavaScript) // Import the example feature collection and subset the forest feature. var forest = ee ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "developers.google.com",
+      "ee.Algorithms.Landsat.simpleCloudScore",
+      "geemap.core"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": []
+}

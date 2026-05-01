@@ -1,0 +1,97 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:32.655Z",
+  "source_step08_card": "data/step-08/current/products/database-center/card.json",
+  "product_name": "Database Center",
+  "product_slug": "database-center",
+  "feature_name": "VPC Service Controls integration",
+  "feature_slug": "vpc-service-controls-integration",
+  "summary": "Database Center integrates with VPC Service Controls to protect database fleet resources with service perimeters.",
+  "extended_definition": "Database Center integrates with VPC Service Controls to protect database fleet resources with service perimeters.",
+  "lifecycle": {
+    "latest_feature_date": "2025-04-09",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/database-center/docs/alerts",
+      "https://docs.cloud.google.com/database-center/docs/configure-vpc-service-controls",
+      "https://docs.cloud.google.com/python/docs/reference/google-cloud-databasecenter/latest/google.cloud.databasecenter_v1beta.services.database_center.DatabaseCenterAsyncClient",
+      "https://docs.cloud.google.com/python/docs/reference/google-cloud-databasecenter/latest/google.cloud.databasecenter_v1beta.services.database_center.DatabaseCenterClient"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Configure VPC Service Controls \\_|\\_ Database Center \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/database-center/docs/configure-vpc-service-controls",
+        "source_id": "site-docs-root",
+        "final_score": 269,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "This page describes how to configure Database Center with VPC Service Controls, a Google Cloud feature to secure data and resources.",
+          "How to secure Database Center service using VPC Service Controls Configuring VPC Service Controls for Database Center project includes the following steps: Create and manage a service perimeter .",
+          "Home Documentation Databases Database Center Guides Send feedback Configure VPC Service Controls Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"Class DatabaseCenterAsyncClient (0.7.0) \\_|\\_ Python client libraries \\_\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/google-cloud-databasecenter/latest/google.cloud.databasecenter_v1beta.services.database_center.DatabaseCenterAsyncClient",
+        "source_id": "site-python-reference",
+        "final_score": 215,
+        "relevance": "",
+        "evidence_snippets": [
+          "Home Documentation Developer tools Python Client libraries Send feedback Class DatabaseCenterAsyncClient (0.7.0) Stay organized with collections Save and categorize content based on your preferences.",
+          "If a Callable is given, it will be called with the same set of initialization arguments as used in the DatabaseCenterTransport constructor.",
+          "It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import databasecenter v1beta async def sample query database resource groups(): Create a client client = databasecenter v1beta ."
+        ]
+      },
+      {
+        "title": "\"Class DatabaseCenterClient (0.7.0) \\_|\\_ Python client libraries \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/google-cloud-databasecenter/latest/google.cloud.databasecenter_v1beta.services.database_center.DatabaseCenterClient",
+        "source_id": "site-python-reference",
+        "final_score": 215,
+        "relevance": "",
+        "evidence_snippets": [
+          "Home Documentation Developer tools Python Client libraries Send feedback Class DatabaseCenterClient (0.7.0) Stay organized with collections Save and categorize content based on your preferences.",
+          "If a Callable is given, it will be called with the same set of initialization arguments as used in the DatabaseCenterTransport constructor.",
+          "It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import databasecenter v1beta def sample query database resource groups(): Create a client client = databasecenter v1beta ."
+        ]
+      },
+      {
+        "title": "\"Monitor your database fleet with alerting policies \\_|\\_ Database Center\\",
+        "url": "https://docs.cloud.google.com/database-center/docs/alerts",
+        "source_id": "site-docs-root",
+        "final_score": 201,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Databases Database Center Guides Send feedback Monitor your database fleet with alerting policies Stay organized with collections Save and categorize content based on your preferences.",
+          "Preview — Monitoring your database fleet in Database Center This feature is subject to the \"Pre-GA Offerings Terms\" in the General Service Terms section of the Service Specific Terms .",
+          "To see the alerting policies configured for your Google Cloud project and the incidents they create, do the following: In the Google Cloud console, go to the Database Center page."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "googleapis.dev",
+      "options.html"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": []
+}

@@ -1,0 +1,164 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:49.581Z",
+  "source_step08_card": "data/step-08/current/products/virtual-private-cloud/card.json",
+  "product_name": "Virtual Private Cloud",
+  "product_slug": "virtual-private-cloud",
+  "feature_name": "Resource Manager tags for VPC resources",
+  "feature_slug": "resource-manager-tags-for-vpc-resources",
+  "summary": "You can now add Resource Manager tags to supported VPC resources.",
+  "extended_definition": "You can now add Resource Manager tags to supported VPC resources.",
+  "lifecycle": {
+    "latest_feature_date": "2023-08-30",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/vpc/docs/access-service-other-vpc-network",
+      "https://docs.cloud.google.com/vpc/docs/add-remove-network-tags",
+      "https://docs.cloud.google.com/vpc/docs/shared-vpc",
+      "https://docs.cloud.google.com/vpc/docs/vpc-peering"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Access the service from another VPC network \\_|\\_ Virtual Private Cloud\\",
+        "url": "https://docs.cloud.google.com/vpc/docs/access-service-other-vpc-network",
+        "source_id": "site-docs-root-2",
+        "final_score": 246,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For example, expected responses look like Page served from: vm-1 and Page served from: vm-2 . curl -s http://192.168.10.5 Clean up To avoid incurring charges to your Google Cloud account for the resources used in this tutorial, either delete the project that contains the resources, or keep the project and delete the individual resources.",
+          "Objectives Configure networking for the service consumer resources Create an endpoint Test accessing the endpoint Costs In this document, you use the following billable components of Google Cloud: Virtual Private Cloud Compute Engine To generate a cost estimate based on your projected usage, use the pricing calculator .",
+          "When you finish the tasks that are described in this document, you can avoid continued billing by deleting the resources that you created."
+        ]
+      },
+      {
+        "title": "Add network tags \\_|\\_ Virtual Private Cloud \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vpc/docs/add-remove-network-tags",
+        "source_id": "site-docs-root-2",
+        "final_score": 236,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Terraform You can use the Terraform resource to create a VM instance that has network tags. resource \"google compute instance\" \"default\" { project = var.project id # Replace this with your project ID in quotes zone = \"southamerica-east1-b\" name = \"backend-instance\" machine type = \"e2-medium\" boot disk { initialize params { image = \"debian-cloud/debian-9\" } } network interface { network = \"default\" } tags = [\"health-check\", \"ssh\"] } To learn how to apply or remove a Terraform configuration, see Basic Terraform commands .",
+          "Perform a GET request to the instance; for example: GET https://compute.googleapis.com/compute/v1/projects/myproject/zones/us-central1-f/instances/example-instance Look for the tags.fingerprint property in the response: 200 OK { ... \"tags\": { \"items\": [ \"http-server\", \"db-client\" ], \"fingerprint\": \"MW8EqhxILtc=\" }, ... } You can also use a gcloud command to get the fingerprint , as shown in the following example: gcloud compute instances describe INSTANCE NAME \\ --zone ZONE \\ --format=\"get(tags.fingerprint)\" Make a POST request to the instance().setTags method.",
+          "You can then specify tags so that the route only applies to traffic sent from VMs with matching network tags in the specified VPC network."
+        ]
+      },
+      {
+        "title": "Shared VPC \\_|\\_ Virtual Private Cloud \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vpc/docs/shared-vpc",
+        "source_id": "site-docs-root",
+        "final_score": 221,
+        "relevance": "",
+        "evidence_snippets": [
+          "Shared VPC lets you map each tier of the web service to different projects so that they can be managed by different teams while sharing a common VPC network: Resources, such as instances and load balancer components, for each tier are placed in individual service projects managed by different teams.",
+          "In this way, you can use Shared VPC to organize resources into cost centers for your organization.",
+          "Resources Eligible resources You can use most Google Cloud products and features in Shared VPC service projects."
+        ]
+      },
+      {
+        "title": "VPC Network Peering \\_|\\_ Virtual Private Cloud \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vpc/docs/vpc-peering",
+        "source_id": "site-docs-root",
+        "final_score": 221,
+        "relevance": "",
+        "evidence_snippets": [
+          "VPC Network Peering also provides certain external IPv6 connectivity to the destination external IPv6 address ranges of the following resources when the routes to those destination external IPv6 addresses are exchanged by VPC Network Peering: Dual-stack and IPv6-only virtual machine (VM) instance network interfaces Forwarding rules for external protocol forwarding Forwarding rules for external passthrough Network Load Balancers VPC Network Peering supports both IPv4 and IPv6 connectivity.",
+          "When the intended peering stack type is IPV4 IPV6 , if a local subnet route for 2001:0db8:0a0b:0c0d::/64 exists, you can't establish a peering connection to a VPC network with a static route whose destination exactly matches 2001:0db8:0a0b:0c0d::/64 or fits within 2001:0db8:0a0b:0c0d::/64 (for example, 2001:0db8:0a0b:0c0d::/96 ).",
+          "If a local static route exists, Google Cloud enforces the following: You can't establish a new peering connection to a VPC network that already contains a subnet route that exactly matches or contains the local static route's destination if the peering configuration results in importing the conflicting subnet route."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "compute.googleapis.com",
+      "compute.xpnAdmin",
+      "resourcemanager.projectIamAdmin",
+      "tags.fingerprint",
+      "var.project"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/access-service-other-vpc-network",
+        "https://docs.cloud.google.com/vpc/docs/add-remove-network-tags",
+        "https://docs.cloud.google.com/vpc/docs/shared-vpc",
+        "https://docs.cloud.google.com/vpc/docs/vpc-peering"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/access-service-other-vpc-network",
+        "https://docs.cloud.google.com/vpc/docs/add-remove-network-tags",
+        "https://docs.cloud.google.com/vpc/docs/shared-vpc",
+        "https://docs.cloud.google.com/vpc/docs/vpc-peering"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/access-service-other-vpc-network",
+        "https://docs.cloud.google.com/vpc/docs/add-remove-network-tags",
+        "https://docs.cloud.google.com/vpc/docs/shared-vpc",
+        "https://docs.cloud.google.com/vpc/docs/vpc-peering"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/access-service-other-vpc-network",
+        "https://docs.cloud.google.com/vpc/docs/add-remove-network-tags",
+        "https://docs.cloud.google.com/vpc/docs/shared-vpc",
+        "https://docs.cloud.google.com/vpc/docs/vpc-peering"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/access-service-other-vpc-network",
+        "https://docs.cloud.google.com/vpc/docs/add-remove-network-tags",
+        "https://docs.cloud.google.com/vpc/docs/shared-vpc",
+        "https://docs.cloud.google.com/vpc/docs/vpc-peering"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/access-service-other-vpc-network",
+        "https://docs.cloud.google.com/vpc/docs/add-remove-network-tags",
+        "https://docs.cloud.google.com/vpc/docs/shared-vpc",
+        "https://docs.cloud.google.com/vpc/docs/vpc-peering"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/access-service-other-vpc-network",
+        "https://docs.cloud.google.com/vpc/docs/add-remove-network-tags",
+        "https://docs.cloud.google.com/vpc/docs/shared-vpc",
+        "https://docs.cloud.google.com/vpc/docs/vpc-peering"
+      ]
+    }
+  ]
+}

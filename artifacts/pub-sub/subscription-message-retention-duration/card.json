@@ -1,0 +1,115 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:45.292Z",
+  "source_step08_card": "data/step-08/current/products/pub-sub/card.json",
+  "product_name": "Pub/Sub",
+  "product_slug": "pub-sub",
+  "feature_name": "Subscription message retention duration",
+  "feature_slug": "subscription-message-retention-duration",
+  "summary": "Subscription message retention duration can now be increased to 31 days.",
+  "extended_definition": "Subscription message retention duration can now be increased to 31 days.",
+  "lifecycle": {
+    "latest_feature_date": "2024-09-30",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/pubsub/docs/monitoring",
+      "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/create_subscription",
+      "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/get_subscription",
+      "https://docs.cloud.google.com/pubsub/docs/reliability-intro"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Monitor Pub/Sub in Cloud Monitoring \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/pubsub/docs/monitoring",
+        "source_id": "site-docs-root",
+        "final_score": 220,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The dashboard can show the following backlog metrics, aggregated by resource, for all your subscriptions: Unacknowledged messages ( subscription/num unacked messages by region ) to see the number of unacknowledged messages.",
+          "The following PromQL query creates a chart with the fraction of messages that subscribers acknowledge on a subscription: rate({ \" name \"=\"pubsub.googleapis.com/subscription/push request count\", \"monitored resource\"=\"pubsub subscription\", \"subscription id\"=\"$SUBSCRIPTION\", \"response class\"=\"ack\" }[${ interval}]) / rate({ \" name \"=\"pubsub.googleapis.com/subscription/push request count\", \"monitored resource\"=\"pubsub subscription\", \"subscription id\"=\"$SUBSCRIPTION\" }[${ interval}]) Monitor subscriptions with filters If you configure a filter on a subscription, Pub/Sub automatically acknowledges messages that don't match the filter .",
+          "You can also attach a subscription to the dead-letter topic and then monitor the forwarded undeliverable messages on this subscription using the following metrics: subscription/num unacked messages by region the number of forwarded messages that have accumulated in the subscription subscription/oldest unacked message age by region the age of the oldest forwarded message in the subscription Maintain a healthy publisher The primary goal of a publisher is to persist message data quickly."
+        ]
+      },
+      {
+        "title": "Pub/Sub: Introduction to reliability \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/pubsub/docs/reliability-intro",
+        "source_id": "site-docs-root",
+        "final_score": 202,
+        "relevance": "",
+        "evidence_snippets": [
+          "Subscribers in Europe and Australia are unavailable In the event all subscribers are unavailable, then Pub/Sub stores the messages up to the configured message retention duration .",
+          "However, it may result in a backlog that continues to build up and leads to messages not being able to be delivered before the message retention duration passes.",
+          "Once the subscribers reconnect, the messages are delivered unless the outage lasts longer than the configured message retention duration."
+        ]
+      },
+      {
+        "title": "\"MCP Tools Reference: pubsub.googleapis.com \\_|\\_ Pub/Sub \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/create_subscription",
+        "source_id": "site-api-reference",
+        "final_score": 198,
+        "relevance": "",
+        "evidence_snippets": [
+          "Subscription JSON representation { \"name\" : string , \"topic\" : string , \"pushConfig\" : { object ( PushConfig ) } , \"bigqueryConfig\" : { object ( BigQueryConfig ) } , \"cloudStorageConfig\" : { object ( CloudStorageConfig ) } , \"ackDeadlineSeconds\" : integer , \"retainAckedMessages\" : boolean , \"messageRetentionDuration\" : string , \"labels\" : { string : string , ... } , \"enableMessageOrdering\" : boolean , \"expirationPolicy\" : { object ( ExpirationPolicy ) } , \"filter\" : string , \"deadLetterPolicy\" : { object ( DeadLetterPolicy ) } , \"retryPolicy\" : { object ( RetryPolicy ) } , \"detached\" : boolean , \"enableExactlyOnceDelivery\" : boolean , \"topicMessageRetentionDuration\" : string , \"state\" : enum ( State ) , \"analyticsHubSubscriptionInfo\" : { object ( AnalyticsHubSubscriptionInfo ) } , \"messageTransforms\" : [ { object ( MessageTransform ) } ] , \"tags\" : { string : string , ... } } Fields name string Required.",
+          "Subscription JSON representation { \"name\" : string , \"topic\" : string , \"pushConfig\" : { object ( PushConfig ) } , \"bigqueryConfig\" : { object ( BigQueryConfig ) } , \"cloudStorageConfig\" : { object ( CloudStorageConfig ) } , \"ackDeadlineSeconds\" : integer , \"retainAckedMessages\" : boolean , \"messageRetentionDuration\" : string , \"labels\" : { string : string , ... } , \"enableMessageOrdering\" : boolean , \"expirationPolicy\" : { object ( ExpirationPolicy ) } , \"filter\" : string , \"deadLetterPolicy\" : { object ( DeadLetterPolicy ) } , \"retryPolicy\" : { object ( RetryPolicy ) } , \"detached\" : boolean , \"enableExactlyOnceDelivery\" : boolean , \"topicMessageRetentionDuration\" : string , \"state\" : enum ( State ) , \"analyticsHubSubscriptionInfo\" : { object ( AnalyticsHubSubscriptionInfo ) } , \"messageTransforms\" : [ { object ( MessageTransform ) } ] , \"tags\" : { string : string , ... } } Fields name string Required.",
+          "This must be true if you would like to Seek to a timestamp in the past to replay previously-acknowledged messages. messageRetentionDuration string ( Duration format) Optional."
+        ]
+      },
+      {
+        "title": "\"MCP Tools Reference: pubsub.googleapis.com \\_|\\_ Pub/Sub \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/get_subscription",
+        "source_id": "site-api-reference",
+        "final_score": 198,
+        "relevance": "",
+        "evidence_snippets": [
+          "Subscription JSON representation { \"name\" : string , \"topic\" : string , \"pushConfig\" : { object ( PushConfig ) } , \"bigqueryConfig\" : { object ( BigQueryConfig ) } , \"cloudStorageConfig\" : { object ( CloudStorageConfig ) } , \"ackDeadlineSeconds\" : integer , \"retainAckedMessages\" : boolean , \"messageRetentionDuration\" : string , \"labels\" : { string : string , ... } , \"enableMessageOrdering\" : boolean , \"expirationPolicy\" : { object ( ExpirationPolicy ) } , \"filter\" : string , \"deadLetterPolicy\" : { object ( DeadLetterPolicy ) } , \"retryPolicy\" : { object ( RetryPolicy ) } , \"detached\" : boolean , \"enableExactlyOnceDelivery\" : boolean , \"topicMessageRetentionDuration\" : string , \"state\" : enum ( State ) , \"analyticsHubSubscriptionInfo\" : { object ( AnalyticsHubSubscriptionInfo ) } , \"messageTransforms\" : [ { object ( MessageTransform ) } ] , \"tags\" : { string : string , ... } } Fields name string Required.",
+          "This must be true if you would like to Seek to a timestamp in the past to replay previously-acknowledged messages. messageRetentionDuration string ( Duration format) Optional.",
+          "If true, then messages are not expunged from the subscription's backlog, even if they are acknowledged, until they fall out of the message retention duration window."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "pubsub.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/pubsub/docs/monitoring",
+        "https://docs.cloud.google.com/pubsub/docs/reliability-intro",
+        "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/create_subscription",
+        "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/get_subscription"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/pubsub/docs/monitoring",
+        "https://docs.cloud.google.com/pubsub/docs/reliability-intro",
+        "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/create_subscription",
+        "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/get_subscription"
+      ]
+    }
+  ]
+}

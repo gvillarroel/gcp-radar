@@ -1,0 +1,124 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:12.665Z",
+  "source_step08_card": "data/step-08/current/products/agent-assist/card.json",
+  "product_name": "Agent Assist",
+  "product_slug": "agent-assist",
+  "feature_name": "Salesforce UI Connector",
+  "feature_slug": "salesforce-ui-connector",
+  "summary": "The Salesforce UI Connector enables Agent Assist voice conversation integration; The Salesforce UI Connector enables Agent Assist chat conversation integration.",
+  "extended_definition": "The Salesforce UI Connector enables Agent Assist voice conversation integration; The Salesforce UI Connector enables Agent Assist chat conversation integration.",
+  "lifecycle": {
+    "latest_feature_date": "2025-04-11",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/agent-assist/docs/custom-events",
+      "https://docs.cloud.google.com/agent-assist/docs/features",
+      "https://docs.cloud.google.com/agent-assist/docs/generative-knowledge-assist"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Custom events and custom UI module connectors | Agent Assist | Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/agent-assist/docs/custom-events",
+        "source_id": "feature-recovery-direct-http",
+        "final_score": 112,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Guides Reference Support Resources Technology areas More Agent Assist Site Selector More Guides Reference Support Resources Cross-product tools More Console Agent Assist Agent Assist console Documentation Overview Send feedback Concepts All concepts Agent Assist basics Agent Assist integrations Cloud logging field definitions Features All features AI Coach Overview Tool integration for AI coach Open API and Integration Connectors tools OpenAPI tool for Datastore Best practices Bidirectional API Build your own GenAI assist Build your own assist Build your own assist extension Extended streaming Implement Agent Assist using pre-built modules UI modules overview Implement UI modules and connectors UI modules Container V1 Container V2 Knowledge assist Generative knowledge assist Smart reply Summarization Transcript Agent desktop integration Custom events and custom UI module connectors UI module events Genesys Cloud integration Deploy the application server AudioHook voice integration Configuration for chat integration Test chat integration Twilio integration Twilio basics Deploy Twilio Flex Twilio SIPREC integration Salesforce integration Overview Salesforce chat integration Salesforce voice integration with Twilio Flex Salesforce voice integration with NiCE CXone LivePerson integration Basics Deploy the application server Deploy the proxy server Backend modules basics Integrate backend modules with your system (Proactive) Generative knowledge assist User guide Knowledge assist filters Skip PubSub notifications for empty suggestions Troubleshoot knowledge assist features Best practices Sentiment analysis Smart Reply Summarization Summarization with custom sections user guide Summarization with custom sections best practices Automatic evaluation basics Automatic evaluation user guide Automatic evaluation best practices Transcription Voice Transcription Transcription with Chirp 3 PubSub intermediate transcription How-to guides All how-to guides Enable Cloud Pub/Sub notifications Enable CMEK Enable real-time entity extraction Handoff a conversation CX Agent Studio Dialogflow CX Dialogflow ES Set up Speech-to-Text model adaptation Upload and export conversation data Upload conversation data Export conversation data Tutorials All tutorials Create a conversation profile Train an AI model Train a smart reply model Train a summarization custom model for chat Upload data Overview Conversation datasets Knowledge bases Use the Agent Assist simulator Deprecations Article suggestion FAQ Assist Knowledge documents best practices AI and ML Application development Application hosting Compute Data analytics and pipelines Databases Distributed, hybrid, and multicloud Industry solutions Migration Networking Observability and monitoring Security Storage Access and resources management Costs and usage management Infrastructure as code SDK, languages, frameworks, and tools Public sites Agent Assist public features Agent Assist console Home Documentation AI and ML Agent Assist Guides Send feedback Custom events and custom UI module connectors Stay organized with collections Save and categorize content based on your preferences.",
+          "A custom UI module connector must be responsible for the following operations: Dispatching an event to select the active conversation.",
+          "To manually dispatch a custom event, use the following syntax: dispatchAgentAssistEvent ( 'event_name' , { detail : event_payload , }); The following example shows how to dispatch the analyze-content-received event: if (newMessageFromHumanAgent) { dispatchAgentAssistEvent('analyze-content-received', { detail: { participantRole: 'HUMAN_AGENT', request: { textInput: {text: newMessageFromHumanAgent}, messageSendTime: new Date().toISOString() } } }); } After a you dispatch a custom event, you will see the following in the UI module connector service: this . api . analyzeContent (...) . then ( function ( response ) { dispatchAgentAssistEvent('analyze-content-response-received', { detail : { response : response } } ); } ); And you will see the following in the module: addAgentAssistEventListener('analyze-content-response-received', function (event) { // Use the AnalyzeContent response to render suggestions in the UI. }); To manually subscribe to a custom event, use the following syntax: addAgentAssistEventListener ( 'event_name' , function ( event ) { // ` event . detail ` contains the event payload . }); The following example shows a custom event subscription: addAgentAssistEventListener('smart-reply-selected', function (event) { var chipContent = event.details; // Populate the agent chat box with the selected Smart Reply chip. }); Custom UI module connectors You can also use custom events to create your own custom UI module connectors, which allow you to integrate the UI modules into an agent desktop that isn't supported by Agent Assist."
+        ]
+      },
+      {
+        "title": "Generative knowledge assist | Agent Assist | Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/agent-assist/docs/generative-knowledge-assist",
+        "source_id": "feature-recovery-direct-http",
+        "final_score": 104,
+        "relevance": "",
+        "evidence_snippets": [
+          "Guides Reference Support Resources Technology areas More Agent Assist Site Selector More Guides Reference Support Resources Cross-product tools More Console Agent Assist Agent Assist console Documentation Overview Send feedback Concepts All concepts Agent Assist basics Agent Assist integrations Cloud logging field definitions Features All features AI Coach Overview Tool integration for AI coach Open API and Integration Connectors tools OpenAPI tool for Datastore Best practices Bidirectional API Build your own GenAI assist Build your own assist Build your own assist extension Extended streaming Implement Agent Assist using pre-built modules UI modules overview Implement UI modules and connectors UI modules Container V1 Container V2 Knowledge assist Generative knowledge assist Smart reply Summarization Transcript Agent desktop integration Custom events and custom UI module connectors UI module events Genesys Cloud integration Deploy the application server AudioHook voice integration Configuration for chat integration Test chat integration Twilio integration Twilio basics Deploy Twilio Flex Twilio SIPREC integration Salesforce integration Overview Salesforce chat integration Salesforce voice integration with Twilio Flex Salesforce voice integration with NiCE CXone LivePerson integration Basics Deploy the application server Deploy the proxy server Backend modules basics Integrate backend modules with your system (Proactive) Generative knowledge assist User guide Knowledge assist filters Skip PubSub notifications for empty suggestions Troubleshoot knowledge assist features Best practices Sentiment analysis Smart Reply Summarization Summarization with custom sections user guide Summarization with custom sections best practices Automatic evaluation basics Automatic evaluation user guide Automatic evaluation best practices Transcription Voice Transcription Transcription with Chirp 3 PubSub intermediate transcription How-to guides All how-to guides Enable Cloud Pub/Sub notifications Enable CMEK Enable real-time entity extraction Handoff a conversation CX Agent Studio Dialogflow CX Dialogflow ES Set up Speech-to-Text model adaptation Upload and export conversation data Upload conversation data Export conversation data Tutorials All tutorials Create a conversation profile Train an AI model Train a smart reply model Train a summarization custom model for chat Upload data Overview Conversation datasets Knowledge bases Use the Agent Assist simulator Deprecations Article suggestion FAQ Assist Knowledge documents best practices AI and ML Application development Application hosting Compute Data analytics and pipelines Databases Distributed, hybrid, and multicloud Industry solutions Migration Networking Observability and monitoring Security Storage Access and resources management Costs and usage management Infrastructure as code SDK, languages, frameworks, and tools Public sites Agent Assist public features Agent Assist console Home Documentation AI and ML Agent Assist Guides Send feedback Generative knowledge assist Stay organized with collections Save and categorize content based on your preferences.",
+          "Before using any of the request data, make the following replacements: PROJECT_ID : your project ID LOCATION_ID : the ID for your location AGENT_ID : your flow-based or playbook-based data store agent ID from the previous step The following is a JSON example: { \"displayName\" : \"my-conversation-profile-display-name\" , \"humanAgentAssistantConfig\" : { \"humanAgentSuggestionConfig\" : { \"featureConfigs\" : [ { \"suggestionFeature\" : { \"type\" : \"KNOWLEDGE_SEARCH\" }, \"queryConfig\" : { \"dialogflowQuerySource\" : { \"humanAgentSideConfig\" : { \"agent\" : \"projects/ PROJECT_ID /locations/ LOCATION_ID /agents/ AGENT_ID \" } } }, \"disableAgentQueryLogging\" : false , \"enableConversationAugmentedQuery\" : false , } ] } } } When you create a conversation profile in the Agent Assist console, Agent Assist automatically enables both generative knowledge assist and proactive generative knowledge assist.",
+          "ParticipantsClient () participant_path = client . participant_path ( project_id , conversation_id , participant_id ) text_input = { \"text\" : text , \"language_code\" : \"en-US\" } response = client . analyze_content ( participant = participant_path , text_input = text_input ) print ( \"AnalyzeContent Response:\" ) print ( f \"Reply Text: { response . reply_text } \" ) for suggestion_result in response . human_agent_suggestion_results : if suggestion_result . error is not None : print ( f \"Error: { suggestion_result . error . message } \" ) if suggestion_result . suggest_articles_response : for answer in suggestion_result . suggest_articles_response . article_answers : print ( f \"Article Suggestion Answer: { answer . title } \" ) print ( f \"Answer Record: { answer . answer_record } \" ) if suggestion_result . suggest_faq_answers_response : for answer in suggestion_result . suggest_faq_answers_response . faq_answers : print ( f \"Faq Answer: { answer . answer } \" ) print ( f \"Answer Record: { answer . answer_record } \" ) if suggestion_result . suggest_smart_replies_response : for ( answer ) in suggestion_result . suggest_smart_replies_response . smart_reply_answers : print ( f \"Smart Reply: { answer . reply } \" ) print ( f \"Answer Record: { answer . answer_record } \" ) for suggestion_result in response . end_user_suggestion_results : if suggestion_result . error : print ( f \"Error: { suggestion_result . error . message } \" ) if suggestion_result . suggest_articles_response : for answer in suggestion_result . suggest_articles_response . article_answers : print ( f \"Article Suggestion Answer: { answer . title } \" ) print ( f \"Answer Record: { answer . answer_record } \" ) if suggestion_result . suggest_faq_answers_response : for answer in suggestion_result . suggest_faq_answers_response . faq_answers : print ( f \"Faq Answer: { answer . answer } \" ) print ( f \"Answer Record: { answer . answer_record } \" ) if suggestion_result . suggest_smart_replies_response : for ( answer ) in suggestion_result . suggest_smart_replies_response . smart_reply_answers : print ( f \"Smart Reply: { answer . reply } \" ) print ( f \"Answer Record: { answer . answer_record } \" ) return response Add a message from the user for suggestions In response to the agent, the user says \"When can I get my return refund?\" This time, the API response contains a suggested query and the generative AI answer based on the knowledge documents."
+        ]
+      },
+      {
+        "title": "Features | Agent Assist | Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/agent-assist/docs/features",
+        "source_id": "feature-recovery-direct-http",
+        "final_score": 88,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Guides Reference Support Resources Technology areas More Agent Assist Site Selector More Guides Reference Support Resources Cross-product tools More Console Agent Assist Agent Assist console Documentation Overview Send feedback Concepts All concepts Agent Assist basics Agent Assist integrations Cloud logging field definitions Features All features AI Coach Overview Tool integration for AI coach Open API and Integration Connectors tools OpenAPI tool for Datastore Best practices Bidirectional API Build your own GenAI assist Build your own assist Build your own assist extension Extended streaming Implement Agent Assist using pre-built modules UI modules overview Implement UI modules and connectors UI modules Container V1 Container V2 Knowledge assist Generative knowledge assist Smart reply Summarization Transcript Agent desktop integration Custom events and custom UI module connectors UI module events Genesys Cloud integration Deploy the application server AudioHook voice integration Configuration for chat integration Test chat integration Twilio integration Twilio basics Deploy Twilio Flex Twilio SIPREC integration Salesforce integration Overview Salesforce chat integration Salesforce voice integration with Twilio Flex Salesforce voice integration with NiCE CXone LivePerson integration Basics Deploy the application server Deploy the proxy server Backend modules basics Integrate backend modules with your system (Proactive) Generative knowledge assist User guide Knowledge assist filters Skip PubSub notifications for empty suggestions Troubleshoot knowledge assist features Best practices Sentiment analysis Smart Reply Summarization Summarization with custom sections user guide Summarization with custom sections best practices Automatic evaluation basics Automatic evaluation user guide Automatic evaluation best practices Transcription Voice Transcription Transcription with Chirp 3 PubSub intermediate transcription How-to guides All how-to guides Enable Cloud Pub/Sub notifications Enable CMEK Enable real-time entity extraction Handoff a conversation CX Agent Studio Dialogflow CX Dialogflow ES Set up Speech-to-Text model adaptation Upload and export conversation data Upload conversation data Export conversation data Tutorials All tutorials Create a conversation profile Train an AI model Train a smart reply model Train a summarization custom model for chat Upload data Overview Conversation datasets Knowledge bases Use the Agent Assist simulator Deprecations Article suggestion FAQ Assist Knowledge documents best practices AI and ML Application development Application hosting Compute Data analytics and pipelines Databases Distributed, hybrid, and multicloud Industry solutions Migration Networking Observability and monitoring Security Storage Access and resources management Costs and usage management Infrastructure as code SDK, languages, frameworks, and tools Public sites Agent Assist public features Agent Assist console Home Documentation AI and ML Agent Assist Guides Send feedback Features Stay organized with collections Save and categorize content based on your preferences.",
+          "Summarization with custom sections Automatically summarize your customer service conversations.",
+          "AI coach Make suggestions for how your agent responds during customer service conversations."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "event.details"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/agent-assist/docs/custom-events",
+        "https://docs.cloud.google.com/agent-assist/docs/generative-knowledge-assist",
+        "https://docs.cloud.google.com/agent-assist/docs/features"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/agent-assist/docs/custom-events",
+        "https://docs.cloud.google.com/agent-assist/docs/generative-knowledge-assist",
+        "https://docs.cloud.google.com/agent-assist/docs/features"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/agent-assist/docs/custom-events",
+        "https://docs.cloud.google.com/agent-assist/docs/generative-knowledge-assist",
+        "https://docs.cloud.google.com/agent-assist/docs/features"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/agent-assist/docs/custom-events",
+        "https://docs.cloud.google.com/agent-assist/docs/generative-knowledge-assist",
+        "https://docs.cloud.google.com/agent-assist/docs/features"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/agent-assist/docs/custom-events",
+        "https://docs.cloud.google.com/agent-assist/docs/generative-knowledge-assist",
+        "https://docs.cloud.google.com/agent-assist/docs/features"
+      ]
+    }
+  ]
+}

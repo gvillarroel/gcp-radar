@@ -1,0 +1,115 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:43.150Z",
+  "source_step08_card": "data/step-08/current/products/mainframe-connector/card.json",
+  "product_name": "Mainframe Connector",
+  "product_slug": "mainframe-connector",
+  "feature_name": "QSAM decode filtering",
+  "feature_slug": "qsam-decode-filtering",
+  "summary": "The QSAM decode command supports filtering rules defined in the transcoder configuration.",
+  "extended_definition": "The QSAM decode command supports filtering rules defined in the transcoder configuration.",
+  "lifecycle": {
+    "latest_feature_date": "2025-09-09",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/mainframe-connector/docs/api-command-reference",
+      "https://docs.cloud.google.com/mainframe-connector/docs/api-reference",
+      "https://docs.cloud.google.com/mainframe-connector/docs/local-transcoding",
+      "https://docs.cloud.google.com/mainframe-connector/docs/qsam-vsam-transcoding"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"qsam and vsam commands reference \\_|\\_ Mainframe Connector \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/mainframe-connector/docs/qsam-vsam-transcoding",
+        "source_id": "site-docs-reference",
+        "final_score": 194,
+        "relevance": "",
+        "evidence_snippets": [
+          "Decode mainframe data to Google Cloud Encode Google Cloud data to the mainframe This page provides an overview of the transcoding process using the qsam decode , qsam encode , and vsam decode commands, the physical and logical types of mainframe data, and the Optimized Row Columnar (ORC) and BigQuery type mappings.",
+          "The qsam and vsam commands perform the following transcoding operations: The qsam decode command decodes QSAM flat files to Google Cloud compatible formats.",
+          "Mainframe Connector also supports transcoding Virtual Storage Access Method (VSAM) files to Google Cloud compatible formats using the vsam decode command."
+        ]
+      },
+      {
+        "title": "Mainframe Connector API commands \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/mainframe-connector/docs/api-reference",
+        "source_id": "site-docs-reference",
+        "final_score": 174,
+        "relevance": "",
+        "evidence_snippets": [
+          "Query file SELECT FROM bigquery-public-data.samples.wikipedia WHERE title = @mytitle AND num characters > @min chars; Execution example bq query \\ --project id=mainframe-connector-dev \\ --location=\"US\" \\ --parameters=mytitle::Hippocrates,min chars:INT64:42600 Perform a dry run of the gsutil cp command The gsutil cp command decodes a QSAM file using a COBOL copybook, and generates an ORC file on Cloud Storage.",
+          "Based on the flag you use, the systemreport command prints the following system data: --supported ciphers : Supported ciphers --available security providers : Available security providers No Use customized character sets Mainframe Connector supports different character sets that decode bytes into BigQuery strings, and the other way around.",
+          "No qsam and vsam commands qsam decode Use this command to transcode QSAM file records to the format you want using the --output-format argument."
+        ]
+      },
+      {
+        "title": "Mainframe Connector command-line reference \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/mainframe-connector/docs/api-command-reference",
+        "source_id": "site-docs-reference",
+        "final_score": 156,
+        "relevance": "",
+        "evidence_snippets": [
+          "INPUT OUTPUT Flags and arguments The qsam decode command uses the following flags and arguments: INPUT : DataPath Specify the data path of the QSAM file you want to decode.",
+          "This command decodes records from a QSAM file to the format you specify using the --output-format argument.",
+          "Synopsis systemreport [-h] [--available-security-providers] [--supported-ciphers] Flags and arguments The systemreport command uses the following flags and arguments: --available-security-providers (Optional) Print supported security providers. --help or -h (Optional) Display this help message. --supported-ciphers (Optional) Print supported ciphers. vsam decode Decode VSAM data."
+        ]
+      },
+      {
+        "title": "\"Move data transcoded locally on the mainframe to Google Cloud \\_|\\_ Mainframe\\",
+        "url": "https://docs.cloud.google.com/mainframe-connector/docs/local-transcoding",
+        "source_id": "site-docs-root",
+        "final_score": 128,
+        "relevance": "",
+        "evidence_snippets": [
+          "If your input dataset is a Queued Sequential Access Method (QSAM) file with fixed or variable record length, use the following command: //STEP01 EXEC BQSH //INFILE DD DSN=<HLQ>.DATA.FILENAME,DISP=SHR //COPYBOOK DD DISP=SHR,DSN=<HLQ>.COPYBOOK.CPY //CONFIG DD DISP=SHR,DSN=<HLQ>.CONFIG.SETTINGS //STDIN DD BUCKET= BUCKET NAME qsam decode --copybook dd:COPYBOOK --transcode-configuration dd:CONFIG dd:INFILE gs://$BUCKET/tablename / If your input dataset is a Virtual Storage Access Method (VSAM) file with fixed or variable record length, use the following command: //STEP01 EXEC BQSH //INFILE DD DSN=<HLQ>.DATA.FILENAME,DISP=SHR //COPYBOOK DD DISP=SHR,DSN=<HLQ>.COPYBOOK.CPY //CONFIG DD DISP=SHR,DSN=<HLQ>.CONFIG.SETTINGS //STDIN DD BUCKET= BUCKET NAME vsam decode --copybook dd:COPYBOOK --transcode-configuration dd:CONFIG dd:INFILE gs://$BUCKET/tablename / Replace BUCKET NAME with the name of the Cloud Storage bucket to which you want to copy mainframe data.",
+          "Using qsam commands (release 5.16.0 and later) Using the vsam decode command (release 5.18.0 and later) Using the gsutil cp command Advantages of qsam and vsam commands The qsam and vsam commands provide the following advantages: Support for compound data types, including the OCCURS clause (lists), REDEFINES clause, and nested records.",
+          "Transcoding is done during the qsam decode , vsam decode , or gsutil cp operations (based on the command you choose), where a mainframe extended binary coded decimal interchange code (EBCDIC) dataset is converted to the ORC format in UTF-8 during the copy to a Cloud Storage bucket."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "data.samples.wikipedia"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/mainframe-connector/docs/qsam-vsam-transcoding",
+        "https://docs.cloud.google.com/mainframe-connector/docs/api-reference",
+        "https://docs.cloud.google.com/mainframe-connector/docs/api-command-reference",
+        "https://docs.cloud.google.com/mainframe-connector/docs/local-transcoding"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/mainframe-connector/docs/qsam-vsam-transcoding",
+        "https://docs.cloud.google.com/mainframe-connector/docs/api-reference",
+        "https://docs.cloud.google.com/mainframe-connector/docs/api-command-reference",
+        "https://docs.cloud.google.com/mainframe-connector/docs/local-transcoding"
+      ]
+    }
+  ]
+}

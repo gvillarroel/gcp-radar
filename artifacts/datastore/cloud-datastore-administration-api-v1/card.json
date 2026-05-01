@@ -1,0 +1,166 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:33.658Z",
+  "source_step08_card": "data/step-08/current/products/datastore/card.json",
+  "product_name": "Datastore",
+  "product_slug": "datastore",
+  "feature_name": "Cloud Datastore Administration API v1",
+  "feature_slug": "cloud-datastore-administration-api-v1",
+  "summary": "Cloud Datastore Administration API v1 provides Datastore administration operations such as export and import; Cloud Datastore Administration API v1 provides export, import, and long-running operation management for Datastore.",
+  "extended_definition": "Cloud Datastore Administration API v1 provides Datastore administration operations such as export and import; Cloud Datastore Administration API v1 provides export, import, and long-running operation management for Datastore.",
+  "lifecycle": {
+    "latest_feature_date": "2018-02-28",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/datastore/docs/concepts/entities",
+      "https://docs.cloud.google.com/datastore/docs/reference/admin/rest",
+      "https://docs.cloud.google.com/datastore/docs/reference/data/rest",
+      "https://docs.cloud.google.com/python/docs/reference/datastore/latest/admin_client"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Cloud Datastore API \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/datastore/docs/reference/admin/rest",
+        "source_id": "site-docs-reference",
+        "final_score": 240,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Select a location to see its regional service endpoint for this service. global africa-south1 asia-east1 asia-east2 asia-northeast1 asia-northeast2 asia-northeast3 asia-south1 asia-south2 asia-southeast1 asia-southeast2 asia-southeast3 australia-southeast1 australia-southeast2 europe-central2 europe-north1 europe-north2 europe-southwest1 europe-west1 europe-west10 europe-west12 europe-west2 europe-west3 europe-west4 europe-west6 europe-west8 europe-west9 me-central1 me-central2 me-west1 northamerica-northeast1 northamerica-northeast2 northamerica-south1 southamerica-east1 southamerica-west1 us-central1 us-east1 us-east4 us-east5 us-south1 us-west1 us-west2 us-west3 us-west4 eu us https://datastore.googleapis.com REST Resource: v1beta1.projects Methods export POST /v1beta1/projects/{projectId}:export Exports a copy of all or a subset of entities from Google Cloud Datastore to another storage system, such as Google Cloud Storage. import POST /v1beta1/projects/{projectId}:import Imports entities into Google Cloud Datastore.",
+          "This service provides the following discovery documents: https://datastore.googleapis.com/$discovery/rest?version=v1 https://datastore.googleapis.com/$discovery/rest?version=v1beta1 Service endpoint A service endpoint is a base URL that specifies the network address of an API service.",
+          "REST Resource: v1beta1.projects REST Resource: v1.projects REST Resource: v1.projects.indexes REST Resource: v1.projects.operations Service: datastore.googleapis.com To call this service, we recommend that you use the Google-provided client libraries ."
+        ]
+      },
+      {
+        "title": "\"Datastore Admin Client \\_|\\_ Python client libraries \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/datastore/latest/admin_client",
+        "source_id": "site-python-reference",
+        "final_score": 232,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "2.24.0 (latest) 2.23.0 2.22.0 2.21.0 2.20.2 2.19.0 2.18.0 2.17.0 2.16.1 2.15.2 2.14.0 2.13.2 2.12.0 2.11.1 2.10.0 2.9.0 2.8.3 2.7.2 2.6.2 2.5.1 2.4.0 2.3.0 2.2.0 2.1.6 2.0.1 1.15.5 1.14.0 1.13.2 1.12.0 1.11.0 1.10.0 1.9.0 class google.cloud.datastore admin v1.services.datastore admin.client.DatastoreAdminClient( , credentials: typing.Optional[google.auth.credentials.Credentials] = None, transport: typing.Optional[typing.Union[str, google.cloud.datastore admin v1.services.datastore admin.transports.base.DatastoreAdminTransport, typing.Callable[[...], google.cloud.datastore admin v1.services.datastore admin.transports.base.DatastoreAdminTransport]]] = None, client options: typing.Optional[typing.Union[google.api core.client options.ClientOptions, dict]] = None, client info: google.api core.gapic v1.client info.ClientInfo = <google.api core.gapic v1.client info.ClientInfo object>) Bases: object Google Cloud Datastore Admin API The Datastore Admin API provides several admin services for Cloud Datastore.",
+          "Return type google.cloud.datastore admin v1.services.datastore admin.pagers.ListIndexesPager list operations(request: Optional [ Union [google.longrunning.operations pb2.ListOperationsRequest, dict ]] = None, , retry: Optional [ Union [ google.api core.retry.retry unary.Retry , google.api core.gapic v1.method.",
+          "Returns None static common billing account path(billing account: str ) Returns a fully-qualified billing account string. static common folder path(folder: str ) Returns a fully-qualified folder string. static common location path(project: str , location: str ) Returns a fully-qualified location string. static common organization path(organization: str ) Returns a fully-qualified organization string. static common project path(project: str ) Returns a fully-qualified project string. create index(request: Optional [ Union [google.cloud.datastore admin v1.types.datastore admin.CreateIndexRequest, dict ]] = None, , retry: Optional [ Union [ google.api core.retry.retry unary.Retry , google.api core.gapic v1.method."
+        ]
+      },
+      {
+        "title": "Entities, Properties, and Keys \\_|\\_ Datastore \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/datastore/docs/concepts/entities",
+        "source_id": "site-iam-reference",
+        "final_score": 232,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For example, starting with the following entity: REST entity: { \"key\" : { \"path\": [ { \"kind\": \"Kind 1\", \"name\": \"entity 1\" } ] } \"properties\" : { \"a\": 1, \"b\": 2, \"c\": 3 } } The following request updates both a and b and then applies a property transform to property b : POST https://datastore.googleapis.com/v1/projects/ { projectId }: commit { \"mode\" : \"NON TRANSACTIONAL\" , \"mutations\" : [ { \"propertyMask\" : { \"a\" , \"b\" }, // update property a , b \"update\" : { \"key\" : { \"path\" : [ { \"kind\" : \"Kind 1\" , \"name\" : \"entity 1\" } ] } \"properties\" : { \"a\" : \"new value\" , \"b\" : -2 } }, \"propertyTransforms\" : [ { \"property\" : \"b\" , \"increment\" : { \"integerValue\" : 2 } } ] } ] } The result is the following: REST entity: { \"key\" : { \"path\": [ { \"kind\": \"Kind 1\", \"name\": \"entity 1\" } ] } \"properties\" : { \"a\": \"new value\", \"b\": 0, \"c\": 3 } } Kinds and identifiers Each entity is of a particular kind , which categorizes the entity for the purpose of queries.",
+          "This operation increments properties by the specified values: REST POST https://datastore.googleapis.com/v1/projects/{projectId}:commit { \"mode\": \"NON TRANSACTIONAL\", \"mutations\": [ { \"propertyMask\": {}, // Empty write mask indicates only transforms can change the entity. \"propertyTransforms\": [ { \"property\": \"quantity\", \"increment\": { \"integerValue\": 2 } }, { \"property\": \"inStock\", \"maximum\": { \"integerValue\": 100 } }, ] \"upsert\": { \"key\": { \"path\": [ { \"kind\": \"Items\", \"name\": \"entity 1\" } ] } } } ] } The following example sets a property value to the time at which the server processed the request with millisecond precision.",
+          "REST POST https://datastore.googleapis.com/v1/projects/{projectId}:commit { \"mode\": \"NON TRANSACTIONAL\", \"mutations\": [ { \"propertyMask\": {}, // Empty write mask indicates only transforms can change the entity. \"propertyTransforms\": [ { \"property\": \"arrayField\", \"appendMissingElements\": { \"values\": [ { \"stringValue\": \"str\" }, { \"integerValue\": 10 } ] } }, ] \"upsert\": { \"key\": { \"path\": [ { \"kind\": \"Kind 1\", \"name\": \"entity 1\" } ] } } } ] } Mixed types with maximum and minimum The maximum and minimum property transforms take either an integer or a double (floating-point number) value as input."
+        ]
+      },
+      {
+        "title": "Cloud Datastore API \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/datastore/docs/reference/data/rest",
+        "source_id": "site-docs-root",
+        "final_score": 228,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "This service provides the following discovery documents: https://datastore.googleapis.com/$discovery/rest?version=v1 https://datastore.googleapis.com/$discovery/rest?version=v1beta3 Service endpoint A service endpoint is a base URL that specifies the network address of an API service.",
+          "REST Resource: v1beta3.projects REST Resource: v1.projects REST Resource: v1.projects.operations Service: datastore.googleapis.com To call this service, we recommend that you use the Google-provided client libraries .",
+          "Select a location to see its regional service endpoint for this service. global africa-south1 asia-east1 asia-east2 asia-northeast1 asia-northeast2 asia-northeast3 asia-south1 asia-south2 asia-southeast1 asia-southeast2 asia-southeast3 australia-southeast1 australia-southeast2 europe-central2 europe-north1 europe-north2 europe-southwest1 europe-west1 europe-west10 europe-west12 europe-west2 europe-west3 europe-west4 europe-west6 europe-west8 europe-west9 me-central1 me-central2 me-west1 northamerica-northeast1 northamerica-northeast2 northamerica-south1 southamerica-east1 southamerica-west1 us-central1 us-east1 us-east4 us-east5 us-south1 us-west1 us-west2 us-west3 us-west4 eu us https://datastore.googleapis.com REST Resource: v1beta3.projects Methods allocateIds POST /v1beta3/projects/{projectId}:allocateIds Allocates IDs for the given keys, which is useful for referencing an entity before it is inserted. beginTransaction POST /v1beta3/projects/{projectId}:beginTransaction Begins a new transaction. commit POST /v1beta3/projects/{projectId}:commit Commits a transaction, optionally creating, deleting or modifying some entities. lookup POST /v1beta3/projects/{projectId}:lookup Looks up entities by key. reserveIds POST /v1beta3/projects/{projectId}:reserveIds Prevents the supplied keys' IDs from being auto-allocated by Cloud Datastore. rollback POST /v1beta3/projects/{projectId}:rollback Rolls back a transaction. runAggregationQuery POST /v1beta3/projects/{projectId}:runAggregationQuery Runs an aggregation query. runQuery POST /v1beta3/projects/{projectId}:runQuery Queries for entities."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "admin.client.DatastoreAdminClient",
+      "admin.CreateIndexRequest",
+      "admin.pagers.ListIndexesPager",
+      "admin.transports.base.DatastoreAdminTranspor",
+      "admin.transports.base.DatastoreAdminTransport",
+      "core.client",
+      "core.gapic",
+      "core.retry.retry",
+      "datastore.googleapis.com",
+      "info.ClientInfo",
+      "options.ClientOptions",
+      "pb2.ListOperationsRequest",
+      "typing.Callable",
+      "typing.Optional",
+      "typing.Union",
+      "unary.Retry",
+      "v1.client",
+      "v1.method",
+      "v1.projects",
+      "v1.projects.indexes",
+      "v1.projects.operations",
+      "v1.services.datastore",
+      "v1.types.datastore",
+      "v1beta1.projects",
+      "v1beta3.projects"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastore/docs/reference/admin/rest",
+        "https://docs.cloud.google.com/python/docs/reference/datastore/latest/admin_client",
+        "https://docs.cloud.google.com/datastore/docs/concepts/entities",
+        "https://docs.cloud.google.com/datastore/docs/reference/data/rest"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastore/docs/reference/admin/rest",
+        "https://docs.cloud.google.com/python/docs/reference/datastore/latest/admin_client",
+        "https://docs.cloud.google.com/datastore/docs/concepts/entities",
+        "https://docs.cloud.google.com/datastore/docs/reference/data/rest"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastore/docs/reference/admin/rest",
+        "https://docs.cloud.google.com/python/docs/reference/datastore/latest/admin_client",
+        "https://docs.cloud.google.com/datastore/docs/concepts/entities",
+        "https://docs.cloud.google.com/datastore/docs/reference/data/rest"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastore/docs/reference/admin/rest",
+        "https://docs.cloud.google.com/python/docs/reference/datastore/latest/admin_client",
+        "https://docs.cloud.google.com/datastore/docs/concepts/entities",
+        "https://docs.cloud.google.com/datastore/docs/reference/data/rest"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastore/docs/reference/admin/rest",
+        "https://docs.cloud.google.com/python/docs/reference/datastore/latest/admin_client",
+        "https://docs.cloud.google.com/datastore/docs/concepts/entities",
+        "https://docs.cloud.google.com/datastore/docs/reference/data/rest"
+      ]
+    }
+  ]
+}

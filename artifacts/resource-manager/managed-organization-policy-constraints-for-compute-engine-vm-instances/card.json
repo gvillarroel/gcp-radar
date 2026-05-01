@@ -1,0 +1,246 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:45.649Z",
+  "source_step08_card": "data/step-08/current/products/resource-manager/card.json",
+  "product_name": "Resource Manager",
+  "product_slug": "resource-manager",
+  "feature_name": "Managed organization policy constraints for Compute Engine VM instances",
+  "feature_slug": "managed-organization-policy-constraints-for-compute-engine-vm-instances",
+  "summary": "Managed organization policy constraints provide prebuilt security governance controls for Compute Engine VM instances.",
+  "extended_definition": "Managed organization policy constraints provide prebuilt security governance controls for Compute Engine VM instances.",
+  "lifecycle": {
+    "latest_feature_date": "2025-09-09",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/resource-manager/docs/manage-baseline-constraints",
+      "https://docs.cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing",
+      "https://docs.cloud.google.com/resource-manager/docs/tags/tags-supported-services"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Manage Google Cloud security baseline constraints \\_|\\_ Resource Manager\\",
+        "url": "https://docs.cloud.google.com/resource-manager/docs/manage-baseline-constraints",
+        "source_id": "site-iam-reference",
+        "final_score": 167,
+        "relevance": "",
+        "evidence_snippets": [
+          "Organization policy name Organization policy constraint Description Impact of enforcement Disable service account key creation constraints/iam.managed.disableServiceAccountKeyCreation Prevent users from creating persistent keys for service accounts.",
+          "Note: For some organizations created after August 15, 2024, the constraints/compute.restrictProtocolForwardingCreationForTypes organization policy constraint might already be applied.",
+          "Disable organization policies To disable or delete an organization policy, run the following command: gcloud org-policies delete CONSTRAINT NAME --organization = ORGANIZATION ID Replace the following: CONSTRAINT NAME : the name of the organization policy constraint that you want to delete—for example, iam.allowedPolicyMemberDomains ORGANIZATION ID : the unique identifier of your organization What's next For more information about creating and managing organization policies, see Using constraints ."
+        ]
+      },
+      {
+        "title": "Services that support tags \\_|\\_ Resource Manager \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/resource-manager/docs/tags/tags-supported-services",
+        "source_id": "site-docs-reference-2",
+        "final_score": 162,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Supported service resources You can attach tags to the following types of Google Cloud resources: Google Cloud service Resource types AlloyDB for PostgreSQL Clusters Backups API Gateway APIs Gateways API hub APIs API deployments Artifact Registry Repositories ( Preview ) BigQuery Datasets Tables Views Bigtable Instances Google Cloud Armor Network Edge Security Services Security Policies Certificate Manager Certificates Certificate maps Trust configs Certificate issuance configurations DNS authorizations Certificate Authority Service CA pools Certificate templates Cloud Billing View resource-level tags in the Cloud Billing BigQuery export Cloud Data Fusion Instances ( Preview ) Cloud Deploy Delivery pipelines ( Preview ) Targets ( Preview ) Cloud Domains Registrations Cloud Key Management Service (Cloud KMS) Key rings Cloud Load Balancing Backend buckets Backend services Forwarding rules Health checks Network endpoint groups SSL policies SSL certificates Target GRPC proxies Target HTTP(S) proxies Target instances Target pools Target SSL proxies Target TCP proxies URL maps Zonal instance groups Cloud Logging Log buckets Cloud Router Routers Cloud Interconnect Interconnects Interconnect attachments Cloud VPN External VPN gateways VPN gateways VPN tunnels Target VPN gateways Cloud Run Services Jobs ( Preview ) Cloud SQL Instances Cloud Storage Buckets Cloud Workstations Clusters Transcoder API Job JobTemplate Compute Engine Images Instances Regional persistent disks Snapshots Zonal persistent disks Managed Service for Apache Spark Clusters Dataproc Metastore Services Federations Datastore Databases Datastream Private connectivity configurations Connection profiles Streams Cloud DNS Policies Filestore Backups Instances Snapshots Firestore Databases Google Distributed Cloud BareMetalCluster BareMetalAdminCluster VMWareCluster VMWareAdminCluster Google Kubernetes Engine (GKE) Clusters Identity and Access Management Custom roles Service accounts Managed Service for Microsoft Active Directory (Managed Microsoft AD) Domains Memorystore for Redis Instances Pub/Sub Topics Subscriptions Snapshots reCAPTCHA Enterprise Key Resource Manager Organizations Folders Projects Secret Manager Secrets Spanner Instances Google Cloud VMware Engine Private Cloud Private Connection Networks Network Peering Network Policy VPC Networks Subnetworks Routes VPC firewall rules Workflows Workflows Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Google Cloud service Resource types Identity and Access Management (IAM) Allow and deny policies Organization Policy Service Organization policies Resources that support tags Virtual Private Cloud (VPC) Network firewall policies VM instances Secure Web Proxy instances The following sections describe how you can use tags with policy engine services.",
+          "Organization Policy Service You can use organization policies with tags to control how your organization policy constraints are applied on certain resources."
+        ]
+      },
+      {
+        "title": "Create and manage tags \\_|\\_ Resource Manager \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing",
+        "source_id": "site-docs-reference-2",
+        "final_score": 158,
+        "relevance": "",
+        "evidence_snippets": [
+          "API To get a list of tag bindings directly attached to a global resource such as an organization, use the tagBindings.list method, specifying the parent resource in the query: GET https://cloudresourcemanager.googleapis.com/v3/tagBindings { \"parent\": \" RESOURCE ID \" } If you want to list the tag bindings attached to a regional resource, such as Compute Engine instances, use the tagBindings.list method with the regional endpoint where your resource is located.",
+          "If you are creating a tag hold for a tag value attached to a global resource such as an organization, use the tagHolds.create method with the global endpoint hostname: POST https://cloudresourcemanager.googleapis.com/v3/tagValues/ TAGVALUE NAME /tagHolds If you are creating a tag hold for a tag value attached to a regional resource, such as a Compute Engine instance, use the tagHolds.create method with the regional endpoint where your resource is located.",
+          "API To delete a tag binding that is attached to a global resource such as an organization, use the tagBindings.delete method: DELETE https://cloudresourcemanager.googleapis.com/v3/{name= TAGBINDINGS NAME } If you want to delete a tag binding that is attached to a regional resource, such as a Compute Engine instance, use the tagBindings.delete method with the regional endpoint where your resource is located."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cloudresourcemanager.googleapis.com",
+      "compute.restrictProtocolForwardingCreationForTypes",
+      "iam.allowedPolicyMemberDomains",
+      "iam.managed.disableServiceAccountKeyCreation",
+      "orgpolicy.constraints.list",
+      "orgpolicy.policies.create",
+      "orgpolicy.policies.delete",
+      "orgpolicy.policies.list",
+      "orgpolicy.policies.update",
+      "orgpolicy.policy.get",
+      "orgpolicy.policy.set"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/manage-baseline-constraints",
+        "https://docs.cloud.google.com/resource-manager/docs/tags/tags-supported-services",
+        "https://docs.cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/manage-baseline-constraints",
+        "https://docs.cloud.google.com/resource-manager/docs/tags/tags-supported-services",
+        "https://docs.cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing"
+      ]
+    },
+    {
+      "capability": "armor",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/manage-baseline-constraints",
+        "https://docs.cloud.google.com/resource-manager/docs/tags/tags-supported-services",
+        "https://docs.cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/manage-baseline-constraints",
+        "https://docs.cloud.google.com/resource-manager/docs/tags/tags-supported-services",
+        "https://docs.cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/manage-baseline-constraints",
+        "https://docs.cloud.google.com/resource-manager/docs/tags/tags-supported-services",
+        "https://docs.cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/manage-baseline-constraints",
+        "https://docs.cloud.google.com/resource-manager/docs/tags/tags-supported-services",
+        "https://docs.cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/manage-baseline-constraints",
+        "https://docs.cloud.google.com/resource-manager/docs/tags/tags-supported-services",
+        "https://docs.cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/manage-baseline-constraints",
+        "https://docs.cloud.google.com/resource-manager/docs/tags/tags-supported-services",
+        "https://docs.cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/manage-baseline-constraints",
+        "https://docs.cloud.google.com/resource-manager/docs/tags/tags-supported-services",
+        "https://docs.cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/manage-baseline-constraints",
+        "https://docs.cloud.google.com/resource-manager/docs/tags/tags-supported-services",
+        "https://docs.cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/manage-baseline-constraints",
+        "https://docs.cloud.google.com/resource-manager/docs/tags/tags-supported-services",
+        "https://docs.cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/manage-baseline-constraints",
+        "https://docs.cloud.google.com/resource-manager/docs/tags/tags-supported-services",
+        "https://docs.cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/manage-baseline-constraints",
+        "https://docs.cloud.google.com/resource-manager/docs/tags/tags-supported-services",
+        "https://docs.cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/manage-baseline-constraints",
+        "https://docs.cloud.google.com/resource-manager/docs/tags/tags-supported-services",
+        "https://docs.cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/manage-baseline-constraints",
+        "https://docs.cloud.google.com/resource-manager/docs/tags/tags-supported-services",
+        "https://docs.cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/manage-baseline-constraints",
+        "https://docs.cloud.google.com/resource-manager/docs/tags/tags-supported-services",
+        "https://docs.cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/manage-baseline-constraints",
+        "https://docs.cloud.google.com/resource-manager/docs/tags/tags-supported-services",
+        "https://docs.cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/manage-baseline-constraints",
+        "https://docs.cloud.google.com/resource-manager/docs/tags/tags-supported-services",
+        "https://docs.cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/manage-baseline-constraints",
+        "https://docs.cloud.google.com/resource-manager/docs/tags/tags-supported-services",
+        "https://docs.cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing"
+      ]
+    }
+  ]
+}

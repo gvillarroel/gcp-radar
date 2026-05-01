@@ -1,0 +1,149 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:18.771Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery",
+  "feature_name": "Draggable details pane tabs",
+  "feature_slug": "draggable-details-pane-tabs",
+  "summary": "The BigQuery console lets users drag details pane tabs into new columns or positions for side-by-side comparison and rearrangement.",
+  "extended_definition": "The BigQuery console lets users drag details pane tabs into new columns or positions for side-by-side comparison and rearrangement.",
+  "lifecycle": {
+    "latest_feature_date": "2024-07-01",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/analytics-hub-grant-roles",
+      "https://docs.cloud.google.com/bigquery/docs/analytics-hub-manage-listings",
+      "https://docs.cloud.google.com/bigquery/docs/bigquery-web-ui"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Explore BigQuery in the Google Cloud console \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/bigquery-web-ui",
+        "source_id": "site-docs-reference-5",
+        "final_score": 173,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Click Query , and then click In new tab or In split tab : Click the field name that you want to query: The following image shows the details pane with two open tabs.",
+          "Work with tabs in Studio Whenever you select a resource or click add box SQL query in the details pane, a new tab opens.",
+          "If you accidentally replace the current page, you can locate it by clicking tab recent Recent tabs in the details pane."
+        ]
+      },
+      {
+        "title": "Manage listings \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/analytics-hub-manage-listings",
+        "source_id": "site-docs-reference-5",
+        "final_score": 126,
+        "relevance": "",
+        "evidence_snippets": [
+          "Enable the Analytics Hub API gcloud Run the gcloud services enable command: gcloud services enable analyticshub.googleapis.com Required roles To manage listings and subscriptions, you must have one of the following BigQuery sharing Identity and Access Management (IAM) roles: Analytics Hub Publisher role ( roles/analyticshub.publisher ), which lets you create, update, delete, and set IAM policies on your listings.",
+          "In the body of the request, specify updated values for the following fields: displayName description primaryContact documentation icon categories[] discoveryType logLinkedDatasetQueryUserEmail bigqueryDataset.replicaLocations For details on these fields, see Resource: Listing .",
+          "Create a non-authenticated URL for public listing To create a non-authenticated BigQuery sharing listing URL that is viewable to even non-Google Cloud users, do the following: Go to the Sharing (Analytics Hub) page."
+        ]
+      },
+      {
+        "title": "Configure BigQuery sharing roles \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/analytics-hub-grant-roles",
+        "source_id": "site-docs-reference-2",
+        "final_score": 118,
+        "relevance": "",
+        "evidence_snippets": [
+          "Analytics Hub Subscriber and Viewer roles To view and subscribe to listings and data exchanges , Sharing provides the following predefined roles that you can grant for a project, a data exchange, or a listing: Analytics Hub Subscriber role ( roles/analyticshub.subscriber ), which lets users view and subscribe to listings.",
+          "Analytics Hub Publisher and Listing Admin roles To manage listings , Sharing provides the following predefined roles that you can grant for a project, a data exchange, or a listing: Analytics Hub Publisher role ( roles/analyticshub.publisher ), which lets users do the following: Create, update, and delete listings.",
+          "Analytics Hub Subscription Owner role To manage subscriptions , Sharing provides the following predefined role that you can grant at the project level: Analytics Hub Subscription Owner role ( roles/analyticshub.subscriptionOwner ), which lets users manage their subscriptions."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "analyticshub.googleapis.com",
+      "analyticshub.listingAdmin",
+      "analyticshub.publisher",
+      "analyticshub.subscriber",
+      "analyticshub.subscriptionOwner"
+    ],
+    "missing_inventory_roles": [
+      "roles/analyticshub.listingAdmin",
+      "roles/analyticshub.publisher",
+      "roles/analyticshub.subscriber",
+      "roles/analyticshub.subscriptionOwner"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/bigquery-web-ui",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-manage-listings",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-grant-roles"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/bigquery-web-ui",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-manage-listings",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-grant-roles"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/bigquery-web-ui",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-manage-listings",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-grant-roles"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/bigquery-web-ui",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-manage-listings",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-grant-roles"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/bigquery-web-ui",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-manage-listings",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-grant-roles"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/bigquery-web-ui",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-manage-listings",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-grant-roles"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/bigquery-web-ui",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-manage-listings",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-grant-roles"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,118 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:37.462Z",
+  "source_step08_card": "data/step-08/current/products/gemini-code-assist-standard-and-enterprise/card.json",
+  "product_name": "Gemini Code Assist Standard and Enterprise",
+  "product_slug": "gemini-code-assist-standard-and-enterprise",
+  "feature_name": "Folder context attachment",
+  "feature_slug": "folder-context-attachment",
+  "summary": "Lets you attach local workspace folders as prompt context in IntelliJ Gemini Code Assist, with support for a 1M-token context window.",
+  "extended_definition": "Lets you attach local workspace folders as prompt context in IntelliJ Gemini Code Assist, with support for a 1M-token context window.",
+  "lifecycle": {
+    "latest_feature_date": "2025-05-06",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/gemini/docs/codeassist/agent-mode",
+      "https://docs.cloud.google.com/gemini/docs/codeassist/chat-gemini",
+      "https://docs.cloud.google.com/gemini/docs/codeassist/configure-local-codebase-awareness",
+      "https://docs.cloud.google.com/gemini/docs/codeassist/use-agentic-chat-pair-programmer"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Chat with Gemini Code Assist Standard and Enterprise \\_|\\_ Gemini for Google\\",
+        "url": "https://docs.cloud.google.com/gemini/docs/codeassist/chat-gemini",
+        "source_id": "site-docs-reference",
+        "final_score": 134,
+        "relevance": "",
+        "evidence_snippets": [
+          "Specify files and folders in your workspace context By default, Gemini Code Assist uses the current open file as context.",
+          "You can specify files or folders in your workspace for Gemini Code Assist to use as additional context.",
+          "Manage files and folders in the Context Drawer After you specify a file or folder to be used as context for your Gemini Code Assist prompts , these files and folders are placed in the Context Drawer , where you can view and remove them from the prompt context."
+        ]
+      },
+      {
+        "title": "\"Use the Gemini Code Assist agent mode \\_|\\_ Gemini for Google Cloud \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/gemini/docs/codeassist/use-agentic-chat-pair-programmer",
+        "source_id": "site-docs-root",
+        "final_score": 130,
+        "relevance": "",
+        "evidence_snippets": [
+          "Context can be taken from files in your IDE, files in your local system folders, tool responses, and your prompt details.",
+          "The following example mcp.json file configures two remote Cloudflare MCP servers, a remote GitLab MCP server, and a local GitHub MCP server for use with Gemini Code Assist in IntelliJ. { \"mcpServers\" : { \"github\" : { \"command\" : \"npx\" , \"args\" : [ \"-y\" , \"@modelcontextprotocol/server-github\" ], \"env\" : { \"GITHUB PERSONAL ACCESS TOKEN\" : \"ghp example personal access token12345\" } }, \"gitlab\" : { \"command\" : \"npx\" , \"args\" : [ \"mcp-remote\" , \"https://your-gitlab-instance.com/api/v4/mcp\" ] }, \"cloudflare-observability\" : { \"command\" : \"npx\" , \"args\" : [ \"mcp-remote\" , \"https://observability.mcp.cloudflare.com/sse\" ] }, \"cloudflare-bindings\" : { \"command\" : \"npx\" , \"args\" : [ \"mcp-remote\" , \"https://bindings.mcp.cloudflare.com/sse\" ] } } } Your configured MCP servers are available for the agent to use in agent mode.",
+          "The following example Gemini settings JSON file configures two remote Cloudflare MCP servers, a remote GitLab MCP server, and a local GitHub MCP server for use with Gemini Code Assist in VS Code. { \"mcpServers\" : { \"github\" : { \"command\" : \"npx\" , \"args\" : [ \"-y\" , \"@modelcontextprotocol/server-github\" ], \"env\" : { \"GITHUB PERSONAL ACCESS TOKEN\" : \"ghp example personal access token12345\" } }, \"gitlab\" : { \"command\" : \"npx\" , \"args\" : [ \"mcp-remote\" , \"https://your-gitlab-instance.com/api/v4/mcp\" ] }, \"cloudflare-observability\" : { \"command\" : \"npx\" , \"args\" : [ \"mcp-remote\" , \"https://observability.mcp.cloudflare.com/sse\" ] }, \"cloudflare-bindings\" : { \"command\" : \"npx\" , \"args\" : [ \"mcp-remote\" , \"https://bindings.mcp.cloudflare.com/sse\" ] } } } Open the command palette and select Developer: Reload Window ."
+        ]
+      },
+      {
+        "title": "\"Configure local codebase awareness \\_|\\_ Gemini for Google Cloud \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/gemini/docs/codeassist/configure-local-codebase-awareness",
+        "source_id": "site-docs-reference",
+        "final_score": 126,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "You can also specify files and folders in your workspace context .",
+          "Home Documentation AI and ML Gemini for Google Cloud Guides Send feedback Configure local codebase awareness Stay organized with collections Save and categorize content based on your preferences.",
+          "By default, local codebase awareness is enabled, but you can exclude files from Gemini Code Assist use , and VS Code users can disable local codebase awareness entirely."
+        ]
+      },
+      {
+        "title": "Agent mode overview \\_|\\_ Gemini for Google Cloud \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/gemini/docs/codeassist/agent-mode",
+        "source_id": "site-docs-reference",
+        "final_score": 96,
+        "relevance": "",
+        "evidence_snippets": [
+          "Context can be taken from files in your IDE, files in your local system folders, tool responses, and your prompt details.",
+          "VS Code The following methods of getting context are usually available to Gemini Code Assist in agent mode: Information in your IDE workspace.",
+          "IntelliJ The following methods of getting context are usually available to Gemini Code Assist in agent mode: Information in your IDE project including your files, indexed symbols and usage of symbols in your project."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "bindings.mcp.cloudflare.com",
+      "instance.com",
+      "mcp.json",
+      "observability.mcp.cloudflare.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/docs/codeassist/chat-gemini",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/use-agentic-chat-pair-programmer",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/configure-local-codebase-awareness",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/agent-mode"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/docs/codeassist/chat-gemini",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/use-agentic-chat-pair-programmer",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/configure-local-codebase-awareness",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/agent-mode"
+      ]
+    }
+  ]
+}

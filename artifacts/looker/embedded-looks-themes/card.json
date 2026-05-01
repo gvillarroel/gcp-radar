@@ -1,0 +1,114 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:42.371Z",
+  "source_step08_card": "data/step-08/current/products/looker/card.json",
+  "product_name": "Looker",
+  "product_slug": "looker",
+  "feature_name": "Embedded Looks themes",
+  "feature_slug": "embedded-looks-themes",
+  "summary": "Embedded Looks now support themes in the Get embed URL dialog.",
+  "extended_definition": "Embedded Looks now support themes in the Get embed URL dialog.",
+  "lifecycle": {
+    "latest_feature_date": "2023-10-11",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/looker/docs/admin-panel-platform-embed",
+      "https://docs.cloud.google.com/looker/docs/admin-panel-platform-themes",
+      "https://docs.cloud.google.com/looker/docs/admin-panel-users-roles"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Admin settings - Embed \\_|\\_ Looker \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/looker/docs/admin-panel-platform-embed",
+        "source_id": "site-docs-reference",
+        "final_score": 157,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Removing Look navigation from embedded Explores By default, embed users who have the explore and save content permissions will see the following options in the Explore Actions gear menu of an embedded Explore: The option to Save as a Look The Save & Schedule option (for embed users who have the send or scheduling permissions ) When set to Enabled , the Remove Look Navigation feature removes all references to Looks, including the options Save as a Look and Save & Schedule , from the embedded Explore's Explore Actions gear menu.",
+          "Dashboard Embed Content Navigation When this option is enabled, embedded dashboard viewers who have been granted the necessary permissions can view folders and the Looks and dashboards that they contain from embedded dashboards.",
+          "Embed domain URL with Looker IDs — The URL in the custom link will include the domain that is selected in the Domain field in the scheduling or alerts dialog and the Looker path to the embedded dashboard, using the content ID."
+        ]
+      },
+      {
+        "title": "Admin settings - Themes \\_|\\_ Looker \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/looker/docs/admin-panel-platform-themes",
+        "source_id": "site-docs-root",
+        "final_score": 141,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For information about setting a default theme for your embedded dashboards and Explores, or for applying a theme to a specific embedded dashboard or Explore, see the Themes for embedded dashboards, Looks, and Explores documentation page.",
+          "You can use themes to customize the appearance of your Looker dashboards or your embedded Looker dashboards, Looks, and Explores.",
+          "For information about setting a theme for an internal (non-embedded) Looker dashboard, see the Themes for internal dashboards documentation page."
+        ]
+      },
+      {
+        "title": "Admin settings - Roles \\_|\\_ Looker \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/looker/docs/admin-panel-users-roles",
+        "source_id": "site-docs-reference",
+        "final_score": 115,
+        "relevance": "",
+        "evidence_snippets": [
+          "Users who have the save content permission but not the embed save shared space permission will only have the option to save content to their personal embed folder . manage embed settings None Instance Wide CM Users can edit embed settings on the Embed page in the Platform section of the Admin menu. manage themes None Instance Wide CM Users can configure theme settings for embedded dashboards, Looks, and Explores on the Themes page in the Platform section of the Admin menu.",
+          "Gemini gemini in looker Conversational Analytics Agent Manager access data , gemini in looker , chat with agent , chat with explore , save agents Conversational Analytics User access data , gemini in looker , chat with agent Customer Engineer Advanced Editor access data , can create forecast , can override vis config , chat with agent , chat with explore , clear cache refresh , create custom fields , create table calculations , deploy , develop , explore , follow alerts , gemini in looker , manage embed settings , manage models , manage privatelabel , manage project connections , manage project connections restricted , manage project models , manage themes , save agents , save content , save dashboards , save looks , see admin , see alerts , see datagroups , see drill overlay , see logs , see lookml , see lookml dashboards , see looks , see pdts , see queries , see schedules , see sql , see system activity , see user dashboards , see users , update datagroups , use global connections NOTE : The Customer Engineer Advanced Editor permission set is available only when the Tiered Support Access Labs feature is enabled.",
+          "Support Advanced Editor access data , clear cache refresh , create custom fields , create table calculations , develop , explore , follow alerts , manage embed settings , manage models , manage privatelabel , manage project connections , manage project connections restricted , manage project models , manage themes , see admin , see alerts , see datagroups , see drill overlay , see logs , see lookml , see lookml dashboards , see looks , see pdts , see queries , see schedules , see sql , see system activity , see user dashboards , see users , update datagroups , use global connections NOTE : The Support Advanced Editor permission set is available only when the Tiered Support Access Labs feature is enabled."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/admin-panel-platform-embed",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-platform-themes",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-users-roles"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/admin-panel-platform-embed",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-platform-themes",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-users-roles"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/admin-panel-platform-embed",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-platform-themes",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-users-roles"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/admin-panel-platform-embed",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-platform-themes",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-users-roles"
+      ]
+    }
+  ]
+}

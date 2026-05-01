@@ -1,0 +1,215 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:14.344Z",
+  "source_step08_card": "data/step-08/current/products/apigee-hybrid/card.json",
+  "product_name": "Apigee hybrid",
+  "product_slug": "apigee-hybrid",
+  "feature_name": "Pre-install cluster readiness check job for Apigee hybrid",
+  "feature_slug": "pre-install-cluster-readiness-check-job-for-apigee-hybrid",
+  "summary": "Starting in v1.10, Apigee hybrid provides a pre-install Cluster Check Kubernetes job to validate cluster readiness before runtime installation.",
+  "extended_definition": "Starting in v1.10, Apigee hybrid provides a pre-install Cluster Check Kubernetes job to validate cluster readiness before runtime installation.",
+  "lifecycle": {
+    "latest_feature_date": "2023-06-30",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/apigee/docs/api-platform/apigee-kubernetes/apigee-apim-operator-install-hybrid",
+      "https://docs.cloud.google.com/apigee/docs/hybrid/latest/config-prop-ref",
+      "https://docs.cloud.google.com/apigee/docs/hybrid/preview/new-install-user-guide"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"New Apigee hybrid installation and administration Preview \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/apigee/docs/hybrid/preview/new-install-user-guide",
+        "source_id": "site-docs-reference",
+        "final_score": 122,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Download setup files Run setup Download setup files Download and prepare the setup files by cloning the GitHub repository at https://github.com/apigee/apigee-hybrid-install/releases/tag/preview-1 : Clone the repository: git clone https://github.com/apigee/apigee-hybrid-install.git Navigate to the directory for the cloned repository: cd apigee-hybrid-install Create a branch from the preview-1 tag: git branch preview-1 preview-1 git checkout preview-1 Make the setup script executable: chmod + x ./ tools / apigee - hybrid - setup . sh The cloned repository will have a structure resembling the one described in Apigee Hybrid Setup Folder Structure : Run setup Run the apigee-hybrid-setup.sh shell script located inside the tools/ folder. ./ tools / apigee - hybrid - setup . sh -- cluster - name $ CLUSTER NAME -- cluster - region $ CLUSTER LOCATION -- org $ ORG NAME -- setup - all Note: Running the script with these arguments uses the Apigee Organization, Environment, and Environment group you created in Prerequisites .",
+          "Also, verify the data size using the nodetool status command: kubectl logs apigee-cassandra-default-0 -f -n apigee Refer the datastore/secrets.yaml for the JMX user and JMX password kubectl exec apigee - cassandra - default - 0 - n apigee -- nodetool - u JMX user - pw JMX password status Remove multiRegionSeedHost from the apigee datastore CR and run the below command to apply the change kubectl apply k apply -k ${ INSTALL DIR } /overlays/instances/ ${ INSTANCE DIR } /datastore Check the Cassandra cluster status The following command is useful to see if the cluster setup is successful in two data centers.",
+          "Resources will be created in the correct order and command will block until all are healthy. -- rename-directories Rename the environment and environment group to the names of the correct environment and environment group. --verbose Shows detailed output for debugging. --help Display usage information. --setup-all This will execute all the tasks that can be performed by this script Apigee Hybrid Setup Folder Structure The apigee-hybrid-setup folder has the following hierarchical structure by default: . ├── bases │ ├── controllers │ │ ├── apigee - controller │ │ │ ├── apigee - controller - deployment . yaml │ │ │ └── kustomization . yaml │ │ └── apigee - ingressgateway - manager │ │ ├── apigee - ingressgateway - manager - deployment . yaml │ │ └── kustomization . yaml │ ├── datastore │ │ └── backup - and - restore │ │ ├── backup │ │ │ ├── cronjob . yaml │ │ │ └── kustomization . yaml │ │ ├── common │ │ │ ├── kustomization . yaml │ │ │ ├── rbac . yaml │ │ │ └── tls - certificate . yaml │ │ └── restore │ │ ├── job . yaml │ │ └── kustomization . yaml │ └── initialization │ ├── certificates │ │ ├── certificates - and - issuers . yaml │ │ └── kustomization . yaml │ ├── crds │ │ ├── customresourcedefinition - apigeedatastores . apigee . cloud . google . com . yaml │ │ ├── customresourcedefinition - apigeedeployments . apigee . cloud . google . com . yaml │ │ ├── customresourcedefinition - apigeeenvironments . apigee . cloud . google . com . yaml │ │ ├── customresourcedefinition - apigeeorganizations . apigee . cloud . google . com . yaml │ │ ├── customresourcedefinition - apigeeredis . apigee . cloud . google . com . yaml │ │ ├── customresourcedefinition - apigeerouteconfigs . apigee . cloud . google . com . yaml │ │ ├── customresourcedefinition - apigeeroutes . apigee . cloud . google . com . yaml │ │ ├── customresourcedefinition - apigeetelemetries . apigee . cloud . google . com . yaml │ │ ├── customresourcedefinition - cassandradatareplications . apigee . cloud . google . com . yaml │ │ └── kustomization . yaml │ ├── openshift │ │ ├── kustomization . yaml │ │ └── scc . yaml │ ├── rbac │ │ ├── apigee - controller │ │ │ ├── kustomization . yaml │ │ │ └── rbac . yaml │ │ └── apigee - embedded - ingress - controller │ │ ├── cluster - role - bindings . yaml │ │ ├── cluster - roles . yaml │ │ ├── kustomization . yaml │ │ └── service - account . yaml │ └── webhooks │ ├── kustomization . yaml │ ├── mutatingwebhookconfiguration . yaml │ └── validatingwebhookconfiguration . yaml ├── CONTRIBUTING . md ├── docs │ └── api references │ ├── v1alpha1 . md │ └── v1alpha2 . md ├── kokoro │ ├── build . sh │ ├── common . cfg │ ├── continuous . cfg │ ├── presubmit . cfg │ └── release . cfg ├── LICENSE ├── overlays │ ├── controllers │ │ ├── apigee - controller │ │ │ ├── apigee - hybrid - config . yaml │ │ │ ├── components │ │ │ │ ├── imagepullsecret │ │ │ │ │ ├── kustomization . yaml │ │ │ │ │ └── patch . yaml │ │ │ │ └── nodeselector │ │ │ │ ├── kustomization . yaml │ │ │ │ └── patch . yaml │ │ │ └── kustomization . yaml │ │ ├── apigee - ingressgateway - manager │ │ │ ├── apigee - ingressgateway - manager - deployment - patch . yaml │ │ │ ├── apigee - istio - mesh - config . yaml │ │ │ ├── components │ │ │ │ ├── imagepullsecret │ │ │ │ │ ├── kustomization . yaml │ │ │ │ │ └── patch . yaml │ │ │ │ └── nodeselector │ │ │ │ ├── kustomization . yaml │ │ │ │ └── patch . yaml │ │ │ └── kustomization . yaml │ │ └── kustomization . yaml │ ├── initialization │ │ ├── certificates │ │ │ ├── apigee - ingressgateway - manager - certificate - patch . yaml │ │ │ ├── apigee - serving - cert - patch . yaml │ │ │ ├── components │ │ │ │ └── disable - apigee - root - certificate - generation │ │ │ │ └── kustomization . yaml │ │ │ └── kustomization . yaml │ │ ├── crds │ │ │ └── kustomization . yaml │ │ ├── ingress │ │ │ ├── envoyfilter - 1.11 . yaml │ │ │ └── kustomization . yaml │ │ ├── namespace . yaml │ │ ├── openshift │ │ │ ├── kustomization . yaml │ │ │ └── scc . yaml │ │ ├── rbac │ │ │ ├── apigee - controller │ │ │ │ └── kustomization . yaml │ │ │ ├── apigee - ingressgateway - manager │ │ │ │ └── kustomization . yaml │ │ │ └── kustomization . yaml │ │ └── webhooks │ │ ├── kustomization . yaml │ │ ├── mutatingwebhookconfiguration . yaml │ │ └── validatingwebhookconfiguration . yaml │ └── instances │ └── instance1 │ ├── datastore │ │ ├── apigee - datastore . yaml │ │ ├── components │ │ │ ├── gcs - backup │ │ │ │ ├── apigee - datastore - patch . yaml │ │ │ │ ├── cron - patch . yaml │ │ │ │ ├── kustomization . yaml │ │ │ │ └── tls - certificate - patch . yaml │ │ │ ├── gcs - restore │ │ │ │ ├── apigee - datastore - patch . yaml │ │ │ │ ├── job - patch . yaml │ │ │ │ ├── kustomization . yaml │ │ │ │ └── tls - certificate - patch . yaml │ │ │ ├── http - proxy │ │ │ │ ├── kustomization . yaml │ │ │ │ └── patch . yaml │ │ │ ├── imagepullsecret │ │ │ │ ├── kustomization . yaml │ │ │ │ └── patch . yaml │ │ │ ├── multi - region │ │ │ │ ├── cassandra - data - replication . yaml │ │ │ │ ├── kustomization . yaml │ │ │ │ └── patch . yaml │ │ │ ├── nodeselector │ │ │ │ ├── kustomization . yaml │ │ │ │ └── patch . yaml │ │ │ ├── non - gcs - backup │ │ │ │ ├── apigee - datastore - patch . yaml │ │ │ │ ├── cron - patch . yaml │ │ │ │ ├── kustomization . yaml │ │ │ │ └── tls - certificate - patch . yaml │ │ │ ├── non - gcs - restore │ │ │ │ ├── apigee - datastore - patch . yaml │ │ │ │ ├── job - patch . yaml │ │ │ │ ├── kustomization . yaml │ │ │ │ └── tls - certificate - patch . yaml │ │ │ ├── openshift - scc │ │ │ │ ├── kustomization . yaml │ │ │ │ └── scc . yaml │ │ │ └── workload - identity │ │ │ ├── kustomization . yaml │ │ │ ├── patch . yaml │ │ │ └── service - accounts . yaml │ │ ├── kustomization . yaml │ │ └── secrets . yaml │ ├── environments │ │ ├── kustomization . yaml │ │ └── test │ │ ├── apigee - environment . yaml │ │ ├── components │ │ │ ├── http - proxy │ │ │ │ ├── kustomization . yaml │ │ │ │ └── patch . yaml │ │ │ ├── imagepullsecret │ │ │ │ ├── kustomization . yaml │ │ │ │ └── patch . yaml │ │ │ ├── nodeselector │ │ │ │ ├── kustomization . yaml │ │ │ │ └── patch . yaml │ │ │ └── workload - identity │ │ │ ├── kustomization . yaml │ │ │ ├── patch . yaml │ │ │ └── service - accounts . yaml │ │ ├── kustomization . yaml │ │ └── secrets . yaml │ ├── kustomization . yaml │ ├── organization │ │ ├── apigee - organization . yaml │ │ ├── components │ │ │ ├── http - proxy │ │ │ │ ├── kustomization . yaml │ │ │ │ └── patch . yaml │ │ │ ├── imagepullsecret │ │ │ │ ├── kustomization . yaml │ │ │ │ └── patch . yaml │ │ │ ├── nodeselector │ │ │ │ ├── kustomization . yaml │ │ │ │ └── patch . yaml │ │ │ └── workload - identity │ │ │ ├── kustomization . yaml │ │ │ ├── patch . yaml │ │ │ └── service - accounts . yaml │ │ ├── kustomization . yaml │ │ └── secrets . yaml │ ├── redis │ │ ├── apigee - redis . yaml │ │ ├── components │ │ │ ├── imagepullsecret │ │ │ │ ├── kustomization . yaml │ │ │ │ └── patch . yaml │ │ │ ├── nodeselector │ │ │ │ ├── kustomization . yaml │ │ │ │ └── patch . yaml │ │ │ └── workload - identity │ │ │ ├── kustomization . yaml │ │ │ ├── patch . yaml │ │ │ └── service - accounts . yaml │ │ ├── kustomization . yaml │ │ └── secrets . yaml │ ├── route - config │ │ ├── kustomization . yaml │ │ └── test - envgroup │ │ ├── apigee - route - config . yaml │ │ ├── components │ │ │ ├── http - and - non - sni - client │ │ │ │ ├── apigee - route . yaml │ │ │ │ └── kustomization . yaml │ │ │ ├── http - client │ │ │ │ ├── apigee - route . yaml │ │ │ │ └── kustomization . yaml │ │ │ └── non - sni - client │ │ │ ├── apigee - route . yaml │ │ │ └── kustomization . yaml │ │ └── kustomization . yaml │ └── telemetry │ ├── apigee - telemetry . yaml │ ├── components │ │ ├── http - proxy │ │ │ ├── kustomization . yaml │ │ │ └── patch . yaml │ │ ├── imagepullsecret │ │ │ ├── kustomization . yaml │ │ │ └── patch . yaml │ │ ├── logger │ │ │ ├── kustomization . yaml │ │ │ └── patch . yaml │ │ ├── metrics │ │ │ ├── kustomization . yaml │ │ │ └── patch . yaml │ │ ├── nodeselector │ │ │ ├── kustomization . yaml │ │ │ └── patch . yaml │ │ ├── openshift - scc │ │ │ ├── kustomization . yaml │ │ │ └── scc . yaml │ │ ├── workload - identity - logger │ │ │ ├── kustomization . yaml │ │ │ ├── patch . yaml │ │ │ └── service - accounts . yaml │ │ └── workload - identity - metrics │ │ ├── kustomization . yaml │ │ ├── patch . yaml │ │ └── service - accounts . yaml │ └── kustomization . yaml ├── README . md ├── templates │ ├── certificate - org - envgroup . yaml │ ├── secret - apigee - cassandra - backup - and - restore - gcp - sa - key . yaml │ ├── secret - apigee - cassandra - backup - and - restore - key - file . yaml │ ├── secret - gcp - sa - key . yaml │ └── secret - ingress - tls - cert - key . yaml └── tools ├── apigee - hybrid - setup . sh ├── apigee - pull - push . sh ├── common . sh ├── create - service - account . sh └── dump kubernetes . sh A version of the above files can be found in the preview-1 tag of the github repository at: https://github.com/apigee/apigee-hybrid-install/releases/tag/preview-1 ."
+        ]
+      },
+      {
+        "title": "Configuration property reference \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/hybrid/latest/config-prop-ref",
+        "source_id": "site-docs-reference",
+        "final_score": 119,
+        "relevance": "",
+        "evidence_snippets": [
+          "For more information, see Adding multiple hybrid orgs to a cluster . namespace Basic Introduced in version: 1.0.0 Default value: apigee Chart: apigee-datastore , apigee-env , apigee-ingress-manager , apigee-operator , apigee-org , apigee-redis , apigee-telemetry , apigee-virtualhost The namespace of your Kubernetes cluster where the Apigee components will be installed. org Basic Introduced in version: 1.0.0 Default value: None Chart: apigee-operator , apigee-telemetry , apigee-org , apigee-env , apigee-virtualhost Required The hybrid-enabled organization that was provisioned for you by Apigee during the hybrid installation.",
+          "The following table describes the properties of the k8sCluster object: Property Type Description k8sCluster.name Basic Introduced in version: 1.2.0 Default value: None Chart: apigee-telemetry , apigee-org The name of the Kubernetes cluster where the hybrid runtime is installed. k8sCluster.region Basic Introduced in version: 1.2.0 Default value: None Chart: apigee-telemetry , apigee-org Identifies the Google Cloud region in which your Kubernetes cluster was created. kubeRBACProxy Identifies where Apigee should look for Kubernetes role-based access controls.",
+          "If you change this setting after installing Hybrid, apply it with apigeectl init and then restart your Apigee ingress gateway pods. istiod.healthCheckUserAgents Advanced Introduced in version: 1.12.0 Default values: - \"GoogleStackdriverMonitoring-UptimeChecks(https://cloud.google.com/monitoring)\" - \"Edge Health Probe\" Chart: apigee-ingress-manager Enables non-Google Cloud loadbalancers to check the ingress gateway's health check endpoints ( /healthz/ingress and /healthz ) by overriding the default user-agent allow list in hybrid."
+        ]
+      },
+      {
+        "title": "\"Install the Apigee Operator for Kubernetes for Apigee hybrid \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-platform/apigee-kubernetes/apigee-apim-operator-install-hybrid",
+        "source_id": "site-docs-reference",
+        "final_score": 109,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Install Istio Gateway into your K8s cluster: For clusters on GKE: kubectl apply -f https://github.com/kubernetes-sigs/gateway-api/releases/download/v1.1.0/standard-install.yaml curl -L https://istio.io/downloadIstio sh - cd 1.6.11-asm.1 export PATH=$PWD/bin:$PATH istioctl install --set profile=minimal --set values.global.platform=gke -y For clusters on other providers: kubectl apply -f https://github.com/kubernetes-sigs/gateway-api/releases/download/v1.1.0/standard-install.yaml curl -L https://istio.io/downloadIstio sh - cd 1.6.11-asm.1 export PATH=$PWD/bin:$PATH istioctl install --set profile=minimal -y Deploy Istio Gateway into your Kubernetes cluster.",
+          "Attach the Environment to the Environment Group you just created with the following command: curl -i -X POST -H \"Authorization: Bearer $TOKEN\" \"https://apigee.googleapis.com/v1/organizations/$APIGEE ORG/envgroups/ $ENV GROUP /attachments\" -H \"Content-Type:application/json\" -d '{ \"environment\": \"'\" $ENV NAME \"'\", }' Install the Apigee Hybrid Environment using helm The procedure to install the new environment in the Apigee Hybrid cluster is similar to how you installed other environments in your cluster.",
+          "Annotations: iam.gke.io/gcp-service-account: apigee-apim-gsa@my-project-id.iam.gserviceaccount.com Confirm that the Apigee Operator for Kubernetes is up and running in the cluster's pods: kubectl get pods -n apim The output should look similar to the following: NAME READY STATUS RESTARTS AGE apigee-apim-operator-8559d4994b-h55fl 1/1 Running 0 8m34s If the STATUS is not Running, or READY does not display 1/1, see Troubleshoot the Apigee Operator for Kubernetes to troubleshoot the installation."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "apigee.cloud.google.com",
+      "apigee.googleapis.com",
+      "asm.1",
+      "cassandra.datacenter",
+      "cassandra.dnsPolicy",
+      "environment.yaml",
+      "github.com",
+      "iam.gke.io",
+      "id.iam.gserviceaccount.com",
+      "install.git",
+      "install.yaml",
+      "istio.io",
+      "istiod.healthCheckUserAgents",
+      "k8s.io",
+      "raw.githubusercontent.com",
+      "secret.json",
+      "secrets.yaml",
+      "setup.sh",
+      "store.csi.k8s.io",
+      "store.csi.x",
+      "v1.1.0",
+      "v1.10",
+      "v1.11",
+      "v1.12",
+      "v1.3",
+      "values.global.platform",
+      "vault.default",
+      "vault.yaml"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/hybrid/preview/new-install-user-guide",
+        "https://docs.cloud.google.com/apigee/docs/hybrid/latest/config-prop-ref",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/apigee-kubernetes/apigee-apim-operator-install-hybrid"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/hybrid/preview/new-install-user-guide",
+        "https://docs.cloud.google.com/apigee/docs/hybrid/latest/config-prop-ref",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/apigee-kubernetes/apigee-apim-operator-install-hybrid"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/hybrid/preview/new-install-user-guide",
+        "https://docs.cloud.google.com/apigee/docs/hybrid/latest/config-prop-ref",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/apigee-kubernetes/apigee-apim-operator-install-hybrid"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/hybrid/preview/new-install-user-guide",
+        "https://docs.cloud.google.com/apigee/docs/hybrid/latest/config-prop-ref",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/apigee-kubernetes/apigee-apim-operator-install-hybrid"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/hybrid/preview/new-install-user-guide",
+        "https://docs.cloud.google.com/apigee/docs/hybrid/latest/config-prop-ref",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/apigee-kubernetes/apigee-apim-operator-install-hybrid"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/hybrid/preview/new-install-user-guide",
+        "https://docs.cloud.google.com/apigee/docs/hybrid/latest/config-prop-ref",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/apigee-kubernetes/apigee-apim-operator-install-hybrid"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/hybrid/preview/new-install-user-guide",
+        "https://docs.cloud.google.com/apigee/docs/hybrid/latest/config-prop-ref",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/apigee-kubernetes/apigee-apim-operator-install-hybrid"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/hybrid/preview/new-install-user-guide",
+        "https://docs.cloud.google.com/apigee/docs/hybrid/latest/config-prop-ref",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/apigee-kubernetes/apigee-apim-operator-install-hybrid"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/hybrid/preview/new-install-user-guide",
+        "https://docs.cloud.google.com/apigee/docs/hybrid/latest/config-prop-ref",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/apigee-kubernetes/apigee-apim-operator-install-hybrid"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/hybrid/preview/new-install-user-guide",
+        "https://docs.cloud.google.com/apigee/docs/hybrid/latest/config-prop-ref",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/apigee-kubernetes/apigee-apim-operator-install-hybrid"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/hybrid/preview/new-install-user-guide",
+        "https://docs.cloud.google.com/apigee/docs/hybrid/latest/config-prop-ref",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/apigee-kubernetes/apigee-apim-operator-install-hybrid"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/hybrid/preview/new-install-user-guide",
+        "https://docs.cloud.google.com/apigee/docs/hybrid/latest/config-prop-ref",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/apigee-kubernetes/apigee-apim-operator-install-hybrid"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/hybrid/preview/new-install-user-guide",
+        "https://docs.cloud.google.com/apigee/docs/hybrid/latest/config-prop-ref",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/apigee-kubernetes/apigee-apim-operator-install-hybrid"
+      ]
+    }
+  ]
+}

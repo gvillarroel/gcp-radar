@@ -1,0 +1,211 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:28.180Z",
+  "source_step08_card": "data/step-08/current/products/cloud-storage/card.json",
+  "product_name": "Cloud Storage",
+  "product_slug": "cloud-storage",
+  "feature_name": "Bucket relocation multipart upload support",
+  "feature_slug": "bucket-relocation-multipart-upload-support",
+  "summary": "Bucket relocation with write downtime supports completed multipart uploads that finish before final synchronization.",
+  "extended_definition": "Bucket relocation with write downtime supports completed multipart uploads that finish before final synchronization.",
+  "lifecycle": {
+    "latest_feature_date": "2026-01-21",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/java/docs/reference/google-cloud-storage/latest/com.google.cloud.storage.BlobAppendableUpload.AppendableUploadWriteableByteChannel",
+      "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.bucket.LifecycleRuleAbortIncompleteMultipartUpload",
+      "https://docs.cloud.google.com/storage/docs/audit-logging",
+      "https://docs.cloud.google.com/storage/docs/uploading-objects"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Class LifecycleRuleAbortIncompleteMultipartUpload (3.10.0) \\_|\\_ Python\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.bucket.LifecycleRuleAbortIncompleteMultipartUpload",
+        "source_id": "site-python-reference",
+        "final_score": 178,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Returns Type Description LifecycleRuleAbortIncompleteMultipartUpload Instance created from resource. fromkeys fromkeys ( value = None , / ) Create a new dictionary with keys from iterable and values set to value. get get ( key , default = None , / ) Return the value for key if key is in the dictionary, else default. items items () API documentation for storage.bucket.LifecycleRuleAbortIncompleteMultipartUpload.items method. keys keys () API documentation for storage.bucket.LifecycleRuleAbortIncompleteMultipartUpload.keys method. pop pop ( k [, d ]) If the key is not found, return the default if given; otherwise, raise a KeyError. popitem popitem () Remove and return a (key, value) pair as a 2-tuple.",
+          "Return the value for key if key is in the dictionary, else default. update update ([ E , ] F ) If E is present and has a .keys() method, then does: for k in E: D[k] = E[k] If E is present and lacks a .keys() method, then does: for k, v in E: D[k] = v In either case, this is followed by: for k in F: D[k] = F[k] values values () API documentation for storage.bucket.LifecycleRuleAbortIncompleteMultipartUpload.values method.",
+          "Methods clear clear () API documentation for storage.bucket.LifecycleRuleAbortIncompleteMultipartUpload.clear method. copy copy () API documentation for storage.bucket.LifecycleRuleAbortIncompleteMultipartUpload.copy method. from api repr from api repr ( resource ) Factory: construct instance from resource."
+        ]
+      },
+      {
+        "title": "\"Upload objects from a file system \\_|\\_ Cloud Storage \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/storage/docs/uploading-objects",
+        "source_id": "site-docs-root",
+        "final_score": 164,
+        "relevance": "",
+        "evidence_snippets": [
+          "For example: --separator string Content-Type: application/json; charset=UTF-8 {\"name\":\"my-document.txt\"} --separator string Content-Type: text/plain This is a text file. --separator string-- Use cURL to call the JSON API with a POST Object request: curl -X POST --data-binary @ MULTIPART FILE LOCATION \\ -H \"Authorization: Bearer $(gcloud auth print-access-token)\" \\ -H \"Content-Type: multipart/related; boundary= BOUNDARY STRING \" \\ -H \"Content-Length: MULTIPART FILE SIZE \" \\ \"https://storage.googleapis.com/upload/storage/v1/b/ BUCKET NAME /o?uploadType=multipart\" Where: MULTIPART FILE LOCATION is the local path to the multipart file you created in step 2.",
+          "Conditions { DoesNotExist : true }) // If the live object already exists in your bucket, set instead a // generation-match precondition using the live object's generation number. // attrs, err := o.Attrs(ctx) // if err != nil { // return fmt.Errorf(\"object.Attrs: %w\", err) // } // o = o.If(storage.Conditions{GenerationMatch: attrs.Generation}) // Upload an object with storage.Writer. wc := o .",
+          "For a destination // object that does not yet exist, set the ifGenerationMatch precondition to 0 // If the destination object already exists in your bucket, set instead a // generation-match precondition using its generation number. preconditionOpts : { ifGenerationMatch : generationMatchPrecondition }, }; await storage . bucket ( bucketName ). upload ( filePath , options ); console . log ( ${ filePath } uploaded to ${ bucketName } ); } uploadFile (). catch ( console . error ); The following sample uploads multiple objects concurrently: / TODO(developer): Uncomment the following lines before running the sample. / // The ID of your GCS bucket // const bucketName = 'your-unique-bucket-name'; // The ID of the first GCS file to upload // const firstFilePath = 'your-first-file-name'; // The ID of the second GCS file to upload // const secondFilePath = 'your-second-file-name'; // Imports the Google Cloud client library const { Storage , TransferManager } = require ( ' @google-cloud/storage ' ); // Creates a client const storage = new Storage (); // Creates a transfer manager client const transferManager = new TransferManager ( storage . bucket ( bucketName )); async function uploadManyFilesWithTransferManager () { // Uploads the files await transferManager . uploadManyFiles ([ firstFilePath , secondFilePath ]); for ( const filePath of [ firstFilePath , secondFilePath ]) { console . log ( ${ filePath } uploaded to ${ bucketName } . ); } } uploadManyFilesWithTransferManager (). catch ( console . error ); The following sample uploads all objects with a common prefix concurrently: / TODO(developer): Uncomment the following lines before running the sample. / // The ID of your GCS bucket // const bucketName = 'your-unique-bucket-name'; // The local directory to upload // const directoryName = 'your-directory'; // Imports the Google Cloud client library const { Storage , TransferManager } = require ( ' @google-cloud/storage ' ); // Creates a client const storage = new Storage (); // Creates a transfer manager client const transferManager = new TransferManager ( storage . bucket ( bucketName )); async function uploadDirectoryWithTransferManager () { // Uploads the directory await transferManager . uploadManyFiles ( directoryName ); console . log ( ${ directoryName } uploaded to ${ bucketName } . ); } uploadDirectoryWithTransferManager (). catch ( console . error ); PHP For more information, see the Cloud Storage PHP API reference documentation ."
+        ]
+      },
+      {
+        "title": "\"Interface BlobAppendableUpload.AppendableUploadWriteableByteChannel (2.64.0)\\",
+        "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-storage/latest/com.google.cloud.storage.BlobAppendableUpload.AppendableUploadWriteableByteChannel",
+        "source_id": "site-java-reference",
+        "final_score": 162,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "See Also: BlobAppendableUploadConfig.CloseAction#CLOSE WITHOUT FINALIZING , Storage#blobAppendableUpload(BlobInfo, BlobAppendableUploadConfig, BlobWriteOption...) , BlobAppendableUploadConfig#getCloseAction() , BlobAppendableUploadConfig#withCloseAction(CloseAction) Exceptions Type Description IOException finalizeAndClose() public abstract void finalizeAndClose () Beta This feature is covered by the Pre-GA Offerings Terms of the Terms of Service.",
+          "See Also: BlobAppendableUploadConfig.CloseAction#FINALIZE WHEN CLOSING , Storage#blobAppendableUpload(BlobInfo, BlobAppendableUploadConfig, BlobWriteOption...) , BlobAppendableUploadConfig#getCloseAction() , BlobAppendableUploadConfig#withCloseAction(CloseAction) Exceptions Type Description IOException flush() public abstract void flush () Beta This feature is covered by the Pre-GA Offerings Terms of the Terms of Service.",
+          "See Also: Storage#blobAppendableUpload(BlobInfo, BlobAppendableUploadConfig, BlobWriteOption...) , BlobAppendableUploadConfig#getCloseAction() , BlobAppendableUploadConfig#withCloseAction(CloseAction) Exceptions Type Description IOException closeWithoutFinalizing() public abstract void closeWithoutFinalizing () Beta This feature is covered by the Pre-GA Offerings Terms of the Terms of Service."
+        ]
+      },
+      {
+        "title": "Cloud Audit Logs with Cloud Storage \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/storage/docs/audit-logging",
+        "source_id": "site-iam-reference",
+        "final_score": 162,
+        "relevance": "",
+        "evidence_snippets": [
+          "Audit log type Sub-type Cloud Storage operations Admin Activity ADMIN WRITE Setting bucket or managed folder IAM policies Setting object ACLs 1 Creating buckets Deleting buckets Restoring soft-deleted buckets Relocating buckets Updating bucket metadata Creating tag bindings on buckets Deleting tag bindings on buckets Creating managed folders Deleting managed folders Updating Storage Intelligence configuration for a project, a folder, or an organization Creating Rapid Cache caches Pausing Rapid Cache caches Resuming Rapid Cache caches Disabling Rapid Cache caches Updating Rapid Cache caches Creating HMAC keys Deleting HMAC keys Updating HMAC keys Cancelling long-running operations Deleting long-running operations Creating Storage Insights inventory report configurations Updating Storage Insights inventory report configurations Deleting Storage Insights inventory report configurations Creating Storage Insights dataset configurations Updating Storage Insights dataset configurations Deleting Storage Insights dataset configurations Linking Storage Insights dataset configurations Unlinking Storage Insights dataset configurations Data Access ADMIN READ Getting bucket or managed folder IAM policies Getting object ACLs Getting bucket metadata Listing buckets Listing tag bindings on buckets Listing effective tags on buckets Getting managed folder metadata Listing managed folders Getting Storage Intelligence configuration for a project, a folder, or an organization Getting Rapid Cache caches Listing Rapid Cache caches Getting HMAC keys Listing HMAC keys Getting long-running operations Listing long-running operations Getting Storage Insights inventory report configurations Listing Storage Insights inventory report configurations Getting Storage Insights inventory reports Listing Storage Insights inventory reports Getting Storage Insights dataset configurations Listing Storage Insights dataset configurations Data Access DATA READ Getting object data Getting object metadata Listing objects Getting folder metadata Listing folders Copying objects 2 Composing objects 2 Listing ongoing XML API multipart uploads Listing XML API multipart upload parts Data Access DATA WRITE Creating objects Deleting objects Deleting multiple objects using the XML API Restoring soft-deleted objects Moving objects Updating non-ACL object metadata Setting retentions for objects Overriding unlocked retentions for objects Copying objects 2 Composing objects 2 Initiating XML API multipart uploads Creating parts in an XML API multipart upload Aborting XML API multipart uploads Completing XML API multipart uploads Creating folders Deleting folders Renaming folders System Event Start of bucket relocate process 3 End of bucket relocate process 1 Admin Activity audit logs are not generated if/when ACLs are initially set at object creation.",
+          "For example: gcloud storage sign-url gs://example bucket/example object.jpeg --private-key-file=example-key.json --duration=10m --query-params=x-goog-custom-audit-job=job name,x-goog-custom-audit-user=test user Example log entry protoPayload: { @type: \"type.googleapis.com/google.cloud.audit.Auditlog\", ... metadata: { audit context: { app context: \"EXTERNAL\", audit info: { x-goog-custom-audit-job: \"job name\", x-goog-custom-audit-user: \"test user\" } } } } For more information on the fields included in the protoPayload object with the type type.googleapis.com/google.cloud.audit.Auditlog , see the AuditLog reference documentation .",
+          "For example, a rewrite operation's object GET request's log includes a destination field in the metadata field of its audit log to specify the bucket where the data has been copied to."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "attrs.Generation",
+      "com.google.cloud.storage",
+      "com.google.cloud.storage.BlobAppendableUpload.AppendableUploadWriteableByteChannel",
+      "document.txt",
+      "fmt.Errorf",
+      "java.io.IOException",
+      "java.nio.file.Files",
+      "java.nio.file.Path",
+      "java.util.ArrayList",
+      "java.util.List",
+      "java.util.stream.Stream",
+      "key.json",
+      "o.Attrs",
+      "o.If",
+      "object.Attrs",
+      "object.jpeg",
+      "storage.bucket.LifecycleRuleAbortIncompleteMultipartUpload.clear",
+      "storage.bucket.LifecycleRuleAbortIncompleteMultipartUpload.copy",
+      "storage.bucket.LifecycleRuleAbortIncompleteMultipartUpload.items",
+      "storage.bucket.LifecycleRuleAbortIncompleteMultipartUpload.keys",
+      "storage.bucket.LifecycleRuleAbortIncompleteMultipartUpload.values",
+      "storage.Conditions",
+      "storage.googleapis.com",
+      "storage.Writer",
+      "type.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.bucket.LifecycleRuleAbortIncompleteMultipartUpload",
+        "https://docs.cloud.google.com/storage/docs/uploading-objects",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-storage/latest/com.google.cloud.storage.BlobAppendableUpload.AppendableUploadWriteableByteChannel",
+        "https://docs.cloud.google.com/storage/docs/audit-logging"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.bucket.LifecycleRuleAbortIncompleteMultipartUpload",
+        "https://docs.cloud.google.com/storage/docs/uploading-objects",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-storage/latest/com.google.cloud.storage.BlobAppendableUpload.AppendableUploadWriteableByteChannel",
+        "https://docs.cloud.google.com/storage/docs/audit-logging"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.bucket.LifecycleRuleAbortIncompleteMultipartUpload",
+        "https://docs.cloud.google.com/storage/docs/uploading-objects",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-storage/latest/com.google.cloud.storage.BlobAppendableUpload.AppendableUploadWriteableByteChannel",
+        "https://docs.cloud.google.com/storage/docs/audit-logging"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.bucket.LifecycleRuleAbortIncompleteMultipartUpload",
+        "https://docs.cloud.google.com/storage/docs/uploading-objects",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-storage/latest/com.google.cloud.storage.BlobAppendableUpload.AppendableUploadWriteableByteChannel",
+        "https://docs.cloud.google.com/storage/docs/audit-logging"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.bucket.LifecycleRuleAbortIncompleteMultipartUpload",
+        "https://docs.cloud.google.com/storage/docs/uploading-objects",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-storage/latest/com.google.cloud.storage.BlobAppendableUpload.AppendableUploadWriteableByteChannel",
+        "https://docs.cloud.google.com/storage/docs/audit-logging"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.bucket.LifecycleRuleAbortIncompleteMultipartUpload",
+        "https://docs.cloud.google.com/storage/docs/uploading-objects",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-storage/latest/com.google.cloud.storage.BlobAppendableUpload.AppendableUploadWriteableByteChannel",
+        "https://docs.cloud.google.com/storage/docs/audit-logging"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.bucket.LifecycleRuleAbortIncompleteMultipartUpload",
+        "https://docs.cloud.google.com/storage/docs/uploading-objects",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-storage/latest/com.google.cloud.storage.BlobAppendableUpload.AppendableUploadWriteableByteChannel",
+        "https://docs.cloud.google.com/storage/docs/audit-logging"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.bucket.LifecycleRuleAbortIncompleteMultipartUpload",
+        "https://docs.cloud.google.com/storage/docs/uploading-objects",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-storage/latest/com.google.cloud.storage.BlobAppendableUpload.AppendableUploadWriteableByteChannel",
+        "https://docs.cloud.google.com/storage/docs/audit-logging"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.bucket.LifecycleRuleAbortIncompleteMultipartUpload",
+        "https://docs.cloud.google.com/storage/docs/uploading-objects",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-storage/latest/com.google.cloud.storage.BlobAppendableUpload.AppendableUploadWriteableByteChannel",
+        "https://docs.cloud.google.com/storage/docs/audit-logging"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.bucket.LifecycleRuleAbortIncompleteMultipartUpload",
+        "https://docs.cloud.google.com/storage/docs/uploading-objects",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-storage/latest/com.google.cloud.storage.BlobAppendableUpload.AppendableUploadWriteableByteChannel",
+        "https://docs.cloud.google.com/storage/docs/audit-logging"
+      ]
+    }
+  ]
+}

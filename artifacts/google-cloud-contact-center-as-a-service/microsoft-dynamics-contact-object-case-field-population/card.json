@@ -1,0 +1,106 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:38.623Z",
+  "source_step08_card": "data/step-08/current/products/google-cloud-contact-center-as-a-service/card.json",
+  "product_name": "Google Cloud Contact Center as a Service",
+  "product_slug": "google-cloud-contact-center-as-a-service",
+  "feature_name": "Microsoft Dynamics contact object case field population",
+  "feature_slug": "microsoft-dynamics-contact-object-case-field-population",
+  "summary": "When the Contact object type is used, customer information can populate fields on a Case object at the same time.",
+  "extended_definition": "When the Contact object type is used, customer information can populate fields on a Case object at the same time.",
+  "lifecycle": {
+    "latest_feature_date": "2023-09-25",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/contact-center/ccai-platform/docs/call-settings",
+      "https://docs.cloud.google.com/contact-center/ccai-platform/docs/salesforce-installation-guide",
+      "https://docs.cloud.google.com/contact-center/ccai-platform/docs/salesforce-integration-guide"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Call settings \\_|\\_ Google Cloud Contact Center as a Service \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/contact-center/ccai-platform/docs/call-settings",
+        "source_id": "site-docs-reference-required-8",
+        "final_score": 127,
+        "relevance": "",
+        "evidence_snippets": [
+          "Extension input at the beginning of a call is on When extension input at the beginning of a call is on, the end-user experience is as follows: The end-user calls the contact center's global number.",
+          "In the case that you don't have phone numbers stored in your CRM, or prefer to use a Unique ID (UID) for this contact lookup instead, CCAI Platform can deliver the same seamless experience.",
+          "Giving agents the opportunity to add an area code to a phone number is particularly important in cases when the area code isn't included in the CRM record."
+        ]
+      },
+      {
+        "title": "\"Salesforce integration guide \\_|\\_ Google Cloud Contact Center as a Service\\",
+        "url": "https://docs.cloud.google.com/contact-center/ccai-platform/docs/salesforce-integration-guide",
+        "source_id": "site-docs-reference",
+        "final_score": 109,
+        "relevance": "",
+        "evidence_snippets": [
+          "Sync button behavior Sync button works on the following types of Salesforce objects: Case page CCAI Platform finds the current lookup object - Contact, Account, Person Account, or Lead The phone number field is populated based on the default phone setting Contact or Account or PersonAccount or Lead page If the current object is the same object type as lookup object, the object is populated and the object's phone number field.",
+          "Salesforce: CCAI Platform session mapping to case or account objects (person account, contact, lead) When a call or chat takes place, the associated data needs to be made available in your CRM and CCAI Platform offers flexibility in how the call/chat session data to is attached to Salesforce data objects.",
+          "When the Account ID is selected and the option Allow agent to select \"Create a new case\" option for outbound calls is enabled, a new case ID entered in the field and CCAI Platform pops a case and call attaches session data to the case using activity or CCAI Platform Session object."
+        ]
+      },
+      {
+        "title": "\"Salesforce installation guide \\_|\\_ Google Cloud Contact Center as a Service\\",
+        "url": "https://docs.cloud.google.com/contact-center/ccai-platform/docs/salesforce-installation-guide",
+        "source_id": "site-docs-reference",
+        "final_score": 89,
+        "relevance": "",
+        "evidence_snippets": [
+          "Configure the Object Settings for Accounts , Cases , Contacts , and Leads using this table: Object Read Create Edit Delete View All Modify All Cases X X X X Contacts X X X X Accounts X X X X Leads X X X X To configure these settings, click the Object Name .",
+          "Repeat these steps for each of the four objects (Accounts, Cases, Contacts, and Leads).",
+          "Create a custom permission set and apply to all agents In this section, you will create a custom permission set (with the minimum requirements needed for integration), update it with case and contact permissions, and apply it to all agents who use the CCAI Platform portal."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/call-settings",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/salesforce-integration-guide",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/salesforce-installation-guide"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/call-settings",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/salesforce-integration-guide",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/salesforce-installation-guide"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/call-settings",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/salesforce-integration-guide",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/salesforce-installation-guide"
+      ]
+    }
+  ]
+}

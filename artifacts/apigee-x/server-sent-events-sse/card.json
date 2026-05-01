@@ -1,0 +1,112 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:14.688Z",
+  "source_step08_card": "data/step-08/current/products/apigee-x/card.json",
+  "product_name": "Apigee X",
+  "product_slug": "apigee-x",
+  "feature_name": "Server-Sent Events (SSE)",
+  "feature_slug": "server-sent-events-sse",
+  "summary": "Server-Sent Events support continuous real-time streaming responses from SSE endpoints to clients.",
+  "extended_definition": "Server-Sent Events support continuous real-time streaming responses from SSE endpoints to clients.",
+  "lifecycle": {
+    "latest_feature_date": "2025-05-22",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/apigee/docs/api-platform/develop/server-sent-events",
+      "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/build-simple-api-proxy",
+      "https://docs.cloud.google.com/apigee/docs/api-platform/reference/variables-reference"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Streaming server-sent events \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-platform/develop/server-sent-events",
+        "source_id": "site-docs-reference-required-3",
+        "final_score": 300,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Apigee supports continuous response streaming from server-sent event (SSE) endpoints to clients in real time.",
+          "Home Documentation Application development Apigee Guides Send feedback Streaming server-sent events Stay organized with collections Save and categorize content based on your preferences.",
+          "You can use the SanitizeModelResponse policy to sanitize incoming server-sent events in an EventFlow ."
+        ]
+      },
+      {
+        "title": "Building a simple API proxy \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/build-simple-api-proxy",
+        "source_id": "site-docs-reference-required-3",
+        "final_score": 142,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Proxy with Server-Sent Events (SSE) An API proxy that includes an EventFlow for streaming server-sent events (SSE).",
+          "For more information, see Streaming server-sent events .",
+          "Create the instance template gcloud compute instance - templates create $ MIG NAME \\ -- project $ PROJECT ID \\ -- region $ REGION \\ -- network $ VPC NAME \\ -- subnet $ VPC SUBNET \\ -- tags = https - server , apigee - mig - proxy , gke - apigee - proxy \\ -- machine - type e2 - medium -- image - family debian - 12 \\ -- image - project debian - cloud -- boot - disk - size 20 GB \\ -- no - address \\ -- metadata ENDPOINT = $ APIGEE ENDPOINT , startup - script - url = gs : //apigee-5g-saas/apigee-envoy-proxy-release/latest/conf/startup-script.sh Create the managed instance group gcloud compute instance - groups managed create $MIG NAME \\ -- project $PROJECT ID -- base - instance - name apigee - mig \\ -- size 2 -- template $MIG NAME -- region $REGION Configure autoscaling gcloud compute instance - groups managed set - autoscaling $MIG NAME \\ -- project $PROJECT ID -- region $REGION -- max - num - replicas 50 \\ -- target - cpu - utilization 0.75 -- cool - down - period 90 Define a named port gcloud compute instance - groups managed set - named - ports $MIG NAME \\ -- project $PROJECT ID -- region $REGION -- named - ports https: 443 Create a Google-managed SSL certificate and key for the load balancer gcloud compute ssl-certificates create $CERTIFICATE NAME \\ --domains=$DOMAIN HOSTNAME \\ --project $PROJECT ID \\ --global Validate that the certificate is provisioned gcloud compute ssl-certificates describe $CERTIFICATE NAME \\ --global \\ --format=\"get(name,managed.status, managed.Status)\" Create the Global Cloud Load Balancer (GCLB) Create a health check gcloud compute health-checks create https hc-apigee-envoy-443 \\ --project $PROJECT ID --port 443 --global \\ --request-path /healthz/ingress Create the backend service for http1 gcloud compute backend - services create YOUR BACKEND 1 \\ -- project $ PROJECT ID \\ -- protocol HTTPS \\ -- health - checks hc - apigee - envoy - 443 \\ -- port - name https \\ -- timeout 302 s \\ -- connection - draining - timeout 300 s \\ -- global Create the backend service for http2 gcloud compute backend - services create YOUR BACKEND 2 \\ -- project $ PROJECT ID \\ -- protocol HTTP2 \\ -- health - checks hc - apigee - envoy - 443 \\ -- port - name https \\ -- timeout 302 s \\ -- connection - draining - timeout 300 s \\ -- global Add MIGs to the backend service."
+        ]
+      },
+      {
+        "title": "Flow variables reference \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-platform/reference/variables-reference",
+        "source_id": "site-docs-reference-required-3",
+        "final_score": 134,
+        "relevance": "",
+        "evidence_snippets": [
+          "See Streaming server-sent events for more information. .",
+          "See Streaming server-sent events for more information.",
+          "See Streaming server-sent events for more information."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "managed.status",
+      "managed.Status",
+      "script.sh",
+      "target.email.address",
+      "target.evaluated.url"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/develop/server-sent-events",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/build-simple-api-proxy",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/variables-reference"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/develop/server-sent-events",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/build-simple-api-proxy",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/variables-reference"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/develop/server-sent-events",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/build-simple-api-proxy",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/variables-reference"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,146 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:43.560Z",
+  "source_step08_card": "data/step-08/current/products/memorystore-for-redis-cluster/card.json",
+  "product_name": "Memorystore for Redis Cluster",
+  "product_slug": "memorystore-for-redis-cluster",
+  "feature_name": "vector search",
+  "feature_slug": "vector-search",
+  "summary": "Memorystore for Redis Cluster can store and query vector data; Memorystore for Redis Cluster supports vector search capabilities in Preview.",
+  "extended_definition": "Memorystore for Redis Cluster can store and query vector data; Memorystore for Redis Cluster supports vector search capabilities in Preview.",
+  "lifecycle": {
+    "latest_feature_date": "2025-03-05",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/memorystore/docs/cluster/about-vector-search",
+      "https://docs.cloud.google.com/memorystore/docs/cluster/cluster-node-specification",
+      "https://docs.cloud.google.com/memorystore/docs/cluster/memorystore-for-redis-cluster-overview",
+      "https://docs.cloud.google.com/memorystore/docs/cluster/reference/rest"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Vector search for generative AI applications \\_|\\_ Memorystore for Redis\\",
+        "url": "https://docs.cloud.google.com/memorystore/docs/cluster/about-vector-search",
+        "source_id": "site-iam-reference",
+        "final_score": 394,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Using vector search with LangChain lets you build solutions for the following use cases: RAG LLM cache Recommendation engine Semantic search Image similarity search Benefits of vector search for generative AI in Memorystore for Redis Cluster The advantage of using Memorystore to store your generative AI data, compared to other Google Cloud databases is its speed.",
+          "This page describes how Memorystore for Redis Cluster supports storing and querying vector data for generative AI applications, such as Retrieval Augmented Generation (RAG) and LangChain, by using vector search capabilities.",
+          "Home Documentation Databases Memorystore Memorystore for Redis Cluster Guides Send feedback Vector search for generative AI applications Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "Memorystore for Redis Cluster overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/memorystore/docs/cluster/memorystore-for-redis-cluster-overview",
+        "source_id": "site-api-reference",
+        "final_score": 310,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The terms instance and cluster can be used interchangeably when referring to a single Memorystore for Redis Cluster unit of deployment.",
+          "Networking prerequisites Before you can create a Memorystore for Redis Cluster instance, you must set up Networking for your project.",
+          "Key concepts and terms Hierarchical resource structure Memorystore for Redis Cluster gathers the various resources used in a Redis deployment into a hierarchical structure that simplifies administration and management."
+        ]
+      },
+      {
+        "title": "\"Google Cloud Memorystore for Redis API \\_|\\_ Memorystore for Redis Cluster\\",
+        "url": "https://docs.cloud.google.com/memorystore/docs/cluster/reference/rest",
+        "source_id": "site-api-reference",
+        "final_score": 302,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Databases Memorystore Memorystore for Redis Cluster Reference Send feedback Google Cloud Memorystore for Redis API Stay organized with collections Save and categorize content based on your preferences.",
+          "REST Resource: v1alpha1.projects.locations.clusters Methods backup POST /v1alpha1/{name=projects/ /locations/ /clusters/ }:backup Backup Redis Cluster. create POST /v1alpha1/{parent=projects/ /locations/ }/clusters Creates a Redis cluster based on the specified properties. delete DELETE /v1alpha1/{name=projects/ /locations/ /clusters/ } Deletes a specific Redis cluster. get GET /v1alpha1/{name=projects/ /locations/ /clusters/ } Gets the details of a specific Redis cluster. getCertificateAuthority GET /v1alpha1/{name=projects/ /locations/ /clusters/ /certificateAuthority} Gets the details of certificate authority information for Redis cluster. list GET /v1alpha1/{parent=projects/ /locations/ }/clusters Lists all Redis clusters owned by a project in either the specified location (region) or all locations. patch PATCH /v1alpha1/{cluster.name=projects/ /locations/ /clusters/ } Updates the metadata and configuration of a specific Redis cluster. rescheduleClusterMaintenance POST /v1alpha1/{name=projects/ /locations/ /clusters/ }:rescheduleClusterMaintenance Reschedules upcoming maintenance event.",
+          "REST Resource: v1beta1.projects.locations.clusters Methods backup POST /v1beta1/{name=projects/ /locations/ /clusters/ }:backup Backup Redis Cluster. create POST /v1beta1/{parent=projects/ /locations/ }/clusters Creates a Redis cluster based on the specified properties. delete DELETE /v1beta1/{name=projects/ /locations/ /clusters/ } Deletes a specific Redis cluster. get GET /v1beta1/{name=projects/ /locations/ /clusters/ } Gets the details of a specific Redis cluster. getCertificateAuthority GET /v1beta1/{name=projects/ /locations/ /clusters/ /certificateAuthority} Gets the details of certificate authority information for Redis cluster. list GET /v1beta1/{parent=projects/ /locations/ }/clusters Lists all Redis clusters owned by a project in either the specified location (region) or all locations. patch PATCH /v1beta1/{cluster.name=projects/ /locations/ /clusters/ } Updates the metadata and configuration of a specific Redis cluster. rescheduleClusterMaintenance POST /v1beta1/{name=projects/ /locations/ /clusters/ }:rescheduleClusterMaintenance Reschedules upcoming maintenance event."
+        ]
+      },
+      {
+        "title": "\"Cluster and node specification \\_|\\_ Memorystore for Redis Cluster \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/memorystore/docs/cluster/cluster-node-specification",
+        "source_id": "site-docs-root",
+        "final_score": 286,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Databases Memorystore Memorystore for Redis Cluster Guides Send feedback Cluster and node specification Stay organized with collections Save and categorize content based on your preferences.",
+          "If you run Memorystore for Redis Cluster in a production environment, then we recommend using the redis-standard-small , redis-highmem-medium , or redis-highmem-xlarge node types.",
+          "Scale an instance As part of creating a Memorystore for Redis Cluster instance, you choose a node type for the instance and specify the number of shards for the instance."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cluster.name",
+      "redis.googleapis.com",
+      "v1.projects.locations.clusters",
+      "v1alpha1.projects.locations.clusters",
+      "v1beta1.projects.locations.clusters"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/cluster/about-vector-search",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/memorystore-for-redis-cluster-overview",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/reference/rest",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/cluster-node-specification"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/cluster/about-vector-search",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/memorystore-for-redis-cluster-overview",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/reference/rest",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/cluster-node-specification"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/cluster/about-vector-search",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/memorystore-for-redis-cluster-overview",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/reference/rest",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/cluster-node-specification"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/cluster/about-vector-search",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/memorystore-for-redis-cluster-overview",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/reference/rest",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/cluster-node-specification"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/cluster/about-vector-search",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/memorystore-for-redis-cluster-overview",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/reference/rest",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/cluster-node-specification"
+      ]
+    }
+  ]
+}

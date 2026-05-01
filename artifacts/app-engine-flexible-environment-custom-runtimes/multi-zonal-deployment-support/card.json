@@ -1,0 +1,116 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:15.241Z",
+  "source_step08_card": "data/step-08/current/products/app-engine-flexible-environment-custom-runtimes/card.json",
+  "product_name": "App Engine flexible environment custom runtimes",
+  "product_slug": "app-engine-flexible-environment-custom-runtimes",
+  "feature_name": "Multi-zonal deployment support",
+  "feature_slug": "multi-zonal-deployment-support",
+  "summary": "App Engine flexible environment can deploy applications across multiple zones.",
+  "extended_definition": "App Engine flexible environment can deploy applications across multiple zones.",
+  "lifecycle": {
+    "latest_feature_date": "2016-11-15",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/appengine/docs/flexible/configuration-files",
+      "https://docs.cloud.google.com/appengine/docs/flexible/java/configuring-the-web-xml-deployment-descriptor",
+      "https://docs.cloud.google.com/appengine/docs/flexible/quotas"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Configuring the web.xml deployment descriptor \\_|\\_ App Engine flexible\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/flexible/java/configuring-the-web-xml-deployment-descriptor",
+        "source_id": "site-docs-reference",
+        "final_score": 88,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Application hosting App Engine Flexible environment Guides Send feedback Configuring the web.xml deployment descriptor Stay organized with collections Save and categorize content based on your preferences.",
+          "App Engine doesn't support JNDI environment variables ( <env-entry> ).",
+          "Here is a simple filter implementation that logs a message, and passes control down the chain, which may include other filters or a servlet, as described by the deployment descriptor: package mysite.server; import java.io.IOException; import java.util.logging.Logger; import javax.servlet.Filter; import javax.servlet.FilterChain; import javax.servlet.FilterConfig; import javax.servlet.ServletException; import javax.servlet.ServletRequest; import javax.servlet.ServletResponse; public class LogFilterImpl implements Filter { private FilterConfig filterConfig; private static final Logger log = Logger.getLogger(LogFilterImpl.class.getName()); public void doFilter(ServletRequest request, ServletResponse response, FilterChain filterChain) throws IOException, ServletException { log.warning(\"Log filter processed a \" + getFilterConfig().getInitParameter(\"logType\") + \" request\"); filterChain.doFilter(request, response); } public FilterConfig getFilterConfig() { return filterConfig; } public void init(FilterConfig filterConfig) { this.filterConfig = filterConfig; } public void destroy() {} } Similar to servlets, you configure a filter in the deployment descriptor by declaring the filter with the <filter> element, then mapping it to a URL pattern with the <filter-mapping> element."
+        ]
+      },
+      {
+        "title": "\"Structuring web services in App Engine \\_|\\_ App Engine flexible environment\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/flexible/configuration-files",
+        "source_id": "site-docs-reference",
+        "final_score": 58,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Application hosting App Engine Flexible environment Guides Send feedback Structuring web services in App Engine Stay organized with collections Save and categorize content based on your preferences.",
+          "You can serve your app's static content directly from that app in App Engine, host your static content on a Google Cloud option like Cloud Storage, or use a third-party content delivery network (CDN).",
+          "For example, you can name a configuration file after your service, or use unique names to represent each version of that particular service, like service1.yaml or app.flexible.yaml ."
+        ]
+      },
+      {
+        "title": "\"Quotas and limits \\_|\\_ App Engine flexible environment \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/flexible/quotas",
+        "source_id": "site-docs-reference-2",
+        "final_score": 54,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Application hosting App Engine Flexible environment Resources Send feedback Quotas and limits Stay organized with collections Save and categorize content based on your preferences.",
+          "Quotas for the App Engine flexible environment When you deploy an application to the App Engine flexible environment, some Google Cloud resources are consumed.",
+          "Both the standard environment and the flexible environment share the same limits for services and versions."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "app.flexible.yaml",
+      "app.yaml",
+      "class.getName",
+      "java.io.IOException",
+      "java.util.logging.Logger",
+      "javax.servlet.Filter",
+      "javax.servlet.FilterChain",
+      "javax.servlet.FilterConfig",
+      "javax.servlet.ServletException",
+      "javax.servlet.ServletRequest",
+      "javax.servlet.ServletResponse",
+      "log.warning",
+      "mysite.server",
+      "mysite.server.TeamServlet",
+      "service1.yaml",
+      "this.filterConfig",
+      "web.xml"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/flexible/java/configuring-the-web-xml-deployment-descriptor",
+        "https://docs.cloud.google.com/appengine/docs/flexible/configuration-files",
+        "https://docs.cloud.google.com/appengine/docs/flexible/quotas"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/flexible/java/configuring-the-web-xml-deployment-descriptor",
+        "https://docs.cloud.google.com/appengine/docs/flexible/configuration-files",
+        "https://docs.cloud.google.com/appengine/docs/flexible/quotas"
+      ]
+    }
+  ]
+}

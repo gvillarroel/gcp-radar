@@ -1,0 +1,101 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-01T19:04:42.971Z",
+  "source_step08_card": "data/step-08/current/products/mainframe-assessment-tool/card.json",
+  "product_name": "Mainframe Assessment Tool",
+  "product_slug": "mainframe-assessment-tool",
+  "feature_name": "JCL dataset name parsing",
+  "feature_slug": "jcl-dataset-name-parsing",
+  "summary": "Improves dataset name parsing from JCL jobs.",
+  "extended_definition": "Improves dataset name parsing from JCL jobs.",
+  "lifecycle": {
+    "latest_feature_date": "2025-01-08",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/mainframe-assessment-tool/docs/business-rules-extraction",
+      "https://docs.cloud.google.com/mainframe-assessment-tool/docs/export-results",
+      "https://docs.cloud.google.com/mainframe-assessment-tool/docs/review-results"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"View and understand assessment results \\_|\\_ Mainframe Assessment Tool \\_\\",
+        "url": "https://docs.cloud.google.com/mainframe-assessment-tool/docs/review-results",
+        "source_id": "site-docs-reference",
+        "final_score": 102,
+        "relevance": "",
+        "evidence_snippets": [
+          "JCL Job Connections Displays dependencies between JCL jobs based on shared datasets, DB2 tables, and IMS segments.",
+          "Data set name: identifies the name of a file, or dataset, as it exists on the mainframe's storage volumes.",
+          "Dataset Lineage: shows how each dataset is used across different jobs, steps, and programs."
+        ]
+      },
+      {
+        "title": "\"Extract business rules \\_|\\_ Mainframe Assessment Tool \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/mainframe-assessment-tool/docs/business-rules-extraction",
+        "source_id": "site-docs-reference",
+        "final_score": 49,
+        "relevance": "",
+        "evidence_snippets": [
+          "To configure the details of the extraction job, on the Basic information page, follow these steps: For Name , enter a unique identifier for the job.",
+          "These agents perform the extraction in several steps, such as parsing code, identifying decision logic, and generating natural language output.",
+          "To review business rules in an extraction job, follow these steps: In the Extraction jobs table, select the job you want to review."
+        ]
+      },
+      {
+        "title": "\"Export assessment results \\_|\\_ Mainframe Assessment Tool \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/mainframe-assessment-tool/docs/export-results",
+        "source_id": "site-docs-reference",
+        "final_score": 41,
+        "relevance": "",
+        "evidence_snippets": [
+          "This file contains nodes and relationships of programs, JCL jobs, datasets, databases, and BMS maps.",
+          "For better performance on large datasets, create constraints for all node labels using a query similar to the following: CALL apoc . load . jsonl ( 'file:///<your-data-file>.jsonl' ) YIELD value WHERE value . type = 'node' UNWIND value . labels as label WITH distinct label CALL apoc . cypher . doIt ( \"CREATE CONSTRAINT IF NOT EXISTS FOR (n:\" + apoc . text . quoteLabel ( label ) + \") REQUIRE n.id IS UNIQUE\" , {}) YIELD value RETURN count ( ); This query reads node labels from the file and creates a unique constraint on the id property for each label.",
+          "The zip archive also contains a table of contents file named index.html , which has links to all of the files in the archive."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "index.html",
+      "n.id"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/mainframe-assessment-tool/docs/review-results",
+        "https://docs.cloud.google.com/mainframe-assessment-tool/docs/business-rules-extraction",
+        "https://docs.cloud.google.com/mainframe-assessment-tool/docs/export-results"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/mainframe-assessment-tool/docs/review-results",
+        "https://docs.cloud.google.com/mainframe-assessment-tool/docs/business-rules-extraction",
+        "https://docs.cloud.google.com/mainframe-assessment-tool/docs/export-results"
+      ]
+    }
+  ]
+}
