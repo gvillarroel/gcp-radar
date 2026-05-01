@@ -400,7 +400,9 @@ resolve to existing files or directories. External HTTP(S) links in generated
 radar Markdown and promoted artifact Markdown must point to official Google
 hosts. Promoted evidence source links must also use the `http` or `https`
 scheme; host-only matches using other URL schemes are not authoritative
-evidence. Every feature listed in a promotion manifest must have both its promoted
+evidence. Security capability evidence links embedded in promoted service and
+feature artifact cards must also point to official Google URLs using `http` or
+`https`. Every feature listed in a promotion manifest must have both its promoted
 `card.json` and `README.md`.
 Each promoted feature README must include at least one official Google evidence
 link from its promoted feature card so artifact review remains possible from
