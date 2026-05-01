@@ -58,6 +58,10 @@ The validator must check:
   `card.json` and `README.md`
 - every promoted feature README includes at least one official Google evidence
   link from its promoted feature card
+- every promoted feature README keeps its IAM mapping status and rendered IAM
+  detail aligned with its promoted feature card, including explicit roles,
+  explicit permissions, derived IAM qualifier text, derived permissions shown
+  by the artifact renderer, and unknown-IAM qualifier text
 - promoted service and feature artifact cards have embedded slugs that match
   their artifact path and promotion manifest
 - promoted service and feature artifact cards have `source_step08_card`

@@ -569,6 +569,9 @@ Every feature listed in a promotion manifest must have both a promoted
 Each promoted feature README must include at least one official Google evidence
 link from its promoted feature card so artifact-level review can verify the
 feature without opening JSON.
+Each promoted feature README must also keep its IAM mapping status and rendered
+IAM detail aligned with its promoted feature card, including explicit roles and
+permissions, derived IAM qualifiers, and unknown-IAM qualifiers.
 Promoted service and feature artifact cards must keep their embedded slugs
 consistent with their artifact path and promotion manifest so final reports
 cannot aggregate a card under the wrong product or feature identity. Their

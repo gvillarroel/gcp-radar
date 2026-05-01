@@ -510,6 +510,119 @@ async function validateArtifactMarkdownExternalLinksAreOfficial() {
   return findings;
 }
 
+async function validateFeatureReadmesMatchCards() {
+  const findings = [];
+
+  for (const productSlug of await listDirs(artifactsRoot)) {
+    const promotion = await readJson(path.join(artifactsRoot, productSlug, "promotion.json"), null);
+    if (!promotion) {
+      continue;
+    }
+
+    for (const feature of promotion.promoted_features || []) {
+      const featureSlug = feature?.feature_slug;
+      if (!featureSlug) {
+        continue;
+      }
+      const readmePath = path.join(artifactsRoot, productSlug, featureSlug, "README.md");
+      const cardPath = path.join(artifactsRoot, productSlug, featureSlug, "card.json");
+      if (!(await exists(readmePath)) || !(await exists(cardPath))) {
+        continue;
+      }
+
+      const readme = await readFile(readmePath, "utf8");
+      const card = await readJson(cardPath, null);
+      const iam = card?.iam || {};
+      const status = iam.iam_mapping_status || "unknown";
+      const expectedStatusLine = `IAM mapping: \`${status}\``;
+      if (!readme.includes(expectedStatusLine)) {
+        findings.push({
+          severity: "error",
+          rule: "feature_readme_iam_status_mismatch",
+          path: readmePath,
+          product_slug: productSlug,
+          feature_slug: featureSlug,
+          expected: expectedStatusLine,
+        });
+      }
+
+      if (status === "explicit") {
+        const missingRoles = (iam.explicit_roles || [])
+          .filter((role) => !readme.includes(`\`${role}\``));
+        const missingPermissions = (iam.explicit_permissions || [])
+          .map((permission) => permission?.permission)
+          .filter(Boolean)
+          .filter((permission) => !readme.includes(`\`${permission}\``));
+        if (missingRoles.length > 0) {
+          findings.push({
+            severity: "error",
+            rule: "feature_readme_missing_explicit_roles",
+            path: readmePath,
+            product_slug: productSlug,
+            feature_slug: featureSlug,
+            missing_roles: missingRoles,
+          });
+        }
+        if (missingPermissions.length > 0) {
+          findings.push({
+            severity: "error",
+            rule: "feature_readme_missing_explicit_permissions",
+            path: readmePath,
+            product_slug: productSlug,
+            feature_slug: featureSlug,
+            missing_permissions: missingPermissions,
+          });
+        }
+      }
+
+      if (status === "derived_from_permission_prefix") {
+        const expectedText = "No explicit feature-level IAM statement was found.";
+        if (!readme.includes(expectedText)) {
+          findings.push({
+            severity: "error",
+            rule: "feature_readme_missing_derived_iam_qualifier",
+            path: readmePath,
+            product_slug: productSlug,
+            feature_slug: featureSlug,
+            expected: expectedText,
+          });
+        }
+        const missingDerivedPermissions = (iam.derived_permissions || [])
+          .slice(0, 20)
+          .map((permission) => permission?.permission)
+          .filter(Boolean)
+          .filter((permission) => !readme.includes(`\`${permission}\``));
+        if (missingDerivedPermissions.length > 0) {
+          findings.push({
+            severity: "error",
+            rule: "feature_readme_missing_derived_permissions",
+            path: readmePath,
+            product_slug: productSlug,
+            feature_slug: featureSlug,
+            missing_permissions: missingDerivedPermissions,
+          });
+        }
+      }
+
+      if (status === "unknown") {
+        const expectedText = "No defensible IAM mapping was found in the current evidence.";
+        if (!readme.includes(expectedText)) {
+          findings.push({
+            severity: "error",
+            rule: "feature_readme_missing_unknown_iam_qualifier",
+            path: readmePath,
+            product_slug: productSlug,
+            feature_slug: featureSlug,
+            expected: expectedText,
+          });
+        }
+      }
+    }
+  }
+
+  return findings;
+}
+
 async function validateRadarDoesNotReferenceDataSteps() {
   const findings = [];
   for (const file of await listFilesRecursive(radarRoot)) {
@@ -1910,6 +2023,7 @@ async function main() {
   const artifactValidation = await validateArtifacts();
   const artifactIndexFindings = await validateArtifactProductIndexes();
   const artifactMarkdownExternalLinkFindings = await validateArtifactMarkdownExternalLinksAreOfficial();
+  const featureReadmeCardFindings = await validateFeatureReadmesMatchCards();
   const radarFindings = await validateRadarDoesNotReferenceDataSteps();
   const radarArtifactLinkFindings = await validateRadarArtifactLinks();
   const radarExternalLinkFindings = await validateRadarExternalLinksAreOfficial();
@@ -1925,6 +2039,7 @@ async function main() {
     ...artifactValidation.findings,
     ...artifactIndexFindings,
     ...artifactMarkdownExternalLinkFindings,
+    ...featureReadmeCardFindings,
     ...radarFindings,
     ...radarArtifactLinkFindings,
     ...radarExternalLinkFindings,
