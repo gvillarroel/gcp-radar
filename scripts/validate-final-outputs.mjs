@@ -9,6 +9,8 @@ const step08Root = path.resolve(process.env.GCP_RADAR_VALIDATE_STEP08_ROOT || "d
 const step09Root = path.resolve(process.env.GCP_RADAR_VALIDATE_STEP09_ROOT || "data/step-09/current");
 const step10Root = path.resolve(process.env.GCP_RADAR_VALIDATE_STEP10_ROOT || "data/step-10/current");
 const outputFile = path.resolve(process.env.GCP_RADAR_VALIDATE_OUTPUT || "data/final-output-validation.json");
+const expectedStep09SchemaVersion = "step-09-artifact-promotion-v1";
+const expectedStep10SchemaVersion = "step-10-radar-reports-v1";
 const officialGoogleHosts = [
   "cloud.google.com",
   "docs.cloud.google.com",
@@ -2007,6 +2009,16 @@ async function validateStep09IndexMatchesArtifacts() {
     return findings;
   }
 
+  if (step09Index.schema_version !== expectedStep09SchemaVersion) {
+    findings.push({
+      severity: "error",
+      rule: "step09_index_schema_version_mismatch",
+      path: step09IndexPath,
+      expected: expectedStep09SchemaVersion,
+      actual: step09Index.schema_version || null,
+    });
+  }
+
   const expectedArtifactsRoot = path.relative(process.cwd(), artifactsRoot).replace(/\\/g, "/") || ".";
   const actualArtifactsRoot = String(step09Index.artifacts_root || "").replace(/\\/g, "/");
   if (actualArtifactsRoot !== expectedArtifactsRoot) {
@@ -2424,6 +2436,16 @@ async function validateRadarMatchesArtifacts() {
   if (!step10Index) {
     findings.push({ severity: "error", rule: "missing_step10_index", path: step10IndexPath });
     return findings;
+  }
+
+  if (step10Index.schema_version !== expectedStep10SchemaVersion) {
+    findings.push({
+      severity: "error",
+      rule: "step10_index_schema_version_mismatch",
+      path: step10IndexPath,
+      expected: expectedStep10SchemaVersion,
+      actual: step10Index.schema_version || null,
+    });
   }
 
   const expectedArtifactsRoot = path.relative(process.cwd(), artifactsRoot).replace(/\\/g, "/") || ".";

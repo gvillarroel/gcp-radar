@@ -48,12 +48,14 @@ The validator must check:
   `artifacts/`
 - `data/step-09/current/index.json` product and feature counts match promoted
   artifacts
+- `data/step-09/current/index.json` uses the current Step 09 schema version
 - `data/step-09/current/index.json` records the same Step 08 root and
   artifacts root that final-output validation is checking
 - Step 09 product entries exactly match the promoted artifact inventory without
   duplicate or stale product entries
 - `data/step-10/current/index.json` product and feature counts match promoted
   artifacts
+- `data/step-10/current/index.json` uses the current Step 10 schema version
 - `data/step-10/current/index.json` records the same artifacts root and radar
   root that final-output validation is checking
 - Step 10 product report paths exactly match the promoted product inventory
