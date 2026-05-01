@@ -310,6 +310,20 @@ async function validateArtifacts() {
         findings.push({ severity: "error", rule: "non_official_service_source_link", path: serviceCardPath, link });
       }
     }
+    for (const capability of serviceCard?.security_capabilities || []) {
+      for (const link of capability.evidence_links || []) {
+        if (!isOfficialGoogleUrl(link)) {
+          findings.push({
+            severity: "error",
+            rule: "non_official_service_security_evidence_link",
+            path: serviceCardPath,
+            product_slug: productSlug,
+            capability: capability.capability || null,
+            link,
+          });
+        }
+      }
+    }
     for (const featureSlug of promotedFeatureSlugs) {
       const cardPath = path.join(artifactsRoot, productSlug, featureSlug, "card.json");
       const card = await readJson(cardPath, null);
@@ -353,6 +367,21 @@ async function validateArtifacts() {
       for (const link of links) {
         if (!isOfficialGoogleUrl(link)) {
           findings.push({ severity: "error", rule: "non_official_source_link", path: cardPath, link });
+        }
+      }
+      for (const capability of card.security_capabilities || []) {
+        for (const link of capability.evidence_links || []) {
+          if (!isOfficialGoogleUrl(link)) {
+            findings.push({
+              severity: "error",
+              rule: "non_official_feature_security_evidence_link",
+              path: cardPath,
+              product_slug: productSlug,
+              feature_slug: featureSlug,
+              capability: capability.capability || null,
+              link,
+            });
+          }
         }
       }
       const officialSourceLinks = links.filter(isOfficialGoogleUrl);

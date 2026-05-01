@@ -564,6 +564,8 @@ Every external HTTP(S) link in promoted artifact Markdown must resolve to an
 official Google host.
 Promoted evidence source links must also use the `http` or `https` scheme;
 host-only matches using other URL schemes are not authoritative evidence.
+Security capability evidence links embedded in promoted service and feature
+artifact cards must also use `http` or `https` official Google URLs.
 Every feature listed in a promotion manifest must have both a promoted
 `card.json` and `README.md` artifact.
 Each promoted feature README must include at least one official Google evidence
