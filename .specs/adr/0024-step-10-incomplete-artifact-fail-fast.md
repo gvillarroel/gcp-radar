@@ -32,7 +32,10 @@ product with a `promotion.json` also has:
 
 It also checks that manifest paths, product slugs, promoted feature counts,
 duplicate promoted feature slugs, and embedded service or feature card slugs
-match the artifact path being rendered.
+match the artifact path being rendered. Step 10 also checks that the promotion
+manifest, promoted service card, and promoted feature cards point their
+`source_step08_card` provenance at the canonical Step 08 product card before
+rendering reports.
 
 If any required card is missing or any artifact identity check fails, Step 10
 exits with an error that lists the problem paths or values and does not rewrite

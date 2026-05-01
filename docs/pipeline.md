@@ -389,8 +389,9 @@ manifest must have both `artifacts/<product-slug>/<feature-slug>/card.json`
 and `artifacts/<product-slug>/<feature-slug>/README.md`.
 The same preflight rejects promotion manifests or promoted cards whose
 product slug, service-card path, promoted feature count, feature artifact
-paths, duplicate feature slugs, or embedded feature-card slug do not match the
-artifact path being rendered.
+paths, duplicate feature slugs, embedded feature-card slug, or
+`source_step08_card` provenance do not match the artifact path and canonical
+Step 08 product card being rendered.
 
 During regeneration, Step 10 removes stale Markdown files directly under
 `radar/products/` when they do not correspond to a currently promoted artifact

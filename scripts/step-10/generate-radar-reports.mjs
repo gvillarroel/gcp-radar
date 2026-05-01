@@ -7,6 +7,7 @@ const schemaVersion = "step-10-radar-reports-v1";
 const artifactsRoot = path.resolve(process.env.GCP_RADAR_STEP10_ARTIFACTS_ROOT || "artifacts");
 const radarRoot = path.resolve(process.env.GCP_RADAR_STEP10_RADAR_ROOT || "radar");
 const outputRoot = path.resolve(process.env.GCP_RADAR_STEP10_OUTPUT_ROOT || "data/step-10/current");
+const step08Root = path.resolve(process.env.GCP_RADAR_STEP10_STEP08_ROOT || "data/step-08/current");
 
 function compareStrings(left, right) {
   return String(left || "").localeCompare(String(right || ""));
@@ -109,6 +110,13 @@ async function loadArtifacts() {
     if (promotion.product_slug && promotion.product_slug !== productSlug) {
       errors.push(`Promotion manifest product_slug mismatch for ${productSlug}: expected ${productSlug}, got ${promotion.product_slug}`);
     }
+    const expectedSourceStep08Card = relativeToCwd(path.join(step08Root, "products", productSlug, "card.json"));
+    if (promotion.source_step08_card && String(promotion.source_step08_card).replace(/\\/g, "/") !== expectedSourceStep08Card) {
+      errors.push(`Promotion manifest source_step08_card mismatch for ${productSlug}: expected ${expectedSourceStep08Card}, got ${promotion.source_step08_card}`);
+    }
+    if (!(await exists(path.join(step08Root, "products", productSlug, "card.json")))) {
+      errors.push(`Missing Step 08 source card for ${productSlug}: ${expectedSourceStep08Card}`);
+    }
     const expectedServiceCard = `artifacts/${productSlug}/card.json`;
     if (promotion.service_card && String(promotion.service_card).replace(/\\/g, "/") !== expectedServiceCard) {
       errors.push(`Promotion manifest service_card mismatch for ${productSlug}: expected ${expectedServiceCard}, got ${promotion.service_card}`);
@@ -123,6 +131,9 @@ async function loadArtifacts() {
       }
       if (serviceCard.service_slug && serviceCard.service_slug !== productSlug) {
         errors.push(`Promoted service card service_slug mismatch for ${productSlug}: expected ${productSlug}, got ${serviceCard.service_slug}`);
+      }
+      if (String(serviceCard.source_step08_card || "").replace(/\\/g, "/") !== expectedSourceStep08Card) {
+        errors.push(`Promoted service card source_step08_card mismatch for ${productSlug}: expected ${expectedSourceStep08Card}, got ${serviceCard.source_step08_card || "missing"}`);
       }
     }
     const features = [];
@@ -158,6 +169,9 @@ async function loadArtifacts() {
         }
         if (card.feature_slug !== feature.feature_slug) {
           errors.push(`Promoted feature card feature_slug mismatch for ${productSlug}/${feature.feature_slug}: expected ${feature.feature_slug}, got ${card.feature_slug}`);
+        }
+        if (String(card.source_step08_card || "").replace(/\\/g, "/") !== expectedSourceStep08Card) {
+          errors.push(`Promoted feature card source_step08_card mismatch for ${productSlug}/${feature.feature_slug}: expected ${expectedSourceStep08Card}, got ${card.source_step08_card || "missing"}`);
         }
         features.push(card);
       } else {
