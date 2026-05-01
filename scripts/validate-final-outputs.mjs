@@ -9,6 +9,7 @@ const step08Root = path.resolve(process.env.GCP_RADAR_VALIDATE_STEP08_ROOT || "d
 const step09Root = path.resolve(process.env.GCP_RADAR_VALIDATE_STEP09_ROOT || "data/step-09/current");
 const step10Root = path.resolve(process.env.GCP_RADAR_VALIDATE_STEP10_ROOT || "data/step-10/current");
 const outputFile = path.resolve(process.env.GCP_RADAR_VALIDATE_OUTPUT || "data/final-output-validation.json");
+const expectedStep08SchemaVersion = "step-08-product-feature-cards-v1";
 const expectedStep09SchemaVersion = "step-09-artifact-promotion-v1";
 const expectedStep10SchemaVersion = "step-10-radar-reports-v1";
 const officialGoogleHosts = [
@@ -2175,6 +2176,208 @@ async function validateStep09IndexMatchesArtifacts() {
   return findings;
 }
 
+async function validateStep08IndexMatchesCards() {
+  const findings = [];
+  const step08IndexPath = path.join(step08Root, "index.json");
+  const step08Index = await readJson(step08IndexPath, null);
+  if (!step08Index) {
+    findings.push({ severity: "error", rule: "missing_step08_index", path: step08IndexPath });
+    return findings;
+  }
+
+  if (step08Index.schema_version !== expectedStep08SchemaVersion) {
+    findings.push({
+      severity: "error",
+      rule: "step08_index_schema_version_mismatch",
+      path: step08IndexPath,
+      expected: expectedStep08SchemaVersion,
+      actual: step08Index.schema_version || null,
+    });
+  }
+
+  const expectedOutputRoot = path.relative(process.cwd(), step08Root).replace(/\\/g, "/") || ".";
+  const actualOutputRoot = String(step08Index.output_root || "").replace(/\\/g, "/");
+  if (actualOutputRoot !== expectedOutputRoot) {
+    findings.push({
+      severity: "error",
+      rule: "step08_index_output_root_mismatch",
+      path: step08IndexPath,
+      expected: expectedOutputRoot,
+      actual: actualOutputRoot || null,
+    });
+  }
+
+  const productEntries = Array.isArray(step08Index.products) ? step08Index.products : [];
+  if (!Array.isArray(step08Index.products)) {
+    findings.push({
+      severity: "error",
+      rule: "step08_index_products_not_array",
+      path: step08IndexPath,
+      actual_type: step08Index.products === null ? "null" : typeof step08Index.products,
+    });
+  }
+
+  const actualProducts = new Map();
+  const seenProducts = new Set();
+  for (const product of productEntries) {
+    const productSlug = product?.product_slug;
+    if (!productSlug) {
+      findings.push({ severity: "error", rule: "step08_index_product_missing_slug", path: step08IndexPath });
+      continue;
+    }
+    if (seenProducts.has(productSlug)) {
+      findings.push({ severity: "error", rule: "step08_index_duplicate_product", path: step08IndexPath, product_slug: productSlug });
+    }
+    seenProducts.add(productSlug);
+    actualProducts.set(productSlug, product);
+  }
+
+  const expectedProducts = new Map();
+  let expectedFeatureCount = 0;
+  let expectedExplicitIamFeatureCount = 0;
+  let expectedDerivedIamFeatureCount = 0;
+  let expectedUnknownIamFeatureCount = 0;
+
+  for (const productSlug of await listDirs(path.join(step08Root, "products"))) {
+    const cardPath = path.join(step08Root, "products", productSlug, "card.json");
+    const cardMarkdownPath = path.join(step08Root, "products", productSlug, "card.md");
+    const card = await readJson(cardPath, null);
+    if (!card) {
+      findings.push({ severity: "error", rule: "step08_product_card_missing", path: cardPath, product_slug: productSlug });
+      continue;
+    }
+
+    const features = Array.isArray(card.features) ? card.features : [];
+    const explicitCount = features.filter((feature) => feature.iam?.iam_mapping_status === "explicit").length;
+    const derivedCount = features.filter((feature) => feature.iam?.iam_mapping_status === "derived_from_permission_prefix").length;
+    const unknownCount = features.filter((feature) => feature.iam?.iam_mapping_status === "unknown").length;
+    const statusCounts = {
+      explicit_feature_count: explicitCount,
+      derived_feature_count: derivedCount,
+      unknown_feature_count: unknownCount,
+    };
+
+    if (card.product_slug !== productSlug) {
+      findings.push({
+        severity: "error",
+        rule: "step08_card_product_slug_mismatch",
+        path: cardPath,
+        expected: productSlug,
+        actual: card.product_slug || null,
+      });
+    }
+    if (card.feature_count !== features.length) {
+      findings.push({
+        severity: "error",
+        rule: "step08_card_feature_count_mismatch",
+        path: cardPath,
+        product_slug: productSlug,
+        expected: features.length,
+        actual: card.feature_count,
+      });
+    }
+    for (const [field, expected] of Object.entries(statusCounts)) {
+      if (Number(card.iam_summary?.[field] || 0) !== expected) {
+        findings.push({
+          severity: "error",
+          rule: "step08_card_iam_summary_mismatch",
+          path: cardPath,
+          product_slug: productSlug,
+          field,
+          expected,
+          actual: card.iam_summary?.[field] ?? null,
+        });
+      }
+    }
+    const serviceIam = card.service_card?.iam_status_counts || {};
+    const serviceStatusCounts = {
+      explicit: explicitCount,
+      derived_from_permission_prefix: derivedCount,
+      unknown: unknownCount,
+    };
+    for (const [field, expected] of Object.entries(serviceStatusCounts)) {
+      if (Number(serviceIam[field] || 0) !== expected) {
+        findings.push({
+          severity: "error",
+          rule: "step08_service_card_iam_count_mismatch",
+          path: cardPath,
+          product_slug: productSlug,
+          field,
+          expected,
+          actual: serviceIam[field] ?? null,
+        });
+      }
+    }
+
+    expectedFeatureCount += features.length;
+    expectedExplicitIamFeatureCount += explicitCount;
+    expectedDerivedIamFeatureCount += derivedCount;
+    expectedUnknownIamFeatureCount += unknownCount;
+    expectedProducts.set(productSlug, {
+      product_name: card.product_name,
+      product_slug: productSlug,
+      product_status: card.validation?.product_status || "",
+      feature_count: features.length,
+      explicit_iam_feature_count: explicitCount,
+      derived_iam_feature_count: derivedCount,
+      unknown_iam_feature_count: unknownCount,
+      service_card_id: card.service_card?.service_card_id || "",
+      card_json: relativeToCwd(cardPath),
+      card_markdown: relativeToCwd(cardMarkdownPath),
+    });
+  }
+
+  const expectedTotals = {
+    product_count: expectedProducts.size,
+    feature_count: expectedFeatureCount,
+    explicit_iam_feature_count: expectedExplicitIamFeatureCount,
+    derived_iam_feature_count: expectedDerivedIamFeatureCount,
+    unknown_iam_feature_count: expectedUnknownIamFeatureCount,
+  };
+  for (const [field, expected] of Object.entries(expectedTotals)) {
+    if (Number(step08Index[field] || 0) !== expected) {
+      findings.push({
+        severity: "error",
+        rule: "step08_index_count_mismatch",
+        path: step08IndexPath,
+        field,
+        expected,
+        actual: step08Index[field] ?? null,
+      });
+    }
+  }
+
+  for (const [productSlug, expected] of expectedProducts) {
+    const actual = actualProducts.get(productSlug);
+    if (!actual) {
+      findings.push({ severity: "error", rule: "step08_index_missing_product", path: step08IndexPath, product_slug: productSlug });
+      continue;
+    }
+    for (const [field, expectedValue] of Object.entries(expected)) {
+      const actualValue = String(actual[field] ?? "").replace(/\\/g, "/");
+      if (String(expectedValue) !== actualValue) {
+        findings.push({
+          severity: "error",
+          rule: "step08_index_product_field_mismatch",
+          path: step08IndexPath,
+          product_slug: productSlug,
+          field,
+          expected: expectedValue,
+          actual: actual[field] ?? null,
+        });
+      }
+    }
+  }
+
+  for (const productSlug of actualProducts.keys()) {
+    if (!expectedProducts.has(productSlug)) {
+      findings.push({ severity: "error", rule: "step08_index_stale_product", path: step08IndexPath, product_slug: productSlug });
+    }
+  }
+
+  return findings;
+}
+
 async function validateRadarMatchesArtifacts() {
   const findings = [];
   const products = [];
@@ -2595,6 +2798,7 @@ async function main() {
   const radarSecurityReportFindings = await validateRadarSecurityReportMatchesArtifacts();
   const radarRootIndexFindings = await validateRadarRootIndexMatchesArtifacts();
   const radarCoverageReportFindings = await validateRadarCoverageReportMatchesArtifacts();
+  const step08IndexFindings = await validateStep08IndexMatchesCards();
   const step09IndexFindings = await validateStep09IndexMatchesArtifacts();
   const radarArtifactFindings = await validateRadarMatchesArtifacts();
   const findings = [
@@ -2612,6 +2816,7 @@ async function main() {
     ...radarSecurityReportFindings,
     ...radarRootIndexFindings,
     ...radarCoverageReportFindings,
+    ...step08IndexFindings,
     ...step09IndexFindings,
     ...radarArtifactFindings,
   ];

@@ -563,6 +563,10 @@ must not contain duplicate or stale entries. The Step 10 index must also use
 the current Step 10 schema version, record the same artifacts root and radar
 root that final-output validation is checking, and its product report list must
 not contain duplicate entries.
+The Step 08 index must use the current Step 08 schema version, record the same
+Step 08 output root that final-output validation is checking, and keep its
+product inventory, feature totals, IAM status totals, card paths, and
+per-product summary fields aligned with the generated Step 08 product cards.
 The fixed Step 10 report paths recorded in `data/step-10/current/index.json`
 must match the canonical radar report layout and resolve to existing files.
 Every external HTTP(S) link in generated radar Markdown must resolve to an

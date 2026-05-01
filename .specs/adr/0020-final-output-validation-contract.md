@@ -44,6 +44,11 @@ The validator must check:
   official Google host
 - every external HTTP(S) link in generated radar Markdown points to an official
   Google host
+- `data/step-08/current/index.json` uses the current Step 08 schema version
+- `data/step-08/current/index.json` records the same Step 08 output root that
+  final-output validation is checking
+- Step 08 product entries, feature totals, IAM status totals, card paths, and
+  per-product summary fields match the generated Step 08 product cards
 - `radar/products/*.md` exactly matches the promoted product directories under
   `artifacts/`
 - `data/step-09/current/index.json` product and feature counts match promoted

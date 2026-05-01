@@ -402,7 +402,11 @@ artifacts root being validated, use the current Step 09 schema version, and its
 product list must not contain duplicate or stale product entries. The Step 10
 index must record the same artifacts root and radar root being validated, use
 the current Step 10 schema version, and its product report list must not
-contain duplicate entries. Radar Markdown links to promoted `artifacts/` content must
+contain duplicate entries. The Step 08 index must record the same Step 08
+output root being validated, use the current Step 08 schema version, and keep
+its product inventory, feature totals, IAM status totals, card paths, and
+per-product summary fields aligned with the generated Step 08 product cards.
+Radar Markdown links to promoted `artifacts/` content must
 resolve to existing files or directories. External HTTP(S) links in generated
 radar Markdown and promoted artifact Markdown must point to official Google
 hosts. Promoted evidence source links must also use the `http` or `https`
