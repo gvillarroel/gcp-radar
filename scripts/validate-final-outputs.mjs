@@ -1299,11 +1299,19 @@ async function validateRadarRootIndexMatchesArtifacts() {
 
   const artifactProductSlugs = new Set();
   const expectedPromotedFeatureCountByProduct = new Map();
+  const expectedRows = new Map();
   for (const productSlug of await listDirs(artifactsRoot)) {
     const promotion = await readJson(path.join(artifactsRoot, productSlug, "promotion.json"), null);
     if (promotion) {
+      const serviceCard = await readJson(path.join(artifactsRoot, productSlug, "card.json"), null);
       artifactProductSlugs.add(productSlug);
       expectedPromotedFeatureCountByProduct.set(productSlug, (promotion.promoted_features || []).length);
+      expectedRows.set(`./products/${productSlug}.md`, {
+        product_name: promotion.product_name || productSlug,
+        features: (promotion.promoted_features || []).length,
+        latest_feature: serviceCard?.lifecycle?.latest_feature_date || "unknown",
+        service_card: `../artifacts/${productSlug}/card.json`,
+      });
     }
   }
 
@@ -1369,6 +1377,59 @@ async function validateRadarRootIndexMatchesArtifacts() {
     }
   }
 
+  const rows = report
+    .split(/\r?\n/)
+    .filter((line) => line.trim().startsWith("|"))
+    .map(splitMarkdownTableRow)
+    .filter((cells) => cells.length > 0);
+  const header = rows[0] || [];
+  const expectedHeader = ["Service", "Features", "Latest feature", "Report", "Service card"];
+  if (expectedHeader.some((label, index) => header[index] !== label)) {
+    findings.push({
+      severity: "error",
+      rule: "radar_root_product_header_mismatch",
+      path: rootIndexPath,
+      expected: expectedHeader,
+      actual: header,
+    });
+  }
+
+  const actualRows = new Map();
+  for (const cells of rows.slice(2)) {
+    if (cells.length < expectedHeader.length) {
+      continue;
+    }
+    const productReportLink = [...String(cells[3] || "").matchAll(linkPattern)]
+      .map((match) => String(match[1] || "").trim().replace(/\\/g, "/").split("#")[0])
+      .find((link) => link.startsWith("./products/") && link.endsWith(".md"));
+    const serviceCardLink = [...String(cells[4] || "").matchAll(linkPattern)]
+      .map((match) => String(match[1] || "").trim().replace(/\\/g, "/").split("#")[0])
+      .find((link) => link.startsWith("../artifacts/") && link.endsWith("/card.json"));
+    if (!productReportLink) {
+      findings.push({
+        severity: "error",
+        rule: "radar_root_product_row_missing_report_link",
+        path: rootIndexPath,
+        row: cells,
+      });
+      continue;
+    }
+    if (actualRows.has(productReportLink)) {
+      findings.push({
+        severity: "error",
+        rule: "radar_root_duplicate_product_row",
+        path: rootIndexPath,
+        link: productReportLink,
+      });
+    }
+    actualRows.set(productReportLink, {
+      product_name: cells[0],
+      features: parseIntegerCell(cells[1]),
+      latest_feature: cells[2],
+      service_card: serviceCardLink || "",
+    });
+  }
+
   for (const link of expectedProductReportLinks) {
     if (!actualProductReportLinks.has(link)) {
       findings.push({
@@ -1404,6 +1465,41 @@ async function validateRadarRootIndexMatchesArtifacts() {
       path: rootIndexPath,
       link,
     });
+  }
+  for (const [link, expected] of expectedRows) {
+    const actual = actualRows.get(link);
+    if (!actual) {
+      findings.push({
+        severity: "error",
+        rule: "missing_radar_root_product_row",
+        path: rootIndexPath,
+        link,
+      });
+      continue;
+    }
+    for (const field of ["product_name", "features", "latest_feature", "service_card"]) {
+      if (actual[field] !== expected[field]) {
+        findings.push({
+          severity: "error",
+          rule: "radar_root_product_row_mismatch",
+          path: rootIndexPath,
+          link,
+          field,
+          expected: expected[field],
+          actual: actual[field],
+        });
+      }
+    }
+  }
+  for (const link of actualRows.keys()) {
+    if (!expectedRows.has(link)) {
+      findings.push({
+        severity: "error",
+        rule: "stale_radar_root_product_row",
+        path: rootIndexPath,
+        link,
+      });
+    }
   }
 
   return findings;

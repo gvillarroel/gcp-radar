@@ -114,6 +114,9 @@ The validator must check:
   artifact inventory
 - the Step 10 root index service-card and promoted-feature summary counts match
   the promoted artifact inventory
+- the Step 10 root index product rows match promoted artifacts for product
+  name, promoted feature count, latest feature date, product report link, and
+  service-card link
 - the Step 10 coverage report includes every promoted product slug, does not
   retain stale product rows, and keeps promoted, skipped, explicit IAM,
   derived IAM, and unknown IAM counts aligned with promoted manifests and

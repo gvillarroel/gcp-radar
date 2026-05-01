@@ -616,7 +616,10 @@ promotion manifest.
 The root radar index must link every promoted product report and service card,
 must not retain stale product or service-card links outside the promoted
 artifact inventory, and must keep its service-card and promoted-feature summary
-counts aligned with the promoted artifact inventory.
+counts aligned with the promoted artifact inventory. Each root index product
+row must also keep the product name, promoted feature count, latest feature
+date, product report link, and service-card link aligned with promoted
+artifacts.
 The coverage report must include each promoted product slug and must keep its
 promoted, skipped, explicit IAM, derived IAM, and unknown IAM counts aligned
 with the promoted artifact manifests and feature cards.
