@@ -78,6 +78,24 @@ function relativeToCwd(target) {
   return path.relative(process.cwd(), target).replace(/\\/g, "/") || ".";
 }
 
+function normalizeForCompare(value) {
+  if (Array.isArray(value)) {
+    return value.map(normalizeForCompare);
+  }
+  if (value && typeof value === "object") {
+    return Object.fromEntries(
+      Object.entries(value)
+        .sort(([left], [right]) => left.localeCompare(right))
+        .map(([key, nested]) => [key, normalizeForCompare(nested)])
+    );
+  }
+  return value;
+}
+
+function jsonEquals(left, right) {
+  return JSON.stringify(normalizeForCompare(left)) === JSON.stringify(normalizeForCompare(right));
+}
+
 function escapeMarkdownLinkLabel(label) {
   return String(label || "").replace(/([\\[\]])/g, "\\$1");
 }
@@ -782,6 +800,97 @@ async function validateFeatureReadmesMatchCards() {
             product_slug: productSlug,
             feature_slug: featureSlug,
             expected: expectedText,
+          });
+        }
+      }
+    }
+  }
+
+  return findings;
+}
+
+async function validatePromotedCardsMatchStep08Cards() {
+  const findings = [];
+  const serviceFields = [
+    "card_type",
+    "service_card_id",
+    "service_name",
+    "service_slug",
+    "feature_count",
+    "validation",
+    "iam_status_counts",
+    "related_permission_groups",
+    "official_source_links",
+    "security_capabilities",
+    "security_capability_count",
+    "lifecycle",
+    "release_notes",
+    "corpus",
+  ];
+  const featureFields = [
+    "feature_name",
+    "feature_slug",
+    "summary",
+    "extended_definition",
+    "lifecycle",
+    "coverage_status",
+    "validation",
+    "evidence",
+    "iam",
+    "security_capabilities",
+  ];
+
+  for (const productSlug of await listDirs(artifactsRoot)) {
+    const step08CardPath = path.join(step08Root, "products", productSlug, "card.json");
+    const step08Card = await readJson(step08CardPath, null);
+    const serviceCardPath = path.join(artifactsRoot, productSlug, "card.json");
+    const serviceCard = await readJson(serviceCardPath, null);
+    const promotion = await readJson(path.join(artifactsRoot, productSlug, "promotion.json"), null);
+    if (!step08Card || !serviceCard || !promotion) {
+      continue;
+    }
+
+    for (const field of serviceFields) {
+      const expected = step08Card.service_card?.[field];
+      const actual = serviceCard[field];
+      if (!jsonEquals(actual, expected)) {
+        findings.push({
+          severity: "error",
+          rule: "promoted_service_card_step08_mismatch",
+          path: serviceCardPath,
+          product_slug: productSlug,
+          field,
+          expected,
+          actual,
+        });
+      }
+    }
+
+    const step08Features = new Map((step08Card.features || []).map((feature) => [feature.feature_slug, feature]));
+    for (const promotedFeature of promotion.promoted_features || []) {
+      const featureSlug = promotedFeature?.feature_slug;
+      if (!featureSlug) {
+        continue;
+      }
+      const step08Feature = step08Features.get(featureSlug);
+      const featureCardPath = path.join(artifactsRoot, productSlug, featureSlug, "card.json");
+      const featureCard = await readJson(featureCardPath, null);
+      if (!step08Feature || !featureCard) {
+        continue;
+      }
+      for (const field of featureFields) {
+        const expected = step08Feature[field];
+        const actual = featureCard[field];
+        if (!jsonEquals(actual, expected)) {
+          findings.push({
+            severity: "error",
+            rule: "promoted_feature_card_step08_mismatch",
+            path: featureCardPath,
+            product_slug: productSlug,
+            feature_slug: featureSlug,
+            field,
+            expected,
+            actual,
           });
         }
       }
@@ -2399,6 +2508,7 @@ async function main() {
   const artifactIndexFindings = await validateArtifactProductIndexes();
   const artifactMarkdownExternalLinkFindings = await validateArtifactMarkdownExternalLinksAreOfficial();
   const featureReadmeCardFindings = await validateFeatureReadmesMatchCards();
+  const promotedCardSourceFindings = await validatePromotedCardsMatchStep08Cards();
   const radarFindings = await validateRadarDoesNotReferenceDataSteps();
   const radarArtifactLinkFindings = await validateRadarArtifactLinks();
   const radarExternalLinkFindings = await validateRadarExternalLinksAreOfficial();
@@ -2415,6 +2525,7 @@ async function main() {
     ...artifactIndexFindings,
     ...artifactMarkdownExternalLinkFindings,
     ...featureReadmeCardFindings,
+    ...promotedCardSourceFindings,
     ...radarFindings,
     ...radarArtifactLinkFindings,
     ...radarExternalLinkFindings,

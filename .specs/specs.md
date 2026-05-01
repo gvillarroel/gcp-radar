@@ -587,6 +587,10 @@ consistent with their artifact path and promotion manifest so final reports
 cannot aggregate a card under the wrong product or feature identity. Their
 `source_step08_card` provenance must also match the canonical Step 08 product
 card path being validated and resolve to an existing card.
+Promoted service and feature artifact cards must also keep their source-backed
+payload fields aligned with that Step 08 product card, so the source-of-truth
+artifact layer cannot drift from the validated card-construction stage while
+retaining correct-looking provenance.
 Each product promotion manifest must also keep its embedded product slug,
 service-card path, promoted feature count, promoted feature slugs, promoted
 artifact paths, and `source_step08_card` provenance consistent with the

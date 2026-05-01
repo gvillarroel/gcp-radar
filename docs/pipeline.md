@@ -421,9 +421,12 @@ card.
 Promoted service and feature artifact cards must use embedded slugs that match
 their artifact path and promotion manifest. Their `source_step08_card`
 provenance must match the canonical Step 08 product card path being validated
-and resolve to an existing card. Promotion manifests must use a product slug,
-service-card path, promoted feature count, feature slugs, artifact paths, and
-`source_step08_card` provenance that match the containing artifact directory.
+and resolve to an existing card. Their source-backed service and feature
+payload fields must also match that Step 08 card so final validation catches
+artifact drift that would otherwise keep valid-looking provenance. Promotion
+manifests must use a product slug, service-card path, promoted feature count,
+feature slugs, artifact paths, and `source_step08_card` provenance that match
+the containing artifact directory.
 Promotion manifests must also keep skipped feature counts aligned with the
 skipped feature list and must not list the same feature slug as both promoted
 and skipped.

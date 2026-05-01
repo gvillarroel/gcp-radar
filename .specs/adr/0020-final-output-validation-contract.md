@@ -75,6 +75,9 @@ The validator must check:
 - promoted service and feature artifact cards have `source_step08_card`
   provenance that matches the canonical Step 08 product card path being
   validated
+- promoted service and feature artifact cards keep their source-backed payload
+  fields aligned with the canonical Step 08 product card referenced by
+  `source_step08_card`
 - each product promotion manifest has an embedded product slug, service-card
   path, promoted feature count, promoted feature slugs, and promoted artifact
   paths that match the containing artifact directory
