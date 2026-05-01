@@ -98,6 +98,7 @@ async function listProductDirs() {
 
 async function loadArtifacts() {
   const products = [];
+  const errors = [];
 
   for (const productSlug of await listProductDirs()) {
     const productDir = path.join(artifactsRoot, productSlug);
@@ -105,15 +106,22 @@ async function loadArtifacts() {
     if (!promotion) {
       continue;
     }
-    const serviceCard = await readJson(path.join(productDir, "card.json"), null);
+    const serviceCardPath = path.join(productDir, "card.json");
+    const serviceCard = await readJson(serviceCardPath, null);
+    if (!serviceCard) {
+      errors.push(`Missing promoted service card for ${productSlug}: ${relativeToCwd(serviceCardPath)}`);
+    }
     const features = [];
     const promotedFeatures = [...(promotion.promoted_features || [])]
       .filter((feature) => feature?.feature_slug)
       .sort((left, right) => compareStrings(left.feature_slug, right.feature_slug));
     for (const feature of promotedFeatures) {
-      const card = await readJson(path.join(productDir, feature.feature_slug, "card.json"), null);
+      const featureCardPath = path.join(productDir, feature.feature_slug, "card.json");
+      const card = await readJson(featureCardPath, null);
       if (card) {
         features.push(card);
+      } else {
+        errors.push(`Missing promoted feature card for ${productSlug}/${feature.feature_slug}: ${relativeToCwd(featureCardPath)}`);
       }
     }
     products.push({
@@ -123,6 +131,10 @@ async function loadArtifacts() {
       service_card: serviceCard,
       features,
     });
+  }
+
+  if (errors.length > 0) {
+    throw new Error(`Step 10 cannot render incomplete promoted artifacts:\n${errors.join("\n")}`);
   }
 
   return products;

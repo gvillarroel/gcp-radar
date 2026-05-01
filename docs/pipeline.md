@@ -382,6 +382,11 @@ signals must be shown in separate columns so derived permission-prefix matches
 are not presented as feature requirements. `radar/iam/index.md` must aggregate
 the same promoted feature-level role and permission details across products.
 
+Step 10 fails before rewriting reports if a promotion manifest points at an
+incomplete promoted artifact inventory. A promoted product must have
+`artifacts/<product-slug>/card.json`, and every promoted feature listed in the
+manifest must have `artifacts/<product-slug>/<feature-slug>/card.json`.
+
 During regeneration, Step 10 removes stale Markdown files directly under
 `radar/products/` when they do not correspond to a currently promoted artifact
 product. That keeps the product report directory aligned with the promoted

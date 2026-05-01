@@ -1,0 +1,47 @@
+# ADR 0024: Step 10 Incomplete Artifact Fail Fast
+
+## Status
+
+Accepted
+
+## Context
+
+Step 10 generates final radar reports from promoted artifacts only. If a
+promotion manifest lists a feature whose promoted `card.json` is missing, or a
+product is missing its promoted service card, report generation can otherwise
+produce incomplete Markdown and leave final-output validation to catch the
+problem afterward.
+
+That delayed failure is less useful than stopping before report files are
+rewritten, because `radar/` should only be regenerated from a complete
+source-of-truth artifact inventory.
+
+## Decision
+
+Step 10 must fail before writing final reports when a promoted artifact
+inventory is incomplete.
+
+The canonical Step 10 script now checks, while loading artifacts, that every
+product with a `promotion.json` also has:
+
+- `artifacts/<product-slug>/card.json`
+- `artifacts/<product-slug>/<feature-slug>/card.json` for every feature listed
+  in the promotion manifest
+
+If any required card is missing, Step 10 exits with an error that lists the
+missing paths and does not rewrite `radar/` or `data/step-10/current/index.json`.
+
+## Consequences
+
+Benefits:
+
+- final reports cannot be silently regenerated from partial promoted artifacts
+- missing artifact-card problems are reported at the stage that would consume
+  them
+- final-output validation remains the full contract, but Step 10 now catches a
+  high-impact artifact integrity issue earlier
+
+Costs:
+
+- manual artifact experiments must include all promoted cards before Step 10 can
+  run successfully
