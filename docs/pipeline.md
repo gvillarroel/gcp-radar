@@ -429,15 +429,18 @@ skipped feature list and must not list the same feature slug as both promoted
 and skipped.
 Product artifact indexes and product reports must link every promoted feature
 README for their product. Product artifact indexes must also link the promoted
-service card. Product reports must also link the promoted service card and
-product artifact index, and their promoted and skipped feature summary counts
-must match the promotion manifest. Product reports must include at least one
-official Google evidence link from each promoted feature card so evidence
-review can be done from the final radar output. Product artifact indexes and
-product reports must not retain feature README links that are no longer in that
-product's promotion manifest. The fixed Step 10 report paths recorded in
-`data/step-10/current/index.json` must match the canonical radar report layout
-and resolve to existing files. Product reports and the IAM report must retain
+service card. Product artifact indexes must keep their rendered title, Step 08
+provenance, summary fields, and feature link labels aligned with the promotion
+manifest, promoted service card, and canonical Step 08 product card. Product
+reports must also link the promoted service card and product artifact index,
+and their promoted and skipped feature summary counts must match the promotion
+manifest. Product reports must include at least one official Google evidence
+link from each promoted feature card so evidence review can be done from the
+final radar output. Product artifact indexes and product reports must not retain
+feature README links that are no longer in that product's promotion manifest.
+The fixed Step 10 report paths recorded in `data/step-10/current/index.json`
+must match the canonical radar report layout and resolve to existing files.
+Product reports and the IAM report must retain
 separate explicit and derived IAM columns. The IAM report must link every
 promoted feature artifact and must not retain stale feature artifact links.
 Its rows must also match the promoted feature cards for product name, IAM

@@ -596,6 +596,11 @@ promoted and skipped feature lists.
 Each product artifact index must link every promoted feature README for that
 product, must link the promoted service card, and must not link feature README
 files or service-card paths outside the product's promotion manifest.
+Each product artifact index must also keep its product title, Step 08
+provenance line, promoted feature count, Step 07 status, corpus health, latest
+feature date, official source-link count, and feature link labels aligned with
+the promotion manifest, promoted service card, and canonical Step 08 product
+card.
 Radar Markdown links that target promoted `artifacts/` content must resolve to
 existing files or directories. Each product report must also link every
 promoted feature README for that product, must include at least one official

@@ -78,6 +78,10 @@ function relativeToCwd(target) {
   return path.relative(process.cwd(), target).replace(/\\/g, "/") || ".";
 }
 
+function escapeMarkdownLinkLabel(label) {
+  return String(label || "").replace(/([\\[\]])/g, "\\$1");
+}
+
 async function loadStep08Inventory() {
   const roles = new Set();
   const permissions = new Set();
@@ -478,16 +482,18 @@ async function validateArtifactProductIndexes() {
     const promotionPath = path.join(productDir, "promotion.json");
     const productIndexPath = path.join(productDir, "index.md");
     const promotion = await readJson(promotionPath, null);
+    const serviceCard = await readJson(path.join(productDir, "card.json"), null);
+    const step08Card = await readJson(path.join(step08Root, "products", productSlug, "card.json"), null);
     if (!promotion || !(await exists(productIndexPath))) {
       continue;
     }
 
     const indexMarkdown = await readFile(productIndexPath, "utf8");
-    const expectedFeatureLinks = new Set((promotion.promoted_features || [])
+    const promotedFeatures = (promotion.promoted_features || [])
       .map((feature) => feature?.feature_slug)
       .filter(Boolean)
-      .sort((left, right) => left.localeCompare(right))
-      .map((featureSlug) => `./${featureSlug}/README.md`));
+      .sort((left, right) => left.localeCompare(right));
+    const expectedFeatureLinks = new Set(promotedFeatures.map((featureSlug) => `./${featureSlug}/README.md`));
     const expectedServiceCardLink = "./card.json";
     let hasServiceCardLink = false;
     const actualFeatureLinks = new Set();
@@ -511,6 +517,47 @@ async function validateArtifactProductIndexes() {
         actualFeatureLinks.add(link);
       } else {
         staleFeatureLinks.add(link);
+      }
+    }
+
+    const expectedSourceStep08Card = relativeToCwd(path.join(step08Root, "products", productSlug, "card.json"));
+    const expectedSummaryLines = [
+      `# ${promotion.product_name || productSlug}`,
+      `Service card: [card.json](${expectedServiceCardLink})`,
+      `Generated from Step 08 card: \`${expectedSourceStep08Card}\``,
+      `- Promoted features: ${promotion.promoted_feature_count}`,
+      `- Step 07 product status: ${step08Card?.validation?.product_status || serviceCard?.validation?.product_status || "unknown"}`,
+      `- Corpus health: ${step08Card?.corpus?.health_status || "unknown"}`,
+      `- Latest feature date: ${serviceCard?.lifecycle?.latest_feature_date || "unknown"}`,
+      `- Official source links: ${serviceCard?.official_source_links?.length || 0}`,
+    ];
+    for (const expectedLine of expectedSummaryLines) {
+      if (!indexMarkdown.includes(expectedLine)) {
+        findings.push({
+          severity: "error",
+          rule: "artifact_index_summary_mismatch",
+          path: productIndexPath,
+          product_slug: productSlug,
+          expected: expectedLine,
+        });
+      }
+    }
+
+    for (const feature of promotion.promoted_features || []) {
+      const featureSlug = feature?.feature_slug;
+      if (!featureSlug) {
+        continue;
+      }
+      const expectedLine = `- [${escapeMarkdownLinkLabel(feature.feature_name || featureSlug)}](./${featureSlug}/README.md)`;
+      if (!indexMarkdown.includes(expectedLine)) {
+        findings.push({
+          severity: "error",
+          rule: "artifact_index_feature_label_mismatch",
+          path: productIndexPath,
+          product_slug: productSlug,
+          feature_slug: featureSlug,
+          expected: expectedLine,
+        });
       }
     }
 

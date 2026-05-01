@@ -88,6 +88,11 @@ The validator must check:
 - each product artifact index links the promoted service card for that product
 - product artifact indexes do not retain feature README links outside the
   product's promotion manifest
+- each product artifact index keeps its rendered title, Step 08 provenance,
+  promoted feature count, Step 07 status, corpus health, latest feature date,
+  official source-link count, and feature link labels aligned with the
+  promotion manifest, promoted service card, and canonical Step 08 product
+  card
 - each Step 10 product report links every promoted feature README for that
   product
 - each Step 10 product report links the promoted service card and product
