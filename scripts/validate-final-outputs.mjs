@@ -935,6 +935,48 @@ async function validateFeatureReadmesMatchCards() {
           });
         }
       }
+
+      const securityCapabilities = Array.isArray(card?.security_capabilities) ? card.security_capabilities : [];
+      if (securityCapabilities.length === 0) {
+        const expectedText = "No security capability was identified from the current evidence.";
+        if (!readme.includes(expectedText)) {
+          findings.push({
+            severity: "error",
+            rule: "feature_readme_missing_no_security_capability_qualifier",
+            path: readmePath,
+            product_slug: productSlug,
+            feature_slug: featureSlug,
+            expected: expectedText,
+          });
+        }
+      }
+      for (const capability of securityCapabilities) {
+        const capabilityName = capability?.capability;
+        if (capabilityName && !readme.includes(capabilityName)) {
+          findings.push({
+            severity: "error",
+            rule: "feature_readme_missing_security_capability",
+            path: readmePath,
+            product_slug: productSlug,
+            feature_slug: featureSlug,
+            capability: capabilityName,
+          });
+        }
+        const missingEvidenceLinks = (capability?.evidence_links || [])
+          .filter(isOfficialGoogleUrl)
+          .filter((link) => !readme.includes(link));
+        if (missingEvidenceLinks.length > 0) {
+          findings.push({
+            severity: "error",
+            rule: "feature_readme_missing_security_evidence_links",
+            path: readmePath,
+            product_slug: productSlug,
+            feature_slug: featureSlug,
+            capability: capabilityName || null,
+            missing_links: missingEvidenceLinks,
+          });
+        }
+      }
     }
   }
 

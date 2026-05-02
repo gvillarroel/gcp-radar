@@ -355,6 +355,10 @@ Promoted feature documentation must include an IAM section. That section must
 list explicit roles and permissions when the evidence supports them. If the
 mapping is derived or unknown, the artifact must say so directly and avoid
 presenting derived IAM data as a required access grant.
+Promoted feature documentation must also render security capabilities from the
+feature card. When a capability has official Google evidence links, those
+links belong in the README so artifact review can validate security signals
+without opening JSON.
 
 ## Step 10
 
@@ -445,6 +449,8 @@ explicit, and derived or unknown mappings must retain their qualifier text.
 Each promoted feature README must also keep its product name, feature slug,
 coverage status, and rendered lifecycle lines aligned with its promoted feature
 card.
+Each promoted feature README must also keep security capability names and
+official Google security evidence links aligned with its promoted feature card.
 Promoted service and feature artifact cards must use embedded slugs that match
 their artifact path and promotion manifest. Their `source_step08_card`
 provenance must match the canonical Step 08 product card path being validated

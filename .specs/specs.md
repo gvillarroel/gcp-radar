@@ -499,6 +499,10 @@ features.
 Each promoted feature artifact must include an IAM section that lists the
 feature's explicit roles and permissions when available. When IAM is derived or
 unknown, the artifact must say that clearly instead of implying a requirement.
+Each promoted feature artifact README must also render security capabilities
+from the feature card. When a capability carries official Google evidence
+links, those links must be visible in the README so security review does not
+require opening JSON.
 
 ### Step 10: Final Radar Reporting
 
@@ -612,6 +616,9 @@ permissions, derived IAM qualifiers, and unknown-IAM qualifiers.
 Each promoted feature README must also keep its rendered product name, feature
 slug, coverage status, and lifecycle lines aligned with its promoted feature
 card so human-readable artifacts cannot drift from their canonical JSON cards.
+Each promoted feature README must also keep its rendered security capability
+names and official Google security evidence links aligned with its promoted
+feature card.
 Promoted service and feature artifact cards must keep their embedded slugs
 consistent with their artifact path and promotion manifest so final reports
 cannot aggregate a card under the wrong product or feature identity. Their

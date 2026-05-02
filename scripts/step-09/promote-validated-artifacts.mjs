@@ -171,7 +171,14 @@ function renderFeatureReadme(product, feature) {
   if (feature.security_capabilities.length === 0) {
     lines.push("No security capability was identified from the current evidence.", "");
   } else {
-    lines.push(...feature.security_capabilities.map((capability) => `- ${capability.capability}`), "");
+    for (const capability of feature.security_capabilities) {
+      const evidenceLinks = (capability.evidence_links || [])
+        .map((url) => markdownLink(url, url))
+        .join(", ");
+      const evidenceSuffix = evidenceLinks ? ` (evidence: ${evidenceLinks})` : "";
+      lines.push(`- ${capability.capability}${evidenceSuffix}`);
+    }
+    lines.push("");
   }
 
   lines.push("## Official Evidence", "");

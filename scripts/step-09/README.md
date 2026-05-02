@@ -40,6 +40,7 @@ Default behavior:
 - removes stale feature artifact directories that are no longer promoted for each processed product
 - accepts the current Step 07 warning rules as reviewed non-blocking warnings
 - blocks features with Step 07 failures, missing summaries, missing official source links, or non-official source links
+- renders security capability evidence links in promoted feature README files
 
 Optional controls:
 
