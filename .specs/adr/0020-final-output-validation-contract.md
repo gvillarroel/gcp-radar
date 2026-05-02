@@ -160,7 +160,7 @@ The validator must check:
 - the Step 10 root index product rows match promoted artifacts for product
   name, promoted feature count, latest feature date, product report link, and
   service-card link
-- the Step 10 root index and coverage report render the same `generated_at`
+- every generated Step 10 Markdown report renders the same `generated_at`
   timestamp recorded in `data/step-10/current/index.json`
 - the Step 10 coverage report includes every promoted product slug, does not
   retain stale product rows, and keeps promoted, skipped, explicit IAM,

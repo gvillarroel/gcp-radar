@@ -412,9 +412,11 @@ function renderIndex(products, generatedAt) {
   return `${lines.join("\n")}\n`;
 }
 
-function renderProductReport(product) {
+function renderProductReport(product, generatedAt) {
   const lines = [
     `# ${product.product_name}`,
+    "",
+    `Generated at: \`${generatedAt}\``,
     "",
     `Service card: [card.json](../../artifacts/${product.product_slug}/card.json)`,
     "",
@@ -451,9 +453,11 @@ function renderProductReport(product) {
   return `${lines.join("\n")}\n`;
 }
 
-function renderIamReport(products) {
+function renderIamReport(products, generatedAt) {
   const lines = [
     "# IAM Coverage",
+    "",
+    `Generated at: \`${generatedAt}\``,
     "",
     "This report is generated from promoted artifacts only.",
     "",
@@ -479,9 +483,11 @@ function renderIamReport(products) {
   return `${lines.join("\n")}\n`;
 }
 
-function renderSecurityReport(products) {
+function renderSecurityReport(products, generatedAt) {
   const lines = [
     "# Security Capabilities",
+    "",
+    `Generated at: \`${generatedAt}\``,
     "",
     "This report lists security-related signals detected in promoted feature artifacts.",
     "",
@@ -539,9 +545,11 @@ function renderCoverageReport(products, generatedAt) {
   return `${lines.join("\n")}\n`;
 }
 
-function renderServiceCardsReport(products) {
+function renderServiceCardsReport(products, generatedAt) {
   const lines = [
     "# Service Cards",
+    "",
+    `Generated at: \`${generatedAt}\``,
     "",
     "This report lists one promoted service card per product.",
     "",
@@ -584,11 +592,11 @@ async function main() {
     }
   }
   for (const product of products) {
-    await writeFile(path.join(radarRoot, "products", `${product.product_slug}.md`), renderProductReport(product));
+    await writeFile(path.join(radarRoot, "products", `${product.product_slug}.md`), renderProductReport(product, generatedAt));
   }
-  await writeFile(path.join(radarRoot, "iam", "index.md"), renderIamReport(products));
-  await writeFile(path.join(radarRoot, "security", "index.md"), renderSecurityReport(products));
-  await writeFile(path.join(radarRoot, "services", "index.md"), renderServiceCardsReport(products));
+  await writeFile(path.join(radarRoot, "iam", "index.md"), renderIamReport(products, generatedAt));
+  await writeFile(path.join(radarRoot, "security", "index.md"), renderSecurityReport(products, generatedAt));
+  await writeFile(path.join(radarRoot, "services", "index.md"), renderServiceCardsReport(products, generatedAt));
   await writeFile(path.join(radarRoot, "coverage.md"), renderCoverageReport(products, generatedAt));
 
   const index = {

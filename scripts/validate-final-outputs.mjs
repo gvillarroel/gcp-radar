@@ -79,6 +79,23 @@ async function readJson(filePath, fallback = null) {
   return parsed;
 }
 
+async function validateRadarGeneratedAt(reportPath, reportText, rule) {
+  const step10Index = await readJson(path.join(step10Root, "index.json"), null);
+  if (!step10Index?.generated_at) {
+    return [];
+  }
+  const expectedGeneratedAt = `Generated at: \`${step10Index.generated_at}\``;
+  if (String(reportText || "").includes(expectedGeneratedAt)) {
+    return [];
+  }
+  return [{
+    severity: "error",
+    rule,
+    path: reportPath,
+    expected: expectedGeneratedAt,
+  }];
+}
+
 async function listDirs(directory) {
   const resolved = path.resolve(directory);
   if (directoryCache.has(resolved)) {
@@ -1276,6 +1293,7 @@ async function validateRadarIamReportMatchesArtifacts() {
   }
 
   const report = await readText(iamReportPath, "");
+  findings.push(...await validateRadarGeneratedAt(iamReportPath, report, "radar_iam_generated_at_mismatch"));
   const actualFeatureLinks = new Set();
   const staleFeatureLinks = new Set();
   const linkPattern = /\[(?:\\.|[^\]\\])*\]\(([^)]+)\)/g;
@@ -1423,6 +1441,7 @@ async function validateRadarServicesReportMatchesArtifacts() {
   }
 
   const report = await readText(servicesReportPath, "");
+  findings.push(...await validateRadarGeneratedAt(servicesReportPath, report, "radar_services_generated_at_mismatch"));
   const expectedServiceLinks = new Set([...expectedRows.keys()].sort());
   const actualServiceLinks = new Set();
   const staleServiceLinks = new Set();
@@ -1617,6 +1636,7 @@ async function validateRadarSecurityReportMatchesArtifacts() {
   }
 
   const report = await readText(securityReportPath, "");
+  findings.push(...await validateRadarGeneratedAt(securityReportPath, report, "radar_security_generated_at_mismatch"));
   const actualFeatureLinks = new Set();
   const staleFeatureLinks = new Set();
   const reportLinks = new Set();
@@ -2729,6 +2749,7 @@ async function validateRadarMatchesArtifacts() {
       continue;
     }
     const report = await readText(reportPath, "");
+    findings.push(...await validateRadarGeneratedAt(reportPath, report, "radar_product_generated_at_mismatch"));
     const expectedTitle = `# ${product.product_name}`;
     if (!report.includes(expectedTitle)) {
       findings.push({

@@ -530,9 +530,9 @@ service-card link.
 The coverage report must include product slugs and must keep promoted,
 skipped, explicit IAM, derived IAM, and unknown IAM counts aligned with the
 promoted artifact manifests and feature cards.
-The root radar index and coverage report must also keep their rendered
-`generated_at` value aligned with `data/step-10/current/index.json`, because
-those files are the user-facing reports that expose Step 10 run metadata.
+Every generated radar Markdown report must keep its rendered `generated_at`
+value aligned with `data/step-10/current/index.json`, because those files are
+the user-facing reports that expose Step 10 run metadata.
 The security report must link every promoted feature with security capability
 signals, must not retain stale feature artifact links, and must include
 official Google evidence links for those signals when promoted feature cards
