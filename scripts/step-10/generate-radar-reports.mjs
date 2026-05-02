@@ -178,6 +178,22 @@ async function loadArtifacts() {
         errors.push(`Missing promoted feature card for ${productSlug}/${feature.feature_slug}: ${relativeToCwd(featureCardPath)}`);
       }
     }
+    const skippedFeatures = [...(promotion.skipped_features || [])]
+      .filter((feature) => feature?.feature_slug)
+      .sort((left, right) => compareStrings(left.feature_slug, right.feature_slug));
+    if (Number(promotion.skipped_feature_count || 0) !== skippedFeatures.length) {
+      errors.push(`Promotion manifest skipped_feature_count mismatch for ${productSlug}: expected ${skippedFeatures.length}, got ${promotion.skipped_feature_count}`);
+    }
+    const seenSkippedFeatureSlugs = new Set();
+    for (const feature of skippedFeatures) {
+      if (seenSkippedFeatureSlugs.has(feature.feature_slug)) {
+        errors.push(`Duplicate skipped feature slug for ${productSlug}: ${feature.feature_slug}`);
+      }
+      seenSkippedFeatureSlugs.add(feature.feature_slug);
+      if (seenFeatureSlugs.has(feature.feature_slug)) {
+        errors.push(`Feature listed as both promoted and skipped for ${productSlug}: ${feature.feature_slug}`);
+      }
+    }
     products.push({
       product_name: promotion.product_name,
       product_slug: productSlug,
