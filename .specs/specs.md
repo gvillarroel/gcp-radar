@@ -523,11 +523,11 @@ Current canonical Step 10 output layout:
 
 Step 10 reports must read from promoted `artifacts/` content only.
 
-Step 10 must fail before rewriting final reports when a product promotion
-manifest references an incomplete promoted artifact inventory. Every promoted
-product must have a service `card.json`, and every promoted feature listed in
-the product promotion manifest must have its feature `card.json` and
-`README.md`.
+Step 10 must fail before rewriting final reports when the promoted artifact
+inventory is incomplete. Every product directory under `artifacts/` must have
+a promotion manifest, every promoted product must have a service `card.json`
+and product `index.md`, and every promoted feature listed in the product
+promotion manifest must have its feature `card.json` and `README.md`.
 Step 10 must also fail before rewriting reports when promotion manifests or
 promoted cards disagree with their artifact paths, including product slugs,
 service-card paths, promoted feature counts, duplicate promoted feature slugs,

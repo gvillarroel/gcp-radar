@@ -150,8 +150,10 @@ async function loadArtifacts() {
 
   for (const productSlug of await listProductDirs()) {
     const productDir = path.join(artifactsRoot, productSlug);
-    const promotion = await readJson(path.join(productDir, "promotion.json"), null);
+    const promotionPath = path.join(productDir, "promotion.json");
+    const promotion = await readJson(promotionPath, null);
     if (!promotion) {
+      errors.push(`Missing promotion manifest for ${productSlug}: ${relativeToCwd(promotionPath)}`);
       continue;
     }
     const step08CardPath = path.join(step08Root, "products", productSlug, "card.json");
@@ -175,6 +177,10 @@ async function loadArtifacts() {
     const expectedServiceCard = `artifacts/${productSlug}/card.json`;
     if (promotion.service_card && String(promotion.service_card).replace(/\\/g, "/") !== expectedServiceCard) {
       errors.push(`Promotion manifest service_card mismatch for ${productSlug}: expected ${expectedServiceCard}, got ${promotion.service_card}`);
+    }
+    const productIndexPath = path.join(productDir, "index.md");
+    if (!(await exists(productIndexPath))) {
+      errors.push(`Missing promoted product index for ${productSlug}: ${relativeToCwd(productIndexPath)}`);
     }
     const serviceCardPath = path.join(productDir, "card.json");
     const serviceCard = await readJson(serviceCardPath, null);

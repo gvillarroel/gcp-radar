@@ -22,9 +22,11 @@ Step 10 must fail before writing final reports when a promoted artifact
 inventory is incomplete or internally inconsistent.
 
 The canonical Step 10 script now checks, while loading artifacts, that every
-product with a `promotion.json` also has:
+product directory under `artifacts/` has a `promotion.json`, and that every
+product with a promotion manifest also has:
 
 - `artifacts/<product-slug>/card.json`
+- `artifacts/<product-slug>/index.md`
 - `artifacts/<product-slug>/<feature-slug>/card.json` for every feature listed
   in the promotion manifest
 - `artifacts/<product-slug>/<feature-slug>/README.md` for every feature listed
