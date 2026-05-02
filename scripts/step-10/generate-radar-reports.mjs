@@ -314,6 +314,11 @@ async function loadArtifacts() {
         errors.push(`Missing promoted feature card for ${productSlug}/${feature.feature_slug}: ${relativeToCwd(featureCardPath)}`);
       }
     }
+    for (const entry of await readdir(productDir, { withFileTypes: true })) {
+      if (entry.isDirectory() && !seenFeatureSlugs.has(entry.name)) {
+        errors.push(`Unpromoted feature artifact directory for ${productSlug}: ${relativeToCwd(path.join(productDir, entry.name))}`);
+      }
+    }
     const skippedFeatures = [...(promotion.skipped_features || [])]
       .filter((feature) => feature?.feature_slug)
       .sort((left, right) => compareStrings(left.feature_slug, right.feature_slug));

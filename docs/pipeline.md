@@ -395,7 +395,9 @@ paths, duplicate feature slugs, skipped feature count, duplicate skipped
 feature slugs, promoted/skipped feature overlap, embedded feature-card slug,
 `source_step08_card` provenance, or Step 09 artifact-promotion schema version
 do not match the artifact path and canonical Step 08 product card being
-rendered. It also rejects manifests and promoted service or feature cards whose
+rendered. It also rejects stale feature artifact directories that are not
+listed in the promotion manifest's promoted feature inventory. It also rejects
+manifests and promoted service or feature cards whose
 rendered labels or source-backed payload fields have drifted from the
 canonical Step 08 card, including IAM, security, lifecycle, evidence, and
 validation data. Step 10 also rejects promoted service or feature cards whose

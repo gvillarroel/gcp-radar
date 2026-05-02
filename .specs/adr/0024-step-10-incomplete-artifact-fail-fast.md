@@ -45,6 +45,12 @@ rendering. This includes product and feature labels, IAM, security, lifecycle,
 evidence, validation, and other source-backed card payloads that feed final
 reports.
 
+Step 10 also rejects stale feature artifact directories under
+`artifacts/<product-slug>/` when those directories are not listed as promoted
+features in the product promotion manifest. This keeps the report generator
+from rewriting `radar/` from an artifact tree that final-output validation
+would later reject as containing unpromoted feature artifacts.
+
 If any required card is missing or any artifact identity check fails, Step 10
 exits with an error that lists the problem paths or values and does not rewrite
 `radar/` or `data/step-10/current/index.json`.
