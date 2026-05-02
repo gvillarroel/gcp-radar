@@ -99,8 +99,17 @@ function isOfficialGoogleUrl(url) {
   }
 }
 
+function collectSecurityCapabilityEvidenceLinks(capabilities) {
+  return [...new Set((capabilities || []).flatMap((capability) => capability.evidence_links || []))];
+}
+
+function collectNonOfficialUrls(urls) {
+  return [...new Set(urls || [])].filter((url) => !isOfficialGoogleUrl(url));
+}
+
 function isFeaturePromotable(feature) {
   const sourceLinks = feature?.evidence?.source_links || [];
+  const securityEvidenceLinks = collectSecurityCapabilityEvidenceLinks(feature?.security_capabilities || []);
   const findings = feature?.validation?.findings || [];
   const blockingWarnings = findings
     .filter((finding) => finding.severity === "warn")
@@ -121,10 +130,26 @@ function isFeaturePromotable(feature) {
   if (!sourceLinks.every(isOfficialGoogleUrl)) {
     return { promotable: false, reason: "non_official_source_link" };
   }
+  if (collectNonOfficialUrls(securityEvidenceLinks).length > 0) {
+    return { promotable: false, reason: "non_official_security_evidence_link" };
+  }
   if (blockingWarnings.length > 0) {
     return { promotable: false, reason: "blocking_warning", blocking_warnings: blockingWarnings.map((finding) => finding.rule) };
   }
   return { promotable: true, reason: "promotable" };
+}
+
+function validateServiceCardEvidence(productSlug, serviceCard) {
+  const errors = [];
+  for (const url of collectNonOfficialUrls(serviceCard?.official_source_links || [])) {
+    errors.push(`Step 08 service card for ${productSlug} has non-official source link: ${url}`);
+  }
+  for (const url of collectNonOfficialUrls(collectSecurityCapabilityEvidenceLinks(serviceCard?.security_capabilities || []))) {
+    errors.push(`Step 08 service card for ${productSlug} has non-official security evidence link: ${url}`);
+  }
+  if (errors.length > 0) {
+    throw new Error(errors.join("\n"));
+  }
 }
 
 function renderFeatureReadme(product, feature) {
@@ -277,13 +302,15 @@ async function promoteProduct(productSlug) {
   }
 
   const productArtifactDir = path.join(artifactsRoot, productSlug);
+  if (!card.service_card) {
+    throw new Error(`Step 08 card for ${productSlug} does not contain service_card`);
+  }
+  validateServiceCardEvidence(productSlug, card.service_card);
+
   if (cleanProductArtifacts) {
     await rm(productArtifactDir, { recursive: true, force: true });
   }
   await mkdir(productArtifactDir, { recursive: true });
-  if (!card.service_card) {
-    throw new Error(`Step 08 card for ${productSlug} does not contain service_card`);
-  }
 
   const promotedFeatures = [];
   const skippedFeatures = [];

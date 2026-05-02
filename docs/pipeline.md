@@ -337,7 +337,13 @@ Promote validated card content into source-of-truth artifacts.
 ### Quality Bar
 
 Promotion requires Step 07 pass status, official Google evidence links, a
-non-empty summary, and no unaccepted blocking warning class.
+non-empty summary, no unaccepted blocking warning class, and official Google
+HTTP(S) security capability evidence links.
+
+Step 09 rejects a processed product before writing artifacts when the service
+card contains non-official source links or non-official security capability
+evidence links. Feature-level non-official security evidence blocks promotion
+of that feature with `non_official_security_evidence_link`.
 
 For every processed product, Step 09 prunes feature directories under
 `artifacts/<product-slug>/` that are not part of the current promotion manifest.

@@ -487,8 +487,13 @@ artifact inventory under `artifacts/`, and records the filtered run scope in
 `processed_product_count` and `processed_products`.
 
 Features can be promoted only when they pass Step 07, have official Google
-evidence links, have a non-empty technical summary, and do not carry
-unaccepted blocking warnings.
+evidence links, have a non-empty technical summary, do not carry unaccepted
+blocking warnings, and do not contain non-official security capability
+evidence links.
+
+Step 09 must also reject a processed product before writing promoted artifacts
+when its service card contains source links or security capability evidence
+links that are not official Google HTTP(S) URLs.
 
 For each processed product, Step 09 removes stale feature artifact directories
 under `artifacts/<product-slug>/` that are not present in the current promotion
