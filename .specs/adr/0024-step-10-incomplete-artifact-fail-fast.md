@@ -37,7 +37,11 @@ feature card slugs match the artifact path being rendered. Step 10 also checks
 that the promotion manifest, promoted service card, and promoted feature cards
 use the current Step 09 artifact-promotion schema and point their
 `source_step08_card` provenance at the canonical Step 08 product card before
-rendering reports.
+rendering reports. Step 10 also compares promoted service and feature card
+payload fields against the canonical Step 08 card for the product before
+rendering. This includes product and feature labels, IAM, security, lifecycle,
+evidence, validation, and other source-backed card payloads that feed final
+reports.
 
 If any required card is missing or any artifact identity check fails, Step 10
 exits with an error that lists the problem paths or values and does not rewrite

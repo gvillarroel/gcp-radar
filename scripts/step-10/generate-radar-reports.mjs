@@ -66,6 +66,24 @@ function markdownLink(label, target) {
   return `[${escapedLabel}](${target})`;
 }
 
+function normalizeForCompare(value) {
+  if (Array.isArray(value)) {
+    return value.map(normalizeForCompare);
+  }
+  if (value && typeof value === "object") {
+    return Object.fromEntries(
+      Object.entries(value)
+        .sort(([left], [right]) => left.localeCompare(right))
+        .map(([key, nested]) => [key, normalizeForCompare(nested)])
+    );
+  }
+  return value;
+}
+
+function jsonEquals(left, right) {
+  return JSON.stringify(normalizeForCompare(left)) === JSON.stringify(normalizeForCompare(right));
+}
+
 function formatRoles(roles, limit = 8) {
   return (roles || [])
     .slice(0, limit)
@@ -101,6 +119,34 @@ async function listProductDirs() {
 async function loadArtifacts() {
   const products = [];
   const errors = [];
+  const serviceStep08Fields = [
+    "card_type",
+    "service_card_id",
+    "service_name",
+    "service_slug",
+    "feature_count",
+    "validation",
+    "iam_status_counts",
+    "related_permission_groups",
+    "official_source_links",
+    "security_capabilities",
+    "security_capability_count",
+    "lifecycle",
+    "release_notes",
+    "corpus",
+  ];
+  const featureStep08Fields = [
+    "feature_name",
+    "feature_slug",
+    "summary",
+    "extended_definition",
+    "lifecycle",
+    "coverage_status",
+    "validation",
+    "evidence",
+    "iam",
+    "security_capabilities",
+  ];
 
   for (const productSlug of await listProductDirs()) {
     const productDir = path.join(artifactsRoot, productSlug);
@@ -108,17 +154,22 @@ async function loadArtifacts() {
     if (!promotion) {
       continue;
     }
+    const step08CardPath = path.join(step08Root, "products", productSlug, "card.json");
+    const expectedSourceStep08Card = relativeToCwd(step08CardPath);
+    const step08Card = await readJson(step08CardPath, null);
     if (promotion.schema_version !== expectedStep09SchemaVersion) {
       errors.push(`Promotion manifest schema_version mismatch for ${productSlug}: expected ${expectedStep09SchemaVersion}, got ${promotion.schema_version || "missing"}`);
     }
     if (promotion.product_slug && promotion.product_slug !== productSlug) {
       errors.push(`Promotion manifest product_slug mismatch for ${productSlug}: expected ${productSlug}, got ${promotion.product_slug}`);
     }
-    const expectedSourceStep08Card = relativeToCwd(path.join(step08Root, "products", productSlug, "card.json"));
+    if (step08Card && promotion.product_name !== step08Card.product_name) {
+      errors.push(`Promotion manifest product_name mismatch for ${productSlug}: expected ${step08Card.product_name}, got ${promotion.product_name || "missing"}`);
+    }
     if (promotion.source_step08_card && String(promotion.source_step08_card).replace(/\\/g, "/") !== expectedSourceStep08Card) {
       errors.push(`Promotion manifest source_step08_card mismatch for ${productSlug}: expected ${expectedSourceStep08Card}, got ${promotion.source_step08_card}`);
     }
-    if (!(await exists(path.join(step08Root, "products", productSlug, "card.json")))) {
+    if (!step08Card) {
       errors.push(`Missing Step 08 source card for ${productSlug}: ${expectedSourceStep08Card}`);
     }
     const expectedServiceCard = `artifacts/${productSlug}/card.json`;
@@ -139,8 +190,18 @@ async function loadArtifacts() {
       if (serviceCard.service_slug && serviceCard.service_slug !== productSlug) {
         errors.push(`Promoted service card service_slug mismatch for ${productSlug}: expected ${productSlug}, got ${serviceCard.service_slug}`);
       }
+      if (step08Card && serviceCard.product_name !== step08Card.product_name) {
+        errors.push(`Promoted service card product_name mismatch for ${productSlug}: expected ${step08Card.product_name}, got ${serviceCard.product_name || "missing"}`);
+      }
       if (String(serviceCard.source_step08_card || "").replace(/\\/g, "/") !== expectedSourceStep08Card) {
         errors.push(`Promoted service card source_step08_card mismatch for ${productSlug}: expected ${expectedSourceStep08Card}, got ${serviceCard.source_step08_card || "missing"}`);
+      }
+      if (step08Card?.service_card) {
+        for (const field of serviceStep08Fields) {
+          if (!jsonEquals(serviceCard[field], step08Card.service_card[field])) {
+            errors.push(`Promoted service card Step 08 payload mismatch for ${productSlug}: field ${field}`);
+          }
+        }
       }
     }
     const features = [];
@@ -151,11 +212,18 @@ async function loadArtifacts() {
       errors.push(`Promotion manifest promoted_feature_count mismatch for ${productSlug}: expected ${promotedFeatures.length}, got ${promotion.promoted_feature_count}`);
     }
     const seenFeatureSlugs = new Set();
+    const step08Features = new Map((step08Card?.features || []).map((feature) => [feature.feature_slug, feature]));
     for (const feature of promotedFeatures) {
       if (seenFeatureSlugs.has(feature.feature_slug)) {
         errors.push(`Duplicate promoted feature slug for ${productSlug}: ${feature.feature_slug}`);
       }
       seenFeatureSlugs.add(feature.feature_slug);
+      const step08Feature = step08Features.get(feature.feature_slug);
+      if (!step08Feature) {
+        errors.push(`Promotion manifest promoted feature missing from Step 08 card for ${productSlug}/${feature.feature_slug}`);
+      } else if (feature.feature_name !== step08Feature.feature_name) {
+        errors.push(`Promotion manifest feature_name mismatch for ${productSlug}/${feature.feature_slug}: expected ${step08Feature.feature_name}, got ${feature.feature_name || "missing"}`);
+      }
       const expectedFeatureReadme = `artifacts/${productSlug}/${feature.feature_slug}/README.md`;
       if (feature.artifact_readme && String(feature.artifact_readme).replace(/\\/g, "/") !== expectedFeatureReadme) {
         errors.push(`Promotion manifest artifact_readme mismatch for ${productSlug}/${feature.feature_slug}: expected ${expectedFeatureReadme}, got ${feature.artifact_readme}`);
@@ -180,8 +248,18 @@ async function loadArtifacts() {
         if (card.feature_slug !== feature.feature_slug) {
           errors.push(`Promoted feature card feature_slug mismatch for ${productSlug}/${feature.feature_slug}: expected ${feature.feature_slug}, got ${card.feature_slug}`);
         }
+        if (card.feature_name !== feature.feature_name) {
+          errors.push(`Promoted feature card feature_name mismatch for ${productSlug}/${feature.feature_slug}: expected ${feature.feature_name || "missing"}, got ${card.feature_name || "missing"}`);
+        }
         if (String(card.source_step08_card || "").replace(/\\/g, "/") !== expectedSourceStep08Card) {
           errors.push(`Promoted feature card source_step08_card mismatch for ${productSlug}/${feature.feature_slug}: expected ${expectedSourceStep08Card}, got ${card.source_step08_card || "missing"}`);
+        }
+        if (step08Feature) {
+          for (const field of featureStep08Fields) {
+            if (!jsonEquals(card[field], step08Feature[field])) {
+              errors.push(`Promoted feature card Step 08 payload mismatch for ${productSlug}/${feature.feature_slug}: field ${field}`);
+            }
+          }
         }
         features.push(card);
       } else {

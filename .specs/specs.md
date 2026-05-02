@@ -534,6 +534,10 @@ service-card paths, promoted feature counts, duplicate promoted feature slugs,
 skipped feature counts, duplicate skipped feature slugs, promoted/skipped
 feature overlap, feature artifact paths, embedded feature-card slugs, and
 `source_step08_card` provenance pointing to the canonical Step 08 product card.
+Step 10 must also fail before rewriting reports when promotion manifests or
+promoted service and feature cards drift from the source-backed product,
+service, feature-label, IAM, security, lifecycle, evidence, or validation
+payloads in the canonical Step 08 card.
 Step 10 must also reject promotion manifests, promoted service cards, and
 promoted feature cards whose `schema_version` does not match the current Step
 09 artifact-promotion schema.

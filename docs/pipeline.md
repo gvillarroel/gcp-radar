@@ -393,7 +393,10 @@ paths, duplicate feature slugs, skipped feature count, duplicate skipped
 feature slugs, promoted/skipped feature overlap, embedded feature-card slug,
 `source_step08_card` provenance, or Step 09 artifact-promotion schema version
 do not match the artifact path and canonical Step 08 product card being
-rendered.
+rendered. It also rejects manifests and promoted service or feature cards whose
+rendered labels or source-backed payload fields have drifted from the
+canonical Step 08 card, including IAM, security, lifecycle, evidence, and
+validation data.
 
 During regeneration, Step 10 removes stale Markdown files directly under
 `radar/products/` when they do not correspond to a currently promoted artifact
