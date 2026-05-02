@@ -425,7 +425,11 @@ under `radar/products/`, and `data/step-10/current/index.json` must describe
 the same product inventory and feature counts. Stale or missing product reports
 fail validation. The Step 09 index must record the same Step 08 root and
 artifacts root being validated, use the current Step 09 schema version, and its
-product list must not contain duplicate or stale product entries. The Step 10
+product list must not contain duplicate or stale product entries. Final
+validation also checks the Step 09 latest-run scope metadata: processed product
+slugs must be sorted and duplicate-free, must point at existing Step 08 cards,
+and must match `processed_product_count`; the top-level stale feature artifact
+cleanup count must match the sum of per-product cleanup counts. The Step 10
 index must record the same artifacts root and radar root being validated, use
 the current Step 10 schema version, and its product report list must not
 contain duplicate entries. The Step 08 index must record the same Step 08

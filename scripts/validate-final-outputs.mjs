@@ -2254,6 +2254,70 @@ async function validateStep09IndexMatchesArtifacts() {
     });
   }
 
+  const processedProducts = step09Index.processed_products;
+  if (!Array.isArray(processedProducts)) {
+    findings.push({
+      severity: "error",
+      rule: "step09_index_processed_products_not_array",
+      path: step09IndexPath,
+      actual_type: processedProducts === null ? "null" : typeof processedProducts,
+    });
+  }
+  const actualProcessedProducts = Array.isArray(processedProducts)
+    ? processedProducts.map((productSlug) => String(productSlug).replace(/\\/g, "/"))
+    : [];
+  const seenProcessedProducts = new Set();
+  let previousProcessedProduct = "";
+  for (const productSlug of actualProcessedProducts) {
+    if (seenProcessedProducts.has(productSlug)) {
+      findings.push({
+        severity: "error",
+        rule: "step09_index_duplicate_processed_product",
+        path: step09IndexPath,
+        product_slug: productSlug,
+      });
+    }
+    seenProcessedProducts.add(productSlug);
+    if (previousProcessedProduct && previousProcessedProduct.localeCompare(productSlug) > 0) {
+      findings.push({
+        severity: "error",
+        rule: "step09_index_processed_products_not_sorted",
+        path: step09IndexPath,
+        previous_product_slug: previousProcessedProduct,
+        product_slug: productSlug,
+      });
+    }
+    previousProcessedProduct = productSlug;
+    if (!(await exists(path.join(step08Root, "products", productSlug, "card.json")))) {
+      findings.push({
+        severity: "error",
+        rule: "step09_index_processed_product_missing_step08_card",
+        path: step09IndexPath,
+        product_slug: productSlug,
+      });
+    }
+  }
+  if (step09Index.processed_product_count !== actualProcessedProducts.length) {
+    findings.push({
+      severity: "error",
+      rule: "step09_processed_product_count_mismatch",
+      path: step09IndexPath,
+      expected: actualProcessedProducts.length,
+      actual: step09Index.processed_product_count,
+    });
+  }
+  const expectedStaleFeatureArtifactDirCount = indexProducts
+    .reduce((sum, product) => sum + Number(product?.stale_feature_artifact_dir_count || 0), 0);
+  if (Number(step09Index.stale_feature_artifact_dir_count || 0) !== expectedStaleFeatureArtifactDirCount) {
+    findings.push({
+      severity: "error",
+      rule: "step09_stale_feature_artifact_dir_count_mismatch",
+      path: step09IndexPath,
+      expected: expectedStaleFeatureArtifactDirCount,
+      actual: step09Index.stale_feature_artifact_dir_count,
+    });
+  }
+
   for (const [productSlug, expected] of expectedProducts) {
     const actual = actualProducts.get(productSlug);
     if (!actual) {

@@ -58,6 +58,11 @@ The validator must check:
   artifacts root that final-output validation is checking
 - Step 09 product entries exactly match the promoted artifact inventory without
   duplicate or stale product entries
+- `data/step-09/current/index.json` latest-run scope metadata is internally
+  consistent: `processed_products` is a sorted duplicate-free list of products
+  with canonical Step 08 cards, `processed_product_count` matches that list,
+  and `stale_feature_artifact_dir_count` matches the sum of per-product stale
+  cleanup counts
 - every promotion manifest, promoted service card, and promoted feature card
   uses the current Step 09 artifact-promotion schema version
 - `data/step-10/current/index.json` product and feature counts match promoted
