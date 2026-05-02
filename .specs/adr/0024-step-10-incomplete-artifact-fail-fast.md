@@ -35,8 +35,9 @@ duplicate promoted feature slugs, skipped feature counts, duplicate skipped
 feature slugs, promoted/skipped feature overlap, and embedded service or
 feature card slugs match the artifact path being rendered. Step 10 also checks
 that the promotion manifest, promoted service card, and promoted feature cards
-point their `source_step08_card` provenance at the canonical Step 08 product
-card before rendering reports.
+use the current Step 09 artifact-promotion schema and point their
+`source_step08_card` provenance at the canonical Step 08 product card before
+rendering reports.
 
 If any required card is missing or any artifact identity check fails, Step 10
 exits with an error that lists the problem paths or values and does not rewrite

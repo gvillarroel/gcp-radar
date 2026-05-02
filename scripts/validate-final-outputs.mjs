@@ -202,6 +202,16 @@ async function validateArtifacts() {
     if (!promotion) {
       findings.push({ severity: "error", rule: "missing_promotion_manifest", path: promotionPath });
     } else {
+      if (promotion.schema_version !== expectedStep09SchemaVersion) {
+        findings.push({
+          severity: "error",
+          rule: "promotion_manifest_schema_version_mismatch",
+          path: promotionPath,
+          product_slug: productSlug,
+          expected: expectedStep09SchemaVersion,
+          actual: promotion.schema_version || null,
+        });
+      }
       const skippedFeatures = Array.isArray(promotion.skipped_features) ? promotion.skipped_features : [];
       const acceptedWarningRules = new Set(Array.isArray(promotion.accepted_warning_rules) ? promotion.accepted_warning_rules : []);
       if (!Array.isArray(promotion.accepted_warning_rules)) {
@@ -412,6 +422,15 @@ async function validateArtifacts() {
     }
     if (!serviceCard) {
       findings.push({ severity: "error", rule: "missing_service_card", path: serviceCardPath });
+    } else if (serviceCard.schema_version !== expectedStep09SchemaVersion) {
+      findings.push({
+        severity: "error",
+        rule: "service_card_schema_version_mismatch",
+        path: serviceCardPath,
+        product_slug: productSlug,
+        expected: expectedStep09SchemaVersion,
+        actual: serviceCard.schema_version || null,
+      });
     } else if (serviceCard.card_type !== "service") {
       findings.push({ severity: "error", rule: "invalid_service_card_type", path: serviceCardPath });
     } else if (String(serviceCard.source_step08_card || "").replace(/\\/g, "/") !== expectedSourceStep08Card) {
@@ -465,6 +484,17 @@ async function validateArtifacts() {
         continue;
       }
       featureCount += 1;
+      if (card.schema_version !== expectedStep09SchemaVersion) {
+        findings.push({
+          severity: "error",
+          rule: "feature_card_schema_version_mismatch",
+          path: cardPath,
+          product_slug: productSlug,
+          feature_slug: featureSlug,
+          expected: expectedStep09SchemaVersion,
+          actual: card.schema_version || null,
+        });
+      }
       if (card.product_slug !== productSlug) {
         findings.push({
           severity: "error",

@@ -534,6 +534,9 @@ service-card paths, promoted feature counts, duplicate promoted feature slugs,
 skipped feature counts, duplicate skipped feature slugs, promoted/skipped
 feature overlap, feature artifact paths, embedded feature-card slugs, and
 `source_step08_card` provenance pointing to the canonical Step 08 product card.
+Step 10 must also reject promotion manifests, promoted service cards, and
+promoted feature cards whose `schema_version` does not match the current Step
+09 artifact-promotion schema.
 
 Step 10 owns the generated Markdown files directly under `radar/products/`.
 During report generation, stale product reports that do not match the current
@@ -604,6 +607,8 @@ consistent with their artifact path and promotion manifest so final reports
 cannot aggregate a card under the wrong product or feature identity. Their
 `source_step08_card` provenance must also match the canonical Step 08 product
 card path being validated and resolve to an existing card.
+Promotion manifests, promoted service cards, and promoted feature cards must
+use the current Step 09 artifact-promotion schema version.
 Promoted service and feature artifact cards must also keep their source-backed
 payload fields aligned with that Step 08 product card, so the source-of-truth
 artifact layer cannot drift from the validated card-construction stage while

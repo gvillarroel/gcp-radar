@@ -58,6 +58,8 @@ The validator must check:
   artifacts root that final-output validation is checking
 - Step 09 product entries exactly match the promoted artifact inventory without
   duplicate or stale product entries
+- every promotion manifest, promoted service card, and promoted feature card
+  uses the current Step 09 artifact-promotion schema version
 - `data/step-10/current/index.json` product and feature counts match promoted
   artifacts
 - `data/step-10/current/index.json` uses the current Step 10 schema version

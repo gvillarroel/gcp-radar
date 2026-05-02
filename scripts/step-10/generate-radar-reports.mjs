@@ -4,6 +4,7 @@ import { access, mkdir, readFile, readdir, rm, writeFile } from "node:fs/promise
 import path from "node:path";
 
 const schemaVersion = "step-10-radar-reports-v1";
+const expectedStep09SchemaVersion = "step-09-artifact-promotion-v1";
 const artifactsRoot = path.resolve(process.env.GCP_RADAR_STEP10_ARTIFACTS_ROOT || "artifacts");
 const radarRoot = path.resolve(process.env.GCP_RADAR_STEP10_RADAR_ROOT || "radar");
 const outputRoot = path.resolve(process.env.GCP_RADAR_STEP10_OUTPUT_ROOT || "data/step-10/current");
@@ -107,6 +108,9 @@ async function loadArtifacts() {
     if (!promotion) {
       continue;
     }
+    if (promotion.schema_version !== expectedStep09SchemaVersion) {
+      errors.push(`Promotion manifest schema_version mismatch for ${productSlug}: expected ${expectedStep09SchemaVersion}, got ${promotion.schema_version || "missing"}`);
+    }
     if (promotion.product_slug && promotion.product_slug !== productSlug) {
       errors.push(`Promotion manifest product_slug mismatch for ${productSlug}: expected ${productSlug}, got ${promotion.product_slug}`);
     }
@@ -126,6 +130,9 @@ async function loadArtifacts() {
     if (!serviceCard) {
       errors.push(`Missing promoted service card for ${productSlug}: ${relativeToCwd(serviceCardPath)}`);
     } else {
+      if (serviceCard.schema_version !== expectedStep09SchemaVersion) {
+        errors.push(`Promoted service card schema_version mismatch for ${productSlug}: expected ${expectedStep09SchemaVersion}, got ${serviceCard.schema_version || "missing"}`);
+      }
       if (serviceCard.product_slug && serviceCard.product_slug !== productSlug) {
         errors.push(`Promoted service card product_slug mismatch for ${productSlug}: expected ${productSlug}, got ${serviceCard.product_slug}`);
       }
@@ -164,6 +171,9 @@ async function loadArtifacts() {
       const featureCardPath = path.join(productDir, feature.feature_slug, "card.json");
       const card = await readJson(featureCardPath, null);
       if (card) {
+        if (card.schema_version !== expectedStep09SchemaVersion) {
+          errors.push(`Promoted feature card schema_version mismatch for ${productSlug}/${feature.feature_slug}: expected ${expectedStep09SchemaVersion}, got ${card.schema_version || "missing"}`);
+        }
         if (card.product_slug !== productSlug) {
           errors.push(`Promoted feature card product_slug mismatch for ${productSlug}/${feature.feature_slug}: expected ${productSlug}, got ${card.product_slug}`);
         }
