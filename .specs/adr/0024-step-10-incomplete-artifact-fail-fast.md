@@ -37,7 +37,9 @@ duplicate promoted feature slugs, skipped feature counts, duplicate skipped
 feature slugs, promoted/skipped feature overlap, and embedded service or
 feature card slugs match the artifact path being rendered. Step 10 also checks
 that the promotion manifest exposes `promoted_features` and `skipped_features`
-as arrays, and that the promotion manifest, promoted service card, and
+as arrays, that those arrays give every canonical Step 08 feature exactly one
+promoted or skipped disposition, and that the promotion manifest, promoted
+service card, and
 promoted feature cards use the current Step 09 artifact-promotion schema and point their
 `source_step08_card` provenance at the canonical Step 08 product card before
 rendering reports. Step 10 also compares promoted service and feature card

@@ -478,6 +478,10 @@ artifact directory.
 Promotion manifests must also keep skipped feature counts aligned with the
 skipped feature list and must not list the same feature slug as both promoted
 and skipped.
+The promoted and skipped feature inventories must also account for every
+feature in the canonical Step 08 product card exactly once. Missing or unknown
+feature dispositions are validation failures because they make promotion
+coverage ambiguous.
 Promotion manifests must expose promoted and skipped feature inventories as
 arrays so final validation can check counts, paths, labels, and report rows
 without relying on implicit fallback behavior.

@@ -649,6 +649,9 @@ artifact paths, and `source_step08_card` provenance consistent with the
 artifact directory that contains it. Its skipped feature count must also match
 the skipped feature list, and a feature slug must not appear in both the
 promoted and skipped feature lists.
+The promoted and skipped feature inventories must also give every feature in
+the canonical Step 08 product card exactly one disposition, so a feature cannot
+silently disappear from promotion accounting.
 Promotion manifests must also keep their rendered product name and promoted or
 skipped feature names aligned with the promoted artifact cards and canonical
 Step 08 product card, because those manifest labels feed final radar reports.

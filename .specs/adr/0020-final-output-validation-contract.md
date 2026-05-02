@@ -106,6 +106,9 @@ The validator must check:
 - each product promotion manifest has a skipped feature count that matches its
   skipped feature list, no duplicate skipped feature slugs, and no feature slug
   listed as both promoted and skipped
+- each product promotion manifest gives every feature in the canonical Step 08
+  product card exactly one promoted or skipped disposition, with no unknown
+  feature slugs outside the Step 08 card
 - each product promotion manifest keeps its product name and promoted or
   skipped feature names aligned with the promoted cards and canonical Step 08
   product card

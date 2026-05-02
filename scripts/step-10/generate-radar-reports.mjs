@@ -344,6 +344,22 @@ async function loadArtifacts() {
       if (seenFeatureSlugs.has(feature.feature_slug)) {
         errors.push(`Feature listed as both promoted and skipped for ${productSlug}: ${feature.feature_slug}`);
       }
+      if (step08Card && !step08Features.has(feature.feature_slug)) {
+        errors.push(`Promotion manifest skipped feature missing from Step 08 card for ${productSlug}/${feature.feature_slug}`);
+      }
+    }
+    if (step08Card) {
+      const dispositionFeatureSlugs = new Set([...seenFeatureSlugs, ...seenSkippedFeatureSlugs]);
+      for (const featureSlug of step08Features.keys()) {
+        if (!dispositionFeatureSlugs.has(featureSlug)) {
+          errors.push(`Promotion manifest missing Step 08 feature disposition for ${productSlug}/${featureSlug}`);
+        }
+      }
+      for (const featureSlug of dispositionFeatureSlugs) {
+        if (!step08Features.has(featureSlug)) {
+          errors.push(`Promotion manifest contains unknown Step 08 feature disposition for ${productSlug}/${featureSlug}`);
+        }
+      }
     }
     products.push({
       product_name: promotion.product_name,

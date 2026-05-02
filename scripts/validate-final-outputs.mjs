@@ -403,6 +403,15 @@ async function validateArtifacts() {
           });
         }
         const step08Feature = step08Features.get(featureSlug);
+        if (!step08Feature) {
+          findings.push({
+            severity: "error",
+            rule: "promotion_manifest_skipped_feature_missing_from_step08",
+            path: promotionPath,
+            product_slug: productSlug,
+            feature_slug: featureSlug,
+          });
+        }
         if (step08Feature?.feature_name && feature.feature_name !== step08Feature.feature_name) {
           findings.push({
             severity: "error",
@@ -413,6 +422,31 @@ async function validateArtifacts() {
             expected: step08Feature.feature_name,
             actual: feature.feature_name || null,
           });
+        }
+      }
+      if (step08Card) {
+        const dispositionFeatureSlugs = new Set([...seenFeatureSlugs, ...seenSkippedFeatureSlugs]);
+        for (const featureSlug of step08Features.keys()) {
+          if (!dispositionFeatureSlugs.has(featureSlug)) {
+            findings.push({
+              severity: "error",
+              rule: "promotion_manifest_missing_step08_feature_disposition",
+              path: promotionPath,
+              product_slug: productSlug,
+              feature_slug: featureSlug,
+            });
+          }
+        }
+        for (const featureSlug of dispositionFeatureSlugs) {
+          if (!step08Features.has(featureSlug)) {
+            findings.push({
+              severity: "error",
+              rule: "promotion_manifest_unknown_step08_feature_disposition",
+              path: promotionPath,
+              product_slug: productSlug,
+              feature_slug: featureSlug,
+            });
+          }
         }
       }
     }
