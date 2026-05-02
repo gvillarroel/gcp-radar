@@ -9,6 +9,14 @@ const artifactsRoot = path.resolve(process.env.GCP_RADAR_STEP10_ARTIFACTS_ROOT |
 const radarRoot = path.resolve(process.env.GCP_RADAR_STEP10_RADAR_ROOT || "radar");
 const outputRoot = path.resolve(process.env.GCP_RADAR_STEP10_OUTPUT_ROOT || "data/step-10/current");
 const step08Root = path.resolve(process.env.GCP_RADAR_STEP10_STEP08_ROOT || "data/step-08/current");
+const officialGoogleHosts = [
+  "cloud.google.com",
+  "docs.cloud.google.com",
+  "developers.google.com",
+  "firebase.google.com",
+  "workspace.google.com",
+  "googleapis.dev",
+];
 
 function compareStrings(left, right) {
   return String(left || "").localeCompare(String(right || ""));
@@ -82,6 +90,28 @@ function normalizeForCompare(value) {
 
 function jsonEquals(left, right) {
   return JSON.stringify(normalizeForCompare(left)) === JSON.stringify(normalizeForCompare(right));
+}
+
+function isOfficialGoogleUrl(url) {
+  try {
+    const parsedUrl = new URL(url);
+    if (!["http:", "https:"].includes(parsedUrl.protocol)) {
+      return false;
+    }
+    const host = parsedUrl.hostname.toLowerCase();
+    return officialGoogleHosts.some((allowed) => host === allowed || host.endsWith(`.${allowed}`));
+  } catch {
+    return false;
+  }
+}
+
+function collectNonOfficialUrls(urls) {
+  return [...new Set(urls || [])]
+    .filter((url) => !isOfficialGoogleUrl(url));
+}
+
+function collectSecurityCapabilityEvidenceLinks(capabilities) {
+  return [...new Set((capabilities || []).flatMap((capability) => capability.evidence_links || []))];
 }
 
 function formatRoles(roles, limit = 8) {
@@ -209,6 +239,12 @@ async function loadArtifacts() {
           }
         }
       }
+      for (const url of collectNonOfficialUrls(serviceCard.official_source_links || [])) {
+        errors.push(`Promoted service card has non-official source link for ${productSlug}: ${url}`);
+      }
+      for (const url of collectNonOfficialUrls(collectSecurityCapabilityEvidenceLinks(serviceCard.security_capabilities))) {
+        errors.push(`Promoted service card has non-official security evidence link for ${productSlug}: ${url}`);
+      }
     }
     const features = [];
     const promotedFeatures = [...(promotion.promoted_features || [])]
@@ -266,6 +302,12 @@ async function loadArtifacts() {
               errors.push(`Promoted feature card Step 08 payload mismatch for ${productSlug}/${feature.feature_slug}: field ${field}`);
             }
           }
+        }
+        for (const url of collectNonOfficialUrls(card.evidence?.source_links || [])) {
+          errors.push(`Promoted feature card has non-official source link for ${productSlug}/${feature.feature_slug}: ${url}`);
+        }
+        for (const url of collectNonOfficialUrls(collectSecurityCapabilityEvidenceLinks(card.security_capabilities))) {
+          errors.push(`Promoted feature card has non-official security evidence link for ${productSlug}/${feature.feature_slug}: ${url}`);
         }
         features.push(card);
       } else {
