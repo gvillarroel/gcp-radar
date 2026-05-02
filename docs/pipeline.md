@@ -402,12 +402,14 @@ and `artifacts/<product-slug>/<feature-slug>/README.md`.
 The same preflight rejects promotion manifests or promoted cards whose
 product slug, service-card path, promoted feature count, feature artifact
 paths, duplicate feature slugs, skipped feature count, duplicate skipped
-feature slugs, promoted/skipped feature overlap, embedded feature-card slug,
-`source_step08_card` provenance, or Step 09 artifact-promotion schema version
-do not match the artifact path and canonical Step 08 product card being
-rendered. Promotion manifest `promoted_features` and `skipped_features` fields
-must be arrays before Step 10 can render reports from them. It also rejects
-stale feature artifact directories that are not
+feature slugs, promoted/skipped feature overlap, promoted or skipped feature
+names, embedded feature-card slug, `source_step08_card` provenance, or Step 09
+artifact-promotion schema version do not match the artifact path and
+canonical Step 08 product card being rendered. Required manifest identity and
+provenance fields must be present, not just correct when present. Promotion
+manifest `promoted_features` and `skipped_features` fields must be arrays
+before Step 10 can render reports from them. It also rejects stale feature
+artifact directories that are not
 listed in the promotion manifest's promoted feature inventory. It also rejects
 manifests and promoted service or feature cards whose
 rendered labels or source-backed payload fields have drifted from the

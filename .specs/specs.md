@@ -538,10 +538,11 @@ a promotion manifest, every promoted product must have a service `card.json`
 and product `index.md`, and every promoted feature listed in the product
 promotion manifest must have its feature `card.json` and `README.md`.
 Step 10 must also fail before rewriting reports when promotion manifests or
-promoted cards disagree with their artifact paths, including product slugs,
-service-card paths, promoted feature counts, duplicate promoted feature slugs,
-skipped feature counts, duplicate skipped feature slugs, promoted/skipped
-feature overlap, feature artifact paths, embedded feature-card slugs, and
+promoted cards disagree with their artifact paths, including missing or
+mismatched product slugs, service-card paths, promoted feature counts,
+duplicate promoted feature slugs, skipped feature counts, duplicate skipped
+feature slugs, promoted/skipped feature overlap, feature artifact paths,
+promoted or skipped feature names, embedded feature-card slugs, and
 `source_step08_card` provenance pointing to the canonical Step 08 product card.
 Promotion manifests must expose `promoted_features` and `skipped_features` as
 arrays before Step 10 can consume them.
