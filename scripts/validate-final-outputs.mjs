@@ -1787,6 +1787,18 @@ async function validateRadarRootIndexMatchesArtifacts() {
   }
 
   const report = await readText(rootIndexPath, "");
+  const step10Index = await readJson(path.join(step10Root, "index.json"), null);
+  if (step10Index?.generated_at) {
+    const expectedGeneratedAt = `Generated at: \`${step10Index.generated_at}\``;
+    if (!report.includes(expectedGeneratedAt)) {
+      findings.push({
+        severity: "error",
+        rule: "radar_root_generated_at_mismatch",
+        path: rootIndexPath,
+        expected: expectedGeneratedAt,
+      });
+    }
+  }
   const expectedFeatureCount = [...artifactProductSlugs].reduce((sum, productSlug) => {
     return sum + expectedPromotedFeatureCountByProduct.get(productSlug);
   }, 0);
@@ -2081,6 +2093,18 @@ async function validateRadarCoverageReportMatchesArtifacts() {
   }
 
   const coverageMarkdown = await readText(coverageReportPath, "");
+  const step10Index = await readJson(path.join(step10Root, "index.json"), null);
+  if (step10Index?.generated_at) {
+    const expectedGeneratedAt = `Generated at: \`${step10Index.generated_at}\``;
+    if (!coverageMarkdown.includes(expectedGeneratedAt)) {
+      findings.push({
+        severity: "error",
+        rule: "radar_coverage_generated_at_mismatch",
+        path: coverageReportPath,
+        expected: expectedGeneratedAt,
+      });
+    }
+  }
   const rows = coverageMarkdown
     .split(/\r?\n/)
     .filter((line) => line.trim().startsWith("|"))
