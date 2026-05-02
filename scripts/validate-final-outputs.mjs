@@ -2204,6 +2204,7 @@ async function validateStep09IndexMatchesArtifacts() {
   }
 
   const actualProducts = new Map();
+  let previousIndexProductSlug = "";
   for (const product of indexProducts) {
     const productSlug = product?.product_slug;
     if (!productSlug) {
@@ -2219,6 +2220,16 @@ async function validateStep09IndexMatchesArtifacts() {
       });
     }
     actualProducts.set(productSlug, product);
+    if (previousIndexProductSlug && previousIndexProductSlug.localeCompare(productSlug) > 0) {
+      findings.push({
+        severity: "error",
+        rule: "step09_index_products_not_sorted",
+        path: step09IndexPath,
+        previous_product_slug: previousIndexProductSlug,
+        product_slug: productSlug,
+      });
+    }
+    previousIndexProductSlug = productSlug;
   }
 
   if (step09Index.product_count !== expectedProducts.size) {
@@ -2342,6 +2353,16 @@ async function validateStep09IndexMatchesArtifacts() {
           actual: actualPath || null,
         });
       }
+    }
+    if (actual.product_name !== expected.product_name) {
+      findings.push({
+        severity: "error",
+        rule: "step09_index_product_name_mismatch",
+        path: step09IndexPath,
+        product_slug: productSlug,
+        expected: expected.product_name,
+        actual: actual.product_name || null,
+      });
     }
     for (const field of ["promoted_feature_count", "skipped_feature_count"]) {
       if (Number(actual[field] || 0) !== expected[field]) {
@@ -2954,6 +2975,8 @@ async function validateRadarMatchesArtifacts() {
     : [];
   const actualReports = new Set(actualProductReports);
   const seenReports = new Set();
+  let previousProductReportSlug = "";
+  let previousProductReport = "";
   for (const report of actualProductReports) {
     if (seenReports.has(report)) {
       findings.push({
@@ -2964,6 +2987,18 @@ async function validateRadarMatchesArtifacts() {
       });
     }
     seenReports.add(report);
+    const productReportSlug = report.replace(/^radar\/products\//, "").replace(/\.md$/, "");
+    if (previousProductReportSlug && previousProductReportSlug.localeCompare(productReportSlug) > 0) {
+      findings.push({
+        severity: "error",
+        rule: "step10_index_product_reports_not_sorted",
+        path: step10IndexPath,
+        previous_report: previousProductReport,
+        report,
+      });
+    }
+    previousProductReportSlug = productReportSlug;
+    previousProductReport = report;
   }
   for (const report of expectedReports) {
     if (!actualReports.has(report)) {

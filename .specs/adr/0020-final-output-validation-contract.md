@@ -56,8 +56,9 @@ The validator must check:
 - `data/step-09/current/index.json` uses the current Step 09 schema version
 - `data/step-09/current/index.json` records the same Step 08 root and
   artifacts root that final-output validation is checking
-- Step 09 product entries exactly match the promoted artifact inventory without
-  duplicate or stale product entries
+- Step 09 product entries are sorted and exactly match the promoted artifact
+  inventory without duplicate or stale product entries, including product names
+  from the corresponding promotion manifests
 - `data/step-09/current/index.json` latest-run scope metadata is internally
   consistent: `processed_products` is a sorted duplicate-free list of products
   with canonical Step 08 cards, `processed_product_count` matches that list,
@@ -70,8 +71,8 @@ The validator must check:
 - `data/step-10/current/index.json` uses the current Step 10 schema version
 - `data/step-10/current/index.json` records the same artifacts root and radar
   root that final-output validation is checking
-- Step 10 product report paths exactly match the promoted product inventory
-  without duplicate product report entries
+- Step 10 product report paths are sorted and exactly match the promoted
+  product inventory without duplicate product report entries
 - fixed Step 10 report paths in `data/step-10/current/index.json` match the
   canonical radar report layout and resolve to existing files
 - every promoted feature listed in a promotion manifest has both its artifact
