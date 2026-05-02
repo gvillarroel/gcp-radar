@@ -159,6 +159,10 @@ function jsonEquals(left, right) {
   return JSON.stringify(normalizeForCompare(left)) === JSON.stringify(normalizeForCompare(right));
 }
 
+function promotionFeatureList(promotion, field) {
+  return Array.isArray(promotion?.[field]) ? promotion[field] : [];
+}
+
 function escapeMarkdownLinkLabel(label) {
   return String(label || "").replace(/([\\[\]])/g, "\\$1");
 }
@@ -197,7 +201,7 @@ async function validateArtifacts() {
     const step08Card = await readJson(path.join(step08Root, "products", productSlug, "card.json"), null);
     const step08Features = new Map((step08Card?.features || []).map((feature) => [feature.feature_slug, feature]));
     const expectedSourceStep08Card = relativeToCwd(path.join(step08Root, "products", productSlug, "card.json"));
-    const promotedFeatureSlugs = new Set((promotion?.promoted_features || []).map((feature) => feature.feature_slug).filter(Boolean));
+    const promotedFeatureSlugs = new Set(promotionFeatureList(promotion, "promoted_features").map((feature) => feature.feature_slug).filter(Boolean));
     const artifactFeatureSlugs = await listDirs(productDir);
     if (!promotion) {
       findings.push({ severity: "error", rule: "missing_promotion_manifest", path: promotionPath });
@@ -212,7 +216,7 @@ async function validateArtifacts() {
           actual: promotion.schema_version || null,
         });
       }
-      const skippedFeatures = Array.isArray(promotion.skipped_features) ? promotion.skipped_features : [];
+      const skippedFeatures = promotionFeatureList(promotion, "skipped_features");
       const acceptedWarningRules = new Set(Array.isArray(promotion.accepted_warning_rules) ? promotion.accepted_warning_rules : []);
       if (!Array.isArray(promotion.accepted_warning_rules)) {
         findings.push({
@@ -222,6 +226,17 @@ async function validateArtifacts() {
           product_slug: productSlug,
           actual_type: promotion.accepted_warning_rules === null ? "null" : typeof promotion.accepted_warning_rules,
         });
+      }
+      for (const field of ["promoted_features", "skipped_features"]) {
+        if (!Array.isArray(promotion[field])) {
+          findings.push({
+            severity: "error",
+            rule: `promotion_manifest_${field}_not_array`,
+            path: promotionPath,
+            product_slug: productSlug,
+            actual_type: promotion[field] === null ? "null" : typeof promotion[field],
+          });
+        }
       }
       if (promotion.product_slug !== productSlug) {
         findings.push({
@@ -294,7 +309,7 @@ async function validateArtifacts() {
         });
       }
       const seenFeatureSlugs = new Set();
-      for (const feature of promotion.promoted_features || []) {
+      for (const feature of promotionFeatureList(promotion, "promoted_features")) {
         const featureSlug = feature?.feature_slug;
         if (!featureSlug) {
           findings.push({
@@ -639,7 +654,7 @@ async function validateArtifactProductIndexes() {
     }
 
     const indexMarkdown = await readText(productIndexPath, "");
-    const promotedFeatures = (promotion.promoted_features || [])
+    const promotedFeatures = promotionFeatureList(promotion, "promoted_features")
       .map((feature) => feature?.feature_slug)
       .filter(Boolean)
       .sort((left, right) => left.localeCompare(right));
@@ -693,7 +708,7 @@ async function validateArtifactProductIndexes() {
       }
     }
 
-    for (const feature of promotion.promoted_features || []) {
+    for (const feature of promotionFeatureList(promotion, "promoted_features")) {
       const featureSlug = feature?.feature_slug;
       if (!featureSlug) {
         continue;
@@ -800,7 +815,7 @@ async function validateFeatureReadmesMatchCards() {
       continue;
     }
 
-    for (const feature of promotion.promoted_features || []) {
+    for (const feature of promotionFeatureList(promotion, "promoted_features")) {
       const featureSlug = feature?.feature_slug;
       if (!featureSlug) {
         continue;
@@ -1041,7 +1056,7 @@ async function validatePromotedCardsMatchStep08Cards() {
     }
 
     const step08Features = new Map((step08Card.features || []).map((feature) => [feature.feature_slug, feature]));
-    for (const promotedFeature of promotion.promoted_features || []) {
+    for (const promotedFeature of promotionFeatureList(promotion, "promoted_features")) {
       const featureSlug = promotedFeature?.feature_slug;
       if (!featureSlug) {
         continue;
@@ -1205,7 +1220,7 @@ async function validateRadarIamReportMatchesArtifacts() {
     if (!promotion) {
       continue;
     }
-    for (const feature of promotion.promoted_features || []) {
+    for (const feature of promotionFeatureList(promotion, "promoted_features")) {
       const featureSlug = feature?.feature_slug;
       if (!featureSlug) {
         continue;
@@ -1544,7 +1559,7 @@ async function validateRadarSecurityReportMatchesArtifacts() {
     if (!promotion) {
       continue;
     }
-    for (const feature of promotion.promoted_features || []) {
+    for (const feature of promotionFeatureList(promotion, "promoted_features")) {
       const featureSlug = feature?.feature_slug;
       if (!featureSlug) {
         continue;
@@ -1727,10 +1742,10 @@ async function validateRadarRootIndexMatchesArtifacts() {
     if (promotion) {
       const serviceCard = await readJson(path.join(artifactsRoot, productSlug, "card.json"), null);
       artifactProductSlugs.add(productSlug);
-      expectedPromotedFeatureCountByProduct.set(productSlug, (promotion.promoted_features || []).length);
+      expectedPromotedFeatureCountByProduct.set(productSlug, promotionFeatureList(promotion, "promoted_features").length);
       expectedRows.set(`./products/${productSlug}.md`, {
         product_name: promotion.product_name || productSlug,
-        features: (promotion.promoted_features || []).length,
+        features: promotionFeatureList(promotion, "promoted_features").length,
         latest_feature: serviceCard?.lifecycle?.latest_feature_date || "unknown",
         service_card: `../artifacts/${productSlug}/card.json`,
       });
@@ -2004,7 +2019,7 @@ async function validateRadarCoverageReportMatchesArtifacts() {
     if (!promotion) {
       continue;
     }
-    const featureSlugs = (promotion.promoted_features || [])
+    const featureSlugs = promotionFeatureList(promotion, "promoted_features")
       .map((feature) => feature?.feature_slug)
       .filter(Boolean);
     let explicit = 0;
@@ -2612,7 +2627,7 @@ async function validateRadarMatchesArtifacts() {
       skipped_feature_count: Number(promotion.skipped_feature_count || 0),
       latest_feature_date: serviceCard?.lifecycle?.latest_feature_date || "unknown",
       service_iam_status: JSON.stringify(serviceCard?.iam_status_counts || {}),
-      feature_slugs: (promotion.promoted_features || [])
+      feature_slugs: promotionFeatureList(promotion, "promoted_features")
         .map((feature) => feature?.feature_slug)
         .filter(Boolean)
         .sort((left, right) => left.localeCompare(right)),

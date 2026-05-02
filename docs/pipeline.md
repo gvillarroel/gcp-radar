@@ -405,7 +405,9 @@ paths, duplicate feature slugs, skipped feature count, duplicate skipped
 feature slugs, promoted/skipped feature overlap, embedded feature-card slug,
 `source_step08_card` provenance, or Step 09 artifact-promotion schema version
 do not match the artifact path and canonical Step 08 product card being
-rendered. It also rejects stale feature artifact directories that are not
+rendered. Promotion manifest `promoted_features` and `skipped_features` fields
+must be arrays before Step 10 can render reports from them. It also rejects
+stale feature artifact directories that are not
 listed in the promotion manifest's promoted feature inventory. It also rejects
 manifests and promoted service or feature cards whose
 rendered labels or source-backed payload fields have drifted from the
@@ -476,6 +478,9 @@ artifact directory.
 Promotion manifests must also keep skipped feature counts aligned with the
 skipped feature list and must not list the same feature slug as both promoted
 and skipped.
+Promotion manifests must expose promoted and skipped feature inventories as
+arrays so final validation can check counts, paths, labels, and report rows
+without relying on implicit fallback behavior.
 Promotion manifests must also keep product and feature names aligned with the
 promoted cards and the canonical Step 08 card, since Step 10 uses those labels
 when rendering final radar reports.

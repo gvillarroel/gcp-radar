@@ -114,6 +114,15 @@ function collectSecurityCapabilityEvidenceLinks(capabilities) {
   return [...new Set((capabilities || []).flatMap((capability) => capability.evidence_links || []))];
 }
 
+function validatePromotionFeatureLists(productSlug, promotion, errors) {
+  for (const field of ["promoted_features", "skipped_features"]) {
+    if (!Array.isArray(promotion[field])) {
+      const actualType = promotion[field] === null ? "null" : typeof promotion[field];
+      errors.push(`Promotion manifest ${field} must be an array for ${productSlug}: got ${actualType}`);
+    }
+  }
+}
+
 function formatRoles(roles, limit = 8) {
   return (roles || [])
     .slice(0, limit)
@@ -192,6 +201,7 @@ async function loadArtifacts() {
     if (promotion.schema_version !== expectedStep09SchemaVersion) {
       errors.push(`Promotion manifest schema_version mismatch for ${productSlug}: expected ${expectedStep09SchemaVersion}, got ${promotion.schema_version || "missing"}`);
     }
+    validatePromotionFeatureLists(productSlug, promotion, errors);
     if (promotion.product_slug && promotion.product_slug !== productSlug) {
       errors.push(`Promotion manifest product_slug mismatch for ${productSlug}: expected ${productSlug}, got ${promotion.product_slug}`);
     }
@@ -247,7 +257,7 @@ async function loadArtifacts() {
       }
     }
     const features = [];
-    const promotedFeatures = [...(promotion.promoted_features || [])]
+    const promotedFeatures = (Array.isArray(promotion.promoted_features) ? [...promotion.promoted_features] : [])
       .filter((feature) => feature?.feature_slug)
       .sort((left, right) => compareStrings(left.feature_slug, right.feature_slug));
     if (Number(promotion.promoted_feature_count || 0) !== promotedFeatures.length) {
@@ -319,7 +329,7 @@ async function loadArtifacts() {
         errors.push(`Unpromoted feature artifact directory for ${productSlug}: ${relativeToCwd(path.join(productDir, entry.name))}`);
       }
     }
-    const skippedFeatures = [...(promotion.skipped_features || [])]
+    const skippedFeatures = (Array.isArray(promotion.skipped_features) ? [...promotion.skipped_features] : [])
       .filter((feature) => feature?.feature_slug)
       .sort((left, right) => compareStrings(left.feature_slug, right.feature_slug));
     if (Number(promotion.skipped_feature_count || 0) !== skippedFeatures.length) {

@@ -543,6 +543,8 @@ service-card paths, promoted feature counts, duplicate promoted feature slugs,
 skipped feature counts, duplicate skipped feature slugs, promoted/skipped
 feature overlap, feature artifact paths, embedded feature-card slugs, and
 `source_step08_card` provenance pointing to the canonical Step 08 product card.
+Promotion manifests must expose `promoted_features` and `skipped_features` as
+arrays before Step 10 can consume them.
 Step 10 must also fail before rewriting reports when a product artifact
 directory contains feature directories that are not listed in the product
 promotion manifest's promoted feature inventory.
@@ -650,6 +652,8 @@ promoted and skipped feature lists.
 Promotion manifests must also keep their rendered product name and promoted or
 skipped feature names aligned with the promoted artifact cards and canonical
 Step 08 product card, because those manifest labels feed final radar reports.
+Promotion manifests must also keep promoted and skipped feature inventories as
+arrays so final validation can audit every feature deterministically.
 Each product artifact index must link every promoted feature README for that
 product, must link the promoted service card, and must not link feature README
 files or service-card paths outside the product's promotion manifest.
