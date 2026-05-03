@@ -151,6 +151,14 @@ function collectExternalMarkdownUrls(markdown) {
   return [...links].sort(compareStrings);
 }
 
+function collectMarkdownLinks(markdown) {
+  const linkPattern = /\[(?:\\.|[^\]\\])*\]\(([^)]+)\)/g;
+  return [...String(markdown || "").matchAll(linkPattern)]
+    .map((match) => String(match[1] || "").trim().replace(/\\/g, "/").split("#")[0])
+    .filter(Boolean)
+    .sort(compareStrings);
+}
+
 function collectSecurityCapabilityEvidenceLinks(capabilities) {
   return [...new Set((capabilities || []).flatMap((capability) => capability.evidence_links || []))];
 }
@@ -267,6 +275,28 @@ async function loadArtifacts() {
       const productIndexMarkdown = await readText(productIndexPath);
       for (const url of collectNonOfficialUrls(collectExternalMarkdownUrls(productIndexMarkdown))) {
         errors.push(`Promoted product index has non-official external link for ${productSlug}: ${relativeToCwd(productIndexPath)} -> ${url}`);
+      }
+      const markdownLinks = collectMarkdownLinks(productIndexMarkdown);
+      const expectedFeatureLinks = new Set((Array.isArray(promotion.promoted_features) ? promotion.promoted_features : [])
+        .map((feature) => feature?.feature_slug)
+        .filter(Boolean)
+        .map((featureSlug) => `./${featureSlug}/README.md`));
+      const actualFeatureLinks = new Set(markdownLinks.filter((link) => link.startsWith("./") && link.endsWith("/README.md")));
+      for (const link of expectedFeatureLinks) {
+        if (!actualFeatureLinks.has(link)) {
+          errors.push(`Promoted product index is missing promoted feature link for ${productSlug}: ${relativeToCwd(productIndexPath)} -> ${link}`);
+        }
+      }
+      for (const link of actualFeatureLinks) {
+        if (!expectedFeatureLinks.has(link)) {
+          errors.push(`Promoted product index has stale feature link for ${productSlug}: ${relativeToCwd(productIndexPath)} -> ${link}`);
+        }
+      }
+      if (!markdownLinks.includes("./card.json")) {
+        errors.push(`Promoted product index is missing service card link for ${productSlug}: ${relativeToCwd(productIndexPath)} -> ./card.json`);
+      }
+      for (const link of markdownLinks.filter((link) => link.startsWith("./") && link.endsWith("/card.json") && link !== "./card.json")) {
+        errors.push(`Promoted product index has stale service card link for ${productSlug}: ${relativeToCwd(productIndexPath)} -> ${link}`);
       }
     }
     const serviceCardPath = path.join(productDir, "card.json");

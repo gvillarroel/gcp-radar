@@ -62,6 +62,12 @@ for external HTTP(S) links. If any external link does not point to an official
 Google host, Step 10 fails before rewriting final reports so artifact
 source-policy drift is caught at the report-generation boundary.
 
+Step 10 also verifies that each promoted product index links the product
+service card and every promoted feature README listed in the promotion
+manifest, and that it does not retain stale local feature README or service
+card links. Product index link drift is therefore caught before `radar/` or
+`data/step-10/current/index.json` is rewritten.
+
 If any required card is missing or any artifact identity check fails, Step 10
 exits with an error that lists the problem paths or values and does not rewrite
 `radar/` or `data/step-10/current/index.json`.
