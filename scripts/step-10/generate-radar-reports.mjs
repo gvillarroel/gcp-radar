@@ -38,6 +38,13 @@ async function readJson(filePath, fallback = null) {
   return JSON.parse(await readFile(filePath, "utf8"));
 }
 
+async function readText(filePath, fallback = "") {
+  if (!(await exists(filePath))) {
+    return fallback;
+  }
+  return readFile(filePath, "utf8");
+}
+
 async function writeJson(filePath, value) {
   await mkdir(path.dirname(filePath), { recursive: true });
   await writeFile(filePath, `${JSON.stringify(value, null, 2)}\n`);
@@ -124,6 +131,24 @@ function validateGeneratedAt(record, label, errors) {
 function collectNonOfficialUrls(urls) {
   return [...new Set(urls || [])]
     .filter((url) => !isOfficialGoogleUrl(url));
+}
+
+function collectExternalMarkdownUrls(markdown) {
+  const links = new Set();
+  const linkPattern = /\[(?:\\.|[^\]\\])*\]\(([^)]+)\)/g;
+  const bareUrlPattern = /https?:\/\/[^\s<>)"']+/g;
+
+  for (const match of String(markdown || "").matchAll(linkPattern)) {
+    const rawLink = String(match[1] || "").trim();
+    if (/^https?:\/\//i.test(rawLink)) {
+      links.add(rawLink);
+    }
+  }
+  for (const match of String(markdown || "").matchAll(bareUrlPattern)) {
+    links.add(String(match[0] || "").trim().replace(/[.,;:]+$/g, ""));
+  }
+
+  return [...links].sort(compareStrings);
 }
 
 function collectSecurityCapabilityEvidenceLinks(capabilities) {
@@ -238,6 +263,11 @@ async function loadArtifacts() {
     const productIndexPath = path.join(productDir, "index.md");
     if (!(await exists(productIndexPath))) {
       errors.push(`Missing promoted product index for ${productSlug}: ${relativeToCwd(productIndexPath)}`);
+    } else {
+      const productIndexMarkdown = await readText(productIndexPath);
+      for (const url of collectNonOfficialUrls(collectExternalMarkdownUrls(productIndexMarkdown))) {
+        errors.push(`Promoted product index has non-official external link for ${productSlug}: ${relativeToCwd(productIndexPath)} -> ${url}`);
+      }
     }
     const serviceCardPath = path.join(productDir, "card.json");
     const serviceCard = await readJson(serviceCardPath, null);
@@ -305,6 +335,11 @@ async function loadArtifacts() {
       const featureReadmePath = path.join(productDir, feature.feature_slug, "README.md");
       if (!(await exists(featureReadmePath))) {
         errors.push(`Missing promoted feature README for ${productSlug}/${feature.feature_slug}: ${relativeToCwd(featureReadmePath)}`);
+      } else {
+        const featureReadmeMarkdown = await readText(featureReadmePath);
+        for (const url of collectNonOfficialUrls(collectExternalMarkdownUrls(featureReadmeMarkdown))) {
+          errors.push(`Promoted feature README has non-official external link for ${productSlug}/${feature.feature_slug}: ${relativeToCwd(featureReadmePath)} -> ${url}`);
+        }
       }
       const featureCardPath = path.join(productDir, feature.feature_slug, "card.json");
       const card = await readJson(featureCardPath, null);

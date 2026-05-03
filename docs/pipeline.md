@@ -419,6 +419,9 @@ canonical Step 08 card, including IAM, security, lifecycle, evidence, and
 validation data. Step 10 also rejects promoted service or feature cards whose
 source links or security capability evidence links are not official Google
 HTTP(S) URLs before any radar Markdown is rewritten.
+Step 10 also rejects promoted product index and feature README Markdown that
+contains external HTTP(S) links outside official Google hosts before any radar
+Markdown is rewritten.
 
 During regeneration, Step 10 removes stale Markdown files directly under
 `radar/products/` when they do not correspond to a currently promoted artifact

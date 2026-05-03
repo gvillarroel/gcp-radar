@@ -57,6 +57,11 @@ features in the product promotion manifest. This keeps the report generator
 from rewriting `radar/` from an artifact tree that final-output validation
 would later reject as containing unpromoted feature artifacts.
 
+Step 10 also scans promoted product index and promoted feature README Markdown
+for external HTTP(S) links. If any external link does not point to an official
+Google host, Step 10 fails before rewriting final reports so artifact
+source-policy drift is caught at the report-generation boundary.
+
 If any required card is missing or any artifact identity check fails, Step 10
 exits with an error that lists the problem paths or values and does not rewrite
 `radar/` or `data/step-10/current/index.json`.

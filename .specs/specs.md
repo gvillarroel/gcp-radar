@@ -562,6 +562,9 @@ timestamp.
 Step 10 must also fail before rewriting reports when promoted service or
 feature cards contain source links or security capability evidence links that
 are not official Google HTTP(S) URLs.
+Step 10 must also fail before rewriting reports when promoted product indexes
+or feature READMEs contain external HTTP(S) links outside official Google
+hosts.
 
 Step 10 owns the generated Markdown files directly under `radar/products/`.
 During report generation, stale product reports that do not match the current
