@@ -81,6 +81,10 @@ function markdownLink(label, target) {
   return `[${escapedLabel}](${target})`;
 }
 
+function escapeMarkdownLinkLabel(label) {
+  return String(label || "").replace(/([\\[\]])/g, "\\$1");
+}
+
 function normalizeForCompare(value) {
   if (Array.isArray(value)) {
     return value.map(normalizeForCompare);
@@ -297,6 +301,31 @@ async function loadArtifacts() {
       }
       for (const link of markdownLinks.filter((link) => link.startsWith("./") && link.endsWith("/card.json") && link !== "./card.json")) {
         errors.push(`Promoted product index has stale service card link for ${productSlug}: ${relativeToCwd(productIndexPath)} -> ${link}`);
+      }
+      const expectedProductIndexLines = [
+        `# ${promotion.product_name || productSlug}`,
+        "Service card: [card.json](./card.json)",
+        `Generated from Step 08 card: \`${expectedSourceStep08Card}\``,
+        `- Promoted features: ${promotion.promoted_feature_count}`,
+        `- Step 07 product status: ${step08Card?.validation?.product_status || "unknown"}`,
+        `- Corpus health: ${step08Card?.corpus?.health_status || "unknown"}`,
+        `- Latest feature date: ${step08Card?.service_card?.lifecycle?.latest_feature_date || "unknown"}`,
+        `- Official source links: ${step08Card?.service_card?.official_source_links?.length || 0}`,
+      ];
+      for (const expectedLine of expectedProductIndexLines) {
+        if (!productIndexMarkdown.includes(expectedLine)) {
+          errors.push(`Promoted product index summary mismatch for ${productSlug}: ${relativeToCwd(productIndexPath)} missing ${expectedLine}`);
+        }
+      }
+      for (const feature of Array.isArray(promotion.promoted_features) ? promotion.promoted_features : []) {
+        const featureSlug = feature?.feature_slug;
+        if (!featureSlug) {
+          continue;
+        }
+        const expectedLine = `- [${escapeMarkdownLinkLabel(feature.feature_name || featureSlug)}](./${featureSlug}/README.md)`;
+        if (!productIndexMarkdown.includes(expectedLine)) {
+          errors.push(`Promoted product index feature label mismatch for ${productSlug}/${featureSlug}: ${relativeToCwd(productIndexPath)} missing ${expectedLine}`);
+        }
       }
     }
     const serviceCardPath = path.join(productDir, "card.json");

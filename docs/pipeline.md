@@ -425,7 +425,9 @@ Markdown is rewritten.
 Step 10 also rejects promoted product indexes that are missing the service card
 link, missing any promoted feature README link listed by the promotion
 manifest, or still linking stale feature or service artifact paths before any
-radar Markdown is rewritten.
+radar Markdown is rewritten. It also rejects promoted product indexes whose
+title, Step 08 provenance line, summary values, or promoted feature link labels
+have drifted from the promotion manifest and canonical Step 08 product card.
 
 During regeneration, Step 10 removes stale Markdown files directly under
 `radar/products/` when they do not correspond to a currently promoted artifact

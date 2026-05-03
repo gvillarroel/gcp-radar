@@ -569,6 +569,10 @@ Step 10 must also fail before rewriting reports when a promoted product index
 is missing the promoted service-card link, is missing any promoted feature
 README link from the product promotion manifest, or still links stale
 feature/service artifact paths that are not part of that manifest.
+Step 10 must also fail before rewriting reports when a promoted product index
+has a stale title, Step 08 provenance line, summary value, or promoted feature
+link label that no longer matches the promotion manifest and canonical Step 08
+product card.
 
 Step 10 owns the generated Markdown files directly under `radar/products/`.
 During report generation, stale product reports that do not match the current
