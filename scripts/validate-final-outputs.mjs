@@ -42,6 +42,7 @@ const existsCache = new Map();
 const jsonCache = new Map();
 const directoryCache = new Map();
 const recursiveFilesCache = new Map();
+const recursiveDirsCache = new Map();
 
 async function exists(target) {
   const resolved = path.resolve(target);
@@ -141,6 +142,28 @@ async function listFilesRecursive(directory) {
   return files;
 }
 
+async function listDirsRecursive(directory) {
+  const resolved = path.resolve(directory);
+  if (recursiveDirsCache.has(resolved)) {
+    return recursiveDirsCache.get(resolved);
+  }
+  if (!(await exists(resolved))) {
+    return [];
+  }
+  const entries = await readdir(resolved, { withFileTypes: true });
+  const dirs = [];
+  for (const entry of entries) {
+    if (!entry.isDirectory()) {
+      continue;
+    }
+    const target = path.join(resolved, entry.name);
+    dirs.push(target, ...await listDirsRecursive(target));
+  }
+  dirs.sort((left, right) => left.localeCompare(right));
+  recursiveDirsCache.set(resolved, dirs);
+  return dirs;
+}
+
 function isOfficialGoogleUrl(url) {
   try {
     const parsedUrl = new URL(url);
@@ -215,6 +238,32 @@ function promotionFeatureList(promotion, field) {
 
 function escapeMarkdownLinkLabel(label) {
   return String(label || "").replace(/([\\[\]])/g, "\\$1");
+}
+
+async function validateFinalOutputDirectoryNamesAreLowercase() {
+  const findings = [];
+  const roots = [
+    { label: "artifacts", root: artifactsRoot },
+    { label: "radar", root: radarRoot },
+    { label: "step08", root: step08Root },
+    { label: "step09", root: step09Root },
+    { label: "step10", root: step10Root },
+  ];
+  for (const { label, root } of roots) {
+    for (const dir of await listDirsRecursive(root)) {
+      const dirName = path.basename(dir);
+      if (dirName !== dirName.toLowerCase()) {
+        findings.push({
+          severity: "error",
+          rule: "final_output_directory_name_not_lowercase",
+          path: dir,
+          root: label,
+          directory_name: dirName,
+        });
+      }
+    }
+  }
+  return findings;
 }
 
 async function loadStep08Inventory() {
@@ -3306,6 +3355,7 @@ async function validateRadarMatchesArtifacts() {
 }
 
 async function main() {
+  const finalOutputDirectoryNameFindings = await validateFinalOutputDirectoryNamesAreLowercase();
   const artifactValidation = await validateArtifacts();
   const artifactIndexFindings = await validateArtifactProductIndexes();
   const artifactMarkdownExternalLinkFindings = await validateArtifactMarkdownExternalLinksAreOfficial();
@@ -3324,6 +3374,7 @@ async function main() {
   const step09IndexFindings = await validateStep09IndexMatchesArtifacts();
   const radarArtifactFindings = await validateRadarMatchesArtifacts();
   const findings = [
+    ...finalOutputDirectoryNameFindings,
     ...artifactValidation.findings,
     ...artifactIndexFindings,
     ...artifactMarkdownExternalLinkFindings,

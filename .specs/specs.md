@@ -590,7 +590,11 @@ Final-output validation must confirm that the promoted artifact inventory,
 `data/step-09/current/index.json`, `data/step-10/current/index.json`, and
 `radar/products/*.md` agree exactly. Stale product reports, missing product
 reports, mismatched Step 09 or Step 10 counts, and radar references to
-intermediate `data/step-*` paths are validation failures. The Step 09 index
+intermediate `data/step-*` paths are validation failures.
+Final-output validation must also reject non-lowercase directory names under
+the final output boundary: `artifacts/`, `radar/`, `data/step-08/current/`,
+`data/step-09/current/`, and `data/step-10/current/`.
+The Step 09 index
 must use the current Step 09 schema version, record the same Step 08 root and
 artifacts root that final-output validation is checking, and its product list
 must be sorted, must not contain duplicate or stale entries, and must keep each

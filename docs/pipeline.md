@@ -429,7 +429,11 @@ Final validation checks the report boundary after Step 10. The promoted product
 directories under `artifacts/`, the Step 09 promotion index, the product reports
 under `radar/products/`, and `data/step-10/current/index.json` must describe
 the same product inventory and feature counts. Stale or missing product reports
-fail validation. The Step 09 index must record the same Step 08 root and
+fail validation. Final validation also rejects non-lowercase directory names
+under `artifacts/`, `radar/`, `data/step-08/current/`,
+`data/step-09/current/`, and `data/step-10/current/`, keeping final outputs
+aligned with the repository-wide lowercase directory convention.
+The Step 09 index must record the same Step 08 root and
 artifacts root being validated, use the current Step 09 schema version, and its
 product list must be sorted, must not contain duplicate or stale product
 entries, and must keep product names aligned with promotion manifests. Its

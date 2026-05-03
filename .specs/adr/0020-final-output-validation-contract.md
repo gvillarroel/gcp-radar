@@ -38,6 +38,9 @@ The validator must check:
 - artifact IAM roles and permissions still exist in the Step 08 inventory
 - radar Markdown and JSON files do not reference intermediate `data/step-*`
   paths
+- final output directories under `artifacts/`, `radar/`,
+  `data/step-08/current/`, `data/step-09/current/`, and
+  `data/step-10/current/` use lowercase directory names
 - radar Markdown links that point to promoted `artifacts/` content resolve to
   existing artifact files or directories
 - every external HTTP(S) link in promoted artifact Markdown points to an
