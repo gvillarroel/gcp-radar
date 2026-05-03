@@ -62,6 +62,11 @@ for external HTTP(S) links. If any external link does not point to an official
 Google host, Step 10 fails before rewriting final reports so artifact
 source-policy drift is caught at the report-generation boundary.
 
+Step 10 also checks promoted feature README content against the promoted
+feature card before rewriting reports. It rejects README drift in feature
+identity, lifecycle lines, official evidence links, IAM status and rendered IAM
+detail, security capability names, and official security evidence links.
+
 Step 10 also verifies that each promoted product index links the product
 service card and every promoted feature README listed in the promotion
 manifest, and that it does not retain stale local feature README or service

@@ -565,6 +565,10 @@ are not official Google HTTP(S) URLs.
 Step 10 must also fail before rewriting reports when promoted product indexes
 or feature READMEs contain external HTTP(S) links outside official Google
 hosts.
+Step 10 must also fail before rewriting reports when promoted feature READMEs
+have drifted from their promoted feature cards, including identity, lifecycle,
+official evidence links, IAM status and details, security capability names,
+and official security evidence links.
 Step 10 must also fail before rewriting reports when a promoted product index
 is missing the promoted service-card link, is missing any promoted feature
 README link from the product promotion manifest, or still links stale

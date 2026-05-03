@@ -167,6 +167,91 @@ function collectSecurityCapabilityEvidenceLinks(capabilities) {
   return [...new Set((capabilities || []).flatMap((capability) => capability.evidence_links || []))];
 }
 
+function validateFeatureReadmeAgainstCard(productSlug, featureSlug, readmePath, readme, card, errors) {
+  const identityLines = [
+    `Product: ${card.product_name || ""}`,
+    `Feature slug: \`${card.feature_slug || ""}\``,
+    `Coverage: \`${card.coverage_status || "unknown"}\``,
+  ];
+  for (const line of identityLines) {
+    if (!readme.includes(line)) {
+      errors.push(`Promoted feature README identity mismatch for ${productSlug}/${featureSlug}: ${relativeToCwd(readmePath)} missing ${line}`);
+    }
+  }
+
+  const lifecycle = card.lifecycle || {};
+  const lifecycleLines = [
+    `- Latest feature date: ${lifecycle.latest_feature_date || "unknown"}`,
+    `- Deprecation date: ${lifecycle.deprecation_date || "none recorded"}`,
+    `- Status: ${lifecycle.status}`,
+  ];
+  for (const line of lifecycleLines) {
+    if (!readme.includes(line)) {
+      errors.push(`Promoted feature README lifecycle mismatch for ${productSlug}/${featureSlug}: ${relativeToCwd(readmePath)} missing ${line}`);
+    }
+  }
+
+  const officialSourceLinks = (card.evidence?.source_links || []).filter(isOfficialGoogleUrl);
+  if (officialSourceLinks.length > 0 && !officialSourceLinks.some((link) => readme.includes(link))) {
+    errors.push(`Promoted feature README missing official evidence link for ${productSlug}/${featureSlug}: ${relativeToCwd(readmePath)}`);
+  }
+
+  const iam = card.iam || {};
+  const iamStatus = iam.iam_mapping_status || "unknown";
+  const iamStatusLine = `IAM mapping: \`${iamStatus}\``;
+  if (!readme.includes(iamStatusLine)) {
+    errors.push(`Promoted feature README IAM status mismatch for ${productSlug}/${featureSlug}: ${relativeToCwd(readmePath)} missing ${iamStatusLine}`);
+  }
+
+  if (iamStatus === "explicit") {
+    for (const role of iam.explicit_roles || []) {
+      if (!readme.includes(`\`${role}\``)) {
+        errors.push(`Promoted feature README missing explicit IAM role for ${productSlug}/${featureSlug}: ${role}`);
+      }
+    }
+    for (const permission of iam.explicit_permissions || []) {
+      const permissionName = permission?.permission;
+      if (permissionName && !readme.includes(`\`${permissionName}\``)) {
+        errors.push(`Promoted feature README missing explicit IAM permission for ${productSlug}/${featureSlug}: ${permissionName}`);
+      }
+    }
+  } else if (iamStatus === "derived_from_permission_prefix") {
+    const qualifier = "No explicit feature-level IAM statement was found.";
+    if (!readme.includes(qualifier)) {
+      errors.push(`Promoted feature README missing derived IAM qualifier for ${productSlug}/${featureSlug}: ${relativeToCwd(readmePath)}`);
+    }
+    for (const permission of (iam.derived_permissions || []).slice(0, 20)) {
+      const permissionName = permission?.permission;
+      if (permissionName && !readme.includes(`\`${permissionName}\``)) {
+        errors.push(`Promoted feature README missing derived IAM permission for ${productSlug}/${featureSlug}: ${permissionName}`);
+      }
+    }
+  } else {
+    const qualifier = "No defensible IAM mapping was found in the current evidence.";
+    if (!readme.includes(qualifier)) {
+      errors.push(`Promoted feature README missing unknown IAM qualifier for ${productSlug}/${featureSlug}: ${relativeToCwd(readmePath)}`);
+    }
+  }
+
+  const securityCapabilities = Array.isArray(card.security_capabilities) ? card.security_capabilities : [];
+  if (securityCapabilities.length === 0) {
+    const qualifier = "No security capability was identified from the current evidence.";
+    if (!readme.includes(qualifier)) {
+      errors.push(`Promoted feature README missing no-security qualifier for ${productSlug}/${featureSlug}: ${relativeToCwd(readmePath)}`);
+    }
+  }
+  for (const capability of securityCapabilities) {
+    if (capability?.capability && !readme.includes(capability.capability)) {
+      errors.push(`Promoted feature README missing security capability for ${productSlug}/${featureSlug}: ${capability.capability}`);
+    }
+    for (const link of (capability?.evidence_links || []).filter(isOfficialGoogleUrl)) {
+      if (!readme.includes(link)) {
+        errors.push(`Promoted feature README missing security evidence link for ${productSlug}/${featureSlug}: ${link}`);
+      }
+    }
+  }
+}
+
 function validatePromotionFeatureLists(productSlug, promotion, errors) {
   for (const field of ["promoted_features", "skipped_features"]) {
     if (!Array.isArray(promotion[field])) {
@@ -392,10 +477,11 @@ async function loadArtifacts() {
         errors.push(`Promotion manifest artifact_card mismatch for ${productSlug}/${feature.feature_slug}: expected ${expectedFeatureCard}, got ${feature.artifact_card || "missing"}`);
       }
       const featureReadmePath = path.join(productDir, feature.feature_slug, "README.md");
+      let featureReadmeMarkdown = null;
       if (!(await exists(featureReadmePath))) {
         errors.push(`Missing promoted feature README for ${productSlug}/${feature.feature_slug}: ${relativeToCwd(featureReadmePath)}`);
       } else {
-        const featureReadmeMarkdown = await readText(featureReadmePath);
+        featureReadmeMarkdown = await readText(featureReadmePath);
         for (const url of collectNonOfficialUrls(collectExternalMarkdownUrls(featureReadmeMarkdown))) {
           errors.push(`Promoted feature README has non-official external link for ${productSlug}/${feature.feature_slug}: ${relativeToCwd(featureReadmePath)} -> ${url}`);
         }
@@ -431,6 +517,9 @@ async function loadArtifacts() {
         }
         for (const url of collectNonOfficialUrls(collectSecurityCapabilityEvidenceLinks(card.security_capabilities))) {
           errors.push(`Promoted feature card has non-official security evidence link for ${productSlug}/${feature.feature_slug}: ${url}`);
+        }
+        if (featureReadmeMarkdown !== null) {
+          validateFeatureReadmeAgainstCard(productSlug, feature.feature_slug, featureReadmePath, featureReadmeMarkdown, card, errors);
         }
         features.push(card);
       } else {

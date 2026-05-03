@@ -422,6 +422,10 @@ HTTP(S) URLs before any radar Markdown is rewritten.
 Step 10 also rejects promoted product index and feature README Markdown that
 contains external HTTP(S) links outside official Google hosts before any radar
 Markdown is rewritten.
+Step 10 also rejects promoted feature READMEs that have drifted from their
+promoted feature cards before rewriting final reports. The preflight checks
+identity, lifecycle, official evidence links, IAM status and details, security
+capability names, and official security evidence links.
 Step 10 also rejects promoted product indexes that are missing the service card
 link, missing any promoted feature README link listed by the promotion
 manifest, or still linking stale feature or service artifact paths before any
