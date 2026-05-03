@@ -292,6 +292,27 @@ function validatePromotionFeatureLists(productSlug, promotion, errors) {
   }
 }
 
+function validatePromotionWarningPolicy(productSlug, promotion, errors) {
+  if (!Array.isArray(promotion.accepted_warning_rules)) {
+    const actualType = promotion.accepted_warning_rules === null ? "null" : typeof promotion.accepted_warning_rules;
+    errors.push(`Promotion manifest accepted_warning_rules must be an array for ${productSlug}: got ${actualType}`);
+    return;
+  }
+
+  const seen = new Set();
+  let previousRule = "";
+  for (const rule of promotion.accepted_warning_rules.map((value) => String(value))) {
+    if (seen.has(rule)) {
+      errors.push(`Promotion manifest accepted_warning_rules has duplicate rule for ${productSlug}: ${rule}`);
+    }
+    seen.add(rule);
+    if (previousRule && compareStrings(previousRule, rule) > 0) {
+      errors.push(`Promotion manifest accepted_warning_rules must be sorted for ${productSlug}: ${previousRule} before ${rule}`);
+    }
+    previousRule = rule;
+  }
+}
+
 function formatRoles(roles, limit = 8) {
   return (roles || [])
     .slice(0, limit)
@@ -372,6 +393,7 @@ async function loadArtifacts() {
     }
     validateGeneratedAt(promotion, `Promotion manifest for ${productSlug}`, errors);
     validatePromotionFeatureLists(productSlug, promotion, errors);
+    validatePromotionWarningPolicy(productSlug, promotion, errors);
     if (promotion.product_slug !== productSlug) {
       errors.push(`Promotion manifest product_slug mismatch for ${productSlug}: expected ${productSlug}, got ${promotion.product_slug || "missing"}`);
     }

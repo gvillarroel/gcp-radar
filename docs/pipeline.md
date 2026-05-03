@@ -408,8 +408,10 @@ artifact-promotion schema version do not match the artifact path and
 canonical Step 08 product card being rendered. Required manifest identity and
 provenance fields must be present, not just correct when present. Promotion
 manifest `promoted_features` and `skipped_features` fields must be arrays
-before Step 10 can render reports from them. It also rejects stale feature
-artifact directories that are not
+before Step 10 can render reports from them. Promotion manifest
+`accepted_warning_rules` must also be a sorted, duplicate-free array before
+Step 10 can use that warning-review policy to confirm promoted feature
+eligibility. It also rejects stale feature artifact directories that are not
 listed in the promotion manifest's promoted feature inventory. It also rejects
 manifests and promoted service or feature cards whose
 `generated_at` value is missing or is not a valid ISO 8601 timestamp. It also

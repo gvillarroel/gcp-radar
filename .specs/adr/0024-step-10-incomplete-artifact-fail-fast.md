@@ -39,7 +39,9 @@ feature names, and embedded service or feature card slugs match the artifact
 path being rendered. Step 10 also checks that the promotion manifest exposes
 `promoted_features` and `skipped_features` as arrays, that those arrays give
 every canonical Step 08 feature exactly one promoted or skipped disposition,
-and that the promotion manifest, promoted service card, and
+that `accepted_warning_rules` is a sorted duplicate-free array before the
+manifest warning-review policy is used for promoted feature eligibility, and
+that the promotion manifest, promoted service card, and
 promoted feature cards use the current Step 09 artifact-promotion schema and point their
 `source_step08_card` provenance at the canonical Step 08 product card before
 rendering reports. Step 10 also checks that the promotion manifest, promoted
