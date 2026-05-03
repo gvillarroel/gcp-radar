@@ -437,7 +437,9 @@ and must match `processed_product_count`; the top-level stale feature artifact
 cleanup count must match the sum of per-product cleanup counts. The Step 10
 index must record the same artifacts root and radar root being validated, use
 the current Step 10 schema version, and its product report list must be sorted
-and must not contain duplicate entries. The Step 08 index must record the same Step 08
+and must not contain duplicate entries. It must also record a non-empty ISO
+8601 `generated_at` timestamp so generated report metadata is validated against
+a real Step 10 run value. The Step 08 index must record the same Step 08
 output root being validated, use the current Step 08 schema version, and keep
 its product inventory, feature totals, IAM status totals, card paths, and
 per-product summary fields aligned with the generated Step 08 product cards.

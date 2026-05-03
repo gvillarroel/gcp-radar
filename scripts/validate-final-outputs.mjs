@@ -176,6 +176,14 @@ function jsonEquals(left, right) {
   return JSON.stringify(normalizeForCompare(left)) === JSON.stringify(normalizeForCompare(right));
 }
 
+function isIsoTimestamp(value) {
+  if (typeof value !== "string" || value.trim() === "") {
+    return false;
+  }
+  const parsed = new Date(value);
+  return !Number.isNaN(parsed.valueOf()) && parsed.toISOString() === value;
+}
+
 function promotionFeatureList(promotion, field) {
   return Array.isArray(promotion?.[field]) ? promotion[field] : [];
 }
@@ -2975,6 +2983,20 @@ async function validateRadarMatchesArtifacts() {
       path: step10IndexPath,
       expected: expectedStep10SchemaVersion,
       actual: step10Index.schema_version || null,
+    });
+  }
+  if (!step10Index.generated_at) {
+    findings.push({
+      severity: "error",
+      rule: "step10_index_generated_at_missing",
+      path: step10IndexPath,
+    });
+  } else if (!isIsoTimestamp(step10Index.generated_at)) {
+    findings.push({
+      severity: "error",
+      rule: "step10_index_generated_at_invalid",
+      path: step10IndexPath,
+      actual: step10Index.generated_at,
     });
   }
 

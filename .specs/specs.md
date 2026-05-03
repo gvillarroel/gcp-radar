@@ -600,6 +600,8 @@ counts recorded in the index. The Step 10 index must also use
 the current Step 10 schema version, record the same artifacts root and radar
 root that final-output validation is checking, and its product report list must
 be sorted and must not contain duplicate entries.
+It must also record a non-empty ISO 8601 `generated_at` timestamp so report
+timestamp validation has a canonical run value to compare against.
 The Step 08 index must use the current Step 08 schema version, record the same
 Step 08 output root that final-output validation is checking, and keep its
 product inventory, feature totals, IAM status totals, card paths, and

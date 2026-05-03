@@ -69,6 +69,8 @@ The validator must check:
 - `data/step-10/current/index.json` product and feature counts match promoted
   artifacts
 - `data/step-10/current/index.json` uses the current Step 10 schema version
+- `data/step-10/current/index.json` records a non-empty ISO 8601
+  `generated_at` timestamp
 - `data/step-10/current/index.json` records the same artifacts root and radar
   root that final-output validation is checking
 - Step 10 product report paths are sorted and exactly match the promoted
