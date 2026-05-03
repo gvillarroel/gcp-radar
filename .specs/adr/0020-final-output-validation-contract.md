@@ -45,15 +45,21 @@ The validator must check:
 - every external HTTP(S) link in generated radar Markdown points to an official
   Google host
 - `data/step-08/current/index.json` uses the current Step 08 schema version
+- `data/step-08/current/index.json` records a non-empty ISO 8601
+  `generated_at` timestamp
 - `data/step-08/current/index.json` records the same Step 08 output root that
   final-output validation is checking
 - Step 08 product entries, feature totals, IAM status totals, card paths, and
   per-product summary fields match the generated Step 08 product cards
+- generated Step 08 product cards record non-empty ISO 8601 `generated_at`
+  timestamps
 - `radar/products/*.md` exactly matches the promoted product directories under
   `artifacts/`
 - `data/step-09/current/index.json` product and feature counts match promoted
   artifacts
 - `data/step-09/current/index.json` uses the current Step 09 schema version
+- `data/step-09/current/index.json` records a non-empty ISO 8601
+  `generated_at` timestamp
 - `data/step-09/current/index.json` records the same Step 08 root and
   artifacts root that final-output validation is checking
 - Step 09 product entries are sorted and exactly match the promoted artifact
@@ -69,6 +75,8 @@ The validator must check:
   cleanup counts
 - every promotion manifest, promoted service card, and promoted feature card
   uses the current Step 09 artifact-promotion schema version
+- every promotion manifest, promoted service card, and promoted feature card
+  records a non-empty ISO 8601 `generated_at` timestamp
 - `data/step-10/current/index.json` product and feature counts match promoted
   artifacts
 - `data/step-10/current/index.json` uses the current Step 10 schema version

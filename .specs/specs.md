@@ -609,6 +609,9 @@ The Step 08 index must use the current Step 08 schema version, record the same
 Step 08 output root that final-output validation is checking, and keep its
 product inventory, feature totals, IAM status totals, card paths, and
 per-product summary fields aligned with the generated Step 08 product cards.
+The Step 08 index and generated product cards must also record non-empty ISO
+8601 `generated_at` timestamps so card-construction metadata remains
+auditable.
 The fixed Step 10 report paths recorded in `data/step-10/current/index.json`
 must match the canonical radar report layout and resolve to existing files.
 Every external HTTP(S) link in generated radar Markdown must resolve to an
@@ -663,6 +666,9 @@ skipped feature names aligned with the promoted artifact cards and canonical
 Step 08 product card, because those manifest labels feed final radar reports.
 Promotion manifests must also keep promoted and skipped feature inventories as
 arrays so final validation can audit every feature deterministically.
+The Step 09 index, each promotion manifest, and each promoted service or
+feature artifact card must also record non-empty ISO 8601 `generated_at`
+timestamps so promotion metadata cannot silently lose run provenance.
 Each product artifact index must link every promoted feature README for that
 product, must link the promoted service card, and must not link feature README
 files or service-card paths outside the product's promotion manifest.

@@ -446,6 +446,11 @@ a real Step 10 run value. The Step 08 index must record the same Step 08
 output root being validated, use the current Step 08 schema version, and keep
 its product inventory, feature totals, IAM status totals, card paths, and
 per-product summary fields aligned with the generated Step 08 product cards.
+The Step 08 index and generated product cards must also record non-empty ISO
+8601 `generated_at` timestamps. The Step 09 index, each promotion manifest,
+and each promoted service or feature artifact card must record non-empty ISO
+8601 `generated_at` timestamps as well, so validation can detect missing run
+provenance before final reporting is accepted.
 Radar Markdown links to promoted `artifacts/` content must
 resolve to existing files or directories. External HTTP(S) links in generated
 radar Markdown and promoted artifact Markdown must point to official Google

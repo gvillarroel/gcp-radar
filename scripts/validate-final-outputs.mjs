@@ -188,6 +188,27 @@ function isIsoTimestamp(value) {
   return !Number.isNaN(parsed.valueOf()) && parsed.toISOString() === value;
 }
 
+function validateGeneratedAtField(record, recordPath, rulePrefix, extra = {}) {
+  if (!record?.generated_at) {
+    return [{
+      severity: "error",
+      rule: `${rulePrefix}_generated_at_missing`,
+      path: recordPath,
+      ...extra,
+    }];
+  }
+  if (!isIsoTimestamp(record.generated_at)) {
+    return [{
+      severity: "error",
+      rule: `${rulePrefix}_generated_at_invalid`,
+      path: recordPath,
+      actual: record.generated_at,
+      ...extra,
+    }];
+  }
+  return [];
+}
+
 function promotionFeatureList(promotion, field) {
   return Array.isArray(promotion?.[field]) ? promotion[field] : [];
 }
@@ -249,6 +270,7 @@ async function validateArtifacts() {
           actual: promotion.schema_version || null,
         });
       }
+      findings.push(...validateGeneratedAtField(promotion, promotionPath, "promotion_manifest", { product_slug: productSlug }));
       const skippedFeatures = promotionFeatureList(promotion, "skipped_features");
       const acceptedWarningRules = new Set(Array.isArray(promotion.accepted_warning_rules) ? promotion.accepted_warning_rules : []);
       if (!Array.isArray(promotion.accepted_warning_rules)) {
@@ -552,6 +574,9 @@ async function validateArtifacts() {
         actual: serviceCard.service_slug,
       });
     }
+    if (serviceCard) {
+      findings.push(...validateGeneratedAtField(serviceCard, serviceCardPath, "service_card", { product_slug: productSlug }));
+    }
     for (const link of serviceCard?.official_source_links || []) {
       if (!isOfficialGoogleUrl(link)) {
         findings.push({ severity: "error", rule: "non_official_service_source_link", path: serviceCardPath, link });
@@ -589,6 +614,7 @@ async function validateArtifacts() {
           actual: card.schema_version || null,
         });
       }
+      findings.push(...validateGeneratedAtField(card, cardPath, "feature_card", { product_slug: productSlug, feature_slug: featureSlug }));
       if (card.product_slug !== productSlug) {
         findings.push({
           severity: "error",
@@ -2272,6 +2298,7 @@ async function validateStep09IndexMatchesArtifacts() {
       actual: step09Index.schema_version || null,
     });
   }
+  findings.push(...validateGeneratedAtField(step09Index, step09IndexPath, "step09_index"));
   if (!Array.isArray(step09Index.accepted_warning_rules)) {
     findings.push({
       severity: "error",
@@ -2564,6 +2591,7 @@ async function validateStep08IndexMatchesCards() {
       actual: step08Index.schema_version || null,
     });
   }
+  findings.push(...validateGeneratedAtField(step08Index, step08IndexPath, "step08_index"));
 
   const expectedOutputRoot = path.relative(process.cwd(), step08Root).replace(/\\/g, "/") || ".";
   const actualOutputRoot = String(step08Index.output_root || "").replace(/\\/g, "/");
@@ -2616,6 +2644,7 @@ async function validateStep08IndexMatchesCards() {
       findings.push({ severity: "error", rule: "step08_product_card_missing", path: cardPath, product_slug: productSlug });
       continue;
     }
+    findings.push(...validateGeneratedAtField(card, cardPath, "step08_product_card", { product_slug: productSlug }));
 
     const features = Array.isArray(card.features) ? card.features : [];
     const explicitCount = features.filter((feature) => feature.iam?.iam_mapping_status === "explicit").length;
