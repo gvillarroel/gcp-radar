@@ -430,7 +430,10 @@ the same product inventory and feature counts. Stale or missing product reports
 fail validation. The Step 09 index must record the same Step 08 root and
 artifacts root being validated, use the current Step 09 schema version, and its
 product list must be sorted, must not contain duplicate or stale product
-entries, and must keep product names aligned with promotion manifests. Final
+entries, and must keep product names aligned with promotion manifests. Its
+accepted warning-rule policy must be an array, sorted, duplicate-free, and
+must match every product promotion manifest so final validation can detect
+stale warning-review policy. Final
 validation also checks the Step 09 latest-run scope metadata: processed product
 slugs must be sorted and duplicate-free, must point at existing Step 08 cards,
 and must match `processed_product_count`; the top-level stale feature artifact

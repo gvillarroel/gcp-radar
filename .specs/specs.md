@@ -591,7 +591,10 @@ intermediate `data/step-*` paths are validation failures. The Step 09 index
 must use the current Step 09 schema version, record the same Step 08 root and
 artifacts root that final-output validation is checking, and its product list
 must be sorted, must not contain duplicate or stale entries, and must keep each
-product name aligned with the corresponding promotion manifest. Its latest-run
+product name aligned with the corresponding promotion manifest. Its accepted
+warning-rule policy must be an array, sorted, duplicate-free, and must match
+the `accepted_warning_rules` array embedded in every product promotion
+manifest. Its latest-run
 processed product scope must also be internally consistent:
 `processed_products` must be a sorted duplicate-free list of products with canonical Step 08 cards,
 `processed_product_count` must match that list, and

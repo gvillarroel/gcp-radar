@@ -176,6 +176,10 @@ function jsonEquals(left, right) {
   return JSON.stringify(normalizeForCompare(left)) === JSON.stringify(normalizeForCompare(right));
 }
 
+function stringArray(value) {
+  return Array.isArray(value) ? value.map((item) => String(item)) : [];
+}
+
 function isIsoTimestamp(value) {
   if (typeof value !== "string" || value.trim() === "") {
     return false;
@@ -216,6 +220,10 @@ async function validateArtifacts() {
   const findings = [];
   let featureCount = 0;
   const inventory = await loadStep08Inventory();
+  const step09Index = await readJson(path.join(step09Root, "index.json"), null);
+  const expectedAcceptedWarningRules = Array.isArray(step09Index?.accepted_warning_rules)
+    ? stringArray(step09Index.accepted_warning_rules)
+    : null;
 
   for (const productSlug of await listDirs(artifactsRoot)) {
     const productDir = path.join(artifactsRoot, productSlug);
@@ -251,6 +259,18 @@ async function validateArtifacts() {
           product_slug: productSlug,
           actual_type: promotion.accepted_warning_rules === null ? "null" : typeof promotion.accepted_warning_rules,
         });
+      } else {
+        const actualAcceptedWarningRules = stringArray(promotion.accepted_warning_rules);
+        if (expectedAcceptedWarningRules && !jsonEquals(actualAcceptedWarningRules, expectedAcceptedWarningRules)) {
+          findings.push({
+            severity: "error",
+            rule: "promotion_manifest_accepted_warning_rules_mismatch",
+            path: promotionPath,
+            product_slug: productSlug,
+            expected: expectedAcceptedWarningRules,
+            actual: actualAcceptedWarningRules,
+          });
+        }
       }
       for (const field of ["promoted_features", "skipped_features"]) {
         if (!Array.isArray(promotion[field])) {
@@ -2251,6 +2271,38 @@ async function validateStep09IndexMatchesArtifacts() {
       expected: expectedStep09SchemaVersion,
       actual: step09Index.schema_version || null,
     });
+  }
+  if (!Array.isArray(step09Index.accepted_warning_rules)) {
+    findings.push({
+      severity: "error",
+      rule: "step09_index_accepted_warning_rules_not_array",
+      path: step09IndexPath,
+      actual_type: step09Index.accepted_warning_rules === null ? "null" : typeof step09Index.accepted_warning_rules,
+    });
+  } else {
+    const seenAcceptedWarningRules = new Set();
+    let previousAcceptedWarningRule = "";
+    for (const rule of stringArray(step09Index.accepted_warning_rules)) {
+      if (seenAcceptedWarningRules.has(rule)) {
+        findings.push({
+          severity: "error",
+          rule: "step09_index_duplicate_accepted_warning_rule",
+          path: step09IndexPath,
+          warning_rule: rule,
+        });
+      }
+      seenAcceptedWarningRules.add(rule);
+      if (previousAcceptedWarningRule && previousAcceptedWarningRule.localeCompare(rule) > 0) {
+        findings.push({
+          severity: "error",
+          rule: "step09_index_accepted_warning_rules_not_sorted",
+          path: step09IndexPath,
+          previous_warning_rule: previousAcceptedWarningRule,
+          warning_rule: rule,
+        });
+      }
+      previousAcceptedWarningRule = rule;
+    }
   }
 
   const expectedArtifactsRoot = path.relative(process.cwd(), artifactsRoot).replace(/\\/g, "/") || ".";
