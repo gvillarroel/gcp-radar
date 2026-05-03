@@ -556,6 +556,9 @@ payloads in the canonical Step 08 card.
 Step 10 must also reject promotion manifests, promoted service cards, and
 promoted feature cards whose `schema_version` does not match the current Step
 09 artifact-promotion schema.
+Step 10 must also reject promotion manifests, promoted service cards, and
+promoted feature cards that are missing a valid ISO 8601 `generated_at`
+timestamp.
 Step 10 must also fail before rewriting reports when promoted service or
 feature cards contain source links or security capability evidence links that
 are not official Google HTTP(S) URLs.

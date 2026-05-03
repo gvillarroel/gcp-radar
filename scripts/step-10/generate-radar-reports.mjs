@@ -105,6 +105,22 @@ function isOfficialGoogleUrl(url) {
   }
 }
 
+function isIsoTimestamp(value) {
+  if (typeof value !== "string" || value.trim() === "") {
+    return false;
+  }
+  const parsed = new Date(value);
+  return !Number.isNaN(parsed.valueOf()) && parsed.toISOString() === value;
+}
+
+function validateGeneratedAt(record, label, errors) {
+  if (!record?.generated_at) {
+    errors.push(`${label} generated_at is missing`);
+  } else if (!isIsoTimestamp(record.generated_at)) {
+    errors.push(`${label} generated_at is not a valid ISO 8601 timestamp: ${record.generated_at}`);
+  }
+}
+
 function collectNonOfficialUrls(urls) {
   return [...new Set(urls || [])]
     .filter((url) => !isOfficialGoogleUrl(url));
@@ -201,6 +217,7 @@ async function loadArtifacts() {
     if (promotion.schema_version !== expectedStep09SchemaVersion) {
       errors.push(`Promotion manifest schema_version mismatch for ${productSlug}: expected ${expectedStep09SchemaVersion}, got ${promotion.schema_version || "missing"}`);
     }
+    validateGeneratedAt(promotion, `Promotion manifest for ${productSlug}`, errors);
     validatePromotionFeatureLists(productSlug, promotion, errors);
     if (promotion.product_slug !== productSlug) {
       errors.push(`Promotion manifest product_slug mismatch for ${productSlug}: expected ${productSlug}, got ${promotion.product_slug || "missing"}`);
@@ -230,6 +247,7 @@ async function loadArtifacts() {
       if (serviceCard.schema_version !== expectedStep09SchemaVersion) {
         errors.push(`Promoted service card schema_version mismatch for ${productSlug}: expected ${expectedStep09SchemaVersion}, got ${serviceCard.schema_version || "missing"}`);
       }
+      validateGeneratedAt(serviceCard, `Promoted service card for ${productSlug}`, errors);
       if (serviceCard.product_slug && serviceCard.product_slug !== productSlug) {
         errors.push(`Promoted service card product_slug mismatch for ${productSlug}: expected ${productSlug}, got ${serviceCard.product_slug}`);
       }
@@ -294,6 +312,7 @@ async function loadArtifacts() {
         if (card.schema_version !== expectedStep09SchemaVersion) {
           errors.push(`Promoted feature card schema_version mismatch for ${productSlug}/${feature.feature_slug}: expected ${expectedStep09SchemaVersion}, got ${card.schema_version || "missing"}`);
         }
+        validateGeneratedAt(card, `Promoted feature card for ${productSlug}/${feature.feature_slug}`, errors);
         if (card.product_slug !== productSlug) {
           errors.push(`Promoted feature card product_slug mismatch for ${productSlug}/${feature.feature_slug}: expected ${productSlug}, got ${card.product_slug}`);
         }

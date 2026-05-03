@@ -42,7 +42,10 @@ every canonical Step 08 feature exactly one promoted or skipped disposition,
 and that the promotion manifest, promoted service card, and
 promoted feature cards use the current Step 09 artifact-promotion schema and point their
 `source_step08_card` provenance at the canonical Step 08 product card before
-rendering reports. Step 10 also compares promoted service and feature card
+rendering reports. Step 10 also checks that the promotion manifest, promoted
+service card, and promoted feature cards expose non-empty valid ISO 8601
+`generated_at` timestamps before rendering reports. Step 10 also compares
+promoted service and feature card
 payload fields against the canonical Step 08 card for the product before
 rendering. This includes product and feature labels, IAM, security, lifecycle,
 evidence, validation, and other source-backed card payloads that feed final
@@ -65,6 +68,8 @@ Benefits:
 - final reports cannot be silently regenerated from partial promoted artifacts
 - final reports cannot be regenerated from artifact cards attached to the
   wrong product or feature identity
+- final reports cannot be regenerated from promoted artifact metadata that has
+  lost valid run timestamps
 - missing card or README artifact problems are reported at the stage that would
   consume them
 - final-output validation remains the full contract, but Step 10 now catches a

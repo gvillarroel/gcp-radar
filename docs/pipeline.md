@@ -412,6 +412,8 @@ before Step 10 can render reports from them. It also rejects stale feature
 artifact directories that are not
 listed in the promotion manifest's promoted feature inventory. It also rejects
 manifests and promoted service or feature cards whose
+`generated_at` value is missing or is not a valid ISO 8601 timestamp. It also
+rejects manifests and promoted service or feature cards whose
 rendered labels or source-backed payload fields have drifted from the
 canonical Step 08 card, including IAM, security, lifecycle, evidence, and
 validation data. Step 10 also rejects promoted service or feature cards whose
