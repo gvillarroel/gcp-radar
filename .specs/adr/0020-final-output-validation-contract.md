@@ -140,6 +140,8 @@ The validator must check:
 - each product artifact index links the promoted service card for that product
 - product artifact indexes do not retain feature README links outside the
   product's promotion manifest
+- product artifact indexes do not duplicate promoted feature README links or
+  the promoted service-card link
 - each product artifact index keeps its rendered title, Step 08 provenance,
   promoted feature count, Step 07 status, corpus health, latest feature date,
   official source-link count, and feature link labels aligned with the

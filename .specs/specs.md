@@ -709,6 +709,8 @@ timestamps so promotion metadata cannot silently lose run provenance.
 Each product artifact index must link every promoted feature README for that
 product, must link the promoted service card, and must not link feature README
 files or service-card paths outside the product's promotion manifest.
+Each promoted feature README link and the promoted service-card link must
+appear only once in the product artifact index.
 Each product artifact index must also keep its product title, Step 08
 provenance line, promoted feature count, Step 07 status, corpus health, latest
 feature date, official source-link count, and feature link labels aligned with

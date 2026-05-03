@@ -424,6 +424,16 @@ async function loadArtifacts() {
         .filter(Boolean)
         .map((featureSlug) => `./${featureSlug}/README.md`));
       const actualFeatureLinks = new Set(markdownLinks.filter((link) => link.startsWith("./") && link.endsWith("/README.md")));
+      const featureLinkCounts = new Map();
+      let serviceCardLinkCount = 0;
+      for (const link of markdownLinks) {
+        if (link.startsWith("./") && link.endsWith("/README.md")) {
+          featureLinkCounts.set(link, (featureLinkCounts.get(link) || 0) + 1);
+        }
+        if (link === "./card.json") {
+          serviceCardLinkCount += 1;
+        }
+      }
       for (const link of expectedFeatureLinks) {
         if (!actualFeatureLinks.has(link)) {
           errors.push(`Promoted product index is missing promoted feature link for ${productSlug}: ${relativeToCwd(productIndexPath)} -> ${link}`);
@@ -436,6 +446,14 @@ async function loadArtifacts() {
       }
       if (!markdownLinks.includes("./card.json")) {
         errors.push(`Promoted product index is missing service card link for ${productSlug}: ${relativeToCwd(productIndexPath)} -> ./card.json`);
+      }
+      for (const [link, count] of featureLinkCounts) {
+        if (count > 1) {
+          errors.push(`Promoted product index has duplicate feature link for ${productSlug}: ${relativeToCwd(productIndexPath)} -> ${link} (${count} times)`);
+        }
+      }
+      if (serviceCardLinkCount > 1) {
+        errors.push(`Promoted product index has duplicate service card link for ${productSlug}: ${relativeToCwd(productIndexPath)} -> ./card.json (${serviceCardLinkCount} times)`);
       }
       for (const link of markdownLinks.filter((link) => link.startsWith("./") && link.endsWith("/card.json") && link !== "./card.json")) {
         errors.push(`Promoted product index has stale service card link for ${productSlug}: ${relativeToCwd(productIndexPath)} -> ${link}`);

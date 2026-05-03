@@ -815,7 +815,9 @@ async function validateArtifactProductIndexes() {
     const expectedFeatureLinks = new Set(promotedFeatures.map((featureSlug) => `./${featureSlug}/README.md`));
     const expectedServiceCardLink = "./card.json";
     let hasServiceCardLink = false;
+    let serviceCardLinkCount = 0;
     const actualFeatureLinks = new Set();
+    const featureLinkCounts = new Map();
     const staleFeatureLinks = new Set();
     const staleServiceCardLinks = new Set();
     const linkPattern = /\[(?:\\.|[^\]\\])*\]\(([^)]+)\)/g;
@@ -825,6 +827,7 @@ async function validateArtifactProductIndexes() {
       if (link.endsWith("/card.json") || link === expectedServiceCardLink) {
         if (link === expectedServiceCardLink) {
           hasServiceCardLink = true;
+          serviceCardLinkCount += 1;
         } else if (link.startsWith("./")) {
           staleServiceCardLinks.add(link);
         }
@@ -832,6 +835,7 @@ async function validateArtifactProductIndexes() {
       if (!link.startsWith("./") || !link.endsWith("/README.md")) {
         continue;
       }
+      featureLinkCounts.set(link, (featureLinkCounts.get(link) || 0) + 1);
       if (expectedFeatureLinks.has(link)) {
         actualFeatureLinks.add(link);
       } else {
@@ -900,6 +904,18 @@ async function validateArtifactProductIndexes() {
         link,
       });
     }
+    for (const [link, count] of featureLinkCounts) {
+      if (count > 1) {
+        findings.push({
+          severity: "error",
+          rule: "duplicate_artifact_index_feature_link",
+          path: productIndexPath,
+          product_slug: productSlug,
+          link,
+          count,
+        });
+      }
+    }
     if (!hasServiceCardLink) {
       findings.push({
         severity: "error",
@@ -907,6 +923,16 @@ async function validateArtifactProductIndexes() {
         path: productIndexPath,
         product_slug: productSlug,
         link: expectedServiceCardLink,
+      });
+    }
+    if (serviceCardLinkCount > 1) {
+      findings.push({
+        severity: "error",
+        rule: "duplicate_artifact_index_service_card_link",
+        path: productIndexPath,
+        product_slug: productSlug,
+        link: expectedServiceCardLink,
+        count: serviceCardLinkCount,
       });
     }
     for (const link of staleServiceCardLinks) {
