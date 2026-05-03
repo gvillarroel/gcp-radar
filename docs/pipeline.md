@@ -451,6 +451,9 @@ a real Step 10 run value. The Step 08 index must record the same Step 08
 output root being validated, use the current Step 08 schema version, and keep
 its product inventory, feature totals, IAM status totals, card paths, and
 per-product summary fields aligned with the generated Step 08 product cards.
+Its product entries must be sorted and duplicate-free, and every indexed
+product must still have both `card.json` and `card.md` under the Step 08
+product output directory.
 The Step 08 index and generated product cards must also record non-empty ISO
 8601 `generated_at` timestamps. The Step 09 index, each promotion manifest,
 and each promoted service or feature artifact card must record non-empty ISO

@@ -51,6 +51,9 @@ The validator must check:
   final-output validation is checking
 - Step 08 product entries, feature totals, IAM status totals, card paths, and
   per-product summary fields match the generated Step 08 product cards
+- Step 08 product entries are sorted and duplicate-free
+- every Step 08 product entry still has a generated product `card.json` and
+  `card.md`
 - generated Step 08 product cards record non-empty ISO 8601 `generated_at`
   timestamps
 - `radar/products/*.md` exactly matches the promoted product directories under

@@ -2692,6 +2692,7 @@ async function validateStep08IndexMatchesCards() {
 
   const actualProducts = new Map();
   const seenProducts = new Set();
+  let previousIndexProductSlug = "";
   for (const product of productEntries) {
     const productSlug = product?.product_slug;
     if (!productSlug) {
@@ -2703,6 +2704,16 @@ async function validateStep08IndexMatchesCards() {
     }
     seenProducts.add(productSlug);
     actualProducts.set(productSlug, product);
+    if (previousIndexProductSlug && previousIndexProductSlug.localeCompare(productSlug) > 0) {
+      findings.push({
+        severity: "error",
+        rule: "step08_index_products_not_sorted",
+        path: step08IndexPath,
+        previous_product_slug: previousIndexProductSlug,
+        product_slug: productSlug,
+      });
+    }
+    previousIndexProductSlug = productSlug;
   }
 
   const expectedProducts = new Map();
@@ -2718,6 +2729,14 @@ async function validateStep08IndexMatchesCards() {
     if (!card) {
       findings.push({ severity: "error", rule: "step08_product_card_missing", path: cardPath, product_slug: productSlug });
       continue;
+    }
+    if (!(await exists(cardMarkdownPath))) {
+      findings.push({
+        severity: "error",
+        rule: "step08_product_card_markdown_missing",
+        path: cardMarkdownPath,
+        product_slug: productSlug,
+      });
     }
     findings.push(...validateGeneratedAtField(card, cardPath, "step08_product_card", { product_slug: productSlug }));
 
