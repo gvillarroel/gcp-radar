@@ -367,6 +367,7 @@ async function promoteProduct(productSlug) {
     await rm(staleDir, { recursive: true, force: true });
     staleFeatureArtifactDirs.push(relativeToCwd(staleDir));
   }
+  staleFeatureArtifactDirs.sort(compareStrings);
 
   await writeFile(path.join(productArtifactDir, "index.md"), renderProductIndex(card, promotedFeatures, relativeToCwd(cardPath)));
   await writeJson(path.join(productArtifactDir, "promotion.json"), {

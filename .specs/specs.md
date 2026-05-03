@@ -602,7 +602,11 @@ processed product scope must also be internally consistent:
 `processed_products` must be a sorted duplicate-free list of products with canonical Step 08 cards,
 `processed_product_count` must match that list, and
 `stale_feature_artifact_dir_count` must match the per-product stale cleanup
-counts recorded in the index. The Step 10 index must also use
+counts recorded in the index. Each per-product stale cleanup entry in the
+Step 09 index must also keep its removed-directory list as a sorted,
+duplicate-free array, keep its count aligned with that list, keep every path
+under the matching product artifact directory, and only list directories that
+no longer exist. The Step 10 index must also use
 the current Step 10 schema version, record the same artifacts root and radar
 root that final-output validation is checking, and its product report list must
 be sorted and must not contain duplicate entries.

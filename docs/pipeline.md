@@ -439,10 +439,13 @@ stale warning-review policy. Final
 validation also checks the Step 09 latest-run scope metadata: processed product
 slugs must be sorted and duplicate-free, must point at existing Step 08 cards,
 and must match `processed_product_count`; the top-level stale feature artifact
-cleanup count must match the sum of per-product cleanup counts. The Step 10
-index must record the same artifacts root and radar root being validated, use
-the current Step 10 schema version, and its product report list must be sorted
-and must not contain duplicate entries. It must also record a non-empty ISO
+cleanup count must match the sum of per-product cleanup counts. Each
+per-product stale cleanup entry must also expose a sorted, duplicate-free
+removed-directory list, keep its count aligned with that list, keep every path
+under the matching product artifact directory, and only list directories that
+no longer exist. The Step 10 index must record the same artifacts root and
+radar root being validated, use the current Step 10 schema version, and its
+product report list must be sorted and must not contain duplicate entries. It must also record a non-empty ISO
 8601 `generated_at` timestamp so generated report metadata is validated against
 a real Step 10 run value. The Step 08 index must record the same Step 08
 output root being validated, use the current Step 08 schema version, and keep

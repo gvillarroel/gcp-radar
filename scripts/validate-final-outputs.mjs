@@ -2509,6 +2509,81 @@ async function validateStep09IndexMatchesArtifacts() {
     });
   }
 
+  for (const product of indexProducts) {
+    const productSlug = product?.product_slug;
+    if (!productSlug) {
+      continue;
+    }
+    const staleDirs = product.stale_feature_artifact_dirs_removed;
+    if (!Array.isArray(staleDirs)) {
+      findings.push({
+        severity: "error",
+        rule: "step09_index_stale_feature_artifact_dirs_removed_not_array",
+        path: step09IndexPath,
+        product_slug: productSlug,
+        actual_type: staleDirs === null ? "null" : typeof staleDirs,
+      });
+      continue;
+    }
+    if (Number(product.stale_feature_artifact_dir_count || 0) !== staleDirs.length) {
+      findings.push({
+        severity: "error",
+        rule: "step09_index_product_stale_feature_artifact_dir_count_mismatch",
+        path: step09IndexPath,
+        product_slug: productSlug,
+        expected: staleDirs.length,
+        actual: product.stale_feature_artifact_dir_count,
+      });
+    }
+    const seenStaleDirs = new Set();
+    let previousStaleDir = "";
+    for (const staleDirValue of staleDirs) {
+      const staleDir = String(staleDirValue || "").replace(/\\/g, "/");
+      const expectedPrefix = `artifacts/${productSlug}/`;
+      if (seenStaleDirs.has(staleDir)) {
+        findings.push({
+          severity: "error",
+          rule: "step09_index_duplicate_stale_feature_artifact_dir",
+          path: step09IndexPath,
+          product_slug: productSlug,
+          stale_feature_artifact_dir: staleDir,
+        });
+      }
+      seenStaleDirs.add(staleDir);
+      if (previousStaleDir && previousStaleDir.localeCompare(staleDir) > 0) {
+        findings.push({
+          severity: "error",
+          rule: "step09_index_stale_feature_artifact_dirs_removed_not_sorted",
+          path: step09IndexPath,
+          product_slug: productSlug,
+          previous_stale_feature_artifact_dir: previousStaleDir,
+          stale_feature_artifact_dir: staleDir,
+        });
+      }
+      previousStaleDir = staleDir;
+      if (!staleDir.startsWith(expectedPrefix) || staleDir.split("/").length !== 3) {
+        findings.push({
+          severity: "error",
+          rule: "step09_index_stale_feature_artifact_dir_path_mismatch",
+          path: step09IndexPath,
+          product_slug: productSlug,
+          expected_prefix: expectedPrefix,
+          actual: staleDir || null,
+        });
+        continue;
+      }
+      if (await exists(path.resolve(process.cwd(), staleDir))) {
+        findings.push({
+          severity: "error",
+          rule: "step09_index_removed_stale_feature_artifact_dir_still_exists",
+          path: step09IndexPath,
+          product_slug: productSlug,
+          stale_feature_artifact_dir: staleDir,
+        });
+      }
+    }
+  }
+
   for (const [productSlug, expected] of expectedProducts) {
     const actual = actualProducts.get(productSlug);
     if (!actual) {
