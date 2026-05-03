@@ -240,6 +240,79 @@ function escapeMarkdownLinkLabel(label) {
   return String(label || "").replace(/([\\[\]])/g, "\\$1");
 }
 
+function expectedStep08FeatureGate(feature) {
+  const validation = feature?.validation || {};
+  if (Number(validation.fail_count || 0) > 0) {
+    return "FAIL";
+  }
+  if (Number(validation.warn_count || 0) > 0) {
+    return "WARN";
+  }
+  return "PASS";
+}
+
+function expectedStep08MarkdownTableRow(feature) {
+  const sources = (feature?.evidence?.source_links || [])
+    .slice(0, 3)
+    .map((url) => `[source](${url})`)
+    .join("<br>");
+  return `| ${[
+    feature?.feature_name || "",
+    feature?.coverage_status || "",
+    expectedStep08FeatureGate(feature),
+    feature?.iam?.iam_mapping_status || "",
+    sources,
+  ].map((value) => String(value ?? "").replace(/\n/g, " ").replace(/\|/g, "\\|")).join(" | ")} |`;
+}
+
+function validateStep08ProductMarkdownAgainstCard(productSlug, markdownPath, markdown, card) {
+  const findings = [];
+  const expectedLines = [
+    `# ${card.product_name || ""}`,
+    `Schema version: \`${card.schema_version || ""}\``,
+    `Generated at: \`${card.generated_at || ""}\``,
+    `Product status: \`${card.validation?.product_status || ""}\``,
+    `- Feature cards: ${card.feature_count}`,
+    `- Step 07 failed features: ${card.validation?.failed_feature_count}`,
+    `- Step 07 warned features: ${card.validation?.warned_feature_count}`,
+    `- Corpus health: ${card.corpus?.health_status || "unknown"}`,
+    `- IAM mapping: ${card.iam_summary?.explicit_feature_count} explicit, ${card.iam_summary?.derived_feature_count} derived, ${card.iam_summary?.unknown_feature_count} unknown`,
+    `- Service card ID: \`${card.service_card?.service_card_id || ""}\``,
+    `- Latest feature date: ${card.service_card?.lifecycle?.latest_feature_date || "unknown"}`,
+    `- Official source links: ${card.service_card?.official_source_links?.length || 0}`,
+    `- Security capabilities: ${card.service_card?.security_capability_count}`,
+  ];
+
+  for (const line of expectedLines) {
+    if (!String(markdown || "").includes(line)) {
+      findings.push({
+        severity: "error",
+        rule: "step08_product_card_markdown_summary_mismatch",
+        path: markdownPath,
+        product_slug: productSlug,
+        expected: line,
+      });
+    }
+  }
+
+  const features = Array.isArray(card.features) ? card.features : [];
+  for (const feature of features) {
+    const expectedRow = expectedStep08MarkdownTableRow(feature);
+    if (!String(markdown || "").includes(expectedRow)) {
+      findings.push({
+        severity: "error",
+        rule: "step08_product_card_markdown_feature_row_mismatch",
+        path: markdownPath,
+        product_slug: productSlug,
+        feature_slug: feature?.feature_slug || null,
+        expected: expectedRow,
+      });
+    }
+  }
+
+  return findings;
+}
+
 async function validateFinalOutputDirectoryNamesAreLowercase() {
   const findings = [];
   const roots = [
@@ -2812,6 +2885,9 @@ async function validateStep08IndexMatchesCards() {
         path: cardMarkdownPath,
         product_slug: productSlug,
       });
+    } else {
+      const cardMarkdown = await readText(cardMarkdownPath, "");
+      findings.push(...validateStep08ProductMarkdownAgainstCard(productSlug, cardMarkdownPath, cardMarkdown, card));
     }
     findings.push(...validateGeneratedAtField(card, cardPath, "step08_product_card", { product_slug: productSlug }));
 

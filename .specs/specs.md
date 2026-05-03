@@ -648,7 +648,11 @@ Step 08 product must have both its generated `card.json` and generated
 `card.md` so the card layer remains reviewable before promotion.
 The Step 08 index and generated product cards must also record non-empty ISO
 8601 `generated_at` timestamps so card-construction metadata remains
-auditable.
+auditable. Each generated Step 08 product `card.md` must also keep its
+rendered product title, schema version, generation timestamp, Step 07 summary,
+corpus health, IAM summary, service-card summary, and feature rows aligned
+with the matching Step 08 `card.json` so the reviewable card layer cannot
+silently drift from its canonical JSON card.
 The fixed Step 10 report paths recorded in `data/step-10/current/index.json`
 must match the canonical radar report layout and resolve to existing files.
 Every external HTTP(S) link in generated radar Markdown must resolve to an

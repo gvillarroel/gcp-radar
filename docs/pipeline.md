@@ -477,7 +477,10 @@ its product inventory, feature totals, IAM status totals, card paths, and
 per-product summary fields aligned with the generated Step 08 product cards.
 Its product entries must be sorted and duplicate-free, and every indexed
 product must still have both `card.json` and `card.md` under the Step 08
-product output directory.
+product output directory. Final validation also checks that each Step 08
+product `card.md` still renders the product title, schema version, generation
+timestamp, Step 07 summary, corpus health, IAM summary, service-card summary,
+and feature rows from the matching `card.json`.
 The Step 08 index and generated product cards must also record non-empty ISO
 8601 `generated_at` timestamps. The Step 09 index, each promotion manifest,
 and each promoted service or feature artifact card must record non-empty ISO

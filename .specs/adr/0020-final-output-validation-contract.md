@@ -57,6 +57,10 @@ The validator must check:
 - Step 08 product entries are sorted and duplicate-free
 - every Step 08 product entry still has a generated product `card.json` and
   `card.md`
+- every generated Step 08 product `card.md` keeps its rendered product title,
+  schema version, generation timestamp, Step 07 summary, corpus health, IAM
+  summary, service-card summary, and feature rows aligned with the matching
+  Step 08 `card.json`
 - generated Step 08 product cards record non-empty ISO 8601 `generated_at`
   timestamps
 - `radar/products/*.md` exactly matches the promoted product directories under
