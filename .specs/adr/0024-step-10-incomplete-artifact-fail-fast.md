@@ -67,6 +67,12 @@ feature card before rewriting reports. It rejects README drift in feature
 identity, lifecycle lines, official evidence links, IAM status and rendered IAM
 detail, security capability names, and official security evidence links.
 
+Step 10 also checks that each promoted feature card still satisfies the Step 09
+promotion eligibility contract before rewriting reports. A promoted feature
+must still have Step 07 pass status, zero failures, a non-empty technical
+summary, at least one source link, and no warning rules outside the product
+promotion manifest's accepted warning-rule policy.
+
 Step 10 also verifies that each promoted product index links the product
 service card and every promoted feature README listed in the promotion
 manifest, and that it does not retain stale local feature README or service

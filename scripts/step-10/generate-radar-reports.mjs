@@ -167,6 +167,37 @@ function collectSecurityCapabilityEvidenceLinks(capabilities) {
   return [...new Set((capabilities || []).flatMap((capability) => capability.evidence_links || []))];
 }
 
+function collectUnacceptedWarningRules(feature, promotion) {
+  const acceptedWarningRules = new Set(Array.isArray(promotion?.accepted_warning_rules) ? promotion.accepted_warning_rules : []);
+  return [...new Set((feature?.validation?.findings || [])
+    .filter((finding) => finding?.severity === "warn")
+    .map((finding) => finding.rule)
+    .filter((rule) => rule && !acceptedWarningRules.has(rule)))]
+    .sort(compareStrings);
+}
+
+function validatePromotedFeatureEligibility(productSlug, featureSlug, card, promotion, errors) {
+  const validation = card?.validation || {};
+  const sourceLinks = card?.evidence?.source_links || [];
+
+  if (!validation.step07_pass) {
+    errors.push(`Promoted feature no longer satisfies Step 09 eligibility for ${productSlug}/${featureSlug}: Step 07 did not pass`);
+  }
+  if (Number(validation.fail_count || 0) > 0) {
+    errors.push(`Promoted feature no longer satisfies Step 09 eligibility for ${productSlug}/${featureSlug}: fail_count=${validation.fail_count}`);
+  }
+  if (!String(card?.extended_definition || card?.summary || "").trim()) {
+    errors.push(`Promoted feature no longer satisfies Step 09 eligibility for ${productSlug}/${featureSlug}: missing technical summary`);
+  }
+  if (sourceLinks.length === 0) {
+    errors.push(`Promoted feature no longer satisfies Step 09 eligibility for ${productSlug}/${featureSlug}: missing source links`);
+  }
+  const unacceptedWarningRules = collectUnacceptedWarningRules(card, promotion);
+  if (unacceptedWarningRules.length > 0) {
+    errors.push(`Promoted feature no longer satisfies Step 09 eligibility for ${productSlug}/${featureSlug}: unaccepted warning rules ${unacceptedWarningRules.join(", ")}`);
+  }
+}
+
 function validateFeatureReadmeAgainstCard(productSlug, featureSlug, readmePath, readme, card, errors) {
   const identityLines = [
     `Product: ${card.product_name || ""}`,
@@ -518,6 +549,7 @@ async function loadArtifacts() {
         for (const url of collectNonOfficialUrls(collectSecurityCapabilityEvidenceLinks(card.security_capabilities))) {
           errors.push(`Promoted feature card has non-official security evidence link for ${productSlug}/${feature.feature_slug}: ${url}`);
         }
+        validatePromotedFeatureEligibility(productSlug, feature.feature_slug, card, promotion, errors);
         if (featureReadmeMarkdown !== null) {
           validateFeatureReadmeAgainstCard(productSlug, feature.feature_slug, featureReadmePath, featureReadmeMarkdown, card, errors);
         }

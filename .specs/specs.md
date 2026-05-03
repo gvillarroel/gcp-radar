@@ -562,6 +562,11 @@ timestamp.
 Step 10 must also fail before rewriting reports when promoted service or
 feature cards contain source links or security capability evidence links that
 are not official Google HTTP(S) URLs.
+Step 10 must also fail before rewriting reports when a promoted feature card no
+longer satisfies the Step 09 promotion eligibility contract: Step 07 must have
+passed, failure count must be zero, a technical summary must be present, at
+least one source link must be present, and all warning rules must be accepted
+by the product promotion manifest.
 Step 10 must also fail before rewriting reports when promoted product indexes
 or feature READMEs contain external HTTP(S) links outside official Google
 hosts.

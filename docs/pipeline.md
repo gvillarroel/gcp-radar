@@ -419,6 +419,11 @@ canonical Step 08 card, including IAM, security, lifecycle, evidence, and
 validation data. Step 10 also rejects promoted service or feature cards whose
 source links or security capability evidence links are not official Google
 HTTP(S) URLs before any radar Markdown is rewritten.
+Step 10 also rejects promoted feature cards that no longer satisfy the Step 09
+promotion eligibility contract before rewriting final reports. Promoted
+features must still have Step 07 pass status, zero failures, a non-empty
+technical summary, at least one source link, and no warning rules outside the
+product promotion manifest's accepted warning-rule policy.
 Step 10 also rejects promoted product index and feature README Markdown that
 contains external HTTP(S) links outside official Google hosts before any radar
 Markdown is rewritten.
