@@ -647,6 +647,9 @@ no longer exist. The Step 10 index must also use
 the current Step 10 schema version, record the same artifacts root and radar
 root that final-output validation is checking, and its product report list must
 be sorted and must not contain duplicate entries.
+It must also keep `fixed_report_count`, `product_report_count`, and
+`report_count` aligned with the canonical fixed report inventory and promoted
+product report inventory.
 It must also record a non-empty ISO 8601 `generated_at` timestamp so report
 timestamp validation has a canonical run value to compare against.
 The Step 08 index must use the current Step 08 schema version, record the same

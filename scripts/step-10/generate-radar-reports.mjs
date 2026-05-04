@@ -63,8 +63,10 @@ function printIndexSummary(index) {
     radar_root: index.radar_root,
     product_count: index.product_count,
     feature_count: index.feature_count,
+    fixed_report_count: index.fixed_report_count,
+    product_report_count: index.product_report_count,
+    report_count: index.report_count,
     index_json: path.posix.join(relativeToCwd(outputRoot), "index.json"),
-    report_count: Object.values(index.reports).flat().length,
   }, null, 2));
 }
 
@@ -917,6 +919,9 @@ async function main() {
     radar_root: relativeToCwd(radarRoot),
     product_count: products.length,
     feature_count: products.reduce((sum, product) => sum + product.features.length, 0),
+    fixed_report_count: 5,
+    product_report_count: products.length,
+    report_count: products.length + 5,
     reports: {
       index: relativeToCwd(path.join(radarRoot, "index.md")),
       iam: relativeToCwd(path.join(radarRoot, "iam", "index.md")),

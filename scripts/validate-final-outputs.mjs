@@ -3506,6 +3506,7 @@ async function validateRadarMatchesArtifacts() {
     services: "radar/services/index.md",
     coverage: "radar/coverage.md",
   };
+  const expectedFixedReportCount = Object.keys(expectedFixedReports).length;
   const expectedReportKeys = new Set([...Object.keys(expectedFixedReports), "products"]);
   for (const reportKey of Object.keys(step10Index.reports || {}).sort((left, right) => left.localeCompare(right))) {
     if (!expectedReportKeys.has(reportKey)) {
@@ -3557,6 +3558,35 @@ async function validateRadarMatchesArtifacts() {
     ? productReports.map((report) => String(report).replace(/\\/g, "/"))
     : [];
   const actualReports = new Set(actualProductReports);
+  const expectedProductReportCount = expectedReports.size;
+  const expectedReportCount = expectedFixedReportCount + expectedProductReportCount;
+  if (step10Index.fixed_report_count !== expectedFixedReportCount) {
+    findings.push({
+      severity: "error",
+      rule: "step10_index_fixed_report_count_mismatch",
+      path: step10IndexPath,
+      expected: expectedFixedReportCount,
+      actual: step10Index.fixed_report_count,
+    });
+  }
+  if (step10Index.product_report_count !== expectedProductReportCount) {
+    findings.push({
+      severity: "error",
+      rule: "step10_index_product_report_count_mismatch",
+      path: step10IndexPath,
+      expected: expectedProductReportCount,
+      actual: step10Index.product_report_count,
+    });
+  }
+  if (step10Index.report_count !== expectedReportCount) {
+    findings.push({
+      severity: "error",
+      rule: "step10_index_report_count_mismatch",
+      path: step10IndexPath,
+      expected: expectedReportCount,
+      actual: step10Index.report_count,
+    });
+  }
   const seenReports = new Set();
   let previousProductReportSlug = "";
   let previousProductReport = "";

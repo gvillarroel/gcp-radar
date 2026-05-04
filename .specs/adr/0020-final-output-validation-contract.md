@@ -105,6 +105,9 @@ The validator must check:
   `generated_at` timestamp
 - `data/step-10/current/index.json` records the same artifacts root and radar
   root that final-output validation is checking
+- `data/step-10/current/index.json` keeps `fixed_report_count`,
+  `product_report_count`, and `report_count` aligned with the canonical fixed
+  report inventory and promoted product report inventory
 - Step 10 product report paths are sorted and exactly match the promoted
   product inventory without duplicate product report entries
 - fixed Step 10 report paths in `data/step-10/current/index.json` match the
