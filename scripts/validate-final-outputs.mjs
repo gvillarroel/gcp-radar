@@ -339,6 +339,66 @@ function validateStep08ProductMarkdownAgainstCard(productSlug, markdownPath, mar
   return findings;
 }
 
+function validateStep08CardOfficialLinks(productSlug, cardPath, card) {
+  const findings = [];
+  for (const link of card?.service_card?.official_source_links || []) {
+    if (!isOfficialGoogleUrl(link)) {
+      findings.push({
+        severity: "error",
+        rule: "step08_service_card_non_official_source_link",
+        path: cardPath,
+        product_slug: productSlug,
+        link,
+      });
+    }
+  }
+  for (const capability of card?.service_card?.security_capabilities || []) {
+    for (const link of capability?.evidence_links || []) {
+      if (!isOfficialGoogleUrl(link)) {
+        findings.push({
+          severity: "error",
+          rule: "step08_service_card_non_official_security_evidence_link",
+          path: cardPath,
+          product_slug: productSlug,
+          capability: capability?.capability || null,
+          link,
+        });
+      }
+    }
+  }
+  for (const feature of card?.features || []) {
+    const featureSlug = feature?.feature_slug || null;
+    for (const link of feature?.evidence?.source_links || []) {
+      if (!isOfficialGoogleUrl(link)) {
+        findings.push({
+          severity: "error",
+          rule: "step08_feature_non_official_source_link",
+          path: cardPath,
+          product_slug: productSlug,
+          feature_slug: featureSlug,
+          link,
+        });
+      }
+    }
+    for (const capability of feature?.security_capabilities || []) {
+      for (const link of capability?.evidence_links || []) {
+        if (!isOfficialGoogleUrl(link)) {
+          findings.push({
+            severity: "error",
+            rule: "step08_feature_non_official_security_evidence_link",
+            path: cardPath,
+            product_slug: productSlug,
+            feature_slug: featureSlug,
+            capability: capability?.capability || null,
+            link,
+          });
+        }
+      }
+    }
+  }
+  return findings;
+}
+
 async function validateFinalOutputDirectoryNamesAreLowercase() {
   const findings = [];
   const roots = [
@@ -2917,6 +2977,7 @@ async function validateStep08IndexMatchesCards() {
       findings.push(...validateStep08ProductMarkdownAgainstCard(productSlug, cardMarkdownPath, cardMarkdown, card));
     }
     findings.push(...validateGeneratedAtField(card, cardPath, "step08_product_card", { product_slug: productSlug }));
+    findings.push(...validateStep08CardOfficialLinks(productSlug, cardPath, card));
 
     const features = Array.isArray(card.features) ? card.features : [];
     const explicitCount = features.filter((feature) => feature.iam?.iam_mapping_status === "explicit").length;

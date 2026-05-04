@@ -653,6 +653,11 @@ rendered product title, schema version, generation timestamp, Step 07 summary,
 corpus health, IAM summary, service-card summary, and feature rows aligned
 with the matching Step 08 `card.json` so the reviewable card layer cannot
 silently drift from its canonical JSON card.
+Final-output validation must also reject Step 08 service-card source links,
+Step 08 feature source links, and Step 08 security capability evidence links
+that are not official Google HTTP(S) URLs. This check does not make every Step
+08 feature promotable, but it prevents non-authoritative evidence from
+remaining in the card layer.
 The fixed Step 10 report paths recorded in `data/step-10/current/index.json`
 must match the canonical radar report layout and resolve to existing files.
 Every external HTTP(S) link in generated radar Markdown must resolve to an
