@@ -492,8 +492,8 @@ that product's promoted artifact set remains auditable as one unit.
 
 Features can be promoted only when they pass Step 07, have official Google
 evidence links, have a non-empty technical summary, do not carry unaccepted
-blocking warnings, and do not contain non-official security capability
-evidence links.
+blocking warnings, do not contain non-official supporting page URLs, and do
+not contain non-official security capability evidence links.
 
 Step 09 must also reject a processed product before writing promoted artifacts
 when its service card contains source links or security capability evidence
@@ -573,8 +573,8 @@ The promoted service card and every promoted feature card for a product must
 also keep the same `generated_at` timestamp as that product's promotion
 manifest, because Step 09 emits those files as one promotion unit.
 Step 10 must also fail before rewriting reports when promoted service or
-feature cards contain source links or security capability evidence links that
-are not official Google HTTP(S) URLs.
+feature cards contain source links, feature supporting page URLs, or security
+capability evidence links that are not official Google HTTP(S) URLs.
 Step 10 must also fail before rewriting reports when a promoted feature card no
 longer satisfies the Step 09 promotion eligibility contract: Step 07 must have
 passed, failure count must be zero, a technical summary must be present, at
@@ -670,10 +670,10 @@ Each Step 08 product card must also keep a duplicate-free feature inventory,
 and every feature in the card must carry a non-empty feature slug before later
 promotion accounting can rely on it.
 Final-output validation must also reject Step 08 service-card source links,
-Step 08 feature source links, and Step 08 security capability evidence links
-that are not official Google HTTP(S) URLs. This check does not make every Step
-08 feature promotable, but it prevents non-authoritative evidence from
-remaining in the card layer.
+Step 08 feature source links, Step 08 feature supporting page URLs, and Step
+08 security capability evidence links that are not official Google HTTP(S)
+URLs. This check does not make every Step 08 feature promotable, but it
+prevents non-authoritative evidence from remaining in the card layer.
 Each generated Step 08 product `card.md` feature table must be the exact
 ordered projection of the matching `card.json` feature inventory, so stale or
 extra rendered feature rows cannot remain reviewable after the JSON card

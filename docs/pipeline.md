@@ -337,13 +337,16 @@ Promote validated card content into source-of-truth artifacts.
 ### Quality Bar
 
 Promotion requires Step 07 pass status, official Google evidence links, a
-non-empty summary, no unaccepted blocking warning class, and official Google
-HTTP(S) security capability evidence links.
+non-empty summary, no unaccepted blocking warning class, official Google
+HTTP(S) supporting page URLs, and official Google HTTP(S) security capability
+evidence links.
 
 Step 09 rejects a processed product before writing artifacts when the service
 card contains non-official source links or non-official security capability
-evidence links. Feature-level non-official security evidence blocks promotion
-of that feature with `non_official_security_evidence_link`.
+evidence links. Feature-level non-official supporting page URLs block
+promotion with `non_official_supporting_page_link`. Feature-level non-official
+security evidence blocks promotion of that feature with
+`non_official_security_evidence_link`.
 
 For every processed product, Step 09 prunes feature directories under
 `artifacts/<product-slug>/` that are not part of the current promotion manifest.
@@ -427,8 +430,9 @@ rejects manifests and promoted service or feature cards whose
 rendered labels or source-backed payload fields have drifted from the
 canonical Step 08 card, including IAM, security, lifecycle, evidence, and
 validation data. Step 10 also rejects promoted service or feature cards whose
-source links or security capability evidence links are not official Google
-HTTP(S) URLs before any radar Markdown is rewritten.
+source links, feature supporting page URLs, or security capability evidence
+links are not official Google HTTP(S) URLs before any radar Markdown is
+rewritten.
 Step 10 also rejects promoted feature cards that no longer satisfy the Step 09
 promotion eligibility contract before rewriting final reports. Promoted
 features must still have Step 07 pass status, zero failures, a non-empty
@@ -505,10 +509,10 @@ a non-empty `feature_slug` on every feature. Step 08 rejects duplicate feature
 slugs while building cards, and final validation rechecks that card layer
 before artifact promotion data is trusted.
 Final validation also checks existing Step 08 service-card source links,
-feature source links, and security capability evidence links. Any such link
-must be an official Google HTTP(S) URL, keeping the card-construction layer
-inside the same authoritative source policy as promoted artifacts and radar
-reports.
+feature source links, feature supporting page URLs, and security capability
+evidence links. Any such link must be an official Google HTTP(S) URL, keeping
+the card-construction layer inside the same authoritative source policy as
+promoted artifacts and radar reports.
 The Step 08 Markdown feature table must also be an exact ordered projection of
 the matching JSON feature inventory. Extra, stale, missing, or reordered
 feature rows are final-output validation failures because the reviewable card

@@ -178,6 +178,12 @@ function collectSecurityCapabilityEvidenceLinks(capabilities) {
   return [...new Set((capabilities || []).flatMap((capability) => capability.evidence_links || []))];
 }
 
+function collectSupportingPageUrls(featureCard) {
+  return [...new Set((featureCard?.evidence?.supporting_pages || [])
+    .map((page) => page?.url)
+    .filter(Boolean))];
+}
+
 function collectUnacceptedWarningRules(feature, promotion) {
   const acceptedWarningRules = new Set(Array.isArray(promotion?.accepted_warning_rules) ? promotion.accepted_warning_rules : []);
   return [...new Set((feature?.validation?.findings || [])
@@ -624,6 +630,9 @@ async function loadArtifacts() {
         }
         for (const url of collectNonOfficialUrls(card.evidence?.source_links || [])) {
           errors.push(`Promoted feature card has non-official source link for ${productSlug}/${feature.feature_slug}: ${url}`);
+        }
+        for (const url of collectNonOfficialUrls(collectSupportingPageUrls(card))) {
+          errors.push(`Promoted feature card has non-official supporting page link for ${productSlug}/${feature.feature_slug}: ${url}`);
         }
         for (const url of collectNonOfficialUrls(collectSecurityCapabilityEvidenceLinks(card.security_capabilities))) {
           errors.push(`Promoted feature card has non-official security evidence link for ${productSlug}/${feature.feature_slug}: ${url}`);

@@ -416,6 +416,22 @@ function validateStep08CardOfficialLinks(productSlug, cardPath, card) {
         });
       }
     }
+    for (const page of feature?.evidence?.supporting_pages || []) {
+      const link = page?.url || "";
+      if (!link) {
+        continue;
+      }
+      if (!isOfficialGoogleUrl(link)) {
+        findings.push({
+          severity: "error",
+          rule: "step08_feature_non_official_supporting_page_link",
+          path: cardPath,
+          product_slug: productSlug,
+          feature_slug: featureSlug,
+          link,
+        });
+      }
+    }
     for (const capability of feature?.security_capabilities || []) {
       for (const link of capability?.evidence_links || []) {
         if (!isOfficialGoogleUrl(link)) {

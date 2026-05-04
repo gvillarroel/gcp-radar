@@ -103,12 +103,19 @@ function collectSecurityCapabilityEvidenceLinks(capabilities) {
   return [...new Set((capabilities || []).flatMap((capability) => capability.evidence_links || []))];
 }
 
+function collectSupportingPageUrls(feature) {
+  return [...new Set((feature?.evidence?.supporting_pages || [])
+    .map((page) => page?.url)
+    .filter(Boolean))];
+}
+
 function collectNonOfficialUrls(urls) {
   return [...new Set(urls || [])].filter((url) => !isOfficialGoogleUrl(url));
 }
 
 function isFeaturePromotable(feature) {
   const sourceLinks = feature?.evidence?.source_links || [];
+  const supportingPageUrls = collectSupportingPageUrls(feature);
   const securityEvidenceLinks = collectSecurityCapabilityEvidenceLinks(feature?.security_capabilities || []);
   const findings = feature?.validation?.findings || [];
   const blockingWarnings = findings
@@ -129,6 +136,9 @@ function isFeaturePromotable(feature) {
   }
   if (!sourceLinks.every(isOfficialGoogleUrl)) {
     return { promotable: false, reason: "non_official_source_link" };
+  }
+  if (collectNonOfficialUrls(supportingPageUrls).length > 0) {
+    return { promotable: false, reason: "non_official_supporting_page_link" };
   }
   if (collectNonOfficialUrls(securityEvidenceLinks).length > 0) {
     return { promotable: false, reason: "non_official_security_evidence_link" };

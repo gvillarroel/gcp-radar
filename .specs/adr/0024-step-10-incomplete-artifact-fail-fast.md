@@ -67,7 +67,9 @@ would later reject as containing unpromoted feature artifacts.
 Step 10 also scans promoted product index and promoted feature README Markdown
 for external HTTP(S) links. If any external link does not point to an official
 Google host, Step 10 fails before rewriting final reports so artifact
-source-policy drift is caught at the report-generation boundary.
+source-policy drift is caught at the report-generation boundary. Promoted
+feature card supporting page URLs preserved under `evidence.supporting_pages`
+must also be official Google HTTP(S) URLs before reports can be rewritten.
 
 Step 10 also checks promoted feature README content against the promoted
 feature card before rewriting reports. It rejects README drift in feature
