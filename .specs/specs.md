@@ -674,6 +674,10 @@ Step 08 feature source links, and Step 08 security capability evidence links
 that are not official Google HTTP(S) URLs. This check does not make every Step
 08 feature promotable, but it prevents non-authoritative evidence from
 remaining in the card layer.
+Each generated Step 08 product `card.md` feature table must be the exact
+ordered projection of the matching `card.json` feature inventory, so stale or
+extra rendered feature rows cannot remain reviewable after the JSON card
+changes.
 The fixed Step 10 report paths recorded in `data/step-10/current/index.json`
 must match the canonical radar report layout and resolve to existing files.
 The Step 10 report index must not contain unknown report keys outside the

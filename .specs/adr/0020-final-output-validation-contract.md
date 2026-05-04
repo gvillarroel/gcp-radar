@@ -61,6 +61,9 @@ The validator must check:
   schema version, generation timestamp, Step 07 summary, corpus health, IAM
   summary, service-card summary, and feature rows aligned with the matching
   Step 08 `card.json`
+- every generated Step 08 product `card.md` feature table is the exact ordered
+  projection of the matching Step 08 `card.json` feature inventory, with no
+  extra or stale rendered feature rows
 - generated Step 08 product cards record non-empty ISO 8601 `generated_at`
   timestamps
 - generated Step 08 product cards have a duplicate-free feature inventory, and

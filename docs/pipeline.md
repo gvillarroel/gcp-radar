@@ -509,6 +509,10 @@ feature source links, and security capability evidence links. Any such link
 must be an official Google HTTP(S) URL, keeping the card-construction layer
 inside the same authoritative source policy as promoted artifacts and radar
 reports.
+The Step 08 Markdown feature table must also be an exact ordered projection of
+the matching JSON feature inventory. Extra, stale, missing, or reordered
+feature rows are final-output validation failures because the reviewable card
+layer must not drift from `card.json`.
 Radar Markdown links to promoted `artifacts/` content must
 resolve to existing files or directories. External HTTP(S) links in generated
 radar Markdown and promoted artifact Markdown must point to official Google

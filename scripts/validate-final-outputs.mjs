@@ -310,6 +310,7 @@ function expectedStep08MarkdownTableRow(feature) {
 
 function validateStep08ProductMarkdownAgainstCard(productSlug, markdownPath, markdown, card) {
   const findings = [];
+  const markdownText = String(markdown || "");
   const expectedLines = [
     `# ${card.product_name || ""}`,
     `Schema version: \`${card.schema_version || ""}\``,
@@ -327,7 +328,7 @@ function validateStep08ProductMarkdownAgainstCard(productSlug, markdownPath, mar
   ];
 
   for (const line of expectedLines) {
-    if (!String(markdown || "").includes(line)) {
+    if (!markdownText.includes(line)) {
       findings.push({
         severity: "error",
         rule: "step08_product_card_markdown_summary_mismatch",
@@ -339,9 +340,10 @@ function validateStep08ProductMarkdownAgainstCard(productSlug, markdownPath, mar
   }
 
   const features = Array.isArray(card.features) ? card.features : [];
+  const expectedFeatureRows = features.map(expectedStep08MarkdownTableRow);
   for (const feature of features) {
     const expectedRow = expectedStep08MarkdownTableRow(feature);
-    if (!String(markdown || "").includes(expectedRow)) {
+    if (!markdownText.includes(expectedRow)) {
       findings.push({
         severity: "error",
         rule: "step08_product_card_markdown_feature_row_mismatch",
@@ -351,6 +353,23 @@ function validateStep08ProductMarkdownAgainstCard(productSlug, markdownPath, mar
         expected: expectedRow,
       });
     }
+  }
+
+  const featureSection = markdownText.split(/\n## Features\s*\n/)[1] || "";
+  const actualFeatureRows = featureSection
+    .split(/\r?\n/)
+    .filter((line) => line.startsWith("| "))
+    .filter((line) => !line.includes("| ---"))
+    .filter((line) => !line.startsWith("| Feature | Coverage | Gate | IAM | Sources |"));
+  if (!jsonEquals(actualFeatureRows, expectedFeatureRows)) {
+    findings.push({
+      severity: "error",
+      rule: "step08_product_card_markdown_feature_rows_mismatch",
+      path: markdownPath,
+      product_slug: productSlug,
+      expected_feature_row_count: expectedFeatureRows.length,
+      actual_feature_row_count: actualFeatureRows.length,
+    });
   }
 
   return findings;
