@@ -2980,6 +2980,29 @@ async function validateStep08IndexMatchesCards() {
     findings.push(...validateStep08CardOfficialLinks(productSlug, cardPath, card));
 
     const features = Array.isArray(card.features) ? card.features : [];
+    const seenFeatureSlugs = new Set();
+    for (const feature of features) {
+      const featureSlug = feature?.feature_slug;
+      if (!featureSlug) {
+        findings.push({
+          severity: "error",
+          rule: "step08_card_feature_missing_slug",
+          path: cardPath,
+          product_slug: productSlug,
+        });
+        continue;
+      }
+      if (seenFeatureSlugs.has(featureSlug)) {
+        findings.push({
+          severity: "error",
+          rule: "step08_card_duplicate_feature_slug",
+          path: cardPath,
+          product_slug: productSlug,
+          feature_slug: featureSlug,
+        });
+      }
+      seenFeatureSlugs.add(featureSlug);
+    }
     const explicitCount = features.filter((feature) => feature.iam?.iam_mapping_status === "explicit").length;
     const derivedCount = features.filter((feature) => feature.iam?.iam_mapping_status === "derived_from_permission_prefix").length;
     const unknownCount = features.filter((feature) => feature.iam?.iam_mapping_status === "unknown").length;

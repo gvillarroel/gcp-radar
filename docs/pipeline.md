@@ -486,6 +486,10 @@ The Step 08 index and generated product cards must also record non-empty ISO
 and each promoted service or feature artifact card must record non-empty ISO
 8601 `generated_at` timestamps as well, so validation can detect missing run
 provenance before final reporting is accepted.
+Step 08 product cards must also carry a duplicate-free feature inventory with
+a non-empty `feature_slug` on every feature. Step 08 rejects duplicate feature
+slugs while building cards, and final validation rechecks that card layer
+before artifact promotion data is trusted.
 Final validation also checks existing Step 08 service-card source links,
 feature source links, and security capability evidence links. Any such link
 must be an official Google HTTP(S) URL, keeping the card-construction layer

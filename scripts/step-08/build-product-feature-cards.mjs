@@ -496,6 +496,26 @@ function buildFeatureCard(feature, gateFeature, iamMapping) {
   };
 }
 
+function assertUniqueFeatureSlugs(productSlug, features) {
+  const seen = new Set();
+  const duplicates = new Set();
+
+  for (const feature of features || []) {
+    const featureSlug = feature?.feature_slug;
+    if (!featureSlug) {
+      continue;
+    }
+    if (seen.has(featureSlug)) {
+      duplicates.add(featureSlug);
+    }
+    seen.add(featureSlug);
+  }
+
+  if (duplicates.size > 0) {
+    throw new Error(`Step 08 card for ${productSlug} contains duplicate feature slugs: ${[...duplicates].sort(compareStrings).join(", ")}`);
+  }
+}
+
 function buildServiceCard({ generatedAt, step06, validation, corpus, iamSummary, features, step02Summary = null }) {
   const officialSourceLinks = uniqueSorted(features.flatMap((feature) => feature.evidence.source_links || []));
   const lifecycleLatestDates = [
@@ -715,6 +735,7 @@ async function buildProductCard(productSlug, rolesIndex, permissionsIndex) {
       ...derived,
     }));
   }
+  assertUniqueFeatureSlugs(productSlug, features);
 
   const iamSummary = {
     explicit_feature_count: features.filter((feature) => feature.iam.iam_mapping_status === "explicit").length,

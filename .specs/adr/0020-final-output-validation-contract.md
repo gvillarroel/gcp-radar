@@ -63,6 +63,8 @@ The validator must check:
   Step 08 `card.json`
 - generated Step 08 product cards record non-empty ISO 8601 `generated_at`
   timestamps
+- generated Step 08 product cards have a duplicate-free feature inventory, and
+  every feature in that inventory has a non-empty feature slug
 - Step 08 service-card source links, Step 08 feature source links, and Step 08
   security capability evidence links use official Google HTTP(S) URLs when
   present

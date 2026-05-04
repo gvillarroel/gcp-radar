@@ -653,6 +653,9 @@ rendered product title, schema version, generation timestamp, Step 07 summary,
 corpus health, IAM summary, service-card summary, and feature rows aligned
 with the matching Step 08 `card.json` so the reviewable card layer cannot
 silently drift from its canonical JSON card.
+Each Step 08 product card must also keep a duplicate-free feature inventory,
+and every feature in the card must carry a non-empty feature slug before later
+promotion accounting can rely on it.
 Final-output validation must also reject Step 08 service-card source links,
 Step 08 feature source links, and Step 08 security capability evidence links
 that are not official Google HTTP(S) URLs. This check does not make every Step
