@@ -573,6 +573,8 @@ product reports must not retain feature README links that are no longer in that
 product's promotion manifest.
 The fixed Step 10 report paths recorded in `data/step-10/current/index.json`
 must match the canonical radar report layout and resolve to existing files.
+The Step 10 report index must remain a closed report inventory: only the
+canonical fixed report keys and the `products` report list are valid.
 Product reports and the IAM report must retain
 separate explicit and derived IAM columns. The IAM report must link every
 promoted feature artifact and must not retain stale feature artifact links.

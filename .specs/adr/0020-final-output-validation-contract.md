@@ -109,6 +109,8 @@ The validator must check:
   product inventory without duplicate product report entries
 - fixed Step 10 report paths in `data/step-10/current/index.json` match the
   canonical radar report layout and resolve to existing files
+- `data/step-10/current/index.json` does not retain unknown report keys outside
+  the canonical fixed reports and `products` report list
 - every promoted feature listed in a promotion manifest has both its artifact
   `card.json` and `README.md`
 - every promoted feature README includes at least one official Google evidence

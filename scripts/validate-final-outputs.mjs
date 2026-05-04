@@ -3506,6 +3506,17 @@ async function validateRadarMatchesArtifacts() {
     services: "radar/services/index.md",
     coverage: "radar/coverage.md",
   };
+  const expectedReportKeys = new Set([...Object.keys(expectedFixedReports), "products"]);
+  for (const reportKey of Object.keys(step10Index.reports || {}).sort((left, right) => left.localeCompare(right))) {
+    if (!expectedReportKeys.has(reportKey)) {
+      findings.push({
+        severity: "error",
+        rule: "step10_index_unknown_report_key",
+        path: step10IndexPath,
+        report_key: reportKey,
+      });
+    }
+  }
   for (const [reportKey, expectedReport] of Object.entries(expectedFixedReports)) {
     const actualReport = step10Index.reports?.[reportKey]
       ? String(step10Index.reports[reportKey]).replace(/\\/g, "/")
