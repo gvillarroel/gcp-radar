@@ -47,7 +47,10 @@ promoted feature cards use the current Step 09 artifact-promotion schema and poi
 `source_step08_card` provenance at the canonical Step 08 product card before
 rendering reports. Step 10 also checks that the promotion manifest, promoted
 service card, and promoted feature cards expose non-empty valid ISO 8601
-`generated_at` timestamps before rendering reports. Step 10 also compares
+`generated_at` timestamps before rendering reports. It also checks that the
+promoted service card and every promoted feature card keep the same
+`generated_at` timestamp as the product promotion manifest, because Step 09
+writes those files as one product promotion unit. Step 10 also compares
 promoted service and feature card
 payload fields against the canonical Step 08 card for the product before
 rendering. This includes product and feature labels, IAM, security, lifecycle,

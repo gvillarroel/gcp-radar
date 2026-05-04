@@ -96,6 +96,8 @@ The validator must check:
   uses the current Step 09 artifact-promotion schema version
 - every promotion manifest, promoted service card, and promoted feature card
   records a non-empty ISO 8601 `generated_at` timestamp
+- every promoted service card and promoted feature card records the same
+  `generated_at` timestamp as its product promotion manifest
 - `data/step-10/current/index.json` product and feature counts match promoted
   artifacts
 - `data/step-10/current/index.json` uses the current Step 10 schema version

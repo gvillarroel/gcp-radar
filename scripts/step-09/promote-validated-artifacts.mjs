@@ -317,12 +317,12 @@ async function promoteProduct(productSlug) {
   const staleFeatureArtifactDirs = [];
   const generatedAt = new Date().toISOString();
   const serviceArtifactCard = {
+    ...card.service_card,
     schema_version: schemaVersion,
     generated_at: generatedAt,
     source_step08_card: relativeToCwd(cardPath),
     product_name: card.product_name,
     product_slug: card.product_slug,
-    ...card.service_card,
   };
   await writeJson(path.join(productArtifactDir, "card.json"), serviceArtifactCard);
 
@@ -341,12 +341,12 @@ async function promoteProduct(productSlug) {
     const featureDir = path.join(productArtifactDir, feature.feature_slug);
     await mkdir(featureDir, { recursive: true });
     const artifactCard = {
+      ...feature,
       schema_version: schemaVersion,
       generated_at: generatedAt,
       source_step08_card: relativeToCwd(cardPath),
       product_name: card.product_name,
       product_slug: card.product_slug,
-      ...feature,
     };
     await writeJson(path.join(featureDir, "card.json"), artifactCard);
     await writeFile(path.join(featureDir, "README.md"), renderFeatureReadme(card, feature));

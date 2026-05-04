@@ -232,6 +232,23 @@ function validateGeneratedAtField(record, recordPath, rulePrefix, extra = {}) {
   return [];
 }
 
+function validateGeneratedAtMatchesPromotion(record, promotion, recordPath, rule, extra = {}) {
+  if (!record?.generated_at || !promotion?.generated_at) {
+    return [];
+  }
+  if (record.generated_at === promotion.generated_at) {
+    return [];
+  }
+  return [{
+    severity: "error",
+    rule,
+    path: recordPath,
+    expected: promotion.generated_at,
+    actual: record.generated_at,
+    ...extra,
+  }];
+}
+
 function promotionFeatureList(promotion, field) {
   return Array.isArray(promotion?.[field]) ? promotion[field] : [];
 }
@@ -785,6 +802,7 @@ async function validateArtifacts() {
     }
     if (serviceCard) {
       findings.push(...validateGeneratedAtField(serviceCard, serviceCardPath, "service_card", { product_slug: productSlug }));
+      findings.push(...validateGeneratedAtMatchesPromotion(serviceCard, promotion, serviceCardPath, "service_card_generated_at_mismatch", { product_slug: productSlug }));
     }
     for (const link of serviceCard?.official_source_links || []) {
       if (!isOfficialGoogleUrl(link)) {
@@ -824,6 +842,7 @@ async function validateArtifacts() {
         });
       }
       findings.push(...validateGeneratedAtField(card, cardPath, "feature_card", { product_slug: productSlug, feature_slug: featureSlug }));
+      findings.push(...validateGeneratedAtMatchesPromotion(card, promotion, cardPath, "feature_card_generated_at_mismatch", { product_slug: productSlug, feature_slug: featureSlug }));
       if (card.product_slug !== productSlug) {
         findings.push({
           severity: "error",

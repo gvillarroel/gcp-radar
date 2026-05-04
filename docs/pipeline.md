@@ -357,6 +357,10 @@ from the complete promoted artifact inventory after the run. The index fields
 the `products` list remains the full promoted artifact inventory required by
 final-output validation.
 
+Within each processed product, Step 09 writes one promotion timestamp across
+the promotion manifest, promoted service card, and promoted feature cards so
+that product's promoted artifact set remains auditable as one unit.
+
 Promoted feature documentation must include an IAM section. That section must
 list explicit roles and permissions when the evidence supports them. If the
 mapping is derived or unknown, the artifact must say so directly and avoid
@@ -415,6 +419,9 @@ eligibility. It also rejects stale feature artifact directories that are not
 listed in the promotion manifest's promoted feature inventory. It also rejects
 manifests and promoted service or feature cards whose
 `generated_at` value is missing or is not a valid ISO 8601 timestamp. It also
+rejects promoted service or feature cards whose `generated_at` timestamp does
+not match their product promotion manifest, because Step 09 writes those files
+as one product promotion unit. It also
 rejects manifests and promoted service or feature cards whose
 rendered labels or source-backed payload fields have drifted from the
 canonical Step 08 card, including IAM, security, lifecycle, evidence, and
@@ -485,7 +492,10 @@ The Step 08 index and generated product cards must also record non-empty ISO
 8601 `generated_at` timestamps. The Step 09 index, each promotion manifest,
 and each promoted service or feature artifact card must record non-empty ISO
 8601 `generated_at` timestamps as well, so validation can detect missing run
-provenance before final reporting is accepted.
+provenance before final reporting is accepted. Within each promoted product,
+final validation also checks that the promoted service card and every promoted
+feature card keep the same `generated_at` timestamp as the product promotion
+manifest.
 Step 08 product cards must also carry a duplicate-free feature inventory with
 a non-empty `feature_slug` on every feature. Step 08 rejects duplicate feature
 slugs while building cards, and final validation rechecks that card layer

@@ -486,6 +486,10 @@ reprocessed. The Step 09 index is still reconciled from the complete promoted
 artifact inventory under `artifacts/`, and records the filtered run scope in
 `processed_product_count` and `processed_products`.
 
+Within each processed product, Step 09 writes one promotion timestamp across
+the promotion manifest, promoted service card, and promoted feature cards so
+that product's promoted artifact set remains auditable as one unit.
+
 Features can be promoted only when they pass Step 07, have official Google
 evidence links, have a non-empty technical summary, do not carry unaccepted
 blocking warnings, and do not contain non-official security capability
@@ -562,6 +566,9 @@ promoted feature cards whose `schema_version` does not match the current Step
 Step 10 must also reject promotion manifests, promoted service cards, and
 promoted feature cards that are missing a valid ISO 8601 `generated_at`
 timestamp.
+The promoted service card and every promoted feature card for a product must
+also keep the same `generated_at` timestamp as that product's promotion
+manifest, because Step 09 emits those files as one promotion unit.
 Step 10 must also fail before rewriting reports when promoted service or
 feature cards contain source links or security capability evidence links that
 are not official Google HTTP(S) URLs.
@@ -721,6 +728,9 @@ across reruns.
 The Step 09 index, each promotion manifest, and each promoted service or
 feature artifact card must also record non-empty ISO 8601 `generated_at`
 timestamps so promotion metadata cannot silently lose run provenance.
+Within each promoted product, the promoted service card and all promoted
+feature artifact cards must keep their `generated_at` timestamp aligned with
+the product promotion manifest.
 Each product artifact index must link every promoted feature README for that
 product, must link the promoted service card, and must not link feature README
 files or service-card paths outside the product's promotion manifest.

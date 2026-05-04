@@ -132,6 +132,15 @@ function validateGeneratedAt(record, label, errors) {
   }
 }
 
+function validatePromotionGeneratedAtMatch(record, promotion, label, productSlug, errors) {
+  if (!record?.generated_at || !promotion?.generated_at) {
+    return;
+  }
+  if (record.generated_at !== promotion.generated_at) {
+    errors.push(`${label} generated_at mismatch for ${productSlug}: expected ${promotion.generated_at}, got ${record.generated_at}`);
+  }
+}
+
 function collectNonOfficialUrls(urls) {
   return [...new Set(urls || [])]
     .filter((url) => !isOfficialGoogleUrl(url));
@@ -505,6 +514,7 @@ async function loadArtifacts() {
         errors.push(`Promoted service card schema_version mismatch for ${productSlug}: expected ${expectedStep09SchemaVersion}, got ${serviceCard.schema_version || "missing"}`);
       }
       validateGeneratedAt(serviceCard, `Promoted service card for ${productSlug}`, errors);
+      validatePromotionGeneratedAtMatch(serviceCard, promotion, "Promoted service card", productSlug, errors);
       if (serviceCard.product_slug && serviceCard.product_slug !== productSlug) {
         errors.push(`Promoted service card product_slug mismatch for ${productSlug}: expected ${productSlug}, got ${serviceCard.product_slug}`);
       }
@@ -576,6 +586,7 @@ async function loadArtifacts() {
           errors.push(`Promoted feature card schema_version mismatch for ${productSlug}/${feature.feature_slug}: expected ${expectedStep09SchemaVersion}, got ${card.schema_version || "missing"}`);
         }
         validateGeneratedAt(card, `Promoted feature card for ${productSlug}/${feature.feature_slug}`, errors);
+        validatePromotionGeneratedAtMatch(card, promotion, "Promoted feature card", `${productSlug}/${feature.feature_slug}`, errors);
         if (card.product_slug !== productSlug) {
           errors.push(`Promoted feature card product_slug mismatch for ${productSlug}/${feature.feature_slug}: expected ${productSlug}, got ${card.product_slug}`);
         }
