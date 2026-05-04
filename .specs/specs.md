@@ -550,6 +550,9 @@ promoted or skipped feature names, embedded feature-card slugs, and
 `source_step08_card` provenance pointing to the canonical Step 08 product card.
 Promotion manifests must expose `promoted_features` and `skipped_features` as
 arrays before Step 10 can consume them.
+Every entry in those arrays must carry a non-empty `feature_slug`; Step 10
+must reject missing feature slugs before rewriting reports instead of ignoring
+malformed manifest entries during aggregation.
 Promotion manifests must also expose `accepted_warning_rules` as a sorted,
 duplicate-free array before Step 10 can use that warning-review policy to
 confirm promoted feature eligibility.

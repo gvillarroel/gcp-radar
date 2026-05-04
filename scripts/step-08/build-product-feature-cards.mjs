@@ -496,13 +496,15 @@ function buildFeatureCard(feature, gateFeature, iamMapping) {
   };
 }
 
-function assertUniqueFeatureSlugs(productSlug, features) {
+function assertValidFeatureSlugs(productSlug, features) {
   const seen = new Set();
   const duplicates = new Set();
+  const missing = [];
 
   for (const feature of features || []) {
     const featureSlug = feature?.feature_slug;
     if (!featureSlug) {
+      missing.push(feature?.feature_name || "(unnamed feature)");
       continue;
     }
     if (seen.has(featureSlug)) {
@@ -511,6 +513,9 @@ function assertUniqueFeatureSlugs(productSlug, features) {
     seen.add(featureSlug);
   }
 
+  if (missing.length > 0) {
+    throw new Error(`Step 08 card for ${productSlug} contains features without slugs: ${missing.sort(compareStrings).join(", ")}`);
+  }
   if (duplicates.size > 0) {
     throw new Error(`Step 08 card for ${productSlug} contains duplicate feature slugs: ${[...duplicates].sort(compareStrings).join(", ")}`);
   }
@@ -735,7 +740,7 @@ async function buildProductCard(productSlug, rolesIndex, permissionsIndex) {
       ...derived,
     }));
   }
-  assertUniqueFeatureSlugs(productSlug, features);
+  assertValidFeatureSlugs(productSlug, features);
 
   const iamSummary = {
     explicit_feature_count: features.filter((feature) => feature.iam.iam_mapping_status === "explicit").length,

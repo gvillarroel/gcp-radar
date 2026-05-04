@@ -313,6 +313,19 @@ function validatePromotionFeatureLists(productSlug, promotion, errors) {
   }
 }
 
+function validatePromotionFeatureEntries(productSlug, promotion, errors) {
+  for (const field of ["promoted_features", "skipped_features"]) {
+    if (!Array.isArray(promotion[field])) {
+      continue;
+    }
+    promotion[field].forEach((feature, index) => {
+      if (!String(feature?.feature_slug || "").trim()) {
+        errors.push(`Promotion manifest ${field} entry is missing feature_slug for ${productSlug} at index ${index}`);
+      }
+    });
+  }
+}
+
 function validatePromotionWarningPolicy(productSlug, promotion, errors) {
   if (!Array.isArray(promotion.accepted_warning_rules)) {
     const actualType = promotion.accepted_warning_rules === null ? "null" : typeof promotion.accepted_warning_rules;
@@ -414,6 +427,7 @@ async function loadArtifacts() {
     }
     validateGeneratedAt(promotion, `Promotion manifest for ${productSlug}`, errors);
     validatePromotionFeatureLists(productSlug, promotion, errors);
+    validatePromotionFeatureEntries(productSlug, promotion, errors);
     validatePromotionWarningPolicy(productSlug, promotion, errors);
     if (promotion.product_slug !== productSlug) {
       errors.push(`Promotion manifest product_slug mismatch for ${productSlug}: expected ${productSlug}, got ${promotion.product_slug || "missing"}`);

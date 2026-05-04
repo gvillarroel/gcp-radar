@@ -412,7 +412,8 @@ artifact-promotion schema version do not match the artifact path and
 canonical Step 08 product card being rendered. Required manifest identity and
 provenance fields must be present, not just correct when present. Promotion
 manifest `promoted_features` and `skipped_features` fields must be arrays
-before Step 10 can render reports from them. Promotion manifest
+before Step 10 can render reports from them, and every entry in those arrays
+must carry a non-empty `feature_slug`. Promotion manifest
 `accepted_warning_rules` must also be a sorted, duplicate-free array before
 Step 10 can use that warning-review policy to confirm promoted feature
 eligibility. It also rejects stale feature artifact directories that are not
