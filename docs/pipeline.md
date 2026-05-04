@@ -532,6 +532,9 @@ coverage ambiguous.
 Promotion manifests must expose promoted and skipped feature inventories as
 arrays so final validation can check counts, paths, labels, and report rows
 without relying on implicit fallback behavior.
+Promotion manifests must also keep both feature inventories sorted by
+`feature_slug`; Step 10 rejects unsorted manifest arrays before rewriting
+reports, and final validation reports the same drift at the output boundary.
 Promotion manifests must also keep product and feature names aligned with the
 promoted cards and the canonical Step 08 card, since Step 10 uses those labels
 when rendering final radar reports.

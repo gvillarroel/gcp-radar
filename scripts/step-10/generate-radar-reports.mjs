@@ -288,6 +288,18 @@ function validatePromotionFeatureLists(productSlug, promotion, errors) {
     if (!Array.isArray(promotion[field])) {
       const actualType = promotion[field] === null ? "null" : typeof promotion[field];
       errors.push(`Promotion manifest ${field} must be an array for ${productSlug}: got ${actualType}`);
+      continue;
+    }
+    let previousFeatureSlug = "";
+    for (const feature of promotion[field]) {
+      const featureSlug = String(feature?.feature_slug || "");
+      if (!featureSlug) {
+        continue;
+      }
+      if (previousFeatureSlug && compareStrings(previousFeatureSlug, featureSlug) > 0) {
+        errors.push(`Promotion manifest ${field} must be sorted by feature_slug for ${productSlug}: ${previousFeatureSlug} before ${featureSlug}`);
+      }
+      previousFeatureSlug = featureSlug;
     }
   }
 }

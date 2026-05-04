@@ -707,6 +707,9 @@ skipped feature names aligned with the promoted artifact cards and canonical
 Step 08 product card, because those manifest labels feed final radar reports.
 Promotion manifests must also keep promoted and skipped feature inventories as
 arrays so final validation can audit every feature deterministically.
+Promotion manifests must also keep both feature inventories sorted by
+`feature_slug` so promotion review and downstream reports remain deterministic
+across reruns.
 The Step 09 index, each promotion manifest, and each promoted service or
 feature artifact card must also record non-empty ISO 8601 `generated_at`
 timestamps so promotion metadata cannot silently lose run provenance.

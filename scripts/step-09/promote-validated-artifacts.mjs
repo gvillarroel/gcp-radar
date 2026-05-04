@@ -358,6 +358,9 @@ async function promoteProduct(productSlug) {
     });
   }
 
+  promotedFeatures.sort((left, right) => compareStrings(left.feature_slug, right.feature_slug));
+  skippedFeatures.sort((left, right) => compareStrings(left.feature_slug, right.feature_slug));
+
   const promotedFeatureSlugs = new Set(promotedFeatures.map((feature) => feature.feature_slug));
   for (const entry of await readdir(productArtifactDir, { withFileTypes: true })) {
     if (!entry.isDirectory() || promotedFeatureSlugs.has(entry.name)) {

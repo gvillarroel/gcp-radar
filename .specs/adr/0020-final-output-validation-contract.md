@@ -128,6 +128,8 @@ The validator must check:
 - each product promotion manifest exposes `promoted_features` and
   `skipped_features` as arrays before their counts, paths, labels, and report
   rows are validated
+- each product promotion manifest keeps `promoted_features` and
+  `skipped_features` sorted by `feature_slug`
 - each product promotion manifest has `source_step08_card` provenance that
   matches an existing canonical Step 08 product card path
 - each product promotion manifest has a skipped feature count that matches its

@@ -236,6 +236,32 @@ function promotionFeatureList(promotion, field) {
   return Array.isArray(promotion?.[field]) ? promotion[field] : [];
 }
 
+function validatePromotionFeatureListOrdering(promotion, promotionPath, productSlug, field) {
+  if (!Array.isArray(promotion?.[field])) {
+    return [];
+  }
+  const findings = [];
+  let previousFeatureSlug = "";
+  for (const feature of promotion[field]) {
+    const featureSlug = String(feature?.feature_slug || "");
+    if (!featureSlug) {
+      continue;
+    }
+    if (previousFeatureSlug && previousFeatureSlug.localeCompare(featureSlug) > 0) {
+      findings.push({
+        severity: "error",
+        rule: `promotion_manifest_${field}_not_sorted`,
+        path: promotionPath,
+        product_slug: productSlug,
+        previous_feature_slug: previousFeatureSlug,
+        feature_slug: featureSlug,
+      });
+    }
+    previousFeatureSlug = featureSlug;
+  }
+  return findings;
+}
+
 function escapeMarkdownLinkLabel(label) {
   return String(label || "").replace(/([\\[\]])/g, "\\$1");
 }
@@ -426,6 +452,7 @@ async function validateArtifacts() {
             actual_type: promotion[field] === null ? "null" : typeof promotion[field],
           });
         }
+        findings.push(...validatePromotionFeatureListOrdering(promotion, promotionPath, productSlug, field));
       }
       if (promotion.product_slug !== productSlug) {
         findings.push({
